@@ -1,0 +1,17 @@
+---
+description: Research loop — docs only, simple-papers style
+globs:
+  - docs/RESEARCH.md
+  - docs/BACKLOG.md
+alwaysApply: false
+---
+
+# Research loop
+
+When running a research / Frontier rotation:
+
+- Only edit `docs/RESEARCH.md` and `docs/BACKLOG.md` (plus tiny related docs clarifications if required)
+- Do not write application code, sandboxes, or approach card rewrites mid-research
+- Do not promote to a default playbook or “ROADMAP” from research alone
+- One research change-set at a time; finish learn notes before stacking another
+- Experiments and builds are separate sessions/loops

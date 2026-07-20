@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-method-lab.local/harness/cell.schema.json",
+  "title": "MethodLabCell",
+  "type": "object",
+  "required": [
+    "cell_id",
+    "approach_id",
+    "project_id",
+    "status",
+    "metrics"
+  ],
+  "properties": {
+    "cell_id": { "type": "string" },
+    "approach_id": { "type": "string" },
+    "approach_version": { "type": "integer", "minimum": 1 },
+    "project_id": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["queued", "running", "scored", "superseded", "invalid"]
+    },
+    "sandbox_path": { "type": "string" },
+    "started_at": { "type": "string" },
+    "finished_at": { "type": "string" },
+    "metrics": {
+      "type": "object",
+      "required": ["correctness_pass", "interventions"],
+      "properties": {
+        "correctness_pass": { "type": "boolean" },
+        "cycle_time_hours": { "type": ["number", "null"] },
+        "interventions": { "type": "integer", "minimum": 0 },
+        "regression_pass": { "type": ["boolean", "null"] },
+        "reviewability_notes": { "type": "string" },
+        "recoverability_ok": { "type": ["boolean", "null"] },
+        "cost_tokens": { "type": ["number", "null"] },
+        "cost_usd": { "type": ["number", "null"] },
+        "wall_time_hours": { "type": ["number", "null"] }
+      }
+    },
+    "fail_tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "team_size_sim": {
+      "type": ["string", "null"],
+      "enum": ["1", "2", "3", "5", null]
+    },
+    "triple_test": { "type": "boolean" },
+    "replication_group": { "type": ["string", "null"] },
+    "run_index": { "type": ["integer", "null"] },
+    "superseded_by": { "type": ["string", "null"] },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": true
+}
