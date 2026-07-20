@@ -1,4 +1,4 @@
-# Experiment backlog
+﻿# Experiment backlog
 
 Prioritized candidates for the matrix. Promote into `matrix/EXPERIMENT_PLAN.md` only when ready to run.
 
@@ -6,22 +6,14 @@ Prioritized candidates for the matrix. Promote into `matrix/EXPERIMENT_PLAN.md` 
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | claimdesk | A03 + A10 | Multi-party insurance claims: filed→review→settled; adjuster/claimant ACL; evidence attachments; audit. |
-| 2 | releasetrain | A03 + A10 | Software release train: planned→staging→prod; change approvals; rollback; deploy webhooks. |
-| 3 | tentcamp | A03 + A10 | Tent pitches (deferred clone-tier; only after comprehensive wave). |
-
-## Harness / method meta (run between products when findings stall)
-
-| Priority | Work | Notes |
-| --- | --- | --- |
-| H1 | Harness loop audit | `protocols/HARNESS_LOOP.md` — oracle immutability, cell schema, triple-test, flake budget |
-| H2 | Frameworks publish | `docs/FRAMEWORKS.md` — proven patterns from portfolio |
-| H3 | Replication spot-check | Triple-test A03 on P-smoke for screenlane after sustain |
+| 1 | **releasetrain** | A03 + A10 | Software release train: planned→staging→prod; dual approval; rollback; deploy webhooks. |
+| 2 | tentcamp | A03 + A10 | Tent pitches (deferred clone-tier; only after comprehensive wave). |
 
 ## Recently completed (portfolio)
 
 | Product | Method | Outcome |
 | --- | --- | --- |
+| claimdesk | A03 + A10 | P-sustain — 17/17; multi-party claims + payout rules |
 | screenlane | A03 + A10 | P-sustain — 18/18; multi-aggregate hiring boards |
 | gardenplot | A03 + A10 | P-sustain — 19/19 |
 | radiohour | A03 + A10 | P-sustain — 19/19 |

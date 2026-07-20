@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claimdesk</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Claimdesk</h1>
+      <p class="lede">File, review, and settle claims with evidence and reserve ceilings.</p>
+      <section id="auth">
+        <h2>Sign in</h2>
+        <label>Email <input id="email" type="email" value="demo@claimdesk.local" /></label>
+        <label>Password <input id="password" type="password" value="demo" /></label>
+        <div class="row">
+          <button type="button" id="register">Register</button>
+          <button type="button" id="login">Log in</button>
+        </div>
+        <p id="auth-status" class="status"></p>
+      </section>
+      <section id="flow" hidden>
+        <h2>Claim lane</h2>
+        <label>Desk <input id="desk-name" type="text" value="Auto desk" /></label>
+        <label>Policy # <input id="policy-number" type="text" value="POL-100" /></label>
+        <label>Claim title <input id="claim-title" type="text" value="Rear-end collision" /></label>
+        <div class="row">
+          <button type="button" id="start">File claim</button>
+          <button type="button" id="review" disabled>Send to review</button>
+          <button type="button" id="evidence" disabled>Add evidence</button>
+          <button type="button" id="settle" disabled>Settle $800</button>
+        </div>
+        <p id="flow-status" class="status"></p>
+        <pre id="view"></pre>
+      </section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

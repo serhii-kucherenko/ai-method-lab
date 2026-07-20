@@ -380,3 +380,8 @@ Sixty-second and sixty-third portfolio products. Both 19/19. Note: entity Match 
 ## 2026-07-20 â€” screenlane sustained (comprehensive)
 
 Sixty-sixth portfolio product. Multi-aggregate hiring + scorecards. 18/18. Frameworks: docs/FRAMEWORKS.md. Next: claimdesk.
+
+## 2026-07-20 — claimdesk sustained (comprehensive)
+
+Sixty-seventh portfolio product. Desks+policies+claims+evidence+payout rules. 17/17. Next: releasetrain.
+
