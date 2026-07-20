@@ -25,4 +25,4 @@
 
 ## Promotion note
 
-Wave-6 complete. Eligible for promote: A03 (primary), A10 (enterprise alternate). Explicit human or scored auto-promote decision still pending in FINDINGS.
+Wave-6 complete. **Auto-promoted:** A03 (primary), A10 (enterprise alternate). Defaults in `matrix/METHOD_DEFAULTS.json`. Usage: `docs/USAGE_GUIDE.md`.

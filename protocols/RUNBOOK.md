@@ -40,6 +40,6 @@ If `matrix/CONTROLLER.json` → `notify.enabled`, send via Resend per `protocols
 
 ## 8. Close + continue (autonomous)
 
-Mark backlog item done. Commit meta-repo score/findings/controller.
+Mark backlog item done. **Commit, push to `origin/main`, and merge** any open controller PR in the same tick. Never end with unpushed commits.
 
 **Do not wait for human confirmation.** Immediately start the next queued cell per `protocols/AUTONOMOUS_CONTROLLER.md` unless `mode` is `paused` or `hard_stop`.

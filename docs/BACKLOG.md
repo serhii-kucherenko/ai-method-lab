@@ -8,10 +8,12 @@
 
 ## Ready
 
-No queued experiment cells. Next:
+No queued experiment cells. Ladder + wave-6 complete. Auto-promote applied (A03 + A10).
 
-- Explicit promote/reject decisions in FINDINGS (rubric §Promotion) — decision email sent
+Next (autonomous / research):
+
 - Triple-test any midterm approach change
+- Replication runs if `defaults.replication` enabled
 
 ## Research / process
 

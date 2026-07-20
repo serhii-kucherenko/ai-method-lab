@@ -28,5 +28,5 @@ Eligible only if:
 2. Interventions within team-size budget
 3. Cycle time within agreed tolerance of baseline (or justified quality gain)
 4. Pros/cons + failure modes written in FINDINGS
-5. Explicit decision recorded (human or scored auto-promote)
+5. Explicit decision recorded (human **or** scored auto-promote when `defaults.auto_promote: true` in CONTROLLER.json)
 6. If midterm-changed: new version triple-tested; old cells marked superseded

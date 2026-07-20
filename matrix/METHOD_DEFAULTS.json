@@ -1,0 +1,41 @@
+{
+  "updated_at": "2026-07-20T10:00:00Z",
+  "source": "scored auto-promote per docs/RUBRIC.md + matrix/FINDINGS.md",
+  "primary": {
+    "approach_id": "A03",
+    "card": "approaches/A03.md",
+    "use_for": [
+      "schema-heavy APIs",
+      "RBAC and permissions",
+      "migrations",
+      "workflow and state machines",
+      "default backend work"
+    ],
+    "failure_modes": [
+      "ceremony overhead on tiny throwaway spikes — use A01 instead",
+      "test suite drift if contracts not kept in CI"
+    ]
+  },
+  "enterprise_alternate": {
+    "approach_id": "A10",
+    "card": "approaches/A10.md",
+    "use_for": [
+      "security-sensitive features",
+      "compliance and audit requirements",
+      "production observability gates",
+      "migration and rollback stories required from slice 1"
+    ],
+    "failure_modes": [
+      "checklist friction on quick spikes",
+      "slower first merge on greenfield prototypes"
+    ]
+  },
+  "finalists_documented": ["A02", "A05", "A08"],
+  "deprioritized": {
+    "A09": "swarm sim — high overhead, low value for solo agent",
+    "A01": "smoke-only signal — use for tiny spikes only",
+    "A04": "smoke-only — plan gate, not laddered",
+    "A06": "smoke-only — slice pattern, not laddered",
+    "A07": "partial ladder — spec kit overhead without top signal"
+  }
+}

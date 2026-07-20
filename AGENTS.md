@@ -21,6 +21,8 @@ Follow approaches/, projects/briefs/, oracles/, protocols/RUNBOOK.md.
 After scoring, immediately continue to the next backlog cell.
 Only hard-stop per AUTONOMOUS_CONTROLLER.md.
 Commit meta-repo updates (matrix, backlog, controller) after each cell.
+Always commit, always push to origin/main, always merge own PRs when CI green — same tick, no human gate.
+If notify.enabled, email digests via Resend MCP per protocols/NOTIFY.md.
 If you open a PR, merge it yourself when checks pass — do not wait for a human.
 ```
 
@@ -39,7 +41,7 @@ Evidence about development approaches across many sandbox projects — not shipp
 ## Pointers
 
 - Controller: `protocols/AUTONOMOUS_CONTROLLER.md` + `matrix/CONTROLLER.json`
-- Email digests: `protocols/NOTIFY.md` (Resend MCP; config under `notify` in CONTROLLER.json)
+- Email digests: `protocols/NOTIFY.md` (Resend MCP; findings + usage guide on ladder_complete)
 - Saved automation text: `docs/AUTOMATION.md`
 - OS stages: `docs/OS.md`
 - Scoring: `docs/RUBRIC.md`

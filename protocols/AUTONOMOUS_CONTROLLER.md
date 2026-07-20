@@ -36,6 +36,7 @@ Read/write: `matrix/CONTROLLER.json`
 7. **Notify** if configured: follow `protocols/NOTIFY.md` (Resend MCP). Do not block on delivery failures.
 8. **Without waiting:** pick next queued cell and go to step 3.
 9. If backlog smoke column is empty: write FINDINGS “wave-1 smoke complete”, send `wave_complete` notify if enabled, queue top-5 × harder tiers per FINDINGS, continue unless `mode` flipped.
+10. When all queued experiment cells are done and `defaults.auto_promote` is true: apply promote per `docs/RUBRIC.md`, write `matrix/METHOD_DEFAULTS.json`, append PROMOTE blocks to FINDINGS, send `ladder_complete` + `promote_complete` digest via Resend (see `protocols/NOTIFY.md`). Do **not** set `ask_human` or wait for human promote confirmation.
 
 ## Mid-cell failure
 
@@ -53,6 +54,16 @@ Set `mode: hard_stop`, `ask_human: true`, reason in state + FINDINGS:
 
 Otherwise: **never** pause for preference questions, naming, stack choice, or “should I continue?”
 
+## Merge + ship policy (mandatory)
+
+When `defaults.always_commit`, `always_push`, and `always_merge` are true (default in autonomous mode):
+
+1. **Commit** meta-repo after every scored cell, wave completion, promote, or protocol/doc update
+2. **Push** to `origin/main` immediately after commit (same tick — do not leave unpushed work)
+3. **Merge** any PR the controller opened once CI is green; if working on a branch, merge to `main` and push — never leave merge-ready PRs open
+
+Hard constraint: never force-push `main`. Sandbox-only commits stay in sandboxes unless needed for evidence.
+
 ## Merge ownership
 
 In `autonomous` mode the controller is the **designated owner** for approach cards that require a human/owner merge. Open the PR, wait for CI green (or local equivalent), then merge it. Do not ask the human to merge.
@@ -61,7 +72,7 @@ In `autonomous` mode the controller is the **designated owner** for approach car
 
 - Stack for P-smoke: Node + TypeScript, simple HTTP API, in-memory or SQLite, Vitest or node:test
 - License/docs: minimal README in sandbox only
-- Commit inside sandbox after green tests; meta-repo: commit score + findings + controller state after each cell
+- Commit inside sandbox after green tests; meta-repo: commit + push + merge after each cell (see ship policy above)
 
 ## Saved wake prompt (paste into Automations /loop / new agent)
 
@@ -73,6 +84,9 @@ Follow approaches/, projects/briefs/, oracles/, protocols/RUNBOOK.md.
 After scoring, immediately continue to the next backlog cell.
 Only hard-stop per AUTONOMOUS_CONTROLLER.md.
 Commit meta-repo updates (matrix, backlog, controller) after each cell.
+If notify.enabled, send digests via Resend MCP per protocols/NOTIFY.md (wave_complete, ladder_complete, promote_complete).
+When ladder complete and auto_promote is true, apply METHOD_DEFAULTS and email the usage guide + findings — no human action required.
+Always commit, always push to origin/main, always merge own PRs when CI green — same tick.
 If you open a PR, merge it yourself when checks pass — do not wait for a human.
 ```
 

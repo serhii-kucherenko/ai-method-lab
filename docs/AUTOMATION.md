@@ -10,16 +10,19 @@ Follow approaches/, projects/briefs/, oracles/, protocols/RUNBOOK.md.
 After scoring, immediately continue to the next backlog cell.
 Only hard-stop per AUTONOMOUS_CONTROLLER.md.
 Commit meta-repo updates (matrix, backlog, controller) after each cell.
-If notify.enabled in CONTROLLER.json, email digests via Resend MCP per protocols/NOTIFY.md.
+Always commit, always push to origin/main, always merge own PRs when CI green — same controller tick, no human gate.
+If notify.enabled in CONTROLLER.json, email digests via Resend MCP per protocols/NOTIFY.md (findings, METHOD_DEFAULTS, USAGE_GUIDE links on ladder_complete).
+When auto_promote is true, never ask the human to confirm promote — apply defaults and send the digest.
 If you open a PR (meta-repo or sandbox), merge it yourself when CI is green — do not wait for a human merge.
 ```
 
-## Merge policy (autonomous)
+## Merge policy (autonomous — mandatory)
 
-When `matrix/CONTROLLER.json` has `mode: autonomous` and `defaults.agent_merges_own_prs: true`:
+When `mode: autonomous` and `defaults.always_commit` / `always_push` / `always_merge` are true:
 
-- The controller is the **designated owner** for merge gates on approach cards that say “human (or designated owner) merges”
-- Docs/results PRs and sandbox experiment PRs opened by the controller are merged by the controller after checks pass
+- **Commit** after every cell, wave, promote, or meta-repo change
+- **Push** to `origin/main` in the same tick (never end a run with unpushed commits)
+- **Merge** controller-owned PRs when CI is green; merge branch → `main` locally if no PR tooling
 - Do not leave merge-ready PRs waiting on human approval unless `mode` is `paused` / `hard_stop`
 
 ## Suggested Automation settings

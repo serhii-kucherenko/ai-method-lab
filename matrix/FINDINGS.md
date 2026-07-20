@@ -117,9 +117,27 @@ Research-gate before code; higher ceremony at ts5 but still green. Oracle 4/4. *
 
 All finalists (A03, A10, A05, A02, A08) passed P-workflow-001 at team sizes 2/3/5 (size 1 prior). No team-fit failures. Ceremony increases with size; correctness holds.
 
-**Promote recommendation (scored auto-candidate):** A03 as primary method default (strongest process signal + viable all sizes); A10 as enterprise-gated alternate. A05/A02/A08 remain documented finalists.
+**Scored auto-promote applied** (rubric §5 + `defaults.auto_promote`): see `matrix/METHOD_DEFAULTS.json`.
 
-**Human decision still required** (rubric §5): reply to prior promote email, or confirm scored auto-promote of A03+A10.
+## PROMOTE — A03 (primary default)
+
+- **Use for:** schema-heavy APIs, RBAC, migrations, workflow logic, default backend work
+- **Evidence:** strongest process signal (red→green); passed smoke → crud → workflow → integrate → scale; viable team sizes 1/2/3/5
+- **Failure modes:** ceremony on tiny spikes (use A01); test drift if CI contracts neglected
+
+## PROMOTE — A10 (enterprise alternate)
+
+- **Use for:** security-sensitive, compliance, prod observability/migration gates from slice 1
+- **Evidence:** checklist gate scales with review/QA lane; all tiers + team sizes pass
+- **Failure modes:** friction on throwaway prototypes
+
+## Documented finalists (not auto-default)
+
+A02 (ERD-first), A05 (adversarial), A08 (research-gate) — viable all tiers; pick per project shape.
+
+## Deprioritized
+
+A09 swarm sim (solo agent overhead). A01/A04/A06 smoke-only or partial ladder. A07 partial ladder.
 
 
 
