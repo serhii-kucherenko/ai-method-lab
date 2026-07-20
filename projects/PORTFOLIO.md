@@ -76,7 +76,7 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | vendorvault | **sustained** | A03 + A10 | sustain complete | Workspaces + vendors + findings + attestation + critical score gates |
 | incidentrail | **sustained** | A03 + A10 | sustain complete | War rooms + sev1–3 + actions + postmortem gates |
 | datacontract | **sustained** | A03 + A10 | sustain complete | Domains + contracts + SLO breaches + remediate/waive |
-| orbitfolio | **sustained** | A03 + A08 | design-lab complete | External https://github.com/serhii-kucherenko/orbitfolio — 50 scored variants |
+| orbitfolio | **sustained** | A03 + A08 | design-lab complete | Live https://orbitfolio-kohl.vercel.app · https://github.com/serhii-kucherenko/orbitfolio |
 
 ## Next autonomous actions
 
