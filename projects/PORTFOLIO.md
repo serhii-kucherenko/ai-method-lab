@@ -55,9 +55,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | helppost | **sustained** | A03 + A10 | sustain complete | Requests posted/claimed/resolved |
 | winecellar | **sustained** | A03 + A10 | sustain complete | Bottles cellared/tasting/emptied |
 | skihold | **sustained** | A03 + A10 | sustain complete | Holds reserved/fitted/returned |
+| boatslip | **sustained** | A03 + A10 | sustain complete | Berths reserved/moored/departed |
+| foodtruck | **sustained** | A03 + A10 | sustain complete | Stops parked/serving/packed |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
 
 ## Next autonomous actions
 
-1. Queue next portfolio product (boatslip) on next tick
+1. Queue next portfolio product (cloudlab) on next tick
 2. Keep 30m dont-stop loop; email digests on product complete

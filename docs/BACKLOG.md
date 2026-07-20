@@ -6,18 +6,18 @@ Prioritized candidates for the matrix. Promote into `matrix/EXPERIMENT_PLAN.md` 
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | boatslip | A03 + A10 | Boat berths: reserved → moored → departed; marinas ACL |
-| 2 | foodtruck | A03 + A10 | Truck stops: parked → serving → packed; lots ACL |
+| 1 | cloudlab | A03 + A10 | Lab benches: booked → running → cleaned; labs ACL |
+| 2 | toyshare | A03 + A10 | Toys: listed → borrowed → returned; shelves ACL |
 
 ## Recently completed (portfolio)
 
 | Product | Method | Outcome |
 | --- | --- | --- |
+| boatslip | A03 + A10 | P-sustain — 19/19 |
+| foodtruck | A03 + A10 | P-sustain — 19/19 |
 | winecellar | A03 + A10 | P-sustain — 19/19 |
 | skihold | A03 + A10 | P-sustain — 19/19 |
 | busroute | A03 + A10 | P-sustain — 19/19 |
 | helppost | A03 + A10 | P-sustain — 19/19 |
-| marketstall | A03 + A10 | P-sustain — 19/19 |
-| gymspot | A03 + A10 | P-sustain — 19/19 |
 
 See `projects/PORTFOLIO.md` for the full active set.
