@@ -13,8 +13,8 @@ One cell in flight at a time. Finish score + learn note before the next.
 | 5 | A05×P-smoke-001 | A05 | P-smoke-001 | done |
 | 6 | A06×P-smoke-001 | A06 | P-smoke-001 | done |
 | 7 | A07×P-smoke-001 | A07 | P-smoke-001 | done |
-| 8 | A08×P-smoke-001 | A08 | P-smoke-001 | next (autonomous) |
-| 9 | A09×P-smoke-001 | A09 | P-smoke-001 | queued |
+| 8 | A08×P-smoke-001 | A08 | P-smoke-001 | done |
+| 9 | A09×P-smoke-001 | A09 | P-smoke-001 | next (autonomous) |
 | 10 | A10×P-smoke-001 | A10 | P-smoke-001 | queued |
 
 ## Later — after smoke column

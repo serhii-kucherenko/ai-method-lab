@@ -11,7 +11,7 @@ Wave 1 smoke column. Update when cells are scored.
 | A05 | pass | — | — | Adversarial review |
 | A06 | pass | — | — | Small slices |
 | A07 | pass | — | — | Spec kit |
-| A08 | — | — | — | |
+| A08 | pass | — | — | Research-gated |
 | A09 | — | — | — | |
 | A10 | — | — | — | |
 
