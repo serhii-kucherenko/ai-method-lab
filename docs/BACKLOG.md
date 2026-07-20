@@ -41,7 +41,8 @@ Same top 5 after P-crud re-rank (all passed).
 
 ## Later
 
-- Finalists × P-integrate / P-scale + team-size sims
+- Finalists × P-integrate / P-scale + team-size sims (briefs not yet present)
+- Explicit promote decision for A02/A03/A10/A05/A07 after human rubric review
 
 ## Research / process
 

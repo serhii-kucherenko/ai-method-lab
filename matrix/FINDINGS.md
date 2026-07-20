@@ -190,3 +190,9 @@ Queued top 5 × **P-workflow-001**. Promotion still blocked until workflow score
 - **Approach fit:** Spec kit / SDD — Spec kit maps AC to transition engine.
 - **Next:** P-workflow top-5 complete
 
+## 2026-07-20 — wave-1 ladder note (P-workflow top-5 complete)
+
+Top-5 approaches (**A02, A03, A10, A05, A07**) now have **pass on smoke + crud + workflow**. Per rubric, they are *eligible* for promotion consideration (≥2 tiers met on correctness), but **no method is promoted yet** — still need intervention budgets, cycle tolerances, and an explicit promote decision.
+
+**Next backlog:** team-size sims / harder P-integrate·P-scale when briefs exist; otherwise idle until new project briefs are added. Controller remains autonomous with empty next_cell.
+
