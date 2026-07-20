@@ -56,3 +56,11 @@ Lab scaffolded. No cells scored yet. First cell queued: **A01 × P-smoke-001**.
 - **Approach fit:** Small-slice trunk — Two mergeable slices documented; kept under soft LOC cap.
 - **Next:** A07 on P-smoke-001
 
+## 2026-07-20 — A07 × P-smoke-001 (r1)
+
+- **Result:** pass (oracle 4/4)
+- **Cycle:** ~0.0006h wall
+- **Interventions:** 0
+- **Approach fit:** Spec kit / SDD — Full spec kit + derived task list linked.
+- **Next:** A08 on P-smoke-001
+
