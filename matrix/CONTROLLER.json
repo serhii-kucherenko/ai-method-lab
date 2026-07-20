@@ -1,5 +1,5 @@
 {
-    "updated_at":  "2026-07-20T18:25:00Z",
+    "updated_at":  "2026-07-20T18:54:40Z",
     "notify":  {
                    "from":  "AI Method Lab \u003conboarding@resend.dev\u003e",
                    "to":  [
@@ -16,7 +16,7 @@
     "paused":  false,
     "active_cell":  null,
     "schema_version":  "1.0.0",
-    "idle_reason":  "beehive_sustained_awaiting_next_tick_bookclub",
+    "idle_reason":  "mudrun_sustained_awaiting_next_tick_surfboard",
     "product_defaults":  {
                              "persistence":  "sqlite",
                              "stack":  "node-ts",
@@ -24,11 +24,11 @@
                              "payments":  "provider-agnostic-webhook-with-hmac",
                              "auth":  "bearer-token"
                          },
-    "last_completed":  "A03__P-sustain__beehive__r1",
+    "last_completed":  "A03__P-sustain__mudrun__r1",
     "last_error":  null,
-    "next_cell":  "A03__P-smoke-001__bookclub__r1",
+    "next_cell":  "A03__P-smoke-001__surfboard__r1",
     "mode":  "autonomous",
     "phase":  "idle",
-    "notes":  "Printshop+beehive sustained (19/19). Portfolio 57 products. Next: bookclub.",
+    "notes":  "Bookclub+mudrun sustained (19/19). Portfolio 59 products. Next: surfboard.",
     "hard_stop":  false
 }
