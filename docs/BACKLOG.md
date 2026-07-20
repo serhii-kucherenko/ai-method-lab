@@ -28,16 +28,22 @@
 - A10__P-smoke-001__r3 (replication pass — A10 triple-test 3/3)
 
 - **kitcheck × P-smoke-001** (A03+A10) — pass
+- **kitcheck × P-crud-001** (A03+A10) — pass
+- **kitcheck × P-workflow-001** (A03+A10) — pass
+- **kitcheck × P-integrate-001** (A03+A10) — pass
+- **kitcheck × P-scale-001** (A03+A10) — pass
+- **kitcheck × P-sustain** (A03+A10) — pass — product sustained
 
 ## Ready (product portfolio)
 
 | Priority | Cell id | Product | Phase | Status |
 |----------|---------|---------|-------|--------|
-| 1 | A03__P-crud-001__kitcheck__r1 | kitcheck | crud | **in progress** |
-| 2 | A03__P-workflow-001__kitcheck__r1 | kitcheck | workflow | queued |
-| 3 | A03__P-integrate-001__kitcheck__r1 | kitcheck | integrate | queued |
-| 4 | A03__P-scale-001__kitcheck__r1 | kitcheck | scale | queued |
-| 5 | A03__P-sustain__kitcheck__r1 | kitcheck | sustain | queued |
+| 1 | A03__P-smoke-001__meetslot__r1 | meetslot | smoke | **in progress** |
+| 2 | A03__P-crud-001__meetslot__r1 | meetslot | crud | queued |
+| 3 | A03__P-workflow-001__meetslot__r1 | meetslot | workflow | queued |
+| 4 | A03__P-integrate-001__meetslot__r1 | meetslot | integrate | queued |
+| 5 | A03__P-scale-001__meetslot__r1 | meetslot | scale | queued |
+| 6 | A03__P-sustain__meetslot__r1 | meetslot | sustain | queued |
 
 ## Ready (replication — promoted defaults)
 

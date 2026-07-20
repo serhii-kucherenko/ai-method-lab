@@ -25,13 +25,13 @@ Small teams loan gear (laptops, kits, tools). Requesters open loans; owners trac
 
 ## Sustain criteria (experiment “done”)
 
-- [ ] Full-stack: API + minimal web UI for the happy path
-- [ ] Authz + negative tests green
-- [ ] `/health`, structured logs, THREATS.md
-- [ ] Migrations with rollback notes
-- [ ] README: how to run, test, deploy locally
-- [ ] One vertical path: login → request loan → check out → return
-- [ ] Product FINDINGS.md with promote/reuse notes
+- [x] Full-stack: API + minimal web UI for the happy path
+- [x] Authz + negative tests green
+- [x] `/health`, structured logs, THREATS.md
+- [x] Migrations with rollback notes
+- [x] README: how to run, test, deploy locally
+- [x] One vertical path: login → request loan → check out → return
+- [x] Product FINDINGS.md with promote/reuse notes
 
 ## Stack
 

@@ -37,9 +37,15 @@ function runMigrations(db: DatabaseSync): void {
   }
 }
 
+export type Role = "owner" | "member" | "viewer";
+
+export function listMigrations(db: DatabaseSync): string[] {
+  return db
+    .prepare("SELECT version FROM schema_migrations ORDER BY version")
+    .all()
+    .map((r) => String((r as { version: string }).version));
+}
+
 export function migrationCount(db: DatabaseSync): number {
-  const row = db.prepare("SELECT COUNT(*) AS c FROM schema_migrations").get() as {
-    c: number;
-  };
-  return row.c;
+  return listMigrations(db).length;
 }

@@ -7,7 +7,7 @@ const port = Number(process.env.PORT ?? 3000);
 const dataDir = join(process.cwd(), "data");
 mkdirSync(dataDir, { recursive: true });
 const dbPath = process.env.KITCHECK_DB ?? join(dataDir, "kitcheck.db");
-const { server } = createApp(createStore(dbPath));
+const { server } = createApp(createStore({ dbPath }));
 server.listen(port, "127.0.0.1", () => {
   console.log(JSON.stringify({ event: "listen", port, dbPath }));
 });

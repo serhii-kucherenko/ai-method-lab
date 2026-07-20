@@ -217,6 +217,15 @@ Enterprise lite replications both green (oracle + health + checklist artifacts).
 
 Fourth portfolio product (equipment loans). A03+A10. Oracle + health green. Next: crud (kits RBAC).
 
+## 2026-07-20 — kitcheck × P-crud-001 (pass)
+
+Shared kits RBAC + notes migration. Next: workflow.
+
+## 2026-07-20 — kitcheck sustained
+
+Finish pack green (19/19). Equipment checkout domain sustained. Next product: meetslot.
+
+
 
 
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kitcheck</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Kitcheck</h1>
+      <p class="lede">Request a loan, check it out, and return it.</p>
+      <section id="auth">
+        <h2>Sign in</h2>
+        <label>Email <input id="email" type="email" value="demo@kitcheck.local" /></label>
+        <label>Password <input id="password" type="password" value="demo" /></label>
+        <div class="row">
+          <button type="button" id="register">Register</button>
+          <button type="button" id="login">Log in</button>
+        </div>
+        <p id="auth-status" class="status"></p>
+      </section>
+      <section id="flow" hidden>
+        <h2>Loan</h2>
+        <label>Item <input id="item" type="text" value="Tripod" /></label>
+        <div class="row">
+          <button type="button" id="create">Request</button>
+          <button type="button" id="checkout" disabled>Check out</button>
+          <button type="button" id="return" disabled>Return</button>
+        </div>
+        <p id="flow-status" class="status"></p>
+        <pre id="loan-view"></pre>
+      </section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

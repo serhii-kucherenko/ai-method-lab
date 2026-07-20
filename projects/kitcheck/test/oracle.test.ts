@@ -81,7 +81,7 @@ test("user can CRUD own loans", async () => {
       status: string;
     };
     assert.equal(loan.itemName, "DSLRkit");
-    assert.equal(loan.status, "open");
+    assert.equal(loan.status, "requested");
 
     const listed = await req(baseUrl, "GET", "/loans", { token });
     assert.equal(listed.status, 200);
@@ -89,12 +89,12 @@ test("user can CRUD own loans", async () => {
 
     const updated = await req(baseUrl, "PATCH", `/loans/${loan.id}`, {
       token,
-      body: { status: "closed", itemName: "DSLRkit-pro" },
+      body: { itemName: "DSLRkit-pro", note: "updated" },
     });
     assert.equal(updated.status, 200);
-    const after = updated.body.loan as { itemName: string; status: string };
-    assert.equal(after.status, "closed");
+    const after = updated.body.loan as { itemName: string; note: string };
     assert.equal(after.itemName, "DSLRkit-pro");
+    assert.equal(after.note, "updated");
 
     assert.equal((await req(baseUrl, "DELETE", `/loans/${loan.id}`, { token })).status, 204);
     assert.equal(
