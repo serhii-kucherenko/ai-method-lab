@@ -272,3 +272,11 @@ Fourteenth portfolio product. Shifts + crews + open/fill/complete. 19/19. Next: 
 ## 2026-07-20 — relaydesk sustained
 
 Fifteenth portfolio product. Tickets + desks + triage/start/resolve. 19/19. Next: lostfound.
+
+## 2026-07-20 — lostfound sustained
+
+Sixteenth portfolio product. Items + hubs + report/claim/reunite. 19/19. Next: pantrybox.
+
+## 2026-07-20 — pantrybox sustained
+
+Seventeenth portfolio product. Stocks + pantries + list/reserve/pickup. 19/19. Next: carpool.
