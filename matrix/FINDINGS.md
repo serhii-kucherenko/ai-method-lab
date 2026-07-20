@@ -48,3 +48,11 @@ Lab scaffolded. No cells scored yet. First cell queued: **A01 × P-smoke-001**.
 - **Approach fit:** Adversarial review — Separate adversarial review artifact with waivers noted.
 - **Next:** A06 on P-smoke-001
 
+## 2026-07-20 — A06 × P-smoke-001 (r1)
+
+- **Result:** pass (oracle 4/4)
+- **Cycle:** ~0.0003h wall
+- **Interventions:** 0
+- **Approach fit:** Small-slice trunk — Two mergeable slices documented; kept under soft LOC cap.
+- **Next:** A07 on P-smoke-001
+

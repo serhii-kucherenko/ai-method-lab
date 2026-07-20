@@ -9,7 +9,7 @@ Wave 1 smoke column. Update when cells are scored.
 | A03 | pass | — | — | TDD/contract-first |
 | A04 | pass | — | — | Plan-gated |
 | A05 | pass | — | — | Adversarial review |
-| A06 | — | — | — | |
+| A06 | pass | — | — | Small slices |
 | A07 | — | — | — | |
 | A08 | — | — | — | |
 | A09 | — | — | — | |

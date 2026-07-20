@@ -11,8 +11,8 @@ One cell in flight at a time. Finish score + learn note before the next.
 | 3 | A03×P-smoke-001 | A03 | P-smoke-001 | done |
 | 4 | A04×P-smoke-001 | A04 | P-smoke-001 | done |
 | 5 | A05×P-smoke-001 | A05 | P-smoke-001 | done |
-| 6 | A06×P-smoke-001 | A06 | P-smoke-001 | next (autonomous) |
-| 7 | A07×P-smoke-001 | A07 | P-smoke-001 | queued |
+| 6 | A06×P-smoke-001 | A06 | P-smoke-001 | done |
+| 7 | A07×P-smoke-001 | A07 | P-smoke-001 | next (autonomous) |
 | 8 | A08×P-smoke-001 | A08 | P-smoke-001 | queued |
 | 9 | A09×P-smoke-001 | A09 | P-smoke-001 | queued |
 | 10 | A10×P-smoke-001 | A10 | P-smoke-001 | queued |
