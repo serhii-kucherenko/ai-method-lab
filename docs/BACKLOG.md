@@ -4,20 +4,21 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **datacontract** | A03 + A10 | Data contracts: schemas, producers/consumers, breach→remediate→waived; SLO gates. |
+| 1 | **policyforge** | A03 + A10 | Policy as code: packs, rules, violations open→waived→enforced; dual approver for waive. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
-| Product | Tests | Gate stressed |
-| --- | --- | --- |
-| incidentrail | 7 | sev1 ack + postmortem |
-| vendorvault | 17 | attestation + critical avg |
-| grantlane | 24 | dual sign-off + clawback |
-| releasetrain | 19 | dual approval + rollback |
-| claimdesk | 17 | payout ≤ reserve |
-| screenlane | 18 | scorecards |
+| Product | Gate stressed |
+| --- | --- |
+| datacontract | SLO latency ceiling + remediate/waive |
+| incidentrail | sev1 ack + postmortem |
+| vendorvault | attestation + critical avg |
+| grantlane | dual sign-off + clawback |
+| releasetrain | dual approval + rollback |
+| claimdesk | payout ≤ reserve |
+| screenlane | scorecards |
 
 ## Strategy
 
-Multi-aggregate + cross-entity gates. Clone-tier deferred. Loop continues until hard_stop.
+Multi-aggregate + cross-entity gates. 1h keepgoing loop armed. Clone-tier deferred.

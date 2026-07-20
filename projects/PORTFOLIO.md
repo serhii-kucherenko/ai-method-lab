@@ -75,10 +75,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | grantlane | **sustained** | A03 + A10 | sustain complete | Programs + applications + milestones + dual sign-off + clawback |
 | vendorvault | **sustained** | A03 + A10 | sustain complete | Workspaces + vendors + findings + attestation + critical score gates |
 | incidentrail | **sustained** | A03 + A10 | sustain complete | War rooms + sev1–3 + actions + postmortem gates |
+| datacontract | **sustained** | A03 + A10 | sustain complete | Domains + contracts + SLO breaches + remediate/waive |
 | orbitfolio | **sustained** | A03 + A08 | design-lab complete | External https://github.com/serhii-kucherenko/orbitfolio — 50 scored variants |
 
 ## Next autonomous actions
 
-1. Build next comprehensive product: **datacontract**
-2. Keep harness-loop audits + insight emails; clone-tier deferred
-3. Proven: severity/money/dual-control gates beat noun-swap FSMs
+1. Build next comprehensive product: **policyforge**
+2. 1h keepgoing loop armed; clone-tier deferred
+3. Proven: SLO/severity/money/dual-control gates beat noun-swap FSMs
