@@ -1,0 +1,29 @@
+{
+  "cell_id": "A03__P-smoke-001__briefpad__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-smoke-001",
+  "status": "scored",
+  "product_path": "projects/briefpad",
+  "sandbox_path": "projects/briefpad",
+  "started_at": "2026-07-20T14:28:00Z",
+  "finished_at": "2026-07-20T14:35:00Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.12,
+    "interventions": 0,
+    "regression_pass": true,
+    "reviewability_notes": "Full ladder in one pass; notes + pads + publish workflow",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.12
+  },
+  "fail_tags": [],
+  "team_size_sim": "1",
+  "triple_test": false,
+  "replication_group": null,
+  "run_index": 1,
+  "superseded_by": null,
+  "notes": "Smoke scored as part of finish pack; see sibling cells."
+}

@@ -233,6 +233,10 @@ Fifth portfolio product (room bookings). Next: crud.
 
 Finish pack green (19/19). Next: briefpad.
 
+## 2026-07-20 — briefpad sustained
+
+Sixth portfolio product. Notes + pads + publish workflow. 19/19.
+
 
 
 
