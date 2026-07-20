@@ -19,10 +19,10 @@ Teams post status updates; readers can see public signals; authors own their pos
 
 ## Sustain criteria
 
-- [ ] API + minimal UI
-- [ ] Authz + negatives + adversarial review trail
-- [ ] `/health`, THREATS.md
-- [ ] Migrations + rollback notes
-- [ ] README
-- [ ] Vertical path: login → post → publish
-- [ ] FINDINGS with A05 reuse notes
+- [x] API + minimal UI
+- [x] Authz + negatives + adversarial review trail
+- [x] `/health`, THREATS.md
+- [x] Migrations + rollback notes
+- [x] README
+- [x] Vertical path: login → post → publish
+- [x] FINDINGS with A05 reuse notes

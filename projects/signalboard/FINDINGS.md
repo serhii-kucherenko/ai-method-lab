@@ -17,3 +17,14 @@ Third portfolio product. Workflow A03+A05 (adversarial overlay).
 - A05 adversarial update; suite 8/8
 - Interventions: 0
 - Next: workflow
+
+## 2026-07-20 — Workflow → sustain (pass) — product sustained
+
+- Workflow/integrate/scale/sustain finish pack; suite 19/19
+- A05 adversarial sustain review recorded
+- Interventions: 0
+
+### Promote / reuse notes
+
+- A05 overlay adds explicit security review without blocking A03 velocity
+- Same ladder patterns as Clearpath/Ledgerlite transferred cleanly

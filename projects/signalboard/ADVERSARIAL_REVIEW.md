@@ -1,19 +1,19 @@
-# Adversarial review (A05) — crud
+# Adversarial review (A05) — sustain pack
 
 Reviewer: adversary-role  
 Builder: implementer-role
 
 ## Checklist
 
-- [x] RBAC matrix enforced (owner/member/viewer)
-- [x] Negative non-member 404
-- [x] Migration `002_task_severity` present
-- [x] Smoke status isolation still green
+- [x] Workflow transitions + optimistic locking
+- [x] HMAC webhooks + idempotency
+- [x] Pagination + rate limits
+- [x] UI happy path without leaking cross-user data
 
 ## Findings
 
-1. Severity is free-text — **waived** for crud tier (enum later).
+1. Public anonymous board feed still out of scope — **accepted** for this experiment tier.
 
 ## Decision
 
-Approve.
+Approve sustain.
