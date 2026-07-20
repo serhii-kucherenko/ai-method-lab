@@ -70,7 +70,7 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | gardenplot | **sustained** | A03 + A10 | sustain complete | Plots claimed/growing/harvested |
 | radiohour | **sustained** | A03 + A10 | sustain complete | Shows scheduled/onair/wrapped |
 | screenlane | **sustained** | A03 + A10 | sustain complete | Hiring boards + jobs + candidates + scorecards + applied→screening→decided |
-| orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
+| orbitfolio | **sustained** | A03 + A08 | design-lab complete | External https://github.com/serhii-kucherenko/orbitfolio — 50 scored variants |
 
 ## Next autonomous actions
 
