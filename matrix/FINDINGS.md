@@ -142,3 +142,19 @@ Queued those five on **P-crud-001**. Re-rank before P-workflow after P-crud scor
 - **Approach fit:** Spec kit / SDD — Spec kit + derived tasks for multi-entity scope.
 - **Next:** P-crud top-5 column complete
 
+## 2026-07-20 — P-crud top-5 column complete
+
+All queued approaches (**A02, A03, A10, A05, A07**) passed P-crud-001 (RBAC + migration). Still no correctness discrimination vs smoke.
+
+**Re-rank for P-workflow** (state machine, audit, concurrency stress): keep same top 5 — they now have two-tier passes and map well to edge-case discipline (A03 tests, A02 contracts, A10 gates, A05 adversarial, A07 spec).
+
+Queued top 5 × **P-workflow-001**. Promotion still blocked until workflow scores + rubric checklist.
+
+## 2026-07-20 — A02 × P-workflow-001 (r1)
+
+- **Result:** pass
+- **Cycle:** ~0.01h wall
+- **Interventions:** 0
+- **Approach fit:** Explicit transition table in ERD prevented illegal jumps; version field specified before code.
+- **Next:** A03 × P-workflow-001
+

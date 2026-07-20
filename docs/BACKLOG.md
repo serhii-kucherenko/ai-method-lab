@@ -19,8 +19,6 @@ One cell in flight at a time. Finish score + learn note before the next.
 
 ## Ready — wave 1 ladder (top 5 × P-crud)
 
-Selected from smoke FINDINGS for ERD/RBAC/migration stress: A02, A03, A10, A05, A07.
-
 | Priority | Cell | Approach | Project | Status |
 |----------|------|----------|---------|--------|
 | 11 | A02×P-crud-001 | A02 | P-crud-001 | done |
@@ -29,9 +27,20 @@ Selected from smoke FINDINGS for ERD/RBAC/migration stress: A02, A03, A10, A05, 
 | 14 | A05×P-crud-001 | A05 | P-crud-001 | done |
 | 15 | A07×P-crud-001 | A07 | P-crud-001 | done |
 
-## Later — after P-crud column
+## Ready — wave 1 ladder (top 5 × P-workflow)
 
-- Same top 5 × P-workflow-001 (re-rank after P-crud scores)
+Same top 5 after P-crud re-rank (all passed).
+
+| Priority | Cell | Approach | Project | Status |
+|----------|------|----------|---------|--------|
+| 16 | A02×P-workflow-001 | A02 | P-workflow-001 | done |
+| 17 | A03×P-workflow-001 | A03 | P-workflow-001 | next (autonomous) |
+| 18 | A10×P-workflow-001 | A10 | P-workflow-001 | queued |
+| 19 | A05×P-workflow-001 | A05 | P-workflow-001 | queued |
+| 20 | A07×P-workflow-001 | A07 | P-workflow-001 | queued |
+
+## Later
+
 - Finalists × P-integrate / P-scale + team-size sims
 
 ## Research / process
