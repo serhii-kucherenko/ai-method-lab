@@ -1,0 +1,28 @@
+{
+  "cell_id": "A10__P-workflow-001__r1",
+  "approach_id": "A10",
+  "approach_version": 1,
+  "project_id": "P-workflow-001",
+  "status": "scored",
+  "sandbox_path": "sandboxes/A10__P-workflow-001__r1",
+  "started_at": "2026-07-20T07:39:37Z",
+  "finished_at": "2026-07-20T07:39:38Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.0003,
+    "interventions": 0,
+    "regression_pass": null,
+    "reviewability_notes": "Security/audit/conflict gates present.",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.0003
+  },
+  "fail_tags": [],
+  "team_size_sim": "1",
+  "triple_test": false,
+  "replication_group": null,
+  "run_index": 1,
+  "superseded_by": null,
+  "notes": "Enterprise gates lite: pass"
+}

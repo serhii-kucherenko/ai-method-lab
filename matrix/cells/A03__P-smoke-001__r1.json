@@ -1,0 +1,28 @@
+{
+  "cell_id": "A03__P-smoke-001__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-smoke-001",
+  "status": "scored",
+  "sandbox_path": "sandboxes/A03__P-smoke-001__r1",
+  "started_at": "2026-07-20T07:35:48Z",
+  "finished_at": "2026-07-20T07:35:49Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.0003,
+    "interventions": 0,
+    "regression_pass": null,
+    "reviewability_notes": "Failing tests/contracts first; red\u2192green log present.",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.0003
+  },
+  "fail_tags": [],
+  "team_size_sim": "1",
+  "triple_test": false,
+  "replication_group": null,
+  "run_index": 1,
+  "superseded_by": null,
+  "notes": "Oracle 4/4. Tests authored before impl; RED_GREEN.md records sequence."
+}
