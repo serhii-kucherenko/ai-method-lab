@@ -1,5 +1,5 @@
 {
-    "updated_at":  "2026-07-20T20:24:51Z",
+    "updated_at":  "2026-07-20T20:54:45Z",
     "notify":  {
                    "from":  "AI Method Lab \u003conboarding@resend.dev\u003e",
                    "to":  [
@@ -16,7 +16,7 @@
     "paused":  false,
     "active_cell":  null,
     "schema_version":  "1.0.0",
-    "idle_reason":  "radiohour_sustained_awaiting_next_tick_icebox",
+    "idle_reason":  "screenlane_sustained_awaiting_next_tick_claimdesk",
     "product_defaults":  {
                              "persistence":  "sqlite",
                              "stack":  "node-ts",
@@ -24,11 +24,12 @@
                              "payments":  "provider-agnostic-webhook-with-hmac",
                              "auth":  "bearer-token"
                          },
-    "last_completed":  "A03__P-sustain__radiohour__r1",
+    "last_completed":  "A03__P-sustain__screenlane__r1",
     "last_error":  null,
-    "next_cell":  "A03__P-smoke-001__icebox__r1",
+    "current_product":  null,
+    "next_cell":  "A03__P-smoke-001__claimdesk__r1",
     "mode":  "autonomous",
     "phase":  "idle",
-    "notes":  "Gardenplot+radiohour sustained (19/19). Portfolio 65 products. Next: icebox.",
+    "notes":  "Screenlane sustained (18/18 comprehensive). Portfolio 66. Next: claimdesk. Clone wave paused in favor of multi-aggregate products.",
     "hard_stop":  false
 }

@@ -1,0 +1,42 @@
+{
+  "method_id": "A03",
+  "method_version": "1.0.0",
+  "run_id": "r1",
+  "oracle_version": "1.0.0",
+  "env": {
+    "os": "win32",
+    "runtime": "node",
+    "model": "composer-agent",
+    "started_at": "2026-07-20T20:54:45.184Z",
+    "ended_at": "2026-07-20T20:54:45.184Z"
+  },
+  "metrics": {
+    "wall_clock_minutes": 25,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": 0,
+    "retries": 0,
+    "human_interventions": 0
+  },
+  "scores": {
+    "rubric_version": "1.0.0",
+    "dimensions": {
+      "correctness": 5,
+      "completeness": 5,
+      "robustness": 5,
+      "maintainability": 4,
+      "efficiency": 4
+    },
+    "notes": "screenlane CRUD green; boards/jobs/candidates.",
+    "artifacts": [
+      "projects/screenlane/src/store.ts"
+    ]
+  },
+  "git": {
+    "commit": "",
+    "dirty": false
+  },
+  "created_at": "2026-07-20T20:54:45.184Z",
+  "cell_id": "A03__P-crud__screenlane__r1",
+  "phase": "P-crud"
+}
