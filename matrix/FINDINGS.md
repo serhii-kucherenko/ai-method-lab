@@ -241,6 +241,10 @@ Sixth portfolio product. Notes + pads + publish workflow. 19/19.
 
 Seventh portfolio product. Clips + vaults + publish workflow. 19/19. Next: formqueue.
 
+## 2026-07-20 — formqueue sustained
+
+Eighth portfolio product. Forms + queues + submit/review/close. 19/19. Next: tasklane.
+
 
 
 
