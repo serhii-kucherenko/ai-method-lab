@@ -36,8 +36,8 @@ Same top 5 after P-crud re-rank (all passed).
 | 16 | A02×P-workflow-001 | A02 | P-workflow-001 | done |
 | 17 | A03×P-workflow-001 | A03 | P-workflow-001 | done |
 | 18 | A10×P-workflow-001 | A10 | P-workflow-001 | done |
-| 19 | A05×P-workflow-001 | A05 | P-workflow-001 | next (autonomous) |
-| 20 | A07×P-workflow-001 | A07 | P-workflow-001 | queued |
+| 19 | A05×P-workflow-001 | A05 | P-workflow-001 | done |
+| 20 | A07×P-workflow-001 | A07 | P-workflow-001 | next (autonomous) |
 
 ## Later
 
