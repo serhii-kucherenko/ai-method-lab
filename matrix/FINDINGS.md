@@ -157,3 +157,7 @@ Failure tags standardized (`docs/FAIL_TAGS.md`). Replication default: **promoted
 
 Replication run 2 of promoted primary. Test-first RED→GREEN; oracle 4/4. Matches r1 signal.
 
+## 2026-07-20 — clearpath × P-crud-001 (pass)
+
+Projects/tasks/comments with owner/member/viewer RBAC; SQLite + 2 migrations; smoke regression green. Oracle 3/3 + negatives. Next: workflow state machine on clearpath.
+
