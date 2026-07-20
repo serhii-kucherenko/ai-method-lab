@@ -15,7 +15,7 @@ When a method breaks mid-wave: **version it → redo → triple-test** before th
 
 | Path | Role |
 |------|------|
-| `docs/` | Research, backlog, rubric, operating system, **[usage guide](docs/USAGE_GUIDE.md)** |
+| `docs/` | **[AI development workflow](docs/DEVELOPMENT_WORKFLOW.md)** (product teams), research, backlog, rubric |
 | `approaches/` | Method cards (A01–A10+) |
 | `projects/briefs/` | Project briefs by stress tier |
 | `oracles/` | Pass/fail criteria agents cannot edit mid-run |

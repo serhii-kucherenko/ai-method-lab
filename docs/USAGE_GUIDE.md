@@ -1,10 +1,13 @@
-# Usage guide — evidence, tests, and applying methods
+# Usage guide — lab operators only
+
+> **Product teams:** use **[DEVELOPMENT_WORKFLOW.md](DEVELOPMENT_WORKFLOW.md)** — the AI dev workflow for frontend/backend/full-stack.  
+> This file is for running and verifying Method Lab *experiments*, not for day-to-day product work.
 
 This lab does **not** ship a product. It ships **scored evidence** about which development approaches work. Use this guide to:
 
 1. Find and verify all evidence
 2. Understand what each oracle tests
-3. Apply a passing method to your next real project
+3. Confirm sandbox runs match matrix scores
 
 ---
 

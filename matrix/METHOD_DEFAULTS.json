@@ -1,6 +1,8 @@
 {
   "updated_at": "2026-07-20T10:00:00Z",
   "source": "scored auto-promote per docs/RUBRIC.md + matrix/FINDINGS.md",
+  "workflow_guide": "docs/DEVELOPMENT_WORKFLOW.md",
+  "lab_operator_guide": "docs/USAGE_GUIDE.md",
   "primary": {
     "approach_id": "A03",
     "card": "approaches/A03.md",

@@ -36,12 +36,12 @@ When `mode: autonomous` and `defaults.auto_promote: true`:
    - **Promoted defaults** — primary + enterprise alternate, one line each
    - **Method picker** — 3–5 bullets (when to use which)
    - **Links** (required, full `https://` URLs):
-     - Usage guide: `docs/USAGE_GUIDE.md`
-     - Findings: `matrix/FINDINGS.md`
-     - Leaderboard: `matrix/leaderboard.md`
+     - **Development workflow (primary):** `docs/DEVELOPMENT_WORKFLOW.md`
      - Method defaults: `matrix/METHOD_DEFAULTS.json`
      - Primary approach card (e.g. `approaches/A03.md`)
      - Enterprise alternate (e.g. `approaches/A10.md`)
+     - Evidence (optional): `matrix/FINDINGS.md`, `matrix/leaderboard.md`
+     - Lab operators only: `docs/USAGE_GUIDE.md`
 3. No reply required. No “choose 1/2/3” unless `hard_stop`.
 
 ## Email format — hard stop only

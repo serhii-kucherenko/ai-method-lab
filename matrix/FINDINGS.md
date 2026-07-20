@@ -117,7 +117,7 @@ Research-gate before code; higher ceremony at ts5 but still green. Oracle 4/4. *
 
 All finalists (A03, A10, A05, A02, A08) passed P-workflow-001 at team sizes 2/3/5 (size 1 prior). No team-fit failures. Ceremony increases with size; correctness holds.
 
-**Scored auto-promote applied** (rubric §5 + `defaults.auto_promote`): see `matrix/METHOD_DEFAULTS.json`.
+**Scored auto-promote applied.** Product workflow: `docs/DEVELOPMENT_WORKFLOW.md`. Lab operators: `docs/USAGE_GUIDE.md`.
 
 ## PROMOTE — A03 (primary default)
 
