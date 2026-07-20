@@ -257,22 +257,10 @@ Tenth portfolio product. Invoices + books + draft/sent/paid. 19/19. Next: guestp
 
 Eleventh portfolio product. Passes + sites + request/approve/check-in. 19/19. Next: waitlist.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 2026-07-20 � waitlist sustained
+## 2026-07-20 — waitlist sustained
 
 Twelfth portfolio product. Entries + lists + waiting/invited/joined. 19/19. Next: tipjar.
 
+## 2026-07-20 — tipjar sustained
+
+Thirteenth portfolio product. Tips + jars + pledge/collect/thank. 19/19. Next: shiftboard.
