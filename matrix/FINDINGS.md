@@ -245,6 +245,10 @@ Seventh portfolio product. Clips + vaults + publish workflow. 19/19. Next: formq
 
 Eighth portfolio product. Forms + queues + submit/review/close. 19/19. Next: tasklane.
 
+## 2026-07-20 — tasklane sustained
+
+Ninth portfolio product. Cards + lanes + todo/doing/done. 19/19. Next: invoicelink.
+
 
 
 
