@@ -1,5 +1,8 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { createHmac, randomUUID, timingSafeEqual } from "node:crypto";
+import { readFileSync, existsSync } from "node:fs";
+import { join, extname, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import type { Store } from "./store.js";
 import {
   createRequest,
@@ -26,7 +29,19 @@ import {
 import { migrationCount } from "./db.js";
 import { createMockDep, type DepClient } from "./dep.js";
 
+const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
+
+const MIME: Record<string, string> = {
+  ".html": "text/html; charset=utf-8",
+  ".css": "text/css; charset=utf-8",
+  ".js": "text/javascript; charset=utf-8",
+};
+
 type Json = Record<string, unknown>;
+
+function logEvent(event: string, fields: Record<string, unknown>): void {
+  console.log(JSON.stringify({ ts: new Date().toISOString(), event, ...fields }));
+}
 
 async function readRaw(req: IncomingMessage): Promise<Buffer> {
   const chunks: Buffer[] = [];
@@ -110,10 +125,39 @@ export function createApp(store: Store = createStore()) {
     const url = new URL(req.url ?? "/", "http://localhost");
     const method = req.method ?? "GET";
     const path = url.pathname;
+    const started = Date.now();
 
     try {
+      if (method === "GET" && (path === "/" || path === "/index.html")) {
+        const file = join(publicDir, "index.html");
+        const body = readFileSync(file);
+        res.writeHead(200, {
+          "content-type": "text/html; charset=utf-8",
+          "content-length": body.length,
+        });
+        res.end(body);
+        logEvent("http", { method, path, status: 200, ms: Date.now() - started });
+        return;
+      }
+
+      if (method === "GET" && (path === "/styles.css" || path === "/app.js")) {
+        const file = join(publicDir, path.slice(1));
+        if (!existsSync(file)) {
+          send(res, 404, { error: "not found" });
+          return;
+        }
+        const body = readFileSync(file);
+        res.writeHead(200, {
+          "content-type": MIME[extname(file)] ?? "application/octet-stream",
+          "content-length": body.length,
+        });
+        res.end(body);
+        return;
+      }
+
       if (method === "GET" && path === "/health") {
         send(res, 200, { ok: true, service: "clearpath", migrations: migrationCount(store.db) });
+        logEvent("http", { method, path, status: 200, ms: Date.now() - started });
         return;
       }
 

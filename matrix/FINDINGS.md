@@ -173,6 +173,11 @@ Outbound mock payment + HMAC webhooks with idempotency. Oracle green; 502 on dep
 
 Keyset pagination + rate limits on request lists. Oracle green; 17/17 regression. Next: sustain.
 
+## 2026-07-20 — clearpath sustained
+
+Minimal UI + production path + migration rollback notes. Full suite 19/19. Next product: ledgerlite.
+
+
 
 
 

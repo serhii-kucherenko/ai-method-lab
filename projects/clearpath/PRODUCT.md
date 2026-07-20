@@ -25,13 +25,13 @@ Users submit requests; reviewers approve or reject with an audit trail. Grows in
 
 ## Sustain criteria (experiment “done”)
 
-- [ ] Full-stack: API + minimal web UI for the happy path
-- [ ] Authz + negative tests green
-- [ ] `/health`, structured logs, THREATS.md
-- [ ] Migrations with rollback notes
-- [ ] README: how to run, test, deploy locally
-- [ ] One vertical “production-shaped” path: login → submit → approve
-- [ ] Product FINDINGS.md completed with promote/reuse notes
+- [x] Full-stack: API + minimal web UI for the happy path
+- [x] Authz + negative tests green
+- [x] `/health`, structured logs, THREATS.md
+- [x] Migrations with rollback notes
+- [x] README: how to run, test, deploy locally
+- [x] One vertical “production-shaped” path: login → submit → approve
+- [x] Product FINDINGS.md completed with promote/reuse notes
 
 ## Stack (defaults)
 

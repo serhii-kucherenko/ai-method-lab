@@ -4,8 +4,8 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
-| clearpath | **phase-complete (scale)** | A03 + A10 | **next: sustain** | Test-first + enterprise gates can grow an approvals product from zero to sustainable MVP |
-| ledgerlite | queued | A03 + A10 | — | Same workflow on a personal finance ledger (schema-heavy) |
+| clearpath | **sustained** | A03 + A10 | sustain complete | Test-first + enterprise gates can grow an approvals product from zero to sustainable MVP |
+| ledgerlite | **queued (next)** | A03 + A10 | smoke | Same workflow on a personal finance ledger (schema-heavy) |
 | signalboard | queued | A03 + A05 | — | Adversarial review overlay improves security outcomes on a public status board |
 
 ## Status meanings
@@ -20,6 +20,6 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 
 ## Next autonomous actions
 
-1. Complete **clearpath** through sustain under A03+A10
+1. Start **ledgerlite** smoke under A03+A10 (clearpath sustained)
 2. Email product findings digest at each phase and at sustain
-3. Start **ledgerlite** after clearpath sustained (or if clearpath abandoned)
+3. Start **signalboard** after ledgerlite sustained (or if abandoned)

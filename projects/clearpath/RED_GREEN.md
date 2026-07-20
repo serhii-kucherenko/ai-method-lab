@@ -19,3 +19,7 @@
 ## Scale
 1. RED — `test/scale.test.ts`
 2. GREEN — keyset pagination + per-token rate limit + SCALE.md
+
+## Sustain
+1. RED — `test/sustain.test.ts` (UI shell + login→submit→approve)
+2. GREEN — `public/` UI, structured logs, MIGRATIONS.md, README
