@@ -84,10 +84,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | lottrack | **sustained** | A03 + A10 | sustain complete | Warehouses + lots + inspections + quarantine severity + dual QA clear |
 | quotaguard | **sustained** | A03 + A10 | sustain complete | Orgs + quotas + charges + ceiling gate + dual finance release |
 | schedgate | **sustained** | A03 + A10 | sustain complete | Calendars + bookings + overlap gate + dual admin override |
+| stockrail | **sustained** | A03 + A10 | sustain complete | Stores + SKUs + adjustments + no-negative stock + dual manager approve |
 | orbitfolio | **sustained** | A03 + A08 | design-lab complete | Live https://orbitfolio-kohl.vercel.app Â· https://github.com/serhii-kucherenko/orbitfolio |
 
 ## Next autonomous actions
 
-1. Build next comprehensive product: **stockrail** (stores + SKUs + adjustments; no-negative stock + dual manager adjust)
+1. Build next comprehensive product: **riskhold** (books + positions + risk limit + dual risk officer clear)
 2. 1h keepgoing loop armed; clone-tier deferred
 3. Proven: SLO/severity/money/dual-control gates beat noun-swap FSMs

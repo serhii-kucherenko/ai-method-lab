@@ -448,3 +448,7 @@ Orgs/quotas/charges. Gates: ceiling vs outstanding + dual finance release. 3/3 t
 ## 2026-07-20 -- schedgate sustain (pass)
 
 Calendars/bookings. Gates: overlap block + dual admin override. Next: stockrail.
+
+## 2026-07-21 -- stockrail sustain (pass)
+
+Stores/SKUs/adjustments. Gates: no-negative stock + dual manager approve. 3/3 tests green. Next: riskhold.
