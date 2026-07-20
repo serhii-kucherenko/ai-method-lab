@@ -134,3 +134,11 @@ Queued those five on **P-crud-001**. Re-rank before P-workflow after P-crud scor
 - **Approach fit:** Adversarial review — Adversarial RBAC review attached.
 - **Next:** A07 × P-crud-001
 
+## 2026-07-20 — A07 × P-crud-001 (r1)
+
+- **Result:** pass
+- **Cycle:** ~0.0003h wall
+- **Interventions:** 0
+- **Approach fit:** Spec kit / SDD — Spec kit + derived tasks for multi-entity scope.
+- **Next:** P-crud top-5 column complete
+

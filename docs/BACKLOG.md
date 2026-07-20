@@ -27,7 +27,7 @@ Selected from smoke FINDINGS for ERD/RBAC/migration stress: A02, A03, A10, A05, 
 | 12 | A03×P-crud-001 | A03 | P-crud-001 | done |
 | 13 | A10×P-crud-001 | A10 | P-crud-001 | done |
 | 14 | A05×P-crud-001 | A05 | P-crud-001 | done |
-| 15 | A07×P-crud-001 | A07 | P-crud-001 | next (autonomous) |
+| 15 | A07×P-crud-001 | A07 | P-crud-001 | done |
 
 ## Later — after P-crud column
 
