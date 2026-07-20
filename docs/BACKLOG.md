@@ -23,6 +23,7 @@
 - **signalboard × P-scale-001** (A03+A05) — pass
 - **signalboard × P-sustain** (A03+A05) — pass — product sustained
 - A03__P-smoke-001__r2 (replication pass)
+- A03__P-smoke-001__r3 (replication pass — A03 triple-test 3/3)
 
 ## Ready (product portfolio)
 
@@ -34,11 +35,10 @@
 
 | Cell | Status |
 |------|--------|
-| A03__P-smoke-001__r3 | queued |
 | A10__P-smoke-001__r2 | queued |
 | A10__P-smoke-001__r3 | queued |
 
-(`r1` scored in wave-1; A03 `r2` scored this run.)
+(`r1` scored in wave-1; A03 r2+r3 scored this run — primary triple-test complete.)
 
 ## Research / process
 

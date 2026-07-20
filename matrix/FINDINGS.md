@@ -205,6 +205,10 @@ Shared boards with RBAC + severity migration. Next: workflow.
 
 Finish pack green (19/19) with A05 overlay. Portfolio products clearpath, ledgerlite, signalboard all sustained.
 
+## 2026-07-20 — A03 × P-smoke-001 r3 (replication pass)
+
+Independent sandbox rebuild; oracle 4/4. A03 triple-test complete (r1–r3 all pass). Next: A10 smoke r2.
+
 
 
 
