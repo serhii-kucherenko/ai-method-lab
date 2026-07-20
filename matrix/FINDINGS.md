@@ -97,5 +97,29 @@ Intake → Eng lead AC → Builder red→green. Oracle 4/4. Extra ceremony vs ts
 
 Five-lane ROLE_LOG (intake/design/lead/2 builders/QA). Oracle 4/4. WIP limit (sequential B1→B2) kept friction manageable. **A03 viable at 1/2/3/5 on workflow tier.**
 
+## 2026-07-20 — A10 × P-workflow-001 × ts2/ts3/ts5 (pass)
+
+Enterprise checklist as merge gate at every size. Oracle 4/4 + /health. Security-minded reviewer role maps cleanly to Eng lead / QA lane. **A10 viable at 1/2/3/5.**
+
+## 2026-07-20 — A05 × P-workflow-001 × ts2/ts3/ts5 (pass)
+
+Adversarial review artifact required at each size; cross-review at ts2, dedicated QA at ts5. Oracle 4/4. **A05 viable at 1/2/3/5.**
+
+## 2026-07-20 — A02 × P-workflow-001 × ts2/ts3/ts5 (pass)
+
+PRD/ERD ownership splits cleanly across Product/Design lanes. Oracle 4/4. **A02 viable at 1/2/3/5.**
+
+## 2026-07-20 — A08 × P-workflow-001 × ts2/ts3/ts5 (pass)
+
+Research-gate before code; higher ceremony at ts5 but still green. Oracle 4/4. **A08 viable at 1/2/3/5.**
+
+## 2026-07-20 — Wave-6 team-size complete
+
+All finalists (A03, A10, A05, A02, A08) passed P-workflow-001 at team sizes 2/3/5 (size 1 prior). No team-fit failures. Ceremony increases with size; correctness holds.
+
+**Promote recommendation (scored auto-candidate):** A03 as primary method default (strongest process signal + viable all sizes); A10 as enterprise-gated alternate. A05/A02/A08 remain documented finalists.
+
+**Human decision still required** (rubric §5): reply to prior promote email, or confirm scored auto-promote of A03+A10.
+
 
 

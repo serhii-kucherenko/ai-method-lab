@@ -8,7 +8,7 @@
 | A04 | pass | — | — | — | — | Plan→execute |
 | A05 | pass | pass | pass | pass | pass | Adversarial finalist |
 | A06 | pass | — | — | — | — | Small slices |
-| A07 | pass | — | — | — | — | Spec kit |
+| A07 | pass | pass | pass | — | — | Spec kit (remote ladder) |
 | A08 | pass | pass | pass | pass | pass | Research-gate finalist |
 | A09 | pass | — | — | — | — | Swarm (sim) |
 | A10 | pass | pass | pass | pass | pass | Enterprise-lite finalist |
@@ -18,11 +18,11 @@
 | Approach | ts1 | ts2 | ts3 | ts5 | Notes |
 |----------|-----|-----|-----|-----|-------|
 | A03 | pass (prior) | pass | pass | pass | Viable all sizes; ceremony↑ with size |
-| A10 | pass (prior) | — | — | — | |
-| A05 | pass (prior) | — | — | — | |
-| A02 | pass (prior) | — | — | — | |
-| A08 | pass (prior) | — | — | — | |
+| A10 | pass (prior) | pass | pass | pass | Checklist gate scales with review lane |
+| A05 | pass (prior) | pass | pass | pass | Adversarial → QA lane |
+| A02 | pass (prior) | pass | pass | pass | ERD ownership splits cleanly |
+| A08 | pass (prior) | pass | pass | pass | Research gate; highest ceremony |
 
 ## Promotion note
 
-Finalists A03/A10/A05/A02/A08 passed ≥2 tiers (actually all five available tiers). Promote deferred pending wave-6 team-fit + explicit decision (notify sent).
+Wave-6 complete. Eligible for promote: A03 (primary), A10 (enterprise alternate). Explicit human or scored auto-promote decision still pending in FINDINGS.

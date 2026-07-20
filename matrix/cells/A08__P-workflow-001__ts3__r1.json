@@ -1,0 +1,28 @@
+﻿{
+  "cell_id": "A08__P-workflow-001__ts3__r1",
+  "approach_id": "A08",
+  "approach_version": 1,
+  "project_id": "P-workflow-001",
+  "status": "scored",
+  "sandbox_path": "sandboxes/A08__P-workflow-001__ts3__r1",
+  "started_at": "2026-07-20T09:40:00Z",
+  "finished_at": "2026-07-20T09:55:00Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.08,
+    "interventions": 0,
+    "regression_pass": null,
+    "reviewability_notes": "ROLE_LOG + approach artifacts; oracle 4/4",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.08
+  },
+  "fail_tags": [],
+  "team_size_sim": "3",
+  "triple_test": false,
+  "replication_group": null,
+  "run_index": 1,
+  "superseded_by": null,
+  "notes": "lead owns research merge; viable"
+}
