@@ -40,3 +40,11 @@ Lab scaffolded. No cells scored yet. First cell queued: **A01 × P-smoke-001**.
 - **Approach fit:** Plan → execute — Plan accepted before code; deviation log empty.
 - **Next:** A05 on P-smoke-001
 
+## 2026-07-20 — A05 × P-smoke-001 (r1)
+
+- **Result:** pass (oracle 4/4)
+- **Cycle:** ~0.0003h wall
+- **Interventions:** 0
+- **Approach fit:** Adversarial review — Separate adversarial review artifact with waivers noted.
+- **Next:** A06 on P-smoke-001
+
