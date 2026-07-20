@@ -110,3 +110,11 @@ Queued those five on **P-crud-001**. Re-rank before P-workflow after P-crud scor
 - **Approach fit:** ERD-first paid off — permission matrix and migration plan existed before code; no silent schema drift.
 - **Next:** A03 × P-crud-001
 
+## 2026-07-20 — A03 × P-crud-001 (r1)
+
+- **Result:** pass
+- **Cycle:** ~0.0006h wall
+- **Interventions:** 0
+- **Approach fit:** Test / contract first — Tests/contracts first for RBAC negatives.
+- **Next:** A10 × P-crud-001
+
