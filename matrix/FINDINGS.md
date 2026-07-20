@@ -312,3 +312,11 @@ Twenty-fourth portfolio product. Tickets + events + reserve/issue/scan. 19/19. N
 ## 2026-07-20 — blooddrive sustained
 
 Twenty-fifth portfolio product. Donations + drives + book/screen/donate. 19/19. Next: toolcrib.
+
+## 2026-07-20 — toolcrib sustained
+
+Twenty-sixth portfolio product. Tools + cribs + stock/checkout/checkin. 19/19. Next: mealplan.
+
+## 2026-07-20 — mealplan sustained
+
+Twenty-seventh portfolio product. Meals + kitchens + plan/prep/serve. 19/19. Next: bikehub.
