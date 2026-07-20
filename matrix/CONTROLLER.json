@@ -1,5 +1,5 @@
 {
-    "updated_at":  "2026-07-20T17:15:12Z",
+    "updated_at":  "2026-07-20T17:17:01Z",
     "notify":  {
                    "from":  "AI Method Lab \u003conboarding@resend.dev\u003e",
                    "to":  [
@@ -16,7 +16,7 @@
     "paused":  false,
     "active_cell":  null,
     "schema_version":  "1.0.0",
-    "idle_reason":  "gymspot_sustained_awaiting_next_tick_busroute",
+    "idle_reason":  "helppost_sustained_awaiting_next_tick_winecellar",
     "product_defaults":  {
                              "persistence":  "sqlite",
                              "stack":  "node-ts",
@@ -24,11 +24,11 @@
                              "payments":  "provider-agnostic-webhook-with-hmac",
                              "auth":  "bearer-token"
                          },
-    "last_completed":  "A03__P-sustain__gymspot__r1",
+    "last_completed":  "A03__P-sustain__helppost__r1",
     "last_error":  null,
-    "next_cell":  "A03__P-smoke-001__busroute__r1",
+    "next_cell":  "A03__P-smoke-001__winecellar__r1",
     "mode":  "autonomous",
     "phase":  "idle",
-    "notes":  "Marketstall+gymspot sustained (19/19). Portfolio 47 products. Next: busroute.",
+    "notes":  "Busroute+helppost sustained (19/19). Portfolio 49 products. Next: winecellar.",
     "hard_stop":  false
 }

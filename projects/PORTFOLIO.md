@@ -51,9 +51,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | clinicslot | **sustained** | A03 + A10 | sustain complete | Appointments booked/checked_in/completed |
 | marketstall | **sustained** | A03 + A10 | sustain complete | Stalls held/trading/closed |
 | gymspot | **sustained** | A03 + A10 | sustain complete | Spots reserved/in_use/released |
+| busroute | **sustained** | A03 + A10 | sustain complete | Trips scheduled/boarding/arrived |
+| helppost | **sustained** | A03 + A10 | sustain complete | Requests posted/claimed/resolved |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
 
 ## Next autonomous actions
 
-1. Queue next portfolio product (busroute) on next tick
+1. Queue next portfolio product (winecellar) on next tick
 2. Keep 30m dont-stop loop; email digests on product complete
