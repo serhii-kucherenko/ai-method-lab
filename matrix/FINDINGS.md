@@ -32,3 +32,11 @@ Lab scaffolded. No cells scored yet. First cell queued: **A01 × P-smoke-001**.
 - **Approach fit:** Test / contract first — Failing tests/contracts first; red→green log present.
 - **Next:** A04 on P-smoke-001
 
+## 2026-07-20 — A04 × P-smoke-001 (r1)
+
+- **Result:** pass (oracle 4/4)
+- **Cycle:** ~0.0006h wall
+- **Interventions:** 0
+- **Approach fit:** Plan → execute — Plan accepted before code; deviation log empty.
+- **Next:** A05 on P-smoke-001
+

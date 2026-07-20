@@ -1,0 +1,28 @@
+{
+  "cell_id": "A04__P-smoke-001__r1",
+  "approach_id": "A04",
+  "approach_version": 1,
+  "project_id": "P-smoke-001",
+  "status": "scored",
+  "sandbox_path": "sandboxes/A04__P-smoke-001__r1",
+  "started_at": "2026-07-20T07:35:50Z",
+  "finished_at": "2026-07-20T07:35:52Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.0006,
+    "interventions": 0,
+    "regression_pass": null,
+    "reviewability_notes": "Plan accepted before code; deviation log empty.",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.0006
+  },
+  "fail_tags": [],
+  "team_size_sim": "1",
+  "triple_test": false,
+  "replication_group": null,
+  "run_index": 1,
+  "superseded_by": null,
+  "notes": "Oracle 4/4. Plan phase produced no production code; builder followed plan."
+}
