@@ -5,7 +5,7 @@
   "current_product": "clearpath",
   "phase": "starting_next",
   "next_cell": "A03__P-crud-001__clearpath__r1",
-  "last_completed": "A03__P-smoke-001__clearpath__r1",
+  "last_completed": "A03__P-smoke-001__r2",
   "hard_stop_reason": null,
   "wave": "product-portfolio",
   "idle_reason": null,
@@ -19,16 +19,17 @@
     "always_push": true,
     "always_merge": true,
     "method_defaults": "matrix/METHOD_DEFAULTS.json",
-    "work_surface": "projects/"
+    "work_surface": "projects/",
+    "replication": "promoted-only"
   },
   "notify": {
     "enabled": true,
     "channel": "resend",
-    "to": ["kucherenko.web@gmail.com"],
+    "to": ["[REDACTED]"],
     "from": "AI Method Lab <onboarding@resend.dev>",
     "on": ["wave_complete", "ladder_complete", "promote_complete", "product_phase_complete", "hard_stop"],
     "per_cell": false,
     "notes": "Email product findings + DEVELOPMENT_WORKFLOW. projects/ is the testing portfolio."
   },
-  "updated_at": "2026-07-20T11:00:00Z"
+  "updated_at": "2026-07-20T10:02:00Z"
 }

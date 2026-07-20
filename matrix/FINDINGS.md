@@ -149,5 +149,11 @@ A02 (ERD-first), A05 (adversarial), A08 (research-gate) — viable all tiers; pi
 
 A09 swarm sim (solo agent overhead). A01/A04/A06 smoke-only or partial ladder. A07 partial ladder.
 
+## 2026-07-20 — Post-ladder process complete
 
+Failure tags standardized (`docs/FAIL_TAGS.md`). Replication default: **promoted-only** (A03 + A10 × P-smoke-001, 3 runs each). GitHub CLI verified for remote PR trails.
+
+## 2026-07-20 — A03 × P-smoke-001 × r2 (pass)
+
+Replication run 2 of promoted primary. Test-first RED→GREEN; oracle 4/4. Matches r1 signal.
 
