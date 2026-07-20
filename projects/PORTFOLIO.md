@@ -1,4 +1,4 @@
-﻿# Product portfolio
+# Product portfolio
 
 Registry of product experiments. Controllers pick the next **queued** product phase from here + `docs/BACKLOG.md`.
 
@@ -37,9 +37,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | parceldrop | **sustained** | A03 + A10 | sustain complete | Parcels arrived/notified/picked_up |
 | tutorbook | **sustained** | A03 + A10 | sustain complete | Lessons booked/taught/reviewed |
 | laundryloop | **sustained** | A03 + A10 | sustain complete | Loads queued/washing/dried |
+| photobooth | **sustained** | A03 + A10 | sustain complete | Sessions ready/shooting/printed |
+| keyfob | **sustained** | A03 + A10 | sustain complete | Fobs issued/active/revoked |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
 
 ## Next autonomous actions
 
-1. Queue next portfolio product (photobooth) on next tick
+1. Queue next portfolio product (lockerbay) on next tick
 2. Keep 30m dont-stop loop; email digests on product complete

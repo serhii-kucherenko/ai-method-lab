@@ -344,3 +344,7 @@ Thirty-second portfolio product. Lessons + studios + book/teach/review. 19/19. N
 ## 2026-07-20 — laundryloop sustained
 
 Thirty-third portfolio product. Loads + rooms + queue/wash/dry. 19/19. Next: photobooth.
+
+## 2026-07-20 — photobooth + keyfob sustained
+
+Thirty-fourth and thirty-fifth portfolio products. Sessions + booths + ready/shoot/print; fobs + buildings + issue/activate/revoke. Both 19/19. Next: lockerbay.
