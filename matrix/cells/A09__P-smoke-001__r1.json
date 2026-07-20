@@ -1,0 +1,28 @@
+{
+  "cell_id": "A09__P-smoke-001__r1",
+  "approach_id": "A09",
+  "approach_version": 1,
+  "project_id": "P-smoke-001",
+  "status": "scored",
+  "sandbox_path": "sandboxes/A09__P-smoke-001__r1",
+  "started_at": "2026-07-20T09:02:02Z",
+  "finished_at": "2026-07-20T09:02:10Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.0003,
+    "interventions": 0,
+    "regression_pass": true,
+    "reviewability_notes": "Named roles + conflict rule + integration verify.",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.0003
+  },
+  "fail_tags": [],
+  "team_size_sim": "1",
+  "triple_test": false,
+  "replication_group": null,
+  "run_index": 1,
+  "superseded_by": null,
+  "notes": "Named roles + conflict rule + integration verify."
+}
