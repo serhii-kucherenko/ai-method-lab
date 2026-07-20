@@ -423,3 +423,7 @@ Multi-aggregate fleets/assets/work-orders. Gates: overdue interval + dual mechan
 
 Bays/docks/loads. Gates: weight capacity + dual checker seal. Next: crewgate.
 
+## 2026-07-20 -- crewgate sustain (pass)
+
+Sites/crews/shifts. Gates: overtime hours vs site limit + dual supervisor close. 3/3 tests green. Next: bondrail.
+

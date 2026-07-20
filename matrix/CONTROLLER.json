@@ -1,35 +1,28 @@
 {
-    "updated_at":  "2026-07-20T23:05:00Z",
-    "notify":  {
-                   "from":  "AI Method Lab <onboarding@resend.dev>",
-                   "to":  [
-                              "kucherenko.web@gmail.com"
-                          ],
-                   "on":  [
-                              "phase_complete",
-                              "product_complete",
-                              "hard_stop",
-                              "digest"
-                          ],
-                   "enabled":  true
-               },
-    "paused":  false,
-    "active_cell":  null,
-    "schema_version":  "1.0.0",
-    "idle_reason":  "loadbay_sustained_awaiting_next_tick_crewgate",
-    "product_defaults":  {
-                             "persistence":  "sqlite",
-                             "stack":  "node-ts",
-                             "test_runner":  "node-test",
-                             "payments":  "provider-agnostic-webhook-with-hmac",
-                             "auth":  "bearer-token"
-                         },
-    "last_completed":  "A03__P-sustain__loadbay__r1",
-    "last_error":  null,
-    "current_product":  null,
-    "next_cell":  "A03__P-smoke-001__crewgate__r1",
-    "mode":  "autonomous",
-    "phase":  "idle",
-    "notes":  "Loadbay sustained (capacity + dual seal). Next: crewgate.",
-    "hard_stop":  false
+  "updated_at": "2026-07-20T22:22:00Z",
+  "notify": {
+    "from": "AI Method Lab <onboarding@resend.dev>",
+    "to": ["kucherenko.web@gmail.com"],
+    "on": ["phase_complete", "product_complete", "hard_stop", "digest"],
+    "enabled": true
+  },
+  "paused": false,
+  "active_cell": null,
+  "schema_version": "1.0.0",
+  "idle_reason": "crewgate_sustained_awaiting_next_tick_bondrail",
+  "product_defaults": {
+    "persistence": "sqlite",
+    "stack": "node-ts",
+    "test_runner": "node-test",
+    "payments": "provider-agnostic-webhook-with-hmac",
+    "auth": "bearer-token"
+  },
+  "last_completed": "A03__P-sustain__crewgate__r1",
+  "last_error": null,
+  "current_product": null,
+  "next_cell": "A03__P-smoke-001__bondrail__r1",
+  "mode": "autonomous",
+  "phase": "idle",
+  "notes": "Crewgate sustained (overtime + dual supervisor close). Next: bondrail.",
+  "hard_stop": false
 }
