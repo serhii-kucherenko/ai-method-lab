@@ -43,9 +43,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | yardshare | **sustained** | A03 + A10 | sustain complete | Tools listed/borrowed/returned |
 | dockslip | **sustained** | A03 + A10 | sustain complete | Slips held/docked/cleared |
 | cafeorder | **sustained** | A03 + A10 | sustain complete | Tickets placed/brewing/served |
+| rinkpass | **sustained** | A03 + A10 | sustain complete | Passes booked/skating/finished |
+| seedbank | **sustained** | A03 + A10 | sustain complete | Packets cataloged/reserved/sown |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
 
 ## Next autonomous actions
 
-1. Queue next portfolio product (rinkpass) on next tick
+1. Queue next portfolio product (trailcamp) on next tick
 2. Keep 30m dont-stop loop; email digests on product complete
