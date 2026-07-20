@@ -32,8 +32,10 @@ Fill `matrix/cells/<cell-id>.json` using `harness/cell.schema.json` fields. Run 
 
 ## 6. Learn
 
-Append to `matrix/FINDINGS.md`. Update leaderboard. Queue next cell from learning rules.
+Append to `matrix/FINDINGS.md`. Update leaderboard. Queue next cell from learning rules. Update `matrix/CONTROLLER.json`.
 
-## 7. Close
+## 7. Close + continue (autonomous)
 
-Mark backlog item done. Do not start the next cell until this is merged/recorded.
+Mark backlog item done. Commit meta-repo score/findings/controller.
+
+**Do not wait for human confirmation.** Immediately start the next queued cell per `protocols/AUTONOMOUS_CONTROLLER.md` unless `mode` is `paused` or `hard_stop`.

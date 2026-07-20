@@ -30,9 +30,17 @@ When a method breaks mid-wave: **version it → redo → triple-test** before th
 2. **Experiment** — one cell `(approach × project)` in flight; results → `matrix/`
 3. **Build / promote** — only after findings promote a method; separate session
 
-## Quick start
+## Autonomous by default
+
+The lab is meant to **self-continue** after each approach: score → learn → next cell, without asking you to confirm.
+
+- Controller: `protocols/AUTONOMOUS_CONTROLLER.md` + `matrix/CONTROLLER.json`
+- Wake prompt / Automation text: `docs/AUTOMATION.md`
+- Agent entry: `AGENTS.md`
+
+## Quick start (manual only if autonomous is paused)
 
 1. Read `docs/OS.md` and `docs/RUBRIC.md`
-2. Pick next cell from `docs/BACKLOG.md`
-3. Follow `protocols/RUNBOOK.md`
-4. Write `matrix/cells/<cell-id>.json` + update `matrix/FINDINGS.md`
+2. Ensure `matrix/CONTROLLER.json` has `"mode": "autonomous"`
+3. Run an agent with the wake prompt in `docs/AUTOMATION.md`
+4. Or follow `protocols/RUNBOOK.md` yourself — still no need to confirm between cells

@@ -12,8 +12,11 @@ alwaysApply: false
 
 # Experiment loop
 
+- Default: **autonomous** — see `protocols/AUTONOMOUS_CONTROLLER.md` and `matrix/CONTROLLER.json`
 - One cell in flight: pick from `docs/BACKLOG.md`, follow `protocols/RUNBOOK.md`
 - Freeze approach + oracle for the duration of the run
 - Do not edit `oracles/` or `harness/` to make a failing run pass
 - On process failure mid-wave: `protocols/MIDTERM_CHANGE.md` + `protocols/TRIPLE_TEST.md`
-- Write `matrix/cells/*.json`, update `matrix/FINDINGS.md` and `matrix/leaderboard.md` before the next cell
+- Write `matrix/cells/*.json`, update `matrix/FINDINGS.md` and `matrix/leaderboard.md`
+- **Then immediately start the next queued cell** — do not ask the human to confirm or continue
+- Only hard-stop per AUTONOMOUS_CONTROLLER.md

@@ -1,0 +1,16 @@
+{
+  "mode": "autonomous",
+  "ask_human": false,
+  "current_cell": null,
+  "phase": "idle",
+  "next_cell": "A01__P-smoke-001__r1",
+  "last_completed": null,
+  "hard_stop_reason": null,
+  "wave": "wave-1-smoke",
+  "defaults": {
+    "stack": "node-ts-http-sqlite-or-memory",
+    "test_runner": "node:test-or-vitest",
+    "no_confirm": true
+  },
+  "updated_at": "2026-07-20T06:45:00Z"
+}
