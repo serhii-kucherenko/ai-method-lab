@@ -213,6 +213,10 @@ Independent sandbox rebuild; oracle 4/4. A03 triple-test complete (r1–r3 all p
 
 Enterprise lite replications both green (oracle + health + checklist artifacts). A10 triple-test 3/3. Promoted defaults confirmed; replication wave complete.
 
+## 2026-07-20 — kitcheck × P-smoke-001 (pass)
+
+Fourth portfolio product (equipment loans). A03+A10. Oracle + health green. Next: crud (kits RBAC).
+
 
 
 

@@ -27,19 +27,23 @@
 - A10__P-smoke-001__r2 (replication pass)
 - A10__P-smoke-001__r3 (replication pass — A10 triple-test 3/3)
 
+- **kitcheck × P-smoke-001** (A03+A10) — pass
+
 ## Ready (product portfolio)
 
 | Priority | Cell id | Product | Phase | Status |
 |----------|---------|---------|-------|--------|
-| — | (portfolio wave complete) | — | — | all three products sustained |
+| 1 | A03__P-crud-001__kitcheck__r1 | kitcheck | crud | **in progress** |
+| 2 | A03__P-workflow-001__kitcheck__r1 | kitcheck | workflow | queued |
+| 3 | A03__P-integrate-001__kitcheck__r1 | kitcheck | integrate | queued |
+| 4 | A03__P-scale-001__kitcheck__r1 | kitcheck | scale | queued |
+| 5 | A03__P-sustain__kitcheck__r1 | kitcheck | sustain | queued |
 
 ## Ready (replication — promoted defaults)
 
 | Cell | Status |
 |------|--------|
 | — | (complete) A03 + A10 smoke triple-tests both 3/3 |
-
-(`r1` scored in wave-1; r2+r3 scored this run.)
 
 ## Research / process
 
