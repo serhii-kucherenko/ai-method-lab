@@ -72,3 +72,11 @@ Lab scaffolded. No cells scored yet. First cell queued: **A01 × P-smoke-001**.
 - **Approach fit:** Research-gated build — Research decision merged before code.
 - **Next:** A09 on P-smoke-001
 
+## 2026-07-20 — A09 × P-smoke-001 (r1)
+
+- **Result:** pass (oracle 4/4)
+- **Cycle:** ~0.0003h wall
+- **Interventions:** 0
+- **Approach fit:** Multi-agent swarm — Named roles + conflict rule + integration verify.
+- **Next:** A10 on P-smoke-001
+
