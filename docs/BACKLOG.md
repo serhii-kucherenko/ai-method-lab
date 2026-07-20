@@ -1,26 +1,26 @@
-# Backlog (cells queued)
+# Backlog (product phases queued)
 
 ## Done
 
-- Wave 1 smoke: A01–A10
-- Wave 2–5 finalists (A03,A10,A05,A02,A08) × P-crud, P-workflow, P-integrate, P-scale
-- Wave-6 team-size sims: finalists × P-workflow-001 × ts2/ts3/ts5 (15 cells)
+- Approach ladder waves 1–6 (method discovery) — see matrix/
+- **clearpath × P-smoke-001** (A03+A10) — pass
 
-## Ready
+## Ready (product portfolio)
 
-No queued experiment cells. Ladder + wave-6 complete. Auto-promote applied (A03 + A10).
-
-Next (autonomous / research):
-
-- Triple-test any midterm approach change
-- Replication runs if `defaults.replication` enabled
+| Priority | Cell id | Product | Phase | Status |
+|----------|---------|---------|-------|--------|
+| 1 | A03__P-crud-001__clearpath__r1 | clearpath | crud | queued |
+| 2 | A03__P-workflow-001__clearpath__r1 | clearpath | workflow | queued |
+| 3 | A03__P-integrate-001__clearpath__r1 | clearpath | integrate | queued |
+| 4 | A03__P-scale-001__clearpath__r1 | clearpath | scale | queued |
+| 5 | A03__P-sustain__clearpath__r1 | clearpath | sustain | queued |
+| 6 | A03__P-smoke-001__ledgerlite__r1 | ledgerlite | smoke | queued |
+| 7 | A03__P-smoke-001__signalboard__r1 | signalboard | smoke | queued |
 
 ## Research / process
 
-- [x] Auto-merge policy (controller merges own PRs)
-- [x] P-integrate-001 + P-scale-001 briefs/oracles
-- [x] Team-size sims = scripted role prompts (not real multi-agent)
-- [x] Wave-6 team-fit column complete
+- [x] Portfolio model: `projects/` = product testing folder
+- [x] Product runbook + autonomous product loop
 - [ ] Standardize failure tags taxonomy
 - [ ] Decide replication default
 - [ ] Install GitHub CLI for remote PR trails

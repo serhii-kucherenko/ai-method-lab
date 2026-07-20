@@ -1,9 +1,11 @@
 # AI development workflow
 
-**The output of the Method Lab.** Use this in your product repos (frontend, backend, full-stack).  
-Not a guide to running experiments — that lives in `docs/USAGE_GUIDE.md` (lab operators only).
+**How to build product experiments** under `projects/<id>/` with AI (frontend, backend, full-stack).
 
-Evidence: 47 scored cells, all tiers pass. **Primary workflow: A03 (test-first).** **Enterprise overlay: A10.**
+The Method Lab’s job: try many products with this workflow, climb each to **sustain**, and publish findings.  
+Lab-operator docs (oracles, scoring): `docs/USAGE_GUIDE.md`.
+
+Evidence so far: 47 approach cells passed. **Primary: A03 (test-first). Enterprise overlay: A10.** First portfolio product: `projects/clearpath/`.
 
 ---
 

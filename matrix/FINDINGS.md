@@ -119,7 +119,17 @@ All finalists (A03, A10, A05, A02, A08) passed P-workflow-001 at team sizes 2/3/
 
 **Scored auto-promote applied.** Product workflow: `docs/DEVELOPMENT_WORKFLOW.md`. Lab operators: `docs/USAGE_GUIDE.md`.
 
+## 2026-07-20 — Portfolio model + clearpath smoke (pass)
+
+**Reframe:** Experiments = build real products under `projects/`. Climb phases to sustain. Repeat.
+
+- First product: **clearpath** (approvals/requests) under A03+A10
+- Smoke phase oracle 5/5 (auth, CRUD, isolation, health)
+- Work surface: `projects/clearpath` (committed), not sandbox
+- Next: clearpath crud → workflow → integrate → scale → sustain; then ledgerlite, signalboard
+
 ## PROMOTE — A03 (primary default)
+
 
 - **Use for:** schema-heavy APIs, RBAC, migrations, workflow logic, default backend work
 - **Evidence:** strongest process signal (red→green); passed smoke → crud → workflow → integrate → scale; viable team sizes 1/2/3/5

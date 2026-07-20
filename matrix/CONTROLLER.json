@@ -2,12 +2,13 @@
   "mode": "autonomous",
   "ask_human": false,
   "current_cell": null,
-  "phase": "idle",
-  "next_cell": null,
-  "last_completed": "A08__P-workflow-001__ts5__r1",
+  "current_product": "clearpath",
+  "phase": "starting_next",
+  "next_cell": "A03__P-crud-001__clearpath__r1",
+  "last_completed": "A03__P-smoke-001__clearpath__r1",
   "hard_stop_reason": null,
-  "wave": "ladder-complete",
-  "idle_reason": "All experiment cells scored; auto-promote applied; digest email on ladder_complete",
+  "wave": "product-portfolio",
+  "idle_reason": null,
   "defaults": {
     "stack": "node-ts-http-sqlite-or-memory",
     "test_runner": "node:test-or-vitest",
@@ -17,16 +18,17 @@
     "always_commit": true,
     "always_push": true,
     "always_merge": true,
-    "method_defaults": "matrix/METHOD_DEFAULTS.json"
+    "method_defaults": "matrix/METHOD_DEFAULTS.json",
+    "work_surface": "projects/"
   },
   "notify": {
     "enabled": true,
     "channel": "resend",
     "to": ["kucherenko.web@gmail.com"],
     "from": "AI Method Lab <onboarding@resend.dev>",
-    "on": ["wave_complete", "ladder_complete", "promote_complete", "hard_stop"],
+    "on": ["wave_complete", "ladder_complete", "promote_complete", "product_phase_complete", "hard_stop"],
     "per_cell": false,
-    "notes": "Autonomous digests per protocols/NOTIFY.md — findings, defaults, usage guide links. No reply required."
+    "notes": "Email product findings + DEVELOPMENT_WORKFLOW. projects/ is the testing portfolio."
   },
-  "updated_at": "2026-07-20T10:15:00Z"
+  "updated_at": "2026-07-20T11:00:00Z"
 }
