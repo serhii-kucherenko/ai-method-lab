@@ -1,5 +1,5 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
-import { randomUUID } from "node:crypto";
+import { createHmac, randomUUID, timingSafeEqual } from "node:crypto";
 import type { Store } from "./store.js";
 import {
   createRequest,
@@ -24,17 +24,23 @@ import {
   getProjectRole,
 } from "./rbac.js";
 import { migrationCount } from "./db.js";
+import { createMockDep, type DepClient } from "./dep.js";
 
 type Json = Record<string, unknown>;
 
-async function readBody(req: IncomingMessage): Promise<Json> {
+async function readRaw(req: IncomingMessage): Promise<Buffer> {
   const chunks: Buffer[] = [];
   for await (const chunk of req) {
     chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
   }
-  if (chunks.length === 0) return {};
+  return Buffer.concat(chunks);
+}
+
+async function readBody(req: IncomingMessage): Promise<Json> {
+  const raw = await readRaw(req);
+  if (raw.length === 0) return {};
   try {
-    return JSON.parse(Buffer.concat(chunks).toString("utf8")) as Json;
+    return JSON.parse(raw.toString("utf8")) as Json;
   } catch {
     return {};
   }
@@ -63,6 +69,19 @@ function authUserId(store: Store, req: IncomingMessage): string | null {
   const token = getToken(req);
   if (!token) return null;
   return resolveToken(store.db, token);
+}
+
+function verifyHmac(
+  secret: string,
+  raw: Buffer,
+  signature: string | undefined,
+): boolean {
+  if (!signature) return false;
+  const expected = createHmac("sha256", secret).update(raw).digest("hex");
+  const a = Buffer.from(expected);
+  const b = Buffer.from(signature);
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
 }
 
 export function createApp(store: Store = createStore()) {
@@ -106,6 +125,88 @@ export function createApp(store: Store = createStore()) {
         }
         const token = issueToken(store.db, user.id);
         send(res, 200, { token, user: { id: user.id, email: user.email } });
+        return;
+      }
+
+      if (method === "POST" && path === "/payments") {
+        const userId = authUserId(store, req);
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const body = await readBody(req);
+        const amount = Number(body.amount);
+        if (!Number.isFinite(amount)) {
+          send(res, 400, { error: "amount required" });
+          return;
+        }
+        let result: Awaited<ReturnType<DepClient["charge"]>>;
+        try {
+          result = await store.dep.charge(amount);
+        } catch (err) {
+          send(res, 502, {
+            error: err instanceof Error ? err.message : "dependency failed",
+          });
+          return;
+        }
+        if (!result.ok) {
+          send(res, 502, { error: result.error });
+          return;
+        }
+        const id = randomUUID();
+        store.db
+          .prepare(
+            "INSERT INTO payments (id, user_id, amount, provider_id) VALUES (?, ?, ?, ?)",
+          )
+          .run(id, userId, amount, result.id);
+        send(res, 201, {
+          payment: { id, amount, providerId: result.id },
+        });
+        return;
+      }
+
+      if (method === "POST" && path === "/webhooks/payment") {
+        const raw = await readRaw(req);
+        const sigHeader = req.headers["x-signature"];
+        const signature = Array.isArray(sigHeader) ? sigHeader[0] : sigHeader;
+        if (!verifyHmac(store.webhookSecret, raw, signature)) {
+          send(res, 401, { error: "invalid signature" });
+          return;
+        }
+        let body: Json = {};
+        try {
+          body = JSON.parse(raw.toString("utf8") || "{}") as Json;
+        } catch {
+          send(res, 400, { error: "invalid json" });
+          return;
+        }
+        const eventId = typeof body.eventId === "string" ? body.eventId : "";
+        if (!eventId) {
+          send(res, 400, { error: "eventId required" });
+          return;
+        }
+        const existing = store.db
+          .prepare("SELECT event_id FROM webhook_events WHERE event_id = ?")
+          .get(eventId);
+        if (existing) {
+          send(res, 200, {
+            ok: true,
+            duplicate: true,
+            sideEffects: store.sideEffects,
+          });
+          return;
+        }
+        store.db
+          .prepare(
+            "INSERT INTO webhook_events (event_id, processed_at) VALUES (?, ?)",
+          )
+          .run(eventId, new Date().toISOString());
+        store.sideEffects += 1;
+        send(res, 200, {
+          ok: true,
+          duplicate: false,
+          sideEffects: store.sideEffects,
+        });
         return;
       }
 
@@ -476,8 +577,14 @@ export function createApp(store: Store = createStore()) {
 
 export async function withServer<T>(
   fn: (baseUrl: string, store: Store) => Promise<T>,
+  opts?: { dep?: DepClient; webhookSecret?: string },
 ): Promise<T> {
-  const { server, store } = createApp();
+  const { server, store } = createApp(
+    createStore({
+      dep: opts?.dep,
+      webhookSecret: opts?.webhookSecret,
+    }),
+  );
   await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
   const addr = server.address();
   if (!addr || typeof addr === "string") {
@@ -493,3 +600,6 @@ export async function withServer<T>(
     });
   }
 }
+
+export { createMockDep };
+export type { DepClient };

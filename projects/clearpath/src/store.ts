@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import type { DatabaseSync } from "node:sqlite";
 import { openDatabase } from "./db.js";
+import { createMockDep, type DepClient } from "./dep.js";
 
 export type WorkflowState = "draft" | "in_review" | "approved" | "rejected";
 
@@ -25,6 +26,9 @@ export type AuditEntry = {
 
 export type Store = {
   db: DatabaseSync;
+  dep: DepClient;
+  webhookSecret: string;
+  sideEffects: number;
 };
 
 const LEGAL: Record<WorkflowState, WorkflowState[]> = {
@@ -63,8 +67,19 @@ function mapRequest(row: {
   };
 }
 
-export function createStore(dbPath = ":memory:"): Store {
-  return { db: openDatabase(dbPath) };
+export type CreateStoreOptions = {
+  dbPath?: string;
+  dep?: DepClient;
+  webhookSecret?: string;
+};
+
+export function createStore(opts: CreateStoreOptions = {}): Store {
+  return {
+    db: openDatabase(opts.dbPath ?? ":memory:"),
+    dep: opts.dep ?? createMockDep(),
+    webhookSecret: opts.webhookSecret ?? "whsec_test",
+    sideEffects: 0,
+  };
 }
 
 export function registerUser(

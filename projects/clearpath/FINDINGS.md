@@ -25,3 +25,11 @@ Portfolio model: products live under `projects/`. Clearpath is first product und
 - Regression: smoke + crud still green (12 tests total)
 - Interventions: 0
 - Next: integrate (webhooks + idempotency)
+
+## 2026-07-20 — Integrate phase (pass)
+
+- Oracle: outbound payment map, HMAC accept/reject, duplicate webhook safe, dependency 5xx/timeout → 502 — 5/5
+- Migration `004_integrate` (payments + webhook_events)
+- Regression: 15/15
+- Interventions: 0
+- Next: scale (pagination + rate limits)

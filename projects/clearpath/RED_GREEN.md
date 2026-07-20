@@ -11,3 +11,7 @@
 ## Workflow
 1. RED — `test/workflow.test.ts`
 2. GREEN — `003_request_workflow` + transition/audit + optimistic version
+
+## Integrate
+1. RED — `test/integrate.test.ts`
+2. GREEN — mock DepClient, HMAC webhook, idempotent events, 502 on dependency failure

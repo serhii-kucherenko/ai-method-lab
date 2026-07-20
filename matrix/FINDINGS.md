@@ -165,5 +165,10 @@ Projects/tasks/comments with owner/member/viewer RBAC; SQLite + 2 migrations; sm
 
 Approval state machine with audit + optimistic locking. Oracle 4/4; regression 12/12. Next: integrate.
 
+## 2026-07-20 — clearpath × P-integrate-001 (pass)
+
+Outbound mock payment + HMAC webhooks with idempotency. Oracle green; 502 on dependency failure. Next: scale.
+
+
 
 

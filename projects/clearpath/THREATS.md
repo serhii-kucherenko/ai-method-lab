@@ -10,5 +10,8 @@
 | Illegal transitions | Bypass review | Explicit legal graph; 409 on illegal |
 | Concurrent updates | Lost updates / corruption | Optimistic `version`; one wins, one 409 |
 | Audit gaps | No accountability | `request_audit` actor/from/to/at |
+| Webhook forgery | Fake payment events | HMAC-SHA256 `x-signature` + timing-safe compare |
+| Duplicate webhooks | Double side effects | `webhook_events` idempotency by event id |
+| Dependency outage | Silent success | Map 5xx/timeout to HTTP 502 with clear error |
 
-No secrets committed. Migrations: `001_initial` → `002_add_priority` → `003_request_workflow`.
+No secrets committed. Migrations: `001` → `002` → `003` → `004_integrate`.
