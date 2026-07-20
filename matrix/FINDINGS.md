@@ -158,3 +158,11 @@ Queued top 5 × **P-workflow-001**. Promotion still blocked until workflow score
 - **Approach fit:** Explicit transition table in ERD prevented illegal jumps; version field specified before code.
 - **Next:** A03 × P-workflow-001
 
+## 2026-07-20 — A03 × P-workflow-001 (r1)
+
+- **Result:** pass
+- **Cycle:** ~0.0006h wall
+- **Interventions:** 0
+- **Approach fit:** Test / contract first — Failing transition tests first.
+- **Next:** A10 × P-workflow-001
+

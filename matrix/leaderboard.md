@@ -6,7 +6,7 @@ Wave 1 smoke column. Update when cells are scored.
 |----------|-------------|------------|----------------|-------|
 | A01 | pass | — | — | Thin PRD; fast cycle |
 | A02 | pass | pass | pass | ERD-gated; clean |
-| A03 | pass | pass | — | TDD/contract-first |
+| A03 | pass | pass | pass | TDD/contract-first |
 | A04 | pass | — | — | Plan-gated |
 | A05 | pass | pass | — | Adversarial review |
 | A06 | pass | — | — | Small slices |
