@@ -69,17 +69,17 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | darkroom | **sustained** | A03 + A10 | sustain complete | Rolls loaded/developing/scanned |
 | gardenplot | **sustained** | A03 + A10 | sustain complete | Plots claimed/growing/harvested |
 | radiohour | **sustained** | A03 + A10 | sustain complete | Shows scheduled/onair/wrapped |
-| screenlane | **sustained** | A03 + A10 | sustain complete | Hiring boards + jobs + candidates + scorecards + applied→screening→decided |
-| claimdesk | **sustained** | A03 + A10 | sustain complete | Desks + policies + claims + evidence + filed→review→settled |
+| screenlane | **sustained** | A03 + A10 | sustain complete | Hiring boards + jobs + candidates + scorecards + appliedâ†’screeningâ†’decided |
+| claimdesk | **sustained** | A03 + A10 | sustain complete | Desks + policies + claims + evidence + filedâ†’reviewâ†’settled |
 | releasetrain | **sustained** | A03 + A10 | sustain complete | Trains + services + releases + dual approval + rollback |
 | grantlane | **sustained** | A03 + A10 | sustain complete | Programs + applications + milestones + dual sign-off + clawback |
 | vendorvault | **sustained** | A03 + A10 | sustain complete | Workspaces + vendors + findings + attestation + critical score gates |
-| incidentrail | **sustained** | A03 + A10 | sustain complete | War rooms + sev1–3 + actions + postmortem gates |
+| incidentrail | **sustained** | A03 + A10 | sustain complete | War rooms + sev1â€“3 + actions + postmortem gates |
 | datacontract | **sustained** | A03 + A10 | sustain complete | Domains + contracts + SLO breaches + remediate/waive |
-| orbitfolio | **sustained** | A03 + A08 | design-lab complete | Live https://orbitfolio-kohl.vercel.app · https://github.com/serhii-kucherenko/orbitfolio |
+| orbitfolio | **sustained** | A03 + A08 | design-lab complete | Live https://orbitfolio-kohl.vercel.app Â· https://github.com/serhii-kucherenko/orbitfolio |
 
 ## Next autonomous actions
 
-1. Build next comprehensive product: **policyforge**
+1. Build next comprehensive product: **tentcamp** (or pick harder gate from BACKLOG)
 2. 1h keepgoing loop armed; clone-tier deferred
 3. Proven: SLO/severity/money/dual-control gates beat noun-swap FSMs

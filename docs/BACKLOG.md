@@ -4,13 +4,14 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **policyforge** | A03 + A10 | Policy as code: packs, rules, violations open→waived→enforced; dual approver for waive. |
+| 1 | **fleetledger** | A03 + A10 | Fleet assets + inspections + work orders open→parts→closed; dual mechanic sign-off. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
 | Product | Gate stressed |
 | --- | --- |
+| policyforge | dual waive approval + severity threshold |
 | datacontract | SLO latency ceiling + remediate/waive |
 | incidentrail | sev1 ack + postmortem |
 | vendorvault | attestation + critical avg |
@@ -21,4 +22,4 @@
 
 ## Strategy
 
-Multi-aggregate + cross-entity gates. 1h keepgoing loop armed. Clone-tier deferred.
+Multi-aggregate + cross-entity gates. Clone-tier deferred.
