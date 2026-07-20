@@ -264,3 +264,11 @@ Twelfth portfolio product. Entries + lists + waiting/invited/joined. 19/19. Next
 ## 2026-07-20 — tipjar sustained
 
 Thirteenth portfolio product. Tips + jars + pledge/collect/thank. 19/19. Next: shiftboard.
+
+## 2026-07-20 — shiftboard sustained
+
+Fourteenth portfolio product. Shifts + crews + open/fill/complete. 19/19. Next: relaydesk.
+
+## 2026-07-20 — relaydesk sustained
+
+Fifteenth portfolio product. Tickets + desks + triage/start/resolve. 19/19. Next: lostfound.

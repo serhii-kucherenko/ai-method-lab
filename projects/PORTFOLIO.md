@@ -17,9 +17,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | guestpass | **sustained** | A03 + A10 | sustain complete | Guest passes request/approve/check-in |
 | waitlist | **sustained** | A03 + A10 | sustain complete | Waitlist waiting/invited/joined |
 | tipjar | **sustained** | A03 + A10 | sustain complete | Tips pledged/collected/thanked |
+| shiftboard | **sustained** | A03 + A10 | sustain complete | Shifts open/filled/completed |
+| relaydesk | **sustained** | A03 + A10 | sustain complete | Tickets triaged/in_progress/resolved |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
 
 ## Next autonomous actions
 
-1. Queue next portfolio product (shiftboard) on next tick
+1. Queue next portfolio product (lostfound) on next tick
 2. Keep 30m dont-stop loop; email digests on product complete
