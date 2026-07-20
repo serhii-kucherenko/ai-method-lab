@@ -23,3 +23,16 @@ Second portfolio product after Clearpath sustain. Reusing A03+A10 patterns.
 - Migration `003_entry_workflow`; suite 12/12
 - Interventions: 0
 - Next: integrate
+
+## 2026-07-20 — Integrate + scale + sustain (pass) — product sustained
+
+- Integrate: payments + HMAC webhooks + idempotency
+- Scale: keyset pagination + 429 Retry-After
+- Sustain: UI at `/`, login→submit→approve, MIGRATIONS.md
+- Suite 19/19; interventions: 0
+
+### Promote / reuse notes
+
+- Clearpath patterns transferred cleanly (same A03+A10 ladder)
+- Schema-heavier product still fit file migrations + RBAC projects
+- Next product (signalboard): try A03+A05 adversarial overlay per portfolio

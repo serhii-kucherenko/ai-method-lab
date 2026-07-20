@@ -1,5 +1,8 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
-import { randomUUID } from "node:crypto";
+import { createHmac, randomUUID, timingSafeEqual } from "node:crypto";
+import { readFileSync, existsSync } from "node:fs";
+import { join, extname, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import type { Store } from "./store.js";
 import {
   createEntry,
@@ -17,25 +20,48 @@ import {
   updateEntry,
 } from "./store.js";
 import { listMigrations, migrationCount } from "./db.js";
+import { createMockDep, type DepClient } from "./dep.js";
+
+const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
+
+const MIME: Record<string, string> = {
+  ".html": "text/html; charset=utf-8",
+  ".css": "text/css; charset=utf-8",
+  ".js": "text/javascript; charset=utf-8",
+};
 
 type Json = Record<string, unknown>;
 
-async function readBody(req: IncomingMessage): Promise<Json> {
+function logEvent(event: string, fields: Record<string, unknown>): void {
+  console.log(JSON.stringify({ ts: new Date().toISOString(), event, ...fields }));
+}
+
+async function readRaw(req: IncomingMessage): Promise<Buffer> {
   const chunks: Buffer[] = [];
   for await (const chunk of req) {
     chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
   }
-  if (chunks.length === 0) return {};
+  return Buffer.concat(chunks);
+}
+
+async function readBody(req: IncomingMessage): Promise<Json> {
+  const raw = await readRaw(req);
+  if (raw.length === 0) return {};
   try {
-    return JSON.parse(Buffer.concat(chunks).toString("utf8")) as Json;
+    return JSON.parse(raw.toString("utf8")) as Json;
   } catch {
     return {};
   }
 }
 
-function send(res: ServerResponse, status: number, body: unknown): void {
+function send(
+  res: ServerResponse,
+  status: number,
+  body: unknown,
+  extraHeaders: Record<string, string> = {},
+): void {
   const payload = status === 204 ? "" : JSON.stringify(body);
-  const headers: Record<string, string | number> = {};
+  const headers: Record<string, string | number> = { ...extraHeaders };
   if (status !== 204) {
     headers["content-type"] = "application/json";
     headers["content-length"] = Buffer.byteLength(payload);
@@ -58,6 +84,35 @@ function authUserId(store: Store, req: IncomingMessage): string | null {
   return resolveToken(store.db, token);
 }
 
+function checkRateLimit(
+  store: Store,
+  req: IncomingMessage,
+  res: ServerResponse,
+): boolean {
+  const token = getToken(req);
+  if (!token) return true;
+  const count = (store.rateCounts.get(token) ?? 0) + 1;
+  store.rateCounts.set(token, count);
+  if (count > store.rateLimit) {
+    send(res, 429, { error: "rate limit exceeded" }, { "retry-after": "1" });
+    return false;
+  }
+  return true;
+}
+
+function verifyHmac(
+  secret: string,
+  raw: Buffer,
+  signature: string | undefined,
+): boolean {
+  if (!signature) return false;
+  const expected = createHmac("sha256", secret).update(raw).digest("hex");
+  const a = Buffer.from(expected);
+  const b = Buffer.from(signature);
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
+}
+
 function canWrite(role: string | null): boolean {
   return role === "owner" || role === "member";
 }
@@ -67,14 +122,43 @@ export function createApp(store: Store = createStore()) {
     const url = new URL(req.url ?? "/", "http://localhost");
     const method = req.method ?? "GET";
     const path = url.pathname;
+    const started = Date.now();
 
     try {
+      if (method === "GET" && (path === "/" || path === "/index.html")) {
+        const file = join(publicDir, "index.html");
+        if (existsSync(file)) {
+          const body = readFileSync(file);
+          res.writeHead(200, {
+            "content-type": "text/html; charset=utf-8",
+            "content-length": body.length,
+          });
+          res.end(body);
+          logEvent("http", { method, path, status: 200, ms: Date.now() - started });
+          return;
+        }
+      }
+
+      if (method === "GET" && (path === "/styles.css" || path === "/app.js")) {
+        const file = join(publicDir, path.slice(1));
+        if (existsSync(file)) {
+          const body = readFileSync(file);
+          res.writeHead(200, {
+            "content-type": MIME[extname(file)] ?? "application/octet-stream",
+            "content-length": body.length,
+          });
+          res.end(body);
+          return;
+        }
+      }
+
       if (method === "GET" && path === "/health") {
         send(res, 200, {
           ok: true,
           service: "ledgerlite",
           migrations: migrationCount(store.db),
         });
+        logEvent("http", { method, path, status: 200, ms: Date.now() - started });
         return;
       }
 
@@ -110,6 +194,86 @@ export function createApp(store: Store = createStore()) {
         return;
       }
 
+      if (method === "POST" && path === "/payments") {
+        const userId = authUserId(store, req);
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const body = await readBody(req);
+        const amount = Number(body.amount);
+        if (!Number.isFinite(amount)) {
+          send(res, 400, { error: "amount required" });
+          return;
+        }
+        let result: Awaited<ReturnType<DepClient["charge"]>>;
+        try {
+          result = await store.dep.charge(amount);
+        } catch (err) {
+          send(res, 502, {
+            error: err instanceof Error ? err.message : "dependency failed",
+          });
+          return;
+        }
+        if (!result.ok) {
+          send(res, 502, { error: result.error });
+          return;
+        }
+        const id = randomUUID();
+        store.db
+          .prepare(
+            "INSERT INTO payments (id, user_id, amount, provider_id) VALUES (?, ?, ?, ?)",
+          )
+          .run(id, userId, amount, result.id);
+        send(res, 201, { payment: { id, amount, providerId: result.id } });
+        return;
+      }
+
+      if (method === "POST" && path === "/webhooks/payment") {
+        const raw = await readRaw(req);
+        const sigHeader = req.headers["x-signature"];
+        const signature = Array.isArray(sigHeader) ? sigHeader[0] : sigHeader;
+        if (!verifyHmac(store.webhookSecret, raw, signature)) {
+          send(res, 401, { error: "invalid signature" });
+          return;
+        }
+        let body: Json = {};
+        try {
+          body = JSON.parse(raw.toString("utf8") || "{}") as Json;
+        } catch {
+          send(res, 400, { error: "invalid json" });
+          return;
+        }
+        const eventId = typeof body.eventId === "string" ? body.eventId : "";
+        if (!eventId) {
+          send(res, 400, { error: "eventId required" });
+          return;
+        }
+        const existing = store.db
+          .prepare("SELECT event_id FROM webhook_events WHERE event_id = ?")
+          .get(eventId);
+        if (existing) {
+          send(res, 200, {
+            ok: true,
+            duplicate: true,
+            sideEffects: store.sideEffects,
+          });
+          return;
+        }
+        store.db
+          .prepare(
+            "INSERT INTO webhook_events (event_id, processed_at) VALUES (?, ?)",
+          )
+          .run(eventId, new Date().toISOString());
+        store.sideEffects += 1;
+        send(res, 200, {
+          ok: true,
+          duplicate: false,
+          sideEffects: store.sideEffects,
+        });
+        return;
+      }
+
       if (method === "GET" && path === "/meta/migrations") {
         const userId = authUserId(store, req);
         if (!userId) {
@@ -126,9 +290,18 @@ export function createApp(store: Store = createStore()) {
           send(res, 401, { error: "unauthorized" });
           return;
         }
+        if (!checkRateLimit(store, req, res)) return;
 
         if (method === "GET" && path === "/entries") {
-          send(res, 200, { entries: listEntries(store.db, userId) });
+          const limitRaw = url.searchParams.get("limit");
+          const limit = limitRaw ? Number(limitRaw) : undefined;
+          const cursor = url.searchParams.get("cursor");
+          const page = listEntries(store.db, userId, { limit, cursor });
+          send(res, 200, {
+            entries: page.entries,
+            nextCursor: page.nextCursor,
+            limit: page.limit,
+          });
           return;
         }
 
@@ -389,8 +562,15 @@ export function createApp(store: Store = createStore()) {
 
 export async function withServer<T>(
   fn: (baseUrl: string, store: Store) => Promise<T>,
+  opts?: { dep?: DepClient; webhookSecret?: string; rateLimit?: number },
 ): Promise<T> {
-  const { server, store } = createApp();
+  const { server, store } = createApp(
+    createStore({
+      dep: opts?.dep,
+      webhookSecret: opts?.webhookSecret,
+      rateLimit: opts?.rateLimit,
+    }),
+  );
   await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
   const addr = server.address();
   if (!addr || typeof addr === "string") {
@@ -406,3 +586,6 @@ export async function withServer<T>(
     });
   }
 }
+
+export { createMockDep };
+export type { DepClient };

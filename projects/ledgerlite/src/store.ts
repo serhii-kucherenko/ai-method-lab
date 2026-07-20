@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import type { DatabaseSync } from "node:sqlite";
 import { openDatabase, type Role } from "./db.js";
+import { createMockDep, type DepClient } from "./dep.js";
 
 export type WorkflowState = "draft" | "in_review" | "approved" | "rejected";
 
@@ -25,6 +26,11 @@ export type AuditEntry = {
 
 export type Store = {
   db: DatabaseSync;
+  dep: DepClient;
+  webhookSecret: string;
+  sideEffects: number;
+  rateLimit: number;
+  rateCounts: Map<string, number>;
 };
 
 const LEGAL: Record<WorkflowState, WorkflowState[]> = {
@@ -63,8 +69,23 @@ function mapEntry(row: {
   };
 }
 
-export function createStore(dbPath = ":memory:"): Store {
-  return { db: openDatabase(dbPath) };
+export type CreateStoreOptions = {
+  dbPath?: string;
+  dep?: DepClient;
+  webhookSecret?: string;
+  rateLimit?: number;
+};
+
+export function createStore(opts: CreateStoreOptions | string = {}): Store {
+  const normalized = typeof opts === "string" ? { dbPath: opts } : opts;
+  return {
+    db: openDatabase(normalized.dbPath ?? ":memory:"),
+    dep: normalized.dep ?? createMockDep(),
+    webhookSecret: normalized.webhookSecret ?? "whsec_test",
+    sideEffects: 0,
+    rateLimit: normalized.rateLimit ?? 1000,
+    rateCounts: new Map(),
+  };
 }
 
 export function registerUser(
@@ -135,12 +156,34 @@ export function createEntry(
   };
 }
 
-export function listEntries(db: DatabaseSync, userId: string): Entry[] {
-  const rows = db
-    .prepare(
-      "SELECT id, user_id AS userId, memo, amount, status, version FROM entries WHERE user_id = ?",
-    )
-    .all(userId) as Array<{
+export function listEntries(
+  db: DatabaseSync,
+  userId: string,
+  opts: { limit?: number; cursor?: string | null } = {},
+): { entries: Entry[]; nextCursor: string | null; limit: number } {
+  const DEFAULT_LIMIT = 20;
+  const MAX_LIMIT = 50;
+  let limit = opts.limit ?? DEFAULT_LIMIT;
+  if (!Number.isFinite(limit) || limit < 1) limit = DEFAULT_LIMIT;
+  if (limit > MAX_LIMIT) limit = MAX_LIMIT;
+  const cursor = opts.cursor ?? null;
+  const rows = (
+    cursor
+      ? db
+          .prepare(
+            `SELECT id, user_id AS userId, memo, amount, status, version
+             FROM entries WHERE user_id = ? AND id > ?
+             ORDER BY id ASC LIMIT ?`,
+          )
+          .all(userId, cursor, limit)
+      : db
+          .prepare(
+            `SELECT id, user_id AS userId, memo, amount, status, version
+             FROM entries WHERE user_id = ?
+             ORDER BY id ASC LIMIT ?`,
+          )
+          .all(userId, limit)
+  ) as Array<{
     id: string;
     userId: string;
     memo: string;
@@ -148,7 +191,34 @@ export function listEntries(db: DatabaseSync, userId: string): Entry[] {
     status: string;
     version: number;
   }>;
-  return rows.map(mapEntry);
+  const entries = rows.map(mapEntry);
+  const nextCursor =
+    entries.length === limit ? entries[entries.length - 1].id : null;
+  return { entries, nextCursor, limit };
+}
+
+export function seedEntries(
+  db: DatabaseSync,
+  userId: string,
+  count: number,
+): string[] {
+  const ids: string[] = [];
+  const insert = db.prepare(
+    "INSERT INTO entries (id, user_id, memo, amount, status, version) VALUES (?, ?, ?, 1, 'draft', 1)",
+  );
+  db.exec("BEGIN");
+  try {
+    for (let i = 0; i < count; i++) {
+      const id = `ent_${String(i).padStart(5, "0")}`;
+      insert.run(id, userId, `Entry ${i}`);
+      ids.push(id);
+    }
+    db.exec("COMMIT");
+  } catch (err) {
+    db.exec("ROLLBACK");
+    throw err;
+  }
+  return ids;
 }
 
 export function getEntry(

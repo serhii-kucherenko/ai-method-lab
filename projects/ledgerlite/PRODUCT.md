@@ -19,13 +19,13 @@ Users track income/expense entries with accounts over time. Schema-heavy cousin 
 
 ## Sustain criteria
 
-- [ ] API + minimal UI happy path
-- [ ] Authz + negative tests green
-- [ ] `/health`, logs, THREATS.md
-- [ ] Migrations + rollback notes
-- [ ] README run/test/deploy
-- [ ] Vertical path: login → add entry → list
-- [ ] FINDINGS with reuse notes
+- [x] API + minimal UI happy path
+- [x] Authz + negative tests green
+- [x] `/health`, logs, THREATS.md
+- [x] Migrations + rollback notes
+- [x] README run/test/deploy
+- [x] Vertical path: login → add entry → list
+- [x] FINDINGS with reuse notes
 
 ## Stack
 

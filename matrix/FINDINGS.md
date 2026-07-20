@@ -189,6 +189,11 @@ Shared ledgers with RBAC + notes migration. Oracle 3/3; smoke regression green. 
 
 Entry approval state machine + audit + optimistic locking. Next: integrate.
 
+## 2026-07-20 — ledgerlite sustained
+
+Integrate + scale + sustain green (19/19). Next product: signalboard (A03+A05).
+
+
 
 
 
