@@ -1,5 +1,5 @@
 {
-    "updated_at":  "2026-07-20T17:03:21Z",
+    "updated_at":  "2026-07-20T17:07:09Z",
     "notify":  {
                    "from":  "AI Method Lab \u003conboarding@resend.dev\u003e",
                    "to":  [
@@ -16,7 +16,7 @@
     "paused":  false,
     "active_cell":  null,
     "schema_version":  "1.0.0",
-    "idle_reason":  "keyfob_sustained_awaiting_next_tick_lockerbay",
+    "idle_reason":  "yardshare_sustained_awaiting_next_tick_dockslip",
     "product_defaults":  {
                              "persistence":  "sqlite",
                              "stack":  "node-ts",
@@ -24,11 +24,11 @@
                              "payments":  "provider-agnostic-webhook-with-hmac",
                              "auth":  "bearer-token"
                          },
-    "last_completed":  "A03__P-sustain__keyfob__r1",
+    "last_completed":  "A03__P-sustain__yardshare__r1",
     "last_error":  null,
-    "next_cell":  "A03__P-smoke-001__lockerbay__r1",
+    "next_cell":  "A03__P-smoke-001__dockslip__r1",
     "mode":  "autonomous",
     "phase":  "idle",
-    "notes":  "Photobooth+keyfob sustained (19/19). Portfolio 35 products. Next: lockerbay.",
+    "notes":  "Lockerbay+yardshare sustained (19/19). Portfolio 37 products. Next: dockslip.",
     "hard_stop":  false
 }
