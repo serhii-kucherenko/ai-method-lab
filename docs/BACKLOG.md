@@ -7,8 +7,8 @@ One cell in flight at a time. Finish score + learn note before the next.
 | Priority | Cell | Approach | Project | Status |
 |----------|------|----------|---------|--------|
 | 1 | A01×P-smoke-001 | A01 | P-smoke-001 | done |
-| 2 | A02×P-smoke-001 | A02 | P-smoke-001 | next (autonomous) |
-| 3 | A03×P-smoke-001 | A03 | P-smoke-001 | queued |
+| 2 | A02×P-smoke-001 | A02 | P-smoke-001 | done |
+| 3 | A03×P-smoke-001 | A03 | P-smoke-001 | next (autonomous) |
 | 4 | A04×P-smoke-001 | A04 | P-smoke-001 | queued |
 | 5 | A05×P-smoke-001 | A05 | P-smoke-001 | queued |
 | 6 | A06×P-smoke-001 | A06 | P-smoke-001 | queued |
