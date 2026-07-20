@@ -320,3 +320,11 @@ Twenty-sixth portfolio product. Tools + cribs + stock/checkout/checkin. 19/19. N
 ## 2026-07-20 — mealplan sustained
 
 Twenty-seventh portfolio product. Meals + kitchens + plan/prep/serve. 19/19. Next: bikehub.
+
+## 2026-07-20 — bikehub sustained
+
+Twenty-eighth portfolio product. Bikes + hubs + dock/rent/redock. 19/19. Next: plantcare.
+
+## 2026-07-20 — plantcare sustained
+
+Twenty-ninth portfolio product. Plants + gardens + seed/grow/harvest. 19/19. Next: coworkdesk.

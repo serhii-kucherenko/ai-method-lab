@@ -31,9 +31,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | blooddrive | **sustained** | A03 + A10 | sustain complete | Donations booked/screened/donated |
 | toolcrib | **sustained** | A03 + A10 | sustain complete | Tools available/checked_out/returned |
 | mealplan | **sustained** | A03 + A10 | sustain complete | Meals planned/prepped/served |
+| bikehub | **sustained** | A03 + A10 | sustain complete | Bikes docked/rented/redocked |
+| plantcare | **sustained** | A03 + A10 | sustain complete | Plants seeded/growing/harvested |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
 
 ## Next autonomous actions
 
-1. Queue next portfolio product (bikehub) on next tick
+1. Queue next portfolio product (coworkdesk) on next tick
 2. Keep 30m dont-stop loop; email digests on product complete
