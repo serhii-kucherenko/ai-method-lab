@@ -4,13 +4,14 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **loadbay** | A03 + A10 | Docks + loads + weight ≤ dock capacity; dual checker seal before depart. |
+| 1 | **crewgate** | A03 + A10 | Crews + shifts + overtime hours gate; dual supervisor close. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
 | Product | Gate stressed |
 | --- | --- |
+| loadbay | dock capacity + dual checker seal |
 | fleetledger | overdue service interval + dual mechanic sign-off |
 | policyforge | dual waive approval + severity threshold |
 | datacontract | SLO latency ceiling + remediate/waive |

@@ -1,5 +1,5 @@
 {
-    "updated_at":  "2026-07-20T22:55:00Z",
+    "updated_at":  "2026-07-20T23:05:00Z",
     "notify":  {
                    "from":  "AI Method Lab <onboarding@resend.dev>",
                    "to":  [
@@ -16,7 +16,7 @@
     "paused":  false,
     "active_cell":  null,
     "schema_version":  "1.0.0",
-    "idle_reason":  "fleetledger_sustained_awaiting_next_tick_loadbay",
+    "idle_reason":  "loadbay_sustained_awaiting_next_tick_crewgate",
     "product_defaults":  {
                              "persistence":  "sqlite",
                              "stack":  "node-ts",
@@ -24,12 +24,12 @@
                              "payments":  "provider-agnostic-webhook-with-hmac",
                              "auth":  "bearer-token"
                          },
-    "last_completed":  "A03__P-sustain__fleetledger__r1",
+    "last_completed":  "A03__P-sustain__loadbay__r1",
     "last_error":  null,
     "current_product":  null,
-    "next_cell":  "A03__P-smoke-001__loadbay__r1",
+    "next_cell":  "A03__P-smoke-001__crewgate__r1",
     "mode":  "autonomous",
     "phase":  "idle",
-    "notes":  "Fleetledger sustained (dual sign-off + overdue gate). Next: loadbay.",
+    "notes":  "Loadbay sustained (capacity + dual seal). Next: crewgate.",
     "hard_stop":  false
 }

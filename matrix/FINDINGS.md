@@ -418,3 +418,8 @@ Policy packs + severity gate + dual waive. Next: fleetledger.
 
 Multi-aggregate fleets/assets/work-orders. Gates: overdue interval + dual mechanic sign-off. Lint+tests green. Next: loadbay.
 
+
+## 2026-07-20 -- loadbay sustain (pass)
+
+Bays/docks/loads. Gates: weight capacity + dual checker seal. Next: crewgate.
+
