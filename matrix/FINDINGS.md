@@ -182,3 +182,11 @@ Queued top 5 × **P-workflow-001**. Promotion still blocked until workflow score
 - **Approach fit:** Adversarial review — Adversarial pass on transitions/races.
 - **Next:** A07 × P-workflow-001
 
+## 2026-07-20 — A07 × P-workflow-001 (r1)
+
+- **Result:** pass
+- **Cycle:** ~0.0006h wall
+- **Interventions:** 0
+- **Approach fit:** Spec kit / SDD — Spec kit maps AC to transition engine.
+- **Next:** P-workflow top-5 complete
+
