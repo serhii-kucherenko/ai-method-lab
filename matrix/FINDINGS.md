@@ -197,6 +197,11 @@ Integrate + scale + sustain green (19/19). Next product: signalboard (A03+A05).
 
 A03+A05. Status CRUD + adversarial review artifact. Next: crud.
 
+## 2026-07-20 — signalboard × P-crud-001 (pass)
+
+Shared boards with RBAC + severity migration. Next: workflow.
+
+
 
 
 

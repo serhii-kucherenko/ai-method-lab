@@ -6,7 +6,7 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 |----|--------|----------|---------------|--------------------|
 | clearpath | **sustained** | A03 + A10 | sustain complete | Test-first + enterprise gates can grow an approvals product from zero to sustainable MVP |
 | ledgerlite | **sustained** | A03 + A10 | sustain complete | Same workflow on a personal finance ledger (schema-heavy) |
-| signalboard | **phase-complete (smoke)** | A03 + A05 | **next: crud** | Adversarial review overlay improves security outcomes on a public status board |
+| signalboard | **phase-complete (crud)** | A03 + A05 | **next: workflow** | Adversarial review overlay improves security outcomes on a public status board |
 
 ## Status meanings
 

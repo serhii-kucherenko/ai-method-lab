@@ -1,0 +1,28 @@
+{
+  "cell_id": "A03__P-crud-001__signalboard__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-crud-001",
+  "status": "scored",
+  "sandbox_path": "projects/signalboard",
+  "started_at": "2026-07-20T12:33:00Z",
+  "finished_at": "2026-07-20T12:42:00Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.15,
+    "interventions": 0,
+    "regression_pass": true,
+    "reviewability_notes": "RBAC + 002_task_severity; A05 adversarial update; smoke regression 8/8",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.15
+  },
+  "fail_tags": [],
+  "team_size_sim": "1",
+  "triple_test": false,
+  "replication_group": null,
+  "run_index": 1,
+  "superseded_by": null,
+  "notes": "Oracle 3/3. Next: workflow."
+}

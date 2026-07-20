@@ -1,7 +1,20 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { randomUUID } from "node:crypto";
-import type { Status, Store } from "./store.js";
-import { createStore } from "./store.js";
+import type { Store } from "./store.js";
+import {
+  createStatus,
+  createStore,
+  deleteStatus,
+  findUserByEmail,
+  getRole,
+  getStatus,
+  issueToken,
+  listStatuses,
+  registerUser,
+  resolveToken,
+  updateStatus,
+} from "./store.js";
+import { listMigrations, migrationCount } from "./db.js";
 
 type Json = Record<string, unknown>;
 
@@ -34,7 +47,11 @@ function authUserId(store: Store, req: IncomingMessage): string | null {
   if (!header) return null;
   const [scheme, token] = header.split(" ");
   if (scheme?.toLowerCase() !== "bearer" || !token) return null;
-  return store.tokens.get(token) ?? null;
+  return resolveToken(store.db, token);
+}
+
+function canWrite(role: string | null): boolean {
+  return role === "owner" || role === "member";
 }
 
 export function createApp(store: Store = createStore()) {
@@ -44,7 +61,11 @@ export function createApp(store: Store = createStore()) {
     const path = url.pathname;
     try {
       if (method === "GET" && path === "/health") {
-        send(res, 200, { ok: true, service: "signalboard" });
+        send(res, 200, {
+          ok: true,
+          service: "signalboard",
+          migrations: migrationCount(store.db),
+        });
         return;
       }
 
@@ -56,17 +77,13 @@ export function createApp(store: Store = createStore()) {
           send(res, 400, { error: "email and password required" });
           return;
         }
-        for (const u of store.users.values()) {
-          if (u.email === email) {
-            send(res, 409, { error: "email already registered" });
-            return;
-          }
+        if (findUserByEmail(store.db, email)) {
+          send(res, 409, { error: "email already registered" });
+          return;
         }
-        const id = randomUUID();
-        store.users.set(id, { id, email, password });
-        const token = randomUUID();
-        store.tokens.set(token, id);
-        send(res, 201, { token, user: { id, email } });
+        const user = registerUser(store.db, email, password);
+        const token = issueToken(store.db, user.id);
+        send(res, 201, { token, user: { id: user.id, email: user.email } });
         return;
       }
 
@@ -74,20 +91,23 @@ export function createApp(store: Store = createStore()) {
         const body = await readBody(req);
         const email = typeof body.email === "string" ? body.email.trim() : "";
         const password = typeof body.password === "string" ? body.password : "";
-        let found: { id: string; email: string } | null = null;
-        for (const u of store.users.values()) {
-          if (u.email === email && u.password === password) {
-            found = { id: u.id, email: u.email };
-            break;
-          }
-        }
-        if (!found) {
+        const user = findUserByEmail(store.db, email);
+        if (!user || user.password !== password) {
           send(res, 401, { error: "invalid credentials" });
           return;
         }
-        const token = randomUUID();
-        store.tokens.set(token, found.id);
-        send(res, 200, { token, user: found });
+        const token = issueToken(store.db, user.id);
+        send(res, 200, { token, user: { id: user.id, email: user.email } });
+        return;
+      }
+
+      if (method === "GET" && path === "/meta/migrations") {
+        const userId = authUserId(store, req);
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        send(res, 200, { applied: listMigrations(store.db) });
         return;
       }
 
@@ -97,14 +117,10 @@ export function createApp(store: Store = createStore()) {
           send(res, 401, { error: "unauthorized" });
           return;
         }
-
         if (method === "GET" && path === "/statuses") {
-          send(res, 200, {
-            statuses: [...store.statuses.values()].filter((s) => s.userId === userId),
-          });
+          send(res, 200, { statuses: listStatuses(store.db, userId) });
           return;
         }
-
         if (method === "POST" && path === "/statuses") {
           const body = await readBody(req);
           const title = typeof body.title === "string" ? body.title.trim() : "";
@@ -113,21 +129,15 @@ export function createApp(store: Store = createStore()) {
             send(res, 400, { error: "title required" });
             return;
           }
-          const item: Status = {
-            id: randomUUID(),
-            userId,
-            title,
-            body: text,
-          };
-          store.statuses.set(item.id, item);
-          send(res, 201, { status: item });
+          send(res, 201, {
+            status: createStatus(store.db, userId, title, text),
+          });
           return;
         }
-
         const match = /^\/statuses\/([^/]+)$/.exec(path);
         if (match) {
-          const item = store.statuses.get(match[1]);
-          if (!item || item.userId !== userId) {
+          const item = getStatus(store.db, match[1], userId);
+          if (!item) {
             send(res, 404, { error: "not found" });
             return;
           }
@@ -137,20 +147,195 @@ export function createApp(store: Store = createStore()) {
           }
           if (method === "PATCH" || method === "PUT") {
             const body = await readBody(req);
-            if (typeof body.title === "string") {
-              item.title = body.title.trim() || item.title;
-            }
-            if (typeof body.body === "string") item.body = body.body;
-            store.statuses.set(item.id, item);
-            send(res, 200, { status: item });
+            const updated = updateStatus(store.db, match[1], userId, {
+              title: typeof body.title === "string" ? body.title.trim() : undefined,
+              body: typeof body.body === "string" ? body.body : undefined,
+            });
+            send(res, 200, { status: updated });
             return;
           }
           if (method === "DELETE") {
-            store.statuses.delete(match[1]);
+            if (!deleteStatus(store.db, match[1], userId)) {
+              send(res, 404, { error: "not found" });
+              return;
+            }
             send(res, 204, {});
             return;
           }
         }
+        send(res, 404, { error: "not found" });
+        return;
+      }
+
+      const userId = authUserId(store, req);
+
+      if (method === "POST" && path === "/projects") {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const body = await readBody(req);
+        const name = typeof body.name === "string" ? body.name.trim() : "";
+        if (!name) {
+          send(res, 400, { error: "name required" });
+          return;
+        }
+        const id = randomUUID();
+        store.db.exec("BEGIN");
+        try {
+          store.db
+            .prepare("INSERT INTO projects (id, name, created_by) VALUES (?, ?, ?)")
+            .run(id, name, userId);
+          store.db
+            .prepare(
+              "INSERT INTO memberships (project_id, user_id, role) VALUES (?, ?, 'owner')",
+            )
+            .run(id, userId);
+          store.db.exec("COMMIT");
+        } catch (err) {
+          store.db.exec("ROLLBACK");
+          throw err;
+        }
+        send(res, 201, { project: { id, name, createdBy: userId } });
+        return;
+      }
+
+      const projectGet = /^\/projects\/([^/]+)$/.exec(path);
+      if (method === "GET" && projectGet) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const projectId = projectGet[1];
+        const role = getRole(store.db, projectId, userId);
+        if (!role) {
+          send(res, 404, { error: "not found" });
+          return;
+        }
+        const project = store.db
+          .prepare(
+            "SELECT id, name, created_by AS createdBy FROM projects WHERE id = ?",
+          )
+          .get(projectId);
+        send(res, 200, { project, role });
+        return;
+      }
+
+      const membersMatch = /^\/projects\/([^/]+)\/members$/.exec(path);
+      if (method === "POST" && membersMatch) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const projectId = membersMatch[1];
+        const role = getRole(store.db, projectId, userId);
+        if (!role) {
+          send(res, 404, { error: "not found" });
+          return;
+        }
+        if (role !== "owner") {
+          send(res, 403, { error: "forbidden" });
+          return;
+        }
+        const body = await readBody(req);
+        const email = typeof body.email === "string" ? body.email.trim() : "";
+        const inviteRole =
+          body.role === "member" || body.role === "viewer" ? body.role : null;
+        if (!email || !inviteRole) {
+          send(res, 400, { error: "email and role required" });
+          return;
+        }
+        const invitee = findUserByEmail(store.db, email);
+        if (!invitee) {
+          send(res, 404, { error: "user not found" });
+          return;
+        }
+        store.db
+          .prepare(
+            "INSERT INTO memberships (project_id, user_id, role) VALUES (?, ?, ?)",
+          )
+          .run(projectId, invitee.id, inviteRole);
+        send(res, 201, {
+          membership: { projectId, userId: invitee.id, role: inviteRole },
+        });
+        return;
+      }
+
+      const tasksMatch = /^\/projects\/([^/]+)\/tasks$/.exec(path);
+      if (method === "POST" && tasksMatch) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const projectId = tasksMatch[1];
+        const role = getRole(store.db, projectId, userId);
+        if (!role) {
+          send(res, 404, { error: "not found" });
+          return;
+        }
+        if (!canWrite(role)) {
+          send(res, 403, { error: "forbidden" });
+          return;
+        }
+        const body = await readBody(req);
+        const title = typeof body.title === "string" ? body.title.trim() : "";
+        if (!title) {
+          send(res, 400, { error: "title required" });
+          return;
+        }
+        const severity =
+          typeof body.severity === "string" && body.severity.trim()
+            ? body.severity.trim()
+            : "normal";
+        const id = randomUUID();
+        store.db
+          .prepare(
+            "INSERT INTO tasks (id, project_id, title, severity) VALUES (?, ?, ?, ?)",
+          )
+          .run(id, projectId, title, severity);
+        send(res, 201, { task: { id, projectId, title, severity } });
+        return;
+      }
+
+      const commentsMatch = /^\/tasks\/([^/]+)\/comments$/.exec(path);
+      if (method === "POST" && commentsMatch) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const taskId = commentsMatch[1];
+        const task = store.db
+          .prepare("SELECT project_id AS projectId FROM tasks WHERE id = ?")
+          .get(taskId) as { projectId: string } | undefined;
+        if (!task) {
+          send(res, 404, { error: "not found" });
+          return;
+        }
+        const role = getRole(store.db, task.projectId, userId);
+        if (!role) {
+          send(res, 404, { error: "not found" });
+          return;
+        }
+        if (!canWrite(role)) {
+          send(res, 403, { error: "forbidden" });
+          return;
+        }
+        const body = await readBody(req);
+        const text = typeof body.body === "string" ? body.body : "";
+        if (!text.trim()) {
+          send(res, 400, { error: "body required" });
+          return;
+        }
+        const id = randomUUID();
+        store.db
+          .prepare(
+            "INSERT INTO comments (id, task_id, author_id, body) VALUES (?, ?, ?, ?)",
+          )
+          .run(id, taskId, userId, text);
+        send(res, 201, {
+          comment: { id, taskId, authorId: userId, body: text },
+        });
+        return;
       }
 
       send(res, 404, { error: "not found" });

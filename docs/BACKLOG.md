@@ -17,6 +17,7 @@
 - **ledgerlite × P-scale-001** (A03+A10) — pass
 - **ledgerlite × P-sustain** (A03+A10) — pass — product sustained
 - **signalboard × P-smoke-001** (A03+A05) — pass
+- **signalboard × P-crud-001** (A03+A05) — pass
 - A03__P-smoke-001__r2 (replication pass)
 
 ## Ready (product portfolio)
@@ -24,7 +25,8 @@
 | Priority | Cell id | Product | Phase | Status |
 |----------|---------|---------|-------|--------|
 | 1 | A03__P-smoke-001__signalboard__r1 | signalboard | smoke | done |
-| 2 | A03__P-crud-001__signalboard__r1 | signalboard | crud | queued |
+| 2 | A03__P-crud-001__signalboard__r1 | signalboard | crud | done |
+| 3 | A03__P-workflow-001__signalboard__r1 | signalboard | workflow | queued |
 
 ## Ready (replication — promoted defaults)
 
