@@ -185,6 +185,11 @@ Second portfolio product. Entry CRUD + isolation; Clearpath patterns reused clea
 
 Shared ledgers with RBAC + notes migration. Oracle 3/3; smoke regression green. Next: workflow.
 
+## 2026-07-20 — ledgerlite × P-workflow-001 (pass)
+
+Entry approval state machine + audit + optimistic locking. Next: integrate.
+
+
 
 
 

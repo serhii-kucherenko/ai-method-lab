@@ -10,8 +10,10 @@ import {
   getRole,
   issueToken,
   listEntries,
+  listEntryAudit,
   registerUser,
   resolveToken,
+  transitionEntry,
   updateEntry,
 } from "./store.js";
 import { listMigrations, migrationCount } from "./db.js";
@@ -139,6 +141,35 @@ export function createApp(store: Store = createStore()) {
             return;
           }
           send(res, 201, { entry: createEntry(store.db, userId, memo, amount) });
+          return;
+        }
+
+        const transitionMatch = /^\/entries\/([^/]+)\/transition$/.exec(path);
+        if (method === "POST" && transitionMatch) {
+          const body = await readBody(req);
+          const result = transitionEntry(
+            store.db,
+            transitionMatch[1],
+            userId,
+            body.to,
+            body.version,
+          );
+          if (!result.ok) {
+            send(res, result.status, { error: result.error });
+            return;
+          }
+          send(res, 200, { request: result.request, entry: result.request });
+          return;
+        }
+
+        const auditMatch = /^\/entries\/([^/]+)\/audit$/.exec(path);
+        if (method === "GET" && auditMatch) {
+          const entries = listEntryAudit(store.db, auditMatch[1], userId);
+          if (!entries) {
+            send(res, 404, { error: "not found" });
+            return;
+          }
+          send(res, 200, { entries });
           return;
         }
 

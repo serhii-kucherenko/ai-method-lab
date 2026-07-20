@@ -16,3 +16,10 @@ Second portfolio product after Clearpath sustain. Reusing A03+A10 patterns.
 - Smoke entries still green; suite 8/8
 - Interventions: 0
 - Next: workflow
+
+## 2026-07-20 — Workflow phase (pass)
+
+- Oracle: transitions, audit, concurrency, revise loop — 4/4
+- Migration `003_entry_workflow`; suite 12/12
+- Interventions: 0
+- Next: integrate
