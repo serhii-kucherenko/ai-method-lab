@@ -209,6 +209,10 @@ Finish pack green (19/19) with A05 overlay. Portfolio products clearpath, ledger
 
 Independent sandbox rebuild; oracle 4/4. A03 triple-test complete (r1–r3 all pass). Next: A10 smoke r2.
 
+## 2026-07-20 — A10 × P-smoke-001 r2 + r3 (replication pass)
+
+Enterprise lite replications both green (oracle + health + checklist artifacts). A10 triple-test 3/3. Promoted defaults confirmed; replication wave complete.
+
 
 
 

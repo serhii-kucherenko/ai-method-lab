@@ -1,0 +1,28 @@
+{
+  "cell_id": "A10__P-smoke-001__r3",
+  "approach_id": "A10",
+  "approach_version": 1,
+  "project_id": "P-smoke-001",
+  "status": "scored",
+  "sandbox_path": "sandboxes/A10__P-smoke-001__r3",
+  "started_at": "2026-07-20T13:12:00Z",
+  "finished_at": "2026-07-20T13:18:00Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.1,
+    "interventions": 0,
+    "regression_pass": null,
+    "reviewability_notes": "CHECKLIST + THREATS + MIGRATIONS; /health + structured logs. Replication run 3.",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.1
+  },
+  "fail_tags": [],
+  "team_size_sim": "1",
+  "triple_test": true,
+  "replication_group": "A10__P-smoke-001",
+  "run_index": 3,
+  "superseded_by": null,
+  "notes": "Oracle 4/4 + health. A10 triple-test complete (3/3). Promoted defaults stand."
+}
