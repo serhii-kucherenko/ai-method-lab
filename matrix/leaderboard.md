@@ -8,7 +8,7 @@ Wave 1 smoke column. Update when cells are scored.
 | A02 | pass | pass | — | ERD-gated; clean |
 | A03 | pass | pass | — | TDD/contract-first |
 | A04 | pass | — | — | Plan-gated |
-| A05 | pass | — | — | Adversarial review |
+| A05 | pass | pass | — | Adversarial review |
 | A06 | pass | — | — | Small slices |
 | A07 | pass | — | — | Spec kit |
 | A08 | pass | — | — | Research-gated |

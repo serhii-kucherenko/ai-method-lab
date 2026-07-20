@@ -126,3 +126,11 @@ Queued those five on **P-crud-001**. Re-rank before P-workflow after P-crud scor
 - **Approach fit:** Enterprise gates lite — Security+migration+health gates from slice 1.
 - **Next:** A05 × P-crud-001
 
+## 2026-07-20 — A05 × P-crud-001 (r1)
+
+- **Result:** pass
+- **Cycle:** ~0.0006h wall
+- **Interventions:** 0
+- **Approach fit:** Adversarial review — Adversarial RBAC review attached.
+- **Next:** A07 × P-crud-001
+
