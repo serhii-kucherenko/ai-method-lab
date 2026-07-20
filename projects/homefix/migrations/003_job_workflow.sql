@@ -1,0 +1,10 @@
+-- 003_job_workflow
+ALTER TABLE jobs ADD COLUMN version INTEGER NOT NULL DEFAULT 1;
+CREATE TABLE job_audit (
+  id TEXT PRIMARY KEY,
+  job_id TEXT NOT NULL REFERENCES jobs(id) ON DELETE CASCADE,
+  actor_id TEXT NOT NULL REFERENCES users(id),
+  from_state TEXT NOT NULL,
+  to_state TEXT NOT NULL,
+  at TEXT NOT NULL
+);

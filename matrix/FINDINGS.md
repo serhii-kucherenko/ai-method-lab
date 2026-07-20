@@ -296,3 +296,11 @@ Twentieth portfolio product. Loans + branches + hold/checkout/checkin. 19/19. Ne
 ## 2026-07-20 — classroster sustained
 
 Twenty-first portfolio product. Seats + cohorts + enroll/attend/graduate. 19/19. Next: homefix.
+
+## 2026-07-20 — homefix sustained
+
+Twenty-second portfolio product. Jobs + properties + request/schedule/finish. 19/19. Next: farmshare.
+
+## 2026-07-20 — farmshare sustained
+
+Twenty-third portfolio product. Shares + farms + list/claim/deliver. 19/19. Next: eventpass.
