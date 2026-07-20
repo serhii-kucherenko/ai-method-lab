@@ -452,3 +452,7 @@ Calendars/bookings. Gates: overlap block + dual admin override. Next: stockrail.
 ## 2026-07-21 -- stockrail sustain (pass)
 
 Stores/SKUs/adjustments. Gates: no-negative stock + dual manager approve. 3/3 tests green. Next: riskhold.
+
+## 2026-07-20 -- riskhold sustain (pass)
+
+Books/positions. Gates: risk-limit breach hold + dual officer clear. Next: limitdesk.
