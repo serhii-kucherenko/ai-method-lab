@@ -1,0 +1,42 @@
+﻿{
+    "method_id":  "A03",
+    "method_version":  "1.0.0",
+    "run_id":  "r1",
+    "oracle_version":  "1.0.0",
+    "env":  {
+                "runtime":  "node",
+                "ended_at":  "2026-07-20T23:55:35.665Z",
+                "model":  "composer-agent",
+                "os":  "win32",
+                "started_at":  "2026-07-20T23:55:35.665Z"
+            },
+    "metrics":  {
+                    "tokens_out":  0,
+                    "tool_calls":  0,
+                    "retries":  0,
+                    "wall_clock_minutes":  25,
+                    "tokens_in":  0,
+                    "human_interventions":  0
+                },
+    "scores":  {
+                   "notes":  "limitdesk smoke green.",
+                   "dimensions":  {
+                                      "robustness":  5,
+                                      "completeness":  5,
+                                      "efficiency":  4,
+                                      "correctness":  5,
+                                      "maintainability":  4
+                                  },
+                   "artifacts":  [
+                                     "projects/limitdesk/package.json"
+                                 ],
+                   "rubric_version":  "1.0.0"
+               },
+    "git":  {
+                "dirty":  false,
+                "commit":  ""
+            },
+    "created_at":  "2026-07-20T23:55:35.665Z",
+    "cell_id":  "A03__P-smoke-001__limitdesk__r1",
+    "phase":  "P-smoke"
+}

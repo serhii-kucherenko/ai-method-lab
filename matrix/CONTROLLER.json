@@ -1,5 +1,5 @@
 {
-    "updated_at":  "2026-07-21T00:30:00Z",
+    "updated_at":  "2026-07-21T01:00:00Z",
     "notify":  {
                    "from":  "AI Method Lab <onboarding@resend.dev>",
                    "to":  ["kucherenko.web@gmail.com"],
@@ -9,7 +9,7 @@
     "paused":  false,
     "active_cell":  null,
     "schema_version":  "1.0.0",
-    "idle_reason":  "riskhold_sustained_awaiting_next_tick_limitdesk",
+    "idle_reason":  "limitdesk_sustained_awaiting_next_tick_safecase",
     "product_defaults":  {
                              "persistence":  "sqlite",
                              "stack":  "node-ts",
@@ -17,12 +17,12 @@
                              "payments":  "provider-agnostic-webhook-with-hmac",
                              "auth":  "bearer-token"
                          },
-    "last_completed":  "A03__P-sustain__riskhold__r1",
+    "last_completed":  "A03__P-sustain__limitdesk__r1",
     "last_error":  null,
     "current_product":  null,
-    "next_cell":  "A03__P-smoke-001__limitdesk__r1",
+    "next_cell":  "A03__P-smoke-001__safecase__r1",
     "mode":  "autonomous",
     "phase":  "idle",
-    "notes":  "Riskhold sustained (breach + dual officer). Next: limitdesk.",
+    "notes":  "Limitdesk sustained (ceiling + dual credit release). Next: safecase.",
     "hard_stop":  false
 }

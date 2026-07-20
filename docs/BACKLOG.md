@@ -4,13 +4,14 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **limitdesk** | A03 + A10 | Desks + credit lines + draws; utilization ceiling; dual credit officer release. |
+| 1 | **safecase** | A03 + A10 | Matters + evidence; retention days gate; dual counsel archive. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
 | Product | Gate stressed |
 | --- | --- |
+| limitdesk | credit ceiling + dual credit officer release |
 | riskhold | risk limit breach + dual risk officer clear |
 | stockrail | no-negative stock + dual manager approve |
 | schedgate | booking overlap + dual admin override |

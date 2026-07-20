@@ -456,3 +456,7 @@ Stores/SKUs/adjustments. Gates: no-negative stock + dual manager approve. 3/3 te
 ## 2026-07-20 -- riskhold sustain (pass)
 
 Books/positions. Gates: risk-limit breach hold + dual officer clear. Next: limitdesk.
+
+## 2026-07-20 -- limitdesk sustain (pass)
+
+Desks/credit lines/draws. Gates: utilization ceiling + dual credit officer release. Next: safecase.
