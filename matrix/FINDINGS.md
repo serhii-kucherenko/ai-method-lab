@@ -249,6 +249,10 @@ Eighth portfolio product. Forms + queues + submit/review/close. 19/19. Next: tas
 
 Ninth portfolio product. Cards + lanes + todo/doing/done. 19/19. Next: invoicelink.
 
+## 2026-07-20 — invoicelink sustained
+
+Tenth portfolio product. Invoices + books + draft/sent/paid. 19/19. Next: guestpass.
+
 
 
 
