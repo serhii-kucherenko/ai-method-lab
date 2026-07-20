@@ -288,3 +288,11 @@ Eighteenth portfolio product. Rides + routes + offer/book/finish. 19/19. Next: p
 ## 2026-07-20 — petcare sustained
 
 Nineteenth portfolio product. Visits + kennels + schedule/admit/release. 19/19. Next: libraryloan.
+
+## 2026-07-20 — libraryloan sustained
+
+Twentieth portfolio product. Loans + branches + hold/checkout/checkin. 19/19. Next: classroster.
+
+## 2026-07-20 — classroster sustained
+
+Twenty-first portfolio product. Seats + cohorts + enroll/attend/graduate. 19/19. Next: homefix.

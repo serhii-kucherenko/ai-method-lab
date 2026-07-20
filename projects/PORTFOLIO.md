@@ -23,9 +23,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | pantrybox | **sustained** | A03 + A10 | sustain complete | Stocks listed/reserved/picked_up |
 | carpool | **sustained** | A03 + A10 | sustain complete | Rides offered/booked/finished |
 | petcare | **sustained** | A03 + A10 | sustain complete | Visits scheduled/in_care/released |
+| libraryloan | **sustained** | A03 + A10 | sustain complete | Loans held/checked_out/returned |
+| classroster | **sustained** | A03 + A10 | sustain complete | Seats enrolled/attending/graduated |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
 
 ## Next autonomous actions
 
-1. Queue next portfolio product (libraryloan) on next tick
+1. Queue next portfolio product (homefix) on next tick
 2. Keep 30m dont-stop loop; email digests on product complete
