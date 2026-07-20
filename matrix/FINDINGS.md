@@ -225,6 +225,10 @@ Shared kits RBAC + notes migration. Next: workflow.
 
 Finish pack green (19/19). Equipment checkout domain sustained. Next product: meetslot.
 
+## 2026-07-20 — meetslot × P-smoke-001 (pass)
+
+Fifth portfolio product (room bookings). Next: crud.
+
 
 
 
