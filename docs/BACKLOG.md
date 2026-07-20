@@ -4,13 +4,14 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **riskhold** | A03 + A10 | Books + positions; risk limit gate; dual risk officer clear. |
+| 1 | **limitdesk** | A03 + A10 | Desks + credit lines + draws; utilization ceiling; dual credit officer release. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
 | Product | Gate stressed |
 | --- | --- |
+| riskhold | risk limit breach + dual risk officer clear |
 | stockrail | no-negative stock + dual manager approve |
 | schedgate | booking overlap + dual admin override |
 | quotaguard | quota ceiling + dual finance release |
