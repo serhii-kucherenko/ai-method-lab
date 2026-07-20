@@ -63,9 +63,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | beehive | **sustained** | A03 + A10 | sustain complete | Checks scheduled/inspected/logged |
 | bookclub | **sustained** | A03 + A10 | sustain complete | Picks nominated/reading/discussed |
 | mudrun | **sustained** | A03 + A10 | sustain complete | Entries registered/started/finished |
+| surfboard | **sustained** | A03 + A10 | sustain complete | Boards reserved/on_water/returned |
+| potterystudio | **sustained** | A03 + A10 | sustain complete | Loads staged/firing/cooled |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
 
 ## Next autonomous actions
 
-1. Queue next portfolio product (surfboard) on next tick
+1. Queue next portfolio product (chessclub) on next tick
 2. Keep 30m dont-stop loop; email digests on product complete
