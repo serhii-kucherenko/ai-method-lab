@@ -46,9 +46,14 @@ async function readBody(req: IncomingMessage): Promise<Json> {
   }
 }
 
-function send(res: ServerResponse, status: number, body: unknown): void {
+function send(
+  res: ServerResponse,
+  status: number,
+  body: unknown,
+  extraHeaders: Record<string, string> = {},
+): void {
   const payload = status === 204 ? "" : JSON.stringify(body);
-  const headers: Record<string, string | number> = {};
+  const headers: Record<string, string | number> = { ...extraHeaders };
   if (status !== 204) {
     headers["content-type"] = "application/json";
     headers["content-length"] = Buffer.byteLength(payload);
@@ -69,6 +74,22 @@ function authUserId(store: Store, req: IncomingMessage): string | null {
   const token = getToken(req);
   if (!token) return null;
   return resolveToken(store.db, token);
+}
+
+function checkRateLimit(
+  store: Store,
+  req: IncomingMessage,
+  res: ServerResponse,
+): boolean {
+  const token = getToken(req);
+  if (!token) return true;
+  const count = (store.rateCounts.get(token) ?? 0) + 1;
+  store.rateCounts.set(token, count);
+  if (count > store.rateLimit) {
+    send(res, 429, { error: "rate limit exceeded" }, { "retry-after": "1" });
+    return false;
+  }
+  return true;
 }
 
 function verifyHmac(
@@ -217,9 +238,21 @@ export function createApp(store: Store = createStore()) {
           send(res, 401, { error: "unauthorized" });
           return;
         }
+        if (!checkRateLimit(store, req, res)) return;
 
         if (method === "GET" && path === "/requests") {
-          send(res, 200, { requests: listRequests(store.db, userId) });
+          const limitRaw = url.searchParams.get("limit");
+          const limit = limitRaw ? Number(limitRaw) : undefined;
+          const cursor = url.searchParams.get("cursor");
+          const page = listRequests(store.db, userId, {
+            limit,
+            cursor,
+          });
+          send(res, 200, {
+            requests: page.requests,
+            nextCursor: page.nextCursor,
+            limit: page.limit,
+          });
           return;
         }
 
@@ -577,12 +610,13 @@ export function createApp(store: Store = createStore()) {
 
 export async function withServer<T>(
   fn: (baseUrl: string, store: Store) => Promise<T>,
-  opts?: { dep?: DepClient; webhookSecret?: string },
+  opts?: { dep?: DepClient; webhookSecret?: string; rateLimit?: number },
 ): Promise<T> {
   const { server, store } = createApp(
     createStore({
       dep: opts?.dep,
       webhookSecret: opts?.webhookSecret,
+      rateLimit: opts?.rateLimit,
     }),
   );
   await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));

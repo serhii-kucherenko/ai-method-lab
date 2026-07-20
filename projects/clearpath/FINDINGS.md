@@ -33,3 +33,10 @@ Portfolio model: products live under `projects/`. Clearpath is first product und
 - Regression: 15/15
 - Interventions: 0
 - Next: scale (pagination + rate limits)
+
+## 2026-07-20 — Scale phase (pass)
+
+- Oracle: walk 250 requests without gaps/dupes; limit capped; 429 + Retry-After — 2/2
+- Keyset pagination + SCALE.md; regression 17/17
+- Interventions: 0
+- Next: sustain (minimal UI + production-shaped path)

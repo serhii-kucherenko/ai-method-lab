@@ -15,3 +15,7 @@
 ## Integrate
 1. RED — `test/integrate.test.ts`
 2. GREEN — mock DepClient, HMAC webhook, idempotent events, 502 on dependency failure
+
+## Scale
+1. RED — `test/scale.test.ts`
+2. GREEN — keyset pagination + per-token rate limit + SCALE.md

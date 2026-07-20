@@ -169,6 +169,11 @@ Approval state machine with audit + optimistic locking. Oracle 4/4; regression 1
 
 Outbound mock payment + HMAC webhooks with idempotency. Oracle green; 502 on dependency failure. Next: scale.
 
+## 2026-07-20 — clearpath × P-scale-001 (pass)
+
+Keyset pagination + rate limits on request lists. Oracle green; 17/17 regression. Next: sustain.
+
+
 
 
 

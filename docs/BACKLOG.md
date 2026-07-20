@@ -8,6 +8,7 @@
 - **clearpath × P-crud-001** (A03) — pass
 - **clearpath × P-workflow-001** (A03+A10) — pass
 - **clearpath × P-integrate-001** (A03+A10) — pass
+- **clearpath × P-scale-001** (A03+A10) — pass
 - A03__P-smoke-001__r2 (replication pass)
 
 ## Ready (product portfolio)
@@ -16,7 +17,7 @@
 |----------|---------|---------|-------|--------|
 | 1 | A03__P-workflow-001__clearpath__r1 | clearpath | workflow | done |
 | 2 | A03__P-integrate-001__clearpath__r1 | clearpath | integrate | done |
-| 3 | A03__P-scale-001__clearpath__r1 | clearpath | scale | queued |
+| 3 | A03__P-scale-001__clearpath__r1 | clearpath | scale | done |
 | 4 | A03__P-sustain__clearpath__r1 | clearpath | sustain | queued |
 | 5 | A03__P-smoke-001__ledgerlite__r1 | ledgerlite | smoke | queued |
 | 6 | A03__P-smoke-001__signalboard__r1 | signalboard | smoke | queued |
