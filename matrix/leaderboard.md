@@ -13,6 +13,16 @@
 | A09 | pass | — | — | — | — | Swarm (sim) |
 | A10 | pass | pass | pass | pass | pass | Enterprise-lite finalist |
 
+## Team-size sims (P-workflow-001)
+
+| Approach | ts1 | ts2 | ts3 | ts5 | Notes |
+|----------|-----|-----|-----|-----|-------|
+| A03 | pass (prior) | pass | pass | pass | Viable all sizes; ceremony↑ with size |
+| A10 | pass (prior) | — | — | — | |
+| A05 | pass (prior) | — | — | — | |
+| A02 | pass (prior) | — | — | — | |
+| A08 | pass (prior) | — | — | — | |
+
 ## Promotion note
 
-Finalists A03/A10/A05/A02/A08 passed ≥2 tiers (actually all five available tiers). Still need explicit promote decision per rubric before method defaults change.
+Finalists A03/A10/A05/A02/A08 passed ≥2 tiers (actually all five available tiers). Promote deferred pending wave-6 team-fit + explicit decision (notify sent).

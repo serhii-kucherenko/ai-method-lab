@@ -1,0 +1,28 @@
+{
+  "cell_id": "A03__P-workflow-001__ts5__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-workflow-001",
+  "status": "scored",
+  "sandbox_path": "sandboxes/A03__P-workflow-001__ts5__r1",
+  "started_at": "2026-07-20T09:18:00Z",
+  "finished_at": "2026-07-20T09:24:00Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.1,
+    "interventions": 0,
+    "regression_pass": null,
+    "reviewability_notes": "5-lane ROLE_LOG + WIP note; oracle 4/4",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.1
+  },
+  "fail_tags": [],
+  "team_size_sim": "5",
+  "triple_test": false,
+  "replication_group": null,
+  "run_index": 1,
+  "superseded_by": null,
+  "notes": "ts5 scripted: ceremony up, friction still low when WIP=1; test-first holds"
+}

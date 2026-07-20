@@ -1,18 +1,27 @@
 {
   "mode": "autonomous",
   "ask_human": false,
-  "current_cell": null,
-  "phase": "idle",
-  "next_cell": null,
-  "last_completed": "A08__P-scale-001__r1",
+  "current_cell": "A10__P-workflow-001__ts2__r1",
+  "phase": "running",
+  "next_cell": "A10__P-workflow-001__ts3__r1",
+  "last_completed": "A03__P-workflow-001__ts5__r1",
   "hard_stop_reason": null,
-  "wave": "ladder-complete-pending-promote",
-  "idle_reason": "All queued cells scored; awaiting promote decisions or team-size sim backlog items",
+  "wave": "wave-6-team-size",
+  "idle_reason": null,
   "defaults": {
     "stack": "node-ts-http-sqlite-or-memory",
     "test_runner": "node:test-or-vitest",
     "no_confirm": true,
     "agent_merges_own_prs": true
   },
-  "updated_at": "2026-07-20T10:30:00Z"
+  "notify": {
+    "enabled": true,
+    "channel": "resend",
+    "to": ["kucherenko.web@gmail.com"],
+    "from": "AI Method Lab <onboarding@resend.dev>",
+    "on": ["wave_complete", "hard_stop", "decision_needed"],
+    "per_cell": false,
+    "notes": "Digests must be decision briefs per protocols/NOTIFY.md — not pass/fail status."
+  },
+  "updated_at": "2026-07-20T09:24:00Z"
 }

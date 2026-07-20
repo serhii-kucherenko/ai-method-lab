@@ -77,6 +77,25 @@ Smoke (all 10) + top-5 on crud + workflow are scored. Authored P-integrate + P-s
 
 Finalists A03, A10, A05, A02, A08 passed P-integrate-001 and P-scale-001. Controller idle — backlog empty pending team-size sims or promote decisions. Still `mode: autonomous` (not hard_stop).
 
+## 2026-07-20 — Wave-6 queued (team-size sims)
+
+Ladder columns complete. **Research decision:** team-size sims use **scripted role prompts** (ROLE_LOG + ownership handoffs), not real multi-agent runtimes — matches A09 sim pattern and keeps oracles comparable.
+
+**Queue:** finalists A03→A10→A05→A02→A08 × P-workflow-001 × `team_size_sim` 2, 3, 5 (15 cells). Size 1 already covered.
+
+Promote deferred until team-fit friction is scored (rubric primary metric). Notify sent: decide whether to promote early on size-1 evidence or wait for wave-6.
+
+## 2026-07-20 — A03 × P-workflow-001 × ts2 (pass)
+
+Scripted size-2: Product locked AC; Eng wrote failing tests then FSM. Oracle 4/4. Interventions 0. Handoff friction low (natural fit for A03 team notes).
+
+## 2026-07-20 — A03 × P-workflow-001 × ts3 (pass)
+
+Intake → Eng lead AC → Builder red→green. Oracle 4/4. Extra ceremony vs ts2; no correctness cost.
+
+## 2026-07-20 — A03 × P-workflow-001 × ts5 (pass)
+
+Five-lane ROLE_LOG (intake/design/lead/2 builders/QA). Oracle 4/4. WIP limit (sequential B1→B2) kept friction manageable. **A03 viable at 1/2/3/5 on workflow tier.**
 
 
 
