@@ -9,7 +9,7 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | signalboard | **sustained** | A03 + A05 | sustain complete | Adversarial review overlay improves security outcomes on a public status board |
 | kitcheck | **sustained** | A03 + A10 | sustain complete | Same workflow on equipment checkout / inventory loans (availability + return cycle) |
 | meetslot | **in progress** | A03 + A10 | crud | Same workflow on meeting-room booking (time-slot conflicts) |
-| orbitfolio | **in progress** | A03 + A08 | design-lab (50 UI variants) | External app `Documents/projects/orbitfolio` — scored multi-variant space portfolio |
+| orbitfolio | **phase-complete** | A03 + A08 | design-lab 50 variants scored | External `orbitfolio` repo — champion hybrid promoted; see github.com/serhii-kucherenko/orbitfolio |
 
 ## Status meanings
 
