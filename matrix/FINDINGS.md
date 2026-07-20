@@ -53,3 +53,30 @@ All A01–A10 × P-smoke-001 scored **pass**. No approach failed correctness on 
 **Queue next (top-5 × P-crud-001):** A03, A10, A05, A02, A08 — then same five × P-workflow-001.
 
 **Autonomy note:** Merge policy locked (`agent_merges_own_prs`). Sandbox PRs are local merge trails until `gh` is available for remote PRs. Hourly Automation draft opened in Glass for unattended continuation.
+
+## 2026-07-20 — A03 × P-crud-001 (pass)
+
+- Test-first RBAC + SQLite migrations (001→002 priority). Oracle 3/3 including negatives.
+- Confirms A03 remains top signal when schema/permissions appear.
+
+## 2026-07-20 — Wave-2 CRUD top-5 complete
+
+A10, A05, A02, A08 × P-crud-001 all **pass**. No correctness failures.
+
+**Queue next:** same top-5 × P-workflow-001 (approvals state machine).
+
+## 2026-07-20 — Wave-3 workflow top-5 complete
+
+A03, A10, A05, A02, A08 × P-workflow-001 all **pass** (legal/illegal transitions, audit, concurrency).
+
+## 2026-07-20 — Available matrix columns complete
+
+Smoke (all 10) + top-5 on crud + workflow are scored. Authored P-integrate + P-scale briefs to continue ladder.
+
+## 2026-07-20 — Waves 4–5 complete (integrate + scale)
+
+Finalists A03, A10, A05, A02, A08 passed P-integrate-001 and P-scale-001. Controller idle — backlog empty pending team-size sims or promote decisions. Still `mode: autonomous` (not hard_stop).
+
+
+
+

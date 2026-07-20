@@ -10,6 +10,7 @@ Follow approaches/, projects/briefs/, oracles/, protocols/RUNBOOK.md.
 After scoring, immediately continue to the next backlog cell.
 Only hard-stop per AUTONOMOUS_CONTROLLER.md.
 Commit meta-repo updates (matrix, backlog, controller) after each cell.
+If notify.enabled in CONTROLLER.json, email digests via Resend MCP per protocols/NOTIFY.md.
 If you open a PR (meta-repo or sandbox), merge it yourself when CI is green — do not wait for a human merge.
 ```
 

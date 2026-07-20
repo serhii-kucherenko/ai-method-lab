@@ -39,6 +39,7 @@ Evidence about development approaches across many sandbox projects — not shipp
 ## Pointers
 
 - Controller: `protocols/AUTONOMOUS_CONTROLLER.md` + `matrix/CONTROLLER.json`
+- Email digests: `protocols/NOTIFY.md` (Resend MCP; config under `notify` in CONTROLLER.json)
 - Saved automation text: `docs/AUTOMATION.md`
 - OS stages: `docs/OS.md`
 - Scoring: `docs/RUBRIC.md`

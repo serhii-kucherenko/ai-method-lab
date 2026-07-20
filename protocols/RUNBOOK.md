@@ -34,7 +34,11 @@ Fill `matrix/cells/<cell-id>.json` using `harness/cell.schema.json` fields. Run 
 
 Append to `matrix/FINDINGS.md`. Update leaderboard. Queue next cell from learning rules. Update `matrix/CONTROLLER.json`.
 
-## 7. Close + continue (autonomous)
+## 7. Notify (if enabled)
+
+If `matrix/CONTROLLER.json` → `notify.enabled`, send via Resend per `protocols/NOTIFY.md` (cell and/or wave events). Failures are non-blocking.
+
+## 8. Close + continue (autonomous)
 
 Mark backlog item done. Commit meta-repo score/findings/controller.
 

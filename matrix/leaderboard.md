@@ -1,26 +1,18 @@
 # Leaderboard
 
-Wave 1 smoke column. Update when cells are scored.
+| Approach | P-smoke | P-crud | P-workflow | P-integrate | P-scale | Notes |
+|----------|---------|--------|------------|-------------|---------|-------|
+| A01 | pass | — | — | — | — | Thin PRD |
+| A02 | pass | pass | pass | pass | pass | ERD-first finalist |
+| A03 | pass | pass | pass | pass | pass | Test-first (top signal) |
+| A04 | pass | — | — | — | — | Plan→execute |
+| A05 | pass | pass | pass | pass | pass | Adversarial finalist |
+| A06 | pass | — | — | — | — | Small slices |
+| A07 | pass | — | — | — | — | Spec kit |
+| A08 | pass | pass | pass | pass | pass | Research-gate finalist |
+| A09 | pass | — | — | — | — | Swarm (sim) |
+| A10 | pass | pass | pass | pass | pass | Enterprise-lite finalist |
 
-| Approach | P-smoke-001 | P-crud-001 | P-workflow-001 | Notes |
-|----------|-------------|------------|----------------|-------|
-| A01 | pass | — | — | Thin PRD; local merge trail |
-| A02 | pass | — | — | ERD before code |
-| A03 | pass | — | — | Red→green commits |
-| A04 | pass | — | — | Plan then execute |
-| A05 | pass | — | — | Adversarial review + waivers |
-| A06 | pass | — | — | Two small slices |
-| A07 | pass | — | — | Spec kit + tasks |
-| A08 | pass | — | — | Research gate first |
-| A09 | pass | — | — | Simulated swarm roles |
-| A10 | pass | — | — | Health + checklist gates |
+## Promotion note
 
-Legend: `pass` / `fail` / `superseded` / `—` not run.
-
-## Wave-1 smoke ranking (process signal, not promotion)
-
-1. **A03** — clearest correctness discipline  
-2. **A10** — security/obs without much slowdown  
-3. **A05** — forced security debt visibility  
-4. **A02** — contract clarity  
-5. **A08** — decision quality before code  
+Finalists A03/A10/A05/A02/A08 passed ≥2 tiers (actually all five available tiers). Still need explicit promote decision per rubric before method defaults change.

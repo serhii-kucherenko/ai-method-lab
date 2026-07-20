@@ -1,40 +1,22 @@
 # Backlog (cells queued)
 
-One cell in flight at a time. Finish score + learn note before the next.
+## Done
 
-## Done — wave 1 smoke
+- Wave 1 smoke: A01–A10
+- Wave 2–5 finalists (A03,A10,A05,A02,A08) × P-crud, P-workflow, P-integrate, P-scale
 
-| Priority | Cell | Approach | Project | Status |
-|----------|------|----------|---------|--------|
-| 1 | A01×P-smoke-001 | A01 | P-smoke-001 | done |
-| 2 | A02×P-smoke-001 | A02 | P-smoke-001 | done |
-| 3 | A03×P-smoke-001 | A03 | P-smoke-001 | done |
-| 4 | A04×P-smoke-001 | A04 | P-smoke-001 | done |
-| 5 | A05×P-smoke-001 | A05 | P-smoke-001 | done |
-| 6 | A06×P-smoke-001 | A06 | P-smoke-001 | done |
-| 7 | A07×P-smoke-001 | A07 | P-smoke-001 | done |
-| 8 | A08×P-smoke-001 | A08 | P-smoke-001 | done |
-| 9 | A09×P-smoke-001 | A09 | P-smoke-001 | done |
-| 10 | A10×P-smoke-001 | A10 | P-smoke-001 | done |
+## Ready
 
-## Ready — wave 2 (top-5 × P-crud)
+No queued experiment cells. Optional next:
 
-| Priority | Cell | Approach | Project | Status |
-|----------|------|----------|---------|--------|
-| 1 | A03×P-crud-001 | A03 | P-crud-001 | next (autonomous) |
-| 2 | A10×P-crud-001 | A10 | P-crud-001 | queued |
-| 3 | A05×P-crud-001 | A05 | P-crud-001 | queued |
-| 4 | A02×P-crud-001 | A02 | P-crud-001 | queued |
-| 5 | A08×P-crud-001 | A08 | P-crud-001 | queued |
-
-## Later — after crud column
-
-- Same top 5 × P-workflow-001
-- Finalists × P-integrate / P-scale + team-size sims
+- Team-size sims (1/2/3/5) on finalists
+- Triple-test any midterm approach change
+- Explicit promote/reject decisions in FINDINGS
 
 ## Research / process
 
-- [x] Define auto-merge policy for docs vs results — controller merges own PRs in autonomous mode (`docs/AUTOMATION.md`)
+- [x] Auto-merge policy (controller merges own PRs)
+- [x] P-integrate-001 + P-scale-001 briefs/oracles
 - [ ] Standardize failure tags taxonomy
-- [ ] Decide replication default (3× same brief vs triad stress)
-- [ ] Install GitHub CLI for remote PR merge trails (local merges used in wave 1)
+- [ ] Decide replication default
+- [ ] Install GitHub CLI for remote PR trails

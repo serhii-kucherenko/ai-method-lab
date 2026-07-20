@@ -21,6 +21,7 @@ Read/write: `matrix/CONTROLLER.json`
 | `last_completed` | Last scored cell id |
 | `ask_human` | Always `false` unless hard stop |
 | `hard_stop_reason` | Set only on hard stop |
+| `notify` | Optional Resend digest config — see `protocols/NOTIFY.md` |
 
 ## Loop (one tick)
 
@@ -32,8 +33,9 @@ Read/write: `matrix/CONTROLLER.json`
 4. Execute `protocols/RUNBOOK.md` for that cell (sandbox → approach rules → verify vs oracle).
 5. Write `matrix/cells/<id>.json`, update `matrix/leaderboard.md` + `matrix/FINDINGS.md`.
 6. Mark backlog row **done**. Set `last_completed`, clear `current_cell`, `phase: starting_next`.
-7. **Without waiting:** pick next queued cell and go to step 3.
-8. If backlog smoke column is empty: write FINDINGS “wave-1 smoke complete”, queue top-5 × harder tiers per FINDINGS, continue unless `mode` flipped.
+7. **Notify** if configured: follow `protocols/NOTIFY.md` (Resend MCP). Do not block on delivery failures.
+8. **Without waiting:** pick next queued cell and go to step 3.
+9. If backlog smoke column is empty: write FINDINGS “wave-1 smoke complete”, send `wave_complete` notify if enabled, queue top-5 × harder tiers per FINDINGS, continue unless `mode` flipped.
 
 ## Mid-cell failure
 
