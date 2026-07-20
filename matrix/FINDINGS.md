@@ -193,6 +193,11 @@ Entry approval state machine + audit + optimistic locking. Next: integrate.
 
 Integrate + scale + sustain green (19/19). Next product: signalboard (A03+A05).
 
+## 2026-07-20 — signalboard × P-smoke-001 (pass)
+
+A03+A05. Status CRUD + adversarial review artifact. Next: crud.
+
+
 
 
 
