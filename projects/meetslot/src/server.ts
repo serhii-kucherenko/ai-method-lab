@@ -7,6 +7,7 @@ const port = Number(process.env.PORT ?? 3000);
 const dataDir = join(process.cwd(), "data");
 mkdirSync(dataDir, { recursive: true });
 const dbPath = process.env.MEETSLOT_DB ?? join(dataDir, "meetslot.db");
-createApp(createStore(dbPath)).server.listen(port, "127.0.0.1", () => {
+const { server } = createApp(createStore({ dbPath }));
+server.listen(port, "127.0.0.1", () => {
   console.log(JSON.stringify({ event: "listen", port, dbPath }));
 });

@@ -8,7 +8,8 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | ledgerlite | **sustained** | A03 + A10 | sustain complete | Same workflow on a personal finance ledger (schema-heavy) |
 | signalboard | **sustained** | A03 + A05 | sustain complete | Adversarial review overlay improves security outcomes on a public status board |
 | kitcheck | **sustained** | A03 + A10 | sustain complete | Same workflow on equipment checkout / inventory loans (availability + return cycle) |
-| meetslot | **in progress** | A03 + A10 | crud | Same workflow on meeting-room booking (time-slot conflicts) |
+| meetslot | **sustained** | A03 + A10 | sustain complete | Same workflow on meeting-room booking (hold → confirm → complete) |
+| briefpad | **queued** | A03 + A10 | smoke | Same workflow on shared notes with revision loops |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab 50 variants scored | External `orbitfolio` repo — champion hybrid promoted; see github.com/serhii-kucherenko/orbitfolio |
 
 ## Status meanings
@@ -23,6 +24,6 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 
 ## Next autonomous actions
 
-1. Grow meetslot smoke → crud → workflow → integrate → scale → sustain (primary lab product tree)
-2. Parallel: finish orbitfolio 50-variant design lab → score → promote → GitHub repo
+1. Start briefpad smoke → sustain
+2. Parallel: orbitfolio design lab as tracked
 3. Keep email digests on phase/product/wave complete

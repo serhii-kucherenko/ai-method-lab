@@ -5,6 +5,8 @@ import { fileURLToPath } from "node:url";
 
 const migrationsDir = join(dirname(fileURLToPath(import.meta.url)), "../migrations");
 
+export type Role = "owner" | "member" | "viewer";
+
 export function openDatabase(path = ":memory:"): DatabaseSync {
   const db = new DatabaseSync(path);
   db.exec("PRAGMA foreign_keys = ON;");
@@ -35,8 +37,13 @@ function runMigrations(db: DatabaseSync): void {
   }
 }
 
+export function listMigrations(db: DatabaseSync): string[] {
+  return db
+    .prepare("SELECT version FROM schema_migrations ORDER BY version")
+    .all()
+    .map((r) => String((r as { version: string }).version));
+}
+
 export function migrationCount(db: DatabaseSync): number {
-  return (
-    db.prepare("SELECT COUNT(*) AS c FROM schema_migrations").get() as { c: number }
-  ).c;
+  return listMigrations(db).length;
 }

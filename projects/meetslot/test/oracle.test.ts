@@ -90,10 +90,12 @@ test("user can CRUD own bookings", async () => {
     );
     const updated = await req(baseUrl, "PATCH", `/bookings/${booking.id}`, {
       token,
-      body: { status: "confirmed", roomName: "Boardroom-2" },
+      body: { roomName: "Boardroom-2", note: "updated" },
     });
     assert.equal(updated.status, 200);
-    assert.equal((updated.body.booking as { status: string }).status, "confirmed");
+    const after = updated.body.booking as { roomName: string; note: string };
+    assert.equal(after.roomName, "Boardroom-2");
+    assert.equal(after.note, "updated");
     assert.equal(
       (await req(baseUrl, "DELETE", `/bookings/${booking.id}`, { token })).status,
       204,

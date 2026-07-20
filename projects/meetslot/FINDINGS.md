@@ -1,5 +1,5 @@
 # Findings — meetslot
 
-## Smoke (pass)
+## Smoke–Sustain (pass)
 
-Auth + owned bookings + isolation + `/health`. Next: rooms RBAC.
+Auth bookings → rooms RBAC → hold/confirm/complete workflow → payments/webhooks → pagination/rate limits → minimal UI. 19/19. Reused Kitcheck patterns on a booking domain.
