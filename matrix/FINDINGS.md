@@ -166,3 +166,11 @@ Queued top 5 × **P-workflow-001**. Promotion still blocked until workflow score
 - **Approach fit:** Test / contract first — Failing transition tests first.
 - **Next:** A10 × P-workflow-001
 
+## 2026-07-20 — A10 × P-workflow-001 (r1)
+
+- **Result:** pass
+- **Cycle:** ~0.0003h wall
+- **Interventions:** 0
+- **Approach fit:** Enterprise gates lite — Security/audit/conflict gates present.
+- **Next:** A05 × P-workflow-001
+

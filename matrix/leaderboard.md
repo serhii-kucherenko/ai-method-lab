@@ -13,6 +13,6 @@ Wave 1 smoke column. Update when cells are scored.
 | A07 | pass | pass | — | Spec kit |
 | A08 | pass | — | — | Research-gated |
 | A09 | pass | — | — | Swarm roles |
-| A10 | pass | pass | — | Enterprise gates lite |
+| A10 | pass | pass | pass | Enterprise gates lite |
 
 Legend: `pass` / `fail` / `superseded` / `—` not run.
