@@ -59,9 +59,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | foodtruck | **sustained** | A03 + A10 | sustain complete | Stops parked/serving/packed |
 | cloudlab | **sustained** | A03 + A10 | sustain complete | Benches booked/running/cleaned |
 | toyshare | **sustained** | A03 + A10 | sustain complete | Toys listed/borrowed/returned |
+| printshop | **sustained** | A03 + A10 | sustain complete | Jobs queued/printing/finished |
+| beehive | **sustained** | A03 + A10 | sustain complete | Checks scheduled/inspected/logged |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
 
 ## Next autonomous actions
 
-1. Queue next portfolio product (printshop) on next tick
+1. Queue next portfolio product (bookclub) on next tick
 2. Keep 30m dont-stop loop; email digests on product complete
