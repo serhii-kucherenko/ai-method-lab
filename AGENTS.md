@@ -45,3 +45,21 @@ Evidence about development approaches across many sandbox projects — not shipp
 - Scoring: `docs/RUBRIC.md`
 - Next work: `docs/BACKLOG.md`
 - How to run a cell: `protocols/RUNBOOK.md`
+
+## Cursor Cloud specific instructions
+
+This repo is a **docs/protocol control-plane**, not an application: there is no source
+code, package manager, build step, or test suite. The only machine-checkable artifacts
+are the two JSON files (`matrix/CONTROLLER.json`, `harness/cell.schema.json`) plus the
+markdown protocols. Node and Python are preinstalled on the pod.
+
+- The closest thing to lint/test here is JSON validity + validating cell-score JSONs
+  (`matrix/cells/*.json`, template in `harness/SCORE_TEMPLATE.md`) against
+  `harness/cell.schema.json`. `jsonschema` is available (installed by the update script);
+  validate a cell with `jsonschema.Draft202012Validator(schema).validate(cell)`.
+- "Running the app" means executing the controller loop by hand: read `matrix/CONTROLLER.json`,
+  follow `protocols/AUTONOMOUS_CONTROLLER.md` + `protocols/RUNBOOK.md`. Nothing to serve.
+- Experiment cells create real runnable projects under `sandboxes/<cell-id>/` (gitignored;
+  Node+TS+Vitest per `CONTROLLER.json.defaults`). Those per-cell product builds set up their
+  own deps and are **not** part of this repo's environment.
+- Never edit `oracles/` or `harness/` to make a run pass (hard constraint 3).
