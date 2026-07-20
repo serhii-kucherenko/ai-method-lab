@@ -181,6 +181,11 @@ Minimal UI + production path + migration rollback notes. Full suite 19/19. Next 
 
 Second portfolio product. Entry CRUD + isolation; Clearpath patterns reused cleanly. Next: crud.
 
+## 2026-07-20 — ledgerlite × P-crud-001 (pass)
+
+Shared ledgers with RBAC + notes migration. Oracle 3/3; smoke regression green. Next: workflow.
+
+
 
 
 

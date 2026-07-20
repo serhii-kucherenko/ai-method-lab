@@ -9,3 +9,10 @@ Second portfolio product after Clearpath sustain. Reusing A03+A10 patterns.
 - Oracle: register/login, entry CRUD, IDOR, `/health` — 5/5
 - Interventions: 0
 - Next: crud (accounts, categories, migrations)
+
+## 2026-07-20 — CRUD phase (pass)
+
+- Oracle: ledger projects with owner/member/viewer; migration `002_task_notes`; non-member 404 — 3/3
+- Smoke entries still green; suite 8/8
+- Interventions: 0
+- Next: workflow
