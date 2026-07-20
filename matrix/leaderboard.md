@@ -4,7 +4,7 @@ Wave 1 smoke column. Update when cells are scored.
 
 | Approach | P-smoke-001 | P-crud-001 | P-workflow-001 | Notes |
 |----------|-------------|------------|----------------|-------|
-| A01 | — | — | — | |
+| A01 | pass | — | — | thin PRD→code |
 | A02 | — | — | — | |
 | A03 | — | — | — | |
 | A04 | — | — | — | |
