@@ -4,13 +4,14 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **bondrail** | A03 + A10 | Workspaces + bonds + draws; collateral floor gate; dual treasurer release. |
+| 1 | **lottrack** | A03 + A10 | Warehouses + lots + inspections; quarantine severity gate; dual clear. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
 | Product | Gate stressed |
 | --- | --- |
+| bondrail | collateral floor + dual treasurer release |
 | crewgate | overtime hours + dual supervisor close |
 | loadbay | dock capacity + dual checker seal |
 | fleetledger | overdue service interval + dual mechanic sign-off |

@@ -427,3 +427,7 @@ Bays/docks/loads. Gates: weight capacity + dual checker seal. Next: crewgate.
 
 Sites/crews/shifts. Gates: overtime hours vs site limit + dual supervisor close. 3/3 tests green. Next: bondrail.
 
+## 2026-07-20 -- bondrail sustain (pass)
+
+Workspaces/bonds/draws. Gates: collateral floor + dual treasurer release. 3/3 tests green. Next: lottrack.
+
