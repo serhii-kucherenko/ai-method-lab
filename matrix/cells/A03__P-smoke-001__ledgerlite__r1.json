@@ -1,0 +1,28 @@
+{
+  "cell_id": "A03__P-smoke-001__ledgerlite__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-smoke-001",
+  "status": "scored",
+  "sandbox_path": "projects/ledgerlite",
+  "started_at": "2026-07-20T11:35:00Z",
+  "finished_at": "2026-07-20T11:42:00Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.12,
+    "interventions": 0,
+    "regression_pass": null,
+    "reviewability_notes": "PRD; RED_GREEN; THREATS; /health; entry CRUD + IDOR; reused Clearpath smoke shape",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.12
+  },
+  "fail_tags": [],
+  "team_size_sim": "1",
+  "triple_test": false,
+  "replication_group": null,
+  "run_index": 1,
+  "superseded_by": null,
+  "notes": "Second portfolio product smoke. Oracle 5/5. Next: crud."
+}

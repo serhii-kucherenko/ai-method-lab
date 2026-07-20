@@ -177,6 +177,11 @@ Keyset pagination + rate limits on request lists. Oracle green; 17/17 regression
 
 Minimal UI + production path + migration rollback notes. Full suite 19/19. Next product: ledgerlite.
 
+## 2026-07-20 — ledgerlite × P-smoke-001 (pass)
+
+Second portfolio product. Entry CRUD + isolation; Clearpath patterns reused cleanly. Next: crud.
+
+
 
 
 
