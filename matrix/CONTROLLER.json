@@ -2,11 +2,12 @@
   "mode": "autonomous",
   "ask_human": false,
   "current_cell": null,
+  "current_product": "clearpath",
   "phase": "starting_next",
-  "next_cell": "A03__P-smoke-001__r3",
+  "next_cell": "A03__P-crud-001__clearpath__r1",
   "last_completed": "A03__P-smoke-001__r2",
   "hard_stop_reason": null,
-  "wave": "replication-promoted",
+  "wave": "product-portfolio",
   "idle_reason": null,
   "defaults": {
     "stack": "node-ts-http-sqlite-or-memory",
@@ -18,6 +19,7 @@
     "always_push": true,
     "always_merge": true,
     "method_defaults": "matrix/METHOD_DEFAULTS.json",
+    "work_surface": "projects/",
     "replication": "promoted-only"
   },
   "notify": {
@@ -25,9 +27,9 @@
     "channel": "resend",
     "to": ["[REDACTED]"],
     "from": "AI Method Lab <onboarding@resend.dev>",
-    "on": ["wave_complete", "ladder_complete", "promote_complete", "hard_stop"],
+    "on": ["wave_complete", "ladder_complete", "promote_complete", "product_phase_complete", "hard_stop"],
     "per_cell": false,
-    "notes": "Autonomous digests per protocols/NOTIFY.md — findings, defaults, usage guide links. No reply required."
+    "notes": "Email product findings + DEVELOPMENT_WORKFLOW. projects/ is the testing portfolio."
   },
   "updated_at": "2026-07-20T10:02:00Z"
 }

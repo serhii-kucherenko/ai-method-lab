@@ -1,46 +1,39 @@
 # AI Method Lab
 
-Multi-project methodology lab. Not one product.
+Build **real products** to test AI development workflows. Repeat across many products. Publish findings.
 
-**Control plane** that repeatedly:
-1. Spins up sandbox projects
-2. Builds each under one development approach
-3. Scores the run (code + benchmarks)
-4. Learns where it scaled or failed
-5. Starts the next project / approach
+## How it works
 
-When a method breaks mid-wave: **version it → redo → triple-test** before the new version counts.
+1. Pick a **product hypothesis** (workflow × product shape)
+2. Build the product under `projects/<id>/` using the promoted workflow
+3. Climb maturity phases (smoke → crud → workflow → integrate → scale → **sustain**)
+4. Score each phase; write findings
+5. Start the next product — `projects/` is the testing portfolio
+
+Method cards and oracles stay frozen during a phase. When a method breaks: version → redo → triple-test.
 
 ## Layout
 
 | Path | Role |
 |------|------|
-| `docs/` | **[AI development workflow](docs/DEVELOPMENT_WORKFLOW.md)** (product teams), research, backlog, rubric |
+| `projects/` | **Product experiments** (portfolio) — primary work surface |
+| `projects/briefs/` | Phase templates (smoke, crud, …) |
+| `docs/DEVELOPMENT_WORKFLOW.md` | AI full-stack workflow to use inside products |
 | `approaches/` | Method cards (A01–A10+) |
-| `projects/briefs/` | Project briefs by stress tier |
-| `oracles/` | Pass/fail criteria agents cannot edit mid-run |
-| `harness/` | Scoring + cell runner (outside agent-writable sandboxes) |
-| `matrix/` | Leaderboard, cell scores, findings |
-| `sandboxes/` | Local runs (gitignored contents OK; keep scores in matrix) |
-| `protocols/` | Runbook, midterm-change, triple-test |
+| `oracles/` | Pass/fail criteria (do not edit mid-phase) |
+| `matrix/` | Scores, leaderboard, cross-product findings |
+| `sandboxes/` | Optional short A/B cells — not portfolio products |
+| `protocols/` | Product runbook, autonomous controller, notify |
 
 ## Loops
 
-1. **Research** — `docs/RESEARCH.md` + `docs/BACKLOG.md` only; one docs PR at a time
-2. **Experiment** — one cell `(approach × project)` in flight; results → `matrix/`
-3. **Build / promote** — only after findings promote a method; separate session
+1. **Research** — method/process questions in `docs/RESEARCH.md`
+2. **Product experiment** — grow one product in `projects/<id>/` through phases
+3. **Findings** — email digests; promote/adjust workflow defaults
 
 ## Autonomous by default
 
-The lab is meant to **self-continue** after each approach: score → learn → next cell, without asking you to confirm.
-
 - Controller: `protocols/AUTONOMOUS_CONTROLLER.md` + `matrix/CONTROLLER.json`
-- Wake prompt / Automation text: `docs/AUTOMATION.md`
-- Agent entry: `AGENTS.md`
-
-## Quick start (manual only if autonomous is paused)
-
-1. Read `docs/OS.md` and `docs/RUBRIC.md`
-2. Ensure `matrix/CONTROLLER.json` has `"mode": "autonomous"`
-3. Run an agent with the wake prompt in `docs/AUTOMATION.md`
-4. Or follow `protocols/RUNBOOK.md` yourself — still no need to confirm between cells
+- Product phases: `protocols/PRODUCT_RUNBOOK.md`
+- Always commit, push, merge; email findings when phases complete
+- Wake prompt: `docs/AUTOMATION.md`
