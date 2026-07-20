@@ -390,3 +390,8 @@ Sixty-seventh portfolio product. Desks+policies+claims+evidence+payout rules. 17
 
 Sixty-eighth portfolio product. Dual approval + checklist + rollback. 19/19. Next: grantlane.
 
+
+## 2026-07-20 — grantlane sustained (comprehensive)
+
+Sixty-ninth portfolio product. Dual sign-off + milestone budget + clawback. 24/24. Next: vendorvault.
+

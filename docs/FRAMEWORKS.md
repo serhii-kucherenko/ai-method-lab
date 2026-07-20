@@ -83,4 +83,5 @@ Body must include:
 - Does reserve/evidence/payout multi-party ACL hold? → **claimdesk** — yes (17/17)
 - Does dual approval + rollback change intervention count? → **releasetrain** — yes, 0 interventions (19/19)
 - Where does static-UI testing stop being enough? → still deferred; three products used pure helpers + shell tests
-- Next stress: budget milestones + clawback → **grantlane**
+- Next stress: budget milestones + clawback → **grantlane** — yes (24/24)
+- Next: vendor risk severity gates → **vendorvault**

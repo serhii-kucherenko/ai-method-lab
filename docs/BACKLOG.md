@@ -6,29 +6,21 @@ Prioritized candidates for the matrix. Promote into `matrix/EXPERIMENT_PLAN.md` 
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **grantlane** | A03 + A10 | Grant programs: orgs, applications, budgets, milestones paid→complete; dual reviewer sign-off; clawback. |
-| 2 | vendorvault | A03 + A10 | Vendor risk: vendors, questionnaires, findings open→remediated→accepted; severity gates; attestations. |
+| 1 | **vendorvault** | A03 + A10 | Vendor risk: vendors, questionnaires, findings open→remediated→accepted; severity gates; attestations. |
+| 2 | incidentrail | A03 + A10 | Incident response: sev1–3, war rooms, actions, postmortems; commander ACL; page webhooks. |
 | 3 | tentcamp | A03 + A10 | Tent pitches (deferred clone-tier). |
 
 ## Recently completed (portfolio)
 
 | Product | Method | Outcome |
 | --- | --- | --- |
+| grantlane | A03 + A10 | P-sustain — 24/24; dual sign-off + clawback |
 | releasetrain | A03 + A10 | P-sustain — 19/19; dual approval + rollback |
 | claimdesk | A03 + A10 | P-sustain — 17/17; multi-party claims + payout rules |
 | screenlane | A03 + A10 | P-sustain — 18/18; multi-aggregate hiring boards |
-| gardenplot | A03 + A10 | P-sustain — 19/19 |
-| radiohour | A03 + A10 | P-sustain — 19/19 |
 
 See `projects/PORTFOLIO.md` for the full active set.
 
 ## Portfolio strategy (2026-07-20 pivot)
 
-Stop optimizing for count of tiny state-machine clones. Prefer products that force:
-
-1. **Multiple aggregates** (not one entity + 3 statuses)
-2. **Cross-entity rules** (ACL + scorecards + workflow together)
-3. **Production shape** (migrations, health, threats, webhooks, rate limits, UI)
-4. **Repeatable harness evidence** (deterministic tests, cell schema, FINDINGS with frameworks)
-
-Icebox/tentcamp clones deferred behind comprehensive wave.
+Prefer multi-aggregate products with cross-entity gates. Clone-tier deferred.
