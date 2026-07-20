@@ -88,3 +88,17 @@ Lab scaffolded. No cells scored yet. First cell queued: **A01 × P-smoke-001**.
 - **Approach fit:** Enterprise gates lite — Security+migration+observability checklist complete.
 - **Next:** smoke column complete
 
+## 2026-07-20 — wave-1 smoke complete
+
+All **A01–A10 × P-smoke-001** scored **pass**. Smoke does not discriminate correctness; all approaches cleared auth/CRUD/IDOR with 0 interventions on the default Node+TS stack.
+
+**Ladder ranking for harder tiers (P-crud stress = ERD churn, RBAC, migration):**
+
+1. **A02** — contracts/ERD before code (matches ERD churn stress)
+2. **A03** — test/contract-first (fits negative permission suites)
+3. **A10** — migrations + security/observability from slice 1
+4. **A05** — adversarial review for permission gaps
+5. **A07** — full spec kit for multi-entity scope
+
+Queued those five on **P-crud-001**. Re-rank before P-workflow after P-crud scores. Not promoting any method yet (needs ≥2 tiers per rubric).
+
