@@ -8,9 +8,11 @@ import {
   findUserByEmail,
   getRequest,
   issueToken,
+  listAudit,
   listRequests,
   registerUser,
   resolveToken,
+  transitionRequest,
   updateRequest,
 } from "./store.js";
 import {
@@ -133,6 +135,35 @@ export function createApp(store: Store = createStore()) {
           return;
         }
 
+        const transitionMatch = /^\/requests\/([^/]+)\/transition$/.exec(path);
+        if (method === "POST" && transitionMatch) {
+          const body = await readBody(req);
+          const result = transitionRequest(
+            store.db,
+            transitionMatch[1],
+            userId,
+            body.to,
+            body.version,
+          );
+          if (!result.ok) {
+            send(res, result.status, { error: result.error });
+            return;
+          }
+          send(res, 200, { request: result.request });
+          return;
+        }
+
+        const auditMatch = /^\/requests\/([^/]+)\/audit$/.exec(path);
+        if (method === "GET" && auditMatch) {
+          const entries = listAudit(store.db, auditMatch[1], userId);
+          if (!entries) {
+            send(res, 404, { error: "not found" });
+            return;
+          }
+          send(res, 200, { entries });
+          return;
+        }
+
         const match = /^\/requests\/([^/]+)$/.exec(path);
         if (match) {
           const requestId = match[1];
@@ -166,6 +197,9 @@ export function createApp(store: Store = createStore()) {
             return;
           }
         }
+
+        send(res, 404, { error: "not found" });
+        return;
       }
 
       const userId = authUserId(store, req);

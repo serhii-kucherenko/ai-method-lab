@@ -4,7 +4,7 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
-| clearpath | **phase-complete (crud)** | A03 + A10 | **next: workflow** | Test-first + enterprise gates can grow an approvals product from zero to sustainable MVP |
+| clearpath | **phase-complete (workflow)** | A03 + A10 | **next: integrate** | Test-first + enterprise gates can grow an approvals product from zero to sustainable MVP |
 | ledgerlite | queued | A03 + A10 | — | Same workflow on a personal finance ledger (schema-heavy) |
 | signalboard | queued | A03 + A05 | — | Adversarial review overlay improves security outcomes on a public status board |
 

@@ -1,0 +1,28 @@
+{
+  "cell_id": "A03__P-workflow-001__clearpath__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-workflow-001",
+  "status": "scored",
+  "sandbox_path": "projects/clearpath",
+  "started_at": "2026-07-20T10:40:00Z",
+  "finished_at": "2026-07-20T10:50:00Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.17,
+    "interventions": 0,
+    "regression_pass": true,
+    "reviewability_notes": "Migration 003_request_workflow; legal transitions; audit; optimistic version; revise loop; smoke+crud regression 12/12",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.17
+  },
+  "fail_tags": [],
+  "team_size_sim": "1",
+  "triple_test": false,
+  "replication_group": null,
+  "run_index": 1,
+  "superseded_by": null,
+  "notes": "Oracle 4/4. Next: integrate (webhooks)."
+}

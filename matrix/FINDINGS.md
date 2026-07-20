@@ -161,3 +161,9 @@ Replication run 2 of promoted primary. Test-first RED→GREEN; oracle 4/4. Match
 
 Projects/tasks/comments with owner/member/viewer RBAC; SQLite + 2 migrations; smoke regression green. Oracle 3/3 + negatives. Next: workflow state machine on clearpath.
 
+## 2026-07-20 — clearpath × P-workflow-001 (pass)
+
+Approval state machine with audit + optimistic locking. Oracle 4/4; regression 12/12. Next: integrate.
+
+
+

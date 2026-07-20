@@ -6,13 +6,14 @@
 - Process: failure tags taxonomy (`docs/FAIL_TAGS.md`), replication default, GitHub CLI verified
 - **clearpath × P-smoke-001** (A03+A10) — pass
 - **clearpath × P-crud-001** (A03) — pass
+- **clearpath × P-workflow-001** (A03+A10) — pass
 - A03__P-smoke-001__r2 (replication pass)
 
 ## Ready (product portfolio)
 
 | Priority | Cell id | Product | Phase | Status |
 |----------|---------|---------|-------|--------|
-| 1 | A03__P-workflow-001__clearpath__r1 | clearpath | workflow | **queued** (next) |
+| 1 | A03__P-workflow-001__clearpath__r1 | clearpath | workflow | done |
 | 2 | A03__P-integrate-001__clearpath__r1 | clearpath | integrate | queued |
 | 3 | A03__P-scale-001__clearpath__r1 | clearpath | scale | queued |
 | 4 | A03__P-sustain__clearpath__r1 | clearpath | sustain | queued |

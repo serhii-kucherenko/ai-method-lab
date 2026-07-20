@@ -2,17 +2,66 @@ import { randomUUID } from "node:crypto";
 import type { DatabaseSync } from "node:sqlite";
 import { openDatabase } from "./db.js";
 
+export type WorkflowState = "draft" | "in_review" | "approved" | "rejected";
+
 export type RequestItem = {
   id: string;
   userId: string;
   title: string;
   body: string;
-  status: "draft";
+  status: WorkflowState;
+  state: WorkflowState;
+  version: number;
+};
+
+export type AuditEntry = {
+  id: string;
+  requestId: string;
+  actorId: string;
+  from: WorkflowState;
+  to: WorkflowState;
+  at: string;
 };
 
 export type Store = {
   db: DatabaseSync;
 };
+
+const LEGAL: Record<WorkflowState, WorkflowState[]> = {
+  draft: ["in_review"],
+  in_review: ["approved", "rejected"],
+  approved: [],
+  rejected: ["draft"],
+};
+
+function isState(value: unknown): value is WorkflowState {
+  return (
+    value === "draft" ||
+    value === "in_review" ||
+    value === "approved" ||
+    value === "rejected"
+  );
+}
+
+function mapRequest(row: {
+  id: string;
+  userId: string;
+  title: string;
+  body: string;
+  status: string;
+  version: number;
+}): RequestItem {
+  const state = isState(row.status) ? row.status : "draft";
+  return {
+    id: row.id,
+    userId: row.userId,
+    title: row.title,
+    body: row.body,
+    status: state,
+    state,
+    version: row.version,
+  };
+}
 
 export function createStore(dbPath = ":memory:"): Store {
   return { db: openDatabase(dbPath) };
@@ -62,17 +111,33 @@ export function createRequest(
 ): RequestItem {
   const id = randomUUID();
   db.prepare(
-    "INSERT INTO requests (id, user_id, title, body, status) VALUES (?, ?, ?, ?, 'draft')",
+    "INSERT INTO requests (id, user_id, title, body, status, version) VALUES (?, ?, ?, ?, 'draft', 1)",
   ).run(id, userId, title, body);
-  return { id, userId, title, body, status: "draft" };
+  return {
+    id,
+    userId,
+    title,
+    body,
+    status: "draft",
+    state: "draft",
+    version: 1,
+  };
 }
 
 export function listRequests(db: DatabaseSync, userId: string): RequestItem[] {
-  return db
+  const rows = db
     .prepare(
-      "SELECT id, user_id AS userId, title, body, status FROM requests WHERE user_id = ?",
+      "SELECT id, user_id AS userId, title, body, status, version FROM requests WHERE user_id = ?",
     )
-    .all(userId) as RequestItem[];
+    .all(userId) as Array<{
+    id: string;
+    userId: string;
+    title: string;
+    body: string;
+    status: string;
+    version: number;
+  }>;
+  return rows.map(mapRequest);
 }
 
 export function getRequest(
@@ -80,11 +145,21 @@ export function getRequest(
   requestId: string,
   userId: string,
 ): RequestItem | undefined {
-  return db
+  const row = db
     .prepare(
-      "SELECT id, user_id AS userId, title, body, status FROM requests WHERE id = ? AND user_id = ?",
+      "SELECT id, user_id AS userId, title, body, status, version FROM requests WHERE id = ? AND user_id = ?",
     )
-    .get(requestId, userId) as RequestItem | undefined;
+    .get(requestId, userId) as
+    | {
+        id: string;
+        userId: string;
+        title: string;
+        body: string;
+        status: string;
+        version: number;
+      }
+    | undefined;
+  return row ? mapRequest(row) : undefined;
 }
 
 export function updateRequest(
@@ -114,4 +189,72 @@ export function deleteRequest(
     .prepare("DELETE FROM requests WHERE id = ? AND user_id = ?")
     .run(requestId, userId);
   return result.changes > 0;
+}
+
+export type TransitionResult =
+  | { ok: true; request: RequestItem }
+  | { ok: false; status: 400 | 404 | 409; error: string };
+
+export function transitionRequest(
+  db: DatabaseSync,
+  requestId: string,
+  userId: string,
+  to: unknown,
+  version: unknown,
+): TransitionResult {
+  if (typeof version !== "number") {
+    return { ok: false, status: 400, error: "version required" };
+  }
+  if (!isState(to)) {
+    return { ok: false, status: 400, error: "invalid target state" };
+  }
+  const existing = getRequest(db, requestId, userId);
+  if (!existing) {
+    return { ok: false, status: 404, error: "not found" };
+  }
+  if (!LEGAL[existing.state].includes(to)) {
+    return {
+      ok: false,
+      status: 409,
+      error: `illegal transition from ${existing.state} to ${to}`,
+    };
+  }
+  if (version !== existing.version) {
+    return { ok: false, status: 409, error: "version conflict" };
+  }
+
+  const result = db
+    .prepare(
+      "UPDATE requests SET status = ?, version = version + 1 WHERE id = ? AND user_id = ? AND version = ?",
+    )
+    .run(to, requestId, userId, version);
+  if (result.changes !== 1) {
+    return { ok: false, status: 409, error: "version conflict" };
+  }
+
+  const at = new Date().toISOString();
+  db.prepare(
+    "INSERT INTO request_audit (id, request_id, actor_id, from_state, to_state, at) VALUES (?, ?, ?, ?, ?, ?)",
+  ).run(randomUUID(), requestId, userId, existing.state, to, at);
+
+  const updated = getRequest(db, requestId, userId);
+  if (!updated) {
+    return { ok: false, status: 404, error: "not found" };
+  }
+  return { ok: true, request: updated };
+}
+
+export function listAudit(
+  db: DatabaseSync,
+  requestId: string,
+  userId: string,
+): AuditEntry[] | null {
+  if (!getRequest(db, requestId, userId)) return null;
+  const rows = db
+    .prepare(
+      `SELECT id, request_id AS requestId, actor_id AS actorId, from_state AS "from", to_state AS "to", at
+       FROM request_audit WHERE request_id = ? ORDER BY at ASC`,
+    )
+    .all(requestId) as AuditEntry[];
+  return rows;
 }

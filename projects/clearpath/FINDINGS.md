@@ -17,3 +17,11 @@ Portfolio model: products live under `projects/`. Clearpath is first product und
 - SQLite via node:sqlite; smoke regression green (8 tests)
 - Interventions: 0
 - Next: workflow (approval state machine)
+
+## 2026-07-20 — Workflow phase (pass)
+
+- Oracle: legal/illegal transitions, audit log, concurrent version conflict, revise loop — 4/4
+- Migration `003_request_workflow` (version + request_audit)
+- Regression: smoke + crud still green (12 tests total)
+- Interventions: 0
+- Next: integrate (webhooks + idempotency)
