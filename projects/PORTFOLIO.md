@@ -65,9 +65,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | mudrun | **sustained** | A03 + A10 | sustain complete | Entries registered/started/finished |
 | surfboard | **sustained** | A03 + A10 | sustain complete | Boards reserved/on_water/returned |
 | potterystudio | **sustained** | A03 + A10 | sustain complete | Loads staged/firing/cooled |
+| chessclub | **sustained** | A03 + A10 | sustain complete | Matches paired/playing/scored |
+| darkroom | **sustained** | A03 + A10 | sustain complete | Rolls loaded/developing/scanned |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
 
 ## Next autonomous actions
 
-1. Queue next portfolio product (chessclub) on next tick
+1. Queue next portfolio product (gardenplot) on next tick
 2. Keep 30m dont-stop loop; email digests on product complete

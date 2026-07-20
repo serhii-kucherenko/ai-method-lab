@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Darkroom</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Darkroom</h1>
+      <p class="lede">Save a roll, publish it, and archive it.</p>
+      <section id="auth">
+        <h2>Sign in</h2>
+        <label>Email <input id="email" type="email" value="demo@darkroom.local" /></label>
+        <label>Password <input id="password" type="password" value="demo" /></label>
+        <div class="row">
+          <button type="button" id="register">Register</button>
+          <button type="button" id="login">Log in</button>
+        </div>
+        <p id="auth-status" class="status"></p>
+      </section>
+      <section id="flow" hidden>
+        <h2>Roll</h2>
+        <label>Title <input id="title" type="text" value="Kickoff rolls" /></label>
+        <div class="row">
+          <button type="button" id="create">Loaded</button>
+          <button type="button" id="publish" disabled>Publish</button>
+          <button type="button" id="archive" disabled>Archive</button>
+        </div>
+        <p id="flow-status" class="status"></p>
+        <pre id="roll-view"></pre>
+      </section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
