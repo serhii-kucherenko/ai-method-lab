@@ -385,3 +385,8 @@ Sixty-sixth portfolio product. Multi-aggregate hiring + scorecards. 18/18. Frame
 
 Sixty-seventh portfolio product. Desks+policies+claims+evidence+payout rules. 17/17. Next: releasetrain.
 
+
+## 2026-07-20 — releasetrain sustained (comprehensive)
+
+Sixty-eighth portfolio product. Dual approval + checklist + rollback. 19/19. Next: grantlane.
+

@@ -71,10 +71,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | radiohour | **sustained** | A03 + A10 | sustain complete | Shows scheduled/onair/wrapped |
 | screenlane | **sustained** | A03 + A10 | sustain complete | Hiring boards + jobs + candidates + scorecards + applied→screening→decided |
 | claimdesk | **sustained** | A03 + A10 | sustain complete | Desks + policies + claims + evidence + filed→review→settled |
+| releasetrain | **sustained** | A03 + A10 | sustain complete | Trains + services + releases + dual approval + rollback |
 | orbitfolio | **sustained** | A03 + A08 | design-lab complete | External https://github.com/serhii-kucherenko/orbitfolio — 50 scored variants |
 
 ## Next autonomous actions
 
-1. Build next comprehensive product: **releasetrain**
+1. Build next comprehensive product: **grantlane**
 2. Keep harness-loop audits + insight emails; clone-tier deferred
-3. Optionally triple-test screenlane/claimdesk smoke replication
+3. Cross-product pattern: dual gates (checklist/approval/payout) are the valuable stress

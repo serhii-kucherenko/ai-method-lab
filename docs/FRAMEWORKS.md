@@ -79,6 +79,8 @@ Body must include:
 
 ## Open questions (next comprehensive wave)
 
-- Does A03+A10 hold when scorecards + multi-role boards land in one product? → **screenlane**
-- Does release rollback + dual approval change intervention count? → **releasetrain**
-- Where does static-UI testing stop being enough? → measure when screenlane UI needs E2E
+- Does A03+A10 hold when scorecards + multi-role boards land in one product? → **screenlane** — yes (18/18)
+- Does reserve/evidence/payout multi-party ACL hold? → **claimdesk** — yes (17/17)
+- Does dual approval + rollback change intervention count? → **releasetrain** — yes, 0 interventions (19/19)
+- Where does static-UI testing stop being enough? → still deferred; three products used pure helpers + shell tests
+- Next stress: budget milestones + clawback → **grantlane**
