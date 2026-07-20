@@ -102,3 +102,11 @@ All **A01–A10 × P-smoke-001** scored **pass**. Smoke does not discriminate co
 
 Queued those five on **P-crud-001**. Re-rank before P-workflow after P-crud scores. Not promoting any method yet (needs ≥2 tiers per rubric).
 
+## 2026-07-20 — A02 × P-crud-001 (r1)
+
+- **Result:** pass (RBAC + migration oracle)
+- **Cycle:** ~0.0275h wall
+- **Interventions:** 0
+- **Approach fit:** ERD-first paid off — permission matrix and migration plan existed before code; no silent schema drift.
+- **Next:** A03 × P-crud-001
+
