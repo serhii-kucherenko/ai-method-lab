@@ -21,5 +21,6 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 ## Next autonomous actions
 
 1. Portfolio wave complete (clearpath, ledgerlite, signalboard sustained)
-2. Continue replication backlog or queue a new portfolio product when added
-3. Keep email digests on phase/product complete
+2. Replication wave complete (A03 + A10 smoke triple-tests 3/3)
+3. Idle until a new portfolio product or backlog cell is queued
+4. Keep email digests on phase/product/wave complete
