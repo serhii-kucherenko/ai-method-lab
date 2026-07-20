@@ -436,3 +436,7 @@ Workspaces/bonds/draws. Gates: collateral floor + dual treasurer release. 3/3 te
 
 Workspaces/bonds/draws. Gates: collateral floor + dual treasurer release. Next: lottrack.
 
+
+## 2026-07-20 -- lottrack sustain (pass)
+
+Warehouses/lots/inspections. Gates: hot quarantine + dual QA clear. Next: quotaguard.
