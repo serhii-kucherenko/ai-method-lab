@@ -4,13 +4,14 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **lottrack** | A03 + A10 | Warehouses + lots + inspections; quarantine severity gate; dual clear. |
+| 1 | **quotaguard** | A03 + A10 | Orgs + quotas + usage; ceiling gate; dual finance release of overage holds. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
 | Product | Gate stressed |
 | --- | --- |
+| lottrack | quarantine severity + dual QA clear |
 | bondrail | collateral floor + dual treasurer release |
 | crewgate | overtime hours + dual supervisor close |
 | loadbay | dock capacity + dual checker seal |
