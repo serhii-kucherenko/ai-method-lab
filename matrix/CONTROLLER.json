@@ -1,35 +1,28 @@
 {
-    "updated_at":  "2026-07-20T20:54:45Z",
-    "notify":  {
-                   "from":  "AI Method Lab \u003conboarding@resend.dev\u003e",
-                   "to":  [
-                              "kucherenko.web@gmail.com"
-                          ],
-                   "on":  [
-                              "phase_complete",
-                              "product_complete",
-                              "hard_stop",
-                              "digest"
-                          ],
-                   "enabled":  true
-               },
-    "paused":  false,
-    "active_cell":  null,
-    "schema_version":  "1.0.0",
-    "idle_reason":  "screenlane_sustained_awaiting_next_tick_claimdesk",
-    "product_defaults":  {
-                             "persistence":  "sqlite",
-                             "stack":  "node-ts",
-                             "test_runner":  "node-test",
-                             "payments":  "provider-agnostic-webhook-with-hmac",
-                             "auth":  "bearer-token"
-                         },
-    "last_completed":  "A03__P-sustain__screenlane__r1",
-    "last_error":  null,
-    "current_product":  null,
-    "next_cell":  "A03__P-smoke-001__claimdesk__r1",
-    "mode":  "autonomous",
-    "phase":  "idle",
-    "notes":  "Screenlane sustained (18/18 comprehensive). Portfolio 66. Next: claimdesk. Clone wave paused in favor of multi-aggregate products.",
-    "hard_stop":  false
+  "schema_version": "1.0.0",
+  "mode": "autonomous",
+  "phase": "idle",
+  "active_cell": null,
+  "next_cell": "A03__P-smoke-001__claimdesk__r1",
+  "last_completed": "A03__P-sustain__screenlane__r1",
+  "last_error": null,
+  "paused": false,
+  "hard_stop": false,
+  "updated_at": "2026-07-20T20:56:00Z",
+  "notes": "Screenlane sustained (18/18 comprehensive). Portfolio 66. Next: claimdesk. Frameworks + harness loop published.",
+  "notify": {
+    "enabled": true,
+    "to": ["kucherenko.web@gmail.com"],
+    "from": "AI Method Lab <onboarding@resend.dev>",
+    "on": ["phase_complete", "product_complete", "hard_stop", "digest"]
+  },
+  "idle_reason": "screenlane_sustained_awaiting_next_tick_claimdesk",
+  "product_defaults": {
+    "stack": "node-ts",
+    "persistence": "sqlite",
+    "auth": "bearer-token",
+    "payments": "provider-agnostic-webhook-with-hmac",
+    "test_runner": "node-test"
+  },
+  "current_product": null
 }

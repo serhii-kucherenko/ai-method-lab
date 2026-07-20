@@ -326,6 +326,7 @@ Do not implement before tests exist for this slice.
 - **A10** added security/observability without breaking correctness.
 - **Team sizes 1–5:** viable with scripted handoffs; more ceremony, same gates.
 - **Avoid:** simulated multi-agent “swarm” (A09) on solo AI — high overhead, no quality gain.
+- **2026-07-20 pivot:** Prefer multi-aggregate products (see `docs/FRAMEWORKS.md`) over noun-swap FSMs; verify harness repeatability via `protocols/HARNESS_LOOP.md`. Screenlane (boards + scorecards) sustained 18/18 under A03+A10.
 
 Details: `matrix/FINDINGS.md`, `matrix/leaderboard.md` (evidence only — you don’t need these to execute the workflow).
 
@@ -336,6 +337,8 @@ Details: `matrix/FINDINGS.md`, `matrix/leaderboard.md` (evidence only — you do
 | File | Audience |
 |------|----------|
 | **This file** | Product teams — daily AI dev workflow |
+| `docs/FRAMEWORKS.md` | Proven ready-to-use patterns from lab products |
+| `protocols/HARNESS_LOOP.md` | How to keep scores repeatable and valuable |
 | `docs/OS.md` | Stage definitions (reference) |
 | `approaches/A03.md`, `A10.md` | Method cards |
 | `matrix/METHOD_DEFAULTS.json` | Promoted defaults |
