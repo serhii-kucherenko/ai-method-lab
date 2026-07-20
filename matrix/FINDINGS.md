@@ -328,3 +328,19 @@ Twenty-eighth portfolio product. Bikes + hubs + dock/rent/redock. 19/19. Next: p
 ## 2026-07-20 — plantcare sustained
 
 Twenty-ninth portfolio product. Plants + gardens + seed/grow/harvest. 19/19. Next: coworkdesk.
+
+## 2026-07-20 — coworkdesk sustained
+
+Thirtieth portfolio product. Desks + spaces + open/occupy/clear. 19/19. Next: parceldrop.
+
+## 2026-07-20 — parceldrop sustained
+
+Thirty-first portfolio product. Parcels + lockers + arrive/notify/pickup. 19/19. Next: tutorbook.
+
+## 2026-07-20 — tutorbook sustained
+
+Thirty-second portfolio product. Lessons + studios + book/teach/review. 19/19. Next: laundryloop.
+
+## 2026-07-20 — laundryloop sustained
+
+Thirty-third portfolio product. Loads + rooms + queue/wash/dry. 19/19. Next: photobooth.
