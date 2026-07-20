@@ -304,3 +304,11 @@ Twenty-second portfolio product. Jobs + properties + request/schedule/finish. 19
 ## 2026-07-20 — farmshare sustained
 
 Twenty-third portfolio product. Shares + farms + list/claim/deliver. 19/19. Next: eventpass.
+
+## 2026-07-20 — eventpass sustained
+
+Twenty-fourth portfolio product. Tickets + events + reserve/issue/scan. 19/19. Next: blooddrive.
+
+## 2026-07-20 — blooddrive sustained
+
+Twenty-fifth portfolio product. Donations + drives + book/screen/donate. 19/19. Next: toolcrib.
