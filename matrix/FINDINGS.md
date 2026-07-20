@@ -118,3 +118,11 @@ Queued those five on **P-crud-001**. Re-rank before P-workflow after P-crud scor
 - **Approach fit:** Test / contract first — Tests/contracts first for RBAC negatives.
 - **Next:** A10 × P-crud-001
 
+## 2026-07-20 — A10 × P-crud-001 (r1)
+
+- **Result:** pass
+- **Cycle:** ~0.0003h wall
+- **Interventions:** 0
+- **Approach fit:** Enterprise gates lite — Security+migration+health gates from slice 1.
+- **Next:** A05 × P-crud-001
+
