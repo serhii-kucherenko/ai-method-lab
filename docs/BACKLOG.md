@@ -6,8 +6,8 @@ One cell in flight at a time. Finish score + learn note before the next.
 
 | Priority | Cell | Approach | Project | Status |
 |----------|------|----------|---------|--------|
-| 1 | A01×P-smoke-001 | A01 | P-smoke-001 | next (autonomous) |
-| 2 | A02×P-smoke-001 | A02 | P-smoke-001 | queued |
+| 1 | A01×P-smoke-001 | A01 | P-smoke-001 | done |
+| 2 | A02×P-smoke-001 | A02 | P-smoke-001 | in progress |
 | 3 | A03×P-smoke-001 | A03 | P-smoke-001 | queued |
 | 4 | A04×P-smoke-001 | A04 | P-smoke-001 | queued |
 | 5 | A05×P-smoke-001 | A05 | P-smoke-001 | queued |
@@ -25,6 +25,6 @@ One cell in flight at a time. Finish score + learn note before the next.
 
 ## Research / process
 
-- [ ] Define auto-merge policy for docs vs results
+- [x] Define auto-merge policy for docs vs results — controller merges own PRs in autonomous mode (`docs/AUTOMATION.md`)
 - [ ] Standardize failure tags taxonomy
 - [ ] Decide replication default (3× same brief vs triad stress)

@@ -10,7 +10,16 @@ Follow approaches/, projects/briefs/, oracles/, protocols/RUNBOOK.md.
 After scoring, immediately continue to the next backlog cell.
 Only hard-stop per AUTONOMOUS_CONTROLLER.md.
 Commit meta-repo updates (matrix, backlog, controller) after each cell.
+If you open a PR (meta-repo or sandbox), merge it yourself when CI is green — do not wait for a human merge.
 ```
+
+## Merge policy (autonomous)
+
+When `matrix/CONTROLLER.json` has `mode: autonomous` and `defaults.agent_merges_own_prs: true`:
+
+- The controller is the **designated owner** for merge gates on approach cards that say “human (or designated owner) merges”
+- Docs/results PRs and sandbox experiment PRs opened by the controller are merged by the controller after checks pass
+- Do not leave merge-ready PRs waiting on human approval unless `mode` is `paused` / `hard_stop`
 
 ## Suggested Automation settings
 
@@ -20,6 +29,6 @@ Commit meta-repo updates (matrix, backlog, controller) after each cell.
 | Trigger | Every hour (or every 30 minutes while filling wave 1) |
 | Repo | This meta-repo (`ai-method-lab`), branch `main` |
 | Memory | On |
-| Behavior | Run the wake prompt above; no human approval gates |
+| Behavior | Run the wake prompt above; no human approval gates; agent merges own PRs |
 
 Open Automations in Cursor and paste this if an agent has not already prefilled it for you.

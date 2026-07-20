@@ -21,6 +21,7 @@ Follow approaches/, projects/briefs/, oracles/, protocols/RUNBOOK.md.
 After scoring, immediately continue to the next backlog cell.
 Only hard-stop per AUTONOMOUS_CONTROLLER.md.
 Commit meta-repo updates (matrix, backlog, controller) after each cell.
+If you open a PR, merge it yourself when checks pass — do not wait for a human.
 ```
 
 ## What to optimize for

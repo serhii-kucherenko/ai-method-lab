@@ -51,6 +51,10 @@ Set `mode: hard_stop`, `ask_human: true`, reason in state + FINDINGS:
 
 Otherwise: **never** pause for preference questions, naming, stack choice, or “should I continue?”
 
+## Merge ownership
+
+In `autonomous` mode the controller is the **designated owner** for approach cards that require a human/owner merge. Open the PR, wait for CI green (or local equivalent), then merge it. Do not ask the human to merge.
+
 ## Defaults when the approach card is silent
 
 - Stack for P-smoke: Node + TypeScript, simple HTTP API, in-memory or SQLite, Vitest or node:test
@@ -67,6 +71,7 @@ Follow approaches/, projects/briefs/, oracles/, protocols/RUNBOOK.md.
 After scoring, immediately continue to the next backlog cell.
 Only hard-stop per AUTONOMOUS_CONTROLLER.md.
 Commit meta-repo updates (matrix, backlog, controller) after each cell.
+If you open a PR, merge it yourself when checks pass — do not wait for a human.
 ```
 
 ## Cursor Automation (recommended)
