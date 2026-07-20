@@ -1,28 +1,28 @@
 {
-  "updated_at": "2026-07-20T22:30:00Z",
-  "notify": {
-    "from": "AI Method Lab <onboarding@resend.dev>",
-    "to": ["kucherenko.web@gmail.com"],
-    "on": ["phase_complete", "product_complete", "hard_stop", "digest"],
-    "enabled": true
-  },
-  "paused": false,
-  "active_cell": null,
-  "schema_version": "1.0.0",
-  "idle_reason": "bondrail_sustained_awaiting_next_tick_lottrack",
-  "product_defaults": {
-    "persistence": "sqlite",
-    "stack": "node-ts",
-    "test_runner": "node-test",
-    "payments": "provider-agnostic-webhook-with-hmac",
-    "auth": "bearer-token"
-  },
-  "last_completed": "A03__P-sustain__bondrail__r1",
-  "last_error": null,
-  "current_product": null,
-  "next_cell": "A03__P-smoke-001__lottrack__r1",
-  "mode": "autonomous",
-  "phase": "idle",
-  "notes": "Bondrail sustained (collateral floor + dual treasurer release). Next: lottrack.",
-  "hard_stop": false
+    "updated_at":  "2026-07-20T23:30:00Z",
+    "notify":  {
+                   "from":  "AI Method Lab <onboarding@resend.dev>",
+                   "to":  ["kucherenko.web@gmail.com"],
+                   "on":  ["phase_complete", "product_complete", "hard_stop", "digest"],
+                   "enabled":  true
+               },
+    "paused":  false,
+    "active_cell":  null,
+    "schema_version":  "1.0.0",
+    "idle_reason":  "bondrail_sustained_awaiting_next_tick_lottrack",
+    "product_defaults":  {
+                             "persistence":  "sqlite",
+                             "stack":  "node-ts",
+                             "test_runner":  "node-test",
+                             "payments":  "provider-agnostic-webhook-with-hmac",
+                             "auth":  "bearer-token"
+                         },
+    "last_completed":  "A03__P-sustain__bondrail__r1",
+    "last_error":  null,
+    "current_product":  null,
+    "next_cell":  "A03__P-smoke-001__lottrack__r1",
+    "mode":  "autonomous",
+    "phase":  "idle",
+    "notes":  "Bondrail sustained (collateral floor + dual treasurer). Next: lottrack.",
+    "hard_stop":  false
 }

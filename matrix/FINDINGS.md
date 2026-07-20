@@ -431,3 +431,8 @@ Sites/crews/shifts. Gates: overtime hours vs site limit + dual supervisor close.
 
 Workspaces/bonds/draws. Gates: collateral floor + dual treasurer release. 3/3 tests green. Next: lottrack.
 
+
+## 2026-07-20 -- bondrail sustain (pass)
+
+Workspaces/bonds/draws. Gates: collateral floor + dual treasurer release. Next: lottrack.
+
