@@ -280,3 +280,11 @@ Sixteenth portfolio product. Items + hubs + report/claim/reunite. 19/19. Next: p
 ## 2026-07-20 — pantrybox sustained
 
 Seventeenth portfolio product. Stocks + pantries + list/reserve/pickup. 19/19. Next: carpool.
+
+## 2026-07-20 — carpool sustained
+
+Eighteenth portfolio product. Rides + routes + offer/book/finish. 19/19. Next: petcare.
+
+## 2026-07-20 — petcare sustained
+
+Nineteenth portfolio product. Visits + kennels + schedule/admit/release. 19/19. Next: libraryloan.
