@@ -41,4 +41,35 @@ Smoke column A01–A10 × P-smoke-001 finished. Ladder next: top approaches on h
 4. **A05** — adversarial review (security findings on RBAC/IDOR)
 5. **A07** — spec kit / SDD (permission matrix as AC source)
 
-Queued those five on P-crud-001 then P-workflow-001. No promotion yet (need ≥2 tiers + explicit promote decision).
+## 2026-07-20 — Top-5 × P-crud-001 (all pass)
+
+| Cell | Result | Notes |
+|------|--------|-------|
+| A02 | pass | ERD + permission matrix before impl; SQL migrations 001→002 |
+| A03 | pass | Negative RBAC contracts first |
+| A10 | pass | Security/migration/health checklist |
+| A05 | pass | Adversarial RBAC review |
+| A07 | pass | Spec kit + derived tasks |
+
+Stack: Node+TS, `node:sqlite`, bearer auth, owner/member/viewer matrix. Viewer mutate and member-invite negatives held.
+
+## 2026-07-20 — Top-5 × P-workflow-001 (all pass)
+
+| Cell | Result | Notes |
+|------|--------|-------|
+| A02 | pass | State contract + `expectedVersion` before impl |
+| A03 | pass | Transition/concurrency tests first |
+| A10 | pass | Audit observability + explicit no-migration |
+| A05 | pass | Adversarial race/illegal-jump review |
+| A07 | pass | Spec→tasks for approval loop |
+
+Illegal transitions → 400; version conflicts → 409; audit has actor/from/to/timestamp.
+
+## 2026-07-20 — Ladder status / idle
+
+- **wave-1 smoke complete**
+- Top-5 cleared three tiers (smoke/crud/workflow) with 0 interventions
+- Rubric item 1 (correctness on ≥2 tiers): **eligible** for A02, A03, A10, A05, A07
+- **Not promoted:** still need explicit promote decision, intervention budgets, and harder briefs
+- Controller idle: no `P-integrate` / `P-scale` briefs in repo yet
+- Next human/process work: add harder briefs or record promote/no-promote decisions

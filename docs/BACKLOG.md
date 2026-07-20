@@ -21,20 +21,21 @@ One cell in flight at a time. Finish score + learn note before the next.
 
 | Priority | Cell | Approach | Project | Status |
 |----------|------|----------|---------|--------|
-| 11 | A02×P-crud-001 | A02 | P-crud-001 | next (autonomous) |
-| 12 | A03×P-crud-001 | A03 | P-crud-001 | queued |
-| 13 | A10×P-crud-001 | A10 | P-crud-001 | queued |
-| 14 | A05×P-crud-001 | A05 | P-crud-001 | queued |
-| 15 | A07×P-crud-001 | A07 | P-crud-001 | queued |
-| 16 | A02×P-workflow-001 | A02 | P-workflow-001 | queued |
-| 17 | A03×P-workflow-001 | A03 | P-workflow-001 | queued |
-| 18 | A10×P-workflow-001 | A10 | P-workflow-001 | queued |
-| 19 | A05×P-workflow-001 | A05 | P-workflow-001 | queued |
-| 20 | A07×P-workflow-001 | A07 | P-workflow-001 | queued |
+| 11 | A02×P-crud-001 | A02 | P-crud-001 | done |
+| 12 | A03×P-crud-001 | A03 | P-crud-001 | done |
+| 13 | A10×P-crud-001 | A10 | P-crud-001 | done |
+| 14 | A05×P-crud-001 | A05 | P-crud-001 | done |
+| 15 | A07×P-crud-001 | A07 | P-crud-001 | done |
+| 16 | A02×P-workflow-001 | A02 | P-workflow-001 | done |
+| 17 | A03×P-workflow-001 | A03 | P-workflow-001 | done |
+| 18 | A10×P-workflow-001 | A10 | P-workflow-001 | done |
+| 19 | A05×P-workflow-001 | A05 | P-workflow-001 | done |
+| 20 | A07×P-workflow-001 | A07 | P-workflow-001 | done |
 
 ## Later — after ladder
 
-- Finalists × P-integrate / P-scale + team-size sims (briefs not yet present)
+- Finalists × P-integrate / P-scale + team-size sims (**briefs not yet present** — controller idle until added)
+- Explicit promote decision for A02/A03/A10/A05/A07 (eligible on ≥2 tiers; not auto-promoted)
 
 ## Research / process
 
