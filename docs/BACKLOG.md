@@ -4,13 +4,14 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **schedgate** | A03 + A10 | Calendars + bookings; overlap gate; dual admin override to force-book. |
+| 1 | **stockrail** | A03 + A10 | Stores + SKUs + adjustments; no-negative stock; dual manager adjust. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
 | Product | Gate stressed |
 | --- | --- |
+| schedgate | booking overlap + dual admin override |
 | quotaguard | quota ceiling + dual finance release |
 | lottrack | quarantine severity + dual QA clear |
 | bondrail | collateral floor + dual treasurer release |

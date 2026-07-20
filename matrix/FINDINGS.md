@@ -444,3 +444,7 @@ Warehouses/lots/inspections. Gates: hot quarantine + dual QA clear. Next: quotag
 ## 2026-07-20 -- quotaguard sustain (pass)
 
 Orgs/quotas/charges. Gates: ceiling vs outstanding + dual finance release. 3/3 tests green. Next: schedgate.
+
+## 2026-07-20 -- schedgate sustain (pass)
+
+Calendars/bookings. Gates: overlap block + dual admin override. Next: stockrail.
