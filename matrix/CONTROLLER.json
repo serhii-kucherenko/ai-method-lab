@@ -1,5 +1,5 @@
 {
-    "updated_at":  "2026-07-20T19:55:50Z",
+    "updated_at":  "2026-07-20T20:24:51Z",
     "notify":  {
                    "from":  "AI Method Lab \u003conboarding@resend.dev\u003e",
                    "to":  [
@@ -16,7 +16,7 @@
     "paused":  false,
     "active_cell":  null,
     "schema_version":  "1.0.0",
-    "idle_reason":  "darkroom_sustained_awaiting_next_tick_gardenplot",
+    "idle_reason":  "radiohour_sustained_awaiting_next_tick_icebox",
     "product_defaults":  {
                              "persistence":  "sqlite",
                              "stack":  "node-ts",
@@ -24,11 +24,11 @@
                              "payments":  "provider-agnostic-webhook-with-hmac",
                              "auth":  "bearer-token"
                          },
-    "last_completed":  "A03__P-sustain__darkroom__r1",
+    "last_completed":  "A03__P-sustain__radiohour__r1",
     "last_error":  null,
-    "next_cell":  "A03__P-smoke-001__gardenplot__r1",
+    "next_cell":  "A03__P-smoke-001__icebox__r1",
     "mode":  "autonomous",
     "phase":  "idle",
-    "notes":  "Chessclub+darkroom sustained (19/19). Portfolio 63 products. Next: gardenplot.",
+    "notes":  "Gardenplot+radiohour sustained (19/19). Portfolio 65 products. Next: icebox.",
     "hard_stop":  false
 }
