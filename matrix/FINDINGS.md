@@ -253,6 +253,10 @@ Ninth portfolio product. Cards + lanes + todo/doing/done. 19/19. Next: invoiceli
 
 Tenth portfolio product. Invoices + books + draft/sent/paid. 19/19. Next: guestpass.
 
+## 2026-07-20 — guestpass sustained
+
+Eleventh portfolio product. Passes + sites + request/approve/check-in. 19/19. Next: waitlist.
+
 
 
 

@@ -14,9 +14,10 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | formqueue | **sustained** | A03 + A10 | sustain complete | Form submission queue submit/review/close |
 | tasklane | **sustained** | A03 + A10 | sustain complete | Task cards todo/doing/done on lanes |
 | invoicelink | **sustained** | A03 + A10 | sustain complete | Invoices draft/sent/paid |
+| guestpass | **sustained** | A03 + A10 | sustain complete | Guest passes request/approve/check-in |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
 
 ## Next autonomous actions
 
-1. Queue next portfolio product (guestpass)
+1. Queue next portfolio product (waitlist) on next tick
 2. Keep 30m dont-stop loop; email digests on product complete

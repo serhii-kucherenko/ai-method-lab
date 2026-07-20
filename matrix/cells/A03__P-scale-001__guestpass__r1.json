@@ -1,0 +1,29 @@
+{
+  "cell_id": "A03__P-scale-001__guestpass__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-scale-001",
+  "status": "scored",
+  "product_path": "projects/guestpass",
+  "sandbox_path": "projects/guestpass",
+  "started_at": "2026-07-20T12:25:00Z",
+  "finished_at": "2026-07-20T12:35:00Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.08,
+    "interventions": 0,
+    "regression_pass": true,
+    "reviewability_notes": "Passes + sites RBAC + request/approve/check-in; 19/19",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.08
+  },
+  "fail_tags": [],
+  "team_size_sim": "1",
+  "triple_test": false,
+  "replication_group": null,
+  "run_index": 1,
+  "superseded_by": null,
+  "notes": "Keyset pagination + rate limit 429."
+}
