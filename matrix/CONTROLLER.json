@@ -1,5 +1,5 @@
 {
-    "updated_at":  "2026-07-20T17:07:09Z",
+    "updated_at":  "2026-07-20T17:09:10Z",
     "notify":  {
                    "from":  "AI Method Lab \u003conboarding@resend.dev\u003e",
                    "to":  [
@@ -16,7 +16,7 @@
     "paused":  false,
     "active_cell":  null,
     "schema_version":  "1.0.0",
-    "idle_reason":  "yardshare_sustained_awaiting_next_tick_dockslip",
+    "idle_reason":  "cafeorder_sustained_awaiting_next_tick_rinkpass",
     "product_defaults":  {
                              "persistence":  "sqlite",
                              "stack":  "node-ts",
@@ -24,11 +24,11 @@
                              "payments":  "provider-agnostic-webhook-with-hmac",
                              "auth":  "bearer-token"
                          },
-    "last_completed":  "A03__P-sustain__yardshare__r1",
+    "last_completed":  "A03__P-sustain__cafeorder__r1",
     "last_error":  null,
-    "next_cell":  "A03__P-smoke-001__dockslip__r1",
+    "next_cell":  "A03__P-smoke-001__rinkpass__r1",
     "mode":  "autonomous",
     "phase":  "idle",
-    "notes":  "Lockerbay+yardshare sustained (19/19). Portfolio 37 products. Next: dockslip.",
+    "notes":  "Dockslip+cafeorder sustained (19/19). Portfolio 39 products. Next: rinkpass.",
     "hard_stop":  false
 }
