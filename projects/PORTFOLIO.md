@@ -76,10 +76,12 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | vendorvault | **sustained** | A03 + A10 | sustain complete | Workspaces + vendors + findings + attestation + critical score gates |
 | incidentrail | **sustained** | A03 + A10 | sustain complete | War rooms + sev1â€“3 + actions + postmortem gates |
 | datacontract | **sustained** | A03 + A10 | sustain complete | Domains + contracts + SLO breaches + remediate/waive |
+| policyforge | **sustained** | A03 + A10 | sustain complete | Packs + rules + violations + severity gate + dual waive |
+| fleetledger | **sustained** | A03 + A10 | sustain complete | Fleets + assets + overdue WOs + dual mechanic sign-off |
 | orbitfolio | **sustained** | A03 + A08 | design-lab complete | Live https://orbitfolio-kohl.vercel.app Â· https://github.com/serhii-kucherenko/orbitfolio |
 
 ## Next autonomous actions
 
-1. Build next comprehensive product: **tentcamp** (or pick harder gate from BACKLOG)
+1. Build next comprehensive product: **loadbay** (docks + loads + weight gate + dual seal)
 2. 1h keepgoing loop armed; clone-tier deferred
 3. Proven: SLO/severity/money/dual-control gates beat noun-swap FSMs

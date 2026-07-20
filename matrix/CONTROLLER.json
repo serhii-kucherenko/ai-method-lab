@@ -1,7 +1,7 @@
 {
-    "updated_at":  "2026-07-20T21:30:11Z",
+    "updated_at":  "2026-07-20T22:55:00Z",
     "notify":  {
-                   "from":  "AI Method Lab \u003conboarding@resend.dev\u003e",
+                   "from":  "AI Method Lab <onboarding@resend.dev>",
                    "to":  [
                               "kucherenko.web@gmail.com"
                           ],
@@ -16,7 +16,7 @@
     "paused":  false,
     "active_cell":  null,
     "schema_version":  "1.0.0",
-    "idle_reason":  "policyforge_sustained_awaiting_next_tick_fleetledger",
+    "idle_reason":  "fleetledger_sustained_awaiting_next_tick_loadbay",
     "product_defaults":  {
                              "persistence":  "sqlite",
                              "stack":  "node-ts",
@@ -24,12 +24,12 @@
                              "payments":  "provider-agnostic-webhook-with-hmac",
                              "auth":  "bearer-token"
                          },
-    "last_completed":  "A03__P-sustain__policyforge__r1",
+    "last_completed":  "A03__P-sustain__fleetledger__r1",
     "last_error":  null,
     "current_product":  null,
-    "next_cell":  "A03__P-smoke-001__fleetledger__r1",
+    "next_cell":  "A03__P-smoke-001__loadbay__r1",
     "mode":  "autonomous",
     "phase":  "idle",
-    "notes":  "Policyforge sustained (dual waive). Next: fleetledger.",
+    "notes":  "Fleetledger sustained (dual sign-off + overdue gate). Next: loadbay.",
     "hard_stop":  false
 }

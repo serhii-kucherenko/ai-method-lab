@@ -413,3 +413,8 @@ Seventieth portfolio product. Attestation + critical score gates. 17/17. Next: i
 ## 2026-07-20 â€” policyforge sustained
 
 Policy packs + severity gate + dual waive. Next: fleetledger.
+
+## 2026-07-20 — fleetledger sustain (pass)
+
+Multi-aggregate fleets/assets/work-orders. Gates: overdue interval + dual mechanic sign-off. Lint+tests green. Next: loadbay.
+

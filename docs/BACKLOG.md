@@ -4,13 +4,14 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **fleetledger** | A03 + A10 | Fleet assets + inspections + work orders open→parts→closed; dual mechanic sign-off. |
+| 1 | **loadbay** | A03 + A10 | Docks + loads + weight ≤ dock capacity; dual checker seal before depart. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
 | Product | Gate stressed |
 | --- | --- |
+| fleetledger | overdue service interval + dual mechanic sign-off |
 | policyforge | dual waive approval + severity threshold |
 | datacontract | SLO latency ceiling + remediate/waive |
 | incidentrail | sev1 ack + postmortem |
