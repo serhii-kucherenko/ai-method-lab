@@ -4,13 +4,14 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **quotaguard** | A03 + A10 | Orgs + quotas + usage; ceiling gate; dual finance release of overage holds. |
+| 1 | **schedgate** | A03 + A10 | Calendars + bookings; overlap gate; dual admin override to force-book. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
 | Product | Gate stressed |
 | --- | --- |
+| quotaguard | quota ceiling + dual finance release |
 | lottrack | quarantine severity + dual QA clear |
 | bondrail | collateral floor + dual treasurer release |
 | crewgate | overtime hours + dual supervisor close |

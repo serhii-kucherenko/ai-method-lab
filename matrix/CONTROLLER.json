@@ -1,28 +1,28 @@
 {
-    "updated_at":  "2026-07-20T23:40:00Z",
-    "notify":  {
-                   "from":  "AI Method Lab <onboarding@resend.dev>",
-                   "to":  ["kucherenko.web@gmail.com"],
-                   "on":  ["phase_complete", "product_complete", "hard_stop", "digest"],
-                   "enabled":  true
-               },
-    "paused":  false,
-    "active_cell":  null,
-    "schema_version":  "1.0.0",
-    "idle_reason":  "lottrack_sustained_awaiting_next_tick_quotaguard",
-    "product_defaults":  {
-                             "persistence":  "sqlite",
-                             "stack":  "node-ts",
-                             "test_runner":  "node-test",
-                             "payments":  "provider-agnostic-webhook-with-hmac",
-                             "auth":  "bearer-token"
-                         },
-    "last_completed":  "A03__P-sustain__lottrack__r1",
-    "last_error":  null,
-    "current_product":  null,
-    "next_cell":  "A03__P-smoke-001__quotaguard__r1",
-    "mode":  "autonomous",
-    "phase":  "idle",
-    "notes":  "Lottrack sustained (quarantine + dual QA). Next: quotaguard.",
-    "hard_stop":  false
+  "updated_at": "2026-07-20T23:55:00Z",
+  "notify": {
+    "from": "AI Method Lab <onboarding@resend.dev>",
+    "to": ["kucherenko.web@gmail.com"],
+    "on": ["phase_complete", "product_complete", "hard_stop", "digest"],
+    "enabled": true
+  },
+  "paused": false,
+  "active_cell": null,
+  "schema_version": "1.0.0",
+  "idle_reason": "quotaguard_sustained_awaiting_next_tick_schedgate",
+  "product_defaults": {
+    "persistence": "sqlite",
+    "stack": "node-ts",
+    "test_runner": "node-test",
+    "payments": "provider-agnostic-webhook-with-hmac",
+    "auth": "bearer-token"
+  },
+  "last_completed": "A03__P-sustain__quotaguard__r1",
+  "last_error": null,
+  "current_product": null,
+  "next_cell": "A03__P-smoke-001__schedgate__r1",
+  "mode": "autonomous",
+  "phase": "idle",
+  "notes": "Quotaguard sustained (ceiling + dual finance release). Next: schedgate.",
+  "hard_stop": false
 }

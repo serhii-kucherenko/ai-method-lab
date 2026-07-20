@@ -440,3 +440,7 @@ Workspaces/bonds/draws. Gates: collateral floor + dual treasurer release. Next: 
 ## 2026-07-20 -- lottrack sustain (pass)
 
 Warehouses/lots/inspections. Gates: hot quarantine + dual QA clear. Next: quotaguard.
+
+## 2026-07-20 -- quotaguard sustain (pass)
+
+Orgs/quotas/charges. Gates: ceiling vs outstanding + dual finance release. 3/3 tests green. Next: schedgate.
