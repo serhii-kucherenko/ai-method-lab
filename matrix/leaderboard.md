@@ -25,4 +25,11 @@
 
 ## Promotion note
 
-Wave-6 complete. **Auto-promoted:** A03 (primary), A10 (enterprise alternate). Defaults in `matrix/METHOD_DEFAULTS.json`. Usage: `docs/USAGE_GUIDE.md`.
+Wave-6 complete. **Auto-promoted:** A03 (primary), A10 (enterprise alternate). Defaults in `matrix/METHOD_DEFAULTS.json`. Usage: `docs/DEVELOPMENT_WORKFLOW.md`.
+
+## Replication (P-smoke-001, promoted defaults)
+
+| Approach | r1 | r2 | r3 |
+|----------|----|----|-----|
+| A03 | pass | pass | — |
+| A10 | pass | — | — |

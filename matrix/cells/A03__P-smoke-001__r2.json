@@ -1,0 +1,28 @@
+{
+  "cell_id": "A03__P-smoke-001__r2",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-smoke-001",
+  "status": "scored",
+  "sandbox_path": "sandboxes/A03__P-smoke-001__r2",
+  "started_at": "2026-07-20T10:00:14Z",
+  "finished_at": "2026-07-20T10:02:00Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.03,
+    "interventions": 0,
+    "regression_pass": null,
+    "reviewability_notes": "RED commit (tests) then GREEN commit (impl); RED_GREEN.md. Replication run 2.",
+    "recoverability_ok": true,
+    "cost_tokens": null,
+    "cost_usd": null,
+    "wall_time_hours": 0.03
+  },
+  "fail_tags": [],
+  "team_size_sim": "1",
+  "triple_test": true,
+  "replication_group": "A03__P-smoke-001",
+  "run_index": 2,
+  "superseded_by": null,
+  "notes": "Oracle 4/4. Independent replication of promoted primary default."
+}
