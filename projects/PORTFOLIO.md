@@ -10,9 +10,10 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | kitcheck | **sustained** | A03 + A10 | sustain complete | Equipment checkout |
 | meetslot | **sustained** | A03 + A10 | sustain complete | Meeting-room booking |
 | briefpad | **sustained** | A03 + A10 | sustain complete | Shared notes draft/publish/archive |
+| clipvault | **sustained** | A03 + A10 | sustain complete | Bookmark/clip vault draft/publish/archive |
 | orbitfolio | **phase-complete** | A03 + A08 | design-lab scored | External orbitfolio repo |
 
 ## Next autonomous actions
 
-1. Queue next portfolio product or continue parallel orbitfolio work
+1. Queue next portfolio product (formqueue) or continue parallel orbitfolio work
 2. Keep 30m dont-stop loop; email digests on product complete

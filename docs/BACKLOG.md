@@ -3,14 +3,14 @@
 ## Done
 
 - Approach ladder waves 1–6 — see matrix/
-- **clearpath / ledgerlite / signalboard / kitcheck / meetslot / briefpad** — sustained
+- **clearpath / ledgerlite / signalboard / kitcheck / meetslot / briefpad / clipvault** — sustained
 - A03 + A10 smoke triple-tests 3/3
 
 ## Ready (product portfolio)
 
 | Priority | Cell id | Product | Phase | Status |
 |----------|---------|---------|-------|--------|
-| — | (idle) | — | — | queue next product when ready |
+| 1 | A03__P-smoke-001__formqueue__r1 | formqueue | smoke→sustain | **queued** |
 
 ## Parallel (external)
 
