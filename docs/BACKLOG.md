@@ -1,26 +1,25 @@
 ﻿# Experiment backlog
 
-Prioritized candidates for the matrix. Promote into `matrix/EXPERIMENT_PLAN.md` only when ready to run.
+Prioritized candidates for the matrix.
 
 ## Queued (autonomous)
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **vendorvault** | A03 + A10 | Vendor risk: vendors, questionnaires, findings open→remediated→accepted; severity gates; attestations. |
-| 2 | incidentrail | A03 + A10 | Incident response: sev1–3, war rooms, actions, postmortems; commander ACL; page webhooks. |
-| 3 | tentcamp | A03 + A10 | Tent pitches (deferred clone-tier). |
+| 1 | **incidentrail** | A03 + A10 | Incident response: sev1–3, war rooms, actions, postmortems; commander ACL; page webhooks. |
+| 2 | datacontract | A03 + A10 | Data contracts: schemas, producers/consumers, breach→remediate→waived; SLO gates. |
+| 3 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
-## Recently completed (portfolio)
+## Recently completed (comprehensive wave)
 
-| Product | Method | Outcome |
-| --- | --- | --- |
-| grantlane | A03 + A10 | P-sustain — 24/24; dual sign-off + clawback |
-| releasetrain | A03 + A10 | P-sustain — 19/19; dual approval + rollback |
-| claimdesk | A03 + A10 | P-sustain — 17/17; multi-party claims + payout rules |
-| screenlane | A03 + A10 | P-sustain — 18/18; multi-aggregate hiring boards |
+| Product | Outcome |
+| --- | --- |
+| vendorvault | 17/17 — attestation + critical score gates |
+| grantlane | 24/24 — dual sign-off + clawback |
+| releasetrain | 19/19 — dual approval + rollback |
+| claimdesk | 17/17 — payout ≤ reserve |
+| screenlane | 18/18 — scorecards |
 
-See `projects/PORTFOLIO.md` for the full active set.
+## Strategy
 
-## Portfolio strategy (2026-07-20 pivot)
-
-Prefer multi-aggregate products with cross-entity gates. Clone-tier deferred.
+Multi-aggregate + cross-entity gates only. Clone-tier deferred.

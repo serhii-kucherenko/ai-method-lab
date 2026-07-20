@@ -73,10 +73,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | claimdesk | **sustained** | A03 + A10 | sustain complete | Desks + policies + claims + evidence + filed→review→settled |
 | releasetrain | **sustained** | A03 + A10 | sustain complete | Trains + services + releases + dual approval + rollback |
 | grantlane | **sustained** | A03 + A10 | sustain complete | Programs + applications + milestones + dual sign-off + clawback |
+| vendorvault | **sustained** | A03 + A10 | sustain complete | Workspaces + vendors + findings + attestation + critical score gates |
 | orbitfolio | **sustained** | A03 + A08 | design-lab complete | External https://github.com/serhii-kucherenko/orbitfolio — 50 scored variants |
 
 ## Next autonomous actions
 
-1. Build next comprehensive product: **vendorvault**
+1. Build next comprehensive product: **incidentrail**
 2. Keep harness-loop audits + insight emails; clone-tier deferred
-3. Cross-product pattern: dual gates + money/risk ceilings are the valuable stress
+3. Proven pattern: dual gates + ceilings (score/money/severity) beat noun-swap FSMs

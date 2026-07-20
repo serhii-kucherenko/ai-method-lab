@@ -1,0 +1,43 @@
+﻿{
+    "phase":  "P-integrate-001",
+    "fail_tags":  [
+
+                  ],
+    "method_version":  "1.0.0",
+    "scores":  {
+                   "notes":  "vendorvault integrate green",
+                   "dimensions":  {
+                                      "robustness":  5,
+                                      "completeness":  5,
+                                      "efficiency":  4,
+                                      "correctness":  5,
+                                      "maintainability":  4
+                                  },
+                   "artifacts":  [
+                                     "projects/vendorvault/FINDINGS.md"
+                                 ],
+                   "rubric_version":  "1.0.0"
+               },
+    "created_at":  "2026-07-20T21:13:54Z",
+    "method_id":  "A03",
+    "run_id":  "r1",
+    "product_path":  "projects/vendorvault",
+    "project_id":  "P-integrate-001",
+    "status":  "scored",
+    "approach_id":  "A03",
+    "metrics":  {
+                    "regression_pass":  true,
+                    "interventions":  0,
+                    "human_interventions":  0,
+                    "wall_clock_minutes":  7,
+                    "recoverability_ok":  true,
+                    "retries":  0,
+                    "cycle_time_hours":  0.45,
+                    "correctness_pass":  true
+                },
+    "cell_id":  "A03__P-integrate-001__vendorvault__r1",
+    "notes":  "A03+A10 vendorvault integrate",
+    "started_at":  "2026-07-20T21:13:54Z",
+    "approach_version":  1,
+    "finished_at":  "2026-07-20T21:13:54Z"
+}
