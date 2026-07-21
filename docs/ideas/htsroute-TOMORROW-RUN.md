@@ -16,7 +16,8 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
 3. Run paper checkers (must stay green):  
    - `node docs/ideas/check-htsroute-fixtures.mjs`  
    - `node docs/ideas/check-htsroute-dual.mjs`  
-4. Fill `htsroute-DAY-BOUNDARY.md` checkboxes for real (not dry-run).
+4. Fill `htsroute-DAY-BOUNDARY.md` checkboxes for real (not dry-run).  
+5. Optional preflight for the whole research farm: `node docs/ideas/check-all-seeds.mjs` (must stay green; does not replace the htsroute-specific re-reads).
 
 ## If all pass
 

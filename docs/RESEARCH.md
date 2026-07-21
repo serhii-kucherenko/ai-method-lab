@@ -649,3 +649,9 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 ## 2026-07-21 -- 30m loop tick 10: phase briefs + checker snap
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 10 (pid 29556 left alone). Wrote lesserof phase briefs + page specs; oshamult/ptax4975 phase briefs; `CHECKER_SNAP.md`. Re-verified dual-green: htsroute 36, depositgap 23, lesserof 23, oshamult 26, ptax4975 35. Still no product; same-day build blocked (use `htsroute-TOMORROW-RUN.md` on 2026-07-22).
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #20
+
+- Added `check-all-seeds.mjs` preflight + `SEED_READINESS.md` (all 5 suites dual-green)
+- lesserof try-demo note; tomorrow run sheet points at preflight
+- Same-day build still blocked; loop 27600 not re-armed
