@@ -377,3 +377,13 @@ Wrote `htsroute-PRODUCT-FRAMING-DRAFT.md` so a later ready flip has forbidden/al
 ## 2026-07-21 -- first live loop tick + API contract
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 1 fired (pid 8880 left alone). Chained: HTTP contract paper + PRODUCT framing constraints (forbids Free/Free duty-savings lies). Checkers still 32/32 + dual-impl green. Same-day build still blocked.
+
+## 2026-07-21 — sync after live loop tick + lesserof Kill B/C (tick 13)
+
+Live `AGENT_LOOP_TICK_depth_keepgoing` already landed API contract, PRODUCT framing, and `demos/htsroute-try/`. This tick:
+
+- Synced controller notes to the full depth chain (Challenge D through acetaminophen pair + lesserof stack)
+- Stubbed duplicate framing draft to point at `htsroute-PRODUCT-FRAMING.md`
+- Wrote `lesserof-KILL-BC.md` (niche + offline kills answered on paper; Kill A still stands)
+
+Still **no** `projects/htsroute/`. Same-day build blocked. Loop pid 8880 left alone.
