@@ -21,6 +21,9 @@ function refundLine(input) {
   if (claim === "direct_id" && input.force_lesser_of === true) {
     return { status: "reject", reason: "lesser_of_on_direct_id" };
   }
+  if (claim === "direct_id" && input.apply_usmca_lesser_of === true) {
+    return { status: "reject", reason: "usmca_on_direct_id" };
+  }
   if (claim === "substitution" && input.skip_lesser_of === true) {
     return { status: "reject", reason: "skip_lesser_of_on_substitution" };
   }

@@ -572,3 +572,10 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 ## 2026-07-21 -- 30m loop tick 5: depositgap G6 + lesserof Q-U
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 5 (pid 29556 left alone). Wrote `depositgap-G6-summary.md` + `depositgap-PAGE-SPECS.md` (seed framing readiness; prefer depositgap next after htsroute). Encoded lesserof Q-U (USMCA missing-partner reject, negative substitute, tiny line, multi-line basket fail, zero substitute). Suite **21/21** single + dual green. Still no product; htsroute same-day no-build.
+
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #11
+
+- Encoded lesserof **V?W** (USMCA-on-direct-ID reject; large-duties precision)
+- Documented X/Y product-phase notes ? G5 ?25 bar met on paper (**23** + 2 notes)
+- Suite **23/23** single + dual green; still seed; htsroute same-day no-build
+- Loop 27600 not re-armed

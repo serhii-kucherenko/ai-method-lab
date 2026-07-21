@@ -1,11 +1,11 @@
 # lesserof — G5 case map (seed paper)
 
-**State:** seed only. Encoded fixtures: A–U (`check-lesserof-fixtures.mjs` + dual).  
+**State:** seed only. Encoded fixtures: A–W (`check-lesserof-fixtures.mjs` + dual).  
 **Not framed. Not `current_idea`. No product.**
 
 Unique claim under test: **stacked** TFTEA substitution lesser-of + optional **USMCA** export lesser-of + **direct-ID exemption** + **basket “other”** reject. Fail any case that collapses to “99% of paid” or dual-signer status.
 
-## Encoded (A–U)
+## Encoded (A–W)
 
 | ID | Teaches |
 |----|---------|
@@ -30,19 +30,19 @@ Unique claim under test: **stacked** TFTEA substitution lesser-of + optional **U
 | S | Tiny line sub-dollar precision |
 | T | Multi-line: one basket reject fails whole run |
 | U | Zero substitute basis → refund 0 |
+| V | USMCA flag on direct-ID → reject (conflicting mode) |
+| W | Extremely large duties — cents stay exact |
 
-## Named, not yet encoded (V–Y) — toward ≥25
+## Product-phase notes (count toward ≥25 bar)
 
-| ID | Intent |
-|----|--------|
-| V | Direct-ID + USMCA apply (should ignore lesser-of / or reject conflicting flags — lock in algorithm) |
-| W | Extremely large duties (overflow / cents rounding policy) |
-| X | Auditor mutation attempt (product-phase note) |
-| Y | Org-scoped isolation (product-phase note) |
+| ID | Intent | Why deferred |
+|----|--------|--------------|
+| X | Auditor-only mutation | Needs product role surface — paper: mutation without auditor role rejects |
+| Y | Org-scoped isolation | Needs multi-tenant persistence — paper: org A totals must not leak into org B |
 
 ## Pass bar for later G5 score
 
-- ≥25 goldens (or 21+ encoded + named product-phase notes)  
+- ≥25 goldens (or **23 encoded + 2 product-phase notes**) ← **met**
 - Dual-impl agree on all  
 - At least 5 rejects protecting stacked-cap honesty  
 

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T16:00:00Z",
+  "updated_at": "2026-07-21T13:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__loop30m_tick5_depositgap_g6_lesserof_qu",
+  "last_completed": "research__loop15m_tick11_lesserof_VW",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "30m tick 5: depositgap G6+page specs; lesserof A-U (21). Same-day build blocked. Do NOT re-arm pid 29556 or 27600.",
+  "notes": "15m tick 11: lesserof A-W (23) dual-green + X/Y notes; G5 bar met. Prefer depositgap after htsroute. Same-day build blocked. Do NOT re-arm pid 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -43,6 +43,6 @@
     "pid": 27600,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 10
+    "ticks_observed": 11
   }
 }

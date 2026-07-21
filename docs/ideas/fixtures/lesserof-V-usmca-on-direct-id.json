@@ -1,0 +1,17 @@
+{
+  "id": "lesserof-V-usmca-on-direct-id",
+  "title": "Honesty — USMCA lesser-of flag on direct-ID is a conflicting mode → reject",
+  "source": "lesserof-G5-cases.md V",
+  "input": {
+    "claim_type": "direct_id",
+    "duties_paid": 10000,
+    "substitute_basis": 4000,
+    "apply_usmca_lesser_of": true,
+    "usmca_partner_duty": 0,
+    "basket_other_ineligible": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "usmca_on_direct_id"
+  }
+}

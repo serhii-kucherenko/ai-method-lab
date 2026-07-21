@@ -26,7 +26,8 @@
    d. Recoverable = `usmca_cap` (already the stacked lesser-of path).  
 3. Reject if someone requests lesser-of on `direct_id`, or skips lesser-of on `substitution`.  
 4. Reject if USMCA lesser-of is requested without a numeric partner-duty input (no silent zero).  
-5. Paper fixtures use field names `claim_type` / `duties_paid` / `substitute_basis` / `usmca_partner_duty` (see checkers) — same rules as above.
+5. Reject if USMCA lesser-of is flagged on `direct_id` (conflicting mode — fixture V).  
+6. Paper fixtures use field names `claim_type` / `duties_paid` / `substitute_basis` / `usmca_partner_duty` (see checkers) — same rules as above.
 
 ## Anti-patterns
 
@@ -39,4 +40,4 @@
 
 ## Next (after htsroute clears)
 
-Continue G5 toward ≥25 (`lesserof-G5-cases.md`). Fixtures A–U paper-green. Prefer activating **depositgap** first (`depositgap-G6-summary.md`). Still no product.
+Continue G5 hygiene; fixtures A–W paper-green + X/Y notes. Prefer activating **depositgap** first (`depositgap-G6-summary.md`). Still no product.

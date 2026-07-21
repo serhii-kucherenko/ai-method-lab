@@ -18,6 +18,9 @@ function refundLineA(input) {
   if (input.claim_type === "direct_id" && input.force_lesser_of === true) {
     return { status: "reject", reason: "lesser_of_on_direct_id" };
   }
+  if (input.claim_type === "direct_id" && input.apply_usmca_lesser_of === true) {
+    return { status: "reject", reason: "usmca_on_direct_id" };
+  }
   if (input.claim_type === "substitution" && input.skip_lesser_of === true) {
     return { status: "reject", reason: "skip_lesser_of_on_substitution" };
   }
@@ -64,6 +67,9 @@ function refundLineB(input) {
   const mode = input.claim_type;
   if (mode === "direct_id" && input.force_lesser_of === true) {
     return { status: "reject", reason: "lesser_of_on_direct_id" };
+  }
+  if (mode === "direct_id" && input.apply_usmca_lesser_of === true) {
+    return { status: "reject", reason: "usmca_on_direct_id" };
   }
   if (mode === "substitution" && input.skip_lesser_of === true) {
     return { status: "reject", reason: "skip_lesser_of_on_substitution" };
