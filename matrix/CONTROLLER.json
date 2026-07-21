@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-21T12:00:00Z",
+  "updated_at": "2026-07-21T10:55:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__lesserof_usmca_g1_hunt_tick12c",
+  "last_completed": "research__htsroute_loop_tick1_api_contract",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "Tick 12c: USMCA stack toy + CF-29 hunt negative. htsroute testable; 32 fixtures; same-day build blocked. Do NOT restart pid 8880.",
+  "notes": "First real AGENT_LOOP_TICK fired. API contract + PRODUCT framing written. 32 fixtures still green. Same-day build blocked. Do NOT restart pid 8880.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -40,6 +40,7 @@
     "purpose": "depth_keepgoing",
     "pid": 8880,
     "chain": "finish_item_then_next",
-    "do_not_rearm_if_alive": true
+    "do_not_rearm_if_alive": true,
+    "ticks_observed": 1
   }
 }

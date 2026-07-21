@@ -373,3 +373,7 @@ Wrote `htsroute-DAY-BOUNDARY.md` so tomorrow?s ready flip cannot skip Challenge 
 ## 2026-07-21 — product framing draft only (tick 12d)
 
 Wrote `htsroute-PRODUCT-FRAMING-DRAFT.md` so a later ready flip has forbidden/allowed claims on paper. **No** `projects/htsroute/`.
+
+## 2026-07-21 -- first live loop tick + API contract
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 1 fired (pid 8880 left alone). Chained: HTTP contract paper + PRODUCT framing constraints (forbids Free/Free duty-savings lies). Checkers still 32/32 + dual-impl green. Same-day build still blocked.
