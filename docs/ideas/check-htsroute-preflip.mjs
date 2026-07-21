@@ -35,17 +35,22 @@ function runChecker(script) {
   return { ok: r.status === 0, tail: tail || `exit ${r.status}` };
 }
 
-function checkTryStackedFence() {
+function checkTryMoneyHonesty() {
   const tryPath = join(root, "demos/htsroute-try/try.html");
+  const indexPath = join(root, "demos/htsroute-try/index.html");
   const fencePath = join(__dirname, "htsroute-STACKED-TARIFF-FENCE.md");
   if (!existsSync(tryPath)) {
     return { ok: false, tail: "missing demos/htsroute-try/try.html" };
   }
+  if (!existsSync(indexPath)) {
+    return { ok: false, tail: "missing demos/htsroute-try/index.html" };
+  }
   if (!existsSync(fencePath)) {
     return { ok: false, tail: "missing htsroute-STACKED-TARIFF-FENCE.md" };
   }
-  const html = readFileSync(tryPath, "utf8");
-  const need = [
+  const tryHtml = readFileSync(tryPath, "utf8");
+  const indexHtml = readFileSync(indexPath, "utf8");
+  const pageNeed = [
     "Stacked duties",
     "2026-07-31",
     "2026-09-29",
@@ -54,16 +59,33 @@ function checkTryStackedFence() {
     "Generic",
     "patented",
   ];
-  const missing = need.filter((s) => !html.includes(s));
-  if (missing.length) {
-    return {
-      ok: false,
-      tail: `try.html missing stacked-fence markers: ${missing.join(", ")}`,
-    };
+  const presetNeed = [
+    "Likely generic",
+    "Brand/Orange Book candidate",
+    "Brand candidate",
+  ];
+  for (const [label, html] of [
+    ["try.html", tryHtml],
+    ["index.html", indexHtml],
+  ]) {
+    const missingPage = pageNeed.filter((s) => !html.includes(s));
+    if (missingPage.length) {
+      return {
+        ok: false,
+        tail: `${label} missing stacked-fence markers: ${missingPage.join(", ")}`,
+      };
+    }
+    const missingPreset = presetNeed.filter((s) => !html.includes(s));
+    if (missingPreset.length) {
+      return {
+        ok: false,
+        tail: `${label} missing preset money-note markers: ${missingPreset.join(", ")}`,
+      };
+    }
   }
   return {
     ok: true,
-    tail: "try.html stacked-duty callout (Annex III dates + generics carve-out)",
+    tail: "try+index stacked-fence + preset generics/brand money notes",
   };
 }
 
@@ -93,8 +115,8 @@ for (const script of [
 }
 
 {
-  const { ok, tail } = checkTryStackedFence();
-  console.log(`${ok ? "PASS" : "FAIL"} try-stacked-fence: ${tail}`);
+  const { ok, tail } = checkTryMoneyHonesty();
+  console.log(`${ok ? "PASS" : "FAIL"} try-money-honesty: ${tail}`);
   if (!ok) failed += 1;
 }
 
@@ -106,5 +128,5 @@ if (failed > 0) {
 }
 
 console.log(
-  "\nPREFLIP CLEAR: calendar + dual-green + paper kits + try stacked-fence. Still walk TOMORROW-RUN re-reads / abort sheet / DAY1-NONSMOKE before ready_to_build. Scaffold: htsroute-REPO-SCAFFOLD.md.",
+  "\nPREFLIP CLEAR: calendar + dual-green + paper kits + try money honesty. Still walk TOMORROW-RUN re-reads / abort sheet / DAY1-NONSMOKE before ready_to_build. Scaffold: htsroute-REPO-SCAFFOLD.md.",
 );

@@ -84,6 +84,8 @@ If `demos/htsroute-try/` (or any try page) ships with the product story:
 
 - README / page must state: research demo, **not** a product folder
 - Money honesty visible: pantoprazole showcase pairs are often duty-free on both sides
+- Stacked-duty callout: Annex III **2026-07-31** / others **2026-09-29**; generics **not** subject at this time
+- Teaching-example money notes: OTC analgesics marked as **not** a 232 story; brand candidates require annex/FR before any 232 dollar claim
 - Must not celebrate fixture counts as product success
 
 Absence of disclaimer → acceptance fail for that surface.
@@ -114,4 +116,4 @@ Absence of disclaimer → acceptance fail for that surface.
 
 ## Explicit defer
 
-Full 10-digit HTS, Section 301 dollar claims, GRI 3 UI, CSOS/Form 222.
+Full 10-digit HTS, Section 301 / 232 dollar claims (annex goldens), GRI 3 UI, CSOS/Form 222.

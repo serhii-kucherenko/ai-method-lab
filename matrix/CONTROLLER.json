@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T21:55:00Z",
+  "updated_at": "2026-07-21T22:10:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__depth15m_tick43_preset_money_232_honesty",
+  "last_completed": "research__depth15m_tick44_preflip_preset_money",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 43: try presets now carry generics-vs-brand 232 honesty in money_notes (not only page aside); G6/DAY1/FLIP-MORNING aligned. Suite 42 dual-green. Same-day build blocked. Do NOT re-arm pid 29556 or 27600.",
+  "notes": "15m tick 44: preflip now requires try+index preset money-note markers (Likely generic / Brand candidate); TOMORROW-RUN + ACCEPTANCE §F aligned. Suite 42 dual-green. Same-day build blocked. Do NOT re-arm pid 29556 or 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -43,6 +43,6 @@
     "pid": 27600,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 43
+    "ticks_observed": 44
   }
 }

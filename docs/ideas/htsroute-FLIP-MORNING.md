@@ -3,7 +3,7 @@
 For **2026-07-22+** only. Full text: `htsroute-TOMORROW-RUN.md`.
 
 1. Date ≠ 2026-07-21  
-2. `node docs/ideas/check-htsroute-preflip.mjs` → clear  
+2. `node docs/ideas/check-htsroute-preflip.mjs` → clear (includes try+index money-honesty markers)  
 3. No hard abort in `htsroute-FLIP-ABORT.md`  
 4. Skim `QUEUE-ISO-AUDIT.md`  
 5. Re-read Challenge D + VALUE-STAKES + PRODUCT framing + `htsroute-STACKED-TARIFF-FENCE.md` (Annex III **2026-07-31** / others **2026-09-29**; generics carve-out; no fake 232 on OTC teaching pairs)  
