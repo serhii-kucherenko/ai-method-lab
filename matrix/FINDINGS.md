@@ -574,3 +574,7 @@ htsroute park run sheet (soft abort #4). Free/Free honesty markers locked into t
 ## 2026-07-21 -- depth tick 53 (research, no product)
 
 depositgap § 6621 mid-window fence + try honesty. Morning status diagnostic (WAIT_SAME_DAY tonight). No product folder.
+
+## 2026-07-21 -- depth tick 54 (research, no product)
+
+lesserof USMCA wipe fence + smoke toy ($0 vs naive +$9,900). Demo index for StackBlitz digests. No product folder.
