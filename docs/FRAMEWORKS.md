@@ -67,13 +67,13 @@ See `protocols/HARNESS_LOOP.md`.
 
 Subject: `[Method Lab] <product>: <one-line outcome>`
 
-Body must include:
+Body must be readable **without opening the repo**:
 
-1. What we built (aggregates + risk)
-2. What we tested (phase suites + count)
-3. What worked / what failed
-4. **Framework recommendation** (link `docs/FRAMEWORKS.md` + `docs/DEVELOPMENT_WORKFLOW.md`)
-5. Next product in queue
+1. What we built / proven (unique claim + framing)
+2. What we tested (ladder highlights, not just pass counts)
+3. What worked / what failed or Kill caveats
+4. Next (one line)
+5. Optional: one FINDINGS or dossier URL — **not** a stack of static workflow/framework links unless those files changed this tick
 
 ---
 

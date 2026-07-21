@@ -13,7 +13,7 @@ Unless `matrix/CONTROLLER.json` says `paused` / `hard_stop`, run as the **autono
 - After each phase is scored, **immediately** continue (next research gate, next product phase, or next queued **ready_to_build** idea)
 - **Do not** ask the human to confirm
 - Always commit, always push to origin/main, always merge own PRs when CI green
-- If notify.enabled, email digests via Resend MCP — link `docs/DEVELOPMENT_WORKFLOW.md` and FINDINGS / idea dossiers
+- If notify.enabled, email digests via Resend MCP per `protocols/NOTIFY.md` — **content-first** (what changed in the body); do not spam unchanged workflow links
 
 Wake prompt (also in `docs/AUTOMATION.md`):
 
@@ -26,7 +26,7 @@ Fewer products, slower research, bulletproof ideas. Kill isomorphic dual-gate cl
 Follow projects/PORTFOLIO.md, docs/BACKLOG.md, protocols/PRODUCT_RUNBOOK.md, docs/DEVELOPMENT_WORKFLOW.md.
 Only hard-stop per AUTONOMOUS_CONTROLLER.md.
 Commit after each tick. Always commit, always push, always merge.
-If notify.enabled, email digests via Resend MCP per protocols/NOTIFY.md — link docs/DEVELOPMENT_WORKFLOW.md (not lab usage guide).
+If notify.enabled, email digests via Resend MCP per protocols/NOTIFY.md — content-first summary in the body; at most one optional deep link; never a farm of unchanged docs.
 If you open a PR, merge it yourself when checks pass — do not wait for a human.
 ```
 

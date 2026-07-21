@@ -37,7 +37,7 @@ Read/write: `matrix/CONTROLLER.json`
 7. Mark backlog progress. Set `last_completed`, advance idea state or clear cell, `phase: starting_next` or stay in `research`.
 8. **Notify** if configured (`protocols/NOTIFY.md`). Non-blocking.
 9. **Without waiting:** next research gate, next product phase, or next **ready_to_build** idea — never the next noun-swap.
-10. When a product sustains: email a **depth** findings digest (frameworks + falsifiers, not pass vanity); return to research before queuing another product.
+10. When a product sustains: email a **depth** findings digest per `protocols/NOTIFY.md` (claim + ladder + framing **in the body**, not a link dump); return to research before queuing another product.
 11. When method ladder work remains (rare): continue approach cells; with `auto_promote`, apply `METHOD_DEFAULTS` without asking.
 
 ## Mid-phase failure
