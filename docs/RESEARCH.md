@@ -804,3 +804,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 ## 2026-07-21 -- 30m loop tick 19: Section 232 fence into flip gates
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 19 (pid 29556 left alone). Deepened `htsroute-STACKED-TARIFF-FENCE.md` with counsel timelines (~**2026-07-31** patented Orange Book / Purple Book 232 rates). Added Challenge D sub-attack 5; wired fence into TOMORROW-RUN / FLIP-ABORT / FLIP-MORNING. Refreshed CHECKER_SNAP to **42**. Preflip still calendar-blocked; kits + dual-green pass. No product.
+
+## 2026-07-21 -- 30m loop tick 20: primary Section 232 dates
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 20 (pid 29556 left alone). Locked proclamation clause (4) into `htsroute-STACKED-TARIFF-FENCE.md`: Annex III **2026-07-31**, other companies **2026-09-29** (prefer primary over conflicting secondary alerts). Updated DAY-BOUNDARY checklist, Challenge D, G6 falsifier #5. Suite **42** dual-green; preflip calendar-blocked. No product.

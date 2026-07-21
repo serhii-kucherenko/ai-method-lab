@@ -22,7 +22,7 @@ Sub-attacks:
 | 2 Kill A | **Stands** (unchanged). Workflow experiment only. |
 | 3 Fixture farm | **Partially accepted.** Suite is necessary for G5 but **not sufficient** for ready_to_build as a “valuable product.” Dual-impl helps method evidence; it does not create demand. |
 | 4 Same-day | **Accepted as process risk.** Same-day build remains blocked. Day-boundary reassess must re-read this challenge, not only the green counts. |
-| 5 Stacked 232/301 | **Accepted as honesty bar.** See `htsroute-STACKED-TARIFF-FENCE.md`. Digests may cite base MFN from CROSS; must not claim landed-duty savings without annex / list evidence. |
+| 5 Stacked 232/301 | **Accepted as honesty bar.** Primary proclamation: Annex III from **2026-07-31**, other companies from **2026-09-29** (`htsroute-STACKED-TARIFF-FENCE.md`). Digests may cite base MFN from CROSS; must not claim landed-duty savings without annex / FR evidence. Prefer primary text over secondary alerts when annex timing conflicts. |
 
 ## Verdict
 

@@ -10,7 +10,7 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
 3. Re-read, in order:  
    - `htsroute-challenge-D.md`  
    - `htsroute-VALUE-STAKES.md`  
-   - `htsroute-STACKED-TARIFF-FENCE.md` (Section 232 from ~2026-07-31; no annex $ in digests)  
+   - `htsroute-STACKED-TARIFF-FENCE.md` (primary 232: Annex III **2026-07-31**; others **2026-09-29**; no annex $ in digests)  
    - `htsroute-G6-summary.md`  
    - `htsroute-GATE-SCORECARD.md`  
    - `htsroute-ACCEPTANCE.md`  
