@@ -40,21 +40,24 @@ Pain evidence for framing. Not a build ticket. Sources cited for skepticism, not
 
 **Why this matters:** A binary “29 vs 3004” idea would mis-route the pellet intermediate. Challenge B forced the algorithm to add `heading_3003_bulk_medicament`. This is the first depth artifact that would fail a shallow keyword product.
 
-## Same-molecule reinforcement (pantoprazole)
+## Same-molecule reinforcement (pantoprazole) — closed
 
 | Form | Route | Source |
 |------|-------|--------|
-| Pantoprazole Sodium **imported in bulk form** | **Chapter 29** (2933.39.4100) | CROSS **NY I89619** |
-| Pantoprazole sodium **delayed-release tablets** (measured dose) | **Heading 3004** | HTS 3004 text + finished-dosage practice; encoded as fixture `htsroute-26-pantoprazole-tablets-3004.json` |
+| Pantoprazole Sodium **imported in bulk form** | **Chapter 29** (2933.39.4100), Free | CROSS **NY I89619**; **NY N055248** |
+| Pantoprazole sodium **delayed-release tablets** (Protonix®) | **Heading 3004** (3004.90.9160), **Free** | CROSS **NY N003244** (16 Nov 2006) — dedicated finished-PPI letter |
 
-Honest residual: still no dedicated US CROSS letter titled for pantoprazole *tablets* located this tick — the bulk leg is primary; the tablet leg rests on heading text + dosage-form practice (same standard used for peer 3004 cards).
+Encoded: `htsroute-26-pantoprazole-tablets-3004.json` (source updated to N003244).
+
+**Value honesty:** both legs Free MFN → see `htsroute-VALUE-STAKES.md` and Challenge D. Closing the letter residual does **not** create a duty-savings product story.
 
 ## What G1 still lacks (honest)
 
 - First-hand interview notes from an importer desk (not obtained).
 - A single public CF-29 / § 1592 docket specifically about 29↔30 pharma misclass (general penalty path only).
-- Dedicated finished omeprazole/pantoprazole **capsule/tablet** CROSS letter (optional strengthen before ready_to_build).
+- Dedicated finished **omeprazole** capsule/tablet CROSS letter (optional; pantoprazole finished letter now on file).
+- Named entry scenario with **non-zero stacked-duty delta** by origin (Section 301 / other) — not assumed.
 
 ## G1 provisional grade
 
-**Strong pass for framing + ruling chains.** Suite encoded (24+ fixtures). **Still not ready_to_build this calendar day** — scorecard hold under same-day policy.
+**Strong pass for form-gate framing + ruling chains** (including finished pantoprazole). **Commercial MFN-value bar: weak** for showcase PPIs. **Still not ready_to_build this calendar day.**

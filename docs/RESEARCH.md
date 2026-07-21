@@ -311,6 +311,22 @@ Human reaffirmed never-stop. Loop PID 8880 still armed. Chained: lansoprazole bu
 
 **Cause:** Re-arming `/loop 30m` on every human message killed the sleeper and restarted the 1800s timer, so no `AGENT_LOOP_TICK_depth_keepgoing` ever printed. That is not the same as doing work in chat, and it looked like empty loops.
 
-**Fix:** `docs/ideas/LOOP_DISCIPLINE.md` — do not restart a live depth loop.
+**Fix:** `docs/ideas/LOOP_DISCIPLINE.md` ? do not restart a live depth loop.
 
 **Work this tick:** dual-implementation cross-check `check-htsroute-dual.mjs` (two routers + probes) green on all 30 fixtures. Still no product today. Loop pid 8880 left alone.
+
+## 2026-07-21 ? htsroute Challenge D + value honesty (tick 11)
+
+Human signal: portfolio still shallow; research must be robust and data-backed, not fixture theater.
+
+**Material work (not more JSON):**
+
+1. Closed G1 finished-PPI residual with primary CROSS **NY N003244** ? Protonix (pantoprazole sodium) delayed-release tablets ? heading 3004 (Free). Updated fixture #26 source + algorithm map + G1 notes.
+2. Wrote `htsroute-VALUE-STAKES.md`: showcase PPI bulk?finished is often **MFN Free on both legs**. Duty-savings pitch would be a lie.
+3. Challenge D accepted on value vanity / fixture-count theater. Domain claim (29/3003/3004) survives; commercial ?valuable product? narrative does not.
+4. Parallel seed only: `lesserof-SEED.md` ? substitution drawback **lesser-of-two** refund calc (actual dollar refunds under 19 U.S.C. § 1313). Not activated; htsroute keeps the active slot.
+
+**Explicit non-actions:** no `projects/htsroute/`, no ready_to_build, no loop re-arm (pid 8880 alive).
+
+**Skeptical one-liner:** We finally found the finished pantoprazole ruling ? and it also proved the money story for this idea is weak. That is progress.
+

@@ -77,8 +77,9 @@ A binary 29/3004 product would mis-route intermediate pellets — that is a dept
 | 3004 conjunction | HTSUS heading 3004 text |
 | Bulk API → 29 | NY I89619; omeprazole NY L82483 |
 | Mixed bulk medicament → 3003 | Omeprazole pellets NY A88482 / NY 864623 |
-| Dosage form → 3004 | NY N325050 (peer dosage forms) |
+| Dosage form → 3004 | NY N325050 (peer); **Protonix pantoprazole tablets NY N003244** |
 | Note 1(a) | Chapter 30 Note 1(a) |
+| Value honesty | MFN often Free both sides — see `htsroute-VALUE-STAKES.md` |
 
 ## Deliberately omitted
 

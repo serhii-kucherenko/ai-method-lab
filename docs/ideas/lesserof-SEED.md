@@ -1,0 +1,33 @@
+# lesserof — parallel research seed (not active)
+
+**State:** `seed`  
+**Slot rule:** htsroute owns `framed`→`ready_to_build`. This file is research-log only until htsroute clears, kills, or parks.
+
+## One-line itch
+
+Export manufacturers leave refundable duty on the table because **substitution drawback** refunds are capped by the **lesser-of-two** rule (19 U.S.C. § 1313(l)) and finance models “99% of duty paid” instead of the capped amount.
+
+## Why this might have real value (vs htsroute MFN Free/Free)
+
+- Refund math is **literally dollars returned** (up to 99% of eligible duties/taxes/fees), not a Free→Free chapter costume.
+- Unique computational claim is not a status FSM: for substitution claims, refund = 99% × **min**(duties paid on designated import, duties that would apply to substituted/exported merchandise if imported).
+- Direct-identification claims (1313(a), 1313(j)(1)) are **not** lesser-of capped the same way — the product fails if it applies lesser-of to direct-ID lanes.
+
+## Primary pointers (to deepen next)
+
+1. 19 U.S.C. § 1313(b) substitution manufacturing; § 1313(l) calculation regulations / lesser-of language.
+2. TFTEA 8-digit HTS subheading interchangeability for substitution.
+3. Industry articulation of the modeling failure (lesser-of ignored by finance) — treat secondary until statute + example table are on paper.
+
+## Kill risks (pre-register)
+
+| Kill | Risk |
+|------|------|
+| A — incumbents | Drawback specialists + ACE filers + broker platforms already claim. Survive only as workflow experiment unless we find a **narrow** lesser-of modeling gap with evidence. |
+| B — niche | Only firms with export + duty-paid imports. Frequency may be real but ICP is finance+trade, not every SMB. |
+| C — offline | Ruling letters, BOM audits, CBP claim review are heavy offline. Software may only hold the **calc + matching** layer. |
+| G2 | Must not collapse into “ceiling + dual signer.” Unique rule = lesser-of across designated import vs substitute duty basis + direct-ID exemption. |
+
+## Decision
+
+**Seed only.** Do not frame, do not fixture, do not open a product. Advance only after htsroute day-boundary decision frees the active slot — or if htsroute is killed/parked for weak commercial value.

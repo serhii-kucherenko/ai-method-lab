@@ -2,13 +2,13 @@
 
 | Gate | Status | Notes |
 |------|--------|-------|
-| G1 Real pain | pass (provisional) | Named user + frequency + workaround; omeprazole/pantoprazole/lansoprazole ruling chains; §1592 path cited. Residual: no importer interview; dedicated finished-PPI CROSS letter still preferred |
+| G1 Real pain | pass (provisional) | Named user + frequency + workaround; omeprazole chain; **pantoprazole bulk↔Protonix tablets** via NY I89619 / N055248 + **NY N003244**; §1592 path cited. Residual: no importer interview; no specific CF-29 pharma docket; MFN value weak (Challenge D) |
 | G2 Non-isomorphic | pass | 29/3003/3004 form-mixing gate ≠ ndcswap / tariffstep / dual-gate / killed lanehold |
-| G3 Adversarial | pass with caveat | Kill A stands commercially; B/C closed with scope fence |
-| G4 Falsifiers | pass (draft) | Ruling contradiction; spreadsheet-still-required after smoke |
-| G5 Depth tests | pass | Named suite + **30 fixture files green** |
-| G6 Research summary | **hold — do not build yet** | Same calendar day as framing; `block_same_day_research_to_build` |
+| G3 Adversarial | pass with caveats | Kill A stands commercially; B/C closed; **D accepted on value vanity / MFN Free/Free** — domain claim survives |
+| G4 Falsifiers | pass (draft) | Ruling contradiction; spreadsheet-still-required; dishonest MFN-savings pitch |
+| G5 Depth tests | pass | Named suite + **30 fixture files green** + dual-impl |
+| G6 Research summary | **hold — do not build yet** | Same calendar day + Challenge D honesty bar |
 
-**Decision this tick:** **Not ready_to_build.** Acceptance outline exists (`htsroute-ACCEPTANCE.md`) for the *next* day reassess — still no product folder today.
+**Decision this tick:** **Not ready_to_build.** Closed G1 finished-PPI letter; wrote value stakes + Challenge D. Still no product folder.
 
-**Do not open** `projects/htsroute/` until decision flips to ready_to_build.
+**Do not open** `projects/htsroute/` until decision flips to ready_to_build **and** PRODUCT framing forbids Free/Free duty-savings lies.

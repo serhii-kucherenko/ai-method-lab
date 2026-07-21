@@ -47,3 +47,5 @@ The first post-restart wave (`lotblast` → `tariffstep`) improved domain nouns 
 - Early G2 kills on capacity + expiry / dual-gate vocabulary (`lanehold` killed 2026-07-21)
 - Multi-tick hold at `framed` / `adversarial` with evidence before fixtures
 - Skeptical digests that can say “we killed this” or “still not ready”
+- **Value honesty:** if showcase scenarios are Free MFN on both legs, say so — do not invent duty-savings stories (`htsroute` Challenge D, 2026-07-21)
+- Prefer next seeds with **literal dollar mechanics** (e.g. drawback lesser-of refund) over chapter-routing costumes

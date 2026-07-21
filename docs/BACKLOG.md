@@ -11,7 +11,8 @@ See `docs/DEPTH_RESTART.md`.
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
 | 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet workflow experiment complete. |
-| — | htsroute | research only | 29/3003/3004 (**testable**). 30 fixtures green; acceptance paper ready; same-day build hold. |
+| — | htsroute | research only | **testable** + Challenge D: form-gate real; MFN Free/Free on showcase PPIs; finished Protonix letter NY N003244; same-day build hold. |
+| — | lesserof | seed only | Parallel seed: substitution drawback lesser-of-two refund math ($ refunds). Do not activate until htsroute frees slot. |
 | — | lanehold | **killed (G2)** | Capacity + hold expiry ≅ loadbay / dual-gate. Autopsy on file. |
 | 2 | bondstrip | sustained | Day-count accrued + cashflow strip method stress complete. |
 | 2 | settlecut | sustained | Loss-once interval settlement method stress complete. |

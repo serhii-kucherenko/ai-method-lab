@@ -1,10 +1,10 @@
 # Research summary — htsroute (G6)
 
-Skeptical senior-eng bar. Standalone memo.
+Skeptical senior-eng bar. Standalone memo. Updated after Challenge D + NY N003244.
 
 ## 1. Problem
 
-Specialty pharma trade-compliance analysts must route SKUs across Chapter 29 (bulk separately defined chemicals), heading 3003 (mixed medicaments not in measured doses/retail packing), and heading 3004 (measured-dose / retail medicaments). Molecule-name spreadsheets fail the form/mixing test and create duty / reasonable-care risk.
+Specialty pharma trade-compliance analysts must route SKUs across Chapter 29 (bulk separately defined chemicals), heading 3003 (mixed medicaments not in measured doses/retail packing), and heading 3004 (measured-dose / retail medicaments). Molecule-name spreadsheets fail the form/mixing test and create **reasonable-care / classification-error** risk — even when MFN duty is Free on both legs.
 
 ## 2. Why prior lab products don’t cover it
 
@@ -27,30 +27,32 @@ Specialty pharma trade-compliance analysts must route SKUs across Chapter 29 (bu
 | A — incumbents | **Stands commercially.** Workflow experiment only. |
 | B — keyword gate | Answered: 3003 middle + consistency reject; cheat fixture green |
 | C — offline/legal | Survive with no-GRI-3 scope fence |
+| D — value / shallowness | **Accepted on MFN dollars and fixture vanity.** Domain claim survives; duty-savings pitch dies for PPI Free/Free pairs. See `htsroute-challenge-D.md` + `htsroute-VALUE-STAKES.md`. |
 
 ## 5. Falsifiers
 
 1. Published rulings contradict ≥2 golden heading-route fixtures → abandon.
 2. After any future smoke, analysts still need a spreadsheet for the happy-path form gate → abandon.
+3. **New:** Any digest or PRODUCT.md that claims MFN duty savings for pantoprazole/omeprazole showcase pairs → abandon framing as dishonest.
 
 ## 6. Depth test outline
 
 - 25 cases named (`htsroute-G5-cases.md`); #16 aliased to #8
 - **30 fixture files green** (`check-htsroute-fixtures.mjs`)
-- **Dual-impl cross-check green** (`check-htsroute-dual.mjs`) — two independent routers + synthetic probes
-- Checker: `docs/ideas/check-htsroute-fixtures.mjs`
+- **Dual-impl cross-check green** (`check-htsroute-dual.mjs`)
+- Fixture #26 now cites primary **NY N003244** (Protonix tablets → 3004)
 
 ## 7. Decision
 
-**Do not build yet** (calendar-day hold).
+**Do not build yet** (calendar-day hold + Challenge D honesty).
 
 Reasons:
 
-1. Same-day research→build is an explicit failure mode after the human shallow signal (`block_same_day_research_to_build`).
-2. Suite is deep enough to *consider* ready_to_build on a **later calendar day** — not this one.
-3. Dedicated finished-PPI CROSS letter still preferred (optional strengthen).
-4. No G1 interview / specific public CF-29 pharma docket.
+1. Same-day research→build remains blocked.
+2. Challenge D: green fixtures ≠ valuable product; MFN Free/Free on showcase PPIs.
+3. Kill A still stands — experiment framing only.
+4. G1 finished-pantoprazole letter residual **closed** (N003244) — that strengthens *rulings*, not *commercial value*.
 
-**Work while holding:** dual-impl testing, acceptance paper, parked-seed hygiene — **not** idle. See `LOOP_DISCIPLINE.md` (do not re-arm live loops).
+**Parallel seed (research log only):** `lesserof-SEED.md` — substitution drawback lesser-of-two refund math (dollar refunds, not Free/Free chapter theater). Do not activate until htsroute frees the slot.
 
-**Next:** day-boundary ready_to_build reassess; then `projects/htsroute/` only if flipped.
+**Next:** day-boundary ready_to_build reassess must re-read Challenge D; if flipped, PRODUCT.md must forbid duty-savings claims for Free/Free pairs.
