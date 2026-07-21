@@ -713,3 +713,11 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Story-first digest emailed (Resend id b4080b49-a364-412f-aee8-9c330d405ca3)
 - Same-day build still blocked; loop 27600 not re-armed
 
+
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #28
+
+- Gate scorecards for lesserof / oshamult / ptax4975
+- Added check-seed-kits.mjs (all 5 paper kits complete)
+- Preflip still calendar-blocked; loop 27600 not re-armed
+

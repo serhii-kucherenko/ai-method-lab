@@ -13,13 +13,14 @@ Use **only after** oshamult has flipped to build, parked, or killed — and **no
 1. `ptax4975-challenge-ABC.md` (Kill A honesty)  
 2. `ptax4975-VALUE-STAKES.md`  
 3. `ptax4975-PRODUCT-FRAMING.md`  
-4. `ptax4975-STATUTE-CITATIONS.md` + `ptax4975-FMV-FENCE.md` (highest-during-period FMV still fenced)  
-5. `ptax4975-G6-summary.md`  
-6. `ptax4975-ACCEPTANCE.md`  
-7. `ptax4975-COMPREHENSIVE-BLUEPRINT.md` + page specs + phase briefs  
-8. `ptax4975-SUSTAIN-TEST-MATRIX.md`  
-9. `ptax4975-API-CONTRACT.md`  
-10. `ptax4975-HYPOTHESIS-DRAFT.md`
+4. `ptax4975-GATE-SCORECARD.md`  
+5. `ptax4975-STATUTE-CITATIONS.md` + `ptax4975-FMV-FENCE.md` (highest-during-period FMV still fenced)  
+6. `ptax4975-G6-summary.md`  
+7. `ptax4975-ACCEPTANCE.md`  
+8. `ptax4975-COMPREHENSIVE-BLUEPRINT.md` + page specs + phase briefs  
+9. `ptax4975-SUSTAIN-TEST-MATRIX.md`  
+10. `ptax4975-API-CONTRACT.md`  
+11. `ptax4975-HYPOTHESIS-DRAFT.md`
 
 ## Checkers
 

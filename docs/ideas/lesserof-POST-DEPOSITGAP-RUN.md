@@ -13,13 +13,14 @@ Use **only after** depositgap has flipped to build, parked, or killed — and **
 1. `lesserof-NARROW-CLAIM.md` + `lesserof-KILL-BC.md`  
 2. `lesserof-VALUE-STAKES.md`  
 3. `lesserof-PRODUCT-FRAMING.md`  
-4. `lesserof-G6-summary.md`  
-5. `lesserof-ACCEPTANCE.md`  
-6. `lesserof-COMPREHENSIVE-BLUEPRINT.md` + page specs + phase briefs  
-7. `lesserof-SUSTAIN-TEST-MATRIX.md`  
-8. `lesserof-API-CONTRACT.md`  
-9. `lesserof-HYPOTHESIS-DRAFT.md`  
-10. Worked papers: `lesserof-WORKED-EXAMPLE.md`, `lesserof-USMCA-STACK.md`, `lesserof-BASKET-OTHER.md`
+4. `lesserof-GATE-SCORECARD.md`  
+5. `lesserof-G6-summary.md`  
+6. `lesserof-ACCEPTANCE.md`  
+7. `lesserof-COMPREHENSIVE-BLUEPRINT.md` + page specs + phase briefs  
+8. `lesserof-SUSTAIN-TEST-MATRIX.md`  
+9. `lesserof-API-CONTRACT.md`  
+10. `lesserof-HYPOTHESIS-DRAFT.md`  
+11. Worked papers: `lesserof-WORKED-EXAMPLE.md`, `lesserof-USMCA-STACK.md`, `lesserof-BASKET-OTHER.md`
 
 ## Checkers
 

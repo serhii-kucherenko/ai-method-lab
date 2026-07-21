@@ -1,8 +1,8 @@
-# depositgap — comprehensive product blueprint (seed stub)
+# depositgap — comprehensive product blueprint (pre-build, parallel seed)
 
-**Status:** seed only — paper blueprint for a future activate. **Do not** set `current_idea`, frame, fixture, or open `projects/depositgap/`.  
+**Status:** paper only. Parallel seed — **not** `current_idea` while htsroute holds the slot.  
 **Bar:** `docs/COMPREHENSIVE_PRODUCT.md`  
-**Seed:** `depositgap-SEED.md` · wave: `SEEDS-WAVE-2026-07-21.md`  
+**Framing:** `depositgap-PRODUCT-FRAMING.md` · stakes: `depositgap-VALUE-STAKES.md` · scorecard: `depositgap-GATE-SCORECARD.md`  
 **Unique claim:** AD/CVD **cash deposit rate** vs **final assessed rate**, then **19 U.S.C. § 1677g** interest (IRC § 6621) from order publication to liquidation — bill or refund of `(assessed − deposited) × entered value` **plus** statutory interest.
 
 ## Goal
