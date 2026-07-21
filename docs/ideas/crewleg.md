@@ -1,6 +1,6 @@
 # crewleg — idea dossier
 
-**State:** `adversarial`  
+**State:** `differentiated`  
 **Framing:** method stress (not GTM vs Jeppesen/AIMS)  
 **Opened:** 2026-07-21 after amendwin sustain
 
@@ -9,8 +9,9 @@
 - Table B algorithm paper: `docs/ideas/crewleg-table-b-algorithm.md`
 - Rest paper (simplified 10h): `docs/ideas/crewleg-rest-algorithm.md`
 - Challenge A: `docs/ideas/crewleg-challenge-A.md`
-- Golden fixtures A–I + checker `docs/ideas/check-crewleg-fixtures.mjs` (green)
-- Next: expand named cases toward ≥25; G6 memo — still no product folder
+- G5 cases + G6 draft: `crewleg-G5-cases.md`, `crewleg-G6-summary.md` — **do not build yet**
+- Fixtures A–O + checker green
+- Next: more fixtures; harden rest cite; gate scorecard — still no product folder
 
 ## Problem (G1 draft)
 

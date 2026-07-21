@@ -1,0 +1,9 @@
+{
+  "id": "crewleg-O-rest-exact-ten",
+  "report_local": "0800",
+  "segments": 2,
+  "acclimated": true,
+  "fdp_hours": 13,
+  "rest_hours": 10,
+  "expect": { "legal": true, "max_fdp": 14, "rest_ok": true }
+}

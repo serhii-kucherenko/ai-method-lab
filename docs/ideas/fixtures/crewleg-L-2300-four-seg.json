@@ -1,0 +1,8 @@
+{
+  "id": "crewleg-L-2300-four-seg",
+  "report_local": "2310",
+  "segments": 4,
+  "acclimated": true,
+  "fdp_hours": 9,
+  "expect": { "legal": true, "max_fdp": 9 }
+}

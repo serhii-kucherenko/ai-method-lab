@@ -1,0 +1,8 @@
+{
+  "id": "crewleg-J-0400-five-seg",
+  "report_local": "0415",
+  "segments": 5,
+  "acclimated": true,
+  "fdp_hours": 9,
+  "expect": { "legal": true, "max_fdp": 9 }
+}

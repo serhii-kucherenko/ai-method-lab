@@ -10,6 +10,6 @@
 | Multi-jurisdiction sales-tax nexus calendar | Soft kill | G2 risk | taxhold twin risk |
 | **amendwin** (amendment-aware visit windows) | Sustained | — | Product done |
 | lotblast | Sustained | — | Product done |
-| **crewleg** (FAR 117 FDP/rest legality) | Research | adversarial | Table B paper + fixtures A–F; Kill A stands commercially |
+| **crewleg** (FAR 117 FDP/rest legality) | Research | differentiated | Table B+rest papers; fixtures A–O; G6 do-not-build |
 
 **Rule:** one idea in `framed`→`ready_to_build`. Dual-gate seeds die immediately.
