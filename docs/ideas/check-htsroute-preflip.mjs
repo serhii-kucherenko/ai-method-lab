@@ -120,6 +120,21 @@ for (const script of [
   if (!ok) failed += 1;
 }
 
+{
+  const smokePath = join(root, "demos/smoke-try-demos.mjs");
+  const r = spawnSync(process.execPath, [smokePath], {
+    encoding: "utf8",
+    cwd: root,
+  });
+  const tail = (r.stdout || r.stderr || "")
+    .trim()
+    .split(/\r?\n/)
+    .slice(-1)[0];
+  const ok = r.status === 0;
+  console.log(`${ok ? "PASS" : "FAIL"} demos/smoke-try-demos.mjs: ${tail || `exit ${r.status}`}`);
+  if (!ok) failed += 1;
+}
+
 if (failed > 0) {
   console.error(
     `\nPREFLIP BLOCKED (${failed} check(s)). Do not open projects/htsroute/. See htsroute-TOMORROW-RUN.md + htsroute-FLIP-ABORT.md + htsroute-FLIP-MORNING.md.`,

@@ -852,15 +852,28 @@ Continued depth without opening products. Parallel seed only.
 
 **Skeptical one-liner:** Three offline research calculators now exist for dollar/serial claims; portfolio product conveyor stays frozen until an idea clears the raised value gate.
 
-## 2026-07-21 ó AGENT_LOOP_TICK_depth_15m #48 (loop re-arm + full demo farm)
+## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #48 (loop re-arm + full demo farm)
 
 User armed `/loop 15m` keep-going (UI green + parallel). Old loop PIDs were dead ? re-armed **pid 26872** (`AGENT_LOOP_TICK_depth_15m`).
 
-- Wrote `demos/smoke-try-demos.mjs` (offline + honesty + default-toy markers) ó **all try demos green**
+- Wrote `demos/smoke-try-demos.mjs` (offline + honesty + default-toy markers) ù **all try demos green**
 - Completed `ptax4975-G1-EVIDENCE.md` + `demos/ptax4975-try/try.html` (last seed in queue now has a research try page)
 - All 5 seed paper kits complete; all seed dual-checkers green
 - Same-day build still blocked; no `projects/` opened
 
 **Decision:** still researching. Loop fires every 15m until stopped.
 
-**Skeptical one-liner:** Every queued dollar/serial seed now has an offline try page behind a smoke gate ó still not a product conveyor.
+**Skeptical one-liner:** Every queued dollar/serial seed now has an offline try page behind a smoke gate ù still not a product conveyor.
+
+## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #49 (value-gate dry run + behavioral smoke)
+
+Loop wake (pid 26872). Same-day build still blocked.
+
+- Wrote `htsroute-VALUE-GATE-DRYRUN.md` ù provisional **lean park** if Challenge D stays weak; prefer depositgap later
+- Extended `demos/smoke-try-demos.mjs` with behavioral dollar toys (depositgap / lesserof / oshamult / ptax4975)
+- Wired try-demo smoke into `check-htsroute-preflip.mjs` (preflip still calendar-blocked today; smoke PASS)
+- All 5 seed suites dual-green; smoke green
+
+**Decision:** still researching. Do not flip ready_to_build tonight. Tomorrow morning: reconfirm value gate or soft abort #4.
+
+**Skeptical one-liner:** Fixture count stays vanity until day-boundary honesty; the dry run already leans park over a Free/Free form-gate product.

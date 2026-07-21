@@ -28,6 +28,7 @@ After the re-reads, answer in one line in `htsroute-DAY-BOUNDARY.md`:
 
 - **Build** only if the unique form-gate claim still deserves a multi-page method product **and** digests can stay honest without inventing duty savings.  
 - **Park / kill** if Challenge D still leaves commercial/value **provisional weak** and the only story is fixture green + Free/Free reasonable-care. Then prefer **depositgap** (literal deposit→assessed + interest dollars) on a later tick — do not ship another shallow costume.
+- Pre-filled provisional lean: `htsroute-VALUE-GATE-DRYRUN.md` (evening 2026-07-21) — re-confirm on the real day, do not treat the dry run as final.
 
 ## If all pass (including value gate → Build)
 

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T22:25:00Z",
+  "updated_at": "2026-07-21T22:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__depth15m_tick48_loop_rearm_demo_farm",
+  "last_completed": "research__depth15m_tick49_value_gate_dryrun_smoke",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 48: re-armed depth loop pid 26872; smoke-try-demos green; ptax4975 try demo complete. Same-day build blocked. Do NOT re-arm if 26872 still alive.",
+  "notes": "15m tick 49: value-gate dry run leans park; behavioral try-demo smoke wired into preflip. Same-day build blocked. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -43,6 +43,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 48
+    "ticks_observed": 49
   }
 }

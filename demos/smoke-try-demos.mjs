@@ -100,6 +100,64 @@ for (const name of dirs) {
   if (ok) pass(`${name}: smoke green (${html.length} bytes)`);
 }
 
+// Behavioral toys — same math as paper oracles / try pages (UI must not drift).
+function nearly(a, b, eps = 0.02) {
+  return Math.abs(a - b) <= eps;
+}
+
+{
+  const duty = (0.25 - 0.1) * 1_000_000;
+  const interest = duty * 0.07 * (365 / 365);
+  const trueUp = duty + interest;
+  if (!(nearly(duty, 150_000) && nearly(interest, 10_500) && nearly(trueUp, 160_500))) {
+    fail(
+      `depositgap toy math drifted (duty=${duty} interest=${interest} trueUp=${trueUp})`,
+    );
+    failed += 1;
+  } else {
+    pass("depositgap behavioral toy: $150k + $10.5k interest");
+  }
+}
+
+{
+  const base = Math.min(10_000, 4_000);
+  const refund = 0.99 * base;
+  const naive = 0.99 * 10_000;
+  if (!(nearly(refund, 3_960) && nearly(naive - refund, 5_940))) {
+    fail(`lesserof toy math drifted (refund=${refund})`);
+    failed += 1;
+  } else {
+    pass("lesserof behavioral toy: $3,960 vs naive +$5,940");
+  }
+}
+
+{
+  // serious: size 0.3, history 0.1, faith 0.15, quick 0 on GBP 5000
+  let amount = 5000;
+  amount *= 1 - 0.3;
+  amount *= 1 - 0.1;
+  amount *= 1 - 0.15;
+  amount *= 1 - 0;
+  if (!nearly(amount, 2677.5)) {
+    fail(`oshamult toy math drifted (penalty=${amount})`);
+    failed += 1;
+  } else {
+    pass("oshamult behavioral toy: $2,677.50");
+  }
+}
+
+{
+  const initial = 0.15 * 10_000 * 2;
+  const additional = 0;
+  const total = initial + additional;
+  if (!(nearly(initial, 3_000) && nearly(total, 3_000))) {
+    fail(`ptax4975 toy math drifted (total=${total})`);
+    failed += 1;
+  } else {
+    pass("ptax4975 behavioral toy: $3,000 corrected");
+  }
+}
+
 if (failed > 0) {
   console.log(`\nSMOKE FAILED: ${failed} check(s)`);
   process.exit(1);

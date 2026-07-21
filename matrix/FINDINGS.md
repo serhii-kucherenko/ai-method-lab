@@ -554,3 +554,7 @@ oshamult G1 evidence + research try demo (serial GBP reductions). Still no produ
 ## 2026-07-21 -- depth tick 48 (research, no product)
 
 Re-armed 15m depth loop (pid 26872). Try-demo smoke harness green. ptax4975 research try demo added — all five queued seeds have offline demos. No product folder.
+
+## 2026-07-21 -- depth tick 49 (research, no product)
+
+htsroute value-gate dry run leans park if Challenge D stays weak. Behavioral try-demo smoke wired into preflip. Same-day build blocked; no product folder.
