@@ -17,8 +17,8 @@
 | 0 | **htsroute** | Current idea — comprehensive multi-page product if day-boundary passes |
 | 1 | **depositgap** | Strongest $ seed; G5+G6+acceptance+phase/API/try-demo notes ready |
 | 2 | **lesserof** | Stacked drawback caps; G5+G6+acceptance on file |
-| 3 | **oshamult** | OSHA serial penalty; G5+G6+comprehensive blueprint stub |
-| 4 | **ptax4975** | § 4975 excise; G5+G6 met (35 fixtures) |
+| 3 | **oshamult** | OSHA serial penalty; G5+G6+blueprint+**acceptance** |
+| 4 | **ptax4975** | § 4975 excise; G5+G6+blueprint+**acceptance** (35 fixtures) |
 
 ## Hard rules
 
