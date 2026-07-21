@@ -178,3 +178,7 @@ settlecut moved framed to adversarial. Loss-once imbalance algorithm + fixtures 
 ## 2026-07-21 — settlecut sustained (loop 11)
 
 settlecut ready_to_build then full A03+A10 ladder (31 tests). Loss-once interval settlement held. Next idea bondstrip framed.
+
+## 2026-07-21 — bondstrip research tick (loop 12)
+
+bondstrip framed to adversarial. 30/360 + ACT/ACT accrued + cashflow strip fixtures A-F green. Kill A (Bloomberg) stands commercially. Still do not build.

@@ -13,6 +13,6 @@
 | **crewleg** (FAR 117 FDP/rest legality) | Sustained | — | Product done |
 | **ndcswap** (Orange Book TE substitution) | Sustained | — | Product done |
 | **settlecut** (interval imbalance settlement) | Sustained | — | Product done |
-| **bondstrip** (coupon strip + day-count accrued) | Research | framed | Method stress; Kill A TBD |
+| **bondstrip** (coupon strip + day-count accrued) | Research | adversarial | Fixtures A–F; Kill A stands commercially |
 
 **Rule:** one idea in `framed`→`ready_to_build`. Dual-gate seeds die immediately.

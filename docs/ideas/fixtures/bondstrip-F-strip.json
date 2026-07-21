@@ -1,0 +1,20 @@
+{
+  "id": "bondstrip-F-strip",
+  "day_count": "30/360",
+  "face": 1000,
+  "coupon_rate": 0.06,
+  "freq": 2,
+  "coupon_dates": ["2026-07-15", "2027-01-15", "2027-07-15"],
+  "maturity": "2027-07-15",
+  "settle": "2026-04-15",
+  "prev_coupon": "2026-01-15",
+  "next_coupon": "2026-07-15",
+  "expect": {
+    "accrued": 15,
+    "cashflows": [
+      { "date": "2026-07-15", "amount": 30 },
+      { "date": "2027-01-15", "amount": 30 },
+      { "date": "2027-07-15", "amount": 1030 }
+    ]
+  }
+}

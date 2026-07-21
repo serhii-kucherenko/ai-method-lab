@@ -1,0 +1,16 @@
+{
+  "id": "bondstrip-B-30360-31st",
+  "day_count": "30/360",
+  "face": 1000,
+  "coupon_rate": 0.06,
+  "freq": 2,
+  "prev_coupon": "2026-01-31",
+  "next_coupon": "2026-07-31",
+  "settle": "2026-03-31",
+  "expect": {
+    "periodic_coupon": 30,
+    "days_elapsed": 60,
+    "days_in_period": 180,
+    "accrued": 10
+  }
+}

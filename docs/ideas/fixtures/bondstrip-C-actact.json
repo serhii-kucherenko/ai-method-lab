@@ -1,0 +1,16 @@
+{
+  "id": "bondstrip-C-actact",
+  "day_count": "ACT/ACT",
+  "face": 1000,
+  "coupon_rate": 0.06,
+  "freq": 2,
+  "prev_coupon": "2026-01-15",
+  "next_coupon": "2026-07-15",
+  "settle": "2026-04-15",
+  "expect": {
+    "periodic_coupon": 30,
+    "days_elapsed": 90,
+    "days_in_period": 181,
+    "accrued": 14.917127
+  }
+}
