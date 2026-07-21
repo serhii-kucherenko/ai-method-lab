@@ -12,6 +12,6 @@
 | lotblast | Sustained | — | Product done |
 | **crewleg** (FAR 117 FDP/rest legality) | Sustained | — | Product done |
 | **ndcswap** (Orange Book TE substitution) | Sustained | — | Product done |
-| **settlecut** (interval imbalance settlement) | Research | framed | Method stress; Kill A TBD |
+| **settlecut** (interval imbalance settlement) | Research | adversarial | Loss-once fixtures A–F; Kill A stands commercially |
 
 **Rule:** one idea in `framed`→`ready_to_build`. Dual-gate seeds die immediately.
