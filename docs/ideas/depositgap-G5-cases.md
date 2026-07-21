@@ -39,6 +39,7 @@ Unique claim under test: **cash deposit rate ≠ final assessed rate**, then **�
 |----|--------|--------------|
 | X | Auditor-only mutation attempt | Needs product UI / role surface — paper: any mutation without auditor role must reject; seed cannot encode auth |
 | Y | Concurrent two-entry independence | Needs multi-entry persistence — paper: entry A true-up must not mutate entry B totals |
+| Z | § 1505(d) delinquency conflation | Needs product copy / reject UX — paper: never treat post-liquidation unpaid-bill interest as the deposit-gap window (`depositgap-DAY-COUNT.md`) |
 
 ## Pass bar for later G5 score
 

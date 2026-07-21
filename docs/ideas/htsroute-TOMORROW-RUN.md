@@ -6,6 +6,7 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
 
 1. Confirm local/OS date is **not** 2026-07-21.  
 2. Confirm none of the hard aborts in `htsroute-FLIP-ABORT.md` apply.  
+2b. Skim `QUEUE-ISO-AUDIT.md` — unique rule still present; no dual-gate costume.  
 3. Re-read, in order:  
    - `htsroute-challenge-D.md`  
    - `htsroute-VALUE-STAKES.md`  
@@ -23,7 +24,7 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
 ## If all pass
 
 1. Flip idea state / controller to `ready_to_build` per `protocols/IDEA_DEPTH.md`.  
-2. Open **comprehensive** `projects/htsroute/` (7 pages) — **not** smoke-as-sustain.  
+2. Open **comprehensive** `projects/htsroute/` (7 pages) — **not** smoke-as-sustain. Day-1 contract: `htsroute-DAY1-NONSMOKE.md`.  
 3. Digests: workflow experiment; Kill A stands; no Free/Free duty-savings vanity.  
 4. Paste hypothesis from `htsroute-HYPOTHESIS-DRAFT.md`.
 

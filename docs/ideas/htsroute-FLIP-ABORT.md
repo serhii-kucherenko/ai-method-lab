@@ -8,8 +8,8 @@ Even after the calendar day changes, **do not** flip `ready_to_build` if any of 
 2. `node docs/ideas/check-all-seeds.mjs` fails (or htsroute dual fails).  
 3. Re-read of Challenge D / VALUE-STAKES is skipped or disagreed — Free/Free duty-savings pitch would ship.  
 4. PRODUCT framing would claim broker/HS-engine replacement or omit Kill A.  
-5. Build plan collapses to smoke / single calculator page (fails `COMPREHENSIVE_PRODUCT.md`).  
-6. Dual-gate / capacity+timer costume sneaks into PRODUCT shape.  
+5. Build plan collapses to smoke / single calculator page (fails `COMPREHENSIVE_PRODUCT.md` / `htsroute-DAY1-NONSMOKE.md`).  
+6. Dual-gate / capacity+timer costume sneaks into PRODUCT shape (fails `QUEUE-ISO-AUDIT.md`).  
 7. Another product phase is already in flight (`current_product` set).
 
 ## Soft aborts (park or delay)
