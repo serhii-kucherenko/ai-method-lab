@@ -550,3 +550,7 @@ lesserof G1 evidence + research try demo (stacked lesser-of dollars). depositgap
 ## 2026-07-21 -- depth tick 47 (research, no product)
 
 oshamult G1 evidence + research try demo (serial GBP reductions). Still no product folder; build blocked same day.
+
+## 2026-07-21 -- depth tick 48 (research, no product)
+
+Re-armed 15m depth loop (pid 26872). Try-demo smoke harness green. ptax4975 research try demo added — all five queued seeds have offline demos. No product folder.

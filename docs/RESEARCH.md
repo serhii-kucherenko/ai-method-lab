@@ -842,7 +842,7 @@ Continued depth without opening products. Parallel seed only.
 
 **Skeptical one-liner:** Two literal-dollar research demos now exist (deposit true-up + stacked drawback caps); neither is a product, and neither replaces Challenge D honesty on htsroute.
 
-## 2026-07-21 ó AGENT_LOOP_TICK_depth_15m #47 (oshamult demo)
+## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #47 (oshamult demo)
 
 - Wrote `oshamult-G1-EVIDENCE.md` + `demos/oshamult-try/try.html` (serial remaining-balance + willful/repeat/FTA gates; statutory-max and additive cheats reject)
 - Kit checker requires oshamult G1 evidence
@@ -851,3 +851,16 @@ Continued depth without opening products. Parallel seed only.
 **Decision:** still researching. Digests attach try + StackBlitz for runnable paper demos.
 
 **Skeptical one-liner:** Three offline research calculators now exist for dollar/serial claims; portfolio product conveyor stays frozen until an idea clears the raised value gate.
+
+## 2026-07-21 ó AGENT_LOOP_TICK_depth_15m #48 (loop re-arm + full demo farm)
+
+User armed `/loop 15m` keep-going (UI green + parallel). Old loop PIDs were dead ? re-armed **pid 26872** (`AGENT_LOOP_TICK_depth_15m`).
+
+- Wrote `demos/smoke-try-demos.mjs` (offline + honesty + default-toy markers) ó **all try demos green**
+- Completed `ptax4975-G1-EVIDENCE.md` + `demos/ptax4975-try/try.html` (last seed in queue now has a research try page)
+- All 5 seed paper kits complete; all seed dual-checkers green
+- Same-day build still blocked; no `projects/` opened
+
+**Decision:** still researching. Loop fires every 15m until stopped.
+
+**Skeptical one-liner:** Every queued dollar/serial seed now has an offline try page behind a smoke gate ó still not a product conveyor.

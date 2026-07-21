@@ -1,0 +1,9 @@
+{
+  "name": "ptax4975-try",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Research-only offline demo of §4975 excise forecast (not a product).",
+  "scripts": {
+    "start": "npx --yes serve -l 3000 ."
+  }
+}
