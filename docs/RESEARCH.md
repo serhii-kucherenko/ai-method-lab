@@ -498,3 +498,10 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 - depositgap: quoted **19 U.S.C. 1673f(b)** deposit vs final + interest cross-ref
 - Stubbed `ptax4975-SEED.md`
 - No product; loop 27600 not re-armed
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #4
+
+- depositgap: illustrative interest **$10,500** on $150k underpayment @ IRS 6621 underpayment **7%** (2026 Q3); caveat = not CBP day-count liquidation math
+- Day-boundary checklist now requires comprehensive blueprint / page specs / phase briefs / sustain matrix
+- `htsroute-READY-DRYRUN.md` — same-day flip **fails** on calendar only; everything else green on paper
+- No product; loop 27600 not re-armed

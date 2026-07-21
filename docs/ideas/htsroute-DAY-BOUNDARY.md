@@ -22,6 +22,8 @@ Use on the **next calendar day** after framing (not 2026-07-21). Do not flip rea
 - [ ] Digests will say workflow experiment; Kill A stands  
 - [ ] No isomorphic dual-gate sneak-in in PRODUCT.md shape  
 - [ ] `htsroute-ACCEPTANCE.md` sections A–F understood as the post-flip ship bar (dual-impl still green)  
+- [ ] `htsroute-COMPREHENSIVE-BLUEPRINT.md` + `htsroute-PAGE-SPECS.md` + `htsroute-PHASE-BRIEFS.md` on file (multi-page bar — no smoke-as-sustain)  
+- [ ] Sustain matrix floor understood (`htsroute-SUSTAIN-TEST-MATRIX.md`, ~68 tests)  
 
 
 ## If any fail

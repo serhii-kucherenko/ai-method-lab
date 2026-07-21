@@ -49,11 +49,26 @@ Source: https://www.law.cornell.edu/uscode/text/19/1673f
 
 **Unique fail:** forecasting landed cost at deposit rate alone, or computing delta **without** interest window, fails the claim.
 
+## Interest toy (illustrative — not CBP liquidated amount)
+
+Using IRS underpayment rate under IRC § 6621 for **2026 Q3 (Jul–Sep): 7%** (corporate and non-corporate underpayment; IRB 2026-22 / IRS quarterly rates page).
+
+Assume the **$150,000** underpayment from the duty toy bears interest for a **full year** at a flat 7% (simplifying — real liquidations use day-count / CBP instructions; do not ship this as production math):
+
+| Piece | Amount |
+|-------|-------:|
+| Duty underpayment | $150,000 |
+| Illustrative interest @ 7% × 1 year | **$10,500** |
+| Illustrative total surprise vs deposit-only forecast | **$160,500** |
+
+Sources: https://www.irs.gov/payments/quarterly-interest-rates ; https://www.irs.gov/irb/2026-22_IRB
+
 ## Still open before framed
 
-1. Quote § 1673f / § 1671f deposit-vs-final text  
-2. One worked interest number with a dated § 6621 rate  
-3. Kill A/B/C answers on paper (beyond seed pre-register)
+1. ~~Quote § 1673f~~ — done (b) collect/refund + 1677g  
+2. ~~One worked interest number with a dated § 6621 rate~~ — done (illustrative; CBP day-count TBD)  
+3. Kill A/B/C answers on paper (beyond seed pre-register)  
+4. CVD twin § 1671f quote
 
 ## Explicit non-actions
 
