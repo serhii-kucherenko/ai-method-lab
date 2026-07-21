@@ -530,3 +530,7 @@ Orange Book TE + DAW fixtures; full ladder. Fourth depth-restart product. Next: 
 ## 2026-07-21 -- settlecut smoke to sustain (pass)
 
 Loss-once fixtures A-Y; full ladder. Fifth depth-restart product. Next: bondstrip framed.
+
+## 2026-07-21 -- bondstrip smoke to sustain (pass)
+
+Day-count accrued + strip fixtures A-Y; full ladder. Sixth depth-restart product. Next: tariffstep framed.

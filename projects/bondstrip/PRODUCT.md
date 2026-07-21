@@ -6,9 +6,9 @@ Method-stress: day-count accrued interest + cashflow strip.
 
 ## Sustain criteria
 
-- [ ] Unique claim: fixtures A–Y green in product tests
-- [ ] Desk/bond API + accrue/strip math
-- [ ] A10: authz, migrations, health, THREATS
-- [ ] Minimal UI vertical path
-- [ ] FINDINGS honest (method stress)
-- [ ] Workflow + integrate + scale ladder green
+- [x] Unique claim: fixtures A–Y green in product tests
+- [x] Desk/bond API + accrue/strip math
+- [x] A10: authz, migrations, health, THREATS
+- [x] Minimal UI vertical path
+- [x] FINDINGS honest (method stress)
+- [x] Workflow + integrate + scale ladder green

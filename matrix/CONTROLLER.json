@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-21T16:40:00Z",
+  "updated_at": "2026-07-21T17:05:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "A03__P-smoke__bondstrip__r1",
+  "active_cell": null,
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-sustain__settlecut__r1",
+  "last_completed": "A03__P-sustain__bondstrip__r1",
   "last_error": null,
-  "current_product": "bondstrip",
-  "current_idea": "bondstrip",
+  "current_product": null,
+  "current_idea": "tariffstep",
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "smoke",
-  "notes": "bondstrip ready_to_build → smoke opened. Fixtures A-Y in product. Loop tick 13.",
+  "phase": "research",
+  "notes": "bondstrip sustained. tariffstep framed. Loop tick 14. No product until ready_to_build.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

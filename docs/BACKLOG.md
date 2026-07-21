@@ -10,7 +10,8 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | bondstrip | ready_to_build → smoke | Day-count accrued + cashflow strip (method stress). |
+| 1 | bondstrip | sustained | Day-count accrued + cashflow strip method stress complete. |
+| — | tariffstep | research only | Stepped tariff blocks + demand ratchet (framed). |
 | 2 | settlecut | sustained | Loss-once interval settlement method stress complete. |
 | 3 | ndcswap | sustained | Orange Book TE method stress complete. |
 | 4 | crewleg | sustained | FAR 117 Table B method stress complete. |
