@@ -460,3 +460,7 @@ Books/positions. Gates: risk-limit breach hold + dual officer clear. Next: limit
 ## 2026-07-20 -- limitdesk sustain (pass)
 
 Desks/credit lines/draws. Gates: utilization ceiling + dual credit officer release. Next: safecase.
+
+## 2026-07-21 -- safecase sustain (pass)
+
+Firms/matters/evidence. Gates: retention days + dual counsel archive. 3/3 tests green. Next: payclaw.

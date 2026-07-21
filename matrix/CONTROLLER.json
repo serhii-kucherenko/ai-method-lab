@@ -1,28 +1,28 @@
 {
-    "updated_at":  "2026-07-21T01:00:00Z",
-    "notify":  {
-                   "from":  "AI Method Lab <onboarding@resend.dev>",
-                   "to":  ["kucherenko.web@gmail.com"],
-                   "on":  ["phase_complete", "product_complete", "hard_stop", "digest"],
-                   "enabled":  true
-               },
-    "paused":  false,
-    "active_cell":  null,
-    "schema_version":  "1.0.0",
-    "idle_reason":  "limitdesk_sustained_awaiting_next_tick_safecase",
-    "product_defaults":  {
-                             "persistence":  "sqlite",
-                             "stack":  "node-ts",
-                             "test_runner":  "node-test",
-                             "payments":  "provider-agnostic-webhook-with-hmac",
-                             "auth":  "bearer-token"
-                         },
-    "last_completed":  "A03__P-sustain__limitdesk__r1",
-    "last_error":  null,
-    "current_product":  null,
-    "next_cell":  "A03__P-smoke-001__safecase__r1",
-    "mode":  "autonomous",
-    "phase":  "idle",
-    "notes":  "Limitdesk sustained (ceiling + dual credit release). Next: safecase.",
-    "hard_stop":  false
+  "updated_at": "2026-07-21T01:20:00Z",
+  "notify": {
+    "from": "AI Method Lab <onboarding@resend.dev>",
+    "to": ["kucherenko.web@gmail.com"],
+    "on": ["phase_complete", "product_complete", "hard_stop", "digest"],
+    "enabled": true
+  },
+  "paused": false,
+  "active_cell": null,
+  "schema_version": "1.0.0",
+  "idle_reason": "safecase_sustained_awaiting_next_tick_payclaw",
+  "product_defaults": {
+    "persistence": "sqlite",
+    "stack": "node-ts",
+    "test_runner": "node-test",
+    "payments": "provider-agnostic-webhook-with-hmac",
+    "auth": "bearer-token"
+  },
+  "last_completed": "A03__P-sustain__safecase__r1",
+  "last_error": null,
+  "current_product": null,
+  "next_cell": "A03__P-smoke-001__payclaw__r1",
+  "mode": "autonomous",
+  "phase": "idle",
+  "notes": "Safecase sustained (retention + dual counsel archive). Next: payclaw.",
+  "hard_stop": false
 }
