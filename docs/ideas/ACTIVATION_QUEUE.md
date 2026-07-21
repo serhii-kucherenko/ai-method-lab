@@ -16,13 +16,14 @@
 |----------|------|-----|
 | 0 | **htsroute** | Current idea — comprehensive multi-page product if day-boundary passes |
 | 1 | **depositgap** | Strongest $ seed; G5+G6+acceptance+phase/API/try-demo notes ready |
-| 2 | **lesserof** | Stacked drawback caps; G5+G6+acceptance on file |
-| 3 | **oshamult** | OSHA serial penalty; G5+G6+blueprint+**acceptance** |
-| 4 | **ptax4975** | § 4975 excise; G5+G6+blueprint+**acceptance** (35 fixtures) |
+| 2 | **lesserof** | Stacked drawback caps; G5+G6+acceptance+**phase/page specs** |
+| 3 | **oshamult** | OSHA serial penalty; G5+G6+blueprint+acceptance+**phase briefs** |
+| 4 | **ptax4975** | § 4975 excise; G5+G6+blueprint+acceptance+**phase briefs** (35 fixtures) |
 
 ## Hard rules
 
 - One product phase in flight.  
 - Kill isomorphic dual-gate on sight.  
 - Digests: story first; Kill A honesty; no pass-count theater.  
-- Never re-arm live loop pids **27600** / **29556** while alive.
+- Never re-arm live loop pids **27600** / **29556** while alive.  
+- Checker hygiene: `docs/ideas/CHECKER_SNAP.md` (re-run before flip).

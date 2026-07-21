@@ -26,10 +26,10 @@ See `docs/DEPTH_RESTART.md`.
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| lesserof | seed | Stacked-cap refund math; **23** fixtures dual-green; G5 + G6 + **ACCEPTANCE** on file. |
-| **depositgap** | seed | **Strongest 2026-07-21 wave.** Full readiness pack + **TRY-DEMO** note — prefer next after htsroute. **Not activated**. |
-| oshamult | seed | OSHA GBP + serial reductions. **26** fixtures; G5+G6 + **comprehensive blueprint** stub. Behind depositgap/lesserof. |
-| ptax4975 | seed | IRC § 4975 15%/100% excise + greater-of FMV toys. **35** fixtures dual-green — G5 met. **G6 summary** on file. Behind depositgap/lesserof/oshamult. |
+| lesserof | seed | Stacked-cap refund math; **23** fixtures; G5+G6+ACCEPTANCE+**phase/page specs**. |
+| **depositgap** | seed | **Strongest 2026-07-21 wave.** Full readiness pack — prefer next after htsroute. **Not activated**. |
+| oshamult | seed | OSHA GBP serial reductions; **26** fixtures; G5+G6+blueprint+ACCEPTANCE+**phase briefs**. |
+| ptax4975 | seed | § 4975 excise; **35** fixtures; G5+G6+blueprint+ACCEPTANCE+**phase briefs**. |
 | meldefer | soft park | Near amendwin/days — `meldefer-PARK.md`. |
 | form222 | soft park | Crowded compliance — `form222-PARK.md`. |
 | lanehold | **killed (G2)** | Capacity + hold expiry ≅ loadbay / dual-gate. |

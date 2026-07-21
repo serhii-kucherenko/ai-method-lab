@@ -645,3 +645,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Wrote `oshamult-ACCEPTANCE.md`, `ptax4975-ACCEPTANCE.md`, `ptax4975-COMPREHENSIVE-BLUEPRINT.md`
 - Activation queue now has acceptance bars for all four parallel seeds
 - Same-day build still blocked (2026-07-21); loop 27600 not re-armed
+
+## 2026-07-21 -- 30m loop tick 10: phase briefs + checker snap
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 10 (pid 29556 left alone). Wrote lesserof phase briefs + page specs; oshamult/ptax4975 phase briefs; `CHECKER_SNAP.md`. Re-verified dual-green: htsroute 36, depositgap 23, lesserof 23, oshamult 26, ptax4975 35. Still no product; same-day build blocked (use `htsroute-TOMORROW-RUN.md` on 2026-07-22).
