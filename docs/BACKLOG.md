@@ -27,7 +27,7 @@ See `docs/DEPTH_RESTART.md`.
 | Seed | State | Notes |
 | --- | --- | --- |
 | lesserof | seed | Stacked-cap refund math + comprehensive blueprint ready. Older parallel seed. |
-| **depositgap** | seed | **Strongest 2026-07-21 wave.** AD/CVD cash deposit vs final assessment + § 1677g interest ($ bill/refund). Seed stub + comprehensive blueprint (`depositgap-SEED.md`, `depositgap-COMPREHENSIVE-BLUEPRINT.md`) — **not activated**. |
+| **depositgap** | seed | **Strongest 2026-07-21 wave.** AD/CVD cash deposit vs final assessment + § 1677g interest ($ bill/refund). Paper fixtures A–J green + `depositgap-G5-cases.md` (K–Y named). Blueprint on file — **not activated**. |
 | oshamult | seed | OSHA GBP + serial size/history/good-faith reductions (29 CFR 1903.15 / FOM Ch. 6). Wave only. |
 | ptax4975 | seed | IRC § 4975 15%/100% prohibited-transaction excise on amount involved. Wave only. |
 | meldefer | soft park | Near amendwin/days — `meldefer-PARK.md`. |

@@ -526,3 +526,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Added `check-depositgap-dual.mjs` — two independent true-up impls agree on all **5** fixtures
 - Still seed-only; htsroute current_idea; calendar 2026-07-21 blocks ready flip
 - Loop 27600 not re-armed
+
+## 2026-07-21 -- 30m loop tick 3: depositgap G5 map + fixtures F-J
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 3 (pid 29556 left alone). Encoded depositgap F-J (all-others underdeposit, same-day zero interest, inverted dates, negative rate, matched-rates zero delta). Case map `depositgap-G5-cases.md` names K-Y toward 25+. Checkers: **10/10** single + dual green. Still seed only; htsroute same-day no-build.

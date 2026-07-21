@@ -1,0 +1,23 @@
+{
+  "id": "depositgap-J-matched-rates-zero-delta",
+  "title": "Deposit equals assessed — zero true-up (honest match path)",
+  "source": "depositgap-algorithm.md; skip_interest remains false",
+  "input": {
+    "order_type": "AD",
+    "deposit_rate": 0.15,
+    "assessed_rate": 0.15,
+    "rate_class": "exporter_specific",
+    "entered_value": 250000,
+    "order_published_on": "2023-01-01",
+    "liquidated_on": "2024-01-01",
+    "interest_annual_rate": 0.08,
+    "skip_interest": false
+  },
+  "expect": {
+    "duty_delta": 0,
+    "days": 365,
+    "interest": 0,
+    "true_up": 0,
+    "status": "ok"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "depositgap-G-same-day-zero-interest",
+  "title": "Assessed above deposit but same calendar day — duty delta only",
+  "source": "depositgap-algorithm.md day-count convention (0 days → 0 interest)",
+  "input": {
+    "order_type": "AD",
+    "deposit_rate": 0.1,
+    "assessed_rate": 0.25,
+    "rate_class": "exporter_specific",
+    "entered_value": 1000000,
+    "order_published_on": "2023-06-15",
+    "liquidated_on": "2023-06-15",
+    "interest_annual_rate": 0.08,
+    "skip_interest": false
+  },
+  "expect": {
+    "duty_delta": 150000,
+    "days": 0,
+    "interest": 0,
+    "true_up": 150000,
+    "status": "ok"
+  }
+}
