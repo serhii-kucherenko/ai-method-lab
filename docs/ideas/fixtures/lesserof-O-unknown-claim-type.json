@@ -1,0 +1,16 @@
+{
+  "id": "lesserof-O-unknown-claim-type",
+  "title": "Unknown claim type — reject",
+  "source": "lesserof-algorithm.md",
+  "input": {
+    "claim_type": "manufacturing_other",
+    "duties_paid": 10000,
+    "substitute_basis": 4000,
+    "apply_usmca_lesser_of": false,
+    "basket_other_ineligible": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "unknown_claim_type"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lesserof-N-negative-duties",
+  "title": "Negative duties paid — reject bad inputs",
+  "source": "lesserof-algorithm.md anti-pattern hygiene",
+  "input": {
+    "claim_type": "substitution",
+    "duties_paid": -100,
+    "substitute_basis": 4000,
+    "apply_usmca_lesser_of": false,
+    "basket_other_ineligible": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "bad_inputs"
+  }
+}

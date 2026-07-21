@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const fixturesDir = join(__dirname, "fixtures");
 
-function refund(input) {
+function refundLine(input) {
   if (input.basket_other_ineligible === true) {
     return { status: "reject", reason: "basket_other" };
   }
@@ -24,6 +24,9 @@ function refund(input) {
   if (claim === "substitution" && input.skip_lesser_of === true) {
     return { status: "reject", reason: "skip_lesser_of_on_substitution" };
   }
+  if (input.relabel_from_substitution === true) {
+    return { status: "reject", reason: "claim_type_relabel" };
+  }
 
   let base;
   if (claim === "direct_id") {
@@ -37,7 +40,6 @@ function refund(input) {
   let refund99 = 0.99 * base;
 
   if (input.usmca_partner_duty === 0 && input.apply_usmca_lesser_of === true) {
-    // Partner duty-free → recoverable customs duty capped at 0 under USMCA lesser-of
     refund99 = Math.min(refund99, 0);
   } else if (
     typeof input.usmca_partner_duty === "number" &&
@@ -51,6 +53,21 @@ function refund(input) {
     refund: refund99,
     base_used: base,
   };
+}
+
+function refund(input) {
+  if (input.mode === "multi_line") {
+    const line_refunds = [];
+    let total = 0;
+    for (const line of input.lines) {
+      const got = refundLine(line);
+      if (got.status !== "ok") return got;
+      line_refunds.push(got.refund);
+      total += got.refund;
+    }
+    return { status: "ok", refund: total, line_refunds };
+  }
+  return refundLine(input);
 }
 
 function nearlyEqual(a, b, eps = 0.02) {
@@ -69,6 +86,12 @@ for (const file of files) {
   let ok = got.status === want.status;
   if (ok && want.status === "ok") {
     ok = nearlyEqual(got.refund, want.refund);
+    if (ok && want.line_refunds) {
+      ok =
+        Array.isArray(got.line_refunds) &&
+        got.line_refunds.length === want.line_refunds.length &&
+        got.line_refunds.every((v, i) => nearlyEqual(v, want.line_refunds[i]));
+    }
   }
   if (ok && want.reason) ok = got.reason === want.reason;
   if (!ok) failed += 1;

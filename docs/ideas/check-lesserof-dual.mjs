@@ -8,8 +8,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const fixturesDir = join(__dirname, "fixtures");
 
-/** Impl A — step order from check-lesserof-fixtures.mjs */
-function refundA(input) {
+function refundLineA(input) {
   if (input.basket_other_ineligible === true) {
     return { status: "reject", reason: "basket_other" };
   }
@@ -21,6 +20,9 @@ function refundA(input) {
   }
   if (input.claim_type === "substitution" && input.skip_lesser_of === true) {
     return { status: "reject", reason: "skip_lesser_of_on_substitution" };
+  }
+  if (input.relabel_from_substitution === true) {
+    return { status: "reject", reason: "claim_type_relabel" };
   }
   let base;
   if (input.claim_type === "direct_id") base = input.duties_paid;
@@ -37,8 +39,7 @@ function refundA(input) {
   return { status: "ok", refund: refund99 };
 }
 
-/** Impl B — rewritten: eligibility first, then claim-mode branch, then stack USMCA. */
-function refundB(input) {
+function refundLineB(input) {
   if (input.basket_other_ineligible) {
     return { status: "reject", reason: "basket_other" };
   }
@@ -46,6 +47,9 @@ function refundB(input) {
   const sub = Number(input.substitute_basis);
   if (!(paid >= 0) || !(sub >= 0)) {
     return { status: "reject", reason: "bad_inputs" };
+  }
+  if (input.relabel_from_substitution) {
+    return { status: "reject", reason: "claim_type_relabel" };
   }
   const mode = input.claim_type;
   if (mode === "direct_id" && input.force_lesser_of === true) {
@@ -74,6 +78,26 @@ function refundB(input) {
   return { status: "ok", refund: out };
 }
 
+function wrap(refundLine) {
+  return function refund(input) {
+    if (input.mode === "multi_line") {
+      const line_refunds = [];
+      let total = 0;
+      for (const line of input.lines) {
+        const got = refundLine(line);
+        if (got.status !== "ok") return got;
+        line_refunds.push(got.refund);
+        total += got.refund;
+      }
+      return { status: "ok", refund: total, line_refunds };
+    }
+    return refundLine(input);
+  };
+}
+
+const refundA = wrap(refundLineA);
+const refundB = wrap(refundLineB);
+
 function nearlyEqual(a, b, eps = 0.02) {
   return Math.abs(a - b) <= eps;
 }
@@ -81,7 +105,13 @@ function nearlyEqual(a, b, eps = 0.02) {
 function same(a, b) {
   if (a.status !== b.status) return false;
   if (a.status === "reject") return a.reason === b.reason;
-  return nearlyEqual(a.refund, b.refund);
+  if (!nearlyEqual(a.refund, b.refund)) return false;
+  if (a.line_refunds || b.line_refunds) {
+    if (!a.line_refunds || !b.line_refunds) return false;
+    if (a.line_refunds.length !== b.line_refunds.length) return false;
+    return a.line_refunds.every((v, i) => nearlyEqual(v, b.line_refunds[i]));
+  }
+  return true;
 }
 
 const files = readdirSync(fixturesDir)
@@ -95,10 +125,16 @@ for (const file of files) {
   const b = refundB(doc.input);
   const want = doc.expect;
   const agree = same(a, b);
-  const matchWant =
+  let matchWant =
     a.status === want.status &&
     (want.status !== "ok" || nearlyEqual(a.refund, want.refund)) &&
     (!want.reason || a.reason === want.reason);
+  if (matchWant && want.line_refunds) {
+    matchWant =
+      Array.isArray(a.line_refunds) &&
+      a.line_refunds.length === want.line_refunds.length &&
+      a.line_refunds.every((v, i) => nearlyEqual(v, want.line_refunds[i]));
+  }
   const ok = agree && matchWant;
   if (!ok) failed += 1;
   console.log(

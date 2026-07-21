@@ -32,7 +32,7 @@ A shallow dual-gate or “99% of paid” product fails (1)–(4). A vendor blog 
 
 ## G5 progress (paper fixtures — seed only)
 
-Encoded A–J (10) via `check-lesserof-fixtures.mjs` / dual — still seed, not framed:
+Encoded A–P (16) via `check-lesserof-fixtures.mjs` / dual — still seed, not framed:
 
 - ✅ Happy: substitution lesser-of binds (A)  
 - ✅ Happy: substitution lesser-of does not bind (E)  
@@ -42,10 +42,12 @@ Encoded A–J (10) via `check-lesserof-fixtures.mjs` / dual — still seed, not 
 - ✅ Boundary: equal columns (F)  
 - ✅ USMCA: partner duty-free → recoverable **0** (C)  
 - ✅ USMCA: partner duty ≥ U.S. TFTEA base → U.S. side survives (G)  
+- ✅ USMCA: partner mid-cap binds (M)  
 - ✅ Basket: 8-digit “other” without match → ineligible (D)  
 - ✅ Basket: matching 10-digit non-other → eligible (J)  
-- ⬜ Expert cheat: relabel claim type to dodge lesser-of  
-- ⬜ Concurrent: two lines independent caps  
+- ✅ Expert cheat: relabel claim type to dodge lesser-of (K)  
+- ✅ Concurrent: two lines independent caps (L)  
+- ✅ Hygiene: negative duties / unknown type / zero duties (N/O/P)  
 
 Still toward ≥25 before any frame. No product while htsroute owns the slot.
 

@@ -562,3 +562,9 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Documented X/Y as product-phase notes ? G5 ?25 bar met on paper (**23** encoded + 2 notes)
 - Checkers **23/23** single + dual green; still seed; htsroute same-day no-build
 - Loop 27600 not re-armed
+
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #10
+
+- Encoded lesserof **K?P** (relabel cheat reject, two-line independence, USMCA mid-cap, negative/unknown/zero hygiene)
+- Suite **16/16** single + dual green; still seed; htsroute same-day no-build
+- Loop 27600 not re-armed
