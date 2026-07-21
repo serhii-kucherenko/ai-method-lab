@@ -39,6 +39,6 @@ Full historical table preserved in git history prior to depth restart; rows belo
 
 ## Next autonomous actions
 
-1. Deepen **lotblast** through IDEA_DEPTH gates (`docs/ideas/lotblast.md`) — research only
+1. Deepen **amendwin** through IDEA_DEPTH (`docs/ideas/amendwin.md`) — research only
 2. Do not open a new `projects/<id>/` until `ready_to_build`
 3. Kill any dual-gate / noun-swap seed immediately

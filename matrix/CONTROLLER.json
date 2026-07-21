@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T10:35:00Z",
+  "updated_at": "2026-07-21T10:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "R-depth-002__next-idea",
+  "active_cell": "R-depth-002__amendwin__framed",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -20,11 +20,11 @@
   "last_completed": "A03__P-sustain__lotblast__r1",
   "last_error": null,
   "current_product": null,
-  "current_idea": null,
-  "next_cell": "R-depth-002__next-idea",
+  "current_idea": "amendwin",
+  "next_cell": "R-depth-002__amendwin__adversarial",
   "mode": "autonomous",
   "phase": "research",
-  "notes": "lotblast sustained. Next: IDEA_DEPTH research for a new non-isomorphic idea — do not start dual-gate clones.",
+  "notes": "lotblast sustained. Active idea: amendwin (framed). Research only — no projects/amendwin until ready_to_build.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

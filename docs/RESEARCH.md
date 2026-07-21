@@ -128,6 +128,12 @@ Next research: Fixture D (scrap edge) golden JSON; still no product code.
 - CTE API + mock-recall export + plant authz + minimal UI landed same tick
 - Next: score A03 smoke cell; climb sustain without dual-gate patterns
 
+## 2026-07-21 — lotblast sustained + amendwin framed
+
+- lotblast full ladder scored; FINDINGS method-stress honest
+- New idea **amendwin** (`docs/ideas/amendwin.md`) — framed, entering adversarial
+- Research only; no `projects/amendwin/` until ready_to_build
+
 
 
 

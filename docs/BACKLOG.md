@@ -10,7 +10,8 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **lotblast** | sustained | Method stress complete. Next: new IDEA_DEPTH idea (no dual-gate queue). |
+| 1 | **amendwin** | research | Amendment-aware clinical visit windows. Dossier: `docs/ideas/amendwin.md`. No code until ready_to_build. |
+| 2 | lotblast | sustained | Method stress complete. |
 | 2 | Idea pipeline hygiene | ongoing | Kill isomorphic dual-gate seeds on sight. |
 
 ## Frozen / abandoned product queue
