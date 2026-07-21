@@ -23,6 +23,8 @@ const seeds = [
       "htsroute-API-CONTRACT.md",
       "htsroute-TOMORROW-RUN.md",
       "htsroute-FLIP-ABORT.md",
+      "htsroute-DAY1-NONSMOKE.md",
+      "QUEUE-ISO-AUDIT.md",
       "check-htsroute-preflip.mjs",
     ],
   },
@@ -39,6 +41,7 @@ const seeds = [
       "depositgap-SUSTAIN-TEST-MATRIX.md",
       "depositgap-API-CONTRACT.md",
       "depositgap-POST-HTSROUTE-RUN.md",
+      "depositgap-DAY1-NONSMOKE.md",
     ],
   },
   {
@@ -54,6 +57,7 @@ const seeds = [
       "lesserof-SUSTAIN-TEST-MATRIX.md",
       "lesserof-API-CONTRACT.md",
       "lesserof-POST-DEPOSITGAP-RUN.md",
+      "lesserof-DAY1-NONSMOKE.md",
     ],
   },
   {

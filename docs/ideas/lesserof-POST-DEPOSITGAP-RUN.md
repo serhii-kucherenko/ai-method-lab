@@ -32,7 +32,7 @@ node docs/ideas/check-lesserof-dual.mjs
 ## If all pass
 
 1. Set `current_idea` → lesserof; walk IDEA_DEPTH only if gates hold.  
-2. Open comprehensive `projects/lesserof/` — not smoke-as-sustain / not 99%-of-paid widget.  
+2. Open comprehensive `projects/lesserof/` — not smoke-as-sustain / not 99%-of-paid widget. Day-1 contract: `lesserof-DAY1-NONSMOKE.md`.  
 3. Digests: stacked refund-cap **workflow experiment**; brokers/ACE still file; Kill A stands.
 
 ## If any fail

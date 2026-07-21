@@ -725,3 +725,11 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 ## 2026-07-21 -- 30m loop tick 14: iso audit + day-1 non-smoke
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 14 (pid 29556 left alone). Wrote `QUEUE-ISO-AUDIT.md` (unique rule per queued idea) and `htsroute-DAY1-NONSMOKE.md`; wired into TOMORROW-RUN / FLIP-ABORT. Added depositgap G5 product-phase note Z (sec 1505(d) delinquency conflation). Preflip still calendar-blocked; `check-all-seeds.mjs` all 5 dual-green. No product.
+
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #29
+
+- Wrote depositgap-DAY1-NONSMOKE + lesserof-DAY1-NONSMOKE
+- Synced BACKLOG fixture counts (htsroute 36); kit checker requires day-1 + iso audit
+- Preflip still calendar-blocked; loop 27600 not re-armed
+

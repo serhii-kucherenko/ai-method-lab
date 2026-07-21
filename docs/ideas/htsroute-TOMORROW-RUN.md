@@ -19,7 +19,7 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
    - `node docs/ideas/check-htsroute-preflip.mjs`  
    (calendar ≠ framing day **and** htsroute fixtures + dual green)  
 5. Fill `htsroute-DAY-BOUNDARY.md` checkboxes for real (not dry-run).  
-6. Optional preflight for the whole research farm: `node docs/ideas/check-all-seeds.mjs` (must stay green; does not replace the htsroute-specific re-reads).
+6. Optional preflight for the whole research farm: `node docs/ideas/check-all-seeds.mjs` and `node docs/ideas/check-seed-kits.mjs` (must stay green; does not replace the htsroute-specific re-reads).
 
 ## If all pass
 

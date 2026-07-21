@@ -7,7 +7,7 @@ Controller chains these without waiting. Finish one → commit → start next.
 | # | Item | Status |
 |---|------|--------|
 | 28 | Day-boundary ready reassess | **pending** (calendar still 2026-07-21) |
-| 54 | 15m tick #28 | **done** — scorecards + kit checker |
+| 55 | 15m tick #29 | **done** — day-1 non-smoke + backlog sync |
 
 ## Rule
 
