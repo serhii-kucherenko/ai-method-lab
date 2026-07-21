@@ -1,0 +1,18 @@
+{
+  "id": "htsroute-26-pantoprazole-tablets-3004",
+  "title": "Pantoprazole sodium delayed-release tablets measured dose",
+  "source": "Pairs with NY I89619 bulk Pantoprazole Sodium → Ch 29; finished tablets → heading 3004 by HTS 3004 text + dosage-form practice",
+  "sku": {
+    "molecule_name": "pantoprazole sodium",
+    "chemical_form": "mixture",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": true,
+    "retail_packing": false,
+    "dosage_form_signal": "tablet",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "heading_3004_medicament"
+  }
+}

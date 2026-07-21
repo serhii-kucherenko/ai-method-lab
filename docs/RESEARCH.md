@@ -298,3 +298,7 @@ Encoded remaining named boundaries through #25 (#16 aliased to #8). Checker: **2
 ## 2026-07-21 ? htsroute suite near-complete + /loop 30m (tick 7)
 
 Armed `/loop 30m` depth keep-going (replaced stale lotblast/product conveyor loops). Encoded remaining G5 boundaries including concurrent batch, molecule-name ignore, expert cheats. Checker **24 fixture files green**. G6 still **do not build yet** (same-day block). No product folder.
+
+## 2026-07-21 ? htsroute chain tick 8 (scorecard + C + pantoprazole)
+
+Chained without idle: gate scorecard (hold), Challenge C closed, RESEARCH_QUEUE written, pantoprazole bulk?tablet fixtures #26/#27. Checker **26 files green**. Re-armed `/loop 30m` with explicit finish?next-item prompt. Still **do not build** today.

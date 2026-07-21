@@ -40,13 +40,21 @@ Pain evidence for framing. Not a build ticket. Sources cited for skepticism, not
 
 **Why this matters:** A binary “29 vs 3004” idea would mis-route the pellet intermediate. Challenge B forced the algorithm to add `heading_3003_bulk_medicament`. This is the first depth artifact that would fail a shallow keyword product.
 
+## Same-molecule reinforcement (pantoprazole)
+
+| Form | Route | Source |
+|------|-------|--------|
+| Pantoprazole Sodium **imported in bulk form** | **Chapter 29** (2933.39.4100) | CROSS **NY I89619** |
+| Pantoprazole sodium **delayed-release tablets** (measured dose) | **Heading 3004** | HTS 3004 text + finished-dosage practice; encoded as fixture `htsroute-26-pantoprazole-tablets-3004.json` |
+
+Honest residual: still no dedicated US CROSS letter titled for pantoprazole *tablets* located this tick — the bulk leg is primary; the tablet leg rests on heading text + dosage-form practice (same standard used for peer 3004 cards).
+
 ## What G1 still lacks (honest)
 
 - First-hand interview notes from an importer desk (not obtained).
 - A single public CF-29 / § 1592 docket specifically about 29↔30 pharma misclass (general penalty path only).
-- Finished omeprazole **capsule** CROSS letter on file (trade practice + heading text support 3004; prefer a direct ruling cite before ready_to_build).
+- Dedicated finished omeprazole/pantoprazole **capsule/tablet** CROSS letter (optional strengthen before ready_to_build).
 
 ## G1 provisional grade
 
-**Stronger pass** — same-molecule omeprazole chain + peer dosage 3004 + Note 1(a) awareness.  
-**Still not ready_to_build** — no fixtures; Challenge B binding rules not yet encoded as golden JSON.
+**Strong pass for framing + ruling chains.** Suite encoded (24+ fixtures). **Still not ready_to_build this calendar day** — scorecard hold under same-day policy.
