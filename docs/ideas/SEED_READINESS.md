@@ -1,19 +1,20 @@
 # Seed readiness snapshot (research only)
 
-**Verified:** 2026-07-21 (15m tick 21) — hypothesis + try-demo notes complete for all queued seeds; preflight still `node docs/ideas/check-all-seeds.mjs`  
-**Same-day build:** still **blocked** (framing day 2026-07-21). Do not open products.
+**Verified:** 2026-07-21 (15m tick 22) — sustain matrices + page specs filled for lesserof / oshamult / ptax  
+**Same-day build:** still **blocked** (framing day 2026-07-21). Do not open products.  
+**Preflight:** `node docs/ideas/check-all-seeds.mjs`
 
-| Idea | Role | Dual-green | G6 | Acceptance | Hypothesis draft | Try-demo note |
-|------|------|------------|----|------------|------------------|---------------|
-| **htsroute** | `current_idea` | 36 + probes | yes | yes | yes | `demos/htsroute-try/` live |
-| **depositgap** | prefer #1 after | 23 | yes | yes | yes | note only |
-| **lesserof** | #2 | 23 | yes | yes | yes | note only |
-| **oshamult** | #3 | 26 | yes | yes | yes | note only |
-| **ptax4975** | #4 | 35 | yes | yes | yes | note only |
+| Idea | Dual | G6 | Accept | Hyp | Try note | Page specs | Sustain matrix |
+|------|------|----|--------|-----|----------|------------|----------------|
+| **htsroute** | 36 | yes | yes | yes | live demo | yes | yes |
+| **depositgap** | 23 | yes | yes | yes | note | yes | yes |
+| **lesserof** | 23 | yes | yes | yes | note | **yes** | **yes** |
+| **oshamult** | 26 | yes | yes | yes | note | **yes** | **yes** |
+| **ptax4975** | 35 | yes | yes | yes | note | **yes** | **yes** |
 
 ## Honest framing (all)
 
-Kill A stands commercially for each. Digests must say **workflow / forecast experiment** — not incumbent replacement.
+Kill A stands commercially for each. Digests must say **workflow / forecast experiment**.
 
 ## Explicit non-actions
 
