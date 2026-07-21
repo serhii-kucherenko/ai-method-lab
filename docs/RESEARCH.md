@@ -469,6 +469,6 @@ Wrote `docs/ideas/htsroute-SUSTAIN-TEST-MATRIX.md` for when the multi-page produ
 
 ## 2026-07-21 -- htsroute page wireframe specs (docs only)
 
-Expanded blueprint into `docs/ideas/htsroute-PAGE-SPECS.md`: per-page route paths, primary actions, empty/error states, data fields, acceptance checks for all **7** pages (Catalog, SKU detail, Batch, Audit, Goldens, Org settings, Money honesty), plus feature×page matrix.
+Expanded blueprint into `docs/ideas/htsroute-PAGE-SPECS.md`: per-page route paths, primary actions, empty/error states, data fields, acceptance checks for all **7** pages (Catalog, SKU detail, Batch, Audit, Goldens, Org settings, Money honesty), plus feature-by-page matrix.
 
 Still **no** `projects/htsroute/`. Paper only until day-boundary ready_to_build.
