@@ -27,13 +27,13 @@ Sign convention: positive `duty_delta` → importer owes; negative → refund pa
 
 ## Procedure (v0)
 
-1. Reject if `entered_value` ≤ 0 or rates missing / negative.  
+1. Reject if `entered_value` ≤ 0, deposit/assessed rates missing or negative, or `interest_annual_rate` missing / non-finite / negative.  
 2. `duty_delta = (assessed_rate − deposit_rate) × entered_value`.  
 3. `days =` calendar days from `order_published_on` to `liquidated_on` (exclude or include per locked convention — **document in fixtures**; default: exclude publication day, include liquidation day, matching common “from/to” trade worksheets unless primary cite says otherwise).  
 4. Simple interest toy (v0): `interest = duty_delta × interest_annual_rate × (days / 365)`.  
    Compounding / exact CBP day-count may replace this in later research — do not claim ACE parity in digests.  
 5. `true_up = duty_delta + interest`.  
-6. Reject “deposit_rate as final” shortcuts: if caller sets `assessed_rate = deposit_rate` **and** marks `skip_interest=true` while dates differ → reject (honesty gate).
+6. Honesty gate: if `skip_interest=true` while `days > 0` → **reject** (covers deposit-as-final cheats and underdeposit interest skips).
 
 ## Worked toy (statute-shaped, not a live liquidation)
 
@@ -48,7 +48,7 @@ Sign convention: positive `duty_delta` → importer owes; negative → refund pa
 | interest | $12,000 |
 | true_up | **$162,000** |
 
-Use non-leap windows in toys (e.g. 2023-01-01 → 2024-01-01) so day count stays 365. Checker: `node docs/ideas/check-depositgap-fixtures.mjs` (A–J green; seed only). Case map: `depositgap-G5-cases.md`.
+Prefer non-leap windows in toys (e.g. 2023-01-01 → 2024-01-01) so day count stays 365; fixture K locks a leap window. Checker: `node docs/ideas/check-depositgap-fixtures.mjs` (A–S green; seed only). Case map: `depositgap-G5-cases.md`.
 
 Cite trail: `depositgap-STATUTE-CITATIONS.md` (§ 1677g, 19 CFR 351.212).
 

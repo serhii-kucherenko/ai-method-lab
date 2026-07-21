@@ -22,18 +22,17 @@ function trueUpA(input) {
     !(input.entered_value > 0) ||
     typeof input.deposit_rate !== "number" ||
     typeof input.assessed_rate !== "number" ||
+    typeof input.interest_annual_rate !== "number" ||
     input.deposit_rate < 0 ||
-    input.assessed_rate < 0
+    input.assessed_rate < 0 ||
+    !Number.isFinite(input.interest_annual_rate) ||
+    input.interest_annual_rate < 0
   ) {
     return { status: "reject" };
   }
   const days = daysA(input.order_published_on, input.liquidated_on);
   if (days === null || days < 0) return { status: "reject" };
-  if (
-    input.skip_interest === true &&
-    input.deposit_rate === input.assessed_rate &&
-    days > 0
-  ) {
+  if (input.skip_interest === true && days > 0) {
     return { status: "reject" };
   }
   const duty_delta =
@@ -51,10 +50,19 @@ function trueUpA(input) {
 /** Impl B — rewritten: validate → honesty gate → delta → pro-rate interest. */
 function trueUpB(input) {
   const value = Number(input.entered_value);
-  const dep = Number(input.deposit_rate);
-  const ass = Number(input.assessed_rate);
-  const rate = Number(input.interest_annual_rate);
-  if (!(value > 0) || !(dep >= 0) || !(ass >= 0) || !Number.isFinite(rate)) {
+  const dep = input.deposit_rate;
+  const ass = input.assessed_rate;
+  const rate = input.interest_annual_rate;
+  if (
+    !(value > 0) ||
+    typeof dep !== "number" ||
+    typeof ass !== "number" ||
+    typeof rate !== "number" ||
+    !(dep >= 0) ||
+    !(ass >= 0) ||
+    !Number.isFinite(rate) ||
+    rate < 0
+  ) {
     return { status: "reject" };
   }
   const t0 = Date.parse(`${input.order_published_on}T00:00:00.000Z`);
@@ -63,7 +71,7 @@ function trueUpB(input) {
     return { status: "reject" };
   }
   const dayCount = Math.round((t1 - t0) / (24 * 60 * 60 * 1000));
-  if (input.skip_interest === true && dep === ass && dayCount > 0) {
+  if (input.skip_interest === true && dayCount > 0) {
     return { status: "reject" };
   }
   const delta = value * (ass - dep);

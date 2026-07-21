@@ -1,0 +1,19 @@
+{
+  "id": "depositgap-P-missing-interest-rate",
+  "title": "Missing interest annual rate — reject",
+  "source": "depositgap-G5-cases.md P",
+  "input": {
+    "order_type": "AD",
+    "deposit_rate": 0.1,
+    "assessed_rate": 0.25,
+    "rate_class": "exporter_specific",
+    "entered_value": 1000000,
+    "order_published_on": "2023-01-01",
+    "liquidated_on": "2024-01-01",
+    "interest_annual_rate": null,
+    "skip_interest": false
+  },
+  "expect": {
+    "status": "reject"
+  }
+}
