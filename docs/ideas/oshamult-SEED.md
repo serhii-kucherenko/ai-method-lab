@@ -29,3 +29,8 @@ Published per-violation maxima are dollar amounts. Wrong serial order or applyin
 ## Decision
 
 **Seed only.** Prefer depositgap / lesserof ahead of this until those clear or kill. Wave: `SEEDS-WAVE-2026-07-21.md`.
+
+## Artifacts so far
+
+- `oshamult-SEED.md` / `oshamult-algorithm.md` / `oshamult-challenge-ABC.md` / `oshamult-G5-cases.md`
+- Paper fixtures **A–F** (6) + `check-oshamult-fixtures.mjs` / `check-oshamult-dual.mjs` green

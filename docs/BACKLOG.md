@@ -28,7 +28,7 @@ See `docs/DEPTH_RESTART.md`.
 | --- | --- | --- |
 | lesserof | seed | Stacked-cap refund math; **23** fixtures dual-green + X/Y notes; G5 bar met on paper. |
 | **depositgap** | seed | **Strongest 2026-07-21 wave.** G5 met (23 fixtures + X/Y notes). **G6 + page specs** on file — prefer next after htsroute. **Not activated**. |
-| oshamult | seed | OSHA GBP + serial size/history/good-faith reductions (29 CFR 1903.15 / FOM Ch. 6). Wave only. |
+| oshamult | seed | OSHA GBP + serial reductions. Algorithm + Kill A/B/C + **6** fixtures dual-green. Still behind depositgap/lesserof. |
 | ptax4975 | seed | IRC § 4975 15%/100% prohibited-transaction excise on amount involved. Wave only. |
 | meldefer | soft park | Near amendwin/days — `meldefer-PARK.md`. |
 | form222 | soft park | Crowded compliance — `form222-PARK.md`. |

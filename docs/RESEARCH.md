@@ -579,3 +579,10 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Documented X/Y product-phase notes ? G5 ?25 bar met on paper (**23** + 2 notes)
 - Suite **23/23** single + dual green; still seed; htsroute same-day no-build
 - Loop 27600 not re-armed
+
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #12
+
+- Opened **oshamult** depth: algorithm + Kill A/B/C + G5 map
+- Encoded fixtures A?F (serial GBP toy, size-on-willful/repeat rejects, statutory-max cheat reject)
+- Checkers **6/6** single + dual green; still seed; prefer depositgap after htsroute
+- Loop 27600 not re-armed

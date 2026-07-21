@@ -9,15 +9,16 @@ Controller chains these without waiting. Finish one → commit → start next.
 | 1–27 | Frame through API/PRODUCT framing | done |
 | 28 | Day-boundary ready reassess | **pending** (calendar still 2026-07-21) |
 | 29–30 | Blueprint / open product | blocked until 28 |
-| 34–36 | 15m ticks #8–#10 | done |
-| 37 | 15m tick #11 | **done** — lesserof V–W + X/Y notes |
+| 37 | 15m tick #11 | done — lesserof V–W |
+| 38 | 15m tick #12 | **done** — oshamult algorithm + A–F |
 
 ## Parallel seeds
 
 | Seed | Latest |
 |------|--------|
-| depositgap | **23** fixtures + G6/page specs — prefer next after htsroute |
-| lesserof | **23** fixtures dual-green + X/Y notes — G5 bar met on paper |
+| depositgap | **23** fixtures + G6 — prefer next after htsroute |
+| lesserof | **23** fixtures + X/Y — G5 bar met |
+| oshamult | Algorithm + Kill ABC + **6** fixtures dual-green |
 
 ## Rule
 

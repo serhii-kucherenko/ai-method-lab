@@ -1,0 +1,18 @@
+{
+  "id": "oshamult-F-size-on-repeat",
+  "title": "Honesty — size reduction on repeat must reject",
+  "source": "oshamult-algorithm.md classification gate",
+  "input": {
+    "classification": "repeat",
+    "gbp_amount": 80000,
+    "size_pct": 0.2,
+    "history_pct": 0.1,
+    "good_faith_pct": 0,
+    "quick_fix_pct": 0,
+    "use_statutory_max": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "size_on_willful_or_repeat"
+  }
+}
