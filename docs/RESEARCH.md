@@ -289,4 +289,4 @@ Seven goldens total. Critical **#4** (other-molecule bulk API) still open. Still
 
 ## 2026-07-21 ? htsroute boundary expand (tick 6)
 
-Added boundary goldens #9, #11, #13, #17 (powder bulk 29; capsule 3004; non-therapeutic reject; inconsistent pellets/defined reject). Checker **12/12 green**. Still **do not build** ? remaining boundaries and overnight hold before any ready_to_build.
+Added boundary goldens #9, #11, #12, #13, #17 (powder bulk 29; capsule 3004; retail packing 3004; non-therapeutic reject; inconsistent pellets/defined reject). Checker **13/13 green**. Still **do not build** ? remaining boundaries and overnight hold before any ready_to_build.

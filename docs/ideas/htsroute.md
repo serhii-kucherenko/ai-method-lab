@@ -3,7 +3,7 @@
 **State:** `testable`  
 **Framing:** workflow experiment (not a commercial pitch against customs classification vendors)  
 **Opened:** 2026-07-21 after lanehold G2 kill  
-**Research ticks on this idea:** 5  
+**Research ticks on this idea:** 6  
 **Policy:** slow depth — **no product folder**, no ready_to_build this calendar day
 
 ## Start here
@@ -14,8 +14,8 @@
 4. Algorithm: `htsroute-algorithm.md`
 5. G5 cases: `htsroute-G5-cases.md`
 6. G6 summary: `htsroute-G6-summary.md` (**do not build yet**)
-7. Golden cards: `fixtures/htsroute-1` … `htsroute-8`
-8. Checker: `node docs/ideas/check-htsroute-fixtures.mjs` (8/8 green)
+7. Golden cards: critical #1–#8 plus boundaries #9, #11, #12, #13, #17
+8. Checker: `node docs/ideas/check-htsroute-fixtures.mjs` (13/13 green)
 
 ## Problem (G1)
 
@@ -48,8 +48,8 @@ The omeprazole chain is the non-isomorphism proof: bulk API → 29; coated pelle
 
 ## Depth test outline (G5)
 
-Paper cases 1–25 named. **Critical path #1–#8 encoded and green.** Boundaries #9–#25 stay paper.
+Paper cases 1–25 named. **Critical path #1–#8 green.** Partial boundaries encoded (#9, #11–#13, #17). Remaining #10, #14–#16, #18–#25 stay paper.
 
 ## Decision
 
-**Testable + critical path green — do not build** (see `htsroute-G6-summary.md`). Same-day research→build blocked. Next: expand boundary goldens slowly; hold overnight before any ready-to-build claim.
+**Testable + 13 goldens green — do not build** (see `htsroute-G6-summary.md`). Same-day research→build blocked. Next: keep expanding boundaries slowly; hold overnight before any ready-to-build claim.
