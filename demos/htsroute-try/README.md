@@ -25,7 +25,7 @@ Open `try.html` in a browser (single file, no build). Or run `npm start` and vis
 - Brokers and existing HS tools already win commercially.
 - This is a **workflow experiment**, not a market proof.
 - Pantoprazole showcase pairs are often **Free / Free** under ordinary MFN.
-- Letter base MFN contrasts are **not** landed-duty savings once Section 232 / 301 stacks apply (~2026-07-31 for patented pharma per counsel) — see `htsroute-STACKED-TARIFF-FENCE.md`.
+- Letter base MFN contrasts are **not** landed-duty savings once Section 232 / 301 stacks apply (proclamation: Annex III **2026-07-31**; other companies **2026-09-29**) — see `htsroute-STACKED-TARIFF-FENCE.md`.
 - Fixture pass counts are **not** product-market evidence.
 
 See `docs/ideas/htsroute-VALUE-STAKES.md`, `docs/ideas/htsroute-PRODUCT-FRAMING.md`, `docs/ideas/htsroute-STACKED-TARIFF-FENCE.md`, and `docs/ideas/htsroute-algorithm.md`.

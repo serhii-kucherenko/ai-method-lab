@@ -45,7 +45,7 @@ function checkTryStackedFence() {
     return { ok: false, tail: "missing htsroute-STACKED-TARIFF-FENCE.md" };
   }
   const html = readFileSync(tryPath, "utf8");
-  const need = ["Stacked duties", "2026-07-31", "232"];
+  const need = ["Stacked duties", "2026-07-31", "2026-09-29", "232", "Annex III"];
   const missing = need.filter((s) => !html.includes(s));
   if (missing.length) {
     return {
@@ -53,7 +53,10 @@ function checkTryStackedFence() {
       tail: `try.html missing stacked-fence markers: ${missing.join(", ")}`,
     };
   }
-  return { ok: true, tail: "try.html stacked-duty callout present" };
+  return {
+    ok: true,
+    tail: "try.html stacked-duty callout (Annex III 2026-07-31 / others 2026-09-29)",
+  };
 }
 
 const today = localYmd();
