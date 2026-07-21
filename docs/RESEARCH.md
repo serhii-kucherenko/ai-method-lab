@@ -190,3 +190,7 @@ bondstrip cleared IDEA_DEPTH (25 fixtures A-Y). Opened projects/bondstrip smoke 
 ## 2026-07-21 -- bondstrip sustained + tariffstep framed (loop 14)
 
 bondstrip full ladder (31 tests). Day-count accrued + strip held. Next idea tariffstep framed -- stepped rate blocks + demand ratchet. No product until ready_to_build.
+
+## 2026-07-21 -- tariffstep adversarial tick (loop 15)
+
+tariffstep moved from framed to adversarial. Paper algorithm + fixtures A-F green (block walk + ratchet bind/rejects). Kill A (CIS/Lodestar) stands commercially. Still no build.

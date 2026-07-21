@@ -1,6 +1,6 @@
 # tariffstep — idea dossier
 
-**State:** `framed`  
+**State:** `adversarial`  
 **Framing:** method stress (not GTM vs utility CIS / Lodestar)  
 **Opened:** 2026-07-21 after bondstrip sustain
 
@@ -23,6 +23,12 @@ Distinct from settlecut (single-interval loss×imbalance once) and bondstrip (co
 2. Kill B — niche tariff QA — soft  
 3. Kill C — regulatory tariff PDF offline — math still checkable  
 
+## Progress
+
+- Paper algorithm written (`tariffstep-algorithm.md`)
+- Fixtures A–F green via `check-tariffstep-fixtures.mjs`
+- Challenge A recorded; Kill A still stands commercially
+
 ## Decision
 
-**`framed`** — research only. No `projects/tariffstep/` until `ready_to_build`.
+**`adversarial`** — research only. No `projects/tariffstep/` until `ready_to_build`.

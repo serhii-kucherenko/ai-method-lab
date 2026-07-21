@@ -14,6 +14,6 @@
 | **ndcswap** (Orange Book TE substitution) | Sustained | — | Product done |
 | **settlecut** (interval imbalance settlement) | Sustained | — | Product done |
 | **bondstrip** (coupon strip + day-count accrued) | Sustained | — | Product done |
-| **tariffstep** (block walk + demand ratchet) | No | framed | Distinct from settlecut; Kill A CIS stands commercially |
+| **tariffstep** (block walk + demand ratchet) | No | adversarial | Fixtures A-F green; Kill A CIS stands commercially |
 
 **Rule:** one idea in `framed`→`ready_to_build`. Dual-gate seeds die immediately.

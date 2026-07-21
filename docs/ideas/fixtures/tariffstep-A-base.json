@@ -1,0 +1,28 @@
+{
+  "id": "tariffstep-A-base",
+  "total_kwh": 180,
+  "current_peak_kw": 12,
+  "prior_peak_kw": 10,
+  "ratchet_pct": 0.8,
+  "demand_rate": 9,
+  "blocks": [
+    {
+      "up_to_kwh": 100,
+      "rate": 0.1
+    },
+    {
+      "up_to_kwh": 200,
+      "rate": 0.15
+    },
+    {
+      "up_to_kwh": null,
+      "rate": 0.2
+    }
+  ],
+  "expect": {
+    "energy_charge": 22,
+    "billing_demand_kw": 12,
+    "demand_charge": 108,
+    "total_charge": 130
+  }
+}
