@@ -36,6 +36,7 @@ Specialty pharma trade-compliance analysts must route SKUs across Chapter 29 (bu
 3. Any digest or PRODUCT.md that claims MFN duty savings for pantoprazole/omeprazole showcase pairs → abandon framing as dishonest.
 4. Digests that treat fixture pass counts as market proof → abandon vanity framing.
 5. Digests that sell base-MFN letter contrasts as landed-duty savings after Section 232 effective dates without Annex I–IV / FR evidence → abandon as dishonest (`htsroute-STACKED-TARIFF-FENCE.md`).
+6. Digests that sell acetaminophen / ibuprofen / aspirin teaching pairs as a Section 232 exposure or savings story while clause (5) keeps generics out “at this time” → abandon as dishonest.
 
 ## 6. Depth test outline
 
@@ -61,4 +62,4 @@ Reasons:
 
 **Queue after htsroute (do not activate same tick as flip):** `depositgap` → `lesserof` → `oshamult` → `ptax4975` (see `ACTIVATION_QUEUE.md`).
 
-**Next:** day-boundary ready_to_build reassess must re-read Challenge D + VALUE-STAKES + `htsroute-STACKED-TARIFF-FENCE.md` (primary: Annex III **2026-07-31**, others **2026-09-29**); if flipped, PRODUCT.md must forbid Free/Free savings pitches, keep Kill A in every digest, and not invent 232 annex dollars.
+**Next:** day-boundary ready_to_build reassess must re-read Challenge D + VALUE-STAKES + `htsroute-STACKED-TARIFF-FENCE.md` (primary: Annex III **2026-07-31**, others **2026-09-29**; generics not under 232 at this time); if flipped, PRODUCT.md must forbid Free/Free savings pitches, keep Kill A in every digest, not invent 232 annex dollars, and not scare OTC analgesic teaching pairs with patented 232 coverage.

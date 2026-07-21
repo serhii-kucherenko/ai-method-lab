@@ -808,3 +808,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 ## 2026-07-21 -- 30m loop tick 20: primary Section 232 dates
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 20 (pid 29556 left alone). Locked proclamation clause (4) into `htsroute-STACKED-TARIFF-FENCE.md`: Annex III **2026-07-31**, other companies **2026-09-29** (prefer primary over conflicting secondary alerts). Updated DAY-BOUNDARY checklist, Challenge D, G6 falsifier #5. Suite **42** dual-green; preflip calendar-blocked. No product.
+
+## 2026-07-21 -- 30m loop tick 21: generics carve-out honesty
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 21 (pid 29556 left alone). Closed a vanity path: digests must not pitch Section 232 over acetaminophen / ibuprofen / aspirin teaching pairs while proclamation clause (5) keeps **generics** out **at this time**. Deepened `htsroute-STACKED-TARIFF-FENCE.md` (annex PDF pointer, teaching-SKU table, secondary-alert anti-pattern). Challenge D sub-attack 6; try callout + preflip Generic marker; G6 falsifier #6. Suite **42** dual-green; preflip still calendar-blocked. No product.

@@ -25,7 +25,7 @@ Open `try.html` in a browser (single file, no build). Or run `npm start` and vis
 - Brokers and existing HS tools already win commercially.
 - This is a **workflow experiment**, not a market proof.
 - Pantoprazole showcase pairs are often **Free / Free** under ordinary MFN.
-- Letter base MFN contrasts are **not** landed-duty savings once Section 232 / 301 stacks apply (proclamation: Annex III **2026-07-31**; other companies **2026-09-29**) — see `htsroute-STACKED-TARIFF-FENCE.md`.
+- Letter base MFN contrasts are **not** landed-duty savings for **patented** covered goods once Section 232 / 301 stacks apply (proclamation: Annex III **2026-07-31**; other companies **2026-09-29**) — see `htsroute-STACKED-TARIFF-FENCE.md`.
 - **Generic** pharmaceuticals are **not** subject to these 232 tariffs *at this time* — acetaminophen / ibuprofen / aspirin teaching pairs are form-gate / base-MFN lessons, **not** a 232 story.
 - Fixture pass counts are **not** product-market evidence.
 

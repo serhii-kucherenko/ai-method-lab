@@ -16,7 +16,7 @@ Even after the calendar day changes, **do not** flip `ready_to_build` if any of 
 
 1. New primary CROSS contradicts ≥2 goldens → re-version before flip.  
 2. Human hard-stop / pause in `CONTROLLER.json`.  
-3. Notify/digest would be dishonest about money stakes (including treating base MFN as landed duty after Section 232 effective dates without annex checks).
+3. Soft abort if digest would pitch Section 232 over acetaminophen / ibuprofen / aspirin teaching pairs while generics remain carved out “at this time.”
 
 ## If aborted
 
