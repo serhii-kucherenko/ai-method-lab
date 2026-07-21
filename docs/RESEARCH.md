@@ -877,3 +877,16 @@ Loop wake (pid 26872). Same-day build still blocked.
 **Decision:** still researching. Do not flip ready_to_build tonight. Tomorrow morning: reconfirm value gate or soft abort #4.
 
 **Skeptical one-liner:** Fixture count stays vanity until day-boundary honesty; the dry run already leans park over a Free/Free form-gate product.
+
+## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #50 (htsroute vs depositgap value)
+
+Loop wake #2 (pid 26872). Same-day build still blocked.
+
+- Wrote `htsroute-vs-depositgap-VALUE.md` ù head-to-head: Free/Free form-gate vs ~$160.5k deposit true-up toy
+- Morning checklist now forces Build vs Park after that memo + dry run
+- Smoke locks leap-year interest toy (fixture K: 366d @ 8%)
+- `depositgap-POST-HTSROUTE-RUN.md` requires try-demo smoke before activation
+
+**Decision:** still researching. Default lean remains park htsroute tomorrow if Challenge D weak; activate depositgap later.
+
+**Skeptical one-liner:** Putting the dollar contrast on one page makes fixture-farm flip excuses harder to hide.

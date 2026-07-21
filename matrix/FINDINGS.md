@@ -558,3 +558,7 @@ Re-armed 15m depth loop (pid 26872). Try-demo smoke harness green. ptax4975 rese
 ## 2026-07-21 -- depth tick 49 (research, no product)
 
 htsroute value-gate dry run leans park if Challenge D stays weak. Behavioral try-demo smoke wired into preflip. Same-day build blocked; no product folder.
+
+## 2026-07-21 -- depth tick 50 (research, no product)
+
+Head-to-head value memo (htsroute vs depositgap). Morning flip checklist forces Build vs Park. Leap-year day-count locked in demo smoke. No product folder.

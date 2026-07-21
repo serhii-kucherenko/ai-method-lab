@@ -117,6 +117,15 @@ function nearly(a, b, eps = 0.02) {
   } else {
     pass("depositgap behavioral toy: $150k + $10.5k interest");
   }
+
+  // Fixture K: leap window 2024-01-01 → 2025-01-01 = 366 days @ 8%
+  const leapInterest = 150_000 * 0.08 * (366 / 365);
+  if (!nearly(leapInterest, 12032.876712328769, 0.05)) {
+    fail(`depositgap leap toy drifted (interest=${leapInterest})`);
+    failed += 1;
+  } else {
+    pass("depositgap leap-year toy: 366d @ 8% ≈ $12,032.88");
+  }
 }
 
 {

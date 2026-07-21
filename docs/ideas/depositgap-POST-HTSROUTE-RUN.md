@@ -27,9 +27,11 @@ Use **only after** `htsroute` has flipped to build, parked, or killed — and **
 ```text
 node docs/ideas/check-depositgap-fixtures.mjs
 node docs/ideas/check-depositgap-dual.mjs
+node demos/smoke-try-demos.mjs
 ```
 
-Optional farm preflight: `node docs/ideas/check-all-seeds.mjs`
+Optional farm preflight: `node docs/ideas/check-all-seeds.mjs`  
+Value contrast before activation: `htsroute-vs-depositgap-VALUE.md` (why this seed over a Free/Free form-gate).
 
 ## If all pass
 
