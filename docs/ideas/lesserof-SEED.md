@@ -39,4 +39,5 @@ Export manufacturers leave refundable duty on the table because **substitution d
 - `lesserof-NARROW-CLAIM.md` / `lesserof-USMCA-STACK.md` / `lesserof-KILL-BC.md` / `lesserof-ALGORITHM.md`  
 - `lesserof-CFR-CITATIONS.md` — primary §§ 190.22 / 190.32 / 182.44–.45 quotes  
 - `lesserof-BASKET-OTHER.md` — § 1313(j)(5) toy ($4,950 fantasy if 8-digit “other” silently matched)  
+- `lesserof-COMPREHENSIVE-BLUEPRINT.md` — multi-page bar (pre-build; still seed)  
 

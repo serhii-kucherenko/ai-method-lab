@@ -36,3 +36,4 @@ Importers book AD/CVD **cash deposit** rates as landed cost, then take a cash hi
 
 - `depositgap-SEED.md` — itch + kill risks  
 - `SEEDS-WAVE-2026-07-21.md` — wave listing with oshamult + ptax4975 siblings  
+- `depositgap-COMPREHENSIVE-BLUEPRINT.md` — multi-page/multi-feature stub (≥4 pages, ≥3 aggregates, ≥6 features); **seed only — do not activate**  

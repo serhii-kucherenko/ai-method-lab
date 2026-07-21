@@ -23,7 +23,7 @@ Controller chains these without waiting. Finish one → commit → start next. N
 | meldefer | Soft park — `meldefer-PARK.md` |
 | form222 | Soft park — crowded compliance |
 | htsroute GRI3 v1 | After v0 sustain |
-| **lesserof** | Seed — narrow stacked-cap claim; `lesserof-NARROW-CLAIM.md` |
+| **lesserof** | Seed — narrow stacked-cap claim; blueprint ready — `lesserof-COMPREHENSIVE-BLUEPRINT.md` |
 | **depositgap** | Seed — AD/CVD deposit vs final + § 1677g interest; strongest 2026-07-21 wave; `depositgap-SEED.md` |
 | oshamult | Seed — OSHA GBP serial reductions; wave listing only |
 | ptax4975 | Seed — IRC § 4975 excise; wave listing only |
@@ -34,6 +34,7 @@ Controller chains these without waiting. Finish one → commit → start next. N
 |------|--------|
 | Primary CFR quotes — 190.22 / 190.32 + Part 182 Subpart E | **done** — `lesserof-CFR-CITATIONS.md` |
 | Basket "other" toy numeric (1313(j)(5)) | **done** — `lesserof-BASKET-OTHER.md` |
+| Comprehensive blueprint (multi-page bar) | **done** — `lesserof-COMPREHENSIVE-BLUEPRINT.md` |
 | Skeptical RESEARCH.md entry | **done** |
 | Activate / frame / product folder | **not done** — blocked while htsroute owns slot |
 

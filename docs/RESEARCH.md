@@ -404,15 +404,7 @@ Still **no** `projects/htsroute/`. Same-day build blocked. Loop pid 8880 left al
 Deepened **lesserof** only (docs). Did **not** move `current_idea` off htsroute. No product folder.
 
 - `lesserof-CFR-CITATIONS.md`: primary quotes from 19 CFR **190.22** / **190.32** (99% of the lesser of paid vs substitute/export basis) and Part **182 Subpart E 182.44** (USMCA lower of U.S. vs CA/MX duties) + **182.45(b)** same-condition escape.
-- `lesserof-BASKET-OTHER.md`: toy **$4,950** fantasy cash when an 8-digit "Other" basket matches but 10-digit SRNs diverge -- correct outcome under 19 U.S.C. 1313(j)(5) is **ineligible / ## 2026-07-21 ? lesserof primary CFR + basket trap (tick 14, parallel seed)
-
-Deepened **lesserof** only (docs). Did **not** move `current_idea` off htsroute. No product folder.
-
-- `lesserof-CFR-CITATIONS.md`: primary quotes from 19 CFR **? 190.22** / **? 190.32** (99% of the lesser of paid vs substitute/export basis) and Part **182 Subpart E ? 182.44** (USMCA lower of U.S. vs CA/MX duties) + **? 182.45(b)** same-condition escape.
-- `lesserof-BASKET-OTHER.md`: toy **$4,950** fantasy cash when an 8-digit ?Other? basket matches but 10-digit SRNs diverge ? correct outcome under ? 1313(j)(5) is **ineligible / $0**, not lesser-of.
-
-**Skeptical one-liner:** We finally have calc-reg text on paper ? and Kill A still stands; primary CFR does not invent a commercial moat, only proves the stacked-cap + basket reject is real law, not a blog vibe.
-**, not lesser-of.
+- `lesserof-BASKET-OTHER.md`: toy **$4,950** fantasy cash when an 8-digit "Other" basket matches but 10-digit SRNs diverge -- correct outcome under 19 U.S.C. 1313(j)(5) is **ineligible / $0**, not lesser-of.
 
 **Skeptical one-liner:** We finally have calc-reg text on paper -- and Kill A still stands; primary CFR does not invent a commercial moat, only proves the stacked-cap + basket reject is real law, not a blog vibe.
 
@@ -440,11 +432,43 @@ Logged **2?3 NEW** dollar/penalty seeds in `docs/ideas/SEEDS-WAVE-2026-07-21.md`
 
 **Explicit non-actions:** no `CONTROLLER.current_idea` change; no framing; no fixtures; no `projects/` folders; htsroute keeps the active research slot; lesserof stays the older parked parallel seed.
 
-## 2026-07-21 — comprehensive product bar + blueprint (tick 15)
+## 2026-07-21 ? comprehensive product bar + blueprint (tick 15)
 
 Human: keep 15m loop; generate **big multi-page multi-feature** products for method tests.
 
 - Did **not** re-arm pid 27600 (already alive)
 - Added `docs/COMPREHENSIVE_PRODUCT.md` + runbook section 0
-- Wrote `htsroute-COMPREHENSIVE-BLUEPRINT.md` (7 pages, =3 aggregates) — still no `projects/` today
-- Ibuprofen/aspirin MFN pairs from parallel hunt (fixtures 34–37); checkers **36** green
+- Wrote `htsroute-COMPREHENSIVE-BLUEPRINT.md` (7 pages, =3 aggregates) ? still no `projects/` today
+- Ibuprofen/aspirin MFN pairs from parallel hunt (fixtures 34?37); checkers **36** green
+
+## 2026-07-21 -- depositgap comprehensive blueprint (seed only)
+
+Parallel seed **depositgap** (not `current_idea`) got a pre-build comprehensive stub so later activation is multi-page/multi-feature from day one.
+
+- Wrote `docs/ideas/depositgap-COMPREHENSIVE-BLUEPRINT.md`: **8 pages**, **>=3 aggregates** (org, entry/deposit, assessment, interest run, audit), **>=6 features** beyond CRUD
+- Unique claim locked: cash **deposit vs assessed** AD/CVD duty delta + **19 U.S.C. 1677g** interest (IRC 6621) -- not dual-gate, not lesser-of, not generic accrual
+- Updated parked-seed note in `docs/BACKLOG.md`; linked artifact from `depositgap-SEED.md`
+- **Explicit non-actions:** no `CONTROLLER.current_idea` change; no framing; no fixtures; no `projects/depositgap/`; htsroute keeps the active research slot
+
+## 2026-07-21 -- lesserof comprehensive blueprint (parallel seed)
+
+Parallel seed **lesserof** (not `current_idea`) got a pre-build comprehensive stub matching `docs/COMPREHENSIVE_PRODUCT.md` + htsroute blueprint shape.
+
+- Wrote `docs/ideas/lesserof-COMPREHENSIVE-BLUEPRINT.md`: **6+ pages** (claim workspace, lane compare, USMCA stack, basket eligibility, forecast vs actual, audit), **>=3 aggregates** (org, claim line, forecast snapshot, audit), **>=6 features** beyond CRUD
+- Unique claim locked: stacked **TFTEA lesser-of** + **USMCA lesser-of** + **basket-other trap** + **direct-ID exemption** -- plain 99%-of-paid calculator forbidden as whole product
+- Linked artifact from `lesserof-SEED.md`; repaired corrupted tick-14 RESEARCH merge
+- **Explicit non-actions:** no `CONTROLLER.current_idea` change; no framing; no fixtures; no `projects/lesserof/`; htsroute keeps the active research slot
+
+## 2026-07-21 -- htsroute sustain test matrix (docs only)
+
+Wrote `docs/ideas/htsroute-SUSTAIN-TEST-MATRIX.md` for when the multi-page product builds:
+
+- Suites: unique-claim goldens (**>=36** / all paper fixtures), API, 7 page critical paths, RBAC, webhook, concurrency, money-honesty + Kill A copy, dual-impl CI
+- **Estimated sustain total: ~68** (floor >=60)
+- Still **no** `projects/htsroute/` -- paper plan only; same-day build still blocked by day-boundary
+
+## 2026-07-21 -- htsroute page wireframe specs (docs only)
+
+Expanded blueprint into `docs/ideas/htsroute-PAGE-SPECS.md`: per-page route paths, primary actions, empty/error states, data fields, acceptance checks for all **7** pages (Catalog, SKU detail, Batch, Audit, Goldens, Org settings, Money honesty), plus feature`x`page matrix.
+
+Still **no** `projects/htsroute/`. Paper only until day-boundary ready_to_build.
