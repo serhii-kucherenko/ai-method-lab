@@ -108,6 +108,12 @@ Next research: Fixture D (scrap edge) golden JSON; still no product code.
 - Depth win: Fixture E would have shipped wrong in-channel without the checker
 - Still **do not build**
 
+## 2026-07-21 — loop tick 4 (gate scorecard + Fixture F)
+
+- `lotblast-GATE-SCORECARD.md`: G1–G6 graded; state → **testable**; still **do not build**
+- Fixture F: concurrent overconsume write-time rule + checker support
+- Deliberate hold before ready_to_build (anti-rush)
+
 
 
 
