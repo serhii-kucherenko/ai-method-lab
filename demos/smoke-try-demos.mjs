@@ -16,7 +16,7 @@ const rules = {
   },
   "lesserof-try": {
     minBytes: 2000,
-    mustInclude: ["research", "honesty", "10000", "4000"],
+    mustInclude: ["research", "honesty", "10000", "4000", "USMCA"],
   },
   "oshamult-try": {
     minBytes: 2000,
@@ -145,6 +145,17 @@ function nearly(a, b, eps = 0.02) {
     failed += 1;
   } else {
     pass("lesserof behavioral toy: $3,960 vs naive +$5,940");
+  }
+
+  // USMCA duty-free wipe after TFTEA lesser-of
+  const afterTftea = refund;
+  const usmcaCap = 0;
+  const stacked = Math.min(afterTftea, usmcaCap);
+  if (!(nearly(stacked, 0) && nearly(naive - stacked, 9_900))) {
+    fail(`lesserof USMCA wipe drifted (stacked=${stacked})`);
+    failed += 1;
+  } else {
+    pass("lesserof USMCA wipe toy: $0 vs naive +$9,900");
   }
 }
 

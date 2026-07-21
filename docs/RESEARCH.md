@@ -919,7 +919,7 @@ Loop wake #4 (pid 26872). Same-day build still blocked.
 
 Loop wake #5 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
 
-- Wrote `depositgap-6621-FENCE.md` ù single-rate stand-in; mid-window ß 6621 changes out of v0
+- Wrote `depositgap-6621-FENCE.md` ù single-rate stand-in; mid-window ù 6621 changes out of v0
 - depositgap try honesty + smoke require **6621** marker
 - Added `check-morning-status.mjs` diagnostic for tomorrow (WAIT / PARK path / BUILD gate)
 - Refreshed `CHECKER_SNAP.md`
@@ -927,3 +927,15 @@ Loop wake #5 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
 **Decision:** still researching. Depositgap honesty tighter before any post-park activation.
 
 **Skeptical one-liner:** Closing the mid-window rate lie early beats adding more green fixtures.
+
+## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #54 (lesserof USMCA wipe)
+
+Loop wake #6 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
+
+- Wrote `lesserof-USMCA-WIPE-FENCE.md` ù TFTEA then USMCA can wipe to **$0** (naive overclaim +$9,900)
+- Smoke locks USMCA wipe toy; try disclaimer points at fence
+- Added `demos/INDEX.md` StackBlitz map for digests
+
+**Decision:** still researching. Queue unchanged: park lean htsroute ù depositgap ù lesserof.
+
+**Skeptical one-liner:** Stacked refund caps stay a second-seat dollar seed ù not a reason to jump htsroute/depositgap tonight.

@@ -37,4 +37,4 @@ Paper: `lesserof-WORKED-EXAMPLE.md`, `lesserof-CFR-CITATIONS.md`, `lesserof-USMC
 
 ## Decision impact
 
-Strengthens why lesserof is the **second** preferred post-htsroute dollar seed (after depositgap). Research try demo: `demos/lesserof-try/try.html`.
+Strengthens why lesserof is the **second** preferred post-htsroute dollar seed (after depositgap). Research try demo: `demos/lesserof-try/try.html`. USMCA wipe fence: `lesserof-USMCA-WIPE-FENCE.md`.

@@ -73,6 +73,7 @@ const seeds = [
       "lesserof-DAY1-NONSMOKE.md",
       "lesserof-REPO-SCAFFOLD.md",
       "lesserof-G1-EVIDENCE.md",
+      "lesserof-USMCA-WIPE-FENCE.md",
     ],
   },
   {
