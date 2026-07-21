@@ -65,6 +65,7 @@ const seeds = [
       "lesserof-POST-DEPOSITGAP-RUN.md",
       "lesserof-DAY1-NONSMOKE.md",
       "lesserof-REPO-SCAFFOLD.md",
+      "lesserof-G1-EVIDENCE.md",
     ],
   },
   {

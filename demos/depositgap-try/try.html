@@ -145,11 +145,11 @@
         </label>
         <label>
           Order published on
-          <input id="order_published_on" type="date" value="2024-01-01" />
+          <input id="order_published_on" type="date" value="2023-01-01" />
         </label>
         <label>
           Liquidated on
-          <input id="liquidated_on" type="date" value="2025-01-01" />
+          <input id="liquidated_on" type="date" value="2024-01-01" />
         </label>
         <label>
           <span>
@@ -163,9 +163,13 @@
     </main>
     <script>
       function daysBetween(a, b) {
-        const ms = Date.parse(b) - Date.parse(a);
-        if (!Number.isFinite(ms)) return NaN;
-        return Math.round(ms / 86400000);
+        // Match paper oracle: exclusive start, inclusive end (UTC calendar days)
+        const start = Date.parse(a + "T00:00:00Z");
+        const end = Date.parse(b + "T00:00:00Z");
+        if (!Number.isFinite(start) || !Number.isFinite(end) || end < start) {
+          return NaN;
+        }
+        return Math.round((end - start) / 86400000);
       }
 
       function money(n) {
