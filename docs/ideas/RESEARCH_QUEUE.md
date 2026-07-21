@@ -20,6 +20,8 @@ Controller chains these without waiting. Finish one → commit → start next. N
 | 21 | lesserof Kill A / narrow unique claim paper | **done** — `lesserof-NARROW-CLAIM.md` (stacked caps + basket trap) |
 | 22 | Day-boundary htsroute reassess | pending (next calendar day) |
 | 23 | Acetaminophen 6.5%↔Free value pair | **done** — fixtures #32/#33 + VALUE-STAKES update |
+| 24 | lesserof USMCA stacked toy | **done** — `lesserof-USMCA-STACK.md` |
+| 25 | Public CF-29 pharma 29↔30 docket hunt | **done (negative)** — none found; residual stands |
 
 ## Parked seeds
 
