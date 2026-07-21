@@ -22,6 +22,20 @@ See `docs/DEPTH_RESTART.md`.
 | 6 | lotblast | sustained | Method stress complete. |
 | 2 | Idea pipeline hygiene | ongoing | Kill isomorphic dual-gate seeds on sight. |
 
+## Parked seeds (research log only — not framed, not current_idea)
+
+| Seed | State | Notes |
+| --- | --- | --- |
+| lesserof | seed | Substitution drawback lesser-of / stacked-cap refund math. Older parallel seed. |
+| **depositgap** | seed | **Strongest 2026-07-21 wave.** AD/CVD cash deposit vs final assessment + § 1677g interest ($ bill/refund). Stub `depositgap-SEED.md`. |
+| oshamult | seed | OSHA GBP + serial size/history/good-faith reductions (29 CFR 1903.15 / FOM Ch. 6). Wave only. |
+| ptax4975 | seed | IRC § 4975 15%/100% prohibited-transaction excise on amount involved. Wave only. |
+| meldefer | soft park | Near amendwin/days — `meldefer-PARK.md`. |
+| form222 | soft park | Crowded compliance — `form222-PARK.md`. |
+| lanehold | **killed (G2)** | Capacity + hold expiry ≅ loadbay / dual-gate. |
+
+Wave file: `docs/ideas/SEEDS-WAVE-2026-07-21.md`. Do not activate any seed while htsroute holds the research slot.
+
 ## Frozen / abandoned product queue
 
 | Product | Reason |
