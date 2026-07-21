@@ -7,12 +7,12 @@ Controller chains these without waiting. Finish one → commit → start next.
 | # | Item | Status |
 |---|------|--------|
 | 28 | Day-boundary ready reassess | **pending** (calendar still 2026-07-21) |
-| 44 | 15m tick #18 | done — tomorrow run sheet |
-| 45 | 15m tick #19 | **done** — oshamult/ptax acceptance bars |
+| 45 | 15m tick #19 | done — acceptance bars |
+| 46 | 15m tick #20 | **done** — `check-all-seeds` + `SEED_READINESS.md` |
 
 ## Parallel seeds
 
-All four have G6 + acceptance (or equivalent). See `ACTIVATION_QUEUE.md`. Tomorrow: `htsroute-TOMORROW-RUN.md`.
+See `SEED_READINESS.md` / `ACTIVATION_QUEUE.md`. Tomorrow: `htsroute-TOMORROW-RUN.md`.
 
 ## Rule
 
