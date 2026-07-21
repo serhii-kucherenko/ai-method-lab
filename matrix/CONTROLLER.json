@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-21T11:40:00Z",
+  "updated_at": "2026-07-21T12:00:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__htsroute_acetaminophen_value_tick12",
+  "last_completed": "research__lesserof_usmca_g1_hunt_tick12c",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "Tick 12: acetaminophen bulk 6.5% (NY R04092) vs 3004 Free fixtures #32/#33; 32 files green. Same-day build blocked. Do NOT restart pid 8880.",
+  "notes": "Tick 12c: USMCA stack toy + CF-29 hunt negative. htsroute testable; 32 fixtures; same-day build blocked. Do NOT restart pid 8880.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

@@ -364,3 +364,8 @@ Still **no product** today. Digests must not claim every drum pays 6.5%.
 
 Wrote `htsroute-DAY-BOUNDARY.md` so tomorrow?s ready flip cannot skip Challenge D / value honesty. Still no product. Loop pid 8880 left alone.
 
+
+## 2026-07-21 — lesserof USMCA stack + G1 residual search (tick 12c)
+
+- `lesserof-USMCA-STACK.md`: Canada duty-free export zeros recoverable duty even after TFTEA lesser-of — naive / half-naive forecasts invent fantasy cash on the toy.
+- Searched for public CF-29 / section 1592 pharma 29 vs 30 docket: **none found**. G1 residual stays honest; general penalty path only.
