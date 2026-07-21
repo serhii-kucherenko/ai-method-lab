@@ -476,3 +476,7 @@ Workspaces/accounts/disbursements. Gates: balance floor + dual escrow officer re
 ## 2026-07-21 -- claimreserve sustain (pass)
 
 Desks/policies/claims. Gates: reserve ceiling + dual adjuster settle. 3/3 tests green. Next: taxhold.
+
+## 2026-07-21 -- taxhold sustain (pass)
+
+Desks/periods/filings. Gates: late-days grace + dual tax officer file. 3/3 tests green. Next: captable.
