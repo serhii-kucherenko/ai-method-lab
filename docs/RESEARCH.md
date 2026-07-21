@@ -198,3 +198,7 @@ tariffstep moved from framed to adversarial. Paper algorithm + fixtures A-F gree
 ## 2026-07-21 -- tariffstep depth expansion (loop 15 follow-up)
 
 Expanded tariffstep to a full A-Y fixture corpus (25/25 green), added challenge rounds B/C, and wrote G5 + G6 gate docs in tutorial-style form. Status advanced to `testable`; still no product build until stronger G1 evidence and final ready_to_build decision.
+
+## 2026-07-21 -- tariffstep G1 evidence pass
+
+Added source-backed G1 notes (demand ratchet behavior, tier/block tariff structures, and regulator complaint workflows) in `docs/ideas/tariffstep-G1-evidence.md`. This improves pain framing quality while preserving method-stress caveat and no-build status.

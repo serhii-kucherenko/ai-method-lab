@@ -11,6 +11,8 @@ Utility billing ops walk metered kWh through **stepped rate blocks** and apply a
 **Named user:** utility rate analyst / CIS config tester.  
 **Frequency:** every bill cycle / tariff change.
 
+Evidence notes: `tariffstep-G1-evidence.md`
+
 ## Unique claim (G2)
 
 **If we remove stepped block walk + demand ratchet, the remaining product is a generic meter reading FSM.**
