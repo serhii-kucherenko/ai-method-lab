@@ -20,6 +20,7 @@ import {
   countSubjects,
   listVisits,
   countVisits,
+  listVisitAudit,
   lockVisit,
   publishVersion,
   recordVisit,
@@ -276,16 +277,18 @@ export function createApp(
           send(res, result.status, { error: result.error });
           return;
         }
-        store.sideEffects += 1;
         const payload = { study_id: studyId, version_id: version.id };
-        recordWebhook(store.db, "amendment.published", studyId, payload);
         try {
           await store.dep.notify("amendment.published", payload);
         } catch (err) {
           logEvent("dep.notify.fail", {
             error: err instanceof Error ? err.message : String(err),
           });
+          send(res, 502, { error: "dependency failed" });
+          return;
         }
+        store.sideEffects += 1;
+        recordWebhook(store.db, "amendment.published", studyId, payload);
         send(res, 201, { version: result.value });
         return;
       }
@@ -344,12 +347,17 @@ export function createApp(
           return;
         }
         if (studyDenied(store, visit.studyId, userId, "lock", res)) return;
-        const result = lockVisit(store.db, visit.id);
+        const body = await readBody(req);
+        const version = Number(body.version ?? visit.version);
+        const result = lockVisit(store.db, visit.id, userId, version);
         if (!result.ok) {
           send(res, result.status, { error: result.error });
           return;
         }
-        send(res, 200, { visit: result.value });
+        send(res, 200, {
+          visit: result.value,
+          audit: listVisitAudit(store.db, visit.id),
+        });
         return;
       }
 

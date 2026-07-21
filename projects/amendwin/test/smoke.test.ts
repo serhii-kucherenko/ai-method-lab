@@ -96,8 +96,17 @@ test("smoke API: amendment split, lock, important list, webhook", async () => {
     "POST",
     `/visits/${(out.json.visit as { id: string }).id}/lock`,
     tokenCdm,
+    { version: 1 },
   );
   assert.equal(locked.status, 200);
+
+  const again = await api(
+    "POST",
+    `/visits/${(out.json.visit as { id: string }).id}/lock`,
+    tokenCdm,
+    { version: 1 },
+  );
+  assert.equal(again.status, 409);
 
   await api("POST", `/studies/${study.id}/versions`, tokenSp, {
     version: {

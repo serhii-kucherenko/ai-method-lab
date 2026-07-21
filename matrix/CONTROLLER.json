@@ -1,5 +1,5 @@
-{
-  "updated_at": "2026-07-21T11:30:00Z",
+﻿{
+  "updated_at": "2026-07-21T12:45:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "A03__P-workflow-001__amendwin__r1",
+  "active_cell": null,
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-crud-001__amendwin__r1",
+  "last_completed": "A03__P-sustain__amendwin__r1",
   "last_error": null,
-  "current_product": "amendwin",
-  "current_idea": "amendwin",
-  "next_cell": "A03__P-workflow-001__amendwin__r1",
+  "current_product": null,
+  "current_idea": "crewleg",
+  "next_cell": null,
   "mode": "autonomous",
-  "phase": "running",
-  "notes": "amendwin crud scored. Next P-workflow. Method stress — not dual-gate.",
+  "phase": "research",
+  "notes": "amendwin sustained. Researching crewleg (FAR 117) - framed. No product until ready_to_build.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

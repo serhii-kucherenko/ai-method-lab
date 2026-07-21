@@ -1,0 +1,8 @@
+{
+  "id": "crewleg-A-day-legal",
+  "report_local": "0800",
+  "segments": 2,
+  "acclimated": true,
+  "fdp_hours": 13.5,
+  "expect": { "legal": true, "max_fdp": 14 }
+}

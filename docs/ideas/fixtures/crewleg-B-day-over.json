@@ -1,0 +1,8 @@
+{
+  "id": "crewleg-B-day-over",
+  "report_local": "0800",
+  "segments": 2,
+  "acclimated": true,
+  "fdp_hours": 14.1,
+  "expect": { "legal": false, "max_fdp": 14 }
+}

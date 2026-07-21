@@ -81,6 +81,6 @@ Body must include:
 
 Dual-gate / multi-aggregate questions from screenlane→taxhold are **answered and saturated**. Do not re-ask them with new nouns.
 
-- Can A03+A10 sustain a **graph-domain** product (lot genealogy DAG + blast radius + mock-recall export) without collapsing to lottrack? → researching as **lotblast** (`docs/ideas/lotblast.md`)
+- Can A03+A10 sustain a **graph-domain** product (lot genealogy DAG + blast radius + mock-recall export) without collapsing to lottrack? → answered by **lotblast** sustain; temporal windows answered by **amendwin**; next open: **crewleg** FAR 117 (`docs/ideas/crewleg.md`)
 - Where does static-UI testing stop being enough? → still deferred until a deep product needs it
 - Does IDEA_DEPTH reduce shallow sustains without stalling the lab forever? → measure: ideas killed vs products started over next N ticks

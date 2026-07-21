@@ -1,0 +1,10 @@
+{
+  "id": "crewleg-F-deadhead-not-segment",
+  "report_local": "0800",
+  "segments": 2,
+  "deadhead_before": 1,
+  "acclimated": true,
+  "fdp_hours": 13.5,
+  "notes": "deadhead must not inflate segment count for Table B",
+  "expect": { "legal": true, "max_fdp": 14, "table_segments": 2 }
+}

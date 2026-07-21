@@ -9,6 +9,7 @@ import {
   type ProtocolVersion,
   type Window,
 } from "./window.js";
+import { canTransition, type VisitLockState } from "./rules.js";
 
 export type Store = {
   db: DatabaseSync;
@@ -225,20 +226,54 @@ export function recordVisit(
   };
 }
 
-export function lockVisit(db: DatabaseSync, visitId: string): WriteResult<{ id: string }> {
-  const row = db.prepare("SELECT id, locked FROM visits WHERE id = ?").get(visitId) as
-    | { id: string; locked: number }
-    | undefined;
+export function lockVisit(
+  db: DatabaseSync,
+  visitId: string,
+  actorId: string,
+  expectedVersion: number,
+): WriteResult<{ id: string; version: number; state: VisitLockState }> {
+  const row = db
+    .prepare("SELECT id, locked, version FROM visits WHERE id = ?")
+    .get(visitId) as { id: string; locked: number; version: number } | undefined;
   if (!row) return { ok: false, status: 404, error: "not found" };
-  if (row.locked) return { ok: false, status: 409, error: "already locked" };
-  db.prepare("UPDATE visits SET locked = 1 WHERE id = ?").run(visitId);
-  return { ok: true, value: { id: visitId } };
+  if (row.version !== expectedVersion) {
+    return { ok: false, status: 409, error: "version conflict" };
+  }
+  const from: VisitLockState = row.locked ? "locked" : "open";
+  if (!canTransition(from, "locked")) {
+    return { ok: false, status: 400, error: "illegal transition" };
+  }
+  const updated = db
+    .prepare("UPDATE visits SET locked = 1, version = version + 1 WHERE id = ? AND version = ?")
+    .run(visitId, expectedVersion);
+  if (Number(updated.changes) !== 1) {
+    return { ok: false, status: 409, error: "version conflict" };
+  }
+  db.prepare(
+    `INSERT INTO visit_audit (id, visit_id, actor_id, from_state, to_state) VALUES (?, ?, ?, ?, ?)`,
+  ).run(randomUUID(), visitId, actorId, from, "locked");
+  return { ok: true, value: { id: visitId, version: expectedVersion + 1, state: "locked" } };
+}
+
+export function listVisitAudit(db: DatabaseSync, visitId: string) {
+  return db
+    .prepare(
+      `SELECT id, actor_id AS actorId, from_state AS fromState, to_state AS toState, at
+       FROM visit_audit WHERE visit_id = ? ORDER BY at`,
+    )
+    .all(visitId) as Array<{
+    id: string;
+    actorId: string;
+    fromState: string;
+    toState: string;
+    at: string;
+  }>;
 }
 
 export function getVisit(db: DatabaseSync, id: string) {
   return db
     .prepare(
-      `SELECT id, study_id AS studyId, subject_id AS subjectId, code, actual, locked,
+      `SELECT id, study_id AS studyId, subject_id AS subjectId, code, actual, locked, version,
               scored_version_id AS scoredVersionId, classification, important
        FROM visits WHERE id = ?`,
     )
@@ -250,6 +285,7 @@ export function getVisit(db: DatabaseSync, id: string) {
         code: string;
         actual: string | null;
         locked: number;
+        version: number;
         scoredVersionId: string | null;
         classification: string | null;
         important: number;
