@@ -1,0 +1,17 @@
+{
+  "id": "htsroute-12-retail-packing-3004",
+  "title": "Retail packing without measured dose still 3004",
+  "source": "G5 case 12",
+  "sku": {
+    "chemical_form": "mixture",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": false,
+    "retail_packing": true,
+    "dosage_form_signal": "other",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "heading_3004_medicament"
+  }
+}

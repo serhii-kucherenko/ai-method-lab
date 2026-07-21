@@ -19,6 +19,7 @@ const DOSE_FORMS = new Set([
 const BULK_PURE = new Set(["bulk_drum", "powder_bulk"]);
 
 const MIXED_BULK = new Set(["bulk_pellets", "other", "unknown"]);
+const BULK_SHAPES = new Set(["bulk_drum", "powder_bulk", "bulk_pellets"]);
 
 function routeSku(sku) {
   if (sku.gri3_combination) return "reject";
@@ -29,11 +30,10 @@ function routeSku(sku) {
     return "reject";
   }
 
-  if (
-    sku.therapeutic_or_prophylactic &&
-    doseOrRetail &&
-    DOSE_FORMS.has(sku.dosage_form_signal)
-  ) {
+  if (sku.therapeutic_or_prophylactic && doseOrRetail) {
+    if (BULK_SHAPES.has(sku.dosage_form_signal)) {
+      return "reject";
+    }
     return "heading_3004_medicament";
   }
 

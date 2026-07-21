@@ -46,7 +46,9 @@ A binary 29/3004 product would mis-route intermediate pellets — that is a dept
 1. If `gri3_combination` → **reject**.
 2. If `note_1a_food_or_supplement` → **excluded_note_1a**.
 3. If `dosage_form_signal` ∈ {tablet, capsule, injectable_vial, transdermal} AND NOT `measured_dose` AND NOT `retail_packing` → **reject** (inconsistent dose-form signal — Challenge B cheat).
-4. Else if `therapeutic_or_prophylactic` AND (`measured_dose` OR `retail_packing`) AND `dosage_form_signal` ∈ {tablet, capsule, injectable_vial, transdermal} → **heading_3004_medicament**.
+4. Else if `therapeutic_or_prophylactic` AND (`measured_dose` OR `retail_packing`):
+   - If `dosage_form_signal` ∈ {bulk_drum, powder_bulk, bulk_pellets} → **reject** (inconsistent bulk + dose/retail claim)
+   - Else → **heading_3004_medicament** (HTS: measured doses **or** retail packing)
 5. Else if `therapeutic_or_prophylactic` AND `chemical_form` = `mixture` AND NOT `measured_dose` AND NOT `retail_packing` AND `dosage_form_signal` ∈ {bulk_pellets, other, unknown} → **heading_3003_bulk_medicament**.
 6. Else if `chemical_form` = `separately_defined` AND `dosage_form_signal` ∈ {bulk_drum, powder_bulk} → **chapter_29_chemical**.
 7. Else if therapeutic true but facts insufficient to choose among 29 / 3003 / 3004 → **reject**.

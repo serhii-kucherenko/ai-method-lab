@@ -267,6 +267,17 @@ Moved **htsroute** `differentiated` ? `testable` without opening a product.
 
 **Skeptical note:** Three cards prove the chain shape; they do not prove the reject surface. Next tick encodes tablet-enum cheat / Note 1(a) / GRI-3 rejects, then a G6 memo.
 
+## 2026-07-21 ? htsroute critical rejects encoded (tick 4 close)
+
+Encoded remaining critical rejects without opening a product:
+
+- #5 tablet enum cheat (already green; forced algorithm consistency reject)
+- #6 Note 1(a) capsule-shaped supplement ? excluded
+- #7 GRI 3 combination ? reject
+- #8 missing/unknown chemical form ? reject
+
+Seven goldens total. Critical **#4** (other-molecule bulk API) still open. Still **no** `projects/htsroute/`, **not** ready_to_build.
+
 ## 2026-07-21 ? htsroute critical path + G6 hold (loop 20 / tick 5)
 
 - Encoded critical path #1?#8 (omeprazole chain, peer bulk, enum cheat, Note 1(a), GRI 3, missing form) ? checker **8/8 green**
@@ -275,3 +286,7 @@ Moved **htsroute** `differentiated` ? `testable` without opening a product.
 - No `projects/htsroute/`
 
 **Digest one-liner:** Customs chapter-routing idea is getting real checks; we deliberately refused to start a product the same day.
+
+## 2026-07-21 ? htsroute boundary expand (tick 6)
+
+Added boundary goldens #9, #11, #13, #17 (powder bulk 29; capsule 3004; non-therapeutic reject; inconsistent pellets/defined reject). Checker **12/12 green**. Still **do not build** ? remaining boundaries and overnight hold before any ready_to_build.
