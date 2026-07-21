@@ -1,35 +1,29 @@
 # Research work queue (depth keep-going)
 
-Controller chains these without waiting. Finish one → commit → start next.
+Controller chains these without waiting. Finish one → commit → start next. Never stop while mode is autonomous.
 
 ## Active idea: htsroute
 
 | # | Item | Status |
 |---|------|--------|
-| 1 | Kill lanehold (G2) | done |
-| 2 | Frame + G1 draft | done |
-| 3 | Challenges A/B + algorithm 29/3003/3004 | done |
-| 4 | Critical fixtures #1–#8 | done |
-| 5 | Boundary suite + concurrent | done (24+ files) |
-| 6 | G6 hold (same-day no build) | done |
-| 7 | Gate scorecard | done this tick — still **hold** |
-| 8 | Challenge C close | done this tick |
-| 9 | Pantoprazole bulk↔tablet same-molecule cards | done (#26/#27) |
-| 10 | Draft brief (explicitly not oracle) | done — `projects/briefs/P-smoke-htsroute-DRAFT.md` |
+| 1–10 | Frame through draft brief | done |
 | 11 | Overnight / next-day ready_to_build reassess | pending (day boundary) |
-| 12 | If ready: open `projects/htsroute/` unique claim first | blocked until 11 |
-| 13 | Product ladder smoke→sustain | blocked until 12 |
-| 14 | Depth digest on product complete | blocked until 13 |
-| 15 | Next idea seed (after htsroute sustain or kill) | parked seeds only |
+| 12 | Lansoprazole bulk↔capsule + inconsistency rejects | done (#28–#31) |
+| 13 | Paper acceptance outline | done — `htsroute-ACCEPTANCE.md` |
+| 14 | meldefer park autopsy | done — `meldefer-PARK.md` |
+| 15 | If ready: open `projects/htsroute/` unique claim first | blocked until 11 |
+| 16 | Product ladder smoke→sustain | blocked until 15 |
+| 17 | Depth digest on product complete | blocked until 16 |
+| 18 | Next idea seed | parked until htsroute clears |
 
-## Parked seeds (do not start until htsroute clears)
+## Parked seeds
 
 | Seed | Note |
 |------|------|
-| meldefer | Soft park — days-clock risk vs amendwin |
+| meldefer | Soft park — see `meldefer-PARK.md` |
 | form222 | Soft park — crowded compliance |
-| htsroute GRI3 v1 | Only after v0 sustain proves form gate |
+| htsroute GRI3 v1 | After v0 sustain |
 
 ## Rule
 
-Never idle after a green checker run: update scorecard/G1/challenge/next fixture or advance controller notes. Never same-day framed→product.
+Never idle after a green checker run. Never same-day framed→product.

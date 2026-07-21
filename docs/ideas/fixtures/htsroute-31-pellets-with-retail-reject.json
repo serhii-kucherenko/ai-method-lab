@@ -1,0 +1,17 @@
+{
+  "id": "htsroute-31-pellets-with-retail-reject",
+  "title": "Bulk pellets cannot claim retail packing",
+  "source": "Algorithm step 4 inconsistency",
+  "sku": {
+    "chemical_form": "mixture",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": false,
+    "retail_packing": true,
+    "dosage_form_signal": "bulk_pellets",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "reject"
+  }
+}
