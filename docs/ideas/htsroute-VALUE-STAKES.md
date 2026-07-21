@@ -30,8 +30,10 @@ That is the kind of value claim prior lab digests would have waved past. We do n
 | Aspirin **tablets** (measured dose / retail) | Heading **3004** (3004.90.9128) | **Free** | CROSS **NY K87058** |
 | Eluxadoline **bulk** (API for Viberzi) | Chapter 29 (2933.29.2000) | **6%** ad valorem; not listed in Pharmaceutical Appendix | CROSS **NY N302614** (same letter) |
 | Viberzi **tablets** (eluxadoline measured dose) | Heading **3004** (3004.90.9260) | **Free** | CROSS **NY N302614** (same letter) |
+| Vericiguat **bulk** (API for Verquvo) | Chapter 29 (2933.59.5300) | **6.5%** ad valorem; not listed in Pharmaceutical Appendix | CROSS **NY N318947** (same letter) |
+| Verquvo **tablets** (vericiguat measured dose) | Heading **3004** (3004.90.9220) | **Free** | CROSS **NY N318947** (same letter) |
 
-Encoded: fixtures `#32`/`#33` (acetaminophen), `#34`/`#35` (ibuprofen), `#36`/`#37` (aspirin), `#40`/`#41` (eluxadoline / Viberzi — **same CROSS letter** NY N302614, bulk **6%** ↔ tablets Free). These restore an **honest** dollar story for *some* form-gate misroutes — without rehabilitating the PPI Free/Free pitch.
+Encoded: fixtures `#32`/`#33` (acetaminophen), `#34`/`#35` (ibuprofen), `#36`/`#37` (aspirin), `#40`/`#41` (eluxadoline / Viberzi — NY N302614, 6%↔Free), `#42`/`#43` (vericiguat / Verquvo — NY N318947, 6.5%↔Free). These restore an **honest** dollar story for *some* form-gate misroutes — without rehabilitating the PPI Free/Free pitch.
 
 Caveats (do not bury):
 - Preference programs (GSP / Special column Free) can erase bulk MFN on a given entry. Digests must say “base MFN vs Free finished,” not “every drum pays X%.”
@@ -43,7 +45,7 @@ Caveats (do not bury):
 
 1. **Reasonable care / audit trail** — wrong chapter/heading on the entry is still a classification error even when both rates are Free. CBP Reasonable Care ICP + 19 U.S.C. § 1592 path remain relevant; we still lack a public CF-29 docket specifically about 29↔30 pharma for this tick.
 2. **Statistical reporting / ACE line accuracy** — HTS statistical suffixes and “containing pantoprazole…” breakouts exist (e.g. 3004.90.92.55 schedule language). Wrong family pollutes trade stats and broker templates.
-3. **Stacked measures by origin** — China-origin Section 301 / other stacked measures can differ by HTS line even when MFN is Free. That is **lane- and list-dependent**, not proven by our goldens. Do not claim a fixed dollar delta without a named entry scenario.
+3. **Stacked measures by origin** — China-origin Section 301 / other stacked measures can differ by HTS line even when MFN is Free. April 2026 pharma proclamation layers also sit outside v0. That is **lane- and list-dependent**, not proven by our goldens — see `htsroute-STACKED-TARIFF-FENCE.md`. Do not claim a fixed dollar delta without a named entry scenario.
 4. **3003 intermediate** — mis-routing enteric pellets as 29 or 3004 is a **real legal error** independent of MFN dollars (omeprazole pellet rulings).
 
 ## What this does *not* prove

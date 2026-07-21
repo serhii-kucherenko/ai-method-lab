@@ -40,12 +40,15 @@ Named cases for the unique claim. Encoding grew across ticks — not a same-tick
 | 39 | mixture drum → 3003 | yes (claim/code align) |
 | 40 | eluxadoline bulk → 29 (NY N302614, 6%) | yes (same-letter form gate) |
 | 41 | Viberzi tablets → 3004 Free (NY N302614) | yes (same-letter form gate) |
+| 42 | vericiguat bulk → 29 (NY N318947, 6.5%) | yes (same-letter form gate) |
+| 43 | Verquvo tablets → 3004 Free (NY N318947) | yes (same-letter form gate) |
 
 ## Encoding status
 
-- **40 fixture files green** via `node docs/ideas/check-htsroute-fixtures.mjs`
-- G5 named suite covered; value pairs #32–#37; mixture-shape twins #38/#39; **same-letter** Eluxadoline/Viberzi #40/#41 (NY N302614)
-- **Value contrast pair:** #32/#33 acetaminophen; #34/#35 ibuprofen; #36/#37 aspirin; #40/#41 eluxadoline (same letter, 6%↔Free)
+- **42 fixture files green** via `node docs/ideas/check-htsroute-fixtures.mjs`
+- G5 named suite covered; value pairs #32–#37; mixture-shape twins #38/#39; same-letter Eluxadoline/Viberzi #40/#41; **same-letter** Vericiguat/Verquvo #42/#43 (NY N318947)
+- **Value contrast pair:** #32/#33 acetaminophen; #34/#35 ibuprofen; #36/#37 aspirin; #40/#41 eluxadoline (6%↔Free); #42/#43 vericiguat (6.5%↔Free)
 - G6 still **do not build yet** this calendar day (`block_same_day_research_to_build`)
-- Checkers: **40** fixture files green (+ dual-impl)
+- Checkers: **42** fixture files green (+ dual-impl)
+- Stacked-tariff honesty: `htsroute-STACKED-TARIFF-FENCE.md` (301 / 2026 pharma proclamation out of scope)
 

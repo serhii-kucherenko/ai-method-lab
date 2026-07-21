@@ -796,3 +796,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Try-demo presets for Eluxadoline bulk 6% + Viberzi tablets Free (same letter NY N302614)
 - README teaching table updated; suite still 40 dual-green; calendar block stands
 
+
+## 2026-07-21 -- 30m loop tick 18: Vericiguat pair + stacked-tariff fence
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 18 (pid 29556 left alone). Encoded same-letter Vericiguat/Verquvo fixtures #42/#43 from CROSS NY N318947 (bulk 6.5% ? tablets Free). Wrote `htsroute-STACKED-TARIFF-FENCE.md` (Section 301 / April 2026 pharma proclamation out of scope for v0). Suite **42** dual-green; kits complete. Preflip still calendar-blocked. No product.

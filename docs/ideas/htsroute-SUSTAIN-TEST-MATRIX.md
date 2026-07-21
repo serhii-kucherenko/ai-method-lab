@@ -13,11 +13,11 @@ This matrix is the **sustain-phase exit plan** for the multi-page product. Vanit
 | Metric | Floor | Notes |
 |--------|------:|-------|
 | **Total automated tests at sustain** | **≥60** | Unique-claim goldens + API + UI + RBAC + webhook + concurrency + copy + dual-impl |
-| Unique-claim goldens | **≥40** | All `docs/ideas/fixtures/htsroute-*.json` green in product runner |
+| Unique-claim goldens | **≥42** | All `docs/ideas/fixtures/htsroute-*.json` green in product runner |
 | Pages with critical-path coverage | **7** | Catalog, SKU detail, Batch, Audit, Goldens browser, Org settings, Money honesty |
 | Dual-impl CI jobs | **2** green | `check-htsroute-fixtures.mjs` + `check-htsroute-dual.mjs` (or product-ported equivalents) |
 
-**Estimated sustain suite size: ~70 tests** (see §Rollup). Stretch to ~75 if Playwright E2E splits page paths into separate cases.
+**Estimated sustain suite size: ~72 tests** (see §Rollup). Stretch to ~75 if Playwright E2E splits page paths into separate cases.
 
 ---
 
@@ -25,7 +25,7 @@ This matrix is the **sustain-phase exit plan** for the multi-page product. Vanit
 
 | Prefix | Suite | Est. count |
 |--------|-------|----------:|
-| `G-` | Unique-claim goldens (fixtures) | 40 |
+| `G-` | Unique-claim goldens (fixtures) | 42 |
 | `A-` | API / contract | 12 |
 | `P-` | Page critical paths | 7 |
 | `R-` | RBAC / tenancy | 6 |
@@ -33,11 +33,11 @@ This matrix is the **sustain-phase exit plan** for the multi-page product. Vanit
 | `C-` | Concurrency / batch independence | 3 |
 | `M-` | Money-honesty + Kill A copy | 5 |
 | `D-` | Dual-impl CI / parity | 3 |
-| | **Total** | **≈70** |
+| | **Total** | **≈72** |
 
 ---
 
-## G — Unique-claim goldens (≥40)
+## G — Unique-claim goldens (≥42)
 
 Product tests load **every** `docs/ideas/fixtures/htsroute-*.json` and assert `routeSku` (or HTTP classify) matches `expected` / fixture route. Molecule name is never a routing input.
 
@@ -83,10 +83,12 @@ Product tests load **every** `docs/ideas/fixtures/htsroute-*.json` and assert `r
 | G-38 | `#39` mixture drum → 3003 | `heading_3003_bulk_medicament` |
 | G-39 | `#40` eluxadoline bulk (NY N302614) | `chapter_29_chemical` |
 | G-40 | `#41` Viberzi tablets (NY N302614) | `heading_3004_medicament` |
+| G-41 | `#42` vericiguat bulk (NY N318947) | `chapter_29_chemical` |
+| G-42 | `#43` Verquvo tablets (NY N318947) | `heading_3004_medicament` |
 
-**Acceptance anchors (must stay green):** G-01–G-03 (29/3003/3004 chain), G-05/G-29/G-30 (cheat rejects), G-06/G-19 (Note 1(a)), G-31–G-32 (honest MFN contrast pair — not PPI Free/Free pitch), G-37–G-38 (mixture shape twins), G-39–G-40 (same-letter 6%↔Free).
+**Acceptance anchors (must stay green):** G-01–G-03 (29/3003/3004 chain), G-05/G-29/G-30 (cheat rejects), G-06/G-19 (Note 1(a)), G-31–G-36 (honest MFN contrast pairs — not PPI Free/Free pitch), G-37–G-38 (mixture shape twins), G-39–G-42 (same-letter 6%/6.5%↔Free pairs).
 
-**Harness note:** One parameterized `test.each(fixtures)` is fine if CI reports **≥40** distinct cases and fails per-file. Do not collapse to a single “all fixtures pass” boolean without per-id attribution.
+**Harness note:** One parameterized `test.each(fixtures)` is fine if CI reports **≥42** distinct cases and fails per-file. Do not collapse to a single “all fixtures pass” boolean without per-id attribution.
 
 ---
 
@@ -221,7 +223,7 @@ Wire D-01/D-02 as required CI checks on `projects/htsroute/` PRs before merge to
 
 | Suite | Count |
 |-------|------:|
-| G unique-claim goldens | 40 |
+| G unique-claim goldens | 42 |
 | A API | 12 |
 | P pages | 7 |
 | R RBAC | 6 |
@@ -229,9 +231,9 @@ Wire D-01/D-02 as required CI checks on `projects/htsroute/` PRs before merge to
 | C concurrency | 3 |
 | M money-honesty / Kill A | 5 |
 | D dual-impl | 3 |
-| **Estimated sustain total** | **≈70** |
+| **Estimated sustain total** | **≈72** |
 
-**Floor:** ≥60. **Goldens floor:** ≥40. Below either → sustain fail.
+**Floor:** ≥60. **Goldens floor:** ≥42. Below either → sustain fail.
 
 ---
 
