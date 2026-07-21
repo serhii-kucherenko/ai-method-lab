@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "oshamult-E-no-reductions",
   "title": "All reduction percents zero → penalty equals GBP",
   "source": "boundary",
@@ -13,5 +13,8 @@
     "use_statutory_max": false,
     "additive_cheat": false
   },
-  "expect": { "status": "ok", "penalty": 4000 }
+  "expect": {
+    "status": "ok",
+    "penalty": 4000
+  }
 }

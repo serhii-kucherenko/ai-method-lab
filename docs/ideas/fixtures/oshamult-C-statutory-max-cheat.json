@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "oshamult-C-statutory-max-cheat",
   "title": "Honesty — accruing statutory max instead of GBP must reject",
   "source": "oshamult-SEED.md",
@@ -13,5 +13,8 @@
     "use_statutory_max": true,
     "additive_cheat": false
   },
-  "expect": { "status": "reject", "reason": "statutory_max_cheat" }
+  "expect": {
+    "status": "reject",
+    "reason": "statutory_max_cheat"
+  }
 }

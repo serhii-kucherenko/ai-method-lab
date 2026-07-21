@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "oshamult-B-size-on-willful",
   "title": "Honesty — size reduction on willful must reject",
   "source": "oshamult-algorithm.md",
@@ -13,5 +13,8 @@
     "use_statutory_max": false,
     "additive_cheat": false
   },
-  "expect": { "status": "reject", "reason": "size_on_willful_or_repeat" }
+  "expect": {
+    "status": "reject",
+    "reason": "size_on_willful_or_repeat"
+  }
 }

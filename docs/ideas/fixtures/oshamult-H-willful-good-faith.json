@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "oshamult-H-willful-good-faith",
   "title": "Honesty — good faith on willful must reject",
   "source": "oshamult-algorithm.md",
@@ -13,5 +13,8 @@
     "use_statutory_max": false,
     "additive_cheat": false
   },
-  "expect": { "status": "reject", "reason": "good_faith_ineligible" }
+  "expect": {
+    "status": "reject",
+    "reason": "good_faith_ineligible"
+  }
 }

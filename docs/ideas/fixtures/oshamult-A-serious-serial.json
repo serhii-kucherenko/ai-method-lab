@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "oshamult-A-serious-serial",
   "title": "Serious GBP with serial size/history/good-faith reductions",
   "source": "oshamult-algorithm.md worked toy",
@@ -13,5 +13,8 @@
     "use_statutory_max": false,
     "additive_cheat": false
   },
-  "expect": { "status": "ok", "penalty": 2677.5 }
+  "expect": {
+    "status": "ok",
+    "penalty": 2677.5
+  }
 }

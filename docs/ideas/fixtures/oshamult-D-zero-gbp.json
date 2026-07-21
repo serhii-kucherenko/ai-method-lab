@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "oshamult-D-zero-gbp",
   "title": "Non-positive GBP → reject",
   "source": "oshamult-algorithm.md",
@@ -13,5 +13,8 @@
     "use_statutory_max": false,
     "additive_cheat": false
   },
-  "expect": { "status": "reject", "reason": "bad_inputs" }
+  "expect": {
+    "status": "reject",
+    "reason": "bad_inputs"
+  }
 }

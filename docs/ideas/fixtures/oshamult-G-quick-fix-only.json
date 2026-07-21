@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "oshamult-G-quick-fix-only",
   "title": "Quick Fix only serial cut",
   "source": "oshamult-G5-cases.md",
@@ -13,5 +13,8 @@
     "use_statutory_max": false,
     "additive_cheat": false
   },
-  "expect": { "status": "ok", "penalty": 4250 }
+  "expect": {
+    "status": "ok",
+    "penalty": 4250
+  }
 }

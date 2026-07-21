@@ -1,6 +1,6 @@
-﻿{
+{
   "id": "oshamult-J-full-serial-small",
-  "title": "Full serial stack size 70% → $1,071 toy",
+  "title": "Full serial stack size 70% → ,071 toy",
   "source": "oshamult-STATUTE-CITATIONS.md",
   "input": {
     "classification": "serious",
@@ -13,5 +13,8 @@
     "use_statutory_max": false,
     "additive_cheat": false
   },
-  "expect": { "status": "ok", "penalty": 1071 }
+  "expect": {
+    "status": "ok",
+    "penalty": 1071
+  }
 }

@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "oshamult-I-high-gravity-quick-fix",
   "title": "Honesty — Quick Fix on high-gravity serious must reject",
   "source": "FOM Quick Fix limitations",
@@ -13,5 +13,8 @@
     "use_statutory_max": false,
     "additive_cheat": false
   },
-  "expect": { "status": "reject", "reason": "quick_fix_ineligible" }
+  "expect": {
+    "status": "reject",
+    "reason": "quick_fix_ineligible"
+  }
 }
