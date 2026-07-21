@@ -520,3 +520,9 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Quoted CVD twin **19 U.S.C. 1671f**; fixture **E** CVD underdeposit green (5 fixtures)
 - Calendar still 2026-07-21 — no ready flip; no `projects/`
 - Loop 27600 not re-armed
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #6
+
+- Added `check-depositgap-dual.mjs` — two independent true-up impls agree on all **5** fixtures
+- Still seed-only; htsroute current_idea; calendar 2026-07-21 blocks ready flip
+- Loop 27600 not re-armed
