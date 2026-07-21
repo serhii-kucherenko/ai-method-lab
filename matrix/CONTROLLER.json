@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-21T12:10:00Z",
+  "updated_at": "2026-07-21T11:00:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__htsroute_depth_chain_tick12d",
+  "last_completed": "research__loop_rearm_after_death_lesserof_algo",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "Depth chain + first live loop tick. Challenge D + N003244 + acetaminophen 6.5% pair + lesserof seed stack + API/PRODUCT framing + demos/htsroute-try. 32 fixtures green. Same-day build blocked. Do NOT restart pid 8880.",
+  "notes": "Prior loop pid 8880 died after first tick (exit 4294967295). Re-armed pid 29556 only because dead. Seeded lesserof algorithm paper. Same-day htsroute build still blocked.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -38,7 +38,7 @@
     "interval": "30m",
     "sentinel": "AGENT_LOOP_TICK_depth_keepgoing",
     "purpose": "depth_keepgoing",
-    "pid": 8880,
+    "pid": 29556,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
     "ticks_observed": 1
