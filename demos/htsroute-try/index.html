@@ -153,6 +153,7 @@
         <button type="button" data-preset="ppi-free-free">Pantoprazole Free/Free honesty</button>
         <button type="button" data-preset="acetaminophen">Acetaminophen 6.5% vs Free</button>
         <button type="button" data-preset="omeprazole-pellets">Omeprazole pellets → 3003</button>
+        <button type="button" data-preset="mixture-powder">Mixture powder → 3003</button>
         <button type="button" data-preset="tablet-cheat">Tablet enum cheat → reject</button>
       </div>
       <p class="preset-hint">
@@ -204,7 +205,13 @@
     <script>
       var DOSE_FORMS = { tablet: 1, capsule: 1, injectable_vial: 1, transdermal: 1 };
       var BULK_PURE = { bulk_drum: 1, powder_bulk: 1 };
-      var MIXED_BULK = { bulk_pellets: 1, other: 1, unknown: 1 };
+      var MIXED_BULK = {
+        bulk_pellets: 1,
+        powder_bulk: 1,
+        bulk_drum: 1,
+        other: 1,
+        unknown: 1,
+      };
       var BULK_SHAPES = { bulk_drum: 1, powder_bulk: 1, bulk_pellets: 1 };
 
       var LABELS = {
@@ -260,6 +267,20 @@
           money_note:
             "Legal form error is real even when MFN dollars are thin. Omeprazole pellets → 3003 (NY A88482 / NY 864623). Mis-routing as 29 or 3004 is wrong regardless of Free rates.",
           cite: "fixture htsroute-2-omeprazole-pellets",
+        },
+        "mixture-powder": {
+          molecule_name: "(ignored)",
+          chemical_form: "mixture",
+          dosage_form_signal: "powder_bulk",
+          therapeutic_or_prophylactic: true,
+          measured_dose: false,
+          retail_packing: false,
+          note_1a_food_or_supplement: false,
+          gri3_combination: false,
+          lesson: "3003 is not pellet-only: a therapeutic mixture in powder bulk (no measured dose / retail) still routes to heading 3003 under HTS text — same family as pellets, different shape.",
+          money_note:
+            "Separately defined powder stays Chapter 29. Mixture powder is the middle path. Do not invent duty savings from the chapter flip alone.",
+          cite: "fixture htsroute-38-mixture-powder-3003",
         },
         "tablet-cheat": {
           molecule_name: "(ignored)",

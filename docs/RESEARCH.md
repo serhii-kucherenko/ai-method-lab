@@ -774,3 +774,11 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Fixtures #38/#39; algorithm + dual routers updated; **38** dual-green
 - Preflip still calendar-blocked; loop 27600 not re-armed
 
+
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #34
+
+- Aligned demos/htsroute-try MIXED_BULK + mixture-powder preset with tick-33 checkers
+- Sustain matrix G-37/G-38 for fixtures #38/#39
+- Preflip still calendar-blocked; loop 27600 not re-armed
+

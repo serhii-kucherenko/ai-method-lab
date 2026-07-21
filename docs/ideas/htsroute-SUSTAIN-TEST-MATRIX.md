@@ -25,7 +25,7 @@ This matrix is the **sustain-phase exit plan** for the multi-page product. Vanit
 
 | Prefix | Suite | Est. count |
 |--------|-------|----------:|
-| `G-` | Unique-claim goldens (fixtures) | 36 |
+| `G-` | Unique-claim goldens (fixtures) | 38 |
 | `A-` | API / contract | 12 |
 | `P-` | Page critical paths | 7 |
 | `R-` | RBAC / tenancy | 6 |
@@ -79,8 +79,10 @@ Product tests load **every** `docs/ideas/fixtures/htsroute-*.json` and assert `r
 | G-34 | `#35` ibuprofen tablets | `heading_3004_medicament` |
 | G-35 | `#36` aspirin bulk (NY 890808) | `chapter_29_chemical` |
 | G-36 | `#37` aspirin tablets | `heading_3004_medicament` |
+| G-37 | `#38` mixture powder → 3003 | `heading_3003_bulk_medicament` |
+| G-38 | `#39` mixture drum → 3003 | `heading_3003_bulk_medicament` |
 
-**Acceptance anchors (must stay green):** G-01–G-03 (29/3003/3004 chain), G-05/G-29/G-30 (cheat rejects), G-06/G-19 (Note 1(a)), G-31–G-32 (honest MFN contrast pair — not PPI Free/Free pitch).
+**Acceptance anchors (must stay green):** G-01–G-03 (29/3003/3004 chain), G-05/G-29/G-30 (cheat rejects), G-06/G-19 (Note 1(a)), G-31–G-32 (honest MFN contrast pair — not PPI Free/Free pitch), G-37–G-38 (mixture shape twins — not pellet-only).
 
 **Harness note:** One parameterized `test.each(fixtures)` is fine if CI reports **≥38** distinct cases and fails per-file. Do not collapse to a single “all fixtures pass” boolean without per-id attribution.
 
@@ -195,7 +197,7 @@ Wire D-01/D-02 as required CI checks on `projects/htsroute/` PRs before merge to
 
 | Product phase | Minimum green from this matrix |
 |---------------|--------------------------------|
-| smoke | G-01…G-36 subset (≥25) + A-01/A-02 + R-01/R-02 |
+| smoke | G-01…G-38 subset (≥25) + A-01/A-02 + R-01/R-02 |
 | crud | + P-01/P-02 + R-03…R-06 + A-11/A-12 |
 | workflow | + P-03/P-04 + C-01 |
 | integrate | + W-01…W-04 + A-05 pagination |
