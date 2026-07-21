@@ -1,0 +1,15 @@
+{
+  "id": "crewleg-R-30h-ok",
+  "report_local": "0800",
+  "segments": 2,
+  "acclimated": true,
+  "fdp_hours": 12,
+  "rest_hours": 11,
+  "max_consecutive_off_in_168h": 30,
+  "expect": {
+    "legal": true,
+    "max_fdp": 14,
+    "rest_ok": true,
+    "rolling_30h_ok": true
+  }
+}

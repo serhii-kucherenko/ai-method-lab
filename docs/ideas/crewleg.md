@@ -10,8 +10,9 @@
 - Rest paper (simplified 10h): `docs/ideas/crewleg-rest-algorithm.md`
 - Challenge A: `docs/ideas/crewleg-challenge-A.md`
 - G5 cases + G6 draft: `crewleg-G5-cases.md`, `crewleg-G6-summary.md` — **do not build yet**
-- Fixtures A–O + checker green
-- Next: more fixtures; harden rest cite; gate scorecard — still no product folder
+- Fixtures A–U + checker green
+- Challenges A–C; gate scorecard: **do not build yet**
+- Next: concurrency/theater-cheat reject specs; then reassess ready_to_build
 
 ## Problem (G1 draft)
 

@@ -1,0 +1,8 @@
+{
+  "id": "crewleg-U-unacclimated-day-edge",
+  "report_local": "0800",
+  "segments": 2,
+  "acclimated": false,
+  "fdp_hours": 13.5,
+  "expect": { "legal": true, "max_fdp": 13.5 }
+}
