@@ -12,6 +12,8 @@ Open `try.html` in a browser (single file, no build). Or run `npm start` and vis
 |---------|--------|
 | **Pantoprazole Free/Free honesty** | Finished tablets → heading 3004 Free; matching bulk → Chapter 29 also Free. Route matters; duty-savings pitch for this PPI pair is false. |
 | **Acetaminophen 6.5% vs Free** | Honest dollar contrast: bulk Chapter 29 base MFN 6.5% (NY R04092) vs finished 3004 Free — with preference/GSP caveats. |
+| **Ibuprofen 6.5% vs Free** | Peer analgesic: bulk NY I83067 at 6.5% vs tablets NY N006187 Free — cite base MFN; preference may erase. |
+| **Aspirin non-Free vs Free** | Bulk NY 890808 non-Free Chapter 29 vs tablets NY K87058 Free — do not invent Free bulk. |
 | **Eluxadoline bulk 6% / Viberzi tablets Free** | Same CROSS letter NY N302614 — bulk 6% ↔ tablets Free. Click both presets; cite base MFN, not guaranteed savings. |
 | **Vericiguat bulk 6.5% / Verquvo tablets Free** | Same CROSS letter NY N318947 — bulk 6.5% ↔ tablets Free. Second same-letter dollar pair; preference caveats still apply. |
 | **Omeprazole pellets → 3003** | Binary 29-vs-3004 fails; mixed enteric pellets (not measured dose) → heading 3003. |

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T20:10:00Z",
+  "updated_at": "2026-07-21T20:25:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__depth15m_tick36_framing_vericiguat_presets",
+  "last_completed": "research__depth15m_tick37_ibuprofen_aspirin_try_presets",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 36: PRODUCT/ACCEPTANCE/DAY-BOUNDARY allowed-value language includes Eluxadoline + Vericiguat pairs; try presets for Vericiguat/Verquvo. Suite 42 dual-green. Same-day build blocked. Do NOT re-arm pid 29556 or 27600.",
+  "notes": "15m tick 37: try page + framing now clickable for ibuprofen and aspirin VALUE-STAKES pairs (fixtures #34–#37). Suite 42 dual-green. Same-day build blocked. Do NOT re-arm pid 29556 or 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -43,6 +43,6 @@
     "pid": 27600,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 36
+    "ticks_observed": 37
   }
 }

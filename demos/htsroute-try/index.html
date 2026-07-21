@@ -152,6 +152,8 @@
       <div class="presets" aria-label="Teaching examples">
         <button type="button" data-preset="ppi-free-free">Pantoprazole Free/Free honesty</button>
         <button type="button" data-preset="acetaminophen">Acetaminophen 6.5% vs Free</button>
+        <button type="button" data-preset="ibuprofen">Ibuprofen 6.5% vs Free</button>
+        <button type="button" data-preset="aspirin">Aspirin non-Free vs Free</button>
         <button type="button" data-preset="eluxadoline-bulk">Eluxadoline bulk 6% (same letter)</button>
         <button type="button" data-preset="viberzi-tablets">Viberzi tablets Free (same letter)</button>
         <button type="button" data-preset="vericiguat-bulk">Vericiguat bulk 6.5% (same letter)</button>
@@ -257,6 +259,34 @@
           money_note:
             "Acetaminophen bulk NY R04092 → Chapter 29, base MFN 6.5% (not Free). Finished dosage forms under heading 3004 are typically Free. Say base MFN 6.5% vs Free finished — not that every drum always pays 6.5%.",
           cite: "fixtures htsroute-32 + htsroute-33",
+        },
+        ibuprofen: {
+          molecule_name: "ibuprofen",
+          chemical_form: "separately_defined",
+          dosage_form_signal: "bulk_drum",
+          therapeutic_or_prophylactic: true,
+          measured_dose: false,
+          retail_packing: false,
+          note_1a_food_or_supplement: false,
+          gri3_combination: false,
+          lesson: "Second honest contrast: ibuprofen bulk is Chapter 29 at base MFN 6.5% (NY I83067 said not Pharma Appendix / not GSP as of 2002); finished tablets are heading 3004 Free (NY N006187). Current Special column may still erase by origin — cite base MFN.",
+          money_note:
+            "NY I83067: Ibuprofen bulk → 2916.39.1500, 6.5%. NY N006187: Ibuprofen tablets → 3004 Free. Preference on today's schedule can zero the bulk rate — never pitch guaranteed 6.5% savings.",
+          cite: "fixtures htsroute-34 + htsroute-35",
+        },
+        aspirin: {
+          molecule_name: "aspirin",
+          chemical_form: "separately_defined",
+          dosage_form_signal: "bulk_drum",
+          therapeutic_or_prophylactic: true,
+          measured_dose: false,
+          retail_packing: false,
+          note_1a_food_or_supplement: false,
+          gri3_combination: false,
+          lesson: "Aspirin bulk stays Chapter 29 non-Free (ruling NY 890808 cited 10.2%; schedule since still non-Free). Finished tablets → 3004 Free (NY K87058). Do not invent a Free bulk Chapter 29 rate.",
+          money_note:
+            "NY 890808: Aspirin (ASA) bulk → 2918.22.1000 non-Free. NY K87058: aspirin tablets → 3004 Free. Cite ruling/schedule non-Free bulk vs Free finished — GSP may still erase by origin.",
+          cite: "fixtures htsroute-36 + htsroute-37",
         },
         "eluxadoline-bulk": {
           molecule_name: "eluxadoline",
