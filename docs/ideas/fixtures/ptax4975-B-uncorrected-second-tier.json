@@ -1,0 +1,17 @@
+{
+  "id": "ptax4975-B-uncorrected-second-tier",
+  "title": "Uncorrected — 15%×years plus 100% additional",
+  "source": "26 U.S.C. § 4975(b)",
+  "input": {
+    "amount_involved": 10000,
+    "year_parts": 2,
+    "corrected": false,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 3000,
+    "additional_tax": 10000,
+    "total": 13000
+  }
+}

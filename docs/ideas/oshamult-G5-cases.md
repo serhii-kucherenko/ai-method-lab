@@ -1,10 +1,10 @@
 # oshamult — G5 case map (seed paper)
 
-**State:** seed only. Encoded fixtures: A–P (**16**).  
+**State:** seed only. Encoded fixtures: **26** green (A–Y with dual U-ids).  
 **Schema locked:** `gbp_amount` + explicit `*_pct` + serial Size→History→Good Faith→Quick Fix.  
 **Not framed. Not `current_idea`. No product.**
 
-## Encoded (A–P)
+## Encoded
 
 | ID | Teaches |
 |----|---------|
@@ -24,10 +24,18 @@
 | N | Willful history-only → **$90,000** |
 | O | Quick Fix on FTA → reject |
 | P | History + good faith only → **$4,800** |
+| Q | Mid-size 30% only → **$3,500** |
+| R | Negative pct → reject |
+| S | Willful no cuts → equals GBP |
+| T | Low-gravity serious + Quick Fix allowed |
+| U-fta | FTA history-only → **$18,000** |
+| U-repeat | Repeat history-only → **$40,000** |
+| V | Large GBP precision |
+| W | 10% size + history → **$7,200** |
+| X | Tiny GBP → **$0.70** |
+| Y | Quick Fix on repeat → reject |
 
-## Named next (Q–Y)
-
-Multi-citation independence, auditor mutation, org isolation (product-phase notes), mid size-bucket toys…
+**G5 ≥25 bar met** (26 encoded fixtures).
 
 ## Explicit non-actions
 

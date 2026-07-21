@@ -34,4 +34,4 @@ Depth started: `oshamult-algorithm.md`, `oshamult-STATUTE-CITATIONS.md`, paper f
 ## Artifacts so far
 
 - `oshamult-SEED.md` / `oshamult-algorithm.md` / `oshamult-challenge-ABC.md` / `oshamult-G5-cases.md` / `oshamult-STATUTE-CITATIONS.md`
-- Paper fixtures **A–P** (16) + `check-oshamult-fixtures.mjs` / `check-oshamult-dual.mjs` green
+- Paper fixtures **26** + checkers dual-green — G5 ≥25 bar met on paper

@@ -596,3 +596,13 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Encoded oshamult **K?P** (additive cheat, FTA good-faith/QF rejects, bad pct, willful history-only, history+faith)
 - Suite **16/16** single + dual green; still seed; prefer depositgap after htsroute
 - Loop 27600 not re-armed
+
+## 2026-07-21 -- 30m loop tick 7: oshamult G5 met + ptax4975 + depositgap API
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 7 (pid 29556 left alone). oshamult suite **26/26** single + dual green (G5 >=25 met). Wrote `depositgap-API-CONTRACT.md` + `depositgap-HYPOTHESIS-DRAFT.md`. Opened `ptax4975` algorithm + fixtures A-E (**5** green). Still no product; htsroute same-day no-build.
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #14
+
+- Grew oshamult through W/X/Y paths; deduped colliding letter ids
+- Suite **26/26** single + dual green — G5 =25 bar met on paper
+- Still seed; htsroute same-day no-build; loop 27600 not re-armed

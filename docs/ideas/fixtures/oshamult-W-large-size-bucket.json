@@ -1,0 +1,20 @@
+{
+  "id": "oshamult-W-large-size-bucket",
+  "title": "101–250 employees as 10% size + history",
+  "source": "FOM size table shape",
+  "input": {
+    "classification": "serious",
+    "gravity_tier": "moderate",
+    "gbp_amount": 10000,
+    "size_pct": 0.1,
+    "history_pct": 0.2,
+    "good_faith_pct": 0,
+    "quick_fix_pct": 0,
+    "use_statutory_max": false,
+    "additive_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "penalty": 7200
+  }
+}
