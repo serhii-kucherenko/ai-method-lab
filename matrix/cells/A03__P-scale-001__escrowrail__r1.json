@@ -1,0 +1,41 @@
+{
+    "phase":  "P-scale-001",
+    "fail_tags":  [],
+    "method_version":  "1.0.0",
+    "scores":  {
+                   "dimensions":  {
+                                      "efficiency":  4,
+                                      "completeness":  5,
+                                      "maintainability":  4,
+                                      "robustness":  5,
+                                      "correctness":  5
+                                  },
+                   "rubric_version":  "1.0.0",
+                   "artifacts":  [
+                                     "projects/escrowrail/test/all.test.ts"
+                                 ],
+                   "notes":  "escrowrail pagination + rate limit"
+               },
+    "created_at":  "2026-07-21T00:32:00Z",
+    "method_id":  "A03",
+    "run_id":  "r1",
+    "product_path":  "projects/escrowrail",
+    "project_id":  "P-scale-001",
+    "status":  "scored",
+    "approach_id":  "A03",
+    "metrics":  {
+                    "regression_pass":  true,
+                    "interventions":  0,
+                    "human_interventions":  0,
+                    "recoverability_ok":  true,
+                    "retries":  0,
+                    "wall_clock_minutes":  15,
+                    "cycle_time_hours":  0.3,
+                    "correctness_pass":  true
+                },
+    "cell_id":  "A03__P-scale-001__escrowrail__r1",
+    "notes":  "A03+A10 escrowrail P-scale-001",
+    "started_at":  "2026-07-21T00:32:00Z",
+    "approach_version":  1,
+    "finished_at":  "2026-07-21T00:32:00Z"
+}

@@ -4,13 +4,14 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **escrowrail** | A03 + A10 | Escrow accounts + disbursements; balance floor gate; dual escrow officer release. |
+| 1 | **claimreserve** | A03 + A10 | Policies + claims; reserve ceiling gate; dual adjuster settle. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
 | Product | Gate stressed |
 | --- | --- |
+| escrowrail | balance floor + dual escrow officer release |
 | payclaw | overpay headroom + dual HR release |
 | safecase | retention days + dual counsel archive |
 | limitdesk | credit ceiling + dual credit officer release |
@@ -21,7 +22,6 @@
 | lottrack | quarantine severity + dual QA clear |
 | bondrail | collateral floor + dual treasurer release |
 | crewgate | overtime hours + dual supervisor close |
-| loadbay | dock capacity + dual checker seal |
 
 ## Strategy
 

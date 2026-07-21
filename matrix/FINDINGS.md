@@ -468,3 +468,7 @@ Firms/matters/evidence. Gates: retention days + dual counsel archive. 3/3 tests 
 ## 2026-07-21 -- payclaw sustain (pass)
 
 Firms/payroll runs/clawbacks. Gates: overpay headroom + dual HR release. 3/3 tests green. Next: escrowrail.
+
+## 2026-07-21 -- escrowrail sustain (pass)
+
+Workspaces/accounts/disbursements. Gates: balance floor + dual escrow officer release. 3/3 tests green. Next: claimreserve.

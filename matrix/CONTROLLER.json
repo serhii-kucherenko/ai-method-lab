@@ -1,5 +1,5 @@
 {
-    "updated_at":  "2026-07-21T00:26:00Z",
+    "updated_at":  "2026-07-21T00:32:00Z",
     "notify":  {
                    "from":  "AI Method Lab <onboarding@resend.dev>",
                    "to":  ["kucherenko.web@gmail.com"],
@@ -17,12 +17,12 @@
                              "payments":  "provider-agnostic-webhook-with-hmac",
                              "auth":  "bearer-token"
                          },
-    "last_completed":  "A03__P-sustain__payclaw__r1",
+    "last_completed":  "A03__P-sustain__escrowrail__r1",
     "last_error":  null,
     "current_product":  null,
-    "next_cell":  "A03__P-smoke-001__escrowrail__r1",
+    "next_cell":  "A03__P-smoke-001__claimreserve__r1",
     "mode":  "autonomous",
     "phase":  null,
-    "notes":  "payclaw sustained. Next: escrowrail (balance floor + dual escrow officer release).",
+    "notes":  "escrowrail sustained. Next: claimreserve (reserve ceiling + dual adjuster settle).",
     "hard_stop":  false
 }
