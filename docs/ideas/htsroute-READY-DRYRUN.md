@@ -1,11 +1,12 @@
 # htsroute — readiness dry-run (same calendar day — not a flip)
 
-**Date:** 2026-07-21 (30m tick 12 reaffirm)  
+**Date:** 2026-07-21 (30m tick 13 reaffirm)  
 **Decision:** **do not flip** `ready_to_build` (same-day policy). This is a dry-run against `htsroute-DAY-BOUNDARY.md`.
 
 | Checklist item | Dry-run |
 |----------------|---------|
 | New calendar day vs framing | **FAIL** — still 2026-07-21 |
+| Executable preflip | **FAIL** — `check-htsroute-preflip.mjs` blocks on calendar (fixtures green) |
 | G1–G5 after re-read | Pass provisional (36 fixtures; Challenge D honesty) |
 | PRODUCT framing forbids PPI Free/Free savings | Pass on paper (`htsroute-PRODUCT-FRAMING.md`) |
 | Acetaminophen / ibuprofen / aspirin caveats | Pass on paper (`VALUE-STAKES`) |
@@ -17,8 +18,8 @@
 | Flip abort hard list | Pass on paper (`htsroute-FLIP-ABORT.md`) — calendar is the only hard block |
 | `node docs/ideas/check-all-seeds.mjs` | Pass (all 5 dual-green) |
 
-**Blocker:** calendar day only. Earliest flip: **2026-07-22** after `htsroute-TOMORROW-RUN.md` + abort sheet.
+**Blocker:** calendar day only. Earliest flip: **2026-07-22** after `htsroute-TOMORROW-RUN.md` + abort sheet + preflip clear.
 
 **Build shape if flipped:** comprehensive 7-page product per blueprint — not smoke.
 
-**Queue after slot:** see `docs/ideas/ACTIVATION_QUEUE.md` (prefer depositgap next; day-count fence now on file).
+**Queue after slot:** full run-sheet chain on `ACTIVATION_QUEUE.md`.

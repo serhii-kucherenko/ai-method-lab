@@ -1,4 +1,4 @@
-﻿# Research work queue (depth keep-going)
+# Research work queue (depth keep-going)
 
 Controller chains these without waiting. Finish one → commit → start next.
 
@@ -7,12 +7,11 @@ Controller chains these without waiting. Finish one → commit → start next.
 | # | Item | Status |
 |---|------|--------|
 | 28 | Day-boundary ready reassess | **pending** (calendar still 2026-07-21) |
-| 50 | 15m tick #24 | done — FOM size + depositgap post-run |
-| 51 | 15m tick #25 | **done** — value stakes + queue run sheets |
+| 52 | 15m tick #26 | **done** — value stakes + blueprints + preflip |
 
-## After htsroute
+## Queue after htsroute
 
-`depositgap-POST-HTSROUTE-RUN.md` then `lesserof-POST-DEPOSITGAP-RUN.md`.
+depositgap → lesserof → oshamult → ptax (run sheets on ACTIVATION_QUEUE).
 
 ## Rule
 

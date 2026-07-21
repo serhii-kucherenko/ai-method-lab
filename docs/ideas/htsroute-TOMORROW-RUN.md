@@ -14,9 +14,9 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
    - `htsroute-ACCEPTANCE.md`  
    - `htsroute-COMPREHENSIVE-BLUEPRINT.md` + page specs + phase briefs  
    - `htsroute-SUSTAIN-TEST-MATRIX.md`  
-4. Run paper checkers (must stay green):  
-   - `node docs/ideas/check-htsroute-fixtures.mjs`  
-   - `node docs/ideas/check-htsroute-dual.mjs`  
+4. Run the executable preflip (must clear):  
+   - `node docs/ideas/check-htsroute-preflip.mjs`  
+   (calendar ≠ framing day **and** htsroute fixtures + dual green)  
 5. Fill `htsroute-DAY-BOUNDARY.md` checkboxes for real (not dry-run).  
 6. Optional preflight for the whole research farm: `node docs/ideas/check-all-seeds.mjs` (must stay green; does not replace the htsroute-specific re-reads).
 
@@ -33,4 +33,4 @@ Stay in research, park, or kill — write why in `docs/RESEARCH.md`. Do not open
 
 ## After htsroute clears (build done, parked, or killed)
 
-Do **not** activate the next idea in the same tick as the flip. Later: follow `depositgap-POST-HTSROUTE-RUN.md` (prefer depositgap; money honesty in `depositgap-VALUE-STAKES.md`). Then `lesserof-POST-DEPOSITGAP-RUN.md`.
+Do **not** activate the next idea in the same tick as the flip. Later chain: `depositgap-POST-HTSROUTE-RUN.md` → `lesserof-POST-DEPOSITGAP-RUN.md` → `oshamult-POST-LESSEROF-RUN.md` → `ptax4975-POST-OSHAMULT-RUN.md`.
