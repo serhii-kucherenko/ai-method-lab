@@ -11,16 +11,16 @@
 2. G6: `htsroute-G6-summary.md` — **do not build yet**
 3. Scorecard: `htsroute-GATE-SCORECARD.md` — hold
 4. Challenges A/B/C + **D (value)**
-5. Value honesty: `htsroute-VALUE-STAKES.md` (PPI Free/Free **and** acetaminophen 6.5%↔Free)
+5. Value honesty: `htsroute-VALUE-STAKES.md` (PPI Free/Free **and** acetaminophen / ibuprofen / aspirin non-Free bulk ↔ Free 3004)
 6. Algorithm + checkers (**32** fixtures + dual-impl)
 
 ## Unique claim
 
-29 / 3003 / 3004 form-and-mixing gate (+ Note 1(a)). Omeprazole + pantoprazole same-molecule reinforcement (**NY N003244** closes finished pantoprazole tablets). Acetaminophen bulk (**NY R04092**, 6.5% MFN) vs finished 3004 supplies a non-zero MFN contrast.
+29 / 3003 / 3004 form-and-mixing gate (+ Note 1(a)). Omeprazole + pantoprazole same-molecule reinforcement (**NY N003244** closes finished pantoprazole tablets). Non-zero MFN contrasts: acetaminophen bulk (**NY R04092**, 6.5%), ibuprofen bulk (**NY I83067**, 6.5%), aspirin bulk (**NY 890808**, non-Free) vs finished 3004 Free.
 
 ## Honest value
 
-Showcase PPI MFN often **Free on both legs**. Acetaminophen bulk can be **6.5%** vs finished Free — preference programs may erase it. Do not sell blanket duty savings. Survive as form-gate method experiment only.
+Showcase PPI MFN often **Free on both legs**. Analgesic/NSAID bulk can be **non-Free** (e.g. 6.5%) vs finished Free — preference programs may erase it. Do not sell blanket duty savings. Survive as form-gate method experiment only.
 
 ## Decision
 

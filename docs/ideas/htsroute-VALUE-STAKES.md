@@ -18,16 +18,23 @@ A product that sells “we save you duty by routing 29 vs 3004” would be **lyi
 
 That is the kind of value claim prior lab digests would have waved past. We do not.
 
-## Counter-example with real MFN delta (same form gate)
+## Counter-examples with real MFN delta (same form gate)
 
 | Form | Route | MFN in source | Source |
 |------|-------|---------------|--------|
 | Acetaminophen USP **bulk** | Chapter 29 (2924.29.6210) | **6.5%** ad valorem (GSP may zero it by origin — base rate still not Free) | CROSS **NY R04092** |
 | Acetaminophen **tablets** (measured dose) | Heading **3004** | **Free** (medicament heading practice; peer analgesic dosage forms e.g. NY N316279 under 3004) | HTS 3004 + peer dosage rulings |
+| Ibuprofen **bulk** | Chapter 29 (2916.39.1500) | **6.5%** ad valorem; letter: not Pharma Appendix; not GSP under GN 4(c)/(d) as of 2002 | CROSS **NY I83067** |
+| Ibuprofen **tablets** (measured dose) | Heading **3004** (3004.90.9128) | **Free** | CROSS **NY N006187** |
+| Aspirin (acetylsalicylic acid) **bulk** | Chapter 29 (2918.22.1000) | **10.2%** in letter (1993); schedule since still **non-Free** (mirrors cite 6.5%); GSP may apply by origin | CROSS **NY 890808** |
+| Aspirin **tablets** (measured dose / retail) | Heading **3004** (3004.90.9128) | **Free** | CROSS **NY K87058** |
 
-Encoded: fixtures `#32` / `#33`. This restores a **honest** dollar story for *some* form-gate misroutes — without rehabilitating the PPI Free/Free pitch.
+Encoded: fixtures `#32`/`#33` (acetaminophen), `#34`/`#35` (ibuprofen), `#36`/`#37` (aspirin). These restore an **honest** dollar story for *some* form-gate misroutes — without rehabilitating the PPI Free/Free pitch.
 
-Caveat: preference programs (GSP historically for India on acetaminophen bulk) can erase the 6.5% on a given entry. Digests must say “base MFN 6.5% vs Free finished,” not “every acetaminophen drum pays 6.5%.”
+Caveats (do not bury):
+- Preference programs (GSP / Special column Free) can erase bulk MFN on a given entry. Digests must say “base MFN vs Free finished,” not “every drum pays X%.”
+- Ibuprofen: current Special column may list Free under preference programs even though NY I83067 denied GSP as of 2002 — still cite base 6.5%.
+- Aspirin: cite ruling rate for the letter; do not invent a Free bulk Chapter 29 rate when schedule remains non-Free.
 
 
 ## Where real stakes still exist (narrower, honest)

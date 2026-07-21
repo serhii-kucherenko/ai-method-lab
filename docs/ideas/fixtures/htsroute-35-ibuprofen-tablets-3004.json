@@ -1,0 +1,22 @@
+{
+  "id": "htsroute-35-ibuprofen-tablets-3004",
+  "title": "Ibuprofen tablets measured dose — heading 3004 Free",
+  "source": "CROSS NY N006187 (12 Feb 2007) — Ibuprofen Tablets → 3004.90.9128, rate of duty Free. Pairs with NY I83067 bulk ibuprofen at 6.5%.",
+  "sku": {
+    "molecule_name": "ibuprofen",
+    "chemical_form": "mixture",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": true,
+    "retail_packing": false,
+    "dosage_form_signal": "tablet",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "heading_3004_medicament"
+  },
+  "value_note": {
+    "mfn_general": "Free (NY N006187)",
+    "contrast": "Bulk ibuprofen NY I83067 is 6.5% MFN — real dollar delta if origin does not erase it via preference"
+  }
+}

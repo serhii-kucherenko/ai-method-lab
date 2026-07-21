@@ -51,6 +51,17 @@ Encoded: `htsroute-26-pantoprazole-tablets-3004.json` (source updated to N003244
 
 **Value honesty:** both legs Free MFN → see `htsroute-VALUE-STAKES.md` and Challenge D. Closing the letter residual does **not** create a duty-savings product story.
 
+## Non-Free MFN form-gate pairs (beyond acetaminophen)
+
+| Form | Route | MFN | Source |
+|------|-------|-----|--------|
+| Ibuprofen **bulk** | Ch 29 (2916.39.1500) | **6.5%** | **NY I83067** |
+| Ibuprofen **tablets** | **3004** (3004.90.9128) | **Free** | **NY N006187** |
+| Aspirin **bulk** | Ch 29 (2918.22.1000) | **10.2%** in letter; schedule still non-Free | **NY 890808** |
+| Aspirin **tablets** | **3004** (3004.90.9128) | **Free** | **NY K87058** |
+
+Encoded: `#34`/`#35`, `#36`/`#37`. Preference caveats in `htsroute-VALUE-STAKES.md`. Reinforces that *some* analgesic/NSAID bulk lines carry non-zero base MFN while finished 3004 is Free — not a blanket pharma savings product.
+
 ## What G1 still lacks (honest)
 
 - First-hand interview notes from an importer desk (not obtained).

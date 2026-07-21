@@ -1,0 +1,22 @@
+{
+  "id": "htsroute-36-aspirin-bulk-29",
+  "title": "Aspirin (acetylsalicylic acid) bulk — Chapter 29 non-Free MFN",
+  "source": "CROSS NY 890808 (22 Oct 1993) — Acetylsalicylic acid (Aspirin) bulk → 2918.22.1000, 10.2% ad valorem in the letter; GSP may apply by origin (Hungary cited). Classification path remains Chapter 29 bulk, not 3004. Current HTS Column 1 general for 2918.22.10 is still non-Free (schedule mirrors cite 6.5%) — do not invent a Free bulk rate.",
+  "sku": {
+    "molecule_name": "aspirin",
+    "chemical_form": "separately_defined",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": false,
+    "retail_packing": false,
+    "dosage_form_signal": "bulk_drum",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "chapter_29_chemical"
+  },
+  "value_note": {
+    "mfn_general": "10.2% (ruling NY 890808); schedule since non-Free (mirrors cite 6.5%)",
+    "contrast": "Finished aspirin tablets under 3004 Free (NY K87058). Preference can zero the bulk rate — cite base MFN non-Free vs Free finished"
+  }
+}
