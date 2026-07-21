@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-21T17:35:00Z",
+  "updated_at": "2026-07-21T18:05:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -24,7 +24,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "tariffstep adversarial. Paper algorithm + fixtures A-F green. Loop tick 15. No product until ready_to_build.",
+  "notes": "tariffstep testable. Fixtures A-Y green + G5/G6/challenges drafted. Loop tick 15 follow-up. No product until ready_to_build.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

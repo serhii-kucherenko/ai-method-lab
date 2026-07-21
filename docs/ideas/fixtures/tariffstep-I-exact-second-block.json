@@ -1,0 +1,28 @@
+{
+  "id": "I-exact-second-block",
+  "total_kwh": 200,
+  "current_peak_kw": 8,
+  "prior_peak_kw": 8,
+  "ratchet_pct": 0.8,
+  "demand_rate": 9,
+  "blocks": [
+    {
+      "up_to_kwh": 100,
+      "rate": 0.1
+    },
+    {
+      "up_to_kwh": 200,
+      "rate": 0.15
+    },
+    {
+      "up_to_kwh": null,
+      "rate": 0.2
+    }
+  ],
+  "expect": {
+    "energy_charge": 25,
+    "billing_demand_kw": 8,
+    "demand_charge": 72,
+    "total_charge": 97
+  }
+}

@@ -1,6 +1,6 @@
 # tariffstep — idea dossier
 
-**State:** `adversarial`  
+**State:** `testable`  
 **Framing:** method stress (not GTM vs utility CIS / Lodestar)  
 **Opened:** 2026-07-21 after bondstrip sustain
 
@@ -17,18 +17,19 @@ Utility billing ops walk metered kWh through **stepped rate blocks** and apply a
 
 Distinct from settlecut (single-interval loss×imbalance once) and bondstrip (coupon day-count).
 
-## Kill rounds (G3) — draft
+## Kill rounds (G3)
 
 1. Kill A — CIS / Lodestar exist → stands for GTM; method stress OK  
-2. Kill B — niche tariff QA — soft  
-3. Kill C — regulatory tariff PDF offline — math still checkable  
+2. Kill B — niche tariff QA — soft; partially reduced by recurring case map  
+3. Kill C — regulatory tariff PDF offline — partially valid; math kernel still checkable  
 
 ## Progress
 
 - Paper algorithm written (`tariffstep-algorithm.md`)
-- Fixtures A–F green via `check-tariffstep-fixtures.mjs`
-- Challenge A recorded; Kill A still stands commercially
+- Fixture suite expanded to A–Y (25) green via `check-tariffstep-fixtures.mjs`
+- Challenges A/B/C recorded
+- G5 and G6 docs drafted
 
 ## Decision
 
-**`adversarial`** — research only. No `projects/tariffstep/` until `ready_to_build`.
+**`testable`** — research only. No `projects/tariffstep/` until `ready_to_build`.

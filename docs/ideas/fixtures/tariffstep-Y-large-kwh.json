@@ -1,0 +1,28 @@
+{
+  "id": "Y-large-kwh",
+  "total_kwh": 5000,
+  "current_peak_kw": 40,
+  "prior_peak_kw": 50,
+  "ratchet_pct": 0.8,
+  "demand_rate": 18,
+  "blocks": [
+    {
+      "up_to_kwh": 100,
+      "rate": 0.1
+    },
+    {
+      "up_to_kwh": 200,
+      "rate": 0.15
+    },
+    {
+      "up_to_kwh": null,
+      "rate": 0.2
+    }
+  ],
+  "expect": {
+    "energy_charge": 985,
+    "billing_demand_kw": 40,
+    "demand_charge": 720,
+    "total_charge": 1705
+  }
+}
