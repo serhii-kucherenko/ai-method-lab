@@ -18,7 +18,7 @@ Use on the **next calendar day** after framing (not 2026-07-21). Do not flip rea
 - [ ] New calendar day vs first framing day  
 - [ ] G1–G5 still pass after re-read (not just green counts)  
 - [ ] PRODUCT framing draft forbids PPI Free/Free duty-savings claims  
-- [ ] PRODUCT framing may cite acetaminophen 6.5% base MFN only with GSP/preference caveat  
+- [ ] PRODUCT framing may cite non-zero base-MFN contrasts (acetaminophen 6.5%, Eluxadoline 6%, Vericiguat 6.5%) only with GSP/preference caveat — never PPI Free/Free as savings  
 - [ ] Digests will say workflow experiment; Kill A stands  
 - [ ] No isomorphic dual-gate sneak-in in PRODUCT.md shape  
 - [ ] `htsroute-ACCEPTANCE.md` sections A–F understood as the post-flip ship bar (dual-impl still green)  

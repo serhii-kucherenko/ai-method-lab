@@ -51,7 +51,7 @@ Acceptance **fails** if digests, PRODUCT.md, FINDINGS, try-demo copy, or marketi
 3. Says the product “beats brokers” or “replaces commercial HS engines”
 4. Cites acetaminophen **6.5% → Free** as guaranteed importer savings without GSP / preference caveat
 
-Allowed (narrow): acetaminophen-style pairs may mention **base MFN 6.5% vs Free finished** only with preference caveats from `htsroute-VALUE-STAKES.md`.
+Allowed (narrow): non-zero-base-MFN pairs may mention **base MFN vs Free finished** only with preference caveats from `htsroute-VALUE-STAKES.md` — acetaminophen-style, Eluxadoline/Viberzi (6%), Vericiguat/Verquvo (6.5%). Never PPI Free/Free as savings.
 
 ---
 

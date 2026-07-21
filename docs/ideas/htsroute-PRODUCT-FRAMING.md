@@ -15,7 +15,13 @@ Workflow experiment: encode Chapter 29 / heading 3003 / heading 3004 form-and-mi
 
 ## Allowed value language (narrow)
 
-Acetaminophen-style pairs where bulk Chapter 29 carries a **non-zero** base MFN (e.g. 6.5%) and finished 3004 is Free may be cited **only** with preference/GSP caveats from `htsroute-VALUE-STAKES.md` — never as guaranteed importer savings.
+Pairs where bulk Chapter 29 carries a **non-zero** base MFN and finished 3004 is Free may be cited **only** with preference/GSP/appendix caveats from `htsroute-VALUE-STAKES.md` — never as guaranteed importer savings. Allowed showcase families (base MFN only):
+
+- Acetaminophen-style (e.g. bulk **6.5%** ↔ finished Free)
+- Same-letter Eluxadoline / Viberzi (NY N302614: bulk **6%** ↔ tablets Free)
+- Same-letter Vericiguat / Verquvo (NY N318947: bulk **6.5%** ↔ tablets Free)
+
+PPI Free/Free pairs remain **forbidden** as duty-savings language.
 
 ## Kill A line (required in digests)
 
