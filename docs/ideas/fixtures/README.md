@@ -9,6 +9,7 @@ Machine-checkable paper oracles for blast cardinalities. Still **research only**
 | `lotblast-C-partial-ship.json` | In-channel = produced − shipped |
 | `lotblast-D-scrap-membership.json` | Scrap/yield loss does not shrink blast membership |
 | `lotblast-E-finished-as-input.json` | Finished lot used as input still pulls further finished lots |
+| `lotblast-F-concurrent-overconsume.json` | Second full consume of same input must reject |
 
 Narrative: `docs/ideas/lotblast-fixtures.md`.
 

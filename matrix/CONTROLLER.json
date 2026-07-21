@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T07:10:00Z",
+  "updated_at": "2026-07-21T07:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "R-depth-001__lotblast__hold-depth",
+  "active_cell": "R-depth-001__lotblast__testable",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "R-depth-001__lotblast__adversarial-challenge",
+  "last_completed": "R-depth-001__lotblast__hold-depth",
   "last_error": null,
   "current_product": null,
   "current_idea": "lotblast",
-  "next_cell": "R-depth-001__lotblast__hold-depth",
+  "next_cell": "R-depth-001__lotblast__hold-before-build",
   "mode": "autonomous",
   "phase": "research",
-  "notes": "Loop tick3: fixture checker green A-E; channel math fixed for re-consume. Still do not build.",
+  "notes": "lotblast state=testable (scorecard). Fixture F added. Deliberate hold — not ready_to_build. No product code.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

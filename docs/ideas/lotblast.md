@@ -1,6 +1,6 @@
 # Idea: lotblast (FSMA lot genealogy + recall blast radius)
 
-**State:** `differentiated` (G1–G2 pass; G3 method-stress locked; G4 draft; G5 paper suite+fixtures+algorithm — still not ready_to_build)  
+**State:** `testable` (paper acceptance tests + checker; G6 scorecard — still not ready_to_build)  
 **Decision:** Continue research. Do **not** build yet.
 
 ## 1. Problem

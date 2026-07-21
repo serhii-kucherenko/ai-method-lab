@@ -14,7 +14,7 @@ When a suspect ingredient lot is identified, a mid-chain food facility must know
 
 - Lots + consume edges form a **DAG**; cycles and over-consume reject.
 - **Forward blast** and **backward trace** are deterministic graph walks (see `lotblast-blast-algorithm.md`).
-- Shared inputs expand blast; diamond paths visit finished TLCs once; in-channel qty = produced − shipped.
+- Shared inputs expand blast; diamond paths visit finished TLCs once; in-channel = produced − shipped − consumed-as-input.
 - Mock recall locks the scoped subgraph and exports Receiving / Transformation / Shipping sheets per `lotblast-export-contract.md`.
 
 ## 4. Kill rounds
@@ -24,7 +24,7 @@ When a suspect ingredient lot is identified, a mid-chain food facility must know
 | A — incumbents (Nulogy, ERP, etc.) | **Stands for GTM.** Survive only as **method stress** (can A03+A10 hold this domain?). Digests must not claim market novelty. |
 | B — rare recalls | Conditional survive if product centers mock-recall + continuous genealogy, not incident theater. |
 | C — offline/legal hard part | Survive if scope stays computation + record pack, not full recall ops. |
-| D — membership ≠ mass balance | Open: yield/scrap must be explicit; blast membership must not silently imply mass conservation. |
+| D — membership ≠ mass balance | **Closed on paper** — Fixture D + algorithm; scrap does not shrink membership |
 
 ## 5. Falsifiers
 
@@ -44,10 +44,11 @@ When a suspect ingredient lot is identified, a mid-chain food facility must know
 
 Remaining before `ready_to_build`:
 
-1. ~~Resolve Kill D (yield/scrap model) on paper~~ — Fixture D + algorithm note
-2. ~~Adversarial challenge of Fixture A~~ — `lotblast-challenge-A.md` (cardinalities hold; finished-kind tightened)
-3. Promote draft brief → real brief only when RED tests are about to be written
-4. Keep method-stress honesty in every summary
+1. ~~Resolve Kill D~~ / ~~Fixture A challenge~~ / fixtures A–F + checker
+2. Gate scorecard: `lotblast-GATE-SCORECARD.md` — state **testable**, decision still hold
+3. Deliberate extra research rotation(s) before code (anti-rush)
+4. Promote draft brief → real brief only at build start
+5. Keep method-stress honesty in every summary
 
 No `projects/lotblast/` until then.
 

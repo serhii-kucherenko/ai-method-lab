@@ -52,9 +52,34 @@ function sameSet(a, b) {
   return as === bs;
 }
 
+function assertOverconsumeRules(doc, file) {
+  let n = 0;
+  for (const c of doc.cases ?? []) {
+    for (const w of c.write_attempts ?? []) {
+      if (w.expect !== "reject_overconsume") continue;
+      const committed = new Map();
+      for (const t of doc.graph.transforms) {
+        for (const inp of t.inputs) {
+          committed.set(inp.tlc, (committed.get(inp.tlc) ?? 0) + inp.qty);
+        }
+      }
+      const lotQty = new Map(doc.graph.lots.map((l) => [l.tlc, l.qty]));
+      for (const inp of w.inputs) {
+        const available = (lotQty.get(inp.tlc) ?? 0) - (committed.get(inp.tlc) ?? 0);
+        if (inp.qty <= available) {
+          n++;
+          console.error(`FAIL ${file}: write ${w.id} should overconsume ${inp.tlc} but available=${available}`);
+        }
+      }
+    }
+  }
+  return n;
+}
+
 let failed = 0;
 for (const file of readdirSync(root).filter((f) => f.endsWith(".json")).sort()) {
   const doc = JSON.parse(readFileSync(join(root, file), "utf8"));
+  failed += assertOverconsumeRules(doc, file);
   for (const c of doc.cases ?? []) {
     const got = forwardBlast(doc.graph, c.suspect);
     const e = c.expect;
@@ -68,6 +93,10 @@ for (const file of readdirSync(root).filter((f) => f.endsWith(".json")).sort()) 
       for (const [t, n] of Object.entries(e.units_in_channel_by_tlc)) {
         checks.push([`channel[${t}]`, got.channelBy[t] === n, got.channelBy[t], n]);
       }
+    }
+    if (e.visited_includes) {
+      const ok = e.visited_includes.every((t) => got.visited.has(t));
+      checks.push(["visited_includes", ok, [...got.visited].sort(), e.visited_includes]);
     }
     for (const [name, ok, g, ex] of checks) {
       if (!ok) {
