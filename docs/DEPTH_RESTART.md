@@ -50,3 +50,21 @@ The first post-restart wave (`lotblast` → `tariffstep`) improved domain nouns 
 - Skeptical digests that can say “we killed this” or “still not ready”
 - **Value honesty:** if showcase scenarios are Free MFN on both legs, say so — do not invent duty-savings stories (`htsroute` Challenge D, 2026-07-21)
 - Prefer next seeds with **literal dollar mechanics** (e.g. drawback lesser-of refund) over chapter-routing costumes
+
+## Correction 2 (same day — human: still shallow; keep going on depth)
+
+Second human signal (2026-07-21, afternoon): portfolio products, testing projects, research, and digests still feel **shallow** — weak ideas, weak verification, little data-backed value. Not another conveyor of one-pagers.
+
+**Additional stops**
+
+- Treating paper-kit completeness or dual-green fixture farms as “bulletproof idea”
+- Flipping `ready_to_build` for a domain claim whose commercial/value bar is still **provisional weak** (Challenge D accepted for `htsroute`)
+- Product finished emails without a working **try page attachment** + one free browser playground link (StackBlitz)
+- Research digests that only celebrate checker counts
+
+**Additional keeps**
+
+- Slow research with honest kill rounds and primary cites
+- Prefer **literal dollar** next seeds (`depositgap`, then `lesserof`) over form-gate costumes when value is weak
+- At day-boundary: if `htsroute` still fails the value honesty bar, **park/kill and activate depositgap** — do not build a shallow form-gate product to “clear the queue”
+- Digests: story first; for finished products always attach `try-<id>.html` + StackBlitz; for research ticks with a runnable paper demo, attach that demo the same way

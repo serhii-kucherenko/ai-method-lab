@@ -538,3 +538,7 @@ Day-count accrued + strip fixtures A-Y; full ladder. Sixth depth-restart product
 ## 2026-07-21 -- tariffstep smoke to sustain (pass)
 
 Block walk + demand ratchet fixtures A-Y; full ladder. Seventh depth-restart product. Next: lanehold framed.
+
+## 2026-07-21 -- depth tick 45 (research, no product)
+
+Human depth signal: portfolio still shallow. Raised htsroute day-boundary value gate (park if Challenge D weak; prefer depositgap dollars). Added depositgap G1 evidence + research try demo. Same-day build still blocked.

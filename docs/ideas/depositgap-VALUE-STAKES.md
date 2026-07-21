@@ -10,7 +10,7 @@ Research only. Fixture count is not value. Prefer this seed after htsroute clear
 | Deposit vs final assessed (CVD) | 19 U.S.C. § 1671f(b) | Same structure; fixtures label `order_type` only |
 | Interest | 19 U.S.C. § 1677g; IRC § 6621 | From order publication (statute) / deposit-required through liquidation (ops CFR) |
 
-Sources: LII §§ 1673f / 1671f / 1677g; 19 CFR § 351.212(e); see `depositgap-STATUTE-CITATIONS.md`, `depositgap-DAY-COUNT.md`.
+Sources: LII §§ 1673f / 1671f / 1677g; 19 CFR § 351.212(e); CIT Slip Op. 22-72 (interest stops at liquidation; § 1505(d) is separate); see `depositgap-STATUTE-CITATIONS.md`, `depositgap-DAY-COUNT.md`, `depositgap-G1-EVIDENCE.md`.
 
 ## Worked dollar story (illustrative — not a filed entry)
 

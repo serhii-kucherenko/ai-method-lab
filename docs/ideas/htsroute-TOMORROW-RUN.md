@@ -22,16 +22,23 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
 5. Fill `htsroute-DAY-BOUNDARY.md` checkboxes for real (not dry-run).  
 6. Optional preflight for the whole research farm: `node docs/ideas/check-all-seeds.mjs` and `node docs/ideas/check-seed-kits.mjs` (must stay green; does not replace the htsroute-specific re-reads).
 
-## If all pass
+## Value gate (before flip — Correction 2)
+
+After the re-reads, answer in one line in `htsroute-DAY-BOUNDARY.md`:
+
+- **Build** only if the unique form-gate claim still deserves a multi-page method product **and** digests can stay honest without inventing duty savings.  
+- **Park / kill** if Challenge D still leaves commercial/value **provisional weak** and the only story is fixture green + Free/Free reasonable-care. Then prefer **depositgap** (literal deposit→assessed + interest dollars) on a later tick — do not ship another shallow costume.
+
+## If all pass (including value gate → Build)
 
 1. Flip idea state / controller to `ready_to_build` per `protocols/IDEA_DEPTH.md`.  
 2. Open **comprehensive** `projects/htsroute/` (7 pages) — **not** smoke-as-sustain. Day-1 contract: `htsroute-DAY1-NONSMOKE.md`. Tree: `htsroute-REPO-SCAFFOLD.md`.  
-3. Digests: workflow experiment; Kill A stands; no Free/Free duty-savings vanity; no stacked 232/301 dollar claims without annex cites; no “232 dwarfs the letter” on OTC analgesic teaching pairs.  
+3. Digests: workflow experiment; Kill A stands; no Free/Free duty-savings vanity; no stacked 232/301 dollar claims without annex cites; no “232 dwarfs the letter” on OTC analgesic teaching pairs. Product finished email **must** attach `try-htsroute.html` + one StackBlitz try link.  
 4. Paste hypothesis from `htsroute-HYPOTHESIS-DRAFT.md`.
 
 ## If any fail
 
-Stay in research, park, or kill — write why in `docs/RESEARCH.md`. Do not open `projects/htsroute/`.
+Stay in research, park, or kill — write why in `docs/RESEARCH.md`. Do not open `projects/htsroute/`. Soft abort #4 → park/kill and queue depositgap activation for a later tick.
 
 ## After htsroute clears (build done, parked, or killed)
 

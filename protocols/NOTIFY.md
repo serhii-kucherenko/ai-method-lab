@@ -161,7 +161,7 @@ Try it
 5. **Next** — one line
 6. **Optional link** — at most one dossier URL
 
-Usually no try page. If the research tick produced a **runnable paper algorithm** (form gate, calculator, etc.), you may attach a research demo under `demos/<idea>-try/try.html` plus one StackBlitz link to that demo folder — still **not** a product. Otherwise omit Try it.
+If the research tick produced (or already has) a **runnable paper algorithm** (form gate, calculator, etc.), **attach** `demos/<idea>-try/try.html` and include **one** StackBlitz link to that demo folder — still **not** a product. Prefer the idea with the strongest literal-dollar or unique-claim demo for that digest. Omit Try it only when no offline demo exists yet.
 
 ### Example — research digest (good)
 

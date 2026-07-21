@@ -55,7 +55,7 @@ Reasons:
 2. Kill A stands — framing must be workflow-experiment honest from day one.  
 3. Comprehensive bar papers exist (`depositgap-COMPREHENSIVE-BLUEPRINT.md`, page specs) — still paper until activation after htsroute clears.
 
-**When** htsroute day-boundary flips to `ready_to_build` or parks/kills: prefer activating **depositgap** next over lesserof if Kill A honesty + G5 bar still hold on re-read.
+**When** htsroute day-boundary flips to `ready_to_build` or parks/kills: prefer activating **depositgap** next over lesserof if Kill A honesty + G5 bar still hold on re-read. Human depth signal (Correction 2): if htsroute parks on Challenge D value weakness, **depositgap is the preferred next framed idea** — literal dollars + G1 evidence pack + research try demo already on file.
 
 ## Explicit non-actions
 

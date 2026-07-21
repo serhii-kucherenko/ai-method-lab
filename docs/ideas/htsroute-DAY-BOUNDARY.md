@@ -27,11 +27,12 @@ Use on the **next calendar day** after framing (not 2026-07-21). Do not flip rea
 - [ ] `htsroute-COMPREHENSIVE-BLUEPRINT.md` + `htsroute-PAGE-SPECS.md` + `htsroute-PHASE-BRIEFS.md` on file (multi-page bar — no smoke-as-sustain)  
 - [ ] Sustain matrix floor understood (`htsroute-SUSTAIN-TEST-MATRIX.md`, ~73 tests incl. M-06 stacked fence)  
 - [ ] `check-htsroute-preflip.mjs` clear (calendar + dual + kits + try stacked-fence)
+- [ ] **Value gate (Correction 2):** Challenge D / VALUE-STAKES still support an honest multi-page method product — **or** choose park/kill and prefer depositgap instead of building a weak-value form-gate costume
 
 ## If any fail
 
-Stay in research, park, or kill — write why in `docs/RESEARCH.md`. Do not open `projects/htsroute/`.
+Stay in research, park, or kill — write why in `docs/RESEARCH.md`. Do not open `projects/htsroute/`. Soft abort #4 in `htsroute-FLIP-ABORT.md` → park/kill; activate depositgap on a **later** tick.
 
 ## Parallel
 
-`depositgap` is next after htsroute clears (`depositgap-POST-HTSROUTE-RUN.md`). Do **not** activate depositgap in the same tick as the htsroute flip.
+`depositgap` is next after htsroute clears (`depositgap-POST-HTSROUTE-RUN.md`). Prefer depositgap if htsroute parks on value. Do **not** activate depositgap in the same tick as the htsroute flip/park.

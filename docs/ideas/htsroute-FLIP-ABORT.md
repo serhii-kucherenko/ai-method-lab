@@ -17,7 +17,8 @@ Even after the calendar day changes, **do not** flip `ready_to_build` if any of 
 1. New primary CROSS contradicts ≥2 goldens → re-version before flip.  
 2. Human hard-stop / pause in `CONTROLLER.json`.  
 3. Soft abort if digest would pitch Section 232 over acetaminophen / ibuprofen / aspirin teaching pairs while generics remain carved out “at this time.”
+4. **Value bar still provisional weak** after Challenge D / VALUE-STAKES re-read (MFN story mostly Free/Free on showcase; Kill A stands; stakes narrowed to reasonable-care / form correctness) → **prefer park or kill `htsroute` and activate `depositgap`** rather than open a comprehensive product whose honest pitch is “brokers already classify; dollars often zero.” See `docs/DEPTH_RESTART.md` Correction 2. Fixture count alone does not clear this abort.
 
 ## If aborted
 
-Write why in `docs/RESEARCH.md`. Leave `projects/htsroute/` closed. Stay research or park/kill per IDEA_DEPTH.
+Write why in `docs/RESEARCH.md`. Leave `projects/htsroute/` closed. Stay research or park/kill per IDEA_DEPTH. If abort #4: run `depositgap-POST-HTSROUTE-RUN.md` on a **later** tick (not same tick as the park).

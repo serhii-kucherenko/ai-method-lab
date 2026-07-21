@@ -27,7 +27,7 @@ See `docs/DEPTH_RESTART.md`.
 | Seed | State | Notes |
 | --- | --- | --- |
 | lesserof | seed | Stacked-cap refund math; **23** fixtures; full kit + day-1 non-smoke. |
-| **depositgap** | seed | **Strongest next.** Full readiness pack + day-1 non-smoke � prefer after htsroute. **Not activated**. |
+| **depositgap** | seed | **Strongest next.** Literal deposit→assessed + § 1677g interest dollars; G1 evidence + research try demo on file. Prefer after htsroute (or if htsroute parks on value). **Not activated**. |
 | oshamult | seed | OSHA GBP serial reductions; **26** fixtures; full kit. |
 | ptax4975 | seed | � 4975 excise; **35** fixtures; full kit. |
 | meldefer | soft park | Near amendwin/days � `meldefer-PARK.md`. |
