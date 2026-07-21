@@ -1,0 +1,17 @@
+{
+  "id": "htsroute-11-capsule-measured",
+  "title": "Capsule measured dose heading 3004",
+  "source": "G5 case 11",
+  "sku": {
+    "chemical_form": "mixture",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": true,
+    "retail_packing": false,
+    "dosage_form_signal": "capsule",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "heading_3004_medicament"
+  }
+}

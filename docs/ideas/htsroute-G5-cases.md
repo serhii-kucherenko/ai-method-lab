@@ -37,6 +37,7 @@ Named cases for the unique claim. **Encoding policy:** critical path cards may b
 
 ## Encoding status
 
-- **Encoded:** #1–#3 under `docs/ideas/fixtures/` (omeprazole chain).
-- **Deferred:** #4–#25 (including critical rejects #5–#8).
-- Ready_to_build still requires fuller suite + G6 memo + gate scorecard — not this tick alone.
+- **Encoded:** #1–#8 critical path + boundaries #9, #11, #13, #17 under `docs/ideas/fixtures/`.
+- **Deferred:** remaining #10, #12, #14–#16, #18–#25.
+- G6 memo says **do not build yet** — same-day build blocked; expand remaining boundaries across later ticks.
+

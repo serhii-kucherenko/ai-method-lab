@@ -16,7 +16,7 @@
 | **bondstrip** (coupon strip + day-count accrued) | Sustained | — | Product done |
 | **tariffstep** (block walk + demand ratchet) | Sustained | — | Product done |
 | **lanehold** (lane capacity + hold expiry) | Yes | G2 | Killed — ≅ loadbay + dual-gate ceiling/timer; autopsy `lanehold-AUTOPSY.md` |
-| **htsroute** (Ch 29 / 3003 / 3004 form gate) | No | testable | G5 cases + omeprazole #1–#3 cards; no product; not ready_to_build |
+| **htsroute** (Ch 29 / 3003 / 3004 form gate) | No | testable | Critical path #1–#8 green; G6 hold — no product this calendar day |
 | meldefer (MEL A/B/C/D clocks) | Soft park | G2 risk | Near amendwin/days; park unless Category A unit polymorphism + extension asymmetry proven non-isomorphic |
 | form222 / CSOS line validation | Soft park | G3 | Crowded compliance; revisit after htsroute depth |
 

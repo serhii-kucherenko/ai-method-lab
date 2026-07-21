@@ -1,0 +1,17 @@
+{
+  "id": "htsroute-9-powder-bulk-29",
+  "title": "Therapeutic powder bulk separately defined",
+  "source": "G5 case 9",
+  "sku": {
+    "chemical_form": "separately_defined",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": false,
+    "retail_packing": false,
+    "dosage_form_signal": "powder_bulk",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "chapter_29_chemical"
+  }
+}

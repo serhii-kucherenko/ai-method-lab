@@ -1,0 +1,17 @@
+{
+  "id": "htsroute-17-inconsistent-pellets-defined",
+  "title": "Bulk pellets marked separately defined rejects",
+  "source": "G5 case 17",
+  "sku": {
+    "chemical_form": "separately_defined",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": false,
+    "retail_packing": false,
+    "dosage_form_signal": "bulk_pellets",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "reject"
+  }
+}
