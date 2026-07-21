@@ -36,7 +36,8 @@ Specialty pharma trade-compliance analysts must route SKUs across Chapter 29 (bu
 ## 6. Depth test outline
 
 - 25 cases named (`htsroute-G5-cases.md`); #16 aliased to #8
-- **24 fixture files green** (critical + boundaries + concurrent batch)
+- **30 fixture files green** (`check-htsroute-fixtures.mjs`)
+- **Dual-impl cross-check green** (`check-htsroute-dual.mjs`) — two independent routers + synthetic probes
 - Checker: `docs/ideas/check-htsroute-fixtures.mjs`
 
 ## 7. Decision
@@ -46,8 +47,10 @@ Specialty pharma trade-compliance analysts must route SKUs across Chapter 29 (bu
 Reasons:
 
 1. Same-day research→build is an explicit failure mode after the human shallow signal (`block_same_day_research_to_build`).
-2. Suite is now deep enough on paper to *consider* ready_to_build on a **later** tick — not this one.
-3. Finished omeprazole **capsule** CROSS letter still preferred for the 3004 same-molecule leg.
+2. Suite is deep enough to *consider* ready_to_build on a **later calendar day** — not this one.
+3. Dedicated finished-PPI CROSS letter still preferred (optional strengthen).
 4. No G1 interview / specific public CF-29 pharma docket.
 
-**Next tick (after overnight / loop):** gate scorecard + possible `ready_to_build` only if still non-isomorphic and digests stay honest. Never open `projects/htsroute/` before that decision.
+**Work while holding:** dual-impl testing, acceptance paper, parked-seed hygiene — **not** idle. See `LOOP_DISCIPLINE.md` (do not re-arm live loops).
+
+**Next:** day-boundary ready_to_build reassess; then `projects/htsroute/` only if flipped.

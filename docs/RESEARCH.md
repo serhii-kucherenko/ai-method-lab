@@ -306,3 +306,11 @@ Chained without idle: gate scorecard (hold), Challenge C closed, RESEARCH_QUEUE 
 ## 2026-07-21 -- keep-working tick 9 (never stop)
 
 Human reaffirmed never-stop. Loop PID 8880 still armed. Chained: lansoprazole bulk/capsule (#28/#29), inconsistency rejects (#30/#31), paper acceptance outline, meldefer + form222 park autopsies. Checker **30 files green**. Still **no product** (same-day hold). Next queue item remains day-boundary ready reassess.
+
+## 2026-07-21 -- why loops looked idle + dual-impl tick 10
+
+**Cause:** Re-arming `/loop 30m` on every human message killed the sleeper and restarted the 1800s timer, so no `AGENT_LOOP_TICK_depth_keepgoing` ever printed. That is not the same as doing work in chat, and it looked like empty loops.
+
+**Fix:** `docs/ideas/LOOP_DISCIPLINE.md` — do not restart a live depth loop.
+
+**Work this tick:** dual-implementation cross-check `check-htsroute-dual.mjs` (two routers + probes) green on all 30 fixtures. Still no product today. Loop pid 8880 left alone.

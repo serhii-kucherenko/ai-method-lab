@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-22T14:00:00Z",
+  "updated_at": "2026-07-21T10:45:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__htsroute_neverstop_tick9",
+  "last_completed": "research__htsroute_dual_impl_tick10",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "Never-stop. htsroute 30 fixtures green; acceptance paper ready; parks written. Same-day build still blocked. /loop 30m pid 8880.",
+  "notes": "Honest: prior /loop re-arms reset sleep so no wake fired — see LOOP_DISCIPLINE.md. Dual-impl cross-check green. Do NOT restart pid 8880. Same-day build still blocked; testing continues.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -39,6 +39,7 @@
     "sentinel": "AGENT_LOOP_TICK_depth_keepgoing",
     "purpose": "depth_keepgoing",
     "pid": 8880,
-    "chain": "finish_item_then_next"
+    "chain": "finish_item_then_next",
+    "do_not_rearm_if_alive": true
   }
 }
