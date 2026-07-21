@@ -7,12 +7,12 @@ Controller chains these without waiting. Finish one → commit → start next.
 | # | Item | Status |
 |---|------|--------|
 | 28 | Day-boundary ready reassess | **pending** (calendar still 2026-07-21) |
-| 47 | 15m tick #21 | done — hypothesis kits |
-| 48 | 15m tick #22 | **done** — page specs + sustain matrices for queued seeds |
+| 48 | 15m tick #22 | done — page specs + sustain matrices |
+| 49 | 15m tick #23 | **done** — API contracts for lesserof / oshamult / ptax |
 
 ## Parallel seeds
 
-Paper kits complete for all five (see `SEED_READINESS.md`). Tomorrow: `htsroute-TOMORROW-RUN.md`.
+Paper kits + API contracts for all five (see `SEED_READINESS.md`). Tomorrow: `htsroute-TOMORROW-RUN.md`.
 
 ## Rule
 
