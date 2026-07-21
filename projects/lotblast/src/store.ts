@@ -361,6 +361,13 @@ export function listLots(db: DatabaseSync, plantId: string, limit: number, offse
   }>;
 }
 
+export function countLots(db: DatabaseSync, plantId: string): number {
+  const row = db
+    .prepare("SELECT COUNT(*) AS n FROM lots WHERE plant_id = ?")
+    .get(plantId) as { n: number };
+  return Number(row.n);
+}
+
 export function listReceiving(db: DatabaseSync, plantId: string, limit: number, offset: number) {
   return db
     .prepare(

@@ -8,7 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
-| lotblast | **in progress** | A03 + A10 | P-scale | DAG lot genealogy + deterministic blast radius + mock-recall export (method stress) |
+| lotblast | **sustained** | A03 + A10 | done | DAG lot genealogy + deterministic blast radius + mock-recall export (method stress) |
 
 ## Abandoned this restart
 

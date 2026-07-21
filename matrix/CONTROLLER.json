@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T10:15:00Z",
+  "updated_at": "2026-07-21T10:35:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "A03__P-scale-001__lotblast__r1",
+  "active_cell": "R-depth-002__next-idea",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-integrate-001__lotblast__r1",
+  "last_completed": "A03__P-sustain__lotblast__r1",
   "last_error": null,
-  "current_product": "lotblast",
-  "current_idea": "lotblast",
-  "next_cell": "A03__P-scale-001__lotblast__r1",
+  "current_product": null,
+  "current_idea": null,
+  "next_cell": "R-depth-002__next-idea",
   "mode": "autonomous",
-  "phase": "running",
-  "notes": "lotblast integrate scored. Next P-scale. Method stress — not dual-gate.",
+  "phase": "research",
+  "notes": "lotblast sustained. Next: IDEA_DEPTH research for a new non-isomorphic idea — do not start dual-gate clones.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

@@ -507,3 +507,7 @@ List/read CTE + qa read-only matrix + migration 002. Cell `A03__P-crud-001__lotb
 ## 2026-07-21 -- lotblast workflow + integrate (pass)
 
 Recall FSM draft?locked?closed with audit/version. HMAC webhooks idempotent; partner notify dep failures return 502. Cells workflow + integrate scored. Next: P-scale.
+
+## 2026-07-21 -- lotblast scale + sustain (pass)
+
+Pagination (=250) + Retry-After rate limit. Sustain scored. First depth-restart product complete. Next: IDEA_DEPTH research (no dual-gate queue).

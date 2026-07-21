@@ -14,6 +14,7 @@ import {
   issueToken,
   listBlastMembers,
   listLots,
+  countLots,
   listReceiving,
   listShipments,
   listTransforms,
@@ -96,7 +97,7 @@ function checkRateLimit(store: Store, req: IncomingMessage, res: ServerResponse)
   const n = (store.rateCounts.get(key) ?? 0) + 1;
   store.rateCounts.set(key, n);
   if (n > store.rateLimit) {
-    send(res, 429, { error: "rate limit exceeded" });
+    send(res, 429, { error: "rate limit exceeded" }, { "retry-after": "1" });
     return false;
   }
   return true;
@@ -335,7 +336,12 @@ export function createApp(
         if (plantDenied(store, plantId, userId, "read", res)) return;
         const limit = Math.min(Math.max(Number(url.searchParams.get("limit") ?? 20), 1), 100);
         const offset = Math.max(Number(url.searchParams.get("offset") ?? 0), 0);
-        send(res, 200, { lots: listLots(store.db, plantId, limit, offset) });
+        send(res, 200, {
+          lots: listLots(store.db, plantId, limit, offset),
+          total: countLots(store.db, plantId),
+          limit,
+          offset,
+        });
         return;
       }
 

@@ -11,4 +11,5 @@ Method-stress product: plants + lot genealogy (DAG) + forward blast / backward t
 - [x] Mock recall lock + export envelope
 - [x] A10: authz, migrations, health, THREATS
 - [x] Minimal UI vertical path
-- [x] FINDINGS honest (method stress framing) — draft; refine at smoke score
+- [x] FINDINGS honest (method stress framing)
+- [x] Workflow + integrate + scale ladder green
