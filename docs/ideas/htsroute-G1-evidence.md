@@ -21,13 +21,32 @@ Pain evidence for framing. Not a build ticket. Sources cited for skepticism, not
 
 5. **Industry articulation of the form mistake** (secondary, use cautiously): GingerControl pharma HS note (May 2026) — common error is classifying finished dosage (Ch 30) as bulk API (Ch 29) or the reverse; same molecule, different chapter; duty / Section 301 stack shifts. Treat as problem statement corroboration, not as oracle.
 
+6. **Penalty path (secondary legal commentary):** Misclassification can lead to CF-29 Notices of Action and, if reasonable care fails, 19 U.S.C. § 1592 penalty exposure; prior disclosure is a separate mitigation path. Sources: customs-bar commentary on CF-29 / § 1592 (not a substitute for primary CBP guidance). Strengthens “why pain matters” without claiming a specific public penalty docket for pharma 29/30 this tick.
+
+## Ruling pair (chapter gate contrast)
+
+| Card | Facts | Route | Source |
+|------|-------|-------|--------|
+| Bulk APIs with therapeutic indications | Colchicine, Oxaprozin, … **imported in bulk form** | **Chapter 29** | CROSS **NY I89619** (13 Jan 2003) |
+| Dosage-form medicaments | Isotretinoin capsules, Ivermectin tablets, Venlafaxine ER tablets **in dosage form** | **Heading 3004** | CROSS **NY N325050** (22 Apr 2022) |
+
+## Same-molecule chain (omeprazole) — closes prior G1 gap
+
+| Form | Route | Source |
+|------|-------|--------|
+| Omeprazole **in bulk form** (API) | **Chapter 29** | NY **L82483** / NY **A89236** |
+| Omeprazole **pellets + enteric coating**, imported bulk (mixed constituents, not measured dose) | **Heading 3003** | NY **A88482** / NY **864623** |
+| Peer dosage-form medicaments (measured doses) | **Heading 3004** | NY **N325050** (family practice; finished omeprazole capsules follow 3004 in trade/HTS practice) |
+
+**Why this matters:** A binary “29 vs 3004” idea would mis-route the pellet intermediate. Challenge B forced the algorithm to add `heading_3003_bulk_medicament`. This is the first depth artifact that would fail a shallow keyword product.
+
 ## What G1 still lacks (honest)
 
-- First-hand interview notes from an importer desk (not obtained this tick).
-- A quantified incident (penalty notice / CF-28 / audit sample) with public redaction — preferred next evidence pass.
-- Binding scope decision: v0 covers only unambiguous 29-vs-3004 form routing; GRI 3 combination products stay out-of-scope until expert fixtures exist.
+- First-hand interview notes from an importer desk (not obtained).
+- A single public CF-29 / § 1592 docket specifically about 29↔30 pharma misclass (general penalty path only).
+- Finished omeprazole **capsule** CROSS letter on file (trade practice + heading text support 3004; prefer a direct ruling cite before ready_to_build).
 
 ## G1 provisional grade
 
-**Pass for framing** (named user + frequency + workaround + citable rule text).  
-**Not yet bulletproof** — need at least one primary ruling pair encoded as future fixtures and one public enforcement/audit-style citation before ready_to_build.
+**Stronger pass** — same-molecule omeprazole chain + peer dosage 3004 + Note 1(a) awareness.  
+**Still not ready_to_build** — no fixtures; Challenge B binding rules not yet encoded as golden JSON.

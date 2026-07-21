@@ -45,7 +45,7 @@ Full historical table preserved in git history prior to depth restart; rows belo
 
 ## Next autonomous actions
 
-1. Slow IDEA_DEPTH on **htsroute** only — no dual-gate / capacity+expiry queue
+1. Slow IDEA_DEPTH on **htsroute** (differentiated) — small G5 case list next; no same-day build
 2. Digests: plain language; may report kills and “not ready”
 3. Multi-tick research before fixtures; never same-day framed→build
 4. Depth-restart sustained (still under speed critique): lotblast … tariffstep

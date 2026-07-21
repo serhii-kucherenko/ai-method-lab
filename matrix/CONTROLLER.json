@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-22T10:15:00Z",
+  "updated_at": "2026-07-22T11:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__lanehold_killed_g2__htsroute_framed",
+  "last_completed": "research__htsroute_differentiated_tick3",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "Human: still shallow. Killed lanehold (G2 capacity+expiry). Framed htsroute only — no fixtures, no product. Slow multi-tick depth. Digests plain language.",
+  "notes": "htsroute differentiated tick 3/≥3. Omeprazole 29/3003/3004 chain. Still no fixtures, no product. Pace over throughput.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
