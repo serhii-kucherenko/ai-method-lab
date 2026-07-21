@@ -1,5 +1,5 @@
-﻿{
-  "updated_at": "2026-07-21T11:55:00Z",
+{
+  "updated_at": "2026-07-21T14:00:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__30m_tick2_depositgap_fixtures",
+  "last_completed": "research__loop15m_tick4_dryrun_depositgap_fixtures",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "30m tick #2: depositgap fixtures A-D + checker 4/4 green. htsroute same-day hold. Do NOT re-arm pid 29556.",
+  "notes": "15m tick #4: ready dry-run FAIL calendar only; depositgap 4 paper fixtures green. Same-day build blocked. Do NOT re-arm pid 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -37,13 +37,12 @@
     "protocol": "protocols/IDEA_DEPTH.md"
   },
   "loop": {
-    "interval": "30m",
-    "sentinel": "AGENT_LOOP_TICK_depth_keepgoing",
-    "purpose": "depth_keepgoing",
-    "pid": 29556,
-    "also_running": [{ "interval": "15m", "pid": 27600, "sentinel": "AGENT_LOOP_TICK_depth_15m" }],
+    "interval": "15m",
+    "sentinel": "AGENT_LOOP_TICK_depth_15m",
+    "purpose": "depth_15m",
+    "pid": 27600,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 2
+    "ticks_observed": 4
   }
 }

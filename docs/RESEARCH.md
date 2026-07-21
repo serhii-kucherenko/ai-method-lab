@@ -509,3 +509,7 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 ## 2026-07-21 -- 30m loop tick 2: depositgap fixtures
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 2 (pid 29556 left alone). Encoded depositgap fixtures A-D + `check-depositgap-fixtures.mjs` (4/4 green): underdeposit true-up, overdeposit sign, skip-interest cheat reject, zero-value reject. Still seed only; htsroute same-day no-build.
+
+## 2026-07-21 — depositgap paper fixtures (tick 4 follow)
+
+Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over deposit, skip-interest cheat, zero value). Checker green. Seed only — not activated; htsroute still current_idea.
