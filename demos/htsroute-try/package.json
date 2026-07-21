@@ -1,0 +1,9 @@
+{
+  "name": "htsroute-try",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Research-only offline demo of the htsroute form gate (not a product).",
+  "scripts": {
+    "start": "npx --yes serve -l 3000 ."
+  }
+}

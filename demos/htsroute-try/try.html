@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>htsroute — try the form gate</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1b1e24;
+        --muted: #5a6270;
+        --line: #d5dae3;
+        --bg: #eef1f6;
+        --panel: #fff;
+        --accent: #1d4f8c;
+        --warn: #8a4b12;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 0% 0%, #d9e4f5 0%, transparent 42%),
+          radial-gradient(circle at 100% 0%, #e6ebf2 0%, transparent 40%),
+          var(--bg);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 36rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        margin: 0 0 0.35rem;
+        font-size: 1.7rem;
+        letter-spacing: -0.02em;
+      }
+      .note {
+        margin: 0 0 1.25rem;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+      .money {
+        margin: 0 0 1.25rem;
+        padding: 0.75rem 0.9rem;
+        border-left: 3px solid var(--warn);
+        background: #fff8f0;
+        color: #5c3a18;
+        line-height: 1.4;
+        font-size: 0.95rem;
+      }
+      .presets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .presets button {
+        background: #fff;
+        color: var(--ink);
+        border: 1px solid var(--line);
+        font-weight: 500;
+      }
+      form {
+        display: grid;
+        gap: 0.7rem;
+        padding: 1.1rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+      }
+      label {
+        display: grid;
+        gap: 0.25rem;
+        font-size: 0.92rem;
+      }
+      select,
+      input[type="text"] {
+        padding: 0.55rem 0.65rem;
+        border: 1px solid var(--line);
+        font: inherit;
+      }
+      .checks {
+        display: grid;
+        gap: 0.45rem;
+      }
+      .checks label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        grid-template-columns: none;
+      }
+      button {
+        margin-top: 0.2rem;
+        padding: 0.7rem 1rem;
+        border: 0;
+        background: var(--accent);
+        color: #fff;
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:hover {
+        filter: brightness(1.05);
+      }
+      pre {
+        margin: 1rem 0 0;
+        padding: 1rem;
+        background: #12151a;
+        color: #d7e4f5;
+        overflow: auto;
+        min-height: 7rem;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>htsroute</h1>
+      <p class="note">
+        Offline research demo of the customs <strong>form gate</strong>: same molecule,
+        different route by bulk vs mixed pellets vs measured-dose tablets. Molecule name is
+        ignored on purpose. This is not a finished product.
+      </p>
+      <p class="money">
+        Money honesty: for pantoprazole showcase pairs, ordinary import duty is often
+        <strong>free on both sides</strong>. A “we save you duty” pitch would be false even
+        when the route changes.
+      </p>
+      <div class="presets">
+        <button type="button" data-preset="bulk">Pantoprazole bulk → Ch 29</button>
+        <button type="button" data-preset="tablets">Protonix tablets → 3004</button>
+        <button type="button" data-preset="pellets">Mixed pellets → 3003</button>
+      </div>
+      <form id="form">
+        <label>
+          Molecule name (not used by the router)
+          <input id="molecule_name" type="text" value="pantoprazole sodium" />
+        </label>
+        <label>
+          Chemical form
+          <select id="chemical_form">
+            <option value="separately_defined">separately defined (bulk API)</option>
+            <option value="mixture">mixture</option>
+            <option value="unknown">unknown</option>
+          </select>
+        </label>
+        <label>
+          Dosage form signal
+          <select id="dosage_form_signal">
+            <option value="bulk_drum">bulk drum</option>
+            <option value="powder_bulk">powder bulk</option>
+            <option value="bulk_pellets">bulk pellets</option>
+            <option value="tablet">tablet</option>
+            <option value="capsule">capsule</option>
+            <option value="injectable_vial">injectable vial</option>
+            <option value="transdermal">transdermal</option>
+            <option value="other">other</option>
+            <option value="unknown">unknown</option>
+          </select>
+        </label>
+        <div class="checks">
+          <label><input id="therapeutic_or_prophylactic" type="checkbox" checked /> Therapeutic / prophylactic</label>
+          <label><input id="measured_dose" type="checkbox" /> Measured dose</label>
+          <label><input id="retail_packing" type="checkbox" /> Retail packing</label>
+          <label><input id="note_1a_food_or_supplement" type="checkbox" /> Food / supplement (Note 1(a))</label>
+          <label><input id="gri3_combination" type="checkbox" /> GRI 3 combination (out of scope)</label>
+        </div>
+        <button type="submit">Route</button>
+      </form>
+      <pre id="out">Pick a preset or change the facts, then Route.</pre>
+    </main>
+    <script>
+      var DOSE_FORMS = { tablet: 1, capsule: 1, injectable_vial: 1, transdermal: 1 };
+      var BULK_PURE = { bulk_drum: 1, powder_bulk: 1 };
+      var MIXED_BULK = { bulk_pellets: 1, other: 1, unknown: 1 };
+      var BULK_SHAPES = { bulk_drum: 1, powder_bulk: 1, bulk_pellets: 1 };
+
+      var LABELS = {
+        chapter_29_chemical: "Chapter 29 — chemical / bulk API",
+        heading_3003_bulk_medicament: "Heading 3003 — mixed bulk medicament (not measured dose)",
+        heading_3004_medicament: "Heading 3004 — measured dose and/or retail packing",
+        excluded_note_1a: "Excluded — Chapter 30 Note 1(a) food/supplement",
+        reject: "Reject — insufficient or inconsistent facts",
+      };
+
+      function routeSku(sku) {
+        if (sku.gri3_combination) return "reject";
+        if (sku.note_1a_food_or_supplement) return "excluded_note_1a";
+        var doseOrRetail = sku.measured_dose || sku.retail_packing;
+        if (DOSE_FORMS[sku.dosage_form_signal] && !doseOrRetail) return "reject";
+        if (sku.therapeutic_or_prophylactic && doseOrRetail) {
+          if (BULK_SHAPES[sku.dosage_form_signal]) return "reject";
+          return "heading_3004_medicament";
+        }
+        if (
+          sku.therapeutic_or_prophylactic &&
+          sku.chemical_form === "mixture" &&
+          !sku.measured_dose &&
+          !sku.retail_packing &&
+          MIXED_BULK[sku.dosage_form_signal]
+        ) {
+          return "heading_3003_bulk_medicament";
+        }
+        if (sku.chemical_form === "separately_defined" && BULK_PURE[sku.dosage_form_signal]) {
+          return "chapter_29_chemical";
+        }
+        return "reject";
+      }
+
+      function readSku() {
+        return {
+          molecule_name: document.getElementById("molecule_name").value,
+          chemical_form: document.getElementById("chemical_form").value,
+          dosage_form_signal: document.getElementById("dosage_form_signal").value,
+          therapeutic_or_prophylactic: document.getElementById("therapeutic_or_prophylactic").checked,
+          measured_dose: document.getElementById("measured_dose").checked,
+          retail_packing: document.getElementById("retail_packing").checked,
+          note_1a_food_or_supplement: document.getElementById("note_1a_food_or_supplement").checked,
+          gri3_combination: document.getElementById("gri3_combination").checked,
+        };
+      }
+
+      function applyPreset(name) {
+        var molecule = document.getElementById("molecule_name");
+        var chem = document.getElementById("chemical_form");
+        var form = document.getElementById("dosage_form_signal");
+        var therapeutic = document.getElementById("therapeutic_or_prophylactic");
+        var measured = document.getElementById("measured_dose");
+        var retail = document.getElementById("retail_packing");
+        var note = document.getElementById("note_1a_food_or_supplement");
+        var gri3 = document.getElementById("gri3_combination");
+        molecule.value = "pantoprazole sodium";
+        therapeutic.checked = true;
+        retail.checked = false;
+        note.checked = false;
+        gri3.checked = false;
+        if (name === "bulk") {
+          chem.value = "separately_defined";
+          form.value = "bulk_drum";
+          measured.checked = false;
+        } else if (name === "tablets") {
+          chem.value = "mixture";
+          form.value = "tablet";
+          measured.checked = true;
+        } else if (name === "pellets") {
+          chem.value = "mixture";
+          form.value = "bulk_pellets";
+          measured.checked = false;
+        }
+      }
+
+      var out = document.getElementById("out");
+      document.getElementById("form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var sku = readSku();
+        var route = routeSku(sku);
+        out.textContent = JSON.stringify(
+          {
+            ignored_molecule_name: sku.molecule_name,
+            route: route,
+            plain: LABELS[route],
+            money_note:
+              "Showcase pantoprazole bulk vs tablets is often Free / Free under ordinary MFN — route still matters; duty-savings pitch does not.",
+          },
+          null,
+          2,
+        );
+      });
+
+      document.querySelectorAll("[data-preset]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          applyPreset(btn.getAttribute("data-preset"));
+          document.getElementById("form").requestSubmit();
+        });
+      });
+    </script>
+  </body>
+</html>
