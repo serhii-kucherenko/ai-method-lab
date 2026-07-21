@@ -7,7 +7,7 @@ Controller chains these without waiting. Finish one → commit → start next. N
 | # | Item | Status |
 |---|------|--------|
 | 1–10 | Frame through draft brief | done |
-| 11 | Overnight / next-day ready_to_build reassess | pending (day boundary) — **must re-read Challenge D** |
+| 11 | Overnight / next-day ready_to_build reassess | pending — use `htsroute-DAY-BOUNDARY.md` |
 | 12 | Lansoprazole bulk↔capsule + inconsistency rejects | done (#28–#31) |
 | 13 | Paper acceptance outline | done — `htsroute-ACCEPTANCE.md` |
 | 14 | meldefer park autopsy | done — `meldefer-PARK.md` |

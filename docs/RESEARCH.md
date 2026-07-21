@@ -344,7 +344,7 @@ Still **no** `projects/`, **no** fixture farm, **htsroute** remains `current_ide
 
 Wrote `lesserof-NARROW-CLAIM.md` so the next idea does not activate as a vendor-blog clone:
 
-- Unique bundle = TFTEA lesser-of + direct-ID exemption + **USMCA export lesser-of** + **§ 1313(j)(5) basket-?other? trap**
+- Unique bundle = TFTEA lesser-of + direct-ID exemption + **USMCA export lesser-of** + **? 1313(j)(5) basket-?other? trap**
 - Kill A pre-registered as commercial stand ? workflow experiment only
 - G5 outline on paper; **no fixtures** yet
 - htsroute still active; same-day build still blocked
@@ -359,4 +359,8 @@ Challenge D said PPI Free/Free kills vanity duty pitches. Searched for a **non-z
 - VALUE-STAKES updated: PPI Free/Free still honest; acetaminophen restores a **conditional** dollar story
 
 Still **no product** today. Digests must not claim every drum pays 6.5%.
+
+## 2026-07-21 ? day-boundary checklist (tick 12b)
+
+Wrote `htsroute-DAY-BOUNDARY.md` so tomorrow?s ready flip cannot skip Challenge D / value honesty. Still no product. Loop pid 8880 left alone.
 
