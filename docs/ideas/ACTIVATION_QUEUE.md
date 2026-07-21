@@ -15,7 +15,7 @@
 | Priority | Idea | Why |
 |----------|------|-----|
 | 0 | **htsroute** | Current idea — comprehensive multi-page product if day-boundary passes |
-| 1 | **depositgap** | Strongest $ seed; G5+G6+acceptance+phase/API/try-demo notes ready |
+| 1 | **depositgap** | Strongest $ seed; kit ready — follow `depositgap-POST-HTSROUTE-RUN.md` after htsroute clears |
 | 2 | **lesserof** | Stacked drawback caps; G5+G6+acceptance+**phase/page specs** |
 | 3 | **oshamult** | OSHA serial penalty; G5+G6+blueprint+acceptance+**phase briefs** |
 | 4 | **ptax4975** | § 4975 excise; G5+G6+blueprint+acceptance+**phase briefs** (35 fixtures) |

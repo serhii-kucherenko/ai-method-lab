@@ -24,11 +24,13 @@ Serious moderate GBP **$7,000**, 20 employees (70% size), 25% good faith, 20% hi
 
 ## Still open before frame
 
-1. Lock exact size-bucket table cells against current FOM HTML (re-fetch on frame day).  
-2. Willful-serious minimum penalty floor (statutory) — not in v0 toy.  
-3. Kill A/B/C paper beyond seed pre-register.  
-4. ≥25 G5 cases before any activate.
+1. ~~Lock exact size-bucket table cells against current FOM HTML~~ — `oshamult-SIZE-TABLE.md` (Table 6-2 locked 2026-07-21; re-fetch on frame day).  
+2. ~~Willful-serious minimum penalty floor~~ — explicitly **out of scope** in `oshamult-SIZE-TABLE.md` (v0 rejects size-on-willful; no annual-min clamp).  
+3. ~~Kill A/B/C paper~~ — `oshamult-challenge-ABC.md`  
+4. ~~≥25 G5 cases~~ — **26** dual-green fixtures (`check-oshamult-*.mjs`).  
+
+**Known honesty debt (not a blocker for seed papers):** live FOM serial order is Size→Good Faith→History→Quick Fix; v0 goldens lock Size→History→Good Faith→Quick Fix until `oshamult-v1` dual re-green. See `oshamult-SIZE-TABLE.md`.
 
 ## Explicit non-actions
 
-No product. No activation while htsroute holds the slot.
+No product. No activation while htsroute holds the slot. Prefer depositgap / lesserof first (`ACTIVATION_QUEUE.md`).

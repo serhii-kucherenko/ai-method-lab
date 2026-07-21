@@ -674,3 +674,9 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Wrote API contracts for lesserof, oshamult, ptax4975 (matching depositgap / htsroute shape)
 - Seed readiness table now includes API column for all five
 - Same-day build still blocked; loop 27600 not re-armed
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #24
+
+- Locked OSHA FOM Table 6-2 size buckets from live chapter-6 HTML; documented HTML vs v0 serial-order honesty debt
+- Wrote depositgap-POST-HTSROUTE-RUN.md for activation after htsroute clears
+- Closed oshamult statute still-open checklist items on paper
+- Same-day build still blocked; loop 27600 not re-armed

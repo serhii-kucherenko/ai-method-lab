@@ -35,7 +35,7 @@ Cite: https://www.osha.gov/fom/chapter-6
    (Skip size multiply when willful/repeat — size already gated to 0.)  
 7. Return `{ status: "ok", penalty }`.
 
-Note: Live FOM HTML may list Size→Good Faith→History→Quick Fix; v0 stays locked to the A–N golden order until a re-versioned dual suite flips.
+Note: Live FOM HTML lists Size→Good Faith→History→Quick Fix (`oshamult-SIZE-TABLE.md`); v0 stays locked to Size→History→Good Faith→Quick Fix until a re-versioned dual suite flips.
 
 ## Worked toys
 
