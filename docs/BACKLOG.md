@@ -10,8 +10,9 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | bondstrip | sustained | Day-count accrued + cashflow strip method stress complete. |
-| — | tariffstep | research only | Stepped tariff blocks + demand ratchet (`testable`, 25 fixtures green). |
+| 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet workflow experiment complete. |
+| — | lanehold | research only | Lane capacity + hold expiry (framed). |
+| 2 | bondstrip | sustained | Day-count accrued + cashflow strip method stress complete. |
 | 2 | settlecut | sustained | Loss-once interval settlement method stress complete. |
 | 3 | ndcswap | sustained | Orange Book TE method stress complete. |
 | 4 | crewleg | sustained | FAR 117 Table B method stress complete. |

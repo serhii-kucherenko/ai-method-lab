@@ -202,3 +202,7 @@ Expanded tariffstep to a full A-Y fixture corpus (25/25 green), added challenge 
 ## 2026-07-21 -- tariffstep G1 evidence pass
 
 Added source-backed G1 notes (demand ratchet behavior, tier/block tariff structures, and regulator complaint workflows) in `docs/ideas/tariffstep-G1-evidence.md`. This improves pain framing quality while preserving method-stress caveat and no-build status.
+
+## 2026-07-21 -- tariffstep ready + sustained (loop 16)
+
+Mapped published stepped-rate and demand-ratchet language onto the 25 scenarios. Cleared research and built projects/tariffstep through the full test ladder (31 checks). Unique claim held. Next idea lanehold framed (lane capacity + hold expiry). Digests must stay plain language.

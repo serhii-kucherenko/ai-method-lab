@@ -534,3 +534,7 @@ Loss-once fixtures A-Y; full ladder. Fifth depth-restart product. Next: bondstri
 ## 2026-07-21 -- bondstrip smoke to sustain (pass)
 
 Day-count accrued + strip fixtures A-Y; full ladder. Sixth depth-restart product. Next: tariffstep framed.
+
+## 2026-07-21 -- tariffstep smoke to sustain (pass)
+
+Block walk + demand ratchet fixtures A-Y; full ladder. Seventh depth-restart product. Next: lanehold framed.

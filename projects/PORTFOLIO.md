@@ -8,6 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
+| tariffstep | **sustained** | A03 + A10 | done | Stepped rate blocks + demand ratchet (workflow experiment) |
 | bondstrip | **sustained** | A03 + A10 | done | Day-count accrued + cashflow strip (method stress) |
 | settlecut | **sustained** | A03 + A10 | done | Loss-adjusted interval imbalance settlement (method stress) |
 | ndcswap | **sustained** | A03 + A10 | done | Orange Book TE substitution + DAW/BMN (method stress) |
@@ -44,7 +45,7 @@ Full historical table preserved in git history prior to depth restart; rows belo
 
 ## Next autonomous actions
 
-1. IDEA_DEPTH on tariffstep (framed) — no product until ready_to_build
-2. Digests: method stress — not vendor replacement
-3. Depth over conveyor: one framed→ready_to_build idea at a time
-4. Depth-restart sustained: lotblast, amendwin, crewleg, ndcswap, settlecut, bondstrip
+1. IDEA_DEPTH next candidate only — no dual-gate queue
+2. Digests: plain language, no acronyms; workflow experiment framing
+3. Depth over conveyor: one idea at a time through research before build
+4. Depth-restart sustained: lotblast, amendwin, crewleg, ndcswap, settlecut, bondstrip, tariffstep

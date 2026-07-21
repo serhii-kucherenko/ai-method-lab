@@ -1,23 +1,38 @@
-# tariffstep — G6 research summary
+# tariffstep — research summary (decision memo)
 
-1. **Problem:** Utility rate analysts repeatedly validate stepped energy charges plus demand-ratchet logic after tariff changes. Spreadsheet implementations are error-prone at block boundaries and ratchet edge cases.
+## 1. Problem
 
-2. **Why prior products do not cover it:** `settlecut` is single-interval loss/imbalance math, `bondstrip` is day-count accrued coupon math, and earlier products are workflow/state models. None encode stepped tariff ladders plus prior-peak ratchet.
+Utility rate analysts and billing testers must re-check stepped energy charges and demand-ratchet floors after every tariff change. Spreadsheets drift at block edges and ratchet ties.
 
-3. **Unique claim + invariants:**
-   - Energy charge is a deterministic block walk across ascending breakpoints.
-   - Demand charge uses `max(current_peak, prior_peak * ratchet_pct)`.
-   - Combined bill total must be reproducible from tariff primitives.
+## 2. Why earlier lab products do not cover it
 
-4. **Kill rounds + outcomes:**
-   - Kill A (CIS/Lodestar already solve this) **stands commercially**; keep method-stress framing only.
-   - Kill B (too niche) remains soft; depends on proving analyst pain with real examples.
-   - Kill C (offline tariff/legal complexity) partially answered: math kernel is still checkable.
+- settlecut: one-interval loss and imbalance pricing  
+- bondstrip: coupon day-count accrued interest  
+- Earlier products: status workflows and dual approvals  
 
-5. **Falsifiers:**
-   - Two independent utility SMEs reject the block/ratchet v0 model as missing tariff clauses.
-   - Analysts still require spreadsheet recalculation for happy-path cases after smoke.
+None encode a stepped rate ladder plus prior-peak demand floor.
 
-6. **Depth test outline:** 25 fixtures A–Y green in `check-tariffstep-fixtures.mjs`, covering happy path, ratchet binds, boundary edges, large-volume stress, and malformed-input rejects.
+## 3. Unique claim
 
-7. **Decision:** **Do not build yet.** Keep `tariffstep` in research (`adversarial` → candidate `testable`) until G1 evidence quality improves and kill-round caveats are tightened.
+Energy charge = walk usage through ordered blocks.  
+Billing demand = max(this month’s peak, prior peak × ratchet %).  
+Bad schedules and illegal percentages must reject.
+
+## 4. Challenges
+
+1. Commercial billing systems already do this → stands; we only run a workflow experiment.  
+2. Niche audience → softened by recurring bill-cycle / tariff-change frequency.  
+3. Legal tariff PDFs dominate → partly true; we still isolate a checkable math core (see tariff mapping).
+
+## 5. Falsifiers
+
+- Two practitioners say our v0 rules miss material tariff clauses.  
+- After a first working slice, the happy path still lives only in spreadsheets.
+
+## 6. Depth tests
+
+25 named scenarios (A–Y) green in the research checker: happy path, ratchet binds, boundaries, large volume, and rejects.
+
+## 7. Decision
+
+**Ready to build** as a workflow experiment. Open `projects/tariffstep/`. Digests must not claim we replace commercial billing systems.

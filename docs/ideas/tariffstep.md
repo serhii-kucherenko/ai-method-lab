@@ -1,37 +1,49 @@
 # tariffstep — idea dossier
 
-**State:** `testable`  
-**Framing:** method stress (not GTM vs utility CIS / Lodestar)  
-**Opened:** 2026-07-21 after bondstrip sustain
+**State:** cleared research → **ready to build** (workflow experiment)  
+**Framing:** workflow experiment — not a commercial pitch against utility billing vendors  
+**Opened:** 2026-07-21 after bondstrip finished
 
-## Problem (G1)
+## Start here (short guide)
 
-Utility billing ops walk metered kWh through **stepped rate blocks** and apply a **demand ratchet** (billing demand = max(current peak, prior peak × ratchet %)). Spreadsheet block walks drift from tariff sheets.
+1. Read the algorithm: `tariffstep-algorithm.md`  
+2. See how rules map to published language: `tariffstep-tariff-mapping.md`  
+3. Run the 25 scenarios:
 
-**Named user:** utility rate analyst / CIS config tester.  
-**Frequency:** every bill cycle / tariff change.
+```text
+node docs/ideas/check-tariffstep-fixtures.mjs
+```
 
-Evidence notes: `tariffstep-G1-evidence.md`
+4. Decision memo: `tariffstep-G6-summary.md`  
+5. Scorecard: `tariffstep-GATE-SCORECARD.md`
 
-## Unique claim (G2)
+## Problem
 
-**If we remove stepped block walk + demand ratchet, the remaining product is a generic meter reading FSM.**
+Utility billing ops walk metered kilowatt-hours through **stepped rate blocks** and apply a **demand ratchet** (billed demand = the larger of this month’s peak and a percentage of a past peak). Spreadsheet walks drift from tariff sheets.
 
-Distinct from settlecut (single-interval loss×imbalance once) and bondstrip (coupon day-count).
+**Who:** rate analyst / billing-system config tester  
+**How often:** every bill cycle and every tariff change  
 
-## Kill rounds (G3)
+Evidence: `tariffstep-G1-evidence.md`
 
-1. Kill A — CIS / Lodestar exist → stands for GTM; method stress OK  
-2. Kill B — niche tariff QA — soft; partially reduced by recurring case map  
-3. Kill C — regulatory tariff PDF offline — partially valid; math kernel still checkable  
+## Unique claim
+
+**If we remove stepped block walk + demand ratchet, the remaining product is a generic meter-reading workflow.**
+
+Distinct from settlecut (single-interval imbalance) and bondstrip (coupon day-count).
+
+## Challenges (three rounds)
+
+1. Commercial systems already exist → stands for go-to-market; workflow experiment still OK  
+2. Niche tooling → soft; bill-cycle frequency helps  
+3. Offline legal tariff books → partly true; math core still checkable  
 
 ## Progress
 
-- Paper algorithm written (`tariffstep-algorithm.md`)
-- Fixture suite expanded to A–Y (25) green via `check-tariffstep-fixtures.mjs`
-- Challenges A/B/C recorded
-- G5 and G6 docs drafted
+- Algorithm + 25 scenarios A–Y green  
+- Challenges A/B/C + evidence + tariff mapping  
+- Scorecard → ready to build  
 
 ## Decision
 
-**`testable`** — research only. No `projects/tariffstep/` until `ready_to_build`.
+**Ready to build.** Open `projects/tariffstep/`. Status emails must use plain language and must not claim vendor replacement.
