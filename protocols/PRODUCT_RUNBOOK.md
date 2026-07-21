@@ -2,6 +2,16 @@
 
 How to run one **product phase** (not a throwaway sandbox cell).
 
+## 0. Comprehensive bar (mandatory)
+
+Before opening `projects/<id>/`, confirm `docs/COMPREHENSIVE_PRODUCT.md`:
+
+- Idea cleared `protocols/IDEA_DEPTH.md` → `ready_to_build`
+- Blueprint on file: `docs/ideas/<id>-COMPREHENSIVE-BLUEPRINT.md` (≥4 pages, ≥3 aggregates, ≥6 features beyond CRUD)
+- Not an isomorphic dual-gate / capacity clone
+
+Shallow single-page smokes fail the lab goal even if tests are green.
+
 ## 1. Pick work
 
 From `projects/PORTFOLIO.md` + `docs/BACKLOG.md`. One phase in flight. Mark portfolio + backlog **in progress**.

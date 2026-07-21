@@ -28,9 +28,10 @@ The portfolio wave failed its real goal. We have **~90 sustained products** that
 
 ## New optimize-for
 
-**Fewer products. Slower research and idea generation. Bulletproof, well-tested ideas before code.**
+**Fewer products. Slower research and idea generation. Bulletproof, well-tested ideas before code.**  
+**When building: comprehensive multi-page, multi-feature products** (`docs/COMPREHENSIVE_PRODUCT.md`) — not ten-route smokes.
 
-Active work = research + idea verification until a candidate clears `protocols/IDEA_DEPTH.md`. Product build resumes only for **one** verified idea at a time, with depth oracles — not smoke clones.
+Active work = research + idea verification until a candidate clears `protocols/IDEA_DEPTH.md`. Product build resumes only for **one** verified idea at a time, with depth oracles — not smoke clones. Sustain requires the comprehensive bar, not pass-count theater.
 
 ## Correction (same day — human: still shallow)
 

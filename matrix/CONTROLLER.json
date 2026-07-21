@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-21T12:20:00Z",
+  "updated_at": "2026-07-21T12:35:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__loop_15m_armed_parallel_agents",
+  "last_completed": "research__comprehensive_bar_blueprint_tick15",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "Human explicit /loop 15m replace. Sentinel AGENT_LOOP_TICK_depth_15m pid 27600. Parallel agents: lesserof CFR, MFN hunt, try-demo harden, new seeds. Same-day build blocked. Do not re-arm while 27600 alive.",
+  "notes": "15m loop pid 27600 alive — do not re-arm. Comprehensive product bar on. htsroute blueprint 7 pages ready for day-boundary build. 36 fixtures green. Same-day code still blocked.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -32,6 +32,8 @@
     "block_isomorphic_dual_gate": true,
     "block_same_day_research_to_build": true,
     "min_research_ticks_before_ready": 3,
+    "require_comprehensive_blueprint": true,
+    "comprehensive_protocol": "docs/COMPREHENSIVE_PRODUCT.md",
     "protocol": "protocols/IDEA_DEPTH.md"
   },
   "loop": {
@@ -41,12 +43,6 @@
     "pid": 27600,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 0,
-    "parallel_agents": [
-      "lesserof-cfr",
-      "mfn-hunt",
-      "try-demo",
-      "seeds-wave"
-    ]
+    "ticks_observed": 0
   }
 }

@@ -439,3 +439,12 @@ Logged **2?3 NEW** dollar/penalty seeds in `docs/ideas/SEEDS-WAVE-2026-07-21.md`
 **Skeptical note:** These are **seeds**, not framed ideas, not `current_idea`, not products. Listing them does not clear IDEA_DEPTH. Kill A (incumbents) is pre-registered on all three. depositgap is strongest because every POR liquidation is a literal cash delta ? not Free/Free chapter theater and not a dual-gate/capacity rename. Still must survive G2 vs bondstrip-style accrual costumes and vs lesserof (different statute: deposit?liquidation interest, not ? 1313(l) lesser-of refund).
 
 **Explicit non-actions:** no `CONTROLLER.current_idea` change; no framing; no fixtures; no `projects/` folders; htsroute keeps the active research slot; lesserof stays the older parked parallel seed.
+
+## 2026-07-21 — comprehensive product bar + blueprint (tick 15)
+
+Human: keep 15m loop; generate **big multi-page multi-feature** products for method tests.
+
+- Did **not** re-arm pid 27600 (already alive)
+- Added `docs/COMPREHENSIVE_PRODUCT.md` + runbook section 0
+- Wrote `htsroute-COMPREHENSIVE-BLUEPRINT.md` (7 pages, =3 aggregates) — still no `projects/` today
+- Ibuprofen/aspirin MFN pairs from parallel hunt (fixtures 34–37); checkers **36** green
