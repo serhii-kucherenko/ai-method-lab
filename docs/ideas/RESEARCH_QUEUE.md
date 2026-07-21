@@ -15,12 +15,12 @@ Controller chains these without waiting. Finish one → commit → start next.
 | 7 | Gate scorecard | done this tick — still **hold** |
 | 8 | Challenge C close | done this tick |
 | 9 | Pantoprazole bulk↔tablet same-molecule cards | done (#26/#27) |
-| 15 | Draft brief (explicitly not oracle) | done — `projects/briefs/P-smoke-htsroute-DRAFT.md` |
-| 16 | Overnight / next-day ready_to_build reassess | pending (day boundary) |
-| 17 | If ready: open `projects/htsroute/` unique claim first | blocked until 16 |
-| 18 | Product ladder smoke→sustain | blocked until 17 |
-| 19 | Depth digest on product complete | blocked until 18 |
-| 20 | Next idea seed (after htsroute sustain or kill) | parked seeds only |
+| 10 | Draft brief (explicitly not oracle) | done — `projects/briefs/P-smoke-htsroute-DRAFT.md` |
+| 11 | Overnight / next-day ready_to_build reassess | pending (day boundary) |
+| 12 | If ready: open `projects/htsroute/` unique claim first | blocked until 11 |
+| 13 | Product ladder smoke→sustain | blocked until 12 |
+| 14 | Depth digest on product complete | blocked until 13 |
+| 15 | Next idea seed (after htsroute sustain or kill) | parked seeds only |
 
 ## Parked seeds (do not start until htsroute clears)
 
