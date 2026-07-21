@@ -513,3 +513,10 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 ## 2026-07-21 — depositgap paper fixtures (tick 4 follow)
 
 Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over deposit, skip-interest cheat, zero value). Checker green. Seed only — not activated; htsroute still current_idea.
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #5
+
+- depositgap Kill A/B/C paper (`depositgap-challenge-ABC.md`) — commercial Kill A stands
+- Quoted CVD twin **19 U.S.C. 1671f**; fixture **E** CVD underdeposit green (5 fixtures)
+- Calendar still 2026-07-21 — no ready flip; no `projects/`
+- Loop 27600 not re-armed

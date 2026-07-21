@@ -37,6 +37,14 @@ Source: https://www.law.cornell.edu/cfr/text/19/351.212
 
 Source: https://www.law.cornell.edu/uscode/text/19/1673f
 
+## 19 U.S.C. § 1671f — deposit vs final assessed (CVD twin)
+
+Same structure as § 1673f for **countervailing** duties: provisional (a) disregard/refund-or-release; post-affirmative (b) **collect** or **refund** the difference **together with interest as provided by section 1677g**.
+
+Source: https://www.law.cornell.edu/uscode/text/19/1671f
+
+Goldens must set `order_type` = `CVD` without changing the true-up arithmetic in v0 (rate inputs already abstract).
+
 ## Worked toy (illustrative — not a filed entry)
 
 | Input | Value |
