@@ -1,15 +1,15 @@
 # Seed readiness snapshot (research only)
 
-**Verified:** 2026-07-21 (15m tick 20) via `node docs/ideas/check-all-seeds.mjs`  
+**Verified:** 2026-07-21 (15m tick 21) — hypothesis + try-demo notes complete for all queued seeds; preflight still `node docs/ideas/check-all-seeds.mjs`  
 **Same-day build:** still **blocked** (framing day 2026-07-21). Do not open products.
 
-| Idea | Role | Dual-green | G6 | Acceptance | Next |
-|------|------|------------|----|------------|------|
-| **htsroute** | `current_idea` | 36 + probes | yes | yes | Tomorrow: `htsroute-TOMORROW-RUN.md` |
-| **depositgap** | prefer #1 after | 23 | yes | yes | After htsroute clears |
-| **lesserof** | #2 | 23 | yes | yes | After depositgap |
-| **oshamult** | #3 | 26 | yes | yes | After lesserof |
-| **ptax4975** | #4 | 35 | yes | yes | After oshamult |
+| Idea | Role | Dual-green | G6 | Acceptance | Hypothesis draft | Try-demo note |
+|------|------|------------|----|------------|------------------|---------------|
+| **htsroute** | `current_idea` | 36 + probes | yes | yes | yes | `demos/htsroute-try/` live |
+| **depositgap** | prefer #1 after | 23 | yes | yes | yes | note only |
+| **lesserof** | #2 | 23 | yes | yes | yes | note only |
+| **oshamult** | #3 | 26 | yes | yes | yes | note only |
+| **ptax4975** | #4 | 35 | yes | yes | yes | note only |
 
 ## Honest framing (all)
 

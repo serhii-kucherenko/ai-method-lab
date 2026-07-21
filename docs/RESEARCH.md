@@ -655,3 +655,8 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Added `check-all-seeds.mjs` preflight + `SEED_READINESS.md` (all 5 suites dual-green)
 - lesserof try-demo note; tomorrow run sheet points at preflight
 - Same-day build still blocked; loop 27600 not re-armed
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #21
+
+- Wrote hypothesis drafts + try-demo notes for lesserof / oshamult / ptax4975
+- `SEED_READINESS.md` now shows full paper kit for all five ideas
+- Same-day build still blocked; loop 27600 not re-armed

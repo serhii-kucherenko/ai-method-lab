@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T15:56:00Z",
+  "updated_at": "2026-07-21T16:10:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -24,14 +24,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__loop15m_tick20_seed_preflight",
+  "last_completed": "research__loop15m_tick21_hypotheses_try_notes",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 20: check-all-seeds green + SEED_READINESS. Same-day build blocked. Do NOT re-arm pid 27600.",
+  "notes": "15m tick 21: hypothesis+try-demo notes for lesserof/oshamult/ptax. Same-day build blocked. Do NOT re-arm pid 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -50,6 +50,6 @@
     "pid": 27600,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 20
+    "ticks_observed": 21
   }
 }
