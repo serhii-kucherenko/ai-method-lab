@@ -170,7 +170,10 @@ Source: FDA illustrative electronic sortable spreadsheet template (PDF extract f
 1. ~~Map lab KDE columns 1:1 against FDA example spreadsheet~~ done (tick 2)
 2. ~~Draft export JSON/CSV contract~~ done — `docs/ideas/lotblast-export-contract.md`
 3. Adversarial pass: invent 3 fixtures (shared ingredient, diamond DAG, partial ship) with expected blast sizes on paper — done (`docs/ideas/lotblast-fixtures.md`)
-4. Only then consider draft brief — still no product code
+4. ~~Paper fixtures~~ + golden JSON under `docs/ideas/fixtures/`
+5. ~~Blast algorithm spec~~ — `docs/ideas/lotblast-blast-algorithm.md`
+6. Draft brief only — `projects/briefs/P-smoke-lotblast-DRAFT.md` (not an oracle yet)
+7. Still no product code; not `ready_to_build` until RED tests exist and G6 summary would survive a skeptical senior eng review without “method stress” weasel words drifting into GTM claims
 5. ~~Encode fixtures as golden JSON~~ done — `docs/ideas/fixtures/` (tick 5)
 
 ### Kill D — Quantity conservation / mass balance (new this tick)

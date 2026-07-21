@@ -76,6 +76,17 @@ Added `docs/ideas/lotblast-fixtures.md`: shared-ingredient expansion, diamond un
 
 Gates: still `adversarial`. G5 closer (30 named cases + 3 fixtures) but **not** ready_to_build — no RED tests, no expert review, Kill A commercial still acknowledged.
 
+## 2026-07-21 — lotblast research tick 5 (golden fixtures + algorithm + draft brief)
+
+- Golden JSON: `docs/ideas/fixtures/fixture-{A,B,C}-*.json`
+- Blast algorithm paper: `docs/ideas/lotblast-blast-algorithm.md` (determinism, anti-patterns)
+- Draft brief: `projects/briefs/P-smoke-lotblast-DRAFT.md` — explicitly not an oracle
+- Idea state advanced to **differentiated** (unique claim documented vs lottrack)
+- Armed `/loop 30m` depth keep-going (replaced old shallow product loops)
+
+Still **not** ready_to_build. Next: G6-quality research summary memo; optional second idea seed kill-pass to avoid fixation; still no `projects/lotblast/`.
+
+
 ## 2026-07-21 — lotblast research tick 5 (golden JSON fixtures)
 
 Encoded Fixtures A/B/C as `docs/ideas/fixtures/lotblast-*.json` with expect cardinalities. Added Kill D (membership ≠ mass balance; yield/scrap explicit).
