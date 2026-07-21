@@ -14,7 +14,7 @@ Primary: 26 U.S.C. § 4975(a)/(b)/(f). Scope fence: tax calc only — not fiduci
 | Field | Meaning |
 |-------|---------|
 | `amount_involved` | Dollars (already resolved greater-of FMV rule — v0 takes resolved input) |
-| `year_parts` | Number of years or part-years in the taxable period (≥ 1) |
+| `year_parts` | Number of years or part-years in the taxable period (≥ 1; may be fractional in v0 toys) |
 | `corrected` | boolean — true if corrected within correction period |
 | `flat_excise_cheat` | if true → reject (must not skip year-parts) |
 
@@ -50,4 +50,4 @@ Same facts, `corrected: false` → additional **$10,000**, total **$13,000**.
 
 ## Explicit non-actions
 
-No activation while htsroute holds the slot. Checker: `check-ptax4975-fixtures.mjs`.
+No activation while htsroute holds the slot. Checkers: `check-ptax4975-fixtures.mjs`, `check-ptax4975-dual.mjs`.

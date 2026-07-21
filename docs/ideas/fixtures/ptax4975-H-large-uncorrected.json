@@ -1,0 +1,17 @@
+{
+  "id": "ptax4975-H-large-uncorrected",
+  "title": "Large amount uncorrected — 15%×years + 100%",
+  "source": "ptax4975-algorithm.md",
+  "input": {
+    "amount_involved": 1000000,
+    "year_parts": 2,
+    "corrected": false,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 300000,
+    "additional_tax": 1000000,
+    "total": 1300000
+  }
+}

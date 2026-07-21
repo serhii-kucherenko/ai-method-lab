@@ -1,0 +1,15 @@
+{
+  "id": "ptax4975-J-negative-amount",
+  "title": "Negative amount involved → reject",
+  "source": "ptax4975-algorithm.md",
+  "input": {
+    "amount_involved": -100,
+    "year_parts": 1,
+    "corrected": true,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "bad_inputs"
+  }
+}

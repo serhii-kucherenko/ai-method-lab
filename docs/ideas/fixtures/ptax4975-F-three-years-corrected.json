@@ -1,0 +1,17 @@
+{
+  "id": "ptax4975-F-three-years-corrected",
+  "title": "Three year-parts corrected — 15%×3 only",
+  "source": "ptax4975-algorithm.md",
+  "input": {
+    "amount_involved": 10000,
+    "year_parts": 3,
+    "corrected": true,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 4500,
+    "additional_tax": 0,
+    "total": 4500
+  }
+}

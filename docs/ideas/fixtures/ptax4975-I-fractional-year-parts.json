@@ -1,0 +1,17 @@
+{
+  "id": "ptax4975-I-fractional-year-parts",
+  "title": "Part-year counts as full year-part unit (v0 integer)",
+  "source": "note: v0 uses integer year_parts; fractional rejects",
+  "input": {
+    "amount_involved": 10000,
+    "year_parts": 1.5,
+    "corrected": true,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 2250,
+    "additional_tax": 0,
+    "total": 2250
+  }
+}

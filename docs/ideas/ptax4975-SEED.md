@@ -28,4 +28,4 @@ Excise is a literal dollar tax schedule, not Free/Free chapter theater. Wrong pe
 ## Decision
 
 **Seed only.** Behind depositgap / lesserof / oshamult for activation priority.  
-Depth started: `ptax4975-algorithm.md` + fixtures A–E + `check-ptax4975-fixtures.mjs`. Wave: `SEEDS-WAVE-2026-07-21.md`.
+Depth: algorithm + Kill ABC + G5 map + fixtures **A–J** (10) dual-green. Wave: `SEEDS-WAVE-2026-07-21.md`.
