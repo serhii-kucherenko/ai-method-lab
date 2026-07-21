@@ -505,3 +505,7 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 - Day-boundary checklist now requires comprehensive blueprint / page specs / phase briefs / sustain matrix
 - `htsroute-READY-DRYRUN.md` — same-day flip **fails** on calendar only; everything else green on paper
 - No product; loop 27600 not re-armed
+
+## 2026-07-21 -- 30m loop tick 2: depositgap fixtures
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 2 (pid 29556 left alone). Encoded depositgap fixtures A-D + `check-depositgap-fixtures.mjs` (4/4 green): underdeposit true-up, overdeposit sign, skip-interest cheat reject, zero-value reject. Still seed only; htsroute same-day no-build.

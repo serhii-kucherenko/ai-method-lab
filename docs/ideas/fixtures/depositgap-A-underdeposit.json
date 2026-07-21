@@ -1,0 +1,23 @@
+{
+  "id": "depositgap-A-underdeposit",
+  "title": "Assessed above deposit — duty owed before interest",
+  "source": "depositgap-algorithm.md worked toy",
+  "input": {
+    "order_type": "AD",
+    "deposit_rate": 0.1,
+    "assessed_rate": 0.25,
+    "rate_class": "exporter_specific",
+    "entered_value": 1000000,
+    "order_published_on": "2023-01-01",
+    "liquidated_on": "2024-01-01",
+    "interest_annual_rate": 0.08,
+    "skip_interest": false
+  },
+  "expect": {
+    "duty_delta": 150000,
+    "days": 365,
+    "interest": 12000,
+    "true_up": 162000,
+    "status": "ok"
+  }
+}
