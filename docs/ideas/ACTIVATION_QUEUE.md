@@ -1,20 +1,28 @@
 # Activation order after htsroute day-boundary
 
-**Calendar rule:** do not flip or open products on the same calendar day as framing (still **2026-07-21** as of this note). Earliest htsroute flip: **2026-07-22** — follow `htsroute-TOMORROW-RUN.md` (not memory).
+**Calendar rule:** do not flip or open products on the same calendar day as framing (still **2026-07-21** as of this note). Earliest htsroute flip: **2026-07-22** after re-running `htsroute-DAY-BOUNDARY.md` for real.
+
+## Tomorrow flip procedure (htsroute)
+
+1. Confirm calendar day ≠ 2026-07-21.  
+2. Walk every checkbox in `htsroute-DAY-BOUNDARY.md` (re-read Challenge D, VALUE-STAKES, G6, ACCEPTANCE).  
+3. If all true: set `ready_to_build`, open `projects/htsroute/` per comprehensive blueprint — **not** smoke-as-sustain.  
+4. If any false: stay research / park / kill; write why in `docs/RESEARCH.md`.  
+5. Do **not** activate depositgap in the same tick as the htsroute flip (one product phase).
 
 ## Queue (research slot frees)
 
 | Priority | Idea | Why |
 |----------|------|-----|
-| 0 | **htsroute** | Current idea — comprehensive 7-page product if day-boundary passes |
-| 1 | **depositgap** | Strongest $ seed; G5+G6+acceptance+phase briefs ready; Kill A = forecast honesty |
-| 2 | **lesserof** | Stacked drawback caps; G5 met; G6 on file; behind depositgap |
-| 3 | **oshamult** | OSHA serial penalty; G5+G6 on file |
-| 4 | **ptax4975** | § 4975 excise; G5 met (35) + **G6** on file |
+| 0 | **htsroute** | Current idea — comprehensive multi-page product if day-boundary passes |
+| 1 | **depositgap** | Strongest $ seed; G5+G6+acceptance+phase/API/try-demo notes ready |
+| 2 | **lesserof** | Stacked drawback caps; G5+G6+acceptance on file |
+| 3 | **oshamult** | OSHA serial penalty; G5+G6+comprehensive blueprint stub |
+| 4 | **ptax4975** | § 4975 excise; G5+G6 met (35 fixtures) |
 
 ## Hard rules
 
 - One product phase in flight.  
 - Kill isomorphic dual-gate on sight.  
 - Digests: story first; Kill A honesty; no pass-count theater.  
-- Never re-arm live loop pid **27600**.
+- Never re-arm live loop pids **27600** / **29556** while alive.
