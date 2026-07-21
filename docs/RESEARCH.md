@@ -789,3 +789,10 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Folded Eluxadoline/Viberzi same-letter CROSS NY N302614 fixtures #40/#41 (6%?Free)
 - Suite now **40** dual-green; floors bumped
 
+
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #35
+
+- Try-demo presets for Eluxadoline bulk 6% + Viberzi tablets Free (same letter NY N302614)
+- README teaching table updated; suite still 40 dual-green; calendar block stands
+

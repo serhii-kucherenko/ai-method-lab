@@ -152,6 +152,8 @@
       <div class="presets" aria-label="Teaching examples">
         <button type="button" data-preset="ppi-free-free">Pantoprazole Free/Free honesty</button>
         <button type="button" data-preset="acetaminophen">Acetaminophen 6.5% vs Free</button>
+        <button type="button" data-preset="eluxadoline-bulk">Eluxadoline bulk 6% (same letter)</button>
+        <button type="button" data-preset="viberzi-tablets">Viberzi tablets Free (same letter)</button>
         <button type="button" data-preset="omeprazole-pellets">Omeprazole pellets → 3003</button>
         <button type="button" data-preset="mixture-powder">Mixture powder → 3003</button>
         <button type="button" data-preset="tablet-cheat">Tablet enum cheat → reject</button>
@@ -253,6 +255,34 @@
           money_note:
             "Acetaminophen bulk NY R04092 → Chapter 29, base MFN 6.5% (not Free). Finished dosage forms under heading 3004 are typically Free. Say base MFN 6.5% vs Free finished — not that every drum always pays 6.5%.",
           cite: "fixtures htsroute-32 + htsroute-33",
+        },
+        "eluxadoline-bulk": {
+          molecule_name: "eluxadoline",
+          chemical_form: "separately_defined",
+          dosage_form_signal: "bulk_drum",
+          therapeutic_or_prophylactic: true,
+          measured_dose: false,
+          retail_packing: false,
+          note_1a_food_or_supplement: false,
+          gri3_combination: false,
+          lesson: "Same CROSS letter as Viberzi tablets: Eluxadoline bulk → Chapter 29 at base MFN 6% (not Pharma Appendix). Pair with the tablets preset for an honest same-letter dollar delta.",
+          money_note:
+            "NY N302614 (15 Feb 2019): Eluxadoline bulk → 2933.29.2000, 6% ad valorem. Preference/appendix may still erase by origin — cite base MFN, not guaranteed savings. PPI Free/Free vanity still fails.",
+          cite: "fixture htsroute-40-eluxadoline-bulk-29; CROSS NY N302614",
+        },
+        "viberzi-tablets": {
+          molecule_name: "eluxadoline",
+          chemical_form: "mixture",
+          dosage_form_signal: "tablet",
+          therapeutic_or_prophylactic: true,
+          measured_dose: true,
+          retail_packing: false,
+          note_1a_food_or_supplement: false,
+          gri3_combination: false,
+          lesson: "Same letter as Eluxadoline bulk: Viberzi tablets (measured dose) → heading 3004 Free. Form gate is real; duty story is base 6% bulk vs Free finished on one letter.",
+          money_note:
+            "NY N302614: Viberzi tablets → 3004.90.9260 Free. Contrast with bulk 6% on the same letter — not a PPI Free/Free pitch.",
+          cite: "fixture htsroute-41-viberzi-tablets-3004; CROSS NY N302614",
         },
         "omeprazole-pellets": {
           molecule_name: "omeprazole",
