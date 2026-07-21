@@ -1,0 +1,39 @@
+{
+  "fixture_id": "B-diamond-dag",
+  "description": "Diamond DAG: forward blast visits finished TLC once",
+  "graph": {
+    "lots": [
+      { "tlc": "ROOT-X", "kind": "ingredient", "qty": 100, "uom": "kg" },
+      { "tlc": "MID-1", "kind": "intermediate", "qty": 40, "uom": "kg" },
+      { "tlc": "MID-2", "kind": "intermediate", "qty": 40, "uom": "kg" },
+      { "tlc": "FG-D", "kind": "finished", "qty": 70, "uom": "cases" }
+    ],
+    "transforms": [
+      { "inputs": [{ "tlc": "ROOT-X", "qty": 40 }], "output": "MID-1" },
+      { "inputs": [{ "tlc": "ROOT-X", "qty": 40 }], "output": "MID-2" },
+      {
+        "inputs": [
+          { "tlc": "MID-1", "qty": 40 },
+          { "tlc": "MID-2", "qty": 40 }
+        ],
+        "output": "FG-D"
+      }
+    ],
+    "shipments": [
+      { "id": "S-Q", "tlc": "FG-D", "qty": 70, "partner": "Q" }
+    ]
+  },
+  "cases": [
+    {
+      "suspect": "ROOT-X",
+      "expect": {
+        "finished_tlcs": ["FG-D"],
+        "finished_tlc_cardinality": 1,
+        "path_count_optional": 2,
+        "shipment_ids": ["S-Q"],
+        "notify_partners": ["Q"]
+      },
+      "fail_if": ["FG-D listed twice as distinct blast members"]
+    }
+  ]
+}

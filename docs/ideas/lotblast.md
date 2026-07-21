@@ -1,6 +1,6 @@
 # Idea: lotblast (FSMA lot genealogy + recall blast radius)
 
-**State:** `adversarial` (G1–G2 pass; G3 in progress — not ready_to_build)  
+**State:** `differentiated` (G1–G2 pass; G3 method-stress locked; G4 draft; G5 paper suite+fixtures+algorithm — still not ready_to_build)  
 **Decision:** Continue research. Do **not** build yet.
 
 ## 1. Problem
@@ -171,6 +171,13 @@ Source: FDA illustrative electronic sortable spreadsheet template (PDF extract f
 2. ~~Draft export JSON/CSV contract~~ done — `docs/ideas/lotblast-export-contract.md`
 3. Adversarial pass: invent 3 fixtures (shared ingredient, diamond DAG, partial ship) with expected blast sizes on paper — done (`docs/ideas/lotblast-fixtures.md`)
 4. Only then consider draft brief — still no product code
+5. ~~Encode fixtures as golden JSON~~ done — `docs/ideas/fixtures/` (tick 5)
+
+### Kill D — Quantity conservation / mass balance (new this tick)
+
+**Standing:** Real MES often has yield loss, scrap, and UoM conversion; a naive DAG with exact qty conservation will disagree with plant reality.  
+**Answer:** Lab product must support **explicit yield/scrap edges** (or documented loss %) on transforms — blast *membership* is topology-first; qty in channel uses remaining after ships (Fixture C). Mass-balance strict equality is an optional assert mode, not the default recall scope rule.  
+**Status:** Survive if we document “membership ≠ mass balance” and keep Fixture C as the in-channel rule.
 
 Sibling seeds (parked): SAFE-conversion math (method-only possible later); bank-recon aging (crowded).
 

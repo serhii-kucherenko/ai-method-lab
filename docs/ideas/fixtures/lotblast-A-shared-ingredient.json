@@ -1,0 +1,49 @@
+{
+  "fixture_id": "A-shared-ingredient",
+  "description": "Shared ingredient expands blast; control ingredient does not",
+  "graph": {
+    "lots": [
+      { "tlc": "ING-A", "kind": "ingredient", "qty": 200, "uom": "kg" },
+      { "tlc": "ING-B", "kind": "ingredient", "qty": 100, "uom": "kg" },
+      { "tlc": "BAT-1", "kind": "intermediate", "qty": 80, "uom": "kg" },
+      { "tlc": "BAT-2", "kind": "intermediate", "qty": 80, "uom": "kg" },
+      { "tlc": "BAT-3", "kind": "intermediate", "qty": 90, "uom": "kg" },
+      { "tlc": "FG-1", "kind": "finished", "qty": 70, "uom": "cases" },
+      { "tlc": "FG-2", "kind": "finished", "qty": 70, "uom": "cases" },
+      { "tlc": "FG-3", "kind": "finished", "qty": 80, "uom": "cases" }
+    ],
+    "transforms": [
+      { "inputs": [{ "tlc": "ING-A", "qty": 50 }], "output": "BAT-1" },
+      { "inputs": [{ "tlc": "ING-A", "qty": 50 }], "output": "BAT-2" },
+      { "inputs": [{ "tlc": "ING-B", "qty": 60 }], "output": "BAT-3" },
+      { "inputs": [{ "tlc": "BAT-1", "qty": 80 }], "output": "FG-1" },
+      { "inputs": [{ "tlc": "BAT-2", "qty": 80 }], "output": "FG-2" },
+      { "inputs": [{ "tlc": "BAT-3", "qty": 90 }], "output": "FG-3" }
+    ],
+    "shipments": [
+      { "id": "S-P1", "tlc": "FG-1", "qty": 70, "partner": "P1" },
+      { "id": "S-P2", "tlc": "FG-2", "qty": 70, "partner": "P2" },
+      { "id": "S-P3", "tlc": "FG-3", "qty": 80, "partner": "P3" }
+    ]
+  },
+  "cases": [
+    {
+      "suspect": "ING-A",
+      "expect": {
+        "finished_tlcs": ["FG-1", "FG-2"],
+        "shipment_ids": ["S-P1", "S-P2"],
+        "notify_partners": ["P1", "P2"],
+        "min_transform_rows_mentioning_suspect": 2
+      }
+    },
+    {
+      "suspect": "ING-B",
+      "expect": {
+        "finished_tlcs": ["FG-3"],
+        "shipment_ids": ["S-P3"],
+        "notify_partners": ["P3"],
+        "min_transform_rows_mentioning_suspect": 1
+      }
+    }
+  ]
+}

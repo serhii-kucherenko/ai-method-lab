@@ -76,4 +76,10 @@ Added `docs/ideas/lotblast-fixtures.md`: shared-ingredient expansion, diamond un
 
 Gates: still `adversarial`. G5 closer (30 named cases + 3 fixtures) but **not** ready_to_build — no RED tests, no expert review, Kill A commercial still acknowledged.
 
+## 2026-07-21 — lotblast research tick 5 (golden JSON fixtures)
+
+Encoded Fixtures A/B/C as `docs/ideas/fixtures/lotblast-*.json` with expect cardinalities. Added Kill D (membership ≠ mass balance; yield/scrap explicit).
+
+Still `adversarial`. Do not open `projects/lotblast/`. Next: brief outline or external expert challenge on Fixture A — not code.
+
 

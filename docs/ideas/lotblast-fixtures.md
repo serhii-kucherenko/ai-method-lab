@@ -71,4 +71,4 @@ Fail if blast uses produced qty instead of unshipped remainder for in-channel.
 
 ## Status
 
-Paper only. Next: encode as golden JSON under `docs/ideas/fixtures/` when approaching ready_to_build — still no `projects/lotblast/`.
+Paper + golden JSON under `docs/ideas/fixtures/`. Next: draft product brief outline OR expert kill on Fixture A cardinalities — still no `projects/lotblast/`.

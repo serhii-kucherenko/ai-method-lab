@@ -1,0 +1,24 @@
+{
+  "id": "fixture-C-partial-ship",
+  "suspect_tlc": "ING-C",
+  "graph": {
+    "lots": [
+      { "tlc": "ING-C", "qty": 200, "uom": "kg" },
+      { "tlc": "FG-C", "qty": 100, "uom": "cases" }
+    ],
+    "transforms": [
+      { "from": [{ "tlc": "ING-C", "qty": 150 }], "to": "FG-C" }
+    ],
+    "shipments": [
+      { "id": "S1", "tlc": "FG-C", "qty": 40, "partner": "R1" },
+      { "id": "S2", "tlc": "FG-C", "qty": 25, "partner": "R2" }
+    ]
+  },
+  "expect": {
+    "finished_tlcs": ["FG-C"],
+    "shipment_ids": ["S1", "S2"],
+    "notify_partners": ["R1", "R2"],
+    "units_in_channel": 35,
+    "units_in_channel_not": [100, 65, 40, 25]
+  }
+}

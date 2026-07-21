@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T05:25:00Z",
+  "updated_at": "2026-07-21T01:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "R-depth-001__lotblast__fixtures",
+  "active_cell": "R-depth-001__lotblast__adversarial-continue",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "R-depth-001__lotblast__export-contract",
+  "last_completed": "R-depth-001__lotblast__golden-fixtures",
   "last_error": null,
   "current_product": null,
   "current_idea": "lotblast",
-  "next_cell": "R-depth-001__lotblast__adversarial-continue",
+  "next_cell": "R-depth-001__lotblast__brief-or-expert-kill",
   "mode": "autonomous",
   "phase": "research",
-  "notes": "lotblast tick4: paper fixtures A/B/C with blast cardinalities. Still adversarial — not ready_to_build. No product code.",
+  "notes": "lotblast tick5: golden JSON fixtures A/B/C + Kill D. Still adversarial — not ready_to_build. No product code. depth_keepgoing loop armed.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
