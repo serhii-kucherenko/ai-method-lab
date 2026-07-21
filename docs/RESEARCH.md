@@ -618,3 +618,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Grew **ptax4975** through greater-of FMV + year-part edges; suite **35/35** dual-green
 - G5 =25 bar met on paper; still seed; prefer depositgap after htsroute
 - Loop 27600 not re-armed
+
+## 2026-07-21 -- 30m loop tick 8: ptax4975 G5 + depositgap acceptance + oshamult G6
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 8 (pid 29556 left alone). Grew ptax4975 through greater-of FMV / honesty rejects — suite **35/35** single + dual green (G5 met). Wrote `depositgap-ACCEPTANCE.md` and `oshamult-G6-summary.md`. Still no product; htsroute same-day no-build.
