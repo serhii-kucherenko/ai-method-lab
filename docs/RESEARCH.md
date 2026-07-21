@@ -324,9 +324,19 @@ Human signal: portfolio still shallow; research must be robust and data-backed, 
 1. Closed G1 finished-PPI residual with primary CROSS **NY N003244** ? Protonix (pantoprazole sodium) delayed-release tablets ? heading 3004 (Free). Updated fixture #26 source + algorithm map + G1 notes.
 2. Wrote `htsroute-VALUE-STAKES.md`: showcase PPI bulk?finished is often **MFN Free on both legs**. Duty-savings pitch would be a lie.
 3. Challenge D accepted on value vanity / fixture-count theater. Domain claim (29/3003/3004) survives; commercial ?valuable product? narrative does not.
-4. Parallel seed only: `lesserof-SEED.md` ? substitution drawback **lesser-of-two** refund calc (actual dollar refunds under 19 U.S.C. § 1313). Not activated; htsroute keeps the active slot.
+4. Parallel seed only: `lesserof-SEED.md` ? substitution drawback **lesser-of-two** refund calc (actual dollar refunds under 19 U.S.C. ? 1313). Not activated; htsroute keeps the active slot.
 
 **Explicit non-actions:** no `projects/htsroute/`, no ready_to_build, no loop re-arm (pid 8880 alive).
 
 **Skeptical one-liner:** We finally found the finished pantoprazole ruling ? and it also proved the money story for this idea is weak. That is progress.
+
+## 2026-07-21 ? lesserof seed deepen (tick 11b, chained)
+
+While htsroute holds the active slot and same-day build remains blocked, deepened the **parallel seed** with money math ? not a product, not framed:
+
+- `lesserof-WORKED-EXAMPLE.md`: toy claim shows **$5,940** overclaim if finance models 99% of duty paid on a substitution line where lesser-of binds ($10k paid vs $4k substitute basis ? $3,960 correct refund).
+- Quoted 19 U.S.C. § 1313(l) substitution ?99 percent of the lesser of? language from House uscode.
+- Honest Kill A warning: vendor explainers already publish this exact miss ? commercial novelty weak; prefer narrowing to stacked USMCA + TFTEA lesser-of + basket-?other? trap before framing.
+
+Still **no** `projects/`, **no** fixture farm, **htsroute** remains `current_idea`.
 

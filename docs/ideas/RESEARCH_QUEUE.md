@@ -14,9 +14,10 @@ Controller chains these without waiting. Finish one → commit → start next. N
 | 15 | If ready: open `projects/htsroute/` unique claim first | blocked until 11 |
 | 16 | Product ladder smoke→sustain | blocked until 15 |
 | 17 | Depth digest on product complete | blocked until 16 |
-| 18 | Next idea seed | **lesserof seeded** (seed only) — activate only after htsroute clears |
+| 18 | Next idea seed | **lesserof** seed + worked $ example + statute quote — still seed only |
 | 19 | Finished pantoprazole CROSS + value honesty | **done** — NY N003244 + VALUE-STAKES + Challenge D |
 | 20 | Dual-impl already green | done (tick 10) |
+| 21 | lesserof Kill A / narrow unique claim paper | pending (before any frame) |
 
 ## Parked seeds
 

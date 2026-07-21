@@ -31,3 +31,9 @@ Export manufacturers leave refundable duty on the table because **substitution d
 ## Decision
 
 **Seed only.** Do not frame, do not fixture, do not open a product. Advance only after htsroute day-boundary decision frees the active slot — or if htsroute is killed/parked for weak commercial value.
+
+## Artifacts so far
+
+- `lesserof-SEED.md` — itch + kill risks  
+- `lesserof-WORKED-EXAMPLE.md` — toy dollar table ($5,940 overclaim if lesser-of skipped)  
+
