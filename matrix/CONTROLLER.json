@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-22T11:40:00Z",
+  "updated_at": "2026-07-22T12:10:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__htsroute_differentiated_tick3",
+  "last_completed": "research__htsroute_small_goldens_tick4",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "htsroute differentiated tick 3/≥3. Omeprazole 29/3003/3004 chain. Still no fixtures, no product. Pace over throughput.",
+  "notes": "htsroute tick 4: 25 cases named, 4 goldens green, algorithm fixed by cheat card. Still no product. Pace over throughput.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

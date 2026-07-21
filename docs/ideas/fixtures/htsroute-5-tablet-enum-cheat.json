@@ -1,0 +1,17 @@
+{
+  "id": "htsroute-5-tablet-enum-cheat",
+  "title": "Tablet signal without measured dose or retail",
+  "source": "Challenge B item 7",
+  "sku": {
+    "chemical_form": "mixture",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": false,
+    "retail_packing": false,
+    "dosage_form_signal": "tablet",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "reject"
+  }
+}

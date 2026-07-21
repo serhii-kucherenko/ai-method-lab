@@ -256,3 +256,13 @@ Challenge B attacked the draft as enum theater. Response:
 ## 2026-07-21 -- htsroute adversarial depth (loop keep-going)
 
 Advanced htsroute framed to adversarial without a fixture farm. Wrote paper algorithm (bulk Chapter 29 path vs heading 3004 form test + Note 1(a) rejects) and Challenges A/B. Kill A (vendors/brokers) still stands commercially. Explicit non-actions: no projects/htsroute/, no 25 green fixtures, no ready-to-build. Research tick count 2 of min 3 before any ready claim.
+
+## 2026-07-21 ? htsroute testable (loop keep-going / tick 4)
+
+Moved **htsroute** `differentiated` ? `testable` without opening a product.
+
+- Named G5 suite (25 cases) in `htsroute-G5-cases.md`.
+- Encoded **only** golden cards #1?#3 (omeprazole bulk ? 29; pellets ? 3003; dosage tablets ? 3004).
+- Explicit non-actions: no `projects/htsroute/`, no 25-file dump, no `ready_to_build` (same-day build block + incomplete critical path #4?#8).
+
+**Skeptical note:** Three cards prove the chain shape; they do not prove the reject surface. Next tick encodes tablet-enum cheat / Note 1(a) / GRI-3 rejects, then a G6 memo.

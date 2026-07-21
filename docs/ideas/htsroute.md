@@ -1,10 +1,10 @@
 # htsroute — idea dossier
 
-**State:** `differentiated`  
+**State:** `testable`  
 **Framing:** workflow experiment (not a commercial pitch against customs classification vendors)  
 **Opened:** 2026-07-21 after lanehold G2 kill  
-**Research ticks on this idea:** 3  
-**Policy:** slow depth — **no fixture corpus yet**, no product folder, no ready_to_build
+**Research ticks on this idea:** 4  
+**Policy:** slow depth — **no product folder**, no ready_to_build this calendar day
 
 ## Start here
 
@@ -13,6 +13,8 @@
 3. Challenge A: `htsroute-challenge-A.md`
 4. Challenge B: `htsroute-challenge-B.md`
 5. Algorithm draft: `htsroute-algorithm.md` (29 / 3003 / 3004 — not binary)
+6. G5 cases: `htsroute-G5-cases.md`
+7. First golden cards: `fixtures/htsroute-1-omeprazole-bulk.json`, `htsroute-2-omeprazole-pellets.json`, `htsroute-3-dosage-tablets.json`
 
 ## Problem (G1)
 
@@ -43,10 +45,10 @@ The omeprazole chain is the non-isomorphism proof: bulk API → 29; coated pelle
 1. Published rulings contradict ≥2 golden heading-route fixtures → abandon.
 2. After any future smoke, analysts still need a spreadsheet for the happy-path form gate → abandon.
 
-## Depth test outline (G5 — not encoded)
+## Depth test outline (G5)
 
-Challenge B lists required fixture shapes (therapeutic bulk, dosage 3004, mixture→3003, Note 1(a), GRI3 reject, insufficient facts reject, tablet-enum cheat). **JSON fixtures deferred** to a later tick on purpose.
+Paper cases 1–25 named in `htsroute-G5-cases.md`. Encoded so far: **#1–#3** (omeprazole chain only). Remaining critical path (#4–#8) and boundaries stay paper until a later tick.
 
 ## Decision
 
-**Differentiated — do not build.** Next tick may begin a *small* fixture set (not a 25-farm dump) only after writing G5 case names; still no product.
+**Testable on paper + three golden cards — do not build.** Same-day research→build is blocked. Next: encode a few more critical rejects (tablet enum cheat, Note 1(a), GRI 3), then a G6 skeptical memo — still no product folder.
