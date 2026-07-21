@@ -1,8 +1,14 @@
 # ndcswap — idea dossier
 
-**State:** `framed`  
+**State:** `adversarial`  
 **Framing:** method stress (not GTM vs First Databank / Medi-Span)  
 **Opened:** 2026-07-21 after crewleg sustain
+
+## Progress
+
+- TE algorithm paper: `docs/ideas/ndcswap-te-algorithm.md` (FDA Orange Book preface: A vs B codes; AB1/AB2 must match)
+- Fixtures A–F + checker green
+- Next: expand to ≥25 cases; G6 — still no product folder
 
 ## Problem (G1 draft)
 

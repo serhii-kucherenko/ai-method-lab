@@ -1,6 +1,7 @@
 # ndcswap — TE substitution algorithm (paper)
 
-Docs-only. Working model for method stress — not a full Orange Book dump.
+Cite: FDA Orange Book preface — https://www.fda.gov/drugs/development-approval-process-drugs/orange-book-preface  
+(A codes substitutable among pharmaceutically equivalent products; B codes not; AB1/AB2 only match same three-character code.)
 
 ## Inputs
 
