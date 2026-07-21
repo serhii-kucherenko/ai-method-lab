@@ -2,13 +2,15 @@
 
 Email delivers **what changed this tick** to `notify.to`. The human should understand the outcome **from the email alone**, in everyday language — as if explaining the work to a smart friend who has never opened this repo.
 
-Links are optional footnotes, not the payload.
+Links are optional footnotes, not the payload — except for **product finished**, where try-artifacts are required (see below).
 
 ## Config
 
 `matrix/CONTROLLER.json` → `notify` (`enabled`, `to`, `from`, `on`).
 
 Repo base (only when a link is warranted): `https://github.com/serhii-kucherenko/ai-method-lab/blob/main/`
+
+StackBlitz try base: `https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/projects/`
 
 ## When to send
 
@@ -26,9 +28,9 @@ Do **not** email per-cell pass/fail or “continuing to next cell.”
 ## Hard rules
 
 1. **Explain before you celebrate.** The reader must learn *what the idea was*, *what the project is*, and *what we actually built* — not only that tests passed.
-2. **Lead with the story, then the proof.** Outcome → idea → project/build → proof → framing → next.
-3. **Never force a re-read of the repo.** Links are optional extras.
-4. **At most one optional deep link.** Not a link farm. Do not re-link unchanged workflow docs.
+2. **Lead with the story, then the proof.** Outcome → idea → project/build → proof → framing → next → try artifacts (product finished only).
+3. **Never force a re-read of the repo.** Links are optional extras (except product try-link below).
+4. **Link budget:** research / hard-stop digests → at most one optional deep link. Product finished → **try-page attachment + one StackBlitz try link** (no findings-doc farm; do not re-link unchanged workflow docs).
 5. **Honest framing in plain words:** this is a workflow experiment unless we say otherwise.
 6. **No acronyms or internal codes** in subject or body (see table below).
 
@@ -43,8 +45,47 @@ Do **not** email per-cell pass/fail or “continuing to next cell.”
 | Kill A / Kill B | “existing vendors already do this commercially” / “niche audience risk” |
 | GTM | “commercial launch claim” |
 | method stress | “workflow experiment — not claiming to beat incumbents” |
+| StackBlitz | “open in the browser playground” (or just paste the URL under Try it) |
 
 **Before send:** read the draft aloud. If a stranger would ask “what is this product?”, rewrite it.
+
+---
+
+## Try artifacts — product finished only
+
+Required on every successful `product_complete` email (skip for abandoned products with no usable UI/core math).
+
+### 1. Standalone try page (attachment)
+
+Commit and attach a **single-file** demo:
+
+- Path: `projects/<name>/try.html`
+- Filename in email: `try-<name>.html`
+- Must open by double-click in a browser with **no server**
+- Inline all CSS and JS in that one file (no external `/styles.css`, `/app.js`, or API calls)
+- Demonstrate the **core happy path** the product proves (calculator, form, rules) with sensible defaults
+- Label clearly that this is a simplified offline demo, not the full app
+- Prefer porting pure domain logic (e.g. bill math) into the page; omit auth, webhooks, and database
+
+Reference: `projects/tariffstep/try.html`
+
+### 2. Browser playground link (StackBlitz)
+
+After the product is on `main`, include exactly one try URL:
+
+```text
+https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/projects/<name>?startScript=start
+```
+
+- Commit + push **before** send so the link resolves
+- Plain-language label in the body: **Try it** (attachment = offline page; link = full project in the browser)
+- Honesty note if useful: the playground may fail when Node SQLite or native APIs are unsupported — the try page still works offline
+
+Do **not** deploy to Vercel (or similar) just for digests.
+
+### Abandoned products
+
+If abandoned mid-build with nothing to try: story + autopsy only; no fake try page.
 
 ---
 
@@ -61,7 +102,9 @@ Do **not** email per-cell pass/fail or “continuing to next cell.”
 5. **What we proved** — 3–6 bullets of verification (scenarios, rejects, scale). Include the “workflow experiment, not vendor replacement” caveat here or in framing.
 6. **What did not change** — only if useful (still not a commercial pitch; still no shallow dual-approval queue)
 7. **Next** — one line
-8. **Optional link** — at most one findings URL
+8. **Try it** — (a) attached `try-<name>.html` — download and open; (b) StackBlitz URL above
+
+**Resend:** `text` body as usual; `attachments: [{ filename: "try-<name>.html", content: <base64 of try.html>, contentType: "text/html" }]`.
 
 ### Example — product finished (good)
 
@@ -94,10 +137,12 @@ What did not change
 Still not a commercial launch claim. Still no shallow dual-approval product queue.
 
 Next
-Research continues on lanehold — warehouse lane capacity plus hold-until-release rules.
+Research continues on the next differentiated idea in the backlog.
 
-Optional link
-https://github.com/serhii-kucherenko/ai-method-lab/blob/main/projects/tariffstep/FINDINGS.md
+Try it
+- Attachment: try-tariffstep.html — download and open in your browser (offline demo of the bill math)
+- Full project in the browser:
+  https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/projects/tariffstep?startScript=start
 ```
 
 ---
@@ -114,6 +159,8 @@ https://github.com/serhii-kucherenko/ai-method-lab/blob/main/projects/tariffstep
 4. **Decision** — still researching / ready to build / killed — and why, in plain words
 5. **Next** — one line
 6. **Optional link** — at most one dossier URL
+
+No try page. No StackBlitz. Nothing to run yet.
 
 ### Example — research digest (good)
 
@@ -152,9 +199,14 @@ Write the capacity/expiry algorithm on paper and start named test scenarios.
 - “See the findings / workflow docs” as a substitute for the story
 - Pass-count vanity without saying what was built
 - Acronyms or internal codes (A03, G5, ready_to_build, Kill A, etc.)
+- Product finished email **without** try page + StackBlitz (when the product has a usable core demo)
+- Try page that still calls `fetch("/...")` or needs `npm start`
+- Deploying a host (Vercel, etc.) only so the digest has a URL
 
 ## Resend
 
 `send-email` with `notify.to` / `notify.from`, `idempotencyKey: method-lab/<event>/<id-or-date>`.
 
-Commit before send when a link is included so `main` resolves; content-first emails do not depend on that.
+For `product_complete`: include `text` + try-page `attachments` as above.
+
+Commit + push before send when a StackBlitz (or other GitHub-backed) link is included so `main` resolves; content-first emails without links do not depend on that.

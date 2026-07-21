@@ -12,7 +12,7 @@ Follow projects/PORTFOLIO.md, docs/BACKLOG.md, protocols/PRODUCT_RUNBOOK.md, doc
 Approaches/, projects/briefs/, oracles/ pin product phases; do not edit oracles mid-run.
 Only hard-stop per AUTONOMOUS_CONTROLLER.md.
 Commit after each tick. Always commit, always push to origin/main, always merge own PRs when CI green.
-If notify.enabled, email digests via Resend MCP per protocols/NOTIFY.md — story first (idea + what we built + proof), plain language, no acronyms; at most one optional deep link; do not re-link unchanged workflow docs every tick.
+If notify.enabled, email digests via Resend MCP per protocols/NOTIFY.md — story first (idea + what we built + proof), plain language, no acronyms. Product finished: attach try-<id>.html + one StackBlitz try link; do not re-link unchanged workflow docs every tick.
 When auto_promote is true, never ask the human to confirm promote — apply defaults and send the digest.
 If you open a PR, merge it yourself when CI is green — do not wait for a human merge.
 ```

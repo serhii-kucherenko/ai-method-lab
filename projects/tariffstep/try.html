@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tariffstep — try offline</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1a1f1c;
+        --muted: #5c665f;
+        --line: #c9d1cb;
+        --bg: #f3f6f2;
+        --panel: #ffffff;
+        --accent: #1f6b4a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 10% 0%, #dfece3 0%, transparent 45%),
+          radial-gradient(circle at 90% 10%, #e8efe6 0%, transparent 40%),
+          var(--bg);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 32rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        margin: 0 0 0.35rem;
+        font-size: 1.75rem;
+        letter-spacing: -0.02em;
+      }
+      .note {
+        margin: 0 0 1.5rem;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+      form {
+        display: grid;
+        gap: 0.75rem;
+        padding: 1.1rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+      }
+      label {
+        display: grid;
+        gap: 0.25rem;
+        font-size: 0.92rem;
+      }
+      input {
+        padding: 0.55rem 0.65rem;
+        border: 1px solid var(--line);
+        font: inherit;
+      }
+      button {
+        margin-top: 0.35rem;
+        padding: 0.7rem 1rem;
+        border: 0;
+        background: var(--accent);
+        color: #fff;
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:hover {
+        filter: brightness(1.05);
+      }
+      pre {
+        margin: 1rem 0 0;
+        padding: 1rem;
+        background: #121612;
+        color: #d7eadc;
+        overflow: auto;
+        min-height: 8rem;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Tariffstep</h1>
+      <p class="note">
+        Offline demo of stepped energy blocks plus demand ratchet. This page runs in your
+        browser only — not the full app (no accounts, posting, or webhooks).
+      </p>
+      <form id="form">
+        <label>Total kWh <input id="kwh" type="number" value="180" min="0" step="any" /></label>
+        <label>Current peak kW <input id="cur" type="number" value="12" min="0" step="any" /></label>
+        <label>Prior peak kW <input id="prior" type="number" value="10" min="0" step="any" /></label>
+        <label>Ratchet % (0–1) <input id="ratchet" type="number" value="0.8" min="0" max="1" step="0.01" /></label>
+        <label>Demand rate <input id="dr" type="number" value="9" min="0" step="any" /></label>
+        <button type="submit">Bill</button>
+      </form>
+      <pre id="out">Submit to see energy, demand, and total charges.</pre>
+    </main>
+    <script>
+      function round6(n) {
+        return Math.round(n * 1e6) / 1e6;
+      }
+
+      function billTariff(input) {
+        var blocks = input.blocks || [];
+        if (!blocks.length) return { ok: false, reason: "empty_blocks" };
+        if (!(input.total_kwh >= 0) || !(input.current_peak_kw >= 0) || !(input.prior_peak_kw >= 0)) {
+          return { ok: false, reason: "negative_input" };
+        }
+        if (!(input.ratchet_pct > 0 && input.ratchet_pct <= 1)) {
+          return { ok: false, reason: "ratchet_pct_invalid" };
+        }
+        var prev = 0;
+        for (var i = 0; i < blocks.length; i++) {
+          var b = blocks[i];
+          if (typeof b.rate !== "number" || b.rate < 0) return { ok: false, reason: "bad_rate" };
+          if (b.up_to_kwh !== null) {
+            if (b.up_to_kwh <= prev) return { ok: false, reason: "blocks_unsorted" };
+            prev = b.up_to_kwh;
+          }
+        }
+        var remaining = input.total_kwh;
+        var energy = 0;
+        prev = 0;
+        for (var j = 0; j < blocks.length; j++) {
+          var block = blocks[j];
+          if (remaining <= 0) break;
+          var width = block.up_to_kwh === null ? remaining : block.up_to_kwh - prev;
+          var take = Math.min(remaining, width);
+          energy += take * block.rate;
+          remaining -= take;
+          if (block.up_to_kwh !== null) prev = block.up_to_kwh;
+        }
+        var billingDemand = Math.max(input.current_peak_kw, input.prior_peak_kw * input.ratchet_pct);
+        var demand = billingDemand * input.demand_rate;
+        return {
+          ok: true,
+          energy_charge: round6(energy),
+          billing_demand_kw: round6(billingDemand),
+          demand_charge: round6(demand),
+          total_charge: round6(energy + demand),
+        };
+      }
+
+      var form = document.getElementById("form");
+      var out = document.getElementById("out");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var result = billTariff({
+          total_kwh: Number(document.getElementById("kwh").value),
+          current_peak_kw: Number(document.getElementById("cur").value),
+          prior_peak_kw: Number(document.getElementById("prior").value),
+          ratchet_pct: Number(document.getElementById("ratchet").value),
+          demand_rate: Number(document.getElementById("dr").value),
+          blocks: [
+            { up_to_kwh: 100, rate: 0.1 },
+            { up_to_kwh: 200, rate: 0.15 },
+            { up_to_kwh: null, rate: 0.2 },
+          ],
+        });
+        out.textContent = JSON.stringify(result, null, 2);
+      });
+    </script>
+  </body>
+</html>

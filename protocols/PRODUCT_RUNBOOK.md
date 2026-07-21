@@ -43,6 +43,8 @@ Update leaderboard / PORTFOLIO status.
 
 If `notify.enabled`, email per `protocols/NOTIFY.md` — story first (idea, project, what we built, then proof), plain language, no acronyms. Do not substitute a list of static docs for the summary.
 
+On **product finished**: commit `projects/<id>/try.html` (standalone offline demo), attach it to the Resend email as `try-<id>.html`, and include one StackBlitz try link. See `protocols/NOTIFY.md` → Try artifacts.
+
 ## 7. Close + continue
 
 Commit + push + merge. Advance to next phase on same product, or next queued product if sustain met / abandoned.
