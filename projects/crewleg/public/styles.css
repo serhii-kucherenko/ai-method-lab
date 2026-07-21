@@ -1,0 +1,39 @@
+:root {
+  --ink: #1a2332;
+  --paper: #e8eef5;
+  --accent: #0b6e4f;
+}
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 20% 0%, #c5d8ec, var(--paper) 55%);
+  min-height: 100vh;
+}
+main {
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+}
+h1 {
+  font-family: "IBM Plex Serif", Georgia, serif;
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem;
+}
+label {
+  display: block;
+  margin: 0.75rem 0;
+}
+button {
+  background: var(--accent);
+  color: white;
+  border: 0;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+pre {
+  background: #0f1720;
+  color: #d7e2ef;
+  padding: 1rem;
+  overflow: auto;
+}

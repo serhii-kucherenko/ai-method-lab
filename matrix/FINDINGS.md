@@ -519,3 +519,6 @@ Fixtures A-F + study/visit API + lock + important list. Cells smoke+crud scored.
 ## 2026-07-21 -- amendwin workflow to sustain (pass)
 
 Visit open-to-locked audit + version; HMAC webhooks + dep 502; 250+ visit pagination + Retry-After. Sustain scored. Second depth-restart product complete. Next: IDEA_DEPTH crewleg (FAR 117) framed - no dual-gate queue.
+## 2026-07-21 -- crewleg smoke to sustain (pass)
+
+FAR 117 Table B + rest fixtures A-Y; full ladder scored. Third depth-restart product. Next: IDEA_DEPTH ndcswap framed.

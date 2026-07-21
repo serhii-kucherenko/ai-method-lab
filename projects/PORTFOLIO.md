@@ -8,6 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
+| crewleg | **sustained** | A03 + A10 | done | FAR 117 Table B FDP + rest legality (method stress) |
 | amendwin | **sustained** | A03 + A10 | done | Amendment-aware visit windows + important PD class (method stress) |
 | lotblast | **sustained** | A03 + A10 | done | DAG lot genealogy + deterministic blast radius + mock-recall export (method stress) |
 
@@ -41,5 +42,6 @@ Full historical table preserved in git history prior to depth restart; rows belo
 ## Next autonomous actions
 
 1. IDEA_DEPTH next candidate only — no dual-gate queue
-2. Digests: method stress — not Medidata/Veeva replacement
+2. Digests: method stress — not vendor replacement
 3. Depth over conveyor: one framed→ready_to_build idea at a time
+4. Depth-restart sustained: lotblast, amendwin, crewleg

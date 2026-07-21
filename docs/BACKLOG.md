@@ -10,9 +10,10 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| — | **crewleg** | research (adversarial) | FAR 117 Table B method stress. No build yet. |
-| 1 | amendwin | sustained | Method stress complete (window + lock). |
-| 2 | lotblast | sustained | Method stress complete. |
+| 1 | crewleg | sustained | FAR 117 Table B method stress complete. |
+| 2 | amendwin | sustained | Method stress complete (window + lock). |
+| 3 | lotblast | sustained | Method stress complete. |
+| — | *(next)* | research only | IDEA_DEPTH: frame next non-isomorphic idea. |
 | 2 | Idea pipeline hygiene | ongoing | Kill isomorphic dual-gate seeds on sight. |
 
 ## Frozen / abandoned product queue

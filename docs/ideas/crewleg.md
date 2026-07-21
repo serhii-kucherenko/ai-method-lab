@@ -1,6 +1,6 @@
 # crewleg — idea dossier
 
-**State:** `differentiated`  
+**State:** `ready_to_build` (method stress)  
 **Framing:** method stress (not GTM vs Jeppesen/AIMS)  
 **Opened:** 2026-07-21 after amendwin sustain
 

@@ -1,0 +1,43 @@
+{
+  "phase": "P-smoke-001",
+  "fail_tags": [],
+  "method_version": "1.0.0",
+  "scores": {
+    "dimensions": {
+      "efficiency": 4,
+      "completeness": 5,
+      "maintainability": 4,
+      "robustness": 5,
+      "correctness": 5
+    },
+    "rubric_version": "1.0.0",
+    "artifacts": [
+      "projects/crewleg/src/legality.ts",
+      "projects/crewleg/test/fixtures.test.ts",
+      "projects/crewleg/test/smoke.test.ts"
+    ],
+    "notes": "crewleg smoke: Table B+rest fixtures A-Y; carrier/pairing API; illegal list; UI; THREATS"
+  },
+  "created_at": "2026-07-21T13:00:00Z",
+  "method_id": "A03",
+  "run_id": "r1",
+  "product_path": "projects/crewleg",
+  "project_id": "P-smoke-001",
+  "status": "scored",
+  "approach_id": "A03",
+  "metrics": {
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 40,
+    "cycle_time_hours": 0.7,
+    "correctness_pass": true
+  },
+  "cell_id": "A03__P-smoke-001__crewleg__r1",
+  "notes": "A03+A10 crewleg P-smoke-001 — FAR 117 method stress",
+  "started_at": "2026-07-21T12:20:00Z",
+  "approach_version": 1,
+  "finished_at": "2026-07-21T13:00:00Z"
+}

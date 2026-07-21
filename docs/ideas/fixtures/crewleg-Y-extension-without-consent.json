@@ -1,0 +1,14 @@
+{
+  "id": "crewleg-Y-extension-without-consent",
+  "report_local": "0800",
+  "segments": 2,
+  "acclimated": true,
+  "fdp_hours": 15.5,
+  "pic_extension_hours": 2,
+  "pic_consent": false,
+  "expect": {
+    "legal": false,
+    "max_fdp": 14,
+    "reject_extension_without_consent": true
+  }
+}

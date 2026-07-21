@@ -1,0 +1,14 @@
+{
+  "id": "crewleg-V-theater-cheat-reject",
+  "report_local": "0800",
+  "segments": 2,
+  "acclimated": true,
+  "fdp_hours": 13.5,
+  "claimed_report_local_other_theater": "0200",
+  "expect": {
+    "legal": true,
+    "max_fdp": 14,
+    "reject_other_theater_clock": true,
+    "notes": "must use last acclimated theater clock, not destination"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "crewleg-X-augmented-without-facility",
+  "report_local": "0800",
+  "segments": 2,
+  "acclimated": true,
+  "fdp_hours": 16,
+  "claims_augmented": true,
+  "has_rest_facility": false,
+  "expect": {
+    "legal": false,
+    "max_fdp": 14,
+    "reject_augmented_claim": true,
+    "notes": "v0 unaugmented only — Table C out of scope"
+  }
+}

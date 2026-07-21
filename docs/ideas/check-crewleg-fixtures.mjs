@@ -42,7 +42,13 @@ for (const f of files) {
     fix.max_consecutive_off_in_168h === undefined
       ? true
       : Number(fix.max_consecutive_off_in_168h) >= 30;
-  const legal = fdpOk && restOk && rollingOk;
+  const rejectAug =
+    fix.claims_augmented === true && fix.has_rest_facility === false
+      ? false
+      : true;
+  const rejectExt =
+    fix.pic_extension_hours && !fix.pic_consent ? false : true;
+  const legal = fdpOk && restOk && rollingOk && rejectAug && rejectExt;
   const okMax = got === fix.expect.max_fdp;
   const okLegal = legal === fix.expect.legal;
   const okRest =
