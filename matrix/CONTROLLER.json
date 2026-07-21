@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T13:55:00Z",
+  "updated_at": "2026-07-21T16:30:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__loop15m_tick12_oshamult_AF",
+  "last_completed": "research__loop30m_tick6_depositgap_sustain_oshamult10",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 12: oshamult algorithm + A-F (6) dual-green. Prefer depositgap after htsroute. Same-day build blocked. Do NOT re-arm pid 27600.",
+  "notes": "30m tick 6: depositgap phase briefs + sustain matrix; oshamult A-J (10) dual-schema green. Same-day build blocked. Do NOT re-arm pid 29556 or 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

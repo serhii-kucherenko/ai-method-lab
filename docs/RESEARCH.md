@@ -586,3 +586,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Encoded fixtures A?F (serial GBP toy, size-on-willful/repeat rejects, statutory-max cheat reject)
 - Checkers **6/6** single + dual green; still seed; prefer depositgap after htsroute
 - Loop 27600 not re-armed
+
+## 2026-07-21 -- 30m loop tick 6: depositgap sustain ladder + oshamult A-J
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 6 (pid 29556 left alone). Wrote `depositgap-PHASE-BRIEFS.md` + `depositgap-SUSTAIN-TEST-MATRIX.md` (~62 sustain floor). Unified oshamult checkers for pct + employee fixture shapes; suite **10/10** single + dual green (A-J). Still no product; htsroute same-day no-build.

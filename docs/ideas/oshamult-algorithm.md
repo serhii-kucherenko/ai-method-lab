@@ -7,73 +7,43 @@
 
 Forecast an OSHA **proposed civil penalty** from a **gravity-based penalty (GBP)** by applying FOM Ch. 6 **serial** reduction factors — not a flat “statutory maximum” accrual.
 
-Primary: OSHA Field Operations Manual Chapter 6 (Penalties and Debt Collection); 29 U.S.C. § 666; 29 CFR § 1903.15.  
+Primary: OSHA Field Operations Manual Chapter 6; 29 U.S.C. § 666; 29 CFR § 1903.15.  
 Cite: https://www.osha.gov/fom/chapter-6
 
-## Inputs (v0)
+## Inputs (v0 — paper fixtures)
 
 | Field | Meaning |
 |-------|---------|
 | `classification` | `serious` \| `other` \| `willful` \| `repeat` \| `fta` |
-| `gravity_tier` | `low` \| `moderate` \| `high` (serious gravity; informational for Quick Fix gate) |
-| `gbp` | Gravity-based penalty dollars (input — do not invent GBP table in v0) |
-| `employees` | Max employees nationwide prior 12 months (size bucket) |
-| `good_faith_pct` | 0–0.25 (FOM max 25% for eligible classifications) |
-| `history_pct` | 0–0.20 (FOM history reduction; post-2025 guidance up to 20%) |
-| `quick_fix_pct` | 0–0.15 (Quick Fix; ineligible for high-gravity serious / willful / repeat / FTA) |
-| `additive_cheat` | if true → reject (must not sum percentages then apply once) |
-
-## Size reduction (v0 table — Jul 2025 FOM update shape)
-
-| Employees | Size reduction |
-|----------:|---------------:|
-| 1–25 | 70% |
-| 26–100 | 30% |
-| 101–250 | 10% |
-| 251+ | 0% |
-
-Exact bucket edges can be re-locked against the live FOM table; digests must not claim OIS parity.
+| `gravity_tier` | `low` \| `moderate` \| `high` (Quick Fix gate for serious) |
+| `gbp_amount` | Gravity-based penalty dollars (input) |
+| `size_pct` | 0–1 size reduction (caller supplies from FOM size table) |
+| `history_pct` | 0–1 history reduction |
+| `good_faith_pct` | 0–1 good-faith reduction |
+| `quick_fix_pct` | 0–1 Quick Fix reduction |
+| `use_statutory_max` | if true → reject |
+| `additive_cheat` | if true → reject |
 
 ## Procedure (v0)
 
-1. Reject if `gbp` ≤ 0 or `employees` < 1.  
-2. Reject if `additive_cheat === true`.  
-3. Classification gates:  
-   - If `classification` ∈ {`willful`, `repeat`, `fta`}: `good_faith_pct` must be **0** (else reject). FOM: no good-faith reduction for willful; willful on inspection blocks good faith.  
-   - If `classification` ∈ {`willful`, `repeat`, `fta`} **or** (`classification === serious` && `gravity_tier === high`): `quick_fix_pct` must be **0** (else reject).  
-4. Look up `size_pct` from employees table.  
-5. Apply **serially** to GBP (order locked to current FOM prose): **Size → Good Faith → History → Quick Fix**:  
-   `p = gbp`  
-   `p *= (1 - size_pct)`  
-   `p *= (1 - good_faith_pct)`  
-   `p *= (1 - history_pct)`  
-   `p *= (1 - quick_fix_pct)`  
-6. Return `{ status: "ok", proposed: p, size_pct, steps: [...] }`.
+1. Reject if `gbp_amount` ≤ 0 or any pct outside [0, 1].  
+2. Reject `use_statutory_max` / `additive_cheat`.  
+3. If `willful` \| `repeat` and `size_pct` > 0 → reject (`size_on_willful_or_repeat`).  
+4. If `willful` \| `repeat` \| `fta` and `good_faith_pct` > 0 → reject.  
+5. If (`willful` \| `repeat` \| `fta`) or (serious + high gravity) and `quick_fix_pct` > 0 → reject.  
+6. Serial remaining-balance (fixture-locked order): **Size → History → Good Faith → Quick Fix**  
+   (Skip size multiply when willful/repeat — size already gated to 0.)  
+7. Return `{ status: "ok", penalty }`.
 
-## Worked toy (illustrative — not a live citation)
+Note: Live FOM HTML may list Size→Good Faith→History→Quick Fix; v0 stays locked to the A–N golden order until a re-versioned dual suite flips.
 
-| Input | Value |
-|-------|-------|
-| classification | serious |
-| gravity_tier | moderate |
-| gbp | $7,000 |
-| employees | 20 → size 70% |
-| good_faith_pct | 25% |
-| history_pct | 20% |
-| quick_fix_pct | 15% |
+## Worked toys
 
-Serial: 7000 → 2100 → 1575 → 1260 → **$1,071** proposed.  
-Additive cheat (70+25+20+15=130%) would be nonsense / reject.
-
-## Anti-patterns
-
-| Anti-pattern | Why |
-|--------------|-----|
-| Accrue at statutory max only | Misses GBP + serial reductions |
-| Sum % then apply once | Not FOM serial math |
-| Dual-approver status board | Dual-gate clone |
-| Size cut on willful + good faith | Classification gate fail |
+| Case | Result |
+|------|--------|
+| GBP $5,000, size 30%, history 10%, good faith 15% | **$2,677.50** (fixture A) |
+| GBP $7,000, size 70%, history 20%, good faith 25%, Quick Fix 15% | **$1,071** (fixture N) |
 
 ## Explicit non-actions
 
-No fixtures activation as `current_idea`. Prefer depositgap after htsroute. Checker: `check-oshamult-fixtures.mjs` (seed paper only).
+No product. Prefer depositgap after htsroute. Checkers: `check-oshamult-fixtures.mjs`, `check-oshamult-dual.mjs`.
