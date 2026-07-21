@@ -369,3 +369,7 @@ Wrote `htsroute-DAY-BOUNDARY.md` so tomorrow?s ready flip cannot skip Challenge 
 
 - `lesserof-USMCA-STACK.md`: Canada duty-free export zeros recoverable duty even after TFTEA lesser-of — naive / half-naive forecasts invent fantasy cash on the toy.
 - Searched for public CF-29 / section 1592 pharma 29 vs 30 docket: **none found**. G1 residual stays honest; general penalty path only.
+
+## 2026-07-21 — product framing draft only (tick 12d)
+
+Wrote `htsroute-PRODUCT-FRAMING-DRAFT.md` so a later ready flip has forbidden/allowed claims on paper. **No** `projects/htsroute/`.
