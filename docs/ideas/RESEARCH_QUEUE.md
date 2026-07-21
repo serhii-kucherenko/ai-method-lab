@@ -17,7 +17,8 @@ Controller chains these without waiting. Finish one → commit → start next. N
 | 18 | Next idea seed | **lesserof** seed + worked $ example + statute quote — still seed only |
 | 19 | Finished pantoprazole CROSS + value honesty | **done** — NY N003244 + VALUE-STAKES + Challenge D |
 | 20 | Dual-impl already green | done (tick 10) |
-| 21 | lesserof Kill A / narrow unique claim paper | pending (before any frame) |
+| 21 | lesserof Kill A / narrow unique claim paper | **done** — `lesserof-NARROW-CLAIM.md` (stacked caps + basket trap) |
+| 22 | Day-boundary htsroute reassess | pending (next calendar day) |
 
 ## Parked seeds
 

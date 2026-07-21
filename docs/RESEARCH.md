@@ -335,8 +335,17 @@ Human signal: portfolio still shallow; research must be robust and data-backed, 
 While htsroute holds the active slot and same-day build remains blocked, deepened the **parallel seed** with money math ? not a product, not framed:
 
 - `lesserof-WORKED-EXAMPLE.md`: toy claim shows **$5,940** overclaim if finance models 99% of duty paid on a substitution line where lesser-of binds ($10k paid vs $4k substitute basis ? $3,960 correct refund).
-- Quoted 19 U.S.C. § 1313(l) substitution ?99 percent of the lesser of? language from House uscode.
+- Quoted 19 U.S.C. ? 1313(l) substitution ?99 percent of the lesser of? language from House uscode.
 - Honest Kill A warning: vendor explainers already publish this exact miss ? commercial novelty weak; prefer narrowing to stacked USMCA + TFTEA lesser-of + basket-?other? trap before framing.
 
 Still **no** `projects/`, **no** fixture farm, **htsroute** remains `current_idea`.
+
+## 2026-07-21 ? lesserof narrow claim (tick 11c, chained)
+
+Wrote `lesserof-NARROW-CLAIM.md` so the next idea does not activate as a vendor-blog clone:
+
+- Unique bundle = TFTEA lesser-of + direct-ID exemption + **USMCA export lesser-of** + **§ 1313(j)(5) basket-?other? trap**
+- Kill A pre-registered as commercial stand ? workflow experiment only
+- G5 outline on paper; **no fixtures** yet
+- htsroute still active; same-day build still blocked
 
