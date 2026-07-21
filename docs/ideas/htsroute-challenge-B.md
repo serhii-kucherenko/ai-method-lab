@@ -27,13 +27,13 @@ Future fixtures (when allowed) must include at least:
 
 Item 7 is the kill shot against enum theater: the enum alone is insufficient; measured_dose/retail_packing facts must bind.
 
-### Same-molecule gap (still open)
+### Same-molecule gap (narrowed)
 
-Without a same-molecule bulk vs dose public pair, a skeptic can say we only showed “different drugs, different codes.” Challenge B **partially stands** until that pair or an authoritative same-molecule explanatory example is on file.
+Omeprazole chain on file: bulk → Chapter 29; enteric pellets bulk → heading 3003; dosage-form peers → heading 3004. A finished omeprazole capsule CROSS letter is still preferred before ready_to_build, but the middle 3003 card already kills binary clones.
 
 ## Outcome
 
 - Algorithm revised: not binary — includes **heading 3003** for mixed bulk medicaments (omeprazole pellets).
 - Keyword/enum attack **answered** by Challenge B binding rules + algorithm invariants.
-- Same-molecule gap **narrowed** via omeprazole chain (bulk 29 → pellets 3003; 3004 via dosage-form peers).
-- Idea stays **differentiated / do not build**. No fixtures this tick.
+- Same-molecule gap **narrowed**; golden cards #1–#3 encode the chain.
+- Idea advanced to **testable / do not build**. No product folder.
