@@ -50,3 +50,16 @@ Frontier thinking only. No product code. No ROADMAP promotion from this file.
 A graph recall product is the first non-isomorphic candidate after dual-gate saturation. **Commercial Kill A stands** — incumbents exist; we locked framing as **method stress**, not GTM. G1 now cites FDA primary rule + 21 CFR enforcement path (via FDA talk summary), not vendor blogs alone. G5 has 25 named cases on paper; not RED tests yet. Continue research — do not open `projects/lotblast/`.
 
 **Digest one-liner:** Restarted for depth; froze shallow conveyor; researching lotblast as a graph/FSMA method stress — not building yet.
+
+## 2026-07-21 — lotblast research tick 2 (FDA column map)
+
+Mapped lab export fields to FDA illustrative sortable spreadsheet tabs (Receiving, Shipping, Transformation) from https://www.fda.gov/media/181945/download.
+
+Findings:
+
+- Dropped lab-only `pack` CTE — packing that assigns a new TLC is Transformation.
+- Scalar `location_id` / `to_partner_id` would have produced another shallow product; location description is multi-field (business, phone, address, city, region, postal, country).
+- Transformation export is **row-per-input** (incoming TLC + qty used) plus new TLC — matches DAG consume edges.
+- Template is illustrative, not mandatory — still the right oracle shape for method stress.
+
+Still not `ready_to_build`. Next: export header/JSON contract + XOR cases for TLC source vs reference.

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T04:00:00Z",
+  "updated_at": "2026-07-21T04:45:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "R-depth-001__lotblast__ideation",
+  "active_cell": "R-depth-001__lotblast__fda-map",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-sustain__taxhold__r1",
+  "last_completed": "R-depth-001__lotblast__ideation",
   "last_error": null,
   "current_product": null,
   "current_idea": "lotblast",
-  "next_cell": "R-depth-001__lotblast__adversarial",
+  "next_cell": "R-depth-001__lotblast__export-contract",
   "mode": "autonomous",
   "phase": "research",
-  "notes": "DEPTH RESTART tick1 done: IDEA_DEPTH live, captable abandoned, lotblast adversarial (method-stress framing; 25 paper tests). Next: FDA spreadsheet column map. No product code.",
+  "notes": "lotblast tick2: FDA spreadsheet column map done (media/181945). Next: export contract + TLC source XOR cases. No product code.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

@@ -95,9 +95,58 @@ G5 still open until these are turned into failing RED tests in a product brief �
 
 ### Lab CTE/KDE subset (draft — not full FSMA product)
 
-CTEs: `receive`, `transform`, `pack`, `ship`.  
-KDEs (minimum): `tlc`, `product_desc`, `qty`, `uom`, `event_time`, `location_id`, `from_tlc[]` (transform), `to_partner_id` (ship).  
-Explicit non-goal: full FTL coverage, harvesting CTEs, retail POS, FDA submission UX.
+**Lab CTEs (aligned to FDA tabs we will implement):** `receiving`, `transformation`, `shipping`.  
+Drop separate `pack` — packing/repacking that creates a new TLC is **transformation** under 21 CFR definitions in the FDA template.
+
+**Explicit non-goals:** harvesting, cooling, initial packing (RAC), first land-based receiving, receiving-from-exempt, full FTL coverage, FDA submission UX, claiming compliance product.
+
+### FDA example spreadsheet → lab field map (tick 2)
+
+Source: FDA illustrative electronic sortable spreadsheet template (PDF extract from https://www.fda.gov/media/181945/download). Template is **not** mandatory; columns shape our export oracle.
+
+#### Receiving (lab must export these columns for exercised receive events)
+
+| FDA template column group | Lab field(s) | Notes |
+|---------------------------|--------------|-------|
+| Traceability Lot Code | `tlc` | Immutable after first CTE |
+| Quantity + Unit of Measure | `qty`, `uom` | |
+| Product Description (name, brand, commodity, variety, pack size, pack style) | `product_*` struct | Lab may require name+size; others optional but columns present |
+| Immediate previous source location description | `from_location_*` | Business, phone, address, city, region, postal, country |
+| Location where received | `to_location_*` | Same shape |
+| Date of reception | `event_date` | |
+| TLC source location **or** TLC source reference | `tlc_source_*` **or** `tlc_source_ref` | One required |
+| Reference document type + number | `ref_doc_type`, `ref_doc_number` | Optional second pair later |
+
+#### Shipping
+
+| FDA template column group | Lab field(s) | Notes |
+|---------------------------|--------------|-------|
+| Traceability Lot Code | `tlc` | |
+| Quantity + UoM | `qty`, `uom` | Partial ship allowed |
+| Product Description | `product_*` | |
+| Immediate subsequent recipient location | `to_partner_*` / `to_location_*` | Drives notify list |
+| Location from which shipped | `from_location_*` | |
+| Shipping Date | `event_date` | |
+| TLC source location or reference | `tlc_source_*` / `tlc_source_ref` | |
+| Reference document type + number | `ref_doc_type`, `ref_doc_number` | e.g. BOL |
+
+#### Transformation (creates new TLC; links inputs)
+
+| FDA template column group | Lab field(s) | Notes |
+|---------------------------|--------------|-------|
+| Incoming FTL food TLC (if applicable) | `from_tlc` (row per input) | Multi-input = multi-row or repeated export rows |
+| Incoming product description + qty used + uom | `from_product_*`, `from_qty`, `from_uom` | Over-consume rejected (test #10) |
+| **New** Traceability Lot Code assigned | `to_tlc` | New node in DAG |
+| Location where transformed (= TLC source) | `tlc_source_*` | |
+| TLC source reference (optional) | `tlc_source_ref` | |
+| Transformation completion date | `event_date` | |
+| Product description of food produced | `to_product_*` | |
+| Quantity + UoM of food produced | `to_qty`, `to_uom` | |
+| Reference documents | `ref_doc_*` | |
+
+**Oracle rule:** mock-recall export must emit **separate sortable sheets/sections** for Receiving, Transformation, Shipping with one TLC per row (FDA guidance: machine-filterable). Missing required KDE → gap flag or blocked export (test #15).
+
+**Gap vs prior lab draft:** old `location_id` / `to_partner_id` scalars are insufficient — location description is multi-field. Update invariants before any code.
 
 ## 7. ICP / framing (updated)
 
@@ -110,8 +159,9 @@ Explicit non-goal: full FTL coverage, harvesting CTEs, retail POS, FDA submissio
 
 **Do not build yet.** Next research tick:
 
-1. Map lab KDE columns 1:1 against FDA example spreadsheet tabs for receive/transform/ship (cite fda.gov template)
-2. Write draft oracle brief `projects/briefs/P-smoke-lotblast.md` **only** when G3–G5 feel stable — still not open for code
-3. Optional: kill lotblast if we cannot keep method-stress honesty in every summary (drift back to “next SaaS”)
+1. Draft export JSON Schema / CSV header contract from the tables above (still docs-only)
+2. Add 5 more negative cases around location-description completeness and TLC source vs reference XOR
+3. Only then consider draft brief `projects/briefs/P-smoke-lotblast.md` — still no product code
 
 Sibling seeds (parked): SAFE-conversion math (method-only possible later); bank-recon aging (crowded).
+
