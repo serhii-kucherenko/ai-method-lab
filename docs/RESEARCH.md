@@ -473,7 +473,7 @@ Expanded blueprint into `docs/ideas/htsroute-PAGE-SPECS.md`: per-page route path
 
 Still **no** `projects/htsroute/`. Paper only until day-boundary ready_to_build.
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #1
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #1
 
 First live 15m sentinel. Same-day build still blocked. Material work:
 
@@ -481,7 +481,7 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 - `depositgap-STATUTE-CITATIONS.md` ? primary ? 1677g + 19 CFR 351.212(e); toy underpayment **$150,000** before interest
 - Loop pid 27600 left alone (do not re-arm)
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #2
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #2
 
 - Closed lesserof cite gaps: **19 CFR 190.31** (direct-ID unused = 99% of paid, no lesser-of) + **19 U.S.C. 4534** scope/carve-outs (calc still 182.44)
 - Updated G5 encoding notes for ibuprofen/aspirin pairs (#34?#37)
@@ -492,14 +492,14 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 
 `AGENT_LOOP_TICK_depth_keepgoing` fired (pid 29556 left alone). Wrote `depositgap-algorithm.md` (deposit vs assessed + interest window +  toy). htsroute still same-day no-build. Parallel seed only.
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #3
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #3
 
 - lesserof: cited CBP TFTEA NPRM **83 FR 37886** lesser-of agency prose + per-unit examples (closes primary walkthrough gap partially)
 - depositgap: quoted **19 U.S.C. 1673f(b)** deposit vs final + interest cross-ref
 - Stubbed `ptax4975-SEED.md`
 - No product; loop 27600 not re-armed
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #4
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #4
 
 - depositgap: illustrative interest **$10,500** on $150k underpayment @ IRS 6621 underpayment **7%** (2026 Q3); caveat = not CBP day-count liquidation math
 - Day-boundary checklist now requires comprehensive blueprint / page specs / phase briefs / sustain matrix
@@ -514,14 +514,14 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 
 Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over deposit, skip-interest cheat, zero value). Checker green. Seed only ? not activated; htsroute still current_idea.
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #5
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #5
 
 - depositgap Kill A/B/C paper (`depositgap-challenge-ABC.md`) ? commercial Kill A stands
 - Quoted CVD twin **19 U.S.C. 1671f**; fixture **E** CVD underdeposit green (5 fixtures)
 - Calendar still 2026-07-21 ? no ready flip; no `projects/`
 - Loop 27600 not re-armed
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #6
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #6
 
 - Added `check-depositgap-dual.mjs` ? two independent true-up impls agree on all **5** fixtures
 - Still seed-only; htsroute current_idea; calendar 2026-07-21 blocks ready flip
@@ -531,14 +531,14 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 3 (pid 29556 left alone). Encoded depositgap F-J (all-others underdeposit, same-day zero interest, inverted dates, negative rate, matched-rates zero delta). Case map `depositgap-G5-cases.md` names K-Y toward 25+. Checkers: **10/10** single + dual green. Still seed only; htsroute same-day no-build.
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #7
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #7
 
 - Encoded **4** lesserof paper fixtures (substitution bind, direct-ID uncapped, USMCA zero, basket-other reject) + `check-lesserof-fixtures.mjs` green
 - depositgap suite still **10** + dual-impl green (prior tick)
 - Still seed-only for lesserof/depositgap; htsroute current_idea; same-day build blocked
 - Loop 27600 not re-armed
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #8
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #8
 
 - lesserof dual-impl green (4 fixtures)
 - Wrote `htsroute-HYPOTHESIS-DRAFT.md` for post day-boundary paste into product
@@ -549,21 +549,21 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 4 (pid 29556 left alone). Encoded depositgap K-S (leap year, multi-year, tiny value, large refund, rate-class other, missing/negative rate rejects, skip-interest underdeposit reject, zero APR). Tightened algorithm: missing interest rate rejects; `skip_interest` with days > 0 always rejects. Checkers: **19/19** single + dual green. Still seed only; htsroute same-day no-build.
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #8 (lesserof E?J)
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #8 (lesserof E?J)
 
 - Encoded lesserof **E?J** (no-bind, equal columns, USMCA partner-higher, force-lesserof-on-direct-id reject, skip-lesserof-on-substitution reject, basket 10-digit eligible)
 - Honesty gates in both checkers; suite **10/10** single + dual green
 - Still seed-only; htsroute current_idea; calendar 2026-07-21 blocks ready flip
 - Loop 27600 not re-armed
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #9
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #9
 
 - Encoded depositgap **T?W** (fractional rates, AD/CVD parity, one-day window, ten-year toy)
 - Documented X/Y as product-phase notes ? G5 ?25 bar met on paper (**23** encoded + 2 notes)
 - Checkers **23/23** single + dual green; still seed; htsroute same-day no-build
 - Loop 27600 not re-armed
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #10
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #10
 
 - Encoded lesserof **K?P** (relabel cheat reject, two-line independence, USMCA mid-cap, negative/unknown/zero hygiene)
 - Suite **16/16** single + dual green; still seed; htsroute same-day no-build
@@ -573,14 +573,14 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 5 (pid 29556 left alone). Wrote `depositgap-G6-summary.md` + `depositgap-PAGE-SPECS.md` (seed framing readiness; prefer depositgap next after htsroute). Encoded lesserof Q-U (USMCA missing-partner reject, negative substitute, tiny line, multi-line basket fail, zero substitute). Suite **21/21** single + dual green. Still no product; htsroute same-day no-build.
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #11
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #11
 
 - Encoded lesserof **V?W** (USMCA-on-direct-ID reject; large-duties precision)
 - Documented X/Y product-phase notes ? G5 ?25 bar met on paper (**23** + 2 notes)
 - Suite **23/23** single + dual green; still seed; htsroute same-day no-build
 - Loop 27600 not re-armed
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #12
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #12
 
 - Opened **oshamult** depth: algorithm + Kill A/B/C + G5 map
 - Encoded fixtures A?F (serial GBP toy, size-on-willful/repeat rejects, statutory-max cheat reject)
@@ -591,7 +591,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 6 (pid 29556 left alone). Wrote `depositgap-PHASE-BRIEFS.md` + `depositgap-SUSTAIN-TEST-MATRIX.md` (~62 sustain floor). Unified oshamult checkers for pct + employee fixture shapes; suite **10/10** single + dual green (A-J). Still no product; htsroute same-day no-build.
 
-## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #13
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #13
 
 - Encoded oshamult **K?P** (additive cheat, FTA good-faith/QF rejects, bad pct, willful history-only, history+faith)
 - Suite **16/16** single + dual green; still seed; prefer depositgap after htsroute
@@ -601,19 +601,19 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 7 (pid 29556 left alone). oshamult suite **26/26** single + dual green (G5 >=25 met). Wrote `depositgap-API-CONTRACT.md` + `depositgap-HYPOTHESIS-DRAFT.md`. Opened `ptax4975` algorithm + fixtures A-E (**5** green). Still no product; htsroute same-day no-build.
 
-## 2026-07-21 � AGENT_LOOP_TICK_depth_15m #14
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #14
 
 - Grew oshamult through W/X/Y paths; deduped colliding letter ids
-- Suite **26/26** single + dual green � G5 =25 bar met on paper
+- Suite **26/26** single + dual green � G5 =25 bar met on paper
 - Still seed; htsroute same-day no-build; loop 27600 not re-armed
 
-## 2026-07-21 � AGENT_LOOP_TICK_depth_15m #15
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #15
 
-- Grew **ptax4975** to fixtures A�J + dual-impl + Kill A/B/C + G5 map
+- Grew **ptax4975** to fixtures A�J + dual-impl + Kill A/B/C + G5 map
 - Suite **10/10** single + dual green; still seed; prefer depositgap after htsroute
 - Loop 27600 not re-armed
 
-## 2026-07-21 � AGENT_LOOP_TICK_depth_15m #16
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #16
 
 - Grew **ptax4975** through greater-of FMV + year-part edges; suite **35/35** dual-green
 - G5 =25 bar met on paper; still seed; prefer depositgap after htsroute
@@ -621,26 +621,26 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 ## 2026-07-21 -- 30m loop tick 8: ptax4975 G5 + depositgap acceptance + oshamult G6
 
-`AGENT_LOOP_TICK_depth_keepgoing` occurrence 8 (pid 29556 left alone). Grew ptax4975 through greater-of FMV / honesty rejects � suite **35/35** single + dual green (G5 met). Wrote `depositgap-ACCEPTANCE.md` and `oshamult-G6-summary.md`. Still no product; htsroute same-day no-build.
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 8 (pid 29556 left alone). Grew ptax4975 through greater-of FMV / honesty rejects � suite **35/35** single + dual green (G5 met). Wrote `depositgap-ACCEPTANCE.md` and `oshamult-G6-summary.md`. Still no product; htsroute same-day no-build.
 
-## 2026-07-21 � AGENT_LOOP_TICK_depth_15m #17
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #17
 
 - Wrote lesserof-G6-summary.md + ACTIVATION_QUEUE.md (htsroute ? depositgap ? lesserof ? oshamult ? ptax4975)
 - Reaffirmed htsroute READY-DRYRUN: still same-day block (2026-07-21)
 - Digest sent (research lined up; wait one more day before building)
 - Loop 27600 not re-armed
 
-## 2026-07-21 � AGENT_LOOP_TICK_depth_15m #18
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #18
 
 - Wrote ptax4975-G6-summary.md + htsroute-TOMORROW-RUN.md (executable day-boundary sheet for 2026-07-22)
-- Re-ran all seed checkers: htsroute 36, depositgap 23, lesserof 23, oshamult 26, ptax4975 35 � all green
+- Re-ran all seed checkers: htsroute 36, depositgap 23, lesserof 23, oshamult 26, ptax4975 35 � all green
 - Same-day build still blocked; loop 27600 not re-armed
 
 ## 2026-07-21 -- 30m loop tick 9: activation readiness pack
 
-`AGENT_LOOP_TICK_depth_keepgoing` occurrence 9 (pid 29556 left alone). Wrote depositgap TRY-DEMO note, lesserof ACCEPTANCE, oshamult comprehensive blueprint stub; expanded ACTIVATION_QUEUE with tomorrow flip procedure. Re-checked suites: depositgap 23, lesserof 23, oshamult 26, ptax4975 35, htsroute 36 — all green. Still no product; same-day build blocked.
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 9 (pid 29556 left alone). Wrote depositgap TRY-DEMO note, lesserof ACCEPTANCE, oshamult comprehensive blueprint stub; expanded ACTIVATION_QUEUE with tomorrow flip procedure. Re-checked suites: depositgap 23, lesserof 23, oshamult 26, ptax4975 35, htsroute 36 � all green. Still no product; same-day build blocked.
 
-## 2026-07-21 � AGENT_LOOP_TICK_depth_15m #19
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #19
 
 - Wrote `oshamult-ACCEPTANCE.md`, `ptax4975-ACCEPTANCE.md`, `ptax4975-COMPREHENSIVE-BLUEPRINT.md`
 - Activation queue now has acceptance bars for all four parallel seeds
@@ -667,7 +667,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Same-day build still blocked; loop 27600 not re-armed
 ## 2026-07-21 -- 30m loop tick 11: depositgap day-count lock
 
-`AGENT_LOOP_TICK_depth_keepgoing` occurrence 11 (pid 29556 left alone). Wrote `depositgap-DAY-COUNT.md` (sec 1677g order-publication to liquidation vs delinquency interest; v0 stays simple day toy). Added `lesserof-SUSTAIN-TEST-MATRIX.md`. Re-ran `check-all-seeds.mjs` — all 5 dual-green. READY-DRYRUN reaffirmed: calendar still 2026-07-21 only blocker. No product.
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 11 (pid 29556 left alone). Wrote `depositgap-DAY-COUNT.md` (sec 1677g order-publication to liquidation vs delinquency interest; v0 stays simple day toy). Added `lesserof-SUSTAIN-TEST-MATRIX.md`. Re-ran `check-all-seeds.mjs` � all 5 dual-green. READY-DRYRUN reaffirmed: calendar still 2026-07-21 only blocker. No product.
 
 ## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #23
 
@@ -680,3 +680,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Wrote depositgap-POST-HTSROUTE-RUN.md for activation after htsroute clears
 - Closed oshamult statute still-open checklist items on paper
 - Same-day build still blocked; loop 27600 not re-armed
+
+## 2026-07-21 -- 30m loop tick 12: flip abort + ptax cites
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 12 (pid 29556 left alone). Refreshed htsroute gate scorecard to **36** fixtures; wrote `htsroute-FLIP-ABORT.md` and wired it into ACTIVATION_QUEUE / READY-DRYRUN. Closed ptax4975 statute gap with `ptax4975-STATUTE-CITATIONS.md` (� 4975(f)(4), Temp. � 141.4975-13, Rev. Rul. 2006-38). Re-ran `check-all-seeds.mjs` � all 5 dual-green. Calendar still **2026-07-21**; no product; do not flip.

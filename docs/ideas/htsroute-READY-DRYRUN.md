@@ -1,6 +1,6 @@
 # htsroute — readiness dry-run (same calendar day — not a flip)
 
-**Date:** 2026-07-21 (30m tick 11 reaffirm)  
+**Date:** 2026-07-21 (30m tick 12 reaffirm)  
 **Decision:** **do not flip** `ready_to_build` (same-day policy). This is a dry-run against `htsroute-DAY-BOUNDARY.md`.
 
 | Checklist item | Dry-run |
@@ -14,9 +14,10 @@
 | ACCEPTANCE A–F | Pass on paper |
 | Comprehensive blueprint + page specs + phase briefs | Pass on paper |
 | Sustain matrix ~68 | Pass on paper |
+| Flip abort hard list | Pass on paper (`htsroute-FLIP-ABORT.md`) — calendar is the only hard block |
 | `node docs/ideas/check-all-seeds.mjs` | Pass (all 5 dual-green) |
 
-**Blocker:** calendar day only. Earliest flip: **2026-07-22** after `htsroute-TOMORROW-RUN.md`.
+**Blocker:** calendar day only. Earliest flip: **2026-07-22** after `htsroute-TOMORROW-RUN.md` + abort sheet.
 
 **Build shape if flipped:** comprehensive 7-page product per blueprint — not smoke.
 
