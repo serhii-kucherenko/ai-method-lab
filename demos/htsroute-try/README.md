@@ -1,7 +1,25 @@
 # htsroute try (research demo)
 
-Standalone form-gate playground for the customs chapter-routing idea.
+Standalone form-gate playground for the customs chapter-routing idea. **Not a product** — do not create `projects/htsroute/` from this folder alone.
 
-- Open `try.html` offline, or run `npm start` and visit the local page
-- Not a product folder — research demo only
-- Money honesty: pantoprazole showcase pairs are often duty-free on both sides
+## Open offline
+
+Open `try.html` in a browser (single file, no build). Or run `npm start` and visit the local page (`index.html` mirrors `try.html`).
+
+## What the examples teach
+
+| Example | Point |
+|---------|--------|
+| **Pantoprazole Free/Free honesty** | Finished tablets → heading 3004 Free; matching bulk → Chapter 29 also Free. Route matters; duty-savings pitch for this PPI pair is false. |
+| **Acetaminophen 6.5% vs Free** | Honest dollar contrast: bulk Chapter 29 base MFN 6.5% (NY R04092) vs finished 3004 Free — with preference/GSP caveats. |
+| **Omeprazole pellets → 3003** | Binary 29-vs-3004 fails; mixed enteric pellets (not measured dose) → heading 3003. |
+| **Tablet enum cheat → reject** | `tablet` without measured dose or retail packing must reject — keyword theater is not classification. |
+
+## Hard disclaimer (also on the page)
+
+- Brokers and existing HS tools already win commercially.
+- This is a **workflow experiment**, not a market proof.
+- Pantoprazole showcase pairs are often **Free / Free** under ordinary MFN.
+- Fixture pass counts are **not** product-market evidence.
+
+See `docs/ideas/htsroute-VALUE-STAKES.md`, `docs/ideas/htsroute-PRODUCT-FRAMING.md`, and `docs/ideas/htsroute-algorithm.md`.

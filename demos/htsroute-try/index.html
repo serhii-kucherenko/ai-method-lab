@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>htsroute — try the form gate</title>
+    <title>htsroute — form-gate research demo</title>
     <style>
       :root {
         color-scheme: light;
@@ -14,6 +14,7 @@
         --panel: #fff;
         --accent: #1d4f8c;
         --warn: #8a4b12;
+        --alert: #7a1f1f;
       }
       * {
         box-sizing: border-box;
@@ -39,30 +40,41 @@
         letter-spacing: -0.02em;
       }
       .note {
-        margin: 0 0 1.25rem;
+        margin: 0 0 1rem;
         color: var(--muted);
         line-height: 1.45;
       }
-      .money {
-        margin: 0 0 1.25rem;
-        padding: 0.75rem 0.9rem;
+      .disclaimer {
+        margin: 0 0 1rem;
+        padding: 0.85rem 0.95rem;
+        border: 1px solid #e0c4a8;
         border-left: 3px solid var(--warn);
         background: #fff8f0;
         color: #5c3a18;
-        line-height: 1.4;
+        line-height: 1.45;
         font-size: 0.95rem;
+      }
+      .disclaimer strong {
+        font-weight: 650;
       }
       .presets {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.35rem;
       }
       .presets button {
         background: #fff;
         color: var(--ink);
         border: 1px solid var(--line);
         font-weight: 500;
+        margin-top: 0;
+      }
+      .preset-hint {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.4;
       }
       form {
         display: grid;
@@ -114,6 +126,12 @@
         min-height: 7rem;
         white-space: pre-wrap;
       }
+      .foot {
+        margin: 1rem 0 0;
+        color: var(--muted);
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
     </style>
   </head>
   <body>
@@ -122,18 +140,24 @@
       <p class="note">
         Offline research demo of the customs <strong>form gate</strong>: same molecule,
         different route by bulk vs mixed pellets vs measured-dose tablets. Molecule name is
-        ignored on purpose. This is not a finished product.
+        ignored on purpose. Fixture pass counts are not market proof.
       </p>
-      <p class="money">
-        Money honesty: for pantoprazole showcase pairs, ordinary import duty is often
-        <strong>free on both sides</strong>. A “we save you duty” pitch would be false even
-        when the route changes.
-      </p>
-      <div class="presets">
-        <button type="button" data-preset="bulk">Pantoprazole bulk → Ch 29</button>
-        <button type="button" data-preset="tablets">Protonix tablets → 3004</button>
-        <button type="button" data-preset="pellets">Mixed pellets → 3003</button>
+      <aside class="disclaimer" role="note">
+        <strong>Disclaimer.</strong> Brokers and existing HS tools already win this commercially.
+        This page is a <strong>workflow experiment</strong>, not a product pitch.
+        For pantoprazole (PPI) showcase pairs, ordinary MFN duty is often
+        <strong>Free / Free</strong> on both bulk Chapter 29 and finished heading 3004 —
+        flipping the chapter does not save duty for that family.
+      </aside>
+      <div class="presets" aria-label="Teaching examples">
+        <button type="button" data-preset="ppi-free-free">Pantoprazole Free/Free honesty</button>
+        <button type="button" data-preset="acetaminophen">Acetaminophen 6.5% vs Free</button>
+        <button type="button" data-preset="omeprazole-pellets">Omeprazole pellets → 3003</button>
+        <button type="button" data-preset="tablet-cheat">Tablet enum cheat → reject</button>
       </div>
+      <p class="preset-hint">
+        Examples teach money honesty and form-gate discipline — not vanity pass counts.
+      </p>
       <form id="form">
         <label>
           Molecule name (not used by the router)
@@ -170,7 +194,12 @@
         </div>
         <button type="submit">Route</button>
       </form>
-      <pre id="out">Pick a preset or change the facts, then Route.</pre>
+      <pre id="out">Pick a teaching example or change the facts, then Route.</pre>
+      <p class="foot">
+        Single-file offline demo. Algorithm sketch:
+        docs/ideas/htsroute-algorithm.md · value stakes:
+        docs/ideas/htsroute-VALUE-STAKES.md
+      </p>
     </main>
     <script>
       var DOSE_FORMS = { tablet: 1, capsule: 1, injectable_vial: 1, transdermal: 1 };
@@ -185,6 +214,70 @@
         excluded_note_1a: "Excluded — Chapter 30 Note 1(a) food/supplement",
         reject: "Reject — insufficient or inconsistent facts",
       };
+
+      var DEFAULT_MONEY =
+        "Brokers already classify commercially. This is a workflow experiment. PPI pantoprazole bulk vs tablets is often Free / Free under ordinary MFN — do not pitch duty savings for that family.";
+
+      var PRESETS = {
+        "ppi-free-free": {
+          molecule_name: "pantoprazole sodium",
+          chemical_form: "mixture",
+          dosage_form_signal: "tablet",
+          therapeutic_or_prophylactic: true,
+          measured_dose: true,
+          retail_packing: false,
+          note_1a_food_or_supplement: false,
+          gri3_combination: false,
+          lesson: "Finished Protonix-style tablets route to heading 3004 (Free). Matching bulk API routes to Chapter 29 — also Free. Route still matters for care/reporting; duty-savings pitch for this PPI pair is false.",
+          money_note:
+            "Pantoprazole Free / Free honesty: bulk Chapter 29 (NY I89619 family) and finished tablets heading 3004 (NY N003244) are both ordinarily Free MFN. Chapter flip ≠ duty savings.",
+          cite: "fixtures htsroute-27 + htsroute-26; docs/ideas/htsroute-VALUE-STAKES.md",
+        },
+        acetaminophen: {
+          molecule_name: "acetaminophen",
+          chemical_form: "separately_defined",
+          dosage_form_signal: "bulk_drum",
+          therapeutic_or_prophylactic: true,
+          measured_dose: false,
+          retail_packing: false,
+          note_1a_food_or_supplement: false,
+          gri3_combination: false,
+          lesson: "Honest dollar contrast (unlike PPI): acetaminophen USP bulk is Chapter 29 at base MFN 6.5%; finished measured-dose tablets are heading 3004 Free. Preference programs (e.g. GSP by origin) can erase the 6.5% on a given entry.",
+          money_note:
+            "Acetaminophen bulk NY R04092 → Chapter 29, base MFN 6.5% (not Free). Finished dosage forms under heading 3004 are typically Free. Say base MFN 6.5% vs Free finished — not that every drum always pays 6.5%.",
+          cite: "fixtures htsroute-32 + htsroute-33",
+        },
+        "omeprazole-pellets": {
+          molecule_name: "omeprazole",
+          chemical_form: "mixture",
+          dosage_form_signal: "bulk_pellets",
+          therapeutic_or_prophylactic: true,
+          measured_dose: false,
+          retail_packing: false,
+          note_1a_food_or_supplement: false,
+          gri3_combination: false,
+          lesson: "Binary 29-vs-3004 fails here: mixed enteric pellets (not measured dose) route to heading 3003 — not Chapter 29 and not 3004.",
+          money_note:
+            "Legal form error is real even when MFN dollars are thin. Omeprazole pellets → 3003 (NY A88482 / NY 864623). Mis-routing as 29 or 3004 is wrong regardless of Free rates.",
+          cite: "fixture htsroute-2-omeprazole-pellets",
+        },
+        "tablet-cheat": {
+          molecule_name: "(ignored)",
+          chemical_form: "mixture",
+          dosage_form_signal: "tablet",
+          therapeutic_or_prophylactic: true,
+          measured_dose: false,
+          retail_packing: false,
+          note_1a_food_or_supplement: false,
+          gri3_combination: false,
+          lesson: "Keyword theater fails: dosage_form_signal=tablet without measured_dose or retail_packing must reject — not invent heading 3004.",
+          money_note:
+            "No duty story here — this is a Challenge B consistency reject. Enum cheats are not classifications.",
+          cite: "fixture htsroute-5-tablet-enum-cheat",
+        },
+      };
+
+      var activePreset = null;
 
       function routeSku(sku) {
         if (sku.gri3_combination) return "reject";
@@ -224,56 +317,55 @@
       }
 
       function applyPreset(name) {
-        var molecule = document.getElementById("molecule_name");
-        var chem = document.getElementById("chemical_form");
-        var form = document.getElementById("dosage_form_signal");
-        var therapeutic = document.getElementById("therapeutic_or_prophylactic");
-        var measured = document.getElementById("measured_dose");
-        var retail = document.getElementById("retail_packing");
-        var note = document.getElementById("note_1a_food_or_supplement");
-        var gri3 = document.getElementById("gri3_combination");
-        molecule.value = "pantoprazole sodium";
-        therapeutic.checked = true;
-        retail.checked = false;
-        note.checked = false;
-        gri3.checked = false;
-        if (name === "bulk") {
-          chem.value = "separately_defined";
-          form.value = "bulk_drum";
-          measured.checked = false;
-        } else if (name === "tablets") {
-          chem.value = "mixture";
-          form.value = "tablet";
-          measured.checked = true;
-        } else if (name === "pellets") {
-          chem.value = "mixture";
-          form.value = "bulk_pellets";
-          measured.checked = false;
-        }
+        var p = PRESETS[name];
+        if (!p) return;
+        activePreset = name;
+        document.getElementById("molecule_name").value = p.molecule_name;
+        document.getElementById("chemical_form").value = p.chemical_form;
+        document.getElementById("dosage_form_signal").value = p.dosage_form_signal;
+        document.getElementById("therapeutic_or_prophylactic").checked = p.therapeutic_or_prophylactic;
+        document.getElementById("measured_dose").checked = p.measured_dose;
+        document.getElementById("retail_packing").checked = p.retail_packing;
+        document.getElementById("note_1a_food_or_supplement").checked = p.note_1a_food_or_supplement;
+        document.getElementById("gri3_combination").checked = p.gri3_combination;
       }
 
-      var out = document.getElementById("out");
-      document.getElementById("form").addEventListener("submit", function (event) {
-        event.preventDefault();
+      function renderResult() {
         var sku = readSku();
         var route = routeSku(sku);
-        out.textContent = JSON.stringify(
-          {
-            ignored_molecule_name: sku.molecule_name,
-            route: route,
-            plain: LABELS[route],
-            money_note:
-              "Showcase pantoprazole bulk vs tablets is often Free / Free under ordinary MFN — route still matters; duty-savings pitch does not.",
-          },
-          null,
-          2,
-        );
+        var preset = activePreset ? PRESETS[activePreset] : null;
+        var payload = {
+          ignored_molecule_name: sku.molecule_name,
+          route: route,
+          plain: LABELS[route],
+          money_note: preset ? preset.money_note : DEFAULT_MONEY,
+          not_vanity_metrics:
+            "Do not treat fixture pass counts as product-market proof. Brokers already do this commercially.",
+        };
+        if (preset) {
+          payload.lesson = preset.lesson;
+          payload.cite = preset.cite;
+          payload.example = activePreset;
+        }
+        document.getElementById("out").textContent = JSON.stringify(payload, null, 2);
+      }
+
+      document.getElementById("form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        renderResult();
+      });
+
+      document.getElementById("form").addEventListener("change", function () {
+        activePreset = null;
+      });
+      document.getElementById("molecule_name").addEventListener("input", function () {
+        activePreset = null;
       });
 
       document.querySelectorAll("[data-preset]").forEach(function (btn) {
         btn.addEventListener("click", function () {
           applyPreset(btn.getAttribute("data-preset"));
-          document.getElementById("form").requestSubmit();
+          renderResult();
         });
       });
     </script>
