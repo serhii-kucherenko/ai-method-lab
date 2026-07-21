@@ -700,3 +700,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Wrote oshamult-POST-LESSEROF-RUN.md
 - Same-day build still blocked; loop 27600 not re-armed
 
+
+## 2026-07-21 -- 30m loop tick 13: htsroute preflip + queue chain
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 13 (pid 29556 left alone). Added `check-htsroute-preflip.mjs` (calendar + dual-green; blocked today on same-day policy). Wrote `ptax4975-POST-OSHAMULT-RUN.md`; wired full activation run-sheet chain into TOMORROW-RUN / ACTIVATION_QUEUE. Re-ran `check-all-seeds.mjs` — all 5 dual-green. READY-DRYRUN: calendar still only blocker. No product.
