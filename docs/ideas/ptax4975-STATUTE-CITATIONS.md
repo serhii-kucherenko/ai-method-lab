@@ -26,8 +26,8 @@ Plain text: https://www.law.cornell.edu/uscode/text/26/4975
 
 | Encoded | Fence (not yet) |
 |---------|-----------------|
-| Greater-of two FMV inputs (`fmv_a`/`fmv_b`) | Highest FMV **during** taxable period for second tier only |
-| 15% × year_parts + 100% if uncorrected | Full taxable-period end-date machinery (notice / assessment / correction dates) |
+| Greater-of two FMV inputs (`fmv_a`/`fmv_b`) | Highest FMV **during** taxable period for second tier only — see `ptax4975-FMV-FENCE.md` |
+| 15% × year_parts + 100% if uncorrected | Full taxable-period end-date machinery (notice / assessment / correction dates) — `ptax4975-FMV-FENCE.md` |
 | Excess-compensation path | Not a separate enum yet — document when framing |
 
 Digests must not claim Form 5330 / IRS parity.

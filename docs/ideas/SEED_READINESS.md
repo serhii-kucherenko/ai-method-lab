@@ -1,16 +1,18 @@
 # Seed readiness snapshot (research only)
 
-**Verified:** 2026-07-21 (15m tick 24) — oshamult FOM size lock + depositgap post-htsroute run sheet  
+**Verified:** 2026-07-21 (15m tick 26) — value stakes + expanded oshamult/ptax blueprints  
 **Same-day build:** still **blocked** (framing day 2026-07-21). Do not open products.  
 **Preflight:** `node docs/ideas/check-all-seeds.mjs`
 
-| Idea | Dual | G6 | Accept | Hyp | Try | Pages | Sustain | API | Extra |
-|------|------|----|--------|-----|-----|-------|---------|-----|-------|
-| **htsroute** | 36 | yes | yes | yes | live | yes | yes | yes | tomorrow run |
-| **depositgap** | 23 | yes | yes | yes | note | yes | yes | yes | **post-htsroute run** |
-| **lesserof** | 23 | yes | yes | yes | note | yes | yes | yes | |
-| **oshamult** | 26 | yes | yes | yes | note | yes | yes | yes | **FOM size table** |
-| **ptax4975** | 35 | yes | yes | yes | note | yes | yes | yes | |
+| Idea | Dual | Value stakes | Blueprint | Activation run |
+|------|------|--------------|-----------|----------------|
+| **htsroute** | 36 | yes | full | tomorrow + flip abort |
+| **depositgap** | 23 | yes | full | post-htsroute |
+| **lesserof** | 23 | **yes** | full | post-depositgap |
+| **oshamult** | 26 | **yes** | **expanded** | post-lesserof |
+| **ptax4975** | 35 | via FMV fence | **expanded** | last in queue |
+
+All five also have G6 / accept / hyp / pages / sustain / API on file.
 
 ## Honest framing (all)
 

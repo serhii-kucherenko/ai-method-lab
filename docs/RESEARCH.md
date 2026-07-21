@@ -691,3 +691,12 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Wrote lesserof-POST-DEPOSITGAP-RUN.md; ptax4975-FMV-FENCE.md
 - Wired htsroute-TOMORROW-RUN to flip-abort + depositgap/lesserof run sheets
 - check-all-seeds still all 5 dual-green; same-day build blocked; loop 27600 not re-armed
+
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #26
+
+- Wrote lesserof-VALUE-STAKES + oshamult-VALUE-STAKES
+- Expanded oshamult/ptax COMPREHENSIVE-BLUEPRINT from stubs to phase/feature bar
+- Wrote oshamult-POST-LESSEROF-RUN.md
+- Same-day build still blocked; loop 27600 not re-armed
+
