@@ -762,3 +762,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Flip-ready digest emailed (Resend id b870b988-c6bb-4bca-a0b8-b087daa5d9fe)
 - Preflip still calendar-blocked; loop 27600 not re-armed
 
+
+## 2026-07-21 -- 30m loop tick 16: CF-29 search + queue scaffolds
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 16 (pid 29556 left alone). Wrote `htsroute-G1-CF29-SEARCH.md` (no public pharma 29/30 CF-29 docket; adjacent 3004?3002 fights out of scope). Finished `lesserof` / `oshamult` / `ptax4975` REPO-SCAFFOLD; kit checker requires them. Preflip still calendar-blocked; all 5 dual-green. No product.
