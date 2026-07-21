@@ -491,3 +491,10 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 ## 2026-07-21 -- 30m loop tick: depositgap algorithm
 
 `AGENT_LOOP_TICK_depth_keepgoing` fired (pid 29556 left alone). Wrote `depositgap-algorithm.md` (deposit vs assessed + interest window +  toy). htsroute still same-day no-build. Parallel seed only.
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #3
+
+- lesserof: cited CBP TFTEA NPRM **83 FR 37886** lesser-of agency prose + per-unit examples (closes primary walkthrough gap partially)
+- depositgap: quoted **19 U.S.C. 1673f(b)** deposit vs final + interest cross-ref
+- Stubbed `ptax4975-SEED.md`
+- No product; loop 27600 not re-armed

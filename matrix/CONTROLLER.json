@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-21T11:30:00Z",
+  "updated_at": "2026-07-21T13:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__30m_tick_depositgap_algorithm",
+  "last_completed": "research__loop15m_tick3_fr_lesserof_1673f",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "30m tick: depositgap-algorithm.md. htsroute still same-day hold. Loops: 15m pid 27600 + 30m pid 29556 both alive — do not re-arm either.",
+  "notes": "15m tick #3: FR 37886 lesser-of + 1673f(b) + ptax4975 stub. Same-day build blocked. Do NOT re-arm pid 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -46,3 +46,4 @@
     "do_not_rearm_if_alive": true
   }
 }
+

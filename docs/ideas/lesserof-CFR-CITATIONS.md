@@ -82,6 +82,17 @@ Basket “other” trap is statutory (§ 1313(j)(5)), not in these calc sections
 ## Cite gaps still open
 
 1. Direct fetch of **ecfr.gov** HTML failed (bot wall); quotes are LII e-CFR mirrors — re-pull from ecfr.gov / govinfo when access works.  
-2. ~~§ 190.31~~ / ~~§ 4534~~ — closed this tick (LII).  
-3. One **CBP primary** operational publication or HQ ruling that walks a lesser-of dollar calc end-to-end — still preferred for G1/G6.  
+2. ~~§ 190.31~~ / ~~§ 4534~~ — closed prior tick (LII).  
+3. ~~CBP primary lesser-of walkthrough~~ — **partially closed this tick:** CBP TFTEA-Drawback NPRM, **83 FR 37886** (2 Aug 2018), § “Lesser of” Rule for Substitution Claims + worked per-unit examples — see below. Final rule trail: 83 FR 64942 (18 Dec 2018). Still prefer an HQ ruling letter with a filed-claim dollar walk if located later.  
 4. Confirm whether any Part 190 text restates § 1313(j)(5) “other” basket (statute may be the only primary for that trap).
+
+## CBP Federal Register — lesser-of (primary agency prose)
+
+**83 FR 37886** (Aug 2, 2018) — CBP NPRM implementing TFTEA-Drawback (govinfo PDF). Agency summary:
+
+- TFTEA substitution claims are generally subject to a “lesser of” rule: refund = **99 percent of the lesser of** (1) duties/taxes/fees **paid** on the imported merchandise, or (2) duties/taxes/fees that **would apply** to the substituted merchandise if imported.
+- Claimants must provide the comparative (“lesser of”) value as part of a substitution claim.
+- Lesser-of **does not** apply to certain alternative standards (wine under 1313(j)(2); finished petroleum under 1313(p)) or NAFTA drawback (then).
+- Per-unit averaging applies to substitution (b)/(j)(2) claims; NPRM Example 1 / Example 2 walk numeric lesser-of bases (import vs export/substitute unit values × rates).
+
+Source: https://www.govinfo.gov/content/pkg/FR-2018-08-02/pdf/2018-16279.pdf

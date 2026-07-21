@@ -24,6 +24,19 @@ Also: U.S. uses a **retrospective** assessment system — final liability determ
 
 Source: https://www.law.cornell.edu/cfr/text/19/351.212
 
+## 19 U.S.C. § 1673f — deposit vs final assessed (AD)
+
+**(b)** If estimated AD deposited under § 1673e(a)(3) differs from the duty determined under the order, then for post-Commission-affirmative entries the difference shall be—
+
+1. **collected**, to the extent the deposit is lower than the duty under the order, or  
+2. **refunded**, to the extent the deposit is higher,
+
+**together with interest as provided by section 1677g**.
+
+(Pre-affirmative provisional deposits under § 1673f(a) have a different disregard/refund rule — goldens must not conflate (a) vs (b).)
+
+Source: https://www.law.cornell.edu/uscode/text/19/1673f
+
 ## Worked toy (illustrative — not a filed entry)
 
 | Input | Value |
