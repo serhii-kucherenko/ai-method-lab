@@ -590,3 +590,9 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 ## 2026-07-21 -- 30m loop tick 6: depositgap sustain ladder + oshamult A-J
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 6 (pid 29556 left alone). Wrote `depositgap-PHASE-BRIEFS.md` + `depositgap-SUSTAIN-TEST-MATRIX.md` (~62 sustain floor). Unified oshamult checkers for pct + employee fixture shapes; suite **10/10** single + dual green (A-J). Still no product; htsroute same-day no-build.
+
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #13
+
+- Encoded oshamult **K?P** (additive cheat, FTA good-faith/QF rejects, bad pct, willful history-only, history+faith)
+- Suite **16/16** single + dual green; still seed; prefer depositgap after htsroute
+- Loop 27600 not re-armed

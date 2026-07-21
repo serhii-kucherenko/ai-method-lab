@@ -1,10 +1,10 @@
 # oshamult — G5 case map (seed paper)
 
-**State:** seed only. Encoded fixtures: A–J (**10**).  
+**State:** seed only. Encoded fixtures: A–P (**16**).  
 **Schema locked:** `gbp_amount` + explicit `*_pct` + serial Size→History→Good Faith→Quick Fix.  
 **Not framed. Not `current_idea`. No product.**
 
-## Encoded (A–J)
+## Encoded (A–P)
 
 | ID | Teaches |
 |----|---------|
@@ -18,10 +18,16 @@
 | H | Good faith on willful → reject |
 | I | Quick Fix on high-gravity serious → reject |
 | J | Full serial size 70% → **$1,071** |
+| K | Additive % cheat → reject |
+| L | Good faith on FTA → reject |
+| M | Pct > 1 → reject |
+| N | Willful history-only → **$90,000** |
+| O | Quick Fix on FTA → reject |
+| P | History + good faith only → **$4,800** |
 
-## Named next (K–Y)
+## Named next (Q–Y)
 
-Additive cheat, FTA gates, bad pct, multi-citation independence, auditor notes…
+Multi-citation independence, auditor mutation, org isolation (product-phase notes), mid size-bucket toys…
 
 ## Explicit non-actions
 
