@@ -5,7 +5,7 @@ Use on flip day **after** `check-htsroute-preflip.mjs` clears and `htsroute-TOMO
 ## First product commits must include
 
 1. `PRODUCT.md` with unique claim (29/3003/3004 form-mixing) + Kill A + **no Free/Free duty-savings** pitch.  
-2. Port of paper goldens (≥36) into product tests — dual-impl or single + cross-check plan.  
+2. Port of paper goldens (≥38) into product tests — dual-impl or single + cross-check plan.  
 3. Classify API for the unique claim (not a status field).  
 4. Money-honesty page or static route early (Challenge D visible).
 

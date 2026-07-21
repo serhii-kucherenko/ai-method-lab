@@ -351,7 +351,7 @@ No edit of fixture expected outcomes from the UI (fixtures stay paper-owned).
 
 ### Acceptance checks (this page)
 
-1. All shipped paper goldens appear (≥36 files when sustain bar applies).
+1. All shipped paper goldens appear (≥38 files when sustain bar applies).
 2. Pass/fail reflects live router vs fixture expected route.
 3. Tablet-cheat fixture fails live if router wrongly returns 3004.
 4. UI copy does **not** treat pass counts as “valuable product” or broker-beating proof.

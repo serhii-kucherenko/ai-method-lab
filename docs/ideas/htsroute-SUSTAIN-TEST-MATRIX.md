@@ -13,7 +13,7 @@ This matrix is the **sustain-phase exit plan** for the multi-page product. Vanit
 | Metric | Floor | Notes |
 |--------|------:|-------|
 | **Total automated tests at sustain** | **≥60** | Unique-claim goldens + API + UI + RBAC + webhook + concurrency + copy + dual-impl |
-| Unique-claim goldens | **≥36** | All `docs/ideas/fixtures/htsroute-*.json` green in product runner |
+| Unique-claim goldens | **≥38** | All `docs/ideas/fixtures/htsroute-*.json` green in product runner |
 | Pages with critical-path coverage | **7** | Catalog, SKU detail, Batch, Audit, Goldens browser, Org settings, Money honesty |
 | Dual-impl CI jobs | **2** green | `check-htsroute-fixtures.mjs` + `check-htsroute-dual.mjs` (or product-ported equivalents) |
 
@@ -37,7 +37,7 @@ This matrix is the **sustain-phase exit plan** for the multi-page product. Vanit
 
 ---
 
-## G — Unique-claim goldens (≥36)
+## G — Unique-claim goldens (≥38)
 
 Product tests load **every** `docs/ideas/fixtures/htsroute-*.json` and assert `routeSku` (or HTTP classify) matches `expected` / fixture route. Molecule name is never a routing input.
 
@@ -82,7 +82,7 @@ Product tests load **every** `docs/ideas/fixtures/htsroute-*.json` and assert `r
 
 **Acceptance anchors (must stay green):** G-01–G-03 (29/3003/3004 chain), G-05/G-29/G-30 (cheat rejects), G-06/G-19 (Note 1(a)), G-31–G-32 (honest MFN contrast pair — not PPI Free/Free pitch).
 
-**Harness note:** One parameterized `test.each(fixtures)` is fine if CI reports **≥36** distinct cases and fails per-file. Do not collapse to a single “all fixtures pass” boolean without per-id attribution.
+**Harness note:** One parameterized `test.each(fixtures)` is fine if CI reports **≥38** distinct cases and fails per-file. Do not collapse to a single “all fixtures pass” boolean without per-id attribution.
 
 ---
 
@@ -227,7 +227,7 @@ Wire D-01/D-02 as required CI checks on `projects/htsroute/` PRs before merge to
 | D dual-impl | 3 |
 | **Estimated sustain total** | **68** |
 
-**Floor:** ≥60. **Goldens floor:** ≥36. Below either → sustain fail.
+**Floor:** ≥60. **Goldens floor:** ≥38. Below either → sustain fail.
 
 ---
 

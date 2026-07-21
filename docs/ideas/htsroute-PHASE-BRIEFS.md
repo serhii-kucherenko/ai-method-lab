@@ -8,7 +8,7 @@ Sources: `htsroute-COMPREHENSIVE-BLUEPRINT.md`, `htsroute-PAGE-SPECS.md`, `htsro
 ## smoke
 
 - Aggregates: org + SKU + classification run
-- Port ≥36 paper goldens into product tests
+- Port ≥38 paper goldens into product tests
 - Classify API only (no full UI yet)
 - Exit: goldens green; Kill A / money-honesty in PRODUCT.md
 
