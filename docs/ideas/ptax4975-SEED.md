@@ -10,7 +10,8 @@ Plan sponsors model a flat “excise hit,” but IRC **§ 4975** taxes **15% of 
 ## Primary pointers
 
 - 26 U.S.C. § 4975
-- Treas. regs on amount involved / taxable period (to quote before framed)
+- Treas. regs / amount-involved: see `ptax4975-STATUTE-CITATIONS.md` (§ 4975(f)(4); Temp. § 141.4975-13; Rev. Rul. 2006-38)
+
 
 ## Why $ stakes
 

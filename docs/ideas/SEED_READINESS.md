@@ -1,16 +1,16 @@
 # Seed readiness snapshot (research only)
 
-**Verified:** 2026-07-21 (15m tick 23) — API contracts for lesserof / oshamult / ptax  
+**Verified:** 2026-07-21 (15m tick 24) — oshamult FOM size lock + depositgap post-htsroute run sheet  
 **Same-day build:** still **blocked** (framing day 2026-07-21). Do not open products.  
 **Preflight:** `node docs/ideas/check-all-seeds.mjs`
 
-| Idea | Dual | G6 | Accept | Hyp | Try | Pages | Sustain | API |
-|------|------|----|--------|-----|-----|-------|---------|-----|
-| **htsroute** | 36 | yes | yes | yes | live | yes | yes | yes |
-| **depositgap** | 23 | yes | yes | yes | note | yes | yes | yes |
-| **lesserof** | 23 | yes | yes | yes | note | yes | yes | **yes** |
-| **oshamult** | 26 | yes | yes | yes | note | yes | yes | **yes** |
-| **ptax4975** | 35 | yes | yes | yes | note | yes | yes | **yes** |
+| Idea | Dual | G6 | Accept | Hyp | Try | Pages | Sustain | API | Extra |
+|------|------|----|--------|-----|-----|-------|---------|-----|-------|
+| **htsroute** | 36 | yes | yes | yes | live | yes | yes | yes | tomorrow run |
+| **depositgap** | 23 | yes | yes | yes | note | yes | yes | yes | **post-htsroute run** |
+| **lesserof** | 23 | yes | yes | yes | note | yes | yes | yes | |
+| **oshamult** | 26 | yes | yes | yes | note | yes | yes | yes | **FOM size table** |
+| **ptax4975** | 35 | yes | yes | yes | note | yes | yes | yes | |
 
 ## Honest framing (all)
 

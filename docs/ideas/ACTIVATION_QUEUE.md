@@ -6,7 +6,8 @@
 
 1. Confirm calendar day ≠ 2026-07-21.  
 2. Walk every checkbox in `htsroute-DAY-BOUNDARY.md` (full re-read list also in `htsroute-TOMORROW-RUN.md`).  
-3. If all true: set `ready_to_build`, open `projects/htsroute/` per comprehensive blueprint — **not** smoke-as-sustain.  
+2b. Confirm none of `htsroute-FLIP-ABORT.md` hard aborts apply.  
+3. If all true: set `ready_to_build`, open `projects/htsroute/` per comprehensive blueprint — **not** smoke-as-sustain.
 4. If any false: stay research / park / kill; write why in `docs/RESEARCH.md`.  
 5. Do **not** activate depositgap in the same tick as the htsroute flip (one product phase).
 
