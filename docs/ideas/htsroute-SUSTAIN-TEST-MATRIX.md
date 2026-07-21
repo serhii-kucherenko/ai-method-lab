@@ -31,7 +31,7 @@ This matrix is the **sustain-phase exit plan** for the multi-page product. Vanit
 | `R-` | RBAC / tenancy | 6 |
 | `W-` | Signed webhook + idempotency | 4 |
 | `C-` | Concurrency / batch independence | 3 |
-| `M-` | Money-honesty + Kill A copy | 5 |
+| `M-` | Money-honesty + Kill A copy | 6 |
 | `D-` | Dual-impl CI / parity | 3 |
 | | **Total** | **≈72** |
 
@@ -167,17 +167,18 @@ Inbound signed supplier catalog push and/or outbound `classification.locked` per
 
 ---
 
-## M — Money-honesty + Kill A copy (~5)
+## M — Money-honesty + Kill A copy (~6)
 
-Instant fail if marketing/try/FINDINGS violate `htsroute-ACCEPTANCE.md` §C–D / `htsroute-VALUE-STAKES.md`.
+Instant fail if marketing/try/FINDINGS violate `htsroute-ACCEPTANCE.md` §C–D / `htsroute-VALUE-STAKES.md` / `htsroute-STACKED-TARIFF-FENCE.md`.
 
 | ID | Assertion | Fail if |
 |----|-----------|---------|
 | M-01 | Money honesty page contains PPI Free/Free caveat | Claims duty savings for pantoprazole / omeprazole / Protonix showcase |
-| M-02 | Acetaminophen (or ibuprofen/aspirin) pair mentions **base MFN** + preference caveat | “Guaranteed importer savings” / every-drum-pays language |
+| M-02 | Acetaminophen (or ibuprofen/aspirin / same-letter pairs) mentions **base MFN** + preference caveat | “Guaranteed importer savings” / every-drum-pays language |
 | M-03 | try.html / demo README | Missing “research demo / workflow experiment” disclaimer |
 | M-04 | FINDINGS or ship digest string | Missing Kill A line: *Existing tools and brokers already do this commercially…* |
 | M-05 | UI copy scan (product shell + honesty page) | “Beats brokers” / “replaces commercial HS engines” / fixture-count-as-market-proof |
+| M-06 | Money honesty page **and** try.html stacked-duty callout | Letter MFN sold as landed-duty / 232 savings; missing ~2026-07-31 / annex out-of-scope language |
 
 Implement as static string/HTML fixtures tests (fast) plus one page fetch for P-07/M-01 overlap is OK if counted once in CI reporting — prefer **distinct** M-ids for sustain score clarity.
 
@@ -206,7 +207,7 @@ Wire D-01/D-02 as required CI checks on `projects/htsroute/` PRs before merge to
 | workflow | + P-03/P-04 + C-01 |
 | integrate | + W-01…W-04 + A-05 pagination |
 | scale | + C-02/C-03 |
-| **sustain** | **All suites; ≥60; D-01…D-03; M-01…M-05; all 7 pages** |
+| **sustain** | **All suites; ≥60; D-01…D-03; M-01…M-06; all 7 pages** |
 
 ---
 
@@ -229,9 +230,9 @@ Wire D-01/D-02 as required CI checks on `projects/htsroute/` PRs before merge to
 | R RBAC | 6 |
 | W webhook | 4 |
 | C concurrency | 3 |
-| M money-honesty / Kill A | 5 |
+| M money-honesty / Kill A | 6 |
 | D dual-impl | 3 |
-| **Estimated sustain total** | **≈72** |
+| **Estimated sustain total** | **≈73** |
 
 **Floor:** ≥60. **Goldens floor:** ≥42. Below either → sustain fail.
 

@@ -19,7 +19,7 @@ These specs define what each of the **7 pages** must show and prove. They are no
 | RBAC | Analyst: create/edit/classify/batch. Auditor: read catalog, detail (locked), audit, goldens. Admin: settings + audit export. |
 | Forbidden chrome | No dual-approver buttons; no duty-savings badges on PPI pairs; no molecule-name classify field |
 | Kill A footer | Every authenticated page shows: “Existing tools and brokers already do this commercially. This product is a method/workflow experiment.” |
-| Money honesty | Any route result that surfaces MFN context must follow `htsroute-VALUE-STAKES.md` (acetaminophen/ibuprofen/aspirin caveats OK; PPI Free/Free savings claims fail) |
+| Money honesty | Any route result that surfaces MFN context must follow `htsroute-VALUE-STAKES.md` + `htsroute-STACKED-TARIFF-FENCE.md` (base MFN caveats OK; PPI Free/Free savings fail; no 232/301 dollar claims without annex cites) |
 
 ---
 
@@ -40,7 +40,7 @@ These specs define what each of the **7 pages** must show and prove. They are no
 | API tokens | | | | | | ● | |
 | Webhook endpoint + HMAC secret | | | | | | ● | |
 | Pagination | ● | | ○ jobs | ● | ○ fixtures | | |
-| Money honesty education (PPI Free/Free caveat) | | ○ link | | | ○ link | | ● |
+| Money honesty education (PPI Free/Free + base-MFN caveats + 232 out-of-scope) | | ○ link | | | ○ link | | ● |
 | Dual-impl parity (sustain CI; not a page) | | | | | ○ live A/B | | |
 
 Legend: **●** primary surface · **○** secondary / linked · blank = not on that page.
@@ -445,17 +445,18 @@ Also linked as `/orgs/:orgId/money-honesty` for in-app chrome consistency.
 
 ### Purpose
 
-Static education: PPI Free/Free vs acetaminophen (and peer) non-zero base MFN caveat. Required sustain page; copy is an acceptance oracle.
+Static education: PPI Free/Free vs encoded non-zero base MFN caveats, plus **stacked Section 232 / 301 out-of-scope** honesty. Required sustain page; copy is an acceptance oracle.
 
 ### Primary actions
 
 | Action | Role | Behavior |
 |--------|------|----------|
 | Read sections | all (incl. logged-out OK) | Static content |
-| Open cited fixtures | authenticated | Links to Page 5 ids `#26`–`#27` (PPI), `#32`–`#37` (honest delta pairs) |
+| Open cited fixtures | authenticated | Links to Page 5 ids `#26`–`#27` (PPI), `#32`–`#37` (analgesic deltas), `#40`–`#43` (same-letter dollar pairs) |
+| Open stacked fence | all | Link to paper `htsroute-STACKED-TARIFF-FENCE.md` (or in-app mirror) |
 | Back to catalog | authenticated | Navigate Page 1 |
 
-No classify, no savings calculator, no “estimated duty saved” widget.
+No classify, no savings calculator, no “estimated duty saved” widget, no annex membership picker.
 
 ### Data fields shown (content blocks)
 
@@ -463,10 +464,11 @@ No classify, no savings calculator, no “estimated duty saved” widget.
 |-------|----------------|
 | Kill A | Brokers/tools exist; this is a method/workflow experiment |
 | PPI showcase honesty | Pantoprazole / omeprazole bulk Chapter 29 and finished 3004 are often **both MFN Free** — **no duty-savings claim** |
-| Honest contrast pairs | Acetaminophen bulk ~**6.5%** vs tablets Free; ibuprofen / aspirin peers per VALUE-STAKES |
+| Honest contrast pairs | Acetaminophen / ibuprofen / aspirin; Eluxadoline–Viberzi; Vericiguat–Verquvo per VALUE-STAKES |
 | Caveats | GSP / preference may zero bulk MFN by origin; cite “base MFN vs Free finished,” not guaranteed importer savings |
+| Stacked duties fence | Letter base MFN is **not** landed-duty savings once Section **232** / **301** stacks apply; counsel timelines ~**2026-07-31** for patented pharma tiers; annexes not encoded in v0 |
 | What the product does | Form/mixing gate 29 / 3003 / 3004 / Note 1(a) / reject — not full 10-digit HTS |
-| Forbidden claims list | Beats brokers; PPI chapter-flip savings; fixture counts as market proof |
+| Forbidden claims list | Beats brokers; PPI chapter-flip savings; fixture counts as market proof; invented 232 annex savings |
 
 ### Empty / error states
 
@@ -483,8 +485,9 @@ No classify, no savings calculator, no “estimated duty saved” widget.
 3. Kill A sentence present verbatim or equivalent.
 4. No “beats brokers” / “replaces commercial HS engines” language.
 5. No dual-approver or capacity-gate education framed as the domain rule.
-6. Playwright/HTML smoke: assert disclaimer substrings present (sustain).
-7. Page is reachable from SKU detail / goldens when MFN context is shown.
+6. Visible copy states stacked **232 / 301** dollars are out of scope / need annex cites (see STACKED-TARIFF-FENCE).
+7. Playwright/HTML smoke: assert disclaimer substrings present (sustain).
+8. Page is reachable from SKU detail / goldens when MFN context is shown.
 
 ---
 

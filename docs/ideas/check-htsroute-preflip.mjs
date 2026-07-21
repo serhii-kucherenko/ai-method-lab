@@ -4,6 +4,7 @@
  * Does not flip controller state — humans/agents still walk TOMORROW-RUN.md.
  */
 import { spawnSync } from "node:child_process";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -34,6 +35,27 @@ function runChecker(script) {
   return { ok: r.status === 0, tail: tail || `exit ${r.status}` };
 }
 
+function checkTryStackedFence() {
+  const tryPath = join(root, "demos/htsroute-try/try.html");
+  const fencePath = join(__dirname, "htsroute-STACKED-TARIFF-FENCE.md");
+  if (!existsSync(tryPath)) {
+    return { ok: false, tail: "missing demos/htsroute-try/try.html" };
+  }
+  if (!existsSync(fencePath)) {
+    return { ok: false, tail: "missing htsroute-STACKED-TARIFF-FENCE.md" };
+  }
+  const html = readFileSync(tryPath, "utf8");
+  const need = ["Stacked duties", "2026-07-31", "232"];
+  const missing = need.filter((s) => !html.includes(s));
+  if (missing.length) {
+    return {
+      ok: false,
+      tail: `try.html missing stacked-fence markers: ${missing.join(", ")}`,
+    };
+  }
+  return { ok: true, tail: "try.html stacked-duty callout present" };
+}
+
 const today = localYmd();
 let failed = 0;
 
@@ -59,6 +81,12 @@ for (const script of [
   if (!ok) failed += 1;
 }
 
+{
+  const { ok, tail } = checkTryStackedFence();
+  console.log(`${ok ? "PASS" : "FAIL"} try-stacked-fence: ${tail}`);
+  if (!ok) failed += 1;
+}
+
 if (failed > 0) {
   console.error(
     `\nPREFLIP BLOCKED (${failed} check(s)). Do not open projects/htsroute/. See htsroute-TOMORROW-RUN.md + htsroute-FLIP-ABORT.md + htsroute-FLIP-MORNING.md.`,
@@ -67,5 +95,5 @@ if (failed > 0) {
 }
 
 console.log(
-  "\nPREFLIP CLEAR: calendar + dual-green + paper kits. Still walk TOMORROW-RUN re-reads / abort sheet / DAY1-NONSMOKE before ready_to_build. Scaffold: htsroute-REPO-SCAFFOLD.md.",
+  "\nPREFLIP CLEAR: calendar + dual-green + paper kits + try stacked-fence. Still walk TOMORROW-RUN re-reads / abort sheet / DAY1-NONSMOKE before ready_to_build. Scaffold: htsroute-REPO-SCAFFOLD.md.",
 );

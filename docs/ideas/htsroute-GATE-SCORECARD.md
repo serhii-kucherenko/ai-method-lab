@@ -4,7 +4,7 @@
 |------|--------|-------|
 | G1 Real pain | pass (provisional) | Named user + frequency + workaround; omeprazole chain; **pantoprazole bulk↔Protonix tablets** via NY I89619 / N055248 + **NY N003244**; §1592 path cited. Residual: no importer interview; no specific CF-29 pharma docket; MFN value weak (Challenge D) |
 | G2 Non-isomorphic | pass | 29/3003/3004 form-mixing gate ≠ ndcswap / tariffstep / dual-gate / killed lanehold |
-| G3 Adversarial | pass with caveats | Kill A stands commercially; B/C closed; **D accepted on value vanity / MFN Free/Free** — domain claim survives |
+| G3 Adversarial | pass with caveats | Kill A stands commercially; B/C closed; **D accepted on value vanity / MFN Free/Free** + stacked **232** eclipses letter MFN toys — domain claim survives |
 | G4 Falsifiers | pass (draft) | Ruling contradiction; spreadsheet-still-required; dishonest MFN-savings pitch |
 | G5 Depth tests | pass | Named suite + **42 fixture files green** + dual-impl; same-letter Vericiguat/Verquvo NY N318947 (6.5%↔Free) |
 | G6 Research summary | **hold — do not build yet** | Same calendar day (**2026-07-21**) + Challenge D honesty bar |

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T20:55:00Z",
+  "updated_at": "2026-07-21T21:00:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__depth15m_tick39_232_try_and_framing",
+  "last_completed": "research__loop30m_tick20_232_primary_dates",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 39: try demo + VALUE-STAKES + PRODUCT/ACCEPTANCE/blueprint now surface Section 232 ~2026-07-31 stacked-duty fence (no annex goldens). Suite 42 dual-green. Same-day build blocked. Do NOT re-arm pid 29556 or 27600.",
+  "notes": "30m tick 20: locked primary 232 clause (4) dates Annex III 2026-07-31 / others 2026-09-29; DAY-BOUNDARY + G6 falsifier. Suite 42 dual-green. Same-day build blocked. Do NOT re-arm pid 29556 or 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
