@@ -15,6 +15,8 @@ Controller chains these without waiting. Finish one → commit → start next. N
 | 29 | Comprehensive blueprint | **done** — `htsroute-COMPREHENSIVE-BLUEPRINT.md` + `docs/COMPREHENSIVE_PRODUCT.md` |
 | 30 | If ready: open `projects/htsroute/` **comprehensive** (7 pages / ≥3 aggregates) | blocked until 28 |
 | 31 | Product ladder / digest / next idea | blocked until 30 |
+| 32 | Phase briefs for comprehensive ladder | **done** — `htsroute-PHASE-BRIEFS.md` |
+| 33 | First AGENT_LOOP_TICK_depth_15m | **done** (this tick) |
 
 ## Parked seeds
 

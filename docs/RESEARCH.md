@@ -472,3 +472,11 @@ Wrote `docs/ideas/htsroute-SUSTAIN-TEST-MATRIX.md` for when the multi-page produ
 Expanded blueprint into `docs/ideas/htsroute-PAGE-SPECS.md`: per-page route paths, primary actions, empty/error states, data fields, acceptance checks for all **7** pages (Catalog, SKU detail, Batch, Audit, Goldens, Org settings, Money honesty), plus feature-by-page matrix.
 
 Still **no** `projects/htsroute/`. Paper only until day-boundary ready_to_build.
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #1
+
+First live 15m sentinel. Same-day build still blocked. Material work:
+
+- `htsroute-PHASE-BRIEFS.md` — smoke?sustain mapped to 7-page comprehensive bar (no shallow sustain)
+- `depositgap-STATUTE-CITATIONS.md` — primary § 1677g + 19 CFR 351.212(e); toy underpayment **$150,000** before interest
+- Loop pid 27600 left alone (do not re-arm)
