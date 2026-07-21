@@ -50,8 +50,9 @@ Acceptance **fails** if digests, PRODUCT.md, FINDINGS, try-demo copy, or marketi
 2. Presents fixture pass counts as market proof or “valuable product” evidence
 3. Says the product “beats brokers” or “replaces commercial HS engines”
 4. Cites acetaminophen **6.5% → Free** as guaranteed importer savings without GSP / preference caveat
+5. Treats letter base MFN contrasts as **entry savings** under Section 232 / 301 without a named annex / list cite (`htsroute-STACKED-TARIFF-FENCE.md`)
 
-Allowed (narrow): non-zero-base-MFN pairs may mention **base MFN vs Free finished** only with preference caveats from `htsroute-VALUE-STAKES.md` — acetaminophen, ibuprofen, aspirin, Eluxadoline/Viberzi (6%), Vericiguat/Verquvo (6.5%). Never PPI Free/Free as savings.
+Allowed (narrow): non-zero-base-MFN pairs may mention **base MFN vs Free finished** only with preference caveats from `htsroute-VALUE-STAKES.md` — acetaminophen, ibuprofen, aspirin, Eluxadoline/Viberzi (6%), Vericiguat/Verquvo (6.5%). Never PPI Free/Free as savings. Never invent 232 annex membership.
 
 ---
 

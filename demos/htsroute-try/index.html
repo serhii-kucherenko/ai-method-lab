@@ -57,6 +57,19 @@
       .disclaimer strong {
         font-weight: 650;
       }
+      .stack-fence {
+        margin: 0 0 1rem;
+        padding: 0.85rem 0.95rem;
+        border: 1px solid #d4b4b4;
+        border-left: 3px solid var(--alert);
+        background: #faf4f4;
+        color: #5a2020;
+        line-height: 1.45;
+        font-size: 0.95rem;
+      }
+      .stack-fence strong {
+        font-weight: 650;
+      }
       .presets {
         display: flex;
         flex-wrap: wrap;
@@ -149,6 +162,12 @@
         <strong>Free / Free</strong> on both bulk Chapter 29 and finished heading 3004 —
         flipping the chapter does not save duty for that family.
       </aside>
+      <aside class="stack-fence" role="note">
+        <strong>Stacked duties out of scope.</strong> Letter base MFN (6% / 6.5% ↔ Free)
+        is not the landed-duty story for patented pharma once Section 232 layers apply
+        (counsel timelines ~<strong>2026-07-31</strong>). This demo does not compute 232 / 301
+        dollars — see docs/ideas/htsroute-STACKED-TARIFF-FENCE.md.
+      </aside>
       <div class="presets" aria-label="Teaching examples">
         <button type="button" data-preset="ppi-free-free">Pantoprazole Free/Free honesty</button>
         <button type="button" data-preset="acetaminophen">Acetaminophen 6.5% vs Free</button>
@@ -229,7 +248,7 @@
       };
 
       var DEFAULT_MONEY =
-        "Brokers already classify commercially. This is a workflow experiment. PPI pantoprazole bulk vs tablets is often Free / Free under ordinary MFN — do not pitch duty savings for that family.";
+        "Brokers already classify commercially. This is a workflow experiment. PPI pantoprazole bulk vs tablets is often Free / Free under ordinary MFN — do not pitch duty savings for that family. Base MFN contrasts in letters are not entry savings once Section 232 / 301 stacks apply — out of scope here.";
 
       var PRESETS = {
         "ppi-free-free": {

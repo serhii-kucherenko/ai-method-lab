@@ -45,14 +45,15 @@ Caveats (do not bury):
 
 1. **Reasonable care / audit trail** — wrong chapter/heading on the entry is still a classification error even when both rates are Free. CBP Reasonable Care ICP + 19 U.S.C. § 1592 path remain relevant; we still lack a public CF-29 docket specifically about 29↔30 pharma for this tick.
 2. **Statistical reporting / ACE line accuracy** — HTS statistical suffixes and “containing pantoprazole…” breakouts exist (e.g. 3004.90.92.55 schedule language). Wrong family pollutes trade stats and broker templates.
-3. **Stacked measures by origin** — China-origin Section 301 / other stacked measures can differ by HTS line even when MFN is Free. April 2026 pharma proclamation layers also sit outside v0. That is **lane- and list-dependent**, not proven by our goldens — see `htsroute-STACKED-TARIFF-FENCE.md`. Do not claim a fixed dollar delta without a named entry scenario.
+3. **Stacked measures by origin / proclamation** — China-origin Section 301 and April 2026 Section **232** pharma layers can dwarf letter base MFN. Counsel summaries put tiered 232 rates largely in force from **~2026-07-31** — days after the earliest htsroute flip window. That is **lane- and annex-dependent**, not proven by our goldens — see `htsroute-STACKED-TARIFF-FENCE.md`. Do not claim a fixed dollar delta without a named entry scenario + current annex cite. Digests may cite **base MFN in CROSS letters** only.
 4. **3003 intermediate** — mis-routing enteric pellets as 29 or 3004 is a **real legal error** independent of MFN dollars (omeprazole pellet rulings).
 
 ## What this does *not* prove
 
 - That importers will pay for software when brokers already classify (Kill A still stands commercially).
 - That a workflow experiment has product-market value.
-- That “30 green fixtures” equals a bulletproof business idea.
+- That “42 green fixtures” equals a bulletproof business idea.
+- That letter MFN 6%/6.5%↔Free is the **landed** duty story once a patented SKU is 232-covered.
 
 ## Decision impact
 

@@ -26,7 +26,7 @@ A multi-page trade-compliance **workflow experiment** that encodes the 29 / 3003
 | **4. Audit log** | Filter by org/SKU/actor/route; export CSV | auditor, admin |
 | **5. Goldens / fixtures browser** | Read-only view of paper goldens + pass/fail vs live router | auditor |
 | **6. Org settings** | Members, tokens, webhook endpoint secret | admin |
-| **7. Money honesty** | Static education: PPI Free/Free vs acetaminophen 6.5% caveat | all |
+| **7. Money honesty** | Static education: PPI Free/Free fail; encoded base-MFN contrasts with preference caveats; **232 / 301 out-of-scope** callout | all |
 
 ## Features (≥6 beyond CRUD)
 
@@ -43,13 +43,14 @@ A multi-page trade-compliance **workflow experiment** that encodes the 29 / 3003
 
 - Dual-approver status gates as “domain”
 - Duty-savings claims for pantoprazole/omeprazole Free/Free
+- Letter MFN sold as landed-duty savings under 232 / 301 without annex cites
 - Single-page calculator shipping as “sustain”
 
 ## Phase plan (when build starts)
 
 | Phase | Scope |
 |-------|-------|
-| smoke | Org + SKU + classify + 36+ goldens ported |
+| smoke | Org + SKU + classify + **≥42** goldens ported |
 | crud | Catalog + detail pages + RBAC |
 | workflow | Batch + audit log |
 | integrate | Webhook + pagination + rate limit |
