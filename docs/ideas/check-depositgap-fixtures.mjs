@@ -23,8 +23,11 @@ function trueUp(input) {
     !(input.entered_value > 0) ||
     typeof input.deposit_rate !== "number" ||
     typeof input.assessed_rate !== "number" ||
+    typeof input.interest_annual_rate !== "number" ||
     input.deposit_rate < 0 ||
-    input.assessed_rate < 0
+    input.assessed_rate < 0 ||
+    !Number.isFinite(input.interest_annual_rate) ||
+    input.interest_annual_rate < 0
   ) {
     return { status: "reject" };
   }
@@ -35,11 +38,8 @@ function trueUp(input) {
   );
   if (days === null || days < 0) return { status: "reject" };
 
-  if (
-    input.skip_interest === true &&
-    input.deposit_rate === input.assessed_rate &&
-    days > 0
-  ) {
+  // Honesty: never skip the interest window when dates differ
+  if (input.skip_interest === true && days > 0) {
     return { status: "reject" };
   }
 
