@@ -113,9 +113,13 @@ $("run").onclick = async () => {
     const recall = await api("POST", `/plants/${plant.id}/recalls`, {
       suspect_tlc: "ING-A",
     });
+    const locked = await api("POST", `/recalls/${recall.recall.id}/transition`, {
+      to: "locked",
+      version: recall.recall.version,
+    });
 
     $("flow-status").textContent = "Mock recall locked.";
-    $("view").textContent = JSON.stringify({ blast, export: recall.export }, null, 2);
+    $("view").textContent = JSON.stringify({ blast, recall: locked.recall }, null, 2);
   } catch (e) {
     $("flow-status").textContent = e.message;
   }

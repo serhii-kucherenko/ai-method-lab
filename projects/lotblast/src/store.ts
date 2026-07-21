@@ -20,6 +20,7 @@ import {
   type LocationDescription,
   type MockRecallExport,
   type ProductDescription,
+  type RecallRecord,
   type ReceivingRow,
   type RefDoc,
   type ShippingRow,
@@ -28,6 +29,7 @@ import {
 } from "./cte.js";
 import { openDatabase, type PlantRole } from "./db.js";
 import { createMockDep, type DepClient } from "./dep.js";
+import { canTransition, isRecallState, type RecallState } from "./rules.js";
 
 export type Store = {
   db: DatabaseSync;
@@ -507,17 +509,111 @@ export function openRecall(
   db: DatabaseSync,
   plantId: string,
   suspectTlc: string,
-): WriteResult<MockRecallExport> {
+): WriteResult<RecallRecord> {
   if (!db.prepare("SELECT tlc FROM lots WHERE plant_id = ? AND tlc = ?").get(plantId, suspectTlc)) {
     return { ok: false, status: 400, error: "unknown suspect_tlc" };
   }
   const id = randomUUID();
-  const lockedAt = new Date().toISOString();
-  const exp = buildExport(db, plantId, id, lockedAt, suspectTlc);
+  const exp = buildExport(db, plantId, id, "", suspectTlc);
   db.prepare(
-    `INSERT INTO recalls (id, plant_id, suspect_tlc, locked_at, export_json) VALUES (?, ?, ?, ?, ?)`,
-  ).run(id, plantId, suspectTlc, lockedAt, JSON.stringify(exp));
-  return { ok: true, value: exp };
+    `INSERT INTO recalls (id, plant_id, suspect_tlc, locked_at, export_json, state, version)
+     VALUES (?, ?, ?, '', ?, 'draft', 1)`,
+  ).run(id, plantId, suspectTlc, JSON.stringify(exp));
+  return { ok: true, value: getRecall(db, id)! };
+}
+
+export function getRecall(db: DatabaseSync, id: string): RecallRecord | undefined {
+  const row = db
+    .prepare(
+      `SELECT id, plant_id AS plantId, suspect_tlc AS suspectTlc, state, version,
+              locked_at AS lockedAt, export_json AS exportJson
+       FROM recalls WHERE id = ?`,
+    )
+    .get(id) as
+    | {
+        id: string;
+        plantId: string;
+        suspectTlc: string;
+        state: string;
+        version: number;
+        lockedAt: string;
+        exportJson: string;
+      }
+    | undefined;
+  if (!row || !isRecallState(row.state)) return undefined;
+  return {
+    id: row.id,
+    plantId: row.plantId,
+    suspectTlc: row.suspectTlc,
+    state: row.state,
+    version: row.version,
+    lockedAt: row.lockedAt,
+    export: parseJson<MockRecallExport>(row.exportJson),
+  };
+}
+
+function writeAudit(
+  db: DatabaseSync,
+  recallId: string,
+  actorId: string,
+  from: RecallState,
+  to: RecallState,
+): void {
+  db.prepare(
+    `INSERT INTO recall_audit (id, recall_id, actor_id, from_state, to_state)
+     VALUES (?, ?, ?, ?, ?)`,
+  ).run(randomUUID(), recallId, actorId, from, to);
+}
+
+export function listRecallAudit(db: DatabaseSync, recallId: string) {
+  return db
+    .prepare(
+      `SELECT id, actor_id AS actorId, from_state AS fromState, to_state AS toState, at
+       FROM recall_audit WHERE recall_id = ? ORDER BY at`,
+    )
+    .all(recallId) as Array<{
+    id: string;
+    actorId: string;
+    fromState: string;
+    toState: string;
+    at: string;
+  }>;
+}
+
+export function transitionRecall(
+  db: DatabaseSync,
+  recallId: string,
+  actorId: string,
+  to: RecallState,
+  expectedVersion: number,
+): WriteResult<RecallRecord> {
+  const cur = getRecall(db, recallId);
+  if (!cur) return { ok: false, status: 404, error: "not found" };
+  if (cur.version !== expectedVersion) {
+    return { ok: false, status: 409, error: "version conflict" };
+  }
+  if (!canTransition(cur.state, to)) {
+    return { ok: false, status: 400, error: "illegal transition" };
+  }
+
+  let lockedAt = cur.lockedAt;
+  let exp = cur.export;
+  if (to === "locked") {
+    lockedAt = new Date().toISOString();
+    exp = buildExport(db, cur.plantId, cur.id, lockedAt, cur.suspectTlc);
+  }
+
+  const updated = db
+    .prepare(
+      `UPDATE recalls SET state = ?, version = version + 1, locked_at = ?, export_json = ?
+       WHERE id = ? AND version = ?`,
+    )
+    .run(to, lockedAt, JSON.stringify(exp), recallId, expectedVersion);
+  if (Number(updated.changes) !== 1) {
+    return { ok: false, status: 409, error: "version conflict" };
+  }
+  writeAudit(db, recallId, actorId, cur.state, to);
+  return { ok: true, value: getRecall(db, recallId)! };
 }
 
 export function recordWebhook(

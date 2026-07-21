@@ -300,6 +300,8 @@ test("HTTP: plant isolation, recall export, webhook, pagination, overconsume", a
     blast: { finished_tlcs: string[]; notify_partners: string[] };
     sheets: { receiving: unknown[]; transformation: unknown[]; shipping: unknown[] };
   };
+  const rec = recall.json.recall as { id: string; state: string; version: number };
+  assert.equal(rec.state, "draft");
   assert.deepEqual(exp.blast.finished_tlcs, ["FG-1", "FG-2"]);
   assert.deepEqual(exp.blast.notify_partners, ["P1", "P2"]);
   assert.ok(exp.sheets.receiving.length >= 1);
@@ -307,11 +309,19 @@ test("HTTP: plant isolation, recall export, webhook, pagination, overconsume", a
   assert.ok(exp.sheets.shipping.length >= 2);
   assert.equal(store.sideEffects, 1);
 
+  const locked = await api("POST", `/recalls/${rec.id}/transition`, tokenB, {
+    to: "locked",
+    version: rec.version,
+  });
+  assert.equal(locked.status, 200);
+  assert.equal((locked.json.recall as { state: string }).state, "locked");
+  assert.equal(store.sideEffects, 2);
+
   const health = await api("GET", "/health");
   assert.equal(health.status, 200);
   assert.ok(Number(health.json.migrations) >= 1);
 
-  const raw = Buffer.from(JSON.stringify({ ping: true }));
+  const raw = Buffer.from(JSON.stringify({ ping: true, eventId: "e-smoke-1" }));
   const sig = createHmac("sha256", store.webhookSecret).update(raw).digest("hex");
   const wh = await fetch(`${base}/webhooks/inbound`, {
     method: "POST",

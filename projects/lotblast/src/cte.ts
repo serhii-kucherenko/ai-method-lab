@@ -125,6 +125,16 @@ export type MockRecallExport = {
   };
 };
 
+export type RecallRecord = {
+  id: string;
+  plantId: string;
+  suspectTlc: string;
+  state: "draft" | "locked" | "closed";
+  version: number;
+  lockedAt: string;
+  export: MockRecallExport;
+};
+
 export type ValidateOk = { ok: true };
 export type ValidateErr = { ok: false; error: string };
 export type ValidateResult = ValidateOk | ValidateErr;

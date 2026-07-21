@@ -503,3 +503,7 @@ Method-stress product (not dual-gate). Fixtures A–F + CTE writes + mock-recall e
 ## 2026-07-21 -- lotblast crud (pass)
 
 List/read CTE + qa read-only matrix + migration 002. Cell `A03__P-crud-001__lotblast__r1`. Next: P-workflow.
+
+## 2026-07-21 -- lotblast workflow + integrate (pass)
+
+Recall FSM draft?locked?closed with audit/version. HMAC webhooks idempotent; partner notify dep failures return 502. Cells workflow + integrate scored. Next: P-scale.

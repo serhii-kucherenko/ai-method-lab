@@ -18,10 +18,13 @@ import {
   listShipments,
   listTransforms,
   loadGraph,
+  getRecall,
+  listRecallAudit,
   openRecall,
   recordWebhook,
   registerUser,
   resolveToken,
+  transitionRecall,
   writeReceiving,
   writeShipping,
   writeTransform,
@@ -29,6 +32,7 @@ import {
 import { forwardBlast } from "./blast.js";
 import { listMigrations, migrationCount, type PlantRole } from "./db.js";
 import { createMockDep, type DepClient } from "./dep.js";
+import { isRecallState, type RecallState } from "./rules.js";
 
 const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
 const MIME: Record<string, string> = {
@@ -397,11 +401,12 @@ export function createApp(
         }
         store.sideEffects += 1;
         const payload = {
-          recall_id: result.value.recall_id,
+          recall_id: result.value.id,
           suspect_tlc: suspect,
           plant_id: plantId,
+          state: result.value.state,
         };
-        recordWebhook(store.db, "recall.opened", result.value.recall_id, payload);
+        recordWebhook(store.db, "recall.opened", result.value.id, payload);
         try {
           await store.dep.notify("recall.opened", payload);
         } catch (err) {
@@ -409,7 +414,72 @@ export function createApp(
             error: err instanceof Error ? err.message : String(err),
           });
         }
-        send(res, 201, { export: result.value });
+        send(res, 201, { recall: result.value, export: result.value.export });
+        return;
+      }
+
+      const trMatch = path.match(/^\/recalls\/([^/]+)\/transition$/);
+      if (method === "POST" && trMatch) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const recall = getRecall(store.db, trMatch[1]!);
+        if (!recall) {
+          send(res, 404, { error: "not found" });
+          return;
+        }
+        if (plantDenied(store, recall.plantId, userId, "recall", res)) return;
+        const body = await readBody(req);
+        const toRaw = String(body.to ?? "");
+        if (!isRecallState(toRaw)) {
+          send(res, 400, { error: "invalid state" });
+          return;
+        }
+        const to = toRaw as RecallState;
+        const version = Number(body.version);
+        if (!Number.isInteger(version)) {
+          send(res, 400, { error: "version required" });
+          return;
+        }
+        const result = transitionRecall(store.db, recall.id, userId, to, version);
+        if (!result.ok) {
+          send(res, result.status, { error: result.error });
+          return;
+        }
+        if (result.value.state === "locked") {
+          store.sideEffects += 1;
+          const payload = {
+            recall_id: result.value.id,
+            plant_id: result.value.plantId,
+            state: result.value.state,
+          };
+          recordWebhook(store.db, "recall.locked", result.value.id, payload);
+          try {
+            await store.dep.notify("recall.locked", payload);
+          } catch (err) {
+            logEvent("dep.notify.fail", {
+              error: err instanceof Error ? err.message : String(err),
+            });
+          }
+        }
+        send(res, 200, { recall: result.value, audit: listRecallAudit(store.db, result.value.id) });
+        return;
+      }
+
+      const auditMatch = path.match(/^\/recalls\/([^/]+)\/audit$/);
+      if (method === "GET" && auditMatch) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const recall = getRecall(store.db, auditMatch[1]!);
+        if (!recall) {
+          send(res, 404, { error: "not found" });
+          return;
+        }
+        if (plantDenied(store, recall.plantId, userId, "read", res)) return;
+        send(res, 200, { audit: listRecallAudit(store.db, recall.id) });
         return;
       }
 
@@ -423,7 +493,71 @@ export function createApp(
           send(res, 401, { error: "invalid signature" });
           return;
         }
-        send(res, 200, { ok: true });
+        let body: Json = {};
+        try {
+          body = JSON.parse(raw.toString("utf8") || "{}") as Json;
+        } catch {
+          send(res, 400, { error: "invalid json" });
+          return;
+        }
+        const eventId = typeof body.eventId === "string" ? body.eventId : "";
+        if (!eventId) {
+          send(res, 400, { error: "eventId required" });
+          return;
+        }
+        const existing = store.db
+          .prepare("SELECT event_id FROM webhook_events WHERE event_id = ?")
+          .get(eventId);
+        if (existing) {
+          send(res, 200, { duplicate: true, sideEffects: store.sideEffects });
+          return;
+        }
+        store.db
+          .prepare("INSERT INTO webhook_events (event_id, processed_at) VALUES (?, ?)")
+          .run(eventId, new Date().toISOString());
+        store.sideEffects += 1;
+        send(res, 200, { duplicate: false, sideEffects: store.sideEffects });
+        return;
+      }
+
+      const notifyMatch = path.match(/^\/recalls\/([^/]+)\/notify-partners$/);
+      if (method === "POST" && notifyMatch) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const recall = getRecall(store.db, notifyMatch[1]!);
+        if (!recall) {
+          send(res, 404, { error: "not found" });
+          return;
+        }
+        if (plantDenied(store, recall.plantId, userId, "recall", res)) return;
+        if (recall.state !== "locked" && recall.state !== "closed") {
+          send(res, 400, { error: "recall must be locked" });
+          return;
+        }
+        const partners = recall.export.blast.notify_partners;
+        const delivered: string[] = [];
+        try {
+          for (const partner of partners) {
+            const out = await store.dep.notifyPartner(partner, {
+              recall_id: recall.id,
+              suspect_tlc: recall.suspectTlc,
+            });
+            if (!out.ok) {
+              send(res, 502, { error: "dependency failed", partner, delivered });
+              return;
+            }
+            delivered.push(partner);
+          }
+          send(res, 200, { ok: true, delivered });
+        } catch (err) {
+          send(res, 502, {
+            error: "dependency failed",
+            detail: err instanceof Error ? err.message : String(err),
+            delivered,
+          });
+        }
         return;
       }
 

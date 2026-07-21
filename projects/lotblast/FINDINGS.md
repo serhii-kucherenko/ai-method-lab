@@ -15,3 +15,5 @@ Method stress on A03+A10 for DAG lot genealogy — not GTM, not dual-gate clones
 3. Mock recall lock exports blast-scoped sheets; `recall.opened` webhook; blast member pagination
 4. Minimal UI seeds receiving → transform → ship → blast → recall
 5. P-crud: qa read-only; list lots/CTE; migration 002 indexes
+6. P-workflow: recall `draft → locked → closed` with audit + optimistic version (not dual-signer)
+7. P-integrate: HMAC webhooks with eventId idempotency; partner notify maps dep 5xx to 502
