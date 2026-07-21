@@ -17,7 +17,7 @@ Context: depth restart + Challenge D (Free/Free vanity). Prefer literal dollar /
 | **G2 kill risk** | Medium. Fail if reduced to “rate ceiling + dual approver” or a generic accrual timer. Must keep **deposit vs assessed rate assignment** (company-specific vs all-others / exporter) + **§ 1677g interest window** as the unique rule. |
 | **Why not isomorphic** | **tariffstep** = utility stepped blocks + demand ratchet. **ndcswap** = Orange Book TE codes. **htsroute** = Ch 29 / 3003 / 3004 form gate (often Free MFN). **lesserof** = drawback substitution lesser-of-two **refund cap** under § 1313(l). **dual-gate / lanehold** = capacity ceiling + hold expiry. This is **deposit→liquidation delta + statutory interest**, a different cash path. |
 
-Stub: `docs/ideas/depositgap-SEED.md`
+Stub: `docs/ideas/depositgap-SEED.md` · comprehensive blueprint (seed only): `depositgap-COMPREHENSIVE-BLUEPRINT.md`
 
 ---
 
