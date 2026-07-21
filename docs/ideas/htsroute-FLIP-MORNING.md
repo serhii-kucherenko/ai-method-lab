@@ -9,6 +9,6 @@ For **2026-07-22+** only. Full text: `htsroute-TOMORROW-RUN.md`.
 5. Re-read Challenge D + VALUE-STAKES + PRODUCT framing  
 6. `node docs/ideas/check-all-seeds.mjs` + `check-seed-kits.mjs` green  
 7. Fill `htsroute-DAY-BOUNDARY.md` for real  
-8. Flip → open comprehensive product per `htsroute-DAY1-NONSMOKE.md` (not smoke)
+8. Flip → open comprehensive product per `htsroute-DAY1-NONSMOKE.md` + tree in `htsroute-REPO-SCAFFOLD.md` (not smoke)
 
 **Do not** activate depositgap in the same tick.

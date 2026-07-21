@@ -24,7 +24,7 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
 ## If all pass
 
 1. Flip idea state / controller to `ready_to_build` per `protocols/IDEA_DEPTH.md`.  
-2. Open **comprehensive** `projects/htsroute/` (7 pages) — **not** smoke-as-sustain. Day-1 contract: `htsroute-DAY1-NONSMOKE.md`.  
+2. Open **comprehensive** `projects/htsroute/` (7 pages) — **not** smoke-as-sustain. Day-1 contract: `htsroute-DAY1-NONSMOKE.md`. Tree: `htsroute-REPO-SCAFFOLD.md`.  
 3. Digests: workflow experiment; Kill A stands; no Free/Free duty-savings vanity.  
 4. Paste hypothesis from `htsroute-HYPOTHESIS-DRAFT.md`.
 

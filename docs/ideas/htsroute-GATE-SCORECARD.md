@@ -9,6 +9,8 @@
 | G5 Depth tests | pass | Named suite + **36 fixture files green** + dual-impl; acetaminophen 6.5%↔Free value pair |
 | G6 Research summary | **hold — do not build yet** | Same calendar day (**2026-07-21**) + Challenge D honesty bar |
 
-**Decision this tick:** **Not ready_to_build.** Calendar still framing day. Flip sheet: `htsroute-TOMORROW-RUN.md`. Abort sheet: `htsroute-FLIP-ABORT.md`.
+**Decision this tick:** **Not ready_to_build.** Calendar still framing day (**2026-07-21**). Flip sheet: `htsroute-TOMORROW-RUN.md`. Morning pocket: `htsroute-FLIP-MORNING.md`. Scaffold: `htsroute-REPO-SCAFFOLD.md`. Preflip now also requires `check-seed-kits.mjs`.
+
+**G1 residual (honest):** still no public CF-29 docket specifically about 29↔30 pharma form gates; no importer interview. Domain claim rests on CROSS form pairs + Reasonable Care path — not a filed penalty story.
 
 **Do not open** `projects/htsroute/` until decision flips to ready_to_build **and** PRODUCT framing forbids Free/Free duty-savings lies.

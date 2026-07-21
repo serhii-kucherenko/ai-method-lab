@@ -52,6 +52,7 @@ if (today === FRAMING_DAY) {
 for (const script of [
   "check-htsroute-fixtures.mjs",
   "check-htsroute-dual.mjs",
+  "check-seed-kits.mjs",
 ]) {
   const { ok, tail } = runChecker(script);
   console.log(`${ok ? "PASS" : "FAIL"} ${script}: ${tail}`);
@@ -60,11 +61,11 @@ for (const script of [
 
 if (failed > 0) {
   console.error(
-    `\nPREFLIP BLOCKED (${failed} check(s)). Do not open projects/htsroute/. See htsroute-TOMORROW-RUN.md + htsroute-FLIP-ABORT.md.`,
+    `\nPREFLIP BLOCKED (${failed} check(s)). Do not open projects/htsroute/. See htsroute-TOMORROW-RUN.md + htsroute-FLIP-ABORT.md + htsroute-FLIP-MORNING.md.`,
   );
   process.exit(1);
 }
 
 console.log(
-  "\nPREFLIP CLEAR: calendar + dual-green. Still walk TOMORROW-RUN re-reads / abort sheet before ready_to_build.",
+  "\nPREFLIP CLEAR: calendar + dual-green + paper kits. Still walk TOMORROW-RUN re-reads / abort sheet / DAY1-NONSMOKE before ready_to_build. Scaffold: htsroute-REPO-SCAFFOLD.md.",
 );

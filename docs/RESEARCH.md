@@ -745,3 +745,12 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 ## 2026-07-21 -- 30m loop tick 15: full-queue day-1 non-smoke
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 15 (pid 29556 left alone). Wrote `oshamult-DAY1-NONSMOKE.md` and `ptax4975-DAY1-NONSMOKE.md`; wired into post-activation run sheets. Kit checker + all 5 dual-green pass. Preflip still calendar-blocked. No product.
+
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #31
+
+- Preflip now runs check-seed-kits.mjs (still blocked on calendar)
+- Wrote htsroute-REPO-SCAFFOLD.md for day-1 tree without opening projects/
+- Restated G1 CF-29 residual on gate scorecard
+- Loop 27600 not re-armed
+

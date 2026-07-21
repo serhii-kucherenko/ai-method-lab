@@ -1,19 +1,16 @@
 # Seed readiness snapshot (research only)
 
-**Verified:** 2026-07-21 (30m tick 15) — day-1 non-smoke for full activation queue  
+**Verified:** 2026-07-21 (15m tick 31) — preflip now requires paper kits; day-1 repo scaffold on file  
 **Same-day build:** still **blocked** (framing day 2026-07-21). Do not open products.  
-**Preflight:** `node docs/ideas/check-all-seeds.mjs` + `node docs/ideas/check-seed-kits.mjs`  
-**htsroute flip gate:** `node docs/ideas/check-htsroute-preflip.mjs` (**blocked today**)
+**htsroute flip gate:** `node docs/ideas/check-htsroute-preflip.mjs` (**blocked today** — calendar; fixtures + kits green)
 
-| Idea | Dual | Day-1 non-smoke | Activation run |
-|------|------|-----------------|----------------|
-| **htsroute** | 36 | yes | tomorrow + preflip |
+| Idea | Dual | Day-1 | Extra |
+|------|------|-------|-------|
+| **htsroute** | 36 | yes | scaffold + morning list |
 | **depositgap** | 23 | yes | post-htsroute |
 | **lesserof** | 23 | yes | post-depositgap |
-| **oshamult** | 26 | **yes** | post-lesserof |
-| **ptax4975** | 35 | **yes** | post-oshamult |
-
-Iso audit: `QUEUE-ISO-AUDIT.md`.
+| **oshamult** | 26 | yes | post-lesserof |
+| **ptax4975** | 35 | yes | post-oshamult |
 
 ## Explicit non-actions
 
