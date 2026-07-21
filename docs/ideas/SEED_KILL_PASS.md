@@ -15,6 +15,9 @@
 | **settlecut** (interval imbalance settlement) | Sustained | — | Product done |
 | **bondstrip** (coupon strip + day-count accrued) | Sustained | — | Product done |
 | **tariffstep** (block walk + demand ratchet) | Sustained | — | Product done |
-| **lanehold** (lane capacity + hold expiry) | No | framed | Distinct from billing/math products; warehouse systems win commercially |
+| **lanehold** (lane capacity + hold expiry) | Yes | G2 | Killed — ≅ loadbay + dual-gate ceiling/timer; autopsy `lanehold-AUTOPSY.md` |
+| **htsroute** (Ch 29 vs heading 3004 form route) | No | framed | Customs chapter Notes; slow research; no fixtures this tick |
+| meldefer (MEL A/B/C/D clocks) | Soft park | G2 risk | Near amendwin/days; park unless Category A unit polymorphism + extension asymmetry proven non-isomorphic |
+| form222 / CSOS line validation | Soft park | G3 | Crowded compliance; revisit after htsroute depth |
 
-**Rule:** one idea in `framed`→`ready_to_build`. Dual-gate seeds die immediately.
+**Rule:** one idea in `framed`→`ready_to_build`. Dual-gate / capacity+expiry seeds die immediately. Same-day fixture farms do not count as depth.

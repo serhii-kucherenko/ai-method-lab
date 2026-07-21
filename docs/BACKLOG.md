@@ -11,7 +11,8 @@ See `docs/DEPTH_RESTART.md`.
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
 | 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet workflow experiment complete. |
-| — | lanehold | research only | Lane capacity + hold expiry (framed). |
+| — | htsroute | research only | Ch 29 vs 3004 form routing (framed). Slow depth — no fixtures yet. |
+| — | lanehold | **killed (G2)** | Capacity + hold expiry ≅ loadbay / dual-gate. Autopsy on file. |
 | 2 | bondstrip | sustained | Day-count accrued + cashflow strip method stress complete. |
 | 2 | settlecut | sustained | Loss-once interval settlement method stress complete. |
 | 3 | ndcswap | sustained | Orange Book TE method stress complete. |

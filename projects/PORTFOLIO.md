@@ -45,7 +45,8 @@ Full historical table preserved in git history prior to depth restart; rows belo
 
 ## Next autonomous actions
 
-1. IDEA_DEPTH next candidate only — no dual-gate queue
-2. Digests: plain language, no acronyms; workflow experiment framing
-3. Depth over conveyor: one idea at a time through research before build
-4. Depth-restart sustained: lotblast, amendwin, crewleg, ndcswap, settlecut, bondstrip, tariffstep
+1. Slow IDEA_DEPTH on **htsroute** only — no dual-gate / capacity+expiry queue
+2. Digests: plain language; may report kills and “not ready”
+3. Multi-tick research before fixtures; never same-day framed→build
+4. Depth-restart sustained (still under speed critique): lotblast … tariffstep
+5. Killed: lanehold (G2)

@@ -1,28 +1,18 @@
 # lanehold — idea dossier
 
-**State:** `framed`  
-**Framing:** workflow experiment (not a commercial pitch against warehouse management vendors)  
-**Opened:** 2026-07-21 after tariffstep finished
+**State:** `killed` (G2)  
+**Killed:** 2026-07-21 (depth keep-going tick after human “everything shallow” signal)  
+**Opened:** 2026-07-21 after tariffstep finished  
+**Autopsy:** `docs/ideas/lanehold-AUTOPSY.md`
 
-## Problem
+## One-line itch (historical)
 
-Warehouse ops allocate inventory with **lane capacity** and **hold-until-release** rules: a reservation occupies lane capacity until released or expired; overfill and expired holds must reject or free capacity cleanly. Spreadsheet lane boards drift under concurrent picks.
+Warehouse lane capacity + soft-hold expiry for outbound reservations.
 
-**Who:** warehouse planner / outbound lead  
-**How often:** every wave / shift  
+## Gate fail
 
-## Unique claim
-
-**If we remove lane capacity + hold expiry, the remaining product is a generic reservation list.**
-
-Distinct from settlecut (energy imbalance), bondstrip (coupon day-count), and tariffstep (rate blocks + demand ratchet).
-
-## Challenge rounds (draft)
-
-1. Warehouse systems already exist → stands commercially; workflow experiment OK  
-2. Niche ops tooling — soft  
-3. Floor process / social coordination offline — software still checkable for capacity math  
+**G2 — isomorphic.** Unique rule reduced to numeric capacity ceiling + time expiry — already saturated by `loadbay` (dock weight ceiling + dual seal) and the dual-gate wave (ceiling/floor/days + dual control). Prior noun-swap capacity products (`yardshare`, `dockslip`, `skihold`, …) prove the same template under new nouns.
 
 ## Decision
 
-**Framed** — research only. No `projects/lanehold/` until research clears to build.
+**Killed.** Do not open `projects/lanehold/`. Do not revive as a “warehouse method stress” without a non-isomorphic external model (e.g. published tariff/regulatory table that is not a ceiling+timer).

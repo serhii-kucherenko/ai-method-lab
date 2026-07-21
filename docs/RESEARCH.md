@@ -206,3 +206,28 @@ Added source-backed G1 notes (demand ratchet behavior, tier/block tariff structu
 ## 2026-07-21 -- tariffstep ready + sustained (loop 16)
 
 Mapped published stepped-rate and demand-ratchet language onto the 25 scenarios. Cleared research and built projects/tariffstep through the full test ladder (31 checks). Unique claim held. Next idea lanehold framed (lane capacity + hold expiry). Digests must stay plain language.
+
+## 2026-07-21 ? human signal + lanehold kill + htsroute frame (loop 17)
+
+**Human:** Everything built (including post-restart method-stress products and summaries) is still shallow. Optimize for slow research, robust verification, bulletproof ideas ? not conveyor throughput.
+
+**Self-critique:** `lotblast`?`tariffstep` improved domain shape but still cleared research-to-product inside one day. That fails the depth restart?s speed bar. Fixture farms invented in a single tick are not proof of idea quality.
+
+**lanehold ? killed (G2)**
+
+Framed as warehouse lane capacity + hold expiry. Autopsy: `docs/ideas/lanehold-AUTOPSY.md`. Unique rule is numeric ceiling + timer ? isomorphic to `loadbay` and the dual-gate wave; archive capacity noun-swaps already cover the shape. Mistake was comparing only to recent billing/math products instead of the capacity archive.
+
+**htsroute ? framed only**
+
+Customs Chapter 29 (separately defined chemical / bulk API) vs heading 3004 (medicament form test: therapeutic intent ? measured dose/retail packing ? dosage form). Dossier + G1 evidence notes written. Kill A (vendors/brokers) stands commercially ? workflow experiment framing only.
+
+**Explicit non-actions this tick**
+
+- No `projects/htsroute/`
+- No 25-fixture corpus
+- No ready_to_build claim
+- No next noun-swap seed queue
+
+**Controller depth_policy additions:** `block_same_day_research_to_build`, `min_research_ticks_before_ready: 3`.
+
+**Next research (slow):** close adversarial kills on paper; pull one public CROSS ruling pair into G1; only then draft algorithm paper ? still no product.

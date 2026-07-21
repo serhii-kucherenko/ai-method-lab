@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-21T18:50:00Z",
+  "updated_at": "2026-07-22T10:15:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,19 +17,21 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-sustain__tariffstep__r1",
+  "last_completed": "research__lanehold_killed_g2__htsroute_framed",
   "last_error": null,
   "current_product": null,
-  "current_idea": "lanehold",
+  "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "tariffstep sustained. lanehold framed. Loop tick 16. Plain-language digests. No product until research clears.",
+  "notes": "Human: still shallow. Killed lanehold (G2 capacity+expiry). Framed htsroute only — no fixtures, no product. Slow multi-tick depth. Digests plain language.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
     "require_idea_depth": true,
     "block_isomorphic_dual_gate": true,
+    "block_same_day_research_to_build": true,
+    "min_research_ticks_before_ready": 3,
     "protocol": "protocols/IDEA_DEPTH.md"
   },
   "loop": {
