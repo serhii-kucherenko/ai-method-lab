@@ -1,11 +1,11 @@
 # Activation order after htsroute day-boundary
 
-**Calendar rule:** do not flip or open products on the same calendar day as framing (still **2026-07-21** as of this note). Earliest htsroute flip: **2026-07-22** after re-running `htsroute-DAY-BOUNDARY.md` for real.
+**Calendar rule:** do not flip or open products on the same calendar day as framing (still **2026-07-21** as of this note). Earliest htsroute flip: **2026-07-22** — follow `htsroute-TOMORROW-RUN.md` (not memory).
 
 ## Tomorrow flip procedure (htsroute)
 
 1. Confirm calendar day ≠ 2026-07-21.  
-2. Walk every checkbox in `htsroute-DAY-BOUNDARY.md` (re-read Challenge D, VALUE-STAKES, G6, ACCEPTANCE).  
+2. Walk every checkbox in `htsroute-DAY-BOUNDARY.md` (full re-read list also in `htsroute-TOMORROW-RUN.md`).  
 3. If all true: set `ready_to_build`, open `projects/htsroute/` per comprehensive blueprint — **not** smoke-as-sustain.  
 4. If any false: stay research / park / kill; write why in `docs/RESEARCH.md`.  
 5. Do **not** activate depositgap in the same tick as the htsroute flip (one product phase).
