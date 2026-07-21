@@ -50,7 +50,8 @@ Sign convention: positive `duty_delta` → importer owes; negative → refund pa
 
 Prefer non-leap windows in toys (e.g. 2023-01-01 → 2024-01-01) so day count stays 365; fixture K locks a leap window; W locks a ten-year toy. Checker: `node docs/ideas/check-depositgap-fixtures.mjs` (A–W green; seed only). Case map: `depositgap-G5-cases.md`.
 
-Cite trail: `depositgap-STATUTE-CITATIONS.md` (§ 1677g, 19 CFR 351.212).
+Cite trail: `depositgap-STATUTE-CITATIONS.md` (§ 1677g, 19 CFR 351.212). Day-count fence: `depositgap-DAY-COUNT.md` (§ 1677g vs delinquency; v0 = simple calendar days).
+
 
 ## Anti-patterns
 

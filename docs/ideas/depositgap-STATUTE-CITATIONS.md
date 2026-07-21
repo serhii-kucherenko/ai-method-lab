@@ -78,7 +78,7 @@ Sources: https://www.irs.gov/payments/quarterly-interest-rates ; https://www.irs
 3. ~~Kill A/B/C answers on paper~~ — `depositgap-challenge-ABC.md`  
 4. ~~CVD twin § 1671f quote~~ — done; fixture E  
 5. ~~Encode G5 T–W + document X/Y~~ — done (**23** paper + 2 notes; ≥25 bar met on paper)
-6. Lock CBP day-count convention cite (v0 remains simple 365 toy)
+6. ~~Lock CBP day-count convention cite~~ — `depositgap-DAY-COUNT.md` (§ 1677g order-publication → liquidation vs § 1505(d) delinquency; v0 stays simple 365 toy)
 
 ## Explicit non-actions
 

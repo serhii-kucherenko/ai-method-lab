@@ -665,3 +665,6 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Wrote PAGE-SPECS + SUSTAIN-TEST-MATRIX for lesserof, oshamult, ptax4975
 - Seed readiness table now complete for all queued ideas
 - Same-day build still blocked; loop 27600 not re-armed
+## 2026-07-21 -- 30m loop tick 11: depositgap day-count lock
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 11 (pid 29556 left alone). Wrote `depositgap-DAY-COUNT.md` (sec 1677g order-publication to liquidation vs delinquency interest; v0 stays simple day toy). Added `lesserof-SUSTAIN-TEST-MATRIX.md`. Re-ran `check-all-seeds.mjs` — all 5 dual-green. READY-DRYRUN reaffirmed: calendar still 2026-07-21 only blocker. No product.
