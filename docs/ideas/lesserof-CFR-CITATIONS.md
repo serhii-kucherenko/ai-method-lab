@@ -48,20 +48,40 @@ Source: https://www.law.cornell.edu/cfr/text/19/182.45
 
 This is why future goldens must split same-condition unused (j)(1) from manufactured / substituted USMCA lines — otherwise the suite lies.
 
+## 19 CFR § 190.31 — direct identification unused (no TFTEA lesser-of)
+
+Source: https://www.law.cornell.edu/cfr/text/19/190.31  
+Implements 19 U.S.C. § 1313(j)(1).
+
+> The total amount of drawback allowable will not exceed **99 percent of the amount of duties, taxes, and fees paid with respect to the imported merchandise.**
+
+No “lesser of paid vs substitute/export basis” language. Applying § 190.22 / § 190.32 lesser-of math to a (j)(1) direct-ID unused claim is a **mode bug**.
+
+## 19 U.S.C. § 4534 — USMCA drawback scope (statute twin)
+
+Source: https://www.law.cornell.edu/uscode/text/19/4534  
+
+Defines “good subject to USMCA drawback” and carve-outs. Operational **lesser-of dollar calc** for claims remains in **19 CFR § 182.44**; this statute sets who is in/out of that regime.
+
+Notable carve-outs for goldens:
+
+- **(a)(2)** — good exported to a USMCA country **in the same condition** as imported (with limited processes) — aligns with § 182.45(b) full-drawback path  
+- **(d)** — nothing in this section authorizes refund/waiver/reduction of **AD/CVD** on an imported good  
+
 ## How these bind the seed claim
 
 | Cap | Primary home | Effect on toy finance model |
 |-----|--------------|-----------------------------|
 | TFTEA substitution lesser-of | §§ 190.22 / 190.32 | Caps at 99% × min(paid, substitute/export basis) |
-| USMCA export lesser-of | § 182.44(a) | Further caps at min(U.S. side, CA/MX duties paid) — often **$0** if partner duty-free |
-| Same-condition exception | § 182.45(b) | (j)(1) same-condition to CA/MX escapes § 182.44 |
+| Direct-ID unused (no lesser-of) | § 190.31 | 99% of duties **paid** only |
+| USMCA export lesser-of | § 182.44(a) (+ § 4534 scope) | Further caps at min(U.S. side, CA/MX duties paid) — often **$0** if partner duty-free |
+| Same-condition exception | § 182.45(b) / § 4534(a)(2) | (j)(1) same-condition to CA/MX escapes § 182.44 |
 
 Basket “other” trap is statutory (§ 1313(j)(5)), not in these calc sections — see `lesserof-BASKET-OTHER.md`.
 
 ## Cite gaps still open
 
 1. Direct fetch of **ecfr.gov** HTML failed (bot wall); quotes are LII e-CFR mirrors — re-pull from ecfr.gov / govinfo when access works.  
-2. Full primary text of **19 U.S.C. § 4534** (USMCA statute twin of Subpart E) not pasted this tick.  
-3. Contrast cite for **direct-ID unused** (§ 190.31) — no lesser-of — not quoted here (only implied by statute + seed worked example).  
-4. One **CBP primary** operational publication or HQ ruling that walks a lesser-of dollar calc end-to-end — still preferred for G1/G6.  
-5. Confirm whether any Part 190 text restates § 1313(j)(5) “other” basket (statute may be the only primary for that trap).
+2. ~~§ 190.31~~ / ~~§ 4534~~ — closed this tick (LII).  
+3. One **CBP primary** operational publication or HQ ruling that walks a lesser-of dollar calc end-to-end — still preferred for G1/G6.  
+4. Confirm whether any Part 190 text restates § 1313(j)(5) “other” basket (statute may be the only primary for that trap).

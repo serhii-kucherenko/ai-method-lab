@@ -16,7 +16,8 @@ Controller chains these without waiting. Finish one → commit → start next. N
 | 30 | If ready: open `projects/htsroute/` **comprehensive** (7 pages / ≥3 aggregates) | blocked until 28 |
 | 31 | Product ladder / digest / next idea | blocked until 30 |
 | 32 | Phase briefs for comprehensive ladder | **done** — `htsroute-PHASE-BRIEFS.md` |
-| 33 | First AGENT_LOOP_TICK_depth_15m | **done** (this tick) |
+| 33 | First AGENT_LOOP_TICK_depth_15m | **done** |
+| 34 | Loop tick #2 lesserof 190.31/4534 + oshamult stub | **done** |
 
 ## Parked seeds
 
@@ -43,3 +44,4 @@ Controller chains these without waiting. Finish one → commit → start next. N
 ## Rule
 
 Never idle after a green checker. Never same-day framed→product. Never re-arm a live depth loop. Never celebrate fixture counts as commercial proof.
+

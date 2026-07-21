@@ -480,3 +480,10 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 - `htsroute-PHASE-BRIEFS.md` — smoke?sustain mapped to 7-page comprehensive bar (no shallow sustain)
 - `depositgap-STATUTE-CITATIONS.md` — primary § 1677g + 19 CFR 351.212(e); toy underpayment **$150,000** before interest
 - Loop pid 27600 left alone (do not re-arm)
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #2
+
+- Closed lesserof cite gaps: **19 CFR 190.31** (direct-ID unused = 99% of paid, no lesser-of) + **19 U.S.C. 4534** scope/carve-outs (calc still 182.44)
+- Updated G5 encoding notes for ibuprofen/aspirin pairs (#34–#37)
+- Stubbed `oshamult-SEED.md` (still behind depositgap/lesserof)
+- Checkers still **36** green; no product; loop 27600 not re-armed

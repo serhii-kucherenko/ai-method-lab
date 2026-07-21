@@ -41,6 +41,7 @@ Named cases for the unique claim. Encoding grew across ticks — not a same-tick
 
 - **24 fixture files green** via `node docs/ideas/check-htsroute-fixtures.mjs`
 - G5 named suite effectively covered (25 cases; #16 aliased to #8)
-- **Value contrast pair:** #32 acetaminophen bulk (NY R04092, 6.5% MFN) + #33 acetaminophen tablets → 3004
+- **Value contrast pair:** #32/#33 acetaminophen; #34/#35 ibuprofen (NY I83067 6.5% / NY N006187 Free); #36/#37 aspirin (NY 890808 non-Free / NY K87058 Free)
 - G6 still **do not build yet** this calendar day (`block_same_day_research_to_build`)
+- Checkers: **36** fixture files green (+ dual-impl)
 
