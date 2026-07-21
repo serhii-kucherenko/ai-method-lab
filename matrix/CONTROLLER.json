@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T16:55:00Z",
+  "updated_at": "2026-07-21T16:58:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -24,14 +24,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__loop15m_tick24_fom_size_depositgap_run",
+  "last_completed": "research__loop15m_tick24_and_30m_tick12",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 24: oshamult FOM Table 6-2 + serial-order honesty; depositgap-POST-HTSROUTE-RUN. Same-day build blocked. Do NOT re-arm pid 27600.",
+  "notes": "15m tick 24 + 30m tick 12: FOM size lock, depositgap-POST-HTSROUTE-RUN, htsroute-FLIP-ABORT, ptax statute cites. Same-day build blocked. Do NOT re-arm pid 27600 or 29556.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
