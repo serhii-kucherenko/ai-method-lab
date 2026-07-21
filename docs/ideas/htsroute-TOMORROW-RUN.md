@@ -10,6 +10,7 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
 3. Re-read, in order:  
    - `htsroute-challenge-D.md`  
    - `htsroute-VALUE-STAKES.md`  
+   - `htsroute-STACKED-TARIFF-FENCE.md` (Section 232 from ~2026-07-31; no annex $ in digests)  
    - `htsroute-G6-summary.md`  
    - `htsroute-GATE-SCORECARD.md`  
    - `htsroute-ACCEPTANCE.md`  
@@ -25,7 +26,7 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
 
 1. Flip idea state / controller to `ready_to_build` per `protocols/IDEA_DEPTH.md`.  
 2. Open **comprehensive** `projects/htsroute/` (7 pages) — **not** smoke-as-sustain. Day-1 contract: `htsroute-DAY1-NONSMOKE.md`. Tree: `htsroute-REPO-SCAFFOLD.md`.  
-3. Digests: workflow experiment; Kill A stands; no Free/Free duty-savings vanity.  
+3. Digests: workflow experiment; Kill A stands; no Free/Free duty-savings vanity; no stacked 232/301 dollar claims without annex cites.  
 4. Paste hypothesis from `htsroute-HYPOTHESIS-DRAFT.md`.
 
 ## If any fail

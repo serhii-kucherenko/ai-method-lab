@@ -800,3 +800,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 ## 2026-07-21 -- 30m loop tick 18: Vericiguat pair + stacked-tariff fence
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 18 (pid 29556 left alone). Encoded same-letter Vericiguat/Verquvo fixtures #42/#43 from CROSS NY N318947 (bulk 6.5% ? tablets Free). Wrote `htsroute-STACKED-TARIFF-FENCE.md` (Section 301 / April 2026 pharma proclamation out of scope for v0). Suite **42** dual-green; kits complete. Preflip still calendar-blocked. No product.
+
+## 2026-07-21 -- 30m loop tick 19: Section 232 fence into flip gates
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 19 (pid 29556 left alone). Deepened `htsroute-STACKED-TARIFF-FENCE.md` with counsel timelines (~**2026-07-31** patented Orange Book / Purple Book 232 rates). Added Challenge D sub-attack 5; wired fence into TOMORROW-RUN / FLIP-ABORT / FLIP-MORNING. Refreshed CHECKER_SNAP to **42**. Preflip still calendar-blocked; kits + dual-green pass. No product.

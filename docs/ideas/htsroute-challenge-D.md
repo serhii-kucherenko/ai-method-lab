@@ -12,6 +12,7 @@ Sub-attacks:
 2. **Kill A still stands** — vendors/brokers solve classification commercially.
 3. **Fixture farm ≠ idea depth** — green checkers prove algorithm consistency, not that anyone needs a product. (Current suite: **42** dual-green files — count still ≠ value.)
 4. **Same-day conveyor risk** — framing → fixtures → scorecard in one calendar day is exactly the failure mode DEPTH_RESTART named.
+5. **Stacked 232 / 301 eclipses MFN toys** — from ~**2026-07-31**, patented pharma / API Section 232 layers (counsel summaries) can dwarf base MFN 6%/6.5%↔Free contrasts. Selling letter MFN as entry savings without annex checks is another vanity path.
 
 ## Answers (honest)
 
@@ -21,6 +22,7 @@ Sub-attacks:
 | 2 Kill A | **Stands** (unchanged). Workflow experiment only. |
 | 3 Fixture farm | **Partially accepted.** Suite is necessary for G5 but **not sufficient** for ready_to_build as a “valuable product.” Dual-impl helps method evidence; it does not create demand. |
 | 4 Same-day | **Accepted as process risk.** Same-day build remains blocked. Day-boundary reassess must re-read this challenge, not only the green counts. |
+| 5 Stacked 232/301 | **Accepted as honesty bar.** See `htsroute-STACKED-TARIFF-FENCE.md`. Digests may cite base MFN from CROSS; must not claim landed-duty savings without annex / list evidence. |
 
 ## Verdict
 
@@ -28,7 +30,7 @@ Challenge D **does not kill the domain claim** (29/3003/3004 form gate remains n
 
 Challenge D **does kill any vanity narrative** that htsroute is already a bulletproof, data-backed commercial product idea.
 
-**State impact:** remain `testable` / research-only. Digests must lead with “form-gate experiment; MFN often Free; brokers already do this” — not pass counts.
+**State impact:** remain `testable` / research-only. Digests must lead with “form-gate experiment; MFN often Free; brokers already do this; stacked 232/301 out of scope unless annex-cited” — not pass counts.
 
 ## Explicit non-actions
 

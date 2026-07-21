@@ -6,7 +6,7 @@ Even after the calendar day changes, **do not** flip `ready_to_build` if any of 
 
 1. Local date is still the framing day (**2026-07-21**).  
 2. `node docs/ideas/check-all-seeds.mjs` fails (or htsroute dual fails).  
-3. Re-read of Challenge D / VALUE-STAKES is skipped or disagreed — Free/Free duty-savings pitch would ship.  
+3. Re-read of Challenge D / VALUE-STAKES / `htsroute-STACKED-TARIFF-FENCE.md` is skipped or disagreed — Free/Free duty-savings pitch or stacked-duty vanity would ship.  
 4. PRODUCT framing would claim broker/HS-engine replacement or omit Kill A.  
 5. Build plan collapses to smoke / single calculator page (fails `COMPREHENSIVE_PRODUCT.md` / `htsroute-DAY1-NONSMOKE.md`).  
 6. Dual-gate / capacity+timer costume sneaks into PRODUCT shape (fails `QUEUE-ISO-AUDIT.md`).  
@@ -16,7 +16,7 @@ Even after the calendar day changes, **do not** flip `ready_to_build` if any of 
 
 1. New primary CROSS contradicts ≥2 goldens → re-version before flip.  
 2. Human hard-stop / pause in `CONTROLLER.json`.  
-3. Notify/digest would be dishonest about money stakes.
+3. Notify/digest would be dishonest about money stakes (including treating base MFN as landed duty after Section 232 effective dates without annex checks).
 
 ## If aborted
 
