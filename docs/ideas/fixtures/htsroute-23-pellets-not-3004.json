@@ -1,0 +1,17 @@
+{
+  "id": "htsroute-23-pellets-not-3004",
+  "title": "Pellets without measured dose are 3003 not 3004",
+  "source": "G5 case 23",
+  "sku": {
+    "chemical_form": "mixture",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": false,
+    "retail_packing": false,
+    "dosage_form_signal": "bulk_pellets",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "heading_3003_bulk_medicament"
+  }
+}

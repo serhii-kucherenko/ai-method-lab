@@ -64,6 +64,18 @@ const files = readdirSync(fixturesDir)
 let failed = 0;
 for (const file of files) {
   const doc = JSON.parse(readFileSync(join(fixturesDir, file), "utf8"));
+  if (Array.isArray(doc.batch)) {
+    for (const item of doc.batch) {
+      const got = routeSku(item.sku);
+      const want = item.expect.route;
+      const ok = got === want;
+      if (!ok) failed += 1;
+      console.log(
+        `${ok ? "PASS" : "FAIL"} ${doc.id}/${item.label}: got=${got} want=${want}`,
+      );
+    }
+    continue;
+  }
   const got = routeSku(doc.sku);
   const want = doc.expect.route;
   const ok = got === want;
@@ -75,4 +87,4 @@ if (failed > 0) {
   console.error(`\n${failed} fixture(s) failed`);
   process.exit(1);
 }
-console.log(`\n${files.length} htsroute fixture(s) green`);
+console.log(`\n${files.length} htsroute fixture file(s) green`);

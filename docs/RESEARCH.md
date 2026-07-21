@@ -290,3 +290,7 @@ Seven goldens total. Critical **#4** (other-molecule bulk API) still open. Still
 ## 2026-07-21 ? htsroute boundary expand (tick 6)
 
 Added boundary goldens #9, #11, #12, #13, #17 (powder bulk 29; capsule 3004; retail packing 3004; non-therapeutic reject; inconsistent pellets/defined reject). Checker **13/13 green**. Still **do not build** ? remaining boundaries and overnight hold before any ready_to_build.
+
+## 2026-07-21 ? htsroute suite near-complete + /loop 30m (tick 7)
+
+Armed `/loop 30m` depth keep-going (replaced stale lotblast/product conveyor loops). Encoded remaining G5 boundaries including concurrent batch, molecule-name ignore, expert cheats. Checker **24 fixture files green**. G6 still **do not build yet** (same-day block). No product folder.

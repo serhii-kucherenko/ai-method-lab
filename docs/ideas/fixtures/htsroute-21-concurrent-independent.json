@@ -1,0 +1,33 @@
+{
+  "id": "htsroute-21-concurrent-independent",
+  "title": "Two SKUs route independently",
+  "source": "G5 case 21",
+  "batch": [
+    {
+      "label": "A",
+      "sku": {
+        "chemical_form": "separately_defined",
+        "therapeutic_or_prophylactic": true,
+        "measured_dose": false,
+        "retail_packing": false,
+        "dosage_form_signal": "bulk_drum",
+        "note_1a_food_or_supplement": false,
+        "gri3_combination": false
+      },
+      "expect": { "route": "chapter_29_chemical" }
+    },
+    {
+      "label": "B",
+      "sku": {
+        "chemical_form": "mixture",
+        "therapeutic_or_prophylactic": true,
+        "measured_dose": true,
+        "retail_packing": false,
+        "dosage_form_signal": "tablet",
+        "note_1a_food_or_supplement": false,
+        "gri3_combination": false
+      },
+      "expect": { "route": "heading_3004_medicament" }
+    }
+  ]
+}

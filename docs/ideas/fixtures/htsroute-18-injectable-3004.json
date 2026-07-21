@@ -1,0 +1,17 @@
+{
+  "id": "htsroute-18-injectable-3004",
+  "title": "Injectable vial measured dose",
+  "source": "G5 case 18",
+  "sku": {
+    "chemical_form": "mixture",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": true,
+    "retail_packing": false,
+    "dosage_form_signal": "injectable_vial",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "heading_3004_medicament"
+  }
+}

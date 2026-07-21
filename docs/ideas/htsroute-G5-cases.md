@@ -1,44 +1,44 @@
 # htsroute — G5 depth cases (paper)
 
-Named cases for the unique claim. **Encoding policy:** critical path cards may become JSON slowly; do not dump 25 green files in one tick to force a scorecard.
+Named cases for the unique claim. Encoding grew across ticks — not a same-tick vanity farm.
 
-## Critical path (must be golden before ready_to_build)
+## Critical path
 
-| # | Name | Expect |
-|---|------|--------|
-| 1 | Omeprazole bulk API | `chapter_29_chemical` |
-| 2 | Omeprazole enteric pellets bulk (mixed) | `heading_3003_bulk_medicament` |
-| 3 | Dosage-form tablets (peer 3004) | `heading_3004_medicament` |
-| 4 | Therapeutic bulk API, other molecule (I89619 shape) | `chapter_29_chemical` |
-| 5 | Tablet enum cheat (`tablet` signal, measured_dose false, retail false) | `reject` or not 3004 |
-| 6 | Note 1(a) food/supplement capsule-shaped | `excluded_note_1a` |
-| 7 | GRI 3 combination flag | `reject` |
-| 8 | Missing chemical_form | `reject` |
+| # | Name | Expect | Encoded |
+|---|------|--------|---------|
+| 1 | Omeprazole bulk API | `chapter_29_chemical` | yes |
+| 2 | Omeprazole enteric pellets bulk | `heading_3003_bulk_medicament` | yes |
+| 3 | Dosage-form tablets (peer 3004) | `heading_3004_medicament` | yes |
+| 4 | Therapeutic bulk API (I89619 shape) | `chapter_29_chemical` | yes |
+| 5 | Tablet enum cheat | `reject` | yes |
+| 6 | Note 1(a) food/supplement | `excluded_note_1a` | yes |
+| 7 | GRI 3 combination | `reject` | yes |
+| 8 | Missing chemical_form | `reject` | yes |
 
-## Boundary / negative (named now; JSON later)
+## Boundary / negative
 
-9. Therapeutic true + powder_bulk + separately_defined → 29  
-10. Therapeutic true + mixture + bulk_pellets + no dose/retail → 3003  
-11. measured_dose true + retail false + capsule → 3004  
-12. measured_dose false + retail true + other form with therapeutic → 3004  
-13. therapeutic false + tablet → reject (not medicament path)  
-14. mixture + therapeutic + measured_dose → 3004 (not 3003)  
-15. separately_defined + bulk_drum + therapeutic → 29 (not 3004)  
-16. unknown chemical_form + incomplete flags → reject  
-17. bulk_pellets + separately_defined (inconsistent) → reject  
-18. injectable_vial + measured_dose → 3004  
-19. transdermal + measured_dose → 3004  
-20. note_1a true overrides tablet signals → excluded_note_1a  
-21. Concurrent two SKUs independent routes (A=29, B=3004)  
-22. Expert cheat: relabel bulk drum as medicament without dose/retail → not 3004  
-23. Expert cheat: claim 3004 for pellets without measured dose → 3003 not 3004  
-24. Zero facts object → reject  
-25. Molecule name field present but ignored (anti-shallow) — route from form facts only  
+| # | Name | Encoded |
+|---|------|---------|
+| 9 | powder_bulk → 29 | yes |
+| 10 | pellets mixture → 3003 | yes |
+| 11 | capsule measured → 3004 | yes |
+| 12 | retail packing → 3004 | yes |
+| 13 | non-therapeutic tablet → reject | yes |
+| 14 | mixture + measured → 3004 | yes |
+| 15 | bulk drum → 29 not 3004 | yes |
+| 16 | unknown form incomplete → reject | covered by #8 |
+| 17 | pellets + separately_defined → reject | yes |
+| 18 | injectable → 3004 | yes |
+| 19 | transdermal → 3004 | yes |
+| 20 | Note 1(a) overrides tablet | yes |
+| 21 | concurrent independent SKUs | yes (batch) |
+| 22 | bulk relabel cheat → 29 | yes |
+| 23 | pellets not 3004 → 3003 | yes |
+| 24 | zero facts → reject | yes |
+| 25 | molecule name ignored | yes |
 
 ## Encoding status
 
-- **Encoded:** #1–#8 critical path + boundaries #9, #11, #12, #13, #17 (13 goldens green).
-- **Deferred:** remaining #10, #14–#16, #18–#25.
-- G6 memo says **do not build yet** — same-day build blocked; expand remaining boundaries across later ticks.
-- Depth wins this session: enum-cheat forced consistency reject; retail-packing card forced 3004 rule widening beyond tablet enum.
-
+- **24 fixture files green** via `node docs/ideas/check-htsroute-fixtures.mjs`
+- G5 named suite effectively covered (25 cases; #16 aliased to #8)
+- G6 still **do not build yet** this calendar day (`block_same_day_research_to_build`)

@@ -35,19 +35,19 @@ Specialty pharma trade-compliance analysts must route SKUs across Chapter 29 (bu
 
 ## 6. Depth test outline
 
-- 25 cases named (`htsroute-G5-cases.md`)
-- Critical path #1–#8 encoded; checker 8/8 green
-- Boundaries #9–#25 mostly still paper
+- 25 cases named (`htsroute-G5-cases.md`); #16 aliased to #8
+- **24 fixture files green** (critical + boundaries + concurrent batch)
+- Checker: `docs/ideas/check-htsroute-fixtures.mjs`
 
 ## 7. Decision
 
-**Do not build yet.**
+**Do not build yet** (calendar-day hold).
 
 Reasons:
 
 1. Same-day research→build is an explicit failure mode after the human shallow signal (`block_same_day_research_to_build`).
-2. Boundary suite (#9–#25) is not encoded; a scorecard green on 8 cards would be theater.
-3. Finished omeprazole **capsule** CROSS letter still preferred for the 3004 leg of the same-molecule story.
+2. Suite is now deep enough on paper to *consider* ready_to_build on a **later** tick — not this one.
+3. Finished omeprazole **capsule** CROSS letter still preferred for the 3004 same-molecule leg.
 4. No G1 interview / specific public CF-29 pharma docket.
 
-**Next:** expand boundary goldens slowly across further ticks; hold overnight before any ready_to_build claim; never open `projects/htsroute/` this calendar day.
+**Next tick (after overnight / loop):** gate scorecard + possible `ready_to_build` only if still non-isomorphic and digests stay honest. Never open `projects/htsroute/` before that decision.

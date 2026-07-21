@@ -1,0 +1,17 @@
+{
+  "id": "htsroute-24-zero-facts",
+  "title": "Empty facts reject",
+  "source": "G5 case 24",
+  "sku": {
+    "chemical_form": "unknown",
+    "therapeutic_or_prophylactic": false,
+    "measured_dose": false,
+    "retail_packing": false,
+    "dosage_form_signal": "unknown",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "reject"
+  }
+}

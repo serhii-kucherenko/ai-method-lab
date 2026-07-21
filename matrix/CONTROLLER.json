@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__htsroute_boundaries_tick6",
+  "last_completed": "research__htsroute_suite_tick7",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "htsroute testable; 13 goldens green; G6 hold no product today. Continue boundaries. lanehold killed.",
+  "notes": "htsroute testable; 24 fixture files green; G6 hold no product today. /loop 30m depth_keepgoing armed (pid tracked). Next tick: scorecard / reassess ready after day boundary.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -37,6 +37,7 @@
   "loop": {
     "interval": "30m",
     "sentinel": "AGENT_LOOP_TICK_depth_keepgoing",
-    "purpose": "depth_keepgoing"
+    "purpose": "depth_keepgoing",
+    "pid": 4436
   }
 }
