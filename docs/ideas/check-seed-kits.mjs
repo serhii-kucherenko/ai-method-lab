@@ -26,6 +26,7 @@ const seeds = [
       "htsroute-DAY1-NONSMOKE.md",
       "htsroute-FLIP-MORNING.md",
       "htsroute-REPO-SCAFFOLD.md",
+      "htsroute-G1-CF29-SEARCH.md",
       "QUEUE-ISO-AUDIT.md",
       "check-htsroute-preflip.mjs",
     ],
