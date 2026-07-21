@@ -1,0 +1,16 @@
+{
+  "id": "bondstrip-Q-cross-year",
+  "day_count": "30/360",
+  "face": 1000,
+  "coupon_rate": 0.06,
+  "freq": 2,
+  "prev_coupon": "2025-11-15",
+  "next_coupon": "2026-05-15",
+  "settle": "2026-02-15",
+  "expect": {
+    "periodic_coupon": 30,
+    "days_elapsed": 90,
+    "days_in_period": 180,
+    "accrued": 15
+  }
+}

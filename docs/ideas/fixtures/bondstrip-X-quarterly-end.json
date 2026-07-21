@@ -1,0 +1,15 @@
+{
+  "id": "bondstrip-X-quarterly-end",
+  "day_count": "30/360",
+  "face": 1000,
+  "coupon_rate": 0.04,
+  "freq": 4,
+  "prev_coupon": "2026-01-15",
+  "next_coupon": "2026-04-15",
+  "settle": "2026-04-15",
+  "expect": {
+    "accrued": 0,
+    "days_elapsed": 0,
+    "periodic_coupon": 10
+  }
+}

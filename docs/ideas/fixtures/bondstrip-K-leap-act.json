@@ -1,0 +1,16 @@
+{
+  "id": "bondstrip-K-leap-act",
+  "day_count": "ACT/ACT",
+  "face": 1000,
+  "coupon_rate": 0.06,
+  "freq": 2,
+  "prev_coupon": "2024-01-15",
+  "next_coupon": "2024-07-15",
+  "settle": "2024-04-15",
+  "expect": {
+    "periodic_coupon": 30,
+    "days_elapsed": 91,
+    "days_in_period": 182,
+    "accrued": 15
+  }
+}

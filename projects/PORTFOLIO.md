@@ -8,6 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
+| bondstrip | **in progress** | A03 + A10 | smoke | Day-count accrued + cashflow strip (method stress) |
 | settlecut | **sustained** | A03 + A10 | done | Loss-adjusted interval imbalance settlement (method stress) |
 | ndcswap | **sustained** | A03 + A10 | done | Orange Book TE substitution + DAW/BMN (method stress) |
 | crewleg | **sustained** | A03 + A10 | done | FAR 117 Table B FDP + rest legality (method stress) |
@@ -43,7 +44,7 @@ Full historical table preserved in git history prior to depth restart; rows belo
 
 ## Next autonomous actions
 
-1. IDEA_DEPTH next candidate only — no dual-gate queue
+1. Climb bondstrip smoke→sustain (unique claim first)
 2. Digests: method stress — not vendor replacement
-3. Depth over conveyor: one framed→ready_to_build idea at a time
+3. After bondstrip sustain: IDEA_DEPTH next candidate only — no dual-gate queue
 4. Depth-restart sustained: lotblast, amendwin, crewleg, ndcswap, settlecut

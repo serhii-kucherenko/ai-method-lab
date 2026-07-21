@@ -1,0 +1,16 @@
+{
+  "id": "bondstrip-L-annual",
+  "day_count": "30/360",
+  "face": 1000,
+  "coupon_rate": 0.05,
+  "freq": 1,
+  "prev_coupon": "2026-01-15",
+  "next_coupon": "2027-01-15",
+  "settle": "2026-07-15",
+  "expect": {
+    "periodic_coupon": 50,
+    "days_elapsed": 180,
+    "days_in_period": 360,
+    "accrued": 25
+  }
+}

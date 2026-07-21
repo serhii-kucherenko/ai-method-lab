@@ -14,7 +14,7 @@ function days30360(a, b) {
   let d1 = a.d;
   let d2 = b.d;
   if (d1 === 31) d1 = 30;
-  if (d2 === 31 && (d1 === 30 || a.d === 31)) d2 = 30;
+  if (d2 === 31 && d1 === 30) d2 = 30;
   return (b.y - a.y) * 360 + (b.m - a.m) * 30 + (d2 - d1);
 }
 
@@ -28,7 +28,15 @@ function round6(n) {
   return Math.round(n * 1e6) / 1e6;
 }
 
+function periodDays30360(freq) {
+  if (freq === 2) return 180;
+  if (freq === 4) return 90;
+  if (freq === 1) return 360;
+  return null;
+}
+
 function accrued(fix) {
+  if (![1, 2, 4].includes(fix.freq)) return { reject: "bad_freq" };
   if (fix.maturity && fix.settle > fix.maturity) {
     return { reject: "settle_after_maturity" };
   }
@@ -43,7 +51,7 @@ function accrued(fix) {
   let daysInPeriod;
   if (fix.day_count === "30/360") {
     daysElapsed = days30360(prev, settle);
-    daysInPeriod = 180;
+    daysInPeriod = periodDays30360(fix.freq);
   } else if (fix.day_count === "ACT/ACT") {
     daysElapsed = actualDays(prev, settle);
     daysInPeriod = actualDays(prev, next);

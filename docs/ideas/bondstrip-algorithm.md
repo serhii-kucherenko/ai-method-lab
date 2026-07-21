@@ -42,4 +42,4 @@ Given remaining coupon dates + maturity:
 - Settlement after maturity
 - Settlement on coupon date → accrued = 0 (ex-coupon v0)
 
-Still research. No product code.
+Cleared IDEA_DEPTH → ready_to_build. Product: `projects/bondstrip/`.

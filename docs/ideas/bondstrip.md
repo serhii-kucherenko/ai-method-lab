@@ -1,14 +1,14 @@
 # bondstrip — idea dossier
 
-**State:** `adversarial`  
+**State:** `ready_to_build` (method stress)  
 **Framing:** method stress (not GTM vs Bloomberg/Yield Book)  
 **Opened:** 2026-07-21 after settlecut sustain
 
 ## Progress
 
 - Algorithm: `docs/ideas/bondstrip-algorithm.md`
-- Fixtures A–F + checker; Challenge A
-- Next: expand toward ≥25; G6 — still no product folder
+- Fixtures A–Y + checker green (25)
+- Challenges A–B; G5/G6; gate scorecard → **ready_to_build**
 
 ## Problem (G1)
 
@@ -27,6 +27,11 @@ Fixed-income desks strip coupon bonds and compute accrued with day-count convent
 2. Kill B — niche desk tooling — soft  
 3. Kill C — legal docs offline — math still checkable  
 
+## Falsifiers (G4)
+
+- Practitioner rejects v0 day-count vs live NASD/ICMA in ≥2 scenarios  
+- Spreadsheet still required for happy-path accrued after smoke  
+
 ## Decision
 
-**`adversarial`** — research only. No `projects/bondstrip/` until `ready_to_build`.
+**`ready_to_build`** — method stress. Digests must not claim commercial novelty vs Bloomberg. Open `projects/bondstrip/`.
