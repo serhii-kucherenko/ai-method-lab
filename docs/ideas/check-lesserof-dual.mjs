@@ -24,6 +24,12 @@ function refundLineA(input) {
   if (input.relabel_from_substitution === true) {
     return { status: "reject", reason: "claim_type_relabel" };
   }
+  if (
+    input.apply_usmca_lesser_of === true &&
+    typeof input.usmca_partner_duty !== "number"
+  ) {
+    return { status: "reject", reason: "usmca_partner_missing" };
+  }
   let base;
   if (input.claim_type === "direct_id") base = input.duties_paid;
   else if (input.claim_type === "substitution") {
@@ -32,9 +38,7 @@ function refundLineA(input) {
 
   let refund99 = 0.99 * base;
   if (input.apply_usmca_lesser_of === true) {
-    const partner =
-      typeof input.usmca_partner_duty === "number" ? input.usmca_partner_duty : 0;
-    refund99 = Math.min(refund99, 0.99 * partner);
+    refund99 = Math.min(refund99, 0.99 * input.usmca_partner_duty);
   }
   return { status: "ok", refund: refund99 };
 }
@@ -50,6 +54,12 @@ function refundLineB(input) {
   }
   if (input.relabel_from_substitution) {
     return { status: "reject", reason: "claim_type_relabel" };
+  }
+  if (
+    input.apply_usmca_lesser_of === true &&
+    typeof input.usmca_partner_duty !== "number"
+  ) {
+    return { status: "reject", reason: "usmca_partner_missing" };
   }
   const mode = input.claim_type;
   if (mode === "direct_id" && input.force_lesser_of === true) {
@@ -70,9 +80,8 @@ function refundLineB(input) {
       return { status: "reject", reason: "unknown_claim_type" };
   }
   let out = column * 0.99;
-  if (input.apply_usmca_lesser_of) {
-    const partnerDuty = Number(input.usmca_partner_duty);
-    const partnerCap = Number.isFinite(partnerDuty) ? partnerDuty * 0.99 : 0;
+  if (input.apply_usmca_lesser_of === true) {
+    const partnerCap = input.usmca_partner_duty * 0.99;
     if (out > partnerCap) out = partnerCap;
   }
   return { status: "ok", refund: out };

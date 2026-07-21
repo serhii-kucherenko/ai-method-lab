@@ -1,0 +1,16 @@
+{
+  "id": "lesserof-U-zero-substitute-basis",
+  "title": "Substitute basis zero — recoverable customs duty zero after 99%",
+  "source": "lesserof-algorithm.md edge",
+  "input": {
+    "claim_type": "substitution",
+    "duties_paid": 10000,
+    "substitute_basis": 0,
+    "apply_usmca_lesser_of": false,
+    "basket_other_ineligible": false
+  },
+  "expect": {
+    "status": "ok",
+    "refund": 0
+  }
+}

@@ -27,6 +27,12 @@ function refundLine(input) {
   if (input.relabel_from_substitution === true) {
     return { status: "reject", reason: "claim_type_relabel" };
   }
+  if (
+    input.apply_usmca_lesser_of === true &&
+    typeof input.usmca_partner_duty !== "number"
+  ) {
+    return { status: "reject", reason: "usmca_partner_missing" };
+  }
 
   let base;
   if (claim === "direct_id") {

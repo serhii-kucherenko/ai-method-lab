@@ -568,3 +568,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Encoded lesserof **K?P** (relabel cheat reject, two-line independence, USMCA mid-cap, negative/unknown/zero hygiene)
 - Suite **16/16** single + dual green; still seed; htsroute same-day no-build
 - Loop 27600 not re-armed
+
+## 2026-07-21 -- 30m loop tick 5: depositgap G6 + lesserof Q-U
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 5 (pid 29556 left alone). Wrote `depositgap-G6-summary.md` + `depositgap-PAGE-SPECS.md` (seed framing readiness; prefer depositgap next after htsroute). Encoded lesserof Q-U (USMCA missing-partner reject, negative substitute, tiny line, multi-line basket fail, zero substitute). Suite **21/21** single + dual green. Still no product; htsroute same-day no-build.

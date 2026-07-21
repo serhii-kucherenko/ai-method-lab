@@ -1,0 +1,16 @@
+{
+  "id": "lesserof-R-negative-substitute",
+  "title": "Negative substitute basis — reject",
+  "source": "lesserof-algorithm.md bad inputs",
+  "input": {
+    "claim_type": "substitution",
+    "duties_paid": 10000,
+    "substitute_basis": -100,
+    "apply_usmca_lesser_of": false,
+    "basket_other_ineligible": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "bad_inputs"
+  }
+}

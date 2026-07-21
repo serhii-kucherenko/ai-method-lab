@@ -24,7 +24,9 @@
    c. If `export_destination` ∈ {CA, MX}: `usmca_cap` = min(`tftea_cap`, `usmca_export_duty`) — may be **0**.  
       Else: `usmca_cap` = `tftea_cap`.  
    d. Recoverable = `usmca_cap` (already the stacked lesser-of path).  
-3. Reject if someone requests lesser-of on `direct_id`, or skips lesser-of on `substitution`.
+3. Reject if someone requests lesser-of on `direct_id`, or skips lesser-of on `substitution`.  
+4. Reject if USMCA lesser-of is requested without a numeric partner-duty input (no silent zero).  
+5. Paper fixtures use field names `claim_type` / `duties_paid` / `substitute_basis` / `usmca_partner_duty` (see checkers) — same rules as above.
 
 ## Anti-patterns
 
@@ -33,7 +35,8 @@
 | Always `0.99 * paid` | Misses TFTEA + USMCA + basket |
 | Dual approver on refund | Dual-gate clone |
 | Encode only blog “99%” text | Kill A theater |
+| USMCA flag with missing partner → silent $0 | Honesty hole (fixture Q) |
 
 ## Next (after htsroute clears)
 
-Continue G5 toward ≥25 (`lesserof-NARROW-CLAIM.md`). Fixtures A–J already paper-green. Still no product.
+Continue G5 toward ≥25 (`lesserof-G5-cases.md`). Fixtures A–U paper-green. Prefer activating **depositgap** first (`depositgap-G6-summary.md`). Still no product.
