@@ -8,7 +8,7 @@ Use on the **next calendar day** after framing (not 2026-07-21). Do not flip rea
 
 1. `htsroute-challenge-D.md` — value vanity accepted; brokers win commercially; stacked 232 eclipses letter MFN toys  
 2. `htsroute-VALUE-STAKES.md` — PPI Free/Free **and** base-MFN contrast caveats  
-3. `htsroute-STACKED-TARIFF-FENCE.md` — Section 232 ~2026-07-31; no annex goldens  
+3. `htsroute-STACKED-TARIFF-FENCE.md` — primary Annex III **2026-07-31** / others **2026-09-29**; no annex goldens  
 4. `htsroute-G6-summary.md` — decision section  
 5. `htsroute-GATE-SCORECARD.md`  
 6. `htsroute-ACCEPTANCE.md` — crisp ready_to_build bars (sections A–F)  

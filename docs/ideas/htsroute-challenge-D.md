@@ -12,7 +12,7 @@ Sub-attacks:
 2. **Kill A still stands** — vendors/brokers solve classification commercially.
 3. **Fixture farm ≠ idea depth** — green checkers prove algorithm consistency, not that anyone needs a product. (Current suite: **42** dual-green files — count still ≠ value.)
 4. **Same-day conveyor risk** — framing → fixtures → scorecard in one calendar day is exactly the failure mode DEPTH_RESTART named.
-5. **Stacked 232 / 301 eclipses MFN toys** — from ~**2026-07-31**, patented pharma / API Section 232 layers (counsel summaries) can dwarf base MFN 6%/6.5%↔Free contrasts. Selling letter MFN as entry savings without annex checks is another vanity path.
+5. **Stacked 232 / 301 eclipses MFN toys** — primary proclamation: Annex III from **2026-07-31**, other companies from **2026-09-29**. Patented pharma / API Section 232 layers can dwarf base MFN 6%/6.5%↔Free contrasts. Selling letter MFN as entry savings without annex checks is another vanity path.
 
 ## Answers (honest)
 
