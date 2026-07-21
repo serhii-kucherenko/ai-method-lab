@@ -125,7 +125,8 @@ Next research: Fixture D (scrap edge) golden JSON; still no product code.
 - Gate scorecard → **ready_to_build** (method stress)
 - Opened `projects/lotblast/` with blast domain module
 - Product tests load golden fixtures A–F (unique claim first)
-- Next: CTE API + mock-recall export (still not dual-gate)
+- CTE API + mock-recall export + plant authz + minimal UI landed same tick
+- Next: score A03 smoke cell; climb sustain without dual-gate patterns
 
 
 

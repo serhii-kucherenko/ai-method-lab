@@ -1,0 +1,75 @@
+:root {
+  --ink: #1a2421;
+  --paper: #e8f0ec;
+  --accent: #0f6b4c;
+  --muted: #5a6e66;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 20% 0%, #c5ddd2 0%, transparent 50%),
+    linear-gradient(160deg, #dfece6, #f4f7f5 60%);
+  min-height: 100vh;
+}
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+h1 {
+  font-size: 2.4rem;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.35rem;
+  color: var(--accent);
+}
+.lede {
+  color: var(--muted);
+  margin: 0 0 1.75rem;
+  line-height: 1.45;
+}
+section {
+  margin-bottom: 1.5rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-size: 0.9rem;
+}
+input {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid #9bb5a8;
+  background: #fff;
+}
+.row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+button {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+}
+.status {
+  min-height: 1.25rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+pre {
+  background: #12201a;
+  color: #d7ebe2;
+  padding: 1rem;
+  overflow: auto;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}

@@ -6,9 +6,9 @@ Method-stress product: plants + lot genealogy (DAG) + forward blast / backward t
 
 ## Sustain criteria
 
-- [ ] Unique claim: fixtures A–F green in product tests
-- [ ] CTE API: receiving / transformation / shipping with location KDEs
-- [ ] Mock recall lock + export envelope
-- [ ] A10: authz, migrations, health, THREATS
-- [ ] Minimal UI vertical path
-- [ ] FINDINGS honest (method stress framing)
+- [x] Unique claim: fixtures A–F green in product tests
+- [x] CTE API: receiving / transformation / shipping with location KDEs
+- [x] Mock recall lock + export envelope
+- [x] A10: authz, migrations, health, THREATS
+- [x] Minimal UI vertical path
+- [x] FINDINGS honest (method stress framing) — draft; refine at smoke score

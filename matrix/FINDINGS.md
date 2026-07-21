@@ -495,3 +495,7 @@ Human feedback: portfolio, testing, research, and summaries were shallow. Contro
 - Optimize-for flipped: fewer products, slower idea verification, bulletproof claims before code.
 - A03+A10 defaults unchanged; dual-gate wave treated as saturated evidence, not a template to extend.
 
+
+## 2026-07-21 -- lotblast smoke (pass)
+
+Method-stress product (not dual-gate). Fixtures A–F + CTE writes + mock-recall export + plant authz + UI. Cell `A03__P-smoke-001__lotblast__r1` scored. Next: P-crud.
