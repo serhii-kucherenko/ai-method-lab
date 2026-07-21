@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T02:20:00Z",
+  "updated_at": "2026-07-21T02:30:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -9,7 +9,7 @@
   "paused": false,
   "active_cell": null,
   "schema_version": "1.0.0",
-  "idle_reason": "taxhold_sustained_awaiting_next_tick_captable",
+  "idle_reason": "awaiting_next_product",
   "product_defaults": {
     "persistence": "sqlite",
     "stack": "node-ts",
@@ -17,12 +17,12 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-sustain__taxhold__r1",
+  "last_completed": "A03__P-sustain__captable__r1",
   "last_error": null,
   "current_product": null,
-  "next_cell": "A03__P-smoke-001__captable__r1",
+  "next_cell": "A03__P-smoke-001__pledgehold__r1",
   "mode": "autonomous",
-  "phase": "idle",
-  "notes": "Taxhold sustained (late-days + dual tax officer file). Next: captable.",
+  "phase": null,
+  "notes": "captable sustained. Next: pledgehold (refund-window gate + dual treasurer refund).",
   "hard_stop": false
 }

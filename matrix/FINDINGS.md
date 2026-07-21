@@ -480,3 +480,7 @@ Desks/policies/claims. Gates: reserve ceiling + dual adjuster settle. 3/3 tests 
 ## 2026-07-21 -- taxhold sustain (pass)
 
 Desks/periods/filings. Gates: late-days grace + dual tax officer file. 3/3 tests green. Next: captable.
+
+## 2026-07-21 -- captable sustain (pass)
+
+Firms/rounds/allocations. Gates: oversubscribe + dual counsel close. 3/3 tests green. Next: pledgehold.
