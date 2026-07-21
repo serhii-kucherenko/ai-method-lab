@@ -1,0 +1,11 @@
+{
+  "id": "ndcswap-E-bmn",
+  "prescribed_ndc": "00093012301",
+  "candidate_ndc": "00173045601",
+  "te_code_prescribed": "AB",
+  "te_code_candidate": "AB",
+  "same_ingredient_strength_form": true,
+  "daw": 0,
+  "brand_medically_necessary": true,
+  "expect": { "allow": false, "reason": "brand_medically_necessary" }
+}

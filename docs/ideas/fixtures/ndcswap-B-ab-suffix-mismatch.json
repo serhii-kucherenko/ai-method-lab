@@ -1,0 +1,11 @@
+{
+  "id": "ndcswap-B-ab-suffix-mismatch",
+  "prescribed_ndc": "00093012301",
+  "candidate_ndc": "00173045601",
+  "te_code_prescribed": "AB1",
+  "te_code_candidate": "AB2",
+  "same_ingredient_strength_form": true,
+  "daw": 0,
+  "brand_medically_necessary": false,
+  "expect": { "allow": false, "reason": "te_suffix_mismatch" }
+}
