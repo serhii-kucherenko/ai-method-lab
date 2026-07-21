@@ -41,6 +41,7 @@ Specialty pharma trade-compliance analysts must route SKUs across Chapter 29 (bu
 - **30 fixture files green** (`check-htsroute-fixtures.mjs`)
 - **Dual-impl cross-check green** (`check-htsroute-dual.mjs`)
 - Fixture #26 now cites primary **NY N003244** (Protonix tablets → 3004)
+- **Value contrast pair #32/#33:** acetaminophen bulk **6.5%** (NY R04092) vs tablets → 3004 Free — honest dollar stakes without rehabilitating PPI Free/Free
 
 ## 7. Decision
 

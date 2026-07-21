@@ -2,7 +2,7 @@
 
 **State:** `testable`  
 **Framing:** workflow experiment (not commercial duty-savings)  
-**Research ticks:** 11  
+**Research ticks:** 12  
 **Policy:** no product this calendar day
 
 ## Start here
@@ -11,16 +11,16 @@
 2. G6: `htsroute-G6-summary.md` — **do not build yet**
 3. Scorecard: `htsroute-GATE-SCORECARD.md` — hold
 4. Challenges A/B/C + **D (value)**
-5. Value honesty: `htsroute-VALUE-STAKES.md`
-6. Algorithm + checkers (30 fixtures + dual-impl)
+5. Value honesty: `htsroute-VALUE-STAKES.md` (PPI Free/Free **and** acetaminophen 6.5%↔Free)
+6. Algorithm + checkers (**32** fixtures + dual-impl)
 
 ## Unique claim
 
-29 / 3003 / 3004 form-and-mixing gate (+ Note 1(a)). Omeprazole + pantoprazole same-molecule reinforcement (**NY N003244** closes finished pantoprazole tablets).
+29 / 3003 / 3004 form-and-mixing gate (+ Note 1(a)). Omeprazole + pantoprazole same-molecule reinforcement (**NY N003244** closes finished pantoprazole tablets). Acetaminophen bulk (**NY R04092**, 6.5% MFN) vs finished 3004 supplies a non-zero MFN contrast.
 
 ## Honest value
 
-Showcase PPI MFN often **Free on both legs**. Do not sell duty savings. Survive as form-gate method experiment only.
+Showcase PPI MFN often **Free on both legs**. Acetaminophen bulk can be **6.5%** vs finished Free — preference programs may erase it. Do not sell blanket duty savings. Survive as form-gate method experiment only.
 
 ## Decision
 

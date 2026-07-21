@@ -6,7 +6,7 @@
 | G2 Non-isomorphic | pass | 29/3003/3004 form-mixing gate ≠ ndcswap / tariffstep / dual-gate / killed lanehold |
 | G3 Adversarial | pass with caveats | Kill A stands commercially; B/C closed; **D accepted on value vanity / MFN Free/Free** — domain claim survives |
 | G4 Falsifiers | pass (draft) | Ruling contradiction; spreadsheet-still-required; dishonest MFN-savings pitch |
-| G5 Depth tests | pass | Named suite + **30 fixture files green** + dual-impl |
+| G5 Depth tests | pass | Named suite + **32 fixture files green** + dual-impl; acetaminophen 6.5%↔Free value pair |
 | G6 Research summary | **hold — do not build yet** | Same calendar day + Challenge D honesty bar |
 
 **Decision this tick:** **Not ready_to_build.** Closed G1 finished-PPI letter; wrote value stakes + Challenge D. Still no product folder.

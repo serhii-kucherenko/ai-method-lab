@@ -1,0 +1,22 @@
+{
+  "id": "htsroute-32-acetaminophen-bulk-29",
+  "title": "Acetaminophen USP bulk — Chapter 29 at 6.5% MFN (non-Free contrast)",
+  "source": "CROSS NY R04092 — Acetaminophen USP bulk → 2924.29.6210, 6.5% ad valorem (GSP may apply by origin; base MFN not Free). Value contrast vs finished 3004 Free.",
+  "sku": {
+    "molecule_name": "acetaminophen",
+    "chemical_form": "separately_defined",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": false,
+    "retail_packing": false,
+    "dosage_form_signal": "bulk_drum",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "chapter_29_chemical"
+  },
+  "value_note": {
+    "mfn_general": "6.5%",
+    "contrast": "Finished acetaminophen dosage forms route under heading 3004 (typically Free MFN) — misrouting bulk as 3004 or finished as Ch 29 changes the duty story unlike PPI Free/Free pairs"
+  }
+}

@@ -349,3 +349,14 @@ Wrote `lesserof-NARROW-CLAIM.md` so the next idea does not activate as a vendor-
 - G5 outline on paper; **no fixtures** yet
 - htsroute still active; same-day build still blocked
 
+## 2026-07-21 ? acetaminophen dollar contrast (tick 12)
+
+Challenge D said PPI Free/Free kills vanity duty pitches. Searched for a **non-zero MFN** form-gate pair without lying:
+
+- **NY R04092:** Acetaminophen USP bulk ? 2924.29.6210 at **6.5%** ad valorem (GSP may apply by origin)
+- Finished acetaminophen dosage forms ? heading **3004** (Free MFN practice; peer 3004 analgesic dosage rulings)
+- Fixtures `#32` / `#33` green; dual-impl **32 files** green
+- VALUE-STAKES updated: PPI Free/Free still honest; acetaminophen restores a **conditional** dollar story
+
+Still **no product** today. Digests must not claim every drum pays 6.5%.
+

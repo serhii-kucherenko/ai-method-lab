@@ -18,6 +18,18 @@ A product that sells “we save you duty by routing 29 vs 3004” would be **lyi
 
 That is the kind of value claim prior lab digests would have waved past. We do not.
 
+## Counter-example with real MFN delta (same form gate)
+
+| Form | Route | MFN in source | Source |
+|------|-------|---------------|--------|
+| Acetaminophen USP **bulk** | Chapter 29 (2924.29.6210) | **6.5%** ad valorem (GSP may zero it by origin — base rate still not Free) | CROSS **NY R04092** |
+| Acetaminophen **tablets** (measured dose) | Heading **3004** | **Free** (medicament heading practice; peer analgesic dosage forms e.g. NY N316279 under 3004) | HTS 3004 + peer dosage rulings |
+
+Encoded: fixtures `#32` / `#33`. This restores a **honest** dollar story for *some* form-gate misroutes — without rehabilitating the PPI Free/Free pitch.
+
+Caveat: preference programs (GSP historically for India on acetaminophen bulk) can erase the 6.5% on a given entry. Digests must say “base MFN 6.5% vs Free finished,” not “every acetaminophen drum pays 6.5%.”
+
+
 ## Where real stakes still exist (narrower, honest)
 
 1. **Reasonable care / audit trail** — wrong chapter/heading on the entry is still a classification error even when both rates are Free. CBP Reasonable Care ICP + 19 U.S.C. § 1592 path remain relevant; we still lack a public CF-29 docket specifically about 29↔30 pharma for this tick.

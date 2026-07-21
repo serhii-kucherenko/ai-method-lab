@@ -19,6 +19,7 @@ Controller chains these without waiting. Finish one → commit → start next. N
 | 20 | Dual-impl already green | done (tick 10) |
 | 21 | lesserof Kill A / narrow unique claim paper | **done** — `lesserof-NARROW-CLAIM.md` (stacked caps + basket trap) |
 | 22 | Day-boundary htsroute reassess | pending (next calendar day) |
+| 23 | Acetaminophen 6.5%↔Free value pair | **done** — fixtures #32/#33 + VALUE-STAKES update |
 
 ## Parked seeds
 
