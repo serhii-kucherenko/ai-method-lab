@@ -80,6 +80,7 @@ https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/pro
 - Commit + push **before** send so the link resolves
 - Plain-language label in the body: **Try it** (attachment = offline page; link = full project in the browser)
 - Honesty note if useful: the playground may fail when Node SQLite or native APIs are unsupported — the try page still works offline
+- Repo must stay **public** so StackBlitz can import without a paid private-repo plan (set public for this reason)
 
 Do **not** deploy to Vercel (or similar) just for digests.
 
