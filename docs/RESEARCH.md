@@ -741,3 +741,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - All five seeds now have day-1 non-smoke contracts in kit checker
 - Preflip still calendar-blocked after 30 ticks; loop 27600 not re-armed
 
+
+## 2026-07-21 -- 30m loop tick 15: full-queue day-1 non-smoke
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 15 (pid 29556 left alone). Wrote `oshamult-DAY1-NONSMOKE.md` and `ptax4975-DAY1-NONSMOKE.md`; wired into post-activation run sheets. Kit checker + all 5 dual-green pass. Preflip still calendar-blocked. No product.
