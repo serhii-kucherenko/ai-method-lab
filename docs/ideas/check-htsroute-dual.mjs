@@ -17,7 +17,13 @@ const DOSE_FORMS = new Set([
   "transdermal",
 ]);
 const BULK_PURE = new Set(["bulk_drum", "powder_bulk"]);
-const MIXED_BULK = new Set(["bulk_pellets", "other", "unknown"]);
+const MIXED_BULK = new Set([
+  "bulk_pellets",
+  "powder_bulk",
+  "bulk_drum",
+  "other",
+  "unknown",
+]);
 const BULK_SHAPES = new Set(["bulk_drum", "powder_bulk", "bulk_pellets"]);
 
 /** Implementation A — step table (canonical algorithm.md order). */
@@ -79,13 +85,17 @@ function routeB(sku) {
     return "heading_3004_medicament";
   }
 
-  // Mixed bulk medicament (3003)
+  // Mixed bulk medicament (3003) — HTS heading text, not pellet-only
   if (
     therapeutic &&
     chem === "mixture" &&
     !measured &&
     !retail &&
-    (form === "bulk_pellets" || form === "other" || form === "unknown")
+    (form === "bulk_pellets" ||
+      form === "powder_bulk" ||
+      form === "bulk_drum" ||
+      form === "other" ||
+      form === "unknown")
   ) {
     return "heading_3003_bulk_medicament";
   }

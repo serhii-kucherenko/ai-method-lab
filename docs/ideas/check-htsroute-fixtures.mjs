@@ -18,7 +18,13 @@ const DOSE_FORMS = new Set([
 
 const BULK_PURE = new Set(["bulk_drum", "powder_bulk"]);
 
-const MIXED_BULK = new Set(["bulk_pellets", "other", "unknown"]);
+const MIXED_BULK = new Set([
+  "bulk_pellets",
+  "powder_bulk",
+  "bulk_drum",
+  "other",
+  "unknown",
+]);
 const BULK_SHAPES = new Set(["bulk_drum", "powder_bulk", "bulk_pellets"]);
 
 function routeSku(sku) {

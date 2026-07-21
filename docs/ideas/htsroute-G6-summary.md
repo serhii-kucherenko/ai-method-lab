@@ -14,7 +14,7 @@ Specialty pharma trade-compliance analysts must route SKUs across Chapter 29 (bu
 
 - Route family ∈ {29, 3003, 3004, Note 1(a) exclusion, reject}
 - Therapeutic bulk separately-defined → 29
-- Therapeutic mixture without measured dose/retail → 3003
+- Therapeutic mixture without measured dose/retail → 3003 (any bulk/other/unknown shape — not pellet-only; powder/drum twins #38/#39)
 - Therapeutic + measured dose/retail + dose form → 3004
 - Dose-form enum without measured/retail → reject (anti-keyword)
 - GRI 3 combinations → reject in v0

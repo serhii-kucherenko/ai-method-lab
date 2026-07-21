@@ -766,3 +766,11 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 ## 2026-07-21 -- 30m loop tick 16: CF-29 search + queue scaffolds
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 16 (pid 29556 left alone). Wrote `htsroute-G1-CF29-SEARCH.md` (no public pharma 29/30 CF-29 docket; adjacent 3004?3002 fights out of scope). Finished `lesserof` / `oshamult` / `ptax4975` REPO-SCAFFOLD; kit checker requires them. Preflip still calendar-blocked; all 5 dual-green. No product.
+
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #33
+
+- Closed claim/code split: mixture + powder/drum ? 3003 (was pellets-only in checkers while ACCEPTANCE said any mixture)
+- Fixtures #38/#39; algorithm + dual routers updated; **38** dual-green
+- Preflip still calendar-blocked; loop 27600 not re-armed
+

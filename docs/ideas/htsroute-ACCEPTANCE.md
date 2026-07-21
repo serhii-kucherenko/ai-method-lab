@@ -13,7 +13,7 @@ Domain module implements `routeSku` per `htsroute-algorithm.md`. Product tests l
 | Scenario | Expected family | Why it is the claim |
 |----------|-----------------|---------------------|
 | Therapeutic bulk separately-defined chemical | **29** | Form gate, not molecule keyword |
-| Therapeutic mixture, no measured dose / retail packing | **3003** | Middle path (omeprazole-style pellets) |
+| Therapeutic mixture, no measured dose / retail packing (pellets, powder, or drum shape) | **3003** | Middle path — HTS 3003 text; pellets CROSS example; fixtures #10 / #38 / #39 |
 | Therapeutic + measured dose / retail + dose form | **3004** | Finished medicament path |
 | Note 1(a) exclusion facts | **Note 1(a)** | Legal fence, not CRUD |
 | Acetaminophen bulk (fixture #32) | **29** | Honest non-zero MFN contrast pair |

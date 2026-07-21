@@ -6,7 +6,7 @@
 | G2 Non-isomorphic | pass | 29/3003/3004 form-mixing gate ≠ ndcswap / tariffstep / dual-gate / killed lanehold |
 | G3 Adversarial | pass with caveats | Kill A stands commercially; B/C closed; **D accepted on value vanity / MFN Free/Free** — domain claim survives |
 | G4 Falsifiers | pass (draft) | Ruling contradiction; spreadsheet-still-required; dishonest MFN-savings pitch |
-| G5 Depth tests | pass | Named suite + **36 fixture files green** + dual-impl; acetaminophen 6.5%↔Free value pair |
+| G5 Depth tests | pass | Named suite + **38 fixture files green** + dual-impl; mixture powder/drum → 3003 aligned with HTS text |
 | G6 Research summary | **hold — do not build yet** | Same calendar day (**2026-07-21**) + Challenge D honesty bar |
 
 **Decision this tick:** **Not ready_to_build.** Calendar still framing day (**2026-07-21**). Flip sheet: `htsroute-TOMORROW-RUN.md`. Morning pocket: `htsroute-FLIP-MORNING.md`. Scaffold: `htsroute-REPO-SCAFFOLD.md`. Preflip now also requires `check-seed-kits.mjs`.

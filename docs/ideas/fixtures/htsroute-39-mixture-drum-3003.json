@@ -1,0 +1,17 @@
+{
+  "id": "htsroute-39-mixture-drum-3003",
+  "title": "Therapeutic mixture bulk drum without dose or retail → 3003",
+  "source": "HTSUS heading 3003 text; twin of #38 for bulk_drum shape",
+  "sku": {
+    "chemical_form": "mixture",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": false,
+    "retail_packing": false,
+    "dosage_form_signal": "bulk_drum",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "heading_3003_bulk_medicament"
+  }
+}

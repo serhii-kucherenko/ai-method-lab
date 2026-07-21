@@ -36,11 +36,13 @@ Named cases for the unique claim. Encoding grew across ticks — not a same-tick
 | 23 | pellets not 3004 → 3003 | yes |
 | 24 | zero facts → reject | yes |
 | 25 | molecule name ignored | yes |
+| 38 | mixture powder → 3003 | yes (claim/code align) |
+| 39 | mixture drum → 3003 | yes (claim/code align) |
 
 ## Encoding status
 
-- **24 fixture files green** via `node docs/ideas/check-htsroute-fixtures.mjs`
-- G5 named suite effectively covered (25 cases; #16 aliased to #8)
+- **38 fixture files green** via `node docs/ideas/check-htsroute-fixtures.mjs`
+- G5 named suite covered; value pairs #32–#37; mixture-shape twins #38/#39 close ACCEPTANCE vs pellets-only checker split
 - **Value contrast pair:** #32/#33 acetaminophen; #34/#35 ibuprofen (NY I83067 6.5% / NY N006187 Free); #36/#37 aspirin (NY 890808 non-Free / NY K87058 Free)
 - G6 still **do not build yet** this calendar day (`block_same_day_research_to_build`)
 - Checkers: **36** fixture files green (+ dual-impl)

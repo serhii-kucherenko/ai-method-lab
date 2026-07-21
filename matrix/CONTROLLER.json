@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T19:00:00Z",
+  "updated_at": "2026-07-21T19:12:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__loop15m_tick32_and_30m_tick16",
+  "last_completed": "research__loop15m_tick33_mixture_3003_align",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 32 + 30m tick 16: depositgap scaffold + digest; CF-29 search (no docket); full-queue REPO-SCAFFOLD. Calendar-blocked. Do NOT re-arm pid 27600 or 29556.",
+  "notes": "15m tick 33: aligned mixture powder/drum → 3003 (fixtures 38/39); closed claim/code split. Calendar-blocked. Do NOT re-arm pid 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -43,6 +43,6 @@
     "pid": 27600,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 32
+    "ticks_observed": 33
   }
 }

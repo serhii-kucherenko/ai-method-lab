@@ -49,7 +49,7 @@ A binary 29/3004 product would mis-route intermediate pellets — that is a dept
 4. Else if `therapeutic_or_prophylactic` AND (`measured_dose` OR `retail_packing`):
    - If `dosage_form_signal` ∈ {bulk_drum, powder_bulk, bulk_pellets} → **reject** (inconsistent bulk + dose/retail claim)
    - Else → **heading_3004_medicament** (HTS: measured doses **or** retail packing)
-5. Else if `therapeutic_or_prophylactic` AND `chemical_form` = `mixture` AND NOT `measured_dose` AND NOT `retail_packing` AND `dosage_form_signal` ∈ {bulk_pellets, other, unknown} → **heading_3003_bulk_medicament**.
+5. Else if `therapeutic_or_prophylactic` AND `chemical_form` = `mixture` AND NOT `measured_dose` AND NOT `retail_packing` AND `dosage_form_signal` ∈ {bulk_pellets, powder_bulk, bulk_drum, other, unknown} → **heading_3003_bulk_medicament**.
 6. Else if `chemical_form` = `separately_defined` AND `dosage_form_signal` ∈ {bulk_drum, powder_bulk} → **chapter_29_chemical**.
 7. Else if therapeutic true but facts insufficient to choose among 29 / 3003 / 3004 → **reject**.
 8. Else → **reject**.
@@ -57,7 +57,8 @@ A binary 29/3004 product would mis-route intermediate pellets — that is a dept
 ## Invariants
 
 - Therapeutic indication alone does **not** create 3004.
-- Mixture + therapeutic + not measured/retail → **3003**, not 29 and not 3004.
+- Mixture + therapeutic + not measured/retail + bulk/other/unknown shape → **3003**, not 29 and not 3004 (HTS 3003 text; pellets CROSS is one worked example, not the only shape).
+- Separately defined + powder/drum → **29** (same physical shape, different chemical_form).
 - Molecule name is **not** an input.
 - `dosage_form_signal=tablet` with `measured_dose=false` and `retail_packing=false` → **not** 3004 (Challenge B item 7).
 
@@ -76,7 +77,7 @@ A binary 29/3004 product would mis-route intermediate pellets — that is a dept
 |-------|--------|
 | 3004 conjunction | HTSUS heading 3004 text |
 | Bulk API → 29 | NY I89619; omeprazole NY L82483 |
-| Mixed bulk medicament → 3003 | Omeprazole pellets NY A88482 / NY 864623 |
+| Mixed bulk medicament → 3003 | HTSUS heading 3003 text; worked CROSS: omeprazole pellets NY A88482 / NY 864623; v0 also encodes mixture powder/drum (#38/#39) |
 | Dosage form → 3004 | NY N325050 (peer); **Protonix pantoprazole tablets NY N003244** |
 | Note 1(a) | Chapter 30 Note 1(a) |
 | Value honesty | MFN often Free both sides — see `htsroute-VALUE-STAKES.md` |
