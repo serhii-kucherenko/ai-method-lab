@@ -5,7 +5,8 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
 ## Before anything else
 
 1. Confirm local/OS date is **not** 2026-07-21.  
-2. Re-read, in order:  
+2. Confirm none of the hard aborts in `htsroute-FLIP-ABORT.md` apply.  
+3. Re-read, in order:  
    - `htsroute-challenge-D.md`  
    - `htsroute-VALUE-STAKES.md`  
    - `htsroute-G6-summary.md`  
@@ -13,11 +14,11 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
    - `htsroute-ACCEPTANCE.md`  
    - `htsroute-COMPREHENSIVE-BLUEPRINT.md` + page specs + phase briefs  
    - `htsroute-SUSTAIN-TEST-MATRIX.md`  
-3. Run paper checkers (must stay green):  
+4. Run paper checkers (must stay green):  
    - `node docs/ideas/check-htsroute-fixtures.mjs`  
    - `node docs/ideas/check-htsroute-dual.mjs`  
-4. Fill `htsroute-DAY-BOUNDARY.md` checkboxes for real (not dry-run).  
-5. Optional preflight for the whole research farm: `node docs/ideas/check-all-seeds.mjs` (must stay green; does not replace the htsroute-specific re-reads).
+5. Fill `htsroute-DAY-BOUNDARY.md` checkboxes for real (not dry-run).  
+6. Optional preflight for the whole research farm: `node docs/ideas/check-all-seeds.mjs` (must stay green; does not replace the htsroute-specific re-reads).
 
 ## If all pass
 
@@ -32,4 +33,4 @@ Stay in research, park, or kill — write why in `docs/RESEARCH.md`. Do not open
 
 ## After htsroute clears (build done, parked, or killed)
 
-Activate next per `ACTIVATION_QUEUE.md` — prefer **depositgap**.
+Do **not** activate the next idea in the same tick as the flip. Later: follow `depositgap-POST-HTSROUTE-RUN.md` (prefer depositgap; money honesty in `depositgap-VALUE-STAKES.md`). Then `lesserof-POST-DEPOSITGAP-RUN.md`.

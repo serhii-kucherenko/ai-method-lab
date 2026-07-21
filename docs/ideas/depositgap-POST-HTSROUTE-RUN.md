@@ -11,13 +11,14 @@ Use **only after** `htsroute` has flipped to build, parked, or killed — and **
 ## Re-read (in order)
 
 1. `depositgap-challenge-ABC.md` (Kill A honesty)  
-2. `depositgap-DAY-COUNT.md` (§ 1677g vs delinquency fence)  
-3. `depositgap-G6-summary.md`  
-4. `depositgap-ACCEPTANCE.md`  
-5. `depositgap-COMPREHENSIVE-BLUEPRINT.md` + `depositgap-PAGE-SPECS.md` + `depositgap-PHASE-BRIEFS.md`  
-6. `depositgap-SUSTAIN-TEST-MATRIX.md`  
-7. `depositgap-API-CONTRACT.md`  
-8. `depositgap-HYPOTHESIS-DRAFT.md`
+2. `depositgap-VALUE-STAKES.md`  
+3. `depositgap-DAY-COUNT.md` (§ 1677g vs delinquency fence)  
+4. `depositgap-G6-summary.md`  
+5. `depositgap-ACCEPTANCE.md`  
+6. `depositgap-COMPREHENSIVE-BLUEPRINT.md` + `depositgap-PAGE-SPECS.md` + `depositgap-PHASE-BRIEFS.md`  
+7. `depositgap-SUSTAIN-TEST-MATRIX.md`  
+8. `depositgap-API-CONTRACT.md`  
+9. `depositgap-HYPOTHESIS-DRAFT.md`
 
 ## Checkers (must stay green)
 

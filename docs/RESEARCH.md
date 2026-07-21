@@ -684,3 +684,10 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 ## 2026-07-21 -- 30m loop tick 12: flip abort + ptax cites
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 12 (pid 29556 left alone). Refreshed htsroute gate scorecard to **36** fixtures; wrote `htsroute-FLIP-ABORT.md` and wired it into ACTIVATION_QUEUE / READY-DRYRUN. Closed ptax4975 statute gap with `ptax4975-STATUTE-CITATIONS.md` (ï¿½ 4975(f)(4), Temp. ï¿½ 141.4975-13, Rev. Rul. 2006-38). Re-ran `check-all-seeds.mjs` ï¿½ all 5 dual-green. Calendar still **2026-07-21**; no product; do not flip.
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #25
+
+- Wrote depositgap-VALUE-STAKES.md (honest ~$160,500 surprise toy; Kill A; day-count fence)
+- Wrote lesserof-POST-DEPOSITGAP-RUN.md; ptax4975-FMV-FENCE.md
+- Wired htsroute-TOMORROW-RUN to flip-abort + depositgap/lesserof run sheets
+- check-all-seeds still all 5 dual-green; same-day build blocked; loop 27600 not re-armed

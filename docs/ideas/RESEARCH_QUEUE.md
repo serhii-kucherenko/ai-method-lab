@@ -7,12 +7,12 @@ Controller chains these without waiting. Finish one → commit → start next.
 | # | Item | Status |
 |---|------|--------|
 | 28 | Day-boundary ready reassess | **pending** (calendar still 2026-07-21) |
-| 49 | 15m tick #23 | done — API contracts |
-| 50 | 15m tick #24 | **done** — FOM size lock + depositgap post-htsroute run |
+| 50 | 15m tick #24 | done — FOM size + depositgap post-run |
+| 51 | 15m tick #25 | **done** — value stakes + queue run sheets |
 
-## Parallel seeds
+## After htsroute
 
-See `SEED_READINESS.md`. After htsroute: `depositgap-POST-HTSROUTE-RUN.md`.
+`depositgap-POST-HTSROUTE-RUN.md` then `lesserof-POST-DEPOSITGAP-RUN.md`.
 
 ## Rule
 
