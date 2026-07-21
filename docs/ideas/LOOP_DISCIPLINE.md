@@ -7,7 +7,9 @@ On 2026-07-21 the agent repeatedly **killed and re-armed** the 30m keep-going lo
 ## Rules
 
 1. **If a matching depth loop is already running, do not restart it.** Only update CONTROLLER notes.
-2. Re-arm only when the process is **dead** or the human explicitly says to replace the loop.
+2. Re-arm only when the process is **dead** or the human explicitly says to replace the loop (e.g. `/loop 15m` replacing a 30m depth loop).
 3. On each wake: do a **material** queue item (fixtures that teach something, scorecard flip, product phase) — not park-note spam.
 4. “Same-day no build” is not “same-day no work.” Research/testing must still advance.
+5. Prefer **one** depth keep-going loop. Parallel **agents/tasks** are fine; duplicate sleepers with the same sentinel are not.
+6. Current depth sentinel (2026-07-21 replace): `AGENT_LOOP_TICK_depth_15m` every **15m** (replaced prior 30m `depth_keepgoing`).
 5. If the loop process **exits** (exit code non-zero / no PID), re-arm once — that is recovery, not a timer reset on a live sleeper.

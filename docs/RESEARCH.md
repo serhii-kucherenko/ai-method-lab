@@ -387,3 +387,9 @@ Live `AGENT_LOOP_TICK_depth_keepgoing` already landed API contract, PRODUCT fram
 - Wrote `lesserof-KILL-BC.md` (niche + offline kills answered on paper; Kill A still stands)
 
 Still **no** `projects/htsroute/`. Same-day build blocked. Loop pid 8880 left alone.
+
+## 2026-07-21 — /loop 15m armed + parallel agents (tick 14)
+
+Human explicit replace of 30m depth loop with **15m** `AGENT_LOOP_TICK_depth_15m` (pid 27600). Stopped old pid 8880 / stale 29740.
+
+Immediate tick: updated LOOP_DISCIPLINE, CONTROLLER, try-demo pointer. Spawned parallel research agents (lesserof CFR cites, MFN hunt, try-demo harden, new seeds, acceptance polish). Still **no** `projects/htsroute/`.
