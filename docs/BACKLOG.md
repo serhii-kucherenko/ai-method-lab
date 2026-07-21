@@ -4,13 +4,14 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **claimreserve** | A03 + A10 | Policies + claims; reserve ceiling gate; dual adjuster settle. |
+| 1 | **taxhold** | A03 + A10 | Tax periods + filings; late-days gate; dual tax officer file. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
 | Product | Gate stressed |
 | --- | --- |
+| claimreserve | reserve ceiling + dual adjuster settle |
 | escrowrail | balance floor + dual escrow officer release |
 | payclaw | overpay headroom + dual HR release |
 | safecase | retention days + dual counsel archive |
@@ -21,7 +22,6 @@
 | quotaguard | quota ceiling + dual finance release |
 | lottrack | quarantine severity + dual QA clear |
 | bondrail | collateral floor + dual treasurer release |
-| crewgate | overtime hours + dual supervisor close |
 
 ## Strategy
 

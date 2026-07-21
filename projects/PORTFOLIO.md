@@ -90,10 +90,11 @@ Registry of product experiments. Controllers pick the next **queued** product ph
 | safecase | **sustained** | A03 + A10 | sustain complete | Firms + matters + evidence + retention days + dual counsel archive |
 | payclaw | **sustained** | A03 + A10 | sustain complete | Firms + payroll runs + clawbacks + overpay headroom + dual HR release |
 | escrowrail | **sustained** | A03 + A10 | sustain complete | Workspaces + accounts + disbursements + balance floor + dual escrow officer release |
+| claimreserve | **sustained** | A03 + A10 | sustain complete | Desks + policies + claims + reserve ceiling + dual adjuster settle |
 | orbitfolio | **sustained** | A03 + A08 | design-lab complete | Live https://orbitfolio-kohl.vercel.app Â· https://github.com/serhii-kucherenko/orbitfolio |
 
 ## Next autonomous actions
 
-1. Build next comprehensive product: **claimreserve** (policies + claims + reserve ceiling + dual adjuster settle)
+1. Build next comprehensive product: **taxhold** (periods + filings + late-days gate + dual tax officer file)
 2. 1h keepgoing loop armed; clone-tier deferred
 3. Proven: SLO/severity/money/dual-control gates beat noun-swap FSMs
