@@ -4,13 +4,14 @@
 
 | # | Item | Status |
 |---|------|--------|
-| 28 | Day-boundary ready reassess | **pending** (calendar still 2026-07-21) |
-| 59 | Value-gate dry run | **done** — `htsroute-VALUE-GATE-DRYRUN.md` (lean park if still weak) |
-| 60 | Try-demo smoke in preflip | **done** — behavioral toys + preflip wire |
-| 61 | Head-to-head value memo | **done** — `htsroute-vs-depositgap-VALUE.md` + morning checklist |
+| 28 | Day-boundary ready reassess | **pending** — provisional **PARK** draft on sheet (confirm 2026-07-22+) |
+| 59 | Value-gate dry run | **done** |
+| 60 | Try-demo smoke in preflip | **done** |
+| 61 | Head-to-head value memo | **done** |
+| 62 | Provisional park draft + kits smoke | **done** — DAY-BOUNDARY draft; kits run smoke |
 
-Morning: `htsroute-FLIP-MORNING.md` + value gate dry run + vs-depositgap memo.
+Morning: `htsroute-FLIP-MORNING.md` → confirm/deny PARK draft.
 
 ## Parallel seeds
 
-All five have G1 evidence + research try demos + dual-green fixtures. Prefer depositgap after htsroute clears/parks.
+Prefer depositgap after htsroute parks/clears (later tick).

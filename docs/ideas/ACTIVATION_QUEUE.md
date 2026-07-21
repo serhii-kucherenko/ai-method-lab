@@ -5,17 +5,18 @@
 ## Tomorrow flip procedure (htsroute)
 
 1. Confirm calendar day ≠ 2026-07-21.  
-2. Walk every checkbox in `htsroute-DAY-BOUNDARY.md` (full re-read list also in `htsroute-TOMORROW-RUN.md`).  
-2b. Confirm none of `htsroute-FLIP-ABORT.md` hard aborts apply.  
-3. If all true: set `ready_to_build`, open `projects/htsroute/` per comprehensive blueprint — **not** smoke-as-sustain.
-4. If any false: stay research / park / kill; write why in `docs/RESEARCH.md`.  
-5. Do **not** activate depositgap in the same tick as the htsroute flip (one product phase).
+2. Walk every checkbox in `htsroute-DAY-BOUNDARY.md` (full re-read list also in `htsroute-TOMORROW-RUN.md`). Confirm/deny the **provisional PARK draft** at the bottom.  
+2b. Confirm none of `htsroute-FLIP-ABORT.md` hard aborts apply. Soft abort #4 (value weak) → prefer park.  
+2c. Re-read `htsroute-vs-depositgap-VALUE.md` (dollar face-off).  
+3. If all true **and** value gate passes as method-stress: set `ready_to_build`, open `projects/htsroute/` per comprehensive blueprint — **not** smoke-as-sustain.  
+4. If any false **or** value still provisional weak: park / kill; write why in `docs/RESEARCH.md`; later tick → depositgap.  
+5. Do **not** activate depositgap in the same tick as the htsroute flip/park.
 
 ## Queue (research slot frees)
 
 | Priority | Idea | Why |
 |----------|------|-----|
-| 0 | **htsroute** | Current idea — comprehensive multi-page product if day-boundary passes |
+| 0 | **htsroute** | Current idea — park lean if Challenge D weak; build only as honest method-stress |
 | 1 | **depositgap** | Strongest $ seed — `depositgap-POST-HTSROUTE-RUN.md` |
 | 2 | **lesserof** | Stacked drawback caps — `lesserof-POST-DEPOSITGAP-RUN.md` |
 | 3 | **oshamult** | OSHA serial penalty — `oshamult-POST-LESSEROF-RUN.md` |
@@ -26,5 +27,5 @@
 - One product phase in flight.  
 - Kill isomorphic dual-gate on sight.  
 - Digests: story first; Kill A honesty; no pass-count theater.  
-- Never re-arm live loop pids **27600** / **29556** while alive.  
-- Checker hygiene: `docs/ideas/CHECKER_SNAP.md` (re-run before flip).
+- Never re-arm live loop while `matrix/CONTROLLER.json` `loop.pid` is alive (`do_not_rearm_if_alive`).  
+- Checker hygiene: `docs/ideas/CHECKER_SNAP.md` (re-run before flip); kits now include try-demo smoke.

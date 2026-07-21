@@ -1,12 +1,15 @@
 /**
  * Paper-kit completeness for the five active research seeds.
- * Does not flip controller state. Exit 0 only when every required artifact exists.
+ * Does not flip controller state. Exit 0 only when every required artifact exists
+ * and research try-demo smoke stays green.
  */
+import { spawnSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const root = join(__dirname, "../..");
 
 const seeds = [
   {
@@ -28,6 +31,8 @@ const seeds = [
       "htsroute-REPO-SCAFFOLD.md",
       "htsroute-G1-CF29-SEARCH.md",
       "htsroute-STACKED-TARIFF-FENCE.md",
+      "htsroute-VALUE-GATE-DRYRUN.md",
+      "htsroute-vs-depositgap-VALUE.md",
       "QUEUE-ISO-AUDIT.md",
       "check-htsroute-preflip.mjs",
     ],
@@ -122,6 +127,23 @@ for (const seed of seeds) {
 if (missing > 0) {
   console.error(`\nKIT INCOMPLETE (${missing} file(s) missing)`);
   process.exit(1);
+}
+
+{
+  const smokePath = join(root, "demos/smoke-try-demos.mjs");
+  const r = spawnSync(process.execPath, [smokePath], {
+    encoding: "utf8",
+    cwd: root,
+  });
+  const tail = (r.stdout || r.stderr || "")
+    .trim()
+    .split(/\r?\n/)
+    .slice(-1)[0];
+  if (r.status !== 0) {
+    console.error(`FAIL demos/smoke-try-demos.mjs: ${tail || `exit ${r.status}`}`);
+    process.exit(1);
+  }
+  console.log(`PASS demos/smoke-try-demos.mjs: ${tail}`);
 }
 
 console.log("\nAll 5 seed paper kits complete");

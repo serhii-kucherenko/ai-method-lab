@@ -36,3 +36,18 @@ Stay in research, park, or kill — write why in `docs/RESEARCH.md`. Do not open
 ## Parallel
 
 `depositgap` is next after htsroute clears (`depositgap-POST-HTSROUTE-RUN.md`). Prefer depositgap if htsroute parks on value. Do **not** activate depositgap in the same tick as the htsroute flip/park.
+
+## Provisional decision draft (2026-07-21 evening — not a flip)
+
+Written before calendar clears so morning is confirm/deny, not invent.
+
+| Field | Draft |
+|-------|-------|
+| Calendar clear? | **No** (still framing day) |
+| Preflip | Blocked on calendar only; dual + kits + smoke green |
+| Value gate | Challenge D still **provisional weak** — see `htsroute-VALUE-GATE-DRYRUN.md` + `htsroute-vs-depositgap-VALUE.md` |
+| **Draft call** | **PARK** (soft abort #4) — do not open `projects/htsroute/` |
+| Next idea | **depositgap** on a **later** tick via `depositgap-POST-HTSROUTE-RUN.md` |
+| Build override | Only if morning re-read explicitly accepts a narrow method-stress product with Kill A + zero Free/Free savings claims in every digest |
+
+**Morning action:** re-read Challenge D; if still weak → check Park above and write the real one-liner into `docs/RESEARCH.md`. If Build override chosen → fill checkboxes above truthfully first.

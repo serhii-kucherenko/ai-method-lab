@@ -890,3 +890,15 @@ Loop wake #2 (pid 26872). Same-day build still blocked.
 **Decision:** still researching. Default lean remains park htsroute tomorrow if Challenge D weak; activate depositgap later.
 
 **Skeptical one-liner:** Putting the dollar contrast on one page makes fixture-farm flip excuses harder to hide.
+
+## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #51 (provisional park draft)
+
+Loop wake #3 (pid 26872). Same-day build still blocked.
+
+- Prefixed `htsroute-DAY-BOUNDARY.md` with a provisional **PARK** draft (soft abort #4) for morning confirm/deny
+- Seed kits now require value memos + run try-demo smoke before green
+- `ACTIVATION_QUEUE.md` aligned to park-lean + depositgap later
+
+**Decision:** still researching. No product folder. Tomorrow: confirm park or override as method-stress only.
+
+**Skeptical one-liner:** Morning should not invent a flip story under time pressure ù the park lean is written down tonight.
