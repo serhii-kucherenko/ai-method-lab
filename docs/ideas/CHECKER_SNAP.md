@@ -4,7 +4,7 @@ Last verified on **2026-07-21** during 30m depth tick 10. Re-run before any read
 
 | Suite | Command | Count |
 |-------|---------|------:|
-| htsroute | `node docs/ideas/check-htsroute-fixtures.mjs` | 38 |
+| htsroute | `node docs/ideas/check-htsroute-fixtures.mjs` | 40 |
 | htsroute dual | `node docs/ideas/check-htsroute-dual.mjs` | (must agree) |
 | depositgap | `node docs/ideas/check-depositgap-fixtures.mjs` | 23 |
 | lesserof | `node docs/ideas/check-lesserof-fixtures.mjs` | 23 |

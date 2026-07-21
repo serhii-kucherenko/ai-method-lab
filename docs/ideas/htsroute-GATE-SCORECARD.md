@@ -6,10 +6,10 @@
 | G2 Non-isomorphic | pass | 29/3003/3004 form-mixing gate ≠ ndcswap / tariffstep / dual-gate / killed lanehold |
 | G3 Adversarial | pass with caveats | Kill A stands commercially; B/C closed; **D accepted on value vanity / MFN Free/Free** — domain claim survives |
 | G4 Falsifiers | pass (draft) | Ruling contradiction; spreadsheet-still-required; dishonest MFN-savings pitch |
-| G5 Depth tests | pass | Named suite + **38 fixture files green** + dual-impl; mixture powder/drum → 3003 aligned with HTS text |
+| G5 Depth tests | pass | Named suite + **40 fixture files green** + dual-impl; same-letter Eluxadoline/Viberzi pair NY N302614 (6%↔Free) |
 | G6 Research summary | **hold — do not build yet** | Same calendar day (**2026-07-21**) + Challenge D honesty bar |
 
-**Decision this tick:** **Not ready_to_build.** Calendar still framing day (**2026-07-21**). Flip sheet: `htsroute-TOMORROW-RUN.md`. Morning pocket: `htsroute-FLIP-MORNING.md`. Scaffold: `htsroute-REPO-SCAFFOLD.md`. Preflip now also requires `check-seed-kits.mjs`.
+**Decision this tick:** **Not ready_to_build.** Calendar still framing day (**2026-07-21**). Flip sheet: `htsroute-TOMORROW-RUN.md`. Morning pocket: `htsroute-FLIP-MORNING.md`. Scaffold: `htsroute-REPO-SCAFFOLD.md`. CF-29 search: `htsroute-G1-CF29-SEARCH.md` (no docket). Preflip requires `check-seed-kits.mjs`.
 
 **G1 residual (honest):** still no public CF-29 docket specifically about 29↔30 pharma form gates (`htsroute-G1-CF29-SEARCH.md` tick 16); no importer interview. Domain claim rests on CROSS form pairs + Reasonable Care / § 1592 path — not a filed penalty story.
 

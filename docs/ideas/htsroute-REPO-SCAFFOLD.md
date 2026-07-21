@@ -54,7 +54,7 @@ projects/htsroute/
 | PRODUCT.md | Unique claim + Kill A + **no** PPI Free/Free savings |
 | classify.ts | Form/mixing gate — not status rename |
 | money-honesty page | Challenge D / VALUE-STAKES visible |
-| tests | ≥38 goldens ported or linked |
+| tests | ≥40 goldens ported or linked |
 
 ## Instant fail shapes
 

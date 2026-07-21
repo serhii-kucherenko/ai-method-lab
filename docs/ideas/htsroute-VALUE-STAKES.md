@@ -28,8 +28,10 @@ That is the kind of value claim prior lab digests would have waved past. We do n
 | Ibuprofen **tablets** (measured dose) | Heading **3004** (3004.90.9128) | **Free** | CROSS **NY N006187** |
 | Aspirin (acetylsalicylic acid) **bulk** | Chapter 29 (2918.22.1000) | **10.2%** in letter (1993); schedule since still **non-Free** (mirrors cite 6.5%); GSP may apply by origin | CROSS **NY 890808** |
 | Aspirin **tablets** (measured dose / retail) | Heading **3004** (3004.90.9128) | **Free** | CROSS **NY K87058** |
+| Eluxadoline **bulk** (API for Viberzi) | Chapter 29 (2933.29.2000) | **6%** ad valorem; not listed in Pharmaceutical Appendix | CROSS **NY N302614** (same letter) |
+| Viberzi **tablets** (eluxadoline measured dose) | Heading **3004** (3004.90.9260) | **Free** | CROSS **NY N302614** (same letter) |
 
-Encoded: fixtures `#32`/`#33` (acetaminophen), `#34`/`#35` (ibuprofen), `#36`/`#37` (aspirin). These restore an **honest** dollar story for *some* form-gate misroutes — without rehabilitating the PPI Free/Free pitch.
+Encoded: fixtures `#32`/`#33` (acetaminophen), `#34`/`#35` (ibuprofen), `#36`/`#37` (aspirin), `#40`/`#41` (eluxadoline / Viberzi — **same CROSS letter** NY N302614, bulk **6%** ↔ tablets Free). These restore an **honest** dollar story for *some* form-gate misroutes — without rehabilitating the PPI Free/Free pitch.
 
 Caveats (do not bury):
 - Preference programs (GSP / Special column Free) can erase bulk MFN on a given entry. Digests must say “base MFN vs Free finished,” not “every drum pays X%.”

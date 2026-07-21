@@ -78,10 +78,10 @@ A binary 29/3004 product would mis-route intermediate pellets — that is a dept
 | 3004 conjunction | HTSUS heading 3004 text |
 | Bulk API → 29 | NY I89619; omeprazole NY L82483 |
 | Mixed bulk medicament → 3003 | HTSUS heading 3003 text; worked CROSS: omeprazole pellets NY A88482 / NY 864623; v0 also encodes mixture powder/drum (#38/#39) |
-| Dosage form → 3004 | NY N325050 (peer); **Protonix pantoprazole tablets NY N003244** |
+| Dosage form → 3004 | NY N325050 (peer); **Protonix pantoprazole tablets NY N003244**; **same-letter** Eluxadoline/Viberzi NY **N302614** (bulk 6% ↔ tablets Free) |
 | Note 1(a) | Chapter 30 Note 1(a) |
-| Value honesty | MFN often Free both sides — see `htsroute-VALUE-STAKES.md` |
+| Value honesty | MFN often Free both sides — see `htsroute-VALUE-STAKES.md`; same-letter non-Free bulk pairs: ibuprofen, aspirin, **eluxadoline N302614** |
 
 ## Deliberately omitted
 
-Section 301 stacks, Pharmaceutical Appendix “K”, excipient chapters, GRI 3 questionnaires.
+Section 301 stacks, Pharmaceutical Appendix “K”, excipient chapters, GRI 3 questionnaires, heading **3002** immunological / toxin fights (Linzess HQ H250309 etc. — adjacent, not form-mixing; see `htsroute-G1-CF29-SEARCH.md`).

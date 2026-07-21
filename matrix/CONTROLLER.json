@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T19:25:00Z",
+  "updated_at": "2026-07-21T19:28:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__loop15m_tick34_demo_matrix_align",
+  "last_completed": "research__loop15m_tick34_demo_and_same_letter_pair",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 34: demo + sustain matrix aligned to mixture powder/drum → 3003. Calendar-blocked. Do NOT re-arm pid 27600.",
+  "notes": "15m tick 34: demo/matrix mixture-3003 align; Eluxadoline/Viberzi same-letter pair (#40/#41) → 40 fixtures. Calendar-blocked. Do NOT re-arm pid 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

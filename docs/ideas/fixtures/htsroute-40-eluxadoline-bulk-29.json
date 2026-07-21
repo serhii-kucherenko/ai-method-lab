@@ -1,0 +1,22 @@
+{
+  "id": "htsroute-40-eluxadoline-bulk-29",
+  "title": "Eluxadoline bulk — Chapter 29 at 6% MFN (same-letter form gate)",
+  "source": "CROSS NY N302614 (15 Feb 2019) — Eluxadoline bulk → 2933.29.2000, 6% ad valorem; not listed in Pharmaceutical Appendix. Same letter also classifies Viberzi tablets under 3004 Free.",
+  "sku": {
+    "molecule_name": "eluxadoline",
+    "chemical_form": "separately_defined",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": false,
+    "retail_packing": false,
+    "dosage_form_signal": "bulk_drum",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "chapter_29_chemical"
+  },
+  "value_note": {
+    "mfn_general": "6% (NY N302614)",
+    "contrast": "Same letter: Viberzi tablets → 3004.90.9260 Free. Real base-MFN delta on one CROSS page — preference/appendix may still erase by origin; cite base MFN, not guaranteed savings"
+  }
+}
