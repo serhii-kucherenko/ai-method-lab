@@ -378,6 +378,17 @@ Wrote `htsroute-PRODUCT-FRAMING-DRAFT.md` so a later ready flip has forbidden/al
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 1 fired (pid 8880 left alone). Chained: HTTP contract paper + PRODUCT framing constraints (forbids Free/Free duty-savings lies). Checkers still 32/32 + dual-impl green. Same-day build still blocked.
 
+## 2026-07-21 ? MFN hunt: ibuprofen + aspirin primary pairs (tick 15)
+
+CROSS search for more **non-Free bulk Chapter 29 vs Free 3004** form-gate contrasts (beyond acetaminophen NY R04092):
+
+| Pair | Bulk (non-Free) | Finished (Free) |
+|------|-----------------|-----------------|
+| Ibuprofen | **NY I83067** ? 2916.39.1500 **6.5%**; not Pharma Appendix | **NY N006187** ? 3004.90.9128 **Free** |
+| Aspirin | **NY 890808** ? 2918.22.1000 **10.2%** in letter (schedule still non-Free) | **NY K87058** ? 3004.90.9128 **Free** |
+
+Fixtures `#34`?`#37`. VALUE-STAKES + G1 updated with preference caveats. Checkers: **36 files** + dual-impl green. Still **no** `projects/htsroute/`. Digests must not claim every drum pays the base rate.
+
 ## 2026-07-21 ? sync after live loop tick + lesserof Kill B/C (tick 13)
 
 Live `AGENT_LOOP_TICK_depth_keepgoing` already landed API contract, PRODUCT framing, and `demos/htsroute-try/`. This tick:
@@ -388,14 +399,22 @@ Live `AGENT_LOOP_TICK_depth_keepgoing` already landed API contract, PRODUCT fram
 
 Still **no** `projects/htsroute/`. Same-day build blocked. Loop pid 8880 left alone.
 
-## 2026-07-21 ? lesserof primary CFR + basket trap (tick 14, parallel seed)
+## 2026-07-21 -- lesserof primary CFR + basket trap (tick 14, parallel seed)
 
 Deepened **lesserof** only (docs). Did **not** move `current_idea` off htsroute. No product folder.
 
-- `lesserof-CFR-CITATIONS.md`: primary quotes from 19 CFR **§ 190.22** / **§ 190.32** (99% of the lesser of paid vs substitute/export basis) and Part **182 Subpart E § 182.44** (USMCA lower of U.S. vs CA/MX duties) + **§ 182.45(b)** same-condition escape.
-- `lesserof-BASKET-OTHER.md`: toy **$4,950** fantasy cash when an 8-digit ?Other? basket matches but 10-digit SRNs diverge ? correct outcome under § 1313(j)(5) is **ineligible / $0**, not lesser-of.
+- `lesserof-CFR-CITATIONS.md`: primary quotes from 19 CFR **190.22** / **190.32** (99% of the lesser of paid vs substitute/export basis) and Part **182 Subpart E 182.44** (USMCA lower of U.S. vs CA/MX duties) + **182.45(b)** same-condition escape.
+- `lesserof-BASKET-OTHER.md`: toy **$4,950** fantasy cash when an 8-digit "Other" basket matches but 10-digit SRNs diverge -- correct outcome under 19 U.S.C. 1313(j)(5) is **ineligible / ## 2026-07-21 ? lesserof primary CFR + basket trap (tick 14, parallel seed)
+
+Deepened **lesserof** only (docs). Did **not** move `current_idea` off htsroute. No product folder.
+
+- `lesserof-CFR-CITATIONS.md`: primary quotes from 19 CFR **? 190.22** / **? 190.32** (99% of the lesser of paid vs substitute/export basis) and Part **182 Subpart E ? 182.44** (USMCA lower of U.S. vs CA/MX duties) + **? 182.45(b)** same-condition escape.
+- `lesserof-BASKET-OTHER.md`: toy **$4,950** fantasy cash when an 8-digit ?Other? basket matches but 10-digit SRNs diverge ? correct outcome under ? 1313(j)(5) is **ineligible / $0**, not lesser-of.
 
 **Skeptical one-liner:** We finally have calc-reg text on paper ? and Kill A still stands; primary CFR does not invent a commercial moat, only proves the stacked-cap + basket reject is real law, not a blog vibe.
+**, not lesser-of.
+
+**Skeptical one-liner:** We finally have calc-reg text on paper -- and Kill A still stands; primary CFR does not invent a commercial moat, only proves the stacked-cap + basket reject is real law, not a blog vibe.
 
 ## 2026-07-21 ? /loop 15m armed + parallel agents (tick 14)
 
@@ -406,3 +425,17 @@ Immediate tick: updated LOOP_DISCIPLINE, CONTROLLER, try-demo pointer. Spawned p
 ## 2026-07-21 -- htsroute acceptance polish (docs only)
 
 Strengthened `htsroute-ACCEPTANCE.md` for day-boundary ready_to_build: must-pass unique-claim scenarios, must-reject cheats, money-honesty (no PPI Free/Free duty-savings), required Kill A digest line, dual-impl green, demo disclaimer. Cross-linked from `htsroute-DAY-BOUNDARY.md`. Still **no** `projects/htsroute/`.
+
+## 2026-07-21 ? new parallel seeds wave (seeds only, not framed)
+
+Logged **2?3 NEW** dollar/penalty seeds in `docs/ideas/SEEDS-WAVE-2026-07-21.md`. Stub only for the strongest: `depositgap-SEED.md`.
+
+| ID | $ mechanic (one line) |
+|----|------------------------|
+| **depositgap** | AD/CVD cash deposit vs final assessment + 19 U.S.C. ? 1677g interest (bill/refund) |
+| oshamult | OSHA gravity-based penalty + serial FOM reductions (29 CFR 1903.15) |
+| ptax4975 | IRC ? 4975 15%/yr then 100% excise on amount involved |
+
+**Skeptical note:** These are **seeds**, not framed ideas, not `current_idea`, not products. Listing them does not clear IDEA_DEPTH. Kill A (incumbents) is pre-registered on all three. depositgap is strongest because every POR liquidation is a literal cash delta ? not Free/Free chapter theater and not a dual-gate/capacity rename. Still must survive G2 vs bondstrip-style accrual costumes and vs lesserof (different statute: deposit?liquidation interest, not ? 1313(l) lesser-of refund).
+
+**Explicit non-actions:** no `CONTROLLER.current_idea` change; no framing; no fixtures; no `projects/` folders; htsroute keeps the active research slot; lesserof stays the older parked parallel seed.

@@ -36,4 +36,7 @@ Export manufacturers leave refundable duty on the table because **substitution d
 
 - `lesserof-SEED.md` — itch + kill risks  
 - `lesserof-WORKED-EXAMPLE.md` — toy dollar table ($5,940 overclaim if lesser-of skipped)  
+- `lesserof-NARROW-CLAIM.md` / `lesserof-USMCA-STACK.md` / `lesserof-KILL-BC.md` / `lesserof-ALGORITHM.md`  
+- `lesserof-CFR-CITATIONS.md` — primary §§ 190.22 / 190.32 / 182.44–.45 quotes  
+- `lesserof-BASKET-OTHER.md` — § 1313(j)(5) toy ($4,950 fantasy if 8-digit “other” silently matched)  
 
