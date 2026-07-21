@@ -77,9 +77,9 @@ Sources: https://www.irs.gov/payments/quarterly-interest-rates ; https://www.irs
 2. ~~One worked interest number with a dated § 6621 rate~~ — done (illustrative; CBP day-count TBD)  
 3. ~~Kill A/B/C answers on paper~~ — `depositgap-challenge-ABC.md`  
 4. ~~CVD twin § 1671f quote~~ — done; fixture E  
-5. Encode remaining G5 names K–Y (`depositgap-G5-cases.md`) toward ≥25 before any frame  
+5. Encode remaining G5 names T–Y (`depositgap-G5-cases.md`) toward ≥25 before any frame  
 6. Lock CBP day-count convention cite (v0 remains simple 365 toy)
 
 ## Explicit non-actions
 
-No product. No activation while htsroute holds the slot. Paper fixtures A–J only.
+No product. No activation while htsroute holds the slot. Paper fixtures A–S only.

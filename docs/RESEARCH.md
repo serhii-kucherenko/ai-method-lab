@@ -544,3 +544,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Wrote `htsroute-HYPOTHESIS-DRAFT.md` for post day-boundary paste into product
 - Digested research progress (still not ready to build today)
 - Loop 27600 not re-armed
+
+## 2026-07-21 -- 30m loop tick 4: depositgap K-S + honesty gates
+
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 4 (pid 29556 left alone). Encoded depositgap K-S (leap year, multi-year, tiny value, large refund, rate-class other, missing/negative rate rejects, skip-interest underdeposit reject, zero APR). Tightened algorithm: missing interest rate rejects; `skip_interest` with days > 0 always rejects. Checkers: **19/19** single + dual green. Still seed only; htsroute same-day no-build.
