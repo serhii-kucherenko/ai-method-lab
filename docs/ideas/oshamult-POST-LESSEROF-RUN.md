@@ -6,11 +6,12 @@ Use **only after** lesserof has flipped to build, parked, or killed (and deposit
 
 1. `oshamult-challenge-ABC.md`  
 2. `oshamult-VALUE-STAKES.md` + `oshamult-SIZE-TABLE.md`  
-3. `oshamult-G6-summary.md`  
-4. `oshamult-ACCEPTANCE.md`  
-5. `oshamult-COMPREHENSIVE-BLUEPRINT.md` + page specs + phase briefs  
-6. `oshamult-SUSTAIN-TEST-MATRIX.md` + `oshamult-API-CONTRACT.md`  
-7. `oshamult-HYPOTHESIS-DRAFT.md`
+3. `oshamult-PRODUCT-FRAMING.md`  
+4. `oshamult-G6-summary.md`  
+5. `oshamult-ACCEPTANCE.md`  
+6. `oshamult-COMPREHENSIVE-BLUEPRINT.md` + page specs + phase briefs  
+7. `oshamult-SUSTAIN-TEST-MATRIX.md` + `oshamult-API-CONTRACT.md`  
+8. `oshamult-HYPOTHESIS-DRAFT.md`
 
 ## Checkers
 
