@@ -65,8 +65,8 @@ Encoded: `#34`/`#35`, `#36`/`#37`. Preference caveats in `htsroute-VALUE-STAKES.
 ## What G1 still lacks (honest)
 
 - First-hand interview notes from an importer desk (not obtained).
-- A single public CF-29 / § 1592 docket specifically about 29↔30 pharma misclass — **searched 2026-07-21; not found.** General Form 29 + § 1592 path remains secondary (customs-bar explainers + 19 U.S.C. § 1592 text). Do not invent a docket.
-- Dedicated finished **omeprazole** capsule/tablet CROSS letter (optional; pantoprazole finished letter now on file).
+- A single public CF-29 / § 1592 docket specifically about 29↔30 pharma misclass — **searched again 2026-07-21 tick 16** (`htsroute-G1-CF29-SEARCH.md`); still **not found**. Adjacent bulletin fights (3004→3002 immunological) are **out of scope**. General Form 29 + § 1592 path remains secondary. Do not invent a docket.
+- Dedicated finished **omeprazole** capsule/tablet CROSS letter (optional; pantoprazole finished letter still on file; tick 16 search did not surface a dedicated finished-omeprazole letter).
 - Named entry scenario with **proven** China Section 301 delta by HTS line for a showcase SKU (secondary vendors claim it; not encoded as golden without a primary cite).
 
 ## G1 provisional grade

@@ -62,6 +62,7 @@ const seeds = [
       "lesserof-API-CONTRACT.md",
       "lesserof-POST-DEPOSITGAP-RUN.md",
       "lesserof-DAY1-NONSMOKE.md",
+      "lesserof-REPO-SCAFFOLD.md",
     ],
   },
   {
@@ -79,6 +80,7 @@ const seeds = [
       "oshamult-POST-LESSEROF-RUN.md",
       "oshamult-SIZE-TABLE.md",
       "oshamult-DAY1-NONSMOKE.md",
+      "oshamult-REPO-SCAFFOLD.md",
     ],
   },
   {
@@ -96,6 +98,7 @@ const seeds = [
       "ptax4975-POST-OSHAMULT-RUN.md",
       "ptax4975-FMV-FENCE.md",
       "ptax4975-DAY1-NONSMOKE.md",
+      "ptax4975-REPO-SCAFFOLD.md",
     ],
   },
 ];
