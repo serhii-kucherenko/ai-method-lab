@@ -537,3 +537,10 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - depositgap suite still **10** + dual-impl green (prior tick)
 - Still seed-only for lesserof/depositgap; htsroute current_idea; same-day build blocked
 - Loop 27600 not re-armed
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #8
+
+- lesserof dual-impl green (4 fixtures)
+- Wrote `htsroute-HYPOTHESIS-DRAFT.md` for post day-boundary paste into product
+- Digested research progress (still not ready to build today)
+- Loop 27600 not re-armed
