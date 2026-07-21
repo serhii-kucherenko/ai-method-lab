@@ -1,0 +1,17 @@
+{
+  "id": "htsroute-6-note1a-supplement",
+  "title": "Note 1(a) food supplement shaped like a capsule",
+  "source": "Chapter 30 Note 1(a)",
+  "sku": {
+    "chemical_form": "mixture",
+    "therapeutic_or_prophylactic": false,
+    "measured_dose": true,
+    "retail_packing": true,
+    "dosage_form_signal": "capsule",
+    "note_1a_food_or_supplement": true,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "excluded_note_1a"
+  }
+}

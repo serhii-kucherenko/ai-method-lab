@@ -266,3 +266,12 @@ Moved **htsroute** `differentiated` ? `testable` without opening a product.
 - Explicit non-actions: no `projects/htsroute/`, no 25-file dump, no `ready_to_build` (same-day build block + incomplete critical path #4?#8).
 
 **Skeptical note:** Three cards prove the chain shape; they do not prove the reject surface. Next tick encodes tablet-enum cheat / Note 1(a) / GRI-3 rejects, then a G6 memo.
+
+## 2026-07-21 ? htsroute critical path + G6 hold (loop 20 / tick 5)
+
+- Encoded critical path #1?#8 (omeprazole chain, peer bulk, enum cheat, Note 1(a), GRI 3, missing form) ? checker **8/8 green**
+- Cheat card previously forced algorithm consistency fix (dose-form without measured/retail ? reject)
+- Wrote G6 skeptical memo: **do not build yet** (same-day build block; boundaries #9?#25 still paper; prefer finished-omeprazole 3004 ruling cite)
+- No `projects/htsroute/`
+
+**Digest one-liner:** Customs chapter-routing idea is getting real checks; we deliberately refused to start a product the same day.

@@ -1,0 +1,17 @@
+{
+  "id": "htsroute-8-missing-chemical-form",
+  "title": "Missing chemical form rejects",
+  "source": "G5 case 8",
+  "sku": {
+    "chemical_form": "unknown",
+    "therapeutic_or_prophylactic": true,
+    "measured_dose": false,
+    "retail_packing": false,
+    "dosage_form_signal": "bulk_drum",
+    "note_1a_food_or_supplement": false,
+    "gri3_combination": false
+  },
+  "expect": {
+    "route": "reject"
+  }
+}

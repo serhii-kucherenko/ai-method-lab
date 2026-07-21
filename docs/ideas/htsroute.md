@@ -14,7 +14,8 @@
 4. Challenge B: `htsroute-challenge-B.md`
 5. Algorithm draft: `htsroute-algorithm.md` (29 / 3003 / 3004 — not binary)
 6. G5 cases: `htsroute-G5-cases.md`
-7. First golden cards: `fixtures/htsroute-1-omeprazole-bulk.json`, `htsroute-2-omeprazole-pellets.json`, `htsroute-3-dosage-tablets.json`
+7. Golden cards: `fixtures/htsroute-{1,2,3,5,6,7,8}-*.json`
+8. Checker: `node docs/ideas/check-htsroute-fixtures.mjs`
 
 ## Problem (G1)
 
@@ -47,8 +48,8 @@ The omeprazole chain is the non-isomorphism proof: bulk API → 29; coated pelle
 
 ## Depth test outline (G5)
 
-Paper cases 1–25 named in `htsroute-G5-cases.md`. Encoded so far: **#1–#3** (omeprazole chain only). Remaining critical path (#4–#8) and boundaries stay paper until a later tick.
+Paper cases 1–25 named in `htsroute-G5-cases.md`. Encoded: **#1–#3** (omeprazole chain), **#5** (tablet enum cheat), **#6** Note 1(a), **#7** GRI 3 reject, **#8** missing chemical form. Still missing critical **#4** (I89619-shape other molecule). Boundaries #9–#25 stay paper.
 
 ## Decision
 
-**Testable on paper + three golden cards — do not build.** Same-day research→build is blocked. Next: encode a few more critical rejects (tablet enum cheat, Note 1(a), GRI 3), then a G6 skeptical memo — still no product folder.
+**Testable + seven golden cards — do not build.** Same-day research→build is blocked. Next: add case #4, then a skeptical research summary memo — still no product folder.
