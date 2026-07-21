@@ -7,8 +7,10 @@
 ## Progress
 
 - Table B algorithm paper: `docs/ideas/crewleg-table-b-algorithm.md`
-- Golden fixtures A–F (draft JSON under `docs/ideas/fixtures/crewleg-*.json`)
-- Next: rest lookback (§117.25); checker script; G6 memo — still no product folder
+- Rest paper (simplified 10h): `docs/ideas/crewleg-rest-algorithm.md`
+- Challenge A: `docs/ideas/crewleg-challenge-A.md`
+- Golden fixtures A–I + checker `docs/ideas/check-crewleg-fixtures.mjs` (green)
+- Next: expand named cases toward ≥25; G6 memo — still no product folder
 
 ## Problem (G1 draft)
 

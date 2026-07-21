@@ -35,11 +35,16 @@ let failed = 0;
 for (const f of files) {
   const fix = JSON.parse(readFileSync(join(dir, f), "utf8"));
   const got = maxFdp(fix.report_local, fix.segments, fix.acclimated);
-  const legal = fix.fdp_hours <= got;
+  const fdpOk = fix.fdp_hours <= got;
+  const restOk =
+    fix.rest_hours === undefined ? true : Number(fix.rest_hours) >= 10;
+  const legal = fdpOk && restOk;
   const okMax = got === fix.expect.max_fdp;
   const okLegal = legal === fix.expect.legal;
-  if (!okMax || !okLegal) {
-    console.error("FAIL", f, { got, legal, expect: fix.expect });
+  const okRest =
+    fix.expect.rest_ok === undefined || fix.expect.rest_ok === restOk;
+  if (!okMax || !okLegal || !okRest) {
+    console.error("FAIL", f, { got, legal, restOk, expect: fix.expect });
     failed += 1;
   } else {
     console.log("ok", f);
