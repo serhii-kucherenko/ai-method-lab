@@ -38,13 +38,20 @@ for (const f of files) {
   const fdpOk = fix.fdp_hours <= got;
   const restOk =
     fix.rest_hours === undefined ? true : Number(fix.rest_hours) >= 10;
-  const legal = fdpOk && restOk;
+  const rollingOk =
+    fix.max_consecutive_off_in_168h === undefined
+      ? true
+      : Number(fix.max_consecutive_off_in_168h) >= 30;
+  const legal = fdpOk && restOk && rollingOk;
   const okMax = got === fix.expect.max_fdp;
   const okLegal = legal === fix.expect.legal;
   const okRest =
     fix.expect.rest_ok === undefined || fix.expect.rest_ok === restOk;
-  if (!okMax || !okLegal || !okRest) {
-    console.error("FAIL", f, { got, legal, restOk, expect: fix.expect });
+  const okRolling =
+    fix.expect.rolling_30h_ok === undefined ||
+    fix.expect.rolling_30h_ok === rollingOk;
+  if (!okMax || !okLegal || !okRest || !okRolling) {
+    console.error("FAIL", f, { got, legal, restOk, rollingOk, expect: fix.expect });
     failed += 1;
   } else {
     console.log("ok", f);

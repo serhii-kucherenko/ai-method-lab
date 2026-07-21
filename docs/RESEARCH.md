@@ -156,3 +156,9 @@ Still `adversarial`. Do not open `projects/lotblast/`. Next: brief outline or ex
 **amendwin** climbed smoke?sustain under A03+A10. Unique claim (version-at-visit-date + lock immutability) held. Method stress only.
 
 **Next idea:** `crewleg` — FAR 117 FDP/rest legality. State `framed`. Dossier `docs/ideas/crewleg.md`. Kill A (incumbents) stands for GTM; method-stress framing only. No product folder until IDEA_DEPTH `ready_to_build`.
+
+
+## 2026-07-21 — crewleg research tick (post-amendwin)
+
+crewleg advanced to differentiated. Table B + rest papers; fixtures A-O green; G6 says do not build yet. Kill A commercial stands.
+

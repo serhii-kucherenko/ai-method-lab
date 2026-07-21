@@ -1,0 +1,16 @@
+{
+  "id": "crewleg-P-30h-in-168",
+  "report_local": "0800",
+  "segments": 2,
+  "acclimated": true,
+  "fdp_hours": 12,
+  "rest_hours": 11,
+  "max_consecutive_off_in_168h": 24,
+  "expect": {
+    "legal": false,
+    "max_fdp": 14,
+    "rest_ok": true,
+    "rolling_30h_ok": false,
+    "notes": "§117.25(b) requires 30 consecutive hours off in past 168h"
+  }
+}
