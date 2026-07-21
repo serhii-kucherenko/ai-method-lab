@@ -162,3 +162,7 @@ Still `adversarial`. Do not open `projects/lotblast/`. Next: brief outline or ex
 
 crewleg advanced to differentiated. Table B + rest papers; fixtures A-O green; G6 says do not build yet. Kill A commercial stands.
 
+
+## 2026-07-21 — ndcswap research tick (loop 8)
+
+ndcswap advanced to differentiated. Fixtures A-Y (25) green; TE class/suffix rules tightened (AA vs AB reject). G6 still do not build. Kill A commercial stands.

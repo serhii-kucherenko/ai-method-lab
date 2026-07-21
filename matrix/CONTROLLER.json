@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-21T13:30:00Z",
+  "updated_at": "2026-07-21T14:00:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -24,7 +24,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "crewleg sustained. Researching ndcswap (Orange Book TE) - framed. No product until ready_to_build.",
+  "notes": "ndcswap differentiated. Fixtures A-Y green. G6 do-not-build. Loop tick 8.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

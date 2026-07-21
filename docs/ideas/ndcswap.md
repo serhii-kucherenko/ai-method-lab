@@ -1,34 +1,32 @@
 # ndcswap — idea dossier
 
-**State:** `adversarial`  
+**State:** `differentiated`  
 **Framing:** method stress (not GTM vs First Databank / Medi-Span)  
 **Opened:** 2026-07-21 after crewleg sustain
 
 ## Progress
 
-- TE algorithm paper: `docs/ideas/ndcswap-te-algorithm.md` (FDA Orange Book preface: A vs B codes; AB1/AB2 must match)
-- Fixtures A–F + checker green
-- Next: expand to ≥25 cases; G6 — still no product folder
+- TE algorithm paper: `docs/ideas/ndcswap-te-algorithm.md` (FDA Orange Book preface)
+- Fixtures A–Y (25) + checker; G5 + Challenge A + G6 draft (**do not build yet**)
+- Next: DAW/NCPDP challenge; gate scorecard → possible ready_to_build next tick
 
-## Problem (G1 draft)
+## Problem (G1)
 
-Pharmacies must substitute generics only when Orange Book therapeutic equivalence (TE) codes allow it for the brand NDC, subject to state “dispense as written” / brand medically necessary flags. Wrong substitution is a patient-safety and payer-reject failure. Workarounds: vendor drug DBs + tribal checklists.
+Pharmacies must substitute generics only when Orange Book TE codes allow it, subject to DAW / brand medically necessary flags.
 
 **Named user:** pharmacy systems pharmacist / Rx claim edit author.  
 **Frequency:** every fill with substitution candidate.
 
-## Unique claim (G2 candidate)
+## Unique claim (G2)
 
 **If we remove Orange Book TE-code matching + DAW/BMN override rules for NDC pairs, the remaining product is identical to a generic catalog/FSM.**
 
-Non-isomorphic vs lotblast (DAG), amendwin (protocol windows), crewleg (FAR tables), dual-gate wave.
+## Kill rounds (G3)
 
-## Kill rounds (open)
-
-1. Kill A — First Databank etc. exist → stands for GTM; method stress OK  
+1. Kill A — FDB/Medi-Span exist → stands for GTM; method stress OK  
 2. Kill B — niche regulated — soft  
-3. Kill C — clinical judgment offline — TE table still software-checkable
+3. Kill C — clinical judgment offline — TE table still software-checkable  
 
 ## Decision
 
-**`framed`** — research only. No `projects/ndcswap/` yet.
+**`differentiated`** — research only. No `projects/ndcswap/` until `ready_to_build`.

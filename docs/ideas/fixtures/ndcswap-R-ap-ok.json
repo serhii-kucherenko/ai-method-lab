@@ -1,0 +1,11 @@
+{
+  "id": "ndcswap-R-ap-ok",
+  "prescribed_ndc": "00093012301",
+  "candidate_ndc": "00173045601",
+  "te_code_prescribed": "AP",
+  "te_code_candidate": "AP",
+  "same_ingredient_strength_form": true,
+  "daw": 0,
+  "brand_medically_necessary": false,
+  "expect": { "allow": true }
+}

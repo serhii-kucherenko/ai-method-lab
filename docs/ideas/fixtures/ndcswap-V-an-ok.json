@@ -1,0 +1,11 @@
+{
+  "id": "ndcswap-V-an-ok",
+  "prescribed_ndc": "00093012301",
+  "candidate_ndc": "00173045601",
+  "te_code_prescribed": "AN",
+  "te_code_candidate": "AN",
+  "same_ingredient_strength_form": true,
+  "daw": 0,
+  "brand_medically_necessary": false,
+  "expect": { "allow": true }
+}
