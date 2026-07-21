@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "A03__P-crud-001__lotblast__r1",
+  "active_cell": "A03__P-workflow-001__lotblast__r1",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-smoke-001__lotblast__r1",
+  "last_completed": "A03__P-crud-001__lotblast__r1",
   "last_error": null,
   "current_product": "lotblast",
   "current_idea": "lotblast",
-  "next_cell": "A03__P-crud-001__lotblast__r1",
+  "next_cell": "A03__P-workflow-001__lotblast__r1",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "lotblast smoke scored. Next P-crud: list/read CTE + qa read-only matrix + migration 002. Method stress — not dual-gate.",
+  "notes": "lotblast crud scored. Next P-workflow: multi-step genealogy→blast→recall path. Method stress — not dual-gate.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

@@ -499,3 +499,7 @@ Human feedback: portfolio, testing, research, and summaries were shallow. Contro
 ## 2026-07-21 -- lotblast smoke (pass)
 
 Method-stress product (not dual-gate). Fixtures A–F + CTE writes + mock-recall export + plant authz + UI. Cell `A03__P-smoke-001__lotblast__r1` scored. Next: P-crud.
+
+## 2026-07-21 -- lotblast crud (pass)
+
+List/read CTE + qa read-only matrix + migration 002. Cell `A03__P-crud-001__lotblast__r1`. Next: P-workflow.

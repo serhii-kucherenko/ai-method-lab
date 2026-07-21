@@ -14,3 +14,4 @@ Method stress on A03+A10 for DAG lot genealogy — not GTM, not dual-gate clones
 2. CTE validation: TLC source XOR, location phone/street, transform inputs required
 3. Mock recall lock exports blast-scoped sheets; `recall.opened` webhook; blast member pagination
 4. Minimal UI seeds receiving → transform → ship → blast → recall
+5. P-crud: qa read-only; list lots/CTE; migration 002 indexes

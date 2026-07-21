@@ -10,7 +10,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **lotblast** | building crud | Method stress: DAG blast + FDA-shaped export. Dossier: `docs/ideas/lotblast.md`. Smoke scored. |
+| 1 | **lotblast** | building workflow | Method stress: DAG blast + FDA-shaped export. Smoke+crud scored. |
 | 2 | Idea pipeline hygiene | ongoing | Kill isomorphic dual-gate seeds on sight. |
 
 ## Frozen / abandoned product queue

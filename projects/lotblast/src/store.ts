@@ -119,9 +119,7 @@ export function assertAccess(
   const role = getRole(db, plantId, userId);
   if (!role) return null;
   if (mode === "read") return role;
-  if (mode === "write" && (role === "ops" || role === "qa" || role === "recall_admin")) {
-    return role;
-  }
+  if (mode === "write" && (role === "ops" || role === "recall_admin")) return role;
   if (mode === "recall" && role === "recall_admin") return role;
   return null;
 }
@@ -344,6 +342,64 @@ function lotProduct(db: DatabaseSync, plantId: string, tlc: string): ProductDesc
     .get(plantId, tlc) as { product_json: string } | undefined;
   if (!row) return { product_name: tlc, packaging_size: "?" };
   return parseJson<ProductDescription>(row.product_json);
+}
+
+export function listLots(db: DatabaseSync, plantId: string, limit: number, offset: number) {
+  return db
+    .prepare(
+      `SELECT tlc, kind, qty, uom, product_json AS productJson FROM lots
+       WHERE plant_id = ? ORDER BY tlc LIMIT ? OFFSET ?`,
+    )
+    .all(plantId, limit, offset) as Array<{
+    tlc: string;
+    kind: string;
+    qty: number;
+    uom: string;
+    productJson: string;
+  }>;
+}
+
+export function listReceiving(db: DatabaseSync, plantId: string, limit: number, offset: number) {
+  return db
+    .prepare(
+      `SELECT id, tlc, qty, uom, event_date AS eventDate FROM receiving_events
+       WHERE plant_id = ? ORDER BY tlc LIMIT ? OFFSET ?`,
+    )
+    .all(plantId, limit, offset) as Array<{
+    id: string;
+    tlc: string;
+    qty: number;
+    uom: string;
+    eventDate: string;
+  }>;
+}
+
+export function listTransforms(db: DatabaseSync, plantId: string, limit: number, offset: number) {
+  return db
+    .prepare(
+      `SELECT id, output_tlc AS outputTlc, output_qty AS outputQty, event_date AS eventDate
+       FROM transform_events WHERE plant_id = ? ORDER BY output_tlc LIMIT ? OFFSET ?`,
+    )
+    .all(plantId, limit, offset) as Array<{
+    id: string;
+    outputTlc: string;
+    outputQty: number;
+    eventDate: string;
+  }>;
+}
+
+export function listShipments(db: DatabaseSync, plantId: string, limit: number, offset: number) {
+  return db
+    .prepare(
+      `SELECT id, tlc, qty, event_date AS eventDate FROM shipping_events
+       WHERE plant_id = ? ORDER BY id LIMIT ? OFFSET ?`,
+    )
+    .all(plantId, limit, offset) as Array<{
+    id: string;
+    tlc: string;
+    qty: number;
+    eventDate: string;
+  }>;
 }
 
 export function buildExport(

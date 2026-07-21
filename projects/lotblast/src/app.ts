@@ -13,6 +13,10 @@ import {
   getPlant,
   issueToken,
   listBlastMembers,
+  listLots,
+  listReceiving,
+  listShipments,
+  listTransforms,
   loadGraph,
   openRecall,
   recordWebhook,
@@ -314,6 +318,62 @@ export function createApp(
           limit,
           offset,
         });
+        return;
+      }
+
+      const lotsMatch = path.match(/^\/plants\/([^/]+)\/lots$/);
+      if (method === "GET" && lotsMatch) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const plantId = lotsMatch[1]!;
+        if (plantDenied(store, plantId, userId, "read", res)) return;
+        const limit = Math.min(Math.max(Number(url.searchParams.get("limit") ?? 20), 1), 100);
+        const offset = Math.max(Number(url.searchParams.get("offset") ?? 0), 0);
+        send(res, 200, { lots: listLots(store.db, plantId, limit, offset) });
+        return;
+      }
+
+      const listRecv = path.match(/^\/plants\/([^/]+)\/receiving$/);
+      if (method === "GET" && listRecv) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const plantId = listRecv[1]!;
+        if (plantDenied(store, plantId, userId, "read", res)) return;
+        const limit = Math.min(Math.max(Number(url.searchParams.get("limit") ?? 20), 1), 100);
+        const offset = Math.max(Number(url.searchParams.get("offset") ?? 0), 0);
+        send(res, 200, { receiving: listReceiving(store.db, plantId, limit, offset) });
+        return;
+      }
+
+      const listXf = path.match(/^\/plants\/([^/]+)\/transformations$/);
+      if (method === "GET" && listXf) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const plantId = listXf[1]!;
+        if (plantDenied(store, plantId, userId, "read", res)) return;
+        const limit = Math.min(Math.max(Number(url.searchParams.get("limit") ?? 20), 1), 100);
+        const offset = Math.max(Number(url.searchParams.get("offset") ?? 0), 0);
+        send(res, 200, { transformations: listTransforms(store.db, plantId, limit, offset) });
+        return;
+      }
+
+      const listShip = path.match(/^\/plants\/([^/]+)\/shipments$/);
+      if (method === "GET" && listShip) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const plantId = listShip[1]!;
+        if (plantDenied(store, plantId, userId, "read", res)) return;
+        const limit = Math.min(Math.max(Number(url.searchParams.get("limit") ?? 20), 1), 100);
+        const offset = Math.max(Number(url.searchParams.get("offset") ?? 0), 0);
+        send(res, 200, { shipments: listShipments(store.db, plantId, limit, offset) });
         return;
       }
 
