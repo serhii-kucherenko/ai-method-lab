@@ -37,7 +37,8 @@ Named cases for the unique claim. **Encoding policy:** critical path cards may b
 
 ## Encoding status
 
-- **Encoded:** #1–#8 critical path + boundaries #9, #11, #13, #17 under `docs/ideas/fixtures/`.
-- **Deferred:** remaining #10, #12, #14–#16, #18–#25.
+- **Encoded:** #1–#8 critical path + boundaries #9, #11, #12, #13, #17 (13 goldens green).
+- **Deferred:** remaining #10, #14–#16, #18–#25.
 - G6 memo says **do not build yet** — same-day build blocked; expand remaining boundaries across later ticks.
+- Depth wins this session: enum-cheat forced consistency reject; retail-packing card forced 3004 rule widening beyond tablet enum.
 
