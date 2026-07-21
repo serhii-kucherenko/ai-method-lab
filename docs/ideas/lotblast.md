@@ -90,8 +90,16 @@ Named cases for a future smoke oracle (must all exist before `ready_to_build`):
 | 23 | diamond DAG (A→B,C→D) | forward blast visits D once |
 | 24 | empty blast (lot never used) | scope size 1 (self) + empty notify |
 | 25 | expert cheat: rename lot code mid-chain | blocked; codes immutable after first CTE |
+| 26 | TLC source location AND reference both set | rejected / export gap |
+| 27 | TLC source neither location nor reference | rejected / export gap |
+| 28 | location missing phone or street | rejected on CTE write |
+| 29 | transformation with 0 input rows | rejected |
+| 30 | export after lock omits a blast member CTE | fail oracle |
 
 G5 still open until these are turned into failing RED tests in a product brief — not before.
+
+Export field contract (types): `docs/ideas/lotblast-export-contract.md`.
+
 
 ### Lab CTE/KDE subset (draft — not full FSMA product)
 
@@ -159,9 +167,10 @@ Source: FDA illustrative electronic sortable spreadsheet template (PDF extract f
 
 **Do not build yet.** Next research tick:
 
-1. Draft export JSON Schema / CSV header contract from the tables above (still docs-only)
-2. Add 5 more negative cases around location-description completeness and TLC source vs reference XOR
-3. Only then consider draft brief `projects/briefs/P-smoke-lotblast.md` — still no product code
+1. ~~Map lab KDE columns 1:1 against FDA example spreadsheet~~ done (tick 2)
+2. ~~Draft export JSON/CSV contract~~ done — `docs/ideas/lotblast-export-contract.md`
+3. Adversarial pass: invent 3 fixtures (shared ingredient, diamond DAG, partial ship) with expected blast sizes on paper — done (`docs/ideas/lotblast-fixtures.md`)
+4. Only then consider draft brief — still no product code
 
 Sibling seeds (parked): SAFE-conversion math (method-only possible later); bank-recon aging (crowded).
 

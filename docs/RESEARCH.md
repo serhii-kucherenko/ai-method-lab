@@ -63,3 +63,17 @@ Findings:
 - Template is illustrative, not mandatory — still the right oracle shape for method stress.
 
 Still not `ready_to_build`. Next: export header/JSON contract + XOR cases for TLC source vs reference.
+
+## 2026-07-21 — lotblast research tick 3 (export contract)
+
+Wrote `docs/ideas/lotblast-export-contract.md`: typed Receiving/Shipping/Transformation rows, mock-recall envelope, TLC-source XOR, tests #26–30.
+
+Skeptical note: contracts on paper are cheap; the depth risk is implementing genealogy as “parent_id on a lot row” and faking the export. Fixtures with expected blast cardinalities are the next kill filter before any brief.
+
+## 2026-07-21 — lotblast research tick 4 (fixtures)
+
+Added `docs/ideas/lotblast-fixtures.md`: shared-ingredient expansion, diamond uniqueness, partial-ship in-channel qty. These are the first artifacts that would fail a dual-gate clone pretending to be traceability.
+
+Gates: still `adversarial`. G5 closer (30 named cases + 3 fixtures) but **not** ready_to_build — no RED tests, no expert review, Kill A commercial still acknowledged.
+
+
