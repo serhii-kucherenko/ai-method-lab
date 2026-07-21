@@ -1,0 +1,9 @@
+{
+  "id": "settlecut-M-meter-zero",
+  "interval_start": "2026-07-02T16:00:00-05:00",
+  "meter_kwh": 0,
+  "schedule_kwh": 40,
+  "delivery_factor": 1,
+  "imbalance_price": 0.07,
+  "expect": { "adjusted_kwh": 0, "imbalance_kwh": -40, "charge": -2.8 }
+}

@@ -5,26 +5,27 @@ import { readFileSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-function round4(n) {
+function round6(n) {
   return Math.round(n * 1e6) / 1e6;
 }
 
 function settle(fix) {
+  if (fix.apply_loss_twice) return { reject: "double_loss" };
+  if (fix.loss_after_price) return { reject: "loss_after_price" };
+
   const meterStart = fix.interval_start ?? fix.meter_interval_start;
   const schedStart = fix.interval_start ?? fix.schedule_interval_start;
-  if (meterStart !== schedStart) {
-    return { reject: "interval_mismatch" };
-  }
-  if (!(fix.delivery_factor > 0)) {
-    return { reject: "delivery_factor_invalid" };
-  }
+  if (!meterStart || !schedStart) return { reject: "interval_required" };
+  if (meterStart !== schedStart) return { reject: "interval_mismatch" };
+  if (!(fix.delivery_factor > 0)) return { reject: "delivery_factor_invalid" };
+
   const adjusted = fix.meter_kwh * fix.delivery_factor;
   const imbalance = adjusted - fix.schedule_kwh;
   const charge = imbalance * fix.imbalance_price;
   return {
-    adjusted_kwh: round4(adjusted),
-    imbalance_kwh: round4(imbalance),
-    charge: round4(charge),
+    adjusted_kwh: round6(adjusted),
+    imbalance_kwh: round6(imbalance),
+    charge: round6(charge),
   };
 }
 

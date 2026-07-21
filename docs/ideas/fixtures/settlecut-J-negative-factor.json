@@ -1,0 +1,9 @@
+{
+  "id": "settlecut-J-negative-factor",
+  "interval_start": "2026-07-02T13:00:00-05:00",
+  "meter_kwh": 100,
+  "schedule_kwh": 100,
+  "delivery_factor": -0.5,
+  "imbalance_price": 0.05,
+  "expect": { "reject": "delivery_factor_invalid" }
+}

@@ -174,3 +174,7 @@ ndcswap ready_to_build then full A03+A10 ladder. Method stress only. New idea se
 ## 2026-07-21 — settlecut research tick (loop 10)
 
 settlecut moved framed to adversarial. Loss-once imbalance algorithm + fixtures A-F green. Kill A (ISO vendors) stands commercially. Still do not build.
+
+## 2026-07-21 — settlecut sustained (loop 11)
+
+settlecut ready_to_build then full A03+A10 ladder (31 tests). Loss-once interval settlement held. Next idea bondstrip framed.

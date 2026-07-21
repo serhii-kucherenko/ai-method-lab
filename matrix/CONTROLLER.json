@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-21T15:10:00Z",
+  "updated_at": "2026-07-21T15:35:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-sustain__ndcswap__r1",
+  "last_completed": "A03__P-sustain__settlecut__r1",
   "last_error": null,
   "current_product": null,
-  "current_idea": "settlecut",
+  "current_idea": "bondstrip",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "settlecut adversarial. Fixtures A-F green. Loop tick 10. No product until ready_to_build.",
+  "notes": "settlecut sustained (5th depth product). Researching bondstrip - framed. Loop tick 11.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

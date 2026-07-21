@@ -1,0 +1,9 @@
+{
+  "id": "settlecut-R-tiny",
+  "interval_start": "2026-07-02T20:00:00-05:00",
+  "meter_kwh": 1,
+  "schedule_kwh": 0.99,
+  "delivery_factor": 0.99,
+  "imbalance_price": 1,
+  "expect": { "adjusted_kwh": 0.99, "imbalance_kwh": 0, "charge": 0 }
+}

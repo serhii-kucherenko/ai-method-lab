@@ -526,3 +526,7 @@ FAR 117 Table B + rest fixtures A-Y; full ladder scored. Third depth-restart pro
 ## 2026-07-21 -- ndcswap smoke to sustain (pass)
 
 Orange Book TE + DAW fixtures; full ladder. Fourth depth-restart product. Next: settlecut framed.
+
+## 2026-07-21 -- settlecut smoke to sustain (pass)
+
+Loss-once fixtures A-Y; full ladder. Fifth depth-restart product. Next: bondstrip framed.

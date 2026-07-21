@@ -10,10 +10,11 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | ndcswap | sustained | Orange Book TE method stress complete. |
-| 2 | crewleg | sustained | FAR 117 Table B method stress complete. |
-| 3 | amendwin | sustained | Method stress complete (window + lock). |
-| 4 | lotblast | sustained | Method stress complete. |
+| 1 | settlecut | sustained | Loss-once interval settlement method stress complete. |
+| 2 | ndcswap | sustained | Orange Book TE method stress complete. |
+| 3 | crewleg | sustained | FAR 117 Table B method stress complete. |
+| 4 | amendwin | sustained | Method stress complete (window + lock). |
+| 5 | lotblast | sustained | Method stress complete. |
 | — | *(next)* | research only | IDEA_DEPTH: frame next non-isomorphic idea. |
 | 2 | Idea pipeline hygiene | ongoing | Kill isomorphic dual-gate seeds on sight. |
 

@@ -1,0 +1,9 @@
+{
+  "id": "settlecut-S-high-price-short",
+  "interval_start": "2026-07-02T21:00:00-05:00",
+  "meter_kwh": 100,
+  "schedule_kwh": 120,
+  "delivery_factor": 1,
+  "imbalance_price": 2.5,
+  "expect": { "adjusted_kwh": 100, "imbalance_kwh": -20, "charge": -50 }
+}

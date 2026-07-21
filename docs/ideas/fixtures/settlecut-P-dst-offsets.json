@@ -1,0 +1,10 @@
+{
+  "id": "settlecut-P-dst-offsets",
+  "interval_start": "2026-03-08T01:00:00-06:00",
+  "meter_kwh": 50,
+  "schedule_kwh": 49,
+  "delivery_factor": 0.98,
+  "imbalance_price": 0.1,
+  "notes": "explicit offset; do not invent a phantom hour",
+  "expect": { "adjusted_kwh": 49, "imbalance_kwh": 0, "charge": 0 }
+}
