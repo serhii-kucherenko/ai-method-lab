@@ -1,0 +1,195 @@
+{
+  "description": "Worked mock-recall export sample for Fixture A / suspect ING-A — illustrates export contract, not a live system",
+  "recall_id": "MR-A-ING-A",
+  "locked_at": "2026-07-21T07:00:00Z",
+  "suspect_tlc": "ING-A",
+  "blast": {
+    "finished_tlcs": ["FG-1", "FG-2"],
+    "shipment_ids": ["S-P1", "S-P2"],
+    "notify_partners": ["P1", "P2"],
+    "units_in_channel": 0
+  },
+  "sheets": {
+    "receiving": [
+      {
+        "tlc": "ING-A",
+        "qty": 200,
+        "uom": "kg",
+        "product": { "product_name": "Organic Spice Blend Base", "packaging_size": "25kg bag" },
+        "previous_source": {
+          "business_name": "Supplier Co",
+          "phone": "+1 555 0100",
+          "street_or_geo": "1 Farm Rd",
+          "city": "Salinas",
+          "region": "CA",
+          "postal_code": "93901",
+          "country": ""
+        },
+        "received_at": {
+          "business_name": "Demo Plant",
+          "phone": "+1 555 0200",
+          "street_or_geo": "9 Pack Ave",
+          "city": "Oakland",
+          "region": "CA",
+          "postal_code": "94607",
+          "country": ""
+        },
+        "event_date": "2026-06-01",
+        "tlc_source": { "kind": "reference", "reference": "https://example.com/tlc/ING-A" },
+        "reference_documents": [{ "type": "BOL", "number": "BOL-1001" }]
+      }
+    ],
+    "transformation": [
+      {
+        "from_tlc": "ING-A",
+        "from_product": { "product_name": "Organic Spice Blend Base", "packaging_size": "25kg bag" },
+        "from_qty_used": 50,
+        "from_uom": "kg",
+        "to_tlc": "BAT-1",
+        "to_product": { "product_name": "Batch Premix 1", "packaging_size": "tote" },
+        "to_qty": 80,
+        "to_uom": "kg",
+        "transformed_at": {
+          "business_name": "Demo Plant",
+          "phone": "+1 555 0200",
+          "street_or_geo": "9 Pack Ave",
+          "city": "Oakland",
+          "region": "CA",
+          "postal_code": "94607",
+          "country": ""
+        },
+        "tlc_source": { "kind": "reference", "reference": "https://example.com/tlc/BAT-1" },
+        "event_date": "2026-06-02",
+        "reference_documents": [{ "type": "Work Order", "number": "WO-201" }]
+      },
+      {
+        "from_tlc": "ING-A",
+        "from_product": { "product_name": "Organic Spice Blend Base", "packaging_size": "25kg bag" },
+        "from_qty_used": 50,
+        "from_uom": "kg",
+        "to_tlc": "BAT-2",
+        "to_product": { "product_name": "Batch Premix 2", "packaging_size": "tote" },
+        "to_qty": 80,
+        "to_uom": "kg",
+        "transformed_at": {
+          "business_name": "Demo Plant",
+          "phone": "+1 555 0200",
+          "street_or_geo": "9 Pack Ave",
+          "city": "Oakland",
+          "region": "CA",
+          "postal_code": "94607",
+          "country": ""
+        },
+        "tlc_source": { "kind": "reference", "reference": "https://example.com/tlc/BAT-2" },
+        "event_date": "2026-06-02",
+        "reference_documents": [{ "type": "Work Order", "number": "WO-202" }]
+      },
+      {
+        "from_tlc": "BAT-1",
+        "from_product": { "product_name": "Batch Premix 1", "packaging_size": "tote" },
+        "from_qty_used": 80,
+        "from_uom": "kg",
+        "to_tlc": "FG-1",
+        "to_product": { "product_name": "Finished Seasoning A", "packaging_size": "12x1lb" },
+        "to_qty": 70,
+        "to_uom": "cases",
+        "transformed_at": {
+          "business_name": "Demo Plant",
+          "phone": "+1 555 0200",
+          "street_or_geo": "9 Pack Ave",
+          "city": "Oakland",
+          "region": "CA",
+          "postal_code": "94607",
+          "country": ""
+        },
+        "tlc_source": { "kind": "reference", "reference": "https://example.com/tlc/FG-1" },
+        "event_date": "2026-06-03",
+        "reference_documents": [{ "type": "Work Order", "number": "WO-301" }]
+      },
+      {
+        "from_tlc": "BAT-2",
+        "from_product": { "product_name": "Batch Premix 2", "packaging_size": "tote" },
+        "from_qty_used": 80,
+        "from_uom": "kg",
+        "to_tlc": "FG-2",
+        "to_product": { "product_name": "Finished Seasoning B", "packaging_size": "12x1lb" },
+        "to_qty": 70,
+        "to_uom": "cases",
+        "transformed_at": {
+          "business_name": "Demo Plant",
+          "phone": "+1 555 0200",
+          "street_or_geo": "9 Pack Ave",
+          "city": "Oakland",
+          "region": "CA",
+          "postal_code": "94607",
+          "country": ""
+        },
+        "tlc_source": { "kind": "reference", "reference": "https://example.com/tlc/FG-2" },
+        "event_date": "2026-06-03",
+        "reference_documents": [{ "type": "Work Order", "number": "WO-302" }]
+      }
+    ],
+    "shipping": [
+      {
+        "tlc": "FG-1",
+        "qty": 70,
+        "uom": "cases",
+        "product": { "product_name": "Finished Seasoning A", "packaging_size": "12x1lb" },
+        "subsequent_recipient": {
+          "business_name": "P1",
+          "phone": "+1 555 0301",
+          "street_or_geo": "10 Retail Way",
+          "city": "San Jose",
+          "region": "CA",
+          "postal_code": "95110",
+          "country": ""
+        },
+        "shipped_from": {
+          "business_name": "Demo Plant",
+          "phone": "+1 555 0200",
+          "street_or_geo": "9 Pack Ave",
+          "city": "Oakland",
+          "region": "CA",
+          "postal_code": "94607",
+          "country": ""
+        },
+        "event_date": "2026-06-04",
+        "tlc_source": { "kind": "reference", "reference": "https://example.com/tlc/FG-1" },
+        "reference_documents": [{ "type": "BOL", "number": "BOL-4001" }]
+      },
+      {
+        "tlc": "FG-2",
+        "qty": 70,
+        "uom": "cases",
+        "product": { "product_name": "Finished Seasoning B", "packaging_size": "12x1lb" },
+        "subsequent_recipient": {
+          "business_name": "P2",
+          "phone": "+1 555 0302",
+          "street_or_geo": "22 Market St",
+          "city": "Sacramento",
+          "region": "CA",
+          "postal_code": "95814",
+          "country": ""
+        },
+        "shipped_from": {
+          "business_name": "Demo Plant",
+          "phone": "+1 555 0200",
+          "street_or_geo": "9 Pack Ave",
+          "city": "Oakland",
+          "region": "CA",
+          "postal_code": "94607",
+          "country": ""
+        },
+        "event_date": "2026-06-04",
+        "tlc_source": { "kind": "reference", "reference": "https://example.com/tlc/FG-2" },
+        "reference_documents": [{ "type": "BOL", "number": "BOL-4002" }]
+      }
+    ]
+  },
+  "contract_notes": [
+    "Transformation sheet has ≥2 rows mentioning ING-A (shared expansion)",
+    "No FG-3 / P3 rows (control isolation)",
+    "Locations are structs; TLC source uses reference XOR",
+    "Not a compliance claim — research sample only"
+  ]
+}

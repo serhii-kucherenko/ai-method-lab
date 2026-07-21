@@ -45,5 +45,15 @@
         "min_transform_rows_mentioning_suspect": 1
       }
     }
+  ],
+  "backward_cases": [
+    {
+      "finished": "FG-1",
+      "expect_inputs": ["BAT-1", "ING-A"]
+    },
+    {
+      "finished": "FG-3",
+      "expect_inputs": ["BAT-3", "ING-B"]
+    }
   ]
 }

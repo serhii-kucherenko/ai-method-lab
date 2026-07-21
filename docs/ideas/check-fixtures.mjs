@@ -46,6 +46,24 @@ function forwardBlast(graph, suspect) {
   return { finished_tlcs: finished, shipment_ids: shipIds, notify_partners: notify, units_in_channel, channelBy, visited };
 }
 
+function backwardTrace(graph, finished) {
+  const ins = new Map();
+  for (const t of graph.transforms) {
+    if (!ins.has(t.output)) ins.set(t.output, []);
+    for (const inp of t.inputs) ins.get(t.output).push(inp.tlc);
+  }
+  const visited = new Set();
+  const queue = [finished];
+  while (queue.length) {
+    const tlc = queue.shift();
+    if (visited.has(tlc)) continue;
+    visited.add(tlc);
+    for (const prev of ins.get(tlc) ?? []) queue.push(prev);
+  }
+  visited.delete(finished);
+  return [...visited].sort();
+}
+
 function sameSet(a, b) {
   const as = [...a].sort().join("\0");
   const bs = [...b].sort().join("\0");
@@ -103,6 +121,13 @@ for (const file of readdirSync(root).filter((f) => f.endsWith(".json")).sort()) 
         failed++;
         console.error(`FAIL ${file} suspect=${c.suspect} ${name}: got ${JSON.stringify(g)} expect ${JSON.stringify(ex)}`);
       }
+    }
+  }
+  for (const b of doc.backward_cases ?? []) {
+    const got = backwardTrace(doc.graph, b.finished);
+    if (!sameSet(got, b.expect_inputs)) {
+      failed++;
+      console.error(`FAIL ${file} backward ${b.finished}: got ${JSON.stringify(got)} expect ${JSON.stringify(b.expect_inputs)}`);
     }
   }
   console.log(`ok ${file}`);

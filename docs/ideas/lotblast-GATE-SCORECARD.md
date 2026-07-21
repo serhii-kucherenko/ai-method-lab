@@ -17,10 +17,12 @@ Updated: 2026-07-21 (loop tick 4). Honest grades — not aspirational.
 
 ## Blockers to ready_to_build
 
-1. Deliberate hold: want ≥1 more research rotation without code to avoid rush relapse
+1. Deliberate hold: want ≥1 more research rotation without code to avoid rush relapse — **this is hold rotation 2** (tick 5)
 2. Draft brief must become real brief + oracle pin only at build start
-3. Optional: Fixture F (concurrent over-consume) on paper this tick
+3. ~~Fixture F~~ done
 4. Human or external domain challenge still valuable (falsifier #1) — not required to block forever under method-stress framing
+
+After hold rotations complete, next autonomous step may set `ready_to_build` if scorecard still green — still no silent GTM claims.
 
 ## Decision
 

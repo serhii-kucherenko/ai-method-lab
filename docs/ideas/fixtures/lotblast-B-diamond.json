@@ -35,5 +35,11 @@
       },
       "fail_if": ["FG-D listed twice as distinct blast members"]
     }
+  ],
+  "backward_cases": [
+    {
+      "finished": "FG-D",
+      "expect_inputs": ["MID-1", "MID-2", "ROOT-X"]
+    }
   ]
 }
