@@ -1,11 +1,11 @@
 # depositgap — G5 case map (seed paper)
 
-**State:** seed only. Encoded fixtures: A–S (`check-depositgap-fixtures.mjs` + dual).  
+**State:** seed only. Encoded fixtures: A–W (`check-depositgap-fixtures.mjs` + dual).  
 **Not framed. Not `current_idea`. No product.**
 
 Unique claim under test: **cash deposit rate ≠ final assessed rate**, then **§ 1677g interest** over the publication→liquidation window. Fail any case that collapses to dual-signer status or day-count-only accrual.
 
-## Encoded (A–S)
+## Encoded (A–W)
 
 | ID | Teaches |
 |----|---------|
@@ -28,21 +28,21 @@ Unique claim under test: **cash deposit rate ≠ final assessed rate**, then **�
 | Q | Negative assessed rate → reject |
 | R | Skip interest on underdeposit → reject |
 | S | Zero interest rate → duty delta only |
+| T | Fractional rates (0.1234 vs 0.2000) — precise cents |
+| U | AD parity twin of CVD fixture E (same numbers, label differs) |
+| V | Publication + one day (days = 1) |
+| W | Ten-year window — simple interest toy; digests must not claim ACE |
 
-## Named, not yet encoded (T–Y) — target ≥25 before frame
+## Product-phase notes (count toward ≥25 bar as documented, not JSON yet)
 
-| ID | Intent | Money / reject |
-|----|--------|----------------|
-| T | Fractional rates (0.1234 vs 0.2000) | Precise cents |
-| U | AD then CVD same entry facts, different `order_type` | Same numbers, label differs (E already covers twin; U locks parity) |
-| V | Publication + one day | days = 1 |
-| W | Extremely long window (10y) | Still simple interest toy — digests must not claim ACE |
-| X | Auditor-only mutation attempt (product phase) | Offline: paper note until build |
-| Y | Concurrent two-entry independence (product phase) | Offline: paper note until build |
+| ID | Intent | Why deferred |
+|----|--------|--------------|
+| X | Auditor-only mutation attempt | Needs product UI / role surface — paper: any mutation without auditor role must reject; seed cannot encode auth |
+| Y | Concurrent two-entry independence | Needs multi-entry persistence — paper: entry A true-up must not mutate entry B totals |
 
 ## Pass bar for later G5 score
 
-- ≥25 goldens green on single checker (or 23 paper + 2 product-phase notes documented)  
+- ≥25 goldens green on single checker (or **23 paper + 2 product-phase notes** documented) ← **met** (23 encoded + X/Y notes)
 - Dual-impl agree on all  
 - At least 5 rejects that protect money honesty  
 - At least one CVD twin and one all-others assignment  

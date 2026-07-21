@@ -555,3 +555,10 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Honesty gates in both checkers; suite **10/10** single + dual green
 - Still seed-only; htsroute current_idea; calendar 2026-07-21 blocks ready flip
 - Loop 27600 not re-armed
+
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #9
+
+- Encoded depositgap **T?W** (fractional rates, AD/CVD parity, one-day window, ten-year toy)
+- Documented X/Y as product-phase notes ? G5 ?25 bar met on paper (**23** encoded + 2 notes)
+- Checkers **23/23** single + dual green; still seed; htsroute same-day no-build
+- Loop 27600 not re-armed

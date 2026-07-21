@@ -1,0 +1,23 @@
+{
+  "id": "depositgap-W-ten-year-window",
+  "title": "Extremely long POR window (10y) — simple interest toy only",
+  "source": "depositgap-G5-cases.md W — digests must not claim ACE",
+  "input": {
+    "order_type": "AD",
+    "deposit_rate": 0.1,
+    "assessed_rate": 0.25,
+    "rate_class": "exporter_specific",
+    "entered_value": 1000000,
+    "order_published_on": "2020-01-01",
+    "liquidated_on": "2030-01-01",
+    "interest_annual_rate": 0.08,
+    "skip_interest": false
+  },
+  "expect": {
+    "duty_delta": 150000,
+    "days": 3653,
+    "interest": 120098.63,
+    "true_up": 270098.63,
+    "status": "ok"
+  }
+}

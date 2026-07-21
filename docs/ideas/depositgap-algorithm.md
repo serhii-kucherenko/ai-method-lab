@@ -48,7 +48,7 @@ Sign convention: positive `duty_delta` → importer owes; negative → refund pa
 | interest | $12,000 |
 | true_up | **$162,000** |
 
-Prefer non-leap windows in toys (e.g. 2023-01-01 → 2024-01-01) so day count stays 365; fixture K locks a leap window. Checker: `node docs/ideas/check-depositgap-fixtures.mjs` (A–S green; seed only). Case map: `depositgap-G5-cases.md`.
+Prefer non-leap windows in toys (e.g. 2023-01-01 → 2024-01-01) so day count stays 365; fixture K locks a leap window; W locks a ten-year toy. Checker: `node docs/ideas/check-depositgap-fixtures.mjs` (A–W green; seed only). Case map: `depositgap-G5-cases.md`.
 
 Cite trail: `depositgap-STATUTE-CITATIONS.md` (§ 1677g, 19 CFR 351.212).
 
