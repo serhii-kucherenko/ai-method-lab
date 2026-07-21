@@ -365,12 +365,12 @@ Still **no product** today. Digests must not claim every drum pays 6.5%.
 Wrote `htsroute-DAY-BOUNDARY.md` so tomorrow?s ready flip cannot skip Challenge D / value honesty. Still no product. Loop pid 8880 left alone.
 
 
-## 2026-07-21 — lesserof USMCA stack + G1 residual search (tick 12c)
+## 2026-07-21 ? lesserof USMCA stack + G1 residual search (tick 12c)
 
-- `lesserof-USMCA-STACK.md`: Canada duty-free export zeros recoverable duty even after TFTEA lesser-of — naive / half-naive forecasts invent fantasy cash on the toy.
+- `lesserof-USMCA-STACK.md`: Canada duty-free export zeros recoverable duty even after TFTEA lesser-of ? naive / half-naive forecasts invent fantasy cash on the toy.
 - Searched for public CF-29 / section 1592 pharma 29 vs 30 docket: **none found**. G1 residual stays honest; general penalty path only.
 
-## 2026-07-21 — product framing draft only (tick 12d)
+## 2026-07-21 ? product framing draft only (tick 12d)
 
 Wrote `htsroute-PRODUCT-FRAMING-DRAFT.md` so a later ready flip has forbidden/allowed claims on paper. **No** `projects/htsroute/`.
 
@@ -378,7 +378,7 @@ Wrote `htsroute-PRODUCT-FRAMING-DRAFT.md` so a later ready flip has forbidden/al
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 1 fired (pid 8880 left alone). Chained: HTTP contract paper + PRODUCT framing constraints (forbids Free/Free duty-savings lies). Checkers still 32/32 + dual-impl green. Same-day build still blocked.
 
-## 2026-07-21 — sync after live loop tick + lesserof Kill B/C (tick 13)
+## 2026-07-21 ? sync after live loop tick + lesserof Kill B/C (tick 13)
 
 Live `AGENT_LOOP_TICK_depth_keepgoing` already landed API contract, PRODUCT framing, and `demos/htsroute-try/`. This tick:
 
@@ -388,8 +388,21 @@ Live `AGENT_LOOP_TICK_depth_keepgoing` already landed API contract, PRODUCT fram
 
 Still **no** `projects/htsroute/`. Same-day build blocked. Loop pid 8880 left alone.
 
-## 2026-07-21 — /loop 15m armed + parallel agents (tick 14)
+## 2026-07-21 ? lesserof primary CFR + basket trap (tick 14, parallel seed)
+
+Deepened **lesserof** only (docs). Did **not** move `current_idea` off htsroute. No product folder.
+
+- `lesserof-CFR-CITATIONS.md`: primary quotes from 19 CFR **§ 190.22** / **§ 190.32** (99% of the lesser of paid vs substitute/export basis) and Part **182 Subpart E § 182.44** (USMCA lower of U.S. vs CA/MX duties) + **§ 182.45(b)** same-condition escape.
+- `lesserof-BASKET-OTHER.md`: toy **$4,950** fantasy cash when an 8-digit ?Other? basket matches but 10-digit SRNs diverge ? correct outcome under § 1313(j)(5) is **ineligible / $0**, not lesser-of.
+
+**Skeptical one-liner:** We finally have calc-reg text on paper ? and Kill A still stands; primary CFR does not invent a commercial moat, only proves the stacked-cap + basket reject is real law, not a blog vibe.
+
+## 2026-07-21 ? /loop 15m armed + parallel agents (tick 14)
 
 Human explicit replace of 30m depth loop with **15m** `AGENT_LOOP_TICK_depth_15m` (pid 27600). Stopped old pid 8880 / stale 29740.
 
 Immediate tick: updated LOOP_DISCIPLINE, CONTROLLER, try-demo pointer. Spawned parallel research agents (lesserof CFR cites, MFN hunt, try-demo harden, new seeds, acceptance polish). Still **no** `projects/htsroute/`.
+
+## 2026-07-21 -- htsroute acceptance polish (docs only)
+
+Strengthened `htsroute-ACCEPTANCE.md` for day-boundary ready_to_build: must-pass unique-claim scenarios, must-reject cheats, money-honesty (no PPI Free/Free duty-savings), required Kill A digest line, dual-impl green, demo disclaimer. Cross-linked from `htsroute-DAY-BOUNDARY.md`. Still **no** `projects/htsroute/`.

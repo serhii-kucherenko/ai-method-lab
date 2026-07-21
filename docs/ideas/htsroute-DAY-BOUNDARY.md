@@ -2,13 +2,16 @@
 
 Use on the **next calendar day** after framing (not 2026-07-21). Do not flip ready_to_build from memory.
 
+**Acceptance bar:** after any flip, ship against `htsroute-ACCEPTANCE.md` (unique-claim must-pass / must-reject, money honesty, Kill A line, dual-impl green, demo disclaimer). Green fixture counts alone do not pass.
+
 ## Must re-read before any flip
 
 1. `htsroute-challenge-D.md` — value vanity accepted; brokers win commercially  
 2. `htsroute-VALUE-STAKES.md` — PPI Free/Free **and** acetaminophen 6.5%↔Free caveat  
 3. `htsroute-G6-summary.md` — decision section  
 4. `htsroute-GATE-SCORECARD.md`  
-5. `protocols/IDEA_DEPTH.md` pace bar + `block_same_day_research_to_build`
+5. `htsroute-ACCEPTANCE.md` — crisp ready_to_build bars (sections A–F)  
+6. `protocols/IDEA_DEPTH.md` pace bar + `block_same_day_research_to_build`
 
 ## Flip to ready_to_build only if all true
 
@@ -18,6 +21,8 @@ Use on the **next calendar day** after framing (not 2026-07-21). Do not flip rea
 - [ ] PRODUCT framing may cite acetaminophen 6.5% base MFN only with GSP/preference caveat  
 - [ ] Digests will say workflow experiment; Kill A stands  
 - [ ] No isomorphic dual-gate sneak-in in PRODUCT.md shape  
+- [ ] `htsroute-ACCEPTANCE.md` sections A–F understood as the post-flip ship bar (dual-impl still green)  
+
 
 ## If any fail
 
