@@ -2,10 +2,11 @@
 
 **How to build product experiments** under `projects/<id>/` with AI (frontend, backend, full-stack).
 
-The Method Lab’s job: try many products with this workflow, climb each to **sustain**, and publish findings.  
+The Method Lab’s job: verify **few, deep ideas**, then climb those to **sustain** with this workflow, and publish findings worth reading.  
+Depth gate before code: `protocols/IDEA_DEPTH.md`. Restart note: `docs/DEPTH_RESTART.md`.  
 Lab-operator docs (oracles, scoring): `docs/USAGE_GUIDE.md`.
 
-Evidence so far: 47 approach cells passed. **Primary: A03 (test-first). Enterprise overlay: A10.** First portfolio product: `projects/clearpath/`.
+Evidence so far: approach ladder + A03/A10 defaults still stand; the high product count was mostly isomorphic dual-gate throughput — not comprehensive depth. **Primary: A03 (test-first). Enterprise overlay: A10.**
 
 ---
 

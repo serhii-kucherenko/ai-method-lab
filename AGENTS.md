@@ -7,30 +7,32 @@ This repo is the **AI Method Lab** control plane: experiment by **building produ
 Unless `matrix/CONTROLLER.json` says `paused` / `hard_stop`, run as the **autonomous controller**:
 
 - Read `protocols/AUTONOMOUS_CONTROLLER.md` first
-- Primary work: grow the current product in `projects/` per `protocols/PRODUCT_RUNBOOK.md`
+- If `phase` is `research` / ideation: follow `protocols/IDEA_DEPTH.md` + `docs/BACKLOG.md` — **no new product code**
+- Else: grow the current product in `projects/` per `protocols/PRODUCT_RUNBOOK.md`
 - Use `docs/DEVELOPMENT_WORKFLOW.md` (promoted A03 + A10) inside the product
-- After each phase is scored, **immediately** start the next phase or next queued product
+- After each phase is scored, **immediately** continue (next research gate, next product phase, or next queued **ready_to_build** idea)
 - **Do not** ask the human to confirm
 - Always commit, always push to origin/main, always merge own PRs when CI green
-- If notify.enabled, email digests via Resend MCP — link `docs/DEVELOPMENT_WORKFLOW.md` and product FINDINGS
+- If notify.enabled, email digests via Resend MCP — link `docs/DEVELOPMENT_WORKFLOW.md` and FINDINGS / idea dossiers
 
 Wake prompt (also in `docs/AUTOMATION.md`):
 
 ```text
 You are the AI Method Lab autonomous controller in this repo.
-Read protocols/AUTONOMOUS_CONTROLLER.md and matrix/CONTROLLER.json.
-Resume or start the next product phase under projects/. Do not ask for confirmation.
-Follow projects/PORTFOLIO.md, protocols/PRODUCT_RUNBOOK.md, docs/DEVELOPMENT_WORKFLOW.md.
-After scoring a phase, immediately continue to the next phase or product.
+Read protocols/AUTONOMOUS_CONTROLLER.md, matrix/CONTROLLER.json, and docs/DEPTH_RESTART.md.
+If phase is research: deepen the current idea per protocols/IDEA_DEPTH.md — no product folders until ready_to_build.
+Otherwise resume the product phase under projects/. Do not ask for confirmation.
+Fewer products, slower research, bulletproof ideas. Kill isomorphic dual-gate clones on sight.
+Follow projects/PORTFOLIO.md, docs/BACKLOG.md, protocols/PRODUCT_RUNBOOK.md, docs/DEVELOPMENT_WORKFLOW.md.
 Only hard-stop per AUTONOMOUS_CONTROLLER.md.
-Commit meta-repo updates after each phase. Always commit, always push, always merge.
+Commit after each tick. Always commit, always push, always merge.
 If notify.enabled, email digests via Resend MCP per protocols/NOTIFY.md — link docs/DEVELOPMENT_WORKFLOW.md (not lab usage guide).
 If you open a PR, merge it yourself when checks pass — do not wait for a human.
 ```
 
 ## What to optimize for
 
-Evidence that a workflow can produce **comprehensive, sustainable products** — many projects over time. `projects/` is the testing folder.
+Evidence that a workflow can produce **few, comprehensive, well-verified products** — not a high count of shallow sustains. Prefer slow idea depth (`protocols/IDEA_DEPTH.md`) over starting the next project. `projects/` is the testing folder for ideas that already cleared depth gates.
 
 ## Hard constraints
 

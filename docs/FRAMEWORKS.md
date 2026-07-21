@@ -77,11 +77,10 @@ Body must include:
 
 ---
 
-## Open questions (next comprehensive wave)
+## Open questions (depth restart)
 
-- Does A03+A10 hold when scorecards + multi-role boards land in one product? → **screenlane** — yes (18/18)
-- Does reserve/evidence/payout multi-party ACL hold? → **claimdesk** — yes (17/17)
-- Does dual approval + rollback change intervention count? → **releasetrain** — yes, 0 interventions (19/19)
-- Where does static-UI testing stop being enough? → still deferred; three products used pure helpers + shell tests
-- Next stress: budget milestones + clawback → **grantlane** — yes (24/24)
-- Next: vendor risk severity gates → **vendorvault**
+Dual-gate / multi-aggregate questions from screenlane→taxhold are **answered and saturated**. Do not re-ask them with new nouns.
+
+- Can A03+A10 sustain a **graph-domain** product (lot genealogy DAG + blast radius + mock-recall export) without collapsing to lottrack? → researching as **lotblast** (`docs/ideas/lotblast.md`)
+- Where does static-UI testing stop being enough? → still deferred until a deep product needs it
+- Does IDEA_DEPTH reduce shallow sustains without stalling the lab forever? → measure: ideas killed vs products started over next N ticks

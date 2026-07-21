@@ -1,17 +1,20 @@
 # Captable Findings
 
-## What we built
-Firms (ACL) + rounds (authorized) + allocations (`proposed→held→closed`) + dual counsel close + HMAC webhooks + pagination + rate limits + UI.
+## Status: abandoned (depth restart)
 
-## What we tested
-Rules + health/ACL/oversubscribe gate/dual-close path/pagination/HMAC/rate-limit/UI + stale 409.
+Stopped mid-smoke on 2026-07-21. Not sustained.
 
-## What worked
-- Authorized-share headroom is a clear equity-domain cross-entity gate.
-- Dual counsel close continues the dual-control pattern.
+## Why abandoned
 
-## What failed / was brittle
-Nothing blocking sustain.
+- Unique claim was authorized-share headroom + dual counsel close — isomorphic to the saturated dual-gate wave (taxhold, quotaguard, claimreserve, …).
+- `HYPOTHESIS.md` was copy-pasted from claimreserve (claims reserve product).
+- `PRODUCT.md` title still said Claimreserve. Signal of shallow generation, not domain work.
+- Real cap-table depth (SAFE conversion waterfalls, fully diluted modeling) was not in scope; commercial space already dense (Carta, Pulley, Cake).
 
-## Framework recommendation
-Continue multi-aggregate + cross-entity gates (`docs/FRAMEWORKS.md`).
+## What existed in tree
+
+Partial smoke scaffold: firms/rounds/allocations, oversubscribe gate, dual close, tests, UI shell. Left in place as autopsy; do not resume.
+
+## Framework lesson
+
+Passing tests on an isomorphic gate is **throughput**, not comprehensive product evidence. Enforce `protocols/IDEA_DEPTH.md` before the next product folder.

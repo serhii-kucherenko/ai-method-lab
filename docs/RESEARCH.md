@@ -21,3 +21,32 @@ Frontier thinking only. No product code. No ROADMAP promotion from this file.
 **Replication default:** `promoted-only` — after auto-promote, run **3 independent replications** (`run_index` 1–3) on **P-smoke-001** for primary (A03) and enterprise alternate (A10). Original wave-1 runs count as `run_index: 1`; queue r2 and r3. Median metrics; promote stands if ≥2/3 pass per `protocols/TRIPLE_TEST.md`. Routine ladder cells do not replicate by default.
 
 **GitHub CLI:** Available (`gh` 2.45, authenticated). Remote PR trails enabled for sandbox merge evidence going forward.
+
+## 2026-07-21 — Depth restart (human signal: everything shallow)
+
+**Diagnosis:** ~90 “sustained” products mostly prove A03+A10 can ship tenancy + FSM + isomorphic numeric gate + dual signer. Captable mid-build was the same template (hypothesis even copy-pasted from claimreserve). Research was idle while the conveyor ran. Summaries were pass-count vanity.
+
+**Decision:** Freeze product conveyor. Optimize for fewer products, slow idea verification, bulletproof claims. Protocol: `protocols/IDEA_DEPTH.md`. Note: `docs/DEPTH_RESTART.md`. Captable abandoned. Controller `phase: research`.
+
+**Seeds killed this tick**
+
+| Seed | Gate fail | Why |
+|------|-----------|-----|
+| captable (as scoped) | G2 | Oversubscribe + dual counsel ≅ taxhold/quotaguard wave |
+| tentcamp / clone-tier | G2 | Explicit noun-swap |
+| “next dual-gate noun” | anti-pattern | Instant kill |
+
+**Active idea: lotblast** → state `adversarial` — dossier `docs/ideas/lotblast.md`
+
+- G1 pain: FSMA 204 24h sortable lot records vs multi-day blast-radius scramble (FDA rule + practitioner sources cited in dossier)
+- G2: DAG genealogy + blast scope + mock-recall export is non-isomorphic to lottrack
+- G3: Kill A (incumbents exist) still open for commercial novelty; survives as **method stress** if ICP narrowed
+- G4–G6: draft only — not ready_to_build
+
+**Not promoted to BACKLOG build.**
+
+## 2026-07-21 — lotblast research tick 1 summary (skeptical)
+
+A graph recall product is the first non-isomorphic candidate after dual-gate saturation. **Commercial Kill A stands** — incumbents exist; we locked framing as **method stress**, not GTM. G1 now cites FDA primary rule + 21 CFR enforcement path (via FDA talk summary), not vendor blogs alone. G5 has 25 named cases on paper; not RED tests yet. Continue research — do not open `projects/lotblast/`.
+
+**Digest one-liner:** Restarted for depth; froze shallow conveyor; researching lotblast as a graph/FSMA method stress — not building yet.

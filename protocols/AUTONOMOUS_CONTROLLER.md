@@ -6,7 +6,7 @@ Human contact is allowed only for **hard stops** (see below).
 
 ## Goal
 
-Grow portfolio products to **sustain**, publish findings, start the next product — unattended as far as possible. Use promoted workflow (`docs/DEVELOPMENT_WORKFLOW.md`).
+Prove the workflow can produce **few, deep, comprehensive products**. Prefer slow research and idea verification (`protocols/IDEA_DEPTH.md`) over starting another project. Build only ideas that reach `ready_to_build`. Use promoted workflow (`docs/DEVELOPMENT_WORKFLOW.md`) inside products. See `docs/DEPTH_RESTART.md`.
 
 ## State file
 
@@ -17,25 +17,28 @@ Read/write: `matrix/CONTROLLER.json`
 | `mode` | `autonomous` \| `paused` \| `hard_stop` |
 | `current_cell` | Phase cell id in flight, or `null` |
 | `current_product` | Product id under `projects/`, or `null` |
-| `phase` | `idle` \| `running` \| `scoring` \| `learning` \| `starting_next` |
+| `current_idea` | Idea id under `docs/ideas/`, or `null` |
+| `phase` | `idle` \| `research` \| `running` \| `scoring` \| `learning` \| `starting_next` |
 | `next_cell` | Next backlog cell id |
 | `last_completed` | Last scored cell id |
 | `ask_human` | Always `false` unless hard stop |
 | `hard_stop_reason` | Set only on hard stop |
 | `notify` | Resend digest config — see `protocols/NOTIFY.md` |
+| `depth_policy` | When set, block isomorphic dual-gate product starts |
 
 ## Loop (one tick)
 
 1. Load `matrix/CONTROLLER.json`. If `mode` is `paused` or `hard_stop`, stop.
-2. If `phase` is `running` / `scoring` / `learning` for `current_cell`, **resume that phase** — do not start another.
-3. If idle: take highest-priority queued row from `docs/BACKLOG.md` / `projects/PORTFOLIO.md`. Set `current_product`, `current_cell`, `phase: running`.
-4. Execute `protocols/PRODUCT_RUNBOOK.md` (preferred) or legacy `protocols/RUNBOOK.md` for sandbox A/B cells only.
-5. Write `matrix/cells/<id>.json`, update product `FINDINGS.md`, `matrix/FINDINGS.md`, portfolio status.
-6. Mark backlog done. Set `last_completed`, clear `current_cell` if phase done, `phase: starting_next`.
-7. **Notify** if configured (`protocols/NOTIFY.md`). Non-blocking.
-8. **Without waiting:** next phase on same product, or next product if sustain/abandon.
-9. When a product sustains: email findings digest; queue next portfolio product.
-10. When method ladder work remains (rare): continue approach cells; with `auto_promote`, apply `METHOD_DEFAULTS` without asking.
+2. If `phase` is `research`: execute one IDEA_DEPTH tick on `current_idea` (docs only). Update dossier + RESEARCH. Do **not** create/extend product trees. Then go to step 7.
+3. If `phase` is `running` / `scoring` / `learning` for `current_cell`, **resume that phase** — do not start another.
+4. If idle: take highest-priority **ready_to_build** idea from `docs/BACKLOG.md`, or continue research if none. Never queue isomorphic dual-gate clones. Set `current_product` / `current_idea`, `current_cell`, `phase` accordingly.
+5. For products: execute `protocols/PRODUCT_RUNBOOK.md` (preferred) or legacy `protocols/RUNBOOK.md` for sandbox A/B cells only.
+6. Write scores/findings; update portfolio. For research ticks: append `docs/RESEARCH.md` with a skeptical summary (G6).
+7. Mark backlog progress. Set `last_completed`, advance idea state or clear cell, `phase: starting_next` or stay in `research`.
+8. **Notify** if configured (`protocols/NOTIFY.md`). Non-blocking.
+9. **Without waiting:** next research gate, next product phase, or next **ready_to_build** idea — never the next noun-swap.
+10. When a product sustains: email a **depth** findings digest (frameworks + falsifiers, not pass vanity); return to research before queuing another product.
+11. When method ladder work remains (rare): continue approach cells; with `auto_promote`, apply `METHOD_DEFAULTS` without asking.
 
 ## Mid-phase failure
 

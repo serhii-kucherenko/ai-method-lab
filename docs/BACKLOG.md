@@ -1,28 +1,25 @@
 ﻿# Experiment backlog
 
-## Queued (autonomous)
+## Strategy (depth restart)
 
-| Priority | Product idea | Method | Notes |
+Fewer products. Slow research / idea verification. No build until `protocols/IDEA_DEPTH.md` → `ready_to_build`.
+
+See `docs/DEPTH_RESTART.md`.
+
+## Active (research only)
+
+| Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **pledgehold** | A03 + A10 | Campaigns + pledges; refund-window gate; dual treasurer refund. |
-| 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
+| 1 | **lotblast** idea depth | adversarial | FSMA lot genealogy + blast radius. Dossier: `docs/ideas/lotblast.md`. Not build-ready. |
+| 2 | Idea pipeline hygiene | ongoing | Kill isomorphic dual-gate seeds on sight. |
 
-## Recently completed (comprehensive wave)
+## Frozen / abandoned product queue
 
-| Product | Gate stressed |
+| Product | Reason |
 | --- | --- |
-| captable | oversubscribe + dual counsel close |
-| taxhold | late-days + dual tax officer file |
-| claimreserve | reserve ceiling + dual adjuster settle |
-| escrowrail | balance floor + dual escrow officer release |
-| payclaw | overpay headroom + dual HR release |
-| safecase | retention days + dual counsel archive |
-| limitdesk | credit ceiling + dual credit officer release |
-| riskhold | risk limit breach + dual risk officer clear |
-| stockrail | no-negative stock + dual manager approve |
-| schedgate | booking overlap + dual admin override |
-| quotaguard | quota ceiling + dual finance release |
+| captable | Abandoned mid-smoke — isomorphic oversubscribe + dual counsel; hypothesis copy-paste. |
+| tentcamp | Deferred clone-tier — stays frozen. |
 
-## Strategy
+## Do not queue
 
-Multi-aggregate + cross-entity gates. Clone-tier deferred.
+Noun-swap FSMs, dual-signer + ceiling/floor/days templates, or any PRODUCT.md generable by find-replace from taxhold.

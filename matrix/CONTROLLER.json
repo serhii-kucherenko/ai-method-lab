@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T02:30:00Z",
+  "updated_at": "2026-07-21T04:00:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,9 +7,9 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": null,
+  "active_cell": "R-depth-001__lotblast__ideation",
   "schema_version": "1.0.0",
-  "idle_reason": "awaiting_next_product",
+  "idle_reason": null,
   "product_defaults": {
     "persistence": "sqlite",
     "stack": "node-ts",
@@ -17,12 +17,19 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-sustain__captable__r1",
+  "last_completed": "A03__P-sustain__taxhold__r1",
   "last_error": null,
   "current_product": null,
-  "next_cell": "A03__P-smoke-001__pledgehold__r1",
+  "current_idea": "lotblast",
+  "next_cell": "R-depth-001__lotblast__adversarial",
   "mode": "autonomous",
-  "phase": null,
-  "notes": "captable sustained. Next: pledgehold (refund-window gate + dual treasurer refund).",
-  "hard_stop": false
+  "phase": "research",
+  "notes": "DEPTH RESTART tick1 done: IDEA_DEPTH live, captable abandoned, lotblast adversarial (method-stress framing; 25 paper tests). Next: FDA spreadsheet column map. No product code.",
+  "hard_stop": false,
+  "depth_policy": {
+    "max_active_products": 1,
+    "require_idea_depth": true,
+    "block_isomorphic_dual_gate": true,
+    "protocol": "protocols/IDEA_DEPTH.md"
+  }
 }

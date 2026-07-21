@@ -484,3 +484,14 @@ Desks/periods/filings. Gates: late-days grace + dual tax officer file. 3/3 tests
 ## 2026-07-21 -- captable sustain (pass)
 
 Firms/rounds/allocations. Gates: oversubscribe + dual counsel close. 3/3 tests green. Next: pledgehold.
+
+## 2026-07-21 — Depth restart
+
+Human feedback: portfolio, testing, research, and summaries were shallow. Controller froze the product conveyor.
+
+- Abandoned **captable** mid-smoke (isomorphic dual-gate; copy-paste hypothesis).
+- Added `protocols/IDEA_DEPTH.md` and `docs/DEPTH_RESTART.md`.
+- Active work: research on **lotblast** (`docs/ideas/lotblast.md`) — state adversarial, not ready_to_build.
+- Optimize-for flipped: fewer products, slower idea verification, bulletproof claims before code.
+- A03+A10 defaults unchanged; dual-gate wave treated as saturated evidence, not a template to extend.
+
