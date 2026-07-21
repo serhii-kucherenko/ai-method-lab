@@ -57,7 +57,16 @@ return visited \ {finished}  // inputs
 3. **Lock:** reject CTE writes that mutate any lot in visited (or any edge touching them)
 4. Export must include every CTE row whose TLC ∈ visited (test #30)
 
-## Anti-patterns (instant fail)
+## Mass vs membership (Kill D)
+
+Blast **membership** (which TLCs are reachable) is independent of **mass balance**.
+
+- Optional `scrap` / `yield_loss` qty on a transform may explain why input kg ≠ output kg.
+- Forward blast still follows edges even when mass does not conserve.
+- **Forbidden:** inferring “not affected” because quantities don’t add up; **forbidden:** requiring perfect mass balance to compute blast.
+
+Fixture note: A/B/C currently ignore scrap; a future Fixture D should include scrap on one edge without changing finished membership.
+
 
 | Impl shortcut | Broken property |
 |---------------|-----------------|

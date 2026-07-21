@@ -86,6 +86,16 @@ Gates: still `adversarial`. G5 closer (30 named cases + 3 fixtures) but **not** 
 
 Still **not** ready_to_build. Next: G6-quality research summary memo; optional second idea seed kill-pass to avoid fixation; still no `projects/lotblast/`.
 
+## 2026-07-21 — loop tick (G6 memo + seed kill-pass)
+
+- Wrote `docs/ideas/lotblast-G6-summary.md` (skeptical seven-part summary; decision remains **do not build yet**)
+- Wrote `docs/ideas/SEED_KILL_PASS.md` (killed/parked alternate seeds; clinical/protocol parked)
+- Removed duplicate `fixture-*.json` (canonical = `lotblast-*.json` per fixtures README)
+- Clarified Kill D in blast algorithm: membership ≠ mass balance; scrap does not shrink blast
+
+Next research: Fixture D (scrap edge) golden JSON; still no product code.
+
+
 
 ## 2026-07-21 — lotblast research tick 5 (golden JSON fixtures)
 
