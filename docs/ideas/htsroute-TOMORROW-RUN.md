@@ -1,6 +1,6 @@
 # htsroute — tomorrow’s day-boundary run sheet
 
-Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**). Do not flip from memory.
+Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**). Do not flip from memory. Pocket list: `htsroute-FLIP-MORNING.md`.
 
 ## Before anything else
 

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T18:10:00Z",
+  "updated_at": "2026-07-21T18:26:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__loop15m_tick29_day1_nonsmoke_backlog",
+  "last_completed": "research__loop15m_tick30_day1_complete_morning_list",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 29: depositgap/lesserof DAY1-NONSMOKE; BACKLOG fixture counts; kit checker includes day-1 + iso audit. Preflip calendar-blocked. Do NOT re-arm pid 27600.",
+  "notes": "15m tick 30: oshamult/ptax DAY1-NONSMOKE; htsroute-FLIP-MORNING; all kits day-1 complete. Preflip calendar-blocked. Do NOT re-arm pid 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -43,6 +43,6 @@
     "pid": 27600,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 29
+    "ticks_observed": 30
   }
 }

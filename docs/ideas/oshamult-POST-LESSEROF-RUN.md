@@ -23,7 +23,9 @@ node docs/ideas/check-oshamult-dual.mjs
 
 ## If all pass
 
-Comprehensive `projects/oshamult/` — not smoke; digests must name serial-order honesty debt vs live FOM.
+1. Set `current_idea` → oshamult; walk IDEA_DEPTH only if gates hold.  
+2. Open comprehensive `projects/oshamult/` — day-1 contract: `oshamult-DAY1-NONSMOKE.md`.  
+3. Digests: serial penalty **forecast experiment**; v0 order ≠ live OIS until versioned dual flip; Kill A stands.
 
 ## Explicit non-actions (2026-07-21)
 

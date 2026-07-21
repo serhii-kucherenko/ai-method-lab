@@ -24,6 +24,7 @@ const seeds = [
       "htsroute-TOMORROW-RUN.md",
       "htsroute-FLIP-ABORT.md",
       "htsroute-DAY1-NONSMOKE.md",
+      "htsroute-FLIP-MORNING.md",
       "QUEUE-ISO-AUDIT.md",
       "check-htsroute-preflip.mjs",
     ],
@@ -74,6 +75,7 @@ const seeds = [
       "oshamult-API-CONTRACT.md",
       "oshamult-POST-LESSEROF-RUN.md",
       "oshamult-SIZE-TABLE.md",
+      "oshamult-DAY1-NONSMOKE.md",
     ],
   },
   {
@@ -90,6 +92,7 @@ const seeds = [
       "ptax4975-API-CONTRACT.md",
       "ptax4975-POST-OSHAMULT-RUN.md",
       "ptax4975-FMV-FENCE.md",
+      "ptax4975-DAY1-NONSMOKE.md",
     ],
   },
 ];

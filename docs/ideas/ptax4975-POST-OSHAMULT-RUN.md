@@ -32,7 +32,7 @@ node docs/ideas/check-ptax4975-dual.mjs
 ## If all pass
 
 1. Set `current_idea` → ptax4975; walk IDEA_DEPTH only if gates hold.  
-2. Open comprehensive `projects/ptax4975/` — not Form 5330 / IRS replacement.  
+2. Open comprehensive `projects/ptax4975/` — not Form 5330 / IRS replacement. Day-1 contract: `ptax4975-DAY1-NONSMOKE.md`.  
 3. Digests: first-/second-tier excise **shape forecast**; Kill A stands; no silent “fix” to highest-during-period FMV without dual suite bump.
 
 ## If any fail

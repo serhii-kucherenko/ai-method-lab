@@ -733,3 +733,11 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Synced BACKLOG fixture counts (htsroute 36); kit checker requires day-1 + iso audit
 - Preflip still calendar-blocked; loop 27600 not re-armed
 
+
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #30
+
+- Wrote oshamult/ptax DAY1-NONSMOKE; htsroute-FLIP-MORNING pocket list
+- All five seeds now have day-1 non-smoke contracts in kit checker
+- Preflip still calendar-blocked after 30 ticks; loop 27600 not re-armed
+
