@@ -34,7 +34,8 @@ When a suspect ingredient lot is identified, a mid-chain food facility must know
 ## 6. Depth test outline
 
 - 30 named cases in `lotblast.md` (+ XOR / location completeness)
-- Golden JSON fixtures A/B/C under `docs/ideas/fixtures/`
+- Golden JSON fixtures A–E under `docs/ideas/fixtures/`
+- Reference checker `docs/ideas/check-fixtures.mjs` (paper algorithm executable)
 - Anti-pattern table in blast algorithm (parent_id-only, plant-wide blast, status cascade)
 
 ## 7. Decision

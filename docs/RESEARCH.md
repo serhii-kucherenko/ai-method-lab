@@ -101,6 +101,13 @@ Next research: Fixture D (scrap edge) golden JSON; still no product code.
 - Fixture E: finished-as-input golden JSON
 - Still **do not build**
 
+## 2026-07-21 — loop tick 3 (executable paper oracles)
+
+- Reference checker `docs/ideas/check-fixtures.mjs` — all A–E green after fixing channel math (subtract consume-as-input)
+- Challenges B/C recorded; no cardinality changes
+- Depth win: Fixture E would have shipped wrong in-channel without the checker
+- Still **do not build**
+
 
 
 

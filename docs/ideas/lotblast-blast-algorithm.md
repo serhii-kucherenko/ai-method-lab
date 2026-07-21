@@ -25,7 +25,10 @@ finished := { t in visited | kind(t) == finished }
 # Leftover unused qty on a visited lot does not create nodes, shipments, or notify partners.
 shipments := all shipments whose tlc ∈ visited
 notify := unique partners of those shipments
-units_in_channel(t) := produced_qty(t) - sum(ship_qty for shipments of t)
+units_in_channel(t) := produced_qty(t)
+  - sum(ship_qty for shipments of t)
+  - sum(qty of t used as transform inputs)
+# Consuming a finished lot into a further transform removes it from channel (Fixture E).
 units_in_channel_total := sum units_in_channel(t) for t in finished
 ```
 
@@ -35,7 +38,7 @@ units_in_channel_total := sum units_in_channel(t) for t in finished
 2. **Idempotent membership:** each finished TLC appears once (Fixture B)
 3. **Shared expansion:** one input used in N transforms reaches all N downstream finished lots (Fixture A)
 4. **Isolation:** unrelated ingredient trees never enter blast (Fixture A control)
-5. **Channel math:** partial ships reduce in-channel; never use produced qty as channel (Fixture C)
+5. **Channel math:** partial ships **and** re-consume as transform input reduce in-channel; never use produced qty as channel (Fixtures C, E)
 6. **No status FSM substitute:** blast ignores lot “status” enums; only edges + shipments matter
 7. **Explicit finished kind:** intermediates never become finished by being leaves (challenge A2)
 8. **Leftovers are not nodes:** unused qty does not add blast members (challenge A1)
