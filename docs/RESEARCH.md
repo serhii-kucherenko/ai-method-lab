@@ -829,7 +829,7 @@ Human: portfolio products, tests, research, and digests still feel shallow ù wea
 
 **Skeptical one-liner:** We raised the flip bar instead of inventing more fixtures; the stronger dollar story sits on depositgap paper + an offline try page, not on another shallow product folder.
 
-## 2026-07-21 ó AGENT_LOOP_TICK_depth_15m #46 (lesserof dollar demo)
+## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #46 (lesserof dollar demo)
 
 Continued depth without opening products. Parallel seed only.
 
@@ -841,3 +841,13 @@ Continued depth without opening products. Parallel seed only.
 **Decision:** still researching. Same-day build blocked. Queue unchanged: htsroute ? (value gate) ? depositgap ? lesserof.
 
 **Skeptical one-liner:** Two literal-dollar research demos now exist (deposit true-up + stacked drawback caps); neither is a product, and neither replaces Challenge D honesty on htsroute.
+
+## 2026-07-21 ó AGENT_LOOP_TICK_depth_15m #47 (oshamult demo)
+
+- Wrote `oshamult-G1-EVIDENCE.md` + `demos/oshamult-try/try.html` (serial remaining-balance + willful/repeat/FTA gates; statutory-max and additive cheats reject)
+- Kit checker requires oshamult G1 evidence
+- Still no product; same-day build blocked; queue depositgap ? lesserof ahead of oshamult
+
+**Decision:** still researching. Digests attach try + StackBlitz for runnable paper demos.
+
+**Skeptical one-liner:** Three offline research calculators now exist for dollar/serial claims; portfolio product conveyor stays frozen until an idea clears the raised value gate.

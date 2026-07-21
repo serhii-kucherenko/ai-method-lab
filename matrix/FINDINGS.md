@@ -546,3 +546,7 @@ Human depth signal: portfolio still shallow. Raised htsroute day-boundary value 
 ## 2026-07-21 -- depth tick 46 (research, no product)
 
 lesserof G1 evidence + research try demo (stacked lesser-of dollars). depositgap try day-count aligned to paper oracle. Still no product folder.
+
+## 2026-07-21 -- depth tick 47 (research, no product)
+
+oshamult G1 evidence + research try demo (serial GBP reductions). Still no product folder; build blocked same day.

@@ -84,6 +84,7 @@ const seeds = [
       "oshamult-SIZE-TABLE.md",
       "oshamult-DAY1-NONSMOKE.md",
       "oshamult-REPO-SCAFFOLD.md",
+      "oshamult-G1-EVIDENCE.md",
     ],
   },
   {
