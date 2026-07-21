@@ -8,7 +8,7 @@
 | SAFE conversion waterfall calculator | Soft kill (GTM) | G3 | Crowded; maybe pure math cell later |
 | Bank recon aging unexplained variance | Soft kill | G3 | QBO/Sage dense |
 | Multi-jurisdiction sales-tax nexus calendar | Soft kill | G2 risk | taxhold twin risk |
-| **amendwin** (amendment-aware visit windows) | Active | framed→adversarial | Next after lotblast sustain |
-| lotblast | Sustained | — | Product done; method-stress evidence |
+| **amendwin** (amendment-aware visit windows) | Building | ready_to_build | Smoke open — method stress |
+| lotblast | Sustained | — | Product done |
 
 **Rule:** one idea in `framed`→`ready_to_build`. Dual-gate seeds die immediately.

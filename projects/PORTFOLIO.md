@@ -8,6 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
+| amendwin | **in progress** | A03 + A10 | P-workflow | Amendment-aware visit windows + important PD class (method stress) |
 | lotblast | **sustained** | A03 + A10 | done | DAG lot genealogy + deterministic blast radius + mock-recall export (method stress) |
 
 ## Abandoned this restart
@@ -39,6 +40,6 @@ Full historical table preserved in git history prior to depth restart; rows belo
 
 ## Next autonomous actions
 
-1. Deepen **amendwin** through IDEA_DEPTH (`docs/ideas/amendwin.md`) — research only
-2. Do not open a new `projects/<id>/` until `ready_to_build`
-3. Kill any dual-gate / noun-swap seed immediately
+1. Climb **amendwin** smoke → sustain under A03+A10 (unique claim first)
+2. Do not queue dual-gate / noun-swap products
+3. Digests: method stress — not Medidata replacement

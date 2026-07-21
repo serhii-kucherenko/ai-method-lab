@@ -511,3 +511,7 @@ Recall FSM draft?locked?closed with audit/version. HMAC webhooks idempotent; par
 ## 2026-07-21 -- lotblast scale + sustain (pass)
 
 Pagination (=250) + Retry-After rate limit. Sustain scored. First depth-restart product complete. Next: IDEA_DEPTH research (no dual-gate queue).
+
+## 2026-07-21 -- amendwin smoke + crud (pass)
+
+Version-at-visit-date windows; fixtures A–F; study API; list/read RBAC. Method stress — not Medidata GTM. Next: workflow.

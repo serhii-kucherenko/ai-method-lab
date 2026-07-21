@@ -10,7 +10,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **amendwin** | research | Amendment-aware clinical visit windows. Dossier: `docs/ideas/amendwin.md`. No code until ready_to_build. |
+| 1 | **amendwin** | building workflow | Method stress: version-at-visit-date windows. Smoke+crud scored. |
 | 2 | lotblast | sustained | Method stress complete. |
 | 2 | Idea pipeline hygiene | ongoing | Kill isomorphic dual-gate seeds on sight. |
 

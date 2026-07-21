@@ -134,6 +134,12 @@ Next research: Fixture D (scrap edge) golden JSON; still no product code.
 - New idea **amendwin** (`docs/ideas/amendwin.md`) — framed, entering adversarial
 - Research only; no `projects/amendwin/` until ready_to_build
 
+## 2026-07-21 — amendwin ready_to_build + smoke slice 1
+
+- Fixtures A–F green; G6 + scorecard → **ready_to_build** (method stress)
+- Opened `projects/amendwin/` with window scorer
+- Next: study/visit API + climb ladder
+
 
 
 

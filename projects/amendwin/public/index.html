@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Amendwin</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Amendwin</h1>
+      <p class="lede">
+        Amendment-aware visit windows — method stress, not a dual-gate clone.
+      </p>
+      <section id="auth">
+        <label>Email <input id="email" value="demo@amendwin.local" /></label>
+        <label>Password <input id="password" type="password" value="demo" /></label>
+        <div class="row">
+          <button type="button" id="register">Register</button>
+          <button type="button" id="login">Log in</button>
+        </div>
+        <p id="auth-status" class="status"></p>
+      </section>
+      <section id="flow" hidden>
+        <button type="button" id="run">Seed study + score out-of-window visit</button>
+        <p id="flow-status" class="status"></p>
+        <pre id="view"></pre>
+      </section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

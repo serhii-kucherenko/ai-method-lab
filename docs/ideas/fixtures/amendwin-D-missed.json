@@ -1,0 +1,27 @@
+{
+  "fixture_id": "D-missed-after-close",
+  "description": "No actual date after allowable window closes → missed",
+  "important_codes": ["V1"],
+  "versions": [
+    {
+      "id": "V1",
+      "effective_at": "2026-01-01",
+      "visits": {
+        "V1": { "target_day": 7, "before": 1, "after": 1 }
+      }
+    }
+  ],
+  "subject": { "id": "S1", "enrollment": "2026-01-01" },
+  "cases": [
+    {
+      "visit": { "code": "V1", "actual": null, "locked": false },
+      "as_of_missed": "2026-01-10",
+      "expect": { "version_id": "V1", "classification": "missed", "important": true }
+    },
+    {
+      "visit": { "code": "V1", "actual": null, "locked": false },
+      "as_of_missed": "2026-01-07",
+      "expect": { "version_id": "V1", "classification": "pending", "important": false }
+    }
+  ]
+}

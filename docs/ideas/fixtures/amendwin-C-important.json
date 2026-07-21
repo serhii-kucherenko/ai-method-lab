@@ -1,0 +1,30 @@
+{
+  "fixture_id": "C-important-vs-other",
+  "description": "Out-of-window on important code → important; on ordinary code → not important",
+  "important_codes": ["EFF"],
+  "versions": [
+    {
+      "id": "V1",
+      "effective_at": "2026-01-01",
+      "visits": {
+        "EFF": { "target_day": 14, "before": 1, "after": 1 },
+        "SAFE": { "target_day": 14, "before": 1, "after": 1 }
+      }
+    }
+  ],
+  "subject": { "id": "S1", "enrollment": "2026-01-01" },
+  "cases": [
+    {
+      "visit": { "code": "EFF", "actual": "2026-01-20", "locked": false },
+      "expect": { "version_id": "V1", "classification": "out_of_window", "important": true }
+    },
+    {
+      "visit": { "code": "SAFE", "actual": "2026-01-20", "locked": false },
+      "expect": { "version_id": "V1", "classification": "out_of_window", "important": false }
+    },
+    {
+      "visit": { "code": "EFF", "actual": "2026-01-15", "locked": false },
+      "expect": { "version_id": "V1", "classification": "on_time", "important": false }
+    }
+  ]
+}

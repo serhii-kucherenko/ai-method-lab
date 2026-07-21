@@ -1,0 +1,31 @@
+{
+  "fixture_id": "E-fixed-anchor",
+  "description": "Late V1 does not shift V2 target; targets always from enrollment",
+  "important_codes": [],
+  "versions": [
+    {
+      "id": "V1",
+      "effective_at": "2026-01-01",
+      "visits": {
+        "V1": { "target_day": 7, "before": 2, "after": 2 },
+        "V2": { "target_day": 21, "before": 2, "after": 2 }
+      }
+    }
+  ],
+  "subject": { "id": "S1", "enrollment": "2026-01-01" },
+  "cases": [
+    {
+      "visit": { "code": "V1", "actual": "2026-01-12", "locked": false },
+      "expect": { "version_id": "V1", "classification": "out_of_window", "important": false }
+    },
+    {
+      "visit": { "code": "V2", "actual": "2026-01-22", "locked": false },
+      "expect": {
+        "version_id": "V1",
+        "classification": "on_time",
+        "important": false,
+        "note": "target remains enrollment+21 even though V1 was late"
+      }
+    }
+  ]
+}

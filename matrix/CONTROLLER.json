@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T10:40:00Z",
+  "updated_at": "2026-07-21T11:30:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "R-depth-002__amendwin__framed",
+  "active_cell": "A03__P-workflow-001__amendwin__r1",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-sustain__lotblast__r1",
+  "last_completed": "A03__P-crud-001__amendwin__r1",
   "last_error": null,
-  "current_product": null,
+  "current_product": "amendwin",
   "current_idea": "amendwin",
-  "next_cell": "R-depth-002__amendwin__adversarial",
+  "next_cell": "A03__P-workflow-001__amendwin__r1",
   "mode": "autonomous",
-  "phase": "research",
-  "notes": "lotblast sustained. Active idea: amendwin (framed). Research only — no projects/amendwin until ready_to_build.",
+  "phase": "running",
+  "notes": "amendwin crud scored. Next P-workflow. Method stress — not dual-gate.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
