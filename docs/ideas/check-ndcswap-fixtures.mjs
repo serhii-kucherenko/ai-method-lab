@@ -35,7 +35,7 @@ function evaluate(fix) {
   if (fix.brand_medically_necessary) {
     return { allow: false, reason: "brand_medically_necessary" };
   }
-  if (fix.daw === 1 || fix.daw === 2) {
+  if ([1, 2, 6, 7, 9].includes(Number(fix.daw))) {
     return { allow: false, reason: "daw_blocks" };
   }
   const te = tePairOk(fix.te_code_prescribed, fix.te_code_candidate);

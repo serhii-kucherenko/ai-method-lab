@@ -11,6 +11,7 @@
 | **amendwin** (amendment-aware visit windows) | Sustained | — | Product done |
 | lotblast | Sustained | — | Product done |
 | **crewleg** (FAR 117 FDP/rest legality) | Sustained | — | Product done |
-| **ndcswap** (Orange Book TE substitution) | Research | differentiated | Fixtures A–Y; G6 do-not-build |
+| **ndcswap** (Orange Book TE substitution) | Sustained | — | Product done |
+| **settlecut** (interval imbalance settlement) | Research | framed | Method stress; Kill A TBD |
 
 **Rule:** one idea in `framed`→`ready_to_build`. Dual-gate seeds die immediately.

@@ -1,5 +1,5 @@
 ﻿{
-  "updated_at": "2026-07-21T14:00:00Z",
+  "updated_at": "2026-07-21T14:35:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-sustain__crewleg__r1",
+  "last_completed": "A03__P-sustain__ndcswap__r1",
   "last_error": null,
   "current_product": null,
-  "current_idea": "ndcswap",
+  "current_idea": "settlecut",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "ndcswap differentiated. Fixtures A-Y green. G6 do-not-build. Loop tick 8.",
+  "notes": "ndcswap sustained (4th depth product). Researching settlecut - framed. Loop tick 9.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

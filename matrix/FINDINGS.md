@@ -522,3 +522,7 @@ Visit open-to-locked audit + version; HMAC webhooks + dep 502; 250+ visit pagina
 ## 2026-07-21 -- crewleg smoke to sustain (pass)
 
 FAR 117 Table B + rest fixtures A-Y; full ladder scored. Third depth-restart product. Next: IDEA_DEPTH ndcswap framed.
+
+## 2026-07-21 -- ndcswap smoke to sustain (pass)
+
+Orange Book TE + DAW fixtures; full ladder. Fourth depth-restart product. Next: settlecut framed.

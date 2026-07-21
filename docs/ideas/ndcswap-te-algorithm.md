@@ -22,7 +22,7 @@ Allow substitution iff ALL:
 1. `same_ingredient_strength_form`
 2. Both TE codes are substitutable (`A…`); B-codes reject
 3. AB family: plain `AB` only matches `AB`; `AB1`/`AB2`/… must match exact suffix; non-AB A-codes (`AA`,`AT`,…) must match exactly (no `AA`↔`AB`)
-4. `daw` not in `{1, 2}` (physician/patient DAW — simplified; exact NCPDP mapping later)
+4. `daw` blocks when in `{1, 2, 6, 7, 9}` (see Challenge B / NCPDP map); `{0, 3, 4, 8}` proceed to TE
 5. `!brand_medically_necessary`
 
 Reject otherwise with reason codes.
