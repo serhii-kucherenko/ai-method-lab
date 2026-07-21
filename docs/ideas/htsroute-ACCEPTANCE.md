@@ -51,8 +51,9 @@ Acceptance **fails** if digests, PRODUCT.md, FINDINGS, try-demo copy, or marketi
 3. Says the product “beats brokers” or “replaces commercial HS engines”
 4. Cites acetaminophen **6.5% → Free** as guaranteed importer savings without GSP / preference caveat
 5. Treats letter base MFN contrasts as **entry savings** under Section 232 / 301 without a named annex / list cite (`htsroute-STACKED-TARIFF-FENCE.md`)
+6. Sells acetaminophen / ibuprofen / aspirin teaching pairs as a **232** exposure or savings story while proclamation clause (5) keeps generics out “at this time”
 
-Allowed (narrow): non-zero-base-MFN pairs may mention **base MFN vs Free finished** only with preference caveats from `htsroute-VALUE-STAKES.md` — acetaminophen, ibuprofen, aspirin, Eluxadoline/Viberzi (6%), Vericiguat/Verquvo (6.5%). Never PPI Free/Free as savings. Never invent 232 annex membership.
+Allowed (narrow): non-zero-base-MFN pairs may mention **base MFN vs Free finished** only with preference caveats from `htsroute-VALUE-STAKES.md` — acetaminophen, ibuprofen, aspirin, Eluxadoline/Viberzi (6%), Vericiguat/Verquvo (6.5%). Never PPI Free/Free as savings. Never invent 232 annex membership. Never conflate generic teaching pairs with patented 232 coverage.
 
 ---
 

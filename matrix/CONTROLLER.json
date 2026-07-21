@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T21:25:00Z",
+  "updated_at": "2026-07-21T21:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__depth15m_tick41_232_dual_dates_try",
+  "last_completed": "research__depth15m_tick42_generics_not_232",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 41: try/VALUE-STAKES/PAGE-SPECS/preflip aligned to primary 232 clause (4) dates — Annex III 2026-07-31 / others 2026-09-29 (not counsel-only). Suite 42 dual-green. Same-day build blocked. Do NOT re-arm pid 29556 or 27600.",
+  "notes": "15m tick 42: try/VALUE/ACCEPTANCE/PRODUCT forbid conflating OTC analgesic teaching pairs with patented 232 coverage (generics not subject at this time). Preflip requires Generic marker. Suite 42 dual-green. Same-day build blocked. Do NOT re-arm pid 29556 or 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -43,6 +43,6 @@
     "pid": 27600,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 41
+    "ticks_observed": 42
   }
 }

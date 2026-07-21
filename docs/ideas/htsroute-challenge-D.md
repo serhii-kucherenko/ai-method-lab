@@ -13,6 +13,7 @@ Sub-attacks:
 3. **Fixture farm ≠ idea depth** — green checkers prove algorithm consistency, not that anyone needs a product. (Current suite: **42** dual-green files — count still ≠ value.)
 4. **Same-day conveyor risk** — framing → fixtures → scorecard in one calendar day is exactly the failure mode DEPTH_RESTART named.
 5. **Stacked 232 / 301 eclipses MFN toys** — primary proclamation: Annex III from **2026-07-31**, other companies from **2026-09-29**. Patented pharma / API Section 232 layers can dwarf base MFN 6%/6.5%↔Free contrasts. Selling letter MFN as entry savings without annex checks is another vanity path.
+6. **Fake 232 on generics** — acetaminophen / ibuprofen / aspirin teaching pairs are the honest MFN toys; clause (5) excludes **generic** pharmaceuticals from these 232 tariffs **at this time**. Saying “232 already dwarfs the 6.5% letter” on those SKUs invents coverage the proclamation withholds.
 
 ## Answers (honest)
 
@@ -23,6 +24,7 @@ Sub-attacks:
 | 3 Fixture farm | **Partially accepted.** Suite is necessary for G5 but **not sufficient** for ready_to_build as a “valuable product.” Dual-impl helps method evidence; it does not create demand. |
 | 4 Same-day | **Accepted as process risk.** Same-day build remains blocked. Day-boundary reassess must re-read this challenge, not only the green counts. |
 | 5 Stacked 232/301 | **Accepted as honesty bar.** Primary proclamation: Annex III from **2026-07-31**, other companies from **2026-09-29** (`htsroute-STACKED-TARIFF-FENCE.md`). Digests may cite base MFN from CROSS; must not claim landed-duty savings without annex / FR evidence. Prefer primary text over secondary alerts when annex timing conflicts. |
+| 6 Fake 232 on generics | **Accepted as honesty bar.** Generics carve-out (clause (5)) means OTC analgesic teaching pairs stay **base-MFN stories** unless a named entry proves patented + annex coverage. Brand candidates (Viberzi / Verquvo) still need Orange Book + annex/FR before any 232 dollar claim. |
 
 ## Verdict
 
@@ -30,7 +32,7 @@ Challenge D **does not kill the domain claim** (29/3003/3004 form gate remains n
 
 Challenge D **does kill any vanity narrative** that htsroute is already a bulletproof, data-backed commercial product idea.
 
-**State impact:** remain `testable` / research-only. Digests must lead with “form-gate experiment; MFN often Free; brokers already do this; stacked 232/301 out of scope unless annex-cited” — not pass counts.
+**State impact:** remain `testable` / research-only. Digests must lead with “form-gate experiment; MFN often Free; brokers already do this; stacked 232 only for patented/annex-cited entries — not generic OTC toys” — not pass counts.
 
 ## Explicit non-actions
 

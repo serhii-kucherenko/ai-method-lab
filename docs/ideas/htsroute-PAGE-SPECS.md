@@ -466,7 +466,7 @@ No classify, no savings calculator, no “estimated duty saved” widget, no ann
 | PPI showcase honesty | Pantoprazole / omeprazole bulk Chapter 29 and finished 3004 are often **both MFN Free** — **no duty-savings claim** |
 | Honest contrast pairs | Acetaminophen / ibuprofen / aspirin; Eluxadoline–Viberzi; Vericiguat–Verquvo per VALUE-STAKES |
 | Caveats | GSP / preference may zero bulk MFN by origin; cite “base MFN vs Free finished,” not guaranteed importer savings |
-| Stacked duties fence | Letter base MFN is **not** landed-duty savings once Section **232** / **301** stacks apply; primary dates: Annex III **2026-07-31**, other companies **2026-09-29**; annexes not encoded in v0 |
+| Stacked duties fence | Letter base MFN is **not** landed-duty savings for **patented** covered goods once Section **232** / **301** stacks apply; primary dates: Annex III **2026-07-31**, other companies **2026-09-29**; **generics not subject at this time** — OTC analgesic teaching pairs ≠ 232 story; annexes not encoded in v0 |
 | What the product does | Form/mixing gate 29 / 3003 / 3004 / Note 1(a) / reject — not full 10-digit HTS |
 | Forbidden claims list | Beats brokers; PPI chapter-flip savings; fixture counts as market proof; invented 232 annex savings |
 

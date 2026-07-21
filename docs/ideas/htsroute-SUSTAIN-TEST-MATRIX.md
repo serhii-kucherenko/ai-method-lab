@@ -178,7 +178,7 @@ Instant fail if marketing/try/FINDINGS violate `htsroute-ACCEPTANCE.md` §C–D 
 | M-03 | try.html / demo README | Missing “research demo / workflow experiment” disclaimer |
 | M-04 | FINDINGS or ship digest string | Missing Kill A line: *Existing tools and brokers already do this commercially…* |
 | M-05 | UI copy scan (product shell + honesty page) | “Beats brokers” / “replaces commercial HS engines” / fixture-count-as-market-proof |
-| M-06 | Money honesty page **and** try.html stacked-duty callout | Letter MFN sold as landed-duty / 232 savings; missing Annex III **2026-07-31** / others **2026-09-29** / annex out-of-scope language |
+| M-06 | Money honesty page **and** try.html stacked-duty callout | Letter MFN sold as landed-duty / 232 savings; missing Annex III **2026-07-31** / others **2026-09-29**; **or** OTC analgesic pairs sold as 232 story while generics excluded “at this time” |
 
 Implement as static string/HTML fixtures tests (fast) plus one page fetch for P-07/M-01 overlap is OK if counted once in CI reporting — prefer **distinct** M-ids for sustain score clarity.
 

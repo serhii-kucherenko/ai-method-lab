@@ -13,6 +13,7 @@ Workflow experiment: encode Chapter 29 / heading 3003 / heading 3004 form-and-mi
 3. Presenting fixture pass counts as market proof
 4. Dual-approval or capacity gates as the unique domain rule
 5. Selling letter base MFN (6% / 6.5% ↔ Free) as **entry / landed-duty savings** once Section 232 / 301 stacks apply — without a named annex cite (`htsroute-STACKED-TARIFF-FENCE.md`)
+6. Treating acetaminophen / ibuprofen / aspirin (typically generic) teaching pairs as a **Section 232** savings or exposure story while generics remain excluded “at this time”
 
 ## Allowed value language (narrow)
 
@@ -24,7 +25,7 @@ Pairs where bulk Chapter 29 carries a **non-zero** base MFN and finished 3004 is
 - Same-letter Eluxadoline / Viberzi (NY N302614: bulk **6%** ↔ tablets Free)
 - Same-letter Vericiguat / Verquvo (NY N318947: bulk **6.5%** ↔ tablets Free)
 
-PPI Free/Free pairs remain **forbidden** as duty-savings language. Stacked 232 / 301 dollars stay **out of v0** — cite base MFN in CROSS letters only.
+PPI Free/Free pairs remain **forbidden** as duty-savings language. Stacked 232 / 301 dollars stay **out of v0** — cite base MFN in CROSS letters only. Primary 232 dates: Annex III **2026-07-31** / others **2026-09-29**; generics **not** subject at this time.
 
 ## Kill A line (required in digests)
 
