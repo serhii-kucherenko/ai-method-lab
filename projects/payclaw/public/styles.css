@@ -1,0 +1,13 @@
+:root { --bg:#12161c; --ink:#eef3f8; --accent:#e0a14a; --muted:#8e9aab; --panel:#1a212b; }
+body { margin:0; font-family:"Segoe UI",sans-serif; color:var(--ink); min-height:100vh;
+  background:radial-gradient(ellipse 55% 35% at 0% 100%, #3a2a12, transparent 55%), var(--bg); }
+main { max-width:40rem; margin:0 auto; padding:3rem 1.25rem; }
+h1 { font-size:2.6rem; margin:0 0 .4rem; }
+.lede { color:var(--muted); }
+section { background:var(--panel); border:1px solid #2a3340; border-radius:12px; padding:1.2rem; margin:1rem 0; }
+label { display:block; margin:.5rem 0; color:var(--muted); }
+input { width:100%; padding:.5rem; border-radius:8px; border:1px solid #3a4554; background:#0c1016; color:var(--ink); }
+.row { display:flex; gap:.5rem; margin:.7rem 0; }
+button { border:0; border-radius:8px; padding:.55rem .9rem; background:var(--accent); color:#1a1205; font-weight:600; cursor:pointer; }
+.status { color:var(--muted); }
+pre { background:#0c1016; padding:.7rem; border-radius:8px; overflow:auto; font-size:.8rem; }

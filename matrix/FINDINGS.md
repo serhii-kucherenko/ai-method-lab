@@ -464,3 +464,7 @@ Desks/credit lines/draws. Gates: utilization ceiling + dual credit officer relea
 ## 2026-07-21 -- safecase sustain (pass)
 
 Firms/matters/evidence. Gates: retention days + dual counsel archive. 3/3 tests green. Next: payclaw.
+
+## 2026-07-21 -- payclaw sustain (pass)
+
+Firms/payroll runs/clawbacks. Gates: overpay headroom + dual HR release. 3/3 tests green. Next: escrowrail.

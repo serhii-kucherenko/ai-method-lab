@@ -4,13 +4,14 @@
 
 | Priority | Product idea | Method | Notes |
 | --- | --- | --- | --- |
-| 1 | **payclaw** | A03 + A10 | Payroll runs + deductions; overpay clawback gate; dual HR release. |
+| 1 | **escrowrail** | A03 + A10 | Escrow accounts + disbursements; balance floor gate; dual escrow officer release. |
 | 2 | tentcamp | A03 + A10 | Deferred clone-tier. |
 
 ## Recently completed (comprehensive wave)
 
 | Product | Gate stressed |
 | --- | --- |
+| payclaw | overpay headroom + dual HR release |
 | safecase | retention days + dual counsel archive |
 | limitdesk | credit ceiling + dual credit officer release |
 | riskhold | risk limit breach + dual risk officer clear |
