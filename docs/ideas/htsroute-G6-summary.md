@@ -1,6 +1,6 @@
 # Research summary — htsroute (G6)
 
-Skeptical senior-eng bar. Standalone memo. Updated after Challenge D + NY N003244.
+Skeptical senior-eng bar. Standalone memo. Updated 2026-07-21 (15m tick 38) after Challenge D, NY N003244, same-letter dollar pairs, and stacked-tariff fence.
 
 ## 1. Problem
 
@@ -27,21 +27,24 @@ Specialty pharma trade-compliance analysts must route SKUs across Chapter 29 (bu
 | A — incumbents | **Stands commercially.** Workflow experiment only. |
 | B — keyword gate | Answered: 3003 middle + consistency reject; cheat fixture green |
 | C — offline/legal | Survive with no-GRI-3 scope fence |
-| D — value / shallowness | **Accepted on MFN dollars and fixture vanity.** Domain claim survives; duty-savings pitch dies for PPI Free/Free pairs. See `htsroute-challenge-D.md` + `htsroute-VALUE-STAKES.md`. |
+| D — value / shallowness | **Accepted on MFN dollars and fixture vanity.** Domain claim survives; duty-savings pitch dies for PPI Free/Free pairs. Honest base-MFN contrasts exist for acetaminophen, ibuprofen, aspirin, Eluxadoline/Viberzi (NY N302614), Vericiguat/Verquvo (NY N318947) — cite preference caveats. Stacked measures fenced out of v0 (`htsroute-STACKED-TARIFF-FENCE.md`). |
 
 ## 5. Falsifiers
 
 1. Published rulings contradict ≥2 golden heading-route fixtures → abandon.
 2. After any future smoke, analysts still need a spreadsheet for the happy-path form gate → abandon.
-3. **New:** Any digest or PRODUCT.md that claims MFN duty savings for pantoprazole/omeprazole showcase pairs → abandon framing as dishonest.
+3. Any digest or PRODUCT.md that claims MFN duty savings for pantoprazole/omeprazole showcase pairs → abandon framing as dishonest.
+4. Digests that treat fixture pass counts as market proof → abandon vanity framing.
 
 ## 6. Depth test outline
 
-- 25 cases named (`htsroute-G5-cases.md`); #16 aliased to #8
-- **30 fixture files green** (`check-htsroute-fixtures.mjs`)
-- **Dual-impl cross-check green** (`check-htsroute-dual.mjs`)
-- Fixture #26 now cites primary **NY N003244** (Protonix tablets → 3004)
-- **Value contrast pair #32/#33:** acetaminophen bulk **6.5%** (NY R04092) vs tablets → 3004 Free — honest dollar stakes without rehabilitating PPI Free/Free
+- Named suite in `htsroute-G5-cases.md` (includes value pairs and mixture-shape twins)
+- **42 fixture files green** (`check-htsroute-fixtures.mjs`)
+- **Dual-impl cross-check green** (`check-htsroute-dual.mjs` — 42 files + probes)
+- Fixture #26 cites primary **NY N003244** (Protonix tablets → 3004 Free)
+- Honest dollar pairs encoded: #32/#33 acetaminophen; #34/#35 ibuprofen; #36/#37 aspirin; #40/#41 Eluxadoline/Viberzi; #42/#43 Vericiguat/Verquvo
+- Offline try demo: `demos/htsroute-try/try.html` (PPI honesty + all encoded contrasts clickable)
+- Paper kits complete (`check-seed-kits.mjs`); preflip still **calendar-blocked** on framing day 2026-07-21
 
 ## 7. Decision
 
@@ -49,11 +52,12 @@ Specialty pharma trade-compliance analysts must route SKUs across Chapter 29 (bu
 
 Reasons:
 
-1. Same-day research→build remains blocked.
+1. Same-day research→build remains blocked (`block_same_day_research_to_build`).
 2. Challenge D: green fixtures ≠ valuable product; MFN Free/Free on showcase PPIs.
 3. Kill A still stands — experiment framing only.
 4. G1 finished-pantoprazole letter residual **closed** (N003244) — that strengthens *rulings*, not *commercial value*.
+5. Earliest flip: calendar ≠ 2026-07-21 via `htsroute-TOMORROW-RUN.md` + `check-htsroute-preflip.mjs` — then comprehensive day-1, **not** smoke.
 
-**Parallel seed (research log only):** `lesserof-SEED.md` — substitution drawback lesser-of-two refund math (dollar refunds, not Free/Free chapter theater). Do not activate until htsroute frees the slot.
+**Queue after htsroute (do not activate same tick as flip):** `depositgap` → `lesserof` → `oshamult` → `ptax4975` (see `ACTIVATION_QUEUE.md`).
 
-**Next:** day-boundary ready_to_build reassess must re-read Challenge D; if flipped, PRODUCT.md must forbid duty-savings claims for Free/Free pairs.
+**Next:** day-boundary ready_to_build reassess must re-read Challenge D + VALUE-STAKES; if flipped, PRODUCT.md must forbid duty-savings claims for Free/Free pairs and keep Kill A in every digest.

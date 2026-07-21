@@ -4,13 +4,13 @@ Independent kill attempt after fixture suite looked “deep.”
 
 ## Attack
 
-**“You built a decision tree with 30 JSON cards. Duty is Free on both sides of your showcase molecules. Brokers already classify. This is research theater with a customs costume.”**
+**“You built a decision tree with dozens of JSON cards. Duty is Free on both sides of your showcase PPI molecules. Brokers already classify. This is research theater with a customs costume.”**
 
 Sub-attacks:
 
-1. **Zero MFN delta** — pantoprazole bulk (Ch 29) and Protonix tablets (3004, NY N003244) are both Free → no dollar product story from MFN.
+1. **Zero MFN delta** — pantoprazole bulk (Ch 29) and Protonix tablets (3004, NY N003244) are both Free → no dollar product story from MFN on that family.
 2. **Kill A still stands** — vendors/brokers solve classification commercially.
-3. **Fixture farm ≠ idea depth** — green checkers prove algorithm consistency, not that anyone needs a product.
+3. **Fixture farm ≠ idea depth** — green checkers prove algorithm consistency, not that anyone needs a product. (Current suite: **42** dual-green files — count still ≠ value.)
 4. **Same-day conveyor risk** — framing → fixtures → scorecard in one calendar day is exactly the failure mode DEPTH_RESTART named.
 
 ## Answers (honest)

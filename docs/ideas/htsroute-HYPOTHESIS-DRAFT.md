@@ -6,7 +6,7 @@
 
 A multi-page Node/TS workflow experiment can encode the Chapter 29 / heading 3003 / heading 3004 form-and-mixing gate (plus Note 1(a) / reject) such that:
 
-1. All paper goldens (≥40) pass in-product,
+1. All paper goldens (≥42) pass in-product,
 2. Dual independent routers stay in lockstep,
 3. Analysts cannot route by molecule name,
 4. Digests never claim PPI Free/Free duty savings or broker replacement.
