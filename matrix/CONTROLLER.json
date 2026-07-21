@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T15:10:00Z",
+  "updated_at": "2026-07-21T15:25:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__loop15m_tick17_lesserof_g6_digest",
+  "last_completed": "research__loop15m_tick18_ptax_g6_tomorrow_run",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 17: lesserof G6 + ACTIVATION_QUEUE + digest sent. Same-day build blocked. Prefer depositgap after htsroute. Do NOT re-arm pid 27600.",
+  "notes": "15m tick 18: ptax4975 G6 + htsroute-TOMORROW-RUN; all seed checkers green. Same-day build blocked. Do NOT re-arm pid 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -43,6 +43,6 @@
     "pid": 27600,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 17
+    "ticks_observed": 18
   }
 }

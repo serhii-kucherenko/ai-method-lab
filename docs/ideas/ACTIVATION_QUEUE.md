@@ -10,7 +10,7 @@
 | 1 | **depositgap** | Strongest $ seed; G5+G6+acceptance+phase briefs ready; Kill A = forecast honesty |
 | 2 | **lesserof** | Stacked drawback caps; G5 met; G6 on file; behind depositgap |
 | 3 | **oshamult** | OSHA serial penalty; G5+G6 on file |
-| 4 | **ptax4975** | § 4975 excise; G5 met (35 fixtures) |
+| 4 | **ptax4975** | § 4975 excise; G5 met (35) + **G6** on file |
 
 ## Hard rules
 
