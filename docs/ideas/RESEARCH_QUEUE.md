@@ -7,17 +7,19 @@ Controller chains these without waiting. Finish one → commit → start next.
 | # | Item | Status |
 |---|------|--------|
 | 28 | Day-boundary ready reassess | **pending** (calendar still 2026-07-21) |
-| 41 | 15m tick #15 | done — ptax4975 A–J |
-| 42 | 15m tick #16 | **done** — ptax4975 to 35; G5 bar met |
+| 42 | 15m tick #16 | done — ptax4975 G5 met |
+| 43 | 15m tick #17 | **done** — lesserof G6 + activation queue + digest |
 
-## Parallel seeds
+## Parallel seeds (all deep; prefer depositgap after htsroute)
 
 | Seed | Latest |
 |------|--------|
-| depositgap | **23** + G6 — prefer next after htsroute |
-| lesserof | **23** — G5 bar met |
-| oshamult | **26** — G5 bar met |
-| ptax4975 | **35** dual-green — G5 ≥25 bar met |
+| depositgap | Prefer #1 after htsroute |
+| lesserof | G5 + **G6** on file |
+| oshamult | G5 + G6 |
+| ptax4975 | G5 met (35) |
+
+See `ACTIVATION_QUEUE.md`.
 
 ## Rule
 

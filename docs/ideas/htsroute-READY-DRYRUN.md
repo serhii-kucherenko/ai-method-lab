@@ -1,6 +1,6 @@
 # htsroute — readiness dry-run (same calendar day — not a flip)
 
-**Date:** 2026-07-21  
+**Date:** 2026-07-21 (15m tick 17 reaffirm)  
 **Decision:** **do not flip** `ready_to_build` (same-day policy). This is a dry-run against `htsroute-DAY-BOUNDARY.md`.
 
 | Checklist item | Dry-run |
@@ -18,3 +18,5 @@
 **Blocker:** calendar day only. Earliest flip: **2026-07-22** after re-running this checklist for real.
 
 **Build shape if flipped:** comprehensive 7-page product per blueprint — not smoke.
+
+**Queue after slot:** see `docs/ideas/ACTIVATION_QUEUE.md` (prefer depositgap next).

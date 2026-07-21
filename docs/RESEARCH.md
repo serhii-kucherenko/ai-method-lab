@@ -622,3 +622,10 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 ## 2026-07-21 -- 30m loop tick 8: ptax4975 G5 + depositgap acceptance + oshamult G6
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 8 (pid 29556 left alone). Grew ptax4975 through greater-of FMV / honesty rejects — suite **35/35** single + dual green (G5 met). Wrote `depositgap-ACCEPTANCE.md` and `oshamult-G6-summary.md`. Still no product; htsroute same-day no-build.
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #17
+
+- Wrote lesserof-G6-summary.md + ACTIVATION_QUEUE.md (htsroute ? depositgap ? lesserof ? oshamult ? ptax4975)
+- Reaffirmed htsroute READY-DRYRUN: still same-day block (2026-07-21)
+- Digest sent (research lined up; wait one more day before building)
+- Loop 27600 not re-armed
