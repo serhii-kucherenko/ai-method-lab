@@ -38,12 +38,14 @@ Named cases for the unique claim. Encoding grew across ticks — not a same-tick
 | 25 | molecule name ignored | yes |
 | 38 | mixture powder → 3003 | yes (claim/code align) |
 | 39 | mixture drum → 3003 | yes (claim/code align) |
+| 40 | eluxadoline bulk → 29 (NY N302614, 6%) | yes (same-letter form gate) |
+| 41 | Viberzi tablets → 3004 Free (NY N302614) | yes (same-letter form gate) |
 
 ## Encoding status
 
-- **38 fixture files green** via `node docs/ideas/check-htsroute-fixtures.mjs`
-- G5 named suite covered; value pairs #32–#37; mixture-shape twins #38/#39 close ACCEPTANCE vs pellets-only checker split
-- **Value contrast pair:** #32/#33 acetaminophen; #34/#35 ibuprofen (NY I83067 6.5% / NY N006187 Free); #36/#37 aspirin (NY 890808 non-Free / NY K87058 Free)
+- **40 fixture files green** via `node docs/ideas/check-htsroute-fixtures.mjs`
+- G5 named suite covered; value pairs #32–#37; mixture-shape twins #38/#39; **same-letter** Eluxadoline/Viberzi #40/#41 (NY N302614)
+- **Value contrast pair:** #32/#33 acetaminophen; #34/#35 ibuprofen; #36/#37 aspirin; #40/#41 eluxadoline (same letter, 6%↔Free)
 - G6 still **do not build yet** this calendar day (`block_same_day_research_to_build`)
-- Checkers: **36** fixture files green (+ dual-impl)
+- Checkers: **40** fixture files green (+ dual-impl)
 

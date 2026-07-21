@@ -18,6 +18,8 @@ Domain module implements `routeSku` per `htsroute-algorithm.md`. Product tests l
 | Note 1(a) exclusion facts | **Note 1(a)** | Legal fence, not CRUD |
 | Acetaminophen bulk (fixture #32) | **29** | Honest non-zero MFN contrast pair |
 | Acetaminophen tablets (fixture #33) | **3004** | Paired with #32; not a PPI Free/Free pitch |
+| Eluxadoline bulk (fixture #40) | **29** | Same-letter NY N302614; base MFN **6%** |
+| Viberzi tablets (fixture #41) | **3004** | Same letter as #40; Free — honest delta pair |
 | Finished PPI tablets with primary CROSS (e.g. #26 / NY N003244) | **3004** | Ruling-backed route, **not** a duty-savings claim |
 
 Molecule name must not be an input. GRI 3 combinations stay out of scope (reject / fence).

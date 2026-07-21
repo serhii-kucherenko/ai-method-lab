@@ -17,7 +17,7 @@ This matrix is the **sustain-phase exit plan** for the multi-page product. Vanit
 | Pages with critical-path coverage | **7** | Catalog, SKU detail, Batch, Audit, Goldens browser, Org settings, Money honesty |
 | Dual-impl CI jobs | **2** green | `check-htsroute-fixtures.mjs` + `check-htsroute-dual.mjs` (or product-ported equivalents) |
 
-**Estimated sustain suite size: ~68 tests** (see §Rollup). Stretch to ~75 if Playwright E2E splits page paths into separate cases.
+**Estimated sustain suite size: ~70 tests** (see §Rollup). Stretch to ~75 if Playwright E2E splits page paths into separate cases.
 
 ---
 
@@ -33,7 +33,7 @@ This matrix is the **sustain-phase exit plan** for the multi-page product. Vanit
 | `C-` | Concurrency / batch independence | 3 |
 | `M-` | Money-honesty + Kill A copy | 5 |
 | `D-` | Dual-impl CI / parity | 3 |
-| | **Total** | **≈68** |
+| | **Total** | **≈70** |
 
 ---
 
@@ -221,7 +221,7 @@ Wire D-01/D-02 as required CI checks on `projects/htsroute/` PRs before merge to
 
 | Suite | Count |
 |-------|------:|
-| G unique-claim goldens | 36 |
+| G unique-claim goldens | 40 |
 | A API | 12 |
 | P pages | 7 |
 | R RBAC | 6 |
@@ -229,7 +229,7 @@ Wire D-01/D-02 as required CI checks on `projects/htsroute/` PRs before merge to
 | C concurrency | 3 |
 | M money-honesty / Kill A | 5 |
 | D dual-impl | 3 |
-| **Estimated sustain total** | **68** |
+| **Estimated sustain total** | **≈70** |
 
 **Floor:** ≥60. **Goldens floor:** ≥40. Below either → sustain fail.
 
