@@ -1,0 +1,14 @@
+{
+  "id": "ptax4975-R-missing-year-parts",
+  "title": "Missing year_parts — reject",
+  "source": "input hygiene",
+  "input": {
+    "amount_involved": 10000,
+    "corrected": true,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "bad_inputs"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "ptax4975-V-fmv-a-wins",
+  "title": "Greater-of when fmv_a is higher",
+  "source": "ptax4975-G5",
+  "input": {
+    "fmv_a": 15000,
+    "fmv_b": 9000,
+    "use_fmv_greater_of": true,
+    "year_parts": 1,
+    "corrected": true,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 2250,
+    "additional_tax": 0,
+    "total": 2250
+  }
+}

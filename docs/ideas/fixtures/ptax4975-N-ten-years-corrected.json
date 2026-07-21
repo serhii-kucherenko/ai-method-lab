@@ -1,0 +1,17 @@
+{
+  "id": "ptax4975-N-ten-years-corrected",
+  "title": "Ten year-parts corrected",
+  "source": "ptax4975-G5",
+  "input": {
+    "amount_involved": 10000,
+    "year_parts": 10,
+    "corrected": true,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 15000,
+    "additional_tax": 0,
+    "total": 15000
+  }
+}

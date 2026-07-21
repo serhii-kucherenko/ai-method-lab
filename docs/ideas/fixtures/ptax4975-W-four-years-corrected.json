@@ -1,0 +1,17 @@
+{
+  "id": "ptax4975-W-four-years-corrected",
+  "title": "Four year-parts corrected",
+  "source": "multi-year",
+  "input": {
+    "amount_involved": 10000,
+    "year_parts": 4,
+    "corrected": true,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 6000,
+    "additional_tax": 0,
+    "total": 6000
+  }
+}

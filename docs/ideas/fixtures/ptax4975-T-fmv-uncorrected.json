@@ -1,0 +1,19 @@
+{
+  "id": "ptax4975-T-fmv-uncorrected",
+  "title": "Greater-of FMV uncorrected — second tier on greater amount",
+  "source": "§ 4975(b) on resolved amount",
+  "input": {
+    "fmv_a": 8000,
+    "fmv_b": 10000,
+    "use_fmv_greater_of": true,
+    "year_parts": 1,
+    "corrected": false,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 1500,
+    "additional_tax": 10000,
+    "total": 11500
+  }
+}

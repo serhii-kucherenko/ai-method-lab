@@ -16,14 +16,17 @@ Primary: 26 U.S.C. § 4975(a)/(b)/(f). Scope fence: tax calc only — not fiduci
 | `amount_involved` | Dollars (already resolved greater-of FMV rule — v0 takes resolved input) |
 | `year_parts` | Number of years or part-years in the taxable period (≥ 1; may be fractional in v0 toys) |
 | `corrected` | boolean — true if corrected within correction period |
-| `flat_excise_cheat` | if true → reject (must not skip year-parts) |
+| `fmv_a` / `fmv_b` | Optional pair — when `use_fmv_greater_of`, amount = max(a,b) |
+| `understate_amount` | If true with amount < greater-of → reject (`greater_of_cheat`) |
 
 ## Procedure (v0)
 
-1. Reject if `amount_involved` ≤ 0 or `year_parts` < 1 or not finite.  
+1. Reject if `amount` ≤ 0 or `year_parts` ≤ 0 or not finite.  
 2. Reject if `flat_excise_cheat === true`.  
-3. `initial_tax = 0.15 * amount_involved * year_parts`.  
-4. `additional_tax = corrected ? 0 : amount_involved` (100% second tier).  
+2b. If FMV pair present and `understate_amount` with amount < max(FMV) → reject.  
+2c. Resolve `amount` from greater-of when `use_fmv_greater_of`, else `amount_involved`.  
+3. `initial_tax = 0.15 * amount * year_parts`.  
+4. `additional_tax = corrected === true ? 0 : amount` (missing corrected → uncorrected).  
 5. `total = initial_tax + additional_tax`.  
 6. Return `{ status: "ok", initial_tax, additional_tax, total }`.
 

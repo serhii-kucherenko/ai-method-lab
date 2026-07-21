@@ -1,0 +1,17 @@
+{
+  "id": "ptax4975-U-four-years-uncorrected",
+  "title": "Four year-parts uncorrected",
+  "source": "ptax4975-G5",
+  "input": {
+    "amount_involved": 20000,
+    "year_parts": 4,
+    "corrected": false,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 12000,
+    "additional_tax": 20000,
+    "total": 32000
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "ptax4975-L-one-year-uncorrected",
+  "title": "One year-part uncorrected — 15% + 100%",
+  "source": "ptax4975-G5",
+  "input": {
+    "amount_involved": 10000,
+    "year_parts": 1,
+    "corrected": false,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 1500,
+    "additional_tax": 10000,
+    "total": 11500
+  }
+}

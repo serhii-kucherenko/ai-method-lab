@@ -1,0 +1,17 @@
+{
+  "id": "ptax4975-P-one-year-uncorrected",
+  "title": "One year-part uncorrected — 15% + 100%",
+  "source": "§ 4975(a)/(b)",
+  "input": {
+    "amount_involved": 20000,
+    "year_parts": 1,
+    "corrected": false,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 3000,
+    "additional_tax": 20000,
+    "total": 23000
+  }
+}

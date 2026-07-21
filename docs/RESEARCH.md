@@ -612,3 +612,9 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Grew **ptax4975** to fixtures A–J + dual-impl + Kill A/B/C + G5 map
 - Suite **10/10** single + dual green; still seed; prefer depositgap after htsroute
 - Loop 27600 not re-armed
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #16
+
+- Grew **ptax4975** through greater-of FMV + year-part edges; suite **35/35** dual-green
+- G5 =25 bar met on paper; still seed; prefer depositgap after htsroute
+- Loop 27600 not re-armed

@@ -1,0 +1,18 @@
+{
+  "id": "ptax4975-Q-greater-of-understate",
+  "title": "Honesty — understating amount vs greater-of FMV must reject",
+  "source": "ptax4975-G5",
+  "input": {
+    "fmv_a": 8000,
+    "fmv_b": 12000,
+    "amount_involved": 8000,
+    "understate_amount": true,
+    "year_parts": 1,
+    "corrected": true,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "greater_of_cheat"
+  }
+}
