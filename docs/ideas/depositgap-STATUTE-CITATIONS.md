@@ -73,13 +73,12 @@ Sources: https://www.irs.gov/payments/quarterly-interest-rates ; https://www.irs
 
 ## Still open before framed
 
-1. ~~Quote § 1673f~~ — done (b) collect/refund + 1677g  
-2. ~~One worked interest number with a dated § 6621 rate~~ — done (illustrative; CBP day-count TBD)  
-3. ~~Kill A/B/C answers on paper~~ — `depositgap-challenge-ABC.md`  
-4. ~~CVD twin § 1671f quote~~ — done; fixture E  
-5. ~~Encode G5 T–W + document X/Y~~ — done (**23** paper + 2 notes; ≥25 bar met on paper)
-6. ~~Lock CBP day-count convention cite~~ — `depositgap-DAY-COUNT.md` (§ 1677g order-publication → liquidation vs § 1505(d) delinquency; v0 stays simple 365 toy)
+All prior framing checklist items are closed on paper (see strikethroughs above). Remaining honesty fences — not blockers for a future frame day:
+
+- v0 day-count stays a simple calendar toy (`depositgap-DAY-COUNT.md`)  
+- Digests must stay forecast-only (Kill A)  
+- Activation waits for htsroute to clear (`depositgap-POST-HTSROUTE-RUN.md`)
 
 ## Explicit non-actions
 
-No product. No activation while htsroute holds the slot. Paper fixtures A–W (**23**) + X/Y notes.
+No product. No activation while htsroute holds the slot. Paper fixtures A–W (**23**) + X/Y notes. Day-1 tree: `depositgap-REPO-SCAFFOLD.md`.

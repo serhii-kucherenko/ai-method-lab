@@ -44,6 +44,7 @@ const seeds = [
       "depositgap-API-CONTRACT.md",
       "depositgap-POST-HTSROUTE-RUN.md",
       "depositgap-DAY1-NONSMOKE.md",
+      "depositgap-REPO-SCAFFOLD.md",
     ],
   },
   {

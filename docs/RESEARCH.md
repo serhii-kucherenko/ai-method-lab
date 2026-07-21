@@ -754,3 +754,11 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Restated G1 CF-29 residual on gate scorecard
 - Loop 27600 not re-armed
 
+
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #32
+
+- Wrote depositgap-REPO-SCAFFOLD.md; closed depositgap statute framing checklist
+- Flip-ready digest emailed (Resend id b870b988-c6bb-4bca-a0b8-b087daa5d9fe)
+- Preflip still calendar-blocked; loop 27600 not re-armed
+

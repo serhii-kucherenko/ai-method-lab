@@ -34,7 +34,7 @@ Optional farm preflight: `node docs/ideas/check-all-seeds.mjs`
 ## If all pass
 
 1. Set `current_idea` → depositgap; walk IDEA_DEPTH to `ready_to_build` only if gates still hold.  
-2. Open **comprehensive** `projects/depositgap/` (≥8 pages per blueprint) — **not** smoke-as-sustain. Day-1 contract: `depositgap-DAY1-NONSMOKE.md`.  
+2. Open **comprehensive** `projects/depositgap/` (≥8 pages per blueprint) — **not** smoke-as-sustain. Day-1 contract: `depositgap-DAY1-NONSMOKE.md`. Tree: `depositgap-REPO-SCAFFOLD.md`.  
 3. Digests: forecast / FP&A honesty experiment; brokers and CBP still liquidate; never claim ACE bill printout.  
 4. Paste hypothesis from `depositgap-HYPOTHESIS-DRAFT.md`.
 
