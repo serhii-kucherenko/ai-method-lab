@@ -50,4 +50,4 @@ Written before calendar clears so morning is confirm/deny, not invent.
 | Next idea | **depositgap** on a **later** tick via `depositgap-POST-HTSROUTE-RUN.md` |
 | Build override | Only if morning re-read explicitly accepts a narrow method-stress product with Kill A + zero Free/Free savings claims in every digest |
 
-**Morning action:** re-read Challenge D; if still weak → check Park above and write the real one-liner into `docs/RESEARCH.md`. If Build override chosen → fill checkboxes above truthfully first.
+**Morning action:** re-read Challenge D; if still weak → run `htsroute-PARK-RUN.md` (not depositgap same tick). If Build override chosen → fill checkboxes above truthfully first.

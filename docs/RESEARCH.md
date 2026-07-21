@@ -902,3 +902,15 @@ Loop wake #3 (pid 26872). Same-day build still blocked.
 **Decision:** still researching. No product folder. Tomorrow: confirm park or override as method-stress only.
 
 **Skeptical one-liner:** Morning should not invent a flip story under time pressure ù the park lean is written down tonight.
+
+## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #52 (park run sheet)
+
+Loop wake #4 (pid 26872). Same-day build still blocked.
+
+- Wrote `htsroute-PARK-RUN.md` ù mechanical soft-abort #4 steps (no freestyle CONTROLLER edits tomorrow)
+- Wired park sheet into morning / abort / day-boundary
+- htsroute try smoke now requires Free/Free + duty-savings honesty + annex dates
+
+**Decision:** still researching. Park path is executable; depositgap still later-tick only.
+
+**Skeptical one-liner:** A park without a run sheet becomes another shallow flip by accident tomorrow.

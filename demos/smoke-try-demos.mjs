@@ -24,7 +24,15 @@ const rules = {
   },
   "htsroute-try": {
     minBytes: 2000,
-    mustInclude: ["research", "232", "generic"],
+    mustInclude: [
+      "research",
+      "232",
+      "generic",
+      "Free/Free",
+      "duty-savings",
+      "2026-07-31",
+      "2026-09-29",
+    ],
   },
   "ptax4975-try": {
     minBytes: 2000,

@@ -33,6 +33,7 @@ const seeds = [
       "htsroute-STACKED-TARIFF-FENCE.md",
       "htsroute-VALUE-GATE-DRYRUN.md",
       "htsroute-vs-depositgap-VALUE.md",
+      "htsroute-PARK-RUN.md",
       "QUEUE-ISO-AUDIT.md",
       "check-htsroute-preflip.mjs",
     ],

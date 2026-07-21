@@ -566,3 +566,7 @@ Head-to-head value memo (htsroute vs depositgap). Morning flip checklist forces 
 ## 2026-07-21 -- depth tick 51 (research, no product)
 
 Provisional PARK draft on day-boundary sheet. Seed kits require value memos and try-demo smoke. Activation queue park-lean. No product folder.
+
+## 2026-07-21 -- depth tick 52 (research, no product)
+
+htsroute park run sheet (soft abort #4). Free/Free honesty markers locked into try-demo smoke. No product folder.

@@ -21,4 +21,4 @@ Even after the calendar day changes, **do not** flip `ready_to_build` if any of 
 
 ## If aborted
 
-Write why in `docs/RESEARCH.md`. Leave `projects/htsroute/` closed. Stay research or park/kill per IDEA_DEPTH. If abort #4: run `depositgap-POST-HTSROUTE-RUN.md` on a **later** tick (not same tick as the park).
+Write why in `docs/RESEARCH.md`. Leave `projects/htsroute/` closed. Stay research or park/kill per IDEA_DEPTH. If abort #4: follow `htsroute-PARK-RUN.md` this tick, then `depositgap-POST-HTSROUTE-RUN.md` on a **later** tick (not same tick as the park).
