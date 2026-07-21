@@ -2,13 +2,13 @@
 
 Registry of product experiments. Controllers pick work from here + `docs/BACKLOG.md`.
 
-**Depth restart (2026-07-21):** Shallow dual-gate conveyor frozen. Active work is research/ideation per `protocols/IDEA_DEPTH.md` until one idea is `ready_to_build`. See `docs/DEPTH_RESTART.md`.
+**Depth restart (2026-07-21):** Shallow dual-gate conveyor frozen. Build only `ready_to_build` ideas. See `docs/DEPTH_RESTART.md`.
 
 ## Active
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
-| *(none)* | — | research | idea depth on **lotblast** | No product folder until ready_to_build |
+| lotblast | **in progress** | A03 + A10 | P-smoke | DAG lot genealogy + deterministic blast radius + mock-recall export (method stress) |
 
 ## Abandoned this restart
 

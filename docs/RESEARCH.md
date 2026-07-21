@@ -120,6 +120,13 @@ Next research: Fixture D (scrap edge) golden JSON; still no product code.
 - Worked mock-recall export sample: `docs/ideas/samples/mock-recall-export-A.json`
 - Hold rotation 2/2 toward possible ready_to_build next tick — still **do not build** this tick
 
+## 2026-07-21 — loop tick 6 (ready_to_build + smoke slice 1)
+
+- Gate scorecard → **ready_to_build** (method stress)
+- Opened `projects/lotblast/` with blast domain module
+- Product tests load golden fixtures A–F (unique claim first)
+- Next: CTE API + mock-recall export (still not dual-gate)
+
 
 
 

@@ -2,15 +2,15 @@
 
 ## Strategy (depth restart)
 
-Fewer products. Slow research / idea verification. No build until `protocols/IDEA_DEPTH.md` → `ready_to_build`.
+Fewer products. Slow research / idea verification. Build only after `protocols/IDEA_DEPTH.md` → `ready_to_build`.
 
 See `docs/DEPTH_RESTART.md`.
 
-## Active (research only)
+## Active (build)
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **lotblast** idea depth | adversarial | FSMA lot genealogy + blast radius. Dossier: `docs/ideas/lotblast.md`. Not build-ready. |
+| 1 | **lotblast** | building smoke | Method stress: DAG blast + FDA-shaped export. Dossier: `docs/ideas/lotblast.md`. |
 | 2 | Idea pipeline hygiene | ongoing | Kill isomorphic dual-gate seeds on sight. |
 
 ## Frozen / abandoned product queue

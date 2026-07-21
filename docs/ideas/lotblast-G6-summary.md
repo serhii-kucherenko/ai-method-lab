@@ -40,15 +40,9 @@ When a suspect ingredient lot is identified, a mid-chain food facility must know
 
 ## 7. Decision
 
-**Do not build yet.**
+**`ready_to_build`** (2026-07-21 loop tick 6).
 
-Remaining before `ready_to_build`:
+Method-stress only: prove A03+A10 can sustain DAG genealogy + deterministic blast + contract-shaped export. Not a commercial novelty claim.
 
-1. ~~Resolve Kill D~~ / ~~Fixture A challenge~~ / fixtures A–F + checker
-2. Gate scorecard: `lotblast-GATE-SCORECARD.md` — state **testable**, decision still hold
-3. Deliberate extra research rotation(s) before code (anti-rush)
-4. Promote draft brief → real brief only at build start
-5. Keep method-stress honesty in every summary
-
-No `projects/lotblast/` until then.
+Build order: unique-claim fixtures green → CTE API → mock-recall export → A10 gates → sustain UI.
 

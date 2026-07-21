@@ -1,7 +1,7 @@
 # Idea: lotblast (FSMA lot genealogy + recall blast radius)
 
-**State:** `testable` (paper acceptance tests + checker; G6 scorecard — still not ready_to_build)  
-**Decision:** Continue research. Do **not** build yet.
+**State:** `ready_to_build` → building (`projects/lotblast/`)  
+**Decision:** Build as method-stress product. See `lotblast-GATE-SCORECARD.md`.
 
 ## 1. Problem
 
