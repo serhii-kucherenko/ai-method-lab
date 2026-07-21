@@ -17,6 +17,7 @@ Use on flip day **after** `check-htsroute-preflip.mjs` clears and `htsroute-TOMO
 - Digests that claim broker or HS-engine replacement  
 - PPI Free/Free savings vanity in PRODUCT or UI copy
 - Letter MFN sold as landed-duty / 232 savings without annex cites
+- OTC analgesic teaching pairs sold as a Section 232 story while generics stay excluded “at this time”
 
 ## Phase exits (from `htsroute-PHASE-BRIEFS.md`)
 

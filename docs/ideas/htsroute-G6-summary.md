@@ -1,6 +1,6 @@
 # Research summary — htsroute (G6)
 
-Skeptical senior-eng bar. Standalone memo. Updated 2026-07-21 (15m tick 38) after Challenge D, NY N003244, same-letter dollar pairs, and stacked-tariff fence.
+Skeptical senior-eng bar. Standalone memo. Updated 2026-07-21 (15m tick 43) after Challenge D#6 generics carve-out + preset money-note honesty.
 
 ## 1. Problem
 
@@ -27,7 +27,7 @@ Specialty pharma trade-compliance analysts must route SKUs across Chapter 29 (bu
 | A — incumbents | **Stands commercially.** Workflow experiment only. |
 | B — keyword gate | Answered: 3003 middle + consistency reject; cheat fixture green |
 | C — offline/legal | Survive with no-GRI-3 scope fence |
-| D — value / shallowness | **Accepted on MFN dollars and fixture vanity.** Domain claim survives; duty-savings pitch dies for PPI Free/Free pairs. Honest base-MFN contrasts exist for acetaminophen, ibuprofen, aspirin, Eluxadoline/Viberzi (NY N302614), Vericiguat/Verquvo (NY N318947) — cite preference caveats. Stacked measures fenced out of v0 (`htsroute-STACKED-TARIFF-FENCE.md`). |
+| D — value / shallowness | **Accepted on MFN dollars and fixture vanity.** Domain claim survives; duty-savings pitch dies for PPI Free/Free pairs. Honest base-MFN contrasts exist for acetaminophen, ibuprofen, aspirin, Eluxadoline/Viberzi (NY N302614), Vericiguat/Verquvo (NY N318947) — cite preference caveats. Stacked 232 fenced (`htsroute-STACKED-TARIFF-FENCE.md`); Challenge D#6: OTC analgesics ≠ 232 while generics carve-out holds. |
 
 ## 5. Falsifiers
 
