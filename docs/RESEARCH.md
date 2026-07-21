@@ -629,3 +629,9 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - Reaffirmed htsroute READY-DRYRUN: still same-day block (2026-07-21)
 - Digest sent (research lined up; wait one more day before building)
 - Loop 27600 not re-armed
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #18
+
+- Wrote ptax4975-G6-summary.md + htsroute-TOMORROW-RUN.md (executable day-boundary sheet for 2026-07-22)
+- Re-ran all seed checkers: htsroute 36, depositgap 23, lesserof 23, oshamult 26, ptax4975 35 — all green
+- Same-day build still blocked; loop 27600 not re-armed

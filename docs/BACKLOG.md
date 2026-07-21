@@ -29,7 +29,7 @@ See `docs/DEPTH_RESTART.md`.
 | lesserof | seed | Stacked-cap refund math; **23** fixtures dual-green + X/Y notes; G5 + **G6** on file. |
 | **depositgap** | seed | **Strongest 2026-07-21 wave.** G5 met. G6 + pages + phase/sustain + API + hypothesis + **ACCEPTANCE** — prefer next after htsroute. **Not activated**. |
 | oshamult | seed | OSHA GBP + serial reductions. **26** fixtures dual-green — G5 met. **G6 summary** on file. Behind depositgap/lesserof. |
-| ptax4975 | seed | IRC § 4975 15%/100% excise + greater-of FMV toys. **35** fixtures dual-green — G5 ≥25 met. Behind depositgap/lesserof/oshamult. |
+| ptax4975 | seed | IRC § 4975 15%/100% excise + greater-of FMV toys. **35** fixtures dual-green — G5 met. **G6 summary** on file. Behind depositgap/lesserof/oshamult. |
 | meldefer | soft park | Near amendwin/days — `meldefer-PARK.md`. |
 | form222 | soft park | Crowded compliance — `form222-PARK.md`. |
 | lanehold | **killed (G2)** | Capacity + hold expiry ≅ loadbay / dual-gate. |

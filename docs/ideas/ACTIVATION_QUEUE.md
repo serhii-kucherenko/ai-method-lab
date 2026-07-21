@@ -1,6 +1,6 @@
 # Activation order after htsroute day-boundary
 
-**Calendar rule:** do not flip or open products on the same calendar day as framing (still **2026-07-21** as of this note). Earliest htsroute flip: **2026-07-22** after re-running `htsroute-DAY-BOUNDARY.md` for real.
+**Calendar rule:** do not flip or open products on the same calendar day as framing (still **2026-07-21** as of this note). Earliest htsroute flip: **2026-07-22** — follow `htsroute-TOMORROW-RUN.md` (not memory).
 
 ## Queue (research slot frees)
 
