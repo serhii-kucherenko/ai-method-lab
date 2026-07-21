@@ -12,13 +12,14 @@ Controller chains these without waiting. Finish one → commit → start next.
 | 31 | Prior 30m tick | done — depositgap algorithm |
 | 32 | This 30m tick (#2) | **done** — depositgap fixtures A–D + checker green |
 | 33 | Product ladder | blocked until 28 |
+| 34 | 15m tick #8 | **done** — lesserof fixtures E–J + honesty gates |
 
 ## Parallel seeds
 
 | Seed | Latest |
 |------|--------|
-| depositgap | Algorithm + **4 fixtures / checker green** — still seed |
-| lesserof | Narrow claim papers — still seed |
+| depositgap | Algorithm + **19** fixtures / dual green — still seed |
+| lesserof | **10** fixtures / dual green (A–J) — still seed |
 
 ## Rule
 

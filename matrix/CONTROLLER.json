@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__loop30m_tick4_depositgap_ks",
+  "last_completed": "research__loop15m_tick8_lesserof_EJ",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "30m tick 4: depositgap A-S (19) honesty gates. Prior 15m #8 lesserof dual. Same-day build blocked. Do NOT re-arm pid 29556 or 27600.",
+  "notes": "15m tick 8: lesserof A-J (10) dual-green + honesty rejects. htsroute same-day build blocked. Do NOT re-arm pid 27600.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

@@ -36,4 +36,4 @@
 
 ## Next (after htsroute clears)
 
-Fixtures for G5 outline in `lesserof-NARROW-CLAIM.md` — not before.
+Continue G5 toward ≥25 (`lesserof-NARROW-CLAIM.md`). Fixtures A–J already paper-green. Still no product.

@@ -16,6 +16,12 @@ function refundA(input) {
   if (!(input.duties_paid >= 0) || !(input.substitute_basis >= 0)) {
     return { status: "reject", reason: "bad_inputs" };
   }
+  if (input.claim_type === "direct_id" && input.force_lesser_of === true) {
+    return { status: "reject", reason: "lesser_of_on_direct_id" };
+  }
+  if (input.claim_type === "substitution" && input.skip_lesser_of === true) {
+    return { status: "reject", reason: "skip_lesser_of_on_substitution" };
+  }
   let base;
   if (input.claim_type === "direct_id") base = input.duties_paid;
   else if (input.claim_type === "substitution") {
@@ -42,6 +48,12 @@ function refundB(input) {
     return { status: "reject", reason: "bad_inputs" };
   }
   const mode = input.claim_type;
+  if (mode === "direct_id" && input.force_lesser_of === true) {
+    return { status: "reject", reason: "lesser_of_on_direct_id" };
+  }
+  if (mode === "substitution" && input.skip_lesser_of === true) {
+    return { status: "reject", reason: "skip_lesser_of_on_substitution" };
+  }
   let column;
   switch (mode) {
     case "direct_id":

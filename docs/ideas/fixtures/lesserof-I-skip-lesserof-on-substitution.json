@@ -1,0 +1,17 @@
+{
+  "id": "lesserof-I-skip-lesserof-on-substitution",
+  "title": "Honesty — skipping lesser-of on substitution must reject",
+  "source": "lesserof-NARROW-CLAIM.md G5 negative",
+  "input": {
+    "claim_type": "substitution",
+    "duties_paid": 10000,
+    "substitute_basis": 4000,
+    "skip_lesser_of": true,
+    "apply_usmca_lesser_of": false,
+    "basket_other_ineligible": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "skip_lesser_of_on_substitution"
+  }
+}

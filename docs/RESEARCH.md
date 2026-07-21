@@ -473,18 +473,18 @@ Expanded blueprint into `docs/ideas/htsroute-PAGE-SPECS.md`: per-page route path
 
 Still **no** `projects/htsroute/`. Paper only until day-boundary ready_to_build.
 
-## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #1
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #1
 
 First live 15m sentinel. Same-day build still blocked. Material work:
 
-- `htsroute-PHASE-BRIEFS.md` — smoke?sustain mapped to 7-page comprehensive bar (no shallow sustain)
-- `depositgap-STATUTE-CITATIONS.md` — primary § 1677g + 19 CFR 351.212(e); toy underpayment **$150,000** before interest
+- `htsroute-PHASE-BRIEFS.md` ? smoke?sustain mapped to 7-page comprehensive bar (no shallow sustain)
+- `depositgap-STATUTE-CITATIONS.md` ? primary ? 1677g + 19 CFR 351.212(e); toy underpayment **$150,000** before interest
 - Loop pid 27600 left alone (do not re-arm)
 
-## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #2
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #2
 
 - Closed lesserof cite gaps: **19 CFR 190.31** (direct-ID unused = 99% of paid, no lesser-of) + **19 U.S.C. 4534** scope/carve-outs (calc still 182.44)
-- Updated G5 encoding notes for ibuprofen/aspirin pairs (#34–#37)
+- Updated G5 encoding notes for ibuprofen/aspirin pairs (#34?#37)
 - Stubbed `oshamult-SEED.md` (still behind depositgap/lesserof)
 - Checkers still **36** green; no product; loop 27600 not re-armed
 
@@ -492,38 +492,38 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 
 `AGENT_LOOP_TICK_depth_keepgoing` fired (pid 29556 left alone). Wrote `depositgap-algorithm.md` (deposit vs assessed + interest window +  toy). htsroute still same-day no-build. Parallel seed only.
 
-## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #3
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #3
 
 - lesserof: cited CBP TFTEA NPRM **83 FR 37886** lesser-of agency prose + per-unit examples (closes primary walkthrough gap partially)
 - depositgap: quoted **19 U.S.C. 1673f(b)** deposit vs final + interest cross-ref
 - Stubbed `ptax4975-SEED.md`
 - No product; loop 27600 not re-armed
 
-## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #4
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #4
 
 - depositgap: illustrative interest **$10,500** on $150k underpayment @ IRS 6621 underpayment **7%** (2026 Q3); caveat = not CBP day-count liquidation math
 - Day-boundary checklist now requires comprehensive blueprint / page specs / phase briefs / sustain matrix
-- `htsroute-READY-DRYRUN.md` — same-day flip **fails** on calendar only; everything else green on paper
+- `htsroute-READY-DRYRUN.md` ? same-day flip **fails** on calendar only; everything else green on paper
 - No product; loop 27600 not re-armed
 
 ## 2026-07-21 -- 30m loop tick 2: depositgap fixtures
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 2 (pid 29556 left alone). Encoded depositgap fixtures A-D + `check-depositgap-fixtures.mjs` (4/4 green): underdeposit true-up, overdeposit sign, skip-interest cheat reject, zero-value reject. Still seed only; htsroute same-day no-build.
 
-## 2026-07-21 — depositgap paper fixtures (tick 4 follow)
+## 2026-07-21 ? depositgap paper fixtures (tick 4 follow)
 
-Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over deposit, skip-interest cheat, zero value). Checker green. Seed only — not activated; htsroute still current_idea.
+Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over deposit, skip-interest cheat, zero value). Checker green. Seed only ? not activated; htsroute still current_idea.
 
-## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #5
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #5
 
-- depositgap Kill A/B/C paper (`depositgap-challenge-ABC.md`) — commercial Kill A stands
+- depositgap Kill A/B/C paper (`depositgap-challenge-ABC.md`) ? commercial Kill A stands
 - Quoted CVD twin **19 U.S.C. 1671f**; fixture **E** CVD underdeposit green (5 fixtures)
-- Calendar still 2026-07-21 — no ready flip; no `projects/`
+- Calendar still 2026-07-21 ? no ready flip; no `projects/`
 - Loop 27600 not re-armed
 
-## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #6
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #6
 
-- Added `check-depositgap-dual.mjs` — two independent true-up impls agree on all **5** fixtures
+- Added `check-depositgap-dual.mjs` ? two independent true-up impls agree on all **5** fixtures
 - Still seed-only; htsroute current_idea; calendar 2026-07-21 blocks ready flip
 - Loop 27600 not re-armed
 
@@ -531,14 +531,14 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 3 (pid 29556 left alone). Encoded depositgap F-J (all-others underdeposit, same-day zero interest, inverted dates, negative rate, matched-rates zero delta). Case map `depositgap-G5-cases.md` names K-Y toward 25+. Checkers: **10/10** single + dual green. Still seed only; htsroute same-day no-build.
 
-## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #7
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #7
 
 - Encoded **4** lesserof paper fixtures (substitution bind, direct-ID uncapped, USMCA zero, basket-other reject) + `check-lesserof-fixtures.mjs` green
 - depositgap suite still **10** + dual-impl green (prior tick)
 - Still seed-only for lesserof/depositgap; htsroute current_idea; same-day build blocked
 - Loop 27600 not re-armed
 
-## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #8
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #8
 
 - lesserof dual-impl green (4 fixtures)
 - Wrote `htsroute-HYPOTHESIS-DRAFT.md` for post day-boundary paste into product
@@ -548,3 +548,10 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 ## 2026-07-21 -- 30m loop tick 4: depositgap K-S + honesty gates
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 4 (pid 29556 left alone). Encoded depositgap K-S (leap year, multi-year, tiny value, large refund, rate-class other, missing/negative rate rejects, skip-interest underdeposit reject, zero APR). Tightened algorithm: missing interest rate rejects; `skip_interest` with days > 0 always rejects. Checkers: **19/19** single + dual green. Still seed only; htsroute same-day no-build.
+
+## 2026-07-21 ? AGENT_LOOP_TICK_depth_15m #8 (lesserof E?J)
+
+- Encoded lesserof **E?J** (no-bind, equal columns, USMCA partner-higher, force-lesserof-on-direct-id reject, skip-lesserof-on-substitution reject, basket 10-digit eligible)
+- Honesty gates in both checkers; suite **10/10** single + dual green
+- Still seed-only; htsroute current_idea; calendar 2026-07-21 blocks ready flip
+- Loop 27600 not re-armed

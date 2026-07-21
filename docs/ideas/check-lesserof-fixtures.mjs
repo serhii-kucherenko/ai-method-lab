@@ -18,6 +18,13 @@ function refund(input) {
   }
 
   const claim = input.claim_type;
+  if (claim === "direct_id" && input.force_lesser_of === true) {
+    return { status: "reject", reason: "lesser_of_on_direct_id" };
+  }
+  if (claim === "substitution" && input.skip_lesser_of === true) {
+    return { status: "reject", reason: "skip_lesser_of_on_substitution" };
+  }
+
   let base;
   if (claim === "direct_id") {
     base = input.duties_paid;

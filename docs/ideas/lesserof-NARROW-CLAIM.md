@@ -30,24 +30,24 @@ A shallow dual-gate or “99% of paid” product fails (1)–(4). A vendor blog 
 2. After any future smoke, finance still forecasts with a single “99% of paid” cell for substitution lanes → abandon (software didn’t change the critical path).  
 3. Golden “other”-basket reject contradicts CBP practice → abandon.
 
-## G5 outline (paper only — do not encode yet)
+## G5 progress (paper fixtures — seed only)
 
-Minimum future suite (estimate ≥25):
+Encoded A–J (10) via `check-lesserof-fixtures.mjs` / dual — still seed, not framed:
 
-- Happy: substitution lesser-of binds (import high, substitute low)  
-- Happy: substitution lesser-of does not bind (import low)  
-- Happy: direct-ID recovers 99% of paid (no lesser-of)  
-- Negative: apply lesser-of to direct-ID → reject / wrong mode  
-- Negative: skip lesser-of on substitution → reject  
-- Boundary: equal columns  
-- USMCA: Canada duty-free export → recoverable **0**  
-- USMCA: Mexico duty ≥ U.S. duty → U.S. side survives  
-- Basket: 8-digit “other” without 10-digit match → ineligible  
-- Basket: matching 10-digit non-other → eligible under trap rule  
-- Expert cheat: relabel claim type to dodge lesser-of  
-- Concurrent: two lines independent caps  
+- ✅ Happy: substitution lesser-of binds (A)  
+- ✅ Happy: substitution lesser-of does not bind (E)  
+- ✅ Happy: direct-ID recovers 99% of paid (B)  
+- ✅ Negative: apply lesser-of to direct-ID → reject (H)  
+- ✅ Negative: skip lesser-of on substitution → reject (I)  
+- ✅ Boundary: equal columns (F)  
+- ✅ USMCA: partner duty-free → recoverable **0** (C)  
+- ✅ USMCA: partner duty ≥ U.S. TFTEA base → U.S. side survives (G)  
+- ✅ Basket: 8-digit “other” without match → ineligible (D)  
+- ✅ Basket: matching 10-digit non-other → eligible (J)  
+- ⬜ Expert cheat: relabel claim type to dodge lesser-of  
+- ⬜ Concurrent: two lines independent caps  
 
-**Do not write JSON fixtures while htsroute owns the active slot and same-day policy still bites.**
+Still toward ≥25 before any frame. No product while htsroute owns the slot.
 
 ## Decision
 

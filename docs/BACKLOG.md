@@ -12,7 +12,7 @@ See `docs/DEPTH_RESTART.md`.
 | --- | --- | --- | --- |
 | 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet workflow experiment complete. |
 | — | htsroute | research only | **testable** + Challenge D. PPI Free/Free honesty; acetaminophen **6.5%↔Free** pair (#32/#33); **32** fixtures green; same-day build hold. Day-boundary checklist on file. |
-| — | lesserof | seed only | Parallel seed: stacked TFTEA + USMCA lesser-of + basket-other + direct-ID exemption. Blueprint: `lesserof-COMPREHENSIVE-BLUEPRINT.md`. Do not activate until htsroute frees slot. |
+| — | lesserof | seed only | Parallel seed: stacked TFTEA + USMCA lesser-of + basket-other + direct-ID exemption. **10** fixtures + dual-impl green (honesty rejects H/I). Blueprint on file. Do not activate until htsroute frees slot. |
 | — | lanehold | **killed (G2)** | Capacity + hold expiry ≅ loadbay / dual-gate. Autopsy on file. |
 | 2 | bondstrip | sustained | Day-count accrued + cashflow strip method stress complete. |
 | 2 | settlecut | sustained | Loss-once interval settlement method stress complete. |
@@ -26,7 +26,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| lesserof | seed | Stacked-cap refund math + comprehensive blueprint ready. Older parallel seed. |
+| lesserof | seed | Stacked-cap refund math; **10** fixtures dual-green; comprehensive blueprint ready. |
 | **depositgap** | seed | **Strongest 2026-07-21 wave.** AD/CVD cash deposit vs final assessment + § 1677g interest ($ bill/refund). Paper fixtures A–S (**19**) green + G5 map (T–Y remain). Blueprint on file — **not activated**. |
 | oshamult | seed | OSHA GBP + serial size/history/good-faith reductions (29 CFR 1903.15 / FOM Ch. 6). Wave only. |
 | ptax4975 | seed | IRC § 4975 15%/100% prohibited-transaction excise on amount involved. Wave only. |
