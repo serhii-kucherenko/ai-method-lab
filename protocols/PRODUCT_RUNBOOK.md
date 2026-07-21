@@ -41,7 +41,7 @@ Update leaderboard / PORTFOLIO status.
 
 ## 6. Notify
 
-If `notify.enabled`, email per `protocols/NOTIFY.md` — content-first, plain-language summary (no acronyms or internal codes). Do not substitute a list of static docs for the summary.
+If `notify.enabled`, email per `protocols/NOTIFY.md` — story first (idea, project, what we built, then proof), plain language, no acronyms. Do not substitute a list of static docs for the summary.
 
 ## 7. Close + continue
 

@@ -63,17 +63,20 @@ See `protocols/HARNESS_LOOP.md`.
 
 ---
 
-## 5. Email digest template (insights, not vanity)
+## 5. Email digest template (story first, then proof)
 
 Subject: `[Method Lab] Results: <one-line outcome>` — **no internal codes or acronyms** (see `protocols/NOTIFY.md`).
 
-Body must be readable **without opening the repo**, in everyday language:
+Body must answer, without opening the repo:
 
-1. What we built / proven (unique claim + honest framing)
-2. What we tested (highlights, not just pass counts)
-3. What worked / what failed or commercial caveats (plain words, not “Kill A”)
-4. Next (one line)
-5. Optional: one findings or dossier URL — **not** a stack of static workflow links unless those files changed this tick
+1. **The idea** — who, pain, what we set out to prove
+2. **The project / what we built** — concrete product pieces in plain words
+3. **What we proved** — tests and caveats (workflow experiment vs commercial claim)
+4. **Next** — one line
+5. Optional: one findings or dossier URL — not a stack of static docs
+
+Vanity pass counts alone are not enough.
+
 
 ---
 
