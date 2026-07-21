@@ -1,0 +1,16 @@
+{
+  "id": "lesserof-D-basket-other-reject",
+  "title": "Basket other 8-digit trap — ineligible, not a silent match",
+  "source": "lesserof-BASKET-OTHER.md / 19 U.S.C. 1313(j)(5)",
+  "input": {
+    "claim_type": "substitution",
+    "duties_paid": 10000,
+    "substitute_basis": 4000,
+    "apply_usmca_lesser_of": false,
+    "basket_other_ineligible": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "basket_other"
+  }
+}

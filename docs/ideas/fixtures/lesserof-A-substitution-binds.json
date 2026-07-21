@@ -1,0 +1,16 @@
+{
+  "id": "lesserof-A-substitution-binds",
+  "title": "Substitution lesser-of binds on lower substitute basis",
+  "source": "lesserof-WORKED-EXAMPLE.md toy",
+  "input": {
+    "claim_type": "substitution",
+    "duties_paid": 10000,
+    "substitute_basis": 4000,
+    "apply_usmca_lesser_of": false,
+    "basket_other_ineligible": false
+  },
+  "expect": {
+    "status": "ok",
+    "refund": 3960
+  }
+}
