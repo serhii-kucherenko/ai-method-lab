@@ -38,3 +38,4 @@ Importers book AD/CVD **cash deposit** rates as landed cost, then take a cash hi
 - `SEEDS-WAVE-2026-07-21.md` — wave listing with oshamult + ptax4975 siblings  
 - `depositgap-COMPREHENSIVE-BLUEPRINT.md` — multi-page/multi-feature stub (≥4 pages, ≥3 aggregates, ≥6 features); **seed only — do not activate**  
 - `depositgap-STATUTE-CITATIONS.md` — § 1677g + 19 CFR 351.212(e) quotes + $150k duty-delta toy  
+- `depositgap-algorithm.md` — deposit vs assessed + interest window procedure (seed draft)  

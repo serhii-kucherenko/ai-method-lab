@@ -1,55 +1,48 @@
 ﻿{
-    "updated_at":  "2026-07-21T13:25:00Z",
-    "notify":  {
-                   "from":  "AI Method Lab \u003conboarding@resend.dev\u003e",
-                   "to":  [
-                              "kucherenko.web@gmail.com"
-                          ],
-                   "on":  [
-                              "phase_complete",
-                              "product_complete",
-                              "hard_stop",
-                              "digest"
-                          ],
-                   "enabled":  true
-               },
-    "paused":  false,
-    "active_cell":  null,
-    "schema_version":  "1.0.0",
-    "idle_reason":  null,
-    "product_defaults":  {
-                             "persistence":  "sqlite",
-                             "stack":  "node-ts",
-                             "test_runner":  "node-test",
-                             "payments":  "provider-agnostic-webhook-with-hmac",
-                             "auth":  "bearer-token"
-                         },
-    "last_completed":  "research__loop15m_tick2_lesserof_cites_oshamult",
-    "last_error":  null,
-    "current_product":  null,
-    "current_idea":  "htsroute",
-    "next_cell":  null,
-    "mode":  "autonomous",
-    "phase":  "research",
-    "notes":  "15m tick #2: lesserof 190.31+4534; oshamult seed stub; 36 fixtures. Same-day build blocked. Do NOT re-arm pid 27600.",
-    "hard_stop":  false,
-    "depth_policy":  {
-                         "max_active_products":  1,
-                         "require_idea_depth":  true,
-                         "block_isomorphic_dual_gate":  true,
-                         "block_same_day_research_to_build":  true,
-                         "min_research_ticks_before_ready":  3,
-                         "require_comprehensive_blueprint":  true,
-                         "comprehensive_protocol":  "docs/COMPREHENSIVE_PRODUCT.md",
-                         "protocol":  "protocols/IDEA_DEPTH.md"
-                     },
-    "loop":  {
-                 "interval":  "15m",
-                 "sentinel":  "AGENT_LOOP_TICK_depth_15m",
-                 "purpose":  "depth_15m",
-                 "pid":  27600,
-                 "chain":  "finish_item_then_next",
-                 "do_not_rearm_if_alive":  true,
-                 "ticks_observed":  2
-             }
+  "updated_at": "2026-07-21T11:30:00Z",
+  "notify": {
+    "from": "AI Method Lab <onboarding@resend.dev>",
+    "to": ["kucherenko.web@gmail.com"],
+    "on": ["phase_complete", "product_complete", "hard_stop", "digest"],
+    "enabled": true
+  },
+  "paused": false,
+  "active_cell": null,
+  "schema_version": "1.0.0",
+  "idle_reason": null,
+  "product_defaults": {
+    "persistence": "sqlite",
+    "stack": "node-ts",
+    "test_runner": "node-test",
+    "payments": "provider-agnostic-webhook-with-hmac",
+    "auth": "bearer-token"
+  },
+  "last_completed": "research__30m_tick_depositgap_algorithm",
+  "last_error": null,
+  "current_product": null,
+  "current_idea": "htsroute",
+  "next_cell": null,
+  "mode": "autonomous",
+  "phase": "research",
+  "notes": "30m tick: depositgap-algorithm.md. htsroute still same-day hold. Loops: 15m pid 27600 + 30m pid 29556 both alive — do not re-arm either.",
+  "hard_stop": false,
+  "depth_policy": {
+    "max_active_products": 1,
+    "require_idea_depth": true,
+    "block_isomorphic_dual_gate": true,
+    "block_same_day_research_to_build": true,
+    "min_research_ticks_before_ready": 3,
+    "require_comprehensive_blueprint": true,
+    "comprehensive_protocol": "docs/COMPREHENSIVE_PRODUCT.md",
+    "protocol": "protocols/IDEA_DEPTH.md"
+  },
+  "loop": {
+    "interval": "30m",
+    "sentinel": "AGENT_LOOP_TICK_depth_keepgoing",
+    "purpose": "depth_keepgoing",
+    "pid": 29556,
+    "also_running": [{ "interval": "15m", "pid": 27600, "sentinel": "AGENT_LOOP_TICK_depth_15m" }],
+    "chain": "finish_item_then_next",
+    "do_not_rearm_if_alive": true
+  }
 }

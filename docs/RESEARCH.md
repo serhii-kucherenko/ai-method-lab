@@ -487,3 +487,7 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 - Updated G5 encoding notes for ibuprofen/aspirin pairs (#34–#37)
 - Stubbed `oshamult-SEED.md` (still behind depositgap/lesserof)
 - Checkers still **36** green; no product; loop 27600 not re-armed
+
+## 2026-07-21 -- 30m loop tick: depositgap algorithm
+
+`AGENT_LOOP_TICK_depth_keepgoing` fired (pid 29556 left alone). Wrote `depositgap-algorithm.md` (deposit vs assessed + interest window +  toy). htsroute still same-day no-build. Parallel seed only.
