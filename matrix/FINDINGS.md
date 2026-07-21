@@ -570,3 +570,7 @@ Provisional PARK draft on day-boundary sheet. Seed kits require value memos and 
 ## 2026-07-21 -- depth tick 52 (research, no product)
 
 htsroute park run sheet (soft abort #4). Free/Free honesty markers locked into try-demo smoke. No product folder.
+
+## 2026-07-21 -- depth tick 53 (research, no product)
+
+depositgap § 6621 mid-window fence + try honesty. Morning status diagnostic (WAIT_SAME_DAY tonight). No product folder.

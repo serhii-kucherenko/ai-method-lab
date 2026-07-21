@@ -54,6 +54,7 @@ const seeds = [
       "depositgap-DAY1-NONSMOKE.md",
       "depositgap-REPO-SCAFFOLD.md",
       "depositgap-G1-EVIDENCE.md",
+      "depositgap-6621-FENCE.md",
     ],
   },
   {

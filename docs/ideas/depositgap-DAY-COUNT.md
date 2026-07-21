@@ -36,3 +36,5 @@ Primary text: https://www.law.cornell.edu/uscode/text/19/1677g · https://www.la
 ## Framing implication
 
 Keep v0 simple day-count until a versioned dual suite locks a CBP-facing day-count cite. Closing this note is **enough to frame** with an explicit “simple 365 toy” fence — not enough to claim OIS/ACE parity.
+
+Mid-window § 6621 rate changes: see `depositgap-6621-FENCE.md` (single stand-in rate in v0).

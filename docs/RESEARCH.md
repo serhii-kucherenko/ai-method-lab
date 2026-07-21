@@ -914,3 +914,16 @@ Loop wake #4 (pid 26872). Same-day build still blocked.
 **Decision:** still researching. Park path is executable; depositgap still later-tick only.
 
 **Skeptical one-liner:** A park without a run sheet becomes another shallow flip by accident tomorrow.
+
+## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #53 (6621 fence + morning status)
+
+Loop wake #5 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
+
+- Wrote `depositgap-6621-FENCE.md` ù single-rate stand-in; mid-window ß 6621 changes out of v0
+- depositgap try honesty + smoke require **6621** marker
+- Added `check-morning-status.mjs` diagnostic for tomorrow (WAIT / PARK path / BUILD gate)
+- Refreshed `CHECKER_SNAP.md`
+
+**Decision:** still researching. Depositgap honesty tighter before any post-park activation.
+
+**Skeptical one-liner:** Closing the mid-window rate lie early beats adding more green fixtures.

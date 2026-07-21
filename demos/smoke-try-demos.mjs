@@ -12,7 +12,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rules = {
   "depositgap-try": {
     minBytes: 2000,
-    mustInclude: ["research", "honesty", "1000000", "0.10", "0.25"],
+    mustInclude: ["research", "honesty", "1000000", "0.10", "0.25", "6621"],
   },
   "lesserof-try": {
     minBytes: 2000,

@@ -5,10 +5,10 @@
 | # | Item | Status |
 |---|------|--------|
 | 28 | Day-boundary ready reassess | **pending** — provisional **PARK**; confirm 2026-07-22+ |
-| 62 | Provisional park draft + kits smoke | **done** |
-| 63 | Park run sheet + Free/Free smoke | **done** — `htsroute-PARK-RUN.md`; try smoke honesty markers |
+| 63 | Park run sheet + Free/Free smoke | **done** |
+| 64 | §6621 fence + morning status | **done** — `depositgap-6621-FENCE.md`; `check-morning-status.mjs` |
 
-Morning: confirm/deny PARK → `htsroute-PARK-RUN.md` or method-stress build.
+Morning: `check-morning-status.mjs` then confirm/deny PARK.
 
 ## Parallel seeds
 
