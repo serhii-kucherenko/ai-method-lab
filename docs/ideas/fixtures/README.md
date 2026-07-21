@@ -8,6 +8,7 @@ Machine-checkable paper oracles for blast cardinalities. Still **research only**
 | `lotblast-B-diamond.json` | Diamond DAG unique finished TLC |
 | `lotblast-C-partial-ship.json` | In-channel = produced − shipped |
 | `lotblast-D-scrap-membership.json` | Scrap/yield loss does not shrink blast membership |
+| `lotblast-E-finished-as-input.json` | Finished lot used as input still pulls further finished lots |
 
 Narrative: `docs/ideas/lotblast-fixtures.md`.
 

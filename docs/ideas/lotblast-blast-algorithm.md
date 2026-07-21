@@ -20,7 +20,9 @@ while queue not empty:
   add tlc to visited
   for each consume edge where from_tlc == tlc:
     enqueue to_tlc
-finished := { t in visited | t has no outgoing consume OR marked finished_good }
+finished := { t in visited | kind(t) == finished }
+# Do NOT use “no outgoing consume” alone — unused intermediates must not count as finished.
+# Leftover unused qty on a visited lot does not create nodes, shipments, or notify partners.
 shipments := all shipments whose tlc ∈ visited
 notify := unique partners of those shipments
 units_in_channel(t) := produced_qty(t) - sum(ship_qty for shipments of t)
@@ -35,6 +37,8 @@ units_in_channel_total := sum units_in_channel(t) for t in finished
 4. **Isolation:** unrelated ingredient trees never enter blast (Fixture A control)
 5. **Channel math:** partial ships reduce in-channel; never use produced qty as channel (Fixture C)
 6. **No status FSM substitute:** blast ignores lot “status” enums; only edges + shipments matter
+7. **Explicit finished kind:** intermediates never become finished by being leaves (challenge A2)
+8. **Leftovers are not nodes:** unused qty does not add blast members (challenge A1)
 
 ## Backward trace(finished)
 
@@ -65,8 +69,13 @@ Blast **membership** (which TLCs are reachable) is independent of **mass balance
 - Forward blast still follows edges even when mass does not conserve.
 - **Forbidden:** inferring “not affected” because quantities don’t add up; **forbidden:** requiring perfect mass balance to compute blast.
 
-Fixture note: A/B/C currently ignore scrap; a future Fixture D should include scrap on one edge without changing finished membership.
+Fixture note: Fixture D covers scrap without shrinking membership. Fixture E (optional): finished lot consumed into a further transform.
 
+## Non-goals (challenge A3)
+
+Line/campaign/sanitation contamination without an explicit graph edge is **out of scope** for v1. Blast must not silently widen beyond genealogy edges.
+
+## Anti-patterns (instant fail)
 
 | Impl shortcut | Broken property |
 |---------------|-----------------|
@@ -75,7 +84,10 @@ Fixture note: A/B/C currently ignore scrap; a future Fixture D should include sc
 | “all lots in plant” | Fixture A control |
 | Status field `recalled=true` cascade | ignores real edges |
 | Dual-approve before blast | irrelevant to genealogy correctness |
+| Leaf intermediate counted as finished | challenge A2 |
+| Unused qty invents notify partners | challenge A1 |
 
 ## Status
 
-Paper algorithm. Pair with golden JSON fixtures. Still no product code.
+Paper algorithm + Fixture A adversarial challenge recorded (`lotblast-challenge-A.md`). Still no product code.
+

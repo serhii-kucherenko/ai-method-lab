@@ -1,0 +1,31 @@
+{
+  "fixture_id": "E-finished-as-input",
+  "description": "A finished lot consumed into a further transform must pull the new finished lot into upstream blast",
+  "graph": {
+    "lots": [
+      { "tlc": "ING-E", "kind": "ingredient", "qty": 50, "uom": "kg" },
+      { "tlc": "FG-E1", "kind": "finished", "qty": 40, "uom": "cases" },
+      { "tlc": "FG-E2", "kind": "finished", "qty": 30, "uom": "cases" }
+    ],
+    "transforms": [
+      { "inputs": [{ "tlc": "ING-E", "qty": 50 }], "output": "FG-E1" },
+      { "inputs": [{ "tlc": "FG-E1", "qty": 20 }], "output": "FG-E2" }
+    ],
+    "shipments": [
+      { "id": "S-E1", "tlc": "FG-E1", "qty": 20, "partner": "PE1" },
+      { "id": "S-E2", "tlc": "FG-E2", "qty": 30, "partner": "PE2" }
+    ]
+  },
+  "cases": [
+    {
+      "suspect": "ING-E",
+      "expect": {
+        "finished_tlcs": ["FG-E1", "FG-E2"],
+        "shipment_ids": ["S-E1", "S-E2"],
+        "notify_partners": ["PE1", "PE2"],
+        "units_in_channel_by_tlc": { "FG-E1": 0, "FG-E2": 0 },
+        "note": "FG-E1 remains finished kind even when also an input; both finished lots in blast"
+      }
+    }
+  ]
+}

@@ -43,9 +43,10 @@ When a suspect ingredient lot is identified, a mid-chain food facility must know
 
 Remaining before `ready_to_build`:
 
-1. Resolve Kill D (yield/scrap model) on paper
-2. One external or adversarial challenge of Fixture A cardinalities recorded
+1. ~~Resolve Kill D (yield/scrap model) on paper~~ — Fixture D + algorithm note
+2. ~~Adversarial challenge of Fixture A~~ — `lotblast-challenge-A.md` (cardinalities hold; finished-kind tightened)
 3. Promote draft brief → real brief only when RED tests are about to be written
 4. Keep method-stress honesty in every summary
 
 No `projects/lotblast/` until then.
+

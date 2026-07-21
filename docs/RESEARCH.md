@@ -95,6 +95,13 @@ Still **not** ready_to_build. Next: G6-quality research summary memo; optional s
 
 Next research: Fixture D (scrap edge) golden JSON; still no product code.
 
+## 2026-07-21 — loop tick 2 (Fixture A challenge)
+
+- Adversarial challenge: `docs/ideas/lotblast-challenge-A.md` — cardinalities hold; fixed finished=explicit kind; leftovers non-goal for notify; line contamination out of scope
+- Fixture E: finished-as-input golden JSON
+- Still **do not build**
+
+
 
 
 ## 2026-07-21 — lotblast research tick 5 (golden JSON fixtures)
