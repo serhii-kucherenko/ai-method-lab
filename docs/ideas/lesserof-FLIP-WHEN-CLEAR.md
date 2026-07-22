@@ -2,6 +2,8 @@
 
 Run **once** when wall time ≥ 4h after `framing_started_at` (`2026-07-22T01:07:23.000Z`) and ticks ≥ 3.
 
+**Diagnostic:** `node docs/ideas/check-lesserof-hour-status.mjs` must print `FLIP_PATH_READY` (not `WAIT_HOURS`).
+
 ## Sequence (no shortcuts)
 
 1. Re-run `node docs/ideas/check-lesserof-fixtures.mjs` and `check-lesserof-dual.mjs` → expect **25/25**.  

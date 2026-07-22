@@ -1127,3 +1127,16 @@ Loop alive (pid 26872). depositgap sustained; lesserof `current_idea`.
 **Decision:** still researching. No `projects/lesserof/` until =4h hold.
 
 **Skeptical one-liner:** Hitting three ticks before the hour hold is fine; flipping build early would be the old conveyor with a better costume.
+
+## 2026-07-21 — lesserof research tick 16 (hour-status diagnostic)
+
+Loop pid 26872 left alone. Hours ~3.2/4 — still `WAIT_HOURS`.
+
+- Added `check-lesserof-hour-status.mjs` (fixtures+dual+kits+pack ? WAIT_HOURS | FLIP_PATH_READY)
+- Wired into `lesserof-FLIP-WHEN-CLEAR.md`
+- depositgap regression **76/76** green; lesserof **25** dual green
+- Parallel: oshamult architect pack prep (seed only)
+
+**Decision:** still researching. Flip only when hour-status prints FLIP_PATH_READY (~22:07 PDT).
+
+**Skeptical one-liner:** A status script beats another prose checklist that nobody re-runs.
