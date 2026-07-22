@@ -1,7 +1,7 @@
-# lesserof — page wireframe specs (seed paper)
+# lesserof — page wireframe specs
 
-**Status:** seed only. Expands `lesserof-COMPREHENSIVE-BLUEPRINT.md`.  
-**Explicit non-action:** do **not** open `projects/lesserof/` while `htsroute` holds the slot.
+**Status:** active research. Expands `lesserof-COMPREHENSIVE-BLUEPRINT.md`.  
+**Explicit non-action:** do **not** open `projects/lesserof/` until hours + preflip clear.
 
 ---
 
@@ -15,6 +15,7 @@
 | Forbidden chrome | No dual-approver; no “replaces ACE / broker” |
 | Kill A footer | Specialists still file; stacked-cap honesty experiment |
 | Money honesty | Show TFTEA cap and USMCA cap separately; never hide $0 USMCA path |
+| Same-condition | v0 out of scope — do not imply every CA/MX export wipes (`lesserof-SAME-CONDITION-FENCE.md`) |
 
 ---
 
@@ -41,13 +42,13 @@ Create/edit lines; claim basis; duty columns; destination; run stacked recoverab
 Shared paid amount: direct-ID (no lesser-of) vs substitution (binds) side by side.
 
 ### 3. USMCA stack
-TFTEA then partner lesser-of; duty-free → recoverable **0**.
+TFTEA then partner lesser-of; duty-free → recoverable **0**. Call out same-condition carve-out as **not modeled** in v0.
 
 ### 4. Basket eligibility
 8-digit “other” + 10-digit match; reject vs eligible.
 
 ### 5. Audit / goldens
-Append-only trail + paper fixture browser.
+Append-only trail + paper fixture browser (**≥25** A–Y).
 
 ### 6. Honesty
-Kill A + “99% of paid” failure mode explained in dollars.
+Kill A + illustrative miss toys; no ACE replacement claims.
