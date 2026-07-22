@@ -35,9 +35,10 @@ Export manufacturers forecast drawback refunds as “99% of duty paid.” For **
 
 ## 6. Depth test outline
 
-- G5: `lesserof-G5-cases.md` — **23** fixtures + X/Y notes; dual-impl green  
+- G5: `lesserof-G5-cases.md` — **25** fixtures A–Y; dual-impl green  
 - Narrow claim: `lesserof-NARROW-CLAIM.md`  
 - CFR cites: `lesserof-CFR-CITATIONS.md`  
+- Digest honesty: `lesserof-DIGEST-COPY.md`  
 - Blueprint: `lesserof-COMPREHENSIVE-BLUEPRINT.md`  
 - Architect pack: `lesserof-VISION.md`, `lesserof-ROADMAP.md`, `lesserof-PRD.md`, `lesserof-ERD.md` (**on file**, paper only)
 

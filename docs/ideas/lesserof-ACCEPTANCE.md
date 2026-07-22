@@ -1,14 +1,14 @@
 # lesserof — paper product acceptance (pre-build)
 
-**Not a green light.** Activate only after `htsroute` clears **and** depositgap is not ahead in `ACTIVATION_QUEUE.md` (or depositgap parks/kills).
+**Not a green light yet.** Flip only when `lesserof-PREFLIP-CHECKLIST.md` is all green (hours ≥4, ticks ≥3, honesty intact).
 
-Tied to: `lesserof-G6-summary.md`, `lesserof-NARROW-CLAIM.md`, `lesserof-algorithm.md`.
+Tied to: `lesserof-G6-summary.md`, `lesserof-NARROW-CLAIM.md`, `lesserof-algorithm.md`, `lesserof-DIGEST-COPY.md`.
 
 ---
 
 ## A. Must-pass unique-claim scenarios
 
-Load all `docs/ideas/fixtures/lesserof-*.json`. At minimum:
+Load all `docs/ideas/fixtures/lesserof-*.json` (**25** A–Y). At minimum:
 
 | Scenario | Expect |
 |----------|--------|
@@ -17,6 +17,8 @@ Load all `docs/ideas/fixtures/lesserof-*.json`. At minimum:
 | USMCA partner duty-free (C) | recoverable **0** |
 | Basket other reject (D) | reject |
 | USMCA mid-cap (M) | partner binds between 0 and TFTEA |
+| Three-line mixed stack (X) | TFTEA + wipe + direct-ID sum correctly |
+| USMCA = TFTEA base (Y) | refund unchanged at boundary |
 
 ## B. Must-reject cheats
 
@@ -29,7 +31,7 @@ Load all `docs/ideas/fixtures/lesserof-*.json`. At minimum:
 
 ## C. Money-honesty / Kill A
 
-Acceptance **fails** if digests claim ACE drawback filing replacement or present fixture counts as market proof. Required line: workflow / stacked-cap math experiment; specialists still file.
+Acceptance **fails** if digests claim ACE drawback filing replacement or present fixture counts as market proof. Required line: workflow / stacked-cap math experiment; specialists still file. Copy kit: `lesserof-DIGEST-COPY.md`.
 
 ## D. Comprehensive bar
 
@@ -41,4 +43,4 @@ Acceptance **fails** if digests claim ACE drawback filing replacement or present
 
 ## Explicit non-action
 
-No `projects/lesserof/` today.
+No `projects/lesserof/` during the hours hold.

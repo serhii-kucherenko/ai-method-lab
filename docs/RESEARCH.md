@@ -1,6 +1,15 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof digest copy + acceptance refresh (tick 8)
+
+Hours hold ~1.2h of 4h.
+
+- Wrote `lesserof-DIGEST-COPY.md` (plain-language email kit; Kill A mandatory).
+- Refreshed `lesserof-ACCEPTANCE.md` + G6 depth outline for **25** A–Y fixtures.
+- Behavioral try-demo smoke still covers ,960 vs naive and USMCA  wipe.
+- **Explicit non-actions:** no `projects/lesserof/`; no milestone email until ready_to_build or park.
+
 ## 2026-07-22 — lesserof G5 A–Y (25 dual-green) tick 7
 
 Hours hold ~1h of 4h.
