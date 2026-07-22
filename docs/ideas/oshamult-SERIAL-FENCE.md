@@ -1,6 +1,6 @@
-# oshamult — serial remaining-balance fence (seed)
+# oshamult — serial remaining-balance fence (active research)
 
-Research only. Not `current_idea`. Keeps the OSHA demo from collapsing into a flat % widget.
+Research only during hours hold. `current_idea` = oshamult. Keeps the OSHA demo from collapsing into a flat % widget.
 
 ## What v0 encodes
 
@@ -18,7 +18,7 @@ Gravity-Based Penalty (GBP) with **serial** size → history → good faith → 
 
 1. Say **serial remaining-balance experiment** — not OIS / OSHA calculator parity.  
 2. Kill A: consultants already model GBP.  
-3. Activate only after depositgap → lesserof per queue.  
-4. Do not add fixture farms tonight to “prove” OSHA demand.
+3. Build only after hours + `oshamult-FLIP-WHEN-CLEAR.md` (not before).  
+4. Do not add fixture farms to “prove” OSHA demand.
 
 Paper: `oshamult-G1-EVIDENCE.md`, `oshamult-algorithm.md`, `demos/oshamult-try/try.html`.

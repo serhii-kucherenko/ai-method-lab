@@ -1,6 +1,6 @@
-# oshamult — statute / FOM citations (seed)
+# oshamult — statute / FOM citations (active research)
 
-**State:** seed only. Not framed.
+**State:** active research (`current_idea`). Hours hold before flip.
 
 ## Primary
 
@@ -29,8 +29,8 @@ Serious moderate GBP **$7,000**, 20 employees (70% size), 25% good faith, 20% hi
 3. ~~Kill A/B/C paper~~ — `oshamult-challenge-ABC.md`  
 4. ~~≥25 G5 cases~~ — **26** dual-green fixtures (`check-oshamult-*.mjs`).  
 
-**Known honesty debt (not a blocker for seed papers):** live FOM serial order is Size→Good Faith→History→Quick Fix; v0 goldens lock Size→History→Good Faith→Quick Fix until `oshamult-v1` dual re-green. See `oshamult-SIZE-TABLE.md`.
+**Known honesty debt (not a flip blocker):** live FOM serial order is Size→Good Faith→History→Quick Fix; v0 goldens lock Size→History→Good Faith→Quick Fix until `oshamult-v1` dual re-green. See `oshamult-SIZE-TABLE.md`.
 
 ## Explicit non-actions
 
-No product. No activation while htsroute holds the slot. Prefer depositgap / lesserof first (`ACTIVATION_QUEUE.md`).
+No `projects/oshamult/` during hours hold. Flip only via `oshamult-FLIP-WHEN-CLEAR.md`.

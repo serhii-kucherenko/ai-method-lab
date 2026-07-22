@@ -1,7 +1,7 @@
 # oshamult — hypothesis draft (post-activation paste)
 
-**Status:** seed draft for a future `projects/oshamult/` hypothesis.  
-**Not active.** Behind depositgap / lesserof in `ACTIVATION_QUEUE.md`.
+**Status:** draft for paste into `projects/oshamult/` after flip.  
+**Active idea** during hours hold — do not open the product folder yet.
 
 ## Hypothesis (one paragraph)
 
@@ -27,4 +27,4 @@ Safety consultants and settlement counsel still model. This product is a forecas
 
 ## Activation gate
 
-Only after higher-priority seeds clear, with IDEA_DEPTH re-read.
+Flip only when `check-oshamult-hour-status.mjs` prints `FLIP_PATH_READY`, then walk `oshamult-FLIP-WHEN-CLEAR.md`.

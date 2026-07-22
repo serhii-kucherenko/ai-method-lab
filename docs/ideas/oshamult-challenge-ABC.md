@@ -1,6 +1,6 @@
-# oshamult — Kill A/B/C (seed)
+# oshamult — Kill A/B/C (active research)
 
-**State:** seed only. Not framed.
+**State:** active research (`current_idea`). Hours hold before flip.
 
 ## Kill A — incumbents
 
@@ -18,4 +18,4 @@ Survive. Contests and informal conferences stay offline. Software holds **propos
 
 ## Decision
 
-Stay **seed**. Prefer depositgap / lesserof ahead of this for activation after htsroute clears.
+Stay in research until hours + `oshamult-FLIP-WHEN-CLEAR.md`. Kill A stands; digests stay method-experiment honest.

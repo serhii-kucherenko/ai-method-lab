@@ -1,6 +1,6 @@
 # oshamult — paper product acceptance (pre-build)
 
-**Not a green light.** Activate only after `htsroute` clears and higher-priority seeds in `ACTIVATION_QUEUE.md` are done, parked, or killed (prefer depositgap → lesserof first).
+**Not a green light.** Flip only after hours + `oshamult-PREFLIP-CHECKLIST.md` / `oshamult-FLIP-WHEN-CLEAR.md`.
 
 Tied to: `oshamult-G6-summary.md`, `oshamult-algorithm.md`, `oshamult-challenge-ABC.md`, `oshamult-COMPREHENSIVE-BLUEPRINT.md`.
 

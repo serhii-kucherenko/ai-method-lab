@@ -1,7 +1,7 @@
-# oshamult — algorithm paper (seed draft)
+# oshamult — algorithm paper (active research)
 
-**State:** seed only. Behind depositgap / lesserof. Not framed. Not `current_idea`.  
-**Not an oracle. No product folder.**
+**State:** active research (`current_idea`). Hours hold before `ready_to_build`.  
+**Not an oracle. No product folder during `WAIT_HOURS`.**
 
 ## Goal
 
@@ -33,7 +33,7 @@ Cite: https://www.osha.gov/fom/chapter-6
 5. If (`willful` \| `repeat` \| `fta`) or (serious + high gravity) and `quick_fix_pct` > 0 → reject.  
 6. Serial remaining-balance (fixture-locked order): **Size → History → Good Faith → Quick Fix**  
    (Skip size multiply when willful/repeat — size already gated to 0.)  
-7. Return `{ status: "ok", penalty }`.
+7. Return `{ status: "ok", penalty, algorithm_version, steps[] }` — each factor’s remaining-balance before/after (see `oshamult-API-CONTRACT.md`).
 
 Note: Live FOM HTML lists Size→Good Faith→History→Quick Fix (`oshamult-SIZE-TABLE.md`); v0 stays locked to Size→History→Good Faith→Quick Fix until a re-versioned dual suite flips.
 
@@ -46,4 +46,4 @@ Note: Live FOM HTML lists Size→Good Faith→History→Quick Fix (`oshamult-SIZ
 
 ## Explicit non-actions
 
-No product. Prefer depositgap after htsroute. Checkers: `check-oshamult-fixtures.mjs`, `check-oshamult-dual.mjs`.
+No `projects/oshamult/` during hours hold. Checkers: `check-oshamult-fixtures.mjs`, `check-oshamult-dual.mjs`, `check-oshamult-hour-status.mjs`.

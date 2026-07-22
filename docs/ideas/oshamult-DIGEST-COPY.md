@@ -19,4 +19,4 @@ Use when emailing a research milestone or (later) product phases. Plain language
 
 ## Research hold status line
 
-Still waiting on the **hours hold** (~1.0h of 4h at last tick; ticks already clear). Architect pack and depth suite are on file. No product folder yet.
+Still waiting on the **hours hold** (~3.4h of 4h at last tick; ticks already clear). Architect pack and depth suite are on file. No product folder yet.

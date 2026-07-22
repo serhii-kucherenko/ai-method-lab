@@ -1,6 +1,6 @@
-# oshamult — API contract (seed paper)
+# oshamult — API contract (active research)
 
-**Status:** seed only. Behind depositgap / lesserof after htsroute.  
+**Status:** paper during hours hold. `current_idea` = oshamult. Do not open `projects/oshamult/` until preflip.  
 **Sources:** `oshamult-COMPREHENSIVE-BLUEPRINT.md`, `oshamult-PAGE-SPECS.md`, `oshamult-algorithm.md`
 
 ## Auth
@@ -28,12 +28,18 @@
 
 Request fields: `classification`, `gravity_tier`, `gbp_amount`, `size_pct`, `history_pct`, `good_faith_pct`, `quick_fix_pct`, `use_statutory_max`, `additive_cheat`.
 
-Success:
+Success (day-1 must expose **each** remaining-balance step — not only the final dollars):
 ```json
 {
   "status": "ok",
   "penalty": 2677.5,
-  "algorithm_version": "oshamult-v0"
+  "algorithm_version": "oshamult-v0",
+  "steps": [
+    { "factor": "size", "pct": 0.3, "balance_before": 5000, "balance_after": 3500 },
+    { "factor": "history", "pct": 0.1, "balance_before": 3500, "balance_after": 3150 },
+    { "factor": "good_faith", "pct": 0.15, "balance_before": 3150, "balance_after": 2677.5 },
+    { "factor": "quick_fix", "pct": 0, "balance_before": 2677.5, "balance_after": 2677.5 }
+  ]
 }
 ```
 
@@ -47,4 +53,4 @@ Reject: `{ "status": "reject", "reason": "..." }` — e.g. size_on_willful_or_re
 
 ## Explicit non-action
 
-Paper only until activation queue reaches this seed.
+Paper only until hours + `oshamult-PREFLIP-CHECKLIST.md` clear. Forecast success **without** `steps[]` fails day-1 honesty.

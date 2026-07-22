@@ -1,6 +1,6 @@
-# oshamult — G1 evidence pack (seed deepen)
+# oshamult — G1 evidence pack (active research)
 
-Research only. Not framed. Prefer depositgap → lesserof ahead in the activation queue.
+Research only. `current_idea` = oshamult. Hours hold before flip.
 
 ## Named user + frequency
 
@@ -29,7 +29,7 @@ Paper: `oshamult-STATUTE-CITATIONS.md`, `oshamult-SIZE-TABLE.md`, `oshamult-algo
 1. Kill A stands — consultants and existing calculators already model GBP.  
 2. v0 serial order may differ from live FOM HTML order — no OIS parity claim.  
 3. Unique claim is **classification gates** + serial remaining-balance, not another flat discount widget.  
-4. Not activated while htsroute / depositgap / lesserof hold priority.
+4. No product until hours + preflip (`oshamult-PREFLIP-DRYRUN.md` — only hours still red mid-hold).
 
 ## Decision impact
 

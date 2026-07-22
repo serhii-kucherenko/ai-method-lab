@@ -1,6 +1,6 @@
-# oshamult — sustain test matrix (seed paper)
+# oshamult — sustain test matrix (active research)
 
-**Status:** docs only until activation after higher-priority seeds clear.  
+**Status:** docs only during hours hold. Flip via `oshamult-FLIP-WHEN-CLEAR.md`.  
 **Bar:** `docs/COMPREHENSIVE_PRODUCT.md` + `oshamult-G6-summary.md` + `oshamult-COMPREHENSIVE-BLUEPRINT.md`
 
 Vanity fixture counts alone never pass. Dual-impl drift fails the phase.
@@ -45,4 +45,4 @@ Vanity fixture counts alone never pass. Dual-impl drift fails the phase.
 
 ## Explicit non-action
 
-No product folder while htsroute holds the slot.
+No `projects/oshamult/` during `WAIT_HOURS`.
