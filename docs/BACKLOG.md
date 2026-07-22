@@ -11,10 +11,10 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **depositgap** | **activated → smoke** | htsroute parked; architect pack on file; comprehensive product starting |
+| 1 | **depositgap** | **sustained** | All 8 pages + goldens browser + try.html; Kill A honesty |
 | 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet complete |
 | — | htsroute | **parked** | Soft abort #4 — Challenge D value weak (Free/Free). No product folder |
-| — | lesserof | seed only | After depositgap |
+| — | lesserof | **research next** | Seed deepen after depositgap sustain; no product folder yet |
 | — | lanehold | **killed (G2)** | Capacity + hold expiry ≅ loadbay |
 | 2 | bondstrip | sustained | |
 | 2 | settlecut | sustained | |
@@ -28,7 +28,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| lesserof | seed | Behind depositgap |
+| lesserof | seed / research | Next IDEA_DEPTH after depositgap sustain — not ready_to_build |
 | oshamult | seed | |
 | ptax4975 | seed | |
 | meldefer | soft park | |

@@ -1,4 +1,121 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8" /><title>depositgap — Goldens</title><link rel="stylesheet" href="/public/styles.css" /></head>
-<body><nav><a href="/public/entries.html">Catalog</a><a href="/public/money-honesty.html">Honesty</a></nav>
-<main><h1>Goldens browser</h1><p>Phase unlock later — stub page for comprehensive bar.</p></main></body></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Depositgap — Goldens browser</title>
+    <style>
+      body {
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 2rem 1.5rem;
+        background: #f7f3eb;
+        color: #1a2332;
+      }
+      .brand { color: #0d6e6e; font-weight: 700; font-size: 1.5rem; }
+      h1 { font-size: 1.2rem; }
+      a { color: #0d6e6e; }
+      .note { max-width: 40rem; color: #4a5568; line-height: 1.45; }
+      #status { color: #4a5568; margin: 1rem 0; }
+      #cards[data-goldens="live"] {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.75rem;
+        max-width: 44rem;
+      }
+      #cards li {
+        padding: 0.85rem 1rem;
+        background: #fff;
+        border: 1px solid #d5cdc0;
+      }
+      #cards li.pass { border-left: 3px solid #0d6e6e; }
+      #cards li.fail { border-left: 3px solid #a33; }
+      .meta { font-size: 0.85rem; color: #4a5568; margin-top: 0.35rem; }
+      nav { margin-top: 1.5rem; font-size: 0.9rem; }
+    </style>
+  </head>
+  <body>
+    <div class="brand">Depositgap</div>
+    <h1>Goldens browser</h1>
+    <p class="note">
+      Paper fixtures vs the live forecast engine. Pass means the engine still matches the
+      locked expect line. Brokers and CBP still own liquidation — this is a forecast / method experiment.
+      Kill A: delinquency ≠ deposit gap.
+    </p>
+    <p id="status">Loading…</p>
+    <ul id="cards" data-goldens="live"></ul>
+    <nav>
+      <a href="/entries.html">Catalog</a> ·
+      <a href="/money-honesty.html">Honesty</a> ·
+      <a href="/audit.html">Audit</a> ·
+      <a href="/settings.html">Settings</a>
+    </nav>
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const token =
+          params.get("token") || localStorage.getItem("depositgap_token") || "";
+        const orgId =
+          params.get("orgId") ||
+          localStorage.getItem("depositgap_orgId") ||
+          "";
+        const statusEl = document.getElementById("status");
+        const listEl = document.getElementById("cards");
+        if (!token || !orgId) {
+          statusEl.textContent =
+            "Set token and orgId in the query string or localStorage (depositgap_token / depositgap_orgId).";
+          return;
+        }
+        fetch("/orgs/" + encodeURIComponent(orgId) + "/goldens", {
+          headers: { authorization: "Bearer " + token },
+        })
+          .then(function (res) {
+            return res.json().then(function (json) {
+              return { status: res.status, json: json };
+            });
+          })
+          .then(function (result) {
+            if (result.status !== 200) {
+              statusEl.textContent =
+                "Failed to load goldens (" + result.status + ").";
+              return;
+            }
+            const cards = result.json.cards || [];
+            const allPass = result.json.all_pass === true;
+            statusEl.textContent =
+              cards.length +
+              " fixtures — " +
+              (allPass ? "all pass vs live engine" : "some failures");
+            listEl.innerHTML = "";
+            cards.forEach(function (card) {
+              const li = document.createElement("li");
+              li.className = card.pass ? "pass" : "fail";
+              const live = card.live || {};
+              li.innerHTML =
+                "<strong>" +
+                (card.title || card.id) +
+                "</strong>" +
+                '<div class="meta">' +
+                (card.pass ? "PASS" : "FAIL") +
+                " · expect " +
+                card.expect_status +
+                " · live " +
+                (live.status || "?") +
+                (live.status === "ok"
+                  ? " · true_up " + live.true_up
+                  : live.reason
+                    ? " · " + live.reason
+                    : "") +
+                "</div>";
+              listEl.appendChild(li);
+            });
+          })
+          .catch(function () {
+            statusEl.textContent = "Network error loading goldens.";
+          });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T02:30:00Z",
+  "updated_at": "2026-07-22T03:00:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "A03__P-sustain__depositgap__r1",
+  "active_cell": null,
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "P-scale-001__depositgap",
+  "last_completed": "A03__P-sustain__depositgap__r1",
   "last_error": null,
-  "current_product": "depositgap",
-  "current_idea": "depositgap",
-  "next_cell": "P-sustain__depositgap",
+  "current_product": null,
+  "current_idea": "lesserof",
+  "next_cell": null,
   "mode": "autonomous",
-  "phase": "running",
-  "notes": "depositgap scale GREEN (33 tests). Next: sustain (all 8 pages + goldens browser + try.html). Loop pid 26872 — do NOT re-arm if alive.",
+  "phase": "research",
+  "notes": "depositgap SUSTAINED (76 tests, 8 pages, goldens + try.html). Product complete digest sent. Next: IDEA_DEPTH research on lesserof — no second product build. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -48,6 +48,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 62
+    "ticks_observed": 63
   }
 }

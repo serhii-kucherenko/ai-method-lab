@@ -30,8 +30,10 @@ import {
 } from "./store.js";
 import { listMigrations, migrationCount, type OrgRole } from "./db.js";
 import type { ForecastInput } from "./domain/forecast.js";
+import { listGoldenCards } from "./goldens.js";
 
 const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
+const projectRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const MIME: Record<string, string> = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -170,6 +172,18 @@ export function createApp(opts: { store?: Store; rateLimit?: number } = {}) {
       if (method === "GET") {
         if (path === "/" || path === "/index.html") {
           if (servePublic("money-honesty.html", res)) return;
+        }
+        if (path === "/try.html") {
+          const file = join(projectRoot, "try.html");
+          if (existsSync(file)) {
+            const body = readFileSync(file);
+            res.writeHead(200, {
+              "content-type": "text/html; charset=utf-8",
+              "content-length": body.length,
+            });
+            res.end(body);
+            return;
+          }
         }
         const staticPages = [
           "/money-honesty.html",
@@ -618,6 +632,18 @@ export function createApp(opts: { store?: Store; rateLimit?: number } = {}) {
           return;
         }
         send(res, 200, listed);
+        return;
+      }
+
+      const goldensMatch = path.match(/^\/orgs\/([^/]+)\/goldens$/);
+      if (method === "GET" && goldensMatch) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const orgId = goldensMatch[1]!;
+        if (orgDenied(store, orgId, userId, "read", res)) return;
+        send(res, 200, listGoldenCards());
         return;
       }
 

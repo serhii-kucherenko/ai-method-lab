@@ -39,18 +39,18 @@
 - Catalog default `limit` 20 / hard cap 100; ≥250-entry page walk without gaps or dupes.
 - Concurrent overlapping `batch/forecast` calls stay independent per entry.
 - Rate limit returns 429 + `Retry-After`. Notes in `SCALE.md` (O(page) lists).
-- **33** tests green. Next: sustain (goldens browser + try.html + matrix floor).
+- Documented pagination bounds and batch independence.
+- **33** tests green. Next was sustain.
 
-## Integrate (2026-07-22)
+## Sustain (2026-07-22)
 
-- HMAC webhook + idempotency; admin settings; cash/audit pagination; live settings page.
-- **31** tests at integrate exit.
-
-## Scale (2026-07-22)
-
-- Catalog walk ≥250 entries; default page 20 / hard cap 100; concurrent batch slices; 429 + Retry-After.
-- Documented in `SCALE.md` (O(page) lists, rate limits, batch independence).
-- **33** tests green (`npm test` + lint).
+- All **8** pages live (catalog, detail, batch, cash-impact, audit, goldens, settings, money honesty) — no “Phase unlock later” stubs.
+- `GET /orgs/:orgId/goldens` read-only fixture cards vs live engine; `public/goldens.html` browser.
+- Offline `try.html`: deposit→assessed→interest with duty_delta + interest + true_up; Kill A disclaimer; skip-interest cheat rejects.
+- Sustain matrix themes covered in `test/sustain.test.ts`; dual-impl fixtures stay green.
+- UI critical asserts all 8 pages load with live content markers.
+- **76** tests green (`npm test` + `npm run lint`). Portfolio → sustained.
+- Honesty: brokers/CBP still liquidate; no ACE replacement claims; digests must say forecast / method experiment.
 
 ## Honesty
 

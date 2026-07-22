@@ -1,6 +1,9 @@
 # Findings
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
+## 2026-07-21 — depositgap P-sustain GREEN (product complete)
+
+- Cell `A03__P-sustain__depositgap__r1` done. 8 pages incl. goldens; offline try.html; 76 tests; Kill A honesty. Next research: lesserof.
 ## 2026-07-21 — depositgap P-scale GREEN (page walk + rate limit)
 
 - Cell `A03__P-scale-001__depositgap__r1` done. ≥250 entries walked; default limit 20 / cap 100; concurrent batch; 429 Retry-After; `SCALE.md`. npm test 33/33.
