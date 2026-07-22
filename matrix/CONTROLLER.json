@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T20:35:00Z",
+  "updated_at": "2026-07-22T20:45:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__c1592__tick5_flipday_day1",
+  "last_completed": "research__c1592__tick6_api_hypothesis",
   "last_error": null,
   "current_product": null,
   "current_idea": "c1592",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "c1592 tick 5: FLIP-DAY-SCRIPT + DAY1-NONSMOKE + PRODUCT-DRAFT + ACCEPTANCE; 26 dual fixtures; WAIT_HOURS (~2.4h left); ticks 5/3. Still no product. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "c1592 tick 6: API-CONTRACT + HYPOTHESIS/FINDINGS drafts + PAGE-SPECS; 26 dual fixtures; WAIT_HOURS (~2.2h left); ticks 6/3. Still no product. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -34,7 +34,7 @@
     "min_hours_research_before_ready": 4,
     "framing_started_at": "2026-07-22T18:55:00.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 5,
+    "research_ticks_on_idea": 6,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 144
+    "ticks_observed": 145
   }
 }
