@@ -1,0 +1,17 @@
+{
+  "id": "c1592-Z-ignore-cap-ok-path",
+  "title": "Ignore cap flag harmless when 2x below domestic",
+  "input": {
+    "culpability": "negligence",
+    "duty_loss": 10000,
+    "domestic_value": 500000,
+    "dutiable_value": 500000,
+    "ignore_domestic_cap": true
+  },
+  "expect": {
+    "status": "ok",
+    "penalty_max": 20000,
+    "branch": "lesser_of_duty"
+  },
+  "source": "c1592-algorithm.md"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "c1592-Q-tiny-duty-loss",
+  "title": "Tiny duty loss 2x",
+  "input": {
+    "culpability": "negligence",
+    "duty_loss": 1,
+    "domestic_value": 10000,
+    "dutiable_value": 10000
+  },
+  "expect": {
+    "status": "ok",
+    "penalty_max": 2,
+    "branch": "lesser_of_duty"
+  },
+  "source": "c1592-algorithm.md"
+}

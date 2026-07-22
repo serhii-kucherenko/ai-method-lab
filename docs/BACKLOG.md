@@ -30,7 +30,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| **c1592** | **framed (research)** | tick 2; 15 dual fixtures; WAIT_HOURS (~3.5h); kills A/B/C written |
+| **c1592** | **framed (research)** | tick 3; 26 dual fixtures; WAIT_HOURS (~3h); VISION+blueprint paper |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
 | ptax4975 | **sustained** | Product complete under projects/ptax4975 |

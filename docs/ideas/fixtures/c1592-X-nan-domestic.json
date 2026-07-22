@@ -1,0 +1,15 @@
+{
+  "id": "c1592-X-nan-domestic",
+  "title": "NaN domestic",
+  "input": {
+    "culpability": "negligence",
+    "duty_loss": 10000,
+    "domestic_value": null,
+    "dutiable_value": 50000
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "bad_inputs"
+  },
+  "source": "c1592-algorithm.md"
+}

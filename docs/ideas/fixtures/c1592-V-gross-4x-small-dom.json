@@ -1,0 +1,16 @@
+{
+  "id": "c1592-V-gross-4x-small-dom",
+  "title": "Gross 4x dwarfed by small domestic",
+  "input": {
+    "culpability": "gross_negligence",
+    "duty_loss": 100000,
+    "domestic_value": 50000,
+    "dutiable_value": 200000
+  },
+  "expect": {
+    "status": "ok",
+    "penalty_max": 50000,
+    "branch": "lesser_of_duty"
+  },
+  "source": "c1592-algorithm.md"
+}
