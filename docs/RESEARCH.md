@@ -1,6 +1,15 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 â€” lesserof G6 + blueprint honesty sync (tick 17)
+
+Hours hold ~3.2h of 4h (~0.8h left). `check-lesserof-hour-status.mjs` â†’ `WAIT_HOURS`.
+
+- G6 unique claim + decision now cite same-condition fence and `FLIP-WHEN-CLEAR`.
+- Blueprint non-actions updated off stale htsroute-slot language.
+- Fixtures/dual still 25 green via hour-status.
+- **Explicit non-actions:** no `projects/lesserof/`.
+
 ## 2026-07-22 â€” lesserof flip runbook + demo label honesty (tick 15)
 
 Hours hold ~3.0h of 4h (~1.0h left).
@@ -1128,9 +1137,9 @@ Loop alive (pid 26872). depositgap sustained; lesserof `current_idea`.
 
 **Skeptical one-liner:** Hitting three ticks before the hour hold is fine; flipping build early would be the old conveyor with a better costume.
 
-## 2026-07-21 — lesserof research tick 16 (hour-status diagnostic)
+## 2026-07-21 ï¿½ lesserof research tick 16 (hour-status diagnostic)
 
-Loop pid 26872 left alone. Hours ~3.2/4 — still `WAIT_HOURS`.
+Loop pid 26872 left alone. Hours ~3.2/4 ï¿½ still `WAIT_HOURS`.
 
 - Added `check-lesserof-hour-status.mjs` (fixtures+dual+kits+pack ? WAIT_HOURS | FLIP_PATH_READY)
 - Wired into `lesserof-FLIP-WHEN-CLEAR.md`

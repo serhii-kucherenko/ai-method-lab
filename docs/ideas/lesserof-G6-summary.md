@@ -17,6 +17,7 @@ Export manufacturers forecast drawback refunds as “99% of duty paid.” For **
 - Reject: lesser-of on direct-ID; skip lesser-of on substitution; USMCA flag without partner; USMCA on direct-ID; basket other without match; claim-type relabel  
 - Multi-line: independent caps; one reject fails the run  
 - USMCA wipe: partner duty-free can drive recoverable to **$0** after TFTEA (`lesserof-USMCA-WIPE-FENCE.md`)
+- Same-condition unused (§ 182.45(b)): **separate carve-out**, v0 out of scope (`lesserof-SAME-CONDITION-FENCE.md`) — digests must not say every CA/MX export wipes
 
 ## 4. Kill rounds
 
@@ -44,13 +45,15 @@ Export manufacturers forecast drawback refunds as “99% of duty paid.” For **
 
 ## 7. Decision
 
-**Do not build yet.** Research continues: `current_idea` = lesserof after depositgap sustain (2026-07-22).
+**Do not build yet.** `current_idea` = lesserof; hours hold still open (~0.8h left as of tick 17).
 
 Still blocked from `ready_to_build` by:
 
 1. Kill A stands (brokers/ACE win commercially) — product may only be a stacked-cap **workflow experiment**
-2. Hours + tick hold (`min_hours_research_before_ready: 4`, `min_research_ticks_before_ready: 3`) — architect pack **on file**; value-gate dry run on file (`lesserof-VALUE-GATE-DRYRUN.md`); **ticks ≥3 met on tick 3** but **hours still open**
-3. G6 must stay honest: no ACE replacement; no ×0.99-only widget
+2. Hours hold (`min_hours_research_before_ready: 4`) — ticks ≥3 met; architect pack + value-gate dry run on file; diagnostic `check-lesserof-hour-status.mjs` → `WAIT_HOURS` until clear
+3. G6 must stay honest: no ACE replacement; no ×0.99-only widget; same-condition fence
+
+When hours clear: `lesserof-FLIP-WHEN-CLEAR.md` (expect `FLIP_PATH_READY`).
 
 See `lesserof-POST-DEPOSITGAP-STATUS.md` + `lesserof-VALUE-GATE-DRYRUN.md`.
 

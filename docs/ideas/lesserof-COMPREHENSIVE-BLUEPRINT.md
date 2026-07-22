@@ -96,7 +96,7 @@ If any of these is missing, the product collapses to a vendor-blog worksheet clo
 
 ## Explicit non-actions today
 
-- Do **not** set `CONTROLLER.current_idea` to lesserof while htsroute holds the slot
-- Do **not** open `projects/lesserof/`
-- Do **not** write JSON fixtures while same-day / active-slot policy still bites
-- Framing + day-boundary only after htsroute clears, kills, or parks
+- Do **not** open `projects/lesserof/` until hours + `lesserof-FLIP-WHEN-CLEAR.md` clear (`FLIP_PATH_READY`)
+- Do **not** set `ready_to_build` while hour-status prints `WAIT_HOURS`
+- Do **not** claim every CA/MX export wipes (same-condition out of scope)
+- Do **not** collapse the product to a single ×0.99 field or ACE-filer replacement
