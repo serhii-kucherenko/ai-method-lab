@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T10:50:00Z",
+  "updated_at": "2026-07-22T11:13:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "A03__P-crud-001__oshamult__r1",
+  "active_cell": null,
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -24,7 +24,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "running",
-  "notes": "oshamult smoke scored (29 tests, 26 dual, steps[], 4 pages). Advancing to crud. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "oshamult smoke scored (29 tests, 26 goldens, steps[]). Next: crud catalog/detail live paths.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 104
+    "ticks_observed": 103
   }
 }
