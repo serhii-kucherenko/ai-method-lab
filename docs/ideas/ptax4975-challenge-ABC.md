@@ -1,6 +1,6 @@
-# ptax4975 — Kill A/B/C (seed)
+# ptax4975 — Kill A/B/C
 
-**State:** seed only. Not framed.
+**State:** framed research (`current_idea`). Hours hold running.
 
 ## Kill A — incumbents
 
@@ -18,4 +18,4 @@ Survive. Correction negotiations and DOL/IRS processes stay offline. Software ho
 
 ## Decision
 
-Stay **seed**. Prefer depositgap → lesserof → oshamult ahead of this for activation after htsroute clears.
+Continue research under hours hold. Not `ready_to_build` until `check-ptax4975-hour-status.mjs` → `FLIP_PATH_READY`. No `projects/ptax4975/` yet.

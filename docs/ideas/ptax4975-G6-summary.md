@@ -1,6 +1,6 @@
 # Research summary — ptax4975 (G6)
 
-Skeptical senior-eng bar. Seed-only memo. **Do not activate** while `htsroute` holds `current_idea`. Prefer **depositgap** → **lesserof** → **oshamult** ahead of this.
+Skeptical senior-eng bar. **`current_idea`** after oshamult sustained. Research / hours hold only — not `ready_to_build` until hours ≥4 and ticks ≥3.
 
 ## 1. Problem
 
@@ -12,10 +12,10 @@ Customs routing, AD deposit true-up, drawback lesser-of, OSHA serial penalties, 
 
 ## 3. Unique claim + invariants
 
-- `initial_tax = 0.15 × amount × year_parts` (fractional year-parts allowed when > 0)  
-- `additional_tax = 0` if corrected, else `amount` (missing corrected → uncorrected)  
-- Optional FMV pair: amount = max(a,b) when `use_fmv_greater_of`  
-- Reject: flat-excise cheat; understate vs greater-of; non-positive amount; non-positive / non-finite year-parts  
+- `initial_tax = 0.15 × amount × year_parts` (fractional year-parts allowed when > 0)
+- `additional_tax = 0` if corrected, else `amount` (missing corrected → uncorrected)
+- Optional FMV pair: amount = max(a,b) when `use_fmv_greater_of`
+- Reject: flat-excise cheat; understate vs greater-of; non-positive amount; non-positive / non-finite year-parts
 
 ## 4. Kill rounds
 
@@ -29,23 +29,24 @@ See `ptax4975-challenge-ABC.md`.
 
 ## 5. Falsifiers
 
-1. Domain experts say year-part counting is wrong in ≥2 real Form 5330 facts → abandon or re-version.  
-2. After smoke, sponsors still book a single flat 15% cell → abandon.  
-3. Digests claim Form 5330 / DOL replacement or omit Kill A → abandon as dishonest.  
+1. Domain experts say year-part counting is wrong in ≥2 real Form 5330 facts → abandon or re-version.
+2. After smoke, sponsors still book a single flat 15% cell → abandon.
+3. Digests claim Form 5330 / DOL replacement or omit Kill A → abandon as dishonest.
 4. Product collapses to dual-approver fee board → kill as isomorphic.
 
 ## 6. Depth test outline
 
-- G5: `ptax4975-G5-cases.md` — **35** fixtures dual-green  
-- Algorithm + greater-of: `ptax4975-algorithm.md`  
+- G5: `ptax4975-G5-cases.md` — **35** fixtures dual-green
+- Algorithm + greater-of: `ptax4975-algorithm.md`
 - Checkers: `check-ptax4975-fixtures.mjs`, `check-ptax4975-dual.mjs`
+- Hours: `check-ptax4975-hour-status.mjs`
 
 ## 7. Decision
 
-**Do not build / do not activate yet.**
+**Still researching — do not build yet.**
 
-Reasons: htsroute owns the slot; Kill A stands; activation priority is behind depositgap / lesserof / oshamult (`ACTIVATION_QUEUE.md`).
+Queue ahead is clear (oshamult sustained). Hours hold + tick floor remain. Kill A stands. Flip path: `ptax4975-FLIP-WHEN-CLEAR.md` only after `FLIP_PATH_READY`.
 
 ## Explicit non-actions
 
-No `projects/ptax4975/`. Digests must say workflow experiment.
+No `projects/ptax4975/` until flip. Digests must say workflow / forecast experiment.

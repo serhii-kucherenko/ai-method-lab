@@ -7,7 +7,7 @@
 | G3 Adversarial | pass with Kill A standing | Counsel/tax software already compute; survive as forecast experiment |
 | G4 Falsifiers | pass (draft) | Form 5330 replacement claims; silent highest-FMV-during-period |
 | G5 Depth tests | pass | **35** fixtures + dual-impl green |
-| G6 Research summary | **in progress** | oshamult done; activated as `current_idea` (research only) |
+| G6 Research summary | **in progress** | tick 2; WAIT_TICKS (2/3) + hours hold; flip sheet ready |
 
 **Decision:** `current_idea` = ptax4975. Hours hold started. Not `ready_to_build` until hours ≥4 + ticks ≥3. Framing: `ptax4975-PRODUCT-FRAMING.md`. Fence: `ptax4975-FMV-FENCE.md`.
 

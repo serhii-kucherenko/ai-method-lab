@@ -2,6 +2,18 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 preflip dry-run + hour-status (tick 2)
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 56. Deepened activation hygiene (docs only).
+
+- Added `check-ptax4975-hour-status.mjs` → **WAIT_TICKS** (2/3) while hours hold also running
+- Wrote `ptax4975-PREFLIP-DRYRUN.md` + `ptax4975-FLIP-WHEN-CLEAR.md`
+- Synced G6 / Kill A-C / FMV fence / POST-OSHAMULT-RUN off stale “behind queue / seed only” language
+- Checkers still **35/35** dual-green
+- Explicit non-actions: **no** `projects/ptax4975/`; not ready until ticks ≥3 and hours ≥4
+
+**Skeptical one-liner:** Paper depth is ahead of the clock — do not mistake fixture green for flip.
+
 ## 2026-07-22 — ptax4975 research activated (tick 1)
 
 oshamult sustained. Activated **ptax4975** as `current_idea` (research only).

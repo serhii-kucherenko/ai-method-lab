@@ -1,6 +1,6 @@
 # ptax4975 — amount-involved / taxable-period fence (seed paper)
 
-**State:** seed only. Expands the “Fence (not yet)” column in `ptax4975-STATUTE-CITATIONS.md`.  
+**State:** framed research (`current_idea`). Expands the “Fence (not yet)” column in `ptax4975-STATUTE-CITATIONS.md`.  
 **Not Form 5330 parity.** Digests must not claim IRS / DOL replacement.
 
 ## What § 4975 actually requires (beyond v0 toys)
@@ -27,4 +27,4 @@ Smoke locks corrected ($3,000), uncorrected ($13,000), and greater-of FMV ($12k 
 
 ## Explicit non-actions
 
-No product. Behind depositgap / lesserof / oshamult. Do not “fix” v0 to highest-during-period FMV without a dual suite bump.
+No `projects/ptax4975/` until flip. Do not “fix” v0 to highest-during-period FMV without a dual suite bump.
