@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — c1592 tick 8: offline demo + statute stakes (WAIT_HOURS)
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 91. Docs + research demo only. Framing clock **unchanged**.
+
+- Added `demos/c1592-try/` offline statutory-max toy + TRY-DEMO pointer
+- Wrote STATUTE-CITATIONS, VALUE-STAKES, SUSTAIN-TEST-MATRIX; refreshed DIGEST-HOLD
+- Fixtures still **26/26** dual-green; hours ~1.6h short → `WAIT_HOURS`
+- Explicit non-actions: **no** `projects/c1592/`
+
+**Skeptical one-liner:** A research demo is not a product — hours hold still owns the flip.
+
 ## 2026-07-22 — c1592 tick 7: scaffold + preflip checklist (WAIT_HOURS)
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 90. Docs only. Framing clock **unchanged**.
