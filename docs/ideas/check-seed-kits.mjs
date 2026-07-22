@@ -126,6 +126,10 @@ const seeds = [
       "ptax4975-DAY1-NONSMOKE.md",
       "ptax4975-REPO-SCAFFOLD.md",
       "ptax4975-G1-EVIDENCE.md",
+      "ptax4975-VISION.md",
+      "ptax4975-ROADMAP.md",
+      "ptax4975-PRD.md",
+      "ptax4975-ERD.md",
     ],
   },
 ];
