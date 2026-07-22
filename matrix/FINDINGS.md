@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — oshamult P-workflow GREEN
+
+- Cell `A03__P-workflow-001__oshamult__r1`. 31 tests; batch independence; audit CSV; auditor 403 on batch. Next: integrate.
+
 ## 2026-07-22 — oshamult P-crud GREEN
 
 - Cell `A03__P-crud-001__oshamult__r1`. 30 tests; citation PATCH; auditor 403 on mutate; serial forecast after patch. Next: workflow.

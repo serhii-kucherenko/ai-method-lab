@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oshamult — Audit log</title>
+    <style>
+      body {
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 2rem 1.5rem;
+        background: #eef2f5;
+        color: #1c2430;
+      }
+      .brand { color: #1f5f8b; font-weight: 700; font-size: 1.5rem; }
+      h1 { font-size: 1.2rem; }
+      a { color: #1f5f8b; }
+      #status { color: #4d5a6a; margin: 1rem 0; }
+      #audit-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+        max-width: 44rem;
+      }
+      #audit-list li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #c5ced8;
+        font-size: 0.95rem;
+      }
+      .meta { font-size: 0.85rem; color: #4d5a6a; font-family: ui-monospace, monospace; }
+    </style>
+  </head>
+  <body>
+    <div class="brand">Oshamult</div>
+    <h1>Audit log</h1>
+    <p>
+      Forecast locks and rejects for this org. Export CSV for auditor review.
+    </p>
+    <p id="status">Loading…</p>
+    <p>
+      <a id="csv-link" href="#">Download CSV</a>
+    </p>
+    <ul id="audit-list" data-audit="live"></ul>
+    <p>
+      <a href="/citations.html">Catalog</a> ·
+      <a href="/batch.html">Batch</a> ·
+      <a href="/money-honesty.html">Money honesty</a>
+    </p>
+    <p>
+      Kill A: consultants and settlement counsel still model. This is a forecast /
+      method experiment — not an OSHA / OIS replacement.
+    </p>
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const token =
+          params.get("token") ||
+          localStorage.getItem("oshamult_token") ||
+          "";
+        const orgId =
+          params.get("orgId") ||
+          localStorage.getItem("oshamult_orgId") ||
+          "";
+        const statusEl = document.getElementById("status");
+        const listEl = document.getElementById("audit-list");
+        const csvLink = document.getElementById("csv-link");
+
+        if (!token || !orgId) {
+          statusEl.textContent =
+            "Provide ?token= and ?orgId= (or set localStorage oshamult_token / oshamult_orgId).";
+          csvLink.removeAttribute("href");
+          return;
+        }
+
+        const basePath = "/orgs/" + encodeURIComponent(orgId) + "/audit";
+        csvLink.href =
+          basePath +
+          "?format=csv&token=" +
+          encodeURIComponent(token);
+        csvLink.addEventListener("click", function (ev) {
+          ev.preventDefault();
+          fetch(basePath + "?format=csv", {
+            headers: { authorization: "Bearer " + token },
+          })
+            .then(function (res) {
+              return res.text().then(function (text) {
+                return { status: res.status, text: text };
+              });
+            })
+            .then(function (result) {
+              if (result.status !== 200) {
+                statusEl.textContent = "CSV export failed.";
+                return;
+              }
+              const blob = new Blob([result.text], { type: "text/csv" });
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement("a");
+              a.href = url;
+              a.download = "audit.csv";
+              a.click();
+              URL.revokeObjectURL(url);
+            });
+        });
+
+        fetch(basePath, {
+          headers: { authorization: "Bearer " + token },
+        })
+          .then(function (res) {
+            return res.json().then(function (json) {
+              return { status: res.status, json: json };
+            });
+          })
+          .then(function (result) {
+            if (result.status !== 200) {
+              statusEl.textContent =
+                "Failed to load audit (" + result.status + ").";
+              return;
+            }
+            const events = result.json.events || [];
+            statusEl.textContent =
+              events.length === 0
+                ? "No forecast runs yet."
+                : events.length +
+                  " event" +
+                  (events.length === 1 ? "" : "s") +
+                  " (of " +
+                  (result.json.total || events.length) +
+                  ")";
+            listEl.innerHTML = "";
+            events.forEach(function (ev) {
+              const li = document.createElement("li");
+              li.innerHTML =
+                "<strong>" +
+                (ev.action || ev.status) +
+                "</strong> · citation " +
+                ev.citation_id +
+                '<div class="meta">' +
+                (ev.status === "ok"
+                  ? "penalty " + (ev.penalty ?? "—")
+                  : "reason " + (ev.reason || "reject")) +
+                " · " +
+                (ev.created_at || "") +
+                "</div>";
+              listEl.appendChild(li);
+            });
+          })
+          .catch(function () {
+            statusEl.textContent = "Network error loading audit.";
+          });
+      })();
+    </script>
+  </body>
+</html>

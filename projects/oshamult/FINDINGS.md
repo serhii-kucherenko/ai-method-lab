@@ -14,6 +14,13 @@
 - Catalog/detail/honesty UI critical paths green
 - **30** tests green
 
+## Workflow (scored)
+
+- Batch forecast independence (ok + reject siblings)
+- Append-only audit + CSV export; auditor **403** on batch mutate
+- Live `batch.html` + `audit.html`; prior pages stay green
+- **31** tests green
+
 ## Next
 
-Workflow: batch forecast independence + audit trail.
+Integrate: HMAC webhook + pagination + admin settings.

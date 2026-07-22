@@ -8,7 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
-| **oshamult** | **in progress** | A03 + A10 | **workflow** (crud scored) | GBP × serial remaining-balance penalty forecast (Kill A; not OIS) |
+| **oshamult** | **in progress** | A03 + A10 | **integrate** (workflow scored) | GBP × serial remaining-balance penalty forecast (Kill A; not OIS) |
 | **lesserof** | **sustained** | A03 + A10 | done | Stacked TFTEA+USMCA+basket refund caps (Kill A; not ACE) |
 | **depositgap** | **sustained** | A03 + A10 | done | Deposit→assessed→interest forecast honesty (Kill A; not ACE/CBP) |
 | tariffstep | **sustained** | A03 + A10 | done | Stepped rate blocks + demand ratchet (workflow experiment) |

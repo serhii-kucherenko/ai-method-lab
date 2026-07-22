@@ -6,7 +6,7 @@ import { test } from "node:test";
 
 const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
 
-test("ui-critical: honesty page Kill A + catalog page present", () => {
+test("ui-critical: honesty page Kill A + catalog + batch + audit pages", () => {
   const honesty = readFileSync(join(publicDir, "money-honesty.html"), "utf8");
   assert.match(honesty, /Kill A/i);
   assert.match(honesty, /Safety consultants and settlement counsel still/i);
@@ -18,4 +18,12 @@ test("ui-critical: honesty page Kill A + catalog page present", () => {
   assert.match(catalog, /Citations catalog/i);
   assert.match(catalog, /data-catalog="live"/);
   assert.match(catalog, /Bearer /);
+
+  const batch = readFileSync(join(publicDir, "batch.html"), "utf8");
+  assert.match(batch, /data-batch="live"/);
+  assert.match(batch, /Batch forecast/i);
+
+  const audit = readFileSync(join(publicDir, "audit.html"), "utf8");
+  assert.match(audit, /data-audit="live"/);
+  assert.match(audit, /Audit log/i);
 });
