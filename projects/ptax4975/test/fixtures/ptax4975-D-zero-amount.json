@@ -1,0 +1,15 @@
+{
+  "id": "ptax4975-D-zero-amount",
+  "title": "Non-positive amount involved — reject",
+  "source": "input hygiene",
+  "input": {
+    "amount_involved": 0,
+    "year_parts": 1,
+    "corrected": true,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "bad_inputs"
+  }
+}

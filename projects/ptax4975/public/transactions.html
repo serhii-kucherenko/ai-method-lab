@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ptax4975 — Transactions catalog</title>
+    <style>
+      body {
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 2rem 1.5rem;
+        background: #eef2f5;
+        color: #1c2430;
+      }
+      .brand { color: #1f5f8b; font-weight: 700; font-size: 1.5rem; }
+      h1 { font-size: 1.2rem; }
+      a { color: #1f5f8b; }
+      #status { color: #4d5a6a; margin: 1rem 0; }
+      #tx-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+        max-width: 40rem;
+      }
+      #tx-list li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #c5ced8;
+      }
+      .meta { font-size: 0.9rem; color: #4d5a6a; }
+    </style>
+  </head>
+  <body>
+    <div class="brand">ptax4975</div>
+    <h1>Transactions catalog</h1>
+    <p>Org-scoped prohibited-transaction forecasts. Token from localStorage or <code>?token=</code>.</p>
+    <p id="status">Loading…</p>
+    <ul id="tx-list" data-catalog="live"></ul>
+    <p>
+      <a href="/money-honesty.html">Money honesty</a> ·
+      <a href="/transaction-detail.html">Transaction detail</a> ·
+      <a href="/goldens.html">Goldens</a>
+    </p>
+    <p>
+      Kill A: counsel and Form 5330 preparers still win. This is a forecast /
+      method experiment — not Form 5330 / IRS / DOL replacement.
+    </p>
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const token =
+          params.get("token") ||
+          localStorage.getItem("ptax4975_token") ||
+          "";
+        const orgId =
+          params.get("orgId") ||
+          localStorage.getItem("ptax4975_orgId") ||
+          "";
+        const statusEl = document.getElementById("status");
+        const listEl = document.getElementById("tx-list");
+
+        if (!token || !orgId) {
+          statusEl.textContent =
+            "Stub mode: set ptax4975_token + ptax4975_orgId in localStorage (or ?token=&orgId=) to load /orgs/:id/transactions.";
+          listEl.innerHTML =
+            "<li class='meta'>Catalog ready — Bearer Authorization required for live list.</li>";
+          return;
+        }
+
+        fetch("/orgs/" + encodeURIComponent(orgId) + "/transactions", {
+          headers: { Authorization: "Bearer " + token },
+        })
+          .then(function (r) {
+            return r.json().then(function (j) {
+              return { ok: r.ok, j: j };
+            });
+          })
+          .then(function (res) {
+            if (!res.ok) {
+              statusEl.textContent = "Load failed";
+              return;
+            }
+            const rows = res.j.transactions || [];
+            statusEl.textContent = rows.length + " transactions";
+            listEl.innerHTML = rows
+              .map(function (t) {
+                return (
+                  "<li><a href='/transaction-detail.html?id=" +
+                  encodeURIComponent(t.id) +
+                  "'>" +
+                  (t.label || t.id) +
+                  "</a><div class='meta'>" +
+                  t.id +
+                  " · amount " +
+                  t.amount_involved +
+                  " · years " +
+                  t.year_parts +
+                  "</div></li>"
+                );
+              })
+              .join("");
+          })
+          .catch(function () {
+            statusEl.textContent = "Load failed";
+          });
+      })();
+    </script>
+  </body>
+</html>

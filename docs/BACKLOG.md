@@ -11,6 +11,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
+| 1 | **ptax4975** | **building (smoke✓ → crud)** | 37 tests; 35 dual goldens; honesty + 3 fences; not Form 5330 |
 | 1 | **oshamult** | **sustained** | 56 tests; 7 pages + try.html; Kill A honesty |
 | 1 | **lesserof** | **sustained** | 11 pages + goldens + try.html; 60 tests; Kill A honesty |
 | 1 | **depositgap** | **sustained** | All 8 pages + goldens browser + try.html; Kill A honesty |
@@ -31,7 +32,7 @@ See `docs/DEPTH_RESTART.md`.
 | --- | --- | --- |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
-| ptax4975 | **framed (research)** | current_idea; tick 17; WAIT_HOURS (~0.30h left); next clear → FLIP-DAY-SCRIPT |
+| ptax4975 | **building** | smoke green; current_product; next crud |
 | meldefer | soft park | |
 | form222 | soft park | |
 | lanehold | **killed (G2)** | |

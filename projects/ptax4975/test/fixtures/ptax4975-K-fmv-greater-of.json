@@ -1,0 +1,19 @@
+{
+  "id": "ptax4975-K-fmv-greater-of",
+  "title": "Greater-of FMV resolves amount involved",
+  "source": "§ 4975(f) amount involved shape",
+  "input": {
+    "fmv_a": 8000,
+    "fmv_b": 10000,
+    "use_fmv_greater_of": true,
+    "year_parts": 1,
+    "corrected": true,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 1500,
+    "additional_tax": 0,
+    "total": 1500
+  }
+}

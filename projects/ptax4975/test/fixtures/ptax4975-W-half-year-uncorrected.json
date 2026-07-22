@@ -1,0 +1,17 @@
+{
+  "id": "ptax4975-W-half-year-uncorrected",
+  "title": "Half year-part uncorrected",
+  "source": "ptax4975-G5",
+  "input": {
+    "amount_involved": 10000,
+    "year_parts": 0.5,
+    "corrected": false,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 750,
+    "additional_tax": 10000,
+    "total": 10750
+  }
+}

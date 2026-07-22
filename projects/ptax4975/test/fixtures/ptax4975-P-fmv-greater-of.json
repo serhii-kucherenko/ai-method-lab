@@ -1,0 +1,19 @@
+{
+  "id": "ptax4975-P-fmv-greater-of",
+  "title": "Amount from greater-of two FMVs",
+  "source": "§4975 amount involved sketch",
+  "input": {
+    "fmv_a": 8000,
+    "fmv_b": 12000,
+    "use_fmv_greater_of": true,
+    "year_parts": 2,
+    "corrected": true,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 3600,
+    "additional_tax": 0,
+    "total": 3600
+  }
+}

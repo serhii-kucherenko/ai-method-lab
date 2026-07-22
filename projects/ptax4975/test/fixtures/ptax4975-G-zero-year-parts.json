@@ -1,0 +1,15 @@
+{
+  "id": "ptax4975-G-zero-year-parts",
+  "title": "year_parts < 1 → reject",
+  "source": "ptax4975-algorithm.md",
+  "input": {
+    "amount_involved": 10000,
+    "year_parts": 0,
+    "corrected": true,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "bad_inputs"
+  }
+}

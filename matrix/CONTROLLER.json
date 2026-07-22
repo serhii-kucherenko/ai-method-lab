@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T16:08:00Z",
+  "updated_at": "2026-07-22T16:52:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__ptax4975__tick17_last_20_min",
+  "last_completed": "A03__P-smoke-001__ptax4975__r1",
   "last_error": null,
-  "current_product": null,
+  "current_product": "ptax4975",
   "current_idea": "ptax4975",
-  "next_cell": null,
+  "next_cell": "A03__P-crud-001__ptax4975__r1",
   "mode": "autonomous",
-  "phase": "research",
-  "notes": "ptax4975 research tick 17: WAIT_HOURS (~0.30h left); next clear tick MUST run FLIP-DAY-SCRIPT. Loop pid 26872 — do NOT re-arm if alive.",
+  "phase": "running",
+  "notes": "ptax4975 smoke GREEN (37 tests, 35 dual goldens). Next: crud (catalog+detail RBAC). Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 126
+    "ticks_observed": 127
   }
 }

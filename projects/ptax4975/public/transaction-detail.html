@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ptax4975 — Transaction detail</title>
+    <style>
+      body {
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 2rem 1.5rem;
+        background: #eef2f5;
+        color: #1c2430;
+        max-width: 40rem;
+      }
+      .brand { color: #1f5f8b; font-weight: 700; font-size: 1.5rem; }
+      h1 { font-size: 1.2rem; }
+      a { color: #1f5f8b; }
+      button {
+        background: #1f5f8b;
+        color: #fff;
+        border: 0;
+        padding: 0.6rem 1rem;
+        font: inherit;
+        cursor: pointer;
+      }
+      #out {
+        margin-top: 1rem;
+        white-space: pre-wrap;
+        font-family: ui-monospace, monospace;
+        font-size: 0.85rem;
+      }
+      .note { color: #4d5a6a; font-size: 0.95rem; }
+    </style>
+  </head>
+  <body data-detail="live">
+    <div class="brand">ptax4975</div>
+    <h1>Transaction detail</h1>
+    <p class="note">
+      Forecast returns <code>initial_tax</code>, <code>additional_tax</code>,
+      <code>total</code>. Kill A: not Form 5330 / IRS / DOL replacement.
+    </p>
+    <p>
+      <label>Transaction id <input id="tx-id" placeholder="uuid" /></label>
+    </p>
+    <button type="button" id="run-forecast">Run forecast</button>
+    <pre id="out"></pre>
+    <p>
+      <a href="/transactions.html">Transactions catalog</a> ·
+      <a href="/money-honesty.html">Money honesty</a>
+    </p>
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const token =
+          params.get("token") || localStorage.getItem("ptax4975_token") || "";
+        const orgId =
+          params.get("orgId") || localStorage.getItem("ptax4975_orgId") || "";
+        const idInput = document.getElementById("tx-id");
+        const out = document.getElementById("out");
+        if (params.get("id")) idInput.value = params.get("id");
+
+        document.getElementById("run-forecast").addEventListener("click", function () {
+          if (!token || !orgId || !idInput.value) {
+            out.textContent = "Need token, orgId, and transaction id (Bearer + /forecast).";
+            return;
+          }
+          fetch(
+            "/orgs/" +
+              encodeURIComponent(orgId) +
+              "/transactions/" +
+              encodeURIComponent(idInput.value) +
+              "/forecast",
+            {
+              method: "POST",
+              headers: { Authorization: "Bearer " + token },
+            },
+          )
+            .then(function (r) {
+              return r.json().then(function (j) {
+                return { status: r.status, j: j };
+              });
+            })
+            .then(function (res) {
+              out.textContent = JSON.stringify(res.j, null, 2);
+            })
+            .catch(function (e) {
+              out.textContent = String(e);
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>

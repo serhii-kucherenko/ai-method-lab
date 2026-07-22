@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ptax4975 — money honesty</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 2rem 1.25rem;
+        max-width: 36rem;
+        margin-inline: auto;
+        color: #1c1a18;
+        background: #f3efe9;
+      }
+      h1 { margin: 0 0 0.5rem; }
+      .warn {
+        border-left: 4px solid #8a4b12;
+        padding: 0.75rem 1rem;
+        background: #fff8ef;
+      }
+      a { color: #8a4a28; }
+    </style>
+  </head>
+  <body>
+    <h1>ptax4975 honesty</h1>
+    <p>
+      Forecast IRC § 4975 prohibited-transaction excise as
+      <strong>15% × year-parts</strong> (first tier) then
+      <strong>100%</strong> additional tax if uncorrected — not a flat “15% once”
+      happy path. Returns <code>initial_tax</code>, <code>additional_tax</code>,
+      and <code>total</code>.
+    </p>
+    <div class="warn">
+      <strong>Kill A:</strong> Tax counsel and Form 5330 preparers still win
+      commercially. This is a forecast / method experiment — not a Form 5330
+      filing system or IRS / DOL replacement.
+    </div>
+    <p>
+      Toy: $10,000 × 2 year-parts, corrected → <strong>$3,000</strong> initial
+      (additional $0). Same facts uncorrected → <strong>$13,000</strong> total.
+      Flat “15% once” would understate at $1,500.
+    </p>
+    <p>
+      <strong>FMV fence:</strong> v0 optional greater-of two fair-value inputs —
+      not highest fair value during the taxable period.
+    </p>
+    <p>
+      <strong>Taxable-period fence:</strong> year-parts are an explicit input —
+      not automatic notice / assessment / correction end dates.
+    </p>
+    <p>
+      <strong>Excess-compensation fence:</strong> amount is resolved by the
+      caller — not automatic excess-compensation narrowing for service PTs.
+    </p>
+    <p>
+      <a href="/transactions.html">Transactions catalog</a> ·
+      <a href="/transaction-detail.html">Transaction detail</a> ·
+      <a href="/goldens.html">Goldens</a>
+    </p>
+  </body>
+</html>

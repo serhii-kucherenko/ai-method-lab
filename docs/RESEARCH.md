@@ -2,6 +2,12 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 flip → smoke GREEN
+
+Hours hold cleared (`FLIP_PATH_READY`). Opened `projects/ptax4975/` per flip-day script. Smoke scored: **37** tests, **35** dual goldens, honesty + three fences. Product now in **running** (next: crud). Research log stays narrative; build lives under `projects/`.
+
+**Skeptical one-liner:** Flip was real — still not Form 5330; counsel still wins commercially.
+
 ## 2026-07-22 — ptax4975 tick 17: last ~20 minutes under WAIT_HOURS
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 71. Docs only. Framing clock **unchanged**.

@@ -1,0 +1,16 @@
+{
+  "id": "ptax4975-O-corrected-undefined-as-uncorrected",
+  "title": "Missing corrected flag treated as uncorrected (honesty)",
+  "source": "ptax4975-algorithm.md",
+  "input": {
+    "amount_involved": 10000,
+    "year_parts": 1,
+    "flat_excise_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "initial_tax": 1500,
+    "additional_tax": 10000,
+    "total": 11500
+  }
+}

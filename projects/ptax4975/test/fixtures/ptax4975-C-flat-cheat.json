@@ -1,0 +1,15 @@
+{
+  "id": "ptax4975-C-flat-cheat",
+  "title": "Flat excise cheat ignoring year-parts — reject",
+  "source": "ptax4975-algorithm.md anti-pattern",
+  "input": {
+    "amount_involved": 10000,
+    "year_parts": 3,
+    "corrected": true,
+    "flat_excise_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "flat_excise_cheat"
+  }
+}
