@@ -13,4 +13,4 @@
 
 **Decision:** `current_idea` = lesserof. State ≈ `differentiated` / `testable`. **Not** `ready_to_build` until hours hold (≥4h from framing window) + ≥3 research ticks. Architect pack is no longer the missing gate — hours + ticks still are.
 
-**Do not open** `projects/lesserof/` until those clear. Status sheet: `lesserof-POST-DEPOSITGAP-STATUS.md`.
+**Do not open** `projects/lesserof/` until those clear. Status: `lesserof-POST-DEPOSITGAP-STATUS.md`. Preflip: `lesserof-PREFLIP-CHECKLIST.md`. Value gate: `lesserof-VALUE-GATE-DRYRUN.md`.

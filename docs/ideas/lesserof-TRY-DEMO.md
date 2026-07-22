@@ -14,4 +14,4 @@ Do **not** treat a research demo as `product_complete`. Product try pages live u
 
 ## Status
 
-Research demo exists. Seed remains **not activated** (after depositgap; htsroute still holds `current_idea`).
+Research demo exists under `demos/lesserof-try/`. Idea is **active research** (`current_idea`) after depositgap sustain — still **not** `ready_to_build` until hours + preflip checklist clear (`lesserof-PREFLIP-CHECKLIST.md`).

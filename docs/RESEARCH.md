@@ -1,6 +1,15 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 â€” lesserof hours-wait preflip checklist (tick 4)
+
+Ticks (â‰¥3) and architect pack are already clear. Hours since framing (~0.2h at write) are **not**.
+
+- Wrote `lesserof-PREFLIP-CHECKLIST.md` â€” the flip gate list for when â‰¥4h elapses.
+- Refreshed `lesserof-TRY-DEMO.md` status (active research, not ready_to_build).
+- Value-gate dry run still says: continue as stacked-cap **method product**, do not park tonight.
+- **Explicit non-actions:** no `projects/lesserof/`; do not fake the framing clock.
+
 
 ## 2026-07-22 ? lesserof architect pack (research tick 2)
 
@@ -1015,12 +1024,12 @@ Human: granularity is **hours**, not days. Keep going.
 
 **Skeptical one-liner:** Waiting for a calendar flip was theater; parking a Free/Free fixture farm is the real depth move.
 
-## 2026-07-21 — lesserof research tick 3 (value gate + framing clock fix)
+## 2026-07-21 ï¿½ lesserof research tick 3 (value gate + framing clock fix)
 
 Loop alive (pid 26872). depositgap sustained; lesserof `current_idea`.
 
-- Wrote `lesserof-VALUE-GATE-DRYRUN.md` — stack claim survives as method experiment; Kill A stands; do not park unless ACE-replacement slips in
-- Corrected `framing_started_at` to real activation (2026-07-22T01:07:23Z / 18:07 PDT) — prior stamp was in the future
+- Wrote `lesserof-VALUE-GATE-DRYRUN.md` ï¿½ stack claim survives as method experiment; Kill A stands; do not park unless ACE-replacement slips in
+- Corrected `framing_started_at` to real activation (2026-07-22T01:07:23Z / 18:07 PDT) ï¿½ prior stamp was in the future
 - Architect pack already on file; `research_ticks_on_idea` ? 3; hours still open (~0.2h elapsed)
 - Kits + lesserof dual still green
 
