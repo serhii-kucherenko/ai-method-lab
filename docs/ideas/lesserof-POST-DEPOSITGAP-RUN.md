@@ -39,6 +39,7 @@ node docs/ideas/check-lesserof-dual.mjs
 
 Stay research / park / kill — write why in `docs/RESEARCH.md`.
 
-## Explicit non-actions (2026-07-21)
+## Explicit non-actions (superseded 2026-07-22)
 
-Do not run this as a flip today. htsroute still owns the slot; depositgap is still preferred next.
+Historical: do not flip while htsroute/depositgap owned the slot.  
+**Now:** depositgap sustained — use `lesserof-POST-DEPOSITGAP-STATUS.md` for the live checklist. Still no product folder until hours + architect pack + honest G6.

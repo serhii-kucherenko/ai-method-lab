@@ -1,6 +1,16 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 ‚Äî lesserof post-depositgap research tick
+
+depositgap is **sustained**. lesserof is `current_idea` (research only).
+
+- Re-ran checkers: **23/23** fixtures + dual-impl green.
+- Wrote `lesserof-POST-DEPOSITGAP-STATUS.md`; refreshed GATE-SCORECARD + G6 decision (activate research, **not** ready_to_build).
+- Kill A still stands; Challenge D soft-survives only as stacked-cap workflow experiment.
+- Architect pack (VISION/ROADMAP/PRD/ERD) still missing ‚Äî next ticks after hours hold.
+- **Explicit non-actions:** no `projects/lesserof/`; no ACE/broker replacement claims.
+
 
 ## 2026-07-19 ? Lab bootstrapped
 
@@ -473,7 +483,7 @@ Expanded blueprint into `docs/ideas/htsroute-PAGE-SPECS.md`: per-page route path
 
 Still **no** `projects/htsroute/`. Paper only until day-boundary ready_to_build.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #1
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #1
 
 First live 15m sentinel. Same-day build still blocked. Material work:
 
@@ -481,7 +491,7 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 - `depositgap-STATUTE-CITATIONS.md` ? primary ? 1677g + 19 CFR 351.212(e); toy underpayment **$150,000** before interest
 - Loop pid 27600 left alone (do not re-arm)
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #2
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #2
 
 - Closed lesserof cite gaps: **19 CFR 190.31** (direct-ID unused = 99% of paid, no lesser-of) + **19 U.S.C. 4534** scope/carve-outs (calc still 182.44)
 - Updated G5 encoding notes for ibuprofen/aspirin pairs (#34?#37)
@@ -492,14 +502,14 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 
 `AGENT_LOOP_TICK_depth_keepgoing` fired (pid 29556 left alone). Wrote `depositgap-algorithm.md` (deposit vs assessed + interest window +  toy). htsroute still same-day no-build. Parallel seed only.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #3
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #3
 
 - lesserof: cited CBP TFTEA NPRM **83 FR 37886** lesser-of agency prose + per-unit examples (closes primary walkthrough gap partially)
 - depositgap: quoted **19 U.S.C. 1673f(b)** deposit vs final + interest cross-ref
 - Stubbed `ptax4975-SEED.md`
 - No product; loop 27600 not re-armed
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #4
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #4
 
 - depositgap: illustrative interest **$10,500** on $150k underpayment @ IRS 6621 underpayment **7%** (2026 Q3); caveat = not CBP day-count liquidation math
 - Day-boundary checklist now requires comprehensive blueprint / page specs / phase briefs / sustain matrix
@@ -514,14 +524,14 @@ First live 15m sentinel. Same-day build still blocked. Material work:
 
 Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over deposit, skip-interest cheat, zero value). Checker green. Seed only ? not activated; htsroute still current_idea.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #5
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #5
 
 - depositgap Kill A/B/C paper (`depositgap-challenge-ABC.md`) ? commercial Kill A stands
 - Quoted CVD twin **19 U.S.C. 1671f**; fixture **E** CVD underdeposit green (5 fixtures)
 - Calendar still 2026-07-21 ? no ready flip; no `projects/`
 - Loop 27600 not re-armed
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #6
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #6
 
 - Added `check-depositgap-dual.mjs` ? two independent true-up impls agree on all **5** fixtures
 - Still seed-only; htsroute current_idea; calendar 2026-07-21 blocks ready flip
@@ -531,14 +541,14 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 3 (pid 29556 left alone). Encoded depositgap F-J (all-others underdeposit, same-day zero interest, inverted dates, negative rate, matched-rates zero delta). Case map `depositgap-G5-cases.md` names K-Y toward 25+. Checkers: **10/10** single + dual green. Still seed only; htsroute same-day no-build.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #7
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #7
 
 - Encoded **4** lesserof paper fixtures (substitution bind, direct-ID uncapped, USMCA zero, basket-other reject) + `check-lesserof-fixtures.mjs` green
 - depositgap suite still **10** + dual-impl green (prior tick)
 - Still seed-only for lesserof/depositgap; htsroute current_idea; same-day build blocked
 - Loop 27600 not re-armed
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #8
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #8
 
 - lesserof dual-impl green (4 fixtures)
 - Wrote `htsroute-HYPOTHESIS-DRAFT.md` for post day-boundary paste into product
@@ -549,21 +559,21 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 4 (pid 29556 left alone). Encoded depositgap K-S (leap year, multi-year, tiny value, large refund, rate-class other, missing/negative rate rejects, skip-interest underdeposit reject, zero APR). Tightened algorithm: missing interest rate rejects; `skip_interest` with days > 0 always rejects. Checkers: **19/19** single + dual green. Still seed only; htsroute same-day no-build.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #8 (lesserof E?J)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #8 (lesserof E?J)
 
 - Encoded lesserof **E?J** (no-bind, equal columns, USMCA partner-higher, force-lesserof-on-direct-id reject, skip-lesserof-on-substitution reject, basket 10-digit eligible)
 - Honesty gates in both checkers; suite **10/10** single + dual green
 - Still seed-only; htsroute current_idea; calendar 2026-07-21 blocks ready flip
 - Loop 27600 not re-armed
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #9
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #9
 
 - Encoded depositgap **T?W** (fractional rates, AD/CVD parity, one-day window, ten-year toy)
 - Documented X/Y as product-phase notes ? G5 ?25 bar met on paper (**23** encoded + 2 notes)
 - Checkers **23/23** single + dual green; still seed; htsroute same-day no-build
 - Loop 27600 not re-armed
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #10
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #10
 
 - Encoded lesserof **K?P** (relabel cheat reject, two-line independence, USMCA mid-cap, negative/unknown/zero hygiene)
 - Suite **16/16** single + dual green; still seed; htsroute same-day no-build
@@ -573,14 +583,14 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 5 (pid 29556 left alone). Wrote `depositgap-G6-summary.md` + `depositgap-PAGE-SPECS.md` (seed framing readiness; prefer depositgap next after htsroute). Encoded lesserof Q-U (USMCA missing-partner reject, negative substitute, tiny line, multi-line basket fail, zero substitute). Suite **21/21** single + dual green. Still no product; htsroute same-day no-build.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #11
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #11
 
 - Encoded lesserof **V?W** (USMCA-on-direct-ID reject; large-duties precision)
 - Documented X/Y product-phase notes ? G5 ?25 bar met on paper (**23** + 2 notes)
 - Suite **23/23** single + dual green; still seed; htsroute same-day no-build
 - Loop 27600 not re-armed
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #12
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #12
 
 - Opened **oshamult** depth: algorithm + Kill A/B/C + G5 map
 - Encoded fixtures A?F (serial GBP toy, size-on-willful/repeat rejects, statutory-max cheat reject)
@@ -591,7 +601,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 6 (pid 29556 left alone). Wrote `depositgap-PHASE-BRIEFS.md` + `depositgap-SUSTAIN-TEST-MATRIX.md` (~62 sustain floor). Unified oshamult checkers for pct + employee fixture shapes; suite **10/10** single + dual green (A-J). Still no product; htsroute same-day no-build.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #13
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #13
 
 - Encoded oshamult **K?P** (additive cheat, FTA good-faith/QF rejects, bad pct, willful history-only, history+faith)
 - Suite **16/16** single + dual green; still seed; prefer depositgap after htsroute
@@ -601,19 +611,19 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 7 (pid 29556 left alone). oshamult suite **26/26** single + dual green (G5 >=25 met). Wrote `depositgap-API-CONTRACT.md` + `depositgap-HYPOTHESIS-DRAFT.md`. Opened `ptax4975` algorithm + fixtures A-E (**5** green). Still no product; htsroute same-day no-build.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #14
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #14
 
 - Grew oshamult through W/X/Y paths; deduped colliding letter ids
-- Suite **26/26** single + dual green ù G5 =25 bar met on paper
+- Suite **26/26** single + dual green ÔøΩ G5 =25 bar met on paper
 - Still seed; htsroute same-day no-build; loop 27600 not re-armed
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #15
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #15
 
-- Grew **ptax4975** to fixtures AùJ + dual-impl + Kill A/B/C + G5 map
+- Grew **ptax4975** to fixtures AÔøΩJ + dual-impl + Kill A/B/C + G5 map
 - Suite **10/10** single + dual green; still seed; prefer depositgap after htsroute
 - Loop 27600 not re-armed
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #16
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #16
 
 - Grew **ptax4975** through greater-of FMV + year-part edges; suite **35/35** dual-green
 - G5 =25 bar met on paper; still seed; prefer depositgap after htsroute
@@ -621,26 +631,26 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 ## 2026-07-21 -- 30m loop tick 8: ptax4975 G5 + depositgap acceptance + oshamult G6
 
-`AGENT_LOOP_TICK_depth_keepgoing` occurrence 8 (pid 29556 left alone). Grew ptax4975 through greater-of FMV / honesty rejects ù suite **35/35** single + dual green (G5 met). Wrote `depositgap-ACCEPTANCE.md` and `oshamult-G6-summary.md`. Still no product; htsroute same-day no-build.
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 8 (pid 29556 left alone). Grew ptax4975 through greater-of FMV / honesty rejects ÔøΩ suite **35/35** single + dual green (G5 met). Wrote `depositgap-ACCEPTANCE.md` and `oshamult-G6-summary.md`. Still no product; htsroute same-day no-build.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #17
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #17
 
 - Wrote lesserof-G6-summary.md + ACTIVATION_QUEUE.md (htsroute ? depositgap ? lesserof ? oshamult ? ptax4975)
 - Reaffirmed htsroute READY-DRYRUN: still same-day block (2026-07-21)
 - Digest sent (research lined up; wait one more day before building)
 - Loop 27600 not re-armed
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #18
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #18
 
 - Wrote ptax4975-G6-summary.md + htsroute-TOMORROW-RUN.md (executable day-boundary sheet for 2026-07-22)
-- Re-ran all seed checkers: htsroute 36, depositgap 23, lesserof 23, oshamult 26, ptax4975 35 ù all green
+- Re-ran all seed checkers: htsroute 36, depositgap 23, lesserof 23, oshamult 26, ptax4975 35 ÔøΩ all green
 - Same-day build still blocked; loop 27600 not re-armed
 
 ## 2026-07-21 -- 30m loop tick 9: activation readiness pack
 
-`AGENT_LOOP_TICK_depth_keepgoing` occurrence 9 (pid 29556 left alone). Wrote depositgap TRY-DEMO note, lesserof ACCEPTANCE, oshamult comprehensive blueprint stub; expanded ACTIVATION_QUEUE with tomorrow flip procedure. Re-checked suites: depositgap 23, lesserof 23, oshamult 26, ptax4975 35, htsroute 36 ù all green. Still no product; same-day build blocked.
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 9 (pid 29556 left alone). Wrote depositgap TRY-DEMO note, lesserof ACCEPTANCE, oshamult comprehensive blueprint stub; expanded ACTIVATION_QUEUE with tomorrow flip procedure. Re-checked suites: depositgap 23, lesserof 23, oshamult 26, ptax4975 35, htsroute 36 ÔøΩ all green. Still no product; same-day build blocked.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #19
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #19
 
 - Wrote `oshamult-ACCEPTANCE.md`, `ptax4975-ACCEPTANCE.md`, `ptax4975-COMPREHENSIVE-BLUEPRINT.md`
 - Activation queue now has acceptance bars for all four parallel seeds
@@ -650,31 +660,31 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 10 (pid 29556 left alone). Wrote lesserof phase briefs + page specs; oshamult/ptax4975 phase briefs; `CHECKER_SNAP.md`. Re-verified dual-green: htsroute 36, depositgap 23, lesserof 23, oshamult 26, ptax4975 35. Still no product; same-day build blocked (use `htsroute-TOMORROW-RUN.md` on 2026-07-22).
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #20
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #20
 
 - Added `check-all-seeds.mjs` preflight + `SEED_READINESS.md` (all 5 suites dual-green)
 - lesserof try-demo note; tomorrow run sheet points at preflight
 - Same-day build still blocked; loop 27600 not re-armed
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #21
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #21
 
 - Wrote hypothesis drafts + try-demo notes for lesserof / oshamult / ptax4975
 - `SEED_READINESS.md` now shows full paper kit for all five ideas
 - Same-day build still blocked; loop 27600 not re-armed
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #22
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #22
 
 - Wrote PAGE-SPECS + SUSTAIN-TEST-MATRIX for lesserof, oshamult, ptax4975
 - Seed readiness table now complete for all queued ideas
 - Same-day build still blocked; loop 27600 not re-armed
 ## 2026-07-21 -- 30m loop tick 11: depositgap day-count lock
 
-`AGENT_LOOP_TICK_depth_keepgoing` occurrence 11 (pid 29556 left alone). Wrote `depositgap-DAY-COUNT.md` (sec 1677g order-publication to liquidation vs delinquency interest; v0 stays simple day toy). Added `lesserof-SUSTAIN-TEST-MATRIX.md`. Re-ran `check-all-seeds.mjs` ù all 5 dual-green. READY-DRYRUN reaffirmed: calendar still 2026-07-21 only blocker. No product.
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 11 (pid 29556 left alone). Wrote `depositgap-DAY-COUNT.md` (sec 1677g order-publication to liquidation vs delinquency interest; v0 stays simple day toy). Added `lesserof-SUSTAIN-TEST-MATRIX.md`. Re-ran `check-all-seeds.mjs` ÔøΩ all 5 dual-green. READY-DRYRUN reaffirmed: calendar still 2026-07-21 only blocker. No product.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #23
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #23
 
 - Wrote API contracts for lesserof, oshamult, ptax4975 (matching depositgap / htsroute shape)
 - Seed readiness table now includes API column for all five
 - Same-day build still blocked; loop 27600 not re-armed
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #24
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #24
 
 - Locked OSHA FOM Table 6-2 size buckets from live chapter-6 HTML; documented HTML vs v0 serial-order honesty debt
 - Wrote depositgap-POST-HTSROUTE-RUN.md for activation after htsroute clears
@@ -683,9 +693,9 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 ## 2026-07-21 -- 30m loop tick 12: flip abort + ptax cites
 
-`AGENT_LOOP_TICK_depth_keepgoing` occurrence 12 (pid 29556 left alone). Refreshed htsroute gate scorecard to **36** fixtures; wrote `htsroute-FLIP-ABORT.md` and wired it into ACTIVATION_QUEUE / READY-DRYRUN. Closed ptax4975 statute gap with `ptax4975-STATUTE-CITATIONS.md` (ù 4975(f)(4), Temp. ù 141.4975-13, Rev. Rul. 2006-38). Re-ran `check-all-seeds.mjs` ù all 5 dual-green. Calendar still **2026-07-21**; no product; do not flip.
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 12 (pid 29556 left alone). Refreshed htsroute gate scorecard to **36** fixtures; wrote `htsroute-FLIP-ABORT.md` and wired it into ACTIVATION_QUEUE / READY-DRYRUN. Closed ptax4975 statute gap with `ptax4975-STATUTE-CITATIONS.md` (ÔøΩ 4975(f)(4), Temp. ÔøΩ 141.4975-13, Rev. Rul. 2006-38). Re-ran `check-all-seeds.mjs` ÔøΩ all 5 dual-green. Calendar still **2026-07-21**; no product; do not flip.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #25
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #25
 
 - Wrote depositgap-VALUE-STAKES.md (honest ~$160,500 surprise toy; Kill A; day-count fence)
 - Wrote lesserof-POST-DEPOSITGAP-RUN.md; ptax4975-FMV-FENCE.md
@@ -693,7 +703,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 - check-all-seeds still all 5 dual-green; same-day build blocked; loop 27600 not re-armed
 
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #26
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #26
 
 - Wrote lesserof-VALUE-STAKES + oshamult-VALUE-STAKES
 - Expanded oshamult/ptax COMPREHENSIVE-BLUEPRINT from stubs to phase/feature bar
@@ -703,10 +713,10 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 ## 2026-07-21 -- 30m loop tick 13: htsroute preflip + queue chain
 
-`AGENT_LOOP_TICK_depth_keepgoing` occurrence 13 (pid 29556 left alone). Added `check-htsroute-preflip.mjs` (calendar + dual-green; blocked today on same-day policy). Wrote `ptax4975-POST-OSHAMULT-RUN.md`; wired full activation run-sheet chain into TOMORROW-RUN / ACTIVATION_QUEUE. Re-ran `check-all-seeds.mjs` ù all 5 dual-green. READY-DRYRUN: calendar still only blocker. No product.
+`AGENT_LOOP_TICK_depth_keepgoing` occurrence 13 (pid 29556 left alone). Added `check-htsroute-preflip.mjs` (calendar + dual-green; blocked today on same-day policy). Wrote `ptax4975-POST-OSHAMULT-RUN.md`; wired full activation run-sheet chain into TOMORROW-RUN / ACTIVATION_QUEUE. Re-ran `check-all-seeds.mjs` ÔøΩ all 5 dual-green. READY-DRYRUN: calendar still only blocker. No product.
 
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #27
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #27
 
 - Wrote PRODUCT-FRAMING for depositgap / lesserof / oshamult / ptax4975
 - depositgap-GATE-SCORECARD + ptax4975-VALUE-STAKES
@@ -715,7 +725,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #28
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #28
 
 - Gate scorecards for lesserof / oshamult / ptax4975
 - Added check-seed-kits.mjs (all 5 paper kits complete)
@@ -727,7 +737,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 14 (pid 29556 left alone). Wrote `QUEUE-ISO-AUDIT.md` (unique rule per queued idea) and `htsroute-DAY1-NONSMOKE.md`; wired into TOMORROW-RUN / FLIP-ABORT. Added depositgap G5 product-phase note Z (sec 1505(d) delinquency conflation). Preflip still calendar-blocked; `check-all-seeds.mjs` all 5 dual-green. No product.
 
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #29
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #29
 
 - Wrote depositgap-DAY1-NONSMOKE + lesserof-DAY1-NONSMOKE
 - Synced BACKLOG fixture counts (htsroute 36); kit checker requires day-1 + iso audit
@@ -735,7 +745,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #30
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #30
 
 - Wrote oshamult/ptax DAY1-NONSMOKE; htsroute-FLIP-MORNING pocket list
 - All five seeds now have day-1 non-smoke contracts in kit checker
@@ -747,7 +757,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 15 (pid 29556 left alone). Wrote `oshamult-DAY1-NONSMOKE.md` and `ptax4975-DAY1-NONSMOKE.md`; wired into post-activation run sheets. Kit checker + all 5 dual-green pass. Preflip still calendar-blocked. No product.
 
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #31
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #31
 
 - Preflip now runs check-seed-kits.mjs (still blocked on calendar)
 - Wrote htsroute-REPO-SCAFFOLD.md for day-1 tree without opening projects/
@@ -756,7 +766,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #32
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #32
 
 - Wrote depositgap-REPO-SCAFFOLD.md; closed depositgap statute framing checklist
 - Flip-ready digest emailed (Resend id b870b988-c6bb-4bca-a0b8-b087daa5d9fe)
@@ -768,7 +778,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 16 (pid 29556 left alone). Wrote `htsroute-G1-CF29-SEARCH.md` (no public pharma 29/30 CF-29 docket; adjacent 3004?3002 fights out of scope). Finished `lesserof` / `oshamult` / `ptax4975` REPO-SCAFFOLD; kit checker requires them. Preflip still calendar-blocked; all 5 dual-green. No product.
 
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #33
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #33
 
 - Closed claim/code split: mixture + powder/drum ? 3003 (was pellets-only in checkers while ACCEPTANCE said any mixture)
 - Fixtures #38/#39; algorithm + dual routers updated; **38** dual-green
@@ -776,7 +786,7 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #34
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #34
 
 - Aligned demos/htsroute-try MIXED_BULK + mixture-powder preset with tick-33 checkers
 - Sustain matrix G-37/G-38 for fixtures #38/#39
@@ -784,14 +794,14 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #34 (continued)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #34 (continued)
 
 - Folded Eluxadoline/Viberzi same-letter CROSS NY N302614 fixtures #40/#41 (6%?Free)
 - Suite now **40** dual-green; floors bumped
 
 
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #35
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #35
 
 - Try-demo presets for Eluxadoline bulk 6% + Viberzi tablets Free (same letter NY N302614)
 - README teaching table updated; suite still 40 dual-green; calendar block stands
@@ -813,23 +823,23 @@ Encoded **4** depositgap goldens + `check-depositgap-fixtures.mjs` (under/over d
 
 `AGENT_LOOP_TICK_depth_keepgoing` occurrence 21 (pid 29556 left alone). Closed a vanity path: digests must not pitch Section 232 over acetaminophen / ibuprofen / aspirin teaching pairs while proclamation clause (5) keeps **generics** out **at this time**. Deepened `htsroute-STACKED-TARIFF-FENCE.md` (annex PDF pointer, teaching-SKU table, secondary-alert anti-pattern). Challenge D sub-attack 6; try callout + preflip Generic marker; G6 falsifier #6. Suite **42** dual-green; preflip still calendar-blocked. No product.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #45 (human depth signal)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #45 (human depth signal)
 
-Human: portfolio products, tests, research, and digests still feel shallow ù weak value, weak verification; keep going autonomous; emails need try-page + StackBlitz.
+Human: portfolio products, tests, research, and digests still feel shallow ÔøΩ weak value, weak verification; keep going autonomous; emails need try-page + StackBlitz.
 
-**What we did (docs only ù no product):**
+**What we did (docs only ÔøΩ no product):**
 
 - Wrote `docs/DEPTH_RESTART.md` Correction 2 (stop treating kit/fixture farms as bulletproof; raise value bar at flip)
-- Soft abort #4 on `htsroute-FLIP-ABORT.md` + value gate on TOMORROW-RUN / DAY-BOUNDARY: if Challenge D still provisional weak at day-boundary, **park/kill htsroute** and prefer **depositgap** later ù do not build a form-gate costume
-- Deepened depositgap G1 with primary cites + CIT Slip Op. 22-72 (`depositgap-G1-EVIDENCE.md`) ù literal deposit?assessed + ù 1677g interest pain, Kill A still stands
+- Soft abort #4 on `htsroute-FLIP-ABORT.md` + value gate on TOMORROW-RUN / DAY-BOUNDARY: if Challenge D still provisional weak at day-boundary, **park/kill htsroute** and prefer **depositgap** later ÔøΩ do not build a form-gate costume
+- Deepened depositgap G1 with primary cites + CIT Slip Op. 22-72 (`depositgap-G1-EVIDENCE.md`) ÔøΩ literal deposit?assessed + ÔøΩ 1677g interest pain, Kill A still stands
 - Shipped research try demo `demos/depositgap-try/try.html` (+ StackBlitz path) so digests can attach a runnable forecast toy
 - Tightened `protocols/NOTIFY.md`: research digests with a runnable demo should attach try + one playground link
 
-**Decision:** still researching. Same-day build blocked. `htsroute` remains `testable` / not ready_to_build. Suite still 42 dual-green ù count ? value. Next calendar day must pass the new value gate or park.
+**Decision:** still researching. Same-day build blocked. `htsroute` remains `testable` / not ready_to_build. Suite still 42 dual-green ÔøΩ count ? value. Next calendar day must pass the new value gate or park.
 
 **Skeptical one-liner:** We raised the flip bar instead of inventing more fixtures; the stronger dollar story sits on depositgap paper + an offline try page, not on another shallow product folder.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #46 (lesserof dollar demo)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #46 (lesserof dollar demo)
 
 Continued depth without opening products. Parallel seed only.
 
@@ -842,7 +852,7 @@ Continued depth without opening products. Parallel seed only.
 
 **Skeptical one-liner:** Two literal-dollar research demos now exist (deposit true-up + stacked drawback caps); neither is a product, and neither replaces Challenge D honesty on htsroute.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #47 (oshamult demo)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #47 (oshamult demo)
 
 - Wrote `oshamult-G1-EVIDENCE.md` + `demos/oshamult-try/try.html` (serial remaining-balance + willful/repeat/FTA gates; statutory-max and additive cheats reject)
 - Kit checker requires oshamult G1 evidence
@@ -852,24 +862,24 @@ Continued depth without opening products. Parallel seed only.
 
 **Skeptical one-liner:** Three offline research calculators now exist for dollar/serial claims; portfolio product conveyor stays frozen until an idea clears the raised value gate.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #48 (loop re-arm + full demo farm)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #48 (loop re-arm + full demo farm)
 
 User armed `/loop 15m` keep-going (UI green + parallel). Old loop PIDs were dead ? re-armed **pid 26872** (`AGENT_LOOP_TICK_depth_15m`).
 
-- Wrote `demos/smoke-try-demos.mjs` (offline + honesty + default-toy markers) ù **all try demos green**
+- Wrote `demos/smoke-try-demos.mjs` (offline + honesty + default-toy markers) ÔøΩ **all try demos green**
 - Completed `ptax4975-G1-EVIDENCE.md` + `demos/ptax4975-try/try.html` (last seed in queue now has a research try page)
 - All 5 seed paper kits complete; all seed dual-checkers green
 - Same-day build still blocked; no `projects/` opened
 
 **Decision:** still researching. Loop fires every 15m until stopped.
 
-**Skeptical one-liner:** Every queued dollar/serial seed now has an offline try page behind a smoke gate ù still not a product conveyor.
+**Skeptical one-liner:** Every queued dollar/serial seed now has an offline try page behind a smoke gate ÔøΩ still not a product conveyor.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #49 (value-gate dry run + behavioral smoke)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #49 (value-gate dry run + behavioral smoke)
 
 Loop wake (pid 26872). Same-day build still blocked.
 
-- Wrote `htsroute-VALUE-GATE-DRYRUN.md` ù provisional **lean park** if Challenge D stays weak; prefer depositgap later
+- Wrote `htsroute-VALUE-GATE-DRYRUN.md` ÔøΩ provisional **lean park** if Challenge D stays weak; prefer depositgap later
 - Extended `demos/smoke-try-demos.mjs` with behavioral dollar toys (depositgap / lesserof / oshamult / ptax4975)
 - Wired try-demo smoke into `check-htsroute-preflip.mjs` (preflip still calendar-blocked today; smoke PASS)
 - All 5 seed suites dual-green; smoke green
@@ -878,11 +888,11 @@ Loop wake (pid 26872). Same-day build still blocked.
 
 **Skeptical one-liner:** Fixture count stays vanity until day-boundary honesty; the dry run already leans park over a Free/Free form-gate product.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #50 (htsroute vs depositgap value)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #50 (htsroute vs depositgap value)
 
 Loop wake #2 (pid 26872). Same-day build still blocked.
 
-- Wrote `htsroute-vs-depositgap-VALUE.md` ù head-to-head: Free/Free form-gate vs ~$160.5k deposit true-up toy
+- Wrote `htsroute-vs-depositgap-VALUE.md` ÔøΩ head-to-head: Free/Free form-gate vs ~$160.5k deposit true-up toy
 - Morning checklist now forces Build vs Park after that memo + dry run
 - Smoke locks leap-year interest toy (fixture K: 366d @ 8%)
 - `depositgap-POST-HTSROUTE-RUN.md` requires try-demo smoke before activation
@@ -891,7 +901,7 @@ Loop wake #2 (pid 26872). Same-day build still blocked.
 
 **Skeptical one-liner:** Putting the dollar contrast on one page makes fixture-farm flip excuses harder to hide.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #51 (provisional park draft)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #51 (provisional park draft)
 
 Loop wake #3 (pid 26872). Same-day build still blocked.
 
@@ -901,13 +911,13 @@ Loop wake #3 (pid 26872). Same-day build still blocked.
 
 **Decision:** still researching. No product folder. Tomorrow: confirm park or override as method-stress only.
 
-**Skeptical one-liner:** Morning should not invent a flip story under time pressure ù the park lean is written down tonight.
+**Skeptical one-liner:** Morning should not invent a flip story under time pressure ÔøΩ the park lean is written down tonight.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #52 (park run sheet)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #52 (park run sheet)
 
 Loop wake #4 (pid 26872). Same-day build still blocked.
 
-- Wrote `htsroute-PARK-RUN.md` ù mechanical soft-abort #4 steps (no freestyle CONTROLLER edits tomorrow)
+- Wrote `htsroute-PARK-RUN.md` ÔøΩ mechanical soft-abort #4 steps (no freestyle CONTROLLER edits tomorrow)
 - Wired park sheet into morning / abort / day-boundary
 - htsroute try smoke now requires Free/Free + duty-savings honesty + annex dates
 
@@ -915,11 +925,11 @@ Loop wake #4 (pid 26872). Same-day build still blocked.
 
 **Skeptical one-liner:** A park without a run sheet becomes another shallow flip by accident tomorrow.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #53 (6621 fence + morning status)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #53 (6621 fence + morning status)
 
 Loop wake #5 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
 
-- Wrote `depositgap-6621-FENCE.md` ù single-rate stand-in; mid-window ù 6621 changes out of v0
+- Wrote `depositgap-6621-FENCE.md` ÔøΩ single-rate stand-in; mid-window ÔøΩ 6621 changes out of v0
 - depositgap try honesty + smoke require **6621** marker
 - Added `check-morning-status.mjs` diagnostic for tomorrow (WAIT / PARK path / BUILD gate)
 - Refreshed `CHECKER_SNAP.md`
@@ -928,35 +938,35 @@ Loop wake #5 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
 
 **Skeptical one-liner:** Closing the mid-window rate lie early beats adding more green fixtures.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #54 (lesserof USMCA wipe)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #54 (lesserof USMCA wipe)
 
 Loop wake #6 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
 
-- Wrote `lesserof-USMCA-WIPE-FENCE.md` ù TFTEA then USMCA can wipe to **$0** (naive overclaim +$9,900)
+- Wrote `lesserof-USMCA-WIPE-FENCE.md` ÔøΩ TFTEA then USMCA can wipe to **$0** (naive overclaim +$9,900)
 - Smoke locks USMCA wipe toy; try disclaimer points at fence
 - Added `demos/INDEX.md` StackBlitz map for digests
 
-**Decision:** still researching. Queue unchanged: park lean htsroute ù depositgap ù lesserof.
+**Decision:** still researching. Queue unchanged: park lean htsroute ÔøΩ depositgap ÔøΩ lesserof.
 
-**Skeptical one-liner:** Stacked refund caps stay a second-seat dollar seed ù not a reason to jump htsroute/depositgap tonight.
+**Skeptical one-liner:** Stacked refund caps stay a second-seat dollar seed ÔøΩ not a reason to jump htsroute/depositgap tonight.
 
-## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #55 (oshamult serial fence)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #55 (oshamult serial fence)
 
 Loop wake #7 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
 
-- Wrote `oshamult-SERIAL-FENCE.md` ù statutory-max / additive / willful gates
+- Wrote `oshamult-SERIAL-FENCE.md` ÔøΩ statutory-max / additive / willful gates
 - Smoke locks additive miss (~$2,250 vs serial $2,677.50)
 - Try disclaimer points at fence
 
-**Decision:** still researching. Queue: park lean ù depositgap ù lesserof ù oshamult.
+**Decision:** still researching. Queue: park lean ÔøΩ depositgap ÔøΩ lesserof ÔøΩ oshamult.
 
 **Skeptical one-liner:** Serial remaining-balance is the claim; additive % toys are the lie we refuse.
 
-## 2026-07-21 ó AGENT_LOOP_TICK_depth_15m #56 (agent roles + depositgap architect pack)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #56 (agent roles + depositgap architect pack)
 
 Human steer: need researcher / senior architect / product delivery so products get vision ? roadmap ? PRD ? ERD ? phased delivery (not one-page HTML). Loop pid 26872 left alone (alive). Same-day build still blocked (`WAIT_SAME_DAY`).
 
-- Wrote `protocols/AGENT_ROLES.md` ó handoff order + UI never-broken gate
+- Wrote `protocols/AGENT_ROLES.md` ÔøΩ handoff order + UI never-broken gate
 - Wired roles into controller, idea depth, product runbook, comprehensive bar, workflow, AGENTS, depth restart
 - Senior-architect paper for depositgap: VISION, ROADMAP, PRD, ERD (kit now 18 artifacts)
 - Audit: sustained products still API-only (`node:test`); docs now fail sustain without UI critical path
@@ -964,9 +974,9 @@ Human steer: need researcher / senior architect / product delivery so products g
 
 **Decision:** still researching. No product folder. Tomorrow: htsroute Build vs Park; if park ? later tick activate depositgap with architect pack already on file.
 
-**Skeptical one-liner:** Roles on paper only matter if tomorrow refuses to open a product without vision/roadmap/PRD/ERD ó and refuses API-green calculator shells.
+**Skeptical one-liner:** Roles on paper only matter if tomorrow refuses to open a product without vision/roadmap/PRD/ERD ÔøΩ and refuses API-green calculator shells.
 
-## 2026-07-21 ó AGENT_LOOP_TICK_depth_15m #57 (ptax4975 FMV / second-tier smoke)
+## 2026-07-21 ÔøΩ AGENT_LOOP_TICK_depth_15m #57 (ptax4975 FMV / second-tier smoke)
 
 Loop wake #8 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
 
@@ -978,7 +988,7 @@ Loop wake #8 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
 
 **Skeptical one-liner:** Excise toys without a second-tier / FMV miss are just another green calculator costume.
 
-## 2026-07-21 ó AGENT_LOOP tick #58 (hours + htsroute PARK)
+## 2026-07-21 ÔøΩ AGENT_LOOP tick #58 (hours + htsroute PARK)
 
 Human: granularity is **hours**, not days. Keep going.
 

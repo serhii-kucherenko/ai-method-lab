@@ -1,7 +1,7 @@
 # lesserof — parallel research seed (not active)
 
 **State:** `seed`  
-**Slot rule:** htsroute owns `framed`→`ready_to_build`. This file is research-log only until htsroute clears, kills, or parks.
+**Slot rule (updated 2026-07-22):** depositgap sustained; lesserof owns `current_idea` research. Still **not** `ready_to_build` — see `lesserof-POST-DEPOSITGAP-STATUS.md`.
 
 ## One-line itch
 

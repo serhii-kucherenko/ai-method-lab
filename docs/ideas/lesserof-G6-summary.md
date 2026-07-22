@@ -1,6 +1,6 @@
 # Research summary — lesserof (G6)
 
-Skeptical senior-eng bar. Seed-only memo. **Do not activate** while `htsroute` holds `current_idea`. Prefer **depositgap** first after that slot clears; this seed is second.
+Skeptical senior-eng bar. **Active research idea** after depositgap sustained (2026-07-22). Not `ready_to_build` yet.
 
 ## 1. Problem
 
@@ -41,10 +41,17 @@ Export manufacturers forecast drawback refunds as “99% of duty paid.” For **
 
 ## 7. Decision
 
-**Do not build / do not activate yet.**
+**Do not build yet** — but **activate research**: `current_idea` = lesserof after depositgap sustain (2026-07-22).
 
-Reasons: htsroute owns the slot; Kill A stands; prefer **depositgap** next when the slot frees.
+Still blocked from `ready_to_build` by:
+
+1. Kill A stands (brokers/ACE win commercially) — product may only be a stacked-cap **workflow experiment**
+2. Hours + tick hold (`min_hours_research_before_ready: 4`, `min_research_ticks_before_ready: 3`)
+3. Architect pack missing (VISION / ROADMAP / PRD / ERD)
+4. G6 must stay honest: no ACE replacement; no ×0.99-only widget
+
+See `lesserof-POST-DEPOSITGAP-STATUS.md`.
 
 ## Explicit non-actions
 
-No `projects/lesserof/` while htsroute is current. Digests must say workflow experiment.
+No `projects/lesserof/` this window. Digests must say workflow experiment.
