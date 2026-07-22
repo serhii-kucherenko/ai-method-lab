@@ -1,6 +1,14 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof preflip dry-run (tick 19)
+
+Hours hold ~3.7h of 4h (~0.27h left). `check-lesserof-hour-status.mjs` → `WAIT_HOURS`.
+
+- Wrote `lesserof-PREFLIP-DRYRUN-TICK19.md`: rows 2–10 green; only hours open.
+- Value-gate + digest hold line synced (25 fixtures; nearly clear).
+- **Explicit non-actions:** no `projects/lesserof/`; no framing-clock move.
+
 ## 2026-07-22 — lesserof day-1 commit order (tick 18)
 
 Hours hold ~3.5h of 4h (~0.5h left). `check-lesserof-hour-status.mjs` → `WAIT_HOURS`.

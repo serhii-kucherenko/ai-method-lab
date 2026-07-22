@@ -18,7 +18,7 @@ Use when emailing a research milestone or (later) product phases. Plain language
 
 ## Research hold status line
 
-Still waiting on the **hours hold** before any build. Architect pack and depth suite are already on file. No product folder yet.
+Hours hold nearly clear (~0.3h as of tick 19). Architect pack and depth suite are on file. No product folder yet. Flip only when hour-status prints `FLIP_PATH_READY`.
 
 ## Try links (research demo only)
 

@@ -13,7 +13,7 @@ Does stacked TFTEA + USMCA + basket/direct-ID claim support an honest multi-page
 | Unique domain claim | **Pass** — stack + wipe-to-zero + basket-other trap ≠ depositgap / dual-gate |
 | Commercial / dollar value | **Provisional weak commercially** (Kill A: brokers/ACE already claim) but **literal miss dollars** are teachable (+$5,940 / +$3,960 / +$9,900 toys) |
 | Method-stress value | Survives as workflow experiment if digests forbid ACE replacement and ×0.99-only widgets |
-| Fixture farm temptation | High — 23 dual-green ≠ demand |
+| Fixture farm temptation | High — 25 dual-green ≠ demand |
 | Architect pack | On file (VISION/ROADMAP/PRD/ERD) |
 
 ## Recommendation
