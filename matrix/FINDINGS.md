@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — ptax4975 P-workflow GREEN
+
+- Cell `A03__P-workflow-001__ptax4975__r1`. 39 tests; batch independence; audit CSV; auditor 403 on batch. Next: integrate.
+
 ## 2026-07-22 — ptax4975 P-crud GREEN
 
 - Cell `A03__P-crud-001__ptax4975__r1`. 38 tests; PATCH + auditor 403; tier forecast after patch. Next: workflow.

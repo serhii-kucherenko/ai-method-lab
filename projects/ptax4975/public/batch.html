@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ptax4975 — Batch forecast</title>
+    <style>
+      body {
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 2rem 1.5rem;
+        background: #eef2f5;
+        color: #1c2430;
+      }
+      .brand { color: #1f5f8b; font-weight: 700; font-size: 1.5rem; }
+      h1 { font-size: 1.2rem; }
+      a { color: #1f5f8b; }
+      #status { color: #4d5a6a; margin: 1rem 0; }
+      textarea {
+        width: min(36rem, 100%);
+        min-height: 6rem;
+        font-family: ui-monospace, monospace;
+        padding: 0.5rem;
+      }
+      button {
+        background: #1f5f8b;
+        color: #fff;
+        border: 0;
+        padding: 0.6rem 1.1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 0.75rem;
+      }
+      #batch-results {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+        max-width: 40rem;
+      }
+      #batch-results li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #c5ced8;
+        font-family: ui-monospace, monospace;
+        font-size: 0.9rem;
+      }
+      .ok { color: #1a6b4a; }
+      .reject { color: #8a3b2c; }
+    </style>
+  </head>
+  <body>
+    <div class="brand">ptax4975</div>
+    <h1>Batch forecast</h1>
+    <p>
+      Queue transaction ids; each 15%×year-parts run is independent. One reject
+      does not rewrite siblings.
+    </p>
+    <p id="status">Provide token and org, then run.</p>
+    <label for="tx-ids">Transaction ids (one per line or comma-separated)</label>
+    <br />
+    <textarea id="tx-ids" placeholder="uuid-1&#10;uuid-2"></textarea>
+    <br />
+    <button id="run-batch" type="button">Run batch forecast</button>
+    <ul id="batch-results" data-batch="live"></ul>
+    <p>
+      <a href="/transactions.html">Catalog</a> ·
+      <a href="/audit.html">Audit</a> ·
+      <a href="/money-honesty.html">Money honesty</a>
+    </p>
+    <p>
+      Kill A: counsel and Form 5330 preparers still win. Forecast / method
+      experiment — not Form 5330 / IRS / DOL replacement.
+    </p>
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const token =
+          params.get("token") ||
+          localStorage.getItem("ptax4975_token") ||
+          "";
+        const orgId =
+          params.get("orgId") ||
+          localStorage.getItem("ptax4975_orgId") ||
+          "";
+        const statusEl = document.getElementById("status");
+        const listEl = document.getElementById("batch-results");
+        const idsEl = document.getElementById("tx-ids");
+
+        document.getElementById("run-batch").addEventListener("click", function () {
+          if (!token || !orgId) {
+            statusEl.textContent = "Need ptax4975_token + ptax4975_orgId (Bearer).";
+            return;
+          }
+          const raw = idsEl.value || "";
+          const transactionIds = raw
+            .split(/[\s,]+/)
+            .map(function (s) {
+              return s.trim();
+            })
+            .filter(Boolean);
+          fetch("/orgs/" + encodeURIComponent(orgId) + "/batch/forecast", {
+            method: "POST",
+            headers: {
+              Authorization: "Bearer " + token,
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({ transactionIds: transactionIds }),
+          })
+            .then(function (r) {
+              return r.json().then(function (j) {
+                return { ok: r.ok, j: j };
+              });
+            })
+            .then(function (res) {
+              if (!res.ok) {
+                statusEl.textContent = "Batch failed";
+                return;
+              }
+              const results = res.j.results || [];
+              statusEl.textContent = results.length + " results";
+              listEl.innerHTML = results
+                .map(function (row) {
+                  const cls = row.status === "ok" ? "ok" : "reject";
+                  const detail =
+                    row.status === "ok"
+                      ? "total=" + row.total
+                      : "reason=" + (row.reason || "");
+                  return (
+                    "<li class='" +
+                    cls +
+                    "'>" +
+                    row.transaction_id +
+                    " · " +
+                    row.status +
+                    " · " +
+                    detail +
+                    "</li>"
+                  );
+                })
+                .join("");
+            })
+            .catch(function () {
+              statusEl.textContent = "Batch failed";
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>

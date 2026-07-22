@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import {
   addMember,
   assertAccess,
+  auditToCsv,
   createOrg,
   createStore,
   createTransaction,
@@ -12,10 +13,12 @@ import {
   getOrg,
   getTransaction,
   issueToken,
+  listAudit,
   listTransactions,
   patchTransaction,
   registerUser,
   resolveToken,
+  runBatchForecast,
   runForecast,
   type OrgRole,
   type Store,
@@ -203,6 +206,57 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
       const result = addMember(store, orgId, String(body.userId ?? ""), role);
       if (!result.ok) return send(res, 400, { error: result.error });
       return send(res, 201, { ok: true });
+    }
+
+    const batchMatch = path.match(/^\/orgs\/([^/]+)\/batch\/forecast$/);
+    if (method === "POST" && batchMatch) {
+      const orgId = batchMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!getOrg(store, orgId)) return send(res, 404, { error: "org_not_found" });
+      if (!assertAccess(store, orgId, userId, ["admin", "analyst"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const body = await readBody(req);
+      const ids = Array.isArray(body.transactionIds)
+        ? body.transactionIds.map(String)
+        : Array.isArray(body.transaction_ids)
+          ? body.transaction_ids.map(String)
+          : [];
+      const batch = runBatchForecast(store, orgId, ids, userId);
+      return send(res, 200, batch);
+    }
+
+    const auditMatch = path.match(/^\/orgs\/([^/]+)\/audit$/);
+    if (method === "GET" && auditMatch) {
+      const orgId = auditMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!getOrg(store, orgId)) return send(res, 404, { error: "org_not_found" });
+      if (!assertAccess(store, orgId, userId, ["admin", "analyst", "auditor"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const listed = listAudit(store, orgId, {
+        transactionId: url.searchParams.get("transactionId") ?? undefined,
+        status: url.searchParams.get("status") ?? undefined,
+        limit: url.searchParams.get("limit")
+          ? Number(url.searchParams.get("limit"))
+          : undefined,
+        offset: url.searchParams.get("offset")
+          ? Number(url.searchParams.get("offset"))
+          : undefined,
+      });
+      if (url.searchParams.get("format") === "csv") {
+        const csv = auditToCsv(listed.events);
+        res.writeHead(200, {
+          "content-type": "text/csv; charset=utf-8",
+          "content-disposition": 'attachment; filename="audit.csv"',
+          "content-length": Buffer.byteLength(csv),
+        });
+        res.end(csv);
+        return;
+      }
+      return send(res, 200, listed);
     }
 
     const txMatch = path.match(

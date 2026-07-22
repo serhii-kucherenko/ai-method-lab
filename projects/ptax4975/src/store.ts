@@ -323,3 +323,133 @@ export function runForecast(
   });
   return { ...result, transaction_id: transactionId, run_id: ev.id };
 }
+
+export type BatchForecastItem = {
+  transaction_id: string;
+  status: "ok" | "reject";
+  initial_tax?: number;
+  additional_tax?: number;
+  total?: number;
+  reason?: string;
+  run_id?: string;
+};
+
+export function runBatchForecast(
+  store: Store,
+  orgId: string,
+  transactionIds: string[],
+  actorId?: string | null,
+): { results: BatchForecastItem[] } {
+  const results: BatchForecastItem[] = [];
+  for (const transactionId of transactionIds) {
+    try {
+      const outcome = runForecast(store, orgId, transactionId, actorId);
+      if (!outcome) {
+        results.push({
+          transaction_id: transactionId,
+          status: "reject",
+          reason: "not_found",
+        });
+        continue;
+      }
+      if (outcome.status === "ok") {
+        results.push({
+          transaction_id: transactionId,
+          status: "ok",
+          initial_tax: outcome.initial_tax,
+          additional_tax: outcome.additional_tax,
+          total: outcome.total,
+          run_id: outcome.run_id,
+        });
+      } else {
+        results.push({
+          transaction_id: transactionId,
+          status: "reject",
+          reason: outcome.reason,
+          run_id: outcome.run_id,
+        });
+      }
+    } catch (err) {
+      results.push({
+        transaction_id: transactionId,
+        status: "reject",
+        reason: err instanceof Error ? err.message : "batch_error",
+      });
+    }
+  }
+  return { results };
+}
+
+export type AuditListOpts = {
+  transactionId?: string;
+  status?: string;
+  limit?: number;
+  offset?: number;
+};
+
+export function listAudit(
+  store: Store,
+  orgId: string,
+  opts: AuditListOpts = {},
+): { events: AuditEvent[]; total: number; limit: number; offset: number } {
+  let rows = store.auditEvents.filter((e) => e.org_id === orgId);
+  if (opts.transactionId) {
+    rows = rows.filter((e) => e.transaction_id === opts.transactionId);
+  }
+  if (opts.status) {
+    rows = rows.filter((e) => e.status === opts.status);
+  }
+  rows = [...rows].sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
+  const total = rows.length;
+  const offset = Math.max(opts.offset ?? 0, 0);
+  const limit =
+    opts.limit !== undefined ? Math.min(Math.max(opts.limit, 1), 100) : 20;
+  return {
+    events: rows.slice(offset, offset + limit),
+    total,
+    limit,
+    offset,
+  };
+}
+
+export function auditToCsv(events: AuditEvent[]): string {
+  const header = [
+    "id",
+    "transaction_id",
+    "action",
+    "status",
+    "initial_tax",
+    "additional_tax",
+    "total",
+    "reason",
+    "algorithm_version",
+    "actor_id",
+    "created_at",
+  ];
+  const escape = (v: unknown): string => {
+    const s = v === null || v === undefined ? "" : String(v);
+    if (/[",\n\r]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
+    return s;
+  };
+  const lines = [header.join(",")];
+  for (const ev of events) {
+    lines.push(
+      [
+        ev.id,
+        ev.transaction_id,
+        ev.action,
+        ev.status,
+        ev.initial_tax,
+        ev.additional_tax,
+        ev.total,
+        ev.reason,
+        ev.algorithm_version,
+        ev.actor_id,
+        ev.created_at,
+      ]
+        .map(escape)
+        .join(","),
+    );
+  }
+  return lines.join("\n");
+}
