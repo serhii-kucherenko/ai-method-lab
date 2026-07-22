@@ -1,6 +1,14 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof same-condition fence (tick 10)
+
+Hours hold ~1.7h of 4h.
+
+- Wrote `lesserof-SAME-CONDITION-FENCE.md`: § 182.45(b) same-condition unused escapes § 182.44 — v0 A–Y / try demo **do not** encode it; digests must not say every Canada export wipes to $0.
+- Synced CFR header + PRD + wipe fence pointers.
+- **Explicit non-actions:** no new fixture expanding scope mid-hold; no `projects/lesserof/`.
+
 ## 2026-07-22 — lesserof blueprint/roadmap sync (tick 9)
 
 Hours hold ~1.5h of 4h.

@@ -1,8 +1,8 @@
 # lesserof — product requirements (seed PRD)
 
-**Paper only. Seed / research. Do not open `projects/lesserof/` yet.**
+**Paper only. Active research. Do not open `projects/lesserof/` until hours + preflip clear.**
 
-Real PRD for activation later — not a thin smoke brief. Sources: `lesserof-VISION.md`, `lesserof-PRODUCT-FRAMING.md`, `lesserof-VALUE-STAKES.md`, `lesserof-PAGE-SPECS.md`, `lesserof-API-CONTRACT.md`, `lesserof-ACCEPTANCE.md`, `lesserof-algorithm.md`, `lesserof-USMCA-WIPE-FENCE.md`.
+Real PRD for activation later — not a thin smoke brief. Sources: `lesserof-VISION.md`, `lesserof-PRODUCT-FRAMING.md`, `lesserof-VALUE-STAKES.md`, `lesserof-PAGE-SPECS.md`, `lesserof-API-CONTRACT.md`, `lesserof-ACCEPTANCE.md`, `lesserof-algorithm.md`, `lesserof-USMCA-WIPE-FENCE.md`, `lesserof-SAME-CONDITION-FENCE.md`.
 
 ---
 

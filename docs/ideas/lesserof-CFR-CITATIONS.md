@@ -1,8 +1,9 @@
-# lesserof — primary CFR citations (seed)
+# lesserof — primary CFR citations
 
-**State:** seed only. Parallel deepen while `current_idea` stays **htsroute**.  
-**Fetched:** 2026-07-21 via Cornell LII e-CFR mirrors (ecfr.gov CAPTCHA-blocked this tick).  
-**Purpose:** put TFTEA calc regs + USMCA Subpart E lesser-of on paper with primary quotes — not vendor blogs.
+**State:** active research (`current_idea`).  
+**Fetched:** 2026-07-21 via Cornell LII e-CFR mirrors (ecfr.gov CAPTCHA-blocked that tick).  
+**Purpose:** put TFTEA calc regs + USMCA Subpart E lesser-of on paper with primary quotes — not vendor blogs.  
+**Related fence:** `lesserof-SAME-CONDITION-FENCE.md` (v0 does not silently apply § 182.45(b)).
 
 ## 19 CFR § 190.22 — substitution manufacturing (TFTEA calc)
 

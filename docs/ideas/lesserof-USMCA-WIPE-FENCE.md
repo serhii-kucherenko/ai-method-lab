@@ -15,6 +15,7 @@ Cites: 19 U.S.C. § 4534; 19 CFR § 182.44; paper `lesserof-USMCA-STACK.md`.
 2. Try demo must expose USMCA partner duty = 0 wipe (`demos/lesserof-try/try.html`) — audited in `lesserof-TRY-DEMO-AUDIT.md`.  
 3. Direct-ID must **not** take USMCA lesser-of in v0 toy (reject).  
 4. No product folder until hours + preflip clear (`lesserof-PREFLIP-CHECKLIST.md`).
+5. Same-condition § 182.45(b) is **out of scope in v0** — see `lesserof-SAME-CONDITION-FENCE.md` (do not call every Canada export a wipe).
 
 ## Decision impact
 
