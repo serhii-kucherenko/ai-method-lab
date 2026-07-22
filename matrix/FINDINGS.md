@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — c1592 tick 5 (WAIT_HOURS)
+
+- Flip-day / day-1 / PRODUCT draft + acceptance + mid-hold skeptic; ~2.4h hours left. No product.
+
 ## 2026-07-22 — c1592 tick 4 (WAIT_HOURS)
 
 - ROADMAP/PRD/ERD + G6 + flip sheet; kit pack green; ~2.65h hours left. No product.

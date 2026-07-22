@@ -2,6 +2,16 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — c1592 tick 5: flip-day + day-1 drafts (WAIT_HOURS)
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 88. Docs only. Framing clock **unchanged**.
+
+- Wrote FLIP-DAY-SCRIPT, DAY1-NONSMOKE, PRODUCT-DRAFT, ACCEPTANCE, MIDHOLD-SKEPTIC
+- Fixtures still **26/26** dual-green; hours ~2.4h short → `WAIT_HOURS`
+- Explicit non-actions: **no** `projects/c1592/`
+
+**Skeptical one-liner:** Flip scripts on paper are still not a flip — the hours hold owns the clock.
+
 ## 2026-07-22 — c1592 tick 4: architect pack + G6 (WAIT_HOURS)
 
 `AGENT_LOOP_TICK_depth_15m` occurrences 86–87. Docs only. Framing clock **unchanged**.
