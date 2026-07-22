@@ -31,7 +31,7 @@ See `docs/DEPTH_RESTART.md`.
 | --- | --- | --- |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
-| ptax4975 | **framed (research)** | current_idea; tick 14; WAIT_HOURS (~1.0h left); FINAL-HOUR |
+| ptax4975 | **framed (research)** | current_idea; tick 15; WAIT_HOURS (~0.8h left); FLIP-DAY-SCRIPT ready |
 | meldefer | soft park | |
 | form222 | soft park | |
 | lanehold | **killed (G2)** | |

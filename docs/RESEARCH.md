@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 tick 15: flip-day script under WAIT_HOURS
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 69. Docs only. Framing clock **unchanged**.
+
+- Wrote `ptax4975-FLIP-DAY-SCRIPT.md` — mechanical open steps for after `FLIP_PATH_READY` only
+- FINAL-HOUR remaining ~0.8h; G6 points at flip-day script
+- `research_ticks_on_idea` → 15; still **WAIT_HOURS**
+- Explicit non-actions: **no** `projects/ptax4975/`
+
+**Skeptical one-liner:** A flip script is rehearsal — running it early would violate the hours gate.
+
 ## 2026-07-22 — ptax4975 tick 14: final-hour hold under WAIT_HOURS
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 68. Docs only. Framing clock **unchanged**.
