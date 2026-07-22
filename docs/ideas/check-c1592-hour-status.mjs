@@ -51,8 +51,17 @@ const fences =
   existsSync(join(root, "docs/ideas/c1592-MITIGATION-FENCE.md"));
 const noProduct = !existsSync(join(root, "projects/c1592"));
 
+const pack = ["VISION", "ROADMAP", "PRD", "ERD"].every((p) =>
+  existsSync(join(root, `docs/ideas/c1592-${p}.md`)),
+);
+const g6 = existsSync(join(root, "docs/ideas/c1592-G6-summary.md"));
+const flip = existsSync(join(root, "docs/ideas/c1592-FLIP-WHEN-CLEAR.md"));
+const blueprint = existsSync(
+  join(root, "docs/ideas/c1592-COMPREHENSIVE-BLUEPRINT.md"),
+);
+
 console.log(
-  `kit: fixtures=${fixtureCount} kills=${kills} g1=${g1} fences=${fences} no_product=${noProduct}`,
+  `kit: fixtures=${fixtureCount} kills=${kills} g1=${g1} fences=${fences} pack=${pack} g6=${g6} flip=${flip} blueprint=${blueprint} no_product=${noProduct}`,
 );
 
 if (!hoursClear || !ticksClear) {
@@ -69,6 +78,10 @@ const readyish =
   kills &&
   g1 &&
   fences &&
+  pack &&
+  g6 &&
+  flip &&
+  blueprint &&
   noProduct;
 
 if (readyish) {

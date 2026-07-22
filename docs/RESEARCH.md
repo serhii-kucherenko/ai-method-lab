@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — c1592 tick 4: architect pack + G6 (WAIT_HOURS)
+
+`AGENT_LOOP_TICK_depth_15m` occurrences 86–87. Docs only. Framing clock **unchanged**.
+
+- Wrote ROADMAP, PRD, ERD, G6 summary, FLIP-WHEN-CLEAR
+- Hour-status now requires architect pack + G6 + flip sheet + blueprint
+- Kit complete on paper; hours still ~2.65h short → `WAIT_HOURS`
+- Explicit non-actions: **no** `projects/c1592/`
+
+**Skeptical one-liner:** Architect docs are not a flip — the hours hold still owns the clock.
+
 ## 2026-07-22 — c1592 tick 3: 26 dual fixtures + vision (WAIT_HOURS)
 
 `AGENT_LOOP_TICK_depth_15m` occurrences 84–85. Docs only. Framing clock **unchanged**.

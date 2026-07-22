@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — c1592 tick 4 (WAIT_HOURS)
+
+- ROADMAP/PRD/ERD + G6 + flip sheet; kit pack green; ~2.65h hours left. No product.
+
 ## 2026-07-22 — c1592 tick 3 (WAIT_HOURS)
 
 - 26 dual fixtures; VISION+blueprint; ticks 3/3; ~3h hours left. No product.
