@@ -1,6 +1,7 @@
 # oshamult — comprehensive product blueprint (pre-build, parallel seed)
 
-**Status:** paper only. Parallel seed — **not** `current_idea`. Prefer depositgap → lesserof first.  
+**Status:** paper only / active research (`current_idea`). Hours hold open — **not** `ready_to_build`.  
+**Not OIS parity** on v0 serial order (`oshamult-SIZE-TABLE.md`). 
 **Bar:** `docs/COMPREHENSIVE_PRODUCT.md`  
 **G6:** `oshamult-G6-summary.md` · size lock: `oshamult-SIZE-TABLE.md` · stakes: `oshamult-VALUE-STAKES.md`  
 **Unique claim:** GBP × **serial** remaining-balance reductions with classification-gated ineligibility — not statutory-max accrual, not dual-signer, not additive %.
@@ -64,4 +65,4 @@ Kill A stands commercially. Digests: method / workflow experiment.
 
 ## Explicit non-action
 
-No `projects/oshamult/` while activation queue prefers depositgap / lesserof after htsroute.
+No `projects/oshamult/` during the hours hold.

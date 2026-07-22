@@ -1,6 +1,14 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — oshamult day-1 sync + hour-status (tick 3)
+
+Hours hold ~0.5h of 4h. `check-oshamult-hour-status.mjs` → `WAIT_HOURS`.
+
+- Synced DAY1 / scaffold / page specs / phase briefs / blueprint off stale queue language.
+- Added `DAY1-COMMIT-ORDER` + hour-status diagnostic; wired into FLIP.
+- **Explicit non-actions:** no `projects/oshamult/`.
+
 ## 2026-07-22 — oshamult digest + flip kit; fixture Z rename (tick 2)
 
 Hours hold ~0.3h of 4h. Fixtures still **26/26 dual-green**.

@@ -1,6 +1,7 @@
 # oshamult — G5 case map (seed paper)
 
-**State:** seed only. Encoded fixtures: **26** green (A–Y with dual U-ids).  
+**State:** active research (`current_idea`). Encoded fixtures: **26** dual-green (A–Y + Z).  
+**Not** `ready_to_build` until hours + preflip clear. 
 **Schema locked:** `gbp_amount` + explicit `*_pct` + serial Size→History→Good Faith→Quick Fix.  
 **Not framed. Not `current_idea`. No product.**
 
@@ -39,4 +40,4 @@
 
 ## Explicit non-actions
 
-Prefer **depositgap** then **lesserof** after htsroute clears. No `projects/oshamult/`.
+No `projects/oshamult/` during the hours hold.

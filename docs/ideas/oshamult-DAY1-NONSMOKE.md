@@ -1,6 +1,6 @@
 # oshamult — day-1 non-smoke contract
 
-Use **after** lesserof clears and `oshamult-POST-LESSEROF-RUN.md` passes. Prefer depositgap → lesserof first.
+Use **after** hours + `oshamult-PREFLIP-CHECKLIST.md` pass (`oshamult-FLIP-WHEN-CLEAR.md`).
 
 ## First product commits must include
 

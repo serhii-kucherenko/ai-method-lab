@@ -52,4 +52,4 @@ Re-fetch Table 6-2 / serial-order paragraph on frame day; if cells change, bump 
 
 ## Explicit non-actions
 
-No product. Prefer depositgap / lesserof after htsroute. Checkers stay on locked v0 order.
+No product during hours hold. Checkers stay on locked v0 order.

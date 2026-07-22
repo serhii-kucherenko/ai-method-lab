@@ -1,6 +1,6 @@
 # oshamult — phase briefs (seed)
 
-**Paper only.** Activate only after htsroute clears and depositgap/lesserof priority allows.
+**Paper only.** Do not open `projects/oshamult/` until hours + `oshamult-PREFLIP-CHECKLIST.md` clear.
 
 ## smoke
 

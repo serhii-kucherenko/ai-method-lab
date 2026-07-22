@@ -1,7 +1,7 @@
 # oshamult — page wireframe specs (seed paper)
 
-**Status:** seed only. Expands `oshamult-COMPREHENSIVE-BLUEPRINT.md`.  
-**Explicit non-action:** do **not** open `projects/oshamult/` while `htsroute` holds the slot.
+**Status:** active research. Expands `oshamult-COMPREHENSIVE-BLUEPRINT.md`.  
+**Explicit non-action:** do **not** open `projects/oshamult/` until hours + preflip clear.
 
 ---
 

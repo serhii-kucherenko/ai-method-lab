@@ -1,6 +1,6 @@
 # oshamult — day-1 repo scaffold (paper only)
 
-**Do not create** `projects/oshamult/` until lesserof clears and `oshamult-POST-LESSEROF-RUN.md` passes.
+**Do not create** `projects/oshamult/` until hours + `oshamult-PREFLIP-CHECKLIST.md` clear.
 
 ## Target layout
 
