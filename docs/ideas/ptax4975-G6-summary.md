@@ -16,6 +16,7 @@ Customs routing, AD deposit true-up, drawback lesser-of, OSHA serial penalties, 
 - `additional_tax = 0` if corrected, else `amount` (missing corrected → uncorrected)
 - Optional FMV pair: amount = max(a,b) when `use_fmv_greater_of`
 - Reject: flat-excise cheat; understate vs greater-of; non-positive amount; non-positive / non-finite year-parts
+- Fences (not v0): highest-FMV-during-period; (f)(2) end-date enum; excess-compensation narrowing
 
 ## 4. Kill rounds
 

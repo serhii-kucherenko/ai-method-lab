@@ -2,7 +2,7 @@
 
 **Paper only.** `current_idea` under hours hold. Do not open `projects/ptax4975/` until `FLIP_PATH_READY`.
 
-Real PRD for activation — not a thin smoke brief. Sources: `ptax4975-VISION.md`, `ptax4975-PRODUCT-FRAMING.md`, `ptax4975-VALUE-STAKES.md`, `ptax4975-PAGE-SPECS.md`, `ptax4975-API-CONTRACT.md`, `ptax4975-ACCEPTANCE.md`, `ptax4975-algorithm.md`, `ptax4975-FMV-FENCE.md`, `ptax4975-TAXABLE-PERIOD-FENCE.md`.
+Real PRD for activation — not a thin smoke brief. Sources: `ptax4975-VISION.md`, `ptax4975-PRODUCT-FRAMING.md`, `ptax4975-VALUE-STAKES.md`, `ptax4975-PAGE-SPECS.md`, `ptax4975-API-CONTRACT.md`, `ptax4975-ACCEPTANCE.md`, `ptax4975-algorithm.md`, `ptax4975-FMV-FENCE.md`, `ptax4975-TAXABLE-PERIOD-FENCE.md`, `ptax4975-EXCESS-COMP-FENCE.md`, `ptax4975-MIDHOLD-SKEPTIC.md`.
 
 ---
 
@@ -129,12 +129,13 @@ Counsel and tax software already compute the tax (Kill A). This product is a **f
 
 ---
 
-## Out of scope (v1 / activation)
+## Out of scope (v0 / activation)
 
 - Filing Form 5330; IRS / DOL / counsel replacement
-- Silently matching highest-FMV-during-period without `ptax4975-v1` dual re-green
+- Silently matching highest-FMV-during-period without versioned dual re-green
+- Automatically deriving year-parts from notice / assessment / correction dates
+- Automatically narrowing service payments to excess compensation only
 - Dual-approver status workflows
-- Deriving year-parts from notice / assessment / correction dates as v0 happy path (caller supplies year_parts)
 - Market proof from fixture pass counts
 - OSHA / deposit-gap / lesser-of / drawback math (other seeds)
 
@@ -154,11 +155,14 @@ Counsel and tax software already compute the tax (Kill A). This product is a **f
 
 | Fence | Doc |
 |-------|-----|
-| Kill A | `ptax4975-VALUE-STAKES.md`, `ptax4975-PRODUCT-FRAMING.md` |
-| Amount / FMV / taxable period | `ptax4975-FMV-FENCE.md` |
+| Kill A | `ptax4975-VALUE-STAKES.md`, `ptax4975-PRODUCT-FRAMING.md`, `ptax4975-DIGEST-HOLD.md` |
+| Highest FMV during period | `ptax4975-FMV-FENCE.md` |
+| Taxable-period end dates | `ptax4975-TAXABLE-PERIOD-FENCE.md` |
+| Excess compensation | `ptax4975-EXCESS-COMP-FENCE.md` |
 | Algorithm v0 | `ptax4975-algorithm.md` |
 | API surface | `ptax4975-API-CONTRACT.md` — do not invent contradicting routes |
 | Comprehensive bar | `docs/COMPREHENSIVE_PRODUCT.md` |
+| Mid-hold continue | `ptax4975-MIDHOLD-SKEPTIC.md` |
 
 ---
 

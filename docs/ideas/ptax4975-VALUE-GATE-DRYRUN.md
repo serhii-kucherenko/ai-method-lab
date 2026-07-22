@@ -17,10 +17,12 @@ What remains teachable is **method stress**, not GTM:
 | Flat “15% once” | Understates multi-year corrected path (toy: **$1,500** vs **$3,000**) |
 | Skip second-tier when uncorrected | Hides **100%** additional tax (toy: **$10,000** on $10k amount) |
 | Silent highest-FMV-during-period | v0 greater-of ≠ statute (b) path — fence in `ptax4975-FMV-FENCE.md` |
+| Silent taxable-period end dates | v0 caller year_parts ≠ (f)(2) enum — `ptax4975-TAXABLE-PERIOD-FENCE.md` |
+| Silent excess-compensation | v0 amount ≠ services carve — `ptax4975-EXCESS-COMP-FENCE.md` |
 
 Worked toys stay fixture-locked: corrected two-year **$3,000**, uncorrected **$13,000**, greater-of FMV **$3,600** initial. Digests must keep the same honesty labels — no Form 5330 parity.
 
-## Reading (2026-07-22 ~05:40 PDT)
+## Reading (2026-07-22 mid-hold refresh)
 
 | Factor | Reading |
 |--------|---------|
@@ -28,9 +30,9 @@ Worked toys stay fixture-locked: corrected two-year **$3,000**, uncorrected **$1
 | Commercial value | **Weak / Kill A stands** — counsel owns Form 5330 |
 | Method-stress value | **Survives** if digests forbid IRS/DOL replacement and flat-excise widgets |
 | Fixture farm temptation | High — 35 dual-green ≠ demand |
-| FMV-FENCE + try demo | Cited and still required for any later smoke |
+| FMV + period + excess fences | Cited; required for any later smoke |
 | Architect pack | On file (VISION / ROADMAP / PRD / ERD) |
-| Hours / ticks | ~0h of 4h; ticks → 2 (≥ min 3 still open). `WAIT_TICKS` / `WAIT_HOURS` |
+| Hours / ticks | Mid-hold; ticks clear; `WAIT_HOURS`. See `ptax4975-MIDHOLD-SKEPTIC.md` |
 
 ## Continue vs park
 

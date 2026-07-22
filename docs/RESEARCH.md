@@ -2,6 +2,18 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 tick 9: framing + PRD fence sync under WAIT_HOURS
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 63. Docs only. Framing clock **unchanged**.
+
+- Expanded `ptax4975-PRODUCT-FRAMING.md` forbidden claims for taxable-period + excess-comp silent “fixes”
+- PRD out-of-scope + fence table now cite all three honesty fences + mid-hold skeptic
+- VALUE-GATE failure modes + mid-hold reading refreshed; STATUTE / G6 fence lines synced
+- `research_ticks_on_idea` → 9; still **WAIT_HOURS** (~2.3h left)
+- Explicit non-actions: **no** `projects/ptax4975/`
+
+**Skeptical one-liner:** Forbidden-claim lists got longer — that is honesty, not product progress.
+
 ## 2026-07-22 — ptax4975 ticks 7–8: mid-hold skeptic (loop 61–62)
 
 `AGENT_LOOP_TICK_depth_15m` occurrences **61–62** (batched). Docs + research try demo only. Framing clock **unchanged**.
