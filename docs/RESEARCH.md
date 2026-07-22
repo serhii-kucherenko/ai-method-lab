@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — c1592 tick 2: kills + 15 dual fixtures (WAIT_HOURS)
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 83. Docs only. Framing clock **unchanged**.
+
+- Wrote G3 kill rounds (A/B/C), G1 evidence, G4 falsifiers
+- **15** dual-green fixtures; hour-status → `WAIT_HOURS` (~3.5h left; ticks 2/3)
+- Fences intact (PD + mitigation). Target ≥25 fixtures before flip; still **not** ready_to_build
+- Explicit non-actions: **no** `projects/c1592/`
+
+**Skeptical one-liner:** Arithmetic kit is growing; most of the hold is still honesty time, not more toys.
+
 ## 2026-07-22 — c1592 framed (tick 1): § 1592 statutory maximums
 
 `AGENT_LOOP_TICK_depth_15m` (post–ptax4975 slot). Docs only. Framing clock **`2026-07-22T18:55:00.000Z`**.

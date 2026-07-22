@@ -1,0 +1,16 @@
+{
+  "id": "c1592-J-ignore-domestic-cap",
+  "title": "Ignore domestic cap cheat",
+  "input": {
+    "culpability": "negligence",
+    "duty_loss": 100000,
+    "domestic_value": 150000,
+    "dutiable_value": 150000,
+    "ignore_domestic_cap": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "ignore_domestic_cap"
+  },
+  "source": "c1592-algorithm.md"
+}

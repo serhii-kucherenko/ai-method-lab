@@ -1,0 +1,16 @@
+{
+  "id": "c1592-H-gross-domestic-binds",
+  "title": "Gross negligence domestic binds",
+  "input": {
+    "culpability": "gross_negligence",
+    "duty_loss": 100000,
+    "domestic_value": 300000,
+    "dutiable_value": 300000
+  },
+  "expect": {
+    "status": "ok",
+    "penalty_max": 300000,
+    "branch": "lesser_of_duty"
+  },
+  "source": "c1592-algorithm.md"
+}

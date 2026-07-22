@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — c1592 tick 2 (WAIT_HOURS)
+
+- G3 kills written; 15 dual fixtures; ~3.5h left on hours hold. No product.
+
 ## 2026-07-22 — c1592 framed (research)
 
 - New current_idea after ptax4975. § 1592(c) statutory max by culpability × duty-loss branch. 6 paper toys. Hours hold on.

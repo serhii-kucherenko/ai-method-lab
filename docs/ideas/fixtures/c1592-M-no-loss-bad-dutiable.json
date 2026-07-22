@@ -1,0 +1,15 @@
+{
+  "id": "c1592-M-no-loss-bad-dutiable",
+  "title": "No loss path needs dutiable",
+  "input": {
+    "culpability": "negligence",
+    "duty_loss": 0,
+    "domestic_value": 100000,
+    "dutiable_value": 0
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "bad_inputs"
+  },
+  "source": "c1592-algorithm.md"
+}
