@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T05:55:00Z",
+  "updated_at": "2026-07-22T06:20:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "product__lesserof__integrate_scored_tick23",
+  "last_completed": "product__lesserof__sustain_complete_tick24",
   "last_error": null,
-  "current_product": "lesserof",
-  "current_idea": "lesserof",
+  "current_product": null,
+  "current_idea": "oshamult",
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "scale",
-  "notes": "lesserof tick 23: integrate scored (webhook+settings+pagination, 31 tests). Next scale. Loop pid 26872 — do NOT re-arm if alive.",
+  "phase": "research",
+  "notes": "lesserof sustained (60 tests, try.html). Next research: oshamult. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -32,9 +32,9 @@
     "block_isomorphic_dual_gate": true,
     "block_same_day_research_to_build": false,
     "min_hours_research_before_ready": 4,
-    "framing_started_at": "2026-07-22T01:07:23.000Z",
+    "framing_started_at": "2026-07-22T06:20:00.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 20,
+    "research_ticks_on_idea": 0,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 86
+    "ticks_observed": 87
   }
 }

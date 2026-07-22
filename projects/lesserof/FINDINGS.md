@@ -1,12 +1,8 @@
 # lesserof findings
 
-## Smoke → Crud → Workflow → Integrate (scored)
+## Product complete (sustained)
 
-- 25 dual-green goldens; honesty + catalog/detail
-- Batch independence + audit CSV; USMCA/basket/forecast pages
-- HMAC `POST /webhooks/claim-lines` + Idempotency-Key replay; org settings rotate/RBAC; catalog `limit`/`offset`
-- Cells: smoke, crud, workflow, `A03__P-integrate-001__lesserof__r1`
-
-## Next
-
-Scale: concurrent batch stress; rate limits; dual-impl still green.
+- Ladder: smoke → crud → workflow → integrate → scale → **sustain**
+- **60** tests; **25** dual-green goldens; **11** live pages (catalog, detail, batch, audit, usmca, basket, forecast, settings, goldens, lane-compare, honesty)
+- Offline `try.html`; Kill A + same-condition fence
+- Cells through `A03__P-sustain__lesserof__r1`

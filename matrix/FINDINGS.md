@@ -1,6 +1,10 @@
 # Findings
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
+## 2026-07-22 — lesserof P-scale + P-sustain GREEN (product complete)
+
+- Cells `A03__P-scale-001__lesserof__r1` + `A03__P-sustain__lesserof__r1`. 60 tests; 11 pages; try.html. Next research: oshamult.
+
 ## 2026-07-22 — lesserof P-integrate GREEN
 
 - Cell `A03__P-integrate-001__lesserof__r1`. HMAC webhook + idempotency; settings RBAC; catalog pagination. 31 tests. Next: scale.

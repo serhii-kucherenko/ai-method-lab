@@ -11,11 +11,12 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **lesserof** | **building (scale)** | Integrate scored; next concurrent batch stress |
+| 1 | **lesserof** | **sustained** | 11 pages + goldens + try.html; 60 tests; Kill A honesty |
 | 1 | **depositgap** | **sustained** | All 8 pages + goldens browser + try.html; Kill A honesty |
 | 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet complete |
 | — | htsroute | **parked** | Soft abort #4 — Challenge D value weak (Free/Free). No product folder |
-| — | lanehold | **killed (G2)** | Capacity + hold expiry ≅ loadbay |
+| — | **oshamult** | **research (hours hold)** | Architect pack on file; activated after lesserof sustain |
+| — | lesserof | **sustained** | Product complete — stacked refund caps |
 | 2 | bondstrip | sustained | |
 | 2 | settlecut | sustained | |
 | 3 | ndcswap | sustained | |
@@ -28,8 +29,8 @@ See `docs/DEPTH_RESTART.md`.
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| lesserof | **ready_to_build → building** | Hours cleared; smoke scaffold in `projects/lesserof/` |
-| oshamult | seed | |
+| lesserof | **sustained** | Product complete |
+| oshamult | research (hours hold) | Active IDEA_DEPTH after lesserof |
 | ptax4975 | seed | |
 | meldefer | soft park | |
 | form222 | soft park | |

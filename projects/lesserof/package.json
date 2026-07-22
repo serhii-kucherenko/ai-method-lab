@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "lint": "tsc --noEmit",
-    "test": "tsx --test test/fixtures.test.ts test/smoke.test.ts test/ui-critical.test.ts test/crud.test.ts test/workflow.test.ts test/integrate.test.ts",
+    "test": "tsx --test test/fixtures.test.ts test/smoke.test.ts test/ui-critical.test.ts test/crud.test.ts test/workflow.test.ts test/integrate.test.ts test/scale.test.ts test/sustain.test.ts test/sustain-matrix.test.ts",
     "start": "tsx src/server.ts",
     "check-fixtures": "node ../../docs/ideas/check-lesserof-fixtures.mjs"
   },

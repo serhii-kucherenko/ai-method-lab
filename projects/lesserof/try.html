@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>lesserof — offline refund-cap demo</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1a1c22;
+        --muted: #5a6170;
+        --line: #d4d8e0;
+        --bg: #eef0f5;
+        --panel: #fff;
+        --accent: #3a4f8c;
+        --warn: #8a4b12;
+        --alert: #7a1f1f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 0% 0%, #d8dff5 0%, transparent 42%),
+          radial-gradient(circle at 100% 0%, #e6e9f0 0%, transparent 40%),
+          var(--bg);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 36rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        margin: 0 0 0.35rem;
+        font-size: 1.65rem;
+        letter-spacing: -0.02em;
+      }
+      .note {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+      .disclaimer {
+        margin: 0 0 1rem;
+        padding: 0.85rem 0.95rem;
+        border: 1px solid #e0c4a8;
+        border-left: 3px solid var(--warn);
+        background: #fff8f0;
+        color: #5c3a18;
+        line-height: 1.45;
+        font-size: 0.95rem;
+      }
+      form {
+        display: grid;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+      }
+      label {
+        display: grid;
+        gap: 0.25rem;
+        font-size: 0.9rem;
+      }
+      input,
+      select,
+      button {
+        font: inherit;
+        padding: 0.55rem 0.65rem;
+      }
+      button {
+        background: var(--accent);
+        color: #fff;
+        border: 0;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        line-height: 1.5;
+      }
+      .out.reject {
+        border-color: #e0b4b4;
+        background: #fff5f5;
+        color: var(--alert);
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        border-bottom: 1px solid var(--line);
+        padding: 0.35rem 0;
+      }
+      .row:last-child {
+        border-bottom: 0;
+        font-weight: 650;
+      }
+      .money {
+        font-variant-numeric: tabular-nums;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>lesserof</h1>
+      <p class="note">
+        Offline product demo. Stacked substitution refund caps: TFTEA
+        lesser-of, optional USMCA partner duty cap, basket-other reject, and
+        direct-ID exemption. Not an ACE filing.
+      </p>
+      <p class="disclaimer">
+        <strong>Honesty:</strong> drawback specialists and brokers already file.
+        This page is a stacked-cap honesty experiment. Numbers are toys — not a
+        filed claim. Naive “99% of paid” on substitution is the miss we encode.
+        USMCA partner duty 0 can wipe the rest after TFTEA (see lesserof-USMCA-WIPE-FENCE).
+        Same-condition unused exports to Canada/Mexico are a different carve-out and are
+        <strong>out of scope</strong> on this page (see lesserof-SAME-CONDITION-FENCE).
+      </p>
+      <form id="f">
+        <label>
+          Claim type
+          <select id="claim_type">
+            <option value="substitution">Substitution (lesser-of applies)</option>
+            <option value="direct_id">Direct identification (no lesser-of)</option>
+          </select>
+        </label>
+        <label>
+          Duties paid on designated import (USD)
+          <input id="duties_paid" type="number" min="0" step="1" value="10000" />
+        </label>
+        <label>
+          Substitute basis if imported (USD)
+          <input id="substitute_basis" type="number" min="0" step="1" value="4000" />
+        </label>
+        <label>
+          <span>
+            <input id="apply_usmca" type="checkbox" />
+            Apply USMCA partner lesser-of
+          </span>
+        </label>
+        <label>
+          USMCA partner duty (USD; 0 = duty-free wipe on this stacked substitution line)
+          <input id="usmca_partner_duty" type="number" min="0" step="1" value="0" />
+        </label>
+        <label>
+          <span>
+            <input id="basket_other" type="checkbox" />
+            Basket “other” 8-digit ineligible (must reject)
+          </span>
+        </label>
+        <label>
+          <span>
+            <input id="skip_lesser_of" type="checkbox" />
+            Cheat: skip lesser-of on substitution (must reject)
+          </span>
+        </label>
+        <label>
+          <span>
+            <input id="force_lesser_of" type="checkbox" />
+            Cheat: force lesser-of on direct-ID (must reject)
+          </span>
+        </label>
+        <button type="submit">Compute refund</button>
+      </form>
+      <div class="out" id="out" hidden></div>
+    </main>
+    <script>
+      function money(n) {
+        return new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "USD",
+          maximumFractionDigits: 2,
+        }).format(n);
+      }
+
+      function refundLine(input) {
+        if (input.basket_other_ineligible === true) {
+          return { status: "reject", reason: "Basket “other” substitution is ineligible." };
+        }
+        if (!(input.duties_paid >= 0) || !(input.substitute_basis >= 0)) {
+          return { status: "reject", reason: "Bad inputs." };
+        }
+        const claim = input.claim_type;
+        if (claim === "direct_id" && input.force_lesser_of === true) {
+          return { status: "reject", reason: "Cannot force lesser-of on direct identification." };
+        }
+        if (claim === "direct_id" && input.apply_usmca_lesser_of === true) {
+          return { status: "reject", reason: "USMCA lesser-of not applied on direct-ID in this toy." };
+        }
+        if (claim === "substitution" && input.skip_lesser_of === true) {
+          return { status: "reject", reason: "Cannot skip lesser-of on substitution." };
+        }
+        if (
+          input.apply_usmca_lesser_of === true &&
+          typeof input.usmca_partner_duty !== "number"
+        ) {
+          return { status: "reject", reason: "USMCA partner duty missing." };
+        }
+
+        let base;
+        if (claim === "direct_id") {
+          base = input.duties_paid;
+        } else if (claim === "substitution") {
+          base = Math.min(input.duties_paid, input.substitute_basis);
+        } else {
+          return { status: "reject", reason: "Unknown claim type." };
+        }
+
+        let refund99 = 0.99 * base;
+        const naive = 0.99 * input.duties_paid;
+
+        if (input.apply_usmca_lesser_of === true) {
+          refund99 = Math.min(refund99, 0.99 * input.usmca_partner_duty);
+        }
+
+        return {
+          status: "ok",
+          base_used: base,
+          refund: refund99,
+          naive,
+          overclaim_if_naive: naive - refund99,
+        };
+      }
+
+      const form = document.getElementById("f");
+      const out = document.getElementById("out");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const claim = document.getElementById("claim_type").value;
+        const applyUsmca = document.getElementById("apply_usmca").checked;
+        const input = {
+          claim_type: claim,
+          duties_paid: Number(document.getElementById("duties_paid").value),
+          substitute_basis: Number(document.getElementById("substitute_basis").value),
+          apply_usmca_lesser_of: applyUsmca,
+          usmca_partner_duty: applyUsmca
+            ? Number(document.getElementById("usmca_partner_duty").value)
+            : undefined,
+          basket_other_ineligible: document.getElementById("basket_other").checked,
+          skip_lesser_of: document.getElementById("skip_lesser_of").checked,
+          force_lesser_of: document.getElementById("force_lesser_of").checked,
+        };
+        const got = refundLine(input);
+        out.hidden = false;
+        if (got.status === "reject") {
+          out.className = "out reject";
+          out.textContent = "Rejected: " + got.reason;
+          return;
+        }
+        out.className = "out";
+        out.innerHTML =
+          "<div class='row'><span>Base used</span><span class='money'>" +
+          money(got.base_used) +
+          "</span></div>" +
+          "<div class='row'><span>Naive 99% of paid</span><span class='money'>" +
+          money(got.naive) +
+          "</span></div>" +
+          "<div class='row'><span>Correct refund</span><span class='money'>" +
+          money(got.refund) +
+          "</span></div>" +
+          "<div class='row'><span>Overclaim if naive</span><span class='money'>" +
+          money(got.overclaim_if_naive) +
+          "</span></div>";
+      });
+
+      form.dispatchEvent(new Event("submit"));
+    </script>
+  </body>
+</html>

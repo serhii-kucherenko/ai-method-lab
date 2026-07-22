@@ -5,10 +5,16 @@ import { recover, type ClaimLineInput, type RecoverResult } from "./domain/recov
 
 export type Store = {
   db: DatabaseSync;
+  rateLimit: number;
+  rateCounts: Map<string, number>;
 };
 
-export function createStore(opts: { dbPath?: string } = {}): Store {
-  return { db: openDatabase(opts.dbPath ?? ":memory:") };
+export function createStore(opts: { dbPath?: string; rateLimit?: number } = {}): Store {
+  return {
+    db: openDatabase(opts.dbPath ?? ":memory:"),
+    rateLimit: opts.rateLimit ?? 1000,
+    rateCounts: new Map(),
+  };
 }
 
 export function registerUser(db: DatabaseSync, email: string, password: string) {

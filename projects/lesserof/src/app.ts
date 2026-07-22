@@ -27,6 +27,7 @@ import {
   runRecover,
   type Store,
 } from "./store.js";
+import { listGoldenCards } from "./goldens.js";
 import type { OrgRole } from "./db.js";
 
 const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
@@ -63,11 +64,17 @@ function verifyHmac(secret: string, raw: Buffer, signature: string | undefined):
   return timingSafeEqual(a, b);
 }
 
-function send(res: ServerResponse, status: number, body: unknown) {
+function send(
+  res: ServerResponse,
+  status: number,
+  body: unknown,
+  extra: Record<string, string> = {},
+) {
   const payload = JSON.stringify(body);
   res.writeHead(status, {
     "content-type": "application/json",
     "content-length": Buffer.byteLength(payload),
+    ...extra,
   });
   res.end(payload);
 }
@@ -86,6 +93,17 @@ function authUserId(store: Store, req: IncomingMessage): string | null {
   return resolveToken(store.db, token);
 }
 
+function checkRateLimit(store: Store, req: IncomingMessage, res: ServerResponse): boolean {
+  const key = getToken(req) ?? req.socket.remoteAddress ?? "anon";
+  const n = (store.rateCounts.get(key) ?? 0) + 1;
+  store.rateCounts.set(key, n);
+  if (n > store.rateLimit) {
+    send(res, 429, { error: "rate_limit_exceeded" }, { "retry-after": "1" });
+    return false;
+  }
+  return true;
+}
+
 function serveStatic(res: ServerResponse, urlPath: string): boolean {
   const clean = urlPath === "/" ? "/honesty.html" : urlPath;
   const filePath = join(publicDir, clean.replace(/^\//, ""));
@@ -99,8 +117,8 @@ function serveStatic(res: ServerResponse, urlPath: string): boolean {
   return true;
 }
 
-export function createApp(opts: { dbPath?: string } = {}) {
-  const store = createStore(opts);
+export function createApp(opts: { dbPath?: string; rateLimit?: number; store?: Store } = {}) {
+  const store = opts.store ?? createStore({ dbPath: opts.dbPath, rateLimit: opts.rateLimit });
 
   const server = createServer(async (req, res) => {
     const url = new URL(req.url ?? "/", "http://127.0.0.1");
@@ -114,6 +132,8 @@ export function createApp(opts: { dbPath?: string } = {}) {
     if (method === "GET" && path === "/health") {
       return send(res, 200, { ok: true, product: "lesserof" });
     }
+
+    if (!checkRateLimit(store, req, res)) return;
 
     if (method === "POST" && path === "/auth/register") {
       const body = await readBody(req);
@@ -382,6 +402,18 @@ export function createApp(opts: { dbPath?: string } = {}) {
         if (!updated) return send(res, 500, { error: "patch_failed" });
         return send(res, 200, { settings: updated });
       }
+    }
+
+    const goldensMatch = path.match(/^\/orgs\/([^/]+)\/goldens$/);
+    if (goldensMatch && method === "GET") {
+      const orgId = goldensMatch[1];
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!getOrg(store.db, orgId)) return send(res, 404, { error: "org_not_found" });
+      if (!assertAccess(store.db, orgId, userId, ["admin", "analyst", "auditor"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      return send(res, 200, listGoldenCards());
     }
 
     return send(res, 404, { error: "not_found" });
