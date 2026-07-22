@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — c1592 tick 12 (WAIT_HOURS)
+
+- ~0.5h hours left; last-30-min note; flip next when ready. No product.
+
 ## 2026-07-22 — c1592 tick 11 (WAIT_HOURS)
 
 - Last half-hour + flip-readiness memo; ~0.8h hours left. No product.
