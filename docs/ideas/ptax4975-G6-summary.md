@@ -41,13 +41,14 @@ See `ptax4975-challenge-ABC.md`.
 - Algorithm + greater-of: `ptax4975-algorithm.md`
 - Checkers: `check-ptax4975-fixtures.mjs`, `check-ptax4975-dual.mjs`
 - Hours: `check-ptax4975-hour-status.mjs`
+- Flip pack: PRODUCT-DRAFT · FINDINGS-DRAFT · FLIP-WHEN-CLEAR · DIGEST-HOLD · FINAL-HOUR
 
 ## 7. Decision
 
 **Still researching — do not build yet.**
 
-Tick floor met (≥3). Hours hold remains (~1h elapsed / 4h). Kill A stands. Flip path: `ptax4975-FLIP-WHEN-CLEAR.md` only after `FLIP_PATH_READY`. Fences: FMV + taxable-period end dates.
+Tick floor met. Hours hold in **final hour** (~3h elapsed / 4h). Kill A stands. Flip only after `FLIP_PATH_READY`, then walk `ptax4975-FLIP-WHEN-CLEAR.md`. Fences: FMV + taxable-period end dates + excess-compensation.
 
 ## Explicit non-actions
 
-No `projects/ptax4975/` until flip. Digests must say workflow / forecast experiment.
+No `projects/ptax4975/` until flip. Digests must say workflow / forecast experiment (`ptax4975-DIGEST-HOLD.md`).

@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 tick 14: final-hour hold under WAIT_HOURS
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 68. Docs only. Framing clock **unchanged**.
+
+- Wrote `ptax4975-FINAL-HOUR.md` (~3.0h / 4h; ~1h left): flip sequence locked; forbid early product / vanity fixtures
+- G6 decision + demo README refreshed for final-hour honesty
+- `research_ticks_on_idea` → 14; still **WAIT_HOURS**
+- Explicit non-actions: **no** `projects/ptax4975/`
+
+**Skeptical one-liner:** Final hour is for waiting, not for inventing a premature product folder.
+
 ## 2026-07-22 — ptax4975 tick 13: three-quarter hold under WAIT_HOURS
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 67. Docs only. Framing clock **unchanged**.
