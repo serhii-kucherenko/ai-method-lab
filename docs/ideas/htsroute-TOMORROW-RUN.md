@@ -1,10 +1,10 @@
-# htsroute — tomorrow’s day-boundary run sheet
+# htsroute — flip run sheet (after hour hold)
 
-Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**). Do not flip from memory. Pocket list: `htsroute-FLIP-MORNING.md`.
+Filename kept for continuity. Use after **`framing_started_at` + `min_hours_research_before_ready`** (hours, not “tomorrow morning”). Do not flip from memory. Pocket list: `htsroute-FLIP-MORNING.md`.
 
 ## Before anything else
 
-1. Confirm local/OS date is **not** 2026-07-21.  
+1. Confirm hours clear (elapsed ≥ `min_hours_research_before_ready` after `framing_started_at`).  
 2. Confirm none of the hard aborts in `htsroute-FLIP-ABORT.md` apply.  
 2b. Skim `QUEUE-ISO-AUDIT.md` — unique rule still present; no dual-gate costume.  
 3. Re-read, in order:  
@@ -18,7 +18,7 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
    - `htsroute-SUSTAIN-TEST-MATRIX.md`  
 4. Run the executable preflip (must clear):  
    - `node docs/ideas/check-htsroute-preflip.mjs`  
-   (calendar ≠ framing day **and** htsroute fixtures + dual green **and** try/index money-honesty markers)  
+   (hours clear **and** htsroute fixtures + dual green **and** try/index money-honesty markers)  
 5. Fill `htsroute-DAY-BOUNDARY.md` checkboxes for real (not dry-run).  
 6. Optional preflight for the whole research farm: `node docs/ideas/check-all-seeds.mjs` and `node docs/ideas/check-seed-kits.mjs` (must stay green; does not replace the htsroute-specific re-reads).
 
@@ -27,8 +27,8 @@ Use on **2026-07-22** (or any new calendar day after framing day **2026-07-21**)
 After the re-reads, answer in one line in `htsroute-DAY-BOUNDARY.md`:
 
 - **Build** only if the unique form-gate claim still deserves a multi-page method product **and** digests can stay honest without inventing duty savings.  
-- **Park / kill** if Challenge D still leaves commercial/value **provisional weak** and the only story is fixture green + Free/Free reasonable-care. Then prefer **depositgap** (literal deposit→assessed + interest dollars) on a later tick — do not ship another shallow costume.
-- Pre-filled provisional lean: `htsroute-VALUE-GATE-DRYRUN.md` (evening 2026-07-21) — re-confirm on the real day, do not treat the dry run as final.
+- **Park / kill** if Challenge D still leaves commercial/value **weak** and the only story is fixture green + Free/Free reasonable-care. Then prefer **depositgap** (literal deposit→assessed + interest dollars) on a later tick — do not ship another shallow costume.
+- **Confirmed lean: PARK** — see `htsroute-VALUE-GATE-DRYRUN.md` (hours clear; soft abort #4).
 
 ## If all pass (including value gate → Build)
 

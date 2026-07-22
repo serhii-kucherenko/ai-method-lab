@@ -1,7 +1,8 @@
 /**
- * htsroute day-boundary preflight (research / flip gate).
- * Exit 0 only when calendar clears framing day AND htsroute dual-green.
- * Does not flip controller state — humans/agents still walk TOMORROW-RUN.md.
+ * htsroute flip preflight (research / flip gate).
+ * Granularity: **hours**, not calendar days.
+ * Exit 0 only when hour hold clears AND htsroute dual-green + kits + try honesty.
+ * Does not flip controller state — still walk FLIP-MORNING / PARK-RUN.
  */
 import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
@@ -11,15 +12,26 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "../..");
 
-/** Framing calendar day for current_idea htsroute (local). */
-const FRAMING_DAY = "2026-07-21";
+/** First material framing of htsroute (UTC). */
+const FRAMING_STARTED_AT = "2026-07-21T10:17:00.000Z";
+const DEFAULT_MIN_HOURS = 4;
 
-function localYmd() {
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${y}-${m}-${day}`;
+function loadMinHours() {
+  try {
+    const c = JSON.parse(
+      readFileSync(join(root, "matrix/CONTROLLER.json"), "utf8"),
+    );
+    const h = c?.depth_policy?.min_hours_research_before_ready;
+    return typeof h === "number" && h > 0 ? h : DEFAULT_MIN_HOURS;
+  } catch {
+    return DEFAULT_MIN_HOURS;
+  }
+}
+
+function hoursSince(iso) {
+  const start = Date.parse(iso);
+  if (Number.isNaN(start)) return 0;
+  return (Date.now() - start) / (1000 * 60 * 60);
 }
 
 function runChecker(script) {
@@ -89,19 +101,21 @@ function checkTryMoneyHonesty() {
   };
 }
 
-const today = localYmd();
+const minHours = loadMinHours();
+const elapsed = hoursSince(FRAMING_STARTED_AT);
 let failed = 0;
 
-console.log(`htsroute preflip: today=${today} framing=${FRAMING_DAY}`);
+console.log(
+  `htsroute preflip: framing_started_at=${FRAMING_STARTED_AT} elapsed_h=${elapsed.toFixed(2)} min_h=${minHours}`,
+);
 
-if (today === FRAMING_DAY) {
-  console.log("FAIL calendar: same-day research→build block (depth_policy)");
-  failed += 1;
-} else if (today < FRAMING_DAY) {
-  console.log("FAIL calendar: before framing day (clock skew?)");
+if (elapsed < minHours) {
+  console.log(
+    `FAIL hours: need ${minHours}h after framing; have ${elapsed.toFixed(2)}h (depth_policy)`,
+  );
   failed += 1;
 } else {
-  console.log("PASS calendar: new day vs framing");
+  console.log(`PASS hours: ${elapsed.toFixed(2)}h >= ${minHours}h`);
 }
 
 for (const script of [
@@ -137,11 +151,11 @@ for (const script of [
 
 if (failed > 0) {
   console.error(
-    `\nPREFLIP BLOCKED (${failed} check(s)). Do not open projects/htsroute/. See htsroute-TOMORROW-RUN.md + htsroute-FLIP-ABORT.md + htsroute-FLIP-MORNING.md.`,
+    `\nPREFLIP BLOCKED (${failed} check(s)). Do not open projects/htsroute/. See htsroute-FLIP-MORNING.md + htsroute-FLIP-ABORT.md + htsroute-PARK-RUN.md.`,
   );
   process.exit(1);
 }
 
 console.log(
-  "\nPREFLIP CLEAR: calendar + dual-green + paper kits + try money honesty. Still walk TOMORROW-RUN re-reads / abort sheet / DAY1-NONSMOKE before ready_to_build. Scaffold: htsroute-REPO-SCAFFOLD.md.",
+  "\nPREFLIP CLEAR: hour hold + dual-green + paper kits + try money honesty. Still walk FLIP-MORNING / value gate / DAY1-NONSMOKE before ready_to_build. Scaffold: htsroute-REPO-SCAFFOLD.md.",
 );

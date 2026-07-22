@@ -33,13 +33,15 @@ The portfolio wave failed its real goal. We have **~90 sustained products** that
 
 Active work = research + idea verification until a candidate clears `protocols/IDEA_DEPTH.md`. Product build resumes only for **one** verified idea at a time, with depth oracles — not smoke clones. Sustain requires the comprehensive bar, not pass-count theater.
 
-## Correction (same day — human: still shallow)
+## Correction (hours not days — human: still shallow)
 
-The first post-restart wave (`lotblast` → `tariffstep`) improved domain nouns (tables, graphs, day-counts) but **failed the speed bar**: many ideas moved framed → fixtures → ready_to_build → sustained product inside one calendar day. That is still conveyor behavior with better costumes. Summaries still risk reading like pass-count theater.
+The first post-restart wave (`lotblast` → `tariffstep`) improved domain nouns (tables, graphs, day-counts) but **failed the speed bar**: many ideas moved framed → fixtures → ready_to_build → sustained product inside a few hours. That is still conveyor behavior with better costumes. Summaries still risk reading like pass-count theater.
+
+**Anti-conveyor is hours + ticks, not calendar days.** Hold at least `depth_policy.min_hours_research_before_ready` (default **4**) after `framing_started_at`, plus `min_research_ticks_before_ready`.
 
 **Additional stops**
 
-- Same-day research-to-build for a new idea
+- Research-to-build before the min-hours hold clears for a new idea
 - Inventing a 25-fixture corpus in one tick to force a green gate scorecard
 - Framing the next itch by contrasting only the last math product (misses archive capacity clones)
 
@@ -51,7 +53,7 @@ The first post-restart wave (`lotblast` → `tariffstep`) improved domain nouns 
 - **Value honesty:** if showcase scenarios are Free MFN on both legs, say so — do not invent duty-savings stories (`htsroute` Challenge D, 2026-07-21)
 - Prefer next seeds with **literal dollar mechanics** (e.g. drawback lesser-of refund) over chapter-routing costumes
 
-## Correction 2 (same day — human: still shallow; keep going on depth)
+## Correction 2 (hours not days — human: still shallow; keep going on depth)
 
 Second human signal (2026-07-21, afternoon): portfolio products, testing projects, research, and digests still feel **shallow** — weak ideas, weak verification, little data-backed value. Not another conveyor of one-pagers.
 
@@ -66,10 +68,10 @@ Second human signal (2026-07-21, afternoon): portfolio products, testing project
 
 - Slow research with honest kill rounds and primary cites
 - Prefer **literal dollar** next seeds (`depositgap`, then `lesserof`) over form-gate costumes when value is weak
-- At day-boundary: if `htsroute` still fails the value honesty bar, **park/kill and activate depositgap** — do not build a shallow form-gate product to “clear the queue”
+- At hour-boundary (after min-hours clear): if `htsroute` still fails the value honesty bar, **park/kill and activate depositgap** — do not build a shallow form-gate product to “clear the queue”
 - Digests: story first; for finished products always attach `try-<id>.html` + StackBlitz; for research ticks with a runnable paper demo, attach that demo the same way
 
-## Correction 3 (same day — human: need roles for sophisticated products)
+## Correction 3 (same session — human: need roles for sophisticated products)
 
 Third human signal (2026-07-21, evening): products stay shallow because one agent skips architecture. Add explicit roles — **researcher**, **senior architect/engineer**, **product delivery** — so we find the idea, define scope, then ship vision → roadmap → PRD → ERD → phased delivery (not one-page HTML).
 
@@ -83,3 +85,7 @@ Third human signal (2026-07-21, evening): products stay shallow because one agen
 - `protocols/AGENT_ROLES.md` handoff order
 - Parallel role agents OK; one depth loop; one product phase
 - UI never-broken gate in Product Delivery phase exit
+
+## Correction 4 (hours only — explicit)
+
+Calendar-day waits (`WAIT_SAME_DAY`, “flip tomorrow”) are **retired**. Use `min_hours_research_before_ready` + ticks. `htsroute` parked after ~14h clear on value weakness; `depositgap` activated.

@@ -1,13 +1,13 @@
-# htsroute — morning flip checklist (print / stick)
+# htsroute — flip checklist (print / stick)
 
-For **2026-07-22+** only. Full text: `htsroute-TOMORROW-RUN.md`.
+After **hour hold clears** (`framing_started_at` + `min_hours_research_before_ready`). Full text: `htsroute-TOMORROW-RUN.md`.
 
-1. Date ≠ 2026-07-21  
+1. Hours clear (not calendar date ≠ framing day) — `check-morning-status.mjs` / preflip  
 2. `node docs/ideas/check-htsroute-preflip.mjs` → clear (includes try+index money-honesty markers)  
 3. No hard abort in `htsroute-FLIP-ABORT.md`  
 4. Skim `QUEUE-ISO-AUDIT.md`  
 5. Re-read Challenge D + VALUE-STAKES + PRODUCT framing + `htsroute-STACKED-TARIFF-FENCE.md` (Annex III **2026-07-31** / others **2026-09-29**; generics carve-out; no fake 232 on OTC teaching pairs)  
-5b. `node docs/ideas/check-morning-status.mjs` — expect BUILD_GATE_CLEAR or PARK_PATH_READY (not WAIT)  
+5b. `node docs/ideas/check-morning-status.mjs` — expect BUILD_GATE_CLEAR or PARK_PATH_READY (not WAIT_HOURS)  
 6. Read `htsroute-vs-depositgap-VALUE.md` + refresh `htsroute-VALUE-GATE-DRYRUN.md` — **Build** only if method-stress is explicit; else **park** (soft abort #4)  
 7. `node docs/ideas/check-all-seeds.mjs` + `check-seed-kits.mjs` green  
 8. Fill `htsroute-DAY-BOUNDARY.md` for real (one-line Build vs Park)  

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T00:25:00Z",
+  "updated_at": "2026-07-22T00:35:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,20 +17,22 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__depth15m_tick57_ptax_fmv_second_tier_smoke",
+  "last_completed": "research__htsroute_parked_value_gate",
   "last_error": null,
   "current_product": null,
-  "current_idea": "htsroute",
-  "next_cell": null,
+  "current_idea": "depositgap",
+  "next_cell": "P-smoke-001__depositgap",
   "mode": "autonomous",
-  "phase": "research",
-  "notes": "15m tick 57: ptax4975 FMV/uncorrected smoke; depositgap POST requires architect pack. WAIT_SAME_DAY. Loop pid 26872 — do NOT re-arm if alive.",
+  "phase": "starting_next",
+  "notes": "Hours not days (min 4h). htsroute PARKED soft abort #4. depositgap activated — architect pack on file; next: ready_to_build + comprehensive smoke. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
     "require_idea_depth": true,
     "block_isomorphic_dual_gate": true,
-    "block_same_day_research_to_build": true,
+    "block_same_day_research_to_build": false,
+    "min_hours_research_before_ready": 4,
+    "framing_started_at": "2026-07-21T11:00:00.000Z",
     "min_research_ticks_before_ready": 3,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
@@ -46,6 +48,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 57
+    "ticks_observed": 58
   }
 }

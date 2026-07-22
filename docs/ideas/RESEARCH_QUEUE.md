@@ -1,16 +1,16 @@
 # Research work queue (depth keep-going)
 
-## Active idea: htsroute
+## Active idea: depositgap (htsroute parked)
 
 | # | Item | Status |
 |---|------|--------|
-| 28 | Day-boundary ready reassess | **pending** — provisional **PARK**; confirm 2026-07-22+ |
+| 28 | htsroute hour-boundary reassess | **parked** (soft abort #4) — Challenge D value weak |
+| 69 | Hours granularity (not calendar days) | **done** — min 4h hold |
+| 70 | depositgap POST-HTSROUTE activation | **in progress** |
 | 66 | oshamult serial fence | **done** |
-| 67 | Roles + depositgap architect pack | **done** (tick 56) — VISION/ROADMAP/PRD/ERD |
-| 68 | ptax4975 FMV/second-tier smoke | **done** — uncorrected + greater-of toys |
-
-Morning: `check-morning-status.mjs` then confirm/deny PARK.
+| 67 | Roles + depositgap architect pack | **done** |
+| 68 | ptax4975 FMV/second-tier smoke | **done** |
 
 ## Parallel seeds
 
-depositgap (architect pack on file) → lesserof → oshamult → ptax4975 (FMV fence + smoke).
+lesserof → oshamult → ptax4975 (behind depositgap).

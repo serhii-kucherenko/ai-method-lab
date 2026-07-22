@@ -7,8 +7,8 @@
 | G3 Adversarial | pass with Kill A standing | Brokers/ACE/counsel liquidate; survive as forecast experiment |
 | G4 Falsifiers | pass (draft) | Wrong interest window; finance still books deposit as final; dishonest ACE claims |
 | G5 Depth tests | pass | **23** fixtures + dual-impl green |
-| G6 Research summary | **hold — do not activate yet** | htsroute owns slot; same-day policy for htsroute; this seed waits |
+| G6 Research summary | **pass — activate** | htsroute parked (value); hour hold; architect pack on file |
 
-**Decision:** Not `current_idea` / not `ready_to_build`. Activation sheet: `depositgap-POST-HTSROUTE-RUN.md`. Framing paste: `depositgap-PRODUCT-FRAMING.md`.
+**Decision:** `current_idea` after htsroute park. Walk POST sheet → `ready_to_build` only with Kill A honesty + comprehensive bar. Architect pack: VISION/ROADMAP/PRD/ERD.
 
-**Do not open** `projects/depositgap/` until htsroute clears and the post-htsroute run sheet passes.
+**Do not open** `projects/depositgap/` as a one-page calculator — comprehensive blueprint + roles pack required.

@@ -1,9 +1,9 @@
 # htsroute — idea dossier
 
-**State:** `testable`  
+**State:** `testable` → **park lean confirmed** (value gate)  
 **Framing:** workflow experiment (not commercial duty-savings)  
-**Research ticks:** 12  
-**Policy:** no product this calendar day
+**Research ticks:** 12+  
+**Policy:** no product until hours clear **and** value gate passes — hours gate clear; **PARK** on Challenge D (not calendar day)
 
 ## Start here
 
@@ -24,4 +24,4 @@ Showcase PPI MFN often **Free on both legs**. Analgesic/NSAID bulk can be **non-
 
 ## Decision
 
-**Testable — do not build yet.** Day-boundary reassess must re-read Challenge D. Parallel seed `lesserof` stays seed-only until this slot frees.
+**Testable — confirmed PARK** (soft abort #4). Hour hold cleared; value still weak. Prefer `depositgap` on a later tick. Parallel seed `lesserof` stays seed-only until this slot frees.

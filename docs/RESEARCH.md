@@ -977,3 +977,16 @@ Loop wake #8 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
 **Decision:** still researching. All five dollar/serial seeds now have honesty fences + behavioral smoke.
 
 **Skeptical one-liner:** Excise toys without a second-tier / FMV miss are just another green calculator costume.
+
+## 2026-07-21 — AGENT_LOOP tick #58 (hours + htsroute PARK)
+
+Human: granularity is **hours**, not days. Keep going.
+
+- Replaced same-day block with `min_hours_research_before_ready: 4` + `framing_started_at`
+- Preflip hour-clear (~14h) ? BUILD_GATE_CLEAR; Challenge D still weak ? **PARK** htsroute
+- `current_idea` ? **depositgap** (VISION/ROADMAP/PRD/ERD already on file)
+- No `projects/htsroute/`. Next: ready_to_build + comprehensive product delivery
+
+**Decision:** htsroute parked. depositgap activated. Hours, not midnight.
+
+**Skeptical one-liner:** Waiting for a calendar flip was theater; parking a Free/Free fixture farm is the real depth move.

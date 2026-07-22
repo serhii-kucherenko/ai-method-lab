@@ -48,15 +48,17 @@ See `depositgap-challenge-ABC.md`.
 
 ## 7. Decision
 
-**Do not build / do not activate yet.**
+**Activate after htsroute park (2026-07-21 ~17:25 PDT).** Hour granularity (not calendar days). Architect pack on file (VISION/ROADMAP/PRD/ERD).
 
-Reasons:
-1. `htsroute` owns the research slot; same-day (and active-idea) policy forbids a second framed idea.  
-2. Kill A stands — framing must be workflow-experiment honest from day one.  
-3. Comprehensive bar papers exist (`depositgap-COMPREHENSIVE-BLUEPRINT.md`, page specs) — still paper until activation after htsroute clears.
+Reasons to activate:
+1. `htsroute` **parked** on Challenge D value weakness (soft abort #4).  
+2. Literal dollar stakes (deposit→assessed + § 1677g interest) beat Free/Free form-gate.  
+3. Kill A still stands — digests must say forecast / FP&A honesty, not ACE replacement.  
+4. Seed research hours ≫ 4h; kits dual-green; comprehensive papers exist.
 
-**When** htsroute day-boundary flips to `ready_to_build` or parks/kills: prefer activating **depositgap** next over lesserof if Kill A honesty + G5 bar still hold on re-read. Human depth signal (Correction 2): if htsroute parks on Challenge D value weakness, **depositgap is the preferred next framed idea** — literal dollars + G1 evidence pack + research try demo already on file.
+**Next:** `ready_to_build` → Product delivery opens comprehensive `projects/depositgap/` (not smoke-as-sustain). Roles: `protocols/AGENT_ROLES.md`.
 
 ## Explicit non-actions
 
-No `projects/depositgap/`. No `current_idea` swap today. No ready_to_build.
+No one-page calculator sustain. No dual-gate costume. No ACE bill claims.
+
