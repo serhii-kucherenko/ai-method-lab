@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 tick 13: three-quarter hold under WAIT_HOURS
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 67. Docs only. Framing clock **unchanged**.
+
+- Wrote `ptax4975-THREE-QUARTER-HOLD.md` (~2.7h / 4h): flip pack paper-complete; **only hours red**; continue
+- DAY1 smoke exit + hypothesis pointers cite PRODUCT/FINDINGS drafts and all three fences
+- `research_ticks_on_idea` → 13; still **WAIT_HOURS** (~1.3h left)
+- Explicit non-actions: **no** `projects/ptax4975/`
+
+**Skeptical one-liner:** Three-quarters through the clock with nothing left to invent on paper — patience is the remaining gate.
+
 ## 2026-07-22 — ptax4975 tick 12: acceptance fences + FINDINGS draft under WAIT_HOURS
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 66. Docs only. Framing clock **unchanged**.

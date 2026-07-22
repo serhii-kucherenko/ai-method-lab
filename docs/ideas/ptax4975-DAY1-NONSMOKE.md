@@ -22,7 +22,7 @@ Use **after** `check-ptax4975-hour-status.mjs` → `FLIP_PATH_READY` and `ptax49
 
 | Phase | Must exit with |
 |-------|----------------|
-| smoke | Goldens green; honesty + FMV + taxable-period fences in PRODUCT |
+| smoke | Goldens green; honesty + FMV + taxable-period + excess-comp fences in PRODUCT |
 | crud | Transactions catalog + detail + money honesty |
 | workflow | Batch + audit |
 | integrate | Webhook + pagination + org settings |
@@ -31,4 +31,4 @@ Use **after** `check-ptax4975-hour-status.mjs` → `FLIP_PATH_READY` and `ptax49
 
 ## Source of truth
 
-`docs/COMPREHENSIVE_PRODUCT.md` + `ptax4975-COMPREHENSIVE-BLUEPRINT.md` + `ptax4975-PRODUCT-FRAMING.md`.
+`docs/COMPREHENSIVE_PRODUCT.md` + `ptax4975-COMPREHENSIVE-BLUEPRINT.md` + `ptax4975-PRODUCT-FRAMING.md` + `ptax4975-PRODUCT-DRAFT.md` + `ptax4975-ACCEPTANCE.md`.

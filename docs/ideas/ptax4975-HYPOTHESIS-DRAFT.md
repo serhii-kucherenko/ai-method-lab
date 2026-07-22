@@ -24,7 +24,7 @@ ERISA counsel still files Form 5330. This product is an FP&A honesty / workflow 
 
 ## Comprehensive bar pointer
 
-`ptax4975-COMPREHENSIVE-BLUEPRINT.md` + `ptax4975-ACCEPTANCE.md`. Smoke-as-sustain fails.
+`ptax4975-COMPREHENSIVE-BLUEPRINT.md` + `ptax4975-ACCEPTANCE.md` + `ptax4975-PRODUCT-DRAFT.md` + `ptax4975-FINDINGS-DRAFT.md`. Smoke-as-sustain fails.
 
 ## Activation gate
 
