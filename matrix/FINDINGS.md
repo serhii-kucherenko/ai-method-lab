@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — c1592 framed (research)
+
+- New current_idea after ptax4975. § 1592(c) statutory max by culpability × duty-loss branch. 6 paper toys. Hours hold on.
+
 ## 2026-07-22 — ptax4975 P-sustain GREEN (product complete)
 
 - Cell `A03__P-sustain__ptax4975__r1`. 58 tests; 7 pages; try.html Kill A + fences; dual-impl. Slot open for next seed.

@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — c1592 framed (tick 1): § 1592 statutory maximums
+
+`AGENT_LOOP_TICK_depth_15m` (post–ptax4975 slot). Docs only. Framing clock **`2026-07-22T18:55:00.000Z`**.
+
+- Activated **c1592**: 19 U.S.C. § 1592(c) civil-penalty **statutory max** by culpability × duty-loss vs no-loss branches (+ lesser-of domestic value)
+- Wrote seed, algorithm, gate scorecard, PD + mitigation fences; **6** paper toys green (`check-c1592-toys.mjs`)
+- Kill A stands (counsel / CBP). Soft parks (`meldefer`, `form222`) not revived
+- Explicit non-actions: **no** `projects/c1592/` until hours + ticks clear
+
+**Skeptical one-liner:** Real money math — but still just maximums on paper; deepen kills and fixture farm before any flip.
+
 ## 2026-07-22 — ptax4975 product complete; research slot open
 
 `ptax4975` sustained (58 tests). Soft parks (`meldefer`, `form222`) still not revival-ready without new isomorphism papers. Next tick: pick a **literal-dollar** seed (not dual-gate / days costume) and start framing clock.

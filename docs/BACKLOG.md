@@ -30,6 +30,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Seed | State | Notes |
 | --- | --- | --- |
+| **c1592** | **framed (research)** | current_idea; §1592 statutory max; hours hold started |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
 | ptax4975 | **sustained** | Product complete under projects/ptax4975 |

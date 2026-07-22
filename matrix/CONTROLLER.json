@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T18:10:00Z",
+  "updated_at": "2026-07-22T18:55:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -20,11 +20,11 @@
   "last_completed": "A03__P-sustain__ptax4975__r1",
   "last_error": null,
   "current_product": null,
-  "current_idea": null,
+  "current_idea": "c1592",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "ptax4975 PRODUCT COMPLETE (58 tests, 7 pages + try). Slot open — next tick select new literal-dollar seed (meldefer/form222 still soft park). Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "c1592 framed: §1592 statutory max by culpability × duty-loss branch. Hours hold started. No product. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -32,9 +32,9 @@
     "block_isomorphic_dual_gate": true,
     "block_same_day_research_to_build": false,
     "min_hours_research_before_ready": 4,
-    "framing_started_at": null,
+    "framing_started_at": "2026-07-22T18:55:00.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 0,
+    "research_ticks_on_idea": 1,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 133
+    "ticks_observed": 138
   }
 }
