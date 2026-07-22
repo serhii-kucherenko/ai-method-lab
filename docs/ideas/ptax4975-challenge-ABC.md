@@ -18,4 +18,4 @@ Survive. Correction negotiations and DOL/IRS processes stay offline. Software ho
 
 ## Decision
 
-Continue research under hours hold. Not `ready_to_build` until `check-ptax4975-hour-status.mjs` → `FLIP_PATH_READY`. No `projects/ptax4975/` yet.
+Continue research under hours hold (`ptax4975-HALFHOLD-STATUS.md`). Not `ready_to_build` until `check-ptax4975-hour-status.mjs` → `FLIP_PATH_READY`. Digests: `ptax4975-DIGEST-HOLD.md`. No `projects/ptax4975/` yet.

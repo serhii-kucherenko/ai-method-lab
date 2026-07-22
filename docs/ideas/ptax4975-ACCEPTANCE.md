@@ -2,7 +2,7 @@
 
 **Not a green light.** `current_idea` under hours hold. Flip only after `check-ptax4975-hour-status.mjs` → `FLIP_PATH_READY`.
 
-Tied to: `ptax4975-G6-summary.md`, `ptax4975-algorithm.md`, `ptax4975-challenge-ABC.md`, `ptax4975-VALUE-GATE-DRYRUN.md`.
+Tied to: `ptax4975-G6-summary.md`, `ptax4975-algorithm.md`, `ptax4975-challenge-ABC.md`, `ptax4975-VALUE-GATE-DRYRUN.md`, `ptax4975-PRODUCT-DRAFT.md`.
 
 ---
 
@@ -28,13 +28,21 @@ Load all `docs/ideas/fixtures/ptax4975-*.json`. At minimum:
 
 ## C. Money-honesty / Kill A
 
-Acceptance **fails** if digests claim Form 5330 / DOL replacement or present fixture counts as market proof. Required line: workflow / FP&A honesty experiment; counsel still files.
+Acceptance **fails** if digests claim Form 5330 / DOL replacement or present fixture counts as market proof. Required line: workflow / FP&A honesty experiment; counsel still files. Copy: `ptax4975-DIGEST-HOLD.md`.
 
-## D. Comprehensive bar
+## D. Fence honesty (v0)
+
+Acceptance **fails** if PRODUCT / digests claim any of:
+
+1. Highest-FMV-during-period parity — `ptax4975-FMV-FENCE.md`
+2. Automatic (f)(2) taxable-period end dates — `ptax4975-TAXABLE-PERIOD-FENCE.md`
+3. Automatic excess-compensation narrowing — `ptax4975-EXCESS-COMP-FENCE.md`
+
+## E. Comprehensive bar
 
 Must meet `docs/COMPREHENSIVE_PRODUCT.md` before sustain. Smoke-as-sustain fails.
 
-## E. Dual-impl
+## F. Dual-impl
 
 `check-ptax4975-fixtures.mjs` + `check-ptax4975-dual.mjs` green in CI.
 

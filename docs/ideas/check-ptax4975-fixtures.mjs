@@ -1,5 +1,5 @@
 /**
- * Paper oracle for ptax4975 (seed only).
+ * Paper oracle for ptax4975 (research hold — framed idea).
  * Implements docs/ideas/ptax4975-algorithm.md (+ greater-of FMV toys)
  */
 import { readdirSync, readFileSync } from "node:fs";

@@ -1,5 +1,5 @@
 /**
- * Dual-implementation cross-check for ptax4975 (seed only).
+ * Dual-implementation cross-check for ptax4975 (research hold — framed idea).
  */
 import { readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";

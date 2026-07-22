@@ -2,6 +2,18 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 tick 12: acceptance fences + FINDINGS draft under WAIT_HOURS
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 66. Docs only. Framing clock **unchanged**.
+
+- ACCEPTANCE now fails on silent FMV / taxable-period / excess-comp “fixes”
+- Wrote `ptax4975-FINDINGS-DRAFT.md` for post-flip FINDINGS paste; Kill A/C decision points at half-hold
+- Checker file headers synced off “seed only”
+- `research_ticks_on_idea` → 12; still **WAIT_HOURS** (~1.6h left)
+- Explicit non-actions: **no** `projects/ptax4975/`
+
+**Skeptical one-liner:** Acceptance got stricter about honesty — still waiting on the clock, not inventing a product.
+
 ## 2026-07-22 — ptax4975 tick 11: half-hold status under WAIT_HOURS
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 65. Docs only. Framing clock **unchanged**.
