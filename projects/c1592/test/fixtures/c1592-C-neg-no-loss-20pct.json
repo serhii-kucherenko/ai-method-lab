@@ -1,0 +1,16 @@
+{
+  "id": "c1592-C-neg-no-loss-20pct",
+  "title": "Negligence no duty loss 20%",
+  "input": {
+    "culpability": "negligence",
+    "duty_loss": 0,
+    "domestic_value": 100000,
+    "dutiable_value": 100000
+  },
+  "expect": {
+    "status": "ok",
+    "penalty_max": 20000,
+    "branch": "pct_dutiable"
+  },
+  "source": "c1592-algorithm.md"
+}

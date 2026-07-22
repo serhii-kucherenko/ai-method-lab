@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — c1592 smoke GREEN (product opened)
+
+- FLIP_PATH_READY → projects/c1592; 32 tests; 30 dual goldens; cell A03__P-smoke-001__c1592__r1. Crud next.
+
 ## 2026-07-22 — c1592 tick 13 (WAIT_HOURS)
 
 - ~0.30h hours left; last-20-min note; flip next when ready. No product.

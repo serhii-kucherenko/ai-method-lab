@@ -11,6 +11,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
+| 1 | **c1592** | **smoke GREEN → crud next** | 32 tests; 30 dual goldens; Kill A + PD + mitigation fences |
 | 1 | **ptax4975** | **sustained** | 58 tests; 7 pages + try.html; Kill A + 3 fences |
 | 1 | **oshamult** | **sustained** | 56 tests; 7 pages + try.html; Kill A honesty |
 | 1 | **lesserof** | **sustained** | 11 pages + goldens + try.html; 60 tests; Kill A honesty |
@@ -30,7 +31,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| **c1592** | **framed (research)** | tick 13; ~0.30h left; 30 dual fixtures; WAIT_HOURS |
+| **c1592** | **ready_to_build → smoke done** | flipped; smoke GREEN; crud next |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
 | ptax4975 | **sustained** | Product complete under projects/ptax4975 |

@@ -1,0 +1,15 @@
+{
+  "id": "c1592-T-neg-duty-loss",
+  "title": "Negative duty loss bad",
+  "input": {
+    "culpability": "negligence",
+    "duty_loss": -1,
+    "domestic_value": 10000,
+    "dutiable_value": 10000
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "bad_inputs"
+  },
+  "source": "c1592-algorithm.md"
+}

@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — c1592 flip + smoke GREEN
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 98. Hours cleared → `FLIP_PATH_READY`.
+
+- Opened `projects/c1592/`; ported **30** dual goldens; forecast returns `penalty_max` + `branch`
+- Honesty UI: Kill A + mitigation + PD fences; catalog/detail/goldens critical paths
+- Cell `A03__P-smoke-001__c1592__r1` scored; **32** tests green
+- CONTROLLER → `phase: running`, `current_product: c1592`; next **crud**
+
+**Skeptical one-liner:** Smoke proves the ceiling math in-product — not that counsel/CBP are displaced.
+
 ## 2026-07-22 — c1592 tick 13: ~20 min left (WAIT_HOURS)
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 97. Docs only. Framing clock **unchanged**.

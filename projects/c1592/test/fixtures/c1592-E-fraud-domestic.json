@@ -1,0 +1,16 @@
+{
+  "id": "c1592-E-fraud-domestic",
+  "title": "Fraud capped at domestic value",
+  "input": {
+    "culpability": "fraud",
+    "duty_loss": 50000,
+    "domestic_value": 80000,
+    "dutiable_value": 80000
+  },
+  "expect": {
+    "status": "ok",
+    "penalty_max": 80000,
+    "branch": "fraud_domestic"
+  },
+  "source": "c1592-algorithm.md"
+}

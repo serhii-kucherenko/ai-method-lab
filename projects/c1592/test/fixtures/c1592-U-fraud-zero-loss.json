@@ -1,0 +1,16 @@
+{
+  "id": "c1592-U-fraud-zero-loss",
+  "title": "Fraud with zero duty loss still domestic",
+  "input": {
+    "culpability": "fraud",
+    "duty_loss": 0,
+    "domestic_value": 120000,
+    "dutiable_value": 120000
+  },
+  "expect": {
+    "status": "ok",
+    "penalty_max": 120000,
+    "branch": "fraud_domestic"
+  },
+  "source": "c1592-algorithm.md"
+}
