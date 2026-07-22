@@ -1229,3 +1229,15 @@ Loop pid 26872 left alone. Hours ~3.2/4 ï¿½ still `WAIT_HOURS`.
 **Decision:** still researching. Flip only when hour-status prints FLIP_PATH_READY (~22:07 PDT).
 
 **Skeptical one-liner:** A status script beats another prose checklist that nobody re-runs.
+
+## 2026-07-22 — oshamult research tick 8 (near-flip)
+
+Loop pid 26872 left alone. Hours ~3.7/4 — still WAIT_HOURS (~0.3h).
+
+- Refreshed `oshamult-PREFLIP-DRYRUN.md`
+- Sustained products still green: lesserof **60**, depositgap **76**; kits green
+- Armed flip+smoke agent to open `projects/oshamult/` only after `FLIP_PATH_READY`
+
+**Decision:** still researching until hour-status clears.
+
+**Skeptical one-liner:** Twenty minutes of honesty beats opening a folder early to feel productive.
