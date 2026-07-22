@@ -55,6 +55,7 @@ Same facts, `corrected: false` → additional **$10,000**, total **$13,000**.
 
 - Highest FMV during taxable period for tier (b) — `ptax4975-FMV-FENCE.md`
 - Taxable-period end-date enum — `ptax4975-TAXABLE-PERIOD-FENCE.md`
+- Excess-compensation narrowing for service PTs — `ptax4975-EXCESS-COMP-FENCE.md`
 
 ## Explicit non-actions
 

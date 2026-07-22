@@ -31,7 +31,7 @@ See `docs/DEPTH_RESTART.md`.
 | --- | --- | --- |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
-| ptax4975 | **framed (research)** | current_idea; 35 dual fixtures; hours hold started |
+| ptax4975 | **framed (research)** | current_idea; tick 11; WAIT_HOURS (~1.8h left); 35 dual; PRODUCT-DRAFT ready |
 | meldefer | soft park | |
 | form222 | soft park | |
 | lanehold | **killed (G2)** | |

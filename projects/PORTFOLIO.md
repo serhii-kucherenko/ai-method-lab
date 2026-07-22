@@ -48,8 +48,8 @@ Full historical table preserved in git history prior to depth restart; rows belo
 
 ## Next autonomous actions
 
-1. Research **ptax4975** per IDEA_DEPTH (oshamult sustained)
-2. Digests: plain language; Kill A honesty
-3. Multi-tick research before fixtures; never same-day framed→build
+1. Research **ptax4975** under hours hold (`WAIT_HOURS` ~2h elapsed) — flip only after `FLIP_PATH_READY`
+2. Digests: plain language; Kill A honesty; `ptax4975-DIGEST-HOLD.md`
+3. Never open `projects/ptax4975/` before hour-status clear
 4. Depth-restart sustained: lotblast … tariffstep … depositgap … lesserof … **oshamult**
 5. Killed: lanehold (G2); parked: htsroute (Challenge D)

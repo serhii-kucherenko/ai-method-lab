@@ -127,6 +127,7 @@ const seeds = [
       "ptax4975-EXCESS-COMP-FENCE.md",
       "ptax4975-MIDHOLD-SKEPTIC.md",
       "ptax4975-PRODUCT-DRAFT.md",
+      "ptax4975-HALFHOLD-STATUS.md",
       "ptax4975-DIGEST-HOLD.md",
       "ptax4975-DAY1-NONSMOKE.md",
       "ptax4975-REPO-SCAFFOLD.md",
