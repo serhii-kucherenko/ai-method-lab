@@ -80,6 +80,11 @@ Before queueing build, write a **research summary** (in `docs/RESEARCH.md` or `d
 
 Vanity pass-counts and “next noun in queue” fail this gate.
 
+## Role
+
+This protocol is owned by the **Researcher** role (`protocols/AGENT_ROLES.md`).  
+After `ready_to_build`, hand off to **Senior architect** for VISION / ROADMAP / PRD / ERD / blueprint **before** Product delivery opens `projects/`.
+
 ## Controller behavior
 
 When `CONTROLLER.phase` is `research` / `ideation`:
@@ -87,7 +92,7 @@ When `CONTROLLER.phase` is `research` / `ideation`:
 1. Advance one idea through gates — do not start product folders
 2. Prefer deepening one idea over generating many seeds
 3. After a research tick: commit docs, update CONTROLLER, optionally notify `digest`
-4. Only when `ready_to_build`: set BACKLOG priority 1 and switch phase to product runbook
+4. Only when `ready_to_build`: set BACKLOG priority 1; next ticks complete architect pack, then product runbook
 
 ## Anti-patterns (instant kill)
 

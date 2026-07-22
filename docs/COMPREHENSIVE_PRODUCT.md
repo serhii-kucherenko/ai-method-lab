@@ -27,6 +27,22 @@ This does **not** waive `protocols/IDEA_DEPTH.md`. It raises what “ready_to_bu
 
 Fewer products. Slower research. When we **do** build, build **comprehensive** — one deep product beats ten isomorphic smokes.
 
-## Blueprint required before `projects/<id>/`
+## Role pack required before `projects/<id>/`
 
-Write `docs/ideas/<id>-COMPREHENSIVE-BLUEPRINT.md` with page map, feature matrix, aggregates, and test themes **before** opening the product folder (after ready_to_build).
+Drive work through `protocols/AGENT_ROLES.md` (researcher → senior architect → product delivery).
+
+After `ready_to_build`, senior architect must commit **before** opening the product folder:
+
+| Artifact | Path |
+|----------|------|
+| Vision | `docs/ideas/<id>-VISION.md` |
+| Roadmap | `docs/ideas/<id>-ROADMAP.md` |
+| PRD | `docs/ideas/<id>-PRD.md` |
+| ERD | `docs/ideas/<id>-ERD.md` |
+| Blueprint | `docs/ideas/<id>-COMPREHENSIVE-BLUEPRINT.md` (page map, feature matrix, aggregates, test themes) |
+
+Shallow “blueprint = phase rename of dual-gate smoke” fails this bar.
+
+## UI never broken
+
+Sustain (and each phase that unlocks a page) requires an automated **UI critical path** — not API-only green. A single calculator HTML shell fails sustain even with ≥25 goldens.

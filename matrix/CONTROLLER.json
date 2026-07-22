@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T00:10:00Z",
+  "updated_at": "2026-07-22T00:25:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__depth15m_tick55_oshamult_serial_fence",
+  "last_completed": "research__depth15m_tick56_agent_roles_depositgap_pack",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 55: oshamult-SERIAL-FENCE + additive miss smoke. WAIT_SAME_DAY. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "15m tick 56: AGENT_ROLES + depositgap VISION/ROADMAP/PRD/ERD. WAIT_SAME_DAY. Loop pid 26872 — do NOT re-arm if alive. UI critical path required before sustain.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -33,7 +33,10 @@
     "block_same_day_research_to_build": true,
     "min_research_ticks_before_ready": 3,
     "require_comprehensive_blueprint": true,
+    "require_architect_pack": true,
+    "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
     "comprehensive_protocol": "docs/COMPREHENSIVE_PRODUCT.md",
+    "roles_protocol": "protocols/AGENT_ROLES.md",
     "protocol": "protocols/IDEA_DEPTH.md"
   },
   "loop": {
@@ -43,6 +46,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 55
+    "ticks_observed": 56
   }
 }

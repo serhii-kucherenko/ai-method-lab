@@ -29,3 +29,5 @@
 - Digests: story first; Kill A honesty; no pass-count theater.  
 - Never re-arm live loop while `matrix/CONTROLLER.json` `loop.pid` is alive (`do_not_rearm_if_alive`).  
 - Checker hygiene: `docs/ideas/CHECKER_SNAP.md` (re-run before flip); kits now include try-demo smoke.
+- Roles (`protocols/AGENT_ROLES.md`): researcher → senior architect (VISION/ROADMAP/PRD/ERD) → product delivery. No `projects/` without the architect pack. UI critical path required — API-only green does not sustain.
+- **depositgap** already has VISION/ROADMAP/PRD/ERD paper (tick 56). After park/activate path, still finish htsroute decision before opening depositgap.

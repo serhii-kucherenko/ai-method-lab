@@ -2,11 +2,14 @@
 
 How to run one **product phase** (not a throwaway sandbox cell).
 
+**Role:** Product delivery (`protocols/AGENT_ROLES.md`). Researcher and senior architect must have finished their packs first.
+
 ## 0. Comprehensive bar (mandatory)
 
-Before opening `projects/<id>/`, confirm `docs/COMPREHENSIVE_PRODUCT.md`:
+Before opening `projects/<id>/`, confirm `docs/COMPREHENSIVE_PRODUCT.md` + architect pack:
 
 - Idea cleared `protocols/IDEA_DEPTH.md` → `ready_to_build`
+- Vision / roadmap / PRD / ERD on file: `docs/ideas/<id>-{VISION,ROADMAP,PRD,ERD}.md`
 - Blueprint on file: `docs/ideas/<id>-COMPREHENSIVE-BLUEPRINT.md` (≥4 pages, ≥3 aggregates, ≥6 features beyond CRUD)
 - Not an isomorphic dual-gate / capacity clone
 
@@ -42,6 +45,14 @@ Optional: use `sandboxes/` only for short A/B method comparisons that should not
 ## 4. Execute
 
 Follow DEVELOPMENT_WORKFLOW stages for the phase slice. RED → GREEN. Log interventions.
+
+### UI never broken (phase exit)
+
+Do not score the phase complete until:
+
+1. Failing tests for the slice were committed first (RED), then made green (no weaken-to-pass)
+2. Each blueprint page unlocked this phase has an automated **UI critical path** (browser E2E or HTML+interaction smoke) — API ladder alone is insufficient
+3. Sustain additionally requires ≥4 distinct views live; one `public/index.html` calculator fails
 
 ## 5. Score
 

@@ -951,3 +951,17 @@ Loop wake #7 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
 **Decision:** still researching. Queue: park lean ù depositgap ù lesserof ù oshamult.
 
 **Skeptical one-liner:** Serial remaining-balance is the claim; additive % toys are the lie we refuse.
+
+## 2026-07-21 ó AGENT_LOOP_TICK_depth_15m #56 (agent roles + depositgap architect pack)
+
+Human steer: need researcher / senior architect / product delivery so products get vision ? roadmap ? PRD ? ERD ? phased delivery (not one-page HTML). Loop pid 26872 left alone (alive). Same-day build still blocked (`WAIT_SAME_DAY`).
+
+- Wrote `protocols/AGENT_ROLES.md` ó handoff order + UI never-broken gate
+- Wired roles into controller, idea depth, product runbook, comprehensive bar, workflow, AGENTS, depth restart
+- Senior-architect paper for depositgap: VISION, ROADMAP, PRD, ERD (kit now 18 artifacts)
+- Audit: sustained products still API-only (`node:test`); docs now fail sustain without UI critical path
+- All 5 seed suites dual-green; kits + try-demo smoke green
+
+**Decision:** still researching. No product folder. Tomorrow: htsroute Build vs Park; if park ? later tick activate depositgap with architect pack already on file.
+
+**Skeptical one-liner:** Roles on paper only matter if tomorrow refuses to open a product without vision/roadmap/PRD/ERD ó and refuses API-green calculator shells.

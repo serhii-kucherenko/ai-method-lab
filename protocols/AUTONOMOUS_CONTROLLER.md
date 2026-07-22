@@ -26,12 +26,24 @@ Read/write: `matrix/CONTROLLER.json`
 | `notify` | Resend digest config — see `protocols/NOTIFY.md` |
 | `depth_policy` | When set, block isomorphic dual-gate product starts |
 
+## Agent roles
+
+Every tick acts as one primary role per `protocols/AGENT_ROLES.md`:
+
+| CONTROLLER situation | Role |
+|----------------------|------|
+| `phase: research` | **Researcher** — IDEA_DEPTH only |
+| `ready_to_build` but architect pack incomplete | **Senior architect** — VISION/ROADMAP/PRD/ERD/blueprint (docs only; still no shallow product) |
+| `phase: running` / product cell | **Product delivery** — phased build; UI never broken |
+
+Parallel role agents are encouraged; CONTROLLER still holds one `current_idea` / one product phase.
+
 ## Loop (one tick)
 
 1. Load `matrix/CONTROLLER.json`. If `mode` is `paused` or `hard_stop`, stop.
 2. If `phase` is `research`: execute one IDEA_DEPTH tick on `current_idea` (docs only). Update dossier + RESEARCH. Do **not** create/extend product trees. Then go to step 7.
 3. If `phase` is `running` / `scoring` / `learning` for `current_cell`, **resume that phase** — do not start another.
-4. If idle: take highest-priority **ready_to_build** idea from `docs/BACKLOG.md`, or continue research if none. Never queue isomorphic dual-gate clones. Set `current_product` / `current_idea`, `current_cell`, `phase` accordingly.
+4. If idle: take highest-priority **ready_to_build** idea from `docs/BACKLOG.md`, or continue research if none. Never queue isomorphic dual-gate clones. If ready but missing VISION/ROADMAP/PRD/ERD, run **senior architect** tick first. Set `current_product` / `current_idea`, `current_cell`, `phase` accordingly.
 5. For products: execute `protocols/PRODUCT_RUNBOOK.md` (preferred) or legacy `protocols/RUNBOOK.md` for sandbox A/B cells only.
 6. Write scores/findings; update portfolio. For research ticks: append `docs/RESEARCH.md` with a skeptical summary (G6).
 7. Mark backlog progress. Set `last_completed`, advance idea state or clear cell, `phase: starting_next` or stay in `research`.

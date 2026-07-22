@@ -55,6 +55,10 @@ const seeds = [
       "depositgap-REPO-SCAFFOLD.md",
       "depositgap-G1-EVIDENCE.md",
       "depositgap-6621-FENCE.md",
+      "depositgap-VISION.md",
+      "depositgap-ROADMAP.md",
+      "depositgap-PRD.md",
+      "depositgap-ERD.md",
     ],
   },
   {

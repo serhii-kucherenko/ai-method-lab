@@ -7,6 +7,7 @@ This repo is the **AI Method Lab** control plane: experiment by **building produ
 Unless `matrix/CONTROLLER.json` says `paused` / `hard_stop`, run as the **autonomous controller**:
 
 - Read `protocols/AUTONOMOUS_CONTROLLER.md` first
+- Drive work through `protocols/AGENT_ROLES.md`: **researcher** → **senior architect** (vision/roadmap/PRD/ERD) → **product delivery** (phased build; UI never broken)
 - If `phase` is `research` / ideation: follow `protocols/IDEA_DEPTH.md` + `docs/BACKLOG.md` — **no new product code**
 - Else: grow the current product in `projects/` per `protocols/PRODUCT_RUNBOOK.md`
 - Use `docs/DEVELOPMENT_WORKFLOW.md` (promoted A03 + A10) inside the product
@@ -45,6 +46,7 @@ Evidence that a workflow can produce **few, comprehensive, well-verified product
 ## Pointers
 
 - Portfolio: `projects/PORTFOLIO.md`
+- Agent roles: `protocols/AGENT_ROLES.md`
 - Product runbook: `protocols/PRODUCT_RUNBOOK.md`
 - Workflow: `docs/DEVELOPMENT_WORKFLOW.md`
 - Controller: `protocols/AUTONOMOUS_CONTROLLER.md` + `matrix/CONTROLLER.json`

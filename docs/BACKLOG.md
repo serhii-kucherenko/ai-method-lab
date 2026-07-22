@@ -11,7 +11,7 @@ See `docs/DEPTH_RESTART.md`.
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
 | 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet workflow experiment complete. |
-| � | htsroute | research only | **testable** + Challenge D. **40** fixtures + dual green; preflip calendar-blocked **2026-07-21**. Day-1 non-smoke + flip abort on file. |
+| � | htsroute | research only | **testable** + Challenge D. **40** fixtures + dual green; preflip calendar-blocked **2026-07-21**. Day-1 non-smoke + flip abort on file. Roles protocol live; depositgap has VISION/ROADMAP/PRD/ERD ready for later. |
 | � | lesserof | seed only | Parallel seed: stacked TFTEA + USMCA + basket + direct-ID. **23** fixtures + dual green; full paper kit. Prefer depositgap after htsroute. |
 | � | lanehold | **killed (G2)** | Capacity + hold expiry ? loadbay / dual-gate. Autopsy on file. |
 | 2 | bondstrip | sustained | Day-count accrued + cashflow strip method stress complete. |
@@ -20,14 +20,14 @@ See `docs/DEPTH_RESTART.md`.
 | 4 | crewleg | sustained | FAR 117 Table B method stress complete. |
 | 5 | amendwin | sustained | Method stress complete (window + lock). |
 | 6 | lotblast | sustained | Method stress complete. |
-| 2 | Idea pipeline hygiene | ongoing | Kill isomorphic dual-gate seeds on sight. |
+| 2 | Idea pipeline hygiene | ongoing | Kill isomorphic dual-gate seeds on sight. Roles: researcher → architect pack → delivery. |
 
 ## Parked seeds (research log only � not framed, not current_idea)
 
 | Seed | State | Notes |
 | --- | --- | --- |
 | lesserof | seed | Stacked-cap refund math; **23** fixtures; full kit + day-1 non-smoke. |
-| **depositgap** | seed | **Strongest next.** Literal deposit→assessed + § 1677g interest dollars; G1 evidence + research try demo on file. Prefer after htsroute (or if htsroute parks on value). **Not activated**. |
+| **depositgap** | seed | **Strongest next.** Literal deposit→assessed + § 1677g interest dollars; VISION/ROADMAP/PRD/ERD paper on file (tick 56). Prefer after htsroute. **Not activated**. |
 | oshamult | seed | OSHA GBP serial reductions; **26** fixtures; full kit. |
 | ptax4975 | seed | � 4975 excise; **35** fixtures; full kit. |
 | meldefer | soft park | Near amendwin/days � `meldefer-PARK.md`. |

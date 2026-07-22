@@ -68,3 +68,18 @@ Second human signal (2026-07-21, afternoon): portfolio products, testing project
 - Prefer **literal dollar** next seeds (`depositgap`, then `lesserof`) over form-gate costumes when value is weak
 - At day-boundary: if `htsroute` still fails the value honesty bar, **park/kill and activate depositgap** — do not build a shallow form-gate product to “clear the queue”
 - Digests: story first; for finished products always attach `try-<id>.html` + StackBlitz; for research ticks with a runnable paper demo, attach that demo the same way
+
+## Correction 3 (same day — human: need roles for sophisticated products)
+
+Third human signal (2026-07-21, evening): products stay shallow because one agent skips architecture. Add explicit roles — **researcher**, **senior architect/engineer**, **product delivery** — so we find the idea, define scope, then ship vision → roadmap → PRD → ERD → phased delivery (not one-page HTML).
+
+**Additional stops**
+
+- Opening `projects/` without VISION / ROADMAP / PRD / ERD paper pack
+- Sustaining on API ladder + single HTML calculator (UI critical path required)
+
+**Additional keeps**
+
+- `protocols/AGENT_ROLES.md` handoff order
+- Parallel role agents OK; one depth loop; one product phase
+- UI never-broken gate in Product Delivery phase exit
