@@ -1,6 +1,6 @@
 # lesserof — day-1 repo scaffold (paper only)
 
-**Do not create** `projects/lesserof/` until depositgap clears and `lesserof-POST-DEPOSITGAP-RUN.md` passes.
+**Do not create** `projects/lesserof/` until hours + `lesserof-PREFLIP-CHECKLIST.md` clear.
 
 ## Target layout
 
@@ -55,7 +55,7 @@ projects/lesserof/
 | PRODUCT.md | Stacked refund caps + Kill A; not “×0.99” |
 | recover.ts | Unique claim engine — not dual-gate status |
 | lane-compare / honesty | Naive 99%-of-paid shown wrong |
-| tests | ≥23 goldens ported |
+| tests | ≥25 goldens ported (A–Y) |
 
 ## Instant fail
 

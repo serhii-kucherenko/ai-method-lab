@@ -9,7 +9,7 @@ Research tick after **depositgap sustained**. Docs only. No `projects/lesserof/`
 | One product in flight? | **Clear** — depositgap sustained; `current_product` null |
 | depositgap ahead? | **No** — portfolio sustained |
 | Hours hold | `framing_started_at` reset to this activation window; need **≥4h** + **≥3 research ticks** before `ready_to_build` |
-| Fixture / dual checkers | **23/23 green** (`check-lesserof-fixtures.mjs` + `check-lesserof-dual.mjs`) |
+| Fixture / dual checkers | **25/25 green** A–Y (`check-lesserof-fixtures.mjs` + `check-lesserof-dual.mjs`) |
 
 ## Gate posture (honest)
 

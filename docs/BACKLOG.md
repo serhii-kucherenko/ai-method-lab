@@ -14,7 +14,7 @@ See `docs/DEPTH_RESTART.md`.
 | 1 | **depositgap** | **sustained** | All 8 pages + goldens browser + try.html; Kill A honesty |
 | 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet complete |
 | — | htsroute | **parked** | Soft abort #4 — Challenge D value weak (Free/Free). No product folder |
-| — | **lesserof** | **research (hours hold)** | ticks≥3; architect pack on file; wait ≥4h then preflip checklist |
+| — | **lesserof** | **research (hours hold)** | ticks≥13; 25 dual-green fixtures; wait ≥4h then preflip checklist |
 | — | lanehold | **killed (G2)** | Capacity + hold expiry ≅ loadbay |
 | 2 | bondstrip | sustained | |
 | 2 | settlecut | sustained | |
@@ -28,7 +28,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| lesserof | seed / research | Next IDEA_DEPTH after depositgap sustain — not ready_to_build |
+| lesserof | research (hours hold) | Active IDEA_DEPTH — not ready_to_build until preflip |
 | oshamult | seed | |
 | ptax4975 | seed | |
 | meldefer | soft park | |

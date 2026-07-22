@@ -10,8 +10,8 @@ Run **only when** `hours since framing_started_at ≥ 4` **and** `research_ticks
 |---|--------|-----|
 | 1 | Hours hold | CONTROLLER `framing_started_at` + `min_hours_research_before_ready: 4` |
 | 2 | Tick hold | `research_ticks_on_idea` ≥ 3 |
-| 3 | Fixtures | `node docs/ideas/check-lesserof-fixtures.mjs` → 23 green |
-| 4 | Dual-impl | `node docs/ideas/check-lesserof-dual.mjs` → 23 green |
+| 3 | Fixtures | `node docs/ideas/check-lesserof-fixtures.mjs` → **≥25** green (A–Y) |
+| 4 | Dual-impl | `node docs/ideas/check-lesserof-dual.mjs` → **≥25** green |
 | 5 | Value gate | `lesserof-VALUE-GATE-DRYRUN.md` still says **continue as method product**, not park |
 | 5b | Same-condition fence | Digests / demo do not claim every CA/MX export wipes (`lesserof-SAME-CONDITION-FENCE.md`) |
 | 6 | G6 honesty | No ACE/broker replacement; no ×0.99-only product |

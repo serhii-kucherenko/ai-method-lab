@@ -1,6 +1,14 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof fixture re-verify + 25-count sync (tick 14)
+
+Hours hold ~2.7h of 4h (~1.3h left).
+
+- Re-ran `check-lesserof-fixtures.mjs` + `check-lesserof-dual.mjs` → **25/25 dual-green**.
+- Synced stale `23` counts to `≥25` in PREFLIP, REPO-SCAFFOLD, POST-DEPOSITGAP-STATUS, VISION, PRD; refreshed BACKLOG notes.
+- **Explicit non-actions:** no `projects/lesserof/`; no ready_to_build.
+
 ## 2026-07-22 — lesserof page specs + phase briefs sync (tick 13)
 
 Hours hold ~2.5h of 4h.

@@ -134,7 +134,7 @@ Stacked **TFTEA lesser-of** + **USMCA lesser-of** + **basket-“other” eligibi
 **AC**
 
 - GET `/orgs/:orgId/goldens` shows pass/fail vs live engine.
-- ≥23 paper fixtures remain green in CI at sustain.
+- ≥25 paper fixtures remain green in CI at sustain.
 - No mutate controls on this page.
 
 ### US-11 — Org settings and webhook

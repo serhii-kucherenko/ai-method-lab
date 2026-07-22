@@ -33,7 +33,7 @@ Kill A stands: brokers, ACE filers, and drawback specialists already claim. Visi
 | Product | Comprehensive workflow (≥6 pages, smoke→sustain ladder) — not a one-page ×0.99 calculator labeled sustain |
 | Money | Every forecast surfaces **TFTEA cap and USMCA cap separately**; USMCA duty-free path shows recoverable **$0** |
 | Toy honesty | Illustrative misses still tell the stack story: e.g. +$5,940 (TFTEA bind), +$3,960 (forgot USMCA wipe), +$9,900 (naive 99% on Canada $0) — labeled **forecast toy**, never a filed claim |
-| Ops | Lane compare (direct-ID vs substitution); basket reject ≠ silent $0 lesser-of; auditors export CSV; ≥23 goldens + dual-impl green |
+| Ops | Lane compare (direct-ID vs substitution); basket reject ≠ silent $0 lesser-of; auditors export CSV; ≥25 goldens + dual-impl green |
 | Claims | Digests still carry Kill A: brokers and ACE filers own filing |
 
 Success is **not** ACE drawback parity, market proof from fixture counts, or replacing Form 7551 / broker workflows.
