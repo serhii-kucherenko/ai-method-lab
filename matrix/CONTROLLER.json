@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T01:25:00Z",
+  "updated_at": "2026-07-22T02:30:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "A03__P-sustain-001__depositgap__r1",
+  "active_cell": "A03__P-sustain__depositgap__r1",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -21,10 +21,10 @@
   "last_error": null,
   "current_product": "depositgap",
   "current_idea": "depositgap",
-  "next_cell": "P-sustain-001__depositgap",
+  "next_cell": "P-sustain__depositgap",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "depositgap scale GREEN (33 tests): 250-entry page walk, limit cap, concurrent batch, 429 Retry-After, SCALE.md. Next: sustain (8 pages + goldens + try.html). htsroute parked. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "depositgap scale GREEN (33 tests). Next: sustain (all 8 pages + goldens browser + try.html). Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

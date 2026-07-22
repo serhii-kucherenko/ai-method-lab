@@ -41,6 +41,17 @@
 - Rate limit returns 429 + `Retry-After`. Notes in `SCALE.md` (O(page) lists).
 - **33** tests green. Next: sustain (goldens browser + try.html + matrix floor).
 
+## Integrate (2026-07-22)
+
+- HMAC webhook + idempotency; admin settings; cash/audit pagination; live settings page.
+- **31** tests at integrate exit.
+
+## Scale (2026-07-22)
+
+- Catalog walk ≥250 entries; default page 20 / hard cap 100; concurrent batch slices; 429 + Retry-After.
+- Documented in `SCALE.md` (O(page) lists, rate limits, batch independence).
+- **33** tests green (`npm test` + lint).
+
 ## Honesty
 
 Brokers/CBP still liquidate. Digests must say forecast experiment. § 6621 is an input rate (see seed fence).

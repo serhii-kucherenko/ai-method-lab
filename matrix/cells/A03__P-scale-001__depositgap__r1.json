@@ -1,24 +1,39 @@
 {
-  "schema_version": 1,
-  "cell_id": "A03__P-scale-001__depositgap__r1",
-  "axis": "A03",
-  "protocol": "P-scale-001",
-  "variant": "depositgap",
-  "repeat": 1,
-  "status": "done",
-  "started_at": "2026-07-22T01:10:00.000Z",
-  "ended_at": "2026-07-22T01:25:00.000Z",
+  "phase": "P-scale-001",
+  "fail_tags": [],
+  "method_version": "1.0.0",
   "scores": {
-    "correctness": 5,
-    "latency": 4,
-    "token_cost": 4,
-    "intervention_needed": 5,
-    "security": 5
+    "dimensions": {
+      "efficiency": 4,
+      "completeness": 5,
+      "maintainability": 4,
+      "robustness": 5,
+      "correctness": 5
+    },
+    "rubric_version": "1.0.0",
+    "artifacts": ["projects/depositgap"],
+    "notes": "≥250 entry page walk; limit 20/cap 100; concurrent batch; 429 Retry-After; SCALE.md; 33 tests"
   },
-  "notes": "GREEN. ≥250 entry page walk without gaps/dupes; default limit 20 / cap 100; concurrent batch forecasts; 429 + Retry-After. SCALE.md documents O(page) + rate limits. npm test 33/33.",
-  "artifact_paths": [
-    "projects/depositgap/",
-    "projects/depositgap/test/scale.test.ts",
-    "projects/depositgap/SCALE.md"
-  ]
+  "created_at": "2026-07-22T02:30:00Z",
+  "method_id": "A03",
+  "run_id": "r1",
+  "product_path": "projects/depositgap",
+  "project_id": "P-scale-001",
+  "status": "scored",
+  "approach_id": "A03",
+  "metrics": {
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 20,
+    "cycle_time_hours": 0.35,
+    "correctness_pass": true
+  },
+  "cell_id": "A03__P-scale-001__depositgap__r1",
+  "notes": "depositgap scale: pagination bounds + concurrent batch + rate limit; dual-impl unchanged",
+  "started_at": "2026-07-22T02:10:00Z",
+  "approach_version": 1,
+  "finished_at": "2026-07-22T02:30:00Z"
 }
