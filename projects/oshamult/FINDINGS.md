@@ -26,6 +26,13 @@
 - Catalog + audit pagination
 - **34** tests green
 
+## Scale (scored)
+
+- Walk ≥250 citations with bounded pagination
+- Rate limit **429** + Retry-After; concurrent batch independence
+- `SCALE.md` documented; dual-impl holds
+- **36** tests green
+
 ## Next
 
-Scale: concurrent citation independence; dual-impl stable under load.
+Sustain: all blueprint pages live; try.html Kill A; matrix floor ≥55.

@@ -31,6 +31,7 @@ import {
 import { listGoldenCards } from "./goldens.js";
 
 const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
+const projectRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const MIME: Record<string, string> = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -138,6 +139,19 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
     const url = new URL(req.url ?? "/", "http://127.0.0.1");
     const method = req.method ?? "GET";
     const path = url.pathname;
+
+    if (method === "GET" && path === "/try.html") {
+      const file = join(projectRoot, "try.html");
+      if (existsSync(file)) {
+        const body = readFileSync(file);
+        res.writeHead(200, {
+          "content-type": "text/html; charset=utf-8",
+          "content-length": body.length,
+        });
+        res.end(body);
+        return;
+      }
+    }
 
     if (method === "GET" && (path === "/" || path.endsWith(".html") || path.endsWith(".css"))) {
       if (serveStatic(res, path)) return;

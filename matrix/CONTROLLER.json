@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T12:06:00Z",
+  "updated_at": "2026-07-22T12:12:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "A03__P-scale-001__oshamult__r1",
+  "active_cell": "A03__P-sustain__oshamult__r1",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-integrate-001__oshamult__r1",
+  "last_completed": "A03__P-scale-001__oshamult__r1",
   "last_error": null,
   "current_product": "oshamult",
   "current_idea": "oshamult",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "running",
-  "notes": "oshamult integrate scored (34 tests; webhook HMAC + settings RBAC + pagination). Advancing to scale. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "oshamult scale scored (36 tests; 250 walk + 429). Advancing to sustain. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 107
+    "ticks_observed": 108
   }
 }

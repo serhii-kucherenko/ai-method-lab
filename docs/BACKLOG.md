@@ -15,7 +15,7 @@ See `docs/DEPTH_RESTART.md`.
 | 1 | **depositgap** | **sustained** | All 8 pages + goldens browser + try.html; Kill A honesty |
 | 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet complete |
 | — | htsroute | **parked** | Soft abort #4 — Challenge D value weak (Free/Free). No product folder |
-| 1 | **oshamult** | **integrate scored → scale** | 34 tests; webhook HMAC + settings RBAC |
+| 1 | **oshamult** | **scale scored → sustain** | 36 tests; 250 walk + rate-limit 429 |
 | — | lesserof | **sustained** | Product complete — stacked refund caps |
 | 2 | bondstrip | sustained | |
 | 2 | settlecut | sustained | |
