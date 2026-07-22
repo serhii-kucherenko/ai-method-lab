@@ -38,10 +38,18 @@ export function resolveToken(db: DatabaseSync, token: string): string | null {
 
 export function createOrg(db: DatabaseSync, userId: string, name: string) {
   const id = randomUUID();
+  const webhookSecret = `whsec_${randomUUID().replace(/-/g, "").slice(0, 24)}`;
   db.prepare("INSERT INTO orgs (id, name, created_by) VALUES (?, ?, ?)").run(id, name, userId);
   db.prepare(
     "INSERT INTO org_members (org_id, user_id, role) VALUES (?, ?, 'admin')",
   ).run(id, userId);
+  db.prepare(
+    `INSERT INTO org_settings (org_id, webhook_secret, tokens_note) VALUES (?, ?, ?)`,
+  ).run(
+    id,
+    webhookSecret,
+    "API tokens are issued at register. Treat bearer tokens as secrets.",
+  );
   return { id, name };
 }
 
@@ -122,11 +130,25 @@ function rowToInput(row: Record<string, unknown>) {
   };
 }
 
-export function listClaimLines(db: DatabaseSync, orgId: string) {
+export function listClaimLines(
+  db: DatabaseSync,
+  orgId: string,
+  opts: { limit?: number; offset?: number } = {},
+) {
+  const totalRow = db
+    .prepare("SELECT COUNT(*) AS n FROM claim_lines WHERE org_id = ?")
+    .get(orgId) as { n: number };
+  const total = Number(totalRow.n);
+  const offset = Math.max(opts.offset ?? 0, 0);
+  const limit =
+    opts.limit !== undefined ? Math.min(Math.max(opts.limit, 1), 100) : 20;
   const rows = db
-    .prepare("SELECT * FROM claim_lines WHERE org_id = ? ORDER BY created_at DESC")
-    .all(orgId) as Record<string, unknown>[];
-  return rows.map(rowToInput);
+    .prepare(
+      `SELECT * FROM claim_lines WHERE org_id = ?
+       ORDER BY created_at DESC LIMIT ? OFFSET ?`,
+    )
+    .all(orgId, limit, offset) as Record<string, unknown>[];
+  return { claim_lines: rows.map(rowToInput), total, limit, offset };
 }
 
 export function patchClaimLine(
@@ -365,4 +387,106 @@ export function auditToCsv(events: AuditEvent[]): string {
   }
   return lines.join("\n");
 }
+
+export type OrgSettings = {
+  orgId: string;
+  webhook_secret: string;
+  tokens_note: string;
+  updated_at: string;
+};
+
+function ensureOrgSettings(db: DatabaseSync, orgId: string): void {
+  const existing = db
+    .prepare("SELECT org_id FROM org_settings WHERE org_id = ?")
+    .get(orgId) as { org_id: string } | undefined;
+  if (existing) return;
+  db.prepare(
+    `INSERT INTO org_settings (org_id, webhook_secret, tokens_note) VALUES (?, ?, ?)`,
+  ).run(
+    orgId,
+    `whsec_${randomUUID().replace(/-/g, "").slice(0, 24)}`,
+    "API tokens are issued at register. Treat bearer tokens as secrets.",
+  );
+}
+
+export function getOrgSettings(db: DatabaseSync, orgId: string): OrgSettings | null {
+  if (!getOrg(db, orgId)) return null;
+  ensureOrgSettings(db, orgId);
+  const row = db
+    .prepare(
+      `SELECT org_id AS orgId, webhook_secret, tokens_note, updated_at
+       FROM org_settings WHERE org_id = ?`,
+    )
+    .get(orgId) as
+    | {
+        orgId: string;
+        webhook_secret: string;
+        tokens_note: string;
+        updated_at: string;
+      }
+    | undefined;
+  if (!row) return null;
+  return {
+    orgId: row.orgId,
+    webhook_secret: row.webhook_secret,
+    tokens_note: row.tokens_note,
+    updated_at: row.updated_at,
+  };
+}
+
+export function patchOrgSettings(
+  db: DatabaseSync,
+  orgId: string,
+  patch: { webhook_secret?: string; tokens_note?: string },
+): OrgSettings | null {
+  if (!getOrg(db, orgId)) return null;
+  ensureOrgSettings(db, orgId);
+  const current = getOrgSettings(db, orgId);
+  if (!current) return null;
+  db.prepare(
+    `UPDATE org_settings
+     SET webhook_secret = ?, tokens_note = ?, updated_at = datetime('now')
+     WHERE org_id = ?`,
+  ).run(
+    patch.webhook_secret !== undefined ? patch.webhook_secret : current.webhook_secret,
+    patch.tokens_note !== undefined ? patch.tokens_note : current.tokens_note,
+    orgId,
+  );
+  return getOrgSettings(db, orgId);
+}
+
+export function rotateWebhookSecret(db: DatabaseSync, orgId: string): OrgSettings | null {
+  return patchOrgSettings(db, orgId, {
+    webhook_secret: `whsec_${randomUUID().replace(/-/g, "").slice(0, 24)}`,
+  });
+}
+
+export function ingestWebhookClaimLine(
+  db: DatabaseSync,
+  orgId: string,
+  idempotencyKey: string,
+  input: ClaimLineCreate,
+):
+  | { ok: true; status: 201 | 200; claim_line: NonNullable<ReturnType<typeof getClaimLine>>; replay: boolean }
+  | { ok: false; status: number; error: string } {
+  if (!getOrg(db, orgId)) return { ok: false, status: 404, error: "org_not_found" };
+  if (!idempotencyKey.trim()) {
+    return { ok: false, status: 400, error: "idempotency_key_required" };
+  }
+  const prior = db
+    .prepare(`SELECT claim_line_id FROM webhook_deliveries WHERE idempotency_key = ?`)
+    .get(idempotencyKey) as { claim_line_id: string } | undefined;
+  if (prior) {
+    const line = getClaimLine(db, orgId, prior.claim_line_id);
+    if (!line) return { ok: false, status: 500, error: "replay_missing" };
+    return { ok: true, status: 200, claim_line: line, replay: true };
+  }
+  const line = createClaimLine(db, orgId, input);
+  if (!line) return { ok: false, status: 500, error: "create_failed" };
+  db.prepare(
+    `INSERT INTO webhook_deliveries (idempotency_key, org_id, claim_line_id) VALUES (?, ?, ?)`,
+  ).run(idempotencyKey, orgId, line.id);
+  return { ok: true, status: 201, claim_line: line, replay: false };
+}
+
 

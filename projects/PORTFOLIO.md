@@ -8,7 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
-| **lesserof** | **building** | A03 + A10 | integrate | Stacked TFTEA+USMCA+basket refund caps (Kill A; not ACE) |
+| **lesserof** | **building** | A03 + A10 | scale | Stacked TFTEA+USMCA+basket refund caps (Kill A; not ACE) |
 | **depositgap** | **sustained** | A03 + A10 | done | Deposit→assessed→interest forecast honesty (Kill A; not ACE/CBP) |
 | tariffstep | **sustained** | A03 + A10 | done | Stepped rate blocks + demand ratchet (workflow experiment) |
 | bondstrip | **sustained** | A03 + A10 | done | Day-count accrued + cashflow strip (method stress) |

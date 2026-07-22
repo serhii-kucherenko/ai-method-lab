@@ -1,23 +1,12 @@
 # lesserof findings
 
-## Smoke (scored)
+## Smoke → Crud → Workflow → Integrate (scored)
 
-- **25** dual-green goldens A–Y
-- Forecast API + honesty page
-- Cell: `matrix/cells/A03__P-smoke-001__lesserof__r1.json`
-
-## Crud (scored)
-
-- Catalog + claim detail; auditor RBAC; USMCA wipe on detail
-- Cell: `matrix/cells/A03__P-crud-001__lesserof__r1.json`
-
-## Workflow (scored)
-
-- Batch recover with independent lines (reject siblings stay ok)
-- Append-only audit + CSV export
-- Pages: batch, audit, usmca, basket, forecast-vs-actual
-- Cell: `matrix/cells/A03__P-workflow-001__lesserof__r1.json`
+- 25 dual-green goldens; honesty + catalog/detail
+- Batch independence + audit CSV; USMCA/basket/forecast pages
+- HMAC `POST /webhooks/claim-lines` + Idempotency-Key replay; org settings rotate/RBAC; catalog `limit`/`offset`
+- Cells: smoke, crud, workflow, `A03__P-integrate-001__lesserof__r1`
 
 ## Next
 
-Integrate: webhook + pagination + org settings.
+Scale: concurrent batch stress; rate limits; dual-impl still green.

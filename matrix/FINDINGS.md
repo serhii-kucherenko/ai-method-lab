@@ -1,6 +1,10 @@
 # Findings
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
+## 2026-07-22 — lesserof P-integrate GREEN
+
+- Cell `A03__P-integrate-001__lesserof__r1`. HMAC webhook + idempotency; settings RBAC; catalog pagination. 31 tests. Next: scale.
+
 ## 2026-07-22 — lesserof P-workflow GREEN
 
 - Cell `A03__P-workflow-001__lesserof__r1`. Batch independence + audit CSV; USMCA/basket/forecast pages. 30 tests. Next: integrate.
