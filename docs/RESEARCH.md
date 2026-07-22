@@ -1,13 +1,13 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
-## 2026-07-22 — oshamult API steps[] + kit sync (tick 6)
+## 2026-07-22 - oshamult API steps[] + kit sync (tick 6)
 
-Hours hold ~3.4h of 4h (`WAIT_HOURS`; ~0.6h left). Fixtures still 26/26 dual-green.
+Hours hold ~3.4h of 4h (WAIT_HOURS; ~0.6h left). Fixtures still 26/26 dual-green.
 
-- Day-1 forecast success must return per-factor `steps[]` remaining balances (API contract + algorithm + DAY1 papers).
-- Synced SERIAL-FENCE / G1 / G5 / statute / sustain / Kill A–C / SEED / acceptance / hypothesis off stale queue language; refreshed PREFLIP-DRYRUN.
-- **Explicit non-actions:** no `projects/oshamult/`; framing clock unchanged; no flip until `FLIP_PATH_READY`.
+- Day-1 forecast success must return per-factor steps[] remaining balances (API contract + algorithm + DAY1 papers).
+- Synced SERIAL-FENCE / G1 / G5 / statute / sustain / Kill A-C / SEED / acceptance / hypothesis off stale queue language; refreshed PREFLIP-DRYRUN.
+- Explicit non-actions: no projects/oshamult/; framing clock unchanged; no flip until FLIP_PATH_READY.
 ## 2026-07-22 — oshamult preflip dry-run + architect pack sync (tick 5)
 
 Hours hold ~0.8h of 4h. `check-oshamult-hour-status.mjs` → `WAIT_HOURS`.

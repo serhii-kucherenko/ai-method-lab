@@ -24,7 +24,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "oshamult tick 6: API steps[] honesty + kit sync off stale queue language; PREFLIP-DRYRUN ~3.4/4. Hours WAIT_HOURS (~0.6h left). ticks=6. No projects/oshamult/. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "oshamult tick 6: API steps[] honesty + kit sync off stale queue language; PREFLIP-DRYRUN ~3.5/4. Hours WAIT_HOURS (~0.5h left). ticks=6. No projects/oshamult/. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 93
+    "ticks_observed": 101
   }
 }
