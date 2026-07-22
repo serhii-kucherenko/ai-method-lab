@@ -40,4 +40,4 @@ Additive % cheats and statutory-max starting points are **rejects**, not alterna
 
 ## Decision impact
 
-Survive only as **serial FOM math / classification-gate workflow experiment**. No product while higher-priority seeds hold the queue.
+Survive only as **serial FOM math / classification-gate workflow experiment**. No `projects/oshamult/` until hours + preflip clear.

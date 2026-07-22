@@ -42,9 +42,9 @@ See `oshamult-challenge-ABC.md`.
 
 ## 7. Decision
 
-**Do not build yet.** `current_idea` = oshamult; hours hold open from `2026-07-22T06:20:00.000Z`.
+**Do not build yet.** `current_idea` = oshamult; hours hold ~3.5h / 4h from `2026-07-22T06:20:00.000Z` (`WAIT_HOURS`). Day-1 forecast must expose `steps[]` remaining balances.
 
-Survive only as serial-penalty **forecast / method experiment** (Kill A stands). See `oshamult-POST-LESSEROF-STATUS.md` + `oshamult-PREFLIP-CHECKLIST.md`.
+Survive only as serial-penalty **forecast / method experiment** (Kill A stands). See `oshamult-POST-LESSEROF-STATUS.md` + `oshamult-PREFLIP-CHECKLIST.md` + `oshamult-PREFLIP-DRYRUN.md`.
 
 ## Explicit non-actions
 

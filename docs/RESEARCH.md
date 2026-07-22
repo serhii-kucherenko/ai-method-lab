@@ -1,6 +1,13 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 - oshamult try demo steps trail + near-flip (tick 7)
+
+Hours hold ~3.5h of 4h (~0.5h left). `check-oshamult-hour-status.mjs` -> `WAIT_HOURS`.
+
+- Research try demo now returns and displays each serial factor remaining-balance (matches API `steps[]`).
+- Refreshed PREFLIP-DRYRUN / G6 / VALUE-STAKES / TRY-DEMO for near-flip; still do not flip.
+- Explicit non-actions: no `projects/oshamult/`.
 ## 2026-07-22 - oshamult API steps[] + kit sync (tick 6)
 
 Hours hold ~3.4h of 4h (WAIT_HOURS; ~0.6h left). Fixtures still 26/26 dual-green.

@@ -105,6 +105,23 @@
       .money {
         font-variant-numeric: tabular-nums;
       }
+      .steps {
+        margin: 0.75rem 0 0;
+        padding: 0;
+        list-style: none;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      .steps li {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.25rem 0;
+        border-bottom: 1px dashed var(--line);
+      }
+      .steps li:last-child {
+        border-bottom: 0;
+      }
     </style>
   </head>
   <body>
@@ -113,6 +130,8 @@
       <p class="note">
         Research-only offline demo. Serial OSHA-style reductions on a gravity-based
         penalty amount, with classification gates. Not a product. Not OIS parity.
+        Each factor must show remaining balance before and after (matches day-1
+        <code>steps[]</code> contract).
       </p>
       <p class="disclaimer">
         <strong>Honesty:</strong> consultants already model these reductions. This
@@ -183,6 +202,15 @@
         }).format(n);
       }
 
+      function applyFactor(balance, factor, pct) {
+        const before = balance;
+        const after = balance * (1 - pct);
+        return {
+          step: { factor, pct, balance_before: before, balance_after: after },
+          balance: after,
+        };
+      }
+
       function penalty(input) {
         const gbp = Number(input.gbp_amount);
         const size = Number(input.size_pct);
@@ -219,12 +247,29 @@
         ) {
           return { status: "reject", reason: "Quick Fix blocked on this class/tier." };
         }
+
+        const steps = [];
         let amount = gbp;
-        if (cls !== "willful" && cls !== "repeat") amount *= 1 - size;
-        amount *= 1 - history;
-        amount *= 1 - faith;
-        amount *= 1 - quick;
-        return { status: "ok", penalty: amount };
+        const sizePct = cls === "willful" || cls === "repeat" ? 0 : size;
+        let next = applyFactor(amount, "size", sizePct);
+        steps.push(next.step);
+        amount = next.balance;
+        next = applyFactor(amount, "history", history);
+        steps.push(next.step);
+        amount = next.balance;
+        next = applyFactor(amount, "good_faith", faith);
+        steps.push(next.step);
+        amount = next.balance;
+        next = applyFactor(amount, "quick_fix", quick);
+        steps.push(next.step);
+        amount = next.balance;
+
+        return {
+          status: "ok",
+          penalty: amount,
+          algorithm_version: "oshamult-v0",
+          steps,
+        };
       }
 
       const form = document.getElementById("f");
@@ -250,10 +295,33 @@
           return;
         }
         out.className = "out";
+        const labels = {
+          size: "Size",
+          history: "History",
+          good_faith: "Good faith",
+          quick_fix: "Quick Fix",
+        };
+        const stepRows = got.steps
+          .map(
+            (s) =>
+              "<li><span>" +
+              labels[s.factor] +
+              " (" +
+              Math.round(s.pct * 100) +
+              "%)</span><span class='money'>" +
+              money(s.balance_before) +
+              " → " +
+              money(s.balance_after) +
+              "</span></li>"
+          )
+          .join("");
         out.innerHTML =
           "<div class='row'><span>Proposed penalty</span><span class='money'>" +
           money(got.penalty) +
-          "</span></div>";
+          "</span></div>" +
+          "<ul class='steps'>" +
+          stepRows +
+          "</ul>";
       });
       form.dispatchEvent(new Event("submit"));
     </script>

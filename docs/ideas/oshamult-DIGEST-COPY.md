@@ -19,4 +19,4 @@ Use when emailing a research milestone or (later) product phases. Plain language
 
 ## Research hold status line
 
-Still waiting on the **hours hold** (~3.4h of 4h at last tick; ~0.6h left; ticks already clear). Forecast responses must expose each serial `steps[]` balance. No product folder yet.
+Still waiting on the **hours hold** (~3.5h of 4h at last tick; ~0.5h left; ticks already clear). Try demo and forecast contract both expose each serial `steps[]` balance. No product folder yet.
