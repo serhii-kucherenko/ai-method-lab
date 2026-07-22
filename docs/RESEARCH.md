@@ -2,6 +2,18 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 ticks 7–8: mid-hold skeptic (loop 61–62)
+
+`AGENT_LOOP_TICK_depth_15m` occurrences **61–62** (batched). Docs + research try demo only. Framing clock **unchanged**.
+
+- Wrote `ptax4975-MIDHOLD-SKEPTIC.md` (~1.5h / 4h): **continue** as forecast method; Kill A + three fences; do not park; do not flip
+- Archived SEED language off stale htsroute slot rule; VISION refuse list + try demo disclose excess-comp fence
+- Committed leftover DAY1 / PREFLIP excess-comp abort rows from tick 6
+- `research_ticks_on_idea` → 8; still **WAIT_HOURS** (~2.5h left)
+- Explicit non-actions: **no** `projects/ptax4975/`
+
+**Skeptical one-liner:** Mid-hold re-ask still says continue — commercial Kill A is unanswered; hours remain the only honest gate left.
+
 ## 2026-07-22 — ptax4975 tick 6: excess-compensation fence under WAIT_HOURS
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 60. Docs only. Framing clock **unchanged**.

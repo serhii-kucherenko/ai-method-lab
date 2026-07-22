@@ -45,7 +45,8 @@ Success is **not** Form 5330 parity, IRS/DOL replacement, market proof from fixt
 3. **Not a naked “15% once” widget** — year-parts × first tier + second tier if uncorrected are required.
 4. **Not silent highest-FMV-during-period parity** — v0 optional greater-of two inputs only (`ptax4975-FMV-FENCE.md`); flip only via versioned dual re-green.
 5. **Not automatic taxable-period end dates** — v0 takes caller-supplied `year_parts`; notice/assessment/correction enum is fenced (`ptax4975-TAXABLE-PERIOD-FENCE.md`).
-6. **Not smoke-as-sustain** — shipping a single calculator page fails `docs/COMPREHENSIVE_PRODUCT.md`.
+6. **Not automatic excess-compensation narrowing** — v0 amount is caller-resolved; services carve is fenced (`ptax4975-EXCESS-COMP-FENCE.md`).
+7. **Not smoke-as-sustain** — shipping a single calculator page fails `docs/COMPREHENSIVE_PRODUCT.md`.
 
 ---
 
