@@ -33,4 +33,4 @@ Paper: `oshamult-STATUTE-CITATIONS.md`, `oshamult-SIZE-TABLE.md`, `oshamult-algo
 
 ## Decision impact
 
-Survive as serial FOM math experiment only. Research demo: `demos/oshamult-try/try.html`.
+Survive as serial FOM math experiment only. Research demo: `demos/oshamult-try/try.html`. Serial fence: `oshamult-SERIAL-FENCE.md`.

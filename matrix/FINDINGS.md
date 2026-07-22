@@ -578,3 +578,7 @@ depositgap § 6621 mid-window fence + try honesty. Morning status diagnostic (WA
 ## 2026-07-21 -- depth tick 54 (research, no product)
 
 lesserof USMCA wipe fence + smoke toy ($0 vs naive +$9,900). Demo index for StackBlitz digests. No product folder.
+
+## 2026-07-21 -- depth tick 55 (research, no product)
+
+oshamult serial remaining-balance fence + additive miss smoke. No product folder.

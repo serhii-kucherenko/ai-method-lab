@@ -20,7 +20,14 @@ const rules = {
   },
   "oshamult-try": {
     minBytes: 2000,
-    mustInclude: ["research", "honesty", "5000"],
+    mustInclude: [
+      "research",
+      "honesty",
+      "5000",
+      "statutory",
+      "additive",
+      "willful",
+    ],
   },
   "htsroute-try": {
     minBytes: 2000,
@@ -171,6 +178,15 @@ function nearly(a, b, eps = 0.02) {
     failed += 1;
   } else {
     pass("oshamult behavioral toy: $2,677.50");
+  }
+
+  // Additive cheat would understate vs serial — document the miss magnitude
+  const additive = 5000 * (1 - (0.3 + 0.1 + 0.15));
+  if (!(nearly(additive, 2250) && additive < amount - 1)) {
+    fail(`oshamult additive contrast drifted (additive=${additive})`);
+    failed += 1;
+  } else {
+    pass("oshamult additive miss toy: ~$2,250 < serial $2,677.50");
   }
 }
 

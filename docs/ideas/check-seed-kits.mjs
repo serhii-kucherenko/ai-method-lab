@@ -93,6 +93,7 @@ const seeds = [
       "oshamult-DAY1-NONSMOKE.md",
       "oshamult-REPO-SCAFFOLD.md",
       "oshamult-G1-EVIDENCE.md",
+      "oshamult-SERIAL-FENCE.md",
     ],
   },
   {

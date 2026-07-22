@@ -939,3 +939,15 @@ Loop wake #6 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
 **Decision:** still researching. Queue unchanged: park lean htsroute ù depositgap ù lesserof.
 
 **Skeptical one-liner:** Stacked refund caps stay a second-seat dollar seed ù not a reason to jump htsroute/depositgap tonight.
+
+## 2026-07-21 ù AGENT_LOOP_TICK_depth_15m #55 (oshamult serial fence)
+
+Loop wake #7 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
+
+- Wrote `oshamult-SERIAL-FENCE.md` ù statutory-max / additive / willful gates
+- Smoke locks additive miss (~$2,250 vs serial $2,677.50)
+- Try disclaimer points at fence
+
+**Decision:** still researching. Queue: park lean ù depositgap ù lesserof ù oshamult.
+
+**Skeptical one-liner:** Serial remaining-balance is the claim; additive % toys are the lie we refuse.
