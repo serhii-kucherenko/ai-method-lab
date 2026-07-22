@@ -1,7 +1,7 @@
 # oshamult — FOM size / serial-order lock (seed paper)
 
 **Fetched:** 2026-07-21 from https://www.osha.gov/fom/chapter-6  
-**State:** seed only. Closes “Still open #1” on `oshamult-STATUTE-CITATIONS.md` for **Table 6-2** cells.  
+**State:** active research (`current_idea`). Closes “Still open #1” on `oshamult-STATUTE-CITATIONS.md` for **Table 6-2** cells.  
 **Not OIS parity.** Digests must not claim OSHA / OIS replacement.
 
 ## Table 6-2 — Size Reduction (non–serious-willful)

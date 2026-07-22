@@ -19,6 +19,10 @@ Run **only when** hours since `framing_started_at` ≥ 4 **and** `research_ticks
 | 8 | Day-1 contract | `oshamult-DAY1-NONSMOKE.md` |
 | 9 | One product rule | `current_product` null; lesserof sustained (not in flight) |
 
+## Flip actions (when all green)
+
+Follow `oshamult-FLIP-WHEN-CLEAR.md`. Digests use `oshamult-DIGEST-COPY.md`.
+
 ## Soft park triggers
 
 - Digests claim OIS parity while v0 order differs  

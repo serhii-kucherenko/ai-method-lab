@@ -1,6 +1,14 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — oshamult digest + flip kit; fixture Z rename (tick 2)
+
+Hours hold ~0.3h of 4h. Fixtures still **26/26 dual-green**.
+
+- Added `oshamult-DIGEST-COPY.md`, `FLIP-WHEN-CLEAR`, `VALUE-GATE-DRYRUN`.
+- Renamed duplicate letter `U-repeat` → `Z-repeat` for clearer suite labeling.
+- **Explicit non-actions:** no `projects/oshamult/`.
+
 ## 2026-07-22 — oshamult activated after lesserof sustain (tick 1)
 
 Hours hold ~0h of 4h. Fixtures **26/26 dual-green**.

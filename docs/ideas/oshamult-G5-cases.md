@@ -29,7 +29,7 @@
 | S | Willful no cuts → equals GBP |
 | T | Low-gravity serious + Quick Fix allowed |
 | U-fta | FTA history-only → **$18,000** |
-| U-repeat | Repeat history-only → **$40,000** |
+| Z-repeat | Repeat history-only → **$40,000** |
 | V | Large GBP precision |
 | W | 10% size + history → **$7,200** |
 | X | Tiny GBP → **$0.70** |
