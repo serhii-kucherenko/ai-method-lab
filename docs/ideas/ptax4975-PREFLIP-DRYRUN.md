@@ -12,11 +12,11 @@ Walk of flip readiness **during** hours hold. Not a flip.
 | 2 | Ticks ≥3 | **Red** — tick 2 / 3 |
 | 3 | Fixtures ≥25 | **Green** — 35 fixtures |
 | 4 | Dual-impl | **Green** — 35 dual |
-| 5 | Value / Kill A | **Green** — counsel stands; forecast experiment only |
+| 5 | Value gate continue-as-method | **Green** (`ptax4975-VALUE-GATE-DRYRUN.md`) |
 | 5b | FMV honesty | **Green** — greater-of v0; highest-during-period fenced |
 | 6 | G6 honesty | **Green** — no Form 5330 / IRS replacement |
 | 7 | Architect pack | **Green** — VISION / ROADMAP / PRD / ERD |
-| 8 | Framing + fence papers | **Green** |
+| 8 | Day-1 + framing + fence | **Green** |
 | 9 | No early product | **Green** — no `projects/ptax4975/` |
 
 ## Decision

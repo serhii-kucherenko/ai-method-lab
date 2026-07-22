@@ -2,17 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
-## 2026-07-22 — ptax4975 preflip dry-run + hour-status (tick 2)
+## 2026-07-22 — ptax4975 value gate + preflip checklist (tick 2)
 
-`AGENT_LOOP_TICK_depth_15m` occurrence 56. Deepened activation hygiene (docs only).
+`AGENT_LOOP_TICK_depth_15m`. Deepened activation hygiene (docs only). Framing clock **unchanged**.
 
-- Added `check-ptax4975-hour-status.mjs` → **WAIT_TICKS** (2/3) while hours hold also running
-- Wrote `ptax4975-PREFLIP-DRYRUN.md` + `ptax4975-FLIP-WHEN-CLEAR.md`
-- Synced G6 / Kill A-C / FMV fence / POST-OSHAMULT-RUN off stale “behind queue / seed only” language
-- Checkers still **35/35** dual-green
-- Explicit non-actions: **no** `projects/ptax4975/`; not ready until ticks ≥3 and hours ≥4
+- Wrote `ptax4975-VALUE-GATE-DRYRUN.md` — Kill A stands (counsel owns Form 5330); **continue as forecast method**, not park
+- Wrote `ptax4975-PREFLIP-CHECKLIST.md` (lesserof/oshamult pattern) + refreshed FLIP-WHEN-CLEAR / PREFLIP-DRYRUN
+- Hour-status + seed kits now require VALUE-GATE + PREFLIP-CHECKLIST + flip sheet
+- `research_ticks_on_idea` → 2; hour-status → **WAIT_TICKS** (2/3) while hours hold also running
+- Checkers **35/35** dual-green; no `projects/ptax4975/`
 
-**Skeptical one-liner:** Paper depth is ahead of the clock — do not mistake fixture green for flip.
+**Skeptical one-liner:** Counsel already owns Form 5330 — thirty-five green fixtures are not a market.
 
 ## 2026-07-22 — ptax4975 research activated (tick 1)
 

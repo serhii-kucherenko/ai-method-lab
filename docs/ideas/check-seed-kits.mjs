@@ -130,6 +130,9 @@ const seeds = [
       "ptax4975-ROADMAP.md",
       "ptax4975-PRD.md",
       "ptax4975-ERD.md",
+      "ptax4975-VALUE-GATE-DRYRUN.md",
+      "ptax4975-PREFLIP-CHECKLIST.md",
+      "ptax4975-FLIP-WHEN-CLEAR.md",
     ],
   },
 ];
