@@ -16,6 +16,7 @@ Export manufacturers forecast drawback refunds as “99% of duty paid.” For **
 - Direct-ID: **no** TFTEA lesser-of (99% of paid)  
 - Reject: lesser-of on direct-ID; skip lesser-of on substitution; USMCA flag without partner; USMCA on direct-ID; basket other without match; claim-type relabel  
 - Multi-line: independent caps; one reject fails the run  
+- USMCA wipe: partner duty-free can drive recoverable to **$0** after TFTEA (`lesserof-USMCA-WIPE-FENCE.md`)
 
 ## 4. Kill rounds
 
@@ -37,18 +38,18 @@ Export manufacturers forecast drawback refunds as “99% of duty paid.” For **
 - G5: `lesserof-G5-cases.md` — **23** fixtures + X/Y notes; dual-impl green  
 - Narrow claim: `lesserof-NARROW-CLAIM.md`  
 - CFR cites: `lesserof-CFR-CITATIONS.md`  
-- Blueprint: `lesserof-COMPREHENSIVE-BLUEPRINT.md`
+- Blueprint: `lesserof-COMPREHENSIVE-BLUEPRINT.md`  
+- Architect pack: `lesserof-VISION.md`, `lesserof-ROADMAP.md`, `lesserof-PRD.md`, `lesserof-ERD.md` (**on file**, paper only)
 
 ## 7. Decision
 
-**Do not build yet** — but **activate research**: `current_idea` = lesserof after depositgap sustain (2026-07-22).
+**Do not build yet.** Research continues: `current_idea` = lesserof after depositgap sustain (2026-07-22).
 
 Still blocked from `ready_to_build` by:
 
 1. Kill A stands (brokers/ACE win commercially) — product may only be a stacked-cap **workflow experiment**
-2. Hours + tick hold (`min_hours_research_before_ready: 4`, `min_research_ticks_before_ready: 3`)
-3. Architect pack missing (VISION / ROADMAP / PRD / ERD)
-4. G6 must stay honest: no ACE replacement; no ×0.99-only widget
+2. Hours + tick hold (`min_hours_research_before_ready: 4`, `min_research_ticks_before_ready: 3`) — architect pack **no longer missing**
+3. G6 must stay honest: no ACE replacement; no ×0.99-only widget
 
 See `lesserof-POST-DEPOSITGAP-STATUS.md`.
 

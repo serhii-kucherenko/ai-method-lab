@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T03:10:00Z",
+  "updated_at": "2026-07-22T03:20:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-sustain__depositgap__r1",
+  "last_completed": "research__lesserof__architect_pack__tick2",
   "last_error": null,
   "current_product": null,
   "current_idea": "lesserof",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "lesserof research tick: post-depositgap status + G6/scorecard refresh; 23 dual fixtures green; Kill A stands; architect pack missing; NOT ready_to_build. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "lesserof research tick 2: senior architect pack on file (VISION/ROADMAP/PRD/ERD); kit requires them; G6/scorecard still NOT ready_to_build until hour hold + ticks ≥3; Kill A stands; no projects/lesserof/. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -34,7 +34,7 @@
     "min_hours_research_before_ready": 4,
     "framing_started_at": "2026-07-22T02:50:00.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 1,
+    "research_ticks_on_idea": 2,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 64
+    "ticks_observed": 65
   }
 }

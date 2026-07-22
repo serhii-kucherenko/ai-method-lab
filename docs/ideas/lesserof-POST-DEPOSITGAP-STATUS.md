@@ -18,7 +18,7 @@ Research tick after **depositgap sustained**. Docs only. No `projects/lesserof/`
 | G1–G5 | Hold as previously scored (provisional G1; Kill A stands) |
 | G6 | Updated: depositgap no longer blocks; **still not `ready_to_build`** |
 | Challenge D (commercial) | Soft survive **only** as stacked-cap **workflow experiment** — brokers/ACE already claim |
-| Architect pack | **Missing** — VISION / ROADMAP / PRD / ERD not written yet |
+| Architect pack | **On file** — VISION / ROADMAP / PRD / ERD (paper only; kit requires them) |
 
 ## What would make this a park (like htsroute)
 
@@ -28,7 +28,7 @@ If digests or framing slide into “replaces ACE filers” or a naked “×0.99 
 
 1. Keep `current_idea` = **lesserof**, `phase` = **research**.  
 2. **Do not** open `projects/lesserof/`.  
-3. Next research ticks: harden G6 + Challenge D language; then **senior architect** pack when hours/ticks clear.  
+3. Architect pack landed; still wait for **≥4h** + **≥3 research ticks** before any `ready_to_build`.  
 4. Digests: stacked refund-cap workflow experiment; Kill A mandatory.
 
 ## Explicit non-actions

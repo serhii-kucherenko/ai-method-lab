@@ -7,10 +7,10 @@
 | G3 Adversarial | pass with Kill A standing | Brokers/ACE already claim; survive as workflow experiment |
 | G4 Falsifiers | pass (draft) | Wrong mode on direct-ID; silent basket match; dishonest ACE claims |
 | G5 Depth tests | pass | **23** fixtures + dual-impl green (re-run 2026-07-22) |
-| G6 Research summary | **in progress** | depositgap no longer blocks; summary must be rewritten for activation window |
+| G6 Research summary | pass (honest hold) | Architect pack on file; still **not** `ready_to_build` until hours + ticks |
 | Challenge D | soft survive | Stacked-cap experiment only — not commercial novelty vs filers |
-| Architect pack | **missing** | VISION / ROADMAP / PRD / ERD required before build |
+| Architect pack | **on file** | VISION / ROADMAP / PRD / ERD written (paper only) |
 
-**Decision:** `current_idea` = lesserof. State ≈ `differentiated` / `testable`. **Not** `ready_to_build` until hours hold (≥4h from framing window) + ≥3 research ticks + architect pack + G6 rewrite.
+**Decision:** `current_idea` = lesserof. State ≈ `differentiated` / `testable`. **Not** `ready_to_build` until hours hold (≥4h from framing window) + ≥3 research ticks. Architect pack is no longer the missing gate — hours + ticks still are.
 
 **Do not open** `projects/lesserof/` until those clear. Status sheet: `lesserof-POST-DEPOSITGAP-STATUS.md`.

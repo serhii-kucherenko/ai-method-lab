@@ -78,6 +78,10 @@ const seeds = [
       "lesserof-REPO-SCAFFOLD.md",
       "lesserof-G1-EVIDENCE.md",
       "lesserof-USMCA-WIPE-FENCE.md",
+      "lesserof-VISION.md",
+      "lesserof-ROADMAP.md",
+      "lesserof-PRD.md",
+      "lesserof-ERD.md",
     ],
   },
   {

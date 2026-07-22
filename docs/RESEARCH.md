@@ -1,14 +1,28 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
-## 2026-07-22 — lesserof post-depositgap research tick
+
+## 2026-07-22 ? lesserof architect pack (research tick 2)
+
+Senior architect paper only. depositgap still **sustained**; lesserof remains `current_idea`.
+
+- Wrote `lesserof-VISION.md`, `lesserof-ROADMAP.md`, `lesserof-PRD.md`, `lesserof-ERD.md` (stacked TFTEA + USMCA wipe + basket + direct-ID; Kill A honesty).
+- Kit `check-seed-kits.mjs` now requires those four; GATE-SCORECARD / G6: architect pack **on file**, still **not** `ready_to_build` until hour hold + ticks ?3.
+- Controllers: `research_ticks_on_idea` ? 2; no `projects/lesserof/`.
+- Checkers: lesserof fixtures + dual + seed kits must stay green.
+
+**Decision:** still researching. Paper pack does not unlock build.
+
+**Skeptical one-liner:** Four architect docs on disk are not a product ? and Kill A still means brokers win the filing game.
+
+## 2026-07-22 ? lesserof post-depositgap research tick
 
 depositgap is **sustained**. lesserof is `current_idea` (research only).
 
 - Re-ran checkers: **23/23** fixtures + dual-impl green.
 - Wrote `lesserof-POST-DEPOSITGAP-STATUS.md`; refreshed GATE-SCORECARD + G6 decision (activate research, **not** ready_to_build).
 - Kill A still stands; Challenge D soft-survives only as stacked-cap workflow experiment.
-- Architect pack (VISION/ROADMAP/PRD/ERD) still missing — next ticks after hours hold.
+- Architect pack (VISION/ROADMAP/PRD/ERD) still missing ? next ticks after hours hold.
 - **Explicit non-actions:** no `projects/lesserof/`; no ACE/broker replacement claims.
 
 
