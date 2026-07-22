@@ -132,6 +132,7 @@ const seeds = [
       "ptax4975-THREE-QUARTER-HOLD.md",
       "ptax4975-FINAL-HOUR.md",
       "ptax4975-FLIP-DAY-SCRIPT.md",
+      "ptax4975-LAST-HALF-HOUR.md",
       "ptax4975-DIGEST-HOLD.md",
       "ptax4975-DAY1-NONSMOKE.md",
       "ptax4975-REPO-SCAFFOLD.md",

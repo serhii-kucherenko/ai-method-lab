@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 tick 16: last half-hour under WAIT_HOURS
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 70. Docs only. Framing clock **unchanged**.
+
+- Wrote `ptax4975-LAST-HALF-HOUR.md` (~3.45h / 4h; ~0.55h left)
+- Next clear tick must run `FLIP-DAY-SCRIPT` — not more paper theater
+- `research_ticks_on_idea` → 16; still **WAIT_HOURS**
+- Explicit non-actions: **no** `projects/ptax4975/`
+
+**Skeptical one-liner:** Half an hour left — the only honest work is waiting, then flipping once.
+
 ## 2026-07-22 — ptax4975 tick 15: flip-day script under WAIT_HOURS
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 69. Docs only. Framing clock **unchanged**.

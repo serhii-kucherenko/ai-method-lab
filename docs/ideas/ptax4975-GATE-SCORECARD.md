@@ -7,7 +7,7 @@
 | G3 Adversarial | pass with Kill A standing | Counsel/tax software already compute; survive as forecast experiment |
 | G4 Falsifiers | pass (draft) | Form 5330 replacement claims; silent highest-FMV-during-period |
 | G5 Depth tests | pass | **35** fixtures + dual-impl green |
-| G6 Research summary | **in progress** | tick 15; WAIT_HOURS (~0.8h left); flip-day script ready |
+| G6 Research summary | **in progress** | tick 16; WAIT_HOURS (~0.55h left); last half-hour |
 
 **Decision:** `current_idea` = ptax4975. Tick bar met. Not `ready_to_build` until hours ≥4. Framing: `ptax4975-PRODUCT-FRAMING.md`. Fence: `ptax4975-FMV-FENCE.md`. Value gate: `ptax4975-VALUE-GATE-DRYRUN.md`. Preflip: `ptax4975-PREFLIP-CHECKLIST.md`.
 
