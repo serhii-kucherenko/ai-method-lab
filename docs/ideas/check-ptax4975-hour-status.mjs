@@ -53,12 +53,15 @@ const fence = existsSync(join(root, "docs/ideas/ptax4975-FMV-FENCE.md"));
 const periodFence = existsSync(
   join(root, "docs/ideas/ptax4975-TAXABLE-PERIOD-FENCE.md"),
 );
+const excessFence = existsSync(
+  join(root, "docs/ideas/ptax4975-EXCESS-COMP-FENCE.md"),
+);
 const g6 = existsSync(join(root, "docs/ideas/ptax4975-G6-summary.md"));
 const flip = existsSync(join(root, "docs/ideas/ptax4975-FLIP-WHEN-CLEAR.md"));
 const value = existsSync(join(root, "docs/ideas/ptax4975-VALUE-GATE-DRYRUN.md"));
 const preflip = existsSync(join(root, "docs/ideas/ptax4975-PREFLIP-CHECKLIST.md"));
 console.log(
-  `PASS papers: pack=${pack} framing=${framingDoc} fence=${fence} period=${periodFence} g6=${g6} flip=${flip} value=${value} preflip=${preflip}`,
+  `PASS papers: pack=${pack} framing=${framingDoc} fence=${fence} period=${periodFence} excess=${excessFence} g6=${g6} flip=${flip} value=${value} preflip=${preflip}`,
 );
 
 const productEarly = existsSync(join(root, "projects/ptax4975"));
@@ -75,6 +78,7 @@ if (
     framingDoc &&
     fence &&
     periodFence &&
+    excessFence &&
     g6 &&
     flip &&
     value &&

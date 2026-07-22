@@ -12,6 +12,7 @@ Use in research digests while hours hold is open. Plain language; no Form 5330 /
 
 - v0 amount path is optional greater-of two fair-value inputs — **not** highest fair value during the taxable period.
 - Year-parts are an explicit input — **not** automatic notice / assessment / correction end dates.
+- Amount is resolved by the caller — **not** automatic excess-compensation narrowing for service PTs.
 
 ## Forbidden
 

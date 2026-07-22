@@ -164,4 +164,4 @@ Counsel and tax software already compute the tax (Kill A). This product is a **f
 
 ## Explicit non-action
 
-Do not open `projects/ptax4975/` from this PRD. Do not flip `current_idea` to ptax4975 while oshamult holds the research slot (`ptax4975-POST-OSHAMULT-RUN.md`).
+Do not open `projects/ptax4975/` from this PRD until `FLIP_PATH_READY`.

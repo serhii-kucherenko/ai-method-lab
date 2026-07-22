@@ -15,6 +15,7 @@ Run **only when** hours since `framing_started_at` ≥ 4 **and** `research_ticks
 | 5 | Value gate | `ptax4975-VALUE-GATE-DRYRUN.md` still says **continue as forecast method**, not park |
 | 5b | FMV honesty | Digests do not claim highest-FMV-during-period parity (`ptax4975-FMV-FENCE.md`) |
 | 5c | Taxable-period honesty | Digests do not claim automatic (f)(2) end-date enum (`ptax4975-TAXABLE-PERIOD-FENCE.md`) |
+| 5d | Excess-compensation honesty | Digests do not claim automatic excess-comp narrowing (`ptax4975-EXCESS-COMP-FENCE.md`) |
 | 6 | G6 honesty | No Form 5330 / IRS / DOL replacement; no flat-once-excise widget |
 | 7 | Architect pack | VISION / ROADMAP / PRD / ERD on file |
 | 8 | Day-1 contract | `ptax4975-DAY1-NONSMOKE.md` |

@@ -2,6 +2,18 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 tick 6: excess-compensation fence under WAIT_HOURS
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 60. Docs only. Framing clock **unchanged**.
+
+- Wrote `ptax4975-EXCESS-COMP-FENCE.md` — (f)(4) services carve stays out of v0; amount remains caller-resolved
+- Synced ERD/PRD/ROADMAP footers, HYPOTHESIS, REPO-SCAFFOLD, G1, TRY-DEMO, DIGEST-HOLD, DAY1, PREFLIP checklist (5d)
+- Hour-status + seed kits require excess-comp fence paper
+- `research_ticks_on_idea` → 6; still **WAIT_HOURS** (~2.8h left)
+- Explicit non-actions: **no** `projects/ptax4975/`
+
+**Skeptical one-liner:** Three honesty fences now (FMV, taxable period, excess-comp) — still not a reason to flip before the hours clock.
+
 ## 2026-07-22 — ptax4975 tick 5: blueprint + digest hold under WAIT_HOURS
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 59. Docs only. Framing clock **unchanged**.

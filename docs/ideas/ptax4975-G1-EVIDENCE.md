@@ -1,6 +1,6 @@
-# ptax4975 — G1 evidence pack (seed deepen)
+# ptax4975 — G1 evidence pack
 
-Research only. Not framed. Last in the activation queue after oshamult.
+Research only. `current_idea` under hours hold.
 
 ## Named user + frequency
 
@@ -16,7 +16,7 @@ Research only. Not framed. Last in the activation queue after oshamult.
 | 26 U.S.C. § 4975(b) | Additional tax = **100%** of amount involved if not corrected |
 | 26 U.S.C. § 4975(f)(4) | Amount involved = greater of money/FMV given or received; (b) uses highest FMV during period |
 
-Paper: `ptax4975-STATUTE-CITATIONS.md`, `ptax4975-FMV-FENCE.md`, `ptax4975-algorithm.md`
+Paper: `ptax4975-STATUTE-CITATIONS.md`, `ptax4975-FMV-FENCE.md`, `ptax4975-TAXABLE-PERIOD-FENCE.md`, `ptax4975-EXCESS-COMP-FENCE.md`, `ptax4975-algorithm.md`
 
 ## Worked dollar toys
 

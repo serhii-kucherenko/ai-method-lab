@@ -1,7 +1,7 @@
 # ptax4975 — hypothesis draft (post-activation paste)
 
-**Status:** seed draft for a future `projects/ptax4975/` hypothesis.  
-**Not active.** Last in `ACTIVATION_QUEUE.md` among current parallel seeds.
+**Status:** draft for a future `projects/ptax4975/HYPOTHESIS.md`.  
+**Active research:** `current_idea` under hours hold — not `ready_to_build` until `FLIP_PATH_READY`.
 
 ## Hypothesis (one paragraph)
 
@@ -17,9 +17,10 @@ ERISA counsel still files Form 5330. This product is an FP&A honesty / workflow 
 
 ## Falsifiers
 
-1. Year-part counting wrong in ≥2 real facts → abandon or re-version.  
-2. After smoke, sponsors still book flat 15% once → abandon.  
+1. Year-part counting wrong in ≥2 real facts → abandon or re-version.
+2. After smoke, sponsors still book flat 15% once → abandon.
 3. Framing claims Form 5330 / DOL replacement → dishonest framing fail.
+4. Silent “fix” of highest-FMV-during-period, taxable-period end dates, or excess-compensation narrowing without dual suite → dishonest framing fail.
 
 ## Comprehensive bar pointer
 
@@ -27,4 +28,4 @@ ERISA counsel still files Form 5330. This product is an FP&A honesty / workflow 
 
 ## Activation gate
 
-Only after higher-priority seeds clear, with IDEA_DEPTH re-read.
+`check-ptax4975-hour-status.mjs` → `FLIP_PATH_READY`, then walk `ptax4975-FLIP-WHEN-CLEAR.md`.

@@ -192,4 +192,4 @@ No extra “file Form 5330” or “approve/approve” routes.
 
 ## Explicit non-action
 
-Paper ERD only. Do not open `projects/ptax4975/` or migrate schemas from this doc. Do not flip `current_idea` to ptax4975 while oshamult holds the research slot (`ptax4975-POST-OSHAMULT-RUN.md`).
+Paper ERD only. Do not open `projects/ptax4975/` or migrate schemas from this doc until `FLIP_PATH_READY`.

@@ -1,6 +1,6 @@
 # ptax4975 — day-1 repo scaffold (paper only)
 
-**Do not create** `projects/ptax4975/` until oshamult clears and `ptax4975-POST-OSHAMULT-RUN.md` passes.
+**Do not create** `projects/ptax4975/` until `check-ptax4975-hour-status.mjs` → `FLIP_PATH_READY`.
 
 ## Target layout
 
@@ -48,12 +48,12 @@ projects/ptax4975/
 
 ## Day-1 must-touch
 
-PRODUCT unique claim + Kill A; tier breakdown API; honesty + FMV fence; ≥35 goldens.
+PRODUCT unique claim + Kill A; tier breakdown API; honesty + FMV + taxable-period + excess-comp fences; ≥35 goldens.
 
 ## Instant fail
 
-Flat once-excise widget; Form 5330 replacement claim; silent highest-during-period FMV “fix”; <4 pages.
+Flat once-excise widget; Form 5330 replacement claim; silent highest-during-period FMV “fix”; silent excess-compensation “fix”; <4 pages.
 
 ## Sources
 
-`ptax4975-COMPREHENSIVE-BLUEPRINT.md`, `ptax4975-FMV-FENCE.md`, `ptax4975-DAY1-NONSMOKE.md`.
+`ptax4975-COMPREHENSIVE-BLUEPRINT.md`, `ptax4975-FMV-FENCE.md`, `ptax4975-TAXABLE-PERIOD-FENCE.md`, `ptax4975-EXCESS-COMP-FENCE.md`, `ptax4975-DAY1-NONSMOKE.md`.

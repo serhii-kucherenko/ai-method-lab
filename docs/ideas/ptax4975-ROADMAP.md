@@ -93,4 +93,4 @@ Shipping smoke (or a single “15% once” calculator page) as “sustain” fai
 
 ## Explicit non-action
 
-No product folder from this roadmap. Do not flip `current_idea` to ptax4975 while oshamult holds the research slot (`ptax4975-POST-OSHAMULT-RUN.md`).
+No product folder from this roadmap until `FLIP_PATH_READY`.

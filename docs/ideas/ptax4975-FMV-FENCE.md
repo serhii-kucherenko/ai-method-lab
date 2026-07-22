@@ -11,7 +11,7 @@
 | Additional tax | (b) 100% if not corrected in taxable period | `corrected` boolean | Correction-period end vs taxable-period end |
 | Taxable period end | (f)(2) earliest of notice / assessment / correction | caller supplies year_parts | Explicit end-date enum |
 | Amount involved | (f)(4) greater-of money/FMV; (b) uses **highest FMV during period** | greater-of two inputs for both tiers | Separate FMV series for second tier |
-| Services | (f)(4) excess compensation only in listed cases | not an enum | `excess_compensation` path |
+| Excess compensation | (f)(4) services carve | not an enum | `excess_compensation` path — `ptax4975-EXCESS-COMP-FENCE.md` |
 
 ## Honesty rejects already in goldens
 
