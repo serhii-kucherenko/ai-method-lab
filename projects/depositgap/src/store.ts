@@ -308,11 +308,13 @@ export function patchEntry(
   return { ok: true, value: row };
 }
 
+export type ForecastRunResult = ForecastResult & { entry_id: string; run_id: string };
+
 export function runForecast(
   db: DatabaseSync,
   entryId: string,
   override?: Partial<ForecastInput>,
-): WriteResult<ForecastResult & { entry_id: string; run_id: string }> {
+): WriteResult<ForecastRunResult> {
   const entry = getEntry(db, entryId);
   if (!entry) return { ok: false, status: 404, error: "not found" };
 
@@ -350,4 +352,245 @@ export function runForecast(
     ok: true,
     value: { ...result, entry_id: entryId, run_id: runId },
   };
+}
+
+export type BatchForecastItem =
+  | ForecastRunResult
+  | { entry_id: string; status: "reject"; reason: string; run_id?: string };
+
+/** Run true-up independently per entry — one failure must not rewrite siblings. */
+export function runBatchForecast(
+  db: DatabaseSync,
+  orgId: string,
+  entryIds: string[],
+  override?: Partial<ForecastInput>,
+): { results: BatchForecastItem[] } {
+  const results: BatchForecastItem[] = [];
+  for (const entryId of entryIds) {
+    try {
+      const entry = getEntry(db, entryId);
+      if (!entry || entry.orgId !== orgId) {
+        results.push({ entry_id: entryId, status: "reject", reason: "not_found" });
+        continue;
+      }
+      const outcome = runForecast(db, entryId, override);
+      if (!outcome.ok) {
+        results.push({
+          entry_id: entryId,
+          status: "reject",
+          reason: outcome.error,
+        });
+        continue;
+      }
+      results.push(outcome.value);
+    } catch (err) {
+      results.push({
+        entry_id: entryId,
+        status: "reject",
+        reason: err instanceof Error ? err.message : "batch_error",
+      });
+    }
+  }
+  return { results };
+}
+
+export type CashImpactLine = {
+  por: string;
+  entry_count: number;
+  duty_delta: number;
+  interest: number;
+  true_up: number;
+};
+
+export type CashImpact = {
+  lines: CashImpactLine[];
+  totals: { duty_delta: number; interest: number; true_up: number; entry_count: number };
+};
+
+/** POR rollup from each entry's latest successful forecast run. */
+export function getCashImpact(db: DatabaseSync, orgId: string): CashImpact {
+  const rows = db
+    .prepare(
+      `SELECT e.id AS entry_id, e.por AS por,
+              fr.duty_delta AS duty_delta, fr.interest AS interest, fr.true_up AS true_up
+       FROM entries e
+       INNER JOIN forecast_runs fr ON fr.entry_id = e.id
+       WHERE e.org_id = ?
+         AND fr.status = 'ok'
+         AND fr.id = (
+           SELECT fr2.id FROM forecast_runs fr2
+           WHERE fr2.entry_id = e.id AND fr2.status = 'ok'
+           ORDER BY fr2.created_at DESC, fr2.id DESC
+           LIMIT 1
+         )
+       ORDER BY e.por ASC, e.id ASC`,
+    )
+    .all(orgId) as Array<{
+    entry_id: string;
+    por: string | null;
+    duty_delta: number;
+    interest: number;
+    true_up: number;
+  }>;
+
+  const byPor = new Map<string, CashImpactLine>();
+  for (const row of rows) {
+    const por = row.por && row.por.trim() ? row.por : "(none)";
+    const line = byPor.get(por) ?? {
+      por,
+      entry_count: 0,
+      duty_delta: 0,
+      interest: 0,
+      true_up: 0,
+    };
+    line.entry_count += 1;
+    line.duty_delta += Number(row.duty_delta);
+    line.interest += Number(row.interest);
+    line.true_up += Number(row.true_up);
+    byPor.set(por, line);
+  }
+
+  const lines = [...byPor.values()];
+  const totals = lines.reduce(
+    (acc, line) => ({
+      duty_delta: acc.duty_delta + line.duty_delta,
+      interest: acc.interest + line.interest,
+      true_up: acc.true_up + line.true_up,
+      entry_count: acc.entry_count + line.entry_count,
+    }),
+    { duty_delta: 0, interest: 0, true_up: 0, entry_count: 0 },
+  );
+  return { lines, totals };
+}
+
+export type AuditEvent = {
+  id: string;
+  entry_id: string;
+  por: string | null;
+  status: string;
+  duty_delta: number | null;
+  days: number | null;
+  interest: number | null;
+  true_up: number | null;
+  reason: string | null;
+  algorithm_version: string | null;
+  action: string;
+  created_at: string;
+};
+
+export type AuditListOpts = {
+  entryId?: string;
+  status?: string;
+  limit?: number;
+  offset?: number;
+};
+
+export function listAudit(
+  db: DatabaseSync,
+  orgId: string,
+  opts: AuditListOpts = {},
+): { events: AuditEvent[]; total: number; limit: number; offset: number } {
+  const filters: string[] = ["e.org_id = ?"];
+  const params: (string | number)[] = [orgId];
+  if (opts.entryId) {
+    filters.push("fr.entry_id = ?");
+    params.push(opts.entryId);
+  }
+  if (opts.status) {
+    filters.push("fr.status = ?");
+    params.push(opts.status);
+  }
+  const where = filters.join(" AND ");
+
+  const totalRow = db
+    .prepare(
+      `SELECT COUNT(*) AS n FROM forecast_runs fr
+       INNER JOIN entries e ON e.id = fr.entry_id
+       WHERE ${where}`,
+    )
+    .get(...params) as { n: number };
+  const total = Number(totalRow.n);
+  const offset = Math.max(opts.offset ?? 0, 0);
+  const limit =
+    opts.limit !== undefined
+      ? Math.min(Math.max(opts.limit, 1), 500)
+      : Math.min(Math.max(total, 1), 500);
+
+  const rows = db
+    .prepare(
+      `SELECT fr.id, fr.entry_id, e.por, fr.status, fr.duty_delta, fr.days, fr.interest,
+              fr.true_up, fr.reason, fr.algorithm_version, fr.created_at
+       FROM forecast_runs fr
+       INNER JOIN entries e ON e.id = fr.entry_id
+       WHERE ${where}
+       ORDER BY fr.created_at DESC, fr.id DESC
+       LIMIT ? OFFSET ?`,
+    )
+    .all(...params, limit, offset) as Array<{
+    id: string;
+    entry_id: string;
+    por: string | null;
+    status: string;
+    duty_delta: number | null;
+    days: number | null;
+    interest: number | null;
+    true_up: number | null;
+    reason: string | null;
+    algorithm_version: string | null;
+    created_at: string;
+  }>;
+
+  return {
+    events: rows.map((row) => ({
+      ...row,
+      action: row.status === "ok" ? "forecast_lock" : "forecast_reject",
+    })),
+    total,
+    limit,
+    offset,
+  };
+}
+
+export function auditToCsv(events: AuditEvent[]): string {
+  const header = [
+    "id",
+    "entry_id",
+    "por",
+    "action",
+    "status",
+    "duty_delta",
+    "days",
+    "interest",
+    "true_up",
+    "reason",
+    "algorithm_version",
+    "created_at",
+  ];
+  const escape = (v: unknown): string => {
+    const s = v === null || v === undefined ? "" : String(v);
+    if (/[",\n\r]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
+    return s;
+  };
+  const lines = [header.join(",")];
+  for (const ev of events) {
+    lines.push(
+      [
+        ev.id,
+        ev.entry_id,
+        ev.por,
+        ev.action,
+        ev.status,
+        ev.duty_delta,
+        ev.days,
+        ev.interest,
+        ev.true_up,
+        ev.reason,
+        ev.algorithm_version,
+        ev.created_at,
+      ]
+        .map(escape)
+        .join(","),
+    );
+  }
+  return lines.join("\n") + "\n";
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T01:15:00Z",
+  "updated_at": "2026-07-22T01:45:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": "A03__P-workflow-001__depositgap__r1",
+  "active_cell": "A03__P-integrate-001__depositgap__r1",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "P-crud-001__depositgap",
+  "last_completed": "P-workflow-001__depositgap",
   "last_error": null,
   "current_product": "depositgap",
   "current_idea": "depositgap",
   "next_cell": "P-integrate-001__depositgap",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "depositgap crud GREEN (27 tests): catalog/detail live + auditor RBAC. Next: workflow (batch/cash/audit). htsroute parked. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "depositgap workflow GREEN (28 tests): batch independence, POR cash rollup, audit CSV + live pages. Next: integrate (webhook/pagination/settings). htsroute parked. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -48,6 +48,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 59
+    "ticks_observed": 60
   }
 }

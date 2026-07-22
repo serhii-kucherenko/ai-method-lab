@@ -1,4 +1,166 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8" /><title>depositgap — Batch</title><link rel="stylesheet" href="/public/styles.css" /></head>
-<body><nav><a href="/public/entries.html">Catalog</a><a href="/public/money-honesty.html">Honesty</a></nav>
-<main><h1>Batch forecast</h1><p>Phase unlock later — stub page for comprehensive bar.</p></main></body></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Depositgap — Batch forecast</title>
+    <style>
+      body {
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 2rem 1.5rem;
+        background: #f7f3eb;
+        color: #1a2332;
+      }
+      .brand { color: #0d6e6e; font-weight: 700; font-size: 1.5rem; }
+      h1 { font-size: 1.2rem; }
+      a { color: #0d6e6e; }
+      #status { color: #4a5568; margin: 1rem 0; }
+      textarea {
+        width: min(36rem, 100%);
+        min-height: 6rem;
+        font-family: ui-monospace, monospace;
+        padding: 0.5rem;
+      }
+      button {
+        background: #0d6e6e;
+        color: #fff;
+        border: 0;
+        padding: 0.6rem 1.1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 0.75rem;
+      }
+      #batch-results {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+        max-width: 40rem;
+      }
+      #batch-results li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #d5cdc0;
+        font-family: ui-monospace, monospace;
+        font-size: 0.9rem;
+      }
+      .ok { color: #0d6e6e; }
+      .reject { color: #8b3a3a; }
+    </style>
+  </head>
+  <body>
+    <div class="brand">Depositgap</div>
+    <h1>Batch forecast</h1>
+    <p>
+      Queue entry ids; each true-up runs independently. One failure does not rewrite siblings.
+    </p>
+    <p id="status">Provide token and org, then run.</p>
+    <label for="entry-ids">Entry ids (one per line or comma-separated)</label>
+    <br />
+    <textarea id="entry-ids" placeholder="uuid-1&#10;uuid-2"></textarea>
+    <br />
+    <button id="run-batch" type="button">Run batch forecast</button>
+    <ul id="batch-results" data-batch="live"></ul>
+    <p>
+      <a href="/entries.html">Catalog</a> ·
+      <a href="/cash-impact.html">Cash impact</a> ·
+      <a href="/audit.html">Audit</a> ·
+      <a href="/money-honesty.html">Money honesty</a>
+    </p>
+    <p>
+      Brokers and CBP still own liquidation. This is a forecast / method experiment.
+    </p>
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const token =
+          params.get("token") ||
+          localStorage.getItem("depositgap_token") ||
+          "";
+        const orgId =
+          params.get("orgId") ||
+          localStorage.getItem("depositgap_orgId") ||
+          "";
+        const statusEl = document.getElementById("status");
+        const listEl = document.getElementById("batch-results");
+        const idsEl = document.getElementById("entry-ids");
+        const btn = document.getElementById("run-batch");
+
+        const preset = params.get("entryIds") || params.get("ids") || "";
+        if (preset) idsEl.value = preset.replace(/,/g, "\n");
+
+        if (!token || !orgId) {
+          statusEl.textContent =
+            "Provide ?token= and ?orgId= (or set localStorage depositgap_token / depositgap_orgId).";
+          btn.disabled = true;
+          return;
+        }
+        statusEl.textContent = "Ready — enter entry ids and run.";
+
+        btn.addEventListener("click", function () {
+          const entryIds = idsEl.value
+            .split(/[\s,]+/)
+            .map(function (s) {
+              return s.trim();
+            })
+            .filter(Boolean);
+          if (entryIds.length === 0) {
+            statusEl.textContent = "Add at least one entry id.";
+            return;
+          }
+          statusEl.textContent = "Running…";
+          btn.disabled = true;
+          fetch("/orgs/" + encodeURIComponent(orgId) + "/batch/forecast", {
+            method: "POST",
+            headers: {
+              authorization: "Bearer " + token,
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({ entryIds: entryIds }),
+          })
+            .then(function (res) {
+              return res.json().then(function (json) {
+                return { status: res.status, json: json };
+              });
+            })
+            .then(function (result) {
+              btn.disabled = false;
+              if (result.status !== 200) {
+                statusEl.textContent =
+                  "Batch failed (" + result.status + ").";
+                return;
+              }
+              const results = result.json.results || [];
+              statusEl.textContent =
+                results.length + " result" + (results.length === 1 ? "" : "s");
+              listEl.innerHTML = "";
+              results.forEach(function (row) {
+                const li = document.createElement("li");
+                if (row.status === "ok") {
+                  li.className = "ok";
+                  li.textContent =
+                    row.entry_id +
+                    " · duty_delta " +
+                    row.duty_delta +
+                    " · interest " +
+                    row.interest +
+                    " · true_up " +
+                    row.true_up;
+                } else {
+                  li.className = "reject";
+                  li.textContent =
+                    row.entry_id +
+                    " · reject · " +
+                    (row.reason || "reject");
+                }
+                listEl.appendChild(li);
+              });
+            })
+            .catch(function () {
+              btn.disabled = false;
+              statusEl.textContent = "Network error running batch.";
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>

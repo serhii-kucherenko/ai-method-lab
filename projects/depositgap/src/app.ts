@@ -6,17 +6,21 @@ import type { Store } from "./store.js";
 import {
   addMember,
   assertAccess,
+  auditToCsv,
   createEntry,
   createOrg,
   createStore,
   findUserByEmail,
+  getCashImpact,
   getEntry,
   getOrg,
   issueToken,
+  listAudit,
   listEntries,
   patchEntry,
   registerUser,
   resolveToken,
+  runBatchForecast,
   runForecast,
 } from "./store.js";
 import { listMigrations, migrationCount, type OrgRole } from "./db.js";
@@ -382,6 +386,73 @@ export function createApp(opts: { store?: Store; rateLimit?: number } = {}) {
           return;
         }
         send(res, 200, forecast);
+        return;
+      }
+
+      const batchMatch = path.match(/^\/orgs\/([^/]+)\/batch\/forecast$/);
+      if (method === "POST" && batchMatch) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const orgId = batchMatch[1]!;
+        if (orgDenied(store, orgId, userId, "forecast", res)) return;
+        const body = await readBody(req);
+        const rawIds = body.entryIds;
+        if (!Array.isArray(rawIds) || rawIds.length === 0) {
+          send(res, 400, { error: "entryIds required" });
+          return;
+        }
+        const entryIds = rawIds.map((id) => String(id));
+        const batch = runBatchForecast(
+          store.db,
+          orgId,
+          entryIds,
+          parseForecastOverride(body),
+        );
+        send(res, 200, batch);
+        return;
+      }
+
+      const cashMatch = path.match(/^\/orgs\/([^/]+)\/cash-impact$/);
+      if (method === "GET" && cashMatch) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const orgId = cashMatch[1]!;
+        if (orgDenied(store, orgId, userId, "read", res)) return;
+        send(res, 200, getCashImpact(store.db, orgId));
+        return;
+      }
+
+      const auditMatch = path.match(/^\/orgs\/([^/]+)\/audit$/);
+      if (method === "GET" && auditMatch) {
+        if (!userId) {
+          send(res, 401, { error: "unauthorized" });
+          return;
+        }
+        const orgId = auditMatch[1]!;
+        if (orgDenied(store, orgId, userId, "read", res)) return;
+        const limitRaw = url.searchParams.get("limit");
+        const offsetRaw = url.searchParams.get("offset");
+        const listed = listAudit(store.db, orgId, {
+          entryId: url.searchParams.get("entryId") ?? undefined,
+          status: url.searchParams.get("status") ?? undefined,
+          limit: limitRaw !== null ? Number(limitRaw) : undefined,
+          offset: offsetRaw !== null ? Number(offsetRaw) : undefined,
+        });
+        if (url.searchParams.get("format") === "csv") {
+          const csv = auditToCsv(listed.events);
+          res.writeHead(200, {
+            "content-type": "text/csv; charset=utf-8",
+            "content-disposition": 'attachment; filename="audit.csv"',
+            "content-length": Buffer.byteLength(csv),
+          });
+          res.end(csv);
+          return;
+        }
+        send(res, 200, listed);
         return;
       }
 
