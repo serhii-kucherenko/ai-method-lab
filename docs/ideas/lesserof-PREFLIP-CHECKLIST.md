@@ -22,6 +22,8 @@ Run **only when** `hours since framing_started_at ≥ 4` **and** `research_ticks
 
 ## Flip actions (when all green)
 
+Follow `lesserof-FLIP-WHEN-CLEAR.md`:
+
 1. Set idea state `ready_to_build` in BACKLOG + G6 decision.  
 2. Open comprehensive `projects/lesserof/` per blueprint — **not** smoke-as-sustain.  
 3. Digests: stacked refund-cap **workflow experiment**; Kill A mandatory.

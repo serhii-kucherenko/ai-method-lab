@@ -36,9 +36,9 @@ See `lesserof-CFR-CITATIONS.md`, `lesserof-WORKED-EXAMPLE.md`, `lesserof-USMCA-S
 ## What this does *not* prove
 
 - Product-market demand.  
-- That 23 green fixtures equal a business.  
+- That 25 green fixtures equal a business.  
 - ACE filing replacement.
 
 ## Decision impact
 
-Survive only as **stacked refund-cap workflow experiment**. Activation: `lesserof-POST-DEPOSITGAP-RUN.md` (not today).
+Survive only as **stacked refund-cap workflow experiment**. Flip sequence: `lesserof-FLIP-WHEN-CLEAR.md` after hours + preflip.

@@ -1,6 +1,15 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof flip runbook + demo label honesty (tick 15)
+
+Hours hold ~3.0h of 4h (~1.0h left).
+
+- Added `lesserof-FLIP-WHEN-CLEAR.md` (exact preflip → ready_to_build sequence).
+- Softened try-demo USMCA label to stacked-substitution wipe (same-condition already fenced).
+- VALUE-STAKES + PREFLIP point at the flip runbook; fixture count 25.
+- **Explicit non-actions:** no `projects/lesserof/`.
+
 ## 2026-07-22 — lesserof fixture re-verify + 25-count sync (tick 14)
 
 Hours hold ~2.7h of 4h (~1.3h left).
