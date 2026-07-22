@@ -2,6 +2,14 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — c1592 tick 13: ~20 min left (WAIT_HOURS)
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 97. Docs only. Framing clock **unchanged**.
+
+- Wrote LAST-20-MIN; kit **30/30**; ~0.30h short → `WAIT_HOURS`
+- Next clear tick: flip immediately — no more status memos
+- Explicit non-actions: **no** `projects/c1592/`
+
 ## 2026-07-22 — c1592 tick 12: ~30 min left (WAIT_HOURS)
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 96. Docs only. Framing clock **unchanged**.
