@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T12:20:00Z",
+  "updated_at": "2026-07-22T12:25:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -24,7 +24,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "oshamult sustained (56 tests; 7 pages; try.html). Cleared product. Next research: ptax4975. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "oshamult product-complete digest sent. ptax4975 research tick 1 (35 dual green; hours hold). Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -32,9 +32,9 @@
     "block_isomorphic_dual_gate": true,
     "block_same_day_research_to_build": false,
     "min_hours_research_before_ready": 4,
-    "framing_started_at": null,
+    "framing_started_at": "2026-07-22T12:25:00.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 0,
+    "research_ticks_on_idea": 1,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 109
+    "ticks_observed": 110
   }
 }

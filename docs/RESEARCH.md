@@ -1,6 +1,19 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+
+## 2026-07-22 — ptax4975 research activated (tick 1)
+
+oshamult sustained. Activated **ptax4975** as `current_idea` (research only).
+
+- Re-ran checkers: **35/35** fixtures + dual-impl green
+- Set `framing_started_at` / hours hold clock; `research_ticks_on_idea` = 1
+- Gate scorecard: G6 hold lifted from “last in queue”; Kill A still stands (counsel/tax software)
+- Unique claim remains: § 4975 **15%/yr × year-parts** then **100%** additional if uncorrected; amount involved = greater-of FMV fence (not silent highest-during-period)
+- Explicit non-actions: **no** `projects/ptax4975/`; not `ready_to_build` until hours ≥4 and ticks ≥3
+
+**Skeptical one-liner:** Paper suite is already deep; the risk is Form 5330 / IRS replacement framing — digests must stay forecast-shape only.
+
 ## 2026-07-22 - oshamult flipped + smoke scored
 
 Hours clear. `FLIP_PATH_READY` then `projects/oshamult/` opened. Smoke green: 26 dual goldens, forecast `steps[]`, four UI pages, Kill A honesty. Next product phase: crud.
