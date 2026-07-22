@@ -1,7 +1,7 @@
-# oshamult — product vision (seed paper)
+# oshamult — product vision (active research)
 
-**Paper only. Parallel seed. Do not open `projects/oshamult/` yet.**  
-**Do not set `current_idea` to oshamult** — `lesserof` holds the research slot (hours hold).
+**Paper only during hours hold. Do not open `projects/oshamult/` until preflip clears.**  
+**`current_idea` = oshamult** — lesserof / depositgap already sustained. Wait on ≥4h framing + `oshamult-PREFLIP-CHECKLIST.md`.
 
 Sources: `oshamult-PRODUCT-FRAMING.md`, `oshamult-VALUE-STAKES.md`, `oshamult-COMPREHENSIVE-BLUEPRINT.md`, `oshamult-SERIAL-FENCE.md`, `oshamult-algorithm.md`, `oshamult-SIZE-TABLE.md`, `oshamult-G6-summary.md`.
 
@@ -69,4 +69,4 @@ Illustrative stakes (VALUE-STAKES): **$2,677.50** / **$1,071** toys. Digests say
 
 ## Explicit non-action
 
-Do not activate, do not open `projects/oshamult/`, do not flip `current_idea` from this artifact. Activation waits on lesserof (and depositgap queue) clear + `oshamult-POST-LESSEROF-RUN.md`.
+Do not open `projects/oshamult/` from this artifact. Flip only after hours + `oshamult-FLIP-WHEN-CLEAR.md` / `oshamult-DAY1-COMMIT-ORDER.md`.

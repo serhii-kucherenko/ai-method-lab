@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T07:05:00Z",
+  "updated_at": "2026-07-22T07:15:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__oshamult__value_gate_tick4",
+  "last_completed": "research__oshamult__preflip_dryrun_tick5",
   "last_error": null,
   "current_product": null,
   "current_idea": "oshamult",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "oshamult tick 4: VALUE-GATE-DRYRUN Kill A honesty (consultants model GBP serial); continue method experiment vs park — continue. SERIAL-FENCE + try demo cited. Hours ~0.7/4 WAIT_HOURS. ticks=4. No projects/oshamult/. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "oshamult tick 5: PREFLIP-DRYRUN (only hours red); architect pack headers synced to active research. Hours ~1.0/4 WAIT_HOURS. ticks=5. No projects/oshamult/. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -34,7 +34,7 @@
     "min_hours_research_before_ready": 4,
     "framing_started_at": "2026-07-22T06:20:00.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 4,
+    "research_ticks_on_idea": 5,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 91
+    "ticks_observed": 92
   }
 }

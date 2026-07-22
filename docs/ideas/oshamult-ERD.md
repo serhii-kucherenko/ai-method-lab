@@ -1,7 +1,7 @@
 # oshamult — entity relationship doc
 
-**Paper only. Parallel seed. Do not open `projects/oshamult/` until activation queue clears.**  
-**Do not set `current_idea` to oshamult** — `lesserof` holds the research slot (hours hold).
+**Paper only during hours hold. Do not open `projects/oshamult/` until preflip clears.**  
+**`current_idea` = oshamult** — wait on ≥4h framing + `oshamult-PREFLIP-CHECKLIST.md`.
 
 Logical aggregates for a future build. Aligns with `oshamult-API-CONTRACT.md`, `oshamult-COMPREHENSIVE-BLUEPRINT.md`, `oshamult-algorithm.md`, `oshamult-PAGE-SPECS.md`, `oshamult-SERIAL-FENCE.md`. **No routes invented beyond the existing contract.**
 
@@ -195,4 +195,4 @@ No extra “issue OSHA citation” or “approve/approve” routes.
 
 ## Explicit non-action
 
-Paper ERD only. Do not open `projects/oshamult/` or migrate schemas from this doc. Do not flip `current_idea` to oshamult while lesserof holds hours (`oshamult-POST-LESSEROF-RUN.md`).
+Paper ERD only. Do not open `projects/oshamult/` or migrate schemas from this doc. Flip only after hours + `oshamult-FLIP-WHEN-CLEAR.md`.

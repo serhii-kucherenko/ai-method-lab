@@ -1,7 +1,7 @@
-# oshamult — product requirements (seed PRD)
+# oshamult — product requirements (active research)
 
-**Paper only. Parallel seed. Do not open `projects/oshamult/` until activation queue clears.**  
-**Do not set `current_idea` to oshamult** — `lesserof` holds the research slot (hours hold).
+**Paper only during hours hold. Do not open `projects/oshamult/` until preflip clears.**  
+**`current_idea` = oshamult** — wait on ≥4h framing + `oshamult-PREFLIP-CHECKLIST.md`.
 
 Real PRD for activation later — not a thin smoke brief. Sources: `oshamult-VISION.md`, `oshamult-PRODUCT-FRAMING.md`, `oshamult-VALUE-STAKES.md`, `oshamult-PAGE-SPECS.md`, `oshamult-API-CONTRACT.md`, `oshamult-ACCEPTANCE.md`, `oshamult-algorithm.md`, `oshamult-SERIAL-FENCE.md`, `oshamult-SIZE-TABLE.md`.
 
@@ -167,4 +167,4 @@ Consultants and counsel already model penalties (Kill A). This product is a **se
 
 ## Explicit non-action
 
-Do not open `projects/oshamult/` from this PRD. Do not flip `current_idea` to oshamult while lesserof holds hours (`oshamult-POST-LESSEROF-RUN.md`).
+Do not open `projects/oshamult/` from this PRD. Flip only after hours + `oshamult-FLIP-WHEN-CLEAR.md`.

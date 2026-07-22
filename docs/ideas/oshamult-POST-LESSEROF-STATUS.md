@@ -25,4 +25,4 @@ Ticks ≥3 and hours ≥4 required before `ready_to_build`. Do **not** move `fra
 
 ## Next research ticks
 
-Preflip checklist, flip-when-clear runbook, G2 vs lesserof memo, value-gate dry-run refresh.
+Preflip dry-run mid-hold (`oshamult-PREFLIP-DRYRUN.md`), architect-pack header sync, flip-when-clear when hours clear.

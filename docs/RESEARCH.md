@@ -1,6 +1,14 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — oshamult preflip dry-run + architect pack sync (tick 5)
+
+Hours hold ~0.8h of 4h. `check-oshamult-hour-status.mjs` → `WAIT_HOURS`.
+
+- Added `oshamult-PREFLIP-DRYRUN.md`: checklist rows 2–9 green; **only hours red**.
+- Synced VISION / ROADMAP / PRD / ERD headers off stale seed / queue language; wired FLIP to dry-run.
+- DIGEST hold line updated; **Explicit non-actions:** no `projects/oshamult/`.
+
 ## 2026-07-22 — oshamult Kill A value-gate honesty (tick 4)
 
 Hours hold ~0.7h of 4h. `check-oshamult-hour-status.mjs` → `WAIT_HOURS`.

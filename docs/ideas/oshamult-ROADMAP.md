@@ -1,7 +1,7 @@
-# oshamult — phased roadmap (seed paper)
+# oshamult — phased roadmap (active research)
 
-**Paper only. Parallel seed. Do not open `projects/oshamult/` until activation queue clears.**  
-**Do not set `current_idea` to oshamult** — `lesserof` holds the research slot (hours hold).
+**Paper only during hours hold. Do not open `projects/oshamult/` until preflip clears.**  
+**`current_idea` = oshamult** — wait on ≥4h framing + `oshamult-PREFLIP-CHECKLIST.md`.
 
 Maps A03/A10 phases to the comprehensive ladder. Sources: `oshamult-PHASE-BRIEFS.md`, `oshamult-PAGE-SPECS.md`, `oshamult-COMPREHENSIVE-BLUEPRINT.md`, `oshamult-SUSTAIN-TEST-MATRIX.md`, `oshamult-API-CONTRACT.md`, `oshamult-SERIAL-FENCE.md`.
 
@@ -94,4 +94,4 @@ Shipping smoke (or a single “sum the %” / statutory-max calculator page) as 
 
 ## Explicit non-action
 
-No product folder from this roadmap. Do not flip `current_idea` to oshamult while lesserof holds the hours gate (`oshamult-POST-LESSEROF-RUN.md`).
+No product folder from this roadmap. Flip only after hours + `oshamult-FLIP-WHEN-CLEAR.md` / `oshamult-DAY1-COMMIT-ORDER.md`.
