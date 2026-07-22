@@ -23,6 +23,8 @@
 
 Say **forecast of first- and second-tier excise shape** — not “we file Form 5330.” Kill A: counsel and tax software still win commercially.
 
+Smoke locks corrected ($3,000), uncorrected ($13,000), and greater-of FMV ($12k → $3,600 initial) toys in `demos/smoke-try-demos.mjs`. That is **not** highest-FMV-during-period parity.
+
 ## Explicit non-actions
 
 No product. Behind depositgap / lesserof / oshamult. Do not “fix” v0 to highest-during-period FMV without a dual suite bump.

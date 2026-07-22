@@ -965,3 +965,15 @@ Human steer: need researcher / senior architect / product delivery so products g
 **Decision:** still researching. No product folder. Tomorrow: htsroute Build vs Park; if park ? later tick activate depositgap with architect pack already on file.
 
 **Skeptical one-liner:** Roles on paper only matter if tomorrow refuses to open a product without vision/roadmap/PRD/ERD — and refuses API-green calculator shells.
+
+## 2026-07-21 — AGENT_LOOP_TICK_depth_15m #57 (ptax4975 FMV / second-tier smoke)
+
+Loop wake #8 (pid 26872). Same-day build still blocked (`WAIT_SAME_DAY`).
+
+- Smoke locks ptax corrected ($3k), uncorrected ($13k), and FMV greater-of ($12k ? $3,600) toys
+- Try disclaimer points at `ptax4975-FMV-FENCE.md` (still not highest-during-period parity)
+- `depositgap-POST-HTSROUTE-RUN.md` requires architect pack + kits before any product folder
+
+**Decision:** still researching. All five dollar/serial seeds now have honesty fences + behavioral smoke.
+
+**Skeptical one-liner:** Excise toys without a second-tier / FMV miss are just another green calculator costume.

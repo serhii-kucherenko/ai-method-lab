@@ -43,8 +43,14 @@ const rules = {
   },
   "ptax4975-try": {
     minBytes: 2000,
-    mustInclude: ["research", "honesty", "10000"],
-    optional: true,
+    mustInclude: [
+      "research",
+      "honesty",
+      "10000",
+      "FMV",
+      "corrected",
+      "additional",
+    ],
   },
 };
 
@@ -199,6 +205,25 @@ function nearly(a, b, eps = 0.02) {
     failed += 1;
   } else {
     pass("ptax4975 behavioral toy: $3,000 corrected");
+  }
+
+  // Uncorrected: +100% additional tax on amount involved
+  const uncorrectedTotal = initial + 10_000;
+  if (!nearly(uncorrectedTotal, 13_000)) {
+    fail(`ptax4975 uncorrected toy drifted (total=${uncorrectedTotal})`);
+    failed += 1;
+  } else {
+    pass("ptax4975 uncorrected toy: $13,000 (15%×2y + 100%)");
+  }
+
+  // Greater-of FMV pair vs stated amount (v0 toy — not highest-during-period)
+  const fmvAmount = Math.max(10_000, 12_000);
+  const fmvInitial = 0.15 * fmvAmount * 2;
+  if (!(nearly(fmvAmount, 12_000) && nearly(fmvInitial, 3_600))) {
+    fail(`ptax4975 FMV greater-of toy drifted (initial=${fmvInitial})`);
+    failed += 1;
+  } else {
+    pass("ptax4975 FMV greater-of toy: $12k → $3,600 initial");
   }
 }
 

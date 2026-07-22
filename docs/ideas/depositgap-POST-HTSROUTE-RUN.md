@@ -20,7 +20,9 @@ Use **only after** `htsroute` has flipped to build, parked, or killed — and **
 8. `depositgap-COMPREHENSIVE-BLUEPRINT.md` + `depositgap-PAGE-SPECS.md` + `depositgap-PHASE-BRIEFS.md`  
 9. `depositgap-SUSTAIN-TEST-MATRIX.md`  
 10. `depositgap-API-CONTRACT.md`  
-11. `depositgap-HYPOTHESIS-DRAFT.md`
+11. `depositgap-HYPOTHESIS-DRAFT.md`  
+12. Architect pack (mandatory before product folder): `depositgap-VISION.md` + `ROADMAP` + `PRD` + `ERD` per `protocols/AGENT_ROLES.md`  
+13. `depositgap-6621-FENCE.md`
 
 ## Checkers (must stay green)
 
@@ -28,6 +30,7 @@ Use **only after** `htsroute` has flipped to build, parked, or killed — and **
 node docs/ideas/check-depositgap-fixtures.mjs
 node docs/ideas/check-depositgap-dual.mjs
 node demos/smoke-try-demos.mjs
+node docs/ideas/check-seed-kits.mjs
 ```
 
 Optional farm preflight: `node docs/ideas/check-all-seeds.mjs`  
@@ -36,9 +39,10 @@ Value contrast before activation: `htsroute-vs-depositgap-VALUE.md` (why this se
 ## If all pass
 
 1. Set `current_idea` → depositgap; walk IDEA_DEPTH to `ready_to_build` only if gates still hold.  
-2. Open **comprehensive** `projects/depositgap/` (≥8 pages per blueprint) — **not** smoke-as-sustain. Day-1 contract: `depositgap-DAY1-NONSMOKE.md`. Tree: `depositgap-REPO-SCAFFOLD.md`.  
-3. Digests: forecast / FP&A honesty experiment; brokers and CBP still liquidate; never claim ACE bill printout.  
-4. Paste hypothesis from `depositgap-HYPOTHESIS-DRAFT.md`.
+2. Senior architect pack must already be on file (VISION/ROADMAP/PRD/ERD) — do not open `projects/` without it.  
+3. Open **comprehensive** `projects/depositgap/` (≥8 pages per blueprint) — **not** smoke-as-sustain. Day-1 contract: `depositgap-DAY1-NONSMOKE.md`. Tree: `depositgap-REPO-SCAFFOLD.md`. UI critical path green before sustain.  
+4. Digests: forecast / FP&A honesty experiment; brokers and CBP still liquidate; never claim ACE bill printout.  
+5. Paste hypothesis from `depositgap-HYPOTHESIS-DRAFT.md`.
 
 ## If any fail
 

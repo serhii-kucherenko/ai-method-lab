@@ -582,3 +582,11 @@ lesserof USMCA wipe fence + smoke toy ($0 vs naive +$9,900). Demo index for Stac
 ## 2026-07-21 -- depth tick 55 (research, no product)
 
 oshamult serial remaining-balance fence + additive miss smoke. No product folder.
+
+## 2026-07-21 -- depth tick 56 (research, no product)
+
+Agent roles protocol + depositgap VISION/ROADMAP/PRD/ERD architect pack. UI critical path required before sustain. No product folder.
+
+## 2026-07-21 -- depth tick 57 (research, no product)
+
+ptax4975 FMV / uncorrected second-tier smoke toys. depositgap post-park run requires architect pack. No product folder.

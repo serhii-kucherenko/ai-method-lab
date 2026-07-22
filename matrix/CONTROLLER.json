@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__depth15m_tick56_agent_roles_depositgap_pack",
+  "last_completed": "research__depth15m_tick57_ptax_fmv_second_tier_smoke",
   "last_error": null,
   "current_product": null,
   "current_idea": "htsroute",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "15m tick 56: AGENT_ROLES + depositgap VISION/ROADMAP/PRD/ERD. WAIT_SAME_DAY. Loop pid 26872 — do NOT re-arm if alive. UI critical path required before sustain.",
+  "notes": "15m tick 57: ptax4975 FMV/uncorrected smoke; depositgap POST requires architect pack. WAIT_SAME_DAY. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -46,6 +46,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 56
+    "ticks_observed": 57
   }
 }
