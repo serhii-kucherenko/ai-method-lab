@@ -1,0 +1,20 @@
+{
+  "id": "oshamult-D-zero-gbp",
+  "title": "Non-positive GBP → reject",
+  "source": "oshamult-algorithm.md",
+  "input": {
+    "classification": "serious",
+    "gravity_tier": "moderate",
+    "gbp_amount": 0,
+    "size_pct": 0.3,
+    "history_pct": 0,
+    "good_faith_pct": 0,
+    "quick_fix_pct": 0,
+    "use_statutory_max": false,
+    "additive_cheat": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "bad_inputs"
+  }
+}

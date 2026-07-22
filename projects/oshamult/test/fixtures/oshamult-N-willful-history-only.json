@@ -1,0 +1,20 @@
+{
+  "id": "oshamult-N-willful-history-only",
+  "title": "Willful with size 0 — history cut only",
+  "source": "oshamult-algorithm.md",
+  "input": {
+    "classification": "willful",
+    "gravity_tier": "high",
+    "gbp_amount": 100000,
+    "size_pct": 0,
+    "history_pct": 0.1,
+    "good_faith_pct": 0,
+    "quick_fix_pct": 0,
+    "use_statutory_max": false,
+    "additive_cheat": false
+  },
+  "expect": {
+    "status": "ok",
+    "penalty": 90000
+  }
+}

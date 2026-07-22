@@ -1,6 +1,6 @@
 # Research summary — oshamult (G6)
 
-Skeptical senior-eng bar. **Active research idea** after lesserof sustained (2026-07-22). Not `ready_to_build` until hours + preflip clear.
+Skeptical senior-eng bar. **`ready_to_build`** after hours + preflip clear (2026-07-22).
 
 ## 1. Problem
 
@@ -42,10 +42,8 @@ See `oshamult-challenge-ABC.md`.
 
 ## 7. Decision
 
-**Do not build yet.** `current_idea` = oshamult; hours hold ~3.5h / 4h from `2026-07-22T06:20:00.000Z` (`WAIT_HOURS`). Day-1 forecast must expose `steps[]` remaining balances.
-
-Survive only as serial-penalty **forecast / method experiment** (Kill A stands). See `oshamult-POST-LESSEROF-STATUS.md` + `oshamult-PREFLIP-CHECKLIST.md` + `oshamult-PREFLIP-DRYRUN.md`.
+**`ready_to_build`.** Hours ≥4h from `2026-07-22T06:20:00.000Z`; ticks ≥3; dual 26/26 green; architect pack on file. Product delivery opens comprehensive `projects/oshamult/` (not a one-page calculator). Digests: serial-penalty **forecast / method experiment**; specialists still model real settlements. No OIS parity claims on v0 order.
 
 ## Explicit non-actions
 
-No `projects/oshamult/` during the hours hold. Digests must not claim OIS replacement.
+No additive-% widget. No silent size-on-willful. Digests must not claim OIS / OSHA replacement.

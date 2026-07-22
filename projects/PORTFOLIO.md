@@ -8,6 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
+| **oshamult** | **in progress** | A03 + A10 | **crud** (smoke scored) | GBP × serial remaining-balance penalty forecast (Kill A; not OIS) |
 | **lesserof** | **sustained** | A03 + A10 | done | Stacked TFTEA+USMCA+basket refund caps (Kill A; not ACE) |
 | **depositgap** | **sustained** | A03 + A10 | done | Deposit→assessed→interest forecast honesty (Kill A; not ACE/CBP) |
 | tariffstep | **sustained** | A03 + A10 | done | Stepped rate blocks + demand ratchet (workflow experiment) |
@@ -47,8 +48,8 @@ Full historical table preserved in git history prior to depth restart; rows belo
 
 ## Next autonomous actions
 
-1. Slow IDEA_DEPTH on **lesserof** (drawback stacked caps) — research only; no second product build yet
-2. Digests: plain language; Kill A honesty on depositgap finished
+1. Finish **oshamult** ladder (smoke → crud → … → sustain); digests = serial-penalty method experiment, no OIS parity
+2. Digests: plain language; Kill A honesty
 3. Multi-tick research before fixtures; never same-day framed→build
-4. Depth-restart sustained: lotblast … tariffstep … **depositgap**
+4. Depth-restart sustained: lotblast … tariffstep … depositgap … **lesserof**
 5. Killed: lanehold (G2); parked: htsroute (Challenge D)

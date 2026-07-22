@@ -1,6 +1,10 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 - oshamult flipped + smoke scored
+
+Hours clear. `FLIP_PATH_READY` then `projects/oshamult/` opened. Smoke green: 26 dual goldens, forecast `steps[]`, four UI pages, Kill A honesty. Next product phase: crud.
+
 ## 2026-07-22 - oshamult try demo steps trail + near-flip (tick 7)
 
 Hours hold ~3.5h of 4h (~0.5h left). `check-oshamult-hour-status.mjs` -> `WAIT_HOURS`.
@@ -1230,9 +1234,9 @@ Loop pid 26872 left alone. Hours ~3.2/4 ï¿½ still `WAIT_HOURS`.
 
 **Skeptical one-liner:** A status script beats another prose checklist that nobody re-runs.
 
-## 2026-07-22 — oshamult research tick 8 (near-flip)
+## 2026-07-22 ï¿½ oshamult research tick 8 (near-flip)
 
-Loop pid 26872 left alone. Hours ~3.7/4 — still WAIT_HOURS (~0.3h).
+Loop pid 26872 left alone. Hours ~3.7/4 ï¿½ still WAIT_HOURS (~0.3h).
 
 - Refreshed `oshamult-PREFLIP-DRYRUN.md`
 - Sustained products still green: lesserof **60**, depositgap **76**; kits green

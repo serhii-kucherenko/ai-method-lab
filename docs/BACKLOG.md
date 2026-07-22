@@ -15,7 +15,7 @@ See `docs/DEPTH_RESTART.md`.
 | 1 | **depositgap** | **sustained** | All 8 pages + goldens browser + try.html; Kill A honesty |
 | 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet complete |
 | — | htsroute | **parked** | Soft abort #4 — Challenge D value weak (Free/Free). No product folder |
-| — | **oshamult** | **research (hours hold)** | Architect pack on file; activated after lesserof sustain |
+| 1 | **oshamult** | **smoke scored → crud** | 26 dual goldens; steps[]; 4 UI pages; 29 tests |
 | — | lesserof | **sustained** | Product complete — stacked refund caps |
 | 2 | bondstrip | sustained | |
 | 2 | settlecut | sustained | |
@@ -30,7 +30,7 @@ See `docs/DEPTH_RESTART.md`.
 | Seed | State | Notes |
 | --- | --- | --- |
 | lesserof | **sustained** | Product complete |
-| oshamult | research (hours hold) | Active IDEA_DEPTH after lesserof |
+| oshamult | **ready_to_build** | Flip clear; product under projects/oshamult |
 | ptax4975 | seed | |
 | meldefer | soft park | |
 | form222 | soft park | |
