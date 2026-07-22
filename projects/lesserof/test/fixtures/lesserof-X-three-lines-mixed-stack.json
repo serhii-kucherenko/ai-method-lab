@@ -1,0 +1,37 @@
+{
+  "id": "lesserof-X-three-lines-mixed-stack",
+  "title": "Three independent lines — TFTEA bind + USMCA wipe + direct-ID",
+  "source": "lesserof G5 concurrent / stack honesty (tick 7)",
+  "input": {
+    "mode": "multi_line",
+    "lines": [
+      {
+        "claim_type": "substitution",
+        "duties_paid": 10000,
+        "substitute_basis": 4000,
+        "apply_usmca_lesser_of": false,
+        "basket_other_ineligible": false
+      },
+      {
+        "claim_type": "substitution",
+        "duties_paid": 10000,
+        "substitute_basis": 4000,
+        "apply_usmca_lesser_of": true,
+        "usmca_partner_duty": 0,
+        "basket_other_ineligible": false
+      },
+      {
+        "claim_type": "direct_id",
+        "duties_paid": 2000,
+        "substitute_basis": 9999,
+        "apply_usmca_lesser_of": false,
+        "basket_other_ineligible": false
+      }
+    ]
+  },
+  "expect": {
+    "status": "ok",
+    "refund": 5940,
+    "line_refunds": [3960, 0, 1980]
+  }
+}

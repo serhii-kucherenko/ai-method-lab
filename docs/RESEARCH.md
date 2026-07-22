@@ -1,6 +1,14 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof FLIP_PATH_READY → smoke scaffold (tick 20)
+
+Hours ≥4h. `check-lesserof-hour-status.mjs` → `FLIP_PATH_READY`.
+
+- Preflip green; value gate continue-as-method; same-condition fence intact.
+- Set `ready_to_build`; opened `projects/lesserof/` smoke: domain recover A/B, 25 fixtures, forecast API, honesty page.
+- Digests: stacked-cap workflow experiment; specialists still file.
+
 ## 2026-07-22 — lesserof preflip dry-run (tick 19)
 
 Hours hold ~3.7h of 4h (~0.27h left). `check-lesserof-hour-status.mjs` → `WAIT_HOURS`.

@@ -1,0 +1,17 @@
+{
+  "id": "lesserof-K-relabel-cheat",
+  "title": "Honesty — relabeling substitution as direct-ID to dodge lesser-of must reject",
+  "source": "lesserof-NARROW-CLAIM.md G5 expert cheat",
+  "input": {
+    "claim_type": "direct_id",
+    "duties_paid": 10000,
+    "substitute_basis": 4000,
+    "relabel_from_substitution": true,
+    "apply_usmca_lesser_of": false,
+    "basket_other_ineligible": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "claim_type_relabel"
+  }
+}

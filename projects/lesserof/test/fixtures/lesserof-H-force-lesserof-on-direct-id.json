@@ -1,0 +1,17 @@
+{
+  "id": "lesserof-H-force-lesserof-on-direct-id",
+  "title": "Honesty — applying lesser-of to direct-ID must reject",
+  "source": "lesserof-NARROW-CLAIM.md falsifier / G5 negative",
+  "input": {
+    "claim_type": "direct_id",
+    "duties_paid": 10000,
+    "substitute_basis": 4000,
+    "force_lesser_of": true,
+    "apply_usmca_lesser_of": false,
+    "basket_other_ineligible": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "lesser_of_on_direct_id"
+  }
+}

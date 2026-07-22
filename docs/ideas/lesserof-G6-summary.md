@@ -45,18 +45,14 @@ Export manufacturers forecast drawback refunds as “99% of duty paid.” For **
 
 ## 7. Decision
 
-**Do not build yet.** `current_idea` = lesserof; hours hold still open (~0.8h left as of tick 17).
+**`ready_to_build` — flipped 2026-07-22** after hours clear + `FLIP_PATH_READY`.
 
-Still blocked from `ready_to_build` by:
+Building as stacked-cap **workflow experiment** only (Kill A stands). Product path: `projects/lesserof/` smoke first per `lesserof-DAY1-COMMIT-ORDER.md`.
 
-1. Kill A stands (brokers/ACE win commercially) — product may only be a stacked-cap **workflow experiment**
-2. Hours hold (`min_hours_research_before_ready: 4`) — ticks ≥3 met; architect pack + value-gate dry run on file; diagnostic `check-lesserof-hour-status.mjs` → `WAIT_HOURS` until clear
-3. G6 must stay honest: no ACE replacement; no ×0.99-only widget; same-condition fence
-
-When hours clear: `lesserof-FLIP-WHEN-CLEAR.md` (expect `FLIP_PATH_READY`).
+Honesty still required: no ACE replacement; no ×0.99-only widget; same-condition fence.
 
 See `lesserof-POST-DEPOSITGAP-STATUS.md` + `lesserof-VALUE-GATE-DRYRUN.md`.
 
 ## Explicit non-actions
 
-No `projects/lesserof/` this window. Digests must say workflow experiment.
+Do not claim filer replacement in digests. Do not smoke-as-sustain.

@@ -1,0 +1,16 @@
+{
+  "id": "lesserof-Q-usmca-missing-partner",
+  "title": "USMCA lesser-of requested without partner duty — reject",
+  "source": "lesserof-NARROW-CLAIM.md honesty",
+  "input": {
+    "claim_type": "substitution",
+    "duties_paid": 10000,
+    "substitute_basis": 4000,
+    "apply_usmca_lesser_of": true,
+    "basket_other_ineligible": false
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "usmca_partner_missing"
+  }
+}

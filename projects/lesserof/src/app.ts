@@ -1,0 +1,165 @@
+import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
+import { readFileSync, existsSync } from "node:fs";
+import { join, extname, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import {
+  assertAccess,
+  createClaimLine,
+  createOrg,
+  createStore,
+  findUserByEmail,
+  getClaimLine,
+  getOrg,
+  issueToken,
+  registerUser,
+  resolveToken,
+  runRecover,
+  type Store,
+} from "./store.js";
+
+const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
+const MIME: Record<string, string> = {
+  ".html": "text/html; charset=utf-8",
+  ".css": "text/css; charset=utf-8",
+  ".js": "text/javascript; charset=utf-8",
+};
+
+type Json = Record<string, unknown>;
+
+async function readBody(req: IncomingMessage): Promise<Json> {
+  const chunks: Buffer[] = [];
+  for await (const chunk of req) chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
+  if (!chunks.length) return {};
+  try {
+    return JSON.parse(Buffer.concat(chunks).toString("utf8")) as Json;
+  } catch {
+    return {};
+  }
+}
+
+function send(res: ServerResponse, status: number, body: unknown) {
+  const payload = JSON.stringify(body);
+  res.writeHead(status, {
+    "content-type": "application/json",
+    "content-length": Buffer.byteLength(payload),
+  });
+  res.end(payload);
+}
+
+function getToken(req: IncomingMessage): string | null {
+  const header = req.headers.authorization;
+  if (!header) return null;
+  const [scheme, token] = header.split(" ");
+  if (scheme?.toLowerCase() !== "bearer" || !token) return null;
+  return token;
+}
+
+function authUserId(store: Store, req: IncomingMessage): string | null {
+  const token = getToken(req);
+  if (!token) return null;
+  return resolveToken(store.db, token);
+}
+
+function serveStatic(res: ServerResponse, urlPath: string): boolean {
+  const clean = urlPath === "/" ? "/honesty.html" : urlPath;
+  const filePath = join(publicDir, clean.replace(/^\//, ""));
+  if (!filePath.startsWith(publicDir) || !existsSync(filePath)) return false;
+  const body = readFileSync(filePath);
+  res.writeHead(200, {
+    "content-type": MIME[extname(filePath)] ?? "application/octet-stream",
+    "content-length": body.length,
+  });
+  res.end(body);
+  return true;
+}
+
+export function createApp(opts: { dbPath?: string } = {}) {
+  const store = createStore(opts);
+
+  const server = createServer(async (req, res) => {
+    const url = new URL(req.url ?? "/", "http://127.0.0.1");
+    const method = req.method ?? "GET";
+    const path = url.pathname;
+
+    if (method === "GET" && (path === "/" || path.endsWith(".html"))) {
+      if (serveStatic(res, path)) return;
+    }
+
+    if (method === "GET" && path === "/health") {
+      return send(res, 200, { ok: true, product: "lesserof" });
+    }
+
+    if (method === "POST" && path === "/auth/register") {
+      const body = await readBody(req);
+      const email = String(body.email ?? "");
+      const password = String(body.password ?? "");
+      if (!email || !password) return send(res, 400, { error: "email_password_required" });
+      if (findUserByEmail(store.db, email)) return send(res, 409, { error: "email_taken" });
+      const user = registerUser(store.db, email, password);
+      const token = issueToken(store.db, user.id);
+      return send(res, 201, { user, token });
+    }
+
+    if (method === "POST" && path === "/orgs") {
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      const body = await readBody(req);
+      const name = String(body.name ?? "").trim();
+      if (!name) return send(res, 400, { error: "name_required" });
+      const org = createOrg(store.db, userId, name);
+      return send(res, 201, { org });
+    }
+
+    const claimMatch = path.match(/^\/orgs\/([^/]+)\/claim-lines(?:\/([^/]+))?(?:\/(recover))?$/);
+    if (claimMatch) {
+      const orgId = claimMatch[1];
+      const lineId = claimMatch[2];
+      const action = claimMatch[3];
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!getOrg(store.db, orgId)) return send(res, 404, { error: "org_not_found" });
+
+      if (method === "POST" && !lineId) {
+        if (!assertAccess(store.db, orgId, userId, ["admin", "analyst"])) {
+          return send(res, 403, { error: "forbidden" });
+        }
+        const body = await readBody(req);
+        const line = createClaimLine(store.db, orgId, {
+          claim_type: String(body.claim_type ?? ""),
+          duties_paid: Number(body.duties_paid),
+          substitute_basis: Number(body.substitute_basis),
+          apply_usmca_lesser_of: body.apply_usmca_lesser_of === true,
+          usmca_partner_duty:
+            typeof body.usmca_partner_duty === "number" ? body.usmca_partner_duty : undefined,
+          basket_other_ineligible: body.basket_other_ineligible === true,
+          force_lesser_of: body.force_lesser_of === true,
+          skip_lesser_of: body.skip_lesser_of === true,
+          relabel_from_substitution: body.relabel_from_substitution === true,
+        });
+        return send(res, 201, { claim_line: line });
+      }
+
+      if (method === "GET" && lineId && !action) {
+        if (!assertAccess(store.db, orgId, userId, ["admin", "analyst", "auditor"])) {
+          return send(res, 403, { error: "forbidden" });
+        }
+        const line = getClaimLine(store.db, orgId, lineId);
+        if (!line) return send(res, 404, { error: "not_found" });
+        return send(res, 200, { claim_line: line });
+      }
+
+      if (method === "POST" && lineId && action === "recover") {
+        if (!assertAccess(store.db, orgId, userId, ["admin", "analyst", "auditor"])) {
+          return send(res, 403, { error: "forbidden" });
+        }
+        const result = runRecover(store.db, orgId, lineId);
+        if (!result) return send(res, 404, { error: "not_found" });
+        return send(res, 200, result);
+      }
+    }
+
+    return send(res, 404, { error: "not_found" });
+  });
+
+  return { server, store };
+}
