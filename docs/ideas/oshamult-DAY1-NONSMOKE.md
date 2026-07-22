@@ -6,7 +6,7 @@ Use **after** hours + `oshamult-PREFLIP-CHECKLIST.md` pass (`oshamult-FLIP-WHEN-
 
 1. `PRODUCT.md` with unique claim (GBP × **serial** remaining-balance + classification gates) + Kill A + forecast-only language.  
 2. Port of paper goldens (≥26) into product tests — dual-impl or cross-check plan.  
-3. Forecast API that returns each serial step’s remaining balance (not a single “discount %”).  
+3. Forecast API that returns each serial step’s remaining balance (`steps[]` per `oshamult-API-CONTRACT.md`) — not a single “discount %”.  
 4. Money-honesty surface early: serial ≠ additive; v0 order ≠ live FOM until versioned dual flip (`oshamult-SIZE-TABLE.md`).
 
 ## Instant abort / revert if day-1 looks like
