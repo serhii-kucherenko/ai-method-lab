@@ -2,6 +2,16 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 tick 17: last ~20 minutes under WAIT_HOURS
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 71. Docs only. Framing clock **unchanged**.
+
+- ~3.7h / 4h (~0.30h left). Wrote `ptax4975-LAST-20-MIN.md`
+- **Next clear tick:** run `FLIP-DAY-SCRIPT` — stop status-memo theater
+- Explicit non-actions: **no** `projects/ptax4975/` until `FLIP_PATH_READY`
+
+**Skeptical one-liner:** Eighteen minutes of honesty left; then build, don’t invent another countdown page.
+
 ## 2026-07-22 — ptax4975 tick 16: last half-hour under WAIT_HOURS
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 70. Docs only. Framing clock **unchanged**.
