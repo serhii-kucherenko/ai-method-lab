@@ -2,6 +2,16 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — c1592 tick 7: scaffold + preflip checklist (WAIT_HOURS)
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 90. Docs only. Framing clock **unchanged**.
+
+- Wrote REPO-SCAFFOLD, PHASE-BRIEFS, PREFLIP-CHECKLIST, HALFHOLD-STATUS
+- Fixtures still **26/26** dual-green; hours ~1.9h short → `WAIT_HOURS`
+- Explicit non-actions: **no** `projects/c1592/`
+
+**Skeptical one-liner:** Half the clock is not a green light — wait for `FLIP_PATH_READY`.
+
 ## 2026-07-22 — c1592 tick 6: API + hypothesis + findings drafts (WAIT_HOURS)
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 89. Docs only. Framing clock **unchanged**.

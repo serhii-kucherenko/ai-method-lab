@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — c1592 tick 7 (WAIT_HOURS)
+
+- Repo scaffold + phase briefs + preflip checklist + half-hold; ~1.9h hours left. No product.
+
 ## 2026-07-22 — c1592 tick 6 (WAIT_HOURS)
 
 - API/hypothesis/findings drafts + page specs; ~2.2h hours left. No product.
