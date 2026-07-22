@@ -1,9 +1,8 @@
-# ptax4975 — product requirements (seed PRD)
+# ptax4975 — product requirements (PRD)
 
-**Paper only. Parallel seed. Do not open `projects/ptax4975/` until activation queue clears.**  
-**Do not set `current_idea` to ptax4975** — `oshamult` holds the research slot.
+**Paper only.** `current_idea` under hours hold. Do not open `projects/ptax4975/` until `FLIP_PATH_READY`.
 
-Real PRD for activation later — not a thin smoke brief. Sources: `ptax4975-VISION.md`, `ptax4975-PRODUCT-FRAMING.md`, `ptax4975-VALUE-STAKES.md`, `ptax4975-PAGE-SPECS.md`, `ptax4975-API-CONTRACT.md`, `ptax4975-ACCEPTANCE.md`, `ptax4975-algorithm.md`, `ptax4975-FMV-FENCE.md`.
+Real PRD for activation — not a thin smoke brief. Sources: `ptax4975-VISION.md`, `ptax4975-PRODUCT-FRAMING.md`, `ptax4975-VALUE-STAKES.md`, `ptax4975-PAGE-SPECS.md`, `ptax4975-API-CONTRACT.md`, `ptax4975-ACCEPTANCE.md`, `ptax4975-algorithm.md`, `ptax4975-FMV-FENCE.md`, `ptax4975-TAXABLE-PERIOD-FENCE.md`.
 
 ---
 

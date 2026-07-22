@@ -2,6 +2,18 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 tick 4: architect pack sync under WAIT_HOURS
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 58. Docs + research try demo only. Framing clock **unchanged**.
+
+- Synced VISION / ROADMAP / PRD / ERD / DAY1 / API off stale “oshamult holds slot / seed only” headers
+- VISION refuse list now includes taxable-period end-date fence; day-1 abort if automatic (f)(2) claimed
+- Research try demo disclaimer: year-parts are caller-typed (not notice/assessment/correction derived)
+- `research_ticks_on_idea` → 4; hour-status still **WAIT_HOURS** (~3.3h left)
+- Explicit non-actions: **no** `projects/ptax4975/`; not ready_to_build
+
+**Skeptical one-liner:** Architect papers were lying about the queue — fixed; the hours clock is still the real gate.
+
 ## 2026-07-22 — ptax4975 tick 3: WAIT_HOURS + taxable-period fence
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 57. Docs only. Framing clock **unchanged**.

@@ -1,9 +1,8 @@
-# ptax4975 — phased roadmap (seed paper)
+# ptax4975 — phased roadmap
 
-**Paper only. Parallel seed. Do not open `projects/ptax4975/` until activation queue clears.**  
-**Do not set `current_idea` to ptax4975** — `oshamult` holds the research slot.
+**Paper only.** `current_idea` under hours hold. Do not open `projects/ptax4975/` until `FLIP_PATH_READY`.
 
-Maps A03/A10 phases to the comprehensive ladder. Sources: `ptax4975-PHASE-BRIEFS.md`, `ptax4975-PAGE-SPECS.md`, `ptax4975-COMPREHENSIVE-BLUEPRINT.md`, `ptax4975-SUSTAIN-TEST-MATRIX.md`, `ptax4975-API-CONTRACT.md`, `ptax4975-FMV-FENCE.md`, `ptax4975-REPO-SCAFFOLD.md`.
+Maps A03/A10 phases to the comprehensive ladder. Sources: `ptax4975-PHASE-BRIEFS.md`, `ptax4975-PAGE-SPECS.md`, `ptax4975-COMPREHENSIVE-BLUEPRINT.md`, `ptax4975-SUSTAIN-TEST-MATRIX.md`, `ptax4975-API-CONTRACT.md`, `ptax4975-FMV-FENCE.md`, `ptax4975-TAXABLE-PERIOD-FENCE.md`, `ptax4975-REPO-SCAFFOLD.md`.
 
 **Hard rule:** UI critical paths that exist in a phase must stay green when later phases land. Smoke-as-sustain fails.
 

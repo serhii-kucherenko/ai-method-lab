@@ -1,7 +1,7 @@
-# ptax4975 — API contract (seed paper)
+# ptax4975 — API contract
 
-**Status:** seed only. Last in activation queue after oshamult.  
-**Sources:** `ptax4975-COMPREHENSIVE-BLUEPRINT.md`, `ptax4975-PAGE-SPECS.md`, `ptax4975-algorithm.md`
+**Status:** framed research (`current_idea`); hours hold.  
+**Sources:** `ptax4975-COMPREHENSIVE-BLUEPRINT.md`, `ptax4975-PAGE-SPECS.md`, `ptax4975-algorithm.md`, `ptax4975-TAXABLE-PERIOD-FENCE.md`
 
 ## Auth
 
@@ -45,8 +45,9 @@ Reject: `{ "status": "reject", "reason": "..." }` — e.g. flat_excise_cheat, gr
 
 - No endpoint that “files” Form 5330 or replaces DOL / counsel
 - Flat once-excise cheat → 422
+- `year_parts` is an explicit input in v0 (not derived from notice/assessment/correction dates)
 - Digests: forecast / method experiment; Kill A stands
 
 ## Explicit non-action
 
-Paper only until activation queue reaches this seed.
+No `projects/ptax4975/` until `FLIP_PATH_READY`.

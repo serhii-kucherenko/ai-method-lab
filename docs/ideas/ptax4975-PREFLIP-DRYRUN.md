@@ -8,8 +8,8 @@ Walk of flip readiness **during** hours hold. Not a flip.
 
 | # | Check | Mid-hold result |
 |---|--------|-----------------|
-| 1 | Hours ≥4 | **Red** — ~0.4h / 4h (`WAIT_HOURS`; ~3.6h left) |
-| 2 | Ticks ≥3 | **Green** — tick 3 / 3 |
+| 1 | Hours ≥4 | **Red** — ~0.7h / 4h (`WAIT_HOURS`; ~3.3h left) |
+| 2 | Ticks ≥3 | **Green** — tick 4 / 3 |
 | 3 | Fixtures ≥25 | **Green** — 35 fixtures |
 | 4 | Dual-impl | **Green** — 35 dual |
 | 5 | Value / Kill A | **Green** — counsel stands; forecast experiment only |

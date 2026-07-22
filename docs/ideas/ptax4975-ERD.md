@@ -1,9 +1,8 @@
 # ptax4975 — entity relationship doc
 
-**Paper only. Parallel seed. Do not open `projects/ptax4975/` until activation queue clears.**  
-**Do not set `current_idea` to ptax4975** — `oshamult` holds the research slot.
+**Paper only.** `current_idea` under hours hold. Do not open `projects/ptax4975/` until `FLIP_PATH_READY`.
 
-Logical aggregates for a future build. Aligns with `ptax4975-API-CONTRACT.md`, `ptax4975-COMPREHENSIVE-BLUEPRINT.md`, `ptax4975-algorithm.md`, `ptax4975-PAGE-SPECS.md`, `ptax4975-FMV-FENCE.md`. **No routes invented beyond the existing contract.**
+Logical aggregates for a future build. Aligns with `ptax4975-API-CONTRACT.md`, `ptax4975-COMPREHENSIVE-BLUEPRINT.md`, `ptax4975-algorithm.md`, `ptax4975-PAGE-SPECS.md`, `ptax4975-FMV-FENCE.md`, `ptax4975-TAXABLE-PERIOD-FENCE.md`. **No routes invented beyond the existing contract.**
 
 ---
 

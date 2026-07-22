@@ -1,9 +1,8 @@
-# ptax4975 — product vision (seed paper)
+# ptax4975 — product vision
 
-**Paper only. Parallel seed. Do not open `projects/ptax4975/` yet.**  
-**Do not set `current_idea` to ptax4975** — `oshamult` holds the research slot.
+**Paper only.** `current_idea` under hours hold. Do not open `projects/ptax4975/` until `FLIP_PATH_READY`.
 
-Sources: `ptax4975-PRODUCT-FRAMING.md`, `ptax4975-VALUE-STAKES.md`, `ptax4975-COMPREHENSIVE-BLUEPRINT.md`, `ptax4975-FMV-FENCE.md`, `ptax4975-algorithm.md`, `ptax4975-PAGE-SPECS.md`, `ptax4975-API-CONTRACT.md`, `ptax4975-G6-summary.md`.
+Sources: `ptax4975-PRODUCT-FRAMING.md`, `ptax4975-VALUE-STAKES.md`, `ptax4975-COMPREHENSIVE-BLUEPRINT.md`, `ptax4975-FMV-FENCE.md`, `ptax4975-TAXABLE-PERIOD-FENCE.md`, `ptax4975-algorithm.md`, `ptax4975-PAGE-SPECS.md`, `ptax4975-API-CONTRACT.md`, `ptax4975-G6-summary.md`.
 
 ---
 
@@ -45,7 +44,8 @@ Success is **not** Form 5330 parity, IRS/DOL replacement, market proof from fixt
 2. **Not a dual-gate FSM** — no dual-approver status costume as “domain” (G2 fence).
 3. **Not a naked “15% once” widget** — year-parts × first tier + second tier if uncorrected are required.
 4. **Not silent highest-FMV-during-period parity** — v0 optional greater-of two inputs only (`ptax4975-FMV-FENCE.md`); flip only via versioned dual re-green.
-5. **Not smoke-as-sustain** — shipping a single calculator page fails `docs/COMPREHENSIVE_PRODUCT.md`.
+5. **Not automatic taxable-period end dates** — v0 takes caller-supplied `year_parts`; notice/assessment/correction enum is fenced (`ptax4975-TAXABLE-PERIOD-FENCE.md`).
+6. **Not smoke-as-sustain** — shipping a single calculator page fails `docs/COMPREHENSIVE_PRODUCT.md`.
 
 ---
 
@@ -66,4 +66,4 @@ Illustrative stakes (VALUE-STAKES): **$3,000** / **$13,000** toys; flat-once und
 
 ## Explicit non-action
 
-Do not activate, do not open `projects/ptax4975/`, do not flip `current_idea` from this artifact. Activation waits on oshamult (and upstream queue) clear + `ptax4975-POST-OSHAMULT-RUN.md`.
+Do not open `projects/ptax4975/` until `check-ptax4975-hour-status.mjs` → `FLIP_PATH_READY`. Walk `ptax4975-FLIP-WHEN-CLEAR.md`.
