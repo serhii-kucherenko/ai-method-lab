@@ -2,6 +2,18 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 tick 3: WAIT_HOURS + taxable-period fence
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 57. Docs only. Framing clock **unchanged**.
+
+- `research_ticks_on_idea` → **3** (tick floor clear); hour-status → **WAIT_HOURS** (~3.6h left)
+- Wrote `ptax4975-TAXABLE-PERIOD-FENCE.md` — (f)(2) notice/assessment/correction end dates stay out of v0; caller supplies year_parts
+- Synced ACCEPTANCE / algorithm / VALUE-STAKES / STATUTE / PREFLIP-DRYRUN / GATE-SCORECARD off stale queue language
+- Hour-status strips UTF-8 BOM if present (controller race hardening)
+- Checkers **35/35** dual-green; no `projects/ptax4975/`
+
+**Skeptical one-liner:** Ticks are done; the clock is the remaining anti-conveyor — do not flip on fixture green alone.
+
 ## 2026-07-22 — ptax4975 value gate + preflip checklist (tick 2)
 
 `AGENT_LOOP_TICK_depth_15m`. Deepened activation hygiene (docs only). Framing clock **unchanged**.

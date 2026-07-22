@@ -1,6 +1,6 @@
 # ptax4975 — statute citations (seed)
 
-**State:** seed only. Closes the “quote amount-involved / taxable period before framed” gap in `ptax4975-SEED.md`.
+**State:** framed research (`current_idea`). Closes the “quote amount-involved / taxable period” gap.
 
 ## Primary — 26 U.S.C. § 4975
 
@@ -27,11 +27,11 @@ Plain text: https://www.law.cornell.edu/uscode/text/26/4975
 | Encoded | Fence (not yet) |
 |---------|-----------------|
 | Greater-of two FMV inputs (`fmv_a`/`fmv_b`) | Highest FMV **during** taxable period for second tier only — see `ptax4975-FMV-FENCE.md` |
-| 15% × year_parts + 100% if uncorrected | Full taxable-period end-date machinery (notice / assessment / correction dates) — `ptax4975-FMV-FENCE.md` |
+| 15% × year_parts + 100% if uncorrected | Full taxable-period end-date machinery (notice / assessment / correction dates) — `ptax4975-TAXABLE-PERIOD-FENCE.md` |
 | Excess-compensation path | Not a separate enum yet — document when framing |
 
 Digests must not claim Form 5330 / IRS parity.
 
 ## Explicit non-actions
 
-No product. Behind depositgap / lesserof / oshamult on `ACTIVATION_QUEUE.md`.
+No `projects/ptax4975/` until `FLIP_PATH_READY`.

@@ -1,8 +1,8 @@
 # ptax4975 — paper product acceptance (pre-build)
 
-**Not a green light.** Activate only after higher-priority items in `ACTIVATION_QUEUE.md` clear (htsroute → depositgap → lesserof → oshamult).
+**Not a green light.** `current_idea` under hours hold. Flip only after `check-ptax4975-hour-status.mjs` → `FLIP_PATH_READY`.
 
-Tied to: `ptax4975-G6-summary.md`, `ptax4975-algorithm.md`, `ptax4975-challenge-ABC.md`.
+Tied to: `ptax4975-G6-summary.md`, `ptax4975-algorithm.md`, `ptax4975-challenge-ABC.md`, `ptax4975-VALUE-GATE-DRYRUN.md`.
 
 ---
 
@@ -20,11 +20,11 @@ Load all `docs/ideas/fixtures/ptax4975-*.json`. At minimum:
 
 ## B. Must-reject cheats
 
-1. Flat-excise cheat (C)  
-2. Understate amount vs greater-of FMV (Q / L)  
-3. Zero / negative amount (D, J)  
-4. Non-positive or non-finite year_parts (G, R)  
-5. Dual-approver / “flat 15% once” costumes as domain  
+1. Flat-excise cheat (C)
+2. Understate amount vs greater-of FMV (Q / L)
+3. Zero / negative amount (D, J)
+4. Non-positive or non-finite year_parts (G, R)
+5. Dual-approver / “flat 15% once” costumes as domain
 
 ## C. Money-honesty / Kill A
 
@@ -32,7 +32,7 @@ Acceptance **fails** if digests claim Form 5330 / DOL replacement or present fix
 
 ## D. Comprehensive bar
 
-Must meet `docs/COMPREHENSIVE_PRODUCT.md` before sustain. Smoke-as-sustain fails. (Blueprint may be written at activation.)
+Must meet `docs/COMPREHENSIVE_PRODUCT.md` before sustain. Smoke-as-sustain fails.
 
 ## E. Dual-impl
 
@@ -40,4 +40,4 @@ Must meet `docs/COMPREHENSIVE_PRODUCT.md` before sustain. Smoke-as-sustain fails
 
 ## Explicit non-action
 
-No `projects/ptax4975/` today.
+No `projects/ptax4975/` until flip.
