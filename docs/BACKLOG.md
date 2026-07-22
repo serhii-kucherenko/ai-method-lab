@@ -11,7 +11,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **ptax4975** | **building (workflow✓ → integrate)** | 39 tests; batch+audit; next webhook+settings |
+| 1 | **ptax4975** | **building (integrate✓ → scale)** | 42 tests; webhook+settings+pagination; next scale |
 | 1 | **oshamult** | **sustained** | 56 tests; 7 pages + try.html; Kill A honesty |
 | 1 | **lesserof** | **sustained** | 11 pages + goldens + try.html; 60 tests; Kill A honesty |
 | 1 | **depositgap** | **sustained** | All 8 pages + goldens browser + try.html; Kill A honesty |

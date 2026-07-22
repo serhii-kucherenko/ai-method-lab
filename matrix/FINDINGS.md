@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — ptax4975 P-integrate GREEN
+
+- Cell `A03__P-integrate-001__ptax4975__r1`. 42 tests; HMAC webhook + idempotency; settings RBAC; pagination. Next: scale.
+
 ## 2026-07-22 — ptax4975 P-workflow GREEN
 
 - Cell `A03__P-workflow-001__ptax4975__r1`. 39 tests; batch independence; audit CSV; auditor 403 on batch. Next: integrate.

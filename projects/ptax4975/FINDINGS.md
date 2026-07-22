@@ -17,7 +17,12 @@
 
 - PATCH transaction; members route; auditor list/get/forecast OK, create/patch **403**
 - Catalog + detail + honesty still live; **38** tests
-- Next: workflow (batch + audit)
+
+## Workflow — GREEN (`A03__P-workflow-001__ptax4975__r1`)
+
+- Batch independence (ok + flat-cheat reject); audit JSON + CSV; auditor **403** on batch
+- batch.html + audit.html; **39** tests
+- Next: integrate (webhook + pagination + settings)
 
 ## Digests
 

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ptax4975 — Org settings</title>
+    <style>
+      body {
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 2rem 1.5rem;
+        background: #eef2f5;
+        color: #1c2430;
+      }
+      .brand { color: #1f5f8b; font-weight: 700; font-size: 1.5rem; }
+      h1 { font-size: 1.2rem; }
+      a { color: #1f5f8b; }
+      #status { color: #4d5a6a; margin: 1rem 0; }
+      label { display: block; margin-top: 1rem; font-size: 0.9rem; }
+      input, textarea {
+        display: block;
+        width: min(40rem, 100%);
+        margin-top: 0.35rem;
+        padding: 0.5rem 0.6rem;
+        font: inherit;
+        border: 1px solid #c5ced8;
+        background: #fff;
+      }
+      textarea { min-height: 4rem; font-family: ui-monospace, monospace; }
+      .actions { margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+      button {
+        padding: 0.5rem 0.9rem;
+        background: #1f5f8b;
+        color: #fff;
+        border: 0;
+        cursor: pointer;
+      }
+      button.secondary { background: #4d5a6a; }
+      .note { max-width: 36rem; color: #4d5a6a; line-height: 1.45; }
+      #form-panel[data-settings="live"] { max-width: 40rem; }
+    </style>
+  </head>
+  <body>
+    <div class="brand">ptax4975</div>
+    <h1>Org settings</h1>
+    <p class="note">
+      Admin can view and save the webhook secret and tokens note. Auditors see a redacted view.
+      Kill A: counsel still files Form 5330 — this is a forecast / method experiment.
+    </p>
+    <p id="status">Loading…</p>
+    <div id="form-panel" data-settings="live" hidden>
+      <label>
+        Webhook secret (HMAC SHA-256)
+        <input id="webhook-secret" type="text" autocomplete="off" />
+      </label>
+      <label>
+        Tokens note
+        <textarea id="tokens-note"></textarea>
+      </label>
+      <div class="actions">
+        <button id="save" type="button">Save settings</button>
+        <button id="rotate" type="button" class="secondary">Rotate webhook secret</button>
+      </div>
+    </div>
+    <p>
+      <a href="/transactions.html">Catalog</a> ·
+      <a href="/money-honesty.html">Money honesty</a> ·
+      <a href="/audit.html">Audit</a>
+    </p>
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const token =
+          params.get("token") ||
+          localStorage.getItem("ptax4975_token") ||
+          "";
+        const orgId =
+          params.get("orgId") ||
+          localStorage.getItem("ptax4975_orgId") ||
+          "";
+        const statusEl = document.getElementById("status");
+        const panel = document.getElementById("form-panel");
+        const secretEl = document.getElementById("webhook-secret");
+        const noteEl = document.getElementById("tokens-note");
+
+        if (!token || !orgId) {
+          statusEl.textContent =
+            "Stub: set ptax4975_token + ptax4975_orgId to load /orgs/:id/settings.";
+          return;
+        }
+
+        function load() {
+          fetch("/orgs/" + encodeURIComponent(orgId) + "/settings", {
+            headers: { Authorization: "Bearer " + token },
+          })
+            .then(function (r) {
+              return r.json().then(function (j) {
+                return { ok: r.ok, j: j };
+              });
+            })
+            .then(function (res) {
+              if (!res.ok) {
+                statusEl.textContent = "Load failed";
+                return;
+              }
+              const s = res.j.settings || {};
+              panel.hidden = false;
+              if (s.webhook_secret == null) {
+                statusEl.textContent = "Redacted view (admin-only secrets).";
+                secretEl.value = "";
+                secretEl.disabled = true;
+                noteEl.value = s.note || "";
+                noteEl.disabled = true;
+                document.getElementById("save").disabled = true;
+                document.getElementById("rotate").disabled = true;
+              } else {
+                statusEl.textContent = "Admin settings loaded.";
+                secretEl.value = s.webhook_secret || "";
+                noteEl.value = s.tokens_note || "";
+              }
+            })
+            .catch(function () {
+              statusEl.textContent = "Load failed";
+            });
+        }
+
+        document.getElementById("save").addEventListener("click", function () {
+          fetch("/orgs/" + encodeURIComponent(orgId) + "/settings", {
+            method: "PATCH",
+            headers: {
+              Authorization: "Bearer " + token,
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({
+              webhook_secret: secretEl.value,
+              tokens_note: noteEl.value,
+            }),
+          })
+            .then(function (r) {
+              return r.json();
+            })
+            .then(function () {
+              statusEl.textContent = "Saved.";
+              load();
+            });
+        });
+
+        document.getElementById("rotate").addEventListener("click", function () {
+          fetch("/orgs/" + encodeURIComponent(orgId) + "/settings", {
+            method: "PATCH",
+            headers: {
+              Authorization: "Bearer " + token,
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({ rotate_webhook_secret: true }),
+          })
+            .then(function (r) {
+              return r.json();
+            })
+            .then(function () {
+              statusEl.textContent = "Rotated.";
+              load();
+            });
+        });
+
+        load();
+      })();
+    </script>
+  </body>
+</html>

@@ -38,6 +38,13 @@ export type AuditEvent = {
   created_at: string;
 };
 
+export type OrgSettings = {
+  orgId: string;
+  webhook_secret: string;
+  tokens_note: string;
+  updated_at: string;
+};
+
 export type Store = {
   users: Map<string, User>;
   usersByEmail: Map<string, string>;
@@ -46,12 +53,23 @@ export type Store = {
   members: Map<string, OrgRole>;
   transactions: Map<string, Transaction>;
   auditEvents: AuditEvent[];
+  orgSettings: Map<string, OrgSettings>;
+  webhookDeliveries: Map<string, { org_id: string; transaction_id: string }>;
   rateLimit: number;
   rateCounts: Map<string, number>;
 };
 
 function memberKey(orgId: string, userId: string): string {
   return `${orgId}::${userId}`;
+}
+
+function defaultSettings(orgId: string): OrgSettings {
+  return {
+    orgId,
+    webhook_secret: `whsec_${randomUUID().replace(/-/g, "").slice(0, 24)}`,
+    tokens_note: "Bearer tokens issued at register; rotate via admin settings.",
+    updated_at: new Date().toISOString(),
+  };
 }
 
 export function createStore(opts: { rateLimit?: number } = {}): Store {
@@ -63,6 +81,8 @@ export function createStore(opts: { rateLimit?: number } = {}): Store {
     members: new Map(),
     transactions: new Map(),
     auditEvents: [],
+    orgSettings: new Map(),
+    webhookDeliveries: new Map(),
     rateLimit: opts.rateLimit ?? 1000,
     rateCounts: new Map(),
   };
@@ -94,6 +114,7 @@ export function createOrg(store: Store, userId: string, name: string) {
   const id = randomUUID();
   store.orgs.set(id, { id, name, created_by: userId });
   store.members.set(memberKey(id, userId), "admin");
+  store.orgSettings.set(id, defaultSettings(id));
   return { id, name };
 }
 
@@ -452,4 +473,65 @@ export function auditToCsv(events: AuditEvent[]): string {
     );
   }
   return lines.join("\n");
+}
+
+export function getOrgSettings(store: Store, orgId: string): OrgSettings | null {
+  if (!getOrg(store, orgId)) return null;
+  let settings = store.orgSettings.get(orgId);
+  if (!settings) {
+    settings = defaultSettings(orgId);
+    store.orgSettings.set(orgId, settings);
+  }
+  return { ...settings };
+}
+
+export function patchOrgSettings(
+  store: Store,
+  orgId: string,
+  patch: { webhook_secret?: string; tokens_note?: string },
+): { ok: true; value: OrgSettings } | { ok: false; error: string } {
+  const current = getOrgSettings(store, orgId);
+  if (!current) return { ok: false, error: "org_not_found" };
+  const next: OrgSettings = {
+    orgId,
+    webhook_secret:
+      patch.webhook_secret !== undefined ? patch.webhook_secret : current.webhook_secret,
+    tokens_note: patch.tokens_note !== undefined ? patch.tokens_note : current.tokens_note,
+    updated_at: new Date().toISOString(),
+  };
+  store.orgSettings.set(orgId, next);
+  return { ok: true, value: next };
+}
+
+export function rotateWebhookSecret(
+  store: Store,
+  orgId: string,
+): { ok: true; value: OrgSettings } | { ok: false; error: string } {
+  return patchOrgSettings(store, orgId, {
+    webhook_secret: `whsec_${randomUUID().replace(/-/g, "").slice(0, 24)}`,
+  });
+}
+
+export function ingestWebhookTransaction(
+  store: Store,
+  orgId: string,
+  input: TransactionCreate,
+  idempotencyKey: string,
+): { transaction: ReturnType<typeof getTransaction>; replay: boolean } | { error: string } {
+  if (!getOrg(store, orgId)) return { error: "org_not_found" };
+  const existing = store.webhookDeliveries.get(idempotencyKey);
+  if (existing) {
+    if (existing.org_id !== orgId) return { error: "idempotency_org_mismatch" };
+    return {
+      transaction: getTransaction(store, orgId, existing.transaction_id),
+      replay: true,
+    };
+  }
+  const transaction = createTransaction(store, orgId, input, null);
+  if (!transaction) return { error: "create_failed" };
+  store.webhookDeliveries.set(idempotencyKey, {
+    org_id: orgId,
+    transaction_id: transaction.id,
+  });
+  return { transaction, replay: false };
 }

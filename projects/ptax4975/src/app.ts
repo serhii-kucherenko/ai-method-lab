@@ -1,3 +1,4 @@
+import { createHmac, timingSafeEqual } from "node:crypto";
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
 import { join, extname, dirname } from "node:path";
@@ -11,13 +12,17 @@ import {
   createTransaction,
   findUserByEmail,
   getOrg,
+  getOrgSettings,
   getTransaction,
+  ingestWebhookTransaction,
   issueToken,
   listAudit,
   listTransactions,
+  patchOrgSettings,
   patchTransaction,
   registerUser,
   resolveToken,
+  rotateWebhookSecret,
   runBatchForecast,
   runForecast,
   type OrgRole,
@@ -35,16 +40,29 @@ const MIME: Record<string, string> = {
 
 type Json = Record<string, unknown>;
 
-async function readBody(req: IncomingMessage): Promise<Json> {
+async function readRawBody(req: IncomingMessage): Promise<Buffer> {
   const chunks: Buffer[] = [];
   for await (const chunk of req) chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
-  const raw = Buffer.concat(chunks);
+  return Buffer.concat(chunks);
+}
+
+async function readBody(req: IncomingMessage): Promise<Json> {
+  const raw = await readRawBody(req);
   if (!raw.length) return {};
   try {
     return JSON.parse(raw.toString("utf8")) as Json;
   } catch {
     return {};
   }
+}
+
+function verifyHmac(secret: string, raw: Buffer, signature: string | undefined): boolean {
+  if (!signature) return false;
+  const expected = createHmac("sha256", secret).update(raw).digest("hex");
+  const a = Buffer.from(expected);
+  const b = Buffer.from(signature.trim());
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
 }
 
 function send(
@@ -169,6 +187,41 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
 
     if (!checkRateLimit(store, req, res)) return;
 
+    if (method === "POST" && path === "/webhooks/transactions") {
+      const raw = await readRawBody(req);
+      let body: Json = {};
+      try {
+        body = raw.length ? (JSON.parse(raw.toString("utf8")) as Json) : {};
+      } catch {
+        return send(res, 400, { error: "invalid_json" });
+      }
+      const orgId = String(body.orgId ?? body.org_id ?? "");
+      if (!orgId) return send(res, 400, { error: "orgId_required" });
+      const settings = getOrgSettings(store, orgId);
+      if (!settings) return send(res, 404, { error: "org_not_found" });
+      const signature =
+        (req.headers["x-signature"] as string | undefined) ??
+        (req.headers["x-hub-signature-256"] as string | undefined);
+      if (!verifyHmac(settings.webhook_secret, raw, signature)) {
+        return send(res, 401, { error: "invalid_signature" });
+      }
+      const idempotencyKey = String(
+        req.headers["idempotency-key"] ?? body.idempotency_key ?? "",
+      ).trim();
+      if (!idempotencyKey) return send(res, 400, { error: "idempotency_key_required" });
+      const ingested = ingestWebhookTransaction(
+        store,
+        orgId,
+        transactionInputFromBody(body),
+        idempotencyKey,
+      );
+      if ("error" in ingested) return send(res, 400, { error: ingested.error });
+      return send(res, ingested.replay ? 200 : 201, {
+        transaction: ingested.transaction,
+        replay: ingested.replay,
+      });
+    }
+
     if (method === "POST" && path === "/auth/register") {
       const body = await readBody(req);
       const email = String(body.email ?? "");
@@ -257,6 +310,56 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
         return;
       }
       return send(res, 200, listed);
+    }
+
+    const settingsMatch = path.match(/^\/orgs\/([^/]+)\/settings$/);
+    if (settingsMatch) {
+      const orgId = settingsMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!getOrg(store, orgId)) return send(res, 404, { error: "org_not_found" });
+
+      if (method === "GET") {
+        const role = assertAccess(store, orgId, userId, ["admin", "analyst", "auditor"]);
+        if (!role) return send(res, 403, { error: "forbidden" });
+        const settings = getOrgSettings(store, orgId);
+        if (!settings) return send(res, 404, { error: "org_not_found" });
+        if (role === "admin") {
+          return send(res, 200, { settings });
+        }
+        return send(res, 200, {
+          settings: {
+            orgId: settings.orgId,
+            webhook_secret: null,
+            tokens_note: null,
+            updated_at: settings.updated_at,
+            note: "webhook secret and tokens note visible to admin only",
+          },
+        });
+      }
+
+      if (method === "PATCH") {
+        if (!assertAccess(store, orgId, userId, ["admin"])) {
+          return send(res, 403, { error: "forbidden" });
+        }
+        const body = await readBody(req);
+        if (body.rotate_webhook_secret === true || body.rotateWebhookSecret === true) {
+          const rotated = rotateWebhookSecret(store, orgId);
+          if (!rotated.ok) return send(res, 400, { error: rotated.error });
+          return send(res, 200, { settings: rotated.value });
+        }
+        const patch: { webhook_secret?: string; tokens_note?: string } = {};
+        if (body.webhook_secret !== undefined) patch.webhook_secret = String(body.webhook_secret);
+        if (body.tokens_note !== undefined) patch.tokens_note = String(body.tokens_note);
+        if (Object.keys(patch).length === 0) {
+          return send(res, 400, {
+            error: "webhook_secret, tokens_note, or rotate_webhook_secret required",
+          });
+        }
+        const patched = patchOrgSettings(store, orgId, patch);
+        if (!patched.ok) return send(res, 400, { error: patched.error });
+        return send(res, 200, { settings: patched.value });
+      }
     }
 
     const txMatch = path.match(
