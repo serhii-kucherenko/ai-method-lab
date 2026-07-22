@@ -1,6 +1,14 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof day-1 commit order (tick 18)
+
+Hours hold ~3.5h of 4h (~0.5h left). `check-lesserof-hour-status.mjs` → `WAIT_HOURS`.
+
+- Added `lesserof-DAY1-COMMIT-ORDER.md`; wired into `FLIP-WHEN-CLEAR`.
+- NARROW-CLAIM G5 progress synced to A–Y (25).
+- **Explicit non-actions:** no `projects/lesserof/`.
+
 ## 2026-07-22 — lesserof G6 + blueprint honesty sync (tick 17)
 
 Hours hold ~3.2h of 4h (~0.8h left). `check-lesserof-hour-status.mjs` → `WAIT_HOURS`.

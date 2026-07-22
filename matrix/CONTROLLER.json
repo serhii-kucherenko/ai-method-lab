@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T04:25:00Z",
+  "updated_at": "2026-07-22T04:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__lesserof__g6_blueprint_sync_tick17",
+  "last_completed": "research__lesserof__day1_commit_order_tick18",
   "last_error": null,
   "current_product": null,
   "current_idea": "lesserof",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "lesserof tick 17: G6 + blueprint honesty sync; hour-status WAIT_HOURS (~0.8h). ticks=17. No projects/lesserof/. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "lesserof tick 18: DAY1-COMMIT-ORDER + NARROW-CLAIM A–Y sync; hour-status WAIT_HOURS (~0.5h). ticks=18. No projects/lesserof/. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -34,7 +34,7 @@
     "min_hours_research_before_ready": 4,
     "framing_started_at": "2026-07-22T01:07:23.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 17,
+    "research_ticks_on_idea": 18,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 80
+    "ticks_observed": 81
   }
 }

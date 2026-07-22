@@ -32,7 +32,7 @@ A shallow dual-gate or “99% of paid” product fails (1)–(4). A vendor blog 
 
 ## G5 progress (paper fixtures)
 
-Encoded **A–W (23)** via `check-lesserof-fixtures.mjs` / dual — re-green on 2026-07-22 tick 6:
+Encoded **A–Y (25)** via `check-lesserof-fixtures.mjs` / dual — re-green on hour-status:
 
 - ✅ Happy: substitution lesser-of binds (A)  
 - ✅ Happy: substitution lesser-of does not bind (E)  
@@ -48,10 +48,10 @@ Encoded **A–W (23)** via `check-lesserof-fixtures.mjs` / dual — re-green on 
 - ✅ Expert cheat: relabel claim type to dodge lesser-of (K)  
 - ✅ Concurrent: two lines independent caps (L)  
 - ✅ Hygiene: negative duties / unknown type / zero duties (N/O/P)  
-- ✅ More: Q–W (USMCA missing partner, tiny/large, multiline reject, USMCA on direct-ID, …)
+- ✅ More: Q–Y (USMCA missing partner, tiny/large, multiline reject, USMCA on direct-ID, three-line stack, USMCA=TFTEA base, …)
 
 G2 vs depositgap: `lesserof-vs-depositgap-G2.md`. Suite is **25** dual-green (A–Y) — smoke floor met on paper.
 
 ## Decision
 
-Keep as **active research**. Prefer this narrow bundle over a plain lesser-of clone. Flip `ready_to_build` only after hours + preflip (`lesserof-PREFLIP-CHECKLIST.md`) with Kill A as workflow experiment.
+Keep as **active research**. Prefer this narrow bundle over a plain lesser-of clone. Flip `ready_to_build` only after hours + preflip (`lesserof-FLIP-WHEN-CLEAR.md`) with Kill A as workflow experiment.
