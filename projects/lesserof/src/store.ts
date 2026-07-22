@@ -122,6 +122,84 @@ function rowToInput(row: Record<string, unknown>) {
   };
 }
 
+export function listClaimLines(db: DatabaseSync, orgId: string) {
+  const rows = db
+    .prepare("SELECT * FROM claim_lines WHERE org_id = ? ORDER BY created_at DESC")
+    .all(orgId) as Record<string, unknown>[];
+  return rows.map(rowToInput);
+}
+
+export function patchClaimLine(
+  db: DatabaseSync,
+  orgId: string,
+  lineId: string,
+  patch: Partial<ClaimLineCreate>,
+) {
+  const existing = getClaimLine(db, orgId, lineId);
+  if (!existing) return null;
+  const next = {
+    claim_type: patch.claim_type ?? existing.claim_type,
+    duties_paid: patch.duties_paid ?? existing.duties_paid,
+    substitute_basis: patch.substitute_basis ?? existing.substitute_basis,
+    apply_usmca_lesser_of:
+      patch.apply_usmca_lesser_of !== undefined
+        ? patch.apply_usmca_lesser_of
+        : existing.apply_usmca_lesser_of,
+    usmca_partner_duty:
+      patch.usmca_partner_duty !== undefined
+        ? patch.usmca_partner_duty
+        : existing.usmca_partner_duty,
+    basket_other_ineligible:
+      patch.basket_other_ineligible !== undefined
+        ? patch.basket_other_ineligible
+        : existing.basket_other_ineligible,
+    force_lesser_of:
+      patch.force_lesser_of !== undefined ? patch.force_lesser_of : existing.force_lesser_of,
+    skip_lesser_of:
+      patch.skip_lesser_of !== undefined ? patch.skip_lesser_of : existing.skip_lesser_of,
+    relabel_from_substitution:
+      patch.relabel_from_substitution !== undefined
+        ? patch.relabel_from_substitution
+        : existing.relabel_from_substitution,
+  };
+  db.prepare(
+    `UPDATE claim_lines SET
+      claim_type = ?, duties_paid = ?, substitute_basis = ?,
+      apply_usmca_lesser_of = ?, usmca_partner_duty = ?, basket_other_ineligible = ?,
+      force_lesser_of = ?, skip_lesser_of = ?, relabel_from_substitution = ?
+    WHERE id = ? AND org_id = ?`,
+  ).run(
+    next.claim_type,
+    next.duties_paid,
+    next.substitute_basis,
+    next.apply_usmca_lesser_of ? 1 : 0,
+    typeof next.usmca_partner_duty === "number" ? next.usmca_partner_duty : null,
+    next.basket_other_ineligible ? 1 : 0,
+    next.force_lesser_of ? 1 : 0,
+    next.skip_lesser_of ? 1 : 0,
+    next.relabel_from_substitution ? 1 : 0,
+    lineId,
+    orgId,
+  );
+  return getClaimLine(db, orgId, lineId);
+}
+
+export function addMember(
+  db: DatabaseSync,
+  orgId: string,
+  userId: string,
+  role: OrgRole,
+): { ok: true } | { ok: false; error: string } {
+  if (!getOrg(db, orgId)) return { ok: false, error: "org_not_found" };
+  const user = db.prepare("SELECT id FROM users WHERE id = ?").get(userId);
+  if (!user) return { ok: false, error: "user_not_found" };
+  db.prepare(
+    `INSERT INTO org_members (org_id, user_id, role) VALUES (?, ?, ?)
+     ON CONFLICT(org_id, user_id) DO UPDATE SET role = excluded.role`,
+  ).run(orgId, userId, role);
+  return { ok: true };
+}
+
 export function runRecover(db: DatabaseSync, orgId: string, lineId: string): RecoverResult | null {
   const line = getClaimLine(db, orgId, lineId);
   if (!line) return null;

@@ -11,7 +11,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **lesserof** | **building (smoke)** | Hours clear; flipped ready_to_build; smoke scaffold open |
+| 1 | **lesserof** | **building (workflow)** | Smoke + crud scored; next batch + audit |
 | 1 | **depositgap** | **sustained** | All 8 pages + goldens browser + try.html; Kill A honesty |
 | 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet complete |
 | — | htsroute | **parked** | Soft abort #4 — Challenge D value weak (Free/Free). No product folder |

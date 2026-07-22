@@ -3,6 +3,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { join, extname, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+  addMember,
   assertAccess,
   createClaimLine,
   createOrg,
@@ -11,11 +12,14 @@ import {
   getClaimLine,
   getOrg,
   issueToken,
+  listClaimLines,
+  patchClaimLine,
   registerUser,
   resolveToken,
   runRecover,
   type Store,
 } from "./store.js";
+import type { OrgRole } from "./db.js";
 
 const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
 const MIME: Record<string, string> = {
@@ -110,6 +114,24 @@ export function createApp(opts: { dbPath?: string } = {}) {
       return send(res, 201, { org });
     }
 
+    const membersMatch = path.match(/^\/orgs\/([^/]+)\/members$/);
+    if (membersMatch && method === "POST") {
+      const orgId = membersMatch[1];
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store.db, orgId, userId, ["admin"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const body = await readBody(req);
+      const role = String(body.role ?? "auditor") as OrgRole;
+      if (!["admin", "analyst", "auditor"].includes(role)) {
+        return send(res, 400, { error: "bad_role" });
+      }
+      const result = addMember(store.db, orgId, String(body.userId ?? ""), role);
+      if (!result.ok) return send(res, 400, { error: result.error });
+      return send(res, 201, { ok: true });
+    }
+
     const claimMatch = path.match(/^\/orgs\/([^/]+)\/claim-lines(?:\/([^/]+))?(?:\/(recover))?$/);
     if (claimMatch) {
       const orgId = claimMatch[1];
@@ -118,6 +140,14 @@ export function createApp(opts: { dbPath?: string } = {}) {
       const userId = authUserId(store, req);
       if (!userId) return send(res, 401, { error: "unauthorized" });
       if (!getOrg(store.db, orgId)) return send(res, 404, { error: "org_not_found" });
+
+      if (method === "GET" && !lineId) {
+        if (!assertAccess(store.db, orgId, userId, ["admin", "analyst", "auditor"])) {
+          return send(res, 403, { error: "forbidden" });
+        }
+        const lines = listClaimLines(store.db, orgId);
+        return send(res, 200, { claim_lines: lines, total: lines.length });
+      }
 
       if (method === "POST" && !lineId) {
         if (!assertAccess(store.db, orgId, userId, ["admin", "analyst"])) {
@@ -146,6 +176,35 @@ export function createApp(opts: { dbPath?: string } = {}) {
         const line = getClaimLine(store.db, orgId, lineId);
         if (!line) return send(res, 404, { error: "not_found" });
         return send(res, 200, { claim_line: line });
+      }
+
+      if (method === "PATCH" && lineId && !action) {
+        if (!assertAccess(store.db, orgId, userId, ["admin", "analyst"])) {
+          return send(res, 403, { error: "forbidden" });
+        }
+        const body = await readBody(req);
+        const patched = patchClaimLine(store.db, orgId, lineId, {
+          claim_type: body.claim_type !== undefined ? String(body.claim_type) : undefined,
+          duties_paid: body.duties_paid !== undefined ? Number(body.duties_paid) : undefined,
+          substitute_basis:
+            body.substitute_basis !== undefined ? Number(body.substitute_basis) : undefined,
+          apply_usmca_lesser_of:
+            body.apply_usmca_lesser_of !== undefined
+              ? body.apply_usmca_lesser_of === true
+              : undefined,
+          usmca_partner_duty:
+            body.usmca_partner_duty !== undefined
+              ? typeof body.usmca_partner_duty === "number"
+                ? body.usmca_partner_duty
+                : undefined
+              : undefined,
+          basket_other_ineligible:
+            body.basket_other_ineligible !== undefined
+              ? body.basket_other_ineligible === true
+              : undefined,
+        });
+        if (!patched) return send(res, 404, { error: "not_found" });
+        return send(res, 200, { claim_line: patched });
       }
 
       if (method === "POST" && lineId && action === "recover") {

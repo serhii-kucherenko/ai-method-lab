@@ -1,0 +1,39 @@
+{
+  "phase": "P-smoke-001",
+  "fail_tags": [],
+  "method_version": "1.0.0",
+  "scores": {
+    "dimensions": {
+      "efficiency": 4,
+      "completeness": 5,
+      "maintainability": 4,
+      "robustness": 5,
+      "correctness": 5
+    },
+    "rubric_version": "1.0.0",
+    "artifacts": ["projects/lesserof"],
+    "notes": "25 goldens dual-green; smoke API + honesty UI; Kill A in PRODUCT"
+  },
+  "created_at": "2026-07-22T05:20:00Z",
+  "method_id": "A03",
+  "run_id": "r1",
+  "product_path": "projects/lesserof",
+  "project_id": "P-smoke-001",
+  "status": "scored",
+  "approach_id": "A03",
+  "metrics": {
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 20,
+    "cycle_time_hours": 0.35,
+    "correctness_pass": true
+  },
+  "cell_id": "A03__P-smoke-001__lesserof__r1",
+  "notes": "A03+A10 lesserof smoke after hours clear + flip",
+  "started_at": "2026-07-22T05:08:00Z",
+  "approach_version": 1,
+  "finished_at": "2026-07-22T05:20:00Z"
+}
