@@ -30,6 +30,7 @@ Follow `ptax4975-FLIP-WHEN-CLEAR.md`. Digests: first-/second-tier excise **shape
 - Digests claim Form 5330 / IRS parity  
 - Product plan collapses to “flat 15% once”  
 - Silent “fix” to highest-during-period FMV without dual suite bump  
+- Silent taxable-period end-date “fix” without dual suite bump  
 - Silent excess-compensation “fix” without dual suite bump  
 - Hours/ticks faked or framing clock moved forward to skip hold
 

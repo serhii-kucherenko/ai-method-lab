@@ -50,6 +50,7 @@ Kill A stands. Digests: forecast / method experiment.
 - Claiming Form 5330 / IRS / DOL / counsel replacement  
 - Highest-FMV-during-period without versioned dual suite (`ptax4975-FMV-FENCE.md`)  
 - Automatic (f)(2) notice/assessment/correction year-parts without dual suite (`ptax4975-TAXABLE-PERIOD-FENCE.md`)  
+- Automatic excess-compensation narrowing without dual suite (`ptax4975-EXCESS-COMP-FENCE.md`)  
 - Single calculator page as sustain  
 
 ## Phase plan (when build starts)

@@ -2,6 +2,18 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 tick 10: PRODUCT draft + flip sheet under WAIT_HOURS
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 64. Docs only. Framing clock **unchanged**.
+
+- Wrote `ptax4975-PRODUCT-DRAFT.md` (paste-ready PRODUCT.md for flip day)
+- Flip sheet now requires all three fences + DIGEST-HOLD; preflip soft-park covers taxable-period silent “fix”
+- Blueprint forbidden list includes excess-comp; seed kits require PRODUCT-DRAFT
+- `research_ticks_on_idea` → 10; still **WAIT_HOURS** (~2.0h left)
+- Explicit non-actions: **no** `projects/ptax4975/`
+
+**Skeptical one-liner:** A paste-ready PRODUCT is not a product — hours still gate the flip.
+
 ## 2026-07-22 — ptax4975 tick 9: framing + PRD fence sync under WAIT_HOURS
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 63. Docs only. Framing clock **unchanged**.
