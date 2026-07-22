@@ -1,6 +1,10 @@
 # Findings
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
+## 2026-07-22 — lesserof P-smoke + P-crud GREEN
+
+- Cells `A03__P-smoke-001__lesserof__r1` + `A03__P-crud-001__lesserof__r1`. 29 tests; catalog+detail; auditor RBAC; USMCA wipe on detail. Next: workflow (batch + audit).
+
 ## 2026-07-21 — depositgap P-sustain GREEN (product complete)
 
 - Cell `A03__P-sustain__depositgap__r1` done. 8 pages incl. goldens; offline try.html; 76 tests; Kill A honesty. Next research: lesserof.
