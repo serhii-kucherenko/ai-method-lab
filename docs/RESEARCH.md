@@ -1,6 +1,13 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof page specs + phase briefs sync (tick 13)
+
+Hours hold ~2.5h of 4h.
+
+- Refreshed `lesserof-PAGE-SPECS.md` + `lesserof-PHASE-BRIEFS.md` for active research: ≥25 goldens, same-condition out of scope, Kill A digests.
+- **Explicit non-actions:** no `projects/lesserof/`.
+
 ## 2026-07-22 — lesserof sustain matrix + API honesty sync (tick 12)
 
 Hours hold ~2.2h of 4h. Dual fixtures still **25/25** green.
