@@ -79,10 +79,18 @@ export function resolveToken(db: DatabaseSync, token: string): string | null {
 
 export function createOrg(db: DatabaseSync, userId: string, name: string) {
   const id = randomUUID();
+  const webhookSecret = `whsec_${randomUUID().replace(/-/g, "").slice(0, 24)}`;
   db.prepare("INSERT INTO orgs (id, name, created_by) VALUES (?, ?, ?)").run(id, name, userId);
   db.prepare(
     "INSERT INTO org_members (org_id, user_id, role) VALUES (?, ?, 'admin')",
   ).run(id, userId);
+  db.prepare(
+    `INSERT INTO org_settings (org_id, webhook_secret, tokens_note) VALUES (?, ?, ?)`,
+  ).run(
+    id,
+    webhookSecret,
+    "API tokens are issued at register. Treat bearer tokens as secrets.",
+  );
   return { id, name };
 }
 
@@ -402,13 +410,25 @@ export type CashImpactLine = {
   true_up: number;
 };
 
+export type CashImpactOpts = {
+  limit?: number;
+  offset?: number;
+};
+
 export type CashImpact = {
   lines: CashImpactLine[];
   totals: { duty_delta: number; interest: number; true_up: number; entry_count: number };
+  total: number;
+  limit: number;
+  offset: number;
 };
 
 /** POR rollup from each entry's latest successful forecast run. */
-export function getCashImpact(db: DatabaseSync, orgId: string): CashImpact {
+export function getCashImpact(
+  db: DatabaseSync,
+  orgId: string,
+  opts: CashImpactOpts = {},
+): CashImpact {
   const rows = db
     .prepare(
       `SELECT e.id AS entry_id, e.por AS por,
@@ -450,8 +470,8 @@ export function getCashImpact(db: DatabaseSync, orgId: string): CashImpact {
     byPor.set(por, line);
   }
 
-  const lines = [...byPor.values()];
-  const totals = lines.reduce(
+  const allLines = [...byPor.values()].sort((a, b) => a.por.localeCompare(b.por));
+  const totals = allLines.reduce(
     (acc, line) => ({
       duty_delta: acc.duty_delta + line.duty_delta,
       interest: acc.interest + line.interest,
@@ -460,7 +480,14 @@ export function getCashImpact(db: DatabaseSync, orgId: string): CashImpact {
     }),
     { duty_delta: 0, interest: 0, true_up: 0, entry_count: 0 },
   );
-  return { lines, totals };
+  const total = allLines.length;
+  const offset = Math.max(opts.offset ?? 0, 0);
+  const limit =
+    opts.limit !== undefined
+      ? Math.min(Math.max(opts.limit, 1), 500)
+      : Math.max(total, 1);
+  const lines = allLines.slice(offset, offset + limit);
+  return { lines, totals, total, limit, offset };
 }
 
 export type AuditEvent = {
@@ -594,3 +621,145 @@ export function auditToCsv(events: AuditEvent[]): string {
   }
   return lines.join("\n") + "\n";
 }
+
+export type OrgSettings = {
+  orgId: string;
+  webhook_secret: string;
+  tokens_note: string;
+  token_count: number;
+  updated_at: string;
+};
+
+function ensureOrgSettings(db: DatabaseSync, orgId: string): void {
+  const existing = db
+    .prepare("SELECT org_id FROM org_settings WHERE org_id = ?")
+    .get(orgId) as { org_id: string } | undefined;
+  if (existing) return;
+  db.prepare(
+    `INSERT INTO org_settings (org_id, webhook_secret, tokens_note)
+     VALUES (?, ?, ?)`,
+  ).run(
+    orgId,
+    `whsec_${randomUUID().replace(/-/g, "").slice(0, 24)}`,
+    "API tokens are issued at register. Treat bearer tokens as secrets.",
+  );
+}
+
+export function getOrgSettings(db: DatabaseSync, orgId: string): OrgSettings | null {
+  if (!getOrg(db, orgId)) return null;
+  ensureOrgSettings(db, orgId);
+  const row = db
+    .prepare(
+      `SELECT org_id AS orgId, webhook_secret, tokens_note, updated_at
+       FROM org_settings WHERE org_id = ?`,
+    )
+    .get(orgId) as
+    | {
+        orgId: string;
+        webhook_secret: string;
+        tokens_note: string;
+        updated_at: string;
+      }
+    | undefined;
+  if (!row) return null;
+  const tokenCount = db
+    .prepare(
+      `SELECT COUNT(*) AS n FROM tokens t
+       INNER JOIN org_members m ON m.user_id = t.user_id
+       WHERE m.org_id = ?`,
+    )
+    .get(orgId) as { n: number };
+  return {
+    orgId: row.orgId,
+    webhook_secret: row.webhook_secret,
+    tokens_note: row.tokens_note,
+    token_count: Number(tokenCount.n),
+    updated_at: row.updated_at,
+  };
+}
+
+export function patchOrgSettings(
+  db: DatabaseSync,
+  orgId: string,
+  patch: { webhook_secret?: string; tokens_note?: string },
+): WriteResult<OrgSettings> {
+  if (!getOrg(db, orgId)) return { ok: false, status: 404, error: "not found" };
+  ensureOrgSettings(db, orgId);
+  const current = getOrgSettings(db, orgId);
+  if (!current) return { ok: false, status: 404, error: "not found" };
+  const nextSecret =
+    patch.webhook_secret !== undefined ? patch.webhook_secret : current.webhook_secret;
+  const nextNote =
+    patch.tokens_note !== undefined ? patch.tokens_note : current.tokens_note;
+  db.prepare(
+    `UPDATE org_settings
+     SET webhook_secret = ?, tokens_note = ?, updated_at = datetime('now')
+     WHERE org_id = ?`,
+  ).run(nextSecret, nextNote, orgId);
+  const updated = getOrgSettings(db, orgId);
+  if (!updated) return { ok: false, status: 500, error: "patch failed" };
+  return { ok: true, value: updated };
+}
+
+export function rotateWebhookSecret(
+  db: DatabaseSync,
+  orgId: string,
+): WriteResult<OrgSettings> {
+  return patchOrgSettings(db, orgId, {
+    webhook_secret: `whsec_${randomUUID().replace(/-/g, "").slice(0, 24)}`,
+  });
+}
+
+export type WebhookIngestResult =
+  | { ok: true; status: 201 | 200; entry: EntryRow; replay: boolean }
+  | { ok: false; status: number; error: string };
+
+/** Ingest ACE-ish entry push; same idempotency key returns prior entry. */
+export function ingestWebhookEntry(
+  db: DatabaseSync,
+  orgId: string,
+  idempotencyKey: string,
+  input: EntryCreateInput,
+): WebhookIngestResult {
+  if (!getOrg(db, orgId)) return { ok: false, status: 404, error: "org not found" };
+  if (!idempotencyKey.trim()) {
+    return { ok: false, status: 400, error: "idempotency key required" };
+  }
+  const prior = db
+    .prepare(
+      `SELECT entry_id FROM webhook_deliveries WHERE idempotency_key = ?`,
+    )
+    .get(idempotencyKey) as { entry_id: string } | undefined;
+  if (prior) {
+    const entry = getEntry(db, prior.entry_id);
+    if (!entry) return { ok: false, status: 500, error: "replay entry missing" };
+    return { ok: true, status: 200, entry, replay: true };
+  }
+  const created = createEntry(db, orgId, input);
+  if (!created.ok) return { ok: false, status: created.status, error: created.error };
+  try {
+    db.prepare(
+      `INSERT INTO webhook_deliveries (idempotency_key, org_id, entry_id) VALUES (?, ?, ?)`,
+    ).run(idempotencyKey, orgId, created.value.id);
+  } catch {
+    const again = db
+      .prepare(`SELECT entry_id FROM webhook_deliveries WHERE idempotency_key = ?`)
+      .get(idempotencyKey) as { entry_id: string } | undefined;
+    if (again) {
+      const entry = getEntry(db, again.entry_id);
+      if (entry) return { ok: true, status: 200, entry, replay: true };
+    }
+    return { ok: false, status: 409, error: "idempotency conflict" };
+  }
+  return { ok: true, status: 201, entry: created.value, replay: false };
+}
+
+/** Alias used by app routes — pagination lives on getCashImpact. */
+export function getCashImpactPage(
+  db: DatabaseSync,
+  orgId: string,
+  opts: CashImpactOpts = {},
+): CashImpact {
+  return getCashImpact(db, orgId, opts);
+}
+

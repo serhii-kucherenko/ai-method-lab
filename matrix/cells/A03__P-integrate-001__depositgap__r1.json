@@ -1,0 +1,39 @@
+{
+  "phase": "P-integrate-001",
+  "fail_tags": [],
+  "method_version": "1.0.0",
+  "scores": {
+    "dimensions": {
+      "efficiency": 4,
+      "completeness": 5,
+      "maintainability": 4,
+      "robustness": 5,
+      "correctness": 5
+    },
+    "rubric_version": "1.0.0",
+    "artifacts": ["projects/depositgap"],
+    "notes": "HMAC webhook + idempotency; settings admin PATCH; cash/audit pagination; settings UI live; 31 tests"
+  },
+  "created_at": "2026-07-22T02:15:00Z",
+  "method_id": "A03",
+  "run_id": "r1",
+  "product_path": "projects/depositgap",
+  "project_id": "P-integrate-001",
+  "status": "scored",
+  "approach_id": "A03",
+  "metrics": {
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 30,
+    "cycle_time_hours": 0.5,
+    "correctness_pass": true
+  },
+  "cell_id": "A03__P-integrate-001__depositgap__r1",
+  "notes": "depositgap integrate: signed entry webhook, org settings, pagination; Kill A honesty; no ACE claims",
+  "started_at": "2026-07-22T01:45:00Z",
+  "approach_version": 1,
+  "finished_at": "2026-07-22T02:15:00Z"
+}

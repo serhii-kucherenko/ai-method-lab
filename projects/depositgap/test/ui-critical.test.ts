@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { createApp } from "../src/app.js";
 
-test("ui-critical: honesty + catalog + detail + batch + cash + audit stay green", async () => {
+test("ui-critical: honesty + catalog + detail + batch + cash + audit + settings stay green", async () => {
   const { server } = createApp({ rateLimit: 100 });
   await new Promise<void>((resolve) => server.listen(0, resolve));
   const addr = server.address();
@@ -65,6 +65,16 @@ test("ui-critical: honesty + catalog + detail + batch + cash + audit stay green"
   assert.match(auditBody, /\/audit/);
   assert.match(auditBody, /format=csv|CSV/i);
   assert.match(auditBody, /localStorage|depositgap_token/);
+
+  const settings = await fetch(`${base}/settings.html`);
+  assert.equal(settings.status, 200);
+  const settingsBody = await settings.text();
+  assert.match(settingsBody, /Org settings/i);
+  assert.match(settingsBody, /data-settings="live"/);
+  assert.match(settingsBody, /\/settings/);
+  assert.match(settingsBody, /webhook|HMAC|Rotate/i);
+  assert.match(settingsBody, /localStorage|depositgap_token/);
+  assert.match(settingsBody, /admin only|Admin-only|admin only/i);
 
   server.close();
 });
