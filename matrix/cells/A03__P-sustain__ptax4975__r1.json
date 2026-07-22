@@ -1,0 +1,39 @@
+{
+  "phase": "P-sustain",
+  "fail_tags": [],
+  "method_version": "1.0.0",
+  "scores": {
+    "dimensions": {
+      "efficiency": 4,
+      "completeness": 5,
+      "maintainability": 4,
+      "robustness": 5,
+      "correctness": 5
+    },
+    "rubric_version": "1.0.0",
+    "artifacts": ["projects/ptax4975", "projects/ptax4975/try.html"],
+    "notes": "58 tests; 7 pages + try.html; 35 dual goldens; Kill A + 3 fences; webhook idempotent"
+  },
+  "created_at": "2026-07-22T18:10:00Z",
+  "method_id": "A03",
+  "run_id": "r1",
+  "product_path": "projects/ptax4975",
+  "project_id": "P-sustain",
+  "status": "scored",
+  "approach_id": "A03",
+  "metrics": {
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 25,
+    "cycle_time_hours": 0.4,
+    "correctness_pass": true
+  },
+  "cell_id": "A03__P-sustain__ptax4975__r1",
+  "notes": "A03 ptax4975 product complete; §4975 year-parts method experiment — not Form 5330",
+  "started_at": "2026-07-22T18:00:00Z",
+  "approach_version": 1,
+  "finished_at": "2026-07-22T18:10:00Z"
+}

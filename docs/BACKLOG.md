@@ -11,7 +11,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **ptax4975** | **building (integrate✓ → scale)** | 42 tests; webhook+settings+pagination; next scale |
+| 1 | **ptax4975** | **sustained** | 58 tests; 7 pages + try.html; Kill A + 3 fences |
 | 1 | **oshamult** | **sustained** | 56 tests; 7 pages + try.html; Kill A honesty |
 | 1 | **lesserof** | **sustained** | 11 pages + goldens + try.html; 60 tests; Kill A honesty |
 | 1 | **depositgap** | **sustained** | All 8 pages + goldens browser + try.html; Kill A honesty |
@@ -32,7 +32,7 @@ See `docs/DEPTH_RESTART.md`.
 | --- | --- | --- |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
-| ptax4975 | **building** | smoke green; current_product; next crud |
+| ptax4975 | **sustained** | Product complete under projects/ptax4975 |
 | meldefer | soft park | |
 | form222 | soft park | |
 | lanehold | **killed (G2)** | |

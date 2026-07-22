@@ -2,6 +2,14 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — ptax4975 P-sustain GREEN (product complete)
+
+- Cell `A03__P-sustain__ptax4975__r1`. 58 tests; 7 pages; try.html Kill A + fences; dual-impl. Slot open for next seed.
+
+## 2026-07-22 — ptax4975 P-scale GREEN
+
+- Cell `A03__P-scale-001__ptax4975__r1`. 44 tests; ≥250 page walk; rate-limit 429; concurrent batch. Next: sustain.
+
 ## 2026-07-22 — ptax4975 P-integrate GREEN
 
 - Cell `A03__P-integrate-001__ptax4975__r1`. 42 tests; HMAC webhook + idempotency; settings RBAC; pagination. Next: scale.

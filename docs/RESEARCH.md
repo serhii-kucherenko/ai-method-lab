@@ -2,6 +2,12 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 product complete; research slot open
+
+`ptax4975` sustained (58 tests). Soft parks (`meldefer`, `form222`) still not revival-ready without new isomorphism papers. Next tick: pick a **literal-dollar** seed (not dual-gate / days costume) and start framing clock.
+
+**Skeptical one-liner:** Finished the excise forecast; don’t resurrect parked form clocks without new unique math.
+
 ## 2026-07-22 — ptax4975 flip → smoke GREEN
 
 Hours hold cleared (`FLIP_PATH_READY`). Opened `projects/ptax4975/` per flip-day script. Smoke scored: **37** tests, **35** dual goldens, honesty + three fences. Product now in **running** (next: crud). Research log stays narrative; build lives under `projects/`.

@@ -6,23 +6,22 @@
 - **35** dual-green paper fixtures; Kill A stands (counsel / Form 5330)
 - Three honesty fences: FMV, taxable-period end dates, excess-compensation
 
-## Smoke — GREEN (`A03__P-smoke-001__ptax4975__r1`)
+## Ladder
 
-- Product opened under `projects/ptax4975/`
-- 35 dual goldens ported; forecast returns `initial_tax`, `additional_tax`, `total`
-- Honesty page: Kill A + three fences; catalog + detail + goldens pages
-- **37** tests pass; lint clean
+| Phase | Cell | Tests |
+|-------|------|-------|
+| smoke | `A03__P-smoke-001__ptax4975__r1` | 37 |
+| crud | `A03__P-crud-001__ptax4975__r1` | 38 |
+| workflow | `A03__P-workflow-001__ptax4975__r1` | 39 |
+| integrate | `A03__P-integrate-001__ptax4975__r1` | 42 |
+| scale | `A03__P-scale-001__ptax4975__r1` | 44 |
+| sustain | `A03__P-sustain__ptax4975__r1` | **58** |
 
-## Crud — GREEN (`A03__P-crud-001__ptax4975__r1`)
+## Sustain — GREEN (product complete)
 
-- PATCH transaction; members route; auditor list/get/forecast OK, create/patch **403**
-- Catalog + detail + honesty still live; **38** tests
-
-## Workflow — GREEN (`A03__P-workflow-001__ptax4975__r1`)
-
-- Batch independence (ok + flat-cheat reject); audit JSON + CSV; auditor **403** on batch
-- batch.html + audit.html; **39** tests
-- Next: integrate (webhook + pagination + settings)
+- 7 pages + offline `try.html`; 35 dual goldens; Kill A + three fences in digests
+- Concurrent batch independence; rate-limit 429; webhook idempotent; cross-org isolation
+- Counsel / Form 5330 still win commercially — method / FP&A experiment only
 
 ## Digests
 
