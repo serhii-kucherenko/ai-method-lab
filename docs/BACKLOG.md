@@ -11,11 +11,11 @@ See `docs/DEPTH_RESTART.md`.
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
+| 1 | **oshamult** | **sustained** | 56 tests; 7 pages + try.html; Kill A honesty |
 | 1 | **lesserof** | **sustained** | 11 pages + goldens + try.html; 60 tests; Kill A honesty |
 | 1 | **depositgap** | **sustained** | All 8 pages + goldens browser + try.html; Kill A honesty |
 | 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet complete |
 | — | htsroute | **parked** | Soft abort #4 — Challenge D value weak (Free/Free). No product folder |
-| 1 | **oshamult** | **scale scored → sustain** | 36 tests; 250 walk + rate-limit 429 |
 | — | lesserof | **sustained** | Product complete — stacked refund caps |
 | 2 | bondstrip | sustained | |
 | 2 | settlecut | sustained | |
@@ -30,8 +30,8 @@ See `docs/DEPTH_RESTART.md`.
 | Seed | State | Notes |
 | --- | --- | --- |
 | lesserof | **sustained** | Product complete |
-| oshamult | **ready_to_build** | Flip clear; product under projects/oshamult |
-| ptax4975 | seed | |
+| oshamult | **sustained** | Product complete under projects/oshamult |
+| ptax4975 | seed | next research after oshamult |
 | meldefer | soft park | |
 | form222 | soft park | |
 | lanehold | **killed (G2)** | |

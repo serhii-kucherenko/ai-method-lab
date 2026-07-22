@@ -1,0 +1,39 @@
+{
+  "phase": "P-sustain",
+  "fail_tags": [],
+  "method_version": "1.0.0",
+  "scores": {
+    "dimensions": {
+      "efficiency": 4,
+      "completeness": 5,
+      "maintainability": 4,
+      "robustness": 5,
+      "correctness": 5
+    },
+    "rubric_version": "1.0.0",
+    "artifacts": ["projects/oshamult"],
+    "notes": "7 pages incl goldens; try.html Kill A; 56 tests; dual-impl; matrix floor met"
+  },
+  "created_at": "2026-07-22T12:20:00Z",
+  "method_id": "A03",
+  "run_id": "r1",
+  "product_path": "projects/oshamult",
+  "project_id": "P-sustain",
+  "status": "scored",
+  "approach_id": "A03",
+  "metrics": {
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 30,
+    "cycle_time_hours": 0.5,
+    "correctness_pass": true
+  },
+  "cell_id": "A03__P-sustain__oshamult__r1",
+  "notes": "oshamult product complete — serial penalty forecast experiment",
+  "started_at": "2026-07-22T12:12:00Z",
+  "approach_version": 1,
+  "finished_at": "2026-07-22T12:20:00Z"
+}

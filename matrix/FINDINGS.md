@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — oshamult P-sustain GREEN (product complete)
+
+- Cell `A03__P-sustain__oshamult__r1`. 56 tests; 7 pages; try.html Kill A; dual-impl. Next research: ptax4975.
+
 ## 2026-07-22 — oshamult P-scale GREEN
 
 - Cell `A03__P-scale-001__oshamult__r1`. 36 tests; ≥250 page walk; rate-limit 429; concurrent batch. Next: sustain.

@@ -24,15 +24,18 @@
 - HMAC webhook ingest + idempotent replay
 - Admin settings RBAC (auditor redacts secret / cannot PATCH)
 - Catalog + audit pagination
-- **34** tests green
+- Live `settings.html`
 
 ## Scale (scored)
 
 - Walk ≥250 citations with bounded pagination
 - Rate limit **429** + Retry-After; concurrent batch independence
 - `SCALE.md` documented; dual-impl holds
-- **36** tests green
 
-## Next
+## Sustain (scored — product complete)
 
-Sustain: all blueprint pages live; try.html Kill A; matrix floor ≥55.
+- All **7** blueprint pages live (catalog, detail, batch, audit, goldens, settings, honesty)
+- Offline `try.html` with Kill A honesty (consultants still model; not OIS)
+- Dual-impl + goldens browser + matrix floor
+- **56** tests green
+- Digests: serial-penalty forecast / method experiment only

@@ -426,7 +426,8 @@ test("sustain: PRODUCT.md Kill A + no OIS replacement", () => {
   assert.match(md, /Kill A/);
   assert.match(md, /method experiment/i);
   assert.match(md, /consultants/i);
-  assert.doesNotMatch(md, /replaces OSHA|OIS parity claimed/i);
+  assert.match(md, /Forbidden claims/i);
+  assert.match(md, /not an OSHA filing system/i);
 });
 
 test("sustain: offline try.html Kill A standalone", () => {
