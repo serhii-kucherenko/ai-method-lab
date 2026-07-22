@@ -1,6 +1,6 @@
 # lesserof — phased roadmap (seed paper)
 
-**Paper only. Seed / research. Do not open `projects/lesserof/` yet.**
+**Paper only. Active research. Do not open `projects/lesserof/` until hours + preflip clear.**
 
 Maps A03/A10 phases to the comprehensive ladder. Sources: `lesserof-PHASE-BRIEFS.md`, `lesserof-PAGE-SPECS.md`, `lesserof-COMPREHENSIVE-BLUEPRINT.md`, `lesserof-SUSTAIN-TEST-MATRIX.md`, `lesserof-API-CONTRACT.md`.
 
@@ -12,7 +12,7 @@ Maps A03/A10 phases to the comprehensive ladder. Sources: `lesserof-PHASE-BRIEFS
 
 | | |
 |--|--|
-| **Goal** | Port the stacked TFTEA → USMCA + basket gate engine + ≥23 paper goldens; org + claim line aggregates exist without a full UI |
+| **Goal** | Port the stacked TFTEA → USMCA + basket gate engine + **≥25** paper goldens (A–Y); org + claim line aggregates exist without a full UI |
 | **Pages unlocked** | None required (forecast API only). PRODUCT.md must already carry Kill A stacked-cap ≠ ACE language |
 | **Exit criteria** | All `docs/ideas/fixtures/lesserof-*.json` green (or product-ported); dual-impl path planned; wrong-mode / basket / missing-partner rejects; Kill A in PRODUCT |
 | **UI green** | N/A yet — do not ship a fake “sustain” ×0.99 calculator page |

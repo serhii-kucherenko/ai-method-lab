@@ -1,9 +1,9 @@
-# lesserof — comprehensive product blueprint (pre-build, parallel seed)
+# lesserof — comprehensive product blueprint
 
-**Status:** paper only. Parallel seed — **not** `current_idea` (htsroute holds the active slot).  
+**Status:** paper only. Active research (`current_idea`) after depositgap sustain. **Not** `ready_to_build` until hours + preflip clear.  
 **Bar:** `docs/COMPREHENSIVE_PRODUCT.md`  
 **Claim:** `lesserof-NARROW-CLAIM.md` (stacked caps + basket trap + direct-ID exemption)  
-**Algorithm sketch:** `lesserof-algorithm.md` · CFR: `lesserof-CFR-CITATIONS.md` · toys: `lesserof-WORKED-EXAMPLE.md`, `lesserof-USMCA-STACK.md`, `lesserof-BASKET-OTHER.md`
+**Algorithm sketch:** `lesserof-algorithm.md` · CFR: `lesserof-CFR-CITATIONS.md` · toys: `lesserof-WORKED-EXAMPLE.md`, `lesserof-USMCA-STACK.md`, `lesserof-BASKET-OTHER.md` · suite: **25** dual-green (A–Y)
 
 ## Goal
 
@@ -64,11 +64,11 @@ If any of these is missing, the product collapses to a vendor-blog worksheet clo
 - Single-page calculator shipping as “sustain”
 - Noun-swap of htsroute / dual-gate templates
 
-## Phase plan (when build starts — after htsroute frees slot + framing)
+## Phase plan (when build starts — after hours + preflip)
 
 | Phase | Scope |
 |-------|-------|
-| smoke | Org + claim line + stacked calc + ≥25 paper goldens ported |
+| smoke | Org + claim line + stacked calc + **≥25** paper goldens ported (A–Y) |
 | crud | Claim workspace + lane compare pages + RBAC |
 | workflow | USMCA stack + basket eligibility + forecast vs actual |
 | integrate | Webhook + pagination + rate limit |

@@ -1,6 +1,14 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof blueprint/roadmap sync (tick 9)
+
+Hours hold ~1.5h of 4h.
+
+- Synced comprehensive blueprint + ROADMAP + DAY1 contract to active research (not htsroute-blocked) and **≥25** A–Y goldens.
+- Day-1 abort now requires USMCA wipe + basket reject on the first forecast surface (blocks TFTEA-only theater).
+- **Explicit non-actions:** no `projects/lesserof/`.
+
 ## 2026-07-22 — lesserof digest copy + acceptance refresh (tick 8)
 
 Hours hold ~1.2h of 4h.

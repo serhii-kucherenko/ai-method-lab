@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T02:25:00Z",
+  "updated_at": "2026-07-22T02:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__lesserof__digest_copy_tick8",
+  "last_completed": "research__lesserof__blueprint_sync_tick9",
   "last_error": null,
   "current_product": null,
   "current_idea": "lesserof",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "lesserof tick 8: DIGEST-COPY + acceptance refresh; try-demo smoke green; 25 fixtures. Hours ~1.2/4. ticks=8. No projects/lesserof/. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "lesserof tick 9: blueprint/ROADMAP/DAY1 synced to 25 goldens + USMCA wipe day-1 abort. Hours ~1.5/4. ticks=9. No projects/lesserof/. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -34,7 +34,7 @@
     "min_hours_research_before_ready": 4,
     "framing_started_at": "2026-07-22T01:07:23.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 8,
+    "research_ticks_on_idea": 9,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 71
+    "ticks_observed": 72
   }
 }
