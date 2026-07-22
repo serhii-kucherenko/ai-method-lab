@@ -42,7 +42,7 @@ See `c1592-FALSIFIERS.md` — wrong branch vs counsel; flat 2× still wins criti
 
 **Still researching — do not build yet.**
 
-Tick floor met (3/3). Fixture floor met (26≥25). Architect pack VISION/ROADMAP/PRD/ERD on paper. **Hours hold** still open (~2.7h left at last check). Flip only after `check-c1592-hour-status.mjs` → `FLIP_PATH_READY`, then a flip-day script (to write before clear).
+Tick floor met (3/3). Fixture floor met (30≥25). Architect pack VISION/ROADMAP/PRD/ERD on paper. **Hours hold** still open (~0.8h left at last check). Flip only after `check-c1592-hour-status.mjs` → `FLIP_PATH_READY`, then walk `c1592-FLIP-DAY-SCRIPT.md`.
 
 ## Explicit non-actions
 
