@@ -1,6 +1,16 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — oshamult Kill A value-gate honesty (tick 4)
+
+Hours hold ~0.7h of 4h. `check-oshamult-hour-status.mjs` → `WAIT_HOURS`.
+
+- Refreshed `oshamult-VALUE-GATE-DRYRUN.md`: Kill A stands (consultants already model GBP serial); continue as method experiment vs park — continue while fences stay honest.
+- Re-cited `oshamult-SERIAL-FENCE.md` + `oshamult-TRY-DEMO.md` honesty (no OIS parity; reject statutory-max / additive cheats).
+- **Explicit non-actions:** no `projects/oshamult/`; framing clock unchanged.
+
+**Skeptical one-liner:** Kill A already owns the spreadsheet — we’re only stress-testing whether serial FOM math ships without lying about OIS.
+
 ## 2026-07-22 — oshamult day-1 sync + hour-status (tick 3)
 
 Hours hold ~0.5h of 4h. `check-oshamult-hour-status.mjs` → `WAIT_HOURS`.
