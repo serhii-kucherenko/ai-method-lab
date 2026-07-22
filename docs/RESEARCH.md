@@ -1,6 +1,15 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof try-demo audit + algorithm sync (tick 5)
+
+Hours hold still open (~0.5h of 4h).
+
+- Audited `demos/lesserof-try/try.html` vs fixture oracle — substitution bind, USMCA wipe, basket/direct-ID rejects, Kill A copy all match (`lesserof-TRY-DEMO-AUDIT.md`).
+- Fixed `lesserof-algorithm.md` drift: recoverable is `0.99 * base` then optional `min` with `0.99 * partner` (matches checkers).
+- Refreshed G1 / USMCA wipe fence language for active research (not parked behind htsroute).
+- **Explicit non-actions:** no `projects/lesserof/`.
+
 ## 2026-07-22 — lesserof hours-wait preflip checklist (tick 4)
 
 Ticks (≥3) and architect pack are already clear. Hours since framing (~0.2h at write) are **not**.

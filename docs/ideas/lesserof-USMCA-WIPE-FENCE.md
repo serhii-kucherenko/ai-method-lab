@@ -1,6 +1,6 @@
-# lesserof — USMCA wipe fence (seed)
+# lesserof — USMCA wipe fence
 
-Research only. Not `current_idea`. Closes a digest lie next to the TFTEA lesser-of toy.
+Research only. Active `current_idea`. Closes a digest lie next to the TFTEA lesser-of toy.
 
 ## Stack (do not flatten)
 
@@ -12,10 +12,10 @@ Cites: 19 U.S.C. § 4534; 19 CFR § 182.44; paper `lesserof-USMCA-STACK.md`.
 ## Fence
 
 1. Digests must not sell “lesser-of calculator” without the **USMCA / basket** stack.  
-2. Try demo must expose USMCA partner duty = 0 wipe (`demos/lesserof-try/try.html`).  
+2. Try demo must expose USMCA partner duty = 0 wipe (`demos/lesserof-try/try.html`) — audited in `lesserof-TRY-DEMO-AUDIT.md`.  
 3. Direct-ID must **not** take USMCA lesser-of in v0 toy (reject).  
-4. Activate only after **depositgap** per `ACTIVATION_QUEUE.md` — never while htsroute owns the slot.
+4. No product folder until hours + preflip clear (`lesserof-PREFLIP-CHECKLIST.md`).
 
 ## Decision impact
 
-Keeps lesserof as **#2 dollar seed** after depositgap. Does not justify jumping the queue tonight.
+Keeps the wipe story mandatory for digests. Does not skip the hours hold.

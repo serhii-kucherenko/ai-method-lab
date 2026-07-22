@@ -1,6 +1,6 @@
-# lesserof — G1 evidence pack (seed deepen)
+# lesserof — G1 evidence pack
 
-Research only. Not framed. Not `current_idea`. Fixture count is not pain evidence.
+Research only. Active `current_idea` after depositgap sustain. Fixture count is not pain evidence.
 
 ## Named user + frequency
 
@@ -33,8 +33,8 @@ Paper: `lesserof-WORKED-EXAMPLE.md`, `lesserof-CFR-CITATIONS.md`, `lesserof-USMC
 1. Kill A stands — brokers / drawback specialists already claim; vendor blogs name lesser-of.  
 2. Novelty must stay the **stack + traps**, not a lonely lesser-of widget.  
 3. 23 dual-green fixtures ≠ product-market proof.  
-4. Activate only after depositgap per queue — not while htsroute holds the slot.
+4. No product folder until hours + preflip clear — do not fake the framing clock.
 
 ## Decision impact
 
-Strengthens why lesserof is the **second** preferred post-htsroute dollar seed (after depositgap). Research try demo: `demos/lesserof-try/try.html`. USMCA wipe fence: `lesserof-USMCA-WIPE-FENCE.md`.
+Keeps provisional G1 alive for a stacked-cap **workflow experiment**. Still not market proof. See `lesserof-POST-DEPOSITGAP-STATUS.md` + `lesserof-PREFLIP-CHECKLIST.md`.
