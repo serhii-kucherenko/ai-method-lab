@@ -103,6 +103,10 @@ const seeds = [
       "oshamult-REPO-SCAFFOLD.md",
       "oshamult-G1-EVIDENCE.md",
       "oshamult-SERIAL-FENCE.md",
+      "oshamult-VISION.md",
+      "oshamult-ROADMAP.md",
+      "oshamult-PRD.md",
+      "oshamult-ERD.md",
     ],
   },
   {
