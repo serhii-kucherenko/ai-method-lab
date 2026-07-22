@@ -2,6 +2,18 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — ptax4975 tick 5: blueprint + digest hold under WAIT_HOURS
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 59. Docs only. Framing clock **unchanged**.
+
+- Synced PAGE-SPECS / COMPREHENSIVE-BLUEPRINT / PHASE-BRIEFS / G5 / G6 / SUSTAIN-TEST-MATRIX off stale queue language
+- Wrote `ptax4975-DIGEST-HOLD.md` (Kill A + FMV + taxable-period hold lines for digests)
+- Honesty page brief now requires both fence callouts in DOM
+- `research_ticks_on_idea` → 5; hour-status still **WAIT_HOURS** (~3.1h left)
+- Explicit non-actions: **no** `projects/ptax4975/`
+
+**Skeptical one-liner:** More paper sync is not demand — the hours clock remains the only honest remaining gate.
+
 ## 2026-07-22 — ptax4975 tick 4: architect pack sync under WAIT_HOURS
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 58. Docs + research try demo only. Framing clock **unchanged**.

@@ -1,10 +1,10 @@
-# ptax4975 — phase briefs (seed)
+# ptax4975 — phase briefs
 
-**Paper only.** Last in `ACTIVATION_QUEUE.md` after htsroute / depositgap / lesserof / oshamult.
+**Paper only.** `current_idea` under hours hold. Flip only after `FLIP_PATH_READY`.
 
 ## smoke
 
-Org + PT event + excise API; ≥35 goldens; Kill A (Form 5330 / counsel still own filing)
+Org + PT event + excise API; ≥35 goldens; Kill A (Form 5330 / counsel still own filing); FMV + taxable-period fences in PRODUCT
 
 ## crud
 

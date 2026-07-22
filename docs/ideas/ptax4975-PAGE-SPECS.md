@@ -1,7 +1,7 @@
-# ptax4975 — page wireframe specs (seed paper)
+# ptax4975 — page wireframe specs
 
-**Status:** seed only. Expands `ptax4975-COMPREHENSIVE-BLUEPRINT.md`.  
-**Explicit non-action:** do **not** open `projects/ptax4975/` while `htsroute` holds the slot.
+**Status:** framed research (`current_idea`); hours hold. Expands `ptax4975-COMPREHENSIVE-BLUEPRINT.md`.  
+**Explicit non-action:** do **not** open `projects/ptax4975/` until `FLIP_PATH_READY`.
 
 ---
 
@@ -15,6 +15,7 @@
 | Forbidden chrome | No dual-approver; no “replaces Form 5330” |
 | Kill A footer | Counsel still files; FP&A honesty experiment |
 | Money honesty | Show initial tax **and** additional tax separately |
+| Fences in DOM | FMV highest-during-period + taxable-period end-date out of v0 |
 
 ---
 
@@ -51,7 +52,7 @@ Append-only + CSV.
 Paper fixtures vs live engine.
 
 ### 6. Honesty
-Kill A + flat-excise failure mode in dollars.
+Kill A + flat-excise failure mode in dollars + FMV fence + taxable-period year-parts-input fence.
 
 ### 7. Org settings
 Members, tokens, webhook.

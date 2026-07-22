@@ -1,6 +1,6 @@
-# ptax4975 — sustain test matrix (seed paper)
+# ptax4975 — sustain test matrix
 
-**Status:** docs only until activation after higher-priority seeds clear.  
+**Status:** docs only until `FLIP_PATH_READY`.  
 **Bar:** `docs/COMPREHENSIVE_PRODUCT.md` + `ptax4975-G6-summary.md` + `ptax4975-COMPREHENSIVE-BLUEPRINT.md`
 
 Vanity fixture counts alone never pass. Dual-impl drift fails the phase.
@@ -45,4 +45,4 @@ Vanity fixture counts alone never pass. Dual-impl drift fails the phase.
 
 ## Explicit non-action
 
-No product folder while htsroute holds the slot.
+No `projects/ptax4975/` until `FLIP_PATH_READY`.

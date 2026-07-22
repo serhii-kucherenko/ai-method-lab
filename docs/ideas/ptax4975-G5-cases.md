@@ -1,7 +1,7 @@
-# ptax4975 — G5 case map (seed paper)
+# ptax4975 — G5 case map
 
-**State:** seed only. Encoded fixtures: **35** green (letter collisions from parallel deepening — all files count).  
-**Not framed. Not `current_idea`. No product.**
+**State:** framed research (`current_idea`). Encoded fixtures: **35** green.  
+**Hours hold. No product until flip.**
 
 Unique claim: **15% × year-parts** then **100%** if uncorrected, with optional **greater-of FMV** amount resolution — not a flat once-excise or dual-signer board.
 
@@ -21,4 +21,4 @@ Unique claim: **15% × year-parts** then **100%** if uncorrected, with optional 
 
 ## Explicit non-actions
 
-Prefer depositgap / lesserof / oshamult after htsroute. No `projects/ptax4975/`.
+No `projects/ptax4975/` until `FLIP_PATH_READY`.

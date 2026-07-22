@@ -1,8 +1,8 @@
-# ptax4975 — comprehensive product blueprint (pre-build, parallel seed)
+# ptax4975 — comprehensive product blueprint
 
-**Status:** paper only. Last in `ACTIVATION_QUEUE.md`.  
+**Status:** paper only. `current_idea` under hours hold.  
 **Bar:** `docs/COMPREHENSIVE_PRODUCT.md`  
-**G6:** `ptax4975-G6-summary.md` · fence: `ptax4975-FMV-FENCE.md` · cites: `ptax4975-STATUTE-CITATIONS.md`  
+**G6:** `ptax4975-G6-summary.md` · fences: `ptax4975-FMV-FENCE.md`, `ptax4975-TAXABLE-PERIOD-FENCE.md` · cites: `ptax4975-STATUTE-CITATIONS.md`  
 **Unique claim:** 15% × year-parts then 100% if uncorrected + optional greater-of FMV — not flat once-excise, not dual-signer.
 
 ## Goal
@@ -49,6 +49,7 @@ Kill A stands. Digests: forecast / method experiment.
 - Dual-approver status as domain  
 - Claiming Form 5330 / IRS / DOL / counsel replacement  
 - Highest-FMV-during-period without versioned dual suite (`ptax4975-FMV-FENCE.md`)  
+- Automatic (f)(2) notice/assessment/correction year-parts without dual suite (`ptax4975-TAXABLE-PERIOD-FENCE.md`)  
 - Single calculator page as sustain  
 
 ## Phase plan (when build starts)
@@ -64,4 +65,4 @@ Kill A stands. Digests: forecast / method experiment.
 
 ## Explicit non-actions
 
-No product folder while higher-priority seeds hold the queue.
+No `projects/ptax4975/` until `FLIP_PATH_READY`.

@@ -1,6 +1,6 @@
 # Research summary — ptax4975 (G6)
 
-Skeptical senior-eng bar. **`current_idea`** after oshamult sustained. Research / hours hold only — not `ready_to_build` until hours ≥4 and ticks ≥3.
+Skeptical senior-eng bar. **`current_idea`** after oshamult sustained. Research / hours hold only — tick floor met; not `ready_to_build` until hours ≥4.
 
 ## 1. Problem
 
@@ -45,7 +45,7 @@ See `ptax4975-challenge-ABC.md`.
 
 **Still researching — do not build yet.**
 
-Queue ahead is clear (oshamult sustained). Hours hold + tick floor remain. Kill A stands. Flip path: `ptax4975-FLIP-WHEN-CLEAR.md` only after `FLIP_PATH_READY`.
+Tick floor met (≥3). Hours hold remains (~1h elapsed / 4h). Kill A stands. Flip path: `ptax4975-FLIP-WHEN-CLEAR.md` only after `FLIP_PATH_READY`. Fences: FMV + taxable-period end dates.
 
 ## Explicit non-actions
 
