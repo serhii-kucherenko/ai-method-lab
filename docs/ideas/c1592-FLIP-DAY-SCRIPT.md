@@ -6,8 +6,8 @@
 
 ```text
 node docs/ideas/check-c1592-hour-status.mjs   # expect FLIP_PATH_READY
-node docs/ideas/check-c1592-fixtures.mjs      # ≥26 green
-node docs/ideas/check-c1592-dual.mjs          # ≥26 green
+node docs/ideas/check-c1592-fixtures.mjs      # ≥30 green
+node docs/ideas/check-c1592-dual.mjs          # ≥30 green
 ```
 
 ## Open product

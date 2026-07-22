@@ -5,7 +5,7 @@
 ## Research hold (pre-product)
 
 - Framing started **2026-07-22T18:55:00.000Z**; hours hold + tick floor enforced
-- **26** dual-green paper fixtures; Kill A stands (counsel / CBP)
+- **30** dual-green paper fixtures; Kill A stands (counsel / CBP)
 - Two honesty fences documented: mitigation ≠ statutory max; PD not automatic
 - Mid-hold skeptic: **continue** as ceiling forecast experiment — do not park, do not flip early
 - Paste PRODUCT from `c1592-PRODUCT-DRAFT.md` on flip day

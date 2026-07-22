@@ -10,8 +10,8 @@ Run **only when** hours since `framing_started_at` ≥ 4 **and** `research_ticks
 |---|--------|-----|
 | 1 | Hours hold | CONTROLLER `min_hours_research_before_ready: 4` |
 | 2 | Tick hold | `research_ticks_on_idea` ≥ 3 |
-| 3 | Fixtures | `node docs/ideas/check-c1592-fixtures.mjs` → **≥26** green |
-| 4 | Dual-impl | `node docs/ideas/check-c1592-dual.mjs` → **≥26** green |
+| 3 | Fixtures | `node docs/ideas/check-c1592-fixtures.mjs` → **≥30** green |
+| 4 | Dual-impl | `node docs/ideas/check-c1592-dual.mjs` → **≥30** green |
 | 5 | Value gate | Mid-hold skeptic still says **continue as ceiling forecast**, not park |
 | 5b | Mitigation honesty | Digests do not claim mitigated-guideline parity (`c1592-MITIGATION-FENCE.md`) |
 | 5c | PD honesty | Digests do not claim automatic prior disclosure (`c1592-PD-FENCE.md`) |

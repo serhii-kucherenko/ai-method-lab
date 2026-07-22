@@ -36,7 +36,7 @@ See `c1592-FALSIFIERS.md` — wrong branch vs counsel; flat 2× still wins criti
 
 ## 6. Depth test outline
 
-**26** dual-green fixtures (`check-c1592-fixtures.mjs` / `check-c1592-dual.mjs`). G5 outline: `c1592-DEPTH-TESTS.md`.
+**30** dual-green fixtures (`check-c1592-fixtures.mjs` / `check-c1592-dual.mjs`). G5 outline: `c1592-DEPTH-TESTS.md`.
 
 ## 7. Decision
 

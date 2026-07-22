@@ -5,7 +5,7 @@ Use **after** `check-c1592-hour-status.mjs` → `FLIP_PATH_READY` and `c1592-FLI
 ## First product commits must include
 
 1. `PRODUCT.md` with unique claim (§ 1592(c) culpability × duty-loss / no-loss + lesser-of domestic) + Kill A + forecast-only language.
-2. Port of paper goldens (≥26) into product tests — dual-impl green.
+2. Port of paper goldens (≥30) into product tests — dual-impl green.
 3. Forecast API that returns `penalty_max` + `branch` (not a flat 2× field).
 4. Money-honesty surface early: not CBP assessed; not mitigated guidelines (`c1592-MITIGATION-FENCE.md`); prior disclosure not automatic (`c1592-PD-FENCE.md`).
 

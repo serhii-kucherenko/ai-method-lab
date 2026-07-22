@@ -12,7 +12,7 @@ Vanity fixture counts alone never pass. Dual-impl drift fails the phase.
 | Metric | Floor | Notes |
 |--------|------:|-------|
 | **Total automated tests at sustain** | **≥55** | Goldens + API + UI + RBAC + webhook + concurrency + copy + dual-impl |
-| Unique-claim goldens | **≥26** | All `docs/ideas/fixtures/c1592-*.json` |
+| Unique-claim goldens | **≥30** | All `docs/ideas/fixtures/c1592-*.json` |
 | Pages with critical-path coverage | **7** | Catalog, Detail, Batch, Audit, Goldens, Honesty, Settings |
 | Dual-impl CI jobs | **2** green | fixtures + dual |
 
@@ -24,7 +24,7 @@ Vanity fixture counts alone never pass. Dual-impl drift fails the phase.
 
 | Prefix | Suite | Est. |
 |--------|-------|-----:|
-| `G-` | Unique-claim goldens | 26 |
+| `G-` | Unique-claim goldens | 30 |
 | `A-` | API / contract | 8 |
 | `P-` | Page critical paths | 7 |
 | `R-` | RBAC / tenancy | 5 |
@@ -32,7 +32,7 @@ Vanity fixture counts alone never pass. Dual-impl drift fails the phase.
 | `C-` | Concurrency / multi-violation | 3 |
 | `M-` | Money-honesty + Kill A copy | 4 |
 | `D-` | Dual-impl CI | 3 |
-| | **Total** | **≈60** |
+| | **Total** | **≈64** |
 
 ## Instant fail
 
