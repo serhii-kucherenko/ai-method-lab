@@ -26,6 +26,14 @@
 - UI critical covers batch/cash/audit live markers; prior catalog/detail/honesty stay green.
 - **28** tests green (`npm test` + `npm run lint`). Next: integrate (webhook + pagination + settings).
 
+## Integrate (2026-07-22)
+
+- `POST /webhooks/entries` — HMAC SHA-256 (`x-signature`); bad sig → 401; `idempotency-key` replay returns same entry.
+- Org settings `GET/PATCH /orgs/:orgId/settings` — webhook secret + tokens note; PATCH admin-only; auditor GET redacted.
+- Pagination: catalog (prior), cash-impact POR lines, audit events all support `limit`/`offset`.
+- `public/settings.html` loads/saves settings (token/org via query or localStorage); rotate secret supported.
+- UI critical includes settings live marker. **31** tests green. Next: scale (stress + rate limits).
+
 ## Honesty
 
 Brokers/CBP still liquidate. Digests must say forecast experiment. § 6621 is an input rate (see seed fence).
