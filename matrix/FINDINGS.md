@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — ptax4975 P-crud GREEN
+
+- Cell `A03__P-crud-001__ptax4975__r1`. 38 tests; PATCH + auditor 403; tier forecast after patch. Next: workflow.
+
 ## 2026-07-22 — ptax4975 P-smoke GREEN
 
 - Cell `A03__P-smoke-001__ptax4975__r1`. 37 tests; 35 dual goldens; forecast `initial_tax`/`additional_tax`/`total`; honesty + 3 fences + catalog/detail/goldens. Next: crud.

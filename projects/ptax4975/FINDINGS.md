@@ -12,7 +12,12 @@
 - 35 dual goldens ported; forecast returns `initial_tax`, `additional_tax`, `total`
 - Honesty page: Kill A + three fences; catalog + detail + goldens pages
 - **37** tests pass; lint clean
-- Next: crud (list/get RBAC, auditor read path)
+
+## Crud — GREEN (`A03__P-crud-001__ptax4975__r1`)
+
+- PATCH transaction; members route; auditor list/get/forecast OK, create/patch **403**
+- Catalog + detail + honesty still live; **38** tests
+- Next: workflow (batch + audit)
 
 ## Digests
 

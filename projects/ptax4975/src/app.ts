@@ -3,6 +3,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { join, extname, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+  addMember,
   assertAccess,
   createOrg,
   createStore,
@@ -12,9 +13,11 @@ import {
   getTransaction,
   issueToken,
   listTransactions,
+  patchTransaction,
   registerUser,
   resolveToken,
   runForecast,
+  type OrgRole,
   type Store,
 } from "./store.js";
 import { listGoldenCards } from "./goldens.js";
@@ -95,20 +98,41 @@ function serveStatic(res: ServerResponse, urlPath: string): boolean {
 }
 
 function transactionInputFromBody(body: Json) {
-  return {
-    label: body.label !== undefined ? String(body.label) : undefined,
-    amount_involved:
-      body.amount_involved !== undefined ? Number(body.amount_involved) : undefined,
-    year_parts: body.year_parts !== undefined ? Number(body.year_parts) : undefined,
-    corrected: body.corrected === true,
-    fmv_a: body.fmv_a !== undefined ? Number(body.fmv_a) : undefined,
-    fmv_b: body.fmv_b !== undefined ? Number(body.fmv_b) : undefined,
-    use_fmv_greater_of: body.use_fmv_greater_of === true,
-    understate_amount: body.understate_amount === true,
-    flat_excise_cheat: body.flat_excise_cheat === true,
-    dual_approver_cheat: body.dual_approver_cheat === true,
-    skip_additional_tax: body.skip_additional_tax === true,
-  };
+  const out: {
+    label?: string;
+    amount_involved?: number;
+    year_parts?: number;
+    corrected?: boolean;
+    fmv_a?: number;
+    fmv_b?: number;
+    use_fmv_greater_of?: boolean;
+    understate_amount?: boolean;
+    flat_excise_cheat?: boolean;
+    dual_approver_cheat?: boolean;
+    skip_additional_tax?: boolean;
+  } = {};
+  if (body.label !== undefined) out.label = String(body.label);
+  if (body.amount_involved !== undefined) out.amount_involved = Number(body.amount_involved);
+  if (body.year_parts !== undefined) out.year_parts = Number(body.year_parts);
+  if (body.corrected !== undefined) out.corrected = body.corrected === true;
+  if (body.fmv_a !== undefined) out.fmv_a = Number(body.fmv_a);
+  if (body.fmv_b !== undefined) out.fmv_b = Number(body.fmv_b);
+  if (body.use_fmv_greater_of !== undefined) {
+    out.use_fmv_greater_of = body.use_fmv_greater_of === true;
+  }
+  if (body.understate_amount !== undefined) {
+    out.understate_amount = body.understate_amount === true;
+  }
+  if (body.flat_excise_cheat !== undefined) {
+    out.flat_excise_cheat = body.flat_excise_cheat === true;
+  }
+  if (body.dual_approver_cheat !== undefined) {
+    out.dual_approver_cheat = body.dual_approver_cheat === true;
+  }
+  if (body.skip_additional_tax !== undefined) {
+    out.skip_additional_tax = body.skip_additional_tax === true;
+  }
+  return out;
 }
 
 export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
@@ -163,6 +187,24 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
       return send(res, 201, { org });
     }
 
+    const membersMatch = path.match(/^\/orgs\/([^/]+)\/members$/);
+    if (membersMatch && method === "POST") {
+      const orgId = membersMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const body = await readBody(req);
+      const role = String(body.role ?? "auditor") as OrgRole;
+      if (!["admin", "analyst", "auditor"].includes(role)) {
+        return send(res, 400, { error: "bad_role" });
+      }
+      const result = addMember(store, orgId, String(body.userId ?? ""), role);
+      if (!result.ok) return send(res, 400, { error: result.error });
+      return send(res, 201, { ok: true });
+    }
+
     const txMatch = path.match(
       /^\/orgs\/([^/]+)\/transactions(?:\/([^/]+))?(?:\/(forecast))?$/,
     );
@@ -208,6 +250,22 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
         const transaction = getTransaction(store, orgId, transactionId);
         if (!transaction) return send(res, 404, { error: "not_found" });
         return send(res, 200, { transaction });
+      }
+
+      if (method === "PATCH" && transactionId && !action) {
+        if (!assertAccess(store, orgId, userId, ["admin", "analyst"])) {
+          return send(res, 403, { error: "forbidden" });
+        }
+        const body = await readBody(req);
+        const patched = patchTransaction(
+          store,
+          orgId,
+          transactionId,
+          transactionInputFromBody(body),
+          userId,
+        );
+        if (!patched) return send(res, 404, { error: "not_found" });
+        return send(res, 200, { transaction: patched });
       }
 
       if (method === "POST" && transactionId && action === "forecast") {

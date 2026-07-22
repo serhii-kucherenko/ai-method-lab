@@ -213,6 +213,77 @@ function toExciseInput(tx: ReturnType<typeof getTransaction>): ExciseInput | nul
   };
 }
 
+export function addMember(
+  store: Store,
+  orgId: string,
+  userId: string,
+  role: OrgRole,
+): { ok: true } | { ok: false; error: string } {
+  if (!getOrg(store, orgId)) return { ok: false, error: "org_not_found" };
+  if (!store.users.get(userId)) return { ok: false, error: "user_not_found" };
+  store.members.set(memberKey(orgId, userId), role);
+  return { ok: true };
+}
+
+export function patchTransaction(
+  store: Store,
+  orgId: string,
+  transactionId: string,
+  patch: Partial<TransactionCreate>,
+  actorId?: string | null,
+) {
+  const existing = store.transactions.get(transactionId);
+  if (!existing || existing.org_id !== orgId) return null;
+  const next: Transaction = {
+    ...existing,
+    label: patch.label ?? existing.label,
+    amount_involved:
+      patch.amount_involved !== undefined
+        ? Number(patch.amount_involved)
+        : existing.amount_involved,
+    year_parts:
+      patch.year_parts !== undefined ? Number(patch.year_parts) : existing.year_parts,
+    corrected:
+      patch.corrected !== undefined ? patch.corrected === true : existing.corrected,
+    fmv_a: patch.fmv_a !== undefined ? Number(patch.fmv_a) : existing.fmv_a,
+    fmv_b: patch.fmv_b !== undefined ? Number(patch.fmv_b) : existing.fmv_b,
+    use_fmv_greater_of:
+      patch.use_fmv_greater_of !== undefined
+        ? patch.use_fmv_greater_of === true
+        : existing.use_fmv_greater_of,
+    understate_amount:
+      patch.understate_amount !== undefined
+        ? patch.understate_amount === true
+        : existing.understate_amount,
+    flat_excise_cheat:
+      patch.flat_excise_cheat !== undefined
+        ? patch.flat_excise_cheat === true
+        : existing.flat_excise_cheat,
+    dual_approver_cheat:
+      patch.dual_approver_cheat !== undefined
+        ? patch.dual_approver_cheat === true
+        : existing.dual_approver_cheat,
+    skip_additional_tax:
+      patch.skip_additional_tax !== undefined
+        ? patch.skip_additional_tax === true
+        : existing.skip_additional_tax,
+  };
+  store.transactions.set(transactionId, next);
+  appendAudit(store, {
+    org_id: orgId,
+    transaction_id: transactionId,
+    actor_id: actorId ?? null,
+    action: "transaction_patch",
+    status: "ok",
+    initial_tax: null,
+    additional_tax: null,
+    total: null,
+    reason: null,
+    algorithm_version: null,
+  });
+  return getTransaction(store, orgId, transactionId);
+}
+
 export function runForecast(
   store: Store,
   orgId: string,

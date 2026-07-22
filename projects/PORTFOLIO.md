@@ -8,7 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
-| **ptax4975** | **active** | A03 + A10 | smoke✓ → crud | § 4975 15%×year-parts + 100% if uncorrected (Kill A; not Form 5330) |
+| **ptax4975** | **active** | A03 + A10 | crud✓ → workflow | § 4975 15%×year-parts + 100% if uncorrected (Kill A; not Form 5330) |
 | **oshamult** | **sustained** | A03 + A10 | done | GBP × serial remaining-balance penalty forecast (Kill A; not OIS) |
 | **lesserof** | **sustained** | A03 + A10 | done | Stacked TFTEA+USMCA+basket refund caps (Kill A; not ACE) |
 | **depositgap** | **sustained** | A03 + A10 | done | Deposit→assessed→interest forecast honesty (Kill A; not ACE/CBP) |
