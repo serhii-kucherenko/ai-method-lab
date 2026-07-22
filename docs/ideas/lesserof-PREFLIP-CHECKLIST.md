@@ -13,6 +13,7 @@ Run **only when** `hours since framing_started_at ≥ 4` **and** `research_ticks
 | 3 | Fixtures | `node docs/ideas/check-lesserof-fixtures.mjs` → 23 green |
 | 4 | Dual-impl | `node docs/ideas/check-lesserof-dual.mjs` → 23 green |
 | 5 | Value gate | `lesserof-VALUE-GATE-DRYRUN.md` still says **continue as method product**, not park |
+| 5b | Same-condition fence | Digests / demo do not claim every CA/MX export wipes (`lesserof-SAME-CONDITION-FENCE.md`) |
 | 6 | G6 honesty | No ACE/broker replacement; no ×0.99-only product |
 | 7 | Architect pack | VISION / ROADMAP / PRD / ERD on file |
 | 8 | Day-1 contract | `lesserof-DAY1-NONSMOKE.md` pasted into future PRODUCT |

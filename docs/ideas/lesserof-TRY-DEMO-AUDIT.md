@@ -19,6 +19,7 @@ Does `demos/lesserof-try/try.html` match the paper oracle (`check-lesserof-fixtu
 | USMCA on direct-ID → reject | apply_usmca + direct_id | V | **Match** |
 | USMCA partner 0 wipe after TFTEA | apply_usmca + partner 0 → $0 | C | **Match** |
 | Kill A copy | Disclaimer present | PRODUCT-FRAMING | **Match** |
+| Same-condition out of scope | Disclaimer cites SAME-CONDITION-FENCE | fence doc | **Match** (tick 11) |
 
 ## Algorithm paper drift (fixed this tick)
 

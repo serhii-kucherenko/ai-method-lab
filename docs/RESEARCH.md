@@ -1,6 +1,14 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof same-condition honesty on try demo (tick 11)
+
+Hours hold ~2h of 4h.
+
+- Try demo + digest copy + preflip checklist now state same-condition unused CA/MX exports are **out of scope** (not every Canada export wipes).
+- `demos/smoke-try-demos.mjs` lesserof toys still green.
+- **Explicit non-actions:** no `projects/lesserof/`.
+
 ## 2026-07-22 — lesserof same-condition fence (tick 10)
 
 Hours hold ~1.7h of 4h.
