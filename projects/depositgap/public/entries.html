@@ -15,21 +15,26 @@
       .brand { color: #0d6e6e; font-weight: 700; font-size: 1.5rem; }
       h1 { font-size: 1.2rem; }
       a { color: #0d6e6e; }
-      .stub {
-        margin-top: 1.5rem;
-        padding: 1rem;
-        border: 1px dashed #9aa5b1;
-        max-width: 36rem;
+      #status { color: #4a5568; margin: 1rem 0; }
+      #entries-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+        max-width: 40rem;
       }
+      #entries-list li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #d5cdc0;
+      }
+      .meta { font-size: 0.9rem; color: #4a5568; }
     </style>
   </head>
   <body>
     <div class="brand">Depositgap</div>
     <h1>Entries catalog</h1>
-    <p>Filter POR / order type / rate class — unlocks in crud phase.</p>
-    <div class="stub">
-      Catalog stub (smoke). Wire list + filters after smoke goldens and forecast API are green.
-    </div>
+    <p>Org-scoped deposit cases. Token from localStorage or <code>?token=</code> stub.</p>
+    <p id="status">Loading…</p>
+    <ul id="entries-list" data-catalog="live"></ul>
     <p>
       <a href="/money-honesty.html">Money honesty</a> ·
       <a href="/entry-detail.html">Entry detail</a>
@@ -37,5 +42,77 @@
     <p>
       Brokers and CBP still own liquidation. This is a forecast / method experiment.
     </p>
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const token =
+          params.get("token") ||
+          localStorage.getItem("depositgap_token") ||
+          "";
+        const orgId =
+          params.get("orgId") ||
+          localStorage.getItem("depositgap_orgId") ||
+          "";
+        const statusEl = document.getElementById("status");
+        const listEl = document.getElementById("entries-list");
+
+        if (!token || !orgId) {
+          statusEl.textContent =
+            "Provide ?token= and ?orgId= (or set localStorage depositgap_token / depositgap_orgId).";
+          return;
+        }
+
+        fetch("/orgs/" + encodeURIComponent(orgId) + "/entries", {
+          headers: { authorization: "Bearer " + token },
+        })
+          .then(function (res) {
+            return res.json().then(function (json) {
+              return { status: res.status, json: json };
+            });
+          })
+          .then(function (result) {
+            if (result.status !== 200) {
+              statusEl.textContent =
+                "Failed to load entries (" + result.status + ").";
+              return;
+            }
+            const entries = result.json.entries || [];
+            statusEl.textContent =
+              entries.length === 0
+                ? "No entries yet."
+                : entries.length + " entr" + (entries.length === 1 ? "y" : "ies");
+            listEl.innerHTML = "";
+            entries.forEach(function (entry) {
+              const li = document.createElement("li");
+              const href =
+                "/entry-detail.html?orgId=" +
+                encodeURIComponent(orgId) +
+                "&entryId=" +
+                encodeURIComponent(entry.id) +
+                "&token=" +
+                encodeURIComponent(token);
+              li.innerHTML =
+                '<a href="' +
+                href +
+                '">' +
+                entry.id +
+                "</a>" +
+                '<div class="meta">' +
+                (entry.order_type || "") +
+                " · deposit " +
+                entry.deposit_rate +
+                " → assessed " +
+                entry.assessed_rate +
+                " · value " +
+                entry.entered_value +
+                "</div>";
+              listEl.appendChild(li);
+            });
+          })
+          .catch(function () {
+            statusEl.textContent = "Network error loading entries.";
+          });
+      })();
+    </script>
   </body>
 </html>

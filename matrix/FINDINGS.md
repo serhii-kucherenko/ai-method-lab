@@ -583,10 +583,10 @@ lesserof USMCA wipe fence + smoke toy ($0 vs naive +$9,900). Demo index for Stac
 
 oshamult serial remaining-balance fence + additive miss smoke. No product folder.
 
-## 2026-07-21 -- depth tick 56 (research, no product)
+## 2026-07-21 -- depth tick 58 / product start (depositgap)
 
-Agent roles protocol + depositgap VISION/ROADMAP/PRD/ERD architect pack. UI critical path required before sustain. No product folder.
+htsroute parked (hours clear + Challenge D weak). depositgap product opened; smoke green.
 
-## 2026-07-21 -- depth tick 57 (research, no product)
+## 2026-07-21 -- depositgap crud (product)
 
-ptax4975 FMV / uncorrected second-tier smoke toys. depositgap post-park run requires architect pack. No product folder.
+Catalog + entry detail live against API. Auditor cannot mutate. Honesty page stays green. 27 tests pass. Next: workflow (batch / cash / audit).

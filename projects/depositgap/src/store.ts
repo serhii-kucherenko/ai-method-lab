@@ -34,6 +34,24 @@ export type EntryRow = {
   skip_interest: boolean;
 };
 
+export type EntryCreateInput = {
+  por?: string;
+  order_type: string;
+  rate_class: string;
+  deposit_rate: number;
+  assessed_rate?: number | null;
+  entered_value: number;
+  order_published_on: string;
+  liquidated_on: string;
+  interest_annual_rate?: number | null;
+  skip_interest?: boolean;
+};
+
+export type EntryListOpts = {
+  limit?: number;
+  offset?: number;
+};
+
 export function registerUser(db: DatabaseSync, email: string, password: string) {
   const id = randomUUID();
   db.prepare("INSERT INTO users (id, email, password) VALUES (?, ?, ?)").run(id, email, password);
@@ -63,7 +81,7 @@ export function createOrg(db: DatabaseSync, userId: string, name: string) {
   const id = randomUUID();
   db.prepare("INSERT INTO orgs (id, name, created_by) VALUES (?, ?, ?)").run(id, name, userId);
   db.prepare(
-    "INSERT INTO org_members (org_id, user_id, role) VALUES (?, ?, 'analyst')",
+    "INSERT INTO org_members (org_id, user_id, role) VALUES (?, ?, 'admin')",
   ).run(id, userId);
   return { id, name };
 }
@@ -95,18 +113,91 @@ export function assertAccess(
   return null;
 }
 
-export type EntryCreateInput = {
-  por?: string;
+export function addMember(
+  db: DatabaseSync,
+  orgId: string,
+  userId: string,
+  role: OrgRole,
+): WriteResult<{ orgId: string; userId: string; role: OrgRole }> {
+  if (!getOrg(db, orgId)) return { ok: false, status: 404, error: "not found" };
+  const user = db.prepare("SELECT id FROM users WHERE id = ?").get(userId) as
+    | { id: string }
+    | undefined;
+  if (!user) return { ok: false, status: 404, error: "user not found" };
+  try {
+    db.prepare(
+      `INSERT INTO org_members (org_id, user_id, role) VALUES (?, ?, ?)
+       ON CONFLICT(org_id, user_id) DO UPDATE SET role = excluded.role`,
+    ).run(orgId, userId, role);
+  } catch {
+    return { ok: false, status: 409, error: "member exists" };
+  }
+  return { ok: true, value: { orgId, userId, role } };
+}
+
+function mapEntryRow(row: {
+  id: string;
+  orgId: string;
+  por: string | null;
   order_type: string;
   rate_class: string;
   deposit_rate: number;
-  assessed_rate?: number | null;
+  assessed_rate: number | null;
   entered_value: number;
   order_published_on: string;
   liquidated_on: string;
-  interest_annual_rate?: number | null;
-  skip_interest?: boolean;
-};
+  interest_annual_rate: number | null;
+  skip_interest: number;
+}): EntryRow {
+  return {
+    ...row,
+    skip_interest: row.skip_interest === 1,
+  };
+}
+
+export function listEntries(
+  db: DatabaseSync,
+  orgId: string,
+  opts: EntryListOpts = {},
+): { entries: EntryRow[]; total: number; limit: number; offset: number } {
+  const totalRow = db
+    .prepare("SELECT COUNT(*) AS n FROM entries WHERE org_id = ?")
+    .get(orgId) as { n: number };
+  const total = Number(totalRow.n);
+  const offset = Math.max(opts.offset ?? 0, 0);
+  const limit =
+    opts.limit !== undefined
+      ? Math.min(Math.max(opts.limit, 1), 500)
+      : Math.max(total, 1);
+  const rows = db
+    .prepare(
+      `SELECT id, org_id AS orgId, por, order_type, rate_class, deposit_rate, assessed_rate,
+              entered_value, order_published_on, liquidated_on, interest_annual_rate, skip_interest
+       FROM entries WHERE org_id = ?
+       ORDER BY created_at ASC, id ASC
+       LIMIT ? OFFSET ?`,
+    )
+    .all(orgId, limit, offset) as Array<{
+    id: string;
+    orgId: string;
+    por: string | null;
+    order_type: string;
+    rate_class: string;
+    deposit_rate: number;
+    assessed_rate: number | null;
+    entered_value: number;
+    order_published_on: string;
+    liquidated_on: string;
+    interest_annual_rate: number | null;
+    skip_interest: number;
+  }>;
+  return {
+    entries: rows.map(mapEntryRow),
+    total,
+    limit,
+    offset,
+  };
+}
 
 export function createEntry(
   db: DatabaseSync,
@@ -163,10 +254,58 @@ export function getEntry(db: DatabaseSync, id: string): EntryRow | undefined {
       }
     | undefined;
   if (!row) return undefined;
-  return {
-    ...row,
-    skip_interest: row.skip_interest === 1,
+  return mapEntryRow(row);
+}
+
+export function patchEntry(
+  db: DatabaseSync,
+  entryId: string,
+  patch: Partial<EntryCreateInput>,
+): WriteResult<EntryRow> {
+  const existing = getEntry(db, entryId);
+  if (!existing) return { ok: false, status: 404, error: "not found" };
+
+  const next = {
+    por: patch.por !== undefined ? patch.por : existing.por,
+    order_type: patch.order_type ?? existing.order_type,
+    rate_class: patch.rate_class ?? existing.rate_class,
+    deposit_rate: patch.deposit_rate ?? existing.deposit_rate,
+    assessed_rate:
+      patch.assessed_rate !== undefined ? patch.assessed_rate : existing.assessed_rate,
+    entered_value: patch.entered_value ?? existing.entered_value,
+    order_published_on: patch.order_published_on ?? existing.order_published_on,
+    liquidated_on: patch.liquidated_on ?? existing.liquidated_on,
+    interest_annual_rate:
+      patch.interest_annual_rate !== undefined
+        ? patch.interest_annual_rate
+        : existing.interest_annual_rate,
+    skip_interest:
+      patch.skip_interest !== undefined ? patch.skip_interest : existing.skip_interest,
   };
+
+  db.prepare(
+    `UPDATE entries SET
+      por = ?, order_type = ?, rate_class = ?, deposit_rate = ?, assessed_rate = ?,
+      entered_value = ?, order_published_on = ?, liquidated_on = ?, interest_annual_rate = ?,
+      skip_interest = ?
+     WHERE id = ?`,
+  ).run(
+    next.por,
+    next.order_type,
+    next.rate_class,
+    next.deposit_rate,
+    next.assessed_rate,
+    next.entered_value,
+    next.order_published_on,
+    next.liquidated_on,
+    next.interest_annual_rate,
+    next.skip_interest ? 1 : 0,
+    entryId,
+  );
+
+  const row = getEntry(db, entryId);
+  if (!row) return { ok: false, status: 500, error: "patch failed" };
+  return { ok: true, value: row };
 }
 
 export function runForecast(

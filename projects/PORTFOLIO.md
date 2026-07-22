@@ -8,7 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
-| **depositgap** | **in progress** | A03 + A10 | smoke → crud | Deposit vs assessed + § 1677g interest (forecast honesty) |
+| **depositgap** | **in progress** | A03 + A10 | crud → workflow | Deposit vs assessed + interest forecast (catalog + RBAC live) |
 | tariffstep | **sustained** | A03 + A10 | done | Stepped rate blocks + demand ratchet (workflow experiment) |
 | bondstrip | **sustained** | A03 + A10 | done | Day-count accrued + cashflow strip (method stress) |
 | settlecut | **sustained** | A03 + A10 | done | Loss-adjusted interval imbalance settlement (method stress) |

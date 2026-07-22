@@ -4,6 +4,7 @@ import { join, extname, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Store } from "./store.js";
 import {
+  addMember,
   assertAccess,
   createEntry,
   createOrg,
@@ -12,11 +13,13 @@ import {
   getEntry,
   getOrg,
   issueToken,
+  listEntries,
+  patchEntry,
   registerUser,
   resolveToken,
   runForecast,
 } from "./store.js";
-import { listMigrations, migrationCount } from "./db.js";
+import { listMigrations, migrationCount, type OrgRole } from "./db.js";
 import type { ForecastInput } from "./domain/forecast.js";
 
 const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
@@ -205,37 +208,151 @@ export function createApp(opts: { store?: Store; rateLimit?: number } = {}) {
       }
 
       const entriesMatch = path.match(/^\/orgs\/([^/]+)\/entries$/);
-      if (method === "POST" && entriesMatch) {
+      if (entriesMatch) {
+        const orgId = entriesMatch[1]!;
+        if (method === "GET") {
+          if (!userId) {
+            send(res, 401, { error: "unauthorized" });
+            return;
+          }
+          if (orgDenied(store, orgId, userId, "read", res)) return;
+          const limitRaw = url.searchParams.get("limit");
+          const offsetRaw = url.searchParams.get("offset");
+          const listed = listEntries(store.db, orgId, {
+            limit: limitRaw !== null ? Number(limitRaw) : undefined,
+            offset: offsetRaw !== null ? Number(offsetRaw) : undefined,
+          });
+          send(res, 200, listed);
+          return;
+        }
+        if (method === "POST") {
+          if (!userId) {
+            send(res, 401, { error: "unauthorized" });
+            return;
+          }
+          if (orgDenied(store, orgId, userId, "write", res)) return;
+          const body = await readBody(req);
+          const result = createEntry(store.db, orgId, {
+            por: body.por !== undefined ? String(body.por) : undefined,
+            order_type: String(body.order_type ?? "AD"),
+            rate_class: String(body.rate_class ?? "exporter_specific"),
+            deposit_rate: Number(body.deposit_rate),
+            assessed_rate:
+              body.assessed_rate === undefined || body.assessed_rate === null
+                ? null
+                : Number(body.assessed_rate),
+            entered_value: Number(body.entered_value),
+            order_published_on: String(body.order_published_on ?? ""),
+            liquidated_on: String(body.liquidated_on ?? ""),
+            interest_annual_rate:
+              body.interest_annual_rate === undefined || body.interest_annual_rate === null
+                ? null
+                : Number(body.interest_annual_rate),
+            skip_interest: Boolean(body.skip_interest),
+          });
+          if (!result.ok) {
+            send(res, result.status, { error: result.error });
+            return;
+          }
+          send(res, 201, { entry: result.value });
+          return;
+        }
+      }
+
+      const entryOneMatch = path.match(/^\/orgs\/([^/]+)\/entries\/([^/]+)$/);
+      if (entryOneMatch) {
+        const orgId = entryOneMatch[1]!;
+        const entryId = entryOneMatch[2]!;
+        if (method === "GET") {
+          if (!userId) {
+            send(res, 401, { error: "unauthorized" });
+            return;
+          }
+          if (orgDenied(store, orgId, userId, "read", res)) return;
+          const entry = getEntry(store.db, entryId);
+          if (!entry || entry.orgId !== orgId) {
+            send(res, 404, { error: "not found" });
+            return;
+          }
+          send(res, 200, { entry });
+          return;
+        }
+        if (method === "PATCH") {
+          if (!userId) {
+            send(res, 401, { error: "unauthorized" });
+            return;
+          }
+          if (orgDenied(store, orgId, userId, "write", res)) return;
+          const entry = getEntry(store.db, entryId);
+          if (!entry || entry.orgId !== orgId) {
+            send(res, 404, { error: "not found" });
+            return;
+          }
+          const body = await readBody(req);
+          const result = patchEntry(store.db, entryId, {
+            por: body.por !== undefined ? String(body.por) : undefined,
+            order_type: body.order_type !== undefined ? String(body.order_type) : undefined,
+            rate_class: body.rate_class !== undefined ? String(body.rate_class) : undefined,
+            deposit_rate:
+              body.deposit_rate !== undefined ? Number(body.deposit_rate) : undefined,
+            assessed_rate:
+              body.assessed_rate === undefined
+                ? undefined
+                : body.assessed_rate === null
+                  ? null
+                  : Number(body.assessed_rate),
+            entered_value:
+              body.entered_value !== undefined ? Number(body.entered_value) : undefined,
+            order_published_on:
+              body.order_published_on !== undefined
+                ? String(body.order_published_on)
+                : undefined,
+            liquidated_on:
+              body.liquidated_on !== undefined ? String(body.liquidated_on) : undefined,
+            interest_annual_rate:
+              body.interest_annual_rate === undefined
+                ? undefined
+                : body.interest_annual_rate === null
+                  ? null
+                  : Number(body.interest_annual_rate),
+            skip_interest:
+              body.skip_interest !== undefined ? Boolean(body.skip_interest) : undefined,
+          });
+          if (!result.ok) {
+            send(res, result.status, { error: result.error });
+            return;
+          }
+          send(res, 200, { entry: result.value });
+          return;
+        }
+      }
+
+      const membersMatch = path.match(/^\/orgs\/([^/]+)\/members$/);
+      if (method === "POST" && membersMatch) {
         if (!userId) {
           send(res, 401, { error: "unauthorized" });
           return;
         }
-        const orgId = entriesMatch[1]!;
-        if (orgDenied(store, orgId, userId, "write", res)) return;
+        const orgId = membersMatch[1]!;
+        const role = assertAccess(store.db, orgId, userId, "read");
+        if (role !== "admin") {
+          send(res, getOrg(store.db, orgId) ? 403 : 404, {
+            error: getOrg(store.db, orgId) ? "admin_required" : "not found",
+          });
+          return;
+        }
         const body = await readBody(req);
-        const result = createEntry(store.db, orgId, {
-          por: body.por !== undefined ? String(body.por) : undefined,
-          order_type: String(body.order_type ?? "AD"),
-          rate_class: String(body.rate_class ?? "exporter_specific"),
-          deposit_rate: Number(body.deposit_rate),
-          assessed_rate:
-            body.assessed_rate === undefined || body.assessed_rate === null
-              ? null
-              : Number(body.assessed_rate),
-          entered_value: Number(body.entered_value),
-          order_published_on: String(body.order_published_on ?? ""),
-          liquidated_on: String(body.liquidated_on ?? ""),
-          interest_annual_rate:
-            body.interest_annual_rate === undefined || body.interest_annual_rate === null
-              ? null
-              : Number(body.interest_annual_rate),
-          skip_interest: Boolean(body.skip_interest),
-        });
+        const memberRole = String(body.role ?? "auditor") as OrgRole;
+        if (!["analyst", "auditor", "admin"].includes(memberRole)) {
+          send(res, 400, { error: "invalid_role" });
+          return;
+        }
+        const result = addMember(store.db, orgId, String(body.userId), memberRole);
         if (!result.ok) {
           send(res, result.status, { error: result.error });
           return;
         }
-        send(res, 201, { entry: result.value });
+        send(res, 201, { member: result.value });
         return;
       }
 

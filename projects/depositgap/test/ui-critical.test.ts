@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { createApp } from "../src/app.js";
 
-test("ui-critical: money-honesty page carries Kill A and deposit≠final", async () => {
+test("ui-critical: honesty + catalog + detail stay green", async () => {
   const { server } = createApp({ rateLimit: 100 });
   await new Promise<void>((resolve) => server.listen(0, resolve));
   const addr = server.address();
@@ -22,13 +22,22 @@ test("ui-critical: money-honesty page carries Kill A and deposit≠final", async
 
   const catalog = await fetch(`${base}/entries.html`);
   assert.equal(catalog.status, 200);
-  assert.match(await catalog.text(), /Entries catalog/i);
+  const catalogBody = await catalog.text();
+  assert.match(catalogBody, /Entries catalog/i);
+  assert.match(catalogBody, /data-catalog="live"/);
+  assert.match(catalogBody, /localStorage|depositgap_token/);
+  assert.match(catalogBody, /\/orgs\/.*\/entries|\/entries/);
+  assert.match(catalogBody, /authorization.*Bearer|Bearer /);
 
   const detail = await fetch(`${base}/entry-detail.html`);
   assert.equal(detail.status, 200);
   const detailBody = await detail.text();
   assert.match(detailBody, /Entry detail/i);
   assert.match(detailBody, /deposit\s*≠\s*final/i);
+  assert.match(detailBody, /data-detail="live"/);
+  assert.match(detailBody, /id="run-forecast"|Run forecast/i);
+  assert.match(detailBody, /\/forecast/);
+  assert.match(detailBody, /duty_delta|interest/i);
 
   server.close();
 });
