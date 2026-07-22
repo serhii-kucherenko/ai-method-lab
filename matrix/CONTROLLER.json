@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T05:25:00Z",
+  "updated_at": "2026-07-22T05:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "product__lesserof__crud_scored_tick21",
+  "last_completed": "product__lesserof__workflow_scored_tick22",
   "last_error": null,
   "current_product": "lesserof",
   "current_idea": "lesserof",
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "workflow",
-  "notes": "lesserof tick 21: smoke + crud scored (29 tests). Next workflow batch+audit. Loop pid 26872 — do NOT re-arm if alive.",
+  "phase": "integrate",
+  "notes": "lesserof tick 22: workflow scored (batch+audit, 30 tests). Next integrate. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 84
+    "ticks_observed": 85
   }
 }

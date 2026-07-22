@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import {
   addMember,
   assertAccess,
+  auditToCsv,
   createClaimLine,
   createOrg,
   createStore,
@@ -12,10 +13,12 @@ import {
   getClaimLine,
   getOrg,
   issueToken,
+  listAudit,
   listClaimLines,
   patchClaimLine,
   registerUser,
   resolveToken,
+  runBatchRecover,
   runRecover,
   type Store,
 } from "./store.js";
@@ -215,6 +218,51 @@ export function createApp(opts: { dbPath?: string } = {}) {
         if (!result) return send(res, 404, { error: "not_found" });
         return send(res, 200, result);
       }
+    }
+
+    const batchMatch = path.match(/^\/orgs\/([^/]+)\/batch\/recover$/);
+    if (batchMatch && method === "POST") {
+      const orgId = batchMatch[1];
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!getOrg(store.db, orgId)) return send(res, 404, { error: "org_not_found" });
+      if (!assertAccess(store.db, orgId, userId, ["admin", "analyst"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const body = await readBody(req);
+      const rawIds = body.claim_line_ids;
+      const lineIds = Array.isArray(rawIds)
+        ? rawIds.map((id) => String(id))
+        : [];
+      const batch = runBatchRecover(store.db, orgId, lineIds);
+      return send(res, 200, batch);
+    }
+
+    const auditMatch = path.match(/^\/orgs\/([^/]+)\/audit$/);
+    if (auditMatch && method === "GET") {
+      const orgId = auditMatch[1];
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!getOrg(store.db, orgId)) return send(res, 404, { error: "org_not_found" });
+      if (!assertAccess(store.db, orgId, userId, ["admin", "analyst", "auditor"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const limit = url.searchParams.get("limit");
+      const offset = url.searchParams.get("offset");
+      const listed = listAudit(store.db, orgId, {
+        limit: limit ? Number(limit) : undefined,
+        offset: offset ? Number(offset) : undefined,
+      });
+      if (url.searchParams.get("format") === "csv") {
+        const csv = auditToCsv(listed.events);
+        res.writeHead(200, {
+          "content-type": "text/csv; charset=utf-8",
+          "content-length": Buffer.byteLength(csv),
+        });
+        res.end(csv);
+        return;
+      }
+      return send(res, 200, listed);
     }
 
     return send(res, 404, { error: "not_found" });

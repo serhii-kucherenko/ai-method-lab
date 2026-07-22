@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>lesserof — batch recover</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 2rem 1.25rem;
+        max-width: 40rem;
+        margin-inline: auto;
+        color: #1a1c22;
+        background: #eef0f5;
+      }
+      .brand { font-weight: 700; font-size: 1.5rem; color: #3a4f8c; }
+      textarea { width: 100%; min-height: 6rem; }
+      button {
+        margin-top: 0.75rem;
+        background: #3a4f8c;
+        color: #fff;
+        border: 0;
+        padding: 0.6rem 1.1rem;
+        cursor: pointer;
+      }
+      #batch-results { list-style: none; padding: 0; }
+      #batch-results li { padding: 0.5rem 0; border-bottom: 1px solid #d4d8e0; }
+      a { color: #3a4f8c; }
+    </style>
+  </head>
+  <body>
+    <div class="brand">lesserof</div>
+    <h1>Batch recover</h1>
+    <p>Each claim line runs independently. One reject does not rewrite siblings.</p>
+    <p id="status">Provide token and org, then run.</p>
+    <textarea id="line-ids" placeholder="uuid-1&#10;uuid-2"></textarea>
+    <br />
+    <button id="run-batch" type="button">Run batch</button>
+    <ul id="batch-results" data-batch="live"></ul>
+    <p>
+      <a href="/claim-lines.html">Catalog</a> ·
+      <a href="/audit.html">Audit</a> ·
+      <a href="/honesty.html">Honesty</a>
+    </p>
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const token = params.get("token") || localStorage.getItem("lesserof_token") || "";
+        const orgId = params.get("orgId") || localStorage.getItem("lesserof_orgId") || "";
+        const statusEl = document.getElementById("status");
+        const listEl = document.getElementById("batch-results");
+        document.getElementById("run-batch").onclick = function () {
+          if (!token || !orgId) {
+            statusEl.textContent = "Need ?token= and ?orgId=.";
+            return;
+          }
+          const raw = document.getElementById("line-ids").value;
+          const ids = raw.split(/[\s,]+/).filter(Boolean);
+          fetch("/orgs/" + encodeURIComponent(orgId) + "/batch/recover", {
+            method: "POST",
+            headers: {
+              authorization: "Bearer " + token,
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({ claim_line_ids: ids }),
+          })
+            .then(function (res) {
+              return res.json().then(function (json) {
+                return { status: res.status, json: json };
+              });
+            })
+            .then(function (result) {
+              if (result.status !== 200) {
+                statusEl.textContent = "Batch failed (" + result.status + ").";
+                return;
+              }
+              statusEl.textContent = "Batch " + result.json.batch_id;
+              listEl.innerHTML = "";
+              (result.json.results || []).forEach(function (row) {
+                const li = document.createElement("li");
+                li.textContent =
+                  row.claim_line_id +
+                  " · " +
+                  row.status +
+                  (row.status === "ok" ? " $" + row.refund : " " + row.reason);
+                listEl.appendChild(li);
+              });
+            });
+        };
+      })();
+    </script>
+  </body>
+</html>

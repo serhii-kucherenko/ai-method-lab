@@ -200,9 +200,169 @@ export function addMember(
   return { ok: true };
 }
 
-export function runRecover(db: DatabaseSync, orgId: string, lineId: string): RecoverResult | null {
+export function recordRecoverRun(
+  db: DatabaseSync,
+  orgId: string,
+  claimLineId: string | null,
+  result: RecoverResult,
+  batchId: string | null = null,
+): string {
+  const id = randomUUID();
+  db.prepare(
+    `INSERT INTO recover_runs (
+      id, org_id, claim_line_id, batch_id, status, refund, reason, algorithm_version
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+  ).run(
+    id,
+    orgId,
+    claimLineId,
+    batchId,
+    result.status,
+    result.status === "ok" ? result.refund : null,
+    result.status === "reject" ? result.reason : null,
+    result.status === "ok" ? result.algorithm_version : "lesserof-v0",
+  );
+  return id;
+}
+
+export function runRecover(
+  db: DatabaseSync,
+  orgId: string,
+  lineId: string,
+  batchId: string | null = null,
+): RecoverResult | null {
   const line = getClaimLine(db, orgId, lineId);
   if (!line) return null;
   const { id: _id, org_id: _org, ...input } = line;
-  return recover(input);
+  const result = recover(input);
+  recordRecoverRun(db, orgId, lineId, result, batchId);
+  return result;
 }
+
+export type BatchRecoverItem = {
+  claim_line_id: string;
+  status: "ok" | "reject";
+  refund?: number;
+  reason?: string;
+  algorithm_version?: string;
+};
+
+export function runBatchRecover(
+  db: DatabaseSync,
+  orgId: string,
+  lineIds: string[],
+): { batch_id: string; results: BatchRecoverItem[] } {
+  const batchId = randomUUID();
+  const results: BatchRecoverItem[] = [];
+  for (const lineId of lineIds) {
+    try {
+      const outcome = runRecover(db, orgId, lineId, batchId);
+      if (!outcome) {
+        const reject: RecoverResult = { status: "reject", reason: "not_found" };
+        recordRecoverRun(db, orgId, null, reject, batchId);
+        results.push({ claim_line_id: lineId, status: "reject", reason: "not_found" });
+        continue;
+      }
+      if (outcome.status === "ok") {
+        results.push({
+          claim_line_id: lineId,
+          status: "ok",
+          refund: outcome.refund,
+          algorithm_version: outcome.algorithm_version,
+        });
+      } else {
+        results.push({
+          claim_line_id: lineId,
+          status: "reject",
+          reason: outcome.reason,
+        });
+      }
+    } catch (err) {
+      const reason = err instanceof Error ? err.message : "batch_error";
+      const reject: RecoverResult = { status: "reject", reason };
+      recordRecoverRun(db, orgId, null, reject, batchId);
+      results.push({ claim_line_id: lineId, status: "reject", reason });
+    }
+  }
+  return { batch_id: batchId, results };
+}
+
+export type AuditEvent = {
+  id: string;
+  claim_line_id: string | null;
+  batch_id: string | null;
+  status: string;
+  refund: number | null;
+  reason: string | null;
+  algorithm_version: string | null;
+  created_at: string;
+};
+
+export function listAudit(
+  db: DatabaseSync,
+  orgId: string,
+  opts: { limit?: number; offset?: number } = {},
+): { events: AuditEvent[]; total: number; limit: number; offset: number } {
+  const totalRow = db
+    .prepare("SELECT COUNT(*) AS n FROM recover_runs WHERE org_id = ?")
+    .get(orgId) as { n: number };
+  const total = Number(totalRow.n);
+  const offset = Math.max(opts.offset ?? 0, 0);
+  const limit =
+    opts.limit !== undefined ? Math.min(Math.max(opts.limit, 1), 100) : 20;
+  const rows = db
+    .prepare(
+      `SELECT id, claim_line_id, batch_id, status, refund, reason, algorithm_version, created_at
+       FROM recover_runs WHERE org_id = ?
+       ORDER BY created_at DESC LIMIT ? OFFSET ?`,
+    )
+    .all(orgId, limit, offset) as Record<string, unknown>[];
+  const events: AuditEvent[] = rows.map((r) => ({
+    id: String(r.id),
+    claim_line_id: r.claim_line_id == null ? null : String(r.claim_line_id),
+    batch_id: r.batch_id == null ? null : String(r.batch_id),
+    status: String(r.status),
+    refund: r.refund == null ? null : Number(r.refund),
+    reason: r.reason == null ? null : String(r.reason),
+    algorithm_version: r.algorithm_version == null ? null : String(r.algorithm_version),
+    created_at: String(r.created_at),
+  }));
+  return { events, total, limit, offset };
+}
+
+export function auditToCsv(events: AuditEvent[]): string {
+  const header = [
+    "id",
+    "claim_line_id",
+    "batch_id",
+    "status",
+    "refund",
+    "reason",
+    "algorithm_version",
+    "created_at",
+  ];
+  const escape = (v: unknown): string => {
+    const s = v === null || v === undefined ? "" : String(v);
+    if (/[",\n\r]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
+    return s;
+  };
+  const lines = [header.join(",")];
+  for (const ev of events) {
+    lines.push(
+      [
+        ev.id,
+        ev.claim_line_id,
+        ev.batch_id,
+        ev.status,
+        ev.refund,
+        ev.reason,
+        ev.algorithm_version,
+        ev.created_at,
+      ]
+        .map(escape)
+        .join(","),
+    );
+  }
+  return lines.join("\n");
+}
+

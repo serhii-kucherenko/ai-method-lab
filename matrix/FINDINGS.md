@@ -1,6 +1,10 @@
 # Findings
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
+## 2026-07-22 — lesserof P-workflow GREEN
+
+- Cell `A03__P-workflow-001__lesserof__r1`. Batch independence + audit CSV; USMCA/basket/forecast pages. 30 tests. Next: integrate.
+
 ## 2026-07-22 — lesserof P-smoke + P-crud GREEN
 
 - Cells `A03__P-smoke-001__lesserof__r1` + `A03__P-crud-001__lesserof__r1`. 29 tests; catalog+detail; auditor RBAC; USMCA wipe on detail. Next: workflow (batch + audit).
