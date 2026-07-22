@@ -26,4 +26,8 @@ test("ui-critical: honesty page Kill A + catalog + batch + audit pages", () => {
   const audit = readFileSync(join(publicDir, "audit.html"), "utf8");
   assert.match(audit, /data-audit="live"/);
   assert.match(audit, /Audit log/i);
+
+  const settings = readFileSync(join(publicDir, "settings.html"), "utf8");
+  assert.match(settings, /data-settings="live"/);
+  assert.match(settings, /Org settings/i);
 });

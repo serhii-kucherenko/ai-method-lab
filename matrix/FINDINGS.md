@@ -2,6 +2,14 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — oshamult P-integrate GREEN
+
+- Cell `A03__P-integrate-001__oshamult__r1`. 34 tests; HMAC webhook + idempotency; settings admin-only; pagination. Next: scale.
+
+## 2026-07-22 — oshamult P-integrate GREEN
+
+- Cell `A03__P-integrate-001__oshamult__r1`. 34 tests; HMAC webhook + idempotency; settings RBAC; pagination. Next: scale.
+
 ## 2026-07-22 — oshamult P-workflow GREEN
 
 - Cell `A03__P-workflow-001__oshamult__r1`. 31 tests; batch independence; audit CSV; auditor 403 on batch. Next: integrate.

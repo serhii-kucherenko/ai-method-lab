@@ -12,15 +12,20 @@
 - Citation `PATCH` for analysts/admins; auditors **403** on create/patch
 - Org member add; auditor can list + forecast (read path)
 - Catalog/detail/honesty UI critical paths green
-- **30** tests green
 
 ## Workflow (scored)
 
 - Batch forecast independence (ok + reject siblings)
 - Append-only audit + CSV export; auditor **403** on batch mutate
-- Live `batch.html` + `audit.html`; prior pages stay green
-- **31** tests green
+- Live `batch.html` + `audit.html`
+
+## Integrate (scored)
+
+- HMAC webhook ingest + idempotent replay
+- Admin settings RBAC (auditor redacts secret / cannot PATCH)
+- Catalog + audit pagination
+- **34** tests green
 
 ## Next
 
-Integrate: HMAC webhook + pagination + admin settings.
+Scale: concurrent citation independence; dual-impl stable under load.
