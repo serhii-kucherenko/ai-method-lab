@@ -2,6 +2,16 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — c1592 tick 11: last half-hour + flip readiness (WAIT_HOURS)
+
+`AGENT_LOOP_TICK_depth_15m` occurrences 94–95. Docs only. Framing clock **unchanged**.
+
+- Wrote LAST-HALF-HOUR + FLIP-READINESS memo
+- Fixtures still **30/30** dual-green; hours ~0.8h short → `WAIT_HOURS`
+- Explicit non-actions: **no** `projects/c1592/`
+
+**Skeptical one-liner:** Readiness memos do not clear the clock — wait for `FLIP_PATH_READY`.
+
 ## 2026-07-22 — c1592 tick 10: final-hour note + kill digest (WAIT_HOURS)
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 93. Docs only. Framing clock **unchanged**.
