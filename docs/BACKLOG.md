@@ -14,7 +14,7 @@ See `docs/DEPTH_RESTART.md`.
 | 1 | **depositgap** | **sustained** | All 8 pages + goldens browser + try.html; Kill A honesty |
 | 1 | tariffstep | sustained | Stepped rate blocks + demand ratchet complete |
 | — | htsroute | **parked** | Soft abort #4 — Challenge D value weak (Free/Free). No product folder |
-| — | lesserof | **research next** | Seed deepen after depositgap sustain; no product folder yet |
+| — | **lesserof** | **research (hours hold)** | ticks≥3; architect pack on file; wait ≥4h then preflip checklist |
 | — | lanehold | **killed (G2)** | Capacity + hold expiry ≅ loadbay |
 | 2 | bondstrip | sustained | |
 | 2 | settlecut | sustained | |
