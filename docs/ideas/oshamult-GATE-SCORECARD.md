@@ -7,8 +7,8 @@
 | G3 Adversarial | pass with Kill A standing | Consultants/counsel already model; survive as method experiment |
 | G4 Falsifiers | pass (draft) | OIS parity claimed while v0 order differs; good faith on willful |
 | G5 Depth tests | pass | **26** fixtures + dual-impl green |
-| G6 Research summary | **hold — do not activate yet** | Behind depositgap → lesserof |
+| G6 Research summary | **active research — hours hold** | lesserof sustained; oshamult is `current_idea` |
 
-**Decision:** Not `current_idea`. Activation: `oshamult-POST-LESSEROF-RUN.md`. Framing: `oshamult-PRODUCT-FRAMING.md`. Honesty debt: `oshamult-SIZE-TABLE.md` (HTML vs v0 serial order).
+**Decision:** Active research. Flip only after hours + `oshamult-PREFLIP-CHECKLIST.md`. Framing: `oshamult-PRODUCT-FRAMING.md`. Honesty debt: `oshamult-SIZE-TABLE.md` (HTML vs v0 serial order).
 
-**Do not open** `projects/oshamult/` until higher-priority seeds clear and the run sheet passes.
+**Do not open** `projects/oshamult/` until preflip clears.

@@ -1,6 +1,6 @@
 # oshamult — value / stakes honesty
 
-Research only. Prefer depositgap → lesserof ahead of this seed.
+Research only. Active after lesserof sustain. Hours hold in progress.
 
 ## What we can cite as primary
 
@@ -17,7 +17,7 @@ See `oshamult-SIZE-TABLE.md`, `oshamult-STATUTE-CITATIONS.md`, `oshamult-algorit
 | Case | Result |
 |------|--------|
 | GBP $5,000 → serial size/history/good faith | **$2,677.50** proposed (fixture A) |
-| GBP $7,000 + Quick Fix path | **$1,071** (fixture N) |
+| GBP $7,000 + full serial small path | **$1,071** (fixture J) |
 
 Additive % cheats and statutory-max starting points are **rejects**, not alternate answers.
 

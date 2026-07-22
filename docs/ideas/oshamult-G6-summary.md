@@ -1,6 +1,6 @@
 # Research summary — oshamult (G6)
 
-Skeptical senior-eng bar. Seed-only memo. **Do not activate** while `htsroute` holds `current_idea`. Prefer **depositgap** then **lesserof** first after that slot clears.
+Skeptical senior-eng bar. **Active research idea** after lesserof sustained (2026-07-22). Not `ready_to_build` until hours + preflip clear.
 
 ## 1. Problem
 
@@ -42,8 +42,10 @@ See `oshamult-challenge-ABC.md`.
 
 ## 7. Decision
 
-**Do not build / do not activate yet.** Park behind depositgap activation priority.
+**Do not build yet.** `current_idea` = oshamult; hours hold open from `2026-07-22T06:20:00.000Z`.
+
+Survive only as serial-penalty **forecast / method experiment** (Kill A stands). See `oshamult-POST-LESSEROF-STATUS.md` + `oshamult-PREFLIP-CHECKLIST.md`.
 
 ## Explicit non-actions
 
-No `projects/oshamult/`. No `current_idea` swap today.
+No `projects/oshamult/` during the hours hold. Digests must not claim OIS replacement.

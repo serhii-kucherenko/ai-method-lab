@@ -1,6 +1,14 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — oshamult activated after lesserof sustain (tick 1)
+
+Hours hold ~0h of 4h. Fixtures **26/26 dual-green**.
+
+- Wrote `oshamult-POST-LESSEROF-STATUS.md`, `PREFLIP-CHECKLIST`, `vs-lesserof-G2`.
+- Synced G6 + gate scorecard off stale “do not activate” language.
+- **Explicit non-actions:** no `projects/oshamult/`.
+
 ## 2026-07-22 — lesserof FLIP_PATH_READY → smoke scaffold (tick 20)
 
 Hours ≥4h. `check-lesserof-hour-status.mjs` → `FLIP_PATH_READY`.
