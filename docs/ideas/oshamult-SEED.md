@@ -1,7 +1,7 @@
-# oshamult — parallel research seed (not active)
+# oshamult — research seed (historical)
 
-**State:** `seed`  
-**Slot rule:** htsroute owns the active idea. This is research-log only.
+**State:** originally `seed`; now **active research** (`current_idea` = oshamult).  
+**Keep this file** as the itch record — do not re-queue behind customs seeds.
 
 ## One-line itch
 
@@ -28,10 +28,9 @@ Published per-violation maxima are dollar amounts. Wrong serial order or applyin
 
 ## Decision
 
-**Seed only.** Prefer depositgap (then lesserof) ahead of this until those clear or kill.  
-Depth started: `oshamult-algorithm.md`, `oshamult-STATUTE-CITATIONS.md`, paper fixtures A–E + `check-oshamult-fixtures.mjs`. Wave: `SEEDS-WAVE-2026-07-21.md`.
+**Active research — hours hold.** Flip via `oshamult-FLIP-WHEN-CLEAR.md` when `check-oshamult-hour-status.mjs` prints `FLIP_PATH_READY`.  
+Depth kit: algorithm, statute citations, **26** dual-green fixtures, architect pack, PREFLIP-DRYRUN.
 
 ## Artifacts so far
 
-- `oshamult-SEED.md` / `oshamult-algorithm.md` / `oshamult-challenge-ABC.md` / `oshamult-G5-cases.md` / `oshamult-STATUTE-CITATIONS.md`
-- Paper fixtures **26** + checkers dual-green — G5 ≥25 bar met on paper
+See `docs/ideas/oshamult-*.md` + `docs/ideas/fixtures/oshamult-*.json`.

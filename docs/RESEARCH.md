@@ -22,24 +22,8 @@ Hours hold ~3.4h of 4h (~0.6h left). `check-oshamult-hour-status.mjs` → `WAIT_
 
 Hours hold ~3.4h of 4h (~0.6h left). `check-oshamult-hour-status.mjs` → `WAIT_HOURS`.
 
-- Locked day-1 forecast success shape to include `steps[]` remaining-balance before/after (API + algorithm).
-- Synced SERIAL-FENCE / G1 / G5 / ACCEPTANCE off stale queue language; refreshed PREFLIP-DRYRUN hours.
-- **Explicit non-actions:** no `projects/oshamult/`; no early flip.
-
-## 2026-07-22 — oshamult API steps[] + kit sync (tick 6)
-
-Hours hold ~3.4h of 4h (`WAIT_HOURS`; ~0.6h left). Fixtures still 26/26 dual-green.
-
-- Forecast success must return per-factor `steps[]` remaining balances (API contract + algorithm).
-- Synced G1 / G5 / SERIAL-FENCE / statute / sustain / Kill A–C off stale queue language; refreshed PREFLIP-DRYRUN.
-- **Explicit non-actions:** no `projects/oshamult/`; framing clock unchanged.
-
-## 2026-07-22 — oshamult API steps + near-flip dry-run (tick 6)
-
-Hours hold ~3.4h of 4h (~0.6h left). `check-oshamult-hour-status.mjs` → `WAIT_HOURS`.
-
-- Locked day-1 forecast success to include `steps[]` remaining-balance trail (API + algorithm).
-- Synced SERIAL-FENCE / G1 / G5 / statute / sustain off stale queue language; refreshed PREFLIP-DRYRUN.
+- Locked day-1 forecast success to include per-factor `steps[]` remaining balances (API + algorithm).
+- Synced SERIAL-FENCE / G1 / G5 / ACCEPTANCE / SEED / statute / sustain off stale queue language; refreshed PREFLIP-DRYRUN.
 - **Explicit non-actions:** no `projects/oshamult/`; framing clock unchanged.
 
 ## 2026-07-22 — oshamult preflip dry-run + architect pack sync (tick 5)
