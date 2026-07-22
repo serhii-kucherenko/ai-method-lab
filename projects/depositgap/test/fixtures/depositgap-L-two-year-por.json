@@ -1,0 +1,23 @@
+{
+  "id": "depositgap-L-two-year-por",
+  "title": "Two-year POR window — interest scales with days",
+  "source": "depositgap-G5-cases.md L",
+  "input": {
+    "order_type": "AD",
+    "deposit_rate": 0.1,
+    "assessed_rate": 0.25,
+    "rate_class": "exporter_specific",
+    "entered_value": 1000000,
+    "order_published_on": "2022-01-01",
+    "liquidated_on": "2024-01-01",
+    "interest_annual_rate": 0.08,
+    "skip_interest": false
+  },
+  "expect": {
+    "duty_delta": 150000,
+    "days": 730,
+    "interest": 24000,
+    "true_up": 174000,
+    "status": "ok"
+  }
+}

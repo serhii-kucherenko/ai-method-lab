@@ -1,0 +1,19 @@
+{
+  "id": "depositgap-D-zero-value",
+  "title": "Non-positive entered value rejects",
+  "source": "depositgap-algorithm step 1",
+  "input": {
+    "order_type": "AD",
+    "deposit_rate": 0.1,
+    "assessed_rate": 0.2,
+    "rate_class": "all_others",
+    "entered_value": 0,
+    "order_published_on": "2024-01-01",
+    "liquidated_on": "2024-06-01",
+    "interest_annual_rate": 0.08,
+    "skip_interest": false
+  },
+  "expect": {
+    "status": "reject"
+  }
+}

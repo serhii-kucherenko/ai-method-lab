@@ -1,0 +1,23 @@
+{
+  "id": "depositgap-O-rate-class-other",
+  "title": "rate_class other with explicit assessed — no inventing all-others",
+  "source": "depositgap-G5-cases.md O",
+  "input": {
+    "order_type": "AD",
+    "deposit_rate": 0.12,
+    "assessed_rate": 0.18,
+    "rate_class": "other",
+    "entered_value": 800000,
+    "order_published_on": "2023-01-01",
+    "liquidated_on": "2024-01-01",
+    "interest_annual_rate": 0.07,
+    "skip_interest": false
+  },
+  "expect": {
+    "duty_delta": 48000,
+    "days": 365,
+    "interest": 3360,
+    "true_up": 51360,
+    "status": "ok"
+  }
+}

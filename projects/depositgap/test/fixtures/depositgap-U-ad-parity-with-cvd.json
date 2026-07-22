@@ -1,0 +1,23 @@
+{
+  "id": "depositgap-U-ad-parity-with-cvd",
+  "title": "AD twin of CVD underdeposit — same numbers, order_type differs",
+  "source": "depositgap-G5-cases.md U (parity lock with E)",
+  "input": {
+    "order_type": "AD",
+    "deposit_rate": 0.1,
+    "assessed_rate": 0.25,
+    "rate_class": "all_others",
+    "entered_value": 1000000,
+    "order_published_on": "2023-01-01",
+    "liquidated_on": "2024-01-01",
+    "interest_annual_rate": 0.08,
+    "skip_interest": false
+  },
+  "expect": {
+    "duty_delta": 150000,
+    "days": 365,
+    "interest": 12000,
+    "true_up": 162000,
+    "status": "ok"
+  }
+}

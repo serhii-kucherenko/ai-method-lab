@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T00:35:00Z",
+  "updated_at": "2026-07-22T00:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -7,7 +7,7 @@
     "enabled": true
   },
   "paused": false,
-  "active_cell": null,
+  "active_cell": "A03__P-smoke-001__depositgap__r1",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -19,12 +19,12 @@
   },
   "last_completed": "research__htsroute_parked_value_gate",
   "last_error": null,
-  "current_product": null,
+  "current_product": "depositgap",
   "current_idea": "depositgap",
-  "next_cell": "P-smoke-001__depositgap",
+  "next_cell": "P-crud-001__depositgap",
   "mode": "autonomous",
-  "phase": "starting_next",
-  "notes": "Hours not days (min 4h). htsroute PARKED soft abort #4. depositgap activated — architect pack on file; next: ready_to_build + comprehensive smoke. Loop pid 26872 — do NOT re-arm if alive.",
+  "phase": "running",
+  "notes": "depositgap smoke GREEN (26 tests + UI critical). Hours not days. htsroute parked. Loop pid 26872 — do NOT re-arm if alive. Next: crud pages + RBAC.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,

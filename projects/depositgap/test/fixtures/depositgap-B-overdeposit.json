@@ -1,0 +1,23 @@
+{
+  "id": "depositgap-B-overdeposit",
+  "title": "Assessed below deposit — refund-shaped delta",
+  "source": "depositgap-algorithm.md sign convention",
+  "input": {
+    "order_type": "CVD",
+    "deposit_rate": 0.2,
+    "assessed_rate": 0.05,
+    "rate_class": "all_others",
+    "entered_value": 500000,
+    "order_published_on": "2024-06-01",
+    "liquidated_on": "2024-12-28",
+    "interest_annual_rate": 0.08,
+    "skip_interest": false
+  },
+  "expect": {
+    "duty_delta": -75000,
+    "days": 210,
+    "interest": -3452.05,
+    "true_up": -78452.05,
+    "status": "ok"
+  }
+}
