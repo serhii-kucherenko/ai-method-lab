@@ -1,0 +1,17 @@
+{
+  "id": "c1592-AB-gross-ignore-domestic-cap",
+  "title": "Gross negligence ignore-domestic-cap rejects when domestic binds",
+  "input": {
+    "culpability": "gross_negligence",
+    "duty_loss": 100000,
+    "domestic_value": 250000,
+    "dutiable_value": 500000,
+    "flat_2x_cheat": false,
+    "dual_approver_cheat": false,
+    "ignore_domestic_cap": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "ignore_domestic_cap"
+  }
+}

@@ -2,6 +2,10 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-22 — c1592 tick 9 (WAIT_HOURS)
+
+- 30 dual fixtures; three-quarter hold + preflip/value-gate dry-runs; ~1.3h hours left. No product.
+
 ## 2026-07-22 — c1592 tick 8 (WAIT_HOURS)
 
 - Offline try demo + statute/value/sustain papers; ~1.6h hours left. No product.

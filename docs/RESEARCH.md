@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-22 — c1592 tick 9: three-quarter hold + 30 fixtures (WAIT_HOURS)
+
+`AGENT_LOOP_TICK_depth_15m` occurrence 92. Docs only. Framing clock **unchanged**.
+
+- Grew dual kit **26 → 30** (fraud-vs-4× story, gross ignore-cap, cents path, exact 40%)
+- Wrote THREE-QUARTER-HOLD, PREFLIP-DRYRUN, VALUE-GATE-DRYRUN
+- Hours ~1.3h short → `WAIT_HOURS`
+- Explicit non-actions: **no** `projects/c1592/`
+
+**Skeptical one-liner:** Extra fixtures do not clear the hours hold.
+
 ## 2026-07-22 — c1592 tick 8: offline demo + statute stakes (WAIT_HOURS)
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 91. Docs + research demo only. Framing clock **unchanged**.

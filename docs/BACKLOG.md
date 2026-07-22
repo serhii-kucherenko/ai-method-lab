@@ -30,7 +30,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| **c1592** | **framed (research)** | tick 8; offline demo+statute papers; 26 dual fixtures; WAIT_HOURS (~1.6h) |
+| **c1592** | **framed (research)** | tick 9; 30 dual fixtures; three-quarter hold; WAIT_HOURS (~1.3h) |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
 | ptax4975 | **sustained** | Product complete under projects/ptax4975 |
