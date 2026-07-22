@@ -50,7 +50,7 @@ Encoded **A–W (23)** via `check-lesserof-fixtures.mjs` / dual — re-green on 
 - ✅ Hygiene: negative duties / unknown type / zero duties (N/O/P)  
 - ✅ More: Q–W (USMCA missing partner, tiny/large, multiline reject, USMCA on direct-ID, …)
 
-G2 vs depositgap: `lesserof-vs-depositgap-G2.md`. Suite is **23** dual-green (smoke floor target ≥25 still preferred at product open).
+G2 vs depositgap: `lesserof-vs-depositgap-G2.md`. Suite is **25** dual-green (A–Y) — smoke floor met on paper.
 
 ## Decision
 

@@ -1,11 +1,11 @@
-# lesserof — G5 case map (seed paper)
+# lesserof — G5 case map
 
-**State:** seed only. Encoded fixtures: A–W (`check-lesserof-fixtures.mjs` + dual).  
-**Not framed. Not `current_idea`. No product.**
+**State:** active research (`current_idea`). Encoded fixtures: **A–Y (25)** dual-green.  
+**Not `ready_to_build` until hours + preflip clear. No product folder.**
 
 Unique claim under test: **stacked** TFTEA substitution lesser-of + optional **USMCA** export lesser-of + **direct-ID exemption** + **basket “other”** reject. Fail any case that collapses to “99% of paid” or dual-signer status.
 
-## Encoded (A–W)
+## Encoded (A–Y)
 
 | ID | Teaches |
 |----|---------|
@@ -32,20 +32,22 @@ Unique claim under test: **stacked** TFTEA substitution lesser-of + optional **U
 | U | Zero substitute basis → refund 0 |
 | V | USMCA flag on direct-ID → reject (conflicting mode) |
 | W | Extremely large duties — cents stay exact |
+| X | Three lines mixed stack (TFTEA + USMCA wipe + direct-ID) |
+| Y | USMCA partner equals TFTEA base — boundary unchanged |
 
-## Product-phase notes (count toward ≥25 bar)
+## Product-phase notes (still needed at build)
 
-| ID | Intent | Why deferred |
-|----|--------|--------------|
-| X | Auditor-only mutation | Needs product role surface — paper: mutation without auditor role rejects |
-| Y | Org-scoped isolation | Needs multi-tenant persistence — paper: org A totals must not leak into org B |
+| ID | Intent |
+|----|--------|
+| Z-auditor | Auditor-only mutation surface |
+| Z-tenant | Org-scoped isolation |
 
-## Pass bar for later G5 score
+## Pass bar
 
-- ≥25 goldens (or **23 encoded + 2 product-phase notes**) ← **met**
+- ≥25 goldens ← **met (25 dual-green)**  
 - Dual-impl agree on all  
 - At least 5 rejects protecting stacked-cap honesty  
 
 ## Explicit non-actions
 
-Do not activate while `htsroute` holds the slot. Prefer **depositgap** next after htsroute clears (`depositgap-G6-summary.md`).
+No `projects/lesserof/` during hours hold. Prefer preflip checklist when hours clear.

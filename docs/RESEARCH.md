@@ -1,6 +1,15 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof G5 A–Y (25 dual-green) tick 7
+
+Hours hold ~1h of 4h.
+
+- Added paper fixtures `lesserof-X-three-lines-mixed-stack` (TFTEA + USMCA wipe + direct-ID) and `lesserof-Y-usmca-equals-tftea-base` (boundary).
+- Checkers: **25/25** fixtures + dual-impl green — smoke floor ≥25 met on paper.
+- Updated `lesserof-G5-cases.md` / scorecard.
+- **Explicit non-actions:** no `projects/lesserof/` until hours + preflip.
+
 ## 2026-07-22 — lesserof vs depositgap G2 (tick 6)
 
 Hours hold ~0.7h of 4h. Fixtures **23/23** dual still green.
