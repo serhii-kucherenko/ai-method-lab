@@ -1,7 +1,8 @@
-# lesserof — API contract (seed paper)
+# lesserof — API contract
 
-**Status:** seed only. Activate only after htsroute clears and depositgap is not ahead.  
-**Sources:** `lesserof-COMPREHENSIVE-BLUEPRINT.md`, `lesserof-PAGE-SPECS.md`, `lesserof-algorithm.md`
+**Status:** paper only. Active research — flip only after hours + preflip.  
+**Sources:** `lesserof-COMPREHENSIVE-BLUEPRINT.md`, `lesserof-PAGE-SPECS.md`, `lesserof-algorithm.md`, `lesserof-SAME-CONDITION-FENCE.md`  
+**Goldens:** 25 dual-green (A–Y) via `check-lesserof-fixtures.mjs` / dual.
 
 ## Auth
 
@@ -48,8 +49,9 @@ Reject: `{ "status": "reject", "reason": "..." }` — e.g. basket_other, wrong_m
 - No endpoint that “files” ACE / CBP drawback
 - Direct-ID + lesser-of request → 422
 - Basket “other” without matching non-other HTS10 → reject (not silent $0 lesser-of)
-- Digests carry Kill A workflow-experiment language
+- Digests carry Kill A workflow-experiment language (`lesserof-DIGEST-COPY.md`)
+- Same-condition § 182.45(b) is **out of scope in v0** — do not expose a silent escape or claim every CA/MX export wipes (`lesserof-SAME-CONDITION-FENCE.md`)
 
 ## Explicit non-action
 
-Paper only until activation queue reaches this seed.
+No `projects/lesserof/` during the hours hold.

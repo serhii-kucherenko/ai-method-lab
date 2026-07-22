@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T03:10:00Z",
+  "updated_at": "2026-07-22T03:25:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -17,14 +17,14 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__lesserof__same_condition_demo_tick11",
+  "last_completed": "research__lesserof__sustain_api_sync_tick12",
   "last_error": null,
   "current_product": null,
   "current_idea": "lesserof",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "lesserof tick 11: try-demo/digest/preflip same-condition honesty. Hours ~2/4. ticks=11. No projects/lesserof/. Loop pid 26872 — do NOT re-arm if alive.",
+  "notes": "lesserof tick 12: sustain matrix ≥25 + API/ERD honesty sync. Hours ~2.2/4. ticks=12. No projects/lesserof/. Loop pid 26872 — do NOT re-arm if alive.",
   "hard_stop": false,
   "depth_policy": {
     "max_active_products": 1,
@@ -34,7 +34,7 @@
     "min_hours_research_before_ready": 4,
     "framing_started_at": "2026-07-22T01:07:23.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 11,
+    "research_ticks_on_idea": 12,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
@@ -49,6 +49,6 @@
     "pid": 26872,
     "chain": "finish_item_then_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 74
+    "ticks_observed": 75
   }
 }

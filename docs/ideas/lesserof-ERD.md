@@ -1,8 +1,8 @@
-# lesserof — entity relationship doc (seed paper)
+# lesserof — entity relationship doc
 
-**Paper only. Seed / research. Do not open `projects/lesserof/` yet.**
+**Paper only. Active research. Do not open `projects/lesserof/` until hours + preflip clear.**
 
-Logical aggregates for a future build. Aligns with `lesserof-API-CONTRACT.md`, `lesserof-COMPREHENSIVE-BLUEPRINT.md`, `lesserof-algorithm.md`, `lesserof-PAGE-SPECS.md`. **No routes invented beyond the existing contract.**
+Logical aggregates for a future build. Aligns with `lesserof-API-CONTRACT.md`, `lesserof-COMPREHENSIVE-BLUEPRINT.md`, `lesserof-algorithm.md`, `lesserof-PAGE-SPECS.md`, `lesserof-SAME-CONDITION-FENCE.md`. **No routes invented beyond the existing contract.**
 
 ---
 
