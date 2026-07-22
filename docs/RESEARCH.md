@@ -1014,3 +1014,16 @@ Human: granularity is **hours**, not days. Keep going.
 **Decision:** htsroute parked. depositgap activated. Hours, not midnight.
 
 **Skeptical one-liner:** Waiting for a calendar flip was theater; parking a Free/Free fixture farm is the real depth move.
+
+## 2026-07-21 — lesserof research tick 3 (value gate + framing clock fix)
+
+Loop alive (pid 26872). depositgap sustained; lesserof `current_idea`.
+
+- Wrote `lesserof-VALUE-GATE-DRYRUN.md` — stack claim survives as method experiment; Kill A stands; do not park unless ACE-replacement slips in
+- Corrected `framing_started_at` to real activation (2026-07-22T01:07:23Z / 18:07 PDT) — prior stamp was in the future
+- Architect pack already on file; `research_ticks_on_idea` ? 3; hours still open (~0.2h elapsed)
+- Kits + lesserof dual still green
+
+**Decision:** still researching. No `projects/lesserof/` until =4h hold.
+
+**Skeptical one-liner:** Hitting three ticks before the hour hold is fine; flipping build early would be the old conveyor with a better costume.

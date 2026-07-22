@@ -82,6 +82,7 @@ const seeds = [
       "lesserof-ROADMAP.md",
       "lesserof-PRD.md",
       "lesserof-ERD.md",
+      "lesserof-VALUE-GATE-DRYRUN.md",
     ],
   },
   {

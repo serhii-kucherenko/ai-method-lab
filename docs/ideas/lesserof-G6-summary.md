@@ -48,10 +48,10 @@ Export manufacturers forecast drawback refunds as “99% of duty paid.” For **
 Still blocked from `ready_to_build` by:
 
 1. Kill A stands (brokers/ACE win commercially) — product may only be a stacked-cap **workflow experiment**
-2. Hours + tick hold (`min_hours_research_before_ready: 4`, `min_research_ticks_before_ready: 3`) — architect pack **no longer missing**
+2. Hours + tick hold (`min_hours_research_before_ready: 4`, `min_research_ticks_before_ready: 3`) — architect pack **on file**; value-gate dry run on file (`lesserof-VALUE-GATE-DRYRUN.md`); **ticks ≥3 met on tick 3** but **hours still open**
 3. G6 must stay honest: no ACE replacement; no ×0.99-only widget
 
-See `lesserof-POST-DEPOSITGAP-STATUS.md`.
+See `lesserof-POST-DEPOSITGAP-STATUS.md` + `lesserof-VALUE-GATE-DRYRUN.md`.
 
 ## Explicit non-actions
 
