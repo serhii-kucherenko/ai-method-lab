@@ -1,6 +1,14 @@
 # Research log
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
+## 2026-07-22 — lesserof vs depositgap G2 (tick 6)
+
+Hours hold ~0.7h of 4h. Fixtures **23/23** dual still green.
+
+- Wrote `lesserof-vs-depositgap-G2.md` — removal test keeps the two dollar ideas separate (deposit/assessed interest vs stacked drawback caps).
+- Refreshed `lesserof-NARROW-CLAIM.md` for active research (A–W suite).
+- **Explicit non-actions:** no `projects/lesserof/`; do not merge ideas into one trade shell.
+
 ## 2026-07-22 — lesserof try-demo audit + algorithm sync (tick 5)
 
 Hours hold still open (~0.5h of 4h).

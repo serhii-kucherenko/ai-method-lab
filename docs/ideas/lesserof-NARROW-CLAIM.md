@@ -1,7 +1,7 @@
-# lesserof — narrow unique-claim draft (pre-frame)
+# lesserof — narrow unique-claim draft
 
-**State:** seed hygiene. Not framed. Not active.  
-**Why:** plain “compute lesser-of” is already explained by incumbents → Kill A stands. Need a **narrower** claim or stay parked forever.
+**State:** active research (`current_idea`). Not `ready_to_build` until hours + preflip clear.  
+**Why:** plain “compute lesser-of” is already explained by incumbents → Kill A stands. Need the **narrower** stack claim or stay parked forever.
 
 ## Candidate unique claim (v0 draft)
 
@@ -30,9 +30,9 @@ A shallow dual-gate or “99% of paid” product fails (1)–(4). A vendor blog 
 2. After any future smoke, finance still forecasts with a single “99% of paid” cell for substitution lanes → abandon (software didn’t change the critical path).  
 3. Golden “other”-basket reject contradicts CBP practice → abandon.
 
-## G5 progress (paper fixtures — seed only)
+## G5 progress (paper fixtures)
 
-Encoded A–P (16) via `check-lesserof-fixtures.mjs` / dual — still seed, not framed:
+Encoded **A–W (23)** via `check-lesserof-fixtures.mjs` / dual — re-green on 2026-07-22 tick 6:
 
 - ✅ Happy: substitution lesser-of binds (A)  
 - ✅ Happy: substitution lesser-of does not bind (E)  
@@ -48,9 +48,10 @@ Encoded A–P (16) via `check-lesserof-fixtures.mjs` / dual — still seed, not 
 - ✅ Expert cheat: relabel claim type to dodge lesser-of (K)  
 - ✅ Concurrent: two lines independent caps (L)  
 - ✅ Hygiene: negative duties / unknown type / zero duties (N/O/P)  
+- ✅ More: Q–W (USMCA missing partner, tiny/large, multiline reject, USMCA on direct-ID, …)
 
-Still toward ≥25 before any frame. No product while htsroute owns the slot.
+G2 vs depositgap: `lesserof-vs-depositgap-G2.md`. Suite is **23** dual-green (smoke floor target ≥25 still preferred at product open).
 
 ## Decision
 
-Keep as **seed**. Prefer this narrow bundle over activating a plain lesser-of clone. Activate framing only after htsroute day-boundary clears **or** htsroute parks/kills — and only with Kill A answered as workflow experiment.
+Keep as **active research**. Prefer this narrow bundle over a plain lesser-of clone. Flip `ready_to_build` only after hours + preflip (`lesserof-PREFLIP-CHECKLIST.md`) with Kill A as workflow experiment.

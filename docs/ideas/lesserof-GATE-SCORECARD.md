@@ -3,7 +3,7 @@
 | Gate | Status | Notes |
 |------|--------|-------|
 | G1 Real pain | pass (provisional) | Drawback finance miss on stacked caps; worked dollars in VALUE-STAKES |
-| G2 Non-isomorphic | pass | Stacked TFTEA + USMCA + basket + direct-ID ≠ depositgap / htsroute / dual-gate |
+| G2 Non-isomorphic | pass | Stacked TFTEA + USMCA + basket + direct-ID ≠ depositgap (see `lesserof-vs-depositgap-G2.md`) |
 | G3 Adversarial | pass with Kill A standing | Brokers/ACE already claim; survive as workflow experiment |
 | G4 Falsifiers | pass (draft) | Wrong mode on direct-ID; silent basket match; dishonest ACE claims |
 | G5 Depth tests | pass | **23** fixtures + dual-impl green (re-run 2026-07-22) |
