@@ -34,6 +34,13 @@
 - `public/settings.html` loads/saves settings (token/org via query or localStorage); rotate secret supported.
 - UI critical includes settings live marker. **31** tests green. Next: scale (stress + rate limits).
 
+## Scale (2026-07-22)
+
+- Catalog default `limit` 20 / hard cap 100; ≥250-entry page walk without gaps or dupes.
+- Concurrent overlapping `batch/forecast` calls stay independent per entry.
+- Rate limit returns 429 + `Retry-After`. Notes in `SCALE.md` (O(page) lists).
+- **33** tests green. Next: sustain (goldens browser + try.html + matrix floor).
+
 ## Honesty
 
 Brokers/CBP still liquidate. Digests must say forecast experiment. § 6621 is an input rate (see seed fence).

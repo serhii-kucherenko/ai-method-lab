@@ -175,8 +175,8 @@ export function listEntries(
   const offset = Math.max(opts.offset ?? 0, 0);
   const limit =
     opts.limit !== undefined
-      ? Math.min(Math.max(opts.limit, 1), 500)
-      : Math.max(total, 1);
+      ? Math.min(Math.max(opts.limit, 1), 100)
+      : 20;
   const rows = db
     .prepare(
       `SELECT id, org_id AS orgId, por, order_type, rate_class, deposit_rate, assessed_rate,
@@ -484,8 +484,8 @@ export function getCashImpact(
   const offset = Math.max(opts.offset ?? 0, 0);
   const limit =
     opts.limit !== undefined
-      ? Math.min(Math.max(opts.limit, 1), 500)
-      : Math.max(total, 1);
+      ? Math.min(Math.max(opts.limit, 1), 100)
+      : 20;
   const lines = allLines.slice(offset, offset + limit);
   return { lines, totals, total, limit, offset };
 }
@@ -540,8 +540,8 @@ export function listAudit(
   const offset = Math.max(opts.offset ?? 0, 0);
   const limit =
     opts.limit !== undefined
-      ? Math.min(Math.max(opts.limit, 1), 500)
-      : Math.min(Math.max(total, 1), 500);
+      ? Math.min(Math.max(opts.limit, 1), 100)
+      : 20;
 
   const rows = db
     .prepare(

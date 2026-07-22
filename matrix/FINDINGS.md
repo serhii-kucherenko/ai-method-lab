@@ -1,6 +1,10 @@
 # Findings
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
+## 2026-07-21 — depositgap P-scale GREEN (page walk + rate limit)
+
+- Cell `A03__P-scale-001__depositgap__r1` done. ≥250 entries walked; default limit 20 / cap 100; concurrent batch; 429 Retry-After; `SCALE.md`. npm test 33/33.
+- Next: sustain (8 pages, goldens, try.html).
 ## 2026-07-21 — depositgap P-integrate GREEN (webhook + settings + page)
 
 - Cell `A03__P-integrate-001__depositgap__r1` done. HMAC `POST /webhooks/entries` + Idempotency-Key replay; org settings rotate/RBAC; cash-impact `limit`/`offset`. Live settings.html. npm test 31/31.

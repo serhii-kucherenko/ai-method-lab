@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "cell_id": "A03__P-scale-001__depositgap__r1",
+  "axis": "A03",
+  "protocol": "P-scale-001",
+  "variant": "depositgap",
+  "repeat": 1,
+  "status": "done",
+  "started_at": "2026-07-22T01:10:00.000Z",
+  "ended_at": "2026-07-22T01:25:00.000Z",
+  "scores": {
+    "correctness": 5,
+    "latency": 4,
+    "token_cost": 4,
+    "intervention_needed": 5,
+    "security": 5
+  },
+  "notes": "GREEN. ≥250 entry page walk without gaps/dupes; default limit 20 / cap 100; concurrent batch forecasts; 429 + Retry-After. SCALE.md documents O(page) + rate limits. npm test 33/33.",
+  "artifact_paths": [
+    "projects/depositgap/",
+    "projects/depositgap/test/scale.test.ts",
+    "projects/depositgap/SCALE.md"
+  ]
+}
