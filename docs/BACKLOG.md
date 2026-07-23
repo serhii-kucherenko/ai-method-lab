@@ -32,7 +32,7 @@ See `docs/DEPTH_RESTART.md` (Correction 6).
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| **Filing Penalty Desk** | **adversarial / WAIT_HOURS** | Slug `filing-penalty-desk`; legacy kit `irc6651`; **≥15 features** required before build; no projects/ |
+| **Filing Penalty Desk** | **ready_to_build + PM go** | 18-feature blueprint; open `projects/filing-penalty-desk/` next; never brand `irc6651` |
 | **c1592** | **sustained** | Display: Customs Penalty Forecast; findings emailed |
 | esrp4980h | seed (log only) | § 4980H ESRP; parked behind irc6651 (depth > width) |
 | lesserof | **sustained** | Product complete |

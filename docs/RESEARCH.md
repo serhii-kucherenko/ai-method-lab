@@ -2,6 +2,12 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — Filing Penalty Desk ready_to_build + PM go
+
+Architect pack landed 18-feature blueprint. Hours/ticks clear. G6 → **ready_to_build**. PM-GO → **go**. Next: product delivery opens `projects/filing-penalty-desk/` with mature name only (never `irc6651`).
+
+**Skeptical one-liner:** Go is earned on paper depth — sustain still has to prove fifteen real features, not a renamed calculator.
+
 ## 2026-07-23 — Architect pack: Filing Penalty Desk (paper only)
 
 Senior architect + researcher. Docs only — **no** `projects/`, **no** `ready_to_build` flip.
