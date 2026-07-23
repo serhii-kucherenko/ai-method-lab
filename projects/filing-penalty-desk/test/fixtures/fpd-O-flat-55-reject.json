@@ -1,0 +1,17 @@
+{
+  "id": "fpd-O-flat-55-reject",
+  "title": "Flat 5.5% forever cheat rejects",
+  "g5": "O",
+  "input": {
+    "net_amount_due": 10000,
+    "unpaid_by_month": [
+      10000
+    ],
+    "unfiled_months": 1,
+    "flat_55_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "flat_55_cheat"
+  }
+}

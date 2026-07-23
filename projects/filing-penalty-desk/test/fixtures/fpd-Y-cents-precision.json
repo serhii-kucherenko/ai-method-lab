@@ -1,0 +1,21 @@
+{
+  "id": "fpd-Y-cents-precision",
+  "title": "Fractional dollars round consistently in month walk",
+  "g5": "Y",
+  "input": {
+    "net_amount_due": 12345.67,
+    "unpaid_by_month": [
+      12345.67
+    ],
+    "unfiled_months": 1,
+    "levy_bump_after_month": null,
+    "apply_minimum": false,
+    "min_floor": 0
+  },
+  "expect": {
+    "status": "ok",
+    "ftf": 555.55515,
+    "ftp": 61.72835,
+    "combined": 617.2835
+  }
+}

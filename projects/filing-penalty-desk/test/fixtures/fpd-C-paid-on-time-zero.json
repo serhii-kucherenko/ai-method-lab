@@ -1,0 +1,19 @@
+{
+  "id": "fpd-C-paid-on-time-zero",
+  "title": "Net amount due zero → no additions",
+  "g5": "C",
+  "input": {
+    "net_amount_due": 0,
+    "unpaid_by_month": [],
+    "unfiled_months": 2,
+    "levy_bump_after_month": null,
+    "apply_minimum": false,
+    "min_floor": 0
+  },
+  "expect": {
+    "status": "ok",
+    "ftf": 0,
+    "ftp": 0,
+    "combined": 0
+  }
+}

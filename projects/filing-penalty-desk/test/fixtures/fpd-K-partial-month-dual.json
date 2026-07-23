@@ -1,0 +1,21 @@
+{
+  "id": "fpd-K-partial-month-dual",
+  "title": "Partial month charges full month fraction",
+  "g5": "K",
+  "input": {
+    "net_amount_due": 10000,
+    "unpaid_by_month": [
+      10000
+    ],
+    "unfiled_months": 1,
+    "levy_bump_after_month": null,
+    "apply_minimum": false,
+    "min_floor": 0
+  },
+  "expect": {
+    "status": "ok",
+    "ftf": 450,
+    "ftp": 50,
+    "combined": 500
+  }
+}

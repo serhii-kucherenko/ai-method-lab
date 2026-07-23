@@ -8,6 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
+| **Filing Penalty Desk** (`filing-penalty-desk`) | **in progress** | A03 + A10 | smoke done → **crud** | Month-walk FTF/FTP additions (Kill A; not IRS/CPA) |
 | **Customs Penalty Forecast** | **sustained** | A03 + A10 | done — findings emailed | Folder legacy `c1592`; statutory max by culpability (Kill A) |
 | **ptax4975** | **sustained** | A03 + A10 | done | § 4975 15%×year-parts + 100% if uncorrected (Kill A; not Form 5330) |
 | **oshamult** | **sustained** | A03 + A10 | done | GBP × serial remaining-balance penalty forecast (Kill A; not OIS) |
@@ -50,8 +51,7 @@ Full historical table preserved in git history prior to depth restart; rows belo
 
 ## Next autonomous actions
 
-1. Research **ptax4975** under hours hold (`WAIT_HOURS` ~2h elapsed) — flip only after `FLIP_PATH_READY`
-2. Digests: plain language; Kill A honesty; `ptax4975-DIGEST-HOLD.md`
-3. Never open `projects/ptax4975/` before hour-status clear
-4. Depth-restart sustained: lotblast … tariffstep … depositgap … lesserof … **oshamult**
-5. Killed: lanehold (G2); parked: htsroute (Challenge D)
+1. **Filing Penalty Desk** — climb crud → workflow → integrate → scale → sustain (≥15 features, ≥6 pages, tutor guide)
+2. Digests: display name only; Kill A honesty; never brand as a statute code
+3. Depth-restart sustained: lotblast … tariffstep … depositgap … lesserof … oshamult … Customs Penalty Forecast
+4. Killed: lanehold (G2); parked: htsroute (Challenge D)

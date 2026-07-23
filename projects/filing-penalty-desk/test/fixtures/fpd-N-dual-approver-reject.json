@@ -1,0 +1,17 @@
+{
+  "id": "fpd-N-dual-approver-reject",
+  "title": "Dual-approver costume rejects",
+  "g5": "N",
+  "input": {
+    "net_amount_due": 10000,
+    "unpaid_by_month": [
+      10000
+    ],
+    "unfiled_months": 1,
+    "dual_approver_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "dual_approver_cheat"
+  }
+}

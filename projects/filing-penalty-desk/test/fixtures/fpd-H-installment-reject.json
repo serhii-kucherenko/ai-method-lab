@@ -1,0 +1,17 @@
+{
+  "id": "fpd-H-installment-reject",
+  "title": "Silent 0.25% installment mode rejects in v0",
+  "g5": "H",
+  "input": {
+    "net_amount_due": 10000,
+    "unpaid_by_month": [
+      10000
+    ],
+    "unfiled_months": 0,
+    "installment_025_silent": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "installment_025_silent"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "fpd-F-min-lesser-of",
+  "title": "Minimum lesser-of underpayment when underpayment < floor",
+  "g5": "F",
+  "input": {
+    "net_amount_due": 200,
+    "unpaid_by_month": [],
+    "unfiled_months": 1,
+    "levy_bump_after_month": null,
+    "apply_minimum": true,
+    "min_floor": 510
+  },
+  "expect": {
+    "status": "ok",
+    "ftf": 200,
+    "ftp": 0,
+    "combined": 200
+  }
+}

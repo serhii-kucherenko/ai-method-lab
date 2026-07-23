@@ -2,6 +2,13 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-23 — Filing Penalty Desk smoke GREEN
+
+- Opened `projects/filing-penalty-desk/`; display name **Filing Penalty Desk** (not statute-code brand)
+- **27** tests; **25** dual-green goldens (month-walk A/B); org + timeline + forecast API
+- Cell `A03__P-smoke-001__filing-penalty-desk__r1` scored; next **crud**
+- Kill A: cash-forecast / method honesty — not IRS or CPA replacement
+
 ## 2026-07-23 — c1592 sustain GREEN (product complete, email pending)
 
 - Ladder smoke→crud→workflow→integrate→scale→**sustain**

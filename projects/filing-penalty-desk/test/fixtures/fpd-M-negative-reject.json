@@ -1,0 +1,16 @@
+{
+  "id": "fpd-M-negative-reject",
+  "title": "Negative unpaid base rejects",
+  "g5": "M",
+  "input": {
+    "net_amount_due": 10000,
+    "unpaid_by_month": [
+      -1
+    ],
+    "unfiled_months": 1
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "bad_inputs"
+  }
+}

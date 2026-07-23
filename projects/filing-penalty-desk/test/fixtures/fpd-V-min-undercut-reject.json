@@ -1,0 +1,19 @@
+{
+  "id": "fpd-V-min-undercut-reject",
+  "title": "Expert cheat: (c)(1) undercuts statutory minimum rejects",
+  "g5": "V",
+  "input": {
+    "net_amount_due": 2000,
+    "unpaid_by_month": [
+      2000
+    ],
+    "unfiled_months": 1,
+    "apply_minimum": true,
+    "min_floor": 510,
+    "min_undercut_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "min_undercut_cheat"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "fpd-G-levy-bump",
+  "title": "FTP 0.5% then 1% after levy-intent months",
+  "g5": "G",
+  "input": {
+    "net_amount_due": 0,
+    "unpaid_by_month": [
+      8000,
+      8000,
+      8000,
+      8000
+    ],
+    "unfiled_months": 0,
+    "levy_bump_after_month": 2,
+    "apply_minimum": false,
+    "min_floor": 0
+  },
+  "expect": {
+    "status": "ok",
+    "ftf": 0,
+    "ftp": 240,
+    "combined": 240
+  }
+}
