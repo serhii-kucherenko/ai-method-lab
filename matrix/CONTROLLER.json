@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T06:48:25.708Z",
+  "updated_at": "2026-07-23T07:04:43.972Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -26,7 +26,7 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "research__irc6651_fixtures10_treas",
+  "last_completed": "research__irc6651_shared_oracle_fixtures14",
   "last_error": null,
   "current_product": null,
   "current_idea": "irc6651",
@@ -34,7 +34,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "robust_15m tick5: irc6651 fixtures 10 green + Treas.Reg notes. WAIT_HOURS (~1.22h/4). No projects/. Loop pid 3032.",
+  "notes": "robust_15m tick6: shared irc6651 oracle + fixtures 14 green. WAIT_HOURS (~1.50h/4). No projects/. Loop pid 3032.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -46,7 +46,7 @@
     "min_hours_research_before_ready": 4,
     "framing_started_at": "2026-07-23T05:35:00.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 7,
+    "research_ticks_on_idea": 8,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "require_pm_go": true,
@@ -79,6 +79,6 @@
     "pid": 3032,
     "chain": "finish_product_email_then_research",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 6
+    "ticks_observed": 7
   }
 }

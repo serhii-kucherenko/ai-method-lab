@@ -2,6 +2,16 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #6 (shared oracle + fixtures 14)
+
+Research only. Stays adversarial / WAIT_HOURS.
+
+- Extracted shared `irc6651-oracle.mjs` for toys + fixtures
+- Fixtures **10 → 14** (H/I/P/W); all green with toys still dual-green
+- Hours ~1.5h/4; ticks=8; **no** `projects/`
+
+**Skeptical one-liner:** Shared oracle cleans the kit — it does not clear the hours hold.
+
 ## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #5 (irc6651 fixtures 10)
 
 Research only. Stays adversarial / WAIT_HOURS.

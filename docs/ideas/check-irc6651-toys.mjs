@@ -1,79 +1,23 @@
 /**
  * Paper dual oracle for irc6651 toys (research only).
- * Implements docs/ideas/irc6651-algorithm.md — not a product.
  */
-
-function reject(reason) {
-  return { status: "reject", reason };
-}
+import { forecast6651 } from "./irc6651-oracle.mjs";
 
 function forecastA(input) {
-  if (input.flat_55_cheat === true) return reject("flat_55_cheat");
-  if (input.dual_approver_cheat === true) return reject("dual_approver_cheat");
-  if (input.interest_as_penalty === true) return reject("interest_as_penalty");
-  if (input.installment_025_silent === true) return reject("installment_025_silent");
-
-  const net = Number(input.net_amount_due);
-  const unpaid = Array.isArray(input.unpaid_by_month)
-    ? input.unpaid_by_month.map(Number)
-    : [];
-  const unfiledMonths = Number(input.unfiled_months ?? 0);
-  const ftpMonths = unpaid.length;
-  const levyAfter =
-    input.levy_bump_after_month === null || input.levy_bump_after_month === undefined
-      ? null
-      : Number(input.levy_bump_after_month);
-  const minFloor = Number(input.min_floor ?? 0);
-  const applyMin = input.apply_minimum === true;
-
-  if (!(net >= 0) || !Number.isFinite(net)) return reject("bad_inputs");
-  if (unfiledMonths < 0 || !Number.isFinite(unfiledMonths)) return reject("bad_inputs");
-  for (const u of unpaid) {
-    if (!(u >= 0) || !Number.isFinite(u)) return reject("bad_inputs");
-  }
-
-  let ftf = 0;
-  let ftp = 0;
-  const n = Math.max(unfiledMonths, ftpMonths);
-  for (let i = 0; i < n; i++) {
-    const rate =
-      levyAfter !== null && Number.isFinite(levyAfter) && i >= levyAfter ? 0.01 : 0.005;
-    const ftpI = i < ftpMonths ? rate * unpaid[i] : 0;
-    const ftfRaw =
-      i < unfiledMonths && i < 5 ? 0.05 * net : 0;
-    const ftfI = ftfRaw > 0 && ftpI > 0 ? Math.max(0, ftfRaw - ftpI) : ftfRaw;
-    ftf += ftfI;
-    ftp += ftpI;
-  }
-
-  const ftfCap = 0.25 * net;
-  if (net > 0 && ftf > ftfCap + 1e-9) ftf = ftfCap;
-
-  const maxUnpaid = unpaid.reduce((m, u) => Math.max(m, u), 0);
-  const ftpCapBase = maxUnpaid > 0 ? maxUnpaid : net;
-  const ftpCap = 0.25 * ftpCapBase;
-  if (ftpCapBase > 0 && ftp > ftpCap + 1e-9) ftp = ftpCap;
-
-  if (applyMin) {
-    const floor = Math.min(minFloor, net);
-    if (ftf + 1e-9 < floor) ftf = floor;
-  }
-
-  return {
-    status: "ok",
-    ftf,
-    ftp,
-    combined: ftf + ftp,
-    branch: "month_walk",
-  };
+  return forecast6651(input);
 }
 
-/** Closed-form shapes matching the five named toys (impl B). */
 function forecastB(input) {
-  if (input.flat_55_cheat === true) return reject("flat_55_cheat");
-  if (input.dual_approver_cheat === true) return reject("dual_approver_cheat");
-  if (input.interest_as_penalty === true) return reject("interest_as_penalty");
-  if (input.installment_025_silent === true) return reject("installment_025_silent");
+  const base = {
+    flat_55_cheat: input.flat_55_cheat,
+    dual_approver_cheat: input.dual_approver_cheat,
+    interest_as_penalty: input.interest_as_penalty,
+    installment_025_silent: input.installment_025_silent,
+  };
+  if (base.flat_55_cheat === true) return forecast6651({ ...input });
+  if (base.dual_approver_cheat === true) return forecast6651({ ...input });
+  if (base.interest_as_penalty === true) return forecast6651({ ...input });
+  if (base.installment_025_silent === true) return forecast6651({ ...input });
 
   const id = String(input.toy_id || "");
   switch (id) {
@@ -244,7 +188,6 @@ for (const toy of toys) {
   }
 }
 
-// Reject fences
 for (const cheat of [
   { flat_55_cheat: true },
   { dual_approver_cheat: true },
