@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T18:35:19.157Z",
+  "updated_at": "2026-07-23T18:37:27.972Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,9 +11,9 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "8172bb9e-7f14-4ea3-ae8a-73719249abc3",
-    "last_idea_validated_email_id": "02b23683-eb69-4f24-8b94-99249d561b4c",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "7fc44b88-f18e-4f72-b0a9-ffafc4829a59",
+    "last_idea_validated_email_id": "65fa97c3-fc11-4494-a630-420bf02327ec",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
@@ -41,13 +41,13 @@
   },
   "last_completed": "A03__P-sustain-001__agent-safety-desk__r1",
   "last_error": null,
-  "current_product": "agent-safety-desk",
-  "current_idea": "agent-safety-desk",
+  "current_product": "enterprise-agent-desk",
+  "current_idea": "enterprise-agent-desk",
   "next_research_idea": null,
-  "next_cell": null,
+  "next_cell": "A03__P-crud-001__enterprise-agent-desk__r1",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "Agent Safety Desk sustain green; product_complete_pending; no finish email this tick.",
+  "notes": "Enterprise Agent Desk climbing Next+landing+designer. Agent Safety emailed.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -60,10 +60,10 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.14570",
-      "slug": "agent-safety-desk",
-      "displayName": "Agent Safety Desk",
-      "at": "2026-07-23T18:29:21.893Z"
+      "paperId": "2607.17331",
+      "slug": "enterprise-agent-desk",
+      "displayName": "Enterprise Agent Desk",
+      "at": "2026-07-23T18:37:14.032Z"
     }
   },
   "depth_policy": {

@@ -11,4 +11,5 @@
 | Pathology Vision Desk | 2607.09526 | Complete |
 | Realtime Deploy Desk | 2607.18171 | Complete |
 | Secure Tutor Desk | 2607.14601 | Complete |
-| Agent Safety Desk | 2607.14570 | Sustain green (product_complete_pending) |
+| Agent Safety Desk | 2607.14570 | Complete |
+| Enterprise Agent Desk | 2607.17331 | Smoke / building (Next + landing) |
