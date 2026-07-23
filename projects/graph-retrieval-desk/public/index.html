@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Graph Retrieval Desk</title>
+    <style>
+      :root {
+        --ink: #1a2433;
+        --muted: #4d5b6d;
+        --line: #c5d0dc;
+        --panel: #f3f7f9;
+        --accent: #1f5f8b;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 85% 10%, #d7e8f2 0%, transparent 40%),
+          linear-gradient(180deg, #eef4f8, #e2ebf1);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: "Source Serif 4", Georgia, serif;
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        margin: 0 0 0.5rem;
+        letter-spacing: -0.02em;
+      }
+      p {
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      nav a {
+        color: var(--accent);
+        margin-right: 1rem;
+      }
+      .panel {
+        margin-top: 1.5rem;
+        padding: 1rem 1.1rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+      }
+      code {
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body data-home="live">
+    <main>
+      <h1>Graph Retrieval Desk</h1>
+      <p>
+        Organize orgs, projects, and multi-step graph retrieval jobs for method
+        experiments — a lab desk, not the authors' production engine.
+      </p>
+      <nav>
+        <a href="/jobs.html">Retrieval jobs</a>
+        <a href="/honesty.html">Honesty</a>
+      </nav>
+      <div class="panel">
+        <p>
+          Paper <strong>2607.11683</strong> · public code available on GitHub
+          (linked from the honesty page).
+        </p>
+        <p>
+          Auth: register with <code>POST /auth/register</code>, then send
+          <code>Authorization: Bearer &lt;token&gt;</code>.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

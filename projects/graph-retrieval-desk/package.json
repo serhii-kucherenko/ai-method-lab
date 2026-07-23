@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "lint": "tsc --noEmit",
-    "test": "tsx --test test/smoke.test.ts",
+    "test": "tsx --test test/smoke.test.ts test/crud.test.ts",
     "start": "tsx src/server.ts"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 ﻿# Graph Retrieval Desk
 
-Method-lab product sourced from a simple-papers digest.
+Method-lab product sourced from a simple-papers digest. Mature display name only — never brand this desk with the paper project's short name.
 
 ## Paper
 
@@ -9,9 +9,9 @@ Method-lab product sourced from a simple-papers digest.
 - **URL:** https://arxiv.org/abs/2607.11683v1
 - **Code:** https://github.com/RaguTeam/RAGU
 
-## What we will build
+## What we build
 
-RAGU offers a more robust and efficient architecture for GraphRAG, separating extraction from consolidation. Its use of a compact, domain-adapted LLM (Meno-Lite-0.1) that runs on a single GPU makes advanced GraphRAG capabilities more accessible and resource-friendly for developer
+A desk for orgs, projects, and multi-step graph retrieval jobs inspired by separating extraction from consolidation. Honesty: method experiment — not a replacement for the authors' engine.
 
 ## Run
 
@@ -22,6 +22,8 @@ npm test
 npm start
 ```
 
+Open `http://localhost:3847/` for home, `/jobs.html` for retrieval jobs, `/honesty.html` for the honesty fence.
+
 ## Status
 
-Smoke scaffold â€” climbing the full product ladder next.
+CRUD green — orgs / projects / retrieval jobs with bearer auth and HTML pages. Climbing the product ladder next.

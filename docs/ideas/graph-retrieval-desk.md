@@ -1,6 +1,6 @@
 ﻿# Graph Retrieval Desk
 
-**State:** building (paper-sourced)  
+**State:** building (crud green → workflow)  
 **Slug:** `graph-retrieval-desk`  
 **Paper id:** `2607.11683`  
 **Paper:** https://arxiv.org/abs/2607.11683v1  
