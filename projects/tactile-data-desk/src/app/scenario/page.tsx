@@ -79,6 +79,47 @@ export default function ScenarioPage() {
       >
         Run compare
       </Button>
+      {result && result.status === "ok" && (
+        <div className="space-y-3" data-layers="live">
+          <p className="text-sm text-[var(--tdd-muted)]">
+            Soft RTD layers (simulation): confirmable {result.k_eligible} /{" "}
+            {result.k_total}; excluded ambiguous {result.k_excluded}.
+          </p>
+          <div className="flex h-3 overflow-hidden rounded-sm bg-[var(--tdd-mist)]">
+            {Array.from({ length: Math.max(1, result.k_total) }).map((_, i) => (
+              <span
+                key={i}
+                className="flex-1 border-r border-[var(--tdd-paper)] last:border-0"
+                style={{
+                  background:
+                    i < result.k_eligible
+                      ? "var(--tdd-steel)"
+                      : "var(--tdd-line)",
+                  opacity: 0.55 + (i % 4) * 0.1,
+                }}
+              />
+            ))}
+          </div>
+          <Button
+            type="button"
+            variant="outline"
+            data-export-scenario="live"
+            onClick={() => {
+              const blob = new Blob([JSON.stringify(result, null, 2)], {
+                type: "application/json",
+              });
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement("a");
+              a.href = url;
+              a.download = `tactile-scenario-${result.corpus}.json`;
+              a.click();
+              URL.revokeObjectURL(url);
+            }}
+          >
+            Export scenario JSON
+          </Button>
+        </div>
+      )}
       {result && (
         <pre className="overflow-x-auto rounded-md border border-[var(--tdd-line)] bg-white/80 p-4 text-xs font-[family-name:var(--font-mono)]">
           {JSON.stringify(result, null, 2)}

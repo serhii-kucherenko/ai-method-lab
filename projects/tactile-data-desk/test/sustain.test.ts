@@ -115,7 +115,7 @@ test("sustain: offline try.html is standalone with honesty", () => {
 test("sustain: PRODUCT honesty + feature bar ≥15", () => {
   const md = readFileSync(join(root, "PRODUCT.md"), "utf8");
   assert.match(md, /not.*replacement for the authors/i);
-  assert.match(md, /Live features \(18/);
+  assert.match(md, /Live features \(20/);
   assert.match(md, /Pages \(9/);
   assert.match(md, /Maturity checklist/);
 });

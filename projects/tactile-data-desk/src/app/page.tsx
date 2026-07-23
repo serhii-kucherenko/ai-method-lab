@@ -28,6 +28,8 @@ const FEATURES = [
   "Pagination + search",
   "Rate-limit feedback",
   "Offline try page",
+  "Soft RTD layer strip",
+  "Scenario JSON export",
 ];
 
 const STEPS = [

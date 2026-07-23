@@ -27,7 +27,7 @@ This is a **method experiment inspired by the paper**. It is **not** a replaceme
 - Using Feelogue / CTDI / Dot Pad as product brand
 - Rebranding prompt-cache, packing, itinerary, or evidence-synthesis desks as tactile domain
 
-## Live features (18 ≥15)
+## Live features (20 ≥15)
 
 1. Org tenancy  
 2. Member roles (admin / operator / viewer)  
@@ -38,15 +38,17 @@ This is a **method experiment inspired by the paper**. It is **not** a replaceme
 7. Optimistic version conflict  
 8. Batch job transitions (independent siblings)  
 9. Scenario compare (speech-only / select-skip-confirm / agent-no-verify vs grounded)  
-10. Audit log  
-11. CSV audit export  
-12. Goldens browser (≥25 dual-impl fixtures)  
-13. Honesty / disclaimer page  
-14. Webhook inbound + HMAC + idempotency  
-15. Org webhook settings (admin rotate)  
-16. Pagination + search  
-17. Rate-limit feedback (429 + Retry-After)  
-18. Offline try page (`try.html`) + in-app guide link  
+10. Soft RTD layer strip (confirmable vs ambiguous)  
+11. Scenario JSON export  
+12. Audit log  
+13. CSV audit export  
+14. Goldens browser (≥25 dual-impl fixtures)  
+15. Honesty / disclaimer page  
+16. Webhook inbound + HMAC + idempotency  
+17. Org webhook settings (admin rotate)  
+18. Pagination + search  
+19. Rate-limit feedback (429 + Retry-After)  
+20. Offline try page (`try.html`) + in-app guide link  
 
 ## Pages (9 ≥6)
 
