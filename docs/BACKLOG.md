@@ -12,7 +12,7 @@ See `docs/DEPTH_RESTART.md` (Correction 6).
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **Filing Penalty Desk** (`filing-penalty-desk`) | **crud green → workflow** | 28 tests; 3 pages; never brand irc6651 |
+| 1 | **Filing Penalty Desk** (`filing-penalty-desk`) | **sustained — email blocked** | 55 tests; 8 pages; 18 features; digest ready; Resend hard stop |
 | 1 | **Customs Penalty Forecast** (`c1592` folder legacy) | **sustained — findings emailed** | Rename pattern retired; see guides/02 |
 | 1 | **ptax4975** | **sustained** | 58 tests; 7 pages + try.html; Kill A + 3 fences |
 | 1 | **oshamult** | **sustained** | 56 tests; 7 pages + try.html; Kill A honesty |
@@ -33,7 +33,7 @@ See `docs/DEPTH_RESTART.md` (Correction 6).
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| **Filing Penalty Desk** | **building (crud done)** | Catalog/detail/honesty live; workflow next; never brand `irc6651` |
+| **Filing Penalty Desk** | **sustained — email blocked** | Digest drafted; restore Resend before next product |
 | **c1592** | **sustained** | Display: Customs Penalty Forecast; findings emailed |
 | esrp4980h | seed (log only) | § 4980H ESRP; parked behind irc6651 (depth > width) |
 | lesserof | **sustained** | Product complete |
