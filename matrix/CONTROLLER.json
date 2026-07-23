@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T18:15:00.000Z",
+  "updated_at": "2026-07-23T18:03:05.461Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,9 +11,9 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "92d8e9a2-100d-42be-afec-a2c7efc80085",
-    "last_idea_validated_email_id": "9fd472ff-b0e0-4de9-9bc0-a272f7de328c",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "eb1af0a8-39d0-452a-b30c-96ef1623aee7",
+    "last_idea_validated_email_id": "d966308b-aba3-4d46-af99-08d3b71bec38",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
@@ -21,7 +21,7 @@
   "paused": false,
   "active_cell": null,
   "schema_version": "1.0.0",
-  "idle_reason": "heart-rhythm-desk sustain green; product_complete email pending (not sent this tick)",
+  "idle_reason": null,
   "product_defaults": {
     "persistence": "sqlite",
     "stack": "nextjs-app-router",
@@ -29,7 +29,11 @@
     "styling": "tailwindcss",
     "framework": "nextjs",
     "language": "typescript",
-    "test_runner": "vitest-and-playwright",
+    "python": "allowed-when-needed",
+    "python_layout": "projects/<slug>/python",
+    "python_serve": "fastapi-uvicorn-sidecar",
+    "dev_orchestration": "npm-run-dev-starts-web-and-python",
+    "test_runner": "vitest-playwright-and-pytest",
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token",
     "stack_protocol": "docs/PRODUCT_STACK.md",
@@ -37,13 +41,13 @@
   },
   "last_completed": "A03__P-sustain-001__heart-rhythm-desk__r1",
   "last_error": null,
-  "current_product": "heart-rhythm-desk",
-  "current_idea": "heart-rhythm-desk",
+  "current_product": "pathology-vision-desk",
+  "current_idea": "pathology-vision-desk",
   "next_research_idea": null,
-  "next_cell": null,
+  "next_cell": "A03__P-crud-001__pathology-vision-desk__r1",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "Heart Rhythm Desk sustain green on Next+shadcn; DESIGN+guide+try shipped; product_complete_pending=true; do not pick next; do not email this tick.",
+  "notes": "Pathology Vision Desk smoke green; idea email sent; climbing Next+shadcn+designer (Python OK).",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -56,10 +60,10 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.14613",
-      "slug": "heart-rhythm-desk",
-      "displayName": "Heart Rhythm Desk",
-      "at": "2026-07-23T17:48:18.983Z"
+      "paperId": "2607.09526",
+      "slug": "pathology-vision-desk",
+      "displayName": "Pathology Vision Desk",
+      "at": "2026-07-23T18:03:05.460Z"
     }
   },
   "depth_policy": {
