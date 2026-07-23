@@ -38,10 +38,10 @@
 - Dual-impl A/B stable on toys
 - Cell `A03__P-scale-001__c1592__r1`
 
-## Sustain (product complete — email pending)
+## Sustain (product complete)
 
 - **59** tests; **7** live pages (catalog, detail, batch, audit, settings, goldens, honesty)
 - Offline `projects/c1592/try.html`
 - Kill A in digests: statutory-max ceiling experiment — not CBP / counsel replacement
 - Cell `A03__P-sustain-001__c1592__r1`
-- CONTROLLER `notify.product_complete_pending: true` — findings email before next product
+- Findings email sent (Resend `965db748-44f1-4364-913a-31960838af89`); product slot cleared → research `irc6651`

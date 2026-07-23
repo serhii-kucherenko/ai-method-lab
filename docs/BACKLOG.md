@@ -12,7 +12,7 @@ See `docs/DEPTH_RESTART.md` (Correction 5).
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **c1592** | **sustained — findings email pending** | 59 tests; 7 pages + try.html; Kill A honesty |
+| 1 | **c1592** | **sustained — findings emailed** | 59 tests; 7 pages + try.html; Kill A honesty |
 | 1 | **ptax4975** | **sustained** | 58 tests; 7 pages + try.html; Kill A + 3 fences |
 | 1 | **oshamult** | **sustained** | 56 tests; 7 pages + try.html; Kill A honesty |
 | 1 | **lesserof** | **sustained** | 11 pages + goldens + try.html; 60 tests; Kill A honesty |
@@ -32,7 +32,7 @@ See `docs/DEPTH_RESTART.md` (Correction 5).
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| **c1592** | **sustained (email pending)** | 59 tests; 7 pages + try.html; send findings before next product |
+| **c1592** | **sustained** | Findings email sent; research moved to irc6651 |
 | **irc6651** | **adversarial (research-only)** | Next after c1592; § 6651 FTF+FTP+(c)(1) stack; Kill A/B/C started; **not** ready_to_build; no projects/ |
 | esrp4980h | seed (log only) | § 4980H ESRP; parked behind irc6651 (depth > width) |
 | lesserof | **sustained** | Product complete |
@@ -48,4 +48,4 @@ Noun-swap FSMs, dual-signer + ceiling/floor/days templates, calendar-day waits p
 
 **2026-07-23 kill pass** (`docs/ideas/SEED_KILL_PASS_2026-07-23.md`): refundgap, epapound, excise4971, slotbay, counselgate, penmaxfda (killed); form222clock (soft park). Do not revive as “next product.”
 
-**Next research (after c1592 findings email):** `irc6651` — adversarial only; not ready_to_build.
+**Next research (active):** `irc6651` — adversarial only; not ready_to_build.

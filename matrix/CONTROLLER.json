@@ -1,11 +1,12 @@
 {
-  "updated_at": "2026-07-23T06:05:00Z",
+  "updated_at": "2026-07-23T06:15:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
     "on": ["phase_complete", "product_complete", "hard_stop", "digest"],
     "enabled": true,
-    "product_complete_pending": true
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "965db748-44f1-4364-913a-31960838af89"
   },
   "paused": false,
   "active_cell": null,
@@ -20,12 +21,13 @@
   },
   "last_completed": "A03__P-sustain-001__c1592__r1",
   "last_error": null,
-  "current_product": "c1592",
-  "current_idea": null,
+  "current_product": null,
+  "current_idea": "irc6651",
+  "next_research_idea": "irc6651",
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "running",
-  "notes": "c1592 sustain GREEN (59 tests, 7 pages, try.html). product_complete_pending=true — send findings email before clearing product slot or starting next product. Research candidate irc6651 remains adversarial only.",
+  "phase": "research",
+  "notes": "c1592 product-complete email sent (Resend 965db748). Slot cleared. Research active on irc6651 (adversarial) — deepen only; no projects/ until ready_to_build + PM go. Loop pid 3032.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -35,9 +37,9 @@
     "block_isomorphic_dual_gate": true,
     "block_same_day_research_to_build": false,
     "min_hours_research_before_ready": 4,
-    "framing_started_at": "2026-07-22T18:55:00.000Z",
+    "framing_started_at": "2026-07-23T05:35:00.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 14,
+    "research_ticks_on_idea": 1,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "require_pm_go": true,
@@ -62,6 +64,6 @@
     "pid": 3032,
     "chain": "finish_product_email_then_research",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 0
+    "ticks_observed": 1
   }
 }

@@ -2,6 +2,12 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — c1592 finished + findings emailed; research → irc6651
+
+Delivery sustain GREEN (59 tests, 7 pages, try.html). Product-complete digest emailed (try page + StackBlitz). CONTROLLER cleared product slot; `phase: research`, `current_idea: irc6651` (adversarial — deepen only, not ready_to_build).
+
+**Skeptical one-liner:** Email closed the product gate; the next idea still has to survive hours + kill rounds before any roadmap go.
+
 ## 2026-07-23 — Researcher: irc6651 seed (next after c1592)
 
 Correction 5 parallel research while **c1592** builds. Docs only — **no** `projects/`, **no** `ready_to_build`, **no** second product flip.
