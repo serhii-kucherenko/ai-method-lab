@@ -1,0 +1,17 @@
+{
+  "id": "std-026",
+  "title": "capacity 9 default catalog",
+  "input": {
+    "capacity": 9
+  },
+  "expect": {
+    "status": "ok",
+    "capacity": 9,
+    "naive_risk": 710,
+    "safer_risk": 0,
+    "delta_score": 710,
+    "naive_utility": 52,
+    "constrained_utility": 41,
+    "naive_violations": 7
+  }
+}

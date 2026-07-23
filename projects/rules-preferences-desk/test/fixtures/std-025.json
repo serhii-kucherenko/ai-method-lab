@@ -1,0 +1,18 @@
+{
+  "id": "std-025",
+  "title": "high utility banned still rejected",
+  "input": {
+    "capacity": 4,
+    "items": "banned-gold:1:100:B|ok:2:5|ok2:1:4"
+  },
+  "expect": {
+    "status": "ok",
+    "capacity": 4,
+    "naive_risk": 110,
+    "safer_risk": 0,
+    "delta_score": 110,
+    "naive_utility": 109,
+    "constrained_utility": 9,
+    "naive_violations": 1
+  }
+}

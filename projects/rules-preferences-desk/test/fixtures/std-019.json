@@ -1,0 +1,17 @@
+{
+  "id": "std-019",
+  "title": "tiny capacity forces sparse",
+  "input": {
+    "capacity": 2
+  },
+  "expect": {
+    "status": "ok",
+    "capacity": 2,
+    "naive_risk": 210,
+    "safer_risk": 0,
+    "delta_score": 210,
+    "naive_utility": 30,
+    "constrained_utility": 19,
+    "naive_violations": 2
+  }
+}

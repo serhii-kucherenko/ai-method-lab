@@ -1,0 +1,17 @@
+{
+  "id": "std-018",
+  "title": "large capacity takes more",
+  "input": {
+    "capacity": 20
+  },
+  "expect": {
+    "status": "ok",
+    "capacity": 20,
+    "naive_risk": 110,
+    "safer_risk": 0,
+    "delta_score": 110,
+    "naive_utility": 52,
+    "constrained_utility": 46,
+    "naive_violations": 1
+  }
+}

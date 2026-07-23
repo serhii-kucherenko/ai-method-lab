@@ -1,0 +1,12 @@
+{
+  "id": "std-014",
+  "title": "preference cheat reject",
+  "input": {
+    "preference_cheat": true,
+    "capacity": 8
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "preference_cheat"
+  }
+}

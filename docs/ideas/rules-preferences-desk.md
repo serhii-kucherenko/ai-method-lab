@@ -1,6 +1,6 @@
 # Rules Preferences Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (sustain green)  
 **Slug:** `rules-preferences-desk`  
 **Display name:** Rules Preferences Desk  
 **Paper id:** `2607.15562`  

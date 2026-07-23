@@ -15,8 +15,17 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 08 | [Virulence Feature Desk — what we learned](08-virulence-feature-desk-lessons.md) | Product `virulence-feature-desk` |
 | 09 | [Heart Rhythm Desk — what we learned](09-heart-rhythm-desk-lessons.md) | Product `heart-rhythm-desk` (first Next + shadcn) |
 | 10 | [Pathology Vision Desk — what we learned](10-pathology-vision-desk-lessons.md) | Product `pathology-vision-desk` |
+| 11 | [Realtime Deploy Desk — what we learned](11-realtime-deploy-desk-lessons.md) | Product `realtime-deploy-desk` |
+| 12 | [Secure Tutor Desk — what we learned](12-secure-tutor-desk-lessons.md) | Product `secure-tutor-desk` |
+| 13 | [Agent Safety Desk — what we learned](13-agent-safety-desk-lessons.md) | Product `agent-safety-desk` |
+| 14 | [Enterprise Agent Desk — what we learned](14-enterprise-agent-desk-lessons.md) | Product `enterprise-agent-desk` |
+| 15 | [Ladder Logic Desk — what we learned](15-ladder-logic-desk-lessons.md) | Product `ladder-logic-desk` |
+| 16 | [Data Science Desk — what we learned](16-data-science-desk-lessons.md) | Product `data-science-desk` |
+| 17 | [Security Control Desk — what we learned](17-security-control-desk-lessons.md) | Product `security-control-desk` |
+| 18 | [Rules Preferences Desk — what we learned](18-rules-preferences-desk-lessons.md) | Product `rules-preferences-desk` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
+
 ### Scoring notes
 
 | Product | Note |

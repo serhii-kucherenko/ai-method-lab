@@ -1,0 +1,17 @@
+{
+  "id": "std-005",
+  "title": "capacity 0 clamped",
+  "input": {
+    "capacity": 0
+  },
+  "expect": {
+    "status": "ok",
+    "capacity": 1,
+    "naive_risk": 110,
+    "safer_risk": 0,
+    "delta_score": 110,
+    "naive_utility": 19,
+    "constrained_utility": 10,
+    "naive_violations": 1
+  }
+}

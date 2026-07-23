@@ -1,0 +1,18 @@
+{
+  "id": "std-016",
+  "title": "winter heavy coat",
+  "input": {
+    "capacity": 7,
+    "items": "coat:5:9|gloves:1:6|hat:1:5|scarf:1:4|passport:1:10"
+  },
+  "expect": {
+    "status": "ok",
+    "capacity": 7,
+    "naive_risk": 210,
+    "safer_risk": 0,
+    "delta_score": 210,
+    "naive_utility": 34,
+    "constrained_utility": 25,
+    "naive_violations": 2
+  }
+}

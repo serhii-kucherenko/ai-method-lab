@@ -1,0 +1,15 @@
+{
+  "id": "std-001",
+  "title": "default catalog capacity 8",
+  "input": {},
+  "expect": {
+    "status": "ok",
+    "capacity": 8,
+    "naive_risk": 810,
+    "safer_risk": 0,
+    "delta_score": 810,
+    "naive_utility": 52,
+    "constrained_utility": 38,
+    "naive_violations": 8
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "std-020",
+  "title": "equal utilities stable tie-break",
+  "input": {
+    "capacity": 4,
+    "items": "a:2:5|b:2:5|c:2:5|d:1:1"
+  },
+  "expect": {
+    "status": "ok",
+    "capacity": 4,
+    "naive_risk": 310,
+    "safer_risk": 0,
+    "delta_score": 310,
+    "naive_utility": 16,
+    "constrained_utility": 10,
+    "naive_violations": 3
+  }
+}
