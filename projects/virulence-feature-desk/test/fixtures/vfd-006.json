@@ -1,0 +1,13 @@
+{
+  "id": "vfd-006",
+  "title": "missing fit → 1",
+  "input": {},
+  "expect": {
+    "status": "ok",
+    "fit_steps": 1,
+    "matched_tags": 0,
+    "naive_fit": 1,
+    "virulence_fit": 3,
+    "delta_risk": 2
+  }
+}

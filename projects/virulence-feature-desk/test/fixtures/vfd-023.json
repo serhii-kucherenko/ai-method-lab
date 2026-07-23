@@ -1,0 +1,15 @@
+{
+  "id": "vfd-023",
+  "title": "fit 7",
+  "input": {
+    "fit_depth": 7
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 7,
+    "matched_tags": 0,
+    "naive_fit": 1,
+    "virulence_fit": 15,
+    "delta_risk": 14
+  }
+}

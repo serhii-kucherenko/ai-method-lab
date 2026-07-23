@@ -12,6 +12,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 05 | [Model Compiler Desk — what we learned](05-model-compiler-desk-lessons.md) | Product `model-compiler-desk` |
 | 06 | [Graph Retrieval Desk — what we learned](06-graph-retrieval-desk-lessons.md) | Product `graph-retrieval-desk` |
 | 07 | [Drug Discovery Desk — what we learned](07-drug-discovery-desk-lessons.md) | Product `drug-discovery-desk` |
+| 08 | [Virulence Feature Desk — what we learned](08-virulence-feature-desk-lessons.md) | Product `virulence-feature-desk` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 ### Scoring notes

@@ -8,4 +8,4 @@ Active Method Lab products (papers-driven intake).
 | Model Compiler Desk | 2607.15865 | Complete |
 | Graph Retrieval Desk | 2607.11683 | Complete |
 | Drug Discovery Desk | 2607.08404 | Complete |
-| Virulence Feature Desk | 10.1186/s40168-026-02467-w | Smoke / building |
+| Virulence Feature Desk | 10.1186/s40168-026-02467-w | Sustain green |

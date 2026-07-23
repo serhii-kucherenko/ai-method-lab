@@ -1,0 +1,16 @@
+{
+  "id": "vfd-026",
+  "title": "mixed separators",
+  "input": {
+    "structural_tags": "pocket,motif|beta>sheet",
+    "evolutionary_tags": "motif|sheet"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 3,
+    "matched_tags": 2,
+    "naive_fit": 1,
+    "virulence_fit": 7,
+    "delta_risk": 6
+  }
+}

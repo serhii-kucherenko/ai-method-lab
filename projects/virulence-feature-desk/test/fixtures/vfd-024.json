@@ -1,0 +1,12 @@
+{
+  "id": "vfd-024",
+  "title": "sequence-only cheat reject",
+  "input": {
+    "fit_depth": 3,
+    "sequence_only_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "sequence_only_cheat"
+  }
+}

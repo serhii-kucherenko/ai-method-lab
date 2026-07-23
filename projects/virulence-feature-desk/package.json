@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "lint": "tsc --noEmit",
-    "test": "tsx --test test/smoke.test.ts",
-    "start": "tsx src/server.ts"
+    "test": "tsx --test test/smoke.test.ts test/crud.test.ts test/workflow.test.ts test/integrate.test.ts test/scale.test.ts test/sustain.test.ts test/sustain-matrix.test.ts test/ui-critical.test.ts",
+    "start": "tsx src/server.ts",
+    "gen:goldens": "node scripts/gen-goldens.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.15.0",

@@ -1,6 +1,6 @@
 ﻿# Virulence Feature Desk
 
-**State:** building (paper-sourced)  
+**State:** sustain (paper-sourced)  
 **Slug:** `virulence-feature-desk`  
 **Paper id:** `10.1186/s40168-026-02467-w`  
 **Paper:** https://doi.org/10.1186/s40168-026-02467-w  
@@ -8,9 +8,8 @@
 
 ## Build claim
 
-SEVA advances the field of bioinformatics by integrating protein language models with structural and evolutionary features, providing a more accurate and robust method for predicting virulence factors and antibiotic resistance genes than previous tools.
+Structural and evolutionary feature integration improves prediction of virulence factors and antibiotic resistance genes versus sequence-only baselines.
 
 ## Honesty
 
-Workflow experiment inspired by the paper â€” not a claim to replace the authorsâ€™ system or commercial vendors.
-
+Workflow experiment inspired by the paper — not a claim to replace the authors' system or a clinical diagnostic.

@@ -1,0 +1,16 @@
+{
+  "id": "vfd-011",
+  "title": "partial overlap two",
+  "input": {
+    "structural_tags": "pocket|toxin",
+    "evolutionary_tags": "pocket|resistance"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 2,
+    "matched_tags": 1,
+    "naive_fit": 1,
+    "virulence_fit": 5,
+    "delta_risk": 4
+  }
+}

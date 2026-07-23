@@ -1,0 +1,16 @@
+{
+  "id": "vfd-016",
+  "title": "duplicate empties ignored",
+  "input": {
+    "structural_tags": "pocket,,motif",
+    "evolutionary_tags": "pocket,,motif"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 3,
+    "matched_tags": 2,
+    "naive_fit": 1,
+    "virulence_fit": 7,
+    "delta_risk": 6
+  }
+}

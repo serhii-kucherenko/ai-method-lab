@@ -1,0 +1,16 @@
+{
+  "id": "vfd-017",
+  "title": "four structural one match",
+  "input": {
+    "structural_tags": "a,b,c,d",
+    "evolutionary_tags": "c,x"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 2,
+    "matched_tags": 1,
+    "naive_fit": 1,
+    "virulence_fit": 5,
+    "delta_risk": 4
+  }
+}
