@@ -15,4 +15,5 @@
 | Enterprise Agent Desk | 2607.17331 | Complete |
 | Ladder Logic Desk | 2607.08417 | Complete |
 | Data Science Desk | 2607.15901 | Complete |
-| Security Control Desk | 2607.09076 | Sustain green (product_complete pending) |
+| Security Control Desk | 2607.09076 | Complete |
+| Rules Preferences Desk | 2607.15562 | Building |

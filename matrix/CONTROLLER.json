@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T19:10:46.633Z",
+  "updated_at": "2026-07-23T19:12:12.397Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,9 +11,9 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
+    "product_complete_pending": false,
     "last_product_complete_email_id": "680b832d-69f8-4970-8cd8-7ecf9a2b95a7",
-    "last_idea_validated_email_id": "41992916-27e6-4d14-9d36-9651edb49d4a",
+    "last_idea_validated_email_id": "63d1920d-08c6-42a6-8b0e-b4f220e65bef",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
@@ -41,13 +41,13 @@
   },
   "last_completed": "A03__P-sustain-001__security-control-desk__r1",
   "last_error": null,
-  "current_product": "security-control-desk",
-  "current_idea": "security-control-desk",
+  "current_product": "rules-preferences-desk",
+  "current_idea": "rules-preferences-desk",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
   "phase": "running",
-  "notes": "Security Control Desk sustain green. product_complete pending (no email this tick). Keep current_product.",
+  "notes": "Security Control Desk finish email already sent. Started Rules Preferences Desk (paper 2607.15562) — climbing smoke→sustain.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -61,9 +61,9 @@
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
       "paperId": "2607.15562",
-      "slug": "hard-rules-soft",
-      "displayName": "Hard Rules Soft",
-      "at": "2026-07-23T19:10:12.602Z"
+      "slug": "rules-preferences-desk",
+      "displayName": "Rules Preferences Desk",
+      "at": "2026-07-23T19:12:06.718Z"
     }
   },
   "depth_policy": {
