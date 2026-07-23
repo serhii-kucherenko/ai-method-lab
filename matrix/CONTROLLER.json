@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T17:20:59.532Z",
+  "updated_at": "2026-07-23T17:21:19.261Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -96,6 +96,6 @@
     "pid": 8552,
     "chain": "pick_build_guide_email_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 3
+    "ticks_observed": 4
   }
 }
