@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Filing Penalty Desk — returns catalog</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 2rem 1.25rem;
+        max-width: 40rem;
+        margin-inline: auto;
+        color: #1a2228;
+        background: #eef2f4;
+      }
+      #list { white-space: pre-wrap; font-family: ui-monospace, monospace; font-size: 0.85rem; }
+      a { color: #1f5f6b; }
+    </style>
+  </head>
+  <body data-catalog="live">
+    <h1>Returns catalog</h1>
+    <p>Lists org-scoped return timelines. Uses Bearer token from localStorage.</p>
+    <p>
+      <a href="/honesty.html">Honesty</a> ·
+      <a href="/timeline-detail.html">Detail</a>
+    </p>
+    <pre id="list">Loading…</pre>
+    <script>
+      const token = localStorage.getItem("fpd_token") || "";
+      const orgId = localStorage.getItem("fpd_org") || "";
+      const el = document.getElementById("list");
+      if (!token || !orgId) {
+        el.textContent = "Set fpd_token and fpd_org in localStorage, then reload.";
+      } else {
+        fetch("/orgs/" + orgId + "/timelines", {
+          headers: { authorization: "Bearer " + token },
+        })
+          .then((r) => r.json())
+          .then((j) => {
+            el.textContent = JSON.stringify(j, null, 2);
+          })
+          .catch((e) => {
+            el.textContent = String(e);
+          });
+      }
+    </script>
+  </body>
+</html>

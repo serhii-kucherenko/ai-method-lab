@@ -12,7 +12,7 @@ See `docs/DEPTH_RESTART.md` (Correction 6).
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **Filing Penalty Desk** (`filing-penalty-desk`) | **smoke green → crud** | 27 tests; 25 dual goldens; never brand irc6651 |
+| 1 | **Filing Penalty Desk** (`filing-penalty-desk`) | **crud green → workflow** | 28 tests; 3 pages; never brand irc6651 |
 | 1 | **Customs Penalty Forecast** (`c1592` folder legacy) | **sustained — findings emailed** | Rename pattern retired; see guides/02 |
 | 1 | **ptax4975** | **sustained** | 58 tests; 7 pages + try.html; Kill A + 3 fences |
 | 1 | **oshamult** | **sustained** | 56 tests; 7 pages + try.html; Kill A honesty |
@@ -33,7 +33,7 @@ See `docs/DEPTH_RESTART.md` (Correction 6).
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| **Filing Penalty Desk** | **building (smoke done)** | Product open; crud next; never brand `irc6651` |
+| **Filing Penalty Desk** | **building (crud done)** | Catalog/detail/honesty live; workflow next; never brand `irc6651` |
 | **c1592** | **sustained** | Display: Customs Penalty Forecast; findings emailed |
 | esrp4980h | seed (log only) | § 4980H ESRP; parked behind irc6651 (depth > width) |
 | lesserof | **sustained** | Product complete |
@@ -49,4 +49,4 @@ Noun-swap FSMs, dual-signer + ceiling/floor/days templates, calendar-day waits p
 
 **2026-07-23 kill pass** (`docs/ideas/SEED_KILL_PASS_2026-07-23.md`): refundgap, epapound, excise4971, slotbay, counselgate, penmaxfda (killed); form222clock (soft park). Do not revive as “next product.”
 
-**Active build:** **Filing Penalty Desk** (`projects/filing-penalty-desk/`) — smoke GREEN; **crud** next.
+**Active build:** **Filing Penalty Desk** (`projects/filing-penalty-desk/`) — crud GREEN; **workflow** next.

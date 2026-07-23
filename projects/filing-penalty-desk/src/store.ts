@@ -168,6 +168,112 @@ export function getTimeline(store: Store, orgId: string, id: string) {
   return publicTimeline(t);
 }
 
+export function listTimelines(
+  store: Store,
+  orgId: string,
+  opts: { limit?: number; offset?: number; q?: string } = {},
+) {
+  const q = (opts.q ?? "").trim().toLowerCase();
+  const all = [...store.timelines.values()]
+    .filter((t) => t.org_id === orgId)
+    .filter((t) => !q || t.label.toLowerCase().includes(q))
+    .sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
+  const total = all.length;
+  const offset = Math.max(opts.offset ?? 0, 0);
+  const limit =
+    opts.limit !== undefined ? Math.min(Math.max(opts.limit, 1), 100) : 20;
+  return {
+    timelines: all.slice(offset, offset + limit).map(publicTimeline),
+    total,
+    limit,
+    offset,
+  };
+}
+
+export function addMember(
+  store: Store,
+  orgId: string,
+  userId: string,
+  role: OrgRole,
+): { ok: true } | { ok: false; error: string } {
+  if (!getOrg(store, orgId)) return { ok: false, error: "org_not_found" };
+  if (!store.users.get(userId)) return { ok: false, error: "user_not_found" };
+  store.members.set(memberKey(orgId, userId), role);
+  return { ok: true };
+}
+
+export function patchTimeline(
+  store: Store,
+  orgId: string,
+  timelineId: string,
+  patch: Partial<TimelineCreate>,
+) {
+  const existing = store.timelines.get(timelineId);
+  if (!existing || existing.org_id !== orgId) return null;
+  const next: ReturnTimeline = {
+    ...existing,
+    label: patch.label !== undefined ? String(patch.label) : existing.label,
+    net_amount_due:
+      patch.net_amount_due !== undefined
+        ? Number(patch.net_amount_due)
+        : existing.net_amount_due,
+    unpaid_by_month:
+      patch.unpaid_by_month !== undefined
+        ? patch.unpaid_by_month.map(Number)
+        : existing.unpaid_by_month,
+    unfiled_months:
+      patch.unfiled_months !== undefined
+        ? Number(patch.unfiled_months)
+        : existing.unfiled_months,
+    levy_bump_after_month:
+      patch.levy_bump_after_month !== undefined
+        ? patch.levy_bump_after_month === null
+          ? null
+          : Number(patch.levy_bump_after_month)
+        : existing.levy_bump_after_month,
+    min_floor:
+      patch.min_floor !== undefined ? Number(patch.min_floor) : existing.min_floor,
+    apply_minimum:
+      patch.apply_minimum !== undefined
+        ? patch.apply_minimum === true
+        : existing.apply_minimum,
+    flat_55_cheat:
+      patch.flat_55_cheat !== undefined
+        ? patch.flat_55_cheat === true
+        : existing.flat_55_cheat,
+    dual_approver_cheat:
+      patch.dual_approver_cheat !== undefined
+        ? patch.dual_approver_cheat === true
+        : existing.dual_approver_cheat,
+    interest_as_penalty:
+      patch.interest_as_penalty !== undefined
+        ? patch.interest_as_penalty === true
+        : existing.interest_as_penalty,
+    installment_025_silent:
+      patch.installment_025_silent !== undefined
+        ? patch.installment_025_silent === true
+        : existing.installment_025_silent,
+    partnership_6698_cheat:
+      patch.partnership_6698_cheat !== undefined
+        ? patch.partnership_6698_cheat === true
+        : existing.partnership_6698_cheat,
+    scorp_6699_cheat:
+      patch.scorp_6699_cheat !== undefined
+        ? patch.scorp_6699_cheat === true
+        : existing.scorp_6699_cheat,
+    c1_after_ftf_cap_cheat:
+      patch.c1_after_ftf_cap_cheat !== undefined
+        ? patch.c1_after_ftf_cap_cheat === true
+        : existing.c1_after_ftf_cap_cheat,
+    min_undercut_cheat:
+      patch.min_undercut_cheat !== undefined
+        ? patch.min_undercut_cheat === true
+        : existing.min_undercut_cheat,
+  };
+  store.timelines.set(timelineId, next);
+  return publicTimeline(next);
+}
+
 function toInput(t: ReturnTimeline): ForecastInput {
   return {
     net_amount_due: t.net_amount_due,

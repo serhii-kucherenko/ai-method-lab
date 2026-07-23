@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T14:55:00Z",
+  "updated_at": "2026-07-23T15:10:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -19,15 +19,15 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-smoke-001__filing-penalty-desk__r1",
+  "last_completed": "A03__P-crud-001__filing-penalty-desk__r1",
   "last_error": null,
   "current_product": "filing-penalty-desk",
   "current_idea": "filing-penalty-desk",
   "next_research_idea": null,
-  "next_cell": "A03__P-crud-001__filing-penalty-desk__r1",
+  "next_cell": "A03__P-workflow-001__filing-penalty-desk__r1",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "Filing Penalty Desk smoke GREEN (27 tests, 25 dual goldens). Next: crud. Never brand irc6651. Loop pid 34852.",
+  "notes": "Filing Penalty Desk crud GREEN (28 tests, 3 pages). Next: workflow. Never brand irc6651. Loop pid 34852.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,

@@ -2,6 +2,11 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-23 — Filing Penalty Desk crud GREEN
+
+- Catalog, timeline detail, honesty pages; auditor RBAC; **28** tests
+- Cell `A03__P-crud-001__filing-penalty-desk__r1`; next **workflow**
+
 ## 2026-07-23 — Filing Penalty Desk smoke GREEN
 
 - Opened `projects/filing-penalty-desk/`; display name **Filing Penalty Desk** (not statute-code brand)

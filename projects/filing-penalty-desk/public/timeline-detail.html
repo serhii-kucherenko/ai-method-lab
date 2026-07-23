@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Filing Penalty Desk — timeline detail</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 2rem 1.25rem;
+        max-width: 40rem;
+        margin-inline: auto;
+        color: #1a2228;
+        background: #eef2f4;
+      }
+      label { display: block; margin: 0.5rem 0 0.15rem; font-size: 0.9rem; }
+      input { width: 100%; box-sizing: border-box; padding: 0.4rem; }
+      button {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background: #1f5f6b;
+        color: #fff;
+        border: 0;
+        cursor: pointer;
+      }
+      #result { white-space: pre-wrap; font-family: ui-monospace, monospace; font-size: 0.85rem; }
+      a { color: #1f5f6b; }
+    </style>
+  </head>
+  <body data-detail="live">
+    <h1>Timeline detail</h1>
+    <p>Edit return facts and run the statutory addition forecast (separate FTF / FTP).</p>
+    <p>
+      <a href="/returns.html">Catalog</a> ·
+      <a href="/honesty.html">Honesty</a>
+    </p>
+    <label>Timeline id</label>
+    <input id="timeline-id" />
+    <label>Net amount due</label>
+    <input id="net" type="number" />
+    <label>Unpaid by month (comma-separated)</label>
+    <input id="unpaid" />
+    <label>Unfiled months</label>
+    <input id="unfiled" type="number" />
+    <button id="run-forecast" type="button">Run forecast</button>
+    <pre id="result">ftf / ftp / branch appear here</pre>
+    <script>
+      const token = localStorage.getItem("fpd_token") || "";
+      const orgId = localStorage.getItem("fpd_org") || "";
+      document.getElementById("run-forecast").addEventListener("click", async () => {
+        const timelineId = document.getElementById("timeline-id").value.trim();
+        const unpaidRaw = document.getElementById("unpaid").value.trim();
+        const unpaid = unpaidRaw
+          ? unpaidRaw.split(",").map((s) => Number(s.trim()))
+          : [];
+        const patchBody = {
+          net_amount_due: Number(document.getElementById("net").value),
+          unpaid_by_month: unpaid,
+          unfiled_months: Number(document.getElementById("unfiled").value),
+        };
+        await fetch("/orgs/" + orgId + "/timelines/" + timelineId, {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+            authorization: "Bearer " + token,
+          },
+          body: JSON.stringify(patchBody),
+        });
+        const res = await fetch(
+          "/orgs/" + orgId + "/timelines/" + timelineId + "/forecast",
+          {
+            method: "POST",
+            headers: { authorization: "Bearer " + token },
+          },
+        );
+        const j = await res.json();
+        document.getElementById("result").textContent = JSON.stringify(j, null, 2);
+      });
+    </script>
+  </body>
+</html>
