@@ -1,21 +1,10 @@
-# Product portfolio
+﻿# Portfolio
 
-Papers-driven lab (reset 2026-07-23). Prior product trees removed — see git history.
+Active Method Lab products (papers-driven intake).
 
-**Intake:** simple-papers digests → implementable filter → pick → build same tick.  
-**Human touch:** email only on validated idea and finished product (plain narrative, no jargon).
-
-## Active
-
-| Display name | Slug | Status | Notes |
-|--------------|------|--------|-------|
-| **Graph Retrieval Desk** | `graph-retrieval-desk` | **sustain GREEN** | Paper `2607.11683` — maturity bar met; product_complete pending |
-| **Model Compiler Desk** | `model-compiler-desk` | **sustained** | Findings emailed |
-| **Filing Penalty Desk** | `filing-penalty-desk` | **sustained** (reference) | Finish letter resent |
-
-## Rules
-
-- Do not invent freehand seeds when digests are available
-- Mature display names only (`docs/PRODUCT_NAMING.md`)
-- Sustain bar: ≥15 features, ≥6 pages, README, tutor guide, try.html, browser playground, plain email
-- No human confirmation between pick and finish
+| Product | Paper | Status |
+|---------|-------|--------|
+| Filing Penalty Desk | (prior) | Complete |
+| Model Compiler Desk | 2607.15865 | Complete |
+| Graph Retrieval Desk | 2607.11683 | Complete |
+| Drug Discovery Desk | 2607.08404 | Smoke / building |
