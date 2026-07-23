@@ -1,4 +1,4 @@
-﻿# Portfolio
+# Portfolio
 
 | Product | Paper | Status |
 |---------|-------|--------|
@@ -8,4 +8,5 @@
 | Drug Discovery Desk | 2607.08404 | Complete |
 | Virulence Feature Desk | 10.1186/s40168-026-02467-w | Complete |
 | Heart Rhythm Desk | 2607.14613 | Complete |
-| Pathology Vision Desk | 2607.09526 | Sustain green (Next + Tailwind + shadcn) |
+| Pathology Vision Desk | 2607.09526 | Complete |
+| Realtime Deploy Desk | 2607.18171 | Smoke / building (Next + design) |
