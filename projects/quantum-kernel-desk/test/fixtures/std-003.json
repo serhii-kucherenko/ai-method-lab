@@ -1,0 +1,18 @@
+{
+  "id": "std-003",
+  "title": "Kinase assay series",
+  "input": {
+    "corpus": "tka",
+    "min_n": 30
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "tka",
+    "naive_risk": 98.74,
+    "safer_risk": 1.2,
+    "delta_score": 97.54,
+    "min_n": 30,
+    "k_eligible": 8,
+    "i2": 17.67
+  }
+}

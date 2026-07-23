@@ -1,0 +1,18 @@
+{
+  "id": "std-005",
+  "title": "GPCR assay series",
+  "input": {
+    "corpus": "acl",
+    "min_n": 60
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "acl",
+    "naive_risk": 112.49,
+    "safer_risk": 4.2,
+    "delta_score": 108.29,
+    "min_n": 60,
+    "k_eligible": 4,
+    "i2": 24
+  }
+}

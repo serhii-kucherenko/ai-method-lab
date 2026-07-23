@@ -32,6 +32,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 25 | [Wild Locomotion Desk — what we learned](25-wild-locomotion-desk-lessons.md) | Product `wild-locomotion-desk` |
 | 26 | [Joint Care Desk — what we learned](26-joint-care-desk-lessons.md) | Product `joint-care-desk` |
 | 27 | [Pocket Molecule Desk — what we learned](27-pocket-molecule-desk-lessons.md) | Product `pocket-molecule-desk` |
+| 28 | [Quantum Kernel Desk — what we learned](28-quantum-kernel-desk-lessons.md) | Product `quantum-kernel-desk` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 

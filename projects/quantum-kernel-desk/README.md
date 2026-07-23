@@ -1,31 +1,33 @@
 # Quantum Kernel Desk
 
-Method-lab product sourced from a simple-papers digest.
-
-## Paper
-
-- **Id:** 2607.11701
-- **Title:** $\mathtt{Q^2SAR}$: overcoming classical bottlenecks in drug discovery via quantum multiple kernel learning
-- **URL:** https://arxiv.org/abs/2607.11701v1
-- **Code:** (none — software claim only)
-
-## What we will build
-
-This framework could contribute to the development of autonomous cognitive architectures and self-improving drug discovery pipelines, but its impact on the field depends on further research and validation
+Soft-simulation org desk for **quantum multiple-kernel SAR plans**, inspired by [arXiv:2607.11701](https://arxiv.org/abs/2607.11701v1). Display name is **Quantum Kernel Desk** only — never brand Q²SAR.
 
 ## Run
 
 ```bash
 cd projects/quantum-kernel-desk
 npm install
-npm test
-npm start
+npm run dev          # Next.js UI
+npm run start:api    # optional Node API harness
+npm run test:unit
+npm run test:app-up  # build + next start GET /
 ```
 
-## Status
+Offline demo: open `try.html` in a browser.
 
-Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` and commits `docs/ideas/quantum-kernel-desk-DESIGN.md` before multi-page UI.
+## Claim
 
-## Config hygiene
+**A (good):** quantum multiple-kernel SAR plans — multi-kernel quantum-style feature maps for activity scoring  
+**B (naive):** classical single linear kernel; single RBF-only; feature-blind flat scores
 
-Never write `package.json` with a UTF-8 BOM (Windows PowerShell `Set-Content -Encoding utf8` does). Node fails with `ERR_INVALID_PACKAGE_CONFIG`. Use Node `fs.writeFileSync` or run `node scripts/strip-json-bom.mjs`.
+## Docs
+
+- Product: [`PRODUCT.md`](./PRODUCT.md)
+- Findings: [`FINDINGS.md`](./FINDINGS.md)
+- Design: [`docs/ideas/quantum-kernel-desk-DESIGN.md`](../../docs/ideas/quantum-kernel-desk-DESIGN.md)
+- Lessons: [`docs/guides/28-quantum-kernel-desk-lessons.md`](../../docs/guides/28-quantum-kernel-desk-lessons.md)
+- Dossier: [`docs/ideas/quantum-kernel-desk.md`](../../docs/ideas/quantum-kernel-desk.md)
+
+## Honesty
+
+Method-lab experiment — not a replacement for the authors' Q²SAR pipeline or commercial QSAR / quantum chemistry tools. Authors' code: none published with this paper.

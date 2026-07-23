@@ -1,0 +1,18 @@
+{
+  "id": "std-011",
+  "title": "Transferase series",
+  "input": {
+    "corpus": "revision",
+    "min_n": 50
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "revision",
+    "naive_risk": 81.59,
+    "safer_risk": 4.2,
+    "delta_score": 77.39,
+    "min_n": 50,
+    "k_eligible": 1,
+    "i2": 32.47
+  }
+}

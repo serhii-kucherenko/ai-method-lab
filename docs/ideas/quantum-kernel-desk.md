@@ -1,6 +1,6 @@
 # Quantum Kernel Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (sustain)  
 **Slug:** `quantum-kernel-desk`  
 **Display name:** Quantum Kernel Desk  
 **Paper id:** `2607.11701`  

@@ -26,4 +26,4 @@
 | Wild Locomotion Desk | 2607.13579 | Complete |
 | Joint Care Desk | 2607.12527 | Complete |
 | Pocket Molecule Desk | 2607.12349 | Complete |
-| Quantum Kernel Desk | 2607.11701 | Building |
+| Quantum Kernel Desk | 2607.11701 | Complete |
