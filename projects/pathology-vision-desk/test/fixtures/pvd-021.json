@@ -1,0 +1,13 @@
+{
+  "id": "pvd-021",
+  "title": "cheat with tags still reject",
+  "input": {
+    "expert_tags": "vision",
+    "sample_feature_tags": "vision",
+    "single_view_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "single_view_cheat"
+  }
+}

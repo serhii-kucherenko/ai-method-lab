@@ -2,6 +2,14 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-23 — Pathology Vision Desk sustain GREEN (product complete email pending)
+
+- Ladder to sustain: 9 pages; 18 features; ≥4 aggregates; goldens ≥28 dual-impl; try.html; tutor guide
+- Stack: Next.js + Tailwind + shadcn; DESIGN note on file
+- Honesty: method experiment, not authors' ALICE model, not clinical diagnostic
+- Cell `A03__P-sustain-001__pathology-vision-desk__r1`
+- `product_complete_pending: true` — do **not** send finish email or pick next paper this tick
+
 ## 2026-07-23 — Graph Retrieval Desk scale GREEN
 
 - ≥250 job page walk; concurrent batch safety; 429 Retry-After

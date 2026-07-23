@@ -1,0 +1,16 @@
+{
+  "id": "pvd-010",
+  "title": "full expert overlap",
+  "input": {
+    "expert_tags": "vision,vision-language,slide",
+    "sample_feature_tags": "vision,vision-language,slide"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 4,
+    "matched_tags": 3,
+    "naive_fit": 1,
+    "pathology_fit": 9,
+    "delta_score": 8
+  }
+}

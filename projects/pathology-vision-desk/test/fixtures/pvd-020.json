@@ -1,0 +1,12 @@
+{
+  "id": "pvd-020",
+  "title": "single-view cheat reject",
+  "input": {
+    "fit_depth": 3,
+    "single_view_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "single_view_cheat"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "pvd-012",
+  "title": "angle tag separators",
+  "input": {
+    "expert_tags": "morphology>semantics>wsi",
+    "sample_feature_tags": "morphology>noise"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 2,
+    "matched_tags": 1,
+    "naive_fit": 1,
+    "pathology_fit": 5,
+    "delta_score": 4
+  }
+}

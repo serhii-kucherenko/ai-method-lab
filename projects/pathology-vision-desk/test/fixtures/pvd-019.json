@@ -1,0 +1,16 @@
+{
+  "id": "pvd-019",
+  "title": "case normalize",
+  "input": {
+    "expert_tags": "Vision,SLIDE",
+    "sample_feature_tags": "vision,slide"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 3,
+    "matched_tags": 2,
+    "naive_fit": 1,
+    "pathology_fit": 7,
+    "delta_score": 6
+  }
+}

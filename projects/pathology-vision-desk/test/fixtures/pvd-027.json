@@ -1,0 +1,15 @@
+{
+  "id": "pvd-027",
+  "title": "fit depth 8",
+  "input": {
+    "fit_depth": 8
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 8,
+    "matched_tags": 0,
+    "naive_fit": 1,
+    "pathology_fit": 17,
+    "delta_score": 16
+  }
+}

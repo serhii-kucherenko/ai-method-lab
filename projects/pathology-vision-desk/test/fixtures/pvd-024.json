@@ -1,0 +1,16 @@
+{
+  "id": "pvd-024",
+  "title": "slide-level context",
+  "input": {
+    "expert_tags": "wsi,til,margin",
+    "sample_feature_tags": "wsi,til,margin"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 4,
+    "matched_tags": 3,
+    "naive_fit": 1,
+    "pathology_fit": 9,
+    "delta_score": 8
+  }
+}
