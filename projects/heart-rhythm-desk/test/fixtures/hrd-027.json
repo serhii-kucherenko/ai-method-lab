@@ -1,0 +1,16 @@
+{
+  "id": "hrd-027",
+  "title": "long-tail arrhythmia sketch",
+  "input": {
+    "rare_class_tags": "vtach,fusion,aberrant,artifact",
+    "sample_feature_tags": "fusion,artifact"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 3,
+    "matched_tags": 2,
+    "naive_fit": 1,
+    "rhythm_fit": 7,
+    "delta_score": 6
+  }
+}

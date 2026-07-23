@@ -1,0 +1,12 @@
+{
+  "id": "hrd-024",
+  "title": "majority cheat reject",
+  "input": {
+    "fit_depth": 3,
+    "majority_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "majority_cheat"
+  }
+}

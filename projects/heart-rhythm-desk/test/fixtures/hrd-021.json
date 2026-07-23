@@ -1,0 +1,16 @@
+{
+  "id": "hrd-021",
+  "title": "leading pipe",
+  "input": {
+    "rare_class_tags": "|pvc",
+    "sample_feature_tags": "|pvc"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 2,
+    "matched_tags": 1,
+    "naive_fit": 1,
+    "rhythm_fit": 5,
+    "delta_score": 4
+  }
+}

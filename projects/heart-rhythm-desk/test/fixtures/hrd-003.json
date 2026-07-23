@@ -1,0 +1,15 @@
+{
+  "id": "hrd-003",
+  "title": "fit 3 long-tail path",
+  "input": {
+    "fit_depth": 3
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 3,
+    "matched_tags": 0,
+    "naive_fit": 1,
+    "rhythm_fit": 7,
+    "delta_score": 6
+  }
+}

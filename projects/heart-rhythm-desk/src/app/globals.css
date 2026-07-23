@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  --hrd-ink: #0f2a32;
+  --hrd-muted: #4a6670;
+  --hrd-paper: #f3f7f8;
+  --hrd-mist: #e4eef1;
+  --hrd-teal: #0d7377;
+  --hrd-teal-deep: #095456;
+  --hrd-signal: #c45c26;
+  --hrd-ok: #2f6b4f;
+  --hrd-warn: #9a6b1f;
+  --hrd-line: #c5d4d8;
+
+  --background: var(--hrd-paper);
+  --foreground: var(--hrd-ink);
+  --card: #ffffff;
+  --card-foreground: var(--hrd-ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--hrd-ink);
+  --primary: var(--hrd-teal);
+  --primary-foreground: #f7fcfc;
+  --secondary: var(--hrd-mist);
+  --secondary-foreground: var(--hrd-ink);
+  --muted: var(--hrd-mist);
+  --muted-foreground: var(--hrd-muted);
+  --accent: #d7e8ea;
+  --accent-foreground: var(--hrd-ink);
+  --destructive: var(--hrd-signal);
+  --border: var(--hrd-line);
+  --input: var(--hrd-line);
+  --ring: var(--hrd-teal);
+  --chart-1: var(--hrd-teal);
+  --chart-2: var(--hrd-signal);
+  --chart-3: var(--hrd-ok);
+  --chart-4: #5a8a94;
+  --chart-5: #2a4a52;
+  --radius: 0.5rem;
+  --sidebar: #eef5f6;
+  --sidebar-foreground: var(--hrd-ink);
+  --sidebar-primary: var(--hrd-teal);
+  --sidebar-primary-foreground: #f7fcfc;
+  --sidebar-accent: var(--hrd-mist);
+  --sidebar-accent-foreground: var(--hrd-ink);
+  --sidebar-border: var(--hrd-line);
+  --sidebar-ring: var(--hrd-teal);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 10% -10%, #cfe6e8 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 100% 0%, #e8eef0 0%, transparent 45%),
+      linear-gradient(
+        0deg,
+        transparent 24px,
+        color-mix(in srgb, var(--hrd-line) 35%, transparent) 25px
+      ),
+      linear-gradient(
+        90deg,
+        transparent 24px,
+        color-mix(in srgb, var(--hrd-line) 28%, transparent) 25px
+      );
+    background-size: auto, auto, 25px 25px, 25px 25px;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@keyframes hrd-trace {
+  from {
+    stroke-dashoffset: 420;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hrd-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hrd-trace {
+  stroke-dasharray: 420;
+  animation: hrd-trace 0.8s ease-out forwards;
+}
+
+.hrd-reveal {
+  animation: hrd-reveal 0.2s ease-out forwards;
+}
+
+.hrd-nav-active {
+  position: relative;
+}
+.hrd-nav-active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.2rem;
+  width: 70%;
+  height: 2px;
+  background: var(--hrd-teal);
+  transform: translateX(-50%) scaleX(1);
+  transform-origin: center;
+  transition: transform 150ms ease;
+}

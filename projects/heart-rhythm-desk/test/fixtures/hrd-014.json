@@ -1,0 +1,16 @@
+{
+  "id": "hrd-014",
+  "title": "empty rare tags",
+  "input": {
+    "rare_class_tags": "",
+    "sample_feature_tags": ""
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 1,
+    "matched_tags": 0,
+    "naive_fit": 1,
+    "rhythm_fit": 3,
+    "delta_score": 2
+  }
+}

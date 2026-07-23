@@ -1,6 +1,6 @@
 ﻿# Heart Rhythm Desk
 
-**State:** building (paper-sourced)  
+**State:** sustain green (product_complete email pending)  
 **Slug:** `heart-rhythm-desk`  
 **Paper id:** `2607.14613`  
 **Paper:** https://arxiv.org/abs/2607.14613v1  
@@ -8,9 +8,12 @@
 
 ## Build claim
 
-The AG-SCL framework offers a novel approach to address the long-tailed distribution problem in medical imaging, combining advanced contrastive learning with adaptive label adjustments and tailored data augmentation, which could be adapted for similar challenges in other domains.
+Long-tail-aware rhythm scoring favors rare arrhythmia classes that majority baselines under-weight — desk experiment inspired by the paper, not the authors' trained model.
 
 ## Honesty
 
-Workflow experiment inspired by the paper â€” not a claim to replace the authorsâ€™ system or commercial vendors.
+Workflow experiment inspired by the paper — not a clinical ECG reader; not a claim to replace the authors' system.
 
+## Stack
+
+Next.js App Router + TypeScript + Tailwind + shadcn/ui. Design: `docs/ideas/heart-rhythm-desk-DESIGN.md`.

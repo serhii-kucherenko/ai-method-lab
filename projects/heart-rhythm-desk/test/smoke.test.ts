@@ -1,14 +1,16 @@
-﻿import assert from "node:assert/strict";
+import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { describeClaim } from "../src/claim.ts";
+import { describeClaim } from "../src/claim.js";
 
 describe("Heart Rhythm Desk smoke", () => {
   it("describes the paper-sourced claim", () => {
     const got = describeClaim({
       paperId: "2607.14613",
-      title: "Heart Rhythm Desk Contrastive Learning for Long-Tailed Electrocardiogram Arrhythmia Diagnosis",
+      title:
+        "Adaptive Guided Supervised Contrastive Learning for Long-Tailed Electrocardiogram Arrhythmia Diagnosis",
       codeUrl: "https://github.com/Open-EXG/AG-SCL-for-Long-Tailed-ECG",
-      buildClaim: "The AG-SCL framework offers a novel approach to address the long-tailed distribution problem in medical imaging, combining advanced contrastive learning with adaptive label adjustments and tailored data augmentation, which could be adapted for similar challenges in other domains.",
+      buildClaim:
+        "Long-tail-aware rhythm scoring favors rare arrhythmia classes that majority baselines under-weight; adapted here as a desk experiment, not the authors' trained model.",
     });
     assert.equal(got.ok, true);
     if (got.ok) assert.match(got.line, /2607\.14613/);
