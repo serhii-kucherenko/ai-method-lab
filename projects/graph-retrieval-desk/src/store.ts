@@ -40,6 +40,17 @@ export type RetrievalJob = {
   updated_at: string;
 };
 
+export type AuditEntry = {
+  id: string;
+  org_id: string;
+  project_id: string;
+  job_id: string;
+  actor_user_id: string;
+  from_status: RetrievalJobStatus;
+  to_status: RetrievalJobStatus;
+  created_at: string;
+};
+
 export type Store = {
   schemaVersion: number;
   users: Map<string, User>;
@@ -49,6 +60,7 @@ export type Store = {
   members: Map<string, OrgRole>;
   projects: Map<string, Project>;
   jobs: Map<string, RetrievalJob>;
+  audit: AuditEntry[];
   rateLimit: number;
   rateCounts: Map<string, number>;
 };
@@ -62,6 +74,16 @@ const JOB_STATUSES: RetrievalJobStatus[] = [
   "cancelled",
 ];
 
+/** Legal retrieval-job lifecycle edges. */
+const ALLOWED_TRANSITIONS: Record<RetrievalJobStatus, RetrievalJobStatus[]> = {
+  draft: ["queued", "cancelled"],
+  queued: ["running", "cancelled"],
+  running: ["succeeded", "failed", "cancelled"],
+  succeeded: [],
+  failed: [],
+  cancelled: [],
+};
+
 const CURRENT_SCHEMA = 2;
 
 function memberKey(orgId: string, userId: string): string {
@@ -74,6 +96,13 @@ function nowIso(): string {
 
 export function isRetrievalJobStatus(value: string): value is RetrievalJobStatus {
   return (JOB_STATUSES as string[]).includes(value);
+}
+
+export function canTransition(
+  from: RetrievalJobStatus,
+  to: RetrievalJobStatus,
+): boolean {
+  return ALLOWED_TRANSITIONS[from].includes(to);
 }
 
 /** Apply schema migrations after initial create (oracle: migration-missing). */
@@ -99,6 +128,7 @@ export function createStore(opts: { rateLimit?: number } = {}): Store {
     members: new Map(),
     projects: new Map(),
     jobs: new Map(),
+    audit: [],
     rateLimit: opts.rateLimit ?? 1000,
     rateCounts: new Map(),
   };
@@ -284,11 +314,31 @@ function publicJob(j: RetrievalJob) {
   };
 }
 
+function appendAudit(
+  store: Store,
+  job: RetrievalJob,
+  actorUserId: string,
+  from: RetrievalJobStatus,
+  to: RetrievalJobStatus,
+) {
+  store.audit.push({
+    id: randomUUID(),
+    org_id: job.org_id,
+    project_id: job.project_id,
+    job_id: job.id,
+    actor_user_id: actorUserId,
+    from_status: from,
+    to_status: to,
+    created_at: nowIso(),
+  });
+}
+
 export function createJob(
   store: Store,
   orgId: string,
   projectId: string,
   input: JobCreate,
+  actorUserId?: string,
 ) {
   const project = store.projects.get(projectId);
   if (!project || project.org_id !== orgId) return null;
@@ -319,6 +369,9 @@ export function createJob(
     updated_at: stamp,
   };
   store.jobs.set(row.id, row);
+  if (actorUserId && status === "queued") {
+    appendAudit(store, row, actorUserId, "draft", "queued");
+  }
   return { job: publicJob(row) };
 }
 
@@ -342,7 +395,45 @@ export function listJobs(store: Store, orgId: string, projectId: string) {
     .map(publicJob);
 }
 
-export type JobPatch = Partial<JobCreate>;
+export type JobPatch = Partial<JobCreate> & { expected_version?: number };
+
+export type TransitionResult =
+  | { ok: true; job: ReturnType<typeof publicJob> }
+  | { ok: false; error: string };
+
+export function transitionJob(
+  store: Store,
+  orgId: string,
+  projectId: string,
+  jobId: string,
+  to: RetrievalJobStatus,
+  actorUserId: string,
+  expectedVersion?: number,
+): TransitionResult {
+  const existing = store.jobs.get(jobId);
+  if (!existing || existing.org_id !== orgId || existing.project_id !== projectId) {
+    return { ok: false, error: "job_not_found" };
+  }
+  if (!isRetrievalJobStatus(to)) {
+    return { ok: false, error: "bad_status" };
+  }
+  if (expectedVersion !== undefined && existing.version !== expectedVersion) {
+    return { ok: false, error: "version_conflict" };
+  }
+  if (!canTransition(existing.status, to)) {
+    return { ok: false, error: "illegal_transition" };
+  }
+  const from = existing.status;
+  const next: RetrievalJob = {
+    ...existing,
+    status: to,
+    version: existing.version + 1,
+    updated_at: nowIso(),
+  };
+  store.jobs.set(jobId, next);
+  appendAudit(store, next, actorUserId, from, to);
+  return { ok: true, job: publicJob(next) };
+}
 
 export function patchJob(
   store: Store,
@@ -350,32 +441,175 @@ export function patchJob(
   projectId: string,
   jobId: string,
   patch: JobPatch,
+  actorUserId: string,
 ) {
   const existing = store.jobs.get(jobId);
   if (!existing || existing.org_id !== orgId || existing.project_id !== projectId) {
     return { error: "job_not_found" as const };
   }
-  if (patch.status !== undefined && !isRetrievalJobStatus(patch.status)) {
-    return { error: "bad_status" as const };
+
+  if (patch.status !== undefined && patch.status !== existing.status) {
+    if (!isRetrievalJobStatus(patch.status)) {
+      return { error: "bad_status" as const };
+    }
+    const moved = transitionJob(
+      store,
+      orgId,
+      projectId,
+      jobId,
+      patch.status,
+      actorUserId,
+      patch.expected_version,
+    );
+    if (!moved.ok) return { error: moved.error };
+    const after = store.jobs.get(jobId)!;
+    const withMeta: RetrievalJob = {
+      ...after,
+      label:
+        patch.label !== undefined
+          ? String(patch.label).trim() || after.label
+          : after.label,
+      query: patch.query !== undefined ? String(patch.query).trim() : after.query,
+      hop_depth:
+        patch.hop_depth !== undefined && Number.isFinite(Number(patch.hop_depth))
+          ? Math.max(1, Math.floor(Number(patch.hop_depth)))
+          : after.hop_depth,
+      notes: patch.notes !== undefined ? String(patch.notes).trim() : after.notes,
+      updated_at: nowIso(),
+    };
+    store.jobs.set(jobId, withMeta);
+    return { job: publicJob(withMeta) };
   }
+
+  if (
+    patch.expected_version !== undefined &&
+    existing.version !== patch.expected_version
+  ) {
+    return { error: "version_conflict" as const };
+  }
+
   const next: RetrievalJob = {
     ...existing,
     label:
       patch.label !== undefined
         ? String(patch.label).trim() || existing.label
         : existing.label,
-    status: patch.status !== undefined ? patch.status : existing.status,
     query: patch.query !== undefined ? String(patch.query).trim() : existing.query,
     hop_depth:
       patch.hop_depth !== undefined && Number.isFinite(Number(patch.hop_depth))
         ? Math.max(1, Math.floor(Number(patch.hop_depth)))
         : existing.hop_depth,
     notes: patch.notes !== undefined ? String(patch.notes).trim() : existing.notes,
-    version: existing.version + 1,
+    version:
+      existing.version +
+      (patch.label || patch.query || patch.hop_depth !== undefined || patch.notes
+        ? 1
+        : 0),
     updated_at: nowIso(),
   };
   store.jobs.set(jobId, next);
   return { job: publicJob(next) };
+}
+
+export type BatchTransitionItem = {
+  project_id: string;
+  job_id: string;
+  to: RetrievalJobStatus;
+  expected_version?: number;
+};
+
+export function batchTransitionJobs(
+  store: Store,
+  orgId: string,
+  items: BatchTransitionItem[],
+  actorUserId: string,
+) {
+  const results = items.map((item) => {
+    const moved = transitionJob(
+      store,
+      orgId,
+      item.project_id,
+      item.job_id,
+      item.to,
+      actorUserId,
+      item.expected_version,
+    );
+    if (!moved.ok) {
+      return { job_id: item.job_id, status: "reject" as const, reason: moved.error };
+    }
+    return { job_id: item.job_id, status: "ok" as const, job: moved.job };
+  });
+  return { results };
+}
+
+export function listAudit(
+  store: Store,
+  orgId: string,
+  opts: { limit?: number; offset?: number; job_id?: string } = {},
+) {
+  const filtered = store.audit
+    .filter((e) => e.org_id === orgId)
+    .filter((e) => !opts.job_id || e.job_id === opts.job_id)
+    .sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
+  const total = filtered.length;
+  const offset = Math.max(opts.offset ?? 0, 0);
+  const limit =
+    opts.limit !== undefined ? Math.min(Math.max(opts.limit, 1), 100) : 50;
+  return {
+    entries: filtered.slice(offset, offset + limit),
+    total,
+    limit,
+    offset,
+  };
+}
+
+export function auditToCsv(entries: AuditEntry[]): string {
+  const header = "id,org_id,project_id,job_id,actor_user_id,from_status,to_status,created_at";
+  const rows = entries.map((e) =>
+    [
+      e.id,
+      e.org_id,
+      e.project_id,
+      e.job_id,
+      e.actor_user_id,
+      e.from_status,
+      e.to_status,
+      e.created_at,
+    ].join(","),
+  );
+  return [header, ...rows].join("\n");
+}
+
+export function scenarioCompare(
+  store: Store,
+  orgId: string,
+  projectId: string,
+  jobId: string,
+) {
+  const job = store.jobs.get(jobId);
+  if (!job || job.org_id !== orgId || job.project_id !== projectId) return null;
+  const hops = Math.max(1, job.hop_depth);
+  const naive = {
+    label: "single_hop_opaque" as const,
+    hop_steps: 1,
+    stages: ["retrieve"],
+    coverage_score: 1,
+  };
+  const paper_inspired = {
+    label: "extract_consolidate_retrieve" as const,
+    hop_steps: hops,
+    stages: ["extract", "consolidate", "retrieve"],
+    coverage_score: hops * 2 + 1,
+  };
+  return {
+    job_id: job.id,
+    query: job.query,
+    naive,
+    paper_inspired,
+    delta_coverage: paper_inspired.coverage_score - naive.coverage_score,
+    honesty:
+      "Method-lab experiment inspired by the paper — not a replacement for the authors' multi-step graph retrieval engine.",
+  };
 }
 
 export function deleteJob(

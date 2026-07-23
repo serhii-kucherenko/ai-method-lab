@@ -26,4 +26,4 @@ Open `http://localhost:3847/` for home, `/jobs.html` for retrieval jobs, `/hones
 
 ## Status
 
-CRUD green — orgs / projects / retrieval jobs with bearer auth and HTML pages. Climbing the product ladder next.
+CRUD and workflow green — climbing integrate next.

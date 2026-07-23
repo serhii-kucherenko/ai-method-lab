@@ -6,6 +6,8 @@ import { describeClaim } from "./claim.js";
 import {
   addMember,
   assertAccess,
+  auditToCsv,
+  batchTransitionJobs,
   createJob,
   createOrg,
   createProject,
@@ -18,13 +20,17 @@ import {
   getProject,
   isRetrievalJobStatus,
   issueToken,
+  listAudit,
   listJobs,
   listProjects,
   patchJob,
   patchProject,
   registerUser,
   resolveToken,
+  scenarioCompare,
   schemaInfo,
+  transitionJob,
+  type BatchTransitionItem,
   type JobCreate,
   type JobPatch,
   type OrgRole,
@@ -80,6 +86,19 @@ function send(
     ...extra,
   });
   res.end(payload);
+}
+
+function sendText(
+  res: ServerResponse,
+  status: number,
+  body: string,
+  contentType: string,
+) {
+  res.writeHead(status, {
+    "content-type": contentType,
+    "content-length": Buffer.byteLength(body),
+  });
+  res.end(body);
 }
 
 function getToken(req: IncomingMessage): string | null {
@@ -139,7 +158,11 @@ function jobFromBody(body: Json): JobCreate {
 }
 
 function jobPatchFromBody(body: Json): JobPatch {
-  return jobFromBody(body);
+  const patch: JobPatch = jobFromBody(body);
+  if (body.expected_version !== undefined) {
+    patch.expected_version = Number(body.expected_version);
+  }
+  return patch;
 }
 
 export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
@@ -229,6 +252,55 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
       const result = addMember(store, orgId, String(body.userId ?? ""), role);
       if (!result.ok) return send(res, 400, { error: result.error });
       return send(res, 201, { ok: true });
+    }
+
+    const auditMatch = path.match(/^\/orgs\/([^/]+)\/audit$/);
+    if (auditMatch && method === "GET") {
+      const orgId = auditMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "operator", "viewer"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const listed = listAudit(store, orgId, {
+        limit: url.searchParams.get("limit")
+          ? Number(url.searchParams.get("limit"))
+          : undefined,
+        offset: url.searchParams.get("offset")
+          ? Number(url.searchParams.get("offset"))
+          : undefined,
+        job_id: url.searchParams.get("job_id") ?? undefined,
+      });
+      if (url.searchParams.get("format") === "csv") {
+        return sendText(res, 200, auditToCsv(listed.entries), "text/csv; charset=utf-8");
+      }
+      return send(res, 200, listed);
+    }
+
+    const batchMatch = path.match(/^\/orgs\/([^/]+)\/batch\/jobs\/transition$/);
+    if (batchMatch && method === "POST") {
+      const orgId = batchMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "operator"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const body = await readBody(req);
+      const raw = Array.isArray(body.transitions) ? body.transitions : [];
+      const items: BatchTransitionItem[] = raw.map((row) => {
+        const r = row as Record<string, unknown>;
+        const toRaw = String(r.to ?? "");
+        return {
+          project_id: String(r.project_id ?? ""),
+          job_id: String(r.job_id ?? ""),
+          to: (isRetrievalJobStatus(toRaw) ? toRaw : toRaw) as RetrievalJobStatus,
+          expected_version:
+            r.expected_version !== undefined
+              ? Number(r.expected_version)
+              : undefined,
+        };
+      });
+      return send(res, 200, batchTransitionJobs(store, orgId, items, userId));
     }
 
     const projectsMatch = path.match(/^\/orgs\/([^/]+)\/projects$/);
@@ -321,10 +393,66 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
         return send(res, 403, { error: "forbidden" });
       }
       const body = await readBody(req);
-      const result = createJob(store, orgId, projectId, jobFromBody(body));
+      const result = createJob(store, orgId, projectId, jobFromBody(body), userId);
       if (!result) return send(res, 404, { error: "project_not_found" });
       if ("error" in result) return send(res, 400, { error: result.error });
       return send(res, 201, { job: result.job });
+    }
+
+    const jobTransition = path.match(
+      /^\/orgs\/([^/]+)\/projects\/([^/]+)\/jobs\/([^/]+)\/transition$/,
+    );
+    if (jobTransition && method === "POST") {
+      const orgId = jobTransition[1]!;
+      const projectId = jobTransition[2]!;
+      const jobId = jobTransition[3]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "operator"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const body = await readBody(req);
+      const toRaw = String(body.to ?? "");
+      const expected =
+        body.expected_version !== undefined
+          ? Number(body.expected_version)
+          : undefined;
+      const moved = transitionJob(
+        store,
+        orgId,
+        projectId,
+        jobId,
+        toRaw as RetrievalJobStatus,
+        userId,
+        expected,
+      );
+      if (!moved.ok) {
+        const code =
+          moved.error === "version_conflict" || moved.error === "illegal_transition"
+            ? 409
+            : moved.error === "job_not_found"
+              ? 404
+              : 400;
+        return send(res, code, { error: moved.error });
+      }
+      return send(res, 200, { job: moved.job });
+    }
+
+    const jobScenario = path.match(
+      /^\/orgs\/([^/]+)\/projects\/([^/]+)\/jobs\/([^/]+)\/scenarios$/,
+    );
+    if (jobScenario && method === "GET") {
+      const orgId = jobScenario[1]!;
+      const projectId = jobScenario[2]!;
+      const jobId = jobScenario[3]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "operator", "viewer"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const scenario = scenarioCompare(store, orgId, projectId, jobId);
+      if (!scenario) return send(res, 404, { error: "job_not_found" });
+      return send(res, 200, scenario);
     }
 
     const jobOne = path.match(
@@ -360,9 +488,16 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
         projectId,
         jobId,
         jobPatchFromBody(body),
+        userId,
       );
       if ("error" in result) {
-        const status = result.error === "job_not_found" ? 404 : 400;
+        const status =
+          result.error === "job_not_found"
+            ? 404
+            : result.error === "version_conflict" ||
+                result.error === "illegal_transition"
+              ? 409
+              : 400;
         return send(res, status, { error: result.error });
       }
       return send(res, 200, { job: result.job });
