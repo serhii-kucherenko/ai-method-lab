@@ -2,6 +2,16 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #7 (fixtures 19 + preflip)
+
+Research only. Stays adversarial / WAIT_HOURS.
+
+- Fixtures **14 → 19** (K/M/Q/R/X); §6698/§6699 reject fences in oracle
+- Preflip checklist on file (hours still own the flip)
+- Hours ~1.7h/4; ticks=9; **no** `projects/`
+
+**Skeptical one-liner:** Nineteen fixtures approach the smoke bar — the clock still says wait.
+
 ## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #6 (shared oracle + fixtures 14)
 
 Research only. Stays adversarial / WAIT_HOURS.

@@ -193,6 +193,8 @@ for (const cheat of [
   { dual_approver_cheat: true },
   { interest_as_penalty: true },
   { installment_025_silent: true },
+  { partnership_6698_cheat: true },
+  { scorp_6699_cheat: true },
 ]) {
   const a = forecastA({
     net_amount_due: 1000,
@@ -212,4 +214,4 @@ if (failed) {
   console.error(`irc6651 toys: ${failed} failure(s)`);
   process.exit(1);
 }
-console.log(`irc6651 toys: ${toys.length} dual-green + 4 rejects`);
+console.log(`irc6651 toys: ${toys.length} dual-green + 6 rejects`);

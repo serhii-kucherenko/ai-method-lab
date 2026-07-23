@@ -12,6 +12,8 @@ export function forecast6651(input) {
   if (input.dual_approver_cheat === true) return reject("dual_approver_cheat");
   if (input.interest_as_penalty === true) return reject("interest_as_penalty");
   if (input.installment_025_silent === true) return reject("installment_025_silent");
+  if (input.partnership_6698_cheat === true) return reject("partnership_6698_cheat");
+  if (input.scorp_6699_cheat === true) return reject("scorp_6699_cheat");
 
   const net = Number(input.net_amount_due);
   const unpaid = Array.isArray(input.unpaid_by_month)
