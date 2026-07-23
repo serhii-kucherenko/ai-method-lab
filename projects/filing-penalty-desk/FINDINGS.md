@@ -1,5 +1,14 @@
 # Filing Penalty Desk findings
 
+## Workflow (2026-07-23)
+
+- Scenario compare: naive stacked flat fee vs month-walk dollars
+- Batch forecast with per-line independence (ok / zero / reject siblings)
+- Append-only audit + CSV export
+- Pages: scenario, batch, audit (prior crud pages stay green)
+- Cell: `A03__P-workflow-001__filing-penalty-desk__r1`
+- Next: **integrate** (HMAC webhook, settings, pagination)
+
 ## Crud (2026-07-23)
 
 - Returns catalog, timeline detail, honesty pages

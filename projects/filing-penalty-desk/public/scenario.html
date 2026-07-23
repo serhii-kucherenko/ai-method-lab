@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Filing Penalty Desk — scenario compare</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 2rem 1.25rem;
+        max-width: 40rem;
+        margin-inline: auto;
+        color: #1a2228;
+        background: #eef2f4;
+      }
+      input { width: 100%; box-sizing: border-box; padding: 0.4rem; }
+      button {
+        margin-top: 0.75rem;
+        background: #1f5f6b;
+        color: #fff;
+        border: 0;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      #compare { white-space: pre-wrap; font-family: ui-monospace, monospace; font-size: 0.85rem; }
+      a { color: #1f5f6b; }
+      .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+      .col h2 { font-size: 1rem; margin: 0 0 0.35rem; }
+    </style>
+  </head>
+  <body data-scenario="live">
+    <h1>Scenario compare</h1>
+    <p>
+      Naive flat stacked fee (no same-month reduction) versus correct month-walk
+      dollars.
+    </p>
+    <label for="timeline-id">Timeline id</label>
+    <input id="timeline-id" />
+    <button id="run-compare" type="button">Compare</button>
+    <div class="cols">
+      <div class="col">
+        <h2>Naive</h2>
+        <div id="naive-dollars">—</div>
+      </div>
+      <div class="col">
+        <h2>Correct</h2>
+        <div id="correct-dollars">—</div>
+      </div>
+    </div>
+    <pre id="compare">Results appear here</pre>
+    <p>
+      <a href="/timeline-detail.html">Detail</a> ·
+      <a href="/returns.html">Catalog</a> ·
+      <a href="/honesty.html">Honesty</a>
+    </p>
+    <script>
+      (function () {
+        const token = localStorage.getItem("fpd_token") || "";
+        const orgId = localStorage.getItem("fpd_org") || "";
+        document.getElementById("run-compare").onclick = function () {
+          const id = document.getElementById("timeline-id").value.trim();
+          if (!token || !orgId || !id) {
+            document.getElementById("compare").textContent =
+              "Need fpd_token, fpd_org, and timeline id.";
+            return;
+          }
+          fetch(
+            "/orgs/" +
+              encodeURIComponent(orgId) +
+              "/timelines/" +
+              encodeURIComponent(id) +
+              "/scenarios",
+            { headers: { authorization: "Bearer " + token } },
+          )
+            .then(function (r) {
+              return r.json();
+            })
+            .then(function (j) {
+              document.getElementById("compare").textContent = JSON.stringify(j, null, 2);
+              const naive = j.naive || {};
+              const correct = j.correct || {};
+              document.getElementById("naive-dollars").textContent =
+                "combined $" + (naive.combined != null ? naive.combined : "—");
+              document.getElementById("correct-dollars").textContent =
+                correct.status === "reject"
+                  ? "reject: " + correct.reason
+                  : "combined $" + (correct.combined != null ? correct.combined : "—");
+            });
+        };
+      })();
+    </script>
+  </body>
+</html>

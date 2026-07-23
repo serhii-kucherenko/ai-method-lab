@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import {
   addMember,
   assertAccess,
+  auditToCsv,
   createOrg,
   createStore,
   createTimeline,
@@ -12,11 +13,14 @@ import {
   getOrg,
   getTimeline,
   issueToken,
+  listAudit,
   listTimelines,
   patchTimeline,
   registerUser,
   resolveToken,
+  runBatchForecast,
   runForecast,
+  scenarioCompare,
   type OrgRole,
   type Store,
   type TimelineCreate,
@@ -45,13 +49,28 @@ async function readBody(req: IncomingMessage): Promise<Json> {
   }
 }
 
-function send(res: ServerResponse, status: number, body: unknown) {
+function send(
+  res: ServerResponse,
+  status: number,
+  body: unknown,
+  extra: Record<string, string> = {},
+) {
   const payload = JSON.stringify(body);
   res.writeHead(status, {
     "content-type": "application/json",
     "content-length": Buffer.byteLength(payload),
+    ...extra,
   });
   res.end(payload);
+}
+
+function sendCsv(res: ServerResponse, csv: string) {
+  res.writeHead(200, {
+    "content-type": "text/csv; charset=utf-8",
+    "content-disposition": 'attachment; filename="audit.csv"',
+    "content-length": Buffer.byteLength(csv),
+  });
+  res.end(csv);
 }
 
 function getToken(req: IncomingMessage): string | null {
@@ -73,7 +92,7 @@ function checkRateLimit(store: Store, req: IncomingMessage, res: ServerResponse)
   const n = (store.rateCounts.get(key) ?? 0) + 1;
   store.rateCounts.set(key, n);
   if (n > store.rateLimit) {
-    send(res, 429, { error: "rate_limit_exceeded" });
+    send(res, 429, { error: "rate_limit_exceeded" }, { "retry-after": "1" });
     return false;
   }
   return true;
@@ -314,6 +333,59 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
         return send(res, 422, outcome);
       }
       return send(res, 200, outcome);
+    }
+
+    const scenarioMatch = path.match(/^\/orgs\/([^/]+)\/timelines\/([^/]+)\/scenarios$/);
+    if (scenarioMatch && method === "GET") {
+      const orgId = scenarioMatch[1]!;
+      const timelineId = scenarioMatch[2]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "analyst", "auditor"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const compare = scenarioCompare(store, orgId, timelineId);
+      if (!compare) return send(res, 404, { error: "timeline_not_found" });
+      return send(res, 200, compare);
+    }
+
+    const batchMatch = path.match(/^\/orgs\/([^/]+)\/batch\/forecast$/);
+    if (batchMatch && method === "POST") {
+      const orgId = batchMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "analyst"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const body = await readBody(req);
+      const ids = Array.isArray(body.timeline_ids)
+        ? (body.timeline_ids as unknown[]).map(String)
+        : [];
+      const batch = runBatchForecast(store, orgId, ids);
+      return send(res, 200, batch);
+    }
+
+    const auditMatch = path.match(/^\/orgs\/([^/]+)\/audit$/);
+    if (auditMatch && method === "GET") {
+      const orgId = auditMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "analyst", "auditor"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const listed = listAudit(store, orgId, {
+        limit: url.searchParams.get("limit")
+          ? Number(url.searchParams.get("limit"))
+          : undefined,
+        offset: url.searchParams.get("offset")
+          ? Number(url.searchParams.get("offset"))
+          : undefined,
+        q: url.searchParams.get("q") ?? undefined,
+      });
+      if (url.searchParams.get("format") === "csv") {
+        return sendCsv(res, auditToCsv(listed.events));
+      }
+      return send(res, 200, listed);
     }
 
     return send(res, 404, { error: "not_found" });

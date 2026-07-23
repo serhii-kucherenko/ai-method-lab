@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Filing Penalty Desk — audit log</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 2rem 1.25rem;
+        max-width: 42rem;
+        margin-inline: auto;
+        color: #1a2228;
+        background: #eef2f4;
+      }
+      #audit-list { white-space: pre-wrap; font-family: ui-monospace, monospace; font-size: 0.85rem; }
+      a { color: #1f5f6b; }
+      button {
+        background: #1f5f6b;
+        color: #fff;
+        border: 0;
+        padding: 0.45rem 0.9rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body data-audit="live">
+    <h1>Audit log</h1>
+    <p>Append-only forecast locks and rejects. Export CSV for controllers.</p>
+    <p>
+      <button id="export-csv" type="button">Export CSV</button>
+      <a href="/batch.html">Batch</a> ·
+      <a href="/returns.html">Catalog</a> ·
+      <a href="/honesty.html">Honesty</a>
+    </p>
+    <pre id="audit-list">Loading…</pre>
+    <script>
+      (function () {
+        const token = localStorage.getItem("fpd_token") || "";
+        const orgId = localStorage.getItem("fpd_org") || "";
+        const el = document.getElementById("audit-list");
+        if (!token || !orgId) {
+          el.textContent = "Set fpd_token and fpd_org in localStorage, then reload.";
+          return;
+        }
+        fetch("/orgs/" + orgId + "/audit", {
+          headers: { authorization: "Bearer " + token },
+        })
+          .then(function (r) {
+            return r.json();
+          })
+          .then(function (j) {
+            el.textContent = JSON.stringify(j, null, 2);
+          })
+          .catch(function (e) {
+            el.textContent = String(e);
+          });
+        document.getElementById("export-csv").onclick = function () {
+          fetch("/orgs/" + orgId + "/audit?format=csv", {
+            headers: { authorization: "Bearer " + token },
+          })
+            .then(function (r) {
+              return r.text();
+            })
+            .then(function (csv) {
+              el.textContent = csv;
+            });
+        };
+      })();
+    </script>
+  </body>
+</html>

@@ -30,7 +30,8 @@ export type ReturnTimeline = {
 export type AdditionForecast = {
   id: string;
   org_id: string;
-  timeline_id: string;
+  timeline_id: string | null;
+  batch_id: string | null;
   status: "ok" | "reject";
   ftf: number | null;
   ftp: number | null;
@@ -41,6 +42,27 @@ export type AdditionForecast = {
   locked_at: string;
 };
 
+export type AuditEvent = {
+  id: string;
+  org_id: string;
+  timeline_id: string | null;
+  batch_id: string | null;
+  status: "ok" | "reject";
+  ftf: number | null;
+  ftp: number | null;
+  combined: number | null;
+  reason: string | null;
+  algorithm_version: string | null;
+  created_at: string;
+};
+
+export type OrgSettings = {
+  orgId: string;
+  webhook_secret: string;
+  tokens_note: string;
+  updated_at: string;
+};
+
 export type Store = {
   users: Map<string, User>;
   usersByEmail: Map<string, string>;
@@ -49,6 +71,9 @@ export type Store = {
   members: Map<string, OrgRole>;
   timelines: Map<string, ReturnTimeline>;
   forecasts: Map<string, AdditionForecast>;
+  audit: AuditEvent[];
+  settings: Map<string, OrgSettings>;
+  webhookDeliveries: Map<string, string>;
   rateLimit: number;
   rateCounts: Map<string, number>;
 };
@@ -66,6 +91,9 @@ export function createStore(opts: { rateLimit?: number } = {}): Store {
     members: new Map(),
     timelines: new Map(),
     forecasts: new Map(),
+    audit: [],
+    settings: new Map(),
+    webhookDeliveries: new Map(),
     rateLimit: opts.rateLimit ?? 1000,
     rateCounts: new Map(),
   };
@@ -93,10 +121,20 @@ export function resolveToken(store: Store, token: string): string | null {
   return store.tokens.get(token) ?? null;
 }
 
+function freshWebhookSecret(): string {
+  return `whsec_${randomUUID().replace(/-/g, "").slice(0, 24)}`;
+}
+
 export function createOrg(store: Store, userId: string, name: string) {
   const id = randomUUID();
   store.orgs.set(id, { id, name, created_by: userId });
   store.members.set(memberKey(id, userId), "admin");
+  store.settings.set(id, {
+    orgId: id,
+    webhook_secret: freshWebhookSecret(),
+    tokens_note: "API tokens are issued at register. Treat bearer tokens as secrets.",
+    updated_at: new Date().toISOString(),
+  });
   return { id, name };
 }
 
@@ -118,11 +156,7 @@ export function assertAccess(
 
 export type TimelineCreate = ForecastInput & { label?: string };
 
-function toTimeline(
-  orgId: string,
-  id: string,
-  input: TimelineCreate,
-): ReturnTimeline {
+function toTimeline(orgId: string, id: string, input: TimelineCreate): ReturnTimeline {
   return {
     id,
     org_id: orgId,
@@ -293,21 +327,38 @@ function toInput(t: ReturnTimeline): ForecastInput {
   };
 }
 
-export function runForecast(
+function recordAudit(
+  store: Store,
+  locked: AdditionForecast,
+): void {
+  store.audit.push({
+    id: randomUUID(),
+    org_id: locked.org_id,
+    timeline_id: locked.timeline_id,
+    batch_id: locked.batch_id,
+    status: locked.status,
+    ftf: locked.ftf,
+    ftp: locked.ftp,
+    combined: locked.combined,
+    reason: locked.reason,
+    algorithm_version: locked.algorithm_version,
+    created_at: locked.locked_at,
+  });
+}
+
+function lockForecast(
   store: Store,
   orgId: string,
-  timelineId: string,
-): ForecastResult & { algorithm_version?: string; forecast_id?: string } {
-  const t = store.timelines.get(timelineId);
-  if (!t || t.org_id !== orgId) {
-    return { status: "reject", reason: "timeline_not_found" };
-  }
-  const result = forecast(toInput(t));
+  timelineId: string | null,
+  result: ForecastResult,
+  batchId: string | null,
+): AdditionForecast {
   const id = randomUUID();
   const locked: AdditionForecast = {
     id,
     org_id: orgId,
     timeline_id: timelineId,
+    batch_id: batchId,
     status: result.status,
     ftf: result.status === "ok" ? result.ftf : null,
     ftp: result.status === "ok" ? result.ftp : null,
@@ -318,8 +369,222 @@ export function runForecast(
     locked_at: new Date().toISOString(),
   };
   store.forecasts.set(id, locked);
-  if (result.status === "ok") {
-    return { ...result, forecast_id: id };
+  recordAudit(store, locked);
+  return locked;
+}
+
+export function runForecast(
+  store: Store,
+  orgId: string,
+  timelineId: string,
+  batchId: string | null = null,
+): ForecastResult & { algorithm_version?: string; forecast_id?: string } {
+  const t = store.timelines.get(timelineId);
+  if (!t || t.org_id !== orgId) {
+    return { status: "reject", reason: "timeline_not_found" };
   }
-  return { ...result, algorithm_version: "fpd-v0", forecast_id: id };
+  const result = forecast(toInput(t));
+  const locked = lockForecast(store, orgId, timelineId, result, batchId);
+  if (result.status === "ok") {
+    return { ...result, forecast_id: locked.id };
+  }
+  return { ...result, algorithm_version: "fpd-v0", forecast_id: locked.id };
+}
+
+export type BatchForecastItem = {
+  timeline_id: string;
+  status: "ok" | "reject";
+  ftf?: number;
+  ftp?: number;
+  combined?: number;
+  branch?: string;
+  reason?: string;
+  forecast_id?: string;
+};
+
+export function runBatchForecast(
+  store: Store,
+  orgId: string,
+  timelineIds: string[],
+): { batch_id: string; results: BatchForecastItem[] } {
+  const batchId = randomUUID();
+  const results: BatchForecastItem[] = [];
+  for (const timelineId of timelineIds) {
+    const outcome = runForecast(store, orgId, timelineId, batchId);
+    if (outcome.status === "ok") {
+      results.push({
+        timeline_id: timelineId,
+        status: "ok",
+        ftf: outcome.ftf,
+        ftp: outcome.ftp,
+        combined: outcome.combined,
+        branch: outcome.branch,
+        forecast_id: outcome.forecast_id,
+      });
+    } else if (outcome.reason === "timeline_not_found") {
+      const reject: ForecastResult = { status: "reject", reason: "timeline_not_found" };
+      const locked = lockForecast(store, orgId, null, reject, batchId);
+      results.push({
+        timeline_id: timelineId,
+        status: "reject",
+        reason: "timeline_not_found",
+        forecast_id: locked.id,
+      });
+    } else {
+      results.push({
+        timeline_id: timelineId,
+        status: "reject",
+        reason: outcome.reason,
+        forecast_id: outcome.forecast_id,
+      });
+    }
+  }
+  return { batch_id: batchId, results };
+}
+
+/** Naive stacked flat fee: 5%×net×unfiled + 0.5%×sum(unpaid) — no same-month reduction. */
+export function naiveFlatFee(t: ReturnTimeline): {
+  ftf: number;
+  ftp: number;
+  combined: number;
+} {
+  const ftf = 0.05 * t.net_amount_due * Math.max(0, t.unfiled_months);
+  const ftp = 0.005 * t.unpaid_by_month.reduce((s, u) => s + u, 0);
+  return { ftf, ftp, combined: ftf + ftp };
+}
+
+export function scenarioCompare(store: Store, orgId: string, timelineId: string) {
+  const t = store.timelines.get(timelineId);
+  if (!t || t.org_id !== orgId) return null;
+  const correct = forecast(toInput(t));
+  const naive = naiveFlatFee(t);
+  return {
+    timeline_id: timelineId,
+    naive: {
+      label: "flat_stacked_no_reduction",
+      ...naive,
+    },
+    correct:
+      correct.status === "ok"
+        ? {
+            label: "month_walk",
+            ftf: correct.ftf,
+            ftp: correct.ftp,
+            combined: correct.combined,
+            branch: correct.branch,
+          }
+        : { label: "month_walk", status: "reject" as const, reason: correct.reason },
+    delta_combined:
+      correct.status === "ok" ? naive.combined - correct.combined : null,
+  };
+}
+
+export function listAudit(
+  store: Store,
+  orgId: string,
+  opts: { limit?: number; offset?: number; q?: string } = {},
+) {
+  const q = (opts.q ?? "").trim().toLowerCase();
+  const all = store.audit
+    .filter((e) => e.org_id === orgId)
+    .filter(
+      (e) =>
+        !q ||
+        (e.timeline_id ?? "").toLowerCase().includes(q) ||
+        (e.reason ?? "").toLowerCase().includes(q) ||
+        (e.status ?? "").toLowerCase().includes(q),
+    )
+    .sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
+  const total = all.length;
+  const offset = Math.max(opts.offset ?? 0, 0);
+  const limit =
+    opts.limit !== undefined ? Math.min(Math.max(opts.limit, 1), 100) : 20;
+  return {
+    events: all.slice(offset, offset + limit),
+    total,
+    limit,
+    offset,
+  };
+}
+
+export function auditToCsv(events: AuditEvent[]): string {
+  const header = [
+    "id",
+    "timeline_id",
+    "batch_id",
+    "status",
+    "ftf",
+    "ftp",
+    "combined",
+    "reason",
+    "algorithm_version",
+    "created_at",
+  ];
+  const rows = events.map((ev) =>
+    [
+      ev.id,
+      ev.timeline_id ?? "",
+      ev.batch_id ?? "",
+      ev.status,
+      ev.ftf ?? "",
+      ev.ftp ?? "",
+      ev.combined ?? "",
+      ev.reason ?? "",
+      ev.algorithm_version ?? "",
+      ev.created_at,
+    ]
+      .map((c) => String(c).replace(/"/g, '""'))
+      .map((c) => `"${c}"`)
+      .join(","),
+  );
+  return [header.join(","), ...rows].join("\n");
+}
+
+export function getOrgSettings(store: Store, orgId: string): OrgSettings | undefined {
+  return store.settings.get(orgId);
+}
+
+export function updateOrgSettings(
+  store: Store,
+  orgId: string,
+  patch: { webhook_secret?: string; tokens_note?: string },
+): OrgSettings | null {
+  const current = store.settings.get(orgId);
+  if (!current) return null;
+  const next: OrgSettings = {
+    ...current,
+    webhook_secret:
+      patch.webhook_secret !== undefined ? patch.webhook_secret : current.webhook_secret,
+    tokens_note:
+      patch.tokens_note !== undefined ? patch.tokens_note : current.tokens_note,
+    updated_at: new Date().toISOString(),
+  };
+  store.settings.set(orgId, next);
+  return next;
+}
+
+export function rotateWebhookSecret(store: Store, orgId: string): OrgSettings | null {
+  return updateOrgSettings(store, orgId, { webhook_secret: freshWebhookSecret() });
+}
+
+export function ingestWebhookTimeline(
+  store: Store,
+  orgId: string,
+  idempotencyKey: string,
+  input: TimelineCreate,
+):
+  | { ok: true; status: 201 | 200; timeline: ReturnType<typeof publicTimeline>; replay: boolean }
+  | { ok: false; status: number; error: string } {
+  if (!getOrg(store, orgId)) return { ok: false, status: 404, error: "org_not_found" };
+  if (!idempotencyKey) return { ok: false, status: 400, error: "idempotency_key_required" };
+  const existingId = store.webhookDeliveries.get(idempotencyKey);
+  if (existingId) {
+    const t = store.timelines.get(existingId);
+    if (t && t.org_id === orgId) {
+      return { ok: true, status: 200, timeline: publicTimeline(t), replay: true };
+    }
+  }
+  const timeline = createTimeline(store, orgId, input);
+  store.webhookDeliveries.set(idempotencyKey, timeline.id);
+  return { ok: true, status: 201, timeline, replay: false };
 }
