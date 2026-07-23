@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T18:17:41.698Z",
+  "updated_at": "2026-07-23T18:20:29.972Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,9 +11,9 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "1e4c04c8-2053-46c3-a8ba-5fa5d9613564",
-    "last_idea_validated_email_id": "6125cabc-96f1-4e99-bcf8-07b7fb869683",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "d3422455-8842-4195-8ed5-a64dc909dddf",
+    "last_idea_validated_email_id": "84f2f4ce-be3f-4f8a-a9e5-3c7e6c049468",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
@@ -41,13 +41,13 @@
   },
   "last_completed": "A03__P-sustain-001__realtime-deploy-desk__r1",
   "last_error": null,
-  "current_product": "realtime-deploy-desk",
-  "current_idea": "realtime-deploy-desk",
+  "current_product": "secure-tutor-desk",
+  "current_idea": "secure-tutor-desk",
   "next_research_idea": null,
-  "next_cell": null,
+  "next_cell": "A03__P-crud-001__secure-tutor-desk__r1",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "Realtime Deploy Desk sustain green (marketing landing at /); product_complete_pending — do not email yet.",
+  "notes": "Secure Tutor Desk climbing Next+landing+designer. RDD emailed.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -60,10 +60,10 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.18171",
-      "slug": "realtime-deploy-desk",
-      "displayName": "Realtime Deploy Desk",
-      "at": "2026-07-23T18:11:14.883Z"
+      "paperId": "2607.14601",
+      "slug": "secure-tutor-desk",
+      "displayName": "Secure Tutor Desk",
+      "at": "2026-07-23T18:20:04.595Z"
     }
   },
   "depth_policy": {

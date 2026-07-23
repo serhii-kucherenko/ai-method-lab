@@ -9,4 +9,5 @@
 | Virulence Feature Desk | 10.1186/s40168-026-02467-w | Complete |
 | Heart Rhythm Desk | 2607.14613 | Complete |
 | Pathology Vision Desk | 2607.09526 | Complete |
-| Realtime Deploy Desk | 2607.18171 | Sustain green (landing + desk; product_complete pending) |
+| Realtime Deploy Desk | 2607.18171 | Complete |
+| Secure Tutor Desk | 2607.14601 | Smoke / building (Next + landing) |
