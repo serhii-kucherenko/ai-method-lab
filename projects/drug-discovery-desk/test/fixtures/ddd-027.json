@@ -1,0 +1,16 @@
+{
+  "id": "ddd-027",
+  "title": "disease scaffold sketch",
+  "input": {
+    "indication_tags": "alzheimer,amyloid,cns,neuro",
+    "candidate_tags": "amyloid,cns"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 3,
+    "matched_tags": 2,
+    "naive_fit": 1,
+    "disease_fit": 7,
+    "delta_fit": 6
+  }
+}

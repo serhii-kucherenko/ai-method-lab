@@ -1,0 +1,12 @@
+{
+  "id": "ddd-024",
+  "title": "unconditioned cheat reject",
+  "input": {
+    "fit_depth": 3,
+    "unconditioned_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "unconditioned_cheat"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "ddd-016",
+  "title": "duplicate empties ignored",
+  "input": {
+    "indication_tags": "oncology,,kinase",
+    "candidate_tags": "oncology,,kinase"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 3,
+    "matched_tags": 2,
+    "naive_fit": 1,
+    "disease_fit": 7,
+    "delta_fit": 6
+  }
+}

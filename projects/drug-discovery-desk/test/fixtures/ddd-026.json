@@ -1,0 +1,16 @@
+{
+  "id": "ddd-026",
+  "title": "mixed separators",
+  "input": {
+    "indication_tags": "oncology,kinase|cns>pain",
+    "candidate_tags": "kinase|pain"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 3,
+    "matched_tags": 2,
+    "naive_fit": 1,
+    "disease_fit": 7,
+    "delta_fit": 6
+  }
+}

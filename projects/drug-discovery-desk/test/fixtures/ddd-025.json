@@ -1,0 +1,13 @@
+{
+  "id": "ddd-025",
+  "title": "cheat with tags reject",
+  "input": {
+    "indication_tags": "oncology,kinase",
+    "candidate_tags": "oncology,kinase",
+    "unconditioned_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "unconditioned_cheat"
+  }
+}

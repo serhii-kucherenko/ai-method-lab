@@ -1,6 +1,6 @@
 ﻿import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { describeClaim } from "../src/claim.ts";
+import { describeClaim } from "../src/claim.js";
 
 describe("Drug Discovery Desk smoke", () => {
   it("describes the paper-sourced claim", () => {

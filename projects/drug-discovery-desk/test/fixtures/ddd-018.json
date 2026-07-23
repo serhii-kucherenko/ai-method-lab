@@ -1,0 +1,16 @@
+{
+  "id": "ddd-018",
+  "title": "six indications no match",
+  "input": {
+    "indication_tags": "a,b,c,d,e,f",
+    "candidate_tags": "z,y"
+  },
+  "expect": {
+    "status": "ok",
+    "fit_steps": 1,
+    "matched_tags": 0,
+    "naive_fit": 1,
+    "disease_fit": 3,
+    "delta_fit": 2
+  }
+}

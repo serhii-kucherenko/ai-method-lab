@@ -1,6 +1,6 @@
 ﻿# Drug Discovery Desk
 
-**State:** building (paper-sourced)  
+**State:** sustain complete (paper-sourced)  
 **Slug:** `drug-discovery-desk`  
 **Paper id:** `2607.08404`  
 **Paper:** https://arxiv.org/abs/2607.08404v1  
@@ -12,5 +12,4 @@ DrugGen-2 advances the field of AI-assisted drug discovery by integrating diseas
 
 ## Honesty
 
-Workflow experiment inspired by the paper â€” not a claim to replace the authorsâ€™ system or commercial vendors.
-
+Workflow experiment inspired by the paper — not a claim to replace the authors' system or commercial vendors. Not a wet-lab or regulatory product. Display name: **Drug Discovery Desk**.
