@@ -1,31 +1,32 @@
 # Consult Bench Desk
 
-Method-lab product sourced from a simple-papers digest.
-
-## Paper
-
-- **Id:** 2607.09142
-- **Title:** MedRealMM: A Real-World Multimodal Benchmark for Chinese Online Medical Consultation
-- **URL:** https://arxiv.org/abs/2607.09142v1
-- **Code:** (none — software claim only)
-
-## What we will build
-
-Builders now have a realistic, multimodal benchmark and rubric to train and test LLMs for online consultation; the dataset is public on Hugging Face.
+Soft-simulation org desk for **real-world multimodal consult evaluation plans**, inspired by [arXiv:2607.09142](https://arxiv.org/abs/2607.09142v1). Display name is **Consult Bench Desk** only — never brand authors' model names; never claim telemedicine product.
 
 ## Run
 
 ```bash
 cd projects/consult-bench-desk
 npm install
-npm test
-npm start
+npm run build
+npm start          # Next.js on :3000
+npm run start:api  # optional HTTP harness + static public/
+npm test           # unit + UI critical + app-up live smoke
 ```
 
-## Status
+Offline demo: open `try.html` in a browser.
 
-Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` and commits `docs/ideas/consult-bench-desk-DESIGN.md` before multi-page UI.
+## Unique claim
 
-## Config hygiene
+**A (good):** real-world multimodal consult evaluation plans — text + image evidence, real consult cases, rubric across modalities  
+**B (naive):** text-only; image-blind scoring; synthetic-chat-only benches
 
-Never write `package.json` with a UTF-8 BOM (Windows PowerShell `Set-Content -Encoding utf8` does). Node fails with `ERR_INVALID_PACKAGE_CONFIG`. Use Node `fs.writeFileSync` or run `node scripts/strip-json-bom.mjs`.
+## Docs
+
+- Product: [`PRODUCT.md`](./PRODUCT.md)
+- Design: [`docs/ideas/consult-bench-desk-DESIGN.md`](../../docs/ideas/consult-bench-desk-DESIGN.md)
+- Lessons: [`docs/guides/32-consult-bench-desk-lessons.md`](../../docs/guides/32-consult-bench-desk-lessons.md)
+- Findings: [`FINDINGS.md`](./FINDINGS.md)
+
+## Honesty
+
+Method-lab experiment — not a telemedicine product and not a claim to replace the authors' MedRealMM benchmark. Authors' code: none published with this paper.

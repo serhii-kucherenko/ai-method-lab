@@ -1,17 +1,21 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { describeClaim } from "../src/claim.ts";
+import { describeClaim, CLAIM, DISPLAY_NAME } from "../src/claim.js";
 
-describe("Medrealmm Real World smoke", () => {
+describe("Consult Bench Desk smoke", () => {
   it("describes the paper-sourced claim", () => {
     const got = describeClaim({
       paperId: "2607.09142",
-      title: "MedRealMM: A Real-World Multimodal Benchmark for Chinese Online Medical Consultation",
+      title:
+        "A Unified Framework for Comprehensive Consult case Segmentation and Phenotyping",
       codeUrl: null,
-      buildClaim: "Builders now have a realistic, multimodal benchmark and rubric to train and test LLMs for online consultation; the dataset is public on Hugging Face.",
+      buildClaim: CLAIM,
     });
     assert.equal(got.ok, true);
-    if (got.ok) assert.match(got.line, /2607\.09142/);
+    if (got.ok) {
+      assert.match(got.line, /2607\.09142/);
+      assert.match(got.line, new RegExp(DISPLAY_NAME));
+    }
   });
 
   it("rejects empty claim", () => {

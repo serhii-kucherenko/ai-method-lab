@@ -1,6 +1,6 @@
 # Consult Bench Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (paper-sourced)  
 **Slug:** `consult-bench-desk`  
 **Display name:** Consult Bench Desk  
 **Paper id:** `2607.09142`  
