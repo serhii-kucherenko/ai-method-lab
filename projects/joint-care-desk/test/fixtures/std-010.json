@@ -1,0 +1,18 @@
+{
+  "id": "std-010",
+  "title": "Sports pathway",
+  "input": {
+    "corpus": "sports",
+    "min_n": 40
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "sports",
+    "naive_risk": 103.57,
+    "safer_risk": 2.4,
+    "delta_score": 101.17,
+    "min_n": 40,
+    "k_eligible": 6,
+    "i2": 20.4
+  }
+}

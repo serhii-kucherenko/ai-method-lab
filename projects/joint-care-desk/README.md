@@ -1,31 +1,42 @@
 # Joint Care Desk
 
-Method-lab product sourced from a simple-papers digest.
+Org desk for dual-evidence musculoskeletal pathway plans — method-lab product from paper 2607.12527.
+
+**Display name:** Joint Care Desk (never brand OrthoPilot / CHEESE / OrthoBench / ORACLE)
 
 ## Paper
 
 - **Id:** 2607.12527
 - **Title:** Evidence-Grounded AI for Musculoskeletal Care
 - **URL:** https://arxiv.org/abs/2607.12527v2
-- **Code:** (none — software claim only)
+- **Code:** none published
 
-## What we will build
+## Unique claim
 
-This system demonstrates the potential of clinical artificial intelligence to improve longitudinal management of complex diseases, moving beyond predictive analytics to executable decision-making.
+Dual-evidence pathway plans (in-hospital evidence + external knowledge + stage-aware care from admission through rehab) versus naive parametric-memory-only, hospital-only, external-only, or stage-blind baselines.
+
+## Honesty
+
+Workflow experiment inspired by the paper. Soft simulation only. Not a replacement for the authors' OrthoPilot system or commercial clinical AI vendors.
 
 ## Run
 
 ```bash
 cd projects/joint-care-desk
 npm install
-npm test
-npm start
+npm run test:unit
+npm run build
+npm run test:app-up
+npm run dev
 ```
 
-## Status
+## Docs
 
-Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` and commits `docs/ideas/joint-care-desk-DESIGN.md` before multi-page UI.
+- Product: `PRODUCT.md`
+- Design: `docs/ideas/joint-care-desk-DESIGN.md`
+- Guide: `docs/guides/26-joint-care-desk-lessons.md`
+- Offline try: `try.html`
 
 ## Config hygiene
 
-Never write `package.json` with a UTF-8 BOM (Windows PowerShell `Set-Content -Encoding utf8` does). Node fails with `ERR_INVALID_PACKAGE_CONFIG`. Use Node `fs.writeFileSync` or run `node scripts/strip-json-bom.mjs`.
+Never write `package.json` with a UTF-8 BOM. Use Node `fs.writeFileSync` or `node scripts/strip-json-bom.mjs`.

@@ -1,6 +1,6 @@
 # Joint Care Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (paper-sourced)  
 **Slug:** `joint-care-desk`  
 **Display name:** Joint Care Desk  
 **Paper id:** `2607.12527`  
