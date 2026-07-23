@@ -97,8 +97,40 @@ Assumptions common to all toys unless noted:
 
 ---
 
+## Toy 6 — `FtpOnly`
+
+**Facts:** Timely filed. Unpaid $10,000 for 3 months at 0.5%. No FTF.
+
+**Expected:** FTF **$0**, FTP **$150**, combined **$150**.
+
+---
+
+## Toy 7 — `PaidOnTimeZero`
+
+**Facts:** Net amount due **$0** (timely pay/withholding covers). Late file months irrelevant.
+
+**Expected:** combined **$0**.
+
+---
+
+## Toy 8 — `MinFloorBinds`
+
+**Facts:** 2025 minimum **$510**. Net due **$2,000**. >60 days; % FTF one month = $100 < floor.
+
+**Expected:** FTF **$510** (floor binds), FTP **$0**.
+
+---
+
+## Toy 9 — `PartialMonthDual`
+
+**Facts:** Same dollars as Toy 1; one partial month still charges a full month fraction.
+
+**Expected:** combined **$500** (same as SameMonth45).
+
+---
+
 ## Explicit non-actions
 
-- No JSON fixture corpus this tick
+- No full 25-fixture JSON farm this tick (anti-conveyor)
 - No `projects/irc6651/`
 - Digests must not present these toys as IRS notice substitutes

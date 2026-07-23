@@ -2,6 +2,16 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #2 (irc6651 toys 9 + G6 draft)
+
+Research only. Stays `adversarial` / **WAIT_HOURS**.
+
+- Dual toys **5 → 9** (FtpOnly, PaidOnTimeZero, MinFloorBinds, PartialMonthDual)
+- Drafted `irc6651-G6-summary.md` with explicit **do not build yet**
+- Hour-status memo; ticks=4; hours still under 4h; **no** `projects/`
+
+**Skeptical one-liner:** A longer toy kit still does not clear the hours hold or Kill A honesty.
+
 ## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #1 (irc6651 dual toys)
 
 Research only. `current_idea: irc6651` stays `adversarial`.

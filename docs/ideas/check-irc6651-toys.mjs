@@ -82,6 +82,14 @@ function forecastB(input) {
       return { status: "ok", ftf: 0, ftp: 240, combined: 240, branch: "levy_bump" };
     case "FiveMonthFileCap":
       return { status: "ok", ftf: 2250, ftp: 400, combined: 2650, branch: "ftf_5mo_cap" };
+    case "FtpOnly":
+      return { status: "ok", ftf: 0, ftp: 150, combined: 150, branch: "ftp_only" };
+    case "PaidOnTimeZero":
+      return { status: "ok", ftf: 0, ftp: 0, combined: 0, branch: "zero_base" };
+    case "MinFloorBinds":
+      return { status: "ok", ftf: 510, ftp: 0, combined: 510, branch: "min_floor_binds" };
+    case "PartialMonthDual":
+      return { status: "ok", ftf: 450, ftp: 50, combined: 500, branch: "partial_month" };
     default:
       return forecastA(input);
   }
@@ -138,6 +146,46 @@ const toys = [
     min_floor: 0,
     expect: { combined: 2650, ftf: 2250, ftp: 400 },
   },
+  {
+    toy_id: "FtpOnly",
+    net_amount_due: 10000,
+    unpaid_by_month: [10000, 10000, 10000],
+    unfiled_months: 0,
+    levy_bump_after_month: null,
+    apply_minimum: false,
+    min_floor: 0,
+    expect: { combined: 150, ftf: 0, ftp: 150 },
+  },
+  {
+    toy_id: "PaidOnTimeZero",
+    net_amount_due: 0,
+    unpaid_by_month: [],
+    unfiled_months: 2,
+    levy_bump_after_month: null,
+    apply_minimum: false,
+    min_floor: 0,
+    expect: { combined: 0, ftf: 0, ftp: 0 },
+  },
+  {
+    toy_id: "MinFloorBinds",
+    net_amount_due: 2000,
+    unpaid_by_month: [],
+    unfiled_months: 1,
+    levy_bump_after_month: null,
+    apply_minimum: true,
+    min_floor: 510,
+    expect: { combined: 510, ftf: 510, ftp: 0 },
+  },
+  {
+    toy_id: "PartialMonthDual",
+    net_amount_due: 10000,
+    unpaid_by_month: [10000],
+    unfiled_months: 1,
+    levy_bump_after_month: null,
+    apply_minimum: false,
+    min_floor: 0,
+    expect: { combined: 500, ftf: 450, ftp: 50 },
+  },
 ];
 
 function near(a, b) {
@@ -192,4 +240,4 @@ if (failed) {
   console.error(`irc6651 toys: ${failed} failure(s)`);
   process.exit(1);
 }
-console.log("irc6651 toys: 5 dual-green + 4 rejects");
+console.log(`irc6651 toys: ${toys.length} dual-green + 4 rejects`);
