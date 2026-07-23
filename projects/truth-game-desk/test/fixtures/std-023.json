@@ -1,0 +1,19 @@
+{
+  "id": "std-023",
+  "title": "Techlean / impute-lean",
+  "input": {
+    "corpus": "techlean",
+    "min_n": 40,
+    "bias_scale": 2
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "techlean",
+    "naive_risk": 20.51,
+    "safer_risk": 3.4,
+    "delta_score": 17.11,
+    "min_n": 40,
+    "k_eligible": 2,
+    "i2": 48.67
+  }
+}

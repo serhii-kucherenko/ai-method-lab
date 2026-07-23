@@ -1,0 +1,19 @@
+{
+  "id": "std-006",
+  "title": "Contaminated with high single-agent extremity",
+  "input": {
+    "corpus": "contaminated",
+    "min_n": 40,
+    "bias_scale": 2.5
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "contaminated",
+    "naive_risk": 40.51,
+    "safer_risk": 3.05,
+    "delta_score": 37.46,
+    "min_n": 40,
+    "k_eligible": 7,
+    "i2": 45.17
+  }
+}

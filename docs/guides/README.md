@@ -37,6 +37,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 30 | [Heart Scan Desk — what we learned](30-heart-scan-desk-lessons.md) | Product `heart-scan-desk` |
 | 31 | [Chest Xray Desk — what we learned](31-chest-xray-desk-lessons.md) | Product `chest-xray-desk` |
 | 32 | [Consult Bench Desk — what we learned](32-consult-bench-desk-lessons.md) | Product `consult-bench-desk` |
+| 33 | [Truth Game Desk — what we learned](33-truth-game-desk-lessons.md) | Product `truth-game-desk` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 

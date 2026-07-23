@@ -1,0 +1,19 @@
+{
+  "id": "std-020",
+  "title": "Small with high extremity",
+  "input": {
+    "corpus": "small",
+    "min_n": 40,
+    "bias_scale": 2.2
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "small",
+    "naive_risk": 79.72,
+    "safer_risk": 2.9,
+    "delta_score": 76.82,
+    "min_n": 40,
+    "k_eligible": 1,
+    "i2": 37.67
+  }
+}

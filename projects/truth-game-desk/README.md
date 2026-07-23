@@ -1,31 +1,32 @@
 # Truth Game Desk
 
-Method-lab product sourced from a simple-papers digest.
-
-## Paper
-
-- **Id:** 2607.08403
-- **Title:** Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination
-- **URL:** https://arxiv.org/abs/2607.08403v1
-- **Code:** (none — software claim only)
-
-## What we will build
-
-The G-Frame framework offers a scalable paradigm for developing more reliable lightweight LLMs in specialized, rule-based domains by integrating multi-agent systems, Bayesian principles, and game theory, addressing a key limitation of current models.
+Soft-simulation org desk for **game-theoretic multi-agent truth plans**, inspired by [arXiv:2607.08403](https://arxiv.org/abs/2607.08403v1). Display name is **Truth Game Desk** only — never brand authors' model names; never claim hallucination-elimination product.
 
 ## Run
 
 ```bash
 cd projects/truth-game-desk
 npm install
-npm test
-npm start
+npm run build
+npm start          # Next.js on :3000
+npm run start:api  # optional HTTP harness + static public/
+npm test           # unit + UI critical + app-up live smoke
 ```
 
-## Status
+Offline demo: open `try.html` in a browser.
 
-Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` and commits `docs/ideas/truth-game-desk-DESIGN.md` before multi-page UI.
+## Unique claim
 
-## Config hygiene
+**A (good):** game-theoretic multi-agent truth plans — structured challenge, payoff scoring, multi-agent game awareness  
+**B (naive):** single-agent; flat majority vote without game structure; confidence-only filters
 
-Never write `package.json` with a UTF-8 BOM (Windows PowerShell `Set-Content -Encoding utf8` does). Node fails with `ERR_INVALID_PACKAGE_CONFIG`. Use Node `fs.writeFileSync` or run `node scripts/strip-json-bom.mjs`.
+## Docs
+
+- Product: [`PRODUCT.md`](./PRODUCT.md)
+- Design: [`docs/ideas/truth-game-desk-DESIGN.md`](../../docs/ideas/truth-game-desk-DESIGN.md)
+- Lessons: [`docs/guides/33-truth-game-desk-lessons.md`](../../docs/guides/33-truth-game-desk-lessons.md)
+- Findings: [`FINDINGS.md`](./FINDINGS.md)
+
+## Honesty
+
+Method-lab experiment — not a hallucination-elimination product and not a claim to replace the authors' game-theory multi-agent framework. Authors' code: none published with this paper.

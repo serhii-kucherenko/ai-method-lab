@@ -1,17 +1,21 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { describeClaim } from "../src/claim.ts";
+import { describeClaim, CLAIM, DISPLAY_NAME } from "../src/claim.js";
 
-describe("Game Theory Driven smoke", () => {
+describe("Truth Game Desk smoke", () => {
   it("describes the paper-sourced claim", () => {
     const got = describeClaim({
       paperId: "2607.08403",
-      title: "Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination",
+      title:
+        "A Unified Framework for Comprehensive Truth claim set Segmentation and Phenotyping",
       codeUrl: null,
-      buildClaim: "The G-Frame framework offers a scalable paradigm for developing more reliable lightweight LLMs in specialized, rule-based domains by integrating multi-agent systems, Bayesian principles, and game theory, addressing a key limitation of current models.",
+      buildClaim: CLAIM,
     });
     assert.equal(got.ok, true);
-    if (got.ok) assert.match(got.line, /2607\.08403/);
+    if (got.ok) {
+      assert.match(got.line, /2607\.08403/);
+      assert.match(got.line, new RegExp(DISPLAY_NAME));
+    }
   });
 
   it("rejects empty claim", () => {

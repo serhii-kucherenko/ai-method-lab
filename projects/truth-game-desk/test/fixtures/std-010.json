@@ -1,0 +1,18 @@
+{
+  "id": "std-010",
+  "title": "Arena beta majority-lean",
+  "input": {
+    "corpus": "clinic_b",
+    "min_n": 40
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "clinic_b",
+    "naive_risk": 21.63,
+    "safer_risk": 3,
+    "delta_score": 18.63,
+    "min_n": 40,
+    "k_eligible": 2,
+    "i2": 44.67
+  }
+}

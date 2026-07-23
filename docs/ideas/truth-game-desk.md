@@ -1,6 +1,6 @@
 # Truth Game Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (sustain)  
 **Slug:** `truth-game-desk`  
 **Display name:** Truth Game Desk  
 **Paper id:** `2607.08403`  
