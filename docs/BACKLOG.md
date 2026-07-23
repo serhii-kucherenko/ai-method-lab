@@ -48,4 +48,4 @@ Noun-swap FSMs, dual-signer + ceiling/floor/days templates, calendar-day waits p
 
 **2026-07-23 kill pass** (`docs/ideas/SEED_KILL_PASS_2026-07-23.md`): refundgap, epapound, excise4971, slotbay, counselgate, penmaxfda (killed); form222clock (soft park). Do not revive as “next product.”
 
-**Next research (active):** **Filing Penalty Desk** (`filing-penalty-desk`) — adversarial; mature name; not ready_to_build.
+**Active build:** **Filing Penalty Desk** (`projects/filing-penalty-desk/`) — PM go; smoke next.
