@@ -2,6 +2,17 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-23 — Graph Retrieval Desk scale GREEN
+
+- ≥250 job page walk; concurrent batch safety; 429 Retry-After
+- **11** tests; Cell `A03__P-scale-001__graph-retrieval-desk__r1`; next **sustain**
+
+## 2026-07-23 — Graph Retrieval Desk integrate GREEN
+
+- HMAC webhook (`x-grd-signature`) + idempotency; settings RBAC; pagination/search; outbound corpus probe; 429 Retry-After
+- **9** tests; settings page; honesty fence unchanged
+- Cell `A03__P-integrate-001__graph-retrieval-desk__r1`; next **scale**
+
 ## 2026-07-23 — Model Compiler Desk sustain GREEN (product complete, email pending)
 
 - Ladder through sustain: 9 pages; 18 features; goldens ≥25; try.html; tutor guide
