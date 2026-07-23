@@ -26,7 +26,7 @@ This is a **method experiment inspired by the paper**. It is **not** a replaceme
 - Hiding the honesty fence on UI or digests
 - Using the paper short name as product brand
 
-## Live features (18 ≥15)
+## Live features (19 ≥15)
 
 1. Org tenancy  
 2. Member roles (admin / operator / viewer)  
@@ -46,11 +46,12 @@ This is a **method experiment inspired by the paper**. It is **not** a replaceme
 16. Pagination + search  
 17. Rate-limit feedback (429 + Retry-After)  
 18. Offline try page (`try.html`) + in-app tutor guide link  
+19. Marketing landing (`/` — hero, problem, product, selling points, features, how-it-works, honesty, Sources, footer CTA)  
 
 ## Pages (9 ≥6)
 
-1. Home (`/` Next + `/index.html` harness)  
-2. Rhythm jobs (`/jobs`)  
+1. Marketing landing (`/` Next + `/index.html` harness)  
+2. Rhythm jobs (`/jobs` — desk entry)  
 3. Lifecycle (`/lifecycle`)  
 4. Scenario compare (`/scenario`)  
 5. Batch transitions (`/batch`)  

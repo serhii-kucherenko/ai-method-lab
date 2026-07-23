@@ -12,7 +12,24 @@ Never brand the product as AG-SCL. The display name is the hero signal on every 
 
 - **Name in chrome:** Heart Rhythm Desk (wordmark-level, not a nav afterthought)
 - **One-line promise:** Compare long-tail-aware rhythm scoring against a naive majority baseline — method experiment, not a clinical ECG reader
-- **First viewport:** one composition — brand, one headline, one supporting sentence, one primary CTA (Open scenario), soft ECG-grid atmosphere. No dashboard dump, no pill clusters, no floating badges on the hero plane
+- **First viewport:** one composition — brand, one headline, one supporting sentence, one primary CTA (Open desk → `/jobs`), soft ECG-grid atmosphere. No dashboard dump, no pill clusters, no floating badges on the hero plane
+
+## Landing brief
+
+| Piece | Copy |
+|-------|------|
+| **Headline** | Rare rhythms should not vanish into the majority score. |
+| **Supporting** | A lab desk to compare long-tail-aware rhythm scoring against a naive majority baseline — method experiment, not a clinical ECG reader. |
+| **Primary CTA** | Open desk → `/jobs` (harness: `/jobs.html`) |
+| **Secondary CTA** | Read honesty → `/honesty` |
+| **Selling points** | Rare-tag score movement vs flat majority; exportable audit; independent batch siblings; dual-impl goldens |
+| **Features** | Org/jobs, lifecycle + conflicts, scenario compare, audit/CSV, goldens, honesty, webhooks, rate limits, try.html — grouped on the landing |
+| **How it works** | 1) Open desk / create job → 2) Compare majority vs long-tail-aware → 3) Audit lifecycle & export |
+| **Honesty / limits** | Workflow experiment; not clinical ECG reader; not authors’ model; never brand as AG-SCL |
+| **Sources** | Paper https://arxiv.org/abs/2607.14613v1 · Code https://github.com/Open-EXG/AG-SCL-for-Long-Tailed-ECG |
+| **Footer CTA** | Repeat Open desk → `/jobs` |
+
+Landing route `/` (`app/page.tsx` + `public/index.html`). Desk chrome starts at `/jobs`. Landing header is minimal (Open desk + Honesty only) so the first viewport stays brand-first.
 
 ## Visual direction
 
@@ -68,8 +85,8 @@ No continuous glow loops, no confetti, no parallax noise.
 
 | Route | Purpose | Primary CTA | Empty / error |
 |-------|---------|-------------|---------------|
-| `/` | Brand + claim + enter desk | Open scenario | — |
-| `/jobs` | Rhythm job catalog CRUD | Create job | “No jobs yet — create one” |
+| `/` | Marketing landing (hero → Sources) | Open desk → `/jobs` | — |
+| `/jobs` | Rhythm job catalog CRUD (desk entry) | Create job | “No jobs yet — create one” |
 | `/lifecycle` | Enforce draft→queued→running→terminal | Advance status | Illegal transition message |
 | `/scenario` | Majority baseline vs long-tail-aware | Run compare | Cheat reject reason |
 | `/batch` | Independent sibling transitions | Run batch | Per-item error rows |
