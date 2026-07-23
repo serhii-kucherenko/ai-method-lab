@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T16:30:00Z",
+  "updated_at": "2026-07-23T16:40:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -28,7 +28,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "Filing Penalty Desk findings emailed (fc5f85c1). Bond Accrual Desk killed G2 vs bondstrip. Research: Employer Shared Responsibility Desk — docs only, not ready_to_build.",
+  "notes": "Deepening Employer Shared Responsibility Desk (tick 2): parallel researchers on algorithm/G-gates/toys. Not ready_to_build. Loop 10m.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -40,7 +40,7 @@
     "min_hours_research_before_ready": 4,
     "framing_started_at": "2026-07-23T16:30:00.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 1,
+    "research_ticks_on_idea": 2,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "require_pm_go": true,
@@ -66,12 +66,12 @@
     "always_merge": true
   },
   "loop": {
-    "interval": "15m",
-    "sentinel": "AGENT_LOOP_TICK_mature_15m",
-    "purpose": "mature_15m",
-    "pid": 32732,
+    "interval": "10m",
+    "sentinel": "AGENT_LOOP_TICK_mature_10m",
+    "purpose": "mature_10m",
+    "pid": 30248,
     "chain": "research_build_guide_email_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 2
+    "ticks_observed": 0
   }
 }

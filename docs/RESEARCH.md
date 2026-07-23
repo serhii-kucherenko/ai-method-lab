@@ -2,6 +2,12 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — Employer Shared Responsibility Desk deepen (tick 2)
+
+Parallel researchers deepening **Employer Shared Responsibility Desk**: algorithm + statute cites + falsifiers; G1/G2/G3/G5; framed dossier + toys + hour status. Loop cadence tightened to 10m. Hours clock from ~16:30Z — still under 4h. **No** `projects/`; **not** `ready_to_build`; never brand `esrp4980h`.
+
+**Skeptical one-liner:** Paper volume is not depth — toys and kill honesty still have to hold before any roadmap.
+
 ## 2026-07-23 — Unblocked: email sent; Bond Accrual killed; ESRP desk framed
 
 Filing Penalty Desk product-complete email sent (Resend id `fc5f85c1-c5e4-4dde-9677-31b6e2a27125`; try page + StackBlitz). Cleared `product_complete_pending` and hard stop. **Bond Accrual Desk killed (G2)** — isomorphic to sustained `bondstrip` day-count accrue + strip. New `current_idea`: **Employer Shared Responsibility Desk** (`employer-shared-responsibility-desk`) — framing only; research tick 1/3; hours clock started; **no** product folder; never brand `esrp4980h`.
