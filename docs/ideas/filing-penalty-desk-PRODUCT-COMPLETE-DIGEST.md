@@ -1,7 +1,7 @@
 # Filing Penalty Desk — product-complete digest (ready to send)
 
-**Status:** Sustained · 55 tests · 8 pages · 18 features · tutor guide filed  
-**Blocker:** Resend MCP / API key not available in this environment — paste into email client or restore Resend and send.
+**Status:** Sent · Resend id `fc5f85c1-c5e4-4dde-9677-31b6e2a27125` · 2026-07-23  
+**Prior blocker:** Resend was unavailable; cleared after send.
 
 **To:** kucherenko.web@gmail.com  
 **From:** AI Method Lab \<onboarding@resend.dev\>  

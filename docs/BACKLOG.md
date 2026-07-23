@@ -12,7 +12,7 @@ See `docs/DEPTH_RESTART.md` (Correction 6).
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **Filing Penalty Desk** (`filing-penalty-desk`) | **sustained — email blocked** | 55 tests; 8 pages; 18 features; digest ready; Resend hard stop |
+| 1 | **Filing Penalty Desk** (`filing-penalty-desk`) | **sustained — findings emailed** | 55 tests; 8 pages; 18 features; Resend `fc5f85c1` |
 | 1 | **Customs Penalty Forecast** (`c1592` folder legacy) | **sustained — findings emailed** | Rename pattern retired; see guides/02 |
 | 1 | **ptax4975** | **sustained** | 58 tests; 7 pages + try.html; Kill A + 3 fences |
 | 1 | **oshamult** | **sustained** | 56 tests; 7 pages + try.html; Kill A honesty |
@@ -33,9 +33,11 @@ See `docs/DEPTH_RESTART.md` (Correction 6).
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| **Filing Penalty Desk** | **sustained — email blocked** | Digest drafted; restore Resend before next product |
+| **Filing Penalty Desk** | **sustained — findings emailed** | Product complete |
+| **Employer Shared Responsibility Desk** | **framing (research)** | ACA assessable payments; never brand `esrp4980h` |
+| **Bond Accrual Desk** | **killed (G2)** | Isomorphic to bondstrip |
 | **c1592** | **sustained** | Display: Customs Penalty Forecast; findings emailed |
-| esrp4980h | seed (log only) | § 4980H ESRP; parked behind irc6651 (depth > width) |
+| esrp4980h | **renamed → Employer Shared Responsibility Desk** | Legacy id only |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
 | ptax4975 | **sustained** | Product complete under projects/ptax4975 |
@@ -49,4 +51,4 @@ Noun-swap FSMs, dual-signer + ceiling/floor/days templates, calendar-day waits p
 
 **2026-07-23 kill pass** (`docs/ideas/SEED_KILL_PASS_2026-07-23.md`): refundgap, epapound, excise4971, slotbay, counselgate, penmaxfda (killed); form222clock (soft park). Do not revive as “next product.”
 
-**Active build:** **Filing Penalty Desk** (`projects/filing-penalty-desk/`) — crud GREEN; **workflow** next.
+**Active research:** **Employer Shared Responsibility Desk** — docs only; Bond Accrual Desk killed. No product folder until ready_to_build + PM go.

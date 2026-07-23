@@ -2,6 +2,12 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — Unblocked: email sent; Bond Accrual killed; ESRP desk framed
+
+Filing Penalty Desk product-complete email sent (Resend id `fc5f85c1-c5e4-4dde-9677-31b6e2a27125`; try page + StackBlitz). Cleared `product_complete_pending` and hard stop. **Bond Accrual Desk killed (G2)** — isomorphic to sustained `bondstrip` day-count accrue + strip. New `current_idea`: **Employer Shared Responsibility Desk** (`employer-shared-responsibility-desk`) — framing only; research tick 1/3; hours clock started; **no** product folder; never brand `esrp4980h`.
+
+**Skeptical one-liner:** Mail closed the product gate; the next idea still has to survive isomorphism and hours before any roadmap go.
+
 ## 2026-07-23 — Filing Penalty Desk sustained; email blocked (hard stop)
 
 Delivery sustain GREEN (55 tests, 8 pages, 18 features, tutor guide `docs/guides/04-filing-penalty-desk-lessons.md`). Digest drafted at `docs/ideas/filing-penalty-desk-PRODUCT-COMPLETE-DIGEST.md`. **Hard stop:** Resend MCP missing and no API key — cannot clear `product_complete_pending`. Next research seed parked as **Bond Accrual Desk** (G2 vs bondstrip required) — **no** second product folder.

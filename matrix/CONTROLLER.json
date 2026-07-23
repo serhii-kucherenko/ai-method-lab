@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-07-23T15:05:00Z",
+  "updated_at": "2026-07-23T16:30:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
     "on": ["phase_complete", "product_complete", "hard_stop", "digest"],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "965db748-44f1-4364-913a-31960838af89",
-    "digest_draft": "docs/ideas/filing-penalty-desk-PRODUCT-COMPLETE-DIGEST.md"
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "fc5f85c1-c5e4-4dde-9677-31b6e2a27125",
+    "digest_draft": null
   },
   "paused": false,
   "active_cell": null,
@@ -21,26 +21,26 @@
     "auth": "bearer-token"
   },
   "last_completed": "A03__P-sustain-001__filing-penalty-desk__r1",
-  "last_error": "Resend MCP unavailable and RESEND_API_KEY missing — cannot send Filing Penalty Desk product-complete email",
-  "current_product": "filing-penalty-desk",
-  "current_idea": "filing-penalty-desk",
-  "next_research_idea": "bond-accrual-desk",
+  "last_error": null,
+  "current_product": null,
+  "current_idea": "employer-shared-responsibility-desk",
+  "next_research_idea": null,
   "next_cell": null,
-  "mode": "hard_stop",
-  "phase": "scoring",
-  "notes": "Filing Penalty Desk sustain GREEN (55 tests, 8 pages, 18 features, tutor guide). Digest drafted. HARD STOP: restore Resend MCP or RESEND_API_KEY, send digest (try page + StackBlitz), then clear product_complete_pending. Do not open next product until email sent.",
-  "hard_stop": true,
-  "ask_human": true,
-  "hard_stop_reason": "Filing Penalty Desk finished and the findings email is ready, but email sending is blocked: Resend is not available in this session and no API key is in the environment. Restore Resend (or provide a send path), then the lab can clear the product slot and continue research.",
+  "mode": "autonomous",
+  "phase": "research",
+  "notes": "Filing Penalty Desk findings emailed (fc5f85c1). Bond Accrual Desk killed G2 vs bondstrip. Research: Employer Shared Responsibility Desk — docs only, not ready_to_build.",
+  "hard_stop": false,
+  "ask_human": false,
+  "hard_stop_reason": null,
   "depth_policy": {
     "max_active_products": 1,
     "require_idea_depth": true,
     "block_isomorphic_dual_gate": true,
     "block_same_day_research_to_build": false,
     "min_hours_research_before_ready": 4,
-    "framing_started_at": "2026-07-23T05:35:00.000Z",
+    "framing_started_at": "2026-07-23T16:30:00.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 11,
+    "research_ticks_on_idea": 1,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "require_pm_go": true,
@@ -69,9 +69,9 @@
     "interval": "15m",
     "sentinel": "AGENT_LOOP_TICK_mature_15m",
     "purpose": "mature_15m",
-    "pid": 34852,
+    "pid": null,
     "chain": "research_build_guide_email_next",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 1
+    "ticks_observed": 2
   }
 }

@@ -1,31 +1,18 @@
-# Bond Accrual Desk — research seed (next after Filing Penalty Desk)
+# Bond Accrual Desk — killed (G2)
 
 **Display name:** Bond Accrual Desk  
 **Slug:** `bond-accrual-desk`  
-**State:** `seed` → framing this tick — **not** `ready_to_build`  
-**Bar:** Correction 6 — mature name, ≥15 features before sustain, tutor guide required  
+**State:** `killed`  
+**Date:** 2026-07-23
 
-**Note:** Prior portfolio had `bondstrip` as a thin method stress. This idea must prove a **non-isomorphic** unique claim or be killed at G2 — do not noun-swap day-count alone.
+## Autopsy
 
-## One-line pitch
+Pitch was coupon stripping + accrued interest across day-count conventions with settle/ex-coupon edges.
 
-Help fixed-income ops forecast **coupon stripping and accrued interest across day-count conventions** with explicit settle/ex-coupon edges — without claiming to replace a trading system.
+**G2 fail:** Removing the costume leaves the same claim as sustained **bondstrip** (`projects/bondstrip/`): day-count accrued interest + remaining coupon strip (+ face). Not a new invariant — noun-swap of an already-proved method stress.
 
-## Problem (draft)
+**Disposition:** `killed` — do not frame, fixture, or open `projects/bond-accrual-desk/`.
 
-Spreadsheets mix 30/360 and actual/actual accruals at settlement and ex-coupon boundaries. Wrong accrued interest invents cash at trade date. Existing lab `bondstrip` may already cover too much of this — **G2 kill round required before deepening.**
+## Next
 
-## Who
-
-Middle-office / ops analysts at small fixed-income desks reconciling accrued interest tickets.
-
-## Immediate research actions
-
-1. G2 vs sustained `bondstrip` — if isomorphic, **kill** and pick another literal-dollar seed  
-2. Prefer alternate next seeds if G2 fails: e.g. **Deposit Interest Window** (customs §1677g already in depositgap — careful), or a new domain with mature name  
-
-## Explicit non-actions
-
-- No `projects/bond-accrual-desk/`  
-- No ready_to_build  
-- Filing Penalty Desk findings email still pending (Resend blocked) — do not open a second product folder
+Research moves to a **non-isomorphic** mature-named seed: **Employer Shared Responsibility Desk** (`employer-shared-responsibility-desk`) — ACA assessable-payment math, not bond accrual.
