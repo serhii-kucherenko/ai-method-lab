@@ -1,9 +1,16 @@
 {
-  "updated_at": "2026-07-23T14:40:00Z",
+  "updated_at": "2026-07-23T14:39:36.418Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
-    "to": ["kucherenko.web@gmail.com"],
-    "on": ["phase_complete", "product_complete", "hard_stop", "digest"],
+    "to": [
+      "kucherenko.web@gmail.com"
+    ],
+    "on": [
+      "phase_complete",
+      "product_complete",
+      "hard_stop",
+      "digest"
+    ],
     "enabled": true,
     "product_complete_pending": false,
     "last_product_complete_email_id": "965db748-44f1-4364-913a-31960838af89"
@@ -52,8 +59,16 @@
     "finish_and_email_before_next": true,
     "max_parallel_agents": 20,
     "naming_protocol": "docs/PRODUCT_NAMING.md",
-    "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
-    "pm_pack": ["ROADMAP", "PM-GO"],
+    "architect_pack": [
+      "VISION",
+      "ROADMAP",
+      "PRD",
+      "ERD"
+    ],
+    "pm_pack": [
+      "ROADMAP",
+      "PM-GO"
+    ],
     "comprehensive_protocol": "docs/COMPREHENSIVE_PRODUCT.md",
     "roles_protocol": "protocols/AGENT_ROLES.md",
     "protocol": "protocols/IDEA_DEPTH.md",
@@ -68,7 +83,7 @@
     "interval": "15m",
     "sentinel": "AGENT_LOOP_TICK_mature_15m",
     "purpose": "mature_15m",
-    "pid": null,
+    "pid": 34852,
     "chain": "research_build_guide_email_next",
     "do_not_rearm_if_alive": true,
     "ticks_observed": 0
