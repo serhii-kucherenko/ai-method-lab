@@ -1,0 +1,12 @@
+{
+  "id": "rdd-020",
+  "title": "manual cheat reject",
+  "input": {
+    "harness_depth": 3,
+    "manual_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "manual_cheat"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "rdd-011",
+  "title": "partial overlap two",
+  "input": {
+    "harness_tags": "placement|streaming",
+    "config_feature_tags": "placement|latency"
+  },
+  "expect": {
+    "status": "ok",
+    "harness_steps": 2,
+    "matched_tags": 1,
+    "naive_fit": 1,
+    "deploy_fit": 5,
+    "delta_score": 4
+  }
+}

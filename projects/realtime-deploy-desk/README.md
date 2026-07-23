@@ -1,17 +1,17 @@
 # Realtime Deploy Desk
 
-Method-lab product sourced from a simple-papers digest.
+Method-lab product for harness-guided deployment optimization versus a naive manual-tuning baseline.
 
 ## Paper
 
 - **Id:** 2607.18171
 - **Title:** FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications
 - **URL:** https://arxiv.org/abs/2607.18171v1
-- **Code:** (none — software claim only)
+- **Code:** none published with this paper
 
-## What we will build
+## What we built
 
-This work offers a novel, agent-driven approach to automate the complex optimization of AI model deployments, potentially reducing the need for expert manual tuning and making high-performance AI more accessible to developers.
+Org desk with marketing landing, deploy jobs, lifecycle, scenario compare (manual-tuning vs harness-guided), batch, audit, goldens, honesty, and settings — on **Next.js + Tailwind + shadcn**. Design note: `docs/ideas/realtime-deploy-desk-DESIGN.md`.
 
 ## Run
 
@@ -19,12 +19,18 @@ This work offers a novel, agent-driven approach to automate the complex optimiza
 cd projects/realtime-deploy-desk
 npm install
 npm test
-npm start
+npm run dev
 ```
 
-## Status
+API harness (tests / static public pages):
 
-Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` and commits `docs/ideas/realtime-deploy-desk-DESIGN.md` before multi-page UI.
+```bash
+npm run start:api
+```
+
+## Honesty
+
+Workflow experiment inspired by the paper — not a replacement for the authors' harness and not a production serving stack. Never brand as FlashRT.
 
 ## Config hygiene
 

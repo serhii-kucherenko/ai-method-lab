@@ -1,0 +1,167 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  --rdd-ink: #0f1c24;
+  --rdd-muted: #4a5d6a;
+  --rdd-paper: #eef2f4;
+  --rdd-mist: #e0e8ec;
+  --rdd-teal: #0d7377;
+  --rdd-teal-deep: #095456;
+  --rdd-cyan: #14919b;
+  --rdd-rose: var(--rdd-teal);
+  --rdd-rose-deep: var(--rdd-teal-deep);
+  --rdd-slate: var(--rdd-cyan);
+  --rdd-ok: #2f6b4f;
+  --rdd-warn: #8a6a2f;
+  --rdd-line: #c5d0d6;
+  --rdd-signal: var(--rdd-cyan);
+
+  --background: var(--rdd-paper);
+  --foreground: var(--rdd-ink);
+  --card: #ffffff;
+  --card-foreground: var(--rdd-ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--rdd-ink);
+  --primary: var(--rdd-teal);
+  --primary-foreground: #f2faf9;
+  --secondary: var(--rdd-mist);
+  --secondary-foreground: var(--rdd-ink);
+  --muted: var(--rdd-mist);
+  --muted-foreground: var(--rdd-muted);
+  --accent: #d0e4e6;
+  --accent-foreground: var(--rdd-ink);
+  --destructive: var(--rdd-warn);
+  --border: var(--rdd-line);
+  --input: var(--rdd-line);
+  --ring: var(--rdd-teal);
+  --chart-1: var(--rdd-teal);
+  --chart-2: var(--rdd-cyan);
+  --chart-3: var(--rdd-ok);
+  --chart-4: #6a7f8c;
+  --chart-5: #2a3844;
+  --radius: 0.5rem;
+  --sidebar: #e6eef1;
+  --sidebar-foreground: var(--rdd-ink);
+  --sidebar-primary: var(--rdd-teal);
+  --sidebar-primary-foreground: #f2faf9;
+  --sidebar-accent: var(--rdd-mist);
+  --sidebar-accent-foreground: var(--rdd-ink);
+  --sidebar-border: var(--rdd-line);
+  --sidebar-ring: var(--rdd-teal);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 8% -8%, #c5e4e5 0%, transparent 55%),
+      radial-gradient(ellipse 55% 40% at 100% 0%, #b8dfe3 0%, transparent 45%),
+      linear-gradient(
+        0deg,
+        transparent 24px,
+        color-mix(in srgb, var(--rdd-line) 40%, transparent) 25px
+      ),
+      linear-gradient(
+        90deg,
+        transparent 24px,
+        color-mix(in srgb, var(--rdd-line) 30%, transparent) 25px
+      );
+    background-size: auto, auto, 25px 25px, 25px 25px;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@keyframes rdd-trace {
+  from {
+    stroke-dashoffset: 420;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rdd-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rdd-trace {
+  stroke-dasharray: 420;
+  animation: rdd-trace 0.8s ease-out forwards;
+}
+
+.rdd-reveal {
+  animation: rdd-reveal 0.2s ease-out forwards;
+}
+
+.rdd-nav-active {
+  position: relative;
+}
+.rdd-nav-active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.2rem;
+  width: 70%;
+  height: 2px;
+  background: var(--rdd-teal);
+  transform: translateX(-50%) scaleX(1);
+  transform-origin: center;
+  transition: transform 150ms ease;
+}

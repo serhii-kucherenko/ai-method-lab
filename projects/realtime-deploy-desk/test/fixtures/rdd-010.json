@@ -1,0 +1,16 @@
+{
+  "id": "rdd-010",
+  "title": "full harness overlap",
+  "input": {
+    "harness_tags": "ir-lift,static-analysis,measure-gate",
+    "config_feature_tags": "ir-lift,static-analysis,measure-gate"
+  },
+  "expect": {
+    "status": "ok",
+    "harness_steps": 4,
+    "matched_tags": 3,
+    "naive_fit": 1,
+    "deploy_fit": 9,
+    "delta_score": 8
+  }
+}

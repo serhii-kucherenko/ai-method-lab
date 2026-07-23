@@ -1,0 +1,15 @@
+{
+  "id": "rdd-005",
+  "title": "depth 5",
+  "input": {
+    "harness_depth": 5
+  },
+  "expect": {
+    "status": "ok",
+    "harness_steps": 5,
+    "matched_tags": 0,
+    "naive_fit": 1,
+    "deploy_fit": 11,
+    "delta_score": 10
+  }
+}

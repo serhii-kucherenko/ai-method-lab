@@ -1,0 +1,16 @@
+{
+  "id": "rdd-013",
+  "title": "spaces around commas",
+  "input": {
+    "harness_tags": " a , b , c ",
+    "config_feature_tags": " b , d "
+  },
+  "expect": {
+    "status": "ok",
+    "harness_steps": 2,
+    "matched_tags": 1,
+    "naive_fit": 1,
+    "deploy_fit": 5,
+    "delta_score": 4
+  }
+}
