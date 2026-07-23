@@ -1,0 +1,14 @@
+{
+  "id": "mcd-015",
+  "title": "tile vectorize",
+  "input": {
+    "mlir_pass_hint": "tile|vectorize"
+  },
+  "expect": {
+    "status": "ok",
+    "pass_layers": 2,
+    "naive_modularity": 1,
+    "layered_modularity": 4,
+    "delta_modularity": 3
+  }
+}

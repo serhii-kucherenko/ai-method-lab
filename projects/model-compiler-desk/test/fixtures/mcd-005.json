@@ -1,0 +1,14 @@
+{
+  "id": "mcd-005",
+  "title": "three comma passes",
+  "input": {
+    "mlir_pass_hint": "lower-to-linalg,vectorize,bufferize"
+  },
+  "expect": {
+    "status": "ok",
+    "pass_layers": 3,
+    "naive_modularity": 1,
+    "layered_modularity": 6,
+    "delta_modularity": 5
+  }
+}

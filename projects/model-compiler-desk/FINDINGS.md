@@ -35,3 +35,12 @@ Paper claim descriptor green. Product scaffolded from 2607.15865.
 - Overlapping optimistic batches → one ok + one reject; in-batch duplicate → `duplicate_in_batch`
 - Scale suite covers 429 + Retry-After
 - Tests: prior suites + scale green
+
+## Sustain (r1)
+
+- 9 pages with UI critical paths; 18 features; ≥4 aggregates
+- Goldens ≥25 dual-impl (modularity A/B); all_pass
+- Offline `try.html` (no fetch); tutor guide `docs/guides/05-model-compiler-desk-lessons.md`
+- README + PRODUCT maturity checklist; StackBlitz URL
+- Cell: `A03__P-sustain-001__model-compiler-desk__r1`
+- Honesty: method experiment, not authors' compiler

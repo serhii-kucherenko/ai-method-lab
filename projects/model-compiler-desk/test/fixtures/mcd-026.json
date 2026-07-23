@@ -1,0 +1,14 @@
+{
+  "id": "mcd-026",
+  "title": "seven passes",
+  "input": {
+    "mlir_pass_hint": "1,2,3,4,5,6,7"
+  },
+  "expect": {
+    "status": "ok",
+    "pass_layers": 7,
+    "naive_modularity": 1,
+    "layered_modularity": 14,
+    "delta_modularity": 13
+  }
+}

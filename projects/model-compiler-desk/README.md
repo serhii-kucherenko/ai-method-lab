@@ -13,40 +13,17 @@ Method-lab product sourced from a simple-papers digest. Display name stays **Mod
 
 This desk is a **method experiment inspired by the paper**. It is **not** a replacement for the authors' MLIR compiler at the paper's code URL.
 
-## What we built
+## Feature matrix (18 ≥15)
 
-### CRUD
+See [PRODUCT.md](./PRODUCT.md) for the full list. Highlights: org tenancy, roles, projects, compile jobs, lifecycle + illegal rejects, optimistic versions, batch transitions, scenario compare, audit CSV, goldens (≥25), webhooks HMAC/idempotency, settings RBAC, pagination/search, rate-limit feedback, offline try, tutor guide link.
 
-- Bearer-token auth stub (`POST /auth/register`)
-- Orgs with roles: admin / operator / viewer
-- Projects under an org (model name + target backend)
-- Compile jobs: create, list, patch, delete
+## Pages (9 ≥6)
 
-### Workflow
+Home · Jobs · Lifecycle · Scenario · Batch · Audit · Goldens · Honesty · Settings — each has a UI critical-path test.
 
-- Compile-job lifecycle: **draft → queued → running → succeeded / failed** (cancel from draft/queued/running)
-- Illegal transitions rejected (`illegal_transition`)
-- Audit log (actor, from, to, time) + CSV export
-- Optimistic `expected_version` → `version_conflict` on stale writes
-- Batch transitions: each job succeeds or rejects independently
-- Scenario compare: naive opaque monolith vs paper-inspired MLIR layered passes
-- HTML: home, jobs, lifecycle, scenario, audit, honesty
+## Aggregates (≥4)
 
-### Integrate
-
-- Inbound webhook `POST /webhooks/jobs` with HMAC (`x-mcd-signature`) + idempotency key (no double-create)
-- Org settings: admin sees webhook secret; operator/viewer get redacted; only admin rotates
-- Project and job lists: `limit` / `offset` pagination and `q` search
-- Over-limit requests return **429** with `Retry-After: 1`
-- Settings page live
-
-### Scale
-
-- Seed and page-walk **250** compile jobs (default page 20, hard cap 100)
-- Concurrent batch transitions on disjoint jobs all succeed
-- Overlapping optimistic batches: one ok, one reject (`version_conflict` / illegal)
-- Duplicate job in one batch → `duplicate_in_batch`
-- Rate limit still returns **429** + `Retry-After: 1` under load
+Organization · Project · CompileJob · AuditEntry (+ OrgSettings, Member)
 
 ## Run
 
@@ -57,8 +34,16 @@ npm test
 npm start
 ```
 
-Open `http://127.0.0.1:3847/` (or `PORT`).
+Open `http://127.0.0.1:3847/` (or `PORT`). Offline demo: open [`try.html`](./try.html) in a browser (no server fetch).
+
+## StackBlitz
+
+https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/projects/model-compiler-desk?startScript=start
+
+## Tutor guide
+
+[docs/guides/05-model-compiler-desk-lessons.md](../../docs/guides/05-model-compiler-desk-lessons.md)
 
 ## Status
 
-Smoke GREEN · CRUD GREEN · Workflow GREEN · Integrate GREEN · Scale GREEN · next: sustain
+Smoke GREEN · CRUD GREEN · Workflow GREEN · Integrate GREEN · Scale GREEN · **Sustain GREEN**

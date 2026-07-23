@@ -1,0 +1,14 @@
+{
+  "id": "mcd-018",
+  "title": "leading pipe",
+  "input": {
+    "mlir_pass_hint": "|vectorize"
+  },
+  "expect": {
+    "status": "ok",
+    "pass_layers": 1,
+    "naive_modularity": 1,
+    "layered_modularity": 2,
+    "delta_modularity": 1
+  }
+}

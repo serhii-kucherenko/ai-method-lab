@@ -1,0 +1,12 @@
+{
+  "id": "mcd-024",
+  "title": "opaque cheat reject",
+  "input": {
+    "mlir_pass_hint": "a,b,c",
+    "opaque_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "opaque_cheat"
+  }
+}

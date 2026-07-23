@@ -2,6 +2,13 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-23 — Model Compiler Desk sustain GREEN (product complete, email pending)
+
+- Ladder through sustain: 9 pages; 18 features; goldens ≥25; try.html; tutor guide
+- Honesty: method experiment, not authors' compiler
+- Cell `A03__P-sustain-001__model-compiler-desk__r1`
+- `product_complete_pending: true` — parent sends finish email; do not clear product slot or start next product
+
 ## 2026-07-23 — Model Compiler Desk scale GREEN
 
 - ≥250 job page walk; concurrent batch safety; 429 Retry-After

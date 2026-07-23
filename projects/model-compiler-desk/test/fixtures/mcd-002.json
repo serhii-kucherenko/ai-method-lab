@@ -1,0 +1,14 @@
+{
+  "id": "mcd-002",
+  "title": "whitespace hint",
+  "input": {
+    "mlir_pass_hint": "   "
+  },
+  "expect": {
+    "status": "ok",
+    "pass_layers": 1,
+    "naive_modularity": 1,
+    "layered_modularity": 2,
+    "delta_modularity": 1
+  }
+}

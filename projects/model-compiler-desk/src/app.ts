@@ -4,6 +4,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describeClaim } from "./claim.js";
+import { listGoldenCards } from "./goldens.js";
 import {
   addMember,
   assertAccess,
@@ -44,6 +45,7 @@ import {
 } from "./store.js";
 
 const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
+const productRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const MIME: Record<string, string> = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -141,6 +143,17 @@ function checkRateLimit(store: Store, req: IncomingMessage, res: ServerResponse)
 }
 
 function serveStatic(res: ServerResponse, urlPath: string): boolean {
+  if (urlPath === "/try.html") {
+    const tryPath = join(productRoot, "try.html");
+    if (!existsSync(tryPath)) return false;
+    const body = readFileSync(tryPath);
+    res.writeHead(200, {
+      "content-type": "text/html; charset=utf-8",
+      "content-length": body.length,
+    });
+    res.end(body);
+    return true;
+  }
   const clean = urlPath === "/" ? "/index.html" : urlPath;
   const filePath = join(publicDir, clean.replace(/^\//, ""));
   if (!filePath.startsWith(publicDir) || !existsSync(filePath)) return false;
@@ -663,6 +676,17 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
       const compare = scenarioCompare(store, orgId, projectId, jobId);
       if (!compare) return send(res, 404, { error: "job_not_found" });
       return send(res, 200, compare);
+    }
+
+    const goldensMatch = path.match(/^\/orgs\/([^/]+)\/goldens$/);
+    if (goldensMatch && method === "GET") {
+      const orgId = goldensMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "operator", "viewer"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      return send(res, 200, listGoldenCards());
     }
 
     return send(res, 404, { error: "not_found" });

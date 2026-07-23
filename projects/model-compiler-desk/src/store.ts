@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { scoreModularity } from "./domain/modularity.js";
 
 export type OrgRole = "admin" | "operator" | "viewer";
 
@@ -649,14 +650,6 @@ export function seedScaleJobs(
   return ids;
 }
 
-function countPassLayers(hint: string): number {
-  const parts = hint
-    .split(/[,>|]/)
-    .map((p) => p.trim())
-    .filter(Boolean);
-  return Math.max(1, parts.length);
-}
-
 /**
  * Scenario compare: naive opaque monolith vs paper-inspired MLIR layered passes.
  * Lab sketch only — not the authors' compiler.
@@ -669,26 +662,21 @@ export function scenarioCompare(
 ) {
   const job = store.jobs.get(jobId);
   if (!job || job.org_id !== orgId || job.project_id !== projectId) return null;
-  const layers = countPassLayers(job.mlir_pass_hint);
-  const naive = {
-    label: "opaque_monolith",
-    pass_layers: 1,
-    modularity_score: 1,
-    note: "Treat the model as one black-box compile unit.",
-  };
-  const paperInspired = {
-    label: "mlir_layered",
-    pass_layers: layers,
-    modularity_score: layers * 2,
-    note: "Sketch of layered MLIR-style passes from the paper's method claim.",
-  };
+  const scored = scoreModularity({ mlir_pass_hint: job.mlir_pass_hint });
+  if (scored.status !== "ok") return null;
   return {
     job_id: jobId,
     project_id: projectId,
     mlir_pass_hint: job.mlir_pass_hint,
-    naive,
-    paper_inspired: paperInspired,
-    delta_modularity: paperInspired.modularity_score - naive.modularity_score,
+    naive: {
+      ...scored.naive,
+      note: "Treat the model as one black-box compile unit.",
+    },
+    paper_inspired: {
+      ...scored.paper_inspired,
+      note: "Sketch of layered MLIR-style passes from the paper's method claim.",
+    },
+    delta_modularity: scored.delta_modularity,
     honesty:
       "Method-lab experiment inspired by paper 2607.15865 — not a replacement for the authors' compiler.",
   };
@@ -788,7 +776,9 @@ export function ingestWebhookJob(
   }
   const created = createJob(store, orgId, projectId, input);
   if (!created) return { ok: false, status: 404, error: "project_not_found" };
-  if ("error" in created) return { ok: false, status: 400, error: created.error };
+  if ("error" in created) {
+    return { ok: false, status: 400, error: created.error ?? "bad_job" };
+  }
   store.webhookDeliveries.set(deliveryKey, created.job.id);
   return { ok: true, status: 201, job: created.job, replay: false };
 }
