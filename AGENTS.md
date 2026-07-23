@@ -14,7 +14,7 @@ Unless `matrix/CONTROLLER.json` says `paused` / `hard_stop`, run as the **autono
 - Use `docs/DEVELOPMENT_WORKFLOW.md` inside the product
 - **Do not** ask the human to confirm
 - Always commit, always push to origin/main, always merge own PRs when CI green
-- Email **only** `idea_validated`, `product_complete`, `hard_stop` via Resend (`protocols/NOTIFY.md`) — story first; finish mail: README + guide + summary + try + StackBlitz
+- Email **only** `idea_validated`, `product_complete`, `hard_stop` via Resend (`protocols/NOTIFY.md`) — **full plain narrative**; assume the reader knows **no** acronyms; finish mail: README + guide + summary + try + browser playground
 
 Wake prompt (also in `docs/AUTOMATION.md`):
 

@@ -1,6 +1,8 @@
 # Notify — autonomous digests via Resend
 
-Email delivers **what changed this tick** to `notify.to`. The human should understand the outcome **from the email alone**, in everyday language — as if explaining the work to a smart friend who has never opened this repo.
+Email delivers **what changed** to `notify.to`. The human should understand the outcome **from the email alone**.
+
+**Audience assumption (hard):** the reader knows **none** of our acronyms, statute codes, paper jargon, or repo slang. Write a **full, detailed, simple plain narrative** — as if explaining to a smart friend who has never heard of this lab, never read a research paper abstract, and never opened GitHub. Spell things out the first time; prefer everyday words over shorthand forever after.
 
 Links are optional footnotes, not the payload — except for **product finished**, where try-artifacts are required (see below).
 
@@ -10,7 +12,7 @@ Links are optional footnotes, not the payload — except for **product finished*
 
 Repo base (only when a link is warranted): `https://github.com/serhii-kucherenko/ai-method-lab/blob/main/`
 
-StackBlitz try base: `https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/projects/`
+Browser playground try base: `https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/projects/`
 
 ## When to send
 
@@ -24,48 +26,62 @@ Do **not** email per-cell pass/fail, phase complete, or “continuing to next ce
 
 ### Validated idea (`idea_validated`)
 
-**Subject:** `[Method Lab] Starting: <display name>`
+**Subject:** `[Method Lab] Starting: <display name>` (human product name only)
 
-**Body (plain text):**
+**Body — plain narrative (no bullet farm of jargon):**
 
-1. **Outcome** — we chose a paper and opened a product folder
-2. **The paper** — title, one-sentence what it is about, link optional
-3. **What we will build** — plain-language product claim (not arXiv jargon dump)
-4. **Why it fits** — public code and/or clear software applicability
-5. **Next** — we will build and test it; you get another email when it is finished
+Write several short paragraphs a stranger can follow:
+
+1. **What happened** — we picked a research paper and started a small software project inspired by it.
+2. **What the paper is about** — in ordinary words (who it helps, what problem, what the authors claim). Do not dump author abbreviations unexplained.
+3. **What we will build** — what the app will do for a user, in concrete everyday terms.
+4. **Why this paper** — e.g. the authors published working source code, or the idea is clearly something a software team can implement and test.
+5. **What you will get later** — another email when it is finished, with a simple offline demo and a link to try the project in the browser.
 
 ### Product finished (`product_complete`)
 
-Same story-first format as before, **plus**:
+Same plain-narrative bar, **longer and more complete**:
 
-- Summary of what shipped
-- README path called out in plain words (“project readme in the folder”)
-- Tutor guide mention
-- Try.html attachment + StackBlitz link
+1. **Outcome** — the named product is finished; one sentence of what it does.
+2. **The idea** — 3–6 sentences: who hurts, what goes wrong today, what we set out to prove (workflow experiment, not “we beat commercial vendors”).
+3. **The project** — what lives in the product folder, in plain words (screens, calculations, rules).
+4. **What we built** — concrete pieces a non-engineer can picture.
+5. **What we proved** — verification in plain words (named scenarios, rejects, scale). Avoid “ladder green.”
+6. **Summary** — one short paragraph of the whole story.
+7. **What did not change** — still not a commercial pitch if true.
+8. **Next** — one sentence.
+9. **Try it** — attached offline page + browser playground link; mention the project readme and lessons guide in plain words (“how to run” file and “what we learned” guide).
 
 ## Hard rules
 
 1. **Explain before you celebrate.** The reader must learn *what the idea was*, *what the project is*, and *what we actually built* — not only that tests passed.
-2. **Lead with the story, then the proof.** Outcome → idea → project/build → proof → framing → next → try artifacts (product finished only).
+2. **Lead with the story, then the proof.** Full narrative first; counts only as supporting detail.
 3. **Never force a re-read of the repo.** Links are optional extras (except product try-link below).
-4. **Link budget:** research / hard-stop digests → at most one optional deep link. Product finished → **try-page attachment + one StackBlitz try link** (no findings-doc farm; do not re-link unchanged workflow docs).
+4. **Link budget:** hard-stop → at most one optional deep link. Product finished → **try-page attachment + one browser-playground try link**.
 5. **Honest framing in plain words:** this is a workflow experiment unless we say otherwise.
-6. **No acronyms or internal codes** in subject or body (see table below).
+6. **No unexplained acronyms or internal codes** in subject or body. If a technical term is unavoidable, define it in the same sentence in everyday language.
+7. **No paper-id or statute-code branding** in the subject; use the mature display name only.
 
-## Plain language (no acronyms)
+## Plain language (never assume these are known)
 
-| Internal (repo only) | Say this in email |
+| Internal / technical | Say this in email |
 |----------------------|-------------------|
-| A03, A10, A03+A10 | “standard build workflow” or “full product test ladder” |
+| A03, A10, ladder | “our full product build-and-test workflow” |
 | G1–G6, IDEA_DEPTH | omit — describe the check in words |
-| ready_to_build | “cleared research and ready to start building” |
+| ready_to_build | “ready to start building” |
 | P-smoke, P-sustain, cell id | “first working version”, “finished”, or omit |
 | Kill A / Kill B | “existing vendors already do this commercially” / “niche audience risk” |
 | GTM | “commercial launch claim” |
 | method stress | “workflow experiment — not claiming to beat incumbents” |
-| StackBlitz | “open in the browser playground” (or just paste the URL under Try it) |
+| StackBlitz | “open in the browser playground” (then paste the URL) |
+| MLIR | “a compiler toolkit used to lower machine-learning models into efficient code” (or avoid and say “compiler passes”) |
+| LLM | “large language model” or “chat-style AI model” |
+| HMAC / RBAC / API | “signed webhook requests” / “role permissions” / “the app’s programming interface” — or describe the user-visible behavior only |
+| CRUD | “create, read, update, and delete records” |
+| arXiv / DOI | “a public research paper” + optional link; never lead with the id |
+| IRS / ACA / OSHA (if ever) | spell out or describe (“U.S. tax agency”, “health coverage rules for large employers”, …) |
 
-**Before send:** read the draft aloud. If a stranger would ask “what is this product?”, rewrite it.
+**Before send:** read the draft aloud. If a stranger would ask “what does that abbreviation mean?” or “what is this product?”, rewrite it. Prefer a letter-like narrative over a checklist of codes.
 
 ---
 
