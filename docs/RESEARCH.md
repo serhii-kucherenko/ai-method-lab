@@ -2,6 +2,28 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — Researcher: irc6651 depth tick (G4/G5/toys)
+
+c1592 finished + findings emailed earlier; research slot is **irc6651** only. Docs deepen — **no** `projects/irc6651/`, **no** `ready_to_build`, **no** PM-GO, **no** architect pack.
+
+**Advanced**
+
+- Kill A/B/C deepened with concrete fences (honesty digest language; spreadsheet falsifier; abatement / § 6601 / 0.25% installment / § 6698–6699 fences)
+- G1 provisional evidence sheet + IRS minimum table years cited
+- G4 falsifiers drafted (`irc6651-FALSIFIERS.md`)
+- G5 paper outline A–Y (**25** sketched) — **not** a green fixture farm
+- Five named dollar toys (`irc6651-TOYS.md`): SameMonth45 **$500**, HalfPayMonth3 **$6,000**, MinFloor2025 **$200**, LevyBumpTwoPlusTwo **$240**, FiveMonthFileCap **$2,650**
+- CONTROLLER `research_ticks_on_idea` **1 → 2**; `framing_started_at` unchanged
+
+**Still not ready**
+
+- State remains **adversarial** (not differentiated/testable/ready)
+- No practitioner interview / matched notice; Kill A commercial honesty still stands
+- G6 summary not written; hours + min ticks still apply before any flip
+- Anti-conveyor: no JSON goldens this tick
+
+**Skeptical one-liner:** Twenty-five sketched case names and five toys are research — shipping a § 6651 calculator tomorrow would still be conveyor theater.
+
 ## 2026-07-23 — c1592 finished + findings emailed; research → irc6651
 
 Delivery sustain GREEN (59 tests, 7 pages, try.html). Product-complete digest emailed (try page + StackBlitz). CONTROLLER cleared product slot; `phase: research`, `current_idea: irc6651` (adversarial — deepen only, not ready_to_build).

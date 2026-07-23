@@ -33,7 +33,7 @@ See `docs/DEPTH_RESTART.md` (Correction 5).
 | Seed | State | Notes |
 | --- | --- | --- |
 | **c1592** | **sustained** | Findings email sent; research moved to irc6651 |
-| **irc6651** | **adversarial (research-only)** | Next after c1592; § 6651 FTF+FTP+(c)(1) stack; Kill A/B/C started; **not** ready_to_build; no projects/ |
+| **irc6651** | **adversarial (research-only)** | G3 deepened; G4+G5 paper + 5 toys; ticks=2; **not** ready_to_build; no projects/ |
 | esrp4980h | seed (log only) | § 4980H ESRP; parked behind irc6651 (depth > width) |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
