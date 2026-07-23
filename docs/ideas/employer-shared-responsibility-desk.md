@@ -3,7 +3,7 @@
 **Display name:** Employer Shared Responsibility Desk  
 **Slug:** `employer-shared-responsibility-desk`  
 **Legacy research id (docs only):** `esrp4980h` — never the brand  
-**State:** `framed`  
+**State:** `adversarial` (G1–G5 + toys + G6 draft) — **not** `ready_to_build`  
 **Bar:** Correction 6 — mature name, ≥15 features before sustain, tutor guide required  
 **Not:** `ready_to_build` · no product folder
 
@@ -74,8 +74,9 @@ Must stay distinct from:
 | Kill rounds | `employer-shared-responsibility-desk-KILL-ROUNDS.md` |
 | G5 cases | `employer-shared-responsibility-desk-G5-cases.md` |
 | Algorithm / statute / falsifiers | `-algorithm.md`, `-STATUTE-CITATIONS.md`, `-FALSIFIERS.md` |
+| G6 summary (do not build yet) | `employer-shared-responsibility-desk-G6-summary.md` |
 
-**Posture note:** This dossier locks **`framed`**. Sibling G1–G3/G5 papers may push CONTROLLER/BACKLOG toward `adversarial` — still **not** `ready_to_build` (hours + tick ≥3 + G6 open).
+**Posture note:** Idea is **`adversarial`**. Hours hold + research ticks ≥3 still block ready_to_build. No PM go / architect pack yet.
 
 ## Immediate research actions (hold before ready)
 

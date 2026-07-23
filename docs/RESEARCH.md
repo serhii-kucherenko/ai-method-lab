@@ -10,9 +10,9 @@ Framed dossier locked (problem / who / workaround / success metric / unique clai
 
 ## 2026-07-23 — Employer Shared Responsibility Desk deepen (tick 2)
 
-Parallel researchers deepening **Employer Shared Responsibility Desk**: algorithm + statute cites + falsifiers; G1/G2/G3/G5; framed dossier + toys + hour status. Loop cadence tightened to 10m. Hours clock from ~16:30Z — still under 4h. **No** `projects/`; **not** `ready_to_build`; never brand `esrp4980h`.
+Parallel pack landed: algorithm + statute cites + G4 falsifiers; G1/G2/G3/G5 (38 cases); toys **6 green**; **G6 draft = do not build yet**. Hours clock from ~16:30Z — still under 4h; ticks <3. Loop 10m. **No** `projects/`; never brand `esrp4980h`.
 
-**Skeptical one-liner:** Paper volume is not depth — toys and kill honesty still have to hold before any roadmap.
+**Skeptical one-liner:** Gates look green on paper; the hours hold and honesty fence are what stop a conveyor flip.
 
 ## 2026-07-23 — Employer Shared Responsibility Desk deepened (G1–G3, G5)
 
