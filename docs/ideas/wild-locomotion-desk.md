@@ -1,6 +1,6 @@
 # Wild Locomotion Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (paper-sourced)  
 **Slug:** `wild-locomotion-desk`  
 **Display name:** Wild Locomotion Desk  
 **Paper id:** `2607.13579`  

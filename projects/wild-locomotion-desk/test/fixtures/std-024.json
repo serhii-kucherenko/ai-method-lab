@@ -1,0 +1,18 @@
+{
+  "id": "std-024",
+  "title": "Mixed obstacles strict",
+  "input": {
+    "corpus": "mixed",
+    "min_n": 90
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "mixed",
+    "naive_risk": 118.12,
+    "safer_risk": 4.2,
+    "delta_score": 113.92,
+    "min_n": 90,
+    "k_eligible": 1,
+    "i2": 28.4
+  }
+}

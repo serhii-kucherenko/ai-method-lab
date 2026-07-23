@@ -1,18 +1,31 @@
 # Wild Locomotion Desk
 
-Multi-skill perceptive quadruped locomotion desk — inspired by paper 2607.13579.
+Multi-skill perceptive locomotion desk: skill library + onboard perception + autonomous transitions for mixed obstacles — versus a single-skill flat-terrain naive policy.
 
-- **Paper:** https://arxiv.org/abs/2607.13579v1
-- **Authors' code:** none published with this paper
+**Paper:** https://arxiv.org/abs/2607.13579v1  
+**Authors' code:** none published  
+**Display name:** Wild Locomotion Desk (never brand APT-RL)
 
 ## Run
 
 ```bash
-cd projects/wild-locomotion-desk
 npm install
-npm test
+npm run dev          # Next.js UI at http://localhost:3000
+npm run start:api    # API + static harness (optional)
+npm test             # unit + app-up live smoke
 ```
 
-Smoke scaffold — climb Next.js + Tailwind + shadcn, ≥20 features / ≥8 pages, DESIGN note, and **live app smoke** (`templates/product/app-up.test.ts`) before finish.
+## Try offline
 
-Honesty: method experiment; never brand APT-RL as the product name.
+Open `try.html` in a browser — no server required for a soft scenario compare.
+
+## Honesty
+
+Workflow experiment inspired by the paper. Soft simulation only. Not a replacement for the authors' quadruped controller or commercial robot stacks.
+
+## Docs
+
+- Product: `PRODUCT.md`
+- Findings: `FINDINGS.md`
+- Design: `../../docs/ideas/wild-locomotion-desk-DESIGN.md`
+- Lessons: `../../docs/guides/25-wild-locomotion-desk-lessons.md`

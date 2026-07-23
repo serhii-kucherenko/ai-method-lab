@@ -29,6 +29,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 22 | [Tactile Data Desk — what we learned](22-tactile-data-desk-lessons.md) | Product `tactile-data-desk` |
 | 23 | [AI Governance Desk — what we learned](23-ai-governance-desk-lessons.md) | Product `ai-governance-desk` |
 | 24 | [Stage Validate Desk — what we learned](24-stage-validate-desk-lessons.md) | Product `stage-validate-desk` |
+| 25 | [Wild Locomotion Desk — what we learned](25-wild-locomotion-desk-lessons.md) | Product `wild-locomotion-desk` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 

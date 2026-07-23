@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wild Locomotion Desk</title>
+    <style>
+      :root {
+        --ink: #1a2a24;
+        --muted: #5a6b63;
+        --paper: #eef4f0;
+        --mist: #d4e0d9;
+        --steel: #2f6b52;
+        --line: #c5d4cc;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(ellipse 80% 50% at 10% 0%, #c5ddd2 0%, transparent 55%),
+          linear-gradient(180deg, var(--paper), #e4efe8);
+        min-height: 100vh;
+      }
+      .wrap { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+      .brand {
+        font-family: Outfit, "Segoe UI", sans-serif;
+        font-size: clamp(1.8rem, 4vw, 2.75rem);
+        margin: 0 0 0.75rem;
+        letter-spacing: -0.02em;
+      }
+      h1 {
+        font-family: Outfit, "Segoe UI", sans-serif;
+        font-size: 1.45rem;
+        font-weight: 600;
+        margin: 0 0 0.75rem;
+      }
+      h2 {
+        font-family: Outfit, "Segoe UI", sans-serif;
+        font-size: 1.25rem;
+        margin: 2rem 0 0.6rem;
+      }
+      p, li { color: var(--muted); line-height: 1.5; }
+      .cta {
+        display: inline-block;
+        margin: 1rem 0.5rem 0 0;
+        padding: 0.55rem 1rem;
+        background: var(--steel);
+        color: #f2f6fa;
+        text-decoration: none;
+        border-radius: 0.35rem;
+        font-weight: 600;
+      }
+      .cta.secondary {
+        background: transparent;
+        color: var(--steel);
+        border: 1px solid var(--line);
+      }
+      ul { padding-left: 1.2rem; }
+      a { color: var(--steel); }
+    </style>
+  </head>
+  <body>
+    <div class="wrap" data-landing="live" data-home="live">
+      <section>
+        <p class="brand">Wild Locomotion Desk</p>
+        <h1>Switch skills — clear mixed obstacles</h1>
+        <p>
+          Skill library plus onboard perception and autonomous transitions —
+          against a single-skill flat-terrain policy that fails on stairs, gaps, and hurdles.
+        </p>
+        <a class="cta" href="/jobs.html">Open desk</a>
+        <a class="cta secondary" href="/honesty.html">Read honesty</a>
+      </section>
+
+      <section>
+        <h2>Problem</h2>
+        <p>
+          Flat-terrain policies look fine until stairs, hurdles, gaps, or stones appear.
+          A single skill with no perception and no autonomous transitions stalls on structured obstacles.
+        </p>
+      </section>
+
+      <section>
+        <h2>Product</h2>
+        <p>
+          Wild Locomotion Desk scores multi-skill perceptive plans beside naive flat baselines,
+          with jobs, audit, and dual-impl goldens. Soft simulation — not robot hardware.
+        </p>
+      </section>
+
+      <section>
+        <h2>Selling points</h2>
+        <ul>
+          <li>Compare multi-skill plans against flat-terrain / perception-blind / no-transition baselines</li>
+          <li>Keep locomotion jobs honest with lifecycle, batch siblings, and audit export</li>
+          <li>Browse dual-impl goldens so locomotion scores stay checkable</li>
+          <li>Org webhooks and roles so rejects and rotates stay visible</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>How it works</h2>
+        <ol>
+          <li>Create a locomotion job under a terrain profile</li>
+          <li>Run scenario compare — naive flat vs multi-skill</li>
+          <li>Advance lifecycle / batch, then export the audit trail</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Honesty / limits</h2>
+        <p>
+          Workflow experiment inspired by the paper. Not a replacement for the
+          authors' quadruped controller. Never brand as APT-RL.
+        </p>
+      </section>
+
+      <section>
+        <h2>Sources</h2>
+        <ul>
+          <li>
+            Paper:
+            <a href="https://arxiv.org/abs/2607.13579v1">https://arxiv.org/abs/2607.13579v1</a>
+          </li>
+          <li>Authors' code: none published</li>
+        </ul>
+      </section>
+
+      <p><a class="cta" href="/jobs.html">Open desk</a></p>
+    </div>
+  </body>
+</html>

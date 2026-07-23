@@ -1,0 +1,18 @@
+{
+  "id": "std-009",
+  "title": "Forest terrain",
+  "input": {
+    "corpus": "forest",
+    "min_n": 35
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "forest",
+    "naive_risk": 96.91,
+    "safer_risk": 1.8,
+    "delta_score": 95.11,
+    "min_n": 35,
+    "k_eligible": 6,
+    "i2": 20.17
+  }
+}
