@@ -1,57 +1,60 @@
 # AGENTS.md
 
-This repo is the **AI Method Lab** control plane: experiment by **building products** under `projects/`, sourced from **simple-papers** digests.
+This repo is the **AI Method Lab** control plane: experiment by building **few, comprehensive products** under `projects/`.
 
-## Default: autonomous
+## Default: paused until depth
 
-Unless `matrix/CONTROLLER.json` says `paused` / `hard_stop`, run as the **autonomous controller**:
+If `matrix/CONTROLLER.json` says `paused` / `hard_stop`, **do not** pick papers or open product folders. Wait for human steer or an explicit unpause with a real product pack.
 
-- Read `protocols/AUTONOMOUS_CONTROLLER.md` and `docs/PAPERS_INTAKE.md` first
-- Idle → `node scripts/pick-paper-idea.mjs --days 14 --write-shortlist --choose 1` → email **idea_validated** → climb product ladder
-- No hours hold / `ready_to_build` wait for paper-sourced ideas; mature names only (`docs/PRODUCT_NAMING.md`); sustain ≥20 features / ≥8 pages (1h keep-going loop); **require live Next build + `/` smoke before finish email**
-- Roles: researcher → PM → architect → **product designer** → delivery → **best-practices tutor** (guides) before finish email
-- Engineering stack: **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); **Python allowed** for ML/numeric paper ports with a documented run path (venv + sidecar); design: `protocols/DESIGN.md` — every product ships a **marketing landing at `/`**
-- Spawn parallel agents as needed (cap **20**); one product phase in CONTROLLER
-- Use `docs/DEVELOPMENT_WORKFLOW.md` inside the product
-- **Do not** ask the human to confirm
+When **not** paused:
+
+- Read `protocols/AUTONOMOUS_CONTROLLER.md`, `docs/PAPERS_INTAKE.md`, `docs/COMPREHENSIVE_PRODUCT.md`, `docs/DEPTH_RESTART.md` first
+- Papers are **research input** — never same-tick pick→smoke→sustain
+- Roles: researcher → product manager → senior architect → **product designer** → product delivery → best-practices tutor
+- Require **PM go + Vision/Roadmap/PRD/ERD/blueprint + DESIGN** before `projects/<slug>/`
+- Stack: **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); Python sidecar when the claim needs it
+- Marketing landing at `/` must sell a **specific buyer outcome** — not a generic lab desk
+- **Ban isomorphic desk clones** (noun-swap of jobs/lifecycle/scenario/goldens shells)
+- One product at a time; ≥20 real features / ≥8 distinct pages; live `next build` + app-up smoke before finish email
 - Always commit, always push to origin/main, always merge own PRs when CI green
-- Never rewrite `package.json` with a UTF-8 BOM (PowerShell `Set-Content -Encoding utf8`); use Node writes or `node scripts/strip-json-bom.mjs --check`
-- Email **only** `idea_validated`, `product_complete`, `hard_stop` via Resend (`protocols/NOTIFY.md`) — **full plain narrative**; assume the reader knows **no** acronyms; every start/finish letter ends with the **Sources** footer (paper URL + authors’ code URL); finish mail: README + guide + summary + try + browser playground — **all repo mentions are full GitHub https links**, never bare paths
+- Never rewrite `package.json` with a UTF-8 BOM; use Node writes or `node scripts/strip-json-bom.mjs --check`
+- If notify.enabled: email only per `protocols/NOTIFY.md` — story first; Sources footer; full GitHub https URLs
 
 Wake prompt (also in `docs/AUTOMATION.md`):
 
 ```text
-You are the AI Method Lab autonomous controller in this repo.
-Read protocols/AUTONOMOUS_CONTROLLER.md, matrix/CONTROLLER.json, docs/PAPERS_INTAKE.md, docs/PRODUCT_NAMING.md.
-Idle: pick implementable paper from simple-papers, open projects/<slug>/ same tick, email idea_validated.
-Running: designer + delivery climb on Next.js/Tailwind/shadcn (Python OK when needed); README + tutor guide + try.html; email product_complete; then next pick.
-Mature names. ≥20 features / ≥8 pages (1h loop). Design note required. Max 20 agents. Always commit push merge. No human confirm.
+You are the AI Method Lab controller.
+Read CONTROLLER.json first. If paused, stop.
+If running: one comprehensive product only — buyer story, selling points, designer pack, then build.
+Never isomorphic desk clones. Never pick→smoke same tick.
+Mature names. ≥20 real features. Live app smoke before finish email.
+Commit push merge. Notify only if enabled.
 ```
 
 ## What to optimize for
 
-Few comprehensive products from **real papers with code or clear software claims** — not freehand statute farms.
+Evidence that the workflow can produce **one sophisticated product a stranger would recognize as a product** — not a high count of template desks.
 
 ## Hard constraints
 
-1. Research ≠ experiment ≠ promote (paper pick still needs honesty fences)
+1. Research ≠ experiment ≠ promote
 2. One product phase in flight at a time
 3. Oracles and harness are not writable by the agent under test during a run
 4. Midterm method changes must version, redo, and triple-test
-5. No confirmation gates between phases in autonomous mode
+5. No confirmation gates between phases when autonomous — **but** `paused` always wins over autonomy
+6. No isomorphic dual-gate / desk-template clones
 
 ## Pointers
 
 - Portfolio: `projects/PORTFOLIO.md`
-- Papers intake: `docs/PAPERS_INTAKE.md`
-- Roles: `protocols/AGENT_ROLES.md`
-- Design: `protocols/DESIGN.md`
-- Stack: `docs/PRODUCT_STACK.md`
+- Agent roles: `protocols/AGENT_ROLES.md`
 - Product runbook: `protocols/PRODUCT_RUNBOOK.md`
+- Workflow: `docs/DEVELOPMENT_WORKFLOW.md`
 - Controller: `protocols/AUTONOMOUS_CONTROLLER.md` + `matrix/CONTROLLER.json`
 - Email: `protocols/NOTIFY.md`
 - Scoring: `docs/RUBRIC.md`
 - Backlog: `docs/BACKLOG.md`
+- Comprehensive bar: `docs/COMPREHENSIVE_PRODUCT.md`
 
 ## Cursor Cloud specific instructions
 

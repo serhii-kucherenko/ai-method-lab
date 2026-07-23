@@ -33,10 +33,24 @@ CRUD create/read/update alone = **3 max** toward the 20. Dual-approval status bo
 - One calculator page + dual approval
 - Desk-only UI with **no marketing landing** (no selling points / features / explanations page)
 - Noun-swap of a prior sustained product
+- **Isomorphic “desk” clones** — same jobs/lifecycle/scenario/batch/audit/goldens shell with a new domain score function and a renamed landing (human steer 2026-07-23 wipe)
+- Same-tick paper pick → smoke scaffold → sustain email without PM go, vision, roadmap, PRD, ERD, blueprint, and design pack
 - Sustaining with green API tests while `next build` / `next start` is broken (landing 500 / module-not-found)
 - Sustain with <8 pages, <4 aggregates, or <20 features
 - Pass-count digests without story + money honesty
 - Shipping without a tutor guide for what was learned
+
+## What “comprehensive” means (non-negotiable)
+
+A paper or document is **research input**, not a product. Before code:
+
+1. **Buyer** — who pays / who uses, in plain language
+2. **Outcome** — what job gets done better than today’s messy alternative
+3. **Selling points** — 3–7 reasons a stranger would open the app
+4. **Feature map** — capabilities that serve that story (not CRUD theater)
+5. **Distinct UX** — pages and flows unique to this product; not a renamed prior desk
+
+If the product folder could be produced by find-replace on another desk, it fails.
 
 ## Relationship to depth restart
 
@@ -46,7 +60,7 @@ Fewer products. Slower research. When we **do** build, build **comprehensive and
 
 Drive work through `protocols/AGENT_ROLES.md` (researcher → product manager → senior architect → **product designer** → product delivery → best-practices tutor).
 
-After `ready_to_build`, product manager commits roadmap + go, then senior architect + designer commit the pack **before** opening the product folder (paper pick→build may open smoke first, then design + Next climb):
+After `ready_to_build`, product manager commits roadmap + go, then senior architect + designer commit the pack **before** opening the product folder. **No same-tick paper→smoke.** Paper pick enters research; code starts only after the pack below exists:
 
 | Artifact | Path |
 |----------|------|
@@ -64,4 +78,4 @@ Shallow “blueprint = phase rename of dual-gate smoke” fails this bar.
 
 Sustain (and each phase that unlocks a page) requires an automated **UI critical path** — not API-only green. A single calculator HTML shell fails sustain even with ≥25 goldens. New products ship real pages on **Next.js + Tailwind + shadcn**, including a **marketing landing at `/`**; offline `try.html` stays the digest demo only. Desk entry is via landing CTA (typically `/jobs`).
 
-**Live app gate (hard):** before sustain email, `npm run build` must pass and a live smoke (`test/app-up.test.ts` or `npm run test:app-up`) must boot the production server and fetch `/` successfully. Copy `templates/product/app-up.test.ts` (pattern proven on `projects/tactile-data-desk`).
+**Live app gate (hard):** before sustain email, `npm run build` must pass and a live smoke (`test/app-up.test.ts` or `npm run test:app-up`) must boot the production server and fetch `/` successfully. Copy `templates/product/app-up.test.ts`.

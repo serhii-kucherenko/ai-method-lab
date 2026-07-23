@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T21:29:59.739Z",
+  "updated_at": "2026-07-23T21:36:59.315Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,18 +10,18 @@
       "product_complete",
       "hard_stop"
     ],
-    "enabled": true,
-    "product_complete_pending": true,
+    "enabled": false,
+    "product_complete_pending": false,
     "last_product_complete_email_id": "44b682f6-b65f-4737-ba8b-8a9638c39777",
     "last_idea_validated_email_id": "33a5b2c0-218e-4678-a77a-acbc07a8b383",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
   },
-  "paused": false,
+  "paused": true,
   "active_cell": null,
   "schema_version": "1.0.0",
-  "idle_reason": null,
+  "idle_reason": "human_steer_wipe_shallow_desks_rebuild_real_product",
   "product_defaults": {
     "persistence": "sqlite",
     "stack": "nextjs-app-router",
@@ -39,49 +39,43 @@
     "stack_protocol": "docs/PRODUCT_STACK.md",
     "design_protocol": "protocols/DESIGN.md"
   },
-  "last_completed": "A03__P-sustain-001__truth-game-desk__r1",
+  "last_completed": "human_steer_2026-07-23_wipe_template_desks",
   "last_error": null,
-  "current_product": "truth-game-desk",
-  "current_idea": "truth-game-desk",
+  "current_product": null,
+  "current_idea": null,
   "next_research_idea": null,
   "next_cell": null,
-  "mode": "autonomous",
-  "phase": "running",
-  "notes": "Truth Game Desk sustain ready — app-up green; finish email pending",
+  "mode": "paused",
+  "phase": "idle",
+  "notes": "PAUSED by human steer 2026-07-23: wiped isomorphic paper→desk template clones. Keep only filing-penalty-desk. Do NOT resume pick→clone→email chain. Next work = one comprehensive product with real business framing (buyer, selling points, distinct UX) per docs/COMPREHENSIVE_PRODUCT.md — ban template desk smokes.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
   "intake": {
     "source": "simple-papers",
-    "mode": "pick_then_build",
+    "mode": "depth_then_one_product",
     "simple_papers_root_env": "SIMPLE_PAPERS_ROOT",
     "default_root": "C:/Users/Serhii/Projects/simple-papers",
     "github_raw_base": "https://raw.githubusercontent.com/serhii-kucherenko/simple-papers/main/data/digests",
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
-    "last_pick": {
-      "paperId": "2607.08403",
-      "slug": "truth-game-desk",
-      "displayName": "Truth Game Desk",
-      "at": "2026-07-23T21:25:32.654Z",
-      "url": "https://arxiv.org/abs/2607.08403v1",
-      "codeUrl": null
-    }
+    "last_pick": null,
+    "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
   },
   "depth_policy": {
     "max_active_products": 1,
-    "require_idea_depth": false,
-    "paper_sourced_skip_hours_hold": true,
-    "paper_sourced_skip_ready_to_build": true,
+    "require_idea_depth": true,
+    "paper_sourced_skip_hours_hold": false,
+    "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
-    "min_hours_research_before_ready": 0,
+    "min_hours_research_before_ready": 24,
     "framing_started_at": null,
-    "min_research_ticks_before_ready": 0,
+    "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 0,
     "require_comprehensive_blueprint": true,
-    "require_architect_pack": false,
-    "require_pm_go": false,
-    "require_roadmap_before_build": false,
+    "require_architect_pack": true,
+    "require_pm_go": true,
+    "require_roadmap_before_build": true,
     "require_mature_display_name": true,
     "require_tutor_guide_before_email": true,
     "require_readme_before_email": true,
@@ -89,7 +83,7 @@
     "min_pages": 8,
     "min_aggregates": 4,
     "finish_and_email_before_next": true,
-    "max_parallel_agents": 20,
+    "max_parallel_agents": 5,
     "naming_protocol": "docs/PRODUCT_NAMING.md",
     "comprehensive_protocol": "docs/COMPREHENSIVE_PRODUCT.md",
     "roles_protocol": "protocols/AGENT_ROLES.md",
@@ -101,7 +95,10 @@
     "design_protocol": "protocols/DESIGN.md",
     "require_next_build": true,
     "require_app_live_smoke": true,
-    "app_live_smoke_protocol": "projects/<slug>/test/app-up.test.ts (build + next start GET /)"
+    "app_live_smoke_protocol": "projects/<slug>/test/app-up.test.ts (build + next start GET /)",
+    "ban_isomorphic_desk_clones": true,
+    "ban_template_noun_swap": true,
+    "require_distinct_business_story": true
   },
   "defaults": {
     "always_commit": true,
@@ -109,13 +106,13 @@
     "always_merge": true
   },
   "loop": {
-    "interval": "1h",
-    "sentinel": "AGENT_LOOP_TICK_mature_1h",
-    "purpose": "mature_1h",
-    "pid": 36996,
-    "chain": "pick_build_guide_email_next",
+    "interval": null,
+    "sentinel": null,
+    "purpose": "stopped_human_steer",
+    "pid": null,
+    "chain": null,
     "do_not_rearm_if_alive": true,
     "ticks_observed": 0,
-    "depth_note": "Hourly ticks: finish fewer products but deeper — ≥20 features, ≥8 pages/views, distinct product lines before sustain email."
+    "depth_note": "Loop killed. Do not re-arm 10m or 1h pick→desk churn. Build one real product at a time."
   }
 }

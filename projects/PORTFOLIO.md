@@ -1,34 +1,18 @@
 # Portfolio
 
-| Product | Paper | Status |
-|---------|-------|--------|
-| Filing Penalty Desk | (prior) | Complete |
-| Model Compiler Desk | 2607.15865 | Complete |
-| Graph Retrieval Desk | 2607.11683 | Complete |
-| Drug Discovery Desk | 2607.08404 | Complete |
-| Virulence Feature Desk | 10.1186/s40168-026-02467-w | Complete |
-| Heart Rhythm Desk | 2607.14613 | Complete |
-| Pathology Vision Desk | 2607.09526 | Complete |
-| Realtime Deploy Desk | 2607.18171 | Complete |
-| Secure Tutor Desk | 2607.14601 | Complete |
-| Agent Safety Desk | 2607.14570 | Complete |
-| Enterprise Agent Desk | 2607.17331 | Complete |
-| Ladder Logic Desk | 2607.08417 | Complete |
-| Data Science Desk | 2607.15901 | Complete |
-| Security Control Desk | 2607.09076 | Complete |
-| Rules Preferences Desk | 2607.15562 | Complete |
-| Itinerary Plan Desk | 2607.15552 | Complete |
-| Prompt Cache Desk | 2607.15516 | Complete |
-| Evidence Synthesis Desk | 2607.15247 | Complete |
-| Tactile Data Desk | 2607.14588 | Complete |
-| AI Governance Desk | 2607.14585 | Complete |
-| Stage Validate Desk | 2607.14568 | Complete |
-| Wild Locomotion Desk | 2607.13579 | Complete |
-| Joint Care Desk | 2607.12527 | Complete |
-| Pocket Molecule Desk | 2607.12349 | Complete |
-| Quantum Kernel Desk | 2607.11701 | Complete |
-| Memory Risk Desk | 2607.11656 | Complete |
-| Heart Scan Desk | 2607.11287 | Complete |
-| Chest Xray Desk | 2607.09305 | Complete |
-| Consult Bench Desk | 2607.09142 | Complete |
-| Truth Game Desk | 2607.08403 | Complete |
+Reset 2026-07-23 (human steer): shallow paper→desk template clones removed. One reference product kept. Next build must be a **single comprehensive product** — real business idea, selling points, distinct UX — not isomorphic “desk” smokes.
+
+## Active
+
+| Display name | Slug | Status | Notes |
+|--------------|------|--------|-------|
+| **Filing Penalty Desk** | `filing-penalty-desk` | **reference (kept)** | Prior sustained product; not the template-clone wave |
+| *(next)* | TBD | paused until real product pack | Pick one document → business framing → designer pack → build deep |
+
+## Rules (hard)
+
+- **No isomorphic desk clones** — noun-swapping a prior desk with new domain scores is an instant fail
+- **One product at a time**, finish for real value before starting another
+- **≥20 real features** that serve the buyer story — CRUD + lifecycle + goldens alone do not count as a product
+- Marketing landing must sell a specific outcome, not a generic “lab desk”
+- See `docs/COMPREHENSIVE_PRODUCT.md`, `docs/PRODUCT_NAMING.md`, `docs/DEPTH_RESTART.md`
