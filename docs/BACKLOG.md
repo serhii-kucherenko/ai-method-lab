@@ -2,17 +2,17 @@
 
 ## Strategy (depth restart)
 
-Fewer **robust** products. Slow research / idea verification. Build only after `protocols/IDEA_DEPTH.md` → `ready_to_build`, then **product manager roadmap + go**, then architect pack.  
-Finish the current product through sustain and **email findings** before switching.  
-**Granularity: hours** (`min_hours_research_before_ready`), not calendar days. Roles: `protocols/AGENT_ROLES.md` (researcher → PM → architect → delivery).
+Fewer **mature** products. Slow research. Build only after idea depth → PM roadmap + go → architect pack with **≥15 features**.  
+Finish + **tutor guide** + findings email before the next product.  
+Display names must be human (`docs/PRODUCT_NAMING.md`). Roles: researcher → PM → architect → delivery → **best-practices tutor**.
 
-See `docs/DEPTH_RESTART.md` (Correction 5).
+See `docs/DEPTH_RESTART.md` (Correction 6).
 
 ## Active (build)
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **c1592** | **sustained — findings emailed** | 59 tests; 7 pages + try.html; Kill A honesty |
+| 1 | **Customs Penalty Forecast** (`c1592` folder legacy) | **sustained — findings emailed** | Rename pattern retired; see guides/02 |
 | 1 | **ptax4975** | **sustained** | 58 tests; 7 pages + try.html; Kill A + 3 fences |
 | 1 | **oshamult** | **sustained** | 56 tests; 7 pages + try.html; Kill A honesty |
 | 1 | **lesserof** | **sustained** | 11 pages + goldens + try.html; 60 tests; Kill A honesty |
@@ -32,8 +32,8 @@ See `docs/DEPTH_RESTART.md` (Correction 5).
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| **c1592** | **sustained** | Findings email sent; research moved to irc6651 |
-| **irc6651** | **adversarial / WAIT_HOURS** | **25** paper fixtures (G5 A–Y); ticks=10; hours ~2/4; no projects/ |
+| **Filing Penalty Desk** | **adversarial / WAIT_HOURS** | Slug `filing-penalty-desk`; legacy kit `irc6651`; **≥15 features** required before build; no projects/ |
+| **c1592** | **sustained** | Display: Customs Penalty Forecast; findings emailed |
 | esrp4980h | seed (log only) | § 4980H ESRP; parked behind irc6651 (depth > width) |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
@@ -48,4 +48,4 @@ Noun-swap FSMs, dual-signer + ceiling/floor/days templates, calendar-day waits p
 
 **2026-07-23 kill pass** (`docs/ideas/SEED_KILL_PASS_2026-07-23.md`): refundgap, epapound, excise4971, slotbay, counselgate, penmaxfda (killed); form222clock (soft park). Do not revive as “next product.”
 
-**Next research (active):** `irc6651` — adversarial only; not ready_to_build.
+**Next research (active):** **Filing Penalty Desk** (`filing-penalty-desk`) — adversarial; mature name; not ready_to_build.

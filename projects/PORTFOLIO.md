@@ -8,7 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
-| **c1592** | **sustained** | A03 + A10 | done — findings emailed | § 1592(c) statutory max by culpability × duty-loss (Kill A; not CBP) |
+| **Customs Penalty Forecast** | **sustained** | A03 + A10 | done — findings emailed | Folder legacy `c1592`; statutory max by culpability (Kill A) |
 | **ptax4975** | **sustained** | A03 + A10 | done | § 4975 15%×year-parts + 100% if uncorrected (Kill A; not Form 5330) |
 | **oshamult** | **sustained** | A03 + A10 | done | GBP × serial remaining-balance penalty forecast (Kill A; not OIS) |
 | **lesserof** | **sustained** | A03 + A10 | done | Stacked TFTEA+USMCA+basket refund caps (Kill A; not ACE) |

@@ -107,3 +107,21 @@ Human steer: stop shallow conveyor projects. Prefer **few robust products**. Rol
 - One active product until sustain + notify complete
 - Parallel researcher agents on the *next* seed while delivery finishes the current product (docs only)
 - Autonomous merge/push when CI green
+
+## Correction 6 (2026-07-23 — human: mature names, tutor, 15 features)
+
+Human steer: coded names (`c1592`, `irc6651`, glue-nouns) and thin feature sets feel stupid. Want **mature products**, a **best-practices tutor** who writes guides, improved scoring, next idea only after one is done, new projects from scratch with **≥15 features**.
+
+**Additional stops**
+
+- Statute codes / ugly glue-nouns as the public product brand
+- Calling a product comprehensive with <15 user-visible features
+- Sustaining without a `docs/guides/` write-up
+- Scoring that only celebrates pass counts
+
+**Additional keeps**
+
+- `docs/PRODUCT_NAMING.md` display-name bar
+- Five-role handoff including **best-practices tutor**
+- Maturity + sophistication metrics in `docs/RUBRIC.md`
+- Loops that alternate research → build → guide → email → next idea

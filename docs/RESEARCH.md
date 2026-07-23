@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — Correction 6: mature names, tutor, ≥15 features
+
+Human steer: coded brands and thin products feel stupid. 
+
+- Added `docs/PRODUCT_NAMING.md`, tutor role + `docs/guides/`, maturity metrics in rubric
+- Comprehensive bar now **≥15 features**, ≥6 pages, ≥4 aggregates, tutor guide before finish email
+- Rebranded active research to **Filing Penalty Desk** (`filing-penalty-desk`); `irc6651` is legacy id only
+- **No** `projects/` until ready_to_build + PM go + 15-feature blueprint
+
+**Skeptical one-liner:** Renaming the folder labels is cheap — the proof is the next sustain failing the old thin bar on purpose.
+
 ## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #8 (fixtures 25 / G5 A–Y)
 
 Research only. Stays adversarial / **WAIT_HOURS**.

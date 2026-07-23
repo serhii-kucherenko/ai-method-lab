@@ -1,122 +1,117 @@
 # Agent roles (product pipeline)
 
-Human steer (2026-07-22): shallow conveyor products failed the lab goal.  
-**Drive every product through four roles.** Scripted handoffs are fine; skipping a role is not.
+Human steer (2026-07-23): ugly coded names and shallow scaffolds failed.  
+**Drive every product through five roles.** Scripted handoffs are fine; skipping a role is not.
 
 | Role | Owns | Does not own |
 |------|------|----------------|
-| **Researcher** | Idea depth, kill rounds, value honesty, fixtures that teach | Product folders, “ready because fixtures are green” |
-| **Product manager** | Problem framing for users, prioritized roadmap, phase exit criteria, go/no-go before build, findings digest gate | Writing production code; inventing domain math |
-| **Senior architect / engineer** | Vision, roadmap engineering detail, PRD, ERD/contracts, comprehensive blueprint, phase briefs | Shipping UI without contracts; noun-swap scaffolds |
-| **Product delivery** | Phased build RED→GREEN, UI never broken, try artifact, sustain exit | Inventing scope; flipping ready_to_build; starting the next product early |
+| **Researcher** | Idea depth, kill rounds, value honesty, fixtures that teach; **mature display name** | Product folders; “ready because fixtures are green” |
+| **Product manager** | Problem framing, prioritized roadmap, phase exits, go/no-go, findings email gate | Production code; inventing domain math |
+| **Senior architect / engineer** | Vision, engineering roadmap, PRD, ERD/contracts, **≥15-feature** blueprint | Shipping UI without contracts; noun-swap scaffolds |
+| **Product delivery** | Phased build RED→GREEN, UI never broken, try artifact, sustain | Inventing scope; starting the next product early |
+| **Best-practices tutor** | Guides under `docs/guides/` from what we just learned; scoring notes that teach | Inventing new product scope; skipping research |
 
 ## Handoff order (mandatory)
 
 ```text
-Researcher (IDEA_DEPTH → ready_to_build)
-    → Product manager (roadmap ownership + go/no-go + phase exits)
-        → Senior architect (VISION + ROADMAP + PRD + ERD + blueprint)
-            → Product delivery (phases under projects/<id>/)
-                → Product manager (findings email) → only then next idea/product
+Researcher (IDEA_DEPTH → ready_to_build + mature name)
+    → Product manager (roadmap + go/no-go)
+        → Senior architect (VISION + ROADMAP + PRD + ERD + ≥15-feature blueprint)
+            → Product delivery (phases under projects/<slug>/)
+                → Best-practices tutor (guide + scoring note)
+                    → Product manager (findings email) → only then next idea
 ```
 
-No `projects/<id>/` until:
+Naming: `docs/PRODUCT_NAMING.md`. Folder slug = pronounceable words. Display name appears in UI, digests, portfolio.
 
-1. Researcher cleared `protocols/IDEA_DEPTH.md` → `ready_to_build` (and calendar / value gates)
-2. **Product manager** signed a **roadmap** with ordered phases, exit criteria, and an explicit **go** (not “fixtures green”)
+No `projects/<slug>/` until:
+
+1. Researcher cleared `protocols/IDEA_DEPTH.md` → `ready_to_build`
+2. Product manager signed roadmap + `PM-GO.md` with `decision: go`
 3. Senior architect committed paper pack under `docs/ideas/`:
 
 | Artifact | File |
 |----------|------|
-| Vision | `<id>-VISION.md` |
-| Roadmap | `<id>-ROADMAP.md` (PM-owned; architect fills engineering detail) |
-| PRD | `<id>-PRD.md` |
-| ERD | `<id>-ERD.md` |
-| Blueprint | `<id>-COMPREHENSIVE-BLUEPRINT.md` (≥4 pages, ≥3 aggregates, ≥6 features) |
-| Page specs + phase briefs | `<id>-PAGE-SPECS.md`, `<id>-PHASE-BRIEFS.md` |
-| API contract | `<id>-API-CONTRACT.md` |
-| PM go/no-go | `<id>-PM-GO.md` |
+| Vision | `<slug>-VISION.md` |
+| Roadmap | `<slug>-ROADMAP.md` |
+| PRD | `<slug>-PRD.md` |
+| ERD | `<slug>-ERD.md` |
+| Blueprint | `<slug>-COMPREHENSIVE-BLUEPRINT.md` (≥6 pages, ≥4 aggregates, **≥15 features**) |
+| Page specs + phase briefs | `<slug>-PAGE-SPECS.md`, `<slug>-PHASE-BRIEFS.md` |
+| API contract | `<slug>-API-CONTRACT.md` |
+| PM go/no-go | `<slug>-PM-GO.md` |
 
-4. Pack matches `docs/COMPREHENSIVE_PRODUCT.md` — not a calculator costume
+4. Pack matches `docs/COMPREHENSIVE_PRODUCT.md`
 
 ## Researcher
 
-Follow `protocols/IDEA_DEPTH.md`. Optimize for **kill early** and **money honesty**.  
-Paper goldens may exist; they never substitute for G1–G6 or Challenge D value.
-
-**Exit:** skeptical G6 summary + explicit `ready_to_build` **or** park/kill with autopsy.
+Follow `protocols/IDEA_DEPTH.md` + `docs/PRODUCT_NAMING.md`. Kill early. Money honesty.  
+**Exit:** skeptical G6 + `ready_to_build` **or** park/kill — always with a mature display name.
 
 ## Product manager
 
-Owns whether we should build, what ships in which order, and when the product is **done enough** to email and leave.
-
-Templates (fill per idea; do not open `projects/` until complete):
-
-- Intake: `docs/ideas/PM_INTAKE_CHECKLIST.md` → copy into `docs/ideas/<id>-PM-GO.md`
-- Roadmap blanks: `docs/ideas/PM_ROADMAP_TEMPLATE.md` → `docs/ideas/<id>-ROADMAP.md`
+Templates: `docs/ideas/PM_INTAKE_CHECKLIST.md`, `docs/ideas/PM_ROADMAP_TEMPLATE.md`.
 
 | Deliverable | Bar |
 |-------------|-----|
-| **Roadmap** | Ordered phases (smoke→crud→workflow→integrate→scale→sustain) with user-visible unlocks and **testable exit criteria** — written **before** RED tests or `projects/` |
-| **Priorities** | What is in-phase vs deferred; what would make us abandon mid-build |
-| **Go / no-go** | Explicit `go` only after Researcher `ready_to_build` **and** roadmap review; `no-go` parks the idea |
-| **Findings gate** | Product finished email (`protocols/NOTIFY.md`) must ship **before** CONTROLLER may switch `current_product` / queue the next build |
-
-**Exit:** committed roadmap + `PM-GO.md` with `decision: go` **or** park with reason. After sustain: findings digest sent; only then release the slot.
+| **Roadmap** | Phases with user-visible unlocks + exit criteria **before** RED tests |
+| **Go / no-go** | Explicit go only after ready_to_build + roadmap review |
+| **Findings gate** | Product-complete email before next product |
 
 ## Senior architect / engineer
 
-Turn a cleared, PM-approved idea into a **buildable sophisticated product**, not a smoke brief.
-
 | Deliverable | Bar |
 |-------------|-----|
-| **VISION** | Who, 12-month success, what we refuse to become |
-| **ROADMAP** | Engineering detail under PM phase order: page unlocks + exit criteria |
-| **PRD** | Personas, stories, testable AC, out-of-scope |
-| **ERD** | Aggregates, fields, relationships, auth boundaries — aligns with API contract |
-| **Blueprint** | Multi-page / multi-feature map per comprehensive bar |
-
-**Exit:** paper pack reviewable by a skeptical senior; contracts frozen before RED tests.
+| **VISION** | Who, 12-month success, what we refuse to become (including “refuse ugly names”) |
+| **ROADMAP** | Engineering detail under PM order |
+| **PRD** | Personas, stories, AC, out-of-scope |
+| **ERD** | ≥4 aggregates; auth boundaries |
+| **Blueprint** | **≥15** user-visible features mapped to pages |
 
 ## Product delivery
 
-Follow `protocols/PRODUCT_RUNBOOK.md` + `docs/DEVELOPMENT_WORKFLOW.md` (A03 + A10).
+Follow `protocols/PRODUCT_RUNBOOK.md` + `docs/DEVELOPMENT_WORKFLOW.md`.
 
 ### UI never broken (hard)
 
-Do **not** exit a product phase until:
+1. RED→GREEN (no weaken-to-pass)
+2. UI critical path per unlocked page
+3. Sustain: ≥6 views, ≥15 features live, mature display name in UI chrome
 
-1. **RED→GREEN** — failing tests for the slice exist first; then green (no weaken-to-pass)
-2. **UI critical path** — automated check that each blueprint page/view for this phase **loads** and completes its **primary user action** (browser E2E **or** HTML+interaction smoke). API-only suites do **not** clear UI
-3. **Comprehensive shape** — sustain requires ≥4 distinct views; a single `public/index.html` calculator **fails** sustain even if API goldens are green
+**Exit:** scored phase + FINDINGS → tutor guide → PM findings email. No next product until email sent.
 
-Prefer Playwright (or equivalent) for multi-page products; React Testing Library when the UI is a component library. Document the chosen harness in PRODUCT.md.
+## Best-practices tutor
 
-**Exit:** scored phase + FINDINGS. On product finished: try.html + StackBlitz, then hand to **Product manager** for the findings email. **Do not** open the next product folder until that email is sent.
+After each sustained product (and after meaningful research kills), write a **plain-language guide** that a future agent or human can follow.
+
+| Deliverable | Path |
+|-------------|------|
+| Guide | `docs/guides/<nn>-<slug-or-topic>.md` |
+| Index row | `docs/guides/README.md` |
+| Scoring note | Optional `docs/guides/scoring/<slug>.md` — what the rubric should reward next time |
+
+Guides explain **how we built / verified / what failed**, not acronym laundry lists. No statute-code brand in the title if a display name exists.
+
+**Exit:** guide committed before product-complete email when a product finished; for research-only kills, guide optional but preferred.
 
 ## Parallelism
 
-- One **depth keep-going loop** (see `docs/ideas/LOOP_DISCIPLINE.md`)
-- Parallel **role agents/tasks** OK — cap **≤20** concurrent agents; CONTROLLER still holds one `current_idea` / one product phase
-- Researcher may deepen the **next** seed while delivery finishes the current product — still **no** second `projects/` folder
-- Never two product folders in flight (`depth_policy.max_active_products`)
-- **Never** switch `current_product` until product-complete notify has been sent (or abandon autopsy emailed)
+- One keep-going loop (`docs/ideas/LOOP_DISCIPLINE.md`)
+- ≤20 parallel agents; one `current_idea` / one product phase in CONTROLLER
+- Tutor may write guides while researcher deepens the *next* named idea (docs only)
+- Never two product folders; never switch products before findings email
 
 ## Anti-patterns
 
-- Collapsing roles into “agent wrote fixtures then opened projects/”
-- Building or testing before a PM roadmap + go
-- PRD that is only a phase-brief rename of dual-gate smoke
-- ERD that invents routes contradicting the API contract
-- Sustaining on API ladder + one HTML shell
-- Same-day researcher flip + architect pack + delivery smoke (research theater)
-- Starting the next product because smoke was green — without sustain + findings email
+- `c1592` / `irc6651` / `oshamult`-style brands as the product people see
+- Collapsing roles into “fixtures then projects/”
+- <15 features called “comprehensive”
+- Skipping the tutor guide
+- Starting the next product because smoke was green
 
 ## Controller wiring
 
-- Research ticks → Researcher
-- After `ready_to_build`, before architect pack → **Product manager** (roadmap + go/no-go)
-- After PM go, before `projects/` → Senior architect
-- `phase: running` → Product delivery
-- Product finished → Product manager findings email → then research / next idea
-- Role log optional in `projects/<id>/ROLE_LOG.md` during build
+- Research → Researcher  
+- ready_to_build → Product manager → Senior architect  
+- `phase: running` → Product delivery  
+- Sustain scored → Best-practices tutor → Product manager email → research next idea

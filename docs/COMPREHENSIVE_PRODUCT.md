@@ -1,6 +1,6 @@
 # Comprehensive product bar (method lab)
 
-Human steer (2026-07-21): products used to test the workflow must be **big and comprehensive** — multi-page, multi-feature — not single-route dual-gate smokes.
+Human steer (2026-07-23): ship **mature, sophisticated products** — not coded-name calculator costumes. See `docs/PRODUCT_NAMING.md`.
 
 This does **not** waive `protocols/IDEA_DEPTH.md`. It raises what “ready_to_build → sustain” must look like.
 
@@ -8,39 +8,50 @@ This does **not** waive `protocols/IDEA_DEPTH.md`. It raises what “ready_to_bu
 
 | Area | Minimum |
 |------|---------|
+| **Display name** | Mature human name per `docs/PRODUCT_NAMING.md` (not a statute code or glue-noun) |
 | **Unique domain claim** | Cleared IDEA_DEPTH; non-isomorphic; money honesty in digests |
-| **Resources** | ≥3 durable aggregates (not just one table + status) |
-| **UI** | ≥4 distinct pages/views (not one form) |
-| **Features** | ≥6 user-visible capabilities beyond CRUD (classify/calc, history, audit, search/filter, roles, export or report, webhook/inbound event, settings or org admin) |
-| **API** | Auth + multi-tenant org + pagination + idempotent webhook |
-| **Tests** | Depth suite for unique claim (≥25) **plus** UI/API integration coverage for each page’s critical path |
-| **Try artifact** | Offline `try.html` demos core claim; product itself remains multi-page |
+| **Resources** | ≥4 durable aggregates (not one table + status) |
+| **UI** | ≥6 distinct pages/views (not one form) |
+| **Features** | **≥15** user-visible capabilities (see feature menu below) — CRUD alone does not count toward 15 |
+| **API** | Auth + multi-tenant org + pagination + idempotent webhook + export |
+| **Tests** | Depth suite for unique claim (≥25) **plus** UI critical path for every page |
+| **Guides** | Best-practices tutor writes ≥1 guide under `docs/guides/` before sustain email |
+| **Try artifact** | Offline `try.html` demos core claim; product remains multi-page |
+| **Scoring** | Phase cells scored with maturity rubric (`docs/RUBRIC.md`) — not pass-count theater |
+
+## Feature menu (pick ≥15 distinct, user-visible)
+
+Examples that count (each once): domain forecast/calc, scenario compare, history timeline, audit log, CSV/JSON export, search, filters, saved views, role-based screens, org settings, member invite, webhook config, notification of rejects, batch jobs, concurrency-safe batch, pagination, goldens browser, honesty/disclaimer surface, report summary, import, idempotent inbound events, rate-limit feedback, dual-impl verify panel, onboarding checklist, help/guide link in-app.
+
+CRUD create/read/update alone = **3 max** toward the 15. Dual-approval status boards do **not** count as domain features.
 
 ## Explicit fails (instant shallow)
 
+- Ugly acronym / statute-code product brand
 - One calculator page + dual approval
 - Noun-swap of a prior sustained product
-- “Sustain” with <4 pages or <3 aggregates
+- Sustain with <6 pages, <4 aggregates, or <15 features
 - Pass-count digests without story + money honesty
+- Shipping without a tutor guide for what was learned
 
 ## Relationship to depth restart
 
-Fewer products. Slower research. When we **do** build, build **comprehensive** — one deep product beats ten isomorphic smokes.
+Fewer products. Slower research. When we **do** build, build **comprehensive and mature** — one deep product beats ten isomorphic smokes.
 
-## Role pack required before `projects/<id>/`
+## Role pack required before `projects/<slug>/`
 
-Drive work through `protocols/AGENT_ROLES.md` (researcher → product manager → senior architect → product delivery).
+Drive work through `protocols/AGENT_ROLES.md` (researcher → product manager → senior architect → product delivery → best-practices tutor).
 
 After `ready_to_build`, product manager commits roadmap + go, then senior architect commits the pack **before** opening the product folder:
 
 | Artifact | Path |
 |----------|------|
-| PM go | `docs/ideas/<id>-PM-GO.md` |
-| Vision | `docs/ideas/<id>-VISION.md` |
-| Roadmap | `docs/ideas/<id>-ROADMAP.md` |
-| PRD | `docs/ideas/<id>-PRD.md` |
-| ERD | `docs/ideas/<id>-ERD.md` |
-| Blueprint | `docs/ideas/<id>-COMPREHENSIVE-BLUEPRINT.md` (page map, feature matrix, aggregates, test themes) |
+| PM go | `docs/ideas/<slug>-PM-GO.md` |
+| Vision | `docs/ideas/<slug>-VISION.md` |
+| Roadmap | `docs/ideas/<slug>-ROADMAP.md` |
+| PRD | `docs/ideas/<slug>-PRD.md` |
+| ERD | `docs/ideas/<slug>-ERD.md` |
+| Blueprint | `docs/ideas/<slug>-COMPREHENSIVE-BLUEPRINT.md` (page map, **≥15-feature** matrix, aggregates, test themes) |
 
 Shallow “blueprint = phase rename of dual-gate smoke” fails this bar.
 
