@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — Architect pack: Filing Penalty Desk (paper only)
+
+Senior architect + researcher. Docs only — **no** `projects/`, **no** `ready_to_build` flip.
+
+- Wrote slug-prefixed pack: `filing-penalty-desk-VISION.md`, `-ROADMAP.md`, `-PRD.md`, `-ERD.md`, `-COMPREHENSIVE-BLUEPRINT.md`
+- Blueprint locks **18** user-visible features mapped to **8** pages and **≥4** durable aggregates (Correction 6 bar)
+- Display name **Filing Penalty Desk** everywhere public; legacy `irc6651*` kit remains research-only (not the brand)
+- Idea state stays `adversarial` / not ready_to_build (PM-GO still required even if hours ≥4h)
+
+**Skeptical one-liner:** An 18-row feature matrix is still paper — without PM-GO and a real multi-page build it is costume maturity.
+
 ## 2026-07-23 — Correction 6: mature names, tutor, ≥15 features
 
 Human steer: coded brands and thin products feel stupid. 
