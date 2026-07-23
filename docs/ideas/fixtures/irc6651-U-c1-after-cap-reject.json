@@ -1,0 +1,12 @@
+{
+  "id": "irc6651-U-c1-after-cap-reject",
+  "title": "Expert cheat: (c)(1) after FTF aggregate cap rejects",
+  "g5": "U",
+  "input": {
+    "net_amount_due": 10000,
+    "unpaid_by_month": [10000],
+    "unfiled_months": 5,
+    "c1_after_ftf_cap_cheat": true
+  },
+  "expect": { "status": "reject", "reason": "c1_after_ftf_cap_cheat" }
+}

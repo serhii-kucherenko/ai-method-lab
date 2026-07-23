@@ -1,0 +1,14 @@
+{
+  "id": "irc6651-T-extension-file-pay-asymmetry",
+  "title": "File extension does not stop FTP on unpaid tax",
+  "g5": "T",
+  "input": {
+    "net_amount_due": 50000,
+    "unpaid_by_month": [50000, 50000, 50000],
+    "unfiled_months": 0,
+    "levy_bump_after_month": null,
+    "apply_minimum": false,
+    "min_floor": 0
+  },
+  "expect": { "status": "ok", "ftf": 0, "ftp": 750, "combined": 750 }
+}

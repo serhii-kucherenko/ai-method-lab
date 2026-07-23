@@ -28,7 +28,7 @@ See `irc6651-FALSIFIERS.md` — spreadsheet critical path; expert rejects stack 
 
 ## 6. Depth test outline
 
-G5 A–Y sketched; dual toys currently **9** green (`check-irc6651-toys.mjs`). Target ≥25 goldens only after hours hold — anti-conveyor.
+G5 paper outline A–Y sketched; dual toys **11** green; paper fixtures **25** green (`check-irc6651-fixtures.mjs`). Smoke outline met — anti-conveyor still requires hours hold before flip.
 
 ## 7. Decision
 

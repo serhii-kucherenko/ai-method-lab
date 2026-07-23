@@ -14,6 +14,8 @@ export function forecast6651(input) {
   if (input.installment_025_silent === true) return reject("installment_025_silent");
   if (input.partnership_6698_cheat === true) return reject("partnership_6698_cheat");
   if (input.scorp_6699_cheat === true) return reject("scorp_6699_cheat");
+  if (input.c1_after_ftf_cap_cheat === true) return reject("c1_after_ftf_cap_cheat");
+  if (input.min_undercut_cheat === true) return reject("min_undercut_cheat");
 
   const net = Number(input.net_amount_due);
   const unpaid = Array.isArray(input.unpaid_by_month)

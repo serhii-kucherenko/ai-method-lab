@@ -1,0 +1,11 @@
+{
+  "id": "irc6651-L-missing-tax-reject",
+  "title": "Non-finite net amount due rejects",
+  "g5": "L",
+  "input": {
+    "net_amount_due": "missing",
+    "unpaid_by_month": [10000],
+    "unfiled_months": 1
+  },
+  "expect": { "status": "reject", "reason": "bad_inputs" }
+}

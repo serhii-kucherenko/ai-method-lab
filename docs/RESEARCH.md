@@ -2,6 +2,16 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #8 (fixtures 25 / G5 A–Y)
+
+Research only. Stays adversarial / **WAIT_HOURS**.
+
+- Paper fixtures **19 → 25** covering G5 themes A–Y; all green
+- Expert-cheat rejects U/V + missing-tax L; toys dual still green
+- Fixture smoke bar met on paper; hours ~2h/4 — **still not ready_to_build**; **no** `projects/`
+
+**Skeptical one-liner:** Hitting 25 fixtures is the smoke outline, not permission to open a product folder.
+
 ## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #7 (fixtures 19 + preflip)
 
 Research only. Stays adversarial / WAIT_HOURS.

@@ -2,17 +2,18 @@
 
 **framing_started_at:** `2026-07-23T05:35:00.000Z`  
 **min_hours:** 4  
-**ticks:** 9 (min 3 met)
+**ticks:** 10 (min 3 met)
 
 ## This tick
 
-Fixtures **19** green; §6698/§6699 fences; preflip checklist; still no flip.
+Paper fixtures **25** green — G5 A–Y themes covered. Still **WAIT_HOURS**.
 
 ## Gate
 
 | Check | Status |
 |-------|--------|
 | Min ticks | Met |
-| Min hours | **WAIT_HOURS** (~1.7h / 4h) |
-| Fixture bar (≥25 themes) | 19 / approaching |
+| Fixture smoke bar (≥25) | **Met** |
+| Min hours | **WAIT_HOURS** (~2h / 4h) |
+| ready_to_build | **No** |
 | projects/ | Forbidden |
