@@ -23,7 +23,8 @@ export type Violation = {
 export type AuditEvent = {
   id: string;
   org_id: string;
-  violation_id: string;
+  violation_id: string | null;
+  batch_id: string | null;
   actor_id: string | null;
   action: string;
   status: string;
@@ -34,6 +35,13 @@ export type AuditEvent = {
   created_at: string;
 };
 
+export type OrgSettings = {
+  orgId: string;
+  webhook_secret: string;
+  tokens_note: string;
+  updated_at: string;
+};
+
 export type Store = {
   users: Map<string, User>;
   usersByEmail: Map<string, string>;
@@ -42,12 +50,18 @@ export type Store = {
   members: Map<string, OrgRole>;
   violations: Map<string, Violation>;
   auditEvents: AuditEvent[];
+  orgSettings: Map<string, OrgSettings>;
+  webhookDeliveries: Map<string, { org_id: string; violation_id: string }>;
   rateLimit: number;
   rateCounts: Map<string, number>;
 };
 
 function memberKey(orgId: string, userId: string): string {
   return `${orgId}::${userId}`;
+}
+
+function newWebhookSecret(): string {
+  return `whsec_${randomUUID().replace(/-/g, "").slice(0, 24)}`;
 }
 
 export function createStore(opts: { rateLimit?: number } = {}): Store {
@@ -59,6 +73,8 @@ export function createStore(opts: { rateLimit?: number } = {}): Store {
     members: new Map(),
     violations: new Map(),
     auditEvents: [],
+    orgSettings: new Map(),
+    webhookDeliveries: new Map(),
     rateLimit: opts.rateLimit ?? 1000,
     rateCounts: new Map(),
   };
@@ -90,6 +106,12 @@ export function createOrg(store: Store, userId: string, name: string) {
   const id = randomUUID();
   store.orgs.set(id, { id, name, created_by: userId });
   store.members.set(memberKey(id, userId), "admin");
+  store.orgSettings.set(id, {
+    orgId: id,
+    webhook_secret: newWebhookSecret(),
+    tokens_note: "API tokens are issued at register. Treat bearer tokens as secrets.",
+    updated_at: new Date().toISOString(),
+  });
   return { id, name };
 }
 
@@ -148,6 +170,7 @@ export function createViolation(
   appendAudit(store, {
     org_id: orgId,
     violation_id: id,
+    batch_id: null,
     actor_id: actorId ?? null,
     action: "violation_create",
     status: "ok",
@@ -255,6 +278,7 @@ export function patchViolation(
   appendAudit(store, {
     org_id: orgId,
     violation_id: violationId,
+    batch_id: null,
     actor_id: actorId ?? null,
     action: "violation_patch",
     status: "ok",
@@ -271,6 +295,7 @@ export function runForecast(
   orgId: string,
   violationId: string,
   actorId?: string | null,
+  batchId: string | null = null,
 ): (PenaltyResult & { violation_id: string; run_id?: string }) | null {
   const v = getViolation(store, orgId, violationId);
   const input = toInput(v);
@@ -280,6 +305,7 @@ export function runForecast(
     const ev = appendAudit(store, {
       org_id: orgId,
       violation_id: violationId,
+      batch_id: batchId,
       actor_id: actorId ?? null,
       action: "forecast_lock",
       status: "ok",
@@ -293,6 +319,7 @@ export function runForecast(
   const ev = appendAudit(store, {
     org_id: orgId,
     violation_id: violationId,
+    batch_id: batchId,
     actor_id: actorId ?? null,
     action: "forecast_reject",
     status: "reject",
@@ -302,4 +329,204 @@ export function runForecast(
     algorithm_version: null,
   });
   return { ...result, violation_id: violationId, run_id: ev.id };
+}
+
+export type BatchForecastItem = {
+  violation_id: string;
+  status: "ok" | "reject";
+  penalty_max?: number;
+  branch?: string;
+  reason?: string;
+  algorithm_version?: string;
+};
+
+export function runBatchForecast(
+  store: Store,
+  orgId: string,
+  violationIds: string[],
+  actorId?: string | null,
+): { batch_id: string; results: BatchForecastItem[] } {
+  const batchId = randomUUID();
+  const results: BatchForecastItem[] = [];
+  for (const violationId of violationIds) {
+    try {
+      const outcome = runForecast(store, orgId, violationId, actorId, batchId);
+      if (!outcome) {
+        appendAudit(store, {
+          org_id: orgId,
+          violation_id: null,
+          batch_id: batchId,
+          actor_id: actorId ?? null,
+          action: "forecast_reject",
+          status: "reject",
+          penalty_max: null,
+          branch: null,
+          reason: "not_found",
+          algorithm_version: null,
+        });
+        results.push({ violation_id: violationId, status: "reject", reason: "not_found" });
+        continue;
+      }
+      if (outcome.status === "ok") {
+        results.push({
+          violation_id: violationId,
+          status: "ok",
+          penalty_max: outcome.penalty_max,
+          branch: outcome.branch,
+          algorithm_version: outcome.algorithm_version,
+        });
+      } else {
+        results.push({
+          violation_id: violationId,
+          status: "reject",
+          reason: outcome.reason,
+        });
+      }
+    } catch (err) {
+      const reason = err instanceof Error ? err.message : "batch_error";
+      appendAudit(store, {
+        org_id: orgId,
+        violation_id: null,
+        batch_id: batchId,
+        actor_id: actorId ?? null,
+        action: "forecast_reject",
+        status: "reject",
+        penalty_max: null,
+        branch: null,
+        reason,
+        algorithm_version: null,
+      });
+      results.push({ violation_id: violationId, status: "reject", reason });
+    }
+  }
+  return { batch_id: batchId, results };
+}
+
+export function listAudit(
+  store: Store,
+  orgId: string,
+  opts: { limit?: number; offset?: number } = {},
+): { events: AuditEvent[]; total: number; limit: number; offset: number } {
+  const all = store.auditEvents
+    .filter((e) => e.org_id === orgId)
+    .sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
+  const total = all.length;
+  const offset = Math.max(opts.offset ?? 0, 0);
+  const limit =
+    opts.limit !== undefined ? Math.min(Math.max(opts.limit, 1), 100) : 20;
+  return {
+    events: all.slice(offset, offset + limit),
+    total,
+    limit,
+    offset,
+  };
+}
+
+export function auditToCsv(events: AuditEvent[]): string {
+  const header = [
+    "id",
+    "violation_id",
+    "batch_id",
+    "action",
+    "status",
+    "penalty_max",
+    "branch",
+    "reason",
+    "algorithm_version",
+    "created_at",
+  ];
+  const escape = (v: unknown): string => {
+    const s = v === null || v === undefined ? "" : String(v);
+    if (/[",\n\r]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
+    return s;
+  };
+  const lines = [header.join(",")];
+  for (const ev of events) {
+    lines.push(
+      [
+        ev.id,
+        ev.violation_id,
+        ev.batch_id,
+        ev.action,
+        ev.status,
+        ev.penalty_max,
+        ev.branch,
+        ev.reason,
+        ev.algorithm_version,
+        ev.created_at,
+      ]
+        .map(escape)
+        .join(","),
+    );
+  }
+  return lines.join("\n");
+}
+
+export function getOrgSettings(store: Store, orgId: string): OrgSettings | null {
+  if (!getOrg(store, orgId)) return null;
+  let settings = store.orgSettings.get(orgId);
+  if (!settings) {
+    settings = {
+      orgId,
+      webhook_secret: newWebhookSecret(),
+      tokens_note: "API tokens are issued at register. Treat bearer tokens as secrets.",
+      updated_at: new Date().toISOString(),
+    };
+    store.orgSettings.set(orgId, settings);
+  }
+  return settings;
+}
+
+export function patchOrgSettings(
+  store: Store,
+  orgId: string,
+  patch: { webhook_secret?: string; tokens_note?: string },
+): OrgSettings | null {
+  const current = getOrgSettings(store, orgId);
+  if (!current) return null;
+  const next: OrgSettings = {
+    orgId,
+    webhook_secret:
+      patch.webhook_secret !== undefined ? patch.webhook_secret : current.webhook_secret,
+    tokens_note: patch.tokens_note !== undefined ? patch.tokens_note : current.tokens_note,
+    updated_at: new Date().toISOString(),
+  };
+  store.orgSettings.set(orgId, next);
+  return next;
+}
+
+export function rotateWebhookSecret(store: Store, orgId: string): OrgSettings | null {
+  return patchOrgSettings(store, orgId, { webhook_secret: newWebhookSecret() });
+}
+
+export function ingestWebhookViolation(
+  store: Store,
+  orgId: string,
+  idempotencyKey: string,
+  input: ViolationCreate,
+):
+  | {
+      ok: true;
+      status: 201 | 200;
+      violation: NonNullable<ReturnType<typeof getViolation>>;
+      replay: boolean;
+    }
+  | { ok: false; status: number; error: string } {
+  if (!getOrg(store, orgId)) return { ok: false, status: 404, error: "org_not_found" };
+  if (!idempotencyKey.trim()) {
+    return { ok: false, status: 400, error: "idempotency_key_required" };
+  }
+  const prior = store.webhookDeliveries.get(idempotencyKey);
+  if (prior) {
+    const violation = getViolation(store, orgId, prior.violation_id);
+    if (!violation) return { ok: false, status: 500, error: "replay_missing" };
+    return { ok: true, status: 200, violation, replay: true };
+  }
+  const violation = createViolation(store, orgId, input, null);
+  if (!violation) return { ok: false, status: 500, error: "create_failed" };
+  store.webhookDeliveries.set(idempotencyKey, {
+    org_id: orgId,
+    violation_id: violation.id,
+  });
+  return { ok: true, status: 201, violation, replay: false };
 }

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>c1592 — batch forecast</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 2rem 1.25rem;
+        max-width: 40rem;
+        margin-inline: auto;
+        color: #1a2228;
+        background: #eef2f4;
+      }
+      .brand { font-weight: 700; font-size: 1.5rem; color: #1f5f6b; }
+      textarea { width: 100%; min-height: 6rem; }
+      button {
+        margin-top: 0.75rem;
+        background: #1f5f6b;
+        color: #fff;
+        border: 0;
+        padding: 0.6rem 1.1rem;
+        cursor: pointer;
+      }
+      #batch-results { list-style: none; padding: 0; }
+      #batch-results li { padding: 0.5rem 0; border-bottom: 1px solid #d0d8dc; }
+      a { color: #1f5f6b; }
+    </style>
+  </head>
+  <body>
+    <div class="brand">c1592</div>
+    <h1>Batch forecast</h1>
+    <p>
+      Each violation runs independently. One reject does not rewrite siblings.
+    </p>
+    <p id="status">Provide token and org, then run.</p>
+    <textarea id="violation-ids" placeholder="uuid-1&#10;uuid-2"></textarea>
+    <br />
+    <button id="run-batch" type="button">Run batch</button>
+    <ul id="batch-results" data-batch="live"></ul>
+    <p>
+      <a href="/violations.html">Catalog</a> ·
+      <a href="/audit.html">Audit</a> ·
+      <a href="/money-honesty.html">Honesty</a>
+    </p>
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const token = params.get("token") || localStorage.getItem("c1592_token") || "";
+        const orgId = params.get("orgId") || localStorage.getItem("c1592_org") || "";
+        const statusEl = document.getElementById("status");
+        const listEl = document.getElementById("batch-results");
+        document.getElementById("run-batch").onclick = function () {
+          if (!token || !orgId) {
+            statusEl.textContent = "Need ?token= and ?orgId= (or localStorage).";
+            return;
+          }
+          const raw = document.getElementById("violation-ids").value;
+          const ids = raw.split(/[\s,]+/).filter(Boolean);
+          fetch("/orgs/" + encodeURIComponent(orgId) + "/batch/forecast", {
+            method: "POST",
+            headers: {
+              authorization: "Bearer " + token,
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({ violation_ids: ids }),
+          })
+            .then(function (res) {
+              return res.json().then(function (json) {
+                return { status: res.status, json: json };
+              });
+            })
+            .then(function (result) {
+              if (result.status !== 200) {
+                statusEl.textContent = "Batch failed (" + result.status + ").";
+                return;
+              }
+              statusEl.textContent = "Batch " + result.json.batch_id;
+              listEl.innerHTML = "";
+              (result.json.results || []).forEach(function (row) {
+                const li = document.createElement("li");
+                li.textContent =
+                  row.violation_id +
+                  " · " +
+                  row.status +
+                  (row.status === "ok"
+                    ? " max $" + row.penalty_max + " (" + row.branch + ")"
+                    : " " + (row.reason || ""));
+                listEl.appendChild(li);
+              });
+            });
+        };
+      })();
+    </script>
+  </body>
+</html>

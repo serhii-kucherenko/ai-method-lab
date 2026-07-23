@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>c1592 — offline statutory-max demo</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1a2228;
+        --muted: #5a6670;
+        --line: #d0d8dc;
+        --bg: #eef2f4;
+        --panel: #fff;
+        --accent: #1f5f6b;
+        --warn: #8a4b12;
+        --alert: #7a1f1f;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 0% 0%, #d5e8ea 0%, transparent 42%),
+          radial-gradient(circle at 100% 0%, #e4e9ec 0%, transparent 40%),
+          var(--bg);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 36rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        margin: 0 0 0.35rem;
+        font-size: 1.65rem;
+        letter-spacing: -0.02em;
+      }
+      .note {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+      .disclaimer {
+        margin: 0 0 1rem;
+        padding: 0.85rem 0.95rem;
+        border: 1px solid #e0c4a8;
+        border-left: 3px solid var(--warn);
+        background: #fff8f0;
+        color: #5c3a18;
+        line-height: 1.45;
+        font-size: 0.95rem;
+      }
+      form {
+        display: grid;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+      }
+      label { display: grid; gap: 0.25rem; font-size: 0.9rem; }
+      input, select, button { font: inherit; padding: 0.55rem 0.65rem; }
+      button {
+        background: var(--accent);
+        color: #fff;
+        border: 0;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        line-height: 1.5;
+      }
+      .out.reject {
+        border-color: #e0b4b4;
+        background: #fff5f5;
+        color: var(--alert);
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        border-bottom: 1px solid var(--line);
+        padding: 0.35rem 0;
+      }
+      .row:last-child {
+        border-bottom: 0;
+        font-weight: 650;
+      }
+      .money { font-variant-numeric: tabular-nums; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>c1592</h1>
+      <p class="note">
+        Offline product demo. Forecast 19 U.S.C. § 1592(c) statutory maximum by
+        culpability × duty-loss / no-loss branch. Not a mitigated guideline
+        amount and not a CBP assessment letter.
+      </p>
+      <p class="disclaimer">
+        <strong>Kill A:</strong> Customs counsel and CBP still win commercially.
+        This page is a statutory-maximum forecast / method experiment — not a
+        counsel replacement. Prior disclosure is not automatic. Mitigated
+        guideline parity is out of scope.
+      </p>
+      <form id="f">
+        <label>
+          Culpability
+          <select id="culpability">
+            <option value="negligence">negligence (2× / 20%)</option>
+            <option value="gross_negligence">gross_negligence (4× / 40%)</option>
+            <option value="fraud">fraud (domestic value)</option>
+          </select>
+        </label>
+        <label>
+          Duty loss (USD)
+          <input id="duty_loss" type="number" min="0" step="1" value="100000" />
+        </label>
+        <label>
+          Domestic value (USD)
+          <input id="domestic_value" type="number" min="0" step="1" value="500000" />
+        </label>
+        <label>
+          Dutiable value (USD; used when duty loss is 0)
+          <input id="dutiable_value" type="number" min="0" step="1" value="100000" />
+        </label>
+        <label>
+          <span>
+            <input id="flat_2x_cheat" type="checkbox" />
+            Cheat: flat 2× happy path (must reject)
+          </span>
+        </label>
+        <button type="submit">Forecast statutory max</button>
+      </form>
+      <div class="out" id="out" hidden></div>
+    </main>
+    <script>
+      function money(n) {
+        return new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "USD",
+          maximumFractionDigits: 0,
+        }).format(n);
+      }
+
+      function penaltyMax(input) {
+        if (input.flat_2x_cheat === true) {
+          return { status: "reject", reason: "flat_2x_cheat" };
+        }
+        if (input.dual_approver_cheat === true) {
+          return { status: "reject", reason: "dual_approver_cheat" };
+        }
+        var c = String(input.culpability || "");
+        var loss = Number(input.duty_loss);
+        var dom = Number(input.domestic_value);
+        var dut = Number(input.dutiable_value);
+        if (["negligence", "gross_negligence", "fraud"].indexOf(c) < 0) {
+          return { status: "reject", reason: "bad_inputs" };
+        }
+        if (!(dom > 0) || !isFinite(dom) || !(loss >= 0) || !isFinite(loss)) {
+          return { status: "reject", reason: "bad_inputs" };
+        }
+        if (c === "fraud") {
+          return {
+            status: "ok",
+            penalty_max: dom,
+            branch: "fraud_domestic",
+            algorithm_version: "c1592-v0",
+          };
+        }
+        if (loss > 0) {
+          var multiple = c === "gross_negligence" ? 4 : 2;
+          var candidate = multiple * loss;
+          if (input.ignore_domestic_cap === true && dom + 1e-9 < candidate) {
+            return { status: "reject", reason: "ignore_domestic_cap" };
+          }
+          return {
+            status: "ok",
+            penalty_max: Math.min(dom, candidate),
+            branch: "lesser_of_duty",
+            algorithm_version: "c1592-v0",
+          };
+        }
+        if (!(dut > 0) || !isFinite(dut)) {
+          return { status: "reject", reason: "bad_inputs" };
+        }
+        var pct = c === "gross_negligence" ? 0.4 : 0.2;
+        return {
+          status: "ok",
+          penalty_max: pct * dut,
+          branch: "pct_dutiable",
+          algorithm_version: "c1592-v0",
+        };
+      }
+
+      document.getElementById("f").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var result = penaltyMax({
+          culpability: document.getElementById("culpability").value,
+          duty_loss: Number(document.getElementById("duty_loss").value),
+          domestic_value: Number(document.getElementById("domestic_value").value),
+          dutiable_value: Number(document.getElementById("dutiable_value").value),
+          flat_2x_cheat: document.getElementById("flat_2x_cheat").checked,
+        });
+        var out = document.getElementById("out");
+        out.hidden = false;
+        if (result.status === "reject") {
+          out.className = "out reject";
+          out.textContent = "Rejected: " + result.reason;
+          return;
+        }
+        out.className = "out";
+        out.innerHTML =
+          '<div class="row"><span>Statutory max</span><span class="money">' +
+          money(result.penalty_max) +
+          "</span></div>" +
+          '<div class="row"><span>Branch</span><span>' +
+          result.branch +
+          "</span></div>" +
+          '<div class="row"><span>Algorithm</span><span>' +
+          result.algorithm_version +
+          "</span></div>" +
+          "<p class=\"note\">Toy defaults include negligence $100k loss / $500k domestic → <strong>$200,000</strong>.</p>";
+      });
+    </script>
+  </body>
+</html>

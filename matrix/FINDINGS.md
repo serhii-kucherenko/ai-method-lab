@@ -2,6 +2,14 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-23 — c1592 sustain GREEN (product complete, email pending)
+
+- Ladder smoke→crud→workflow→integrate→scale→**sustain**
+- **59** tests; **30** dual-green goldens; **7** live pages; offline `projects/c1592/try.html`
+- Cells through `A03__P-sustain-001__c1592__r1`
+- Kill A: statutory-max forecast / method experiment — not CBP or counsel replacement
+- `product_complete_pending: true` — send findings email before next product
+
 ## 2026-07-22 — c1592 smoke GREEN (product opened)
 
 - FLIP_PATH_READY → projects/c1592; 32 tests; 30 dual goldens; cell A03__P-smoke-001__c1592__r1. Crud next.
