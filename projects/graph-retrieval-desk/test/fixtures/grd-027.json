@@ -1,0 +1,14 @@
+{
+  "id": "grd-027",
+  "title": "graph hop sketch",
+  "input": {
+    "stages_hint": "entity,relation,path,answer"
+  },
+  "expect": {
+    "status": "ok",
+    "hop_steps": 4,
+    "naive_coverage": 1,
+    "paper_coverage": 9,
+    "delta_coverage": 8
+  }
+}

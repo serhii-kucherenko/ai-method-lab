@@ -1,0 +1,14 @@
+{
+  "id": "grd-003",
+  "title": "hop 3 extract path",
+  "input": {
+    "hop_depth": 3
+  },
+  "expect": {
+    "status": "ok",
+    "hop_steps": 3,
+    "naive_coverage": 1,
+    "paper_coverage": 7,
+    "delta_coverage": 6
+  }
+}

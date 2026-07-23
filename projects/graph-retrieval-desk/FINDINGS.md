@@ -37,3 +37,11 @@ Paper claim descriptor green. Product scaffolded from 2607.11683.
 - Overlapping optimistic batches → one ok + one reject; in-batch duplicate → `duplicate_in_batch`
 - Scale suite covers 429 + Retry-After
 - Tests: prior suites + scale green (11)
+
+## Sustain (r1)
+
+- ≥15 features / 9 pages / ≥4 aggregates documented in PRODUCT.md + README
+- Goldens ≥25 dual-impl coverage fixtures; browser page + API
+- Offline `try.html` (no fetch); tutor guide `docs/guides/06-graph-retrieval-desk-lessons.md`
+- UI critical path on every page; honesty fence; never brand paper short name
+- Tests: prior + sustain + sustain-matrix + ui-critical green

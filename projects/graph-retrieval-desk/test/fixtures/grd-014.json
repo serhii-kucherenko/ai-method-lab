@@ -1,0 +1,14 @@
+{
+  "id": "grd-014",
+  "title": "empty stages hint",
+  "input": {
+    "stages_hint": ""
+  },
+  "expect": {
+    "status": "ok",
+    "hop_steps": 1,
+    "naive_coverage": 1,
+    "paper_coverage": 3,
+    "delta_coverage": 2
+  }
+}

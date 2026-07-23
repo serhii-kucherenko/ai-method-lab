@@ -1,0 +1,14 @@
+{
+  "id": "grd-009",
+  "title": "fractional hop floor",
+  "input": {
+    "hop_depth": 2.9
+  },
+  "expect": {
+    "status": "ok",
+    "hop_steps": 2,
+    "naive_coverage": 1,
+    "paper_coverage": 5,
+    "delta_coverage": 4
+  }
+}

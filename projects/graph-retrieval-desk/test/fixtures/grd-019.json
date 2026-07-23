@@ -1,0 +1,14 @@
+{
+  "id": "grd-019",
+  "title": "single stage label",
+  "input": {
+    "stages_hint": "retrieve"
+  },
+  "expect": {
+    "status": "ok",
+    "hop_steps": 1,
+    "naive_coverage": 1,
+    "paper_coverage": 3,
+    "delta_coverage": 2
+  }
+}

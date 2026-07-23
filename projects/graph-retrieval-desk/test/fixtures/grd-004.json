@@ -1,0 +1,14 @@
+{
+  "id": "grd-004",
+  "title": "hop 4",
+  "input": {
+    "hop_depth": 4
+  },
+  "expect": {
+    "status": "ok",
+    "hop_steps": 4,
+    "naive_coverage": 1,
+    "paper_coverage": 9,
+    "delta_coverage": 8
+  }
+}

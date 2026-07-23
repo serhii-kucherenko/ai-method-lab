@@ -1,0 +1,14 @@
+{
+  "id": "grd-007",
+  "title": "zero hop clamped",
+  "input": {
+    "hop_depth": 0
+  },
+  "expect": {
+    "status": "ok",
+    "hop_steps": 1,
+    "naive_coverage": 1,
+    "paper_coverage": 3,
+    "delta_coverage": 2
+  }
+}

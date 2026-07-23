@@ -4,6 +4,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describeClaim } from "./claim.js";
+import { listGoldenCards } from "./goldens.js";
 import {
   addMember,
   assertAccess,
@@ -734,6 +735,17 @@ export function createApp(
         return send(res, 404, { error: "job_not_found" });
       }
       return send(res, 200, { ok: true });
+    }
+
+    const goldensMatch = path.match(/^\/orgs\/([^/]+)\/goldens$/);
+    if (goldensMatch && method === "GET") {
+      const orgId = goldensMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "operator", "viewer"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      return send(res, 200, listGoldenCards());
     }
 
     return send(res, 404, { error: "not_found" });

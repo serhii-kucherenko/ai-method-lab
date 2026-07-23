@@ -1,0 +1,12 @@
+{
+  "id": "grd-006",
+  "title": "missing hop → 1",
+  "input": {},
+  "expect": {
+    "status": "ok",
+    "hop_steps": 1,
+    "naive_coverage": 1,
+    "paper_coverage": 3,
+    "delta_coverage": 2
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "grd-017",
+  "title": "four stages",
+  "input": {
+    "stages_hint": "e,c,r,rerank"
+  },
+  "expect": {
+    "status": "ok",
+    "hop_steps": 4,
+    "naive_coverage": 1,
+    "paper_coverage": 9,
+    "delta_coverage": 8
+  }
+}
