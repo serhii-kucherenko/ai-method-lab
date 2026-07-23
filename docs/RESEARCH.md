@@ -8,6 +8,10 @@ Parallel researchers deepening **Employer Shared Responsibility Desk**: algorith
 
 **Skeptical one-liner:** Paper volume is not depth — toys and kill honesty still have to hold before any roadmap.
 
+## 2026-07-23 — Employer Shared Responsibility Desk deepened (G1–G3, G5)
+
+Researcher tick: wrote `docs/ideas/employer-shared-responsibility-desk-G1-EVIDENCE.md`, `-KILL-ROUNDS.md`, `-G5-cases.md` (≥25 paper), `-G2.md` (pass vs Filing Penalty Desk, ptax4975, oshamult, depositgap). Gate posture: G1 provisional, G2 pass, G3 A/B/C survive with honesty fences, G5 paper only, G4/G6 open. **Not** `ready_to_build`; research ticks 2/3; hours hold; **no** product folder; never statute-code brand.
+
 ## 2026-07-23 — Unblocked: email sent; Bond Accrual killed; ESRP desk framed
 
 Filing Penalty Desk product-complete email sent (Resend id `fc5f85c1-c5e4-4dde-9677-31b6e2a27125`; try page + StackBlitz). Cleared `product_complete_pending` and hard stop. **Bond Accrual Desk killed (G2)** — isomorphic to sustained `bondstrip` day-count accrue + strip. New `current_idea`: **Employer Shared Responsibility Desk** (`employer-shared-responsibility-desk`) — framing only; research tick 1/3; hours clock started; **no** product folder; never brand `esrp4980h`.
