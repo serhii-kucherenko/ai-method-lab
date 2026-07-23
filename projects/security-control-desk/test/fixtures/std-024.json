@@ -1,0 +1,16 @@
+{
+  "id": "std-024",
+  "title": "ineffective tiny drain",
+  "input": {
+    "base_peak": 1100,
+    "magnitude": -1,
+    "duration": 5
+  },
+  "expect": {
+    "status": "ok",
+    "base_peak": 1100,
+    "naive_risk": 1095,
+    "safer_risk": 1095,
+    "delta_score": 0
+  }
+}

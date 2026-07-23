@@ -1,0 +1,16 @@
+{
+  "id": "std-012",
+  "title": "magnitude too strong",
+  "input": {
+    "base_peak": 1100,
+    "magnitude": -80,
+    "duration": 10
+  },
+  "expect": {
+    "status": "ok",
+    "base_peak": 1100,
+    "naive_risk": 550,
+    "safer_risk": 1100,
+    "delta_score": -550
+  }
+}

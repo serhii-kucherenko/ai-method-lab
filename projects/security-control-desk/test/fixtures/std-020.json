@@ -1,0 +1,15 @@
+{
+  "id": "std-020",
+  "title": "comma-separated candidates",
+  "input": {
+    "base_peak": 1120,
+    "candidates": "-18:12,-42:16"
+  },
+  "expect": {
+    "status": "ok",
+    "base_peak": 1120,
+    "naive_risk": 904,
+    "safer_risk": 599,
+    "delta_score": 305
+  }
+}

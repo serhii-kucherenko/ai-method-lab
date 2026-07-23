@@ -1,0 +1,16 @@
+{
+  "id": "std-010",
+  "title": "slow drain",
+  "input": {
+    "base_peak": 1080,
+    "magnitude": -12,
+    "duration": 30
+  },
+  "expect": {
+    "status": "ok",
+    "base_peak": 1080,
+    "naive_risk": 840,
+    "safer_risk": 840,
+    "delta_score": 0
+  }
+}

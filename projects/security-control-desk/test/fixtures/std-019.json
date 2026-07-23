@@ -1,0 +1,15 @@
+{
+  "id": "std-019",
+  "title": "pipe-separated candidates",
+  "input": {
+    "base_peak": 1120,
+    "candidates": "-15:10|-45:22"
+  },
+  "expect": {
+    "status": "ok",
+    "base_peak": 1120,
+    "naive_risk": 970,
+    "safer_risk": 596,
+    "delta_score": 374
+  }
+}

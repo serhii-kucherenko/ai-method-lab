@@ -1,0 +1,17 @@
+{
+  "id": "std-021",
+  "title": "short horizon",
+  "input": {
+    "base_peak": 1100,
+    "horizon": 8,
+    "magnitude": -30,
+    "duration": 6
+  },
+  "expect": {
+    "status": "ok",
+    "base_peak": 1100,
+    "naive_risk": 920,
+    "safer_risk": 920,
+    "delta_score": 0
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "cell_id": "A03__P-integrate-001__security-control-desk__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-integrate-001",
+  "phase": "P-integrate-001",
+  "run_id": "r1",
+  "method_id": "A03",
+  "method_version": "1.0.0",
+  "status": "scored",
+  "product_path": "projects/security-control-desk",
+  "created_at": "2026-07-23T19:09:45.684Z",
+  "started_at": "2026-07-23T19:09:45.684Z",
+  "finished_at": "2026-07-23T19:09:45.684Z",
+  "fail_tags": [],
+  "notes": "A03 Security Control Desk integrate — Webhooks HMAC RBAC pagination",
+  "metrics": {
+    "correctness_pass": true,
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 15,
+    "cycle_time_hours": 0.25
+  },
+  "scores": {
+    "rubric_version": "1.0.0",
+    "dimensions": {
+      "correctness": 5,
+      "completeness": 5,
+      "robustness": 5,
+      "maintainability": 5,
+      "efficiency": 4
+    },
+    "artifacts": [
+      "projects/security-control-desk",
+      "docs/ideas/security-control-desk-DESIGN.md",
+      "docs/guides/17-security-control-desk-lessons.md"
+    ],
+    "notes": "Webhooks HMAC RBAC pagination"
+  }
+}

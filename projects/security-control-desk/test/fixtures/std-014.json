@@ -1,0 +1,16 @@
+{
+  "id": "std-014",
+  "title": "duration too long",
+  "input": {
+    "base_peak": 1100,
+    "magnitude": -20,
+    "duration": 80
+  },
+  "expect": {
+    "status": "ok",
+    "base_peak": 1100,
+    "naive_risk": 700,
+    "safer_risk": 1100,
+    "delta_score": -400
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "std-022",
+  "title": "long horizon",
+  "input": {
+    "base_peak": 1100,
+    "horizon": 40,
+    "magnitude": -22,
+    "duration": 25
+  },
+  "expect": {
+    "status": "ok",
+    "base_peak": 1100,
+    "naive_risk": 595,
+    "safer_risk": 595,
+    "delta_score": 0
+  }
+}

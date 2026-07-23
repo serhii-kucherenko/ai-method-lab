@@ -7,11 +7,11 @@ Method-lab product sourced from a simple-papers digest.
 - **Id:** 2607.09076
 - **Title:** Neuro-Agentic Control: A Deep Learning-based LLM-Powered Agentic AI Framework for Controlling Security Controls
 - **URL:** https://arxiv.org/abs/2607.09076v1
-- **Code:** (none — software claim only)
+- **Code:** none published with this paper
 
-## What we will build
+## What we built
 
-The Counterfactual Physics Injection mechanism and coupling of an LLM planner with a time-series foundation model offer a new architecture pattern for safe agentic control, though broader validation is needed.
+Safer agentic counterfactual physics injection versus a naive open-loop baseline — desk experiment, not the authors’ neuro-agentic control system. Never brand as Neuro-Agentic Control.
 
 ## Run
 
@@ -19,12 +19,13 @@ The Counterfactual Physics Injection mechanism and coupling of an LLM planner wi
 cd projects/security-control-desk
 npm install
 npm test
-npm start
+npm run start:api   # API + public HTML harness
+npm run dev         # Next.js UI (App Router)
 ```
 
-## Status
+## Stack
 
-Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` and commits `docs/ideas/security-control-desk-DESIGN.md` before multi-page UI.
+Next.js App Router + TypeScript + Tailwind + shadcn/ui. Design note: `docs/ideas/security-control-desk-DESIGN.md`. Tutor guide: `docs/guides/17-security-control-desk-lessons.md`. Offline demo: `try.html`.
 
 ## Config hygiene
 

@@ -1,0 +1,17 @@
+{
+  "id": "std-023",
+  "title": "custom threshold 800",
+  "input": {
+    "base_peak": 950,
+    "threshold": 800,
+    "magnitude": -40,
+    "duration": 20
+  },
+  "expect": {
+    "status": "ok",
+    "base_peak": 950,
+    "naive_risk": 504,
+    "safer_risk": 504,
+    "delta_score": 0
+  }
+}

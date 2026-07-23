@@ -1,0 +1,12 @@
+{
+  "id": "std-001",
+  "title": "default peak 1100",
+  "input": {},
+  "expect": {
+    "status": "ok",
+    "base_peak": 1100,
+    "naive_risk": 1100,
+    "safer_risk": 1100,
+    "delta_score": 0
+  }
+}

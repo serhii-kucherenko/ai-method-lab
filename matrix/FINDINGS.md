@@ -838,3 +838,6 @@ htsroute parked (hours clear + Challenge D weak). depositgap product opened; smo
 ## 2026-07-21 -- depositgap crud (product)
 
 Catalog + entry detail live against API. Auditor cannot mutate. Honesty page stays green. 27 tests pass. Next: workflow (batch / cash / audit).
+
+## Security Control Desk (2026-07-23)
+Sustain green: safer agentic CF vs naive open-loop; 9 pages; 18 features; 28 dual-impl goldens; DESIGN + guide 17; never brand Neuro-Agentic Control. product_complete pending (no email this session).

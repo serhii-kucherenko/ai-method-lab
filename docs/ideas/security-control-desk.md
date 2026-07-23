@@ -1,6 +1,6 @@
 # Security Control Desk
 
-**State:** building (paper-sourced)  
+**State:** sustain green (product_complete pending)  
 **Slug:** `security-control-desk`  
 **Paper id:** `2607.09076`  
 **Paper:** https://arxiv.org/abs/2607.09076v1  
@@ -12,4 +12,4 @@ The Counterfactual Physics Injection mechanism and coupling of an LLM planner wi
 
 ## Honesty
 
-Workflow experiment inspired by the paper — not a claim to replace the authors’ system or commercial vendors.
+Workflow experiment inspired by the paper — not a claim to replace the authors’ system or commercial vendors. Never brand as Neuro-Agentic Control.
