@@ -1,6 +1,6 @@
 # Memory Risk Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (sustain)  
 **Slug:** `memory-risk-desk`  
 **Display name:** Memory Risk Desk  
 **Paper id:** `2607.11656`  

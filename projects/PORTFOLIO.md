@@ -27,4 +27,4 @@
 | Joint Care Desk | 2607.12527 | Complete |
 | Pocket Molecule Desk | 2607.12349 | Complete |
 | Quantum Kernel Desk | 2607.11701 | Complete |
-| Memory Risk Desk | 2607.11656 | Building |
+| Memory Risk Desk | 2607.11656 | Complete |

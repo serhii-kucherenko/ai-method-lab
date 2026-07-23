@@ -1,14 +1,15 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { describeClaim } from "../src/claim.ts";
+import { describeClaim, CLAIM } from "../src/claim.js";
 
-describe("Imputation Free Transformer smoke", () => {
+describe("Memory Risk Desk smoke", () => {
   it("describes the paper-sourced claim", () => {
     const got = describeClaim({
       paperId: "2607.11656",
-      title: "Imputation-free transformer learning enables robust Alzheimer's disease prediction and calibrated uncertainty quantification across heterogeneous clinical cohorts",
+      title:
+        "Imputation-free transformer for Alzheimer's prediction with calibrated uncertainty",
       codeUrl: null,
-      buildClaim: "NITROGEN's imputation-free approach could be useful for other machine learning applications where missing data is a problem",
+      buildClaim: CLAIM,
     });
     assert.equal(got.ok, true);
     if (got.ok) assert.match(got.line, /2607\.11656/);
