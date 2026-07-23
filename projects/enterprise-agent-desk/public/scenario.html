@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enterprise Agent Desk — scenario</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        color: #0f2a32;
+        background: linear-gradient(180deg, #f3f7f8, #e4eef1);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        margin: 0 0 0.4rem;
+        font-family: "Source Serif 4", Georgia, serif;
+      }
+      p {
+        color: #4a5f56;
+        line-height: 1.5;
+      }
+      a {
+        color: #0d7377;
+      }
+      .panel {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #f2f7f4;
+        border: 1px solid #c5d4cc;
+      }
+    </style>
+  </head>
+  <body data-scenario="live">
+    <main>
+      <h1>single-agent vs multi-agent coordinator</h1>
+      <p>
+        Compare single-agent baseline against multi-agent coordinator scoring
+        inspired by the paper. Lab sketch only — not the authors' Agentic ERP system.
+      </p>
+      <div class="panel">
+        <p>
+          Call
+          <code>GET /orgs/:org/projects/:project/jobs/:job/scenarios</code>
+          after creating a job. multi-agent coordinator score should beat the single-agent baseline score
+          when role-aligned agent tags align with workflow function.
+        </p>
+      </div>
+      <p>
+        <a href="/">Landing</a> · <a href="/lifecycle.html">Lifecycle</a> ·
+        <a href="/honesty.html">Honesty</a>
+      </p>
+    </main>
+  </body>
+</html>

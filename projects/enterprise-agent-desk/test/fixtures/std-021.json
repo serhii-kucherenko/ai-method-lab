@@ -1,0 +1,13 @@
+{
+  "id": "std-021",
+  "title": "cheat with tags still reject",
+  "input": {
+    "agent_roles": "coordinator",
+    "workflow_tags": "coordinator",
+    "single_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "single_cheat"
+  }
+}

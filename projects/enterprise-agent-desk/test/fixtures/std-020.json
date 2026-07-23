@@ -1,0 +1,12 @@
+{
+  "id": "std-020",
+  "title": "single cheat reject",
+  "input": {
+    "plan_depth": 3,
+    "single_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "single_cheat"
+  }
+}

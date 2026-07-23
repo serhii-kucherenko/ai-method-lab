@@ -1,0 +1,15 @@
+{
+  "id": "std-003",
+  "title": "depth 3 coordinator path",
+  "input": {
+    "plan_depth": 3
+  },
+  "expect": {
+    "status": "ok",
+    "plan_steps": 3,
+    "matched_roles": 0,
+    "single_fit": 1,
+    "plan_fit": 7,
+    "delta_score": 6
+  }
+}

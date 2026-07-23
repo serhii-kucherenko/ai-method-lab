@@ -1,0 +1,16 @@
+{
+  "id": "std-022",
+  "title": "purchasing lead-time tags",
+  "input": {
+    "agent_roles": "purchasing,lead-time,supplier-risk",
+    "workflow_tags": "purchasing,lead-time,stockout"
+  },
+  "expect": {
+    "status": "ok",
+    "plan_steps": 3,
+    "matched_roles": 2,
+    "single_fit": 1,
+    "plan_fit": 7,
+    "delta_score": 6
+  }
+}

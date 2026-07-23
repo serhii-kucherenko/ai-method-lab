@@ -1,0 +1,43 @@
+{
+  "cell_id": "A03__P-crud-001__enterprise-agent-desk__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-crud-001",
+  "phase": "P-crud-001",
+  "run_id": "r1",
+  "method_id": "A03",
+  "method_version": "1.0.0",
+  "status": "scored",
+  "product_path": "projects/enterprise-agent-desk",
+  "created_at": "2026-07-23T20:30:00Z",
+  "started_at": "2026-07-23T18:37:00Z",
+  "finished_at": "2026-07-23T20:30:00Z",
+  "fail_tags": [],
+  "notes": "A03 Enterprise Agent Desk crud — orgs projects plan jobs pages; never brand Agentic ERP",
+  "metrics": {
+    "correctness_pass": true,
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 10,
+    "cycle_time_hours": 0.2
+  },
+  "scores": {
+    "rubric_version": "1.0.0",
+    "dimensions": {
+      "correctness": 5,
+      "completeness": 4,
+      "robustness": 5,
+      "maintainability": 5,
+      "efficiency": 4
+    },
+    "artifacts": [
+      "projects/enterprise-agent-desk",
+      "docs/ideas/enterprise-agent-desk-DESIGN.md",
+      "docs/guides/14-enterprise-agent-desk-lessons.md"
+    ],
+    "notes": "orgs projects plan jobs pages"
+  }
+}

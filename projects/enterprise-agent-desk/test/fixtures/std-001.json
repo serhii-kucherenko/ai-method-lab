@@ -1,0 +1,15 @@
+{
+  "id": "std-001",
+  "title": "default depth 1",
+  "input": {
+    "plan_depth": 1
+  },
+  "expect": {
+    "status": "ok",
+    "plan_steps": 1,
+    "matched_roles": 0,
+    "single_fit": 1,
+    "plan_fit": 3,
+    "delta_score": 2
+  }
+}

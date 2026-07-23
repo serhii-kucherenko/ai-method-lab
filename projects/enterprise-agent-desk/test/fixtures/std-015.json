@@ -1,0 +1,16 @@
+{
+  "id": "std-015",
+  "title": "empty role tags",
+  "input": {
+    "agent_roles": "",
+    "workflow_tags": ""
+  },
+  "expect": {
+    "status": "ok",
+    "plan_steps": 1,
+    "matched_roles": 0,
+    "single_fit": 1,
+    "plan_fit": 3,
+    "delta_score": 2
+  }
+}

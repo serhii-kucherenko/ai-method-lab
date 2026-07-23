@@ -1,0 +1,16 @@
+{
+  "id": "std-010",
+  "title": "full role overlap",
+  "input": {
+    "agent_roles": "coordinator,sales,inventory",
+    "workflow_tags": "coordinator,sales,inventory"
+  },
+  "expect": {
+    "status": "ok",
+    "plan_steps": 4,
+    "matched_roles": 3,
+    "single_fit": 1,
+    "plan_fit": 9,
+    "delta_score": 8
+  }
+}

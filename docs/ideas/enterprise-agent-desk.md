@@ -1,6 +1,6 @@
 # Enterprise Agent Desk
 
-**State:** building (paper-sourced)  
+**State:** sustain green (product_complete_pending)  
 **Slug:** `enterprise-agent-desk`  
 **Paper id:** `2607.17331`  
 **Paper:** https://arxiv.org/abs/2607.17331v1  
@@ -8,8 +8,8 @@
 
 ## Build claim
 
-This work provides a reference architecture and evaluation protocol for building autonomous enterprise systems using multi-agent LLMs, advancing the field of AI in business process automation.
+Multi-agent coordinated ERP planning versus a single-agent baseline; adapted here as a desk experiment, not the authors' system.
 
 ## Honesty
 
-Workflow experiment inspired by the paper — not a claim to replace the authors’ system or commercial vendors.
+Workflow experiment inspired by the paper — not a claim to replace the authors’ Agentic ERP system or commercial vendors. Never brand as Agentic ERP.
