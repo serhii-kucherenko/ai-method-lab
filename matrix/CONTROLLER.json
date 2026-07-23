@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T19:44:01.658Z",
+  "updated_at": "2026-07-23T19:46:20.693Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,9 +11,9 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "71ec21fb-3a8d-4f0b-addd-32907b6c9558",
-    "last_idea_validated_email_id": "705606f5-5c4f-4d7c-a02d-c08d438d9986",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "dcf1d8b1-060d-4203-94cf-231475adb65c",
+    "last_idea_validated_email_id": "5211c86a-1957-4306-8eae-57d4e0cf6052",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
@@ -41,13 +41,13 @@
   },
   "last_completed": "A03__P-sustain-001__evidence-synthesis-desk__r1",
   "last_error": null,
-  "current_product": "evidence-synthesis-desk",
-  "current_idea": "evidence-synthesis-desk",
+  "current_product": "tactile-data-desk",
+  "current_idea": "tactile-data-desk",
   "next_research_idea": null,
-  "next_cell": null,
+  "next_cell": "A03__P-smoke-001__tactile-data-desk__r1",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "Evidence Synthesis Desk sustain green; product_complete_pending for finish email.",
+  "notes": "Evidence Synthesis Desk finish emailed. Started Tactile Data Desk (paper 2607.14588) — climbing smoke→sustain.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -60,10 +60,10 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.15247",
-      "slug": "evidence-synthesis-desk",
-      "displayName": "Evidence Synthesis Desk",
-      "at": "2026-07-23T19:37:24.444Z"
+      "paperId": "2607.14588",
+      "slug": "tactile-data-desk",
+      "displayName": "Tactile Data Desk",
+      "at": "2026-07-23T19:46:08.415Z"
     }
   },
   "depth_policy": {

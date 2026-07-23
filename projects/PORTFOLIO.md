@@ -20,3 +20,4 @@
 | Itinerary Plan Desk | 2607.15552 | Complete |
 | Prompt Cache Desk | 2607.15516 | Complete |
 | Evidence Synthesis Desk | 2607.15247 | Complete |
+| Tactile Data Desk | 2607.14588 | Building |
