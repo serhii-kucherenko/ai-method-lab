@@ -23,3 +23,4 @@
 | Tactile Data Desk | 2607.14588 | Complete |
 | AI Governance Desk | 2607.14585 | Complete |
 | Stage Validate Desk | 2607.14568 | Complete |
+| Wild Locomotion Desk | 2607.13579 | Building |
