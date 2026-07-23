@@ -1,0 +1,16 @@
+{
+  "id": "std-022",
+  "title": "OWASP inject path tags",
+  "input": {
+    "invariant_tags": "tool-boundary,cwe-22,path-traversal",
+    "regression_tags": "tool-boundary,cwe-22,focus-mode"
+  },
+  "expect": {
+    "status": "ok",
+    "monitor_steps": 3,
+    "matched_tags": 2,
+    "checklist_fit": 1,
+    "safety_fit": 7,
+    "delta_score": 6
+  }
+}

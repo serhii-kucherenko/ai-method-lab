@@ -1,0 +1,16 @@
+{
+  "id": "std-011",
+  "title": "partial overlap two",
+  "input": {
+    "invariant_tags": "invariant|edge",
+    "regression_tags": "invariant|tool-boundary"
+  },
+  "expect": {
+    "status": "ok",
+    "monitor_steps": 2,
+    "matched_tags": 1,
+    "checklist_fit": 1,
+    "safety_fit": 5,
+    "delta_score": 4
+  }
+}

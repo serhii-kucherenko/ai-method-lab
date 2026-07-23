@@ -1,0 +1,16 @@
+{
+  "id": "std-023",
+  "title": "privilege focus tags",
+  "input": {
+    "invariant_tags": "focus-mode,dyslexia-font,progress-bar",
+    "regression_tags": "focus-mode,noise"
+  },
+  "expect": {
+    "status": "ok",
+    "monitor_steps": 2,
+    "matched_tags": 1,
+    "checklist_fit": 1,
+    "safety_fit": 5,
+    "delta_score": 4
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "std-018",
+  "title": "duplicate tags collapsed",
+  "input": {
+    "invariant_tags": "invariant,invariant,edge",
+    "regression_tags": "invariant,edge,edge"
+  },
+  "expect": {
+    "status": "ok",
+    "monitor_steps": 3,
+    "matched_tags": 2,
+    "checklist_fit": 1,
+    "safety_fit": 7,
+    "delta_score": 6
+  }
+}

@@ -1,17 +1,17 @@
 # Agent Safety Desk
 
-Method-lab product sourced from a simple-papers digest.
+Method-lab product for structural monitoring versus a naive checklist baseline.
 
 ## Paper
 
 - **Id:** 2607.14570
-- **Title:** Agent Safety Desk Safety: A Structural Monitoring Approach
+- **Title:** Democratizing Agent Deployment Safety: A Structural Monitoring Approach
 - **URL:** https://arxiv.org/abs/2607.14570v1
-- **Code:** (none — software claim only)
+- **Code:** none published
 
-## What we will build
+## What we built
 
-The IFG monitor provides a new approach to detecting security regressions in AI agent deployments, which can contribute to the development of more robust and trustworthy AI systems.
+Org desk with marketing landing, safety jobs, lifecycle, scenario compare (checklist vs structural), batch, audit, goldens (≥25 dual-impl), webhooks, honesty, and offline `try.html`. Display name is **Agent Safety Desk** — never brand as IFG.
 
 ## Run
 
@@ -19,13 +19,17 @@ The IFG monitor provides a new approach to detecting security regressions in AI 
 cd projects/agent-safety-desk
 npm install
 npm test
-npm start
+npm run dev          # Next on :3000
+npm run start:api    # HTTP harness for public/*.html + API tests
 ```
 
-## Status
+Design: `docs/ideas/agent-safety-desk-DESIGN.md`  
+Guide: `docs/guides/13-agent-safety-desk-lessons.md`
 
-Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` and commits `docs/ideas/agent-safety-desk-DESIGN.md` before multi-page UI.
+## Honesty
+
+Workflow experiment inspired by the paper — not a replacement for the authors' safety monitor system; not a live agent safety vendor product.
 
 ## Config hygiene
 
-Never write `package.json` with a UTF-8 BOM (Windows PowerShell `Set-Content -Encoding utf8` does). Node fails with `ERR_INVALID_PACKAGE_CONFIG`. Use Node `fs.writeFileSync` or run `node scripts/strip-json-bom.mjs`.
+Never write `package.json` with a UTF-8 BOM. Use Node writes or `node scripts/strip-json-bom.mjs --check`.

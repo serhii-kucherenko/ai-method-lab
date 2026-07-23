@@ -1,0 +1,39 @@
+{
+  "phase": "P-smoke-001",
+  "fail_tags": [],
+  "method_version": "1.0.0",
+  "scores": {
+    "dimensions": {
+      "efficiency": 5,
+      "completeness": 5,
+      "maintainability": 5,
+      "robustness": 5,
+      "correctness": 5
+    },
+    "rubric_version": "1.0.0",
+    "artifacts": ["projects/agent-safety-desk"],
+    "notes": "Paper claim seed + smoke tests green"
+  },
+  "created_at": "2026-07-23T18:30:00Z",
+  "method_id": "A03",
+  "run_id": "r1",
+  "product_path": "projects/agent-safety-desk",
+  "project_id": "P-smoke-001",
+  "status": "scored",
+  "approach_id": "A03",
+  "metrics": {
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 5,
+    "cycle_time_hours": 0.1,
+    "correctness_pass": true
+  },
+  "cell_id": "A03__P-smoke-001__agent-safety-desk__r1",
+  "notes": "Smoke claim for Agent Safety Desk",
+  "started_at": "2026-07-23T18:29:00Z",
+  "approach_version": 1,
+  "finished_at": "2026-07-23T18:35:00Z"
+}

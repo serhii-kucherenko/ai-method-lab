@@ -1,0 +1,16 @@
+{
+  "id": "std-010",
+  "title": "full role overlap",
+  "input": {
+    "invariant_tags": "invariant,edge,node-class",
+    "regression_tags": "invariant,edge,node-class"
+  },
+  "expect": {
+    "status": "ok",
+    "monitor_steps": 4,
+    "matched_tags": 3,
+    "checklist_fit": 1,
+    "safety_fit": 9,
+    "delta_score": 8
+  }
+}

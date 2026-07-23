@@ -1,0 +1,16 @@
+{
+  "id": "std-012",
+  "title": "angle tag separators",
+  "input": {
+    "invariant_tags": "invariant>edge>node-class",
+    "regression_tags": "invariant>noise"
+  },
+  "expect": {
+    "status": "ok",
+    "monitor_steps": 2,
+    "matched_tags": 1,
+    "checklist_fit": 1,
+    "safety_fit": 5,
+    "delta_score": 4
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "std-015",
+  "title": "empty role tags",
+  "input": {
+    "invariant_tags": "",
+    "regression_tags": ""
+  },
+  "expect": {
+    "status": "ok",
+    "monitor_steps": 1,
+    "matched_tags": 0,
+    "checklist_fit": 1,
+    "safety_fit": 3,
+    "delta_score": 2
+  }
+}

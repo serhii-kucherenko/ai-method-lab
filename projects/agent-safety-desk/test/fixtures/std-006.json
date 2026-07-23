@@ -1,0 +1,13 @@
+{
+  "id": "std-006",
+  "title": "missing depth → 1",
+  "input": {},
+  "expect": {
+    "status": "ok",
+    "monitor_steps": 1,
+    "matched_tags": 0,
+    "checklist_fit": 1,
+    "safety_fit": 3,
+    "delta_score": 2
+  }
+}

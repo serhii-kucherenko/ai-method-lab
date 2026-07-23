@@ -1,0 +1,12 @@
+{
+  "id": "std-020",
+  "title": "single cheat reject",
+  "input": {
+    "monitor_depth": 3,
+    "checklist_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "checklist_cheat"
+  }
+}
