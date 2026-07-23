@@ -1,0 +1,18 @@
+{
+  "id": "std-009",
+  "title": "Education domain",
+  "input": {
+    "corpus": "education",
+    "min_n": 35
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "education",
+    "naive_risk": 75.34,
+    "safer_risk": 1.8,
+    "delta_score": 73.54,
+    "min_n": 35,
+    "k_eligible": 4,
+    "i2": 26.17
+  }
+}

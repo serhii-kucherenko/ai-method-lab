@@ -1,6 +1,6 @@
 # Stage Validate Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (paper-sourced)  
 **Slug:** `stage-validate-desk`  
 **Display name:** Stage Validate Desk  
 **Paper id:** `2607.14568`  
@@ -13,4 +13,4 @@ Stage-validated inference plans: gate each stage against a reference and measure
 
 ## Honesty
 
-Workflow experiment inspired by the paper — not a claim to replace the authors' Fermi CUDA engine or commercial inference stacks.
+Workflow experiment inspired by the paper — not a claim to replace the authors' Fermi CUDA engine or commercial inference stacks. Never brand MiniCPM / Fermi / Tesla C2075 as the product name.

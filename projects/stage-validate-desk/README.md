@@ -1,18 +1,23 @@
 # Stage Validate Desk
 
-Stage-validated inference measurement desk — inspired by paper 2607.14568 (legacy GPU multimodal port lessons).
+Stage-validated inference / port plans: gate each stage against a reference and measure long-context / bit-width / kernel choices — vs naive short-bench intuition.
 
-- **Paper:** https://arxiv.org/abs/2607.14568v1
-- **Authors' code:** none published with this paper
+**Paper:** https://arxiv.org/abs/2607.14568v1  
+**Authors' code:** none published  
 
 ## Run
 
 ```bash
 cd projects/stage-validate-desk
 npm install
-npm test
+npm run dev          # Next.js UI
+npm run start:api    # optional Node harness API + public/*.html
+npm run test:unit
+npm run test:app-up  # build + next start GET /
 ```
 
-Smoke scaffold — climb to Next.js + Tailwind + shadcn, DESIGN note, ≥20 features / ≥8 pages, and **live app smoke** (`templates/product/app-up.test.ts`) before finish.
+Desk entry: `/jobs` · Landing: `/` · Offline: `try.html`
 
-Honesty: method experiment; not a claim to ship Fermi CUDA or MiniCPM as a product.
+## Honesty
+
+Method experiment inspired by the paper. Not a Fermi CUDA engine or MiniCPM product. Never brand MiniCPM, Fermi, or Tesla C2075 as the product name.

@@ -22,4 +22,4 @@
 | Evidence Synthesis Desk | 2607.15247 | Complete |
 | Tactile Data Desk | 2607.14588 | Complete |
 | AI Governance Desk | 2607.14585 | Complete |
-| Stage Validate Desk | 2607.14568 | Building |
+| Stage Validate Desk | 2607.14568 | Complete |

@@ -1,0 +1,18 @@
+{
+  "id": "std-019",
+  "title": "Homogeneous mid risk",
+  "input": {
+    "corpus": "homogeneous",
+    "min_n": 40
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "homogeneous",
+    "naive_risk": 72.55,
+    "safer_risk": 2.4,
+    "delta_score": 70.15,
+    "min_n": 40,
+    "k_eligible": 3,
+    "i2": 28.67
+  }
+}
