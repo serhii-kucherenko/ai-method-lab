@@ -1,9 +1,16 @@
 {
-  "updated_at": "2026-07-23T06:45:00Z",
+  "updated_at": "2026-07-23T05:49:26.819Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
-    "to": ["kucherenko.web@gmail.com"],
-    "on": ["phase_complete", "product_complete", "hard_stop", "digest"],
+    "to": [
+      "kucherenko.web@gmail.com"
+    ],
+    "on": [
+      "phase_complete",
+      "product_complete",
+      "hard_stop",
+      "digest"
+    ],
     "enabled": true,
     "product_complete_pending": false,
     "last_product_complete_email_id": "965db748-44f1-4364-913a-31960838af89"
@@ -19,7 +26,7 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-sustain-001__c1592__r1",
+  "last_completed": "research__irc6651_dual_toys",
   "last_error": null,
   "current_product": null,
   "current_idea": "irc6651",
@@ -27,7 +34,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "Research tick on irc6651 (adversarial): G4 falsifiers + G5 A–Y paper outline + 5 dollar toys. Kill A/B/C fences deepened. framing_started_at unchanged. No projects/; not ready_to_build. Loop pid 3032.",
+  "notes": "robust_15m tick1: irc6651 algorithm + dual toys 5/5 green. ticks=3 (min met); hours hold incomplete; still adversarial; no projects/. Loop pid 3032.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -39,15 +46,23 @@
     "min_hours_research_before_ready": 4,
     "framing_started_at": "2026-07-23T05:35:00.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 2,
+    "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "require_pm_go": true,
     "require_roadmap_before_build": true,
     "finish_and_email_before_next": true,
     "max_parallel_agents": 20,
-    "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
-    "pm_pack": ["ROADMAP", "PM-GO"],
+    "architect_pack": [
+      "VISION",
+      "ROADMAP",
+      "PRD",
+      "ERD"
+    ],
+    "pm_pack": [
+      "ROADMAP",
+      "PM-GO"
+    ],
     "comprehensive_protocol": "docs/COMPREHENSIVE_PRODUCT.md",
     "roles_protocol": "protocols/AGENT_ROLES.md",
     "protocol": "protocols/IDEA_DEPTH.md"
@@ -64,6 +79,6 @@
     "pid": 3032,
     "chain": "finish_product_email_then_research",
     "do_not_rearm_if_alive": true,
-    "ticks_observed": 1
+    "ticks_observed": 2
   }
 }
