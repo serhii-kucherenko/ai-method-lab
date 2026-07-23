@@ -28,8 +28,10 @@ Read/write: `matrix/CONTROLLER.json`
 | CONTROLLER situation | Role |
 |----------------------|------|
 | Idle, no `current_product` | **Researcher / picker** — run `scripts/pick-paper-idea.mjs --choose 1`; email validated idea; open `projects/` |
-| `phase: running` | **Product delivery** — climb ladder; README + UI never broken |
+| `phase: running` | **Product designer** + **Product delivery** — DESIGN note; climb ladder on Next.js + Tailwind + shadcn; README + UI never broken |
 | Sustain scored | **Best-practices tutor** then email product finished; clear slot; pick next |
+
+Roles detail: `protocols/AGENT_ROLES.md`. Stack: `docs/PRODUCT_STACK.md`. Design: `protocols/DESIGN.md`.
 
 Cap parallel agents at `depth_policy.max_parallel_agents` (default **20**). One product phase at a time.
 

@@ -9,7 +9,8 @@ Unless `matrix/CONTROLLER.json` says `paused` / `hard_stop`, run as the **autono
 - Read `protocols/AUTONOMOUS_CONTROLLER.md` and `docs/PAPERS_INTAKE.md` first
 - Idle → `node scripts/pick-paper-idea.mjs --days 14 --write-shortlist --choose 1` → email **idea_validated** → climb product ladder
 - No hours hold / `ready_to_build` wait for paper-sourced ideas; mature names only (`docs/PRODUCT_NAMING.md`); sustain ≥15 features
-- Roles: picker/delivery → **best-practices tutor** (guides) before finish email
+- Roles: researcher → PM → architect → **product designer** → delivery → **best-practices tutor** (guides) before finish email
+- Engineering stack: **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); design: `protocols/DESIGN.md`
 - Spawn parallel agents as needed (cap **20**); one product phase in CONTROLLER
 - Use `docs/DEVELOPMENT_WORKFLOW.md` inside the product
 - **Do not** ask the human to confirm
@@ -22,8 +23,8 @@ Wake prompt (also in `docs/AUTOMATION.md`):
 You are the AI Method Lab autonomous controller in this repo.
 Read protocols/AUTONOMOUS_CONTROLLER.md, matrix/CONTROLLER.json, docs/PAPERS_INTAKE.md, docs/PRODUCT_NAMING.md.
 Idle: pick implementable paper from simple-papers, open projects/<slug>/ same tick, email idea_validated.
-Running: climb ladder to sustain; README + tutor guide + try.html; email product_complete; then next pick.
-Mature names. ≥15 features. Max 20 agents. Always commit push merge. No human confirm.
+Running: designer + delivery climb on Next.js/Tailwind/shadcn; README + tutor guide + try.html; email product_complete; then next pick.
+Mature names. ≥15 features. Design note required. Max 20 agents. Always commit push merge. No human confirm.
 ```
 
 ## What to optimize for
@@ -42,6 +43,9 @@ Few comprehensive products from **real papers with code or clear software claims
 
 - Portfolio: `projects/PORTFOLIO.md`
 - Papers intake: `docs/PAPERS_INTAKE.md`
+- Roles: `protocols/AGENT_ROLES.md`
+- Design: `protocols/DESIGN.md`
+- Stack: `docs/PRODUCT_STACK.md`
 - Product runbook: `protocols/PRODUCT_RUNBOOK.md`
 - Controller: `protocols/AUTONOMOUS_CONTROLLER.md` + `matrix/CONTROLLER.json`
 - Email: `protocols/NOTIFY.md`

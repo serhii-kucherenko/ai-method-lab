@@ -2,7 +2,9 @@
 
 How to run one **product phase** (not a throwaway sandbox cell).
 
-**Role:** Product delivery (`protocols/AGENT_ROLES.md`). Researcher, **product manager** (roadmap + go), and senior architect must have finished their packs first.
+**Role:** Product delivery (`protocols/AGENT_ROLES.md`). Researcher, **product manager** (roadmap + go), senior architect, and **product designer** (`protocols/DESIGN.md`) must have finished their packs first (paper pick→build: design note before multi-page UI).
+
+**Stack:** Next.js App Router + TypeScript + Tailwind CSS + shadcn/ui — `docs/PRODUCT_STACK.md` + CONTROLLER `product_defaults`.
 
 ## 0. Comprehensive bar (mandatory)
 
@@ -40,6 +42,8 @@ projects/<id>/
 
 This is the durable product. Prefer evolving this tree over creating `sandboxes/` copies.
 Record path in cell JSON as `sandbox_path` **or** `product_path` (prefer `product_path` for portfolio work).
+
+Scaffold (if still a thin smoke): `create-next-app` + `shadcn init -d --base radix` per `docs/PRODUCT_STACK.md`. Implement pages against `docs/ideas/<id>-DESIGN.md`.
 
 Optional: use `sandboxes/` only for short A/B method comparisons that should not pollute the product.
 

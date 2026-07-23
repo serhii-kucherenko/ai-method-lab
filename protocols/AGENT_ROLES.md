@@ -1,14 +1,15 @@
 # Agent roles (product pipeline)
 
 Human steer (2026-07-23): ugly coded names and shallow scaffolds failed.  
-**Drive every product through five roles.** Scripted handoffs are fine; skipping a role is not.
+**Drive every product through six roles.** Scripted handoffs are fine; skipping a role is not.
 
 | Role | Owns | Does not own |
 |------|------|----------------|
 | **Researcher** | Idea depth, kill rounds, value honesty, fixtures that teach; **mature display name** | Product folders; “ready because fixtures are green” |
 | **Product manager** | Problem framing, prioritized roadmap, phase exits, go/no-go, findings email gate | Production code; inventing domain math |
-| **Senior architect / engineer** | Vision, engineering roadmap, PRD, ERD/contracts, **≥15-feature** blueprint | Shipping UI without contracts; noun-swap scaffolds |
-| **Product delivery** | Phased build RED→GREEN, UI never broken, try artifact, sustain | Inventing scope; starting the next product early |
+| **Senior architect / engineer** | Vision, engineering roadmap, PRD, ERD/contracts, **≥15-feature** blueprint; stack = Next.js + Tailwind + shadcn (`docs/PRODUCT_STACK.md`) | Shipping UI without contracts; noun-swap scaffolds; inventing a one-off CSS framework |
+| **Product designer** | Visual system, brand-first composition, page direction, shadcn theme (`protocols/DESIGN.md`) | Domain math; inventing features; raw unstyled HTML as the product |
+| **Product delivery** | Phased build RED→GREEN on the default stack, UI never broken, try artifact, sustain | Inventing scope; starting the next product early; ignoring the design note |
 | **Best-practices tutor** | Guides under `docs/guides/` from what we just learned; scoring notes that teach | Inventing new product scope; skipping research |
 
 ## Handoff order (mandatory)
@@ -17,14 +18,17 @@ Human steer (2026-07-23): ugly coded names and shallow scaffolds failed.
 Researcher (IDEA_DEPTH → ready_to_build + mature name)
     → Product manager (roadmap + go/no-go)
         → Senior architect (VISION + ROADMAP + PRD + ERD + ≥15-feature blueprint)
-            → Product delivery (phases under projects/<slug>/)
-                → Best-practices tutor (guide + scoring note)
-                    → Product manager (findings email) → only then next idea
+            → Product designer (DESIGN.md + theme tokens)
+                → Product delivery (phases under projects/<slug>/ — Next.js + Tailwind + shadcn)
+                    → Best-practices tutor (guide + scoring note)
+                        → Product manager (findings email) → only then next idea
 ```
+
+For **paper pick→build** (hours holds retired): picker opens the folder + smoke claim → designer + delivery climb together on the default stack → tutor → finish email. Do not ship sustain UI without `docs/ideas/<slug>-DESIGN.md`.
 
 Naming: `docs/PRODUCT_NAMING.md`. Folder slug = pronounceable words. Display name appears in UI, digests, portfolio.
 
-No `projects/<slug>/` until:
+No `projects/<slug>/` until (full depth path):
 
 1. Researcher cleared `protocols/IDEA_DEPTH.md` → `ready_to_build`
 2. Product manager signed roadmap + `PM-GO.md` with `decision: go`
@@ -37,11 +41,12 @@ No `projects/<slug>/` until:
 | PRD | `<slug>-PRD.md` |
 | ERD | `<slug>-ERD.md` |
 | Blueprint | `<slug>-COMPREHENSIVE-BLUEPRINT.md` (≥6 pages, ≥4 aggregates, **≥15 features**) |
+| Design | `<slug>-DESIGN.md` (product designer) |
 | Page specs + phase briefs | `<slug>-PAGE-SPECS.md`, `<slug>-PHASE-BRIEFS.md` |
 | API contract | `<slug>-API-CONTRACT.md` |
 | PM go/no-go | `<slug>-PM-GO.md` |
 
-4. Pack matches `docs/COMPREHENSIVE_PRODUCT.md`
+4. Pack matches `docs/COMPREHENSIVE_PRODUCT.md` + `docs/PRODUCT_STACK.md`
 
 ## Researcher
 
@@ -67,16 +72,30 @@ Templates: `docs/ideas/PM_INTAKE_CHECKLIST.md`, `docs/ideas/PM_ROADMAP_TEMPLATE.
 | **PRD** | Personas, stories, AC, out-of-scope |
 | **ERD** | ≥4 aggregates; auth boundaries |
 | **Blueprint** | **≥15** user-visible features mapped to pages |
+| **Stack** | Next.js App Router + TypeScript + Tailwind + shadcn/ui (`docs/PRODUCT_STACK.md`) |
+
+## Product designer
+
+Follow `protocols/DESIGN.md`.
+
+| Deliverable | Bar |
+|-------------|-----|
+| **DESIGN** | Brand, tokens, typography, page compositions, motion, shadcn theme map |
+| **Quality** | One composition first viewport; brand-first; no AI-default purple/cream clichés |
+| **Handoff** | Delivery can implement pages without inventing the look |
 
 ## Product delivery
 
-Follow `protocols/PRODUCT_RUNBOOK.md` + `docs/DEVELOPMENT_WORKFLOW.md`.
+Follow `protocols/PRODUCT_RUNBOOK.md` + `docs/DEVELOPMENT_WORKFLOW.md` + `docs/PRODUCT_STACK.md`.
+
+Implement UI with **Next.js + Tailwind + shadcn**, matching `<slug>-DESIGN.md`.
 
 ### UI never broken (hard)
 
 1. RED→GREEN (no weaken-to-pass)
 2. UI critical path per unlocked page
 3. Sustain: ≥6 views, ≥15 features live, mature display name in UI chrome
+4. No sustain on raw unstyled static HTML shells when the stack default is Next/shadcn (offline `try.html` is the exception)
 
 **Exit:** scored phase + FINDINGS → tutor guide → PM findings email. No next product until email sent.
 
@@ -98,6 +117,7 @@ Guides explain **how we built / verified / what failed**, not acronym laundry li
 
 - One keep-going loop (`docs/ideas/LOOP_DISCIPLINE.md`)
 - ≤20 parallel agents; one `current_idea` / one product phase in CONTROLLER
+- Designer may draft DESIGN while architect finishes ERD; delivery waits for design before multi-page UI
 - Tutor may write guides while researcher deepens the *next* named idea (docs only)
 - Never two product folders; never switch products before findings email
 
@@ -106,12 +126,14 @@ Guides explain **how we built / verified / what failed**, not acronym laundry li
 - `c1592` / `irc6651` / `oshamult`-style brands as the product people see
 - Collapsing roles into “fixtures then projects/”
 - <15 features called “comprehensive”
+- Skipping the designer (default fonts + gray boxes)
+- Skipping Next/Tailwind/shadcn for a new product without CONTROLLER override
 - Skipping the tutor guide
 - Starting the next product because smoke was green
 
 ## Controller wiring
 
 - Research → Researcher  
-- ready_to_build → Product manager → Senior architect  
-- `phase: running` → Product delivery  
+- ready_to_build → Product manager → Senior architect → Product designer  
+- `phase: running` → Product delivery (on default stack)  
 - Sustain scored → Best-practices tutor → Product manager email → research next idea

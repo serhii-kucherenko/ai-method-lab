@@ -256,7 +256,7 @@ npm start
 
 ## Status
 
-Smoke scaffold — climbing the full product ladder next.
+Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per \`docs/PRODUCT_STACK.md\` and commits \`docs/ideas/${slug}-DESIGN.md\` before multi-page UI.
 `,
   );
 

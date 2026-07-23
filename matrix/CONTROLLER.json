@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T17:43:08.374Z",
+  "updated_at": "2026-07-23T17:45:38.967Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -24,10 +24,16 @@
   "idle_reason": null,
   "product_defaults": {
     "persistence": "sqlite",
-    "stack": "node-ts",
-    "test_runner": "node-test",
+    "stack": "nextjs-app-router",
+    "ui": "shadcn-tailwind",
+    "styling": "tailwindcss",
+    "framework": "nextjs",
+    "language": "typescript",
+    "test_runner": "vitest-and-playwright",
     "payments": "provider-agnostic-webhook-with-hmac",
-    "auth": "bearer-token"
+    "auth": "bearer-token",
+    "stack_protocol": "docs/PRODUCT_STACK.md",
+    "design_protocol": "protocols/DESIGN.md"
   },
   "last_completed": "A03__P-sustain-001__drug-discovery-desk__r1",
   "last_error": null,
@@ -37,7 +43,7 @@
   "next_cell": "A03__P-crud-001__virulence-feature-desk__r1",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "Virulence Feature Desk smoke green; idea email sent; climbing to sustain.",
+  "notes": "Virulence Feature Desk smoke green; idea email sent; climbing to sustain. Stack default now Next.js+Tailwind+shadcn; designer role required. Virulence Feature Desk may finish on prior node scaffold; next products use new stack.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -82,7 +88,10 @@
     "comprehensive_protocol": "docs/COMPREHENSIVE_PRODUCT.md",
     "roles_protocol": "protocols/AGENT_ROLES.md",
     "intake_protocol": "docs/PAPERS_INTAKE.md",
-    "guides_dir": "docs/guides"
+    "guides_dir": "docs/guides",
+    "require_design_note": true,
+    "stack_protocol": "docs/PRODUCT_STACK.md",
+    "design_protocol": "protocols/DESIGN.md"
   },
   "defaults": {
     "always_commit": true,

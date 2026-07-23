@@ -24,7 +24,7 @@ Idea → Research? → PRD → Contracts/ERD → Plan → RED tests → GREEN im
          ↑ optional (A08)     ↑ A02 gate on schema-heavy work
 ```
 
-**Lab roles** (`protocols/AGENT_ROLES.md`): Researcher owns idea→depth; Senior architect owns vision/roadmap/PRD/ERD before code; Product delivery owns RED→GREEN + **UI never broken** (UI critical path per unlocked page — API-only green is not enough).
+**Lab roles** (`protocols/AGENT_ROLES.md`): Researcher owns idea→depth; Senior architect owns vision/roadmap/PRD/ERD before code; **Product designer** owns visual system (`protocols/DESIGN.md`); Product delivery owns RED→GREEN on **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`) + **UI never broken** (UI critical path per unlocked page — API-only green is not enough).
 
 ---
 

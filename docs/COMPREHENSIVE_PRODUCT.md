@@ -11,7 +11,8 @@ This does **not** waive `protocols/IDEA_DEPTH.md`. It raises what “ready_to_bu
 | **Display name** | Mature human name per `docs/PRODUCT_NAMING.md` (not a statute code or glue-noun) |
 | **Unique domain claim** | Cleared IDEA_DEPTH; non-isomorphic; money honesty in digests |
 | **Resources** | ≥4 durable aggregates (not one table + status) |
-| **UI** | ≥6 distinct pages/views (not one form) |
+| **UI** | ≥6 distinct pages/views (not one form); **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`) |
+| **Design** | Product designer note `docs/ideas/<slug>-DESIGN.md` (`protocols/DESIGN.md`) before sustain |
 | **Features** | **≥15** user-visible capabilities (see feature menu below) — CRUD alone does not count toward 15 |
 | **API** | Auth + multi-tenant org + pagination + idempotent webhook + export |
 | **Tests** | Depth suite for unique claim (≥25) **plus** UI critical path for every page |
@@ -40,9 +41,9 @@ Fewer products. Slower research. When we **do** build, build **comprehensive and
 
 ## Role pack required before `projects/<slug>/`
 
-Drive work through `protocols/AGENT_ROLES.md` (researcher → product manager → senior architect → product delivery → best-practices tutor).
+Drive work through `protocols/AGENT_ROLES.md` (researcher → product manager → senior architect → **product designer** → product delivery → best-practices tutor).
 
-After `ready_to_build`, product manager commits roadmap + go, then senior architect commits the pack **before** opening the product folder:
+After `ready_to_build`, product manager commits roadmap + go, then senior architect + designer commit the pack **before** opening the product folder (paper pick→build may open smoke first, then design + Next climb):
 
 | Artifact | Path |
 |----------|------|
@@ -52,9 +53,10 @@ After `ready_to_build`, product manager commits roadmap + go, then senior archit
 | PRD | `docs/ideas/<slug>-PRD.md` |
 | ERD | `docs/ideas/<slug>-ERD.md` |
 | Blueprint | `docs/ideas/<slug>-COMPREHENSIVE-BLUEPRINT.md` (page map, **≥15-feature** matrix, aggregates, test themes) |
+| Design | `docs/ideas/<slug>-DESIGN.md` (brand, tokens, page compositions, shadcn theme) |
 
 Shallow “blueprint = phase rename of dual-gate smoke” fails this bar.
 
 ## UI never broken
 
-Sustain (and each phase that unlocks a page) requires an automated **UI critical path** — not API-only green. A single calculator HTML shell fails sustain even with ≥25 goldens.
+Sustain (and each phase that unlocks a page) requires an automated **UI critical path** — not API-only green. A single calculator HTML shell fails sustain even with ≥25 goldens. New products ship real pages on **Next.js + Tailwind + shadcn**; offline `try.html` stays the digest demo only.
