@@ -29,3 +29,4 @@
 | Quantum Kernel Desk | 2607.11701 | Complete |
 | Memory Risk Desk | 2607.11656 | Complete |
 | Heart Scan Desk | 2607.11287 | Complete |
+| Chest Xray Desk | 2607.09305 | Building |
