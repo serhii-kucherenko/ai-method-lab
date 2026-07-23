@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T20:35:00.000Z",
+  "updated_at": "2026-07-23T18:46:51.890Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,9 +11,9 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "7fc44b88-f18e-4f72-b0a9-ffafc4829a59",
-    "last_idea_validated_email_id": "65fa97c3-fc11-4494-a630-420bf02327ec",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "9c997e66-3a2c-4bb0-80cb-826cbed55ece",
+    "last_idea_validated_email_id": "c636b6fb-a5ec-4b63-b0f0-9c32d41c74ff",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
@@ -41,13 +41,13 @@
   },
   "last_completed": "A03__P-sustain-001__enterprise-agent-desk__r1",
   "last_error": null,
-  "current_product": "enterprise-agent-desk",
-  "current_idea": "enterprise-agent-desk",
+  "current_product": "ladder-logic-desk",
+  "current_idea": "ladder-logic-desk",
   "next_research_idea": null,
-  "next_cell": null,
+  "next_cell": "A03__P-crud-001__ladder-logic-desk__r1",
   "mode": "autonomous",
-  "phase": "scoring",
-  "notes": "Enterprise Agent Desk sustain green. product_complete_pending=true. No finish email this tick per instruction. Keep current_product.",
+  "phase": "running",
+  "notes": "Ladder Logic Desk climbing Next+landing+designer. Enterprise Agent emailed.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -60,10 +60,10 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.17331",
-      "slug": "enterprise-agent-desk",
-      "displayName": "Enterprise Agent Desk",
-      "at": "2026-07-23T18:37:14.032Z"
+      "paperId": "2607.08417",
+      "slug": "ladder-logic-desk",
+      "displayName": "Ladder Logic Desk",
+      "at": "2026-07-23T18:46:35.944Z"
     }
   },
   "depth_policy": {
