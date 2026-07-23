@@ -37,6 +37,7 @@ Write several short paragraphs a stranger can follow:
 3. **What we will build** — what the app will do for a user, in concrete everyday terms.
 4. **Why this paper** — e.g. the authors published working source code, or the idea is clearly something a software team can implement and test.
 5. **What you will get later** — another email when it is finished, with a simple offline demo and a link to try the project in the browser.
+6. **Sources (required)** — paste full URLs for the paper page and, when the pick has one, the authors’ public code repository. Label them in plain words (“paper:”, “authors’ code:”). Do not omit these even if the rest of the letter stays link-light.
 
 ### Product finished (`product_complete`)
 
@@ -51,16 +52,18 @@ Same plain-narrative bar, **longer and more complete**:
 7. **What did not change** — still not a commercial pitch if true.
 8. **Next** — one sentence.
 9. **Try it** — attached offline page + browser playground link; mention the project readme and lessons guide in plain words (“how to run” file and “what we learned” guide).
+10. **Sources (required)** — same as start letter: full paper URL and authors’ code URL when present.
 
 ## Hard rules
 
 1. **Explain before you celebrate.** The reader must learn *what the idea was*, *what the project is*, and *what we actually built* — not only that tests passed.
 2. **Lead with the story, then the proof.** Full narrative first; counts only as supporting detail.
-3. **Never force a re-read of the repo.** Links are optional extras (except product try-link below).
-4. **Link budget:** hard-stop → at most one optional deep link. Product finished → **try-page attachment + one browser-playground try link**.
+3. **Never force a re-read of the repo.** Links are optional extras (except product try-link and source links below).
+4. **Link budget:** hard-stop → at most one optional deep link. Idea start and product finished → **always include paper URL + code URL when known**. Product finished also → **try-page attachment + one browser-playground try link**.
 5. **Honest framing in plain words:** this is a workflow experiment unless we say otherwise.
 6. **No unexplained acronyms or internal codes** in subject or body. If a technical term is unavoidable, define it in the same sentence in everyday language.
 7. **No paper-id or statute-code branding** in the subject; use the mature display name only.
+8. **Chat / status updates:** when naming the current product, always include the paper link and code link (or say code was not published).
 
 ## Plain language (never assume these are known)
 
