@@ -26,7 +26,7 @@
    - `ftp_i = (i < ftp_months) ? ftp_rate * unpaid_by_month[i] : 0`
    - `ftf_raw_i = (i < unfiled_months && i < 5) ? 0.05 * net_amount_due : 0`
    - If both `ftf_raw_i > 0` and `ftp_i > 0`: `ftf_i = max(0, ftf_raw_i - ftp_i)` else `ftf_i = ftf_raw_i`  // § 6651(c)(1)
-3. Sum FTF and FTP. Cap each aggregate at 25% of its respective bases (FTF vs net_amount_due; FTP vs max unpaid — paper note: toys stay under cap).
+3. Sum FTF and FTP. Cap FTF at 25% of `net_amount_due`. Cap FTP at 25% of max unpaid (or net if unpaid empty).
 4. If `apply_minimum` and FTF sum < `min(min_floor, net_amount_due)`: set FTF = `min(min_floor, net_amount_due)` (lesser-of). Do **not** let (c)(1) push FTF below this floor when the minimum sentence applies (expert cheat V).
 5. Return `{ status, ftf, ftp, combined, branch }`.
 

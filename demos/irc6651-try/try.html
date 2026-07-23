@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>irc6651 — research late-file / late-pay demo</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1a2228;
+        --muted: #5a6670;
+        --line: #d0d8dc;
+        --bg: #eef2f4;
+        --panel: #fff;
+        --accent: #2a5f4a;
+        --warn: #8a4b12;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 0% 0%, #d7ebe0 0%, transparent 42%),
+          radial-gradient(circle at 100% 0%, #e4e9ec 0%, transparent 40%),
+          var(--bg);
+        min-height: 100vh;
+      }
+      main { max-width: 36rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+      h1 { margin: 0 0 0.35rem; font-size: 1.65rem; letter-spacing: -0.02em; }
+      .note { margin: 0 0 1rem; color: var(--muted); line-height: 1.45; }
+      .disclaimer {
+        margin: 0 0 1rem; padding: 0.85rem 0.95rem;
+        border: 1px solid #e0c4a8; border-left: 3px solid var(--warn);
+        background: #fff8f0; color: #5c3a18; line-height: 1.45; font-size: 0.95rem;
+      }
+      form { display: grid; gap: 0.75rem; padding: 1rem; background: var(--panel); border: 1px solid var(--line); }
+      label { display: grid; gap: 0.25rem; font-size: 0.9rem; }
+      input, button { font: inherit; padding: 0.55rem 0.65rem; }
+      button { background: var(--accent); color: #fff; border: 0; cursor: pointer; }
+      .out { margin-top: 1rem; padding: 1rem; background: var(--panel); border: 1px solid var(--line); line-height: 1.5; }
+      .row { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--line); padding: 0.35rem 0; }
+      .row:last-child { border-bottom: 0; font-weight: 650; }
+      .money { font-variant-numeric: tabular-nums; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>irc6651</h1>
+      <p class="note">
+        Offline research demo. Forecast stacked failure-to-file and failure-to-pay additions
+        with same-month file reduction. Not an IRS notice and not tax advice.
+      </p>
+      <p class="disclaimer">
+        <strong>Honesty:</strong> The IRS and tax software already handle real assessments.
+        This page is a workflow-experiment calculator for statutory addition math only —
+        no abatement, no underpayment interest, no installment-plan rate.
+      </p>
+      <form id="f">
+        <label>Net amount due (file base, USD)
+          <input id="net" type="number" min="0" step="1" value="10000" />
+        </label>
+        <label>Months late to file (capped at 5 for accrual)
+          <input id="unfiled" type="number" min="0" step="1" value="1" />
+        </label>
+        <label>Months unpaid (constant unpaid = net for this demo)
+          <input id="unpaid_months" type="number" min="0" step="1" value="1" />
+        </label>
+        <label><span><input id="apply_min" type="checkbox" /> Apply &gt;60-day minimum floor</span></label>
+        <label>Minimum floor (USD)
+          <input id="min_floor" type="number" min="0" step="1" value="510" />
+        </label>
+        <button type="submit">Forecast additions</button>
+      </form>
+      <div class="out" id="out" hidden></div>
+    </main>
+    <script>
+      function money(n) {
+        return new Intl.NumberFormat("en-US", {
+          style: "currency", currency: "USD", maximumFractionDigits: 0,
+        }).format(n);
+      }
+      function forecast(input) {
+        var net = Number(input.net);
+        var unfiled = Math.min(5, Math.max(0, Number(input.unfiled)));
+        var unpaidMonths = Math.max(0, Number(input.unpaid_months));
+        var minFloor = Number(input.min_floor);
+        var applyMin = input.apply_min === true;
+        var ftf = 0;
+        var ftp = 0;
+        var n = Math.max(unfiled, unpaidMonths);
+        for (var i = 0; i < n; i++) {
+          var ftpI = i < unpaidMonths ? 0.005 * net : 0;
+          var ftfRaw = i < unfiled ? 0.05 * net : 0;
+          var ftfI = ftfRaw > 0 && ftpI > 0 ? Math.max(0, ftfRaw - ftpI) : ftfRaw;
+          ftf += ftfI;
+          ftp += ftpI;
+        }
+        if (net > 0) ftf = Math.min(ftf, 0.25 * net);
+        if (net > 0) ftp = Math.min(ftp, 0.25 * net);
+        if (applyMin) {
+          var floor = Math.min(minFloor, net);
+          if (ftf < floor) ftf = floor;
+        }
+        return { ftf: ftf, ftp: ftp, combined: ftf + ftp };
+      }
+      document.getElementById("f").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var result = forecast({
+          net: document.getElementById("net").value,
+          unfiled: document.getElementById("unfiled").value,
+          unpaid_months: document.getElementById("unpaid_months").value,
+          apply_min: document.getElementById("apply_min").checked,
+          min_floor: document.getElementById("min_floor").value,
+        });
+        var out = document.getElementById("out");
+        out.hidden = false;
+        out.innerHTML =
+          '<div class="row"><span>File addition</span><span class="money">' + money(result.ftf) + "</span></div>" +
+          '<div class="row"><span>Pay addition</span><span class="money">' + money(result.ftp) + "</span></div>" +
+          '<div class="row"><span>Combined</span><span class="money">' + money(result.combined) + "</span></div>" +
+          '<p class="note">Default toy: one dual month on $10,000 → $500 (4.5% + 0.5%), not naive $550.</p>';
+      });
+    </script>
+  </body>
+</html>

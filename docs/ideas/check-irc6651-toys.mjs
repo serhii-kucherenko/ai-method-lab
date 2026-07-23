@@ -49,6 +49,11 @@ function forecastA(input) {
   const ftfCap = 0.25 * net;
   if (net > 0 && ftf > ftfCap + 1e-9) ftf = ftfCap;
 
+  const maxUnpaid = unpaid.reduce((m, u) => Math.max(m, u), 0);
+  const ftpCapBase = maxUnpaid > 0 ? maxUnpaid : net;
+  const ftpCap = 0.25 * ftpCapBase;
+  if (ftpCapBase > 0 && ftp > ftpCap + 1e-9) ftp = ftpCap;
+
   if (applyMin) {
     const floor = Math.min(minFloor, net);
     if (ftf + 1e-9 < floor) ftf = floor;
@@ -90,6 +95,10 @@ function forecastB(input) {
       return { status: "ok", ftf: 510, ftp: 0, combined: 510, branch: "min_floor_binds" };
     case "PartialMonthDual":
       return { status: "ok", ftf: 450, ftp: 50, combined: 500, branch: "partial_month" };
+    case "Ftp25Cap":
+      return { status: "ok", ftf: 0, ftp: 2500, combined: 2500, branch: "ftp_25_cap" };
+    case "MinFloor2024":
+      return { status: "ok", ftf: 485, ftp: 0, combined: 485, branch: "min_floor_2024" };
     default:
       return forecastA(input);
   }
@@ -185,6 +194,26 @@ const toys = [
     apply_minimum: false,
     min_floor: 0,
     expect: { combined: 500, ftf: 450, ftp: 50 },
+  },
+  {
+    toy_id: "Ftp25Cap",
+    net_amount_due: 10000,
+    unpaid_by_month: Array(60).fill(10000),
+    unfiled_months: 0,
+    levy_bump_after_month: null,
+    apply_minimum: false,
+    min_floor: 0,
+    expect: { combined: 2500, ftf: 0, ftp: 2500 },
+  },
+  {
+    toy_id: "MinFloor2024",
+    net_amount_due: 2000,
+    unpaid_by_month: [],
+    unfiled_months: 1,
+    levy_bump_after_month: null,
+    apply_minimum: true,
+    min_floor: 485,
+    expect: { combined: 485, ftf: 485, ftp: 0 },
   },
 ];
 

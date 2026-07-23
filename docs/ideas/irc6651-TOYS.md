@@ -129,8 +129,25 @@ Assumptions common to all toys unless noted:
 
 ---
 
+## Toy 10 — `Ftp25Cap`
+
+**Facts:** Timely filed. Unpaid $10,000 constant for **60** months at 0.5% (uncapped $3,000).
+
+**Expected:** FTP capped at **$2,500** (25%); FTF **$0**.
+
+---
+
+## Toy 11 — `MinFloor2024`
+
+**Facts:** 2024-era minimum **$485**. Net due **$2,000**. >60 days; one late-file month.
+
+**Expected:** FTF **$485**.
+
+---
+
 ## Explicit non-actions
 
 - No full 25-fixture JSON farm this tick (anti-conveyor)
 - No `projects/irc6651/`
 - Digests must not present these toys as IRS notice substitutes
+- Offline research demo: `demos/irc6651-try/try.html`
