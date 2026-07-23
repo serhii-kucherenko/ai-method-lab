@@ -64,4 +64,4 @@ Shallow “blueprint = phase rename of dual-gate smoke” fails this bar.
 
 Sustain (and each phase that unlocks a page) requires an automated **UI critical path** — not API-only green. A single calculator HTML shell fails sustain even with ≥25 goldens. New products ship real pages on **Next.js + Tailwind + shadcn**, including a **marketing landing at `/`**; offline `try.html` stays the digest demo only. Desk entry is via landing CTA (typically `/jobs`).
 
-**Live app gate (hard):** before sustain email, `npm run build` must pass and a live smoke (`test/app-up.test.ts` or `npm run test:app-up`) must boot the production server and fetch `/` successfully. Copy the pattern from `projects/tactile-data-desk/test/app-up.test.ts`.
+**Live app gate (hard):** before sustain email, `npm run build` must pass and a live smoke (`test/app-up.test.ts` or `npm run test:app-up`) must boot the production server and fetch `/` successfully. Copy `templates/product/app-up.test.ts` (pattern proven on `projects/tactile-data-desk`).
