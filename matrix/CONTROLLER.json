@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T18:00:00.000Z",
+  "updated_at": "2026-07-23T17:43:08.374Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,9 +11,9 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "77638510-ce80-4766-962e-57fe115c33ca",
-    "last_idea_validated_email_id": "077e1b83-dbb3-45bb-81e3-d02c6682f4f7",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "f46cc607-5ece-46c8-9040-137e58988a04",
+    "last_idea_validated_email_id": "9459ca76-ad64-4f0b-9ca8-82e3444120aa",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
@@ -31,13 +31,13 @@
   },
   "last_completed": "A03__P-sustain-001__drug-discovery-desk__r1",
   "last_error": null,
-  "current_product": "drug-discovery-desk",
-  "current_idea": "drug-discovery-desk",
+  "current_product": "virulence-feature-desk",
+  "current_idea": "virulence-feature-desk",
   "next_research_idea": null,
-  "next_cell": null,
+  "next_cell": "A03__P-crud-001__virulence-feature-desk__r1",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "Drug Discovery Desk sustain green; product_complete_pending for parent email.",
+  "notes": "Virulence Feature Desk smoke green; idea email sent; climbing to sustain.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -50,10 +50,10 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.08404",
-      "slug": "drug-discovery-desk",
-      "displayName": "Drug Discovery Desk",
-      "at": "2026-07-23T17:35:29.914Z"
+      "paperId": "10.1186/s40168-026-02467-w",
+      "slug": "virulence-feature-desk",
+      "displayName": "Virulence Feature Desk",
+      "at": "2026-07-23T17:42:42.806Z"
     }
   },
   "depth_policy": {
