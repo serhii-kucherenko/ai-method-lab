@@ -1,0 +1,14 @@
+{
+  "id": "irc6651-D-half-pay-month3",
+  "title": "Mid-stream payment shrinks FTP; (c)(1) still applies",
+  "g5": "D",
+  "input": {
+    "net_amount_due": 40000,
+    "unpaid_by_month": [40000, 40000, 20000],
+    "unfiled_months": 3,
+    "levy_bump_after_month": null,
+    "apply_minimum": false,
+    "min_floor": 0
+  },
+  "expect": { "status": "ok", "ftf": 5500, "ftp": 500, "combined": 6000 }
+}

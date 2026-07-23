@@ -33,7 +33,7 @@ See `docs/DEPTH_RESTART.md` (Correction 5).
 | Seed | State | Notes |
 | --- | --- | --- |
 | **c1592** | **sustained** | Findings email sent; research moved to irc6651 |
-| **irc6651** | **adversarial / WAIT_HOURS** | 11 toys + 5 paper fixtures; value-gate hold; ticks=6; no projects/ |
+| **irc6651** | **adversarial / WAIT_HOURS** | 11 toys + 10 paper fixtures; ticks=7; no projects/ |
 | esrp4980h | seed (log only) | § 4980H ESRP; parked behind irc6651 (depth > width) |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |

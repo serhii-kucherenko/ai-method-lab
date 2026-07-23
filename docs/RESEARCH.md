@@ -2,6 +2,16 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #5 (irc6651 fixtures 10)
+
+Research only. Stays adversarial / WAIT_HOURS.
+
+- Paper fixtures **5 → 10** (added C/D/F/G/O); all green
+- Treas. Reg. § 301.6651-1 notes pointer
+- Hours ~1.2h/4; ticks=7; **no** `projects/`
+
+**Skeptical one-liner:** Ten fixtures still are not a matched notice — hold the clock.
+
 ## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #4 (irc6651 paper fixtures)
 
 Research only. Stays adversarial / WAIT_HOURS.
