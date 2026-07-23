@@ -34,7 +34,7 @@ Mature display name (2–4 English words). Slug = hyphenated lowercase. Never br
 |----------|------|
 | README | `projects/<slug>/README.md` |
 | Design note | `docs/ideas/<slug>-DESIGN.md` |
-| App stack | Next.js + Tailwind + shadcn (`docs/PRODUCT_STACK.md`) |
+| App stack | Next.js + Tailwind + shadcn; Python sidecar when needed (`docs/PRODUCT_STACK.md`) |
 | Tutor guide | `docs/guides/NN-<slug>-lessons.md` |
 | Offline try | `projects/<slug>/try.html` |
 | StackBlitz | `https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/projects/<slug>?startScript=start` |

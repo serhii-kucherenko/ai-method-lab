@@ -4,7 +4,7 @@ How to run one **product phase** (not a throwaway sandbox cell).
 
 **Role:** Product delivery (`protocols/AGENT_ROLES.md`). Researcher, **product manager** (roadmap + go), senior architect, and **product designer** (`protocols/DESIGN.md`) must have finished their packs first (paper pick→build: design note before multi-page UI).
 
-**Stack:** Next.js App Router + TypeScript + Tailwind CSS + shadcn/ui — `docs/PRODUCT_STACK.md` + CONTROLLER `product_defaults`.
+**Stack:** Next.js App Router + TypeScript + Tailwind CSS + shadcn/ui — `docs/PRODUCT_STACK.md` + CONTROLLER `product_defaults`. **Python** under `python/` when the paper claim needs it; README must show how to run Next + sidecar together.
 
 ## 0. Comprehensive bar (mandatory)
 

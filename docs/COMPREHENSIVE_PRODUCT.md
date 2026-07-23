@@ -11,7 +11,7 @@ This does **not** waive `protocols/IDEA_DEPTH.md`. It raises what “ready_to_bu
 | **Display name** | Mature human name per `docs/PRODUCT_NAMING.md` (not a statute code or glue-noun) |
 | **Unique domain claim** | Cleared IDEA_DEPTH; non-isomorphic; money honesty in digests |
 | **Resources** | ≥4 durable aggregates (not one table + status) |
-| **UI** | ≥6 distinct pages/views (not one form); **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`) |
+| **UI** | ≥6 distinct pages/views (not one form); **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); Python sidecar OK when the paper claim needs it |
 | **Design** | Product designer note `docs/ideas/<slug>-DESIGN.md` (`protocols/DESIGN.md`) before sustain |
 | **Features** | **≥15** user-visible capabilities (see feature menu below) — CRUD alone does not count toward 15 |
 | **API** | Auth + multi-tenant org + pagination + idempotent webhook + export |

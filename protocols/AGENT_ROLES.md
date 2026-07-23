@@ -7,7 +7,7 @@ Human steer (2026-07-23): ugly coded names and shallow scaffolds failed.
 |------|------|----------------|
 | **Researcher** | Idea depth, kill rounds, value honesty, fixtures that teach; **mature display name** | Product folders; “ready because fixtures are green” |
 | **Product manager** | Problem framing, prioritized roadmap, phase exits, go/no-go, findings email gate | Production code; inventing domain math |
-| **Senior architect / engineer** | Vision, engineering roadmap, PRD, ERD/contracts, **≥15-feature** blueprint; stack = Next.js + Tailwind + shadcn (`docs/PRODUCT_STACK.md`) | Shipping UI without contracts; noun-swap scaffolds; inventing a one-off CSS framework |
+| **Senior architect / engineer** | Vision, engineering roadmap, PRD, ERD/contracts, **≥15-feature** blueprint; UI stack = Next.js + Tailwind + shadcn; **Python sidecar when the paper needs it** (`docs/PRODUCT_STACK.md`) | Shipping UI without contracts; noun-swap scaffolds; inventing a one-off CSS framework; forbidding Python when the claim is ML/numeric |
 | **Product designer** | Visual system, brand-first composition, page direction, shadcn theme (`protocols/DESIGN.md`) | Domain math; inventing features; raw unstyled HTML as the product |
 | **Product delivery** | Phased build RED→GREEN on the default stack, UI never broken, try artifact, sustain | Inventing scope; starting the next product early; ignoring the design note |
 | **Best-practices tutor** | Guides under `docs/guides/` from what we just learned; scoring notes that teach | Inventing new product scope; skipping research |
@@ -19,7 +19,7 @@ Researcher (IDEA_DEPTH → ready_to_build + mature name)
     → Product manager (roadmap + go/no-go)
         → Senior architect (VISION + ROADMAP + PRD + ERD + ≥15-feature blueprint)
             → Product designer (DESIGN.md + theme tokens)
-                → Product delivery (phases under projects/<slug>/ — Next.js + Tailwind + shadcn)
+                → Product delivery (phases under projects/<slug>/ — Next.js + Tailwind + shadcn; Python when needed)
                     → Best-practices tutor (guide + scoring note)
                         → Product manager (findings email) → only then next idea
 ```
@@ -72,7 +72,7 @@ Templates: `docs/ideas/PM_INTAKE_CHECKLIST.md`, `docs/ideas/PM_ROADMAP_TEMPLATE.
 | **PRD** | Personas, stories, AC, out-of-scope |
 | **ERD** | ≥4 aggregates; auth boundaries |
 | **Blueprint** | **≥15** user-visible features mapped to pages |
-| **Stack** | Next.js App Router + TypeScript + Tailwind + shadcn/ui (`docs/PRODUCT_STACK.md`) |
+| **Stack** | Next.js App Router + TypeScript + Tailwind + shadcn/ui; optional Python package + run story (`docs/PRODUCT_STACK.md`) |
 
 ## Product designer
 
@@ -88,7 +88,7 @@ Follow `protocols/DESIGN.md`.
 
 Follow `protocols/PRODUCT_RUNBOOK.md` + `docs/DEVELOPMENT_WORKFLOW.md` + `docs/PRODUCT_STACK.md`.
 
-Implement UI with **Next.js + Tailwind + shadcn**, matching `<slug>-DESIGN.md`.
+Implement UI with **Next.js + Tailwind + shadcn**, matching `<slug>-DESIGN.md`. Use **Python** under `python/` when the unique claim needs it; document `npm run dev` (or compose) so Next + sidecar start together.
 
 ### UI never broken (hard)
 
@@ -128,6 +128,7 @@ Guides explain **how we built / verified / what failed**, not acronym laundry li
 - <15 features called “comprehensive”
 - Skipping the designer (default fonts + gray boxes)
 - Skipping Next/Tailwind/shadcn for a new product without CONTROLLER override
+- Pretending Python is banned when the paper’s claim needs it — or shipping Python with no README run story
 - Skipping the tutor guide
 - Starting the next product because smoke was green
 
