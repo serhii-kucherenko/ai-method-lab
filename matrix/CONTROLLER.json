@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T19:09:45.735Z",
+  "updated_at": "2026-07-23T19:10:46.633Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -12,7 +12,7 @@
     ],
     "enabled": true,
     "product_complete_pending": true,
-    "last_product_complete_email_id": "4ffc693c-0ae9-4da3-9a6e-15bf74de5d5e",
+    "last_product_complete_email_id": "680b832d-69f8-4970-8cd8-7ecf9a2b95a7",
     "last_idea_validated_email_id": "41992916-27e6-4d14-9d36-9651edb49d4a",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -60,10 +60,10 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.09076",
-      "slug": "security-control-desk",
-      "displayName": "Security Control Desk",
-      "at": "2026-07-23T19:03:05.290Z"
+      "paperId": "2607.15562",
+      "slug": "hard-rules-soft",
+      "displayName": "Hard Rules Soft",
+      "at": "2026-07-23T19:10:12.602Z"
     }
   },
   "depth_policy": {
