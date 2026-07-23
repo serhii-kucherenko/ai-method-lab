@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Filing Penalty Desk — goldens browser</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 2rem 1.25rem;
+        max-width: 44rem;
+        margin-inline: auto;
+        color: #1a2228;
+        background: #eef2f4;
+      }
+      #goldens-out {
+        white-space: pre-wrap;
+        font-family: ui-monospace, monospace;
+        font-size: 0.8rem;
+      }
+      a { color: #1f5f6b; }
+      .pass { color: #1b5e3b; }
+      .fail { color: #7a1f1f; }
+    </style>
+  </head>
+  <body data-goldens="live">
+    <h1>Goldens browser</h1>
+    <p>Paper fixtures versus the live month-walk engine (≥25 cards).</p>
+    <p id="summary">Loading…</p>
+    <pre id="goldens-out"></pre>
+    <p>
+      <a href="/returns.html">Catalog</a> ·
+      <a href="/honesty.html">Honesty</a> ·
+      <a href="/settings.html">Settings</a>
+    </p>
+    <script>
+      (function () {
+        const token = localStorage.getItem("fpd_token") || "";
+        const orgId = localStorage.getItem("fpd_org") || "";
+        const summary = document.getElementById("summary");
+        const out = document.getElementById("goldens-out");
+        if (!token || !orgId) {
+          summary.textContent = "Set fpd_token and fpd_org in localStorage, then reload.";
+          return;
+        }
+        fetch("/orgs/" + orgId + "/goldens", {
+          headers: { authorization: "Bearer " + token },
+        })
+          .then(function (r) {
+            return r.json();
+          })
+          .then(function (j) {
+            summary.className = j.all_pass ? "pass" : "fail";
+            summary.textContent =
+              "total " + j.total + " · all_pass=" + j.all_pass;
+            out.textContent = JSON.stringify(j.cards, null, 2);
+          })
+          .catch(function (e) {
+            summary.textContent = String(e);
+          });
+      })();
+    </script>
+  </body>
+</html>

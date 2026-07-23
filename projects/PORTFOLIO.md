@@ -8,7 +8,7 @@ Registry of product experiments. Controllers pick work from here + `docs/BACKLOG
 
 | ID | Status | Workflow | Current phase | Hypothesis (short) |
 |----|--------|----------|---------------|--------------------|
-| **Filing Penalty Desk** (`filing-penalty-desk`) | **in progress** | A03 + A10 | scale done → **sustain** | Month-walk FTF/FTP additions (Kill A; not IRS/CPA) |
+| **Filing Penalty Desk** (`filing-penalty-desk`) | **sustained** | A03 + A10 | sustain GREEN · guide filed · email pending | Month-walk FTF/FTP additions (Kill A; not IRS/CPA) |
 | **Customs Penalty Forecast** | **sustained** | A03 + A10 | done — findings emailed | Folder legacy `c1592`; statutory max by culpability (Kill A) |
 | **ptax4975** | **sustained** | A03 + A10 | done | § 4975 15%×year-parts + 100% if uncorrected (Kill A; not Form 5330) |
 | **oshamult** | **sustained** | A03 + A10 | done | GBP × serial remaining-balance penalty forecast (Kill A; not OIS) |

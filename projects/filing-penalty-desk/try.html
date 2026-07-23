@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Filing Penalty Desk — offline demo</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1a2228;
+        --muted: #5a6570;
+        --line: #d0d8dc;
+        --bg: #eef2f4;
+        --panel: #fff;
+        --accent: #1f5f6b;
+        --warn: #8a4b12;
+        --alert: #7a1f1f;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 0% 0%, #d5e6ea 0%, transparent 42%),
+          radial-gradient(circle at 100% 0%, #e4ebe8 0%, transparent 40%),
+          var(--bg);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 36rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        margin: 0 0 0.35rem;
+        font-size: 1.65rem;
+        letter-spacing: -0.02em;
+      }
+      .note {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+      .disclaimer {
+        margin: 0 0 1rem;
+        padding: 0.85rem 0.95rem;
+        border: 1px solid #e0c4a8;
+        border-left: 3px solid var(--warn);
+        background: #fff8f0;
+        color: #5c3a18;
+        line-height: 1.45;
+        font-size: 0.95rem;
+      }
+      form {
+        display: grid;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+      }
+      label {
+        display: grid;
+        gap: 0.25rem;
+        font-size: 0.9rem;
+      }
+      input, button {
+        font: inherit;
+        padding: 0.55rem 0.65rem;
+      }
+      button {
+        background: var(--accent);
+        color: #fff;
+        border: 0;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        line-height: 1.5;
+      }
+      .out.reject {
+        border-color: #e0b4b4;
+        background: #fff5f5;
+        color: var(--alert);
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        border-bottom: 1px solid var(--line);
+        padding: 0.35rem 0;
+      }
+      .row:last-child {
+        border-bottom: 0;
+        font-weight: 650;
+      }
+      .money { font-variant-numeric: tabular-nums; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Filing Penalty Desk</h1>
+      <p class="note">
+        Offline demo. Month-by-month failure-to-file and failure-to-pay additions
+        with same-month file reduction — not a flat late-fee widget.
+      </p>
+      <p class="disclaimer">
+        <strong>Kill A:</strong> IRS notices and commercial tax software already
+        assess. This is a cash-forecast / method honesty desk — not an IRS
+        assessment, abatement, or CPA replacement. Toy defaults:
+        $10,000 unpaid one late-file month → failure-to-file <strong>$450</strong>
+        and failure-to-pay <strong>$50</strong> (combined <strong>$500</strong>),
+        not a stacked 5.5%.
+      </p>
+      <form id="f">
+        <label>
+          Net amount due (USD)
+          <input id="net" type="number" min="0" step="1" value="10000" />
+        </label>
+        <label>
+          Unpaid by month (comma-separated)
+          <input id="unpaid" value="10000" />
+        </label>
+        <label>
+          Unfiled months
+          <input id="unfiled" type="number" min="0" step="1" value="1" />
+        </label>
+        <label>
+          Levy bump after month (blank = none)
+          <input id="levy" type="number" min="0" step="1" />
+        </label>
+        <label>
+          <span>
+            <input id="flat_cheat" type="checkbox" />
+            Cheat: flat 5.5% (must reject)
+          </span>
+        </label>
+        <button type="submit">Forecast additions</button>
+      </form>
+      <div class="out" id="out" hidden></div>
+    </main>
+    <script>
+      function money(n) {
+        return new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "USD",
+          maximumFractionDigits: 2,
+        }).format(n);
+      }
+
+      function forecast(input) {
+        if (input.flat_55_cheat === true) {
+          return { status: "reject", reason: "flat_55_cheat" };
+        }
+        const net = Number(input.net_amount_due);
+        const unpaid = Array.isArray(input.unpaid_by_month)
+          ? input.unpaid_by_month.map(Number)
+          : [];
+        const unfiledMonths = Number(input.unfiled_months ?? 0);
+        const levyAfter =
+          input.levy_bump_after_month === null ||
+          input.levy_bump_after_month === undefined ||
+          input.levy_bump_after_month === ""
+            ? null
+            : Number(input.levy_bump_after_month);
+        if (!(net >= 0) || !Number.isFinite(net)) {
+          return { status: "reject", reason: "bad_inputs" };
+        }
+        let ftf = 0;
+        let ftp = 0;
+        const n = Math.max(unfiledMonths, unpaid.length);
+        for (let i = 0; i < n; i++) {
+          const rate =
+            levyAfter !== null && Number.isFinite(levyAfter) && i >= levyAfter
+              ? 0.01
+              : 0.005;
+          const ftpI = i < unpaid.length ? rate * unpaid[i] : 0;
+          const ftfRaw = i < unfiledMonths && i < 5 ? 0.05 * net : 0;
+          const ftfI = ftfRaw > 0 && ftpI > 0 ? Math.max(0, ftfRaw - ftpI) : ftfRaw;
+          ftf += ftfI;
+          ftp += ftpI;
+        }
+        if (net > 0 && ftf > 0.25 * net + 1e-9) ftf = 0.25 * net;
+        const maxUnpaid = unpaid.reduce(function (m, u) {
+          return Math.max(m, u);
+        }, 0);
+        const ftpCapBase = maxUnpaid > 0 ? maxUnpaid : net;
+        if (ftpCapBase > 0 && ftp > 0.25 * ftpCapBase + 1e-9) ftp = 0.25 * ftpCapBase;
+        const naiveFtf = 0.05 * net * Math.max(0, unfiledMonths);
+        const naiveFtp = 0.005 * unpaid.reduce(function (s, u) {
+          return s + u;
+        }, 0);
+        return {
+          status: "ok",
+          ftf: ftf,
+          ftp: ftp,
+          combined: ftf + ftp,
+          naive_combined: naiveFtf + naiveFtp,
+        };
+      }
+
+      const form = document.getElementById("f");
+      const out = document.getElementById("out");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const unpaidRaw = document.getElementById("unpaid").value.trim();
+        const levyRaw = document.getElementById("levy").value.trim();
+        const got = forecast({
+          net_amount_due: Number(document.getElementById("net").value),
+          unpaid_by_month: unpaidRaw
+            ? unpaidRaw.split(",").map(function (s) {
+                return Number(s.trim());
+              })
+            : [],
+          unfiled_months: Number(document.getElementById("unfiled").value),
+          levy_bump_after_month: levyRaw === "" ? null : Number(levyRaw),
+          flat_55_cheat: document.getElementById("flat_cheat").checked,
+        });
+        out.hidden = false;
+        if (got.status === "reject") {
+          out.className = "out reject";
+          out.textContent = "Rejected: " + got.reason;
+          return;
+        }
+        out.className = "out";
+        out.innerHTML =
+          "<div class='row'><span>Failure-to-file</span><span class='money'>" +
+          money(got.ftf) +
+          "</span></div>" +
+          "<div class='row'><span>Failure-to-pay</span><span class='money'>" +
+          money(got.ftp) +
+          "</span></div>" +
+          "<div class='row'><span>Naive stacked flat</span><span class='money'>" +
+          money(got.naive_combined) +
+          "</span></div>" +
+          "<div class='row'><span>Correct combined</span><span class='money'>" +
+          money(got.combined) +
+          "</span></div>";
+      });
+      form.dispatchEvent(new Event("submit"));
+    </script>
+  </body>
+</html>

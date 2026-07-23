@@ -1,0 +1,39 @@
+{
+  "phase": "P-sustain-001",
+  "fail_tags": [],
+  "method_version": "1.0.0",
+  "scores": {
+    "dimensions": {
+      "efficiency": 4,
+      "completeness": 5,
+      "maintainability": 5,
+      "robustness": 5,
+      "correctness": 5
+    },
+    "rubric_version": "1.0.0",
+    "artifacts": ["projects/filing-penalty-desk", "docs/guides/04-filing-penalty-desk-lessons.md"],
+    "notes": "8 pages; 18 features; goldens ≥25; try.html; tutor guide; maturity checklist; no irc6651 brand"
+  },
+  "created_at": "2026-07-23T17:20:00Z",
+  "method_id": "A03",
+  "run_id": "r1",
+  "product_path": "projects/filing-penalty-desk",
+  "project_id": "P-sustain-001",
+  "status": "scored",
+  "approach_id": "A03",
+  "metrics": {
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 30,
+    "cycle_time_hours": 0.5,
+    "correctness_pass": true
+  },
+  "cell_id": "A03__P-sustain-001__filing-penalty-desk__r1",
+  "notes": "A03 Filing Penalty Desk sustain — comprehensive bar met",
+  "started_at": "2026-07-23T16:55:00Z",
+  "approach_version": 1,
+  "finished_at": "2026-07-23T17:20:00Z"
+}

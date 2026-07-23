@@ -2,6 +2,29 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-23 — Filing Penalty Desk sustain GREEN (product complete, email pending)
+
+- Ladder workflow→integrate→scale→**sustain** complete after crud/smoke
+- **55** tests; **8** pages; **18** features; offline `projects/filing-penalty-desk/try.html`
+- Tutor guide `docs/guides/04-filing-penalty-desk-lessons.md`
+- Cell `A03__P-sustain-001__filing-penalty-desk__r1`
+- `product_complete_pending: true` — parent may send findings email; do not start another product
+
+## 2026-07-23 — Filing Penalty Desk scale GREEN
+
+- 250-row walk; concurrent batch; 429 Retry-After; dual-impl stable
+- Cell `A03__P-scale-001__filing-penalty-desk__r1`
+
+## 2026-07-23 — Filing Penalty Desk integrate GREEN
+
+- HMAC webhook + idempotency; settings RBAC; pagination/search
+- Cell `A03__P-integrate-001__filing-penalty-desk__r1`
+
+## 2026-07-23 — Filing Penalty Desk workflow GREEN
+
+- Scenario compare; batch independence; audit CSV; 6 pages
+- Cell `A03__P-workflow-001__filing-penalty-desk__r1`
+
 ## 2026-07-23 — Filing Penalty Desk crud GREEN
 
 - Catalog, timeline detail, honesty pages; auditor RBAC; **28** tests

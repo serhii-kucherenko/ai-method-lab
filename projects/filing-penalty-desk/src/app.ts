@@ -30,6 +30,7 @@ import {
   type Store,
   type TimelineCreate,
 } from "./store.js";
+import { listGoldenCards } from "./goldens.js";
 
 const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
 const MIME: Record<string, string> = {
@@ -485,6 +486,18 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
         const updated = updateOrgSettings(store, orgId, patch);
         return send(res, 200, { settings: updated });
       }
+    }
+
+    const goldensMatch = path.match(/^\/orgs\/([^/]+)\/goldens$/);
+    if (goldensMatch && method === "GET") {
+      const orgId = goldensMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "analyst", "auditor"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const pack = listGoldenCards();
+      return send(res, 200, pack);
     }
 
     return send(res, 404, { error: "not_found" });

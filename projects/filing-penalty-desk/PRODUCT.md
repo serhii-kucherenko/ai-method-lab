@@ -21,9 +21,56 @@ IRS notices and commercial tax software already assess these additions. This pro
 - Silent interest-as-penalty or installment 0.25% swap
 - Public product brand as a statute code
 
+## Live features (18 ≥15)
+
+1. Org tenancy  
+2. Member roles (admin / analyst / auditor)  
+3. Return / timeline catalog  
+4. Timeline detail editor  
+5. Statutory addition forecast (locked FTF / FTP / combined)  
+6. Branch / line explanation  
+7. Scenario compare (naive vs correct)  
+8. Batch forecast  
+9. Audit log  
+10. CSV export  
+11. Goldens browser  
+12. Honesty / disclaimer page  
+13. Webhook inbound + HMAC  
+14. Org webhook settings  
+15. Pagination + search/filter  
+16. Rate-limit feedback  
+17. Offline try page (`try.html`)  
+18. In-app link to tutor guide  
+
+## Pages (8 ≥6)
+
+1. Returns catalog (`/returns.html`)  
+2. Timeline detail (`/timeline-detail.html`)  
+3. Scenario compare (`/scenario.html`)  
+4. Batch forecast (`/batch.html`)  
+5. Audit log (`/audit.html`)  
+6. Goldens browser (`/goldens.html`)  
+7. Honesty (`/honesty.html`)  
+8. Org settings (`/settings.html`)  
+
+## Aggregates (≥4)
+
+Organization · ReturnTimeline · AdditionForecast · AuditEvent (+ OrgSettings, Member)
+
 ## Smoke exit
 
 - ≥25 paper goldens green (dual-impl A/B)
 - Org + return timeline + addition forecast API
 - Cheat rejects (flat fee, dual-approver, interest-as-penalty, installment silent)
 - Kill A language in this file; mature display name
+
+## Maturity checklist (sustain)
+
+- [x] ≥15 features live
+- [x] ≥6 pages with UI critical paths
+- [x] ≥4 aggregates
+- [x] Dual-impl CI green
+- [x] Offline `try.html`
+- [x] Tutor guide under `docs/guides/`
+- [x] Digests use **Filing Penalty Desk** only (never statute-code brand)
+- [x] Never claim IRS/CPA replacement
