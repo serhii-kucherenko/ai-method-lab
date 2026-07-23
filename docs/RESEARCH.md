@@ -2,6 +2,16 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #4 (irc6651 paper fixtures)
+
+Research only. Stays adversarial / WAIT_HOURS.
+
+- Encoded **5** paper fixtures (A/B/E/J/N) + `check-irc6651-fixtures.mjs` green
+- Value-gate dry-run: honesty holds; still **not** ready_to_build
+- Hours ~1h/4; ticks=6; **no** `projects/`
+
+**Skeptical one-liner:** Five fixtures are a starter kit, not a conveyor flip.
+
 ## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #3 (irc6651 FTP cap + try demo)
 
 Research only. Stays adversarial / WAIT_HOURS.
