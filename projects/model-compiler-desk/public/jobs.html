@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Model Compiler Desk — jobs</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        color: #1c2430;
+        background: linear-gradient(180deg, #eef3f6, #e4ebf0);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 { margin: 0 0 0.4rem; font-family: "IBM Plex Serif", Georgia, serif; }
+      p, label { color: #4a5564; }
+      a { color: #0f6b6b; }
+      form {
+        display: grid;
+        gap: 0.6rem;
+        margin: 1.25rem 0;
+        padding: 1rem;
+        background: #f4f7fa;
+        border: 1px solid #c9d2dc;
+      }
+      input, button {
+        font: inherit;
+        padding: 0.45rem 0.6rem;
+      }
+      button {
+        background: #0f6b6b;
+        color: #fff;
+        border: 0;
+        cursor: pointer;
+        width: fit-content;
+      }
+      pre {
+        background: #1c2430;
+        color: #e8eef3;
+        padding: 0.85rem;
+        overflow: auto;
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body data-jobs="live">
+    <main>
+      <h1>Compile jobs</h1>
+      <p>
+        Create a project and queue a compile job through the bearer API.
+        Token is kept in <code>mcd_token</code> for this browser session.
+      </p>
+      <p><a href="/">Home</a> · <a href="/honesty.html">Honesty</a></p>
+      <form id="job-form">
+        <label>
+          Bearer token
+          <input id="token" name="token" autocomplete="off" placeholder="from /auth/register" />
+        </label>
+        <label>
+          Org id
+          <input id="orgId" name="orgId" autocomplete="off" />
+        </label>
+        <label>
+          Project name
+          <input id="projectName" name="projectName" value="demo-llm" />
+        </label>
+        <label>
+          Job label
+          <input id="jobLabel" name="jobLabel" value="lower-pass" />
+        </label>
+        <button type="submit">Create project + queued job</button>
+      </form>
+      <pre id="out" data-jobs-out="live">Ready.</pre>
+    </main>
+    <script>
+      const tokenEl = document.getElementById("token");
+      const saved = localStorage.getItem("mcd_token");
+      if (saved) tokenEl.value = saved;
+
+      document.getElementById("job-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const token = tokenEl.value.trim();
+        const orgId = document.getElementById("orgId").value.trim();
+        const projectName = document.getElementById("projectName").value.trim();
+        const jobLabel = document.getElementById("jobLabel").value.trim();
+        const out = document.getElementById("out");
+        if (!token || !orgId) {
+          out.textContent = "Need bearer token and org id.";
+          return;
+        }
+        localStorage.setItem("mcd_token", token);
+        const headers = {
+          "content-type": "application/json",
+          authorization: "Bearer " + token,
+        };
+        try {
+          const projectRes = await fetch("/orgs/" + orgId + "/projects", {
+            method: "POST",
+            headers,
+            body: JSON.stringify({
+              name: projectName,
+              model_name: "toy-llm",
+              target_backend: "mlir-demo",
+            }),
+          });
+          const projectJson = await projectRes.json();
+          if (!projectRes.ok) {
+            out.textContent = JSON.stringify(projectJson, null, 2);
+            return;
+          }
+          const projectId = projectJson.project.id;
+          const jobRes = await fetch(
+            "/orgs/" + orgId + "/projects/" + projectId + "/jobs",
+            {
+              method: "POST",
+              headers,
+              body: JSON.stringify({
+                label: jobLabel,
+                status: "queued",
+                mlir_pass_hint: "lower-to-linalg",
+              }),
+            },
+          );
+          const jobJson = await jobRes.json();
+          out.textContent = JSON.stringify(
+            { project: projectJson.project, job: jobJson.job ?? jobJson },
+            null,
+            2,
+          );
+        } catch (err) {
+          out.textContent = String(err);
+        }
+      });
+    </script>
+  </body>
+</html>

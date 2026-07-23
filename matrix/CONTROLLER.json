@@ -1,5 +1,5 @@
-{
-  "updated_at": "2026-07-23T17:00:13.338Z",
+﻿{
+  "updated_at": "2026-07-23T17:05:00.000Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -29,15 +29,15 @@
     "payments": "provider-agnostic-webhook-with-hmac",
     "auth": "bearer-token"
   },
-  "last_completed": "A03__P-smoke-001__model-compiler-desk__r1",
+  "last_completed": "A03__P-crud-001__model-compiler-desk__r1",
   "last_error": null,
   "current_product": "model-compiler-desk",
   "current_idea": "model-compiler-desk",
   "next_research_idea": null,
-  "next_cell": "A03__P-crud-001__model-compiler-desk__r1",
+  "next_cell": "A03__P-workflow-001__model-compiler-desk__r1",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "Model Compiler Desk smoke GREEN. Climbing crud. Old ESRP loop killed; papers-driven loop pid 8552.",
+  "notes": "Model Compiler Desk smoke GREEN (unchanged). CRUD GREEN: orgs/projects/compile-jobs + bearer stub + 3 HTML pages; 3 tests pass. Next: workflow.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,

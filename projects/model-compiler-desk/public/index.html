@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Model Compiler Desk</title>
+    <style>
+      :root {
+        --ink: #1c2430;
+        --muted: #4a5564;
+        --line: #c9d2dc;
+        --panel: #f4f7fa;
+        --accent: #0f6b6b;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 10% 0%, #dcecf0 0%, transparent 45%),
+          linear-gradient(180deg, #eef3f6, #e4ebf0);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: "IBM Plex Serif", Georgia, serif;
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        margin: 0 0 0.5rem;
+        letter-spacing: -0.02em;
+      }
+      p { color: var(--muted); line-height: 1.5; }
+      nav a {
+        color: var(--accent);
+        margin-right: 1rem;
+      }
+      .panel {
+        margin-top: 1.5rem;
+        padding: 1rem 1.1rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+      }
+      code { font-size: 0.9em; }
+    </style>
+  </head>
+  <body data-home="live">
+    <main>
+      <h1>Model Compiler Desk</h1>
+      <p>
+        Track org projects and MLIR-inspired compile jobs for LLM method
+        experiments — a lab desk, not the authors' production compiler.
+      </p>
+      <nav>
+        <a href="/jobs.html">Compile jobs</a>
+        <a href="/honesty.html">Honesty</a>
+      </nav>
+      <div class="panel">
+        <p>
+          Paper <strong>2607.15865</strong> · public code at
+          <code>github.com/sophgo/tpu-mlir</code>
+        </p>
+        <p>
+          Auth: register with <code>POST /auth/register</code>, then send
+          <code>Authorization: Bearer &lt;token&gt;</code>.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
