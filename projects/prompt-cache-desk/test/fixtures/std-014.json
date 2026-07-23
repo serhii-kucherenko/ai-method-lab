@@ -1,0 +1,19 @@
+{
+  "id": "std-014",
+  "title": "Long session N=30",
+  "input": {
+    "prefix_tokens": 12000,
+    "ratio": 3,
+    "queries": 30
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 12000,
+    "naive_risk": 120000,
+    "safer_risk": 12000,
+    "delta_score": 108000,
+    "ratio": 3,
+    "r_max": 3,
+    "cache_aware_tier": "persistent"
+  }
+}

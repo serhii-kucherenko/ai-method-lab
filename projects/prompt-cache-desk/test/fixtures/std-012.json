@@ -1,0 +1,19 @@
+{
+  "id": "std-012",
+  "title": "Enterprise tools schema 94k r=3",
+  "input": {
+    "prefix_tokens": 94000,
+    "ratio": 3,
+    "queries": 20
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 94000,
+    "naive_risk": 626680,
+    "safer_risk": 62668,
+    "delta_score": 564012,
+    "ratio": 3,
+    "r_max": 26,
+    "cache_aware_tier": "persistent"
+  }
+}

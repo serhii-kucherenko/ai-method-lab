@@ -1,0 +1,19 @@
+{
+  "id": "std-006",
+  "title": "High ratio clamps to r_max",
+  "input": {
+    "prefix_tokens": 12000,
+    "ratio": 8,
+    "queries": 10
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 12000,
+    "naive_risk": 15000,
+    "safer_risk": 4000,
+    "delta_score": 11000,
+    "ratio": 8,
+    "r_max": 3,
+    "cache_aware_tier": "persistent"
+  }
+}

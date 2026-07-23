@@ -1,0 +1,19 @@
+{
+  "id": "std-023",
+  "title": "Persistent after mild compress",
+  "input": {
+    "prefix_tokens": 14000,
+    "ratio": 2,
+    "queries": 10
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 14000,
+    "naive_risk": 70000,
+    "safer_risk": 7000,
+    "delta_score": 63000,
+    "ratio": 2,
+    "r_max": 4,
+    "cache_aware_tier": "persistent"
+  }
+}

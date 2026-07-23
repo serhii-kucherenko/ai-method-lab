@@ -1,0 +1,19 @@
+{
+  "id": "std-028",
+  "title": "Retail-ish small wiki prefix",
+  "input": {
+    "prefix_tokens": 4000,
+    "ratio": 2,
+    "queries": 50
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 4000,
+    "naive_risk": 100000,
+    "safer_risk": 20000,
+    "delta_score": 80000,
+    "ratio": 2,
+    "r_max": 1,
+    "cache_aware_tier": "persistent"
+  }
+}

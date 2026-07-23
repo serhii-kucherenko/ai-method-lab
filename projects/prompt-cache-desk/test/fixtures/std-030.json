@@ -1,0 +1,19 @@
+{
+  "id": "std-030",
+  "title": "Ratio 4 on 12k",
+  "input": {
+    "prefix_tokens": 12000,
+    "ratio": 4,
+    "queries": 10
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 12000,
+    "naive_risk": 30000,
+    "safer_risk": 4000,
+    "delta_score": 26000,
+    "ratio": 4,
+    "r_max": 3,
+    "cache_aware_tier": "persistent"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "std-016",
+  "title": "Expensive writes punish misses",
+  "input": {
+    "prefix_tokens": 12000,
+    "ratio": 3,
+    "queries": 10,
+    "c_write": 2
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 12000,
+    "naive_risk": 80000,
+    "safer_risk": 4000,
+    "delta_score": 76000,
+    "ratio": 3,
+    "r_max": 3,
+    "cache_aware_tier": "persistent"
+  }
+}

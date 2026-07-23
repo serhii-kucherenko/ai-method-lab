@@ -1,0 +1,19 @@
+{
+  "id": "std-024",
+  "title": "Would fall to hot without clamp",
+  "input": {
+    "prefix_tokens": 10000,
+    "ratio": 5,
+    "queries": 10
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 10000,
+    "naive_risk": 20000,
+    "safer_risk": 5000,
+    "delta_score": 15000,
+    "ratio": 5,
+    "r_max": 2,
+    "cache_aware_tier": "persistent"
+  }
+}

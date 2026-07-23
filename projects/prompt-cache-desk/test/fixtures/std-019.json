@@ -1,0 +1,19 @@
+{
+  "id": "std-019",
+  "title": "Ratio 1 no compression",
+  "input": {
+    "prefix_tokens": 8000,
+    "ratio": 1,
+    "queries": 10
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 8000,
+    "naive_risk": 80000,
+    "safer_risk": 8000,
+    "delta_score": 72000,
+    "ratio": 1,
+    "r_max": 2,
+    "cache_aware_tier": "persistent"
+  }
+}

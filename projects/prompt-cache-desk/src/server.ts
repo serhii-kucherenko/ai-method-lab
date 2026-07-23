@@ -1,8 +1,14 @@
-import { createServer } from "node:http";
-import { DISPLAY_NAME, PAPER_URL } from "./claim.ts";
+import { createApp } from "./httpApp.js";
 
-const port = Number(process.env.PORT || 3848);
-createServer((_req, res) => {
-  res.writeHead(200, { "content-type": "application/json" });
-  res.end(JSON.stringify({ ok: true, display_name: DISPLAY_NAME, paper: PAPER_URL }));
-}).listen(port, () => console.log(`${DISPLAY_NAME} smoke on :${port}`));
+const port = Number(process.env.PORT ?? 3847);
+const { server } = createApp();
+server.listen(port, () => {
+  console.log(
+    JSON.stringify({
+      event: "listen",
+      product: "prompt-cache-desk",
+      display_name: "Prompt Cache Desk",
+      port,
+    }),
+  );
+});

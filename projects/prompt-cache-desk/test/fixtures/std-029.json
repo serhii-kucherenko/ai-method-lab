@@ -1,0 +1,19 @@
+{
+  "id": "std-029",
+  "title": "Ratio 2 on 12k",
+  "input": {
+    "prefix_tokens": 12000,
+    "ratio": 2,
+    "queries": 10
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 12000,
+    "naive_risk": 60000,
+    "safer_risk": 6000,
+    "delta_score": 54000,
+    "ratio": 2,
+    "r_max": 3,
+    "cache_aware_tier": "persistent"
+  }
+}

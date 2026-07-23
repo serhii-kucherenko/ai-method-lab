@@ -1,0 +1,19 @@
+{
+  "id": "std-003",
+  "title": "Small prefix stays hot tier",
+  "input": {
+    "prefix_tokens": 2000,
+    "ratio": 2,
+    "queries": 10
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 2000,
+    "naive_risk": 10000,
+    "safer_risk": 5060,
+    "delta_score": 4940,
+    "ratio": 2,
+    "r_max": 1,
+    "cache_aware_tier": "hot"
+  }
+}

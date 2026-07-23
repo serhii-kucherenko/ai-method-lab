@@ -1,0 +1,21 @@
+{
+  "id": "std-025",
+  "title": "Equal c_write and c_read",
+  "input": {
+    "prefix_tokens": 12000,
+    "ratio": 3,
+    "queries": 10,
+    "c_write": 1,
+    "c_read": 1
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 12000,
+    "naive_risk": 40000,
+    "safer_risk": 40000,
+    "delta_score": 0,
+    "ratio": 3,
+    "r_max": 3,
+    "cache_aware_tier": "persistent"
+  }
+}

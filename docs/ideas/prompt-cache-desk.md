@@ -1,6 +1,6 @@
 # Prompt Cache Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (paper-sourced)  
 **Slug:** `prompt-cache-desk`  
 **Display name:** Prompt Cache Desk  
 **Paper id:** `2607.15516`  

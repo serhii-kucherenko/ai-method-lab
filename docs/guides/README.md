@@ -24,6 +24,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 17 | [Security Control Desk — what we learned](17-security-control-desk-lessons.md) | Product `security-control-desk` |
 | 18 | [Rules Preferences Desk — what we learned](18-rules-preferences-desk-lessons.md) | Product `rules-preferences-desk` |
 | 19 | [Itinerary Plan Desk — what we learned](19-itinerary-plan-desk-lessons.md) | Product `itinerary-plan-desk` |
+| 20 | [Prompt Cache Desk — what we learned](20-prompt-cache-desk-lessons.md) | Product `prompt-cache-desk` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 

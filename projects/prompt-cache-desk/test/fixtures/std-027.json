@@ -1,0 +1,19 @@
+{
+  "id": "std-027",
+  "title": "Graphify-scale 260k capped",
+  "input": {
+    "prefix_tokens": 260000,
+    "ratio": 4,
+    "queries": 10
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 200000,
+    "naive_risk": 500000,
+    "safer_risk": 50000,
+    "delta_score": 450000,
+    "ratio": 4,
+    "r_max": 57,
+    "cache_aware_tier": "persistent"
+  }
+}

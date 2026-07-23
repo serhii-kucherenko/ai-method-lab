@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prompt Cache Desk — try</title>
+    <style>
+      :root {
+        --ink: #1c2a36;
+        --muted: #5a6a78;
+        --paper: #eef3f6;
+        --steel: #1f5a6e;
+        --line: #c5d0d8;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(ellipse at top left, #c8dde8, var(--paper));
+        min-height: 100vh;
+      }
+      main { max-width: 36rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+      h1 { font-family: "Space Grotesk", Georgia, sans-serif; margin: 0 0 0.5rem; }
+      label { display: block; margin-top: 0.85rem; font-size: 0.9rem; color: var(--muted); }
+      input[type="number"] {
+        width: 100%;
+        padding: 0.5rem 0.65rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+        margin-top: 0.25rem;
+      }
+      button {
+        margin-top: 1rem;
+        padding: 0.55rem 1rem;
+        background: var(--steel);
+        color: #f2faf9;
+        border: 0;
+        border-radius: 0.35rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        padding: 0.85rem;
+        border: 1px solid var(--line);
+        background: #fff;
+        font-family: ui-monospace, monospace;
+        font-size: 0.85rem;
+        white-space: pre-wrap;
+      }
+      .row { display: flex; justify-content: space-between; gap: 1rem; margin: 0.2rem 0; }
+      p { color: var(--muted); line-height: 1.45; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Prompt Cache Desk — offline try</h1>
+      <p>
+        Two-tier cost sketch: vanilla / cache-only / query-aware vs cache-aware
+        with a tier-preserving ratio bound (~3500 prefix tokens). Not a commercial LLM API gateway.
+        Honesty: method experiment only — paper 2607.15516 — not a replacement for the authors' system.
+      </p>
+      <label>Prefix tokens <input id="prefix" type="number" value="12000" /></label>
+      <label>Compression ratio <input id="ratio" type="number" value="3" /></label>
+      <label>Queries (N) <input id="queries" type="number" value="10" /></label>
+      <label>
+        <input id="cheat" type="checkbox" />
+        Ideal ρ=1.0 cheat (must reject)
+      </label>
+      <button type="button" id="run">Run compare</button>
+      <div class="out" id="out">Press Run compare.</div>
+    </main>
+    <script>
+      function hitRate(size, thr, rhoHot) {
+        return size >= thr ? 1 : rhoHot;
+      }
+      function tierOf(size, thr) {
+        return size >= thr ? "persistent" : "hot";
+      }
+      function rMax(P, thr) {
+        return Math.max(1, Math.floor(P / thr));
+      }
+      function compressed(P, r) {
+        return Math.max(1, Math.ceil(P / Math.max(1, r)));
+      }
+      function sessionCost(N, size, rho, cw, cr) {
+        return Number((N * ((1 - rho) * size * cw + rho * size * cr)).toFixed(4));
+      }
+      function score(input) {
+        if (input.ideal_rho_cheat) return { status: "reject", reason: "ideal_rho_cheat" };
+        var P = Math.max(500, Math.min(200000, Math.floor(Number(input.prefix_tokens) || 12000)));
+        var r = Math.max(1, Math.min(20, Math.floor(Number(input.ratio) || 3)));
+        var N = Math.max(1, Math.min(100, Math.floor(Number(input.queries) || 10)));
+        var cw = 1, cr = 0.1, thr = 3500, rhoHot = 0.83;
+        var r_max = rMax(P, thr);
+        var vanilla = { cost: Number((N * P * cw).toFixed(4)), risk: Number((N * P * cw).toFixed(2)) };
+        var coSize = P;
+        var coRho = hitRate(coSize, thr, rhoHot);
+        var cache_only = {
+          cost: sessionCost(N, coSize, coRho, cw, cr),
+          tier: tierOf(coSize, thr),
+          rho: coRho,
+        };
+        var qaSize = compressed(P, r);
+        var query_aware = { cost: Number((N * qaSize * cw).toFixed(4)), risk: Number((N * qaSize * cw).toFixed(2)) };
+        var ru = Math.min(r, r_max);
+        var caSize = compressed(P, ru);
+        var caRho = hitRate(caSize, thr, rhoHot);
+        var cache_aware = {
+          cost: sessionCost(N, caSize, caRho, cw, cr),
+          risk: Number(sessionCost(N, caSize, caRho, cw, cr).toFixed(2)),
+          ratio_used: ru,
+          tier: tierOf(caSize, thr),
+          rho: caRho,
+        };
+        return {
+          status: "ok",
+          prefix_tokens: P,
+          ratio: r,
+          r_max: r_max,
+          vanilla: vanilla,
+          cache_only: cache_only,
+          query_aware: query_aware,
+          cache_aware: cache_aware,
+          delta: Number((query_aware.risk - cache_aware.risk).toFixed(4)),
+        };
+      }
+      document.getElementById("run").onclick = function () {
+        var got = score({
+          prefix_tokens: document.getElementById("prefix").value,
+          ratio: document.getElementById("ratio").value,
+          queries: document.getElementById("queries").value,
+          ideal_rho_cheat: document.getElementById("cheat").checked,
+        });
+        var el = document.getElementById("out");
+        if (got.status === "reject") {
+          el.textContent = "Reject: " + got.reason;
+          return;
+        }
+        el.innerHTML =
+          "<div class='row'><span>prefix / ratio / r_max</span><span>" +
+          got.prefix_tokens + " / " + got.ratio + " / " + got.r_max + "</span></div>" +
+          "<div class='row'><span>vanilla</span><span>" + got.vanilla.cost + "</span></div>" +
+          "<div class='row'><span>cache-only</span><span>" + got.cache_only.cost + " (" + got.cache_only.tier + ")</span></div>" +
+          "<div class='row'><span>query-aware</span><span>" + got.query_aware.cost + "</span></div>" +
+          "<div class='row'><span>cache-aware</span><span>" + got.cache_aware.cost + " r=" + got.cache_aware.ratio_used + " " + got.cache_aware.tier + "</span></div>" +
+          "<div class='row'><span>delta vs query-aware</span><span>" + got.delta + "</span></div>";
+      };
+    </script>
+  </body>
+</html>

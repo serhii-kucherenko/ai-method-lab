@@ -1,0 +1,15 @@
+{
+  "id": "std-001",
+  "title": "Default 12k prefix ratio 3",
+  "input": {},
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 12000,
+    "naive_risk": 40000,
+    "safer_risk": 4000,
+    "delta_score": 36000,
+    "ratio": 3,
+    "r_max": 3,
+    "cache_aware_tier": "persistent"
+  }
+}

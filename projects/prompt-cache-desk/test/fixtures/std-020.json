@@ -1,0 +1,19 @@
+{
+  "id": "std-020",
+  "title": "Minimum prefix clamp",
+  "input": {
+    "prefix_tokens": 100,
+    "ratio": 2,
+    "queries": 5
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 500,
+    "naive_risk": 1250,
+    "safer_risk": 632.5,
+    "delta_score": 617.5,
+    "ratio": 2,
+    "r_max": 1,
+    "cache_aware_tier": "hot"
+  }
+}

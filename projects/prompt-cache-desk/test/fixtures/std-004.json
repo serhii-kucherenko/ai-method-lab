@@ -1,0 +1,19 @@
+{
+  "id": "std-004",
+  "title": "Exactly at tier threshold",
+  "input": {
+    "prefix_tokens": 3500,
+    "ratio": 1,
+    "queries": 10
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 3500,
+    "naive_risk": 35000,
+    "safer_risk": 3500,
+    "delta_score": 31500,
+    "ratio": 1,
+    "r_max": 1,
+    "cache_aware_tier": "persistent"
+  }
+}

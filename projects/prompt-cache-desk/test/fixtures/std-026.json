@@ -1,0 +1,19 @@
+{
+  "id": "std-026",
+  "title": "Graphify-scale 5k prefix",
+  "input": {
+    "prefix_tokens": 5000,
+    "ratio": 2,
+    "queries": 10
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 5000,
+    "naive_risk": 25000,
+    "safer_risk": 5000,
+    "delta_score": 20000,
+    "ratio": 2,
+    "r_max": 1,
+    "cache_aware_tier": "persistent"
+  }
+}

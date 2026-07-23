@@ -1,0 +1,19 @@
+{
+  "id": "std-009",
+  "title": "LongBench-ish 18k ratio 6",
+  "input": {
+    "prefix_tokens": 18000,
+    "ratio": 6,
+    "queries": 10
+  },
+  "expect": {
+    "status": "ok",
+    "prefix_tokens": 18000,
+    "naive_risk": 30000,
+    "safer_risk": 3600,
+    "delta_score": 26400,
+    "ratio": 6,
+    "r_max": 5,
+    "cache_aware_tier": "persistent"
+  }
+}
