@@ -111,6 +111,10 @@ Then add only the shadcn components the designer’s page map needs (`npx shadcn
 
 Add `python/` only when the paper claim needs it — do not invent a sidecar for pure TS desks.
 
+## Marketing landing
+
+Every product’s `/` route is a **marketing landing** (hero, problem, product, selling points, features, how-it-works, honesty, Sources) per `protocols/DESIGN.md`. Desk work lives behind the primary CTA (usually `/jobs`).
+
 ## Honesty
 
 Stack choice does not waive domain depth, dual-impl goldens, or the ≥15-feature / ≥6-page sustain bar. Pretty UI on a shallow dual-gate clone still fails. Python does not waive the designer note or shadcn UI.

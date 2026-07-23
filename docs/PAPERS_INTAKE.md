@@ -33,7 +33,8 @@ Mature display name (2–4 English words). Slug = hyphenated lowercase. Never br
 | Artifact | Path |
 |----------|------|
 | README | `projects/<slug>/README.md` |
-| Design note | `docs/ideas/<slug>-DESIGN.md` |
+| Design note | `docs/ideas/<slug>-DESIGN.md` (includes landing brief) |
+| Marketing landing | `/` — selling points, features, explanations (`protocols/DESIGN.md`) |
 | App stack | Next.js + Tailwind + shadcn; Python sidecar when needed (`docs/PRODUCT_STACK.md`) |
 | Tutor guide | `docs/guides/NN-<slug>-lessons.md` |
 | Offline try | `projects/<slug>/try.html` |

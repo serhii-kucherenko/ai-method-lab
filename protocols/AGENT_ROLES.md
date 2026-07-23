@@ -8,7 +8,7 @@ Human steer (2026-07-23): ugly coded names and shallow scaffolds failed.
 | **Researcher** | Idea depth, kill rounds, value honesty, fixtures that teach; **mature display name** | Product folders; “ready because fixtures are green” |
 | **Product manager** | Problem framing, prioritized roadmap, phase exits, go/no-go, findings email gate | Production code; inventing domain math |
 | **Senior architect / engineer** | Vision, engineering roadmap, PRD, ERD/contracts, **≥15-feature** blueprint; UI stack = Next.js + Tailwind + shadcn; **Python sidecar when the paper needs it** (`docs/PRODUCT_STACK.md`) | Shipping UI without contracts; noun-swap scaffolds; inventing a one-off CSS framework; forbidding Python when the claim is ML/numeric |
-| **Product designer** | Visual system, brand-first composition, page direction, shadcn theme (`protocols/DESIGN.md`) | Domain math; inventing features; raw unstyled HTML as the product |
+| **Product designer** | Visual system, brand-first composition, **marketing landing**, page direction, shadcn theme (`protocols/DESIGN.md`) | Domain math; inventing features; raw unstyled HTML as the product; desk home pretending to be a landing |
 | **Product delivery** | Phased build RED→GREEN on the default stack, UI never broken, try artifact, sustain | Inventing scope; starting the next product early; ignoring the design note |
 | **Best-practices tutor** | Guides under `docs/guides/` from what we just learned; scoring notes that teach | Inventing new product scope; skipping research |
 
@@ -80,7 +80,8 @@ Follow `protocols/DESIGN.md`.
 
 | Deliverable | Bar |
 |-------------|-----|
-| **DESIGN** | Brand, tokens, typography, page compositions, motion, shadcn theme map |
+| **DESIGN** | Brand, tokens, typography, **landing brief**, page compositions, motion, shadcn theme map |
+| **Landing** | `/` ships selling points, features, how-it-works, honesty, Sources — desk entry via CTA |
 | **Quality** | One composition first viewport; brand-first; no AI-default purple/cream clichés |
 | **Handoff** | Delivery can implement pages without inventing the look |
 
@@ -94,8 +95,9 @@ Implement UI with **Next.js + Tailwind + shadcn**, matching `<slug>-DESIGN.md`. 
 
 1. RED→GREEN (no weaken-to-pass)
 2. UI critical path per unlocked page
-3. Sustain: ≥6 views, ≥15 features live, mature display name in UI chrome
+3. Sustain: ≥6 views (including marketing landing at `/`), ≥15 features live, mature display name in UI chrome
 4. No sustain on raw unstyled static HTML shells when the stack default is Next/shadcn (offline `try.html` is the exception)
+5. Landing UI critical path: brand, primary CTA, Sources links
 
 **Exit:** scored phase + FINDINGS → tutor guide → PM findings email. No next product until email sent.
 
@@ -127,6 +129,7 @@ Guides explain **how we built / verified / what failed**, not acronym laundry li
 - Collapsing roles into “fixtures then projects/”
 - <15 features called “comprehensive”
 - Skipping the designer (default fonts + gray boxes)
+- Shipping a desk with no marketing landing (selling points / features / explanations)
 - Skipping Next/Tailwind/shadcn for a new product without CONTROLLER override
 - Pretending Python is banned when the paper’s claim needs it — or shipping Python with no README run story
 - Skipping the tutor guide

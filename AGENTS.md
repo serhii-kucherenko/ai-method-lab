@@ -10,7 +10,7 @@ Unless `matrix/CONTROLLER.json` says `paused` / `hard_stop`, run as the **autono
 - Idle → `node scripts/pick-paper-idea.mjs --days 14 --write-shortlist --choose 1` → email **idea_validated** → climb product ladder
 - No hours hold / `ready_to_build` wait for paper-sourced ideas; mature names only (`docs/PRODUCT_NAMING.md`); sustain ≥15 features
 - Roles: researcher → PM → architect → **product designer** → delivery → **best-practices tutor** (guides) before finish email
-- Engineering stack: **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); **Python allowed** for ML/numeric paper ports with a documented run path (venv + sidecar); design: `protocols/DESIGN.md`
+- Engineering stack: **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); **Python allowed** for ML/numeric paper ports with a documented run path (venv + sidecar); design: `protocols/DESIGN.md` — every product ships a **marketing landing at `/`**
 - Spawn parallel agents as needed (cap **20**); one product phase in CONTROLLER
 - Use `docs/DEVELOPMENT_WORKFLOW.md` inside the product
 - **Do not** ask the human to confirm

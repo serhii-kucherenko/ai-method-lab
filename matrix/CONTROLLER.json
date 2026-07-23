@@ -94,6 +94,7 @@
     "intake_protocol": "docs/PAPERS_INTAKE.md",
     "guides_dir": "docs/guides",
     "require_design_note": true,
+    "require_marketing_landing": true,
     "stack_protocol": "docs/PRODUCT_STACK.md",
     "design_protocol": "protocols/DESIGN.md"
   },
