@@ -2,6 +2,16 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #1 (irc6651 dual toys)
+
+Research only. `current_idea: irc6651` stays `adversarial`.
+
+- Wrote paper algorithm + `check-irc6651-toys.mjs`
+- **5/5** toys dual-green + 4 reject fences
+- `research_ticks_on_idea` → **3** (min ticks met); hours hold still short of 4h; **no** G6 flip; **no** `projects/`
+
+**Skeptical one-liner:** Dual-green toys are a checker, not a matched IRS notice — still not ready_to_build.
+
 ## 2026-07-23 — Researcher: irc6651 depth tick (G4/G5/toys)
 
 c1592 finished + findings emailed earlier; research slot is **irc6651** only. Docs deepen — **no** `projects/irc6651/`, **no** `ready_to_build`, **no** PM-GO, **no** architect pack.
