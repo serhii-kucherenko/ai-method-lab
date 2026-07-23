@@ -2,21 +2,11 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
-## 2026-07-23 — Employer Shared Responsibility Desk framed dossier + toys (tick 2)
+## 2026-07-23 — Employer Shared Responsibility Desk tick 2 pack (adversarial)
 
-Framed dossier locked (problem / who / workaround / success metric / unique claim / fences). Paper toys with **illustrative** APA constants + hour-status (`framing_started_at` 2026-07-23T16:30Z) + small hardcoded toy checker (6 green). Sibling wave: G1/G2/G3/G5 papers. State **`framed`** on dossier; still **WAIT_HOURS** + need ≥3 ticks; **no** product folder; **not** `ready_to_build`; never brand `esrp4980h`.
+Parallel wave complete on paper: framed dossier + toys (6 green) + algorithm/statute/falsifiers + G1/G2/G3/G5 (38 cases) + **G6 draft = do not build yet**. Dossier state **`adversarial`**. Hours from `2026-07-23T16:30Z` still under 4h; research ticks **2/3**. Loop 10m. **No** `projects/`; never brand `esrp4980h`.
 
-**Skeptical one-liner:** Framed toys are not a go — hours, a third tick, and G6 still gate any roadmap.
-
-## 2026-07-23 — Employer Shared Responsibility Desk deepen (tick 2)
-
-Parallel pack landed: algorithm + statute cites + G4 falsifiers; G1/G2/G3/G5 (38 cases); toys **6 green**; **G6 draft = do not build yet**. Hours clock from ~16:30Z — still under 4h; ticks <3. Loop 10m. **No** `projects/`; never brand `esrp4980h`.
-
-**Skeptical one-liner:** Gates look green on paper; the hours hold and honesty fence are what stop a conveyor flip.
-
-## 2026-07-23 — Employer Shared Responsibility Desk deepened (G1–G3, G5)
-
-Researcher tick: wrote `docs/ideas/employer-shared-responsibility-desk-G1-EVIDENCE.md`, `-KILL-ROUNDS.md`, `-G5-cases.md` (≥25 paper), `-G2.md` (pass vs Filing Penalty Desk, ptax4975, oshamult, depositgap). Gate posture: G1 provisional, G2 pass, G3 A/B/C survive with honesty fences, G5 paper only, G4/G6 open. **Not** `ready_to_build`; research ticks 2/3; hours hold; **no** product folder; never statute-code brand.
+**Skeptical one-liner:** Paper pack is thick; hours + tick 3 + honesty fence still block any roadmap go.
 
 ## 2026-07-23 — Unblocked: email sent; Bond Accrual killed; ESRP desk framed
 
