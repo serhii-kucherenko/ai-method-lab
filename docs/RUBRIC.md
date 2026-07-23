@@ -4,6 +4,8 @@ Score every cell `(approach × project)` the same way. Harness lives under `harn
 
 Human steer (2026-07-23): improve scoring so **maturity and sophistication** beat pass-count theater and ugly naming.
 
+How to apply this rubric in practice: `docs/guides/03-scoring-for-maturity.md`.
+
 ## Primary metrics
 
 | Metric | Per cell | Across projects (approach score) |
