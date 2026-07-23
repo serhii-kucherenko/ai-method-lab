@@ -2,6 +2,12 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-23 — Model Compiler Desk integrate GREEN
+
+- HMAC webhook (`x-mcd-signature`) + idempotency; settings RBAC; pagination/search; 429 Retry-After
+- **7** tests; **7** pages; honesty fence unchanged
+- Cell `A03__P-integrate-001__model-compiler-desk__r1`; next **scale**
+
 ## 2026-07-23 — Filing Penalty Desk sustain GREEN (product complete, email pending)
 
 - Ladder workflow→integrate→scale→**sustain** complete after crud/smoke

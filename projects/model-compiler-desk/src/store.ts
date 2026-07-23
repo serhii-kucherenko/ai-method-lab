@@ -48,6 +48,13 @@ export type AuditEntry = {
   created_at: string;
 };
 
+export type OrgSettings = {
+  orgId: string;
+  webhook_secret: string;
+  tokens_note: string;
+  updated_at: string;
+};
+
 export type Store = {
   users: Map<string, User>;
   usersByEmail: Map<string, string>;
@@ -57,6 +64,8 @@ export type Store = {
   projects: Map<string, Project>;
   jobs: Map<string, CompileJob>;
   audit: AuditEntry[];
+  settings: Map<string, OrgSettings>;
+  webhookDeliveries: Map<string, string>;
   rateLimit: number;
   rateCounts: Map<string, number>;
 };
@@ -99,6 +108,10 @@ export function canTransition(
   return ALLOWED_TRANSITIONS[from].includes(to);
 }
 
+function freshWebhookSecret(): string {
+  return `whsec_${randomUUID().replace(/-/g, "").slice(0, 24)}`;
+}
+
 export function createStore(opts: { rateLimit?: number } = {}): Store {
   return {
     users: new Map(),
@@ -109,6 +122,8 @@ export function createStore(opts: { rateLimit?: number } = {}): Store {
     projects: new Map(),
     jobs: new Map(),
     audit: [],
+    settings: new Map(),
+    webhookDeliveries: new Map(),
     rateLimit: opts.rateLimit ?? 1000,
     rateCounts: new Map(),
   };
@@ -140,6 +155,12 @@ export function createOrg(store: Store, userId: string, name: string) {
   const id = randomUUID();
   store.orgs.set(id, { id, name, created_by: userId });
   store.members.set(memberKey(id, userId), "admin");
+  store.settings.set(id, {
+    orgId: id,
+    webhook_secret: freshWebhookSecret(),
+    tokens_note: "API tokens are issued at register. Treat bearer tokens as secrets.",
+    updated_at: nowIso(),
+  });
   return { id, name };
 }
 
@@ -667,4 +688,64 @@ export function auditToCsv(entries: AuditEntry[]): string {
     ].join(","),
   );
   return [header, ...lines].join("\n");
+}
+
+export function getOrgSettings(store: Store, orgId: string): OrgSettings | undefined {
+  return store.settings.get(orgId);
+}
+
+export function updateOrgSettings(
+  store: Store,
+  orgId: string,
+  patch: { webhook_secret?: string; tokens_note?: string },
+): OrgSettings | null {
+  const current = store.settings.get(orgId);
+  if (!current) return null;
+  const next: OrgSettings = {
+    ...current,
+    webhook_secret:
+      patch.webhook_secret !== undefined ? patch.webhook_secret : current.webhook_secret,
+    tokens_note:
+      patch.tokens_note !== undefined ? patch.tokens_note : current.tokens_note,
+    updated_at: nowIso(),
+  };
+  store.settings.set(orgId, next);
+  return next;
+}
+
+export function rotateWebhookSecret(store: Store, orgId: string): OrgSettings | null {
+  return updateOrgSettings(store, orgId, { webhook_secret: freshWebhookSecret() });
+}
+
+export function ingestWebhookJob(
+  store: Store,
+  orgId: string,
+  projectId: string,
+  idempotencyKey: string,
+  input: JobCreate,
+):
+  | {
+      ok: true;
+      status: 201 | 200;
+      job: ReturnType<typeof publicJob>;
+      replay: boolean;
+    }
+  | { ok: false; status: number; error: string } {
+  if (!getOrg(store, orgId)) return { ok: false, status: 404, error: "org_not_found" };
+  if (!idempotencyKey) {
+    return { ok: false, status: 400, error: "idempotency_key_required" };
+  }
+  const deliveryKey = `${orgId}::${idempotencyKey}`;
+  const existingId = store.webhookDeliveries.get(deliveryKey);
+  if (existingId) {
+    const j = store.jobs.get(existingId);
+    if (j && j.org_id === orgId) {
+      return { ok: true, status: 200, job: publicJob(j), replay: true };
+    }
+  }
+  const created = createJob(store, orgId, projectId, input);
+  if (!created) return { ok: false, status: 404, error: "project_not_found" };
+  if ("error" in created) return { ok: false, status: 400, error: created.error };
+  store.webhookDeliveries.set(deliveryKey, created.job.id);
+  return { ok: true, status: 201, job: created.job, replay: false };
 }

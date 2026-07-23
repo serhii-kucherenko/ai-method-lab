@@ -32,6 +32,14 @@ This desk is a **method experiment inspired by the paper**. It is **not** a repl
 - Scenario compare: naive opaque monolith vs paper-inspired MLIR layered passes
 - HTML: home, jobs, lifecycle, scenario, audit, honesty
 
+### Integrate
+
+- Inbound webhook `POST /webhooks/jobs` with HMAC (`x-mcd-signature`) + idempotency key (no double-create)
+- Org settings: admin sees webhook secret; operator/viewer get redacted; only admin rotates
+- Project and job lists: `limit` / `offset` pagination and `q` search
+- Over-limit requests return **429** with `Retry-After: 1`
+- Settings page live
+
 ## Run
 
 ```bash
@@ -45,4 +53,4 @@ Open `http://127.0.0.1:3847/` (or `PORT`).
 
 ## Status
 
-Smoke GREEN · CRUD GREEN · Workflow GREEN · next: integrate
+Smoke GREEN · CRUD GREEN · Workflow GREEN · Integrate GREEN · next: scale

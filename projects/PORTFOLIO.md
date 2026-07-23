@@ -9,7 +9,7 @@ Papers-driven lab (reset 2026-07-23). Prior product trees removed — see git hi
 
 | Display name | Slug | Status | Notes |
 |--------------|------|--------|-------|
-| **Model Compiler Desk** | `model-compiler-desk` | **building (workflow)** | Paper `2607.15865` — MLIR compilation for LLMs; public code; next integrate |
+| **Model Compiler Desk** | `model-compiler-desk` | **building (integrate)** | Paper `2607.15865` — MLIR compilation for LLMs; public code; next scale |
 | **Filing Penalty Desk** | `filing-penalty-desk` | **sustained** (reference) | Sole kept prior product |
 
 ## Rules

@@ -19,3 +19,11 @@ Paper claim descriptor green. Product scaffolded from 2607.15865.
 - Scenario: naive monolith vs MLIR layered modularity sketch
 - Pages: lifecycle, scenario, audit (plus prior CRUD pages)
 - Tests: smoke + crud + workflow suites green
+
+## Integrate (r1)
+
+- HMAC inbound webhook for compile jobs (`x-mcd-signature`) + idempotency replay
+- Settings RBAC: secret admin-only; non-admin rotate → 403
+- Projects/jobs list pagination + search; 429 + Retry-After when over limit
+- Settings page live; honesty fence unchanged
+- Tests: smoke + crud + workflow + integrate green (7)
