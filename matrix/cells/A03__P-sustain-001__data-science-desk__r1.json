@@ -1,0 +1,43 @@
+{
+  "cell_id": "A03__P-sustain-001__data-science-desk__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-sustain-001",
+  "phase": "P-sustain-001",
+  "run_id": "r1",
+  "method_id": "A03",
+  "method_version": "1.0.0",
+  "status": "scored",
+  "product_path": "projects/data-science-desk",
+  "created_at": "2026-07-23T19:01:24.143Z",
+  "started_at": "2026-07-23T19:01:24.143Z",
+  "finished_at": "2026-07-23T19:01:24.143Z",
+  "fail_tags": [],
+  "notes": "A03 Data Science Desk sustain — 9 pages 18 features goldens>=28 try guide DESIGN; never brand DSWorld",
+  "metrics": {
+    "correctness_pass": true,
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 40,
+    "cycle_time_hours": 0.67
+  },
+  "scores": {
+    "rubric_version": "1.0.0",
+    "dimensions": {
+      "correctness": 5,
+      "completeness": 5,
+      "robustness": 5,
+      "maintainability": 5,
+      "efficiency": 4
+    },
+    "artifacts": [
+      "projects/data-science-desk",
+      "docs/ideas/data-science-desk-DESIGN.md",
+      "docs/guides/16-data-science-desk-lessons.md"
+    ],
+    "notes": "9 pages 18 features goldens>=28 try guide DESIGN; never brand DSWorld"
+  }
+}

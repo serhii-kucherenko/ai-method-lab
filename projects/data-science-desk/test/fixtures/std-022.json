@@ -1,0 +1,15 @@
+{
+  "id": "std-022",
+  "title": "filter + hyper_tune",
+  "input": {
+    "op_kinds": "filter,hyper_tune"
+  },
+  "expect": {
+    "status": "ok",
+    "plan_steps": 2,
+    "routed_ops": 2,
+    "naive_cost": 5,
+    "world_cost": 2,
+    "delta_score": 3
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "std-018",
+  "title": "duplicate tags collapsed",
+  "input": {
+    "op_kinds": "preview,preview,train"
+  },
+  "expect": {
+    "status": "ok",
+    "plan_steps": 2,
+    "routed_ops": 2,
+    "naive_cost": 5,
+    "world_cost": 2,
+    "delta_score": 3
+  }
+}

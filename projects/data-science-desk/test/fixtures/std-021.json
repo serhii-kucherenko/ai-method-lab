@@ -1,0 +1,12 @@
+{
+  "id": "std-021",
+  "title": "cheat with ops still reject",
+  "input": {
+    "op_kinds": "preview",
+    "step_burn_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "step_burn_cheat"
+  }
+}

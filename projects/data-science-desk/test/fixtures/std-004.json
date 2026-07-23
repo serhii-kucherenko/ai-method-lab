@@ -1,0 +1,15 @@
+{
+  "id": "std-004",
+  "title": "plan 4",
+  "input": {
+    "plan_steps": 4
+  },
+  "expect": {
+    "status": "ok",
+    "plan_steps": 4,
+    "routed_ops": 0,
+    "naive_cost": 9,
+    "world_cost": 4,
+    "delta_score": 5
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "std-020",
+  "title": "step burn cheat reject",
+  "input": {
+    "plan_steps": 3,
+    "step_burn_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "step_burn_cheat"
+  }
+}
