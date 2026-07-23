@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T18:45:00.000Z",
+  "updated_at": "2026-07-23T17:20:59.532Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,12 +11,12 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "fc5f85c1-c5e4-4dde-9677-31b6e2a27125",
-    "last_idea_validated_email_id": "c9728f6e-0407-4fb9-8493-8de4ab2d6231",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "1779421d-2a72-485e-9916-c1a23b43310f",
+    "last_idea_validated_email_id": "3c3663f2-e9dd-4b9f-82ab-724319e799d6",
     "digest_draft": null,
-    "fpd_reemail_pending": true,
-    "fpd_reemail_error": "Resend still Unauthorized after crud tick"
+    "fpd_reemail_pending": false,
+    "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
   },
   "paused": false,
   "active_cell": null,
@@ -31,13 +31,13 @@
   },
   "last_completed": "A03__P-sustain-001__model-compiler-desk__r1",
   "last_error": null,
-  "current_product": "model-compiler-desk",
-  "current_idea": "model-compiler-desk",
+  "current_product": "graph-retrieval-desk",
+  "current_idea": "graph-retrieval-desk",
   "next_research_idea": null,
-  "next_cell": null,
+  "next_cell": "A03__P-crud-001__graph-retrieval-desk__r1",
   "mode": "autonomous",
-  "phase": "learning",
-  "notes": "Model Compiler Desk sustain GREEN: 9 pages, 18 features, goldens ≥25, try.html, tutor guide. product_complete_pending — parent sends email; do not clear product slot.",
+  "phase": "running",
+  "notes": "Model Compiler Desk emailed. Graph Retrieval Desk smoke green; climbing crud.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -50,10 +50,10 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.15865",
-      "slug": "model-compiler-desk",
-      "displayName": "Model Compiler Desk",
-      "at": "2026-07-23T16:58:03.584Z"
+      "paperId": "2607.11683",
+      "slug": "graph-retrieval-desk",
+      "displayName": "Graph Retrieval Desk",
+      "at": "2026-07-23T17:20:23.775Z"
     }
   },
   "depth_policy": {

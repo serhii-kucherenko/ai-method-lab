@@ -10,8 +10,9 @@ See `docs/PAPERS_INTAKE.md`, `docs/DEPTH_RESTART.md` (Correction 7).
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **Model Compiler Desk** (`model-compiler-desk`) | **smoke green → climb** | Paper 2607.15865; pick→build |
-| 1 | **Filing Penalty Desk** (`filing-penalty-desk`) | **sustained** | Reference product; README + guide + try |
+| 1 | **Graph Retrieval Desk** (`graph-retrieval-desk`) | **smoke green → climb** | Paper 2607.11683; pick→build |
+| 1 | **Model Compiler Desk** (`model-compiler-desk`) | **sustained — findings emailed** | 33 tests; 9 pages; 18 features |
+| 1 | **Filing Penalty Desk** (`filing-penalty-desk`) | **sustained** | Reference product; finish letter resent |
 
 ## Explicitly retired
 
