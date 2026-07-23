@@ -1,17 +1,17 @@
 # Secure Tutor Desk
 
-Method-lab product sourced from a simple-papers digest.
+Method-lab product for multi-LLM orchestrated tutoring versus a naive single-model baseline.
 
 ## Paper
 
 - **Id:** 2607.14601
 - **Title:** SYNAPSE: A Multi-LLM Orchestrated AI Tutor for Secure Software Development Education with Neurodivergent-First Design
 - **URL:** https://arxiv.org/abs/2607.14601v1
-- **Code:** (none — software claim only)
+- **Code:** none published
 
-## What we will build
+## What we built
 
-SYNAPSE demonstrates the potential of multi-LLM orchestration for adaptive tutoring, but further research is needed to fully realize its potential
+Org desk with marketing landing, tutor jobs, lifecycle, scenario compare (single-model vs multi-LLM), batch, audit, goldens (≥25 dual-impl), webhooks, honesty, and offline `try.html`. Display name is **Secure Tutor Desk** — never brand as SYNAPSE.
 
 ## Run
 
@@ -19,13 +19,17 @@ SYNAPSE demonstrates the potential of multi-LLM orchestration for adaptive tutor
 cd projects/secure-tutor-desk
 npm install
 npm test
-npm start
+npm run dev          # Next on :3000
+npm run start:api    # HTTP harness for public/*.html + API tests
 ```
 
-## Status
+Design: `docs/ideas/secure-tutor-desk-DESIGN.md`  
+Guide: `docs/guides/12-secure-tutor-desk-lessons.md`
 
-Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` and commits `docs/ideas/secure-tutor-desk-DESIGN.md` before multi-page UI.
+## Honesty
+
+Workflow experiment inspired by the paper — not a replacement for the authors' tutoring platform; not a live tutoring course product.
 
 ## Config hygiene
 
-Never write `package.json` with a UTF-8 BOM (Windows PowerShell `Set-Content -Encoding utf8` does). Node fails with `ERR_INVALID_PACKAGE_CONFIG`. Use Node `fs.writeFileSync` or run `node scripts/strip-json-bom.mjs`.
+Never write `package.json` with a UTF-8 BOM. Use Node writes or `node scripts/strip-json-bom.mjs --check`.

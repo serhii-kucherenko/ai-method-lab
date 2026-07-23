@@ -1,0 +1,15 @@
+{
+  "id": "std-008",
+  "title": "negative depth clamped",
+  "input": {
+    "orchestrate_depth": -3
+  },
+  "expect": {
+    "status": "ok",
+    "orchestrate_steps": 1,
+    "matched_tags": 0,
+    "naive_fit": 1,
+    "tutor_fit": 3,
+    "delta_score": 2
+  }
+}

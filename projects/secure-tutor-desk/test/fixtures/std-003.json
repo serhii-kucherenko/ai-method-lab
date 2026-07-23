@@ -1,0 +1,15 @@
+{
+  "id": "std-003",
+  "title": "depth 3 socratic path",
+  "input": {
+    "orchestrate_depth": 3
+  },
+  "expect": {
+    "status": "ok",
+    "orchestrate_steps": 3,
+    "matched_tags": 0,
+    "naive_fit": 1,
+    "tutor_fit": 7,
+    "delta_score": 6
+  }
+}

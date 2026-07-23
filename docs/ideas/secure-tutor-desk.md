@@ -1,15 +1,15 @@
 # Secure Tutor Desk
 
-**State:** building (paper-sourced)  
+**State:** sustain green (product_complete pending)  
 **Slug:** `secure-tutor-desk`  
 **Paper id:** `2607.14601`  
 **Paper:** https://arxiv.org/abs/2607.14601v1  
-**Code:** none  
+**Code:** none published  
 
 ## Build claim
 
-SYNAPSE demonstrates the potential of multi-LLM orchestration for adaptive tutoring, but further research is needed to fully realize its potential
+Multi-LLM orchestrated tutoring versus a naive single-model baseline for secure-coding pedagogy — adapted as a desk experiment, not the authors' platform.
 
 ## Honesty
 
-Workflow experiment inspired by the paper — not a claim to replace the authors’ system or commercial vendors.
+Workflow experiment inspired by the paper — not a claim to replace the authors’ system or commercial vendors. Never brand as SYNAPSE.

@@ -1,0 +1,15 @@
+{
+  "id": "std-002",
+  "title": "depth 2",
+  "input": {
+    "orchestrate_depth": 2
+  },
+  "expect": {
+    "status": "ok",
+    "orchestrate_steps": 2,
+    "matched_tags": 0,
+    "naive_fit": 1,
+    "tutor_fit": 5,
+    "delta_score": 4
+  }
+}

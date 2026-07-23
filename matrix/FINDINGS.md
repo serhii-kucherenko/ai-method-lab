@@ -2,6 +2,14 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-23 — Secure Tutor Desk sustain GREEN (product complete email pending)
+
+- Ladder to sustain: 9 pages; 18 features; ≥4 aggregates; goldens ≥28 dual-impl; try.html; tutor guide `docs/guides/12-secure-tutor-desk-lessons.md`
+- Stack: Next.js + Tailwind + shadcn; DESIGN note on file; marketing landing at `/`
+- Domain: multi-LLM orchestrated tutoring vs single-model baseline (never brand SYNAPSE)
+- Cell `A03__P-sustain-001__secure-tutor-desk__r1`
+- `product_complete_pending: true` — do **not** send finish email or pick next paper this tick
+
 ## 2026-07-23 — Pathology Vision Desk sustain GREEN (product complete email pending)
 
 - Ladder to sustain: 9 pages; 18 features; ≥4 aggregates; goldens ≥28 dual-impl; try.html; tutor guide

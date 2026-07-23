@@ -10,4 +10,4 @@
 | Heart Rhythm Desk | 2607.14613 | Complete |
 | Pathology Vision Desk | 2607.09526 | Complete |
 | Realtime Deploy Desk | 2607.18171 | Complete |
-| Secure Tutor Desk | 2607.14601 | Smoke / building (Next + landing) |
+| Secure Tutor Desk | 2607.14601 | Sustain green (complete pending email) |
