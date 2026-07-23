@@ -34,7 +34,7 @@ See `docs/DEPTH_RESTART.md` (Correction 6).
 | Seed | State | Notes |
 | --- | --- | --- |
 | **Filing Penalty Desk** | **sustained — findings emailed** | Product complete |
-| **Employer Shared Responsibility Desk** | **adversarial (research)** | G1–G3 + G5 paper; not ready_to_build; never statute-code brand |
+| **Employer Shared Responsibility Desk** | **adversarial (research)** | G1–G6 draft do-not-build; toys 6 green; hours/tick3 open |
 | **Bond Accrual Desk** | **killed (G2)** | Isomorphic to bondstrip |
 | **c1592** | **sustained** | Display: Customs Penalty Forecast; findings emailed |
 | esrp4980h | **renamed → Employer Shared Responsibility Desk** | Legacy id only |
@@ -51,4 +51,4 @@ Noun-swap FSMs, dual-signer + ceiling/floor/days templates, calendar-day waits p
 
 **2026-07-23 kill pass** (`docs/ideas/SEED_KILL_PASS_2026-07-23.md`): refundgap, epapound, excise4971, slotbay, counselgate, penmaxfda (killed); form222clock (soft park). Do not revive as “next product.”
 
-**Active research:** **Employer Shared Responsibility Desk** — G1 evidence, G2 pass, G3 kills, G5 ≥25 paper cases. Docs only; not ready_to_build. No product folder until ready_to_build + PM go.
+**Active research:** **Employer Shared Responsibility Desk** — adversarial; G6 says do not build yet. Hours + tick ≥3 still required.
