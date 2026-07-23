@@ -4,7 +4,10 @@ Email delivers **what changed** to `notify.to`. The human should understand the 
 
 **Audience assumption (hard):** the reader knows **none** of our acronyms, statute codes, paper jargon, or repo slang. Write a **full, detailed, simple plain narrative** — as if explaining to a smart friend who has never heard of this lab, never read a research paper abstract, and never opened GitHub. Spell things out the first time; prefer everyday words over shorthand forever after.
 
-Links are optional footnotes, not the payload — except for **product finished**, where try-artifacts are required (see below).
+Story first; links are not the payload — except these **required** link blocks:
+
+- Every `idea_validated` and `product_complete` email ends with a **Sources** footer (paper URL + authors’ code URL when known).
+- Every successful `product_complete` also includes try-artifacts (attachment + browser playground link).
 
 ## Config
 
@@ -37,7 +40,7 @@ Write several short paragraphs a stranger can follow:
 3. **What we will build** — what the app will do for a user, in concrete everyday terms.
 4. **Why this paper** — e.g. the authors published working source code, or the idea is clearly something a software team can implement and test.
 5. **What you will get later** — another email when it is finished, with a simple offline demo and a link to try the project in the browser.
-6. **Sources (required)** — paste full URLs for the paper page and, when the pick has one, the authors’ public code repository. Label them in plain words (“paper:”, “authors’ code:”). Do not omit these even if the rest of the letter stays link-light.
+6. **Sources** — required footer; use the **Sources footer template** below.
 
 ### Product finished (`product_complete`)
 
@@ -52,18 +55,36 @@ Same plain-narrative bar, **longer and more complete**:
 7. **What did not change** — still not a commercial pitch if true.
 8. **Next** — one sentence.
 9. **Try it** — attached offline page + browser playground link; mention the project readme and lessons guide in plain words (“how to run” file and “what we learned” guide).
-10. **Sources (required)** — same as start letter: full paper URL and authors’ code URL when present.
+10. **Sources** — required footer; same template as the start letter.
+
+## Sources footer template (required on start + finish emails)
+
+Paste this block **verbatim at the end** of every `idea_validated` and `product_complete` email. Fill the URLs from the pick (`docs/ideas/<slug>.md` or picker JSON). Never omit the heading. Never substitute “see the dossier” for the URLs.
+
+```text
+Sources
+Paper: <full https URL to the paper page — arXiv abs, DOI, publisher, etc.>
+Authors’ code: <full https URL to the public repository>
+```
+
+If the pick has **no** public code repository:
+
+```text
+Sources
+Paper: <full https URL to the paper page>
+Authors’ code: none published with this paper
+```
 
 ## Hard rules
 
 1. **Explain before you celebrate.** The reader must learn *what the idea was*, *what the project is*, and *what we actually built* — not only that tests passed.
 2. **Lead with the story, then the proof.** Full narrative first; counts only as supporting detail.
-3. **Never force a re-read of the repo.** Links are optional extras (except product try-link and source links below).
-4. **Link budget:** hard-stop → at most one optional deep link. Idea start and product finished → **always include paper URL + code URL when known**. Product finished also → **try-page attachment + one browser-playground try link**.
+3. **Never force a re-read of the repo.** Links are optional extras (except product try-link and the Sources footer).
+4. **Link budget:** hard-stop → at most one optional deep link. Idea start and product finished → **Sources footer always** (paper URL + code URL or “none published”). Product finished also → **try-page attachment + one browser-playground try link**.
 5. **Honest framing in plain words:** this is a workflow experiment unless we say otherwise.
 6. **No unexplained acronyms or internal codes** in subject or body. If a technical term is unavoidable, define it in the same sentence in everyday language.
 7. **No paper-id or statute-code branding** in the subject; use the mature display name only.
-8. **Chat / status updates:** when naming the current product, always include the paper link and code link (or say code was not published).
+8. **Do not send** a start or finish email without the Sources footer.
 
 ## Plain language (never assume these are known)
 
@@ -127,6 +148,46 @@ If abandoned mid-build with nothing to try: story + autopsy only; no fake try pa
 
 ---
 
+## Email format — validated idea (`idea_validated`)
+
+**Subject:** `[Method Lab] Starting: <display name>`
+
+**Body — all sections required, plain text:**
+
+1. **What happened**
+2. **What the paper is about**
+3. **What we will build**
+4. **Why this paper**
+5. **What you will get later**
+6. **Sources** — Sources footer template (paper + authors’ code)
+
+### Copy-paste skeleton — start letter
+
+```text
+Subject: [Method Lab] Starting: <Display Name>
+
+What happened
+We picked a research paper and started a small software project inspired by it. The working name is <Display Name>.
+
+What the paper is about
+<2–4 sentences in everyday words: who it helps, what problem, what the authors claim.>
+
+What we will build
+<Concrete everyday description of the desk/app the user will see.>
+
+Why this paper
+<Why implementable — usually: authors published working source code and a clear software claim.>
+
+What you will get later
+Another email when it is finished, with a simple offline demo page and a link to try the project in the browser playground, plus a short how-to-run note and a lessons guide.
+
+Sources
+Paper: <https://...>
+Authors’ code: <https://...>
+```
+
+---
+
 ## Email format — product finished (`product_complete`)
 
 **Subject:** `[Method Lab] Results: <product name> finished` (or similar, ≤8 words, no codes)
@@ -141,8 +202,48 @@ If abandoned mid-build with nothing to try: story + autopsy only; no fake try pa
 6. **What did not change** — only if useful (still not a commercial pitch; still no shallow dual-approval queue)
 7. **Next** — one line
 8. **Try it** — (a) attached `try-<name>.html` — download and open; (b) StackBlitz URL above
+9. **Sources** — Sources footer template (paper + authors’ code)
 
 **Resend:** `text` body as usual; `attachments: [{ filename: "try-<name>.html", content: <base64 of try.html>, contentType: "text/html" }]`.
+
+### Copy-paste skeleton — finish letter
+
+```text
+Subject: [Method Lab] Results: <Display Name> finished
+
+Outcome
+<Display Name> finished — <one sentence of what it does>.
+
+The idea
+<2–4 sentences.>
+
+The project
+<What the folder is, in plain words.>
+
+What we built
+<Concrete pieces.>
+
+What we proved
+- <verification bullets>
+- Framing: workflow experiment only — not replacing the authors’ system or commercial vendors
+
+What did not change
+Still not a commercial launch claim.
+
+Next
+We will pick another implementable research paper and start the next desk.
+
+Try it
+- Attachment: try-<slug>.html — download and open in your browser (offline demo)
+- Full project in the browser:
+  https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/projects/<slug>?startScript=start
+How to run: projects/<slug>/README.md
+What we learned: docs/guides/<nn>-<slug>-lessons.md
+
+Sources
+Paper: <https://...>
+Authors’ code: <https://...>
+```
 
 ### Example — product finished (good)
 
@@ -181,6 +282,10 @@ Try it
 - Attachment: try-tariffstep.html — download and open in your browser (offline demo of the bill math)
 - Full project in the browser:
   https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/projects/tariffstep?startScript=start
+
+Sources
+Paper: none — this product was not paper-sourced
+Authors’ code: none published with this paper
 ```
 
 ---
@@ -238,6 +343,7 @@ Write the capacity/expiry algorithm on paper and start named test scenarios.
 - Pass-count vanity without saying what was built
 - Acronyms or internal codes (A03, G5, ready_to_build, Kill A, etc.)
 - Product finished email **without** try page + StackBlitz (when the product has a usable core demo)
+- Start or finish email **without** the Sources footer (paper URL + authors’ code URL or “none published”)
 - Try page that still calls `fetch("/...")` or needs `npm start`
 - Deploying a host (Vercel, etc.) only so the digest has a URL
 
