@@ -7,10 +7,10 @@ Fully autonomous. No human confirmation between pick and product finish.
 When digests are available and the lab is idle (no `current_product`):
 
 1. Run `node scripts/pick-paper-idea.mjs --days 14 --write-shortlist --choose 1`
-2. Email **validated idea** (plain language)
+2. Email **validated idea** — full plain narrative; assume the reader knows **no** acronyms (`protocols/NOTIFY.md`)
 3. Climb the product ladder on `projects/<slug>/` until sustain
 4. Ship README + tutor guide + try.html
-5. Email **product finished** (summary + try attachment + StackBlitz)
+5. Email **product finished** — detailed simple story a stranger can follow; try page + browser playground; no jargon dump
 6. Clear product slot → pick again
 
 Never invent freehand statute-code seeds while simple-papers digests exist.
