@@ -6,6 +6,8 @@ import { describeClaim } from "./claim.js";
 import {
   addMember,
   assertAccess,
+  auditToCsv,
+  batchTransitionJobs,
   createJob,
   createOrg,
   createProject,
@@ -18,14 +20,19 @@ import {
   getProject,
   isCompileJobStatus,
   issueToken,
+  listAudit,
   listJobs,
   listProjects,
   patchJob,
   patchProject,
   registerUser,
   resolveToken,
+  scenarioCompare,
+  transitionJob,
+  type BatchTransitionItem,
   type CompileJobStatus,
   type JobCreate,
+  type JobPatch,
   type OrgRole,
   type ProjectCreate,
   type Store,
@@ -75,6 +82,19 @@ function send(
     ...extra,
   });
   res.end(payload);
+}
+
+function sendText(
+  res: ServerResponse,
+  status: number,
+  body: string,
+  contentType: string,
+) {
+  res.writeHead(status, {
+    "content-type": contentType,
+    "content-length": Buffer.byteLength(body),
+  });
+  res.end(body);
 }
 
 function getToken(req: IncomingMessage): string | null {
@@ -145,15 +165,17 @@ function jobFromBody(body: Json): JobCreate {
     status:
       statusRaw && isCompileJobStatus(statusRaw)
         ? (statusRaw as CompileJobStatus)
-        : undefined,
+        : statusRaw
+          ? (statusRaw as CompileJobStatus)
+          : undefined,
     mlir_pass_hint:
       body.mlir_pass_hint !== undefined ? String(body.mlir_pass_hint) : undefined,
     notes: body.notes !== undefined ? String(body.notes) : undefined,
   };
 }
 
-function jobPatchFromBody(body: Json): Partial<JobCreate> {
-  const patch: Partial<JobCreate> = {};
+function jobPatchFromBody(body: Json): JobPatch {
+  const patch: JobPatch = {};
   if (body.label !== undefined) patch.label = String(body.label);
   if (body.status !== undefined) {
     const statusRaw = String(body.status);
@@ -164,6 +186,9 @@ function jobPatchFromBody(body: Json): Partial<JobCreate> {
     patch.mlir_pass_hint = String(body.mlir_pass_hint);
   }
   if (body.notes !== undefined) patch.notes = String(body.notes);
+  if (body.expected_version !== undefined) {
+    patch.expected_version = Number(body.expected_version);
+  }
   return patch;
 }
 
@@ -252,6 +277,55 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
       const result = addMember(store, orgId, String(body.userId ?? ""), role);
       if (!result.ok) return send(res, 400, { error: result.error });
       return send(res, 201, { ok: true });
+    }
+
+    const auditMatch = path.match(/^\/orgs\/([^/]+)\/audit$/);
+    if (auditMatch && method === "GET") {
+      const orgId = auditMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "operator", "viewer"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const listed = listAudit(store, orgId, {
+        limit: url.searchParams.get("limit")
+          ? Number(url.searchParams.get("limit"))
+          : undefined,
+        offset: url.searchParams.get("offset")
+          ? Number(url.searchParams.get("offset"))
+          : undefined,
+        job_id: url.searchParams.get("job_id") ?? undefined,
+      });
+      if (url.searchParams.get("format") === "csv") {
+        return sendText(res, 200, auditToCsv(listed.entries), "text/csv; charset=utf-8");
+      }
+      return send(res, 200, listed);
+    }
+
+    const batchMatch = path.match(/^\/orgs\/([^/]+)\/batch\/jobs\/transition$/);
+    if (batchMatch && method === "POST") {
+      const orgId = batchMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "operator"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const body = await readBody(req);
+      const raw = Array.isArray(body.transitions) ? body.transitions : [];
+      const items: BatchTransitionItem[] = raw.map((row) => {
+        const r = row as Record<string, unknown>;
+        const toRaw = String(r.to ?? "");
+        return {
+          project_id: String(r.project_id ?? ""),
+          job_id: String(r.job_id ?? ""),
+          to: (isCompileJobStatus(toRaw) ? toRaw : toRaw) as CompileJobStatus,
+          expected_version:
+            r.expected_version !== undefined
+              ? Number(r.expected_version)
+              : undefined,
+        };
+      });
+      return send(res, 200, batchTransitionJobs(store, orgId, items, userId));
     }
 
     const projectsMatch = path.match(/^\/orgs\/([^/]+)\/projects$/);
@@ -364,9 +438,10 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
         return send(res, 403, { error: "forbidden" });
       }
       const body = await readBody(req);
-      const job = createJob(store, orgId, projectId, jobFromBody(body));
-      if (!job) return send(res, 404, { error: "project_not_found" });
-      return send(res, 201, { job });
+      const created = createJob(store, orgId, projectId, jobFromBody(body), userId);
+      if (!created) return send(res, 404, { error: "project_not_found" });
+      if ("error" in created) return send(res, 400, { error: created.error });
+      return send(res, 201, { job: created.job });
     }
 
     const jobOne = path.match(/^\/orgs\/([^/]+)\/projects\/([^/]+)\/jobs\/([^/]+)$/);
@@ -394,9 +469,24 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
         return send(res, 403, { error: "forbidden" });
       }
       const body = await readBody(req);
-      const result = patchJob(store, orgId, projectId, jobId, jobPatchFromBody(body));
+      const result = patchJob(
+        store,
+        orgId,
+        projectId,
+        jobId,
+        jobPatchFromBody(body),
+        userId,
+      );
       if (!result) return send(res, 404, { error: "job_not_found" });
-      if ("error" in result) return send(res, 400, { error: result.error });
+      if ("error" in result) {
+        const code =
+          result.error === "version_conflict"
+            ? 409
+            : result.error === "illegal_transition"
+              ? 409
+              : 400;
+        return send(res, code, { error: result.error });
+      }
       return send(res, 200, { job: result.job });
     }
 
@@ -413,6 +503,66 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
         return send(res, 404, { error: "job_not_found" });
       }
       return send(res, 200, { ok: true });
+    }
+
+    const transitionMatch = path.match(
+      /^\/orgs\/([^/]+)\/projects\/([^/]+)\/jobs\/([^/]+)\/transition$/,
+    );
+    if (transitionMatch && method === "POST") {
+      const orgId = transitionMatch[1]!;
+      const projectId = transitionMatch[2]!;
+      const jobId = transitionMatch[3]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "operator"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const body = await readBody(req);
+      const toRaw = String(body.to ?? body.status ?? "");
+      if (!isCompileJobStatus(toRaw)) {
+        return send(res, 400, { error: "bad_status" });
+      }
+      const expected =
+        body.expected_version !== undefined
+          ? Number(body.expected_version)
+          : undefined;
+      const moved = transitionJob(
+        store,
+        orgId,
+        projectId,
+        jobId,
+        toRaw,
+        userId,
+        expected,
+      );
+      if (!moved.ok) {
+        const code =
+          moved.error === "job_not_found"
+            ? 404
+            : moved.error === "version_conflict" ||
+                moved.error === "illegal_transition"
+              ? 409
+              : 400;
+        return send(res, code, { error: moved.error });
+      }
+      return send(res, 200, { job: moved.job });
+    }
+
+    const scenarioMatch = path.match(
+      /^\/orgs\/([^/]+)\/projects\/([^/]+)\/jobs\/([^/]+)\/scenarios$/,
+    );
+    if (scenarioMatch && method === "GET") {
+      const orgId = scenarioMatch[1]!;
+      const projectId = scenarioMatch[2]!;
+      const jobId = scenarioMatch[3]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin", "operator", "viewer"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const compare = scenarioCompare(store, orgId, projectId, jobId);
+      if (!compare) return send(res, 404, { error: "job_not_found" });
+      return send(res, 200, compare);
     }
 
     return send(res, 404, { error: "not_found" });
