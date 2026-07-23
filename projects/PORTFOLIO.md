@@ -13,4 +13,5 @@
 | Secure Tutor Desk | 2607.14601 | Complete |
 | Agent Safety Desk | 2607.14570 | Complete |
 | Enterprise Agent Desk | 2607.17331 | Complete |
-| Ladder Logic Desk | 2607.08417 | Sustain green (product_complete pending) |
+| Ladder Logic Desk | 2607.08417 | Complete |
+| Data Science Desk | 2607.15901 | Smoke / building (Next + landing) |
