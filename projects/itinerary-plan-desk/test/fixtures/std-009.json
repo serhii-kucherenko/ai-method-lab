@@ -1,0 +1,18 @@
+{
+  "id": "std-009",
+  "title": "short visits fit more stops",
+  "input": {
+    "day_budget": 6,
+    "pois": "a:9:18:1:5|b:9:18:1:6|c:9:18:1:7|d:9:18:1:4"
+  },
+  "expect": {
+    "status": "ok",
+    "day_budget": 6,
+    "naive_risk": 0,
+    "safer_risk": 0,
+    "delta_score": 0,
+    "naive_preference": 22,
+    "pla_preference": 22,
+    "naive_violations": 0
+  }
+}

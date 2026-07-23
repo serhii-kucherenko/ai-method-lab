@@ -1,15 +1,16 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { describeClaim } from "../src/claim.ts";
+import { describeClaim } from "../src/claim.js";
 
 describe("Itinerary Plan Desk smoke", () => {
   it("describes the paper-sourced claim", () => {
     const got = describeClaim({
       paperId: "2607.15552",
-      title: "From Feasibility to Desirability: Plan, Learn, Adapt (PLA) Framework for Personalized On-Device Itinerary Generation",
+      title:
+        "Plan, Learn, Adapt: On-Device Itinerary Generation",
       codeUrl: "https://github.com/Official529Tech/pla-itinerary",
       buildClaim:
-        "Plan feasible itineraries, learn preference rewards, adapt under a budget while keeping every state feasible.",
+        "feasibility-first plan/learn/adapt scheduling versus a naive preference-only baseline; adapted here as a desk experiment, not the authors' on-device itinerary system.",
     });
     assert.equal(got.ok, true);
     if (got.ok) assert.match(got.line, /2607\.15552/);

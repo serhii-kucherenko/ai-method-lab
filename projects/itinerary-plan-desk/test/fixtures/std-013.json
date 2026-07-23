@@ -1,0 +1,18 @@
+{
+  "id": "std-013",
+  "title": "visit longer than budget",
+  "input": {
+    "day_budget": 2,
+    "pois": "trek:8:20:5:50"
+  },
+  "expect": {
+    "status": "ok",
+    "day_budget": 2,
+    "naive_risk": 0,
+    "safer_risk": 0,
+    "delta_score": 0,
+    "naive_preference": 0,
+    "pla_preference": 0,
+    "naive_violations": 0
+  }
+}

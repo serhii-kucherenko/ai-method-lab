@@ -1,0 +1,18 @@
+{
+  "id": "std-020",
+  "title": "equal preferences stable tie-break",
+  "input": {
+    "day_budget": 5,
+    "pois": "a:9:18:2:5|b:9:18:2:5|c:9:18:2:5|d:9:18:1:1"
+  },
+  "expect": {
+    "status": "ok",
+    "day_budget": 5,
+    "naive_risk": 410,
+    "safer_risk": 0,
+    "delta_score": 410,
+    "naive_preference": 16,
+    "pla_preference": 10,
+    "naive_violations": 4
+  }
+}

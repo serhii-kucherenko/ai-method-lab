@@ -1,0 +1,19 @@
+{
+  "id": "std-008",
+  "title": "late-open museum vs early cafe",
+  "input": {
+    "day_budget": 5,
+    "day_start": 9,
+    "pois": "museum:12:17:2:9|cafe:8:20:1:7|park:9:18:2:5"
+  },
+  "expect": {
+    "status": "ok",
+    "day_budget": 5,
+    "naive_risk": 210,
+    "safer_risk": 0,
+    "delta_score": 210,
+    "naive_preference": 21,
+    "pla_preference": 16,
+    "naive_violations": 2
+  }
+}

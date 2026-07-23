@@ -1,0 +1,18 @@
+{
+  "id": "std-022",
+  "title": "empty pois string falls back",
+  "input": {
+    "day_budget": 8,
+    "pois": ""
+  },
+  "expect": {
+    "status": "ok",
+    "day_budget": 8,
+    "naive_risk": 610,
+    "safer_risk": 0,
+    "delta_score": 610,
+    "naive_preference": 43,
+    "pla_preference": 30,
+    "naive_violations": 6
+  }
+}

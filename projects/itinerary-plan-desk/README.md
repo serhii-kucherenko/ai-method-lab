@@ -1,9 +1,19 @@
 # Itinerary Plan Desk
 
-Feasible itinerary planning with preference ranking and feasibility-preserving adapt — inspired by PLA (paper 2607.15552).
+Feasible itinerary planning with preference ranking and feasibility-preserving adapt — inspired by paper 2607.15552.
 
-- **Paper:** https://arxiv.org/abs/2607.15552v1
-- **Authors' code:** https://github.com/Official529Tech/pla-itinerary
+- **Id:** 2607.15552
+- **Title:** Plan, Learn, Adapt: On-Device Itinerary Generation
+- **URL:** https://arxiv.org/abs/2607.15552v1
+- **Code:** https://github.com/Official529Tech/pla-itinerary
+
+## Claim
+
+Feasibility-first day schedules versus a naive preference-only baseline — desk experiment, not the authors’ on-device itinerary system. Never brand as FlyEnJoy or PLA.
+
+## Stack
+
+Next.js App Router + TypeScript + Tailwind + shadcn/ui. Design: `docs/ideas/itinerary-plan-desk-DESIGN.md`. Marketing landing at `/`.
 
 ## Run
 
@@ -11,8 +21,10 @@ Feasible itinerary planning with preference ranking and feasibility-preserving a
 cd projects/itinerary-plan-desk
 npm install
 npm test
+npm run start:api   # static harness + API
+npm run dev         # Next UI
 ```
 
-Smoke scaffold — delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` with marketing landing at `/` and `docs/ideas/itinerary-plan-desk-DESIGN.md` before multi-page UI.
+Offline sketch: open `try.html` in a browser.
 
 Honesty: method experiment; not FlyEnJoy / PLA branding as the product name.

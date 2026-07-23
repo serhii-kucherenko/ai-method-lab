@@ -1,6 +1,6 @@
 # Itinerary Plan Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (paper-sourced)  
 **Slug:** `itinerary-plan-desk`  
 **Display name:** Itinerary Plan Desk  
 **Paper id:** `2607.15552`  

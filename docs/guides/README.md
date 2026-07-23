@@ -23,6 +23,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 16 | [Data Science Desk — what we learned](16-data-science-desk-lessons.md) | Product `data-science-desk` |
 | 17 | [Security Control Desk — what we learned](17-security-control-desk-lessons.md) | Product `security-control-desk` |
 | 18 | [Rules Preferences Desk — what we learned](18-rules-preferences-desk-lessons.md) | Product `rules-preferences-desk` |
+| 19 | [Itinerary Plan Desk — what we learned](19-itinerary-plan-desk-lessons.md) | Product `itinerary-plan-desk` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 

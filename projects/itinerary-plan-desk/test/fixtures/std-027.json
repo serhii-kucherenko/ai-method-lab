@@ -1,0 +1,18 @@
+{
+  "id": "std-027",
+  "title": "city culture loop",
+  "input": {
+    "day_budget": 8,
+    "pois": "museum:10:17:2:9|gallery:10:16:2:8|cafe:8:20:1:6|park:9:18:1:5|shop:11:19:1:4"
+  },
+  "expect": {
+    "status": "ok",
+    "day_budget": 8,
+    "naive_risk": 210,
+    "safer_risk": 0,
+    "delta_score": 210,
+    "naive_preference": 32,
+    "pla_preference": 28,
+    "naive_violations": 2
+  }
+}
