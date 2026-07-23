@@ -19,5 +19,7 @@
 | **htsroute** (Ch 29 / 3003 / 3004 form gate) | No | testable | 26 fixtures; scorecard hold (same-day); Challenge C closed |
 | meldefer (MEL A/B/C/D clocks) | Soft park | G2 risk | Near amendwin/days; park unless Category A unit polymorphism + extension asymmetry proven non-isomorphic |
 | form222 / CSOS line validation | Soft park | G3 | Crowded compliance; revisit after htsroute depth |
+| **irc6651** (§ 6651 FTF+FTP+(c)(1) stack) | No | adversarial | Next after c1592; literal addition $; Kill A honesty; **not** ready_to_build |
+| esrp4980h (§ 4980H ESRP) | Soft park | depth | Log-only behind irc6651 — do not widen |
 
 **Rule:** one idea in `framed`→`ready_to_build`. Dual-gate / capacity+expiry seeds die immediately. Same-day fixture farms do not count as depth.

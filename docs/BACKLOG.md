@@ -12,7 +12,7 @@ See `docs/DEPTH_RESTART.md` (Correction 5).
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **c1592** | **smoke GREEN → crud→sustain (PM-GO)** | Finish full roadmap; email before next product |
+| 1 | **c1592** | **crud GREEN → workflow→sustain (PM-GO)** | Finish full roadmap; email before next product |
 | 1 | **ptax4975** | **sustained** | 58 tests; 7 pages + try.html; Kill A + 3 fences |
 | 1 | **oshamult** | **sustained** | 56 tests; 7 pages + try.html; Kill A honesty |
 | 1 | **lesserof** | **sustained** | 11 pages + goldens + try.html; 60 tests; Kill A honesty |
@@ -32,7 +32,9 @@ See `docs/DEPTH_RESTART.md` (Correction 5).
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| **c1592** | **ready_to_build → building (PM-GO remaining roadmap)** | smoke GREEN; finish through sustain + email |
+| **c1592** | **building (PM-GO remaining roadmap)** | crud GREEN; finish through sustain + email |
+| **irc6651** | **adversarial (research-only)** | Next after c1592; § 6651 FTF+FTP+(c)(1) stack; Kill A/B/C started; **not** ready_to_build; no projects/ |
+| esrp4980h | seed (log only) | § 4980H ESRP; parked behind irc6651 (depth > width) |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
 | ptax4975 | **sustained** | Product complete under projects/ptax4975 |

@@ -202,6 +202,70 @@ function toInput(v: ReturnType<typeof getViolation>): PenaltyInput | null {
   };
 }
 
+export function addMember(
+  store: Store,
+  orgId: string,
+  userId: string,
+  role: OrgRole,
+): { ok: true } | { ok: false; error: string } {
+  if (!getOrg(store, orgId)) return { ok: false, error: "org_not_found" };
+  if (!store.users.get(userId)) return { ok: false, error: "user_not_found" };
+  store.members.set(memberKey(orgId, userId), role);
+  return { ok: true };
+}
+
+export function patchViolation(
+  store: Store,
+  orgId: string,
+  violationId: string,
+  patch: Partial<ViolationCreate>,
+  actorId?: string | null,
+) {
+  const existing = store.violations.get(violationId);
+  if (!existing || existing.org_id !== orgId) return null;
+  const next: Violation = {
+    ...existing,
+    label: patch.label ?? existing.label,
+    culpability:
+      patch.culpability !== undefined ? String(patch.culpability) : existing.culpability,
+    duty_loss:
+      patch.duty_loss !== undefined ? Number(patch.duty_loss) : existing.duty_loss,
+    domestic_value:
+      patch.domestic_value !== undefined
+        ? Number(patch.domestic_value)
+        : existing.domestic_value,
+    dutiable_value:
+      patch.dutiable_value !== undefined
+        ? Number(patch.dutiable_value)
+        : existing.dutiable_value,
+    flat_2x_cheat:
+      patch.flat_2x_cheat !== undefined
+        ? patch.flat_2x_cheat === true
+        : existing.flat_2x_cheat,
+    dual_approver_cheat:
+      patch.dual_approver_cheat !== undefined
+        ? patch.dual_approver_cheat === true
+        : existing.dual_approver_cheat,
+    ignore_domestic_cap:
+      patch.ignore_domestic_cap !== undefined
+        ? patch.ignore_domestic_cap === true
+        : existing.ignore_domestic_cap,
+  };
+  store.violations.set(violationId, next);
+  appendAudit(store, {
+    org_id: orgId,
+    violation_id: violationId,
+    actor_id: actorId ?? null,
+    action: "violation_patch",
+    status: "ok",
+    penalty_max: null,
+    branch: null,
+    reason: null,
+    algorithm_version: null,
+  });
+  return getViolation(store, orgId, violationId);
+}
+
 export function runForecast(
   store: Store,
   orgId: string,

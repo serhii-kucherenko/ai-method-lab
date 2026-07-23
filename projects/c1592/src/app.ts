@@ -3,6 +3,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { join, extname, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+  addMember,
   assertAccess,
   createOrg,
   createStore,
@@ -12,9 +13,11 @@ import {
   getViolation,
   issueToken,
   listViolations,
+  patchViolation,
   registerUser,
   resolveToken,
   runForecast,
+  type OrgRole,
   type Store,
 } from "./store.js";
 import { listGoldenCards } from "./goldens.js";
@@ -139,6 +142,24 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
       return send(res, 201, { org });
     }
 
+    const membersMatch = path.match(/^\/orgs\/([^/]+)\/members$/);
+    if (membersMatch && method === "POST") {
+      const orgId = membersMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      if (!assertAccess(store, orgId, userId, ["admin"])) {
+        return send(res, 403, { error: "forbidden" });
+      }
+      const body = await readBody(req);
+      const role = String(body.role ?? "auditor") as OrgRole;
+      if (!["admin", "analyst", "auditor"].includes(role)) {
+        return send(res, 400, { error: "bad_role" });
+      }
+      const result = addMember(store, orgId, String(body.userId ?? ""), role);
+      if (!result.ok) return send(res, 400, { error: result.error });
+      return send(res, 201, { ok: true });
+    }
+
     if (method === "GET" && path === "/goldens") {
       return send(res, 200, listGoldenCards());
     }
@@ -190,8 +211,24 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
         return send(res, 200, { violation });
       }
 
-      if (method === "POST" && violationId && forecast) {
+      if (method === "PATCH" && violationId && !forecast) {
         if (!assertAccess(store, orgId, userId, ["admin", "analyst"])) {
+          return send(res, 403, { error: "forbidden" });
+        }
+        const body = await readBody(req);
+        const violation = patchViolation(
+          store,
+          orgId,
+          violationId,
+          violationInputFromBody(body),
+          userId,
+        );
+        if (!violation) return send(res, 404, { error: "not_found" });
+        return send(res, 200, { violation });
+      }
+
+      if (method === "POST" && violationId && forecast) {
+        if (!assertAccess(store, orgId, userId, ["admin", "analyst", "auditor"])) {
           return send(res, 403, { error: "forbidden" });
         }
         const outcome = runForecast(store, orgId, violationId, userId);
