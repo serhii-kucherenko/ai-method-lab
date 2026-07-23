@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Evidence Synthesis Desk</title>
+    <style>
+      :root {
+        --ink: #1a2f2a;
+        --muted: #4d635c;
+        --line: #c5d4ce;
+        --paper: #eef4f1;
+        --teal: #1f5c4a;
+        --teal-deep: #154036;
+        --cyan: #3d7a6a;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(ellipse 80% 50% at 8% -8%, #c5e0d6 0%, transparent 55%),
+          radial-gradient(ellipse 55% 40% at 100% 0%, #d2ddd0 0%, transparent 45%),
+          var(--paper);
+        min-height: 100vh;
+      }
+      .top {
+        display: flex;
+        justify-content: flex-end;
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 1.25rem 1.25rem 0;
+      }
+      .top a { color: var(--teal); font-weight: 600; text-decoration: none; }
+      .top a:hover { text-decoration: underline; }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3.5rem;
+      }
+      .brand {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: clamp(1.85rem, 4vw, 2.6rem);
+        margin: 0 0 0.65rem;
+        letter-spacing: -0.02em;
+      }
+      h1 {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: clamp(1.35rem, 3vw, 1.85rem);
+        margin: 0 0 0.75rem;
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.25rem;
+        margin: 2.25rem 0 0.65rem;
+      }
+      p, li { color: var(--muted); line-height: 1.5; }
+      .hero p { font-size: 1.05rem; max-width: 36rem; }
+      .cta {
+        display: inline-block;
+        margin: 1rem 0.75rem 0 0;
+        padding: 0.65rem 1rem;
+        background: var(--teal);
+        color: #f2faf9;
+        text-decoration: none;
+        border-radius: 0.4rem;
+        font-weight: 600;
+      }
+      .cta.secondary {
+        background: transparent;
+        color: var(--teal-deep);
+        border: 1px solid var(--line);
+      }
+      .cta:hover { background: var(--teal-deep); color: #f2faf9; }
+      .cta.secondary:hover { border-color: var(--teal); }
+      ul.features { columns: 1; }
+      @media (min-width: 640px) { ul.features { columns: 2; } }
+      footer.cta-foot { margin-top: 2.5rem; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+  <body data-home="live" data-landing="live">
+    <div class="top"><a href="/jobs.html">Open desk</a></div>
+    <main>
+      <section class="hero">
+        <p class="brand">Evidence Synthesis Desk</p>
+        <h1>Screen first; then pool with care</h1>
+        <p>
+          Score screened eligibility, standardized effect sizes, and
+          random-effects pooling against naive averages that skip screening
+          discipline.
+        </p>
+        <a class="cta" href="/jobs.html">Open desk</a>
+        <a class="cta secondary" href="/honesty.html">Read honesty</a>
+      </section>
+
+      <h2>Problem</h2>
+      <p>
+        Averaging reported numbers without eligibility lets underpowered or
+        off-protocol studies drag the pooled answer. Teams need screening,
+        standardized effects, and heterogeneity — not a single glowing mean.
+      </p>
+
+      <h2>Product</h2>
+      <p>
+        Evidence Synthesis Desk runs a screened pipeline — eligibility →
+        Hedges' g → DerSimonian–Laird random-effects — beside naive averages
+        and other weak baselines, with jobs, audit, and goldens.
+      </p>
+
+      <h2>Selling points</h2>
+      <ul>
+        <li>Compare screened random-effects pooling against naive averages that skip eligibility</li>
+        <li>Keep synthesis jobs honest with lifecycle, batch siblings, and audit export</li>
+        <li>Browse dual-impl goldens so effect-size scores stay checkable</li>
+        <li>Org webhooks and roles so rejects and rotates stay visible</li>
+      </ul>
+
+      <h2>Features</h2>
+      <ul class="features">
+        <li>Org tenancy</li>
+        <li>Member roles</li>
+        <li>Project / topic catalog</li>
+        <li>Synthesis job CRUD</li>
+        <li>Lifecycle transitions</li>
+        <li>Illegal transition reject</li>
+        <li>Optimistic version conflict</li>
+        <li>Batch sibling transitions</li>
+        <li>Scenario compare (naive vs screened)</li>
+        <li>Audit log + CSV export</li>
+        <li>Goldens browser</li>
+        <li>Honesty page</li>
+        <li>Signed inbound webhooks</li>
+        <li>Admin webhook rotate</li>
+        <li>Pagination + search</li>
+        <li>Rate-limit feedback</li>
+        <li>Offline try page</li>
+        <li>Marketing landing</li>
+      </ul>
+
+      <h2>How it works</h2>
+      <ol>
+        <li>Open the desk and create a synthesis job under a review topic</li>
+        <li>Run scenario compare — naive vs screened random-effects</li>
+        <li>Advance lifecycle or batch, then export the audit trail</li>
+      </ol>
+
+      <h2>Honesty / limits</h2>
+      <p>
+        Workflow experiment inspired by the paper. Not a replacement for the
+        authors' system. Not a commercial evidence-synthesis vendor. Never brand
+        as AutoSynthesis.
+      </p>
+
+      <h2>Sources</h2>
+      <ul>
+        <li>Paper: <a href="https://arxiv.org/abs/2607.15247v1">https://arxiv.org/abs/2607.15247v1</a></li>
+        <li>Authors' code: none published</li>
+      </ul>
+
+      <footer class="cta-foot">
+        <a class="cta" href="/jobs.html">Open desk</a>
+      </footer>
+    </main>
+  </body>
+</html>

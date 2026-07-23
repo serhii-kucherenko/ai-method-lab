@@ -1,0 +1,18 @@
+{
+  "id": "std-011",
+  "title": "Nutrition corpus",
+  "input": {
+    "corpus": "nutrition",
+    "min_n": 50
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "nutrition",
+    "naive_risk": 69.32,
+    "safer_risk": 11.14,
+    "delta_score": 58.18,
+    "min_n": 50,
+    "k_eligible": 4,
+    "i2": 0
+  }
+}

@@ -1,6 +1,6 @@
 # Evidence Synthesis Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (paper-sourced)  
 **Slug:** `evidence-synthesis-desk`  
 **Display name:** Evidence Synthesis Desk  
 **Paper id:** `2607.15247`  

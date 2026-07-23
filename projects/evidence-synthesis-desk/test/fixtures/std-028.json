@@ -1,0 +1,19 @@
+{
+  "id": "std-028",
+  "title": "Default bias 1.5",
+  "input": {
+    "corpus": "default",
+    "min_n": 40,
+    "bias_scale": 1.5
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "default",
+    "naive_risk": 45.67,
+    "safer_risk": 7.63,
+    "delta_score": 38.04,
+    "min_n": 40,
+    "k_eligible": 8,
+    "i2": 0
+  }
+}

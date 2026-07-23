@@ -1,0 +1,18 @@
+{
+  "id": "std-008",
+  "title": "Cardiology corpus",
+  "input": {
+    "corpus": "cardiology",
+    "min_n": 60
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "cardiology",
+    "naive_risk": 43.99,
+    "safer_risk": 6.09,
+    "delta_score": 37.9,
+    "min_n": 60,
+    "k_eligible": 9,
+    "i2": 0
+  }
+}

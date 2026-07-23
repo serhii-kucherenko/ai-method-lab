@@ -1,0 +1,19 @@
+{
+  "id": "std-026",
+  "title": "Nutrition mild",
+  "input": {
+    "corpus": "nutrition",
+    "min_n": 30,
+    "bias_scale": 1
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "nutrition",
+    "naive_risk": 47.58,
+    "safer_risk": 10.21,
+    "delta_score": 37.37,
+    "min_n": 30,
+    "k_eligible": 6,
+    "i2": 0
+  }
+}

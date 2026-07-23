@@ -1,0 +1,18 @@
+{
+  "id": "std-012",
+  "title": "Strict eligibility min_n 100",
+  "input": {
+    "corpus": "default",
+    "min_n": 100
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "default",
+    "naive_risk": 55.27,
+    "safer_risk": 8.27,
+    "delta_score": 47,
+    "min_n": 100,
+    "k_eligible": 6,
+    "i2": 0
+  }
+}

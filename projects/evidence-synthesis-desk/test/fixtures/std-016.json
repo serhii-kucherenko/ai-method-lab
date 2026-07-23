@@ -1,0 +1,18 @@
+{
+  "id": "std-016",
+  "title": "Custom corpus name alpha",
+  "input": {
+    "corpus": "alpha-trial",
+    "min_n": 40
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "alpha-trial",
+    "naive_risk": 51.56,
+    "safer_risk": 7.23,
+    "delta_score": 44.33,
+    "min_n": 40,
+    "k_eligible": 7,
+    "i2": 0
+  }
+}

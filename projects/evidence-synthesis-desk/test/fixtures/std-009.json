@@ -1,0 +1,18 @@
+{
+  "id": "std-009",
+  "title": "Oncology corpus",
+  "input": {
+    "corpus": "oncology",
+    "min_n": 35
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "oncology",
+    "naive_risk": 52.64,
+    "safer_risk": 9.28,
+    "delta_score": 43.36,
+    "min_n": 35,
+    "k_eligible": 7,
+    "i2": 0
+  }
+}

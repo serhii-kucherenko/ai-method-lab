@@ -1,0 +1,18 @@
+{
+  "id": "std-010",
+  "title": "Education corpus",
+  "input": {
+    "corpus": "education",
+    "min_n": 40
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "education",
+    "naive_risk": 45.4,
+    "safer_risk": 8.2,
+    "delta_score": 37.2,
+    "min_n": 40,
+    "k_eligible": 8,
+    "i2": 0
+  }
+}

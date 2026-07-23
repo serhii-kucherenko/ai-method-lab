@@ -1,0 +1,18 @@
+{
+  "id": "std-004",
+  "title": "Large contaminated corpus",
+  "input": {
+    "corpus": "large",
+    "min_n": 50
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "large",
+    "naive_risk": 50.15,
+    "safer_risk": 5.83,
+    "delta_score": 44.32,
+    "min_n": 50,
+    "k_eligible": 12,
+    "i2": 0
+  }
+}

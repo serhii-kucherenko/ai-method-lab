@@ -1,0 +1,19 @@
+{
+  "id": "std-025",
+  "title": "Education mild bias",
+  "input": {
+    "corpus": "education",
+    "min_n": 30,
+    "bias_scale": 0.8
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "education",
+    "naive_risk": 34.37,
+    "safer_risk": 8.2,
+    "delta_score": 26.17,
+    "min_n": 30,
+    "k_eligible": 8,
+    "i2": 0
+  }
+}

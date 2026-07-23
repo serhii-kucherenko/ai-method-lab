@@ -4,6 +4,9 @@ Evidence synthesis desk: screening discipline then standardized pooling — insp
 
 - **Paper:** https://arxiv.org/abs/2607.15247v1
 - **Authors' code:** none published with this paper
+- **Guide:** [docs/guides/21-evidence-synthesis-desk-lessons.md](../../docs/guides/21-evidence-synthesis-desk-lessons.md)
+- **Design:** [docs/ideas/evidence-synthesis-desk-DESIGN.md](../../docs/ideas/evidence-synthesis-desk-DESIGN.md)
+- **Try offline:** open `try.html` in a browser
 
 ## Run
 
@@ -11,8 +14,12 @@ Evidence synthesis desk: screening discipline then standardized pooling — insp
 cd projects/evidence-synthesis-desk
 npm install
 npm test
+npm run start:api   # API + static harness on :3849 (or PORT)
+npm run dev         # Next.js UI
 ```
 
-Smoke scaffold — delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` with marketing landing at `/` and `docs/ideas/evidence-synthesis-desk-DESIGN.md`.
+## Claim
+
+Screen and eligibility before pooling: standardized effect sizes + random-effects synthesis with audit — versus naive average of reported numbers that skip screening discipline.
 
 Honesty: method experiment; never brand as AutoSynthesis.
