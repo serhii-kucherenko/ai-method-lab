@@ -1,0 +1,39 @@
+{
+  "cell_id": "A03__P-smoke-001__ladder-logic-desk__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-smoke-001",
+  "phase": "P-smoke-001",
+  "run_id": "r1",
+  "method_id": "A03",
+  "method_version": "1.0.0",
+  "status": "scored",
+  "product_path": "projects/ladder-logic-desk",
+  "created_at": "2026-07-23T18:46:00Z",
+  "started_at": "2026-07-23T18:46:00Z",
+  "finished_at": "2026-07-23T19:00:00Z",
+  "fail_tags": [],
+  "notes": "A03 Ladder Logic Desk smoke — paper claim scaffold",
+  "metrics": {
+    "correctness_pass": true,
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 15,
+    "cycle_time_hours": 0.25
+  },
+  "scores": {
+    "rubric_version": "1.0.0",
+    "dimensions": {
+      "correctness": 5,
+      "completeness": 4,
+      "robustness": 4,
+      "maintainability": 5,
+      "efficiency": 5
+    },
+    "artifacts": ["projects/ladder-logic-desk"],
+    "notes": "Paper claim described; never brand ESBMC-PLC+"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "std-007",
+  "title": "zero depth clamped",
+  "input": {
+    "scan_depth": 0
+  },
+  "expect": {
+    "status": "ok",
+    "scan_steps": 1,
+    "matched_triggers": 0,
+    "naive_fit": 1,
+    "bomb_fit": 3,
+    "delta_score": 2
+  }
+}

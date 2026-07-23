@@ -1,0 +1,15 @@
+{
+  "id": "std-027",
+  "title": "depth 8",
+  "input": {
+    "scan_depth": 8
+  },
+  "expect": {
+    "status": "ok",
+    "scan_steps": 8,
+    "matched_triggers": 0,
+    "naive_fit": 1,
+    "bomb_fit": 17,
+    "delta_score": 16
+  }
+}

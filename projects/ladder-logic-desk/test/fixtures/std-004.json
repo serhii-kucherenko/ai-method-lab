@@ -1,0 +1,15 @@
+{
+  "id": "std-004",
+  "title": "depth 4",
+  "input": {
+    "scan_depth": 4
+  },
+  "expect": {
+    "status": "ok",
+    "scan_steps": 4,
+    "matched_triggers": 0,
+    "naive_fit": 1,
+    "bomb_fit": 9,
+    "delta_score": 8
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "std-019",
+  "title": "case normalize",
+  "input": {
+    "trigger_kinds": "Comparison,Timer",
+    "payload_kinds": "Actuator"
+  },
+  "expect": {
+    "status": "ok",
+    "scan_steps": 3,
+    "matched_triggers": 2,
+    "naive_fit": 2,
+    "bomb_fit": 7,
+    "delta_score": 5
+  }
+}

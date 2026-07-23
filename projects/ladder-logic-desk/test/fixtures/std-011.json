@@ -1,0 +1,16 @@
+{
+  "id": "std-011",
+  "title": "adaptive alone (naive misses)",
+  "input": {
+    "trigger_kinds": "adaptive",
+    "payload_kinds": "denial"
+  },
+  "expect": {
+    "status": "ok",
+    "scan_steps": 2,
+    "matched_triggers": 1,
+    "naive_fit": 1,
+    "bomb_fit": 5,
+    "delta_score": 4
+  }
+}

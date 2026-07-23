@@ -1,0 +1,16 @@
+{
+  "id": "std-014",
+  "title": "unknown trigger tags only",
+  "input": {
+    "trigger_kinds": "noise-a,noise-b",
+    "payload_kinds": "noise-c"
+  },
+  "expect": {
+    "status": "ok",
+    "scan_steps": 1,
+    "matched_triggers": 0,
+    "naive_fit": 1,
+    "bomb_fit": 3,
+    "delta_score": 2
+  }
+}

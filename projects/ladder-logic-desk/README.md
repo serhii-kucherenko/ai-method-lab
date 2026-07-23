@@ -1,17 +1,17 @@
 # Ladder Logic Desk
 
-Method-lab product sourced from a simple-papers digest.
+Method-lab product for formal trigger-synthesis / bomb-detection scoring versus a naive scan baseline.
 
 ## Paper
 
 - **Id:** 2607.08417
-- **Title:** Ladder Logic Desk Bombs in IEC 61131-3 PLC Programs using ESBMC-PLC+: A Formal Verification Approach with Trigger Synthesis
+- **Title:** Detecting Ladder Logic Bombs in IEC 61131-3 PLC Programs using ESBMC-PLC+: A Formal Verification Approach with Trigger Synthesis
 - **URL:** https://arxiv.org/abs/2607.08417v1
-- **Code:** (none — software claim only)
+- **Code:** none published
 
-## What we will build
+## What this is
 
-This tool can help improve the security of PLC programs and provide a new approach to detecting malicious code in these programs.
+Org desk with marketing landing, verification jobs, lifecycle, scenario compare (naive scan vs formal), batch, audit, goldens (≥25 dual-impl), webhooks, honesty, and offline `try.html`. Display name is **Ladder Logic Desk** — never brand as ESBMC-PLC+ or IEC statute codes.
 
 ## Run
 
@@ -19,13 +19,18 @@ This tool can help improve the security of PLC programs and provide a new approa
 cd projects/ladder-logic-desk
 npm install
 npm test
-npm start
+npm run dev          # Next.js UI on :3000
+npm run start:api    # JSON API + static harness on :3847 (or PORT)
 ```
 
-## Status
+## Honesty
 
-Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` and commits `docs/ideas/ladder-logic-desk-DESIGN.md` before multi-page UI.
+Method experiment inspired by the paper — **not** a replacement for the authors' formal verifier and **not** a commercial PLC security product.
+
+## Design
+
+See `docs/ideas/ladder-logic-desk-DESIGN.md` and tutor guide `docs/guides/15-ladder-logic-desk-lessons.md`.
 
 ## Config hygiene
 
-Never write `package.json` with a UTF-8 BOM (Windows PowerShell `Set-Content -Encoding utf8` does). Node fails with `ERR_INVALID_PACKAGE_CONFIG`. Use Node `fs.writeFileSync` or run `node scripts/strip-json-bom.mjs`.
+Never write `package.json` with a UTF-8 BOM. Use Node writes or `node scripts/strip-json-bom.mjs --check`.

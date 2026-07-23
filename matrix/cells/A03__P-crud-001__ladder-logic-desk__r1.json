@@ -1,0 +1,42 @@
+{
+  "cell_id": "A03__P-crud-001__ladder-logic-desk__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "project_id": "P-crud-001",
+  "phase": "P-crud-001",
+  "run_id": "r1",
+  "method_id": "A03",
+  "method_version": "1.0.0",
+  "status": "scored",
+  "product_path": "projects/ladder-logic-desk",
+  "created_at": "2026-07-23T19:00:00Z",
+  "started_at": "2026-07-23T19:00:00Z",
+  "finished_at": "2026-07-23T19:20:00Z",
+  "fail_tags": [],
+  "notes": "A03 Ladder Logic Desk CRUD — org/project/job + Next landing",
+  "metrics": {
+    "correctness_pass": true,
+    "regression_pass": true,
+    "interventions": 0,
+    "human_interventions": 0,
+    "recoverability_ok": true,
+    "retries": 0,
+    "wall_clock_minutes": 20,
+    "cycle_time_hours": 0.35
+  },
+  "scores": {
+    "rubric_version": "1.0.0",
+    "dimensions": {
+      "correctness": 5,
+      "completeness": 5,
+      "robustness": 5,
+      "maintainability": 5,
+      "efficiency": 4
+    },
+    "artifacts": [
+      "projects/ladder-logic-desk",
+      "docs/ideas/ladder-logic-desk-DESIGN.md"
+    ],
+    "notes": "CRUD green; marketing landing; DESIGN note"
+  }
+}

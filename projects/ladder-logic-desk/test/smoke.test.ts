@@ -1,14 +1,16 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { describeClaim } from "../src/claim.ts";
+import { describeClaim } from "../src/claim.js";
 
 describe("Ladder Logic Desk smoke", () => {
   it("describes the paper-sourced claim", () => {
     const got = describeClaim({
       paperId: "2607.08417",
-      title: "Ladder Logic Desk Bombs in IEC 61131-3 PLC Programs using ESBMC-PLC+: A Formal Verification Approach with Trigger Synthesis",
+      title:
+        "Detecting Ladder Logic Bombs in IEC 61131-3 PLC Programs using ESBMC-PLC+: A Formal Verification Approach with Trigger Synthesis",
       codeUrl: null,
-      buildClaim: "This tool can help improve the security of PLC programs and provide a new approach to detecting malicious code in these programs.",
+      buildClaim:
+        "Formal trigger-synthesis bomb scoring versus a naive scan baseline; adapted here as a desk experiment, not the authors' verifier.",
     });
     assert.equal(got.ok, true);
     if (got.ok) assert.match(got.line, /2607\.08417/);
