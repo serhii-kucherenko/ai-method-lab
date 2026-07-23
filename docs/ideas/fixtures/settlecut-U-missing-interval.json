@@ -1,8 +1,0 @@
-{
-  "id": "settlecut-U-missing-interval",
-  "meter_kwh": 100,
-  "schedule_kwh": 100,
-  "delivery_factor": 1,
-  "imbalance_price": 0.05,
-  "expect": { "reject": "interval_required" }
-}

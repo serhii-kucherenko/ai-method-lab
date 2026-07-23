@@ -1,9 +1,0 @@
-{
-  "id": "crewleg-G-rest-ok",
-  "report_local": "0800",
-  "segments": 2,
-  "acclimated": true,
-  "fdp_hours": 13.5,
-  "rest_hours": 11,
-  "expect": { "legal": true, "max_fdp": 14, "rest_ok": true }
-}

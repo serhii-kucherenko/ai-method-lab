@@ -1,8 +1,0 @@
-{
-  "id": "crewleg-K-1700-six-seg",
-  "report_local": "1800",
-  "segments": 6,
-  "acclimated": true,
-  "fdp_hours": 9,
-  "expect": { "legal": true, "max_fdp": 9 }
-}

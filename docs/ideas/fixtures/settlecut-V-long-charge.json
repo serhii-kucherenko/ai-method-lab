@@ -1,9 +1,0 @@
-{
-  "id": "settlecut-V-long-charge",
-  "interval_start": "2026-07-02T23:00:00-05:00",
-  "meter_kwh": 200,
-  "schedule_kwh": 150,
-  "delivery_factor": 1,
-  "imbalance_price": 0.12,
-  "expect": { "adjusted_kwh": 200, "imbalance_kwh": 50, "charge": 6 }
-}

@@ -1,9 +1,0 @@
-{
-  "id": "crewleg-H-rest-short",
-  "report_local": "0800",
-  "segments": 2,
-  "acclimated": true,
-  "fdp_hours": 13.5,
-  "rest_hours": 9.5,
-  "expect": { "legal": false, "max_fdp": 14, "rest_ok": false }
-}

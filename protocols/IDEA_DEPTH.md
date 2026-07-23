@@ -1,6 +1,10 @@
 # Idea depth protocol
 
-Research and verification only. **No product code** until a candidate reaches `ready_to_build` and is explicitly queued in `docs/BACKLOG.md`.
+Research and verification only **when inventing freehand ideas**.  
+
+For **paper-sourced** intake (`CONTROLLER.intake.source === "simple-papers"`), skip hours holds and `ready_to_build` waits — see `docs/PAPERS_INTAKE.md`. Kill honesty still belongs in digests and product fences.
+
+Research and verification only. **No product code** until a candidate reaches `ready_to_build` and is explicitly queued in `docs/BACKLOG.md` — **except** paper-sourced picks, which open `projects/` the same tick after the implementable filter.
 
 Goal: kill shallow ideas early. Prefer months of research on one idea over shipping another dual-gate FSM.
 

@@ -16,14 +16,32 @@ StackBlitz try base: `https://stackblitz.com/fork/github/serhii-kucherenko/ai-me
 
 | Event | Trigger | Human action? |
 |-------|---------|---------------|
-| `product_complete` | Product finished (or abandoned with autopsy) | No |
-| `wave_complete` / `ladder_complete` | Major method wave finishes | No |
-| `promote_complete` | Auto-promote applied | No |
-| `hard_stop` | Controller blocked | Yes — unblock only |
-| `digest` | Research milestone worth reading (idea cleared to build, idea killed) | No |
-| `decision_needed` | Legacy; **disabled** in autonomous mode when `auto_promote` is on |
+| `idea_validated` | Paper passed implementable filter; product folder opened | No |
+| `product_complete` | Product finished (README + guide + try) or abandoned with autopsy | No |
+| `hard_stop` | Controller blocked (credentials / corruption) | Yes — unblock only |
 
-Do **not** email per-cell pass/fail or “continuing to next cell.”
+Do **not** email per-cell pass/fail, phase complete, or “continuing to next cell.”
+
+### Validated idea (`idea_validated`)
+
+**Subject:** `[Method Lab] Starting: <display name>`
+
+**Body (plain text):**
+
+1. **Outcome** — we chose a paper and opened a product folder
+2. **The paper** — title, one-sentence what it is about, link optional
+3. **What we will build** — plain-language product claim (not arXiv jargon dump)
+4. **Why it fits** — public code and/or clear software applicability
+5. **Next** — we will build and test it; you get another email when it is finished
+
+### Product finished (`product_complete`)
+
+Same story-first format as before, **plus**:
+
+- Summary of what shipped
+- README path called out in plain words (“project readme in the folder”)
+- Tutor guide mention
+- Try.html attachment + StackBlitz link
 
 ## Hard rules
 

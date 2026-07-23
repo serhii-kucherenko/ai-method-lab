@@ -1,8 +1,0 @@
-{
-  "id": "crewleg-E-night-edge",
-  "report_local": "0200",
-  "segments": 1,
-  "acclimated": true,
-  "fdp_hours": 9,
-  "expect": { "legal": true, "max_fdp": 9 }
-}

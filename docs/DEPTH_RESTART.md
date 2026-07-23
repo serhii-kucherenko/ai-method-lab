@@ -125,3 +125,22 @@ Human steer: coded names (`c1592`, `irc6651`, glue-nouns) and thin feature sets 
 - Five-role handoff including **best-practices tutor**
 - Maturity + sophistication metrics in `docs/RUBRIC.md`
 - Loops that alternate research → build → guide → email → next idea
+
+## Correction 7 (2026-07-23 — papers-driven, pick then build)
+
+Human steer: wipe shallow/prior portfolio (keep Filing Penalty Desk only); drive ideas from **simple-papers**; always build after an implementable pick; human only notified by email on **validated idea** and **finished product** (README + guide + summary + try/StackBlitz).
+
+**Additional stops**
+
+- Freehand statute / glue-noun seed farms while digests exist
+- Multi-hour research holds or `ready_to_build` waits for paper-sourced ideas
+- Asking the human to confirm pick / build / promote
+- Emailing every phase complete
+- Sustaining without README + tutor guide + try.html + StackBlitz link in the finish email
+
+**Additional keeps**
+
+- `docs/PAPERS_INTAKE.md` + `scripts/pick-paper-idea.mjs`
+- simple-papers `docs/METHOD_LAB_INTAKE.md` eligibility contract
+- Mature naming + ≥15 features + tutor guides
+- Filing Penalty Desk as the sole kept prior product (reference)

@@ -1,9 +1,0 @@
-{
-  "id": "settlecut-G-unit-factor",
-  "interval_start": "2026-07-02T10:00:00-05:00",
-  "meter_kwh": 80,
-  "schedule_kwh": 80,
-  "delivery_factor": 1,
-  "imbalance_price": 0.05,
-  "expect": { "adjusted_kwh": 80, "imbalance_kwh": 0, "charge": 0 }
-}

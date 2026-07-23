@@ -1,8 +1,0 @@
-{
-  "id": "crewleg-M-unacclimated-night",
-  "report_local": "0200",
-  "segments": 1,
-  "acclimated": false,
-  "fdp_hours": 8.6,
-  "expect": { "legal": false, "max_fdp": 8.5 }
-}

@@ -1,9 +1,0 @@
-{
-  "id": "crewleg-Q-rest-under-ten",
-  "report_local": "0800",
-  "segments": 2,
-  "acclimated": true,
-  "fdp_hours": 12,
-  "rest_hours": 9.99,
-  "expect": { "legal": false, "max_fdp": 14, "rest_ok": false }
-}

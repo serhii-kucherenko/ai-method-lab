@@ -1,9 +1,0 @@
-{
-  "id": "settlecut-K-fifteen-min",
-  "interval_start": "2026-07-02T14:15:00-05:00",
-  "meter_kwh": 25,
-  "schedule_kwh": 24,
-  "delivery_factor": 0.96,
-  "imbalance_price": 0.1,
-  "expect": { "adjusted_kwh": 24, "imbalance_kwh": 0, "charge": 0 }
-}

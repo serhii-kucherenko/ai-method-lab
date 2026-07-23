@@ -1,9 +1,0 @@
-{
-  "id": "settlecut-L-large",
-  "interval_start": "2026-07-02T15:00:00-05:00",
-  "meter_kwh": 100000,
-  "schedule_kwh": 99000,
-  "delivery_factor": 0.99,
-  "imbalance_price": 0.03,
-  "expect": { "adjusted_kwh": 99000, "imbalance_kwh": 0, "charge": 0 }
-}

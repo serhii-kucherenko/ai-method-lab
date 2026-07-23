@@ -1,8 +1,0 @@
-{
-  "id": "crewleg-N-exact-max",
-  "report_local": "0800",
-  "segments": 2,
-  "acclimated": true,
-  "fdp_hours": 14,
-  "expect": { "legal": true, "max_fdp": 14 }
-}

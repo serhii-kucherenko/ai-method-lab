@@ -1,8 +1,0 @@
-{
-  "id": "crewleg-T-1200-three-seg",
-  "report_local": "1230",
-  "segments": 3,
-  "acclimated": true,
-  "fdp_hours": 13,
-  "expect": { "legal": true, "max_fdp": 13 }
-}

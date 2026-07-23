@@ -1,9 +1,0 @@
-{
-  "id": "settlecut-O-factor-gt-one",
-  "interval_start": "2026-07-02T18:00:00-05:00",
-  "meter_kwh": 100,
-  "schedule_kwh": 105,
-  "delivery_factor": 1.05,
-  "imbalance_price": 0.04,
-  "expect": { "adjusted_kwh": 105, "imbalance_kwh": 0, "charge": 0 }
-}

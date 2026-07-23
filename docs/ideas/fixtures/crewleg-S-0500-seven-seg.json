@@ -1,8 +1,0 @@
-{
-  "id": "crewleg-S-0500-seven-seg",
-  "report_local": "0530",
-  "segments": 7,
-  "acclimated": true,
-  "fdp_hours": 10.5,
-  "expect": { "legal": true, "max_fdp": 10.5 }
-}

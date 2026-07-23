@@ -1,9 +1,0 @@
-{
-  "id": "settlecut-A-balanced",
-  "interval_start": "2026-07-01T14:00:00-05:00",
-  "meter_kwh": 100,
-  "schedule_kwh": 98,
-  "delivery_factor": 0.98,
-  "imbalance_price": 0.05,
-  "expect": { "adjusted_kwh": 98, "imbalance_kwh": 0, "charge": 0 }
-}

@@ -1,9 +1,0 @@
-{
-  "id": "settlecut-T-precision",
-  "interval_start": "2026-07-02T22:00:00-05:00",
-  "meter_kwh": 100,
-  "schedule_kwh": 30,
-  "delivery_factor": 0.333,
-  "imbalance_price": 0.1,
-  "expect": { "adjusted_kwh": 33.3, "imbalance_kwh": 3.3, "charge": 0.33 }
-}
