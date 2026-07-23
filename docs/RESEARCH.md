@@ -2,6 +2,37 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — Researcher: irc6651 seed (next after c1592)
+
+Correction 5 parallel research while **c1592** builds. Docs only — **no** `projects/`, **no** `ready_to_build`, **no** second product flip.
+
+**Seeds considered**
+
+1. **`irc6651` (activated → `adversarial`)** — IRC § 6651 FTF 5%/mo + FTP 0.5%/mo (cap 25% each) on § 6651(b) net bases; **(c)(1)** same-month FTF reduced by FTP; optional **(d)** 1% pay bump; >60-day indexed minimum file floor. Literal IRS addition dollars.
+2. **`esrp4980h` (log only)** — § 4980H(a)/(b) ESRP with (b)(2) cap + indexed applicable payment amounts. Parked behind irc6651 (depth > width).
+
+**Unique claim (one-liner):** Forecast stacked § 6651 file+pay additions with (c)(1) same-month reduction and (b) net-amount bases — not a flat late-fee % and not isomorphic to ptax4975 / oshamult / c1592.
+
+**G2 vs recent five:** Not drawback caps (lesserof), not AD deposit≠assessed+§1677g (depositgap), not OSHA serial GBP (oshamult), not §4975 15%/100% excise (ptax4975), not §1592 culpability maxes (c1592). Survives the same-day kill-pass (not refundgap / penmaxfda / counselgate renames).
+
+**Kill status:** A/B/C **started** — Kill A stands as honesty (IRS/CPA/software incumbents); B/C survive with abatement+interest fences. Instant dual-gate/capacity kills: **fail (not applicable)**. Still **adversarial**, not differentiated/testable/ready.
+
+**Cites this tick:** [26 U.S.C. § 6651](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6651); [IRS FTF](https://www.irs.gov/payments/failure-to-file-penalty); [IRS FTP](https://www.irs.gov/payments/failure-to-pay-penalty).
+
+**Files:** `docs/ideas/irc6651.md`, `docs/ideas/irc6651-KILL-ROUNDS.md`; BACKLOG parked row; SEED_KILL_PASS row.
+
+**Skeptical one-liner:** A well-cited penalty stack is still not a product — Kill A is real, and conveyor fixtures would fake depth.
+
+## 2026-07-23 — Seed kill-pass (skeptical)
+
+Researcher pass only. Wrote `docs/ideas/SEED_KILL_PASS_2026-07-23.md`.
+
+- Killed / soft-parked **7** tempting next-product itches: refundgap, epapound, excise4971, slotbay, form222clock (soft-park), counselgate, penmaxfda
+- Pattern: dual-gate renames, capacity boards, form clocks, and noun-swaps of depositgap / lesserof / oshamult / ptax4975 / c1592
+- None framed; none `ready_to_build`; no `projects/` opens
+
+**Skeptical one-liner:** A new statute number is not a new product — G2 still fails when the math is a rename of a sustained twin.
+
 ## 2026-07-23 — Correction 5: robust products + PM + researcher
 
 Human steer: fewer shallow products; add **product manager** and keep **researcher**; roadmap before build/tests; findings email before switching products; ≤20 parallel agents; autonomous merge/push.
