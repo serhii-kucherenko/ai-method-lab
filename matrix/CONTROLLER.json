@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T21:03:23.152Z",
+  "updated_at": "2026-07-23T21:04:55.587Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,9 +11,9 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "07cbeb55-e84f-4327-9d1d-58e530885504",
-    "last_idea_validated_email_id": "ccfdd4fd-a5a6-4190-9362-758c1ca4ca5b",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "58a7ec48-cdc2-45e0-ac04-b1d6665dadd7",
+    "last_idea_validated_email_id": "fe2f07be-3d8b-4bce-8fa5-88ad46e62472",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
@@ -41,13 +41,13 @@
   },
   "last_completed": "A03__P-sustain-001__memory-risk-desk__r1",
   "last_error": null,
-  "current_product": "memory-risk-desk",
-  "current_idea": "memory-risk-desk",
+  "current_product": "heart-scan-desk",
+  "current_idea": "heart-scan-desk",
   "next_research_idea": null,
-  "next_cell": null,
+  "next_cell": "A03__P-smoke-001__heart-scan-desk__r1",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "Memory Risk Desk sustain ready — app-up green; finish email pending",
+  "notes": "Building Heart Scan Desk from paper 2607.11287 (unified cardiac CT segmentation + phenotyping). Finish email for Memory Risk Desk sent.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -60,11 +60,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.11656",
-      "slug": "memory-risk-desk",
-      "displayName": "Memory Risk Desk",
-      "at": "2026-07-23T20:56:41.438Z",
-      "url": "https://arxiv.org/abs/2607.11656v2",
+      "paperId": "2607.11287",
+      "slug": "heart-scan-desk",
+      "displayName": "Heart Scan Desk",
+      "at": "2026-07-23T21:04:39.786Z",
+      "url": "https://arxiv.org/abs/2607.11287v1",
       "codeUrl": null
     }
   },
