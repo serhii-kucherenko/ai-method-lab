@@ -34,6 +34,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 27 | [Pocket Molecule Desk — what we learned](27-pocket-molecule-desk-lessons.md) | Product `pocket-molecule-desk` |
 | 28 | [Quantum Kernel Desk — what we learned](28-quantum-kernel-desk-lessons.md) | Product `quantum-kernel-desk` |
 | 29 | [Memory Risk Desk — what we learned](29-memory-risk-desk-lessons.md) | Product `memory-risk-desk` |
+| 30 | [Heart Scan Desk — what we learned](30-heart-scan-desk-lessons.md) | Product `heart-scan-desk` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 

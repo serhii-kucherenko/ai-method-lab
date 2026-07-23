@@ -1,31 +1,32 @@
 # Heart Scan Desk
 
-Method-lab product sourced from a simple-papers digest.
-
-## Paper
-
-- **Id:** 2607.11287
-- **Title:** A Unified Framework for Comprehensive Cardiac CT Segmentation and Phenotyping: Human-in-the-Loop Data Annotation, Vision Foundation Model Development, Multicenter Evaluation and Clinical Validation
-- **URL:** https://arxiv.org/abs/2607.11287v1
-- **Code:** (none — software claim only)
-
-## What we will build
-
-This work provides a new approach to cardiac CT segmentation and phenotyping, and the release of the dataset and code can facilitate further research in this area.
+Soft-simulation org desk for **unified segmentation + phenotyping plans**, inspired by [arXiv:2607.11287](https://arxiv.org/abs/2607.11287v1). Display name is **Heart Scan Desk** only — never brand authors' model names; never claim medical device.
 
 ## Run
 
 ```bash
 cd projects/heart-scan-desk
 npm install
-npm test
-npm start
+npm run build
+npm start          # Next.js on :3000
+npm run start:api  # optional HTTP harness + static public/
+npm test           # unit + UI critical + app-up live smoke
 ```
 
-## Status
+Offline demo: open `try.html` in a browser.
 
-Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` and commits `docs/ideas/heart-scan-desk-DESIGN.md` before multi-page UI.
+## Unique claim
 
-## Config hygiene
+**A (good):** unified segmentation + phenotyping plans — joint structure+phenotype pathway, human-in-loop review, multicenter-aware validation  
+**B (naive):** segmentation-only; phenotype-from-raw-pixels-only; single-center unchecked
 
-Never write `package.json` with a UTF-8 BOM (Windows PowerShell `Set-Content -Encoding utf8` does). Node fails with `ERR_INVALID_PACKAGE_CONFIG`. Use Node `fs.writeFileSync` or run `node scripts/strip-json-bom.mjs`.
+## Docs
+
+- Product: [`PRODUCT.md`](./PRODUCT.md)
+- Design: [`docs/ideas/heart-scan-desk-DESIGN.md`](../../docs/ideas/heart-scan-desk-DESIGN.md)
+- Lessons: [`docs/guides/30-heart-scan-desk-lessons.md`](../../docs/guides/30-heart-scan-desk-lessons.md)
+- Findings: [`FINDINGS.md`](./FINDINGS.md)
+
+## Honesty
+
+Method-lab experiment — not a clinical diagnostic product and not a claim to replace the authors' foundation model. Authors' code: none published with this paper.

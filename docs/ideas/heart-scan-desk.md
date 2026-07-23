@@ -1,6 +1,6 @@
 # Heart Scan Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (sustain ready)  
 **Slug:** `heart-scan-desk`  
 **Display name:** Heart Scan Desk  
 **Paper id:** `2607.11287`  
@@ -13,7 +13,7 @@ Cardiac CT scans need both detailed structure outlines and usable clinical pheno
 
 ## Unique claim (dual-gate — not isomorphic)
 
-**Unified segmentation + phenotyping plans** (joint structure+phenotype pathway, human-in-loop review, multicenter-aware validation) vs **naive baselines** (segmentation-only, phenotype-from-raw-pixels-only, single-center unchecked). Soft desk simulation — not the authors’ model as a brand. Distinct from Heart Rhythm Desk (ECG contrastive learning).
+**Unified segmentation + phenotyping plans** (joint structure+phenotype pathway, human-in-loop review, multicenter-aware validation) vs **naive baselines** (segmentation-only, phenotype-from-raw-pixels-only, single-center unchecked). Soft desk simulation — not the authors’ model as a brand. Distinct from Heart Rhythm Desk (ECG contrastive learning), Memory Risk Desk, Pathology Vision Desk.
 
 ## Build claim
 
@@ -22,3 +22,4 @@ Org desk for cardiac CT pathway jobs: projects, lifecycle, scenario compare (uni
 ## Honesty
 
 Workflow experiment inspired by the paper — not a medical imaging product for diagnosis and not a claim to replace the authors’ foundation model. Never brand this desk as a clinical device.
+

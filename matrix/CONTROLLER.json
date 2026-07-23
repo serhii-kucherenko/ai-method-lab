@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T21:04:55.587Z",
+  "updated_at": "2026-07-23T21:10:25.362Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,7 +11,7 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": false,
+    "product_complete_pending": true,
     "last_product_complete_email_id": "58a7ec48-cdc2-45e0-ac04-b1d6665dadd7",
     "last_idea_validated_email_id": "fe2f07be-3d8b-4bce-8fa5-88ad46e62472",
     "digest_draft": null,
@@ -21,7 +21,7 @@
   "paused": false,
   "active_cell": null,
   "schema_version": "1.0.0",
-  "idle_reason": null,
+  "idle_reason": "product_complete_pending",
   "product_defaults": {
     "persistence": "sqlite",
     "stack": "nextjs-app-router",
@@ -39,15 +39,15 @@
     "stack_protocol": "docs/PRODUCT_STACK.md",
     "design_protocol": "protocols/DESIGN.md"
   },
-  "last_completed": "A03__P-sustain-001__memory-risk-desk__r1",
+  "last_completed": "A03__P-sustain-001__heart-scan-desk__r1",
   "last_error": null,
-  "current_product": "heart-scan-desk",
+  "current_product": null,
   "current_idea": "heart-scan-desk",
   "next_research_idea": null,
-  "next_cell": "A03__P-smoke-001__heart-scan-desk__r1",
+  "next_cell": null,
   "mode": "autonomous",
-  "phase": "running",
-  "notes": "Building Heart Scan Desk from paper 2607.11287 (unified cardiac CT segmentation + phenotyping). Finish email for Memory Risk Desk sent.",
+  "phase": "idle",
+  "notes": "Heart Scan Desk sustain ready — app-up green; finish email pending",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,

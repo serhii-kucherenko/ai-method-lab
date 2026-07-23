@@ -1,17 +1,21 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { describeClaim } from "../src/claim.ts";
+import { describeClaim, CLAIM, DISPLAY_NAME } from "../src/claim.js";
 
-describe("Unified Framework Comprehensive smoke", () => {
+describe("Heart Scan Desk smoke", () => {
   it("describes the paper-sourced claim", () => {
     const got = describeClaim({
       paperId: "2607.11287",
-      title: "A Unified Framework for Comprehensive Cardiac CT Segmentation and Phenotyping: Human-in-the-Loop Data Annotation, Vision Foundation Model Development, Multicenter Evaluation and Clinical Validation",
+      title:
+        "A Unified Framework for Comprehensive Cardiac CT Segmentation and Phenotyping",
       codeUrl: null,
-      buildClaim: "This work provides a new approach to cardiac CT segmentation and phenotyping, and the release of the dataset and code can facilitate further research in this area.",
+      buildClaim: CLAIM,
     });
     assert.equal(got.ok, true);
-    if (got.ok) assert.match(got.line, /2607\.11287/);
+    if (got.ok) {
+      assert.match(got.line, /2607\.11287/);
+      assert.match(got.line, new RegExp(DISPLAY_NAME));
+    }
   });
 
   it("rejects empty claim", () => {
