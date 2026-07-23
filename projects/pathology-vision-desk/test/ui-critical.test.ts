@@ -16,7 +16,18 @@ async function withServer(fn: (base: string) => Promise<void>): Promise<void> {
 }
 
 const CRITICAL = [
-  { path: "/", must: [/data-home="live"/, /Pathology Vision Desk/] },
+  {
+    path: "/",
+    must: [
+      /data-home="live"/,
+      /data-landing="live"/,
+      /Pathology Vision Desk/,
+      /Open desk/,
+      /Sources/,
+      /https:\/\/arxiv\.org\/abs\/2607\.09526v1/,
+      /https:\/\/github\.com\/WonderLandxD\/ALICE/,
+    ],
+  },
   { path: "/jobs.html", must: [/data-jobs="live"/, /vision jobs|jobs/i] },
   { path: "/lifecycle.html", must: [/data-lifecycle="live"/, /Lifecycle|draft|queued/i] },
   {

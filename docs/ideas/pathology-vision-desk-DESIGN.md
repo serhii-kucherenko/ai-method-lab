@@ -12,7 +12,24 @@ Never brand the product as ALICE. The display name is the hero signal on every s
 
 - **Name in chrome:** Pathology Vision Desk (wordmark-level, not a nav afterthought)
 - **One-line promise:** Compare multi-expert pathology scoring against a naive single-view baseline — method experiment, not a clinical diagnostic tool
-- **First viewport:** one composition — brand, one headline, one supporting sentence, one primary CTA (Open scenario), soft tissue-slide atmosphere. No dashboard dump, no pill clusters, no floating badges on the hero plane
+- **First viewport:** one composition — brand, one headline, one supporting sentence, one primary CTA (Open desk → `/jobs`), soft tissue-slide atmosphere. No dashboard dump, no pill clusters, no floating badges on the hero plane
+
+## Landing brief
+
+| Piece | Copy |
+|-------|------|
+| **Headline** | Multi-expert tags should not collapse into a single view. |
+| **Supporting** | A lab desk to compare multi-expert pathology scoring against a naive single-view baseline — method experiment, not a clinical diagnostic tool. |
+| **Primary CTA** | Open desk → `/jobs` (harness: `/jobs.html`) |
+| **Secondary CTA** | Read honesty → `/honesty` |
+| **Selling points** | Multi-expert score movement vs flat single-view; exportable audit; independent batch siblings; dual-impl goldens |
+| **Features** | Org/jobs, lifecycle + conflicts, scenario compare, audit/CSV, goldens, honesty, webhooks, rate limits, try.html — grouped on the landing |
+| **How it works** | 1) Open desk / create job → 2) Compare single-view vs multi-expert → 3) Audit lifecycle & export |
+| **Honesty / limits** | Workflow experiment; not clinical diagnostic; not authors’ foundation model; never brand as ALICE |
+| **Sources** | Paper https://arxiv.org/abs/2607.09526v1 · Code https://github.com/WonderLandxD/ALICE |
+| **Footer CTA** | Repeat Open desk → `/jobs` |
+
+Landing route `/` (`app/page.tsx` + `public/index.html`). Desk chrome starts at `/jobs`. Landing header is minimal (Open desk + Honesty only) so the first viewport stays brand-first.
 
 ## Visual direction
 
@@ -68,8 +85,8 @@ No continuous glow loops, no confetti, no parallax noise.
 
 | Route | Purpose | Primary CTA | Empty / error |
 |-------|---------|-------------|---------------|
-| `/` | Brand + claim + enter desk | Open scenario | — |
-| `/jobs` | Vision job catalog CRUD | Create job | “No jobs yet — create one” |
+| `/` | Marketing landing (hero → Sources) | Open desk → `/jobs` | — |
+| `/jobs` | Vision job catalog CRUD (desk entry) | Create job | “No jobs yet — create one” |
 | `/lifecycle` | Enforce draft→queued→running→terminal | Advance status | Illegal transition message |
 | `/scenario` | Single-view baseline vs multi-expert | Run compare | Cheat reject reason |
 | `/batch` | Independent sibling transitions | Run batch | Per-item error rows |
