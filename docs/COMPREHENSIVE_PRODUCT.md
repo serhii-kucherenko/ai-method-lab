@@ -29,12 +29,13 @@ Fewer products. Slower research. When we **do** build, build **comprehensive** �
 
 ## Role pack required before `projects/<id>/`
 
-Drive work through `protocols/AGENT_ROLES.md` (researcher → senior architect → product delivery).
+Drive work through `protocols/AGENT_ROLES.md` (researcher → product manager → senior architect → product delivery).
 
-After `ready_to_build`, senior architect must commit **before** opening the product folder:
+After `ready_to_build`, product manager commits roadmap + go, then senior architect commits the pack **before** opening the product folder:
 
 | Artifact | Path |
 |----------|------|
+| PM go | `docs/ideas/<id>-PM-GO.md` |
 | Vision | `docs/ideas/<id>-VISION.md` |
 | Roadmap | `docs/ideas/<id>-ROADMAP.md` |
 | PRD | `docs/ideas/<id>-PRD.md` |

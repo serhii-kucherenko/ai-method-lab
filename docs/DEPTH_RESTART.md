@@ -89,3 +89,21 @@ Third human signal (2026-07-21, evening): products stay shallow because one agen
 ## Correction 4 (hours only — explicit)
 
 Calendar-day waits (`WAIT_SAME_DAY`, “flip tomorrow”) are **retired**. Use `min_hours_research_before_ready` + ticks. `htsroute` parked after ~14h clear on value weakness; `depositgap` activated.
+
+## Correction 5 (2026-07-22 — human: robust products + PM + researcher)
+
+Human steer: stop shallow conveyor projects. Prefer **few robust products**. Roles must include **researcher** and **product manager**. **Roadmap before any testing/building.** Switch to the next project only after findings are **emailed**. Parallel agents OK (cap 20). Fully autonomous commit/push/merge.
+
+**Additional stops**
+
+- Opening RED tests or `projects/` without a PM-owned roadmap + go
+- Starting the next product because smoke/crud was green
+- Leaving a finished product without a findings digest email
+- Spawning >20 parallel agents for one tick
+
+**Additional keeps**
+
+- `protocols/AGENT_ROLES.md` four-role handoff (researcher → PM → architect → delivery)
+- One active product until sustain + notify complete
+- Parallel researcher agents on the *next* seed while delivery finishes the current product (docs only)
+- Autonomous merge/push when CI green

@@ -33,23 +33,27 @@ Every tick acts as one primary role per `protocols/AGENT_ROLES.md`:
 | CONTROLLER situation | Role |
 |----------------------|------|
 | `phase: research` | **Researcher** — IDEA_DEPTH only |
-| `ready_to_build` but architect pack incomplete | **Senior architect** — VISION/ROADMAP/PRD/ERD/blueprint (docs only; still no shallow product) |
+| `ready_to_build` but no PM go / roadmap | **Product manager** — roadmap + go/no-go (docs only) |
+| PM go but architect pack incomplete | **Senior architect** — VISION/ROADMAP/PRD/ERD/blueprint (docs only; still no shallow product) |
 | `phase: running` / product cell | **Product delivery** — phased build; UI never broken |
+| Product sustain scored | **Product manager** — findings email **before** next product |
 
-Parallel role agents are encouraged; CONTROLLER still holds one `current_idea` / one product phase.
+Parallel role agents are encouraged (cap `depth_policy.max_parallel_agents`, default **20**). CONTROLLER still holds one `current_idea` / one product phase.
+
+**Hard sequencing:** do not switch `current_product` or open a new `projects/` folder until the prior product’s findings digest has been emailed (or an abandon autopsy emailed).
 
 ## Loop (one tick)
 
 1. Load `matrix/CONTROLLER.json`. If `mode` is `paused` or `hard_stop`, stop.
 2. If `phase` is `research`: execute one IDEA_DEPTH tick on `current_idea` (docs only). Update dossier + RESEARCH. Do **not** create/extend product trees. Then go to step 7.
 3. If `phase` is `running` / `scoring` / `learning` for `current_cell`, **resume that phase** — do not start another.
-4. If idle: take highest-priority **ready_to_build** idea from `docs/BACKLOG.md`, or continue research if none. Never queue isomorphic dual-gate clones. If ready but missing VISION/ROADMAP/PRD/ERD, run **senior architect** tick first. Set `current_product` / `current_idea`, `current_cell`, `phase` accordingly.
+4. If idle: take highest-priority **ready_to_build** idea from `docs/BACKLOG.md`, or continue research if none. Never queue isomorphic dual-gate clones. If ready but missing PM roadmap/go, run **product manager** tick first. If PM go but missing VISION/ROADMAP/PRD/ERD, run **senior architect** tick. Set `current_product` / `current_idea`, `current_cell`, `phase` accordingly. Never start a new product while `notify.product_complete_pending` is true.
 5. For products: execute `protocols/PRODUCT_RUNBOOK.md` (preferred) or legacy `protocols/RUNBOOK.md` for sandbox A/B cells only.
 6. Write scores/findings; update portfolio. For research ticks: append `docs/RESEARCH.md` with a skeptical summary (G6).
 7. Mark backlog progress. Set `last_completed`, advance idea state or clear cell, `phase: starting_next` or stay in `research`.
 8. **Notify** if configured (`protocols/NOTIFY.md`). Non-blocking.
 9. **Without waiting:** next research gate, next product phase, or next **ready_to_build** idea — never the next noun-swap.
-10. When a product sustains: email a **depth** findings digest per `protocols/NOTIFY.md` (idea + what we built + proof + framing **in plain language**, story before pass counts, no acronyms); return to research before queuing another product.
+10. When a product sustains: set `notify.product_complete_pending: true`; email a **depth** findings digest per `protocols/NOTIFY.md` (idea + what we built + proof + framing **in plain language**, story before pass counts, no acronyms); clear the pending flag only after send; **then** return to research before queuing another product.
 11. When method ladder work remains (rare): continue approach cells; with `auto_promote`, apply `METHOD_DEFAULTS` without asking.
 
 ## Mid-phase failure

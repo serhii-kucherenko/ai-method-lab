@@ -2,16 +2,17 @@
 
 ## Strategy (depth restart)
 
-Fewer products. Slow research / idea verification. Build only after `protocols/IDEA_DEPTH.md` → `ready_to_build`.  
-**Granularity: hours** (`min_hours_research_before_ready`), not calendar days. Roles: `protocols/AGENT_ROLES.md`.
+Fewer **robust** products. Slow research / idea verification. Build only after `protocols/IDEA_DEPTH.md` → `ready_to_build`, then **product manager roadmap + go**, then architect pack.  
+Finish the current product through sustain and **email findings** before switching.  
+**Granularity: hours** (`min_hours_research_before_ready`), not calendar days. Roles: `protocols/AGENT_ROLES.md` (researcher → PM → architect → delivery).
 
-See `docs/DEPTH_RESTART.md`.
+See `docs/DEPTH_RESTART.md` (Correction 5).
 
 ## Active (build)
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **c1592** | **smoke GREEN → crud next** | 32 tests; 30 dual goldens; Kill A + PD + mitigation fences |
+| 1 | **c1592** | **smoke GREEN → crud→sustain (PM-GO)** | Finish full roadmap; email before next product |
 | 1 | **ptax4975** | **sustained** | 58 tests; 7 pages + try.html; Kill A + 3 fences |
 | 1 | **oshamult** | **sustained** | 56 tests; 7 pages + try.html; Kill A honesty |
 | 1 | **lesserof** | **sustained** | 11 pages + goldens + try.html; 60 tests; Kill A honesty |
@@ -31,7 +32,7 @@ See `docs/DEPTH_RESTART.md`.
 
 | Seed | State | Notes |
 | --- | --- | --- |
-| **c1592** | **ready_to_build → smoke done** | flipped; smoke GREEN; crud next |
+| **c1592** | **ready_to_build → building (PM-GO remaining roadmap)** | smoke GREEN; finish through sustain + email |
 | lesserof | **sustained** | Product complete |
 | oshamult | **sustained** | Product complete under projects/oshamult |
 | ptax4975 | **sustained** | Product complete under projects/ptax4975 |

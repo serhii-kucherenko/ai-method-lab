@@ -7,11 +7,12 @@ This repo is the **AI Method Lab** control plane: experiment by **building produ
 Unless `matrix/CONTROLLER.json` says `paused` / `hard_stop`, run as the **autonomous controller**:
 
 - Read `protocols/AUTONOMOUS_CONTROLLER.md` first
-- Drive work through `protocols/AGENT_ROLES.md`: **researcher** → **senior architect** (vision/roadmap/PRD/ERD) → **product delivery** (phased build; UI never broken)
+- Drive work through `protocols/AGENT_ROLES.md`: **researcher** → **product manager** (roadmap + go) → **senior architect** (vision/roadmap/PRD/ERD) → **product delivery** (phased build; UI never broken)
 - If `phase` is `research` / ideation: follow `protocols/IDEA_DEPTH.md` + `docs/BACKLOG.md` — **no new product code**
-- Else: grow the current product in `projects/` per `protocols/PRODUCT_RUNBOOK.md`
+- Else: grow the current product in `projects/` per `protocols/PRODUCT_RUNBOOK.md` through sustain; **email findings before switching products**
+- Spawn parallel role agents as needed (cap **20**); still one product phase in CONTROLLER
 - Use `docs/DEVELOPMENT_WORKFLOW.md` (promoted A03 + A10) inside the product
-- After each phase is scored, **immediately** continue (next research gate, next product phase, or next queued **ready_to_build** idea)
+- After each phase is scored, **immediately** continue (next research gate, next product phase) — next product only after findings email
 - **Do not** ask the human to confirm
 - Always commit, always push to origin/main, always merge own PRs when CI green
 - If notify.enabled, email digests via Resend MCP per `protocols/NOTIFY.md` — **story first** (idea + what we built + proof), plain language, no acronyms; product finished includes try-page + StackBlitz; do not spam unchanged workflow links
@@ -21,13 +22,14 @@ Wake prompt (also in `docs/AUTOMATION.md`):
 ```text
 You are the AI Method Lab autonomous controller in this repo.
 Read protocols/AUTONOMOUS_CONTROLLER.md, matrix/CONTROLLER.json, and docs/DEPTH_RESTART.md.
-If phase is research: deepen the current idea per protocols/IDEA_DEPTH.md — no product folders until ready_to_build.
+Roles: researcher → product manager → senior architect → product delivery. Roadmap before build. Finish + email before next product. Max 20 parallel agents.
+If phase is research: deepen the current idea per protocols/IDEA_DEPTH.md — no product folders until ready_to_build + PM go.
 Otherwise resume the product phase under projects/. Do not ask for confirmation.
-Fewer products, slower research, bulletproof ideas. Kill isomorphic dual-gate clones on sight.
+Fewer robust products, slower research, bulletproof ideas. Kill isomorphic dual-gate clones on sight.
 Follow projects/PORTFOLIO.md, docs/BACKLOG.md, protocols/PRODUCT_RUNBOOK.md, docs/DEVELOPMENT_WORKFLOW.md.
 Only hard-stop per AUTONOMOUS_CONTROLLER.md.
 Commit after each tick. Always commit, always push, always merge.
-If notify.enabled, email digests via Resend MCP per protocols/NOTIFY.md — story first (idea, project, what we built, then proof); plain language, no acronyms. Product finished: attach try-<id>.html + one StackBlitz try link; never a farm of unchanged docs.
+If notify.enabled, email digests via Resend MCP per protocols/NOTIFY.md — story first; product finished: try page + StackBlitz.
 If you open a PR, merge it yourself when checks pass — do not wait for a human.
 ```
 

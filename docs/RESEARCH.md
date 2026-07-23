@@ -2,6 +2,17 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — Correction 5: robust products + PM + researcher
+
+Human steer: fewer shallow products; add **product manager** and keep **researcher**; roadmap before build/tests; findings email before switching products; ≤20 parallel agents; autonomous merge/push.
+
+- Updated `protocols/AGENT_ROLES.md` (four-role handoff)
+- CONTROLLER `depth_policy`: `require_pm_go`, `require_roadmap_before_build`, `finish_and_email_before_next`, `max_parallel_agents: 20`
+- `c1592-PM-GO.md`: **go** to finish remaining roadmap through sustain, then email — no second product early
+- Active build remains **c1592**; parallel researcher work may seed the *next* idea on paper only
+
+**Skeptical one-liner:** Policy text is cheap — the proof is finishing one comprehensive product and emailing before the next.
+
 ## 2026-07-22 — c1592 flip + smoke GREEN
 
 `AGENT_LOOP_TICK_depth_15m` occurrence 98. Hours cleared → `FLIP_PATH_READY`.

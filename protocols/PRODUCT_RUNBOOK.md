@@ -2,13 +2,14 @@
 
 How to run one **product phase** (not a throwaway sandbox cell).
 
-**Role:** Product delivery (`protocols/AGENT_ROLES.md`). Researcher and senior architect must have finished their packs first.
+**Role:** Product delivery (`protocols/AGENT_ROLES.md`). Researcher, **product manager** (roadmap + go), and senior architect must have finished their packs first.
 
 ## 0. Comprehensive bar (mandatory)
 
 Before opening `projects/<id>/`, confirm `docs/COMPREHENSIVE_PRODUCT.md` + architect pack:
 
 - Idea cleared `protocols/IDEA_DEPTH.md` → `ready_to_build`
+- Product manager roadmap + `docs/ideas/<id>-PM-GO.md` with `decision: go`
 - Vision / roadmap / PRD / ERD on file: `docs/ideas/<id>-{VISION,ROADMAP,PRD,ERD}.md`
 - Blueprint on file: `docs/ideas/<id>-COMPREHENSIVE-BLUEPRINT.md` (≥4 pages, ≥3 aggregates, ≥6 features beyond CRUD)
 - Not an isomorphic dual-gate / capacity clone
@@ -68,6 +69,6 @@ On **product finished**: commit `projects/<id>/try.html` (standalone offline dem
 
 ## 7. Close + continue
 
-Commit + push + merge. Advance to next phase on same product, or next queued product if sustain met / abandoned.
+Commit + push + merge. Advance to next phase on the **same** product until sustain (or abandon). On sustain: product-manager findings email first (`protocols/NOTIFY.md`); only then clear the product slot and resume research / next idea.
 
 **Do not ask for confirmation.**
