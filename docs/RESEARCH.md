@@ -2,6 +2,12 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — Employer Shared Responsibility Desk framed dossier + toys (tick 2)
+
+Framed dossier locked (problem / who / workaround / success metric / unique claim / fences). Paper toys with **illustrative** APA constants + hour-status (`framing_started_at` 2026-07-23T16:30Z) + small hardcoded toy checker (6 green). Sibling wave: G1/G2/G3/G5 papers. State **`framed`** on dossier; still **WAIT_HOURS** + need ≥3 ticks; **no** product folder; **not** `ready_to_build`; never brand `esrp4980h`.
+
+**Skeptical one-liner:** Framed toys are not a go — hours, a third tick, and G6 still gate any roadmap.
+
 ## 2026-07-23 — Employer Shared Responsibility Desk deepen (tick 2)
 
 Parallel researchers deepening **Employer Shared Responsibility Desk**: algorithm + statute cites + falsifiers; G1/G2/G3/G5; framed dossier + toys + hour status. Loop cadence tightened to 10m. Hours clock from ~16:30Z — still under 4h. **No** `projects/`; **not** `ready_to_build`; never brand `esrp4980h`.

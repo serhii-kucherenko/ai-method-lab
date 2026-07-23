@@ -65,12 +65,23 @@ Must stay distinct from:
 | Hours / do-not-flip | `docs/ideas/employer-shared-responsibility-desk-HOUR-STATUS.md` |
 | Toy checker (optional, research only) | `docs/ideas/check-employer-shared-responsibility-desk-toys.mjs` |
 
-## Immediate research actions (not this tick’s flip)
+### Sibling research papers (same tick wave — still docs only)
 
-1. G1 evidence note with cites (who / frequency / wrong cash)  
-2. Kill rounds A–C with honesty that IRS / ACA vendors win commercially  
-3. Paper algorithm: month walk, (a)/(b) branch, (b) cap  
-4. Hold **≥4h** from `framing_started_at` + **≥3** research ticks before any `ready_to_build`
+| Artifact | Path |
+| --- | --- |
+| G1 evidence | `employer-shared-responsibility-desk-G1-EVIDENCE.md` |
+| G2 claim | `employer-shared-responsibility-desk-G2.md` |
+| Kill rounds | `employer-shared-responsibility-desk-KILL-ROUNDS.md` |
+| G5 cases | `employer-shared-responsibility-desk-G5-cases.md` |
+| Algorithm / statute / falsifiers | `-algorithm.md`, `-STATUTE-CITATIONS.md`, `-FALSIFIERS.md` |
+
+**Posture note:** This dossier locks **`framed`**. Sibling G1–G3/G5 papers may push CONTROLLER/BACKLOG toward `adversarial` — still **not** `ready_to_build` (hours + tick ≥3 + G6 open).
+
+## Immediate research actions (hold before ready)
+
+1. Finish G4 falsifiers + G6 skeptical summary with explicit do-not-build / ready decision  
+2. Hold **≥4h** from `framing_started_at` + **≥3** research ticks before any `ready_to_build`  
+3. No fixture farm / product folder until those clear
 
 ## Explicit non-actions
 
