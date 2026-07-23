@@ -2,6 +2,16 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #3 (irc6651 FTP cap + try demo)
+
+Research only. Stays adversarial / WAIT_HOURS.
+
+- Dual toys **9 → 11** (Ftp25Cap, MinFloor2024); paper FTP 25% aggregate cap
+- Offline research demo `demos/irc6651-try/try.html`
+- Hours still under 4h; **no** projects/; **no** ready_to_build
+
+**Skeptical one-liner:** A try page is not a product flip.
+
 ## 2026-07-23 — AGENT_LOOP_TICK_robust_15m #2 (irc6651 toys 9 + G6 draft)
 
 Research only. Stays `adversarial` / **WAIT_HOURS**.
