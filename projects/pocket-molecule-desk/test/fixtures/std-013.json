@@ -1,0 +1,18 @@
+{
+  "id": "std-013",
+  "title": "Lenient pocket fit floor min_n 10",
+  "input": {
+    "corpus": "default",
+    "min_n": 10
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "default",
+    "naive_risk": 69.31,
+    "safer_risk": 0.6,
+    "delta_score": 68.71,
+    "min_n": 10,
+    "k_eligible": 8,
+    "i2": 23.67
+  }
+}

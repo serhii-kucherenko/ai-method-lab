@@ -1,0 +1,18 @@
+{
+  "id": "std-007",
+  "title": "Sparse pocket cells",
+  "input": {
+    "corpus": "sparse",
+    "min_n": 45
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "sparse",
+    "naive_risk": 86.23,
+    "safer_risk": 3.6,
+    "delta_score": 82.63,
+    "min_n": 45,
+    "k_eligible": 0,
+    "i2": 29.17
+  }
+}

@@ -25,4 +25,4 @@
 | Stage Validate Desk | 2607.14568 | Complete |
 | Wild Locomotion Desk | 2607.13579 | Complete |
 | Joint Care Desk | 2607.12527 | Complete |
-| Pocket Molecule Desk | 2607.12349 | Building |
+| Pocket Molecule Desk | 2607.12349 | Complete |

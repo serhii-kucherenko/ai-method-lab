@@ -1,6 +1,6 @@
 # Pocket Molecule Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (paper-sourced)  
 **Slug:** `pocket-molecule-desk`  
 **Display name:** Pocket Molecule Desk  
 **Paper id:** `2607.12349`  
