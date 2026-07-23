@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T16:50:00Z",
+  "updated_at": "2026-07-23T16:55:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": ["kucherenko.web@gmail.com"],
@@ -28,7 +28,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "research",
-  "notes": "Employer Shared Responsibility Desk tick 2: G1/G2/G3/G5 docs landed. Adversarial; G4/G6 open; not ready_to_build.",
+  "notes": "Employer Shared Responsibility Desk adversarial: algorithm+G1–G3+G5+toys green (6). G6/hours/tick3 still open. Not ready_to_build.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
