@@ -1,0 +1,19 @@
+{
+  "id": "std-026",
+  "title": "Workplace mild",
+  "input": {
+    "corpus": "workplace",
+    "min_n": 30,
+    "bias_scale": 1
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "workplace",
+    "naive_risk": 49.65,
+    "safer_risk": 1.7,
+    "delta_score": 47.95,
+    "min_n": 30,
+    "k_eligible": 5,
+    "i2": 30
+  }
+}

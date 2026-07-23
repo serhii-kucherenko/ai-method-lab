@@ -27,6 +27,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 20 | [Prompt Cache Desk — what we learned](20-prompt-cache-desk-lessons.md) | Product `prompt-cache-desk` |
 | 21 | [Evidence Synthesis Desk — what we learned](21-evidence-synthesis-desk-lessons.md) | Product `evidence-synthesis-desk` |
 | 22 | [Tactile Data Desk — what we learned](22-tactile-data-desk-lessons.md) | Product `tactile-data-desk` |
+| 23 | [AI Governance Desk — what we learned](23-ai-governance-desk-lessons.md) | Product `ai-governance-desk` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 

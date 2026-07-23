@@ -1,0 +1,11 @@
+{
+  "id": "std-002",
+  "title": "Reject ignore-prefs cheat",
+  "input": {
+    "skip_verify_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "skip_verify_cheat"
+  }
+}

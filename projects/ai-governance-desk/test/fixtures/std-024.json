@@ -1,0 +1,18 @@
+{
+  "id": "std-024",
+  "title": "Policing strict risk",
+  "input": {
+    "corpus": "policing",
+    "min_n": 90
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "policing",
+    "naive_risk": 94.32,
+    "safer_risk": 4.2,
+    "delta_score": 90.12,
+    "min_n": 90,
+    "k_eligible": 0,
+    "i2": 34.4
+  }
+}

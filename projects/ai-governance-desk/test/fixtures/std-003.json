@@ -1,0 +1,18 @@
+{
+  "id": "std-003",
+  "title": "Workplace domain",
+  "input": {
+    "corpus": "workplace",
+    "min_n": 30
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "workplace",
+    "naive_risk": 55.58,
+    "safer_risk": 1.8,
+    "delta_score": 53.78,
+    "min_n": 30,
+    "k_eligible": 5,
+    "i2": 31
+  }
+}

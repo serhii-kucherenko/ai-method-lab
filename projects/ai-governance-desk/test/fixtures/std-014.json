@@ -1,0 +1,19 @@
+{
+  "id": "std-014",
+  "title": "Low tech-first extremity",
+  "input": {
+    "corpus": "contaminated",
+    "min_n": 40,
+    "bias_scale": 0.5
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "contaminated",
+    "naive_risk": 21.6,
+    "safer_risk": 2.05,
+    "delta_score": 19.55,
+    "min_n": 40,
+    "k_eligible": 7,
+    "i2": 35.17
+  }
+}

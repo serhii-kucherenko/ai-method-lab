@@ -1,6 +1,6 @@
 # AI Governance Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (paper-sourced)  
 **Slug:** `ai-governance-desk`  
 **Display name:** AI Governance Desk  
 **Paper id:** `2607.14585`  

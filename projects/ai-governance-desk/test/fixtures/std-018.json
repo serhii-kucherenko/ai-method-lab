@@ -1,0 +1,19 @@
+{
+  "id": "std-018",
+  "title": "Custom profile gamma",
+  "input": {
+    "corpus": "gamma",
+    "min_n": 35,
+    "bias_scale": 1.8
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "gamma",
+    "naive_risk": 98.85,
+    "safer_risk": 2.7,
+    "delta_score": 96.15,
+    "min_n": 35,
+    "k_eligible": 3,
+    "i2": 29.83
+  }
+}

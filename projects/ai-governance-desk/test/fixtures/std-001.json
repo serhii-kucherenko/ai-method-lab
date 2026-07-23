@@ -1,0 +1,15 @@
+{
+  "id": "std-001",
+  "title": "Default profile risk 40",
+  "input": {},
+  "expect": {
+    "status": "ok",
+    "corpus": "default",
+    "naive_risk": 70.45,
+    "safer_risk": 2.4,
+    "delta_score": 68.05,
+    "min_n": 40,
+    "k_eligible": 5,
+    "i2": 28.67
+  }
+}

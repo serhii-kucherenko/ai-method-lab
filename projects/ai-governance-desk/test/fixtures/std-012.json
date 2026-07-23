@@ -1,0 +1,18 @@
+{
+  "id": "std-012",
+  "title": "Strict risk floor min_n 100",
+  "input": {
+    "corpus": "default",
+    "min_n": 100
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "default",
+    "naive_risk": 78.51,
+    "safer_risk": 4.2,
+    "delta_score": 74.31,
+    "min_n": 100,
+    "k_eligible": 0,
+    "i2": 36.67
+  }
+}

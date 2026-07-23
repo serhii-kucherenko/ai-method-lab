@@ -21,4 +21,4 @@
 | Prompt Cache Desk | 2607.15516 | Complete |
 | Evidence Synthesis Desk | 2607.15247 | Complete |
 | Tactile Data Desk | 2607.14588 | Complete |
-| AI Governance Desk | 2607.14585 | Building |
+| AI Governance Desk | 2607.14585 | Complete |
