@@ -40,6 +40,14 @@ This desk is a **method experiment inspired by the paper**. It is **not** a repl
 - Over-limit requests return **429** with `Retry-After: 1`
 - Settings page live
 
+### Scale
+
+- Seed and page-walk **250** compile jobs (default page 20, hard cap 100)
+- Concurrent batch transitions on disjoint jobs all succeed
+- Overlapping optimistic batches: one ok, one reject (`version_conflict` / illegal)
+- Duplicate job in one batch → `duplicate_in_batch`
+- Rate limit still returns **429** + `Retry-After: 1` under load
+
 ## Run
 
 ```bash
@@ -53,4 +61,4 @@ Open `http://127.0.0.1:3847/` (or `PORT`).
 
 ## Status
 
-Smoke GREEN · CRUD GREEN · Workflow GREEN · Integrate GREEN · next: scale
+Smoke GREEN · CRUD GREEN · Workflow GREEN · Integrate GREEN · Scale GREEN · next: sustain

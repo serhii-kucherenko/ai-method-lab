@@ -27,3 +27,11 @@ Paper claim descriptor green. Product scaffolded from 2607.15865.
 - Projects/jobs list pagination + search; 429 + Retry-After when over limit
 - Settings page live; honesty fence unchanged
 - Tests: smoke + crud + workflow + integrate green (7)
+
+## Scale (r1)
+
+- Seeded **250** compile jobs; full page walk (limit 20 default / cap 100)
+- Concurrent disjoint batch transitions all ok
+- Overlapping optimistic batches → one ok + one reject; in-batch duplicate → `duplicate_in_batch`
+- Scale suite covers 429 + Retry-After
+- Tests: prior suites + scale green

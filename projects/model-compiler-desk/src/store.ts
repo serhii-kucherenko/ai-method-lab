@@ -558,7 +558,11 @@ export type BatchTransitionResult = {
   reason?: string;
 };
 
-/** Each job transitions independently — one reject does not stop siblings. */
+/**
+ * Each job transitions independently — one reject does not stop siblings.
+ * Within a batch, the same job_id is applied at most once (first wins) so
+ * concurrent overlapping batches stay consistent under optimistic versioning.
+ */
 export function batchTransitionJobs(
   store: Store,
   orgId: string,
@@ -567,7 +571,19 @@ export function batchTransitionJobs(
 ): { batch_id: string; results: BatchTransitionResult[] } {
   const batchId = randomUUID();
   const results: BatchTransitionResult[] = [];
+  const seenInBatch = new Set<string>();
   for (const item of items) {
+    const dedupeKey = `${item.project_id}::${item.job_id}`;
+    if (seenInBatch.has(dedupeKey)) {
+      results.push({
+        project_id: item.project_id,
+        job_id: item.job_id,
+        status: "reject",
+        reason: "duplicate_in_batch",
+      });
+      continue;
+    }
+    seenInBatch.add(dedupeKey);
     if (!isCompileJobStatus(item.to)) {
       results.push({
         project_id: item.project_id,
@@ -604,6 +620,33 @@ export function batchTransitionJobs(
     }
   }
   return { batch_id: batchId, results };
+}
+
+/** Seed many queued compile jobs for scale walks (lab fixture). */
+export function seedScaleJobs(
+  store: Store,
+  orgId: string,
+  projectId: string,
+  count: number,
+): string[] {
+  const ids: string[] = [];
+  for (let i = 0; i < count; i += 1) {
+    const created = createJob(store, orgId, projectId, {
+      label: `scale-job-${String(i).padStart(4, "0")}`,
+      status: "queued",
+      mlir_pass_hint:
+        i % 3 === 0
+          ? "lower-to-linalg"
+          : i % 3 === 1
+            ? "lower-to-linalg,vectorize"
+            : "lower-to-linalg,vectorize,bufferize",
+    });
+    if (!created || "error" in created) {
+      throw new Error(`seedScaleJobs failed at ${i}`);
+    }
+    ids.push(created.job.id);
+  }
+  return ids;
 }
 
 function countPassLayers(hint: string): number {

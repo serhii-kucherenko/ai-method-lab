@@ -2,6 +2,11 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-23 — Model Compiler Desk scale GREEN
+
+- ≥250 job page walk; concurrent batch safety; 429 Retry-After
+- **9** tests; Cell `A03__P-scale-001__model-compiler-desk__r1`; next **sustain**
+
 ## 2026-07-23 — Model Compiler Desk integrate GREEN
 
 - HMAC webhook (`x-mcd-signature`) + idempotency; settings RBAC; pagination/search; 429 Retry-After
