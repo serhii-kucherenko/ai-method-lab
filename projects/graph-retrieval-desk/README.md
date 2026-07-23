@@ -26,4 +26,4 @@ Open `http://localhost:3847/` for home, `/jobs.html` for retrieval jobs, `/hones
 
 ## Status
 
-CRUD and workflow green — climbing integrate next.
+CRUD through scale green — climbing sustain next (no finish email until sustain).

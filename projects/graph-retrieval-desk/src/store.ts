@@ -51,6 +51,13 @@ export type AuditEntry = {
   created_at: string;
 };
 
+export type OrgSettings = {
+  orgId: string;
+  webhook_secret: string;
+  tokens_note: string;
+  updated_at: string;
+};
+
 export type Store = {
   schemaVersion: number;
   users: Map<string, User>;
@@ -61,6 +68,8 @@ export type Store = {
   projects: Map<string, Project>;
   jobs: Map<string, RetrievalJob>;
   audit: AuditEntry[];
+  settings: Map<string, OrgSettings>;
+  webhookDeliveries: Map<string, string>;
   rateLimit: number;
   rateCounts: Map<string, number>;
 };
@@ -105,6 +114,10 @@ export function canTransition(
   return ALLOWED_TRANSITIONS[from].includes(to);
 }
 
+function freshWebhookSecret(): string {
+  return `whsec_${randomUUID().replace(/-/g, "").slice(0, 24)}`;
+}
+
 /** Apply schema migrations after initial create (oracle: migration-missing). */
 export function applyMigrations(store: Store): number {
   if (store.schemaVersion < 2) {
@@ -129,6 +142,8 @@ export function createStore(opts: { rateLimit?: number } = {}): Store {
     projects: new Map(),
     jobs: new Map(),
     audit: [],
+    settings: new Map(),
+    webhookDeliveries: new Map(),
     rateLimit: opts.rateLimit ?? 1000,
     rateCounts: new Map(),
   };
@@ -162,6 +177,13 @@ export function createOrg(store: Store, userId: string, name: string) {
   const id = randomUUID();
   store.orgs.set(id, { id, name, created_by: userId });
   store.members.set(memberKey(id, userId), "admin");
+  store.settings.set(id, {
+    orgId: id,
+    webhook_secret: freshWebhookSecret(),
+    tokens_note:
+      "API tokens are issued at register. Treat bearer tokens as secrets.",
+    updated_at: nowIso(),
+  });
   return { id, name };
 }
 
@@ -242,11 +264,31 @@ export function getProject(store: Store, orgId: string, projectId: string) {
   return publicProject(p);
 }
 
-export function listProjects(store: Store, orgId: string) {
-  return [...store.projects.values()]
+export function listProjects(
+  store: Store,
+  orgId: string,
+  opts: { limit?: number; offset?: number; q?: string } = {},
+) {
+  const q = (opts.q ?? "").trim().toLowerCase();
+  const all = [...store.projects.values()]
     .filter((p) => p.org_id === orgId)
-    .sort((a, b) => (a.created_at < b.created_at ? 1 : -1))
-    .map(publicProject);
+    .filter(
+      (p) =>
+        !q ||
+        p.name.toLowerCase().includes(q) ||
+        p.corpus_label.toLowerCase().includes(q),
+    )
+    .sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
+  const total = all.length;
+  const offset = Math.max(opts.offset ?? 0, 0);
+  const limit =
+    opts.limit !== undefined ? Math.min(Math.max(opts.limit, 1), 100) : 20;
+  return {
+    projects: all.slice(offset, offset + limit).map(publicProject),
+    total,
+    limit,
+    offset,
+  };
 }
 
 export function patchProject(
@@ -386,13 +428,35 @@ export function getJob(
   return publicJob(j);
 }
 
-export function listJobs(store: Store, orgId: string, projectId: string) {
+export function listJobs(
+  store: Store,
+  orgId: string,
+  projectId: string,
+  opts: { limit?: number; offset?: number; q?: string } = {},
+) {
   const project = store.projects.get(projectId);
   if (!project || project.org_id !== orgId) return null;
-  return [...store.jobs.values()]
+  const q = (opts.q ?? "").trim().toLowerCase();
+  const all = [...store.jobs.values()]
     .filter((j) => j.org_id === orgId && j.project_id === projectId)
-    .sort((a, b) => (a.created_at < b.created_at ? 1 : -1))
-    .map(publicJob);
+    .filter(
+      (j) =>
+        !q ||
+        j.label.toLowerCase().includes(q) ||
+        j.status.toLowerCase().includes(q) ||
+        j.query.toLowerCase().includes(q),
+    )
+    .sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
+  const total = all.length;
+  const offset = Math.max(opts.offset ?? 0, 0);
+  const limit =
+    opts.limit !== undefined ? Math.min(Math.max(opts.limit, 1), 100) : 20;
+  return {
+    jobs: all.slice(offset, offset + limit).map(publicJob),
+    total,
+    limit,
+    offset,
+  };
 }
 
 export type JobPatch = Partial<JobCreate> & { expected_version?: number };
@@ -524,7 +588,27 @@ export function batchTransitionJobs(
   items: BatchTransitionItem[],
   actorUserId: string,
 ) {
-  const results = items.map((item) => {
+  const results: Array<{
+    project_id: string;
+    job_id: string;
+    status: "ok" | "reject";
+    to?: RetrievalJobStatus;
+    job?: ReturnType<typeof publicJob>;
+    reason?: string;
+  }> = [];
+  const seenInBatch = new Set<string>();
+  for (const item of items) {
+    const dedupeKey = `${item.project_id}::${item.job_id}`;
+    if (seenInBatch.has(dedupeKey)) {
+      results.push({
+        project_id: item.project_id,
+        job_id: item.job_id,
+        status: "reject",
+        reason: "duplicate_in_batch",
+      });
+      continue;
+    }
+    seenInBatch.add(dedupeKey);
     const moved = transitionJob(
       store,
       orgId,
@@ -535,11 +619,46 @@ export function batchTransitionJobs(
       item.expected_version,
     );
     if (!moved.ok) {
-      return { job_id: item.job_id, status: "reject" as const, reason: moved.error };
+      results.push({
+        project_id: item.project_id,
+        job_id: item.job_id,
+        status: "reject",
+        reason: moved.error,
+      });
+      continue;
     }
-    return { job_id: item.job_id, status: "ok" as const, job: moved.job };
-  });
+    results.push({
+      project_id: item.project_id,
+      job_id: item.job_id,
+      status: "ok",
+      to: item.to,
+      job: moved.job,
+    });
+  }
   return { results };
+}
+
+/** Seed many queued retrieval jobs for scale walks (lab fixture). */
+export function seedScaleJobs(
+  store: Store,
+  orgId: string,
+  projectId: string,
+  count: number,
+): string[] {
+  const ids: string[] = [];
+  for (let i = 0; i < count; i += 1) {
+    const created = createJob(store, orgId, projectId, {
+      label: `scale-job-${String(i).padStart(4, "0")}`,
+      status: "queued",
+      query: `query-${i}`,
+      hop_depth: (i % 3) + 1,
+    });
+    if (!created || "error" in created) {
+      throw new Error(`seedScaleJobs failed at ${i}`);
+    }
+    ids.push(created.job.id);
+  }
+  return ids;
 }
 
 export function listAudit(
@@ -624,6 +743,68 @@ export function deleteJob(
   }
   store.jobs.delete(jobId);
   return true;
+}
+
+export function getOrgSettings(store: Store, orgId: string): OrgSettings | undefined {
+  return store.settings.get(orgId);
+}
+
+export function updateOrgSettings(
+  store: Store,
+  orgId: string,
+  patch: { webhook_secret?: string; tokens_note?: string },
+): OrgSettings | null {
+  const current = store.settings.get(orgId);
+  if (!current) return null;
+  const next: OrgSettings = {
+    ...current,
+    webhook_secret:
+      patch.webhook_secret !== undefined ? patch.webhook_secret : current.webhook_secret,
+    tokens_note:
+      patch.tokens_note !== undefined ? patch.tokens_note : current.tokens_note,
+    updated_at: nowIso(),
+  };
+  store.settings.set(orgId, next);
+  return next;
+}
+
+export function rotateWebhookSecret(store: Store, orgId: string): OrgSettings | null {
+  return updateOrgSettings(store, orgId, { webhook_secret: freshWebhookSecret() });
+}
+
+export function ingestWebhookJob(
+  store: Store,
+  orgId: string,
+  projectId: string,
+  idempotencyKey: string,
+  input: JobCreate,
+):
+  | {
+      ok: true;
+      status: 201 | 200;
+      job: ReturnType<typeof publicJob>;
+      replay: boolean;
+    }
+  | { ok: false; status: number; error: string } {
+  if (!getOrg(store, orgId)) return { ok: false, status: 404, error: "org_not_found" };
+  if (!idempotencyKey) {
+    return { ok: false, status: 400, error: "idempotency_key_required" };
+  }
+  const deliveryKey = `${orgId}::${idempotencyKey}`;
+  const existingId = store.webhookDeliveries.get(deliveryKey);
+  if (existingId) {
+    const j = store.jobs.get(existingId);
+    if (j && j.org_id === orgId) {
+      return { ok: true, status: 200, job: publicJob(j), replay: true };
+    }
+  }
+  const created = createJob(store, orgId, projectId, input);
+  if (!created) return { ok: false, status: 404, error: "project_not_found" };
+  if ("error" in created) {
+    return { ok: false, status: 400, error: String(created.error) };
+  }
+  store.webhookDeliveries.set(deliveryKey, created.job.id);
+  return { ok: true, status: 201, job: created.job, replay: false };
 }
 
 export function schemaInfo(store: Store) {

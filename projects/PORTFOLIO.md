@@ -9,7 +9,7 @@ Papers-driven lab (reset 2026-07-23). Prior product trees removed — see git hi
 
 | Display name | Slug | Status | Notes |
 |--------------|------|--------|-------|
-| **Graph Retrieval Desk** | `graph-retrieval-desk` | **building (integrate)** | Paper `2607.11683` — workflow green; climbing integrate |
+| **Graph Retrieval Desk** | `graph-retrieval-desk` | **building (sustain)** | Paper `2607.11683` — scale green; climbing sustain |
 | **Model Compiler Desk** | `model-compiler-desk` | **sustained** | Findings emailed |
 | **Filing Penalty Desk** | `filing-penalty-desk` | **sustained** (reference) | Finish letter resent |
 
