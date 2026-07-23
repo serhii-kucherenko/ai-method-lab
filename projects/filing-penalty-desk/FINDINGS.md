@@ -1,5 +1,14 @@
 # Filing Penalty Desk findings
 
+## Scale (2026-07-23)
+
+- Walk 250 timelines with paginated catalog (limit capped at 100)
+- Concurrent batch forecasts stay independent and green
+- Rate limit 429 + Retry-After documented in SCALE.md
+- Dual-impl A/B still agree on same-month toy
+- Cell: `A03__P-scale-001__filing-penalty-desk__r1`
+- Next: **sustain** (goldens page, try.html, ≥15 features, tutor guide)
+
 ## Integrate (2026-07-23)
 
 - Inbound webhook HMAC (`x-fpd-signature`) + idempotency replay
