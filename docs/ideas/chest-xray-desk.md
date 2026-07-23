@@ -1,6 +1,6 @@
 # Chest Xray Desk
 
-**State:** building (paper-sourced)  
+**State:** sustain (paper-sourced)  
 **Slug:** `chest-xray-desk`  
 **Display name:** Chest Xray Desk  
 **Paper id:** `2607.09305`  

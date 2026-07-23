@@ -1,0 +1,170 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  /* Film-lab cool desk — not purple, not cream+terracotta, not broadsheet, not HSD slate twin */
+  --cxd-ink: #15202b;
+  --cxd-muted: #5c6b78;
+  --cxd-paper: #eef2f4;
+  --cxd-mist: #d8e2e6;
+  --cxd-steel: #3a7a72;
+  --cxd-steel-deep: #2a5a54;
+  --cxd-cyan: #5a8fa8;
+  --cxd-rose: var(--cxd-steel);
+  --cxd-rose-deep: var(--cxd-steel-deep);
+  --cxd-slate: var(--cxd-cyan);
+  --cxd-ok: #3d6b55;
+  --cxd-warn: #8a6a2f;
+  --cxd-line: #c5d0d9;
+  --cxd-signal: var(--cxd-cyan);
+
+  --background: var(--cxd-paper);
+  --foreground: var(--cxd-ink);
+  --card: #ffffff;
+  --card-foreground: var(--cxd-ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--cxd-ink);
+  --primary: var(--cxd-steel);
+  --primary-foreground: #f2f6fa;
+  --secondary: var(--cxd-mist);
+  --secondary-foreground: var(--cxd-ink);
+  --muted: var(--cxd-mist);
+  --muted-foreground: var(--cxd-muted);
+  --accent: #c9d6e6;
+  --accent-foreground: var(--cxd-ink);
+  --destructive: var(--cxd-warn);
+  --border: var(--cxd-line);
+  --input: var(--cxd-line);
+  --ring: var(--cxd-steel);
+  --chart-1: var(--cxd-steel);
+  --chart-2: var(--cxd-cyan);
+  --chart-3: var(--cxd-ok);
+  --chart-4: #6a7d95;
+  --chart-5: #2a3544;
+  --radius: 0.5rem;
+  --sidebar: var(--cxd-mist);
+  --sidebar-foreground: var(--cxd-ink);
+  --sidebar-primary: var(--cxd-steel);
+  --sidebar-primary-foreground: #f2f6fa;
+  --sidebar-accent: #c5d0e0;
+  --sidebar-accent-foreground: var(--cxd-ink);
+  --sidebar-border: var(--cxd-line);
+  --sidebar-ring: var(--cxd-steel);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 8% -8%, #c5d6e6 0%, transparent 55%),
+      radial-gradient(ellipse 55% 40% at 100% 0%, #d0e4dc 0%, transparent 45%),
+      linear-gradient(
+        0deg,
+        transparent 24px,
+        color-mix(in srgb, var(--cxd-line) 35%, transparent) 25px
+      ),
+      linear-gradient(
+        90deg,
+        transparent 24px,
+        color-mix(in srgb, var(--cxd-line) 25%, transparent) 25px
+      );
+    background-size: auto, auto, 25px 25px, 25px 25px;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@keyframes cxd-trace {
+  from {
+    opacity: 0;
+    stroke-dashoffset: 420;
+  }
+  to {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes qkd-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cxd-trace {
+  stroke-dasharray: 420;
+  animation: cxd-trace 0.9s ease-out forwards;
+}
+
+.qkd-reveal {
+  animation: qkd-reveal 0.2s ease-out forwards;
+}
+
+.cxd-nav-active {
+  position: relative;
+}
+.cxd-nav-active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.2rem;
+  width: 70%;
+  height: 2px;
+  background: var(--cxd-steel);
+  transform: translateX(-50%) scaleX(1);
+  transform-origin: center;
+  transition: transform 150ms ease;
+}

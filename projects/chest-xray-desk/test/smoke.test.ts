@@ -1,17 +1,21 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { describeClaim } from "../src/claim.ts";
+import { describeClaim, CLAIM, DISPLAY_NAME } from "../src/claim.js";
 
-describe("Classification Localization Clinical smoke", () => {
+describe("Chest Xray Desk smoke", () => {
   it("describes the paper-sourced claim", () => {
     const got = describeClaim({
       paperId: "2607.09305",
-      title: "From Classification to Localization and Clinical Validation: Large-Scale Development of a Deep Learning System for Thoracic Disease Detection on Chest Radiographs in Thailand",
+      title:
+        "A Unified Framework for Comprehensive Chest radiograph Segmentation and Phenotyping",
       codeUrl: null,
-      buildClaim: "The Attend-and-Compare Modules and PCAM aggregation layer enable simultaneous classification and localization in a single model, which may influence future CXR AI architectures.",
+      buildClaim: CLAIM,
     });
     assert.equal(got.ok, true);
-    if (got.ok) assert.match(got.line, /2607\.09305/);
+    if (got.ok) {
+      assert.match(got.line, /2607\.09305/);
+      assert.match(got.line, new RegExp(DISPLAY_NAME));
+    }
   });
 
   it("rejects empty claim", () => {

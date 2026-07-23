@@ -1,0 +1,18 @@
+{
+  "id": "std-019",
+  "title": "Mixed multi-center",
+  "input": {
+    "corpus": "mixed",
+    "min_n": 40
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "mixed",
+    "naive_risk": 115.36,
+    "safer_risk": 1.8,
+    "delta_score": 113.56,
+    "min_n": 40,
+    "k_eligible": 8,
+    "i2": 15.33
+  }
+}

@@ -1,31 +1,32 @@
 # Chest Xray Desk
 
-Method-lab product sourced from a simple-papers digest.
-
-## Paper
-
-- **Id:** 2607.09305
-- **Title:** From Classification to Localization and Clinical Validation: Large-Scale Development of a Deep Learning System for Thoracic Disease Detection on Chest Radiographs in Thailand
-- **URL:** https://arxiv.org/abs/2607.09305v1
-- **Code:** (none — software claim only)
-
-## What we will build
-
-The Attend-and-Compare Modules and PCAM aggregation layer enable simultaneous classification and localization in a single model, which may influence future CXR AI architectures.
+Soft-simulation org desk for **classify → localize → clinically validate plans**, inspired by [arXiv:2607.09305](https://arxiv.org/abs/2607.09305v1). Display name is **Chest Xray Desk** only — never brand authors' model names; never claim medical device.
 
 ## Run
 
 ```bash
 cd projects/chest-xray-desk
 npm install
-npm test
-npm start
+npm run build
+npm start          # Next.js on :3000
+npm run start:api  # optional HTTP harness + static public/
+npm test           # unit + UI critical + app-up live smoke
 ```
 
-## Status
+Offline demo: open `try.html` in a browser.
 
-Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per `docs/PRODUCT_STACK.md` and commits `docs/ideas/chest-xray-desk-DESIGN.md` before multi-page UI.
+## Unique claim
 
-## Config hygiene
+**A (good):** classify → localize → clinically validate plans — label + region localization pathway, human-in-loop review, clinical validation awareness  
+**B (naive):** classification-only; localization without clinical gate; unverified single-threshold alerts
 
-Never write `package.json` with a UTF-8 BOM (Windows PowerShell `Set-Content -Encoding utf8` does). Node fails with `ERR_INVALID_PACKAGE_CONFIG`. Use Node `fs.writeFileSync` or run `node scripts/strip-json-bom.mjs`.
+## Docs
+
+- Product: [`PRODUCT.md`](./PRODUCT.md)
+- Design: [`docs/ideas/chest-xray-desk-DESIGN.md`](../../docs/ideas/chest-xray-desk-DESIGN.md)
+- Lessons: [`docs/guides/31-chest-xray-desk-lessons.md`](../../docs/guides/31-chest-xray-desk-lessons.md)
+- Findings: [`FINDINGS.md`](./FINDINGS.md)
+
+## Honesty
+
+Method-lab experiment — not a clinical diagnostic product and not a claim to replace the authors' Thailand deep learning system. Authors' code: none published with this paper.

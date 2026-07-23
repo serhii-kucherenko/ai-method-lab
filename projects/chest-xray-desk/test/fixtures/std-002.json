@@ -1,0 +1,11 @@
+{
+  "id": "std-002",
+  "title": "Reject impute / localize_no_gate cheat",
+  "input": {
+    "skip_verify_cheat": true
+  },
+  "expect": {
+    "status": "reject",
+    "reason": "skip_verify_cheat"
+  }
+}
