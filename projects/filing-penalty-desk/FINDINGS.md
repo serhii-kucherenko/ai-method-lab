@@ -2,7 +2,7 @@
 
 ## Sustain (2026-07-23)
 
-- 8 pages live with UI critical paths; 18 features claimed; ≥4 aggregates
+- 9 pages live with UI critical paths; 18 features claimed; ≥4 aggregates
 - Goldens browser ≥25 all_pass; dual-impl CI; offline `try.html`
 - Tutor guide: `docs/guides/04-filing-penalty-desk-lessons.md`
 - Maturity checklist in PRODUCT.md

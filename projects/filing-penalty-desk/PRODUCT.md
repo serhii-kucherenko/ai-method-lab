@@ -42,16 +42,17 @@ IRS notices and commercial tax software already assess these additions. This pro
 17. Offline try page (`try.html`)  
 18. In-app link to tutor guide  
 
-## Pages (8 ≥6)
+## Pages (9 ≥6)
 
-1. Returns catalog (`/returns.html`)  
-2. Timeline detail (`/timeline-detail.html`)  
-3. Scenario compare (`/scenario.html`)  
-4. Batch forecast (`/batch.html`)  
-5. Audit log (`/audit.html`)  
-6. Goldens browser (`/goldens.html`)  
-7. Honesty (`/honesty.html`)  
-8. Org settings (`/settings.html`)  
+1. Marketing landing (`/index.html` / `/`)  
+2. Returns catalog (`/returns.html`)  
+3. Timeline detail (`/timeline-detail.html`)  
+4. Scenario compare (`/scenario.html`)  
+5. Batch forecast (`/batch.html`)  
+6. Audit log (`/audit.html`)  
+7. Goldens browser (`/goldens.html`)  
+8. Honesty (`/honesty.html`)  
+9. Org settings (`/settings.html`)  
 
 ## Aggregates (≥4)
 

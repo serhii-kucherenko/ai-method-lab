@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Filing Penalty Desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #1a2228;
+        --muted: #4a5560;
+        --line: #c5ced6;
+        --panel: #f3f6f8;
+        --accent: #1f5f6b;
+        --accent-deep: #164850;
+        --wash: #d8e6ea;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(ellipse 80% 50% at 15% 0%, var(--wash) 0%, transparent 55%),
+          linear-gradient(165deg, #eef2f4 0%, #e4eaee 48%, #dfe8ec 100%);
+        min-height: 100vh;
+      }
+      .wrap {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 0 1.25rem 4rem;
+      }
+      .hero {
+        min-height: min(100vh, 40rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.1rem;
+        padding: 3rem 0 2.5rem;
+        animation: rise 0.7s ease-out both;
+      }
+      .brand {
+        font-family: Fraunces, Georgia, serif;
+        font-size: clamp(2.4rem, 7vw, 3.6rem);
+        font-weight: 650;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        margin: 0;
+      }
+      .headline {
+        font-family: Fraunces, Georgia, serif;
+        font-size: clamp(1.25rem, 3vw, 1.55rem);
+        font-weight: 500;
+        margin: 0;
+        max-width: 28rem;
+        line-height: 1.35;
+      }
+      .lede {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.5;
+        max-width: 32rem;
+      }
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 0.4rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.7rem 1.15rem;
+        border-radius: 0.35rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+      .btn:hover { transform: translateY(-1px); }
+      .btn-primary {
+        background: var(--accent);
+        color: #f7fbfc;
+      }
+      .btn-primary:hover { background: var(--accent-deep); }
+      .btn-ghost {
+        background: transparent;
+        color: var(--accent);
+        border: 1px solid var(--accent);
+      }
+      section {
+        border-top: 1px solid var(--line);
+        padding: 2.75rem 0;
+        animation: rise 0.6s ease-out both;
+      }
+      section:nth-of-type(2) { animation-delay: 0.08s; }
+      section:nth-of-type(3) { animation-delay: 0.12s; }
+      h2 {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 1.75rem;
+        font-weight: 650;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.75rem;
+      }
+      section p, section li {
+        color: var(--muted);
+        line-height: 1.55;
+        max-width: 36rem;
+      }
+      .sell li {
+        list-style: none;
+        border-left: 2px solid var(--accent);
+        padding-left: 0.9rem;
+        margin: 0 0 0.9rem;
+      }
+      .sell, .feats, .steps { margin: 0; padding: 0; }
+      .feat-grid {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 1.25rem;
+      }
+      @media (min-width: 560px) {
+        .feat-grid { grid-template-columns: 1fr 1fr; }
+      }
+      .feat-grid h3 {
+        margin: 0 0 0.4rem;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--accent-deep);
+      }
+      .feat-grid ul {
+        margin: 0;
+        padding-left: 1.1rem;
+        color: var(--muted);
+      }
+      .feat-grid li { margin: 0.25rem 0; }
+      .steps {
+        display: grid;
+        gap: 1.25rem;
+        margin-top: 1rem;
+      }
+      @media (min-width: 560px) {
+        .steps { grid-template-columns: repeat(3, 1fr); }
+      }
+      .steps li { list-style: none; }
+      .steps .n {
+        font-size: 0.8rem;
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .steps h3 {
+        margin: 0.25rem 0;
+        font-size: 1.05rem;
+        color: var(--ink);
+      }
+      .sources a {
+        color: var(--accent);
+        word-break: break-all;
+      }
+      .footer-cta {
+        border-top: 1px solid var(--line);
+        padding-top: 2.75rem;
+      }
+      .atmosphere {
+        height: 3px;
+        width: 100%;
+        max-width: 18rem;
+        margin-top: 1rem;
+        background: linear-gradient(90deg, var(--accent), transparent);
+        transform-origin: left;
+        animation: draw 1.1s ease-out 0.3s both;
+      }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: none; }
+      }
+      @keyframes draw {
+        from { transform: scaleX(0); opacity: 0; }
+        to { transform: scaleX(1); opacity: 1; }
+      }
+    </style>
+  </head>
+  <body data-home="live" data-landing="live">
+    <div class="wrap">
+      <header class="hero">
+        <p class="brand">Filing Penalty Desk</p>
+        <h1 class="headline">Late returns need a month-by-month cash forecast — not a flat late fee.</h1>
+        <p class="lede">
+          Walk failure-to-file and failure-to-pay additions the way the rules stack months, same-month reductions, and floors — a method lab desk, not an IRS or CPA product.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/returns.html">Open desk</a>
+          <a class="btn btn-ghost" href="/honesty.html">Read honesty</a>
+        </div>
+        <div class="atmosphere" aria-hidden="true"></div>
+      </header>
+
+      <section>
+        <h2>The problem</h2>
+        <p>
+          Controllers often budget one stacked percentage for late returns. Real additions walk month by month: when both file and pay apply in the same month, the file slice is reduced; levy-intent can raise the pay rate; caps and a minimum floor can bind. A spreadsheet that ignores that stack understates or overstates cash risk.
+        </p>
+      </section>
+
+      <section>
+        <h2>The product</h2>
+        <p>
+          Filing Penalty Desk is an org workspace for return timelines: edit unpaid months, run the locked addition forecast, compare a naive stack against the correct walk, batch sibling forecasts, and export an audit trail. Built for method honesty — not assessment, abatement, or advice.
+        </p>
+      </section>
+
+      <section>
+        <h2>Why teams use it</h2>
+        <ul class="sell">
+          <li>See same-month file reduction instead of stacking full file and pay additions.</li>
+          <li>Model an optional levy-intent pay bump after a chosen index month.</li>
+          <li>Compare naive vs correct scenarios side by side before you brief finance.</li>
+          <li>Keep every forecast and edit on an exportable audit trail.</li>
+          <li>Browse dual-implementation goldens so the month-walk stays checkable.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Features</h2>
+        <p>Live capabilities in plain language — grouped for scanning.</p>
+        <div class="feat-grid">
+          <div>
+            <h3>Org &amp; returns</h3>
+            <ul>
+              <li>Org tenancy and member roles</li>
+              <li>Return / timeline catalog</li>
+              <li>Timeline detail editor</li>
+              <li>Pagination and search</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Forecast</h3>
+            <ul>
+              <li>Statutory addition forecast (file / pay / combined)</li>
+              <li>Branch and line explanation</li>
+              <li>Scenario compare (naive vs correct)</li>
+              <li>Batch forecast</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Evidence</h3>
+            <ul>
+              <li>Audit log and CSV export</li>
+              <li>Goldens browser</li>
+              <li>Honesty and disclaimer page</li>
+              <li>Offline try page and tutor guide</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Integrations</h3>
+            <ul>
+              <li>Webhook inbound with HMAC</li>
+              <li>Org webhook settings</li>
+              <li>Rate-limit feedback</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>How it works</h2>
+        <ol class="steps">
+          <li>
+            <span class="n">1</span>
+            <h3>Open a return</h3>
+            <p>Create or pick a timeline with unpaid months and due amount.</p>
+          </li>
+          <li>
+            <span class="n">2</span>
+            <h3>Run the walk</h3>
+            <p>Forecast file and pay additions; compare naive vs correct.</p>
+          </li>
+          <li>
+            <span class="n">3</span>
+            <h3>Audit the path</h3>
+            <p>Batch siblings when needed and export the trail.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Honesty / limits</h2>
+        <p>
+          This is a cash-forecast / method honesty desk for controllers and tax leads. It is <strong>not</strong> an IRS assessment, abatement tool, or CPA replacement. Commercial tax software and the IRS still win in production. Never branded as a statute code.
+        </p>
+      </section>
+
+      <section class="sources">
+        <h2>Sources</h2>
+        <p>
+          Not paper-sourced. This desk encodes a literal-dollar month-walk for late-file and late-pay additions as a Method Lab workflow experiment — no published paper or authors’ code URL.
+        </p>
+      </section>
+
+      <section class="footer-cta">
+        <h2>Ready to try the desk?</h2>
+        <p>Open the returns catalog and run your first forecast.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/returns.html">Open desk</a>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

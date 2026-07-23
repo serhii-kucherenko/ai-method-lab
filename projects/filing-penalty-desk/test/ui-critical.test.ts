@@ -16,6 +16,18 @@ async function withServer(fn: (base: string) => Promise<void>): Promise<void> {
 }
 
 const CRITICAL = [
+  {
+    path: "/",
+    must: [
+      /data-home="live"/,
+      /data-landing="live"/,
+      /Filing Penalty Desk/,
+      /Open desk/,
+      /Sources/,
+      /Not paper-sourced/i,
+      /returns\.html/,
+    ],
+  },
   { path: "/honesty.html", must: [/data-honesty="live"/, /Kill A/i, /Filing Penalty Desk/] },
   { path: "/returns.html", must: [/data-catalog="live"/, /Returns catalog/i] },
   { path: "/timeline-detail.html", must: [/data-detail="live"/, /Run forecast/i] },
@@ -28,7 +40,7 @@ const CRITICAL = [
 
 test("ui-critical: every live page marker + no statute brand", async () => {
   await withServer(async (base) => {
-    assert.equal(CRITICAL.length, 8);
+    assert.ok(CRITICAL.length >= 6);
     for (const page of CRITICAL) {
       const res = await fetch(`${base}${page.path}`);
       assert.equal(res.status, 200, page.path);

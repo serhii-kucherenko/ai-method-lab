@@ -118,7 +118,7 @@ function checkRateLimit(store: Store, req: IncomingMessage, res: ServerResponse)
 }
 
 function serveStatic(res: ServerResponse, urlPath: string): boolean {
-  const clean = urlPath === "/" ? "/honesty.html" : urlPath;
+  const clean = urlPath === "/" ? "/index.html" : urlPath;
   const filePath = join(publicDir, clean.replace(/^\//, ""));
   if (!filePath.startsWith(publicDir) || !existsSync(filePath)) return false;
   const body = readFileSync(filePath);

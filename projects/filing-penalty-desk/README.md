@@ -31,4 +31,4 @@ Lessons from building this product: [`docs/guides/04-filing-penalty-desk-lessons
 
 ## Status
 
-Sustained in the method lab (55 automated checks, 8 pages, 18 features).
+Sustained in the method lab (55 automated checks, 9 pages, 18 features).
