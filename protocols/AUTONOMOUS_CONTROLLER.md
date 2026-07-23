@@ -45,7 +45,7 @@ Cap parallel agents at `depth_policy.max_parallel_agents` (default **20**). One 
 4. Execute `protocols/PRODUCT_RUNBOOK.md` for the current product.
 5. Score; update portfolio.
 6. **Notify** only for idea validated / product complete / hard stop.
-7. On sustain: require README + tutor guide + try.html; email product finished; clear pending; return to idle → next pick.
+7. On sustain: require README + tutor guide + try.html + **live app smoke** (`next build` green and production server serves `/`); email product finished; clear pending; return to idle → next pick.
 
 ## Hard stops
 

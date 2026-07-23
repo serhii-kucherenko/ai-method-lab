@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T19:48:08.722Z",
+  "updated_at": "2026-07-23T19:58:25.964Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -21,7 +21,7 @@
   "paused": false,
   "active_cell": null,
   "schema_version": "1.0.0",
-  "idle_reason": null,
+  "idle_reason": "product_complete_pending_email",
   "product_defaults": {
     "persistence": "sqlite",
     "stack": "nextjs-app-router",
@@ -39,15 +39,15 @@
     "stack_protocol": "docs/PRODUCT_STACK.md",
     "design_protocol": "protocols/DESIGN.md"
   },
-  "last_completed": "A03__P-sustain-001__evidence-synthesis-desk__r1",
+  "last_completed": "A03__P-sustain-001__tactile-data-desk__r1",
   "last_error": null,
   "current_product": "tactile-data-desk",
   "current_idea": "tactile-data-desk",
   "next_research_idea": null,
-  "next_cell": "A03__P-smoke-001__tactile-data-desk__r1",
+  "next_cell": null,
   "mode": "autonomous",
-  "phase": "running",
-  "notes": "Evidence Synthesis Desk finish emailed. Started Tactile Data Desk (paper 2607.14588) — climbing smoke→sustain. Switched keep-going loop to 1h for deeper products (≥20 features / ≥8 pages).",
+  "phase": "idle",
+  "notes": "Tactile Data Desk Next app live-smoke green (build+start). Hold finish email until ≥20 features / ≥8 pages under 1h depth bar; deepen then email.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -96,7 +96,10 @@
     "require_design_note": true,
     "require_marketing_landing": true,
     "stack_protocol": "docs/PRODUCT_STACK.md",
-    "design_protocol": "protocols/DESIGN.md"
+    "design_protocol": "protocols/DESIGN.md",
+    "require_next_build": true,
+    "require_app_live_smoke": true,
+    "app_live_smoke_protocol": "projects/<slug>/test/app-up.test.ts (build + next start GET /)"
   },
   "defaults": {
     "always_commit": true,

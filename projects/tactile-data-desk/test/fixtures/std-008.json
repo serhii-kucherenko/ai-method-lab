@@ -1,0 +1,18 @@
+{
+  "id": "std-008",
+  "title": "Sales chart",
+  "input": {
+    "corpus": "sales",
+    "min_n": 60
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "sales",
+    "naive_risk": 117.08,
+    "safer_risk": 7.48,
+    "delta_score": 109.6,
+    "min_n": 60,
+    "k_eligible": 3,
+    "i2": 52.11
+  }
+}

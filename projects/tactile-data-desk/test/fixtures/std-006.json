@@ -1,0 +1,19 @@
+{
+  "id": "std-006",
+  "title": "Contaminated with high speech drift",
+  "input": {
+    "corpus": "contaminated",
+    "min_n": 40,
+    "bias_scale": 2.5
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "contaminated",
+    "naive_risk": 164.63,
+    "safer_risk": 6.5,
+    "delta_score": 158.13,
+    "min_n": 40,
+    "k_eligible": 7,
+    "i2": 87.47
+  }
+}

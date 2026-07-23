@@ -1,0 +1,19 @@
+{
+  "id": "std-025",
+  "title": "Inventory mild drift",
+  "input": {
+    "corpus": "inventory",
+    "min_n": 30,
+    "bias_scale": 0.8
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "inventory",
+    "naive_risk": 70.72,
+    "safer_risk": 4.82,
+    "delta_score": 65.9,
+    "min_n": 30,
+    "k_eligible": 7,
+    "i2": 32.24
+  }
+}

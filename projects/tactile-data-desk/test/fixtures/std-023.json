@@ -1,0 +1,19 @@
+{
+  "id": "std-023",
+  "title": "Sales high drift",
+  "input": {
+    "corpus": "sales",
+    "min_n": 50,
+    "bias_scale": 2
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "sales",
+    "naive_risk": 136.04,
+    "safer_risk": 6.3,
+    "delta_score": 129.74,
+    "min_n": 50,
+    "k_eligible": 6,
+    "i2": 69.03
+  }
+}

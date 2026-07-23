@@ -1,6 +1,6 @@
 # Tactile Data Desk
 
-**State:** building (paper-sourced)  
+**State:** complete (paper-sourced)  
 **Slug:** `tactile-data-desk`  
 **Display name:** Tactile Data Desk  
 **Paper id:** `2607.14588`  

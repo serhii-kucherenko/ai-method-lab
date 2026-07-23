@@ -1,0 +1,19 @@
+{
+  "id": "std-018",
+  "title": "Custom chart gamma",
+  "input": {
+    "corpus": "gamma",
+    "min_n": 35,
+    "bias_scale": 1.8
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "gamma",
+    "naive_risk": 113.99,
+    "safer_risk": 6.22,
+    "delta_score": 107.77,
+    "min_n": 35,
+    "k_eligible": 3,
+    "i2": 53.69
+  }
+}

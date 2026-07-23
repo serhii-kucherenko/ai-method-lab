@@ -71,6 +71,8 @@ If `notify.enabled`, email per `protocols/NOTIFY.md` — story first (idea, proj
 
 On **product finished**: commit `projects/<id>/try.html` (standalone offline demo), attach it to the Resend email as `try-<id>.html`, and include one StackBlitz try link. See `protocols/NOTIFY.md` → Try artifacts.
 
+**Live app required:** run `npm run build` and a live smoke that starts the finished server and GETs `/` (see `test/app-up.test.ts` pattern). Do **not** send `product_complete` if the Next app fails to build or serve. API-only harness green is insufficient.
+
 ## 7. Close + continue
 
 Commit + push + merge. Advance to next phase on the **same** product until sustain (or abandon). On sustain: product-manager findings email first (`protocols/NOTIFY.md`); only then clear the product slot and resume research / next idea.

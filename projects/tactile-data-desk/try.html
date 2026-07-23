@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tactile Data Desk — try</title>
+    <style>
+      :root {
+        --ink: #1c2838;
+        --muted: #5a6a78;
+        --paper: #eef2f6;
+        --steel: #2a4a6a;
+        --line: #c5d0d8;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(ellipse at top left, #c8d6e4, var(--paper));
+        min-height: 100vh;
+      }
+      main { max-width: 36rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+      h1 { font-family: Fraunces, Georgia, serif; margin: 0 0 0.5rem; }
+      label { display: block; margin-top: 0.85rem; font-size: 0.9rem; color: var(--muted); }
+      select, input[type="number"] {
+        width: 100%;
+        padding: 0.5rem 0.65rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+        margin-top: 0.25rem;
+      }
+      button {
+        margin-top: 1rem;
+        padding: 0.55rem 1rem;
+        background: var(--steel);
+        color: #f2f6fa;
+        border: 0;
+        border-radius: 0.35rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        padding: 0.85rem;
+        border: 1px solid var(--line);
+        background: #fff;
+        font-family: ui-monospace, monospace;
+        font-size: 0.85rem;
+        white-space: pre-wrap;
+      }
+      p { color: var(--muted); line-height: 1.45; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Tactile Data Desk — offline try</h1>
+      <p>
+        Soft layered select → confirm → ask → verify on chart versus a speech-only
+        answer that skips tactile grounding. Honesty: method experiment only —
+        paper 2607.14588 — not a replacement for the authors' system. Not a commercial tactile accessibility product. Never brand as Feelogue.
+      </p>
+      <label
+        >Chart
+        <select id="corpus">
+          <option value="default">default</option>
+          <option value="contaminated">contaminated</option>
+          <option value="homogeneous">homogeneous</option>
+          <option value="sparse">sparse</option>
+          <option value="sales">sales</option>
+        </select>
+      </label>
+      <label>Confirm floor <input id="min_n" type="number" value="40" /></label>
+      <label>Speech drift <input id="bias" type="number" step="0.1" value="1.2" /></label>
+      <label>
+        <input id="cheat" type="checkbox" />
+        Skip-verify cheat (must reject)
+      </label>
+      <button type="button" id="run">Run compare</button>
+      <div class="out" id="out">Press Run compare.</div>
+    </main>
+    <script>
+      function round2(n) { return Math.round(n * 100) / 100; }
+      function round4(n) { return Math.round(n * 10000) / 10000; }
+      function mean(xs) {
+        if (!xs.length) return 0;
+        return xs.reduce((a, b) => a + b, 0) / xs.length;
+      }
+      function buildChart(corpus, biasScale) {
+        const presets = {
+          default: { k: 8, base: 42, layers: 4, hard: [0, 3] },
+          small: { k: 4, base: 28, layers: 3, hard: [1] },
+          large: { k: 12, base: 55, layers: 5, hard: [2, 5, 9] },
+          homogeneous: { k: 6, base: 40, layers: 4, hard: [] },
+          contaminated: { k: 10, base: 35, layers: 4, hard: [0, 1, 2, 7] },
+          sparse: { k: 5, base: 22, layers: 2, hard: [0, 4] },
+          sales: { k: 9, base: 48, layers: 5, hard: [3, 8] },
+        };
+        const p = presets[corpus] || {
+          k: 6 + (corpus.length % 5),
+          base: 30 + (corpus.length % 7) * 3,
+          layers: 2 + (corpus.length % 4),
+          hard: [0, Math.min(2, corpus.length % 4)],
+        };
+        const points = [];
+        for (let i = 0; i < p.k; i++) {
+          const isHard = p.hard.includes(i);
+          const layer = Math.max(0, (i % p.layers) - (isHard ? 1 : 0));
+          const jitter = ((i % 5) - 2) * 1.4;
+          points.push({
+            layer,
+            index: i,
+            value: round4(p.base + (i % 4) * 3.5 + jitter - (isHard ? biasScale * 4 : 0)),
+          });
+        }
+        return points;
+      }
+      function confirmable(p, minN) {
+        return p.layer * 12 + p.index * 4 + 20 >= minN;
+      }
+      function score(input) {
+        if (input.skip_verify_cheat) return { status: "reject", reason: "skip_verify_cheat" };
+        const corpus = input.corpus || "default";
+        const min_n = Math.max(10, Math.min(200, Math.floor(Number(input.min_n) || 40)));
+        const bias_scale = Math.max(0.5, Math.min(3, Number(input.bias_scale) || 1.2));
+        const points = buildChart(corpus, bias_scale);
+        const kept = points.filter((p) => confirmable(p, min_n));
+        const k_eligible = kept.length;
+        const k_excluded = points.length - k_eligible;
+        const src = kept.length ? kept : points;
+        const grounded = round4(mean(src.map((p) => p.value)));
+        const speech = round4(
+          mean(points.map((p) => p.value)) +
+            bias_scale * (8 + points.length * 0.35) +
+            (points.length % 3) * 1.2,
+        );
+        const selectSkip = round4(mean(points.map((p) => p.value)));
+        const agentNoVerify = round4(grounded + bias_scale * 1.5 + (k_excluded > 0 ? 0.8 : 0.2));
+        const speechGap = Math.abs(speech - grounded);
+        const skipGap = Math.abs(selectSkip - grounded);
+        const verifyGap = Math.abs(agentNoVerify - grounded);
+        const naive_risk = round2(speechGap * 4 + k_excluded * 6 + 18 + bias_scale * 8);
+        const skip_risk = round2(skipGap * 5 + k_excluded * 5 + 14 + bias_scale * 3);
+        const no_verify_risk = round2(verifyGap * 20 + 10 + bias_scale * 2 + (k_excluded > 0 ? 4 : 0));
+        const grounded_risk = round2(4 + Math.min(6, k_excluded) * 0.5 + bias_scale * 0.4);
+        return {
+          status: "ok",
+          corpus,
+          k_eligible,
+          k_excluded,
+          mu: grounded,
+          naive: { risk_score: naive_risk, effect: speech },
+          pla: { risk_score: grounded_risk, effect: grounded },
+          include_all_fe: { risk_score: skip_risk, effect: selectSkip },
+          unweighted_eligible: { risk_score: no_verify_risk, effect: agentNoVerify },
+          delta_score: round2(naive_risk - grounded_risk),
+        };
+      }
+      document.getElementById("run").onclick = () => {
+        const fit = score({
+          corpus: document.getElementById("corpus").value,
+          min_n: document.getElementById("min_n").value,
+          bias_scale: document.getElementById("bias").value,
+          skip_verify_cheat: document.getElementById("cheat").checked,
+        });
+        document.getElementById("out").textContent = JSON.stringify(fit, null, 2);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "id": "std-016",
+  "title": "Custom chart name alpha",
+  "input": {
+    "corpus": "alpha-trial",
+    "min_n": 40
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "alpha-trial",
+    "naive_risk": 86.11,
+    "safer_risk": 5.48,
+    "delta_score": 80.63,
+    "min_n": 40,
+    "k_eligible": 5,
+    "i2": 38.89
+  }
+}

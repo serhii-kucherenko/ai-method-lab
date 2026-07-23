@@ -1,0 +1,18 @@
+{
+  "id": "std-024",
+  "title": "Weather strict",
+  "input": {
+    "corpus": "weather",
+    "min_n": 70
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "weather",
+    "naive_risk": 124.56,
+    "safer_risk": 7.48,
+    "delta_score": 117.08,
+    "min_n": 70,
+    "k_eligible": 0,
+    "i2": 55.22
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "std-020",
+  "title": "Small with high drift",
+  "input": {
+    "corpus": "small",
+    "min_n": 40,
+    "bias_scale": 2.2
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "small",
+    "naive_risk": 122.52,
+    "safer_risk": 6.38,
+    "delta_score": 116.14,
+    "min_n": 40,
+    "k_eligible": 1,
+    "i2": 57.69
+  }
+}

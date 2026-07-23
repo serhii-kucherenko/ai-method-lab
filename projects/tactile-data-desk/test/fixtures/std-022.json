@@ -1,0 +1,18 @@
+{
+  "id": "std-022",
+  "title": "Sparse lenient",
+  "input": {
+    "corpus": "sparse",
+    "min_n": 20
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "sparse",
+    "naive_risk": 84,
+    "safer_risk": 4.48,
+    "delta_score": 79.52,
+    "min_n": 20,
+    "k_eligible": 5,
+    "i2": 42.3
+  }
+}

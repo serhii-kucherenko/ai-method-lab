@@ -1,0 +1,18 @@
+{
+  "id": "std-003",
+  "title": "Small chart",
+  "input": {
+    "corpus": "small",
+    "min_n": 30
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "small",
+    "naive_risk": 65.12,
+    "safer_risk": 5.48,
+    "delta_score": 59.64,
+    "min_n": 30,
+    "k_eligible": 2,
+    "i2": 23.14
+  }
+}

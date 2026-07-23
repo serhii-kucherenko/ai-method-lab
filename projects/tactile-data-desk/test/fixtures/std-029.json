@@ -1,0 +1,18 @@
+{
+  "id": "std-029",
+  "title": "Contaminated lenient",
+  "input": {
+    "corpus": "contaminated",
+    "min_n": 25
+  },
+  "expect": {
+    "status": "ok",
+    "corpus": "contaminated",
+    "naive_risk": 91.82,
+    "safer_risk": 5.48,
+    "delta_score": 86.34,
+    "min_n": 25,
+    "k_eligible": 8,
+    "i2": 43.17
+  }
+}

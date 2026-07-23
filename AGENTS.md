@@ -8,7 +8,7 @@ Unless `matrix/CONTROLLER.json` says `paused` / `hard_stop`, run as the **autono
 
 - Read `protocols/AUTONOMOUS_CONTROLLER.md` and `docs/PAPERS_INTAKE.md` first
 - Idle → `node scripts/pick-paper-idea.mjs --days 14 --write-shortlist --choose 1` → email **idea_validated** → climb product ladder
-- No hours hold / `ready_to_build` wait for paper-sourced ideas; mature names only (`docs/PRODUCT_NAMING.md`); sustain ≥20 features / ≥8 pages (1h keep-going loop)
+- No hours hold / `ready_to_build` wait for paper-sourced ideas; mature names only (`docs/PRODUCT_NAMING.md`); sustain ≥20 features / ≥8 pages (1h keep-going loop); **require live Next build + `/` smoke before finish email**
 - Roles: researcher → PM → architect → **product designer** → delivery → **best-practices tutor** (guides) before finish email
 - Engineering stack: **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); **Python allowed** for ML/numeric paper ports with a documented run path (venv + sidecar); design: `protocols/DESIGN.md` — every product ships a **marketing landing at `/`**
 - Spawn parallel agents as needed (cap **20**); one product phase in CONTROLLER
