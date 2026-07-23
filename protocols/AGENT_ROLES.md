@@ -50,6 +50,11 @@ Paper goldens may exist; they never substitute for G1–G6 or Challenge D value.
 
 Owns whether we should build, what ships in which order, and when the product is **done enough** to email and leave.
 
+Templates (fill per idea; do not open `projects/` until complete):
+
+- Intake: `docs/ideas/PM_INTAKE_CHECKLIST.md` → copy into `docs/ideas/<id>-PM-GO.md`
+- Roadmap blanks: `docs/ideas/PM_ROADMAP_TEMPLATE.md` → `docs/ideas/<id>-ROADMAP.md`
+
 | Deliverable | Bar |
 |-------------|-----|
 | **Roadmap** | Ordered phases (smoke→crud→workflow→integrate→scale→sustain) with user-visible unlocks and **testable exit criteria** — written **before** RED tests or `projects/` |
