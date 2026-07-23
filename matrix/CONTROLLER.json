@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T18:00:00.000Z",
+  "updated_at": "2026-07-23T17:48:38.724Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,9 +11,9 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "f46cc607-5ece-46c8-9040-137e58988a04",
-    "last_idea_validated_email_id": "9459ca76-ad64-4f0b-9ca8-82e3444120aa",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "92d8e9a2-100d-42be-afec-a2c7efc80085",
+    "last_idea_validated_email_id": "9fd472ff-b0e0-4de9-9bc0-a272f7de328c",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
@@ -24,20 +24,26 @@
   "idle_reason": null,
   "product_defaults": {
     "persistence": "sqlite",
-    "stack": "node-ts",
-    "test_runner": "node-test",
+    "stack": "nextjs-app-router",
+    "ui": "shadcn-tailwind",
+    "styling": "tailwindcss",
+    "framework": "nextjs",
+    "language": "typescript",
+    "test_runner": "vitest-and-playwright",
     "payments": "provider-agnostic-webhook-with-hmac",
-    "auth": "bearer-token"
+    "auth": "bearer-token",
+    "stack_protocol": "docs/PRODUCT_STACK.md",
+    "design_protocol": "protocols/DESIGN.md"
   },
   "last_completed": "A03__P-sustain-001__virulence-feature-desk__r1",
   "last_error": null,
-  "current_product": "virulence-feature-desk",
-  "current_idea": "virulence-feature-desk",
+  "current_product": "heart-rhythm-desk",
+  "current_idea": "heart-rhythm-desk",
   "next_research_idea": null,
-  "next_cell": null,
+  "next_cell": "A03__P-crud-001__heart-rhythm-desk__r1",
   "mode": "autonomous",
   "phase": "running",
-  "notes": "Virulence Feature Desk sustain green; product_complete_pending for parent email; do not pick next.",
+  "notes": "Heart Rhythm Desk smoke green; idea email sent; climbing on Next+shadcn+designer.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -50,10 +56,10 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.1186/s40168-026-02467-w",
-      "slug": "virulence-feature-desk",
-      "displayName": "Virulence Feature Desk",
-      "at": "2026-07-23T17:42:42.806Z"
+      "paperId": "2607.14613",
+      "slug": "heart-rhythm-desk",
+      "displayName": "Heart Rhythm Desk",
+      "at": "2026-07-23T17:48:18.983Z"
     }
   },
   "depth_policy": {
@@ -82,7 +88,10 @@
     "comprehensive_protocol": "docs/COMPREHENSIVE_PRODUCT.md",
     "roles_protocol": "protocols/AGENT_ROLES.md",
     "intake_protocol": "docs/PAPERS_INTAKE.md",
-    "guides_dir": "docs/guides"
+    "guides_dir": "docs/guides",
+    "require_design_note": true,
+    "stack_protocol": "docs/PRODUCT_STACK.md",
+    "design_protocol": "protocols/DESIGN.md"
   },
   "defaults": {
     "always_commit": true,
