@@ -22,4 +22,6 @@
 | **irc6651** (§ 6651 FTF+FTP+(c)(1) stack) | No | adversarial | Next after c1592; literal addition $; Kill A honesty; **not** ready_to_build |
 | esrp4980h (§ 4980H ESRP) | Soft park | depth | Log-only behind irc6651 — do not widen |
 
+**Dated pass:** `SEED_KILL_PASS_2026-07-23.md` — refundgap / epapound / excise4971 / slotbay / counselgate / penmaxfda killed; form222clock soft-parked.
+
 **Rule:** one idea in `framed`→`ready_to_build`. Dual-gate / capacity+expiry seeds die immediately. Same-day fixture farms do not count as depth.

@@ -45,3 +45,7 @@ See `docs/DEPTH_RESTART.md` (Correction 5).
 ## Do not queue
 
 Noun-swap FSMs, dual-signer + ceiling/floor/days templates, calendar-day waits pretending to be depth.
+
+**2026-07-23 kill pass** (`docs/ideas/SEED_KILL_PASS_2026-07-23.md`): refundgap, epapound, excise4971, slotbay, counselgate, penmaxfda (killed); form222clock (soft park). Do not revive as “next product.”
+
+**Next research (after c1592 findings email):** `irc6651` — adversarial only; not ready_to_build.
