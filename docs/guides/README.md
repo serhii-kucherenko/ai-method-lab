@@ -7,6 +7,13 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 |---|-------|------|
 | 01 | [Mature product naming](01-mature-product-naming.md) | Correction 6 |
 | 02 | [Customs penalty forecast — what we learned shipping it](02-customs-penalty-forecast-lessons.md) | Product formerly branded `c1592` |
+| 03 | [Scoring for maturity](03-scoring-for-maturity.md) | Correction 6 / `docs/RUBRIC.md` |
+
+### Scoring notes
+
+| Product | Note |
+|---------|------|
+| Customs Penalty Forecast | [Would fail today’s maturity bar](scoring/customs-penalty-forecast.md) |
 
 ## Rules
 
