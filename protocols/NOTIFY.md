@@ -7,13 +7,24 @@ Email delivers **what changed** to `notify.to`. The human should understand the 
 Story first; links are not the payload — except these **required** link blocks:
 
 - Every `idea_validated` and `product_complete` email ends with a **Sources** footer (paper URL + authors’ code URL when known).
-- Every successful `product_complete` also includes try-artifacts (attachment + browser playground link).
+- Every successful `product_complete` also includes try-artifacts (attachment + browser playground link) and **full GitHub https links** for how-to-run, lessons guide, design note, and the product folder (never bare repo paths like `projects/foo/README.md`).
 
 ## Config
 
 `matrix/CONTROLLER.json` → `notify` (`enabled`, `to`, `from`, `on`).
 
-Repo base (only when a link is warranted): `https://github.com/serhii-kucherenko/ai-method-lab/blob/main/`
+**GitHub link base (required whenever naming a repo file):**  
+`https://github.com/serhii-kucherenko/ai-method-lab/blob/main/`
+
+Examples:
+
+| Artifact | Email must use |
+|----------|----------------|
+| README | `https://github.com/serhii-kucherenko/ai-method-lab/blob/main/projects/<slug>/README.md` |
+| Tutor guide | `https://github.com/serhii-kucherenko/ai-method-lab/blob/main/docs/guides/<nn>-<slug>-lessons.md` |
+| Design note | `https://github.com/serhii-kucherenko/ai-method-lab/blob/main/docs/ideas/<slug>-DESIGN.md` |
+| Product tree | `https://github.com/serhii-kucherenko/ai-method-lab/tree/main/projects/<slug>` |
+| try.html on GitHub | `https://github.com/serhii-kucherenko/ai-method-lab/blob/main/projects/<slug>/try.html` |
 
 Browser playground try base: `https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/projects/`
 
@@ -54,7 +65,7 @@ Same plain-narrative bar, **longer and more complete**:
 6. **Summary** — one short paragraph of the whole story.
 7. **What did not change** — still not a commercial pitch if true.
 8. **Next** — one sentence.
-9. **Try it** — attached offline page + browser playground link; mention the project readme and lessons guide in plain words (“how to run” file and “what we learned” guide).
+9. **Try it** — attached offline page + browser playground link; **full GitHub https URLs** for how-to-run, lessons guide, design note (see templates below). Never paste bare paths.
 10. **Sources** — required footer; same template as the start letter.
 
 ## Sources footer template (required on start + finish emails)
@@ -75,16 +86,34 @@ Paper: <full https URL to the paper page>
 Authors’ code: none published with this paper
 ```
 
+## Repo links template (required on finish emails)
+
+After **Try it**, always include full GitHub links — **never** `projects/...` or `docs/...` alone:
+
+```text
+How to run: https://github.com/serhii-kucherenko/ai-method-lab/blob/main/projects/<slug>/README.md
+What we learned: https://github.com/serhii-kucherenko/ai-method-lab/blob/main/docs/guides/<nn>-<slug>-lessons.md
+Design note: https://github.com/serhii-kucherenko/ai-method-lab/blob/main/docs/ideas/<slug>-DESIGN.md
+Product folder: https://github.com/serhii-kucherenko/ai-method-lab/tree/main/projects/<slug>
+```
+
+On **start** letters, optional but preferred when the folder already exists:
+
+```text
+Project folder: https://github.com/serhii-kucherenko/ai-method-lab/tree/main/projects/<slug>
+```
+
 ## Hard rules
 
 1. **Explain before you celebrate.** The reader must learn *what the idea was*, *what the project is*, and *what we actually built* — not only that tests passed.
 2. **Lead with the story, then the proof.** Full narrative first; counts only as supporting detail.
-3. **Never force a re-read of the repo.** Links are optional extras (except product try-link and the Sources footer).
-4. **Link budget:** hard-stop → at most one optional deep link. Idea start and product finished → **Sources footer always** (paper URL + code URL or “none published”). Product finished also → **try-page attachment + one browser-playground try link**.
+3. **Never force a re-read of the repo.** When you name a file, paste the **clickable GitHub https URL** — do not leave bare paths.
+4. **Link budget:** hard-stop → at most one optional deep link. Idea start and product finished → **Sources footer always** (paper URL + code URL or “none published”). Product finished also → **try-page attachment + browser-playground try link + full GitHub links** for README, guide, design, product folder.
 5. **Honest framing in plain words:** this is a workflow experiment unless we say otherwise.
 6. **No unexplained acronyms or internal codes** in subject or body. If a technical term is unavoidable, define it in the same sentence in everyday language.
 7. **No paper-id or statute-code branding** in the subject; use the mature display name only.
 8. **Do not send** a start or finish email without the Sources footer.
+9. **Do not send** a finish email that only names `projects/<slug>/README.md` or `docs/guides/...` without the matching `https://github.com/...` URL.
 
 ## Plain language (never assume these are known)
 
@@ -181,6 +210,8 @@ Why this paper
 What you will get later
 Another email when it is finished, with a simple offline demo page and a link to try the project in the browser playground, plus a short how-to-run note and a lessons guide.
 
+Project folder: https://github.com/serhii-kucherenko/ai-method-lab/tree/main/projects/<slug>
+
 Sources
 Paper: <https://...>
 Authors’ code: <https://...>
@@ -201,7 +232,7 @@ Authors’ code: <https://...>
 5. **What we proved** — 3–6 bullets of verification (scenarios, rejects, scale). Include the “workflow experiment, not vendor replacement” caveat here or in framing.
 6. **What did not change** — only if useful (still not a commercial pitch; still no shallow dual-approval queue)
 7. **Next** — one line
-8. **Try it** — (a) attached `try-<name>.html` — download and open; (b) StackBlitz URL above
+8. **Try it** — (a) attached `try-<name>.html` — download and open; (b) StackBlitz URL; (c) **Repo links template** with full GitHub https URLs
 9. **Sources** — Sources footer template (paper + authors’ code)
 
 **Resend:** `text` body as usual; `attachments: [{ filename: "try-<name>.html", content: <base64 of try.html>, contentType: "text/html" }]`.
@@ -237,8 +268,10 @@ Try it
 - Attachment: try-<slug>.html — download and open in your browser (offline demo)
 - Full project in the browser:
   https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/projects/<slug>?startScript=start
-How to run: projects/<slug>/README.md
-What we learned: docs/guides/<nn>-<slug>-lessons.md
+How to run: https://github.com/serhii-kucherenko/ai-method-lab/blob/main/projects/<slug>/README.md
+What we learned: https://github.com/serhii-kucherenko/ai-method-lab/blob/main/docs/guides/<nn>-<slug>-lessons.md
+Design note: https://github.com/serhii-kucherenko/ai-method-lab/blob/main/docs/ideas/<slug>-DESIGN.md
+Product folder: https://github.com/serhii-kucherenko/ai-method-lab/tree/main/projects/<slug>
 
 Sources
 Paper: <https://...>
@@ -282,6 +315,9 @@ Try it
 - Attachment: try-tariffstep.html — download and open in your browser (offline demo of the bill math)
 - Full project in the browser:
   https://stackblitz.com/fork/github/serhii-kucherenko/ai-method-lab/tree/main/projects/tariffstep?startScript=start
+How to run: https://github.com/serhii-kucherenko/ai-method-lab/blob/main/projects/tariffstep/README.md
+What we learned: https://github.com/serhii-kucherenko/ai-method-lab/blob/main/docs/guides/01-tariffstep-lessons.md
+Product folder: https://github.com/serhii-kucherenko/ai-method-lab/tree/main/projects/tariffstep
 
 Sources
 Paper: none — this product was not paper-sourced
@@ -344,6 +380,7 @@ Write the capacity/expiry algorithm on paper and start named test scenarios.
 - Acronyms or internal codes (A03, G5, ready_to_build, Kill A, etc.)
 - Product finished email **without** try page + StackBlitz (when the product has a usable core demo)
 - Start or finish email **without** the Sources footer (paper URL + authors’ code URL or “none published”)
+- Finish email that names repo files as bare paths (`projects/...`, `docs/...`) instead of full `https://github.com/serhii-kucherenko/ai-method-lab/...` links
 - Try page that still calls `fetch("/...")` or needs `npm start`
 - Deploying a host (Vercel, etc.) only so the digest has a URL
 
