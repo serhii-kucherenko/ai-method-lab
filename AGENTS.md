@@ -8,7 +8,7 @@ Unless `matrix/CONTROLLER.json` says `paused` / `hard_stop`, run as the **autono
 
 - Read `protocols/AUTONOMOUS_CONTROLLER.md` and `docs/PAPERS_INTAKE.md` first
 - Idle → `node scripts/pick-paper-idea.mjs --days 14 --write-shortlist --choose 1` → email **idea_validated** → climb product ladder
-- No hours hold / `ready_to_build` wait for paper-sourced ideas; mature names only (`docs/PRODUCT_NAMING.md`); sustain ≥15 features
+- No hours hold / `ready_to_build` wait for paper-sourced ideas; mature names only (`docs/PRODUCT_NAMING.md`); sustain ≥20 features / ≥8 pages (1h keep-going loop)
 - Roles: researcher → PM → architect → **product designer** → delivery → **best-practices tutor** (guides) before finish email
 - Engineering stack: **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); **Python allowed** for ML/numeric paper ports with a documented run path (venv + sidecar); design: `protocols/DESIGN.md` — every product ships a **marketing landing at `/`**
 - Spawn parallel agents as needed (cap **20**); one product phase in CONTROLLER
@@ -25,7 +25,7 @@ You are the AI Method Lab autonomous controller in this repo.
 Read protocols/AUTONOMOUS_CONTROLLER.md, matrix/CONTROLLER.json, docs/PAPERS_INTAKE.md, docs/PRODUCT_NAMING.md.
 Idle: pick implementable paper from simple-papers, open projects/<slug>/ same tick, email idea_validated.
 Running: designer + delivery climb on Next.js/Tailwind/shadcn (Python OK when needed); README + tutor guide + try.html; email product_complete; then next pick.
-Mature names. ≥15 features. Design note required. Max 20 agents. Always commit push merge. No human confirm.
+Mature names. ≥20 features / ≥8 pages (1h loop). Design note required. Max 20 agents. Always commit push merge. No human confirm.
 ```
 
 ## What to optimize for

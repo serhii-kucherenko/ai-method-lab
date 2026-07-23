@@ -11,20 +11,20 @@ This does **not** waive `protocols/IDEA_DEPTH.md`. It raises what “ready_to_bu
 | **Display name** | Mature human name per `docs/PRODUCT_NAMING.md` (not a statute code or glue-noun) |
 | **Unique domain claim** | Cleared IDEA_DEPTH; non-isomorphic; money honesty in digests |
 | **Resources** | ≥4 durable aggregates (not one table + status) |
-| **UI** | ≥6 distinct pages/views including a **marketing landing at `/`** (selling points, features, explanations — `protocols/DESIGN.md`); **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); Python sidecar OK when the paper claim needs it |
+| **UI** | ≥8 distinct pages/views including a **marketing landing at `/`** (selling points, features, explanations — `protocols/DESIGN.md`); **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); Python sidecar OK when the paper claim needs it; prefer multiple product lines / role surfaces when the claim supports them |
 | **Design** | Product designer note `docs/ideas/<slug>-DESIGN.md` (`protocols/DESIGN.md`) before sustain — must include landing brief |
-| **Features** | **≥15** user-visible capabilities (see feature menu below) — CRUD alone does not count toward 15 |
+| **Features** | **≥20** user-visible capabilities (see feature menu below) — CRUD alone does not count toward 20; 1h loop cadence expects depth over throughput |
 | **API** | Auth + multi-tenant org + pagination + idempotent webhook + export |
 | **Tests** | Depth suite for unique claim (≥25) **plus** UI critical path for every page |
 | **Guides** | Best-practices tutor writes ≥1 guide under `docs/guides/` before sustain email |
 | **Try artifact** | Offline `try.html` demos core claim; product remains multi-page |
 | **Scoring** | Phase cells scored with maturity rubric (`docs/RUBRIC.md`) — not pass-count theater |
 
-## Feature menu (pick ≥15 distinct, user-visible)
+## Feature menu (pick ≥20 distinct, user-visible)
 
 Examples that count (each once): **marketing landing**, domain forecast/calc, scenario compare, history timeline, audit log, CSV/JSON export, search, filters, saved views, role-based screens, org settings, member invite, webhook config, notification of rejects, batch jobs, concurrency-safe batch, pagination, goldens browser, honesty/disclaimer surface, report summary, import, idempotent inbound events, rate-limit feedback, dual-impl verify panel, onboarding checklist, help/guide link in-app.
 
-CRUD create/read/update alone = **3 max** toward the 15. Dual-approval status boards do **not** count as domain features.
+CRUD create/read/update alone = **3 max** toward the 20. Dual-approval status boards do **not** count as domain features.
 
 ## Explicit fails (instant shallow)
 
@@ -32,7 +32,7 @@ CRUD create/read/update alone = **3 max** toward the 15. Dual-approval status bo
 - One calculator page + dual approval
 - Desk-only UI with **no marketing landing** (no selling points / features / explanations page)
 - Noun-swap of a prior sustained product
-- Sustain with <6 pages, <4 aggregates, or <15 features
+- Sustain with <8 pages, <4 aggregates, or <20 features
 - Pass-count digests without story + money honesty
 - Shipping without a tutor guide for what was learned
 
