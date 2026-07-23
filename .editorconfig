@@ -1,0 +1,15 @@
+# EditorConfig — keep Node config JSON BOM-free
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{json,jsonc}]
+charset = utf-8
+# Never emit UTF-8 BOM — Node rejects BOM package.json (ERR_INVALID_PACKAGE_CONFIG)
+
+[package.json]
+charset = utf-8

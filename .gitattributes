@@ -1,0 +1,4 @@
+# Keep package.json as UTF-8 text without a BOM.
+# A leading UTF-8 BOM makes Node throw ERR_INVALID_PACKAGE_CONFIG (StackBlitz / local).
+package.json text eol=lf
+**/package.json text eol=lf

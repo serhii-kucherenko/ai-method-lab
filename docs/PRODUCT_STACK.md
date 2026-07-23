@@ -115,6 +115,14 @@ Add `python/` only when the paper claim needs it — do not invent a sidecar for
 
 Stack choice does not waive domain depth, dual-impl goldens, or the ≥15-feature / ≥6-page sustain bar. Pretty UI on a shallow dual-gate clone still fails. Python does not waive the designer note or shadcn UI.
 
+## Config hygiene (no UTF-8 BOM)
+
+Node rejects `package.json` that starts with a UTF-8 BOM (`ERR_INVALID_PACKAGE_CONFIG`). Common cause on Windows: PowerShell `Set-Content -Encoding utf8` (writes BOM).
+
+- Write JSON with Node `fs.writeFileSync(path, data, "utf8")` (no BOM), or PowerShell `utf8NoBOM` / `[IO.File]::WriteAllText`
+- After bulk renames: `node scripts/strip-json-bom.mjs`
+- Guard: `node scripts/strip-json-bom.mjs --check`
+
 ## Skills / docs agents should load
 
 - Vercel Next.js + React best practices skills when implementing UI

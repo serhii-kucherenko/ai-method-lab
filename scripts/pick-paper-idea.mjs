@@ -257,6 +257,10 @@ npm start
 ## Status
 
 Smoke scaffold (claim + domain seed). Delivery upgrades to **Next.js + Tailwind + shadcn** per \`docs/PRODUCT_STACK.md\` and commits \`docs/ideas/${slug}-DESIGN.md\` before multi-page UI.
+
+## Config hygiene
+
+Never write \`package.json\` with a UTF-8 BOM (Windows PowerShell \`Set-Content -Encoding utf8\` does). Node fails with \`ERR_INVALID_PACKAGE_CONFIG\`. Use Node \`fs.writeFileSync\` or run \`node scripts/strip-json-bom.mjs\`.
 `,
   );
 
