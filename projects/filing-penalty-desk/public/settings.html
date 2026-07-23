@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Filing Penalty Desk — org settings</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 2rem 1.25rem;
+        max-width: 40rem;
+        margin-inline: auto;
+        color: #1a2228;
+        background: #eef2f4;
+      }
+      button {
+        background: #1f5f6b;
+        color: #fff;
+        border: 0;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        margin-right: 0.5rem;
+      }
+      #settings-out {
+        white-space: pre-wrap;
+        font-family: ui-monospace, monospace;
+        font-size: 0.85rem;
+      }
+      a { color: #1f5f6b; }
+    </style>
+  </head>
+  <body data-settings="live">
+    <h1>Org settings</h1>
+    <p>
+      Admin-only webhook HMAC secret and token notes. Auditors see redacted settings.
+      Inbound signed posts use header <code>x-fpd-signature</code>.
+    </p>
+    <p>
+      <button id="load-settings" type="button">Load settings</button>
+      <button id="rotate-secret" type="button">Rotate webhook secret</button>
+    </p>
+    <pre id="settings-out">Load to view</pre>
+    <p>
+      <a href="/returns.html">Catalog</a> ·
+      <a href="/audit.html">Audit</a> ·
+      <a href="/honesty.html">Honesty</a>
+    </p>
+    <script>
+      (function () {
+        const token = localStorage.getItem("fpd_token") || "";
+        const orgId = localStorage.getItem("fpd_org") || "";
+        const out = document.getElementById("settings-out");
+        function load() {
+          if (!token || !orgId) {
+            out.textContent = "Set fpd_token and fpd_org in localStorage.";
+            return;
+          }
+          fetch("/orgs/" + orgId + "/settings", {
+            headers: { authorization: "Bearer " + token },
+          })
+            .then(function (r) {
+              return r.json();
+            })
+            .then(function (j) {
+              out.textContent = JSON.stringify(j, null, 2);
+            });
+        }
+        document.getElementById("load-settings").onclick = load;
+        document.getElementById("rotate-secret").onclick = function () {
+          fetch("/orgs/" + orgId + "/settings", {
+            method: "PATCH",
+            headers: {
+              "content-type": "application/json",
+              authorization: "Bearer " + token,
+            },
+            body: JSON.stringify({ rotate_webhook_secret: true }),
+          })
+            .then(function (r) {
+              return r.json();
+            })
+            .then(function (j) {
+              out.textContent = JSON.stringify(j, null, 2);
+            });
+        };
+      })();
+    </script>
+  </body>
+</html>

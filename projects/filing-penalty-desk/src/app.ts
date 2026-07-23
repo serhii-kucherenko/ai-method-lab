@@ -1,3 +1,4 @@
+import { createHmac, timingSafeEqual } from "node:crypto";
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, extname, join } from "node:path";
@@ -11,16 +12,20 @@ import {
   createTimeline,
   findUserByEmail,
   getOrg,
+  getOrgSettings,
   getTimeline,
+  ingestWebhookTimeline,
   issueToken,
   listAudit,
   listTimelines,
   patchTimeline,
   registerUser,
   resolveToken,
+  rotateWebhookSecret,
   runBatchForecast,
   runForecast,
   scenarioCompare,
+  updateOrgSettings,
   type OrgRole,
   type Store,
   type TimelineCreate,
@@ -35,18 +40,31 @@ const MIME: Record<string, string> = {
 
 type Json = Record<string, unknown>;
 
-async function readBody(req: IncomingMessage): Promise<Json> {
+async function readRawBody(req: IncomingMessage): Promise<Buffer> {
   const chunks: Buffer[] = [];
   for await (const chunk of req) {
     chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
   }
-  const raw = Buffer.concat(chunks);
+  return Buffer.concat(chunks);
+}
+
+async function readBody(req: IncomingMessage): Promise<Json> {
+  const raw = await readRawBody(req);
   if (!raw.length) return {};
   try {
     return JSON.parse(raw.toString("utf8")) as Json;
   } catch {
     return {};
   }
+}
+
+function verifyHmac(secret: string, raw: Buffer, signature: string | undefined): boolean {
+  if (!signature) return false;
+  const expected = createHmac("sha256", secret).update(raw).digest("hex");
+  const a = Buffer.from(expected);
+  const b = Buffer.from(signature.trim());
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
 }
 
 function send(
@@ -213,6 +231,42 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
       const user = registerUser(store, email, password);
       const token = issueToken(store, user.id);
       return send(res, 201, { user, token });
+    }
+
+    if (method === "POST" && path === "/webhooks/timelines") {
+      const raw = await readRawBody(req);
+      let body: Json = {};
+      try {
+        body = raw.length ? (JSON.parse(raw.toString("utf8")) as Json) : {};
+      } catch {
+        return send(res, 400, { error: "invalid_json" });
+      }
+      const orgId = String(body.orgId ?? body.org_id ?? "").trim();
+      if (!orgId) return send(res, 400, { error: "org_id_required" });
+      const settings = getOrgSettings(store, orgId);
+      if (!settings) return send(res, 404, { error: "org_not_found" });
+      const signature =
+        (req.headers["x-fpd-signature"] as string | undefined) ??
+        (req.headers["x-signature"] as string | undefined);
+      if (!verifyHmac(settings.webhook_secret, raw, signature)) {
+        return send(res, 401, { error: "invalid_signature" });
+      }
+      const idempotencyKey = String(
+        req.headers["idempotency-key"] ?? body.idempotency_key ?? "",
+      ).trim();
+      const lineBody = (
+        body.timeline && typeof body.timeline === "object"
+          ? (body.timeline as Json)
+          : body
+      ) as Json;
+      const result = ingestWebhookTimeline(
+        store,
+        orgId,
+        idempotencyKey,
+        timelineInputFromBody(lineBody),
+      );
+      if (!result.ok) return send(res, result.status, { error: result.error });
+      return send(res, result.status, { timeline: result.timeline, replay: result.replay });
     }
 
     if (method === "POST" && path === "/orgs") {
@@ -386,6 +440,51 @@ export function createApp(opts: { rateLimit?: number; store?: Store } = {}) {
         return sendCsv(res, auditToCsv(listed.events));
       }
       return send(res, 200, listed);
+    }
+
+    const settingsMatch = path.match(/^\/orgs\/([^/]+)\/settings$/);
+    if (settingsMatch) {
+      const orgId = settingsMatch[1]!;
+      const userId = authUserId(store, req);
+      if (!userId) return send(res, 401, { error: "unauthorized" });
+      const role = assertAccess(store, orgId, userId, ["admin", "analyst", "auditor"]);
+      if (!role) return send(res, 403, { error: "forbidden" });
+
+      if (method === "GET") {
+        const settings = getOrgSettings(store, orgId);
+        if (!settings) return send(res, 404, { error: "not_found" });
+        if (role === "admin") {
+          return send(res, 200, { settings });
+        }
+        return send(res, 200, {
+          settings: {
+            orgId: settings.orgId,
+            webhook_secret: null,
+            tokens_note: null,
+            updated_at: settings.updated_at,
+            note: "webhook secret and tokens note visible to admin only",
+          },
+        });
+      }
+
+      if (method === "PATCH") {
+        if (role !== "admin") return send(res, 403, { error: "forbidden" });
+        const body = await readBody(req);
+        if (body.rotate_webhook_secret === true || body.rotateWebhookSecret === true) {
+          const rotated = rotateWebhookSecret(store, orgId);
+          return send(res, 200, { settings: rotated });
+        }
+        const patch: { webhook_secret?: string; tokens_note?: string } = {};
+        if (body.webhook_secret !== undefined) patch.webhook_secret = String(body.webhook_secret);
+        if (body.tokens_note !== undefined) patch.tokens_note = String(body.tokens_note);
+        if (Object.keys(patch).length === 0) {
+          return send(res, 400, {
+            error: "webhook_secret, tokens_note, or rotate_webhook_secret required",
+          });
+        }
+        const updated = updateOrgSettings(store, orgId, patch);
+        return send(res, 200, { settings: updated });
+      }
     }
 
     return send(res, 404, { error: "not_found" });

@@ -1,5 +1,13 @@
 # Filing Penalty Desk findings
 
+## Integrate (2026-07-23)
+
+- Inbound webhook HMAC (`x-fpd-signature`) + idempotency replay
+- Org settings: admin sees secret; auditor redacted; rotate admin-only
+- Catalog pagination + label search; settings page live
+- Cell: `A03__P-integrate-001__filing-penalty-desk__r1`
+- Next: **scale** (concurrent batch, 429, dual-impl walk)
+
 ## Workflow (2026-07-23)
 
 - Scenario compare: naive stacked flat fee vs month-walk dollars
