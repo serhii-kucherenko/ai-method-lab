@@ -2,6 +2,12 @@
 
 Frontier thinking only. No product code. No ROADMAP promotion from this file.
 
+## 2026-07-23 — Filing Penalty Desk sustained; email blocked (hard stop)
+
+Delivery sustain GREEN (55 tests, 8 pages, 18 features, tutor guide `docs/guides/04-filing-penalty-desk-lessons.md`). Digest drafted at `docs/ideas/filing-penalty-desk-PRODUCT-COMPLETE-DIGEST.md`. **Hard stop:** Resend MCP missing and no API key — cannot clear `product_complete_pending`. Next research seed parked as **Bond Accrual Desk** (G2 vs bondstrip required) — **no** second product folder.
+
+**Skeptical one-liner:** The product is done; the workflow is blocked on mail, not on code.
+
 ## 2026-07-23 — Filing Penalty Desk ready_to_build + PM go
 
 Architect pack landed 18-feature blueprint. Hours/ticks clear. G6 → **ready_to_build**. PM-GO → **go**. Next: product delivery opens `projects/filing-penalty-desk/` with mature name only (never `irc6651`).

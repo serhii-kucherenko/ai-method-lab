@@ -1,19 +1,13 @@
 {
-  "updated_at": "2026-07-23T17:20:00Z",
+  "updated_at": "2026-07-23T15:05:00Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
-    "to": [
-      "kucherenko.web@gmail.com"
-    ],
-    "on": [
-      "phase_complete",
-      "product_complete",
-      "hard_stop",
-      "digest"
-    ],
+    "to": ["kucherenko.web@gmail.com"],
+    "on": ["phase_complete", "product_complete", "hard_stop", "digest"],
     "enabled": true,
     "product_complete_pending": true,
-    "last_product_complete_email_id": "965db748-44f1-4364-913a-31960838af89"
+    "last_product_complete_email_id": "965db748-44f1-4364-913a-31960838af89",
+    "digest_draft": "docs/ideas/filing-penalty-desk-PRODUCT-COMPLETE-DIGEST.md"
   },
   "paused": false,
   "active_cell": null,
@@ -27,17 +21,17 @@
     "auth": "bearer-token"
   },
   "last_completed": "A03__P-sustain-001__filing-penalty-desk__r1",
-  "last_error": null,
+  "last_error": "Resend MCP unavailable and RESEND_API_KEY missing — cannot send Filing Penalty Desk product-complete email",
   "current_product": "filing-penalty-desk",
   "current_idea": "filing-penalty-desk",
-  "next_research_idea": null,
+  "next_research_idea": "bond-accrual-desk",
   "next_cell": null,
-  "mode": "autonomous",
-  "phase": "running",
-  "notes": "Filing Penalty Desk sustain GREEN (55 tests, 8 pages, 18 features). Tutor guide filed. product_complete_pending=true — parent may send email. Do not start another product. Never brand irc6651. Loop pid 34852.",
-  "hard_stop": false,
-  "ask_human": false,
-  "hard_stop_reason": null,
+  "mode": "hard_stop",
+  "phase": "scoring",
+  "notes": "Filing Penalty Desk sustain GREEN (55 tests, 8 pages, 18 features, tutor guide). Digest drafted. HARD STOP: restore Resend MCP or RESEND_API_KEY, send digest (try page + StackBlitz), then clear product_complete_pending. Do not open next product until email sent.",
+  "hard_stop": true,
+  "ask_human": true,
+  "hard_stop_reason": "Filing Penalty Desk finished and the findings email is ready, but email sending is blocked: Resend is not available in this session and no API key is in the environment. Restore Resend (or provide a send path), then the lab can clear the product slot and continue research.",
   "depth_policy": {
     "max_active_products": 1,
     "require_idea_depth": true,
@@ -59,16 +53,8 @@
     "finish_and_email_before_next": true,
     "max_parallel_agents": 20,
     "naming_protocol": "docs/PRODUCT_NAMING.md",
-    "architect_pack": [
-      "VISION",
-      "ROADMAP",
-      "PRD",
-      "ERD"
-    ],
-    "pm_pack": [
-      "ROADMAP",
-      "PM-GO"
-    ],
+    "architect_pack": ["VISION", "ROADMAP", "PRD", "ERD"],
+    "pm_pack": ["ROADMAP", "PM-GO"],
     "comprehensive_protocol": "docs/COMPREHENSIVE_PRODUCT.md",
     "roles_protocol": "protocols/AGENT_ROLES.md",
     "protocol": "protocols/IDEA_DEPTH.md",
