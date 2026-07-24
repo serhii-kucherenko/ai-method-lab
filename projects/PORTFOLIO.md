@@ -28,6 +28,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **MSK Care Studio** | `msk-care-studio` | **Complete** | Evidence-grounded MSK pathways |
 | **Legacy Infer Studio** | `legacy-infer-studio` | **Complete** | Stage-validated legacy GPU inference |
 | **Quad Skill Studio** | `quad-skill-studio` | **Complete** | Multi-skill wild quadruped locomotion |
+| **Developable Molecule Studio** | `developable-molecule-studio` | **Building** | Pocket + developability generation |
 
 ## Rules
 
