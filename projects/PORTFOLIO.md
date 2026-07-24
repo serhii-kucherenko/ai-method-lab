@@ -22,6 +22,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Neuro Guard Studio** | `neuro-guard-studio` | **Complete** | IIoT neuro-agentic defense + CPI |
 | **Prompt Cache Studio** | `prompt-cache-studio` | **Complete** | Cache-aware prompt compression |
 | **Meta Synthesis Studio** | `meta-synthesis-studio` | **Complete** | Agentic meta-analysis pipeline |
+| **Tactile Chart Studio** | `tactile-chart-studio` | **Building** | Conversational + tactile charts |
 
 ## Rules
 
