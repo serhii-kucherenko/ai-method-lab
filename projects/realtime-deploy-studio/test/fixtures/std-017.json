@@ -1,0 +1,41 @@
+{
+  "id": "std-017",
+  "input": {
+    "pipelineStages": 9,
+    "gpuBudget": 5,
+    "modalityCount": 2,
+    "latencyWeight": 0.59,
+    "throughputWeight": 0.43,
+    "streamingOverlap": 0.55,
+    "stateScopeComplexity": 0.61,
+    "placementFlexibility": 0.54,
+    "irValidationDepth": 0.5,
+    "measurementGateStrictness": 0.53,
+    "candidatePassCount": 2,
+    "profile": "fast"
+  },
+  "expectedHarnessed": {
+    "mode": "harnessed",
+    "ttfoScore": 54.81,
+    "throughputScore": 75.51,
+    "correctnessConfidence": 49.25,
+    "readinessScore": 60.98,
+    "harnessLift": 42.66,
+    "criticalPathScore": 52.05,
+    "placementScore": 61.97,
+    "confidence": 44.36,
+    "overall": 59.41
+  },
+  "expectedNaive": {
+    "mode": "naive",
+    "ttfoScore": 41.14,
+    "throughputScore": 51.19,
+    "correctnessConfidence": 53.86,
+    "readinessScore": 44.17,
+    "harnessLift": 2.89,
+    "criticalPathScore": 36.58,
+    "placementScore": 70.88,
+    "confidence": 65.78,
+    "overall": 46.54
+  }
+}

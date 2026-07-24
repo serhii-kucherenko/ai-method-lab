@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Realtime Deploy Studio — try</title>
+    <style>
+      :root {
+        --bg: #0f1419;
+        --panel: #161d27;
+        --amber: #f0b429;
+        --ink: #e8eef4;
+        --muted: #94a3b8;
+        --line: #2a3444;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Manrope, system-ui, sans-serif;
+        background: radial-gradient(ellipse 70% 55% at 12% 0%, #2a2410 0%, transparent 55%),
+          #0f1419;
+        color: var(--ink);
+        min-height: 100vh;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: Sora, system-ui, sans-serif;
+        color: var(--amber);
+        font-size: 2rem;
+        margin: 0 0 0.5rem;
+      }
+      p {
+        color: var(--muted);
+        max-width: 36rem;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        max-width: 40rem;
+      }
+      label {
+        display: grid;
+        gap: 0.35rem;
+        font-size: 0.9rem;
+      }
+      input,
+      select {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        color: var(--ink);
+        border-radius: 0.5rem;
+        padding: 0.55rem 0.7rem;
+      }
+      button {
+        margin-top: 0.5rem;
+        background: var(--amber);
+        color: #1a1408;
+        border: 0;
+        border-radius: 0.5rem;
+        padding: 0.65rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.5rem;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 0.75rem;
+        padding: 1rem;
+        max-width: 40rem;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #243041;
+        border-radius: 999px;
+        overflow: hidden;
+        margin: 0.35rem 0 0.75rem;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--amber);
+      }
+      .fence {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Realtime Deploy Studio</h1>
+    <p>
+      Offline demo: harnessed multi-check deploy plan vs naive single-shot.
+      Soft simulation only — not FlashRT brand, not a production autoscaler.
+    </p>
+    <div class="grid">
+      <label>
+        Pipeline stages
+        <input id="stages" type="number" min="2" max="12" value="7" />
+      </label>
+      <label>
+        GPU budget
+        <input id="gpu" type="number" min="1" max="8" value="4" />
+      </label>
+      <label>
+        Modalities
+        <input id="mod" type="number" min="1" max="4" value="3" />
+      </label>
+      <label>
+        IR validation depth (0–1)
+        <input id="ir" type="number" min="0" max="1" step="0.01" value="0.8" />
+      </label>
+      <label>
+        Measurement gate (0–1)
+        <input id="gate" type="number" min="0" max="1" step="0.01" value="0.76" />
+      </label>
+      <button id="run" type="button">Score harnessed vs naive</button>
+    </div>
+    <div class="out" id="out">Run to compare.</div>
+    <p class="fence">
+      Sources: arXiv 2607.18171 · Authors’ code Infini-AI-Lab/FlashRT · Method Lab soft sim
+    </p>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function pressure(input) {
+        return clamp(
+          (input.pipelineStages / 12) * 0.35 +
+            (input.modalityCount / 4) * 0.3 +
+            0.62 * 0.25 +
+            (1 - 0.7) * 0.1,
+          0,
+          1,
+        );
+      }
+      function scoreHarnessed(input) {
+        const p = pressure(input);
+        const ir =
+          input.irValidationDepth * 46 +
+          input.measurementGateStrictness * 28 +
+          5 * 3.2 +
+          0.7 * 12;
+        const stream = 0.68 * 52 + input.gpuBudget * 5.5 + (1 - p) * 18 + 0.7 * 14;
+        const measure =
+          input.measurementGateStrictness * 48 +
+          5 * 4.5 +
+          input.irValidationDepth * 22 +
+          0.72 * 12;
+        const overall = round2(
+          clamp(
+            ((ir * 0.34 + stream * 0.4 + measure * 0.26) * 1.1 - p * 14) * 0.55 +
+              0.72 * 18,
+            0,
+            100,
+          ),
+        );
+        const naive = round2(
+          clamp(42 + input.gpuBudget * 2.5 - p * 32 - 0.62 * 12, 0, 100),
+        );
+        return { overall, naive, lift: round2(Math.max(0, overall - naive)) };
+      }
+      document.getElementById("run").onclick = () => {
+        const input = {
+          pipelineStages: Number(document.getElementById("stages").value),
+          gpuBudget: Number(document.getElementById("gpu").value),
+          modalityCount: Number(document.getElementById("mod").value),
+          irValidationDepth: Number(document.getElementById("ir").value),
+          measurementGateStrictness: Number(document.getElementById("gate").value),
+        };
+        const r = scoreHarnessed(input);
+        document.getElementById("out").innerHTML =
+          "<p><strong>Harnessed overall</strong> " +
+          r.overall +
+          '</p><div class="bar"><span style="width:' +
+          r.overall +
+          '%"></span></div>' +
+          "<p><strong>Naive single-shot</strong> " +
+          r.naive +
+          '</p><div class="bar"><span style="width:' +
+          r.naive +
+          '%"></span></div>' +
+          "<p>Harness lift ≈ " +
+          r.lift +
+          "</p>";
+      };
+    </script>
+  </body>
+</html>

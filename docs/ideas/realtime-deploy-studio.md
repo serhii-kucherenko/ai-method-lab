@@ -1,6 +1,6 @@
 # Realtime Deploy Studio
 
-**State:** building  
+**State:** sustain-green  
 **Slug:** `realtime-deploy-studio`  
 **Paper:** https://arxiv.org/abs/2607.18171v1  
 **Authors’ code:** none  
