@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ladder Bomb Studio — try</title>
+    <style>
+      :root {
+        --bg: #eef1f4;
+        --ink: #1a2332;
+        --amber: #d97706;
+        --line: #cbd5e1;
+        --panel: #fff;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        background: radial-gradient(ellipse 70% 55% at 8% 0%, #fde68a55, transparent 55%),
+          #eef1f4;
+        color: var(--ink);
+        padding: 2rem;
+      }
+      h1 {
+        font-family: "IBM Plex Serif", Georgia, serif;
+        color: var(--amber);
+        margin: 0 0 0.5rem;
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 1rem;
+        max-width: 520px;
+        margin-top: 1rem;
+      }
+      label {
+        display: block;
+        font-size: 0.85rem;
+        margin-top: 0.75rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.4rem 0.5rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--amber);
+        color: #fffbeb;
+        border: 0;
+        border-radius: 6px;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .bar {
+        height: 8px;
+        background: #e2e8f0;
+        border-radius: 4px;
+        margin-top: 0.35rem;
+        overflow: hidden;
+      }
+      .bar > i {
+        display: block;
+        height: 100%;
+        background: var(--amber);
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #64748b;
+        max-width: 520px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ladder Bomb Studio</h1>
+    <p class="note">
+      Offline approximate demo of FB-aware formal plan quality vs dropped-FB
+      baseline. Full studio: <code>npm run dev</code> in
+      <code>projects/ladder-bomb-studio</code>. Not ESBMC-LLB.
+    </p>
+    <div class="panel">
+      <label
+        >FB body retention
+        <input id="ret" type="number" min="0" max="1" step="0.05" value="0.88"
+      /></label>
+      <label
+        >Nested FB depth
+        <input id="nest" type="number" min="0" max="1" step="0.05" value="0.62"
+      /></label>
+      <label
+        >Hidden timer hint
+        <input id="timer" type="number" min="0" max="1" step="0.05" value="0.7"
+      /></label>
+      <button id="run">Score plans</button>
+      <div id="out" style="margin-top: 1rem"></div>
+    </div>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreFb(ret, nest, timer) {
+        const catchRate = round2(
+          clamp(ret * 42 + nest * 18 + timer * 28 + 12, 0, 100),
+        );
+        const trigger = round2(clamp(ret * 28 + (1 - nest) * 20 + timer * 18 + 22, 0, 100));
+        const overall = round2(clamp(catchRate * 0.55 + trigger * 0.45, 0, 100));
+        return { catchRate, trigger, overall };
+      }
+      function scoreDrop(ret, nest, timer) {
+        const catchRate = round2(
+          clamp(38 + timer * 12 - nest * 26 - ret * 18, 0, 62),
+        );
+        const trigger = round2(clamp(30 + timer * 10 - nest * 18 - ret * 12, 0, 55));
+        const overall = round2(clamp(catchRate * 0.55 + trigger * 0.45, 0, 100));
+        return { catchRate, trigger, overall };
+      }
+      function bar(label, v) {
+        return (
+          "<div><div>" +
+          label +
+          ": " +
+          v +
+          '</div><div class="bar"><i style="width:' +
+          Math.min(100, v) +
+          '%"></i></div></div>'
+        );
+      }
+      document.getElementById("run").onclick = function () {
+        const ret = Number(document.getElementById("ret").value);
+        const nest = Number(document.getElementById("nest").value);
+        const timer = Number(document.getElementById("timer").value);
+        const a = scoreFb(ret, nest, timer);
+        const b = scoreDrop(ret, nest, timer);
+        document.getElementById("out").innerHTML =
+          "<strong>FB-aware</strong>" +
+          bar("catch", a.catchRate) +
+          bar("trigger", a.trigger) +
+          bar("overall", a.overall) +
+          "<br/><strong>Dropped-FB</strong>" +
+          bar("catch", b.catchRate) +
+          bar("trigger", b.trigger) +
+          bar("overall", b.overall);
+      };
+      document.getElementById("run").click();
+    </script>
+  </body>
+</html>

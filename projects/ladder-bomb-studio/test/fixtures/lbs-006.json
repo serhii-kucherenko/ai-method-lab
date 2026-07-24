@@ -1,0 +1,38 @@
+{
+  "id": "lbs-006",
+  "input": {
+    "fbBodyRetention": 0.3,
+    "nestedFbDepth": 0.25,
+    "timerCounterComplexity": 0.19,
+    "interlockBypassRisk": 0.18,
+    "actuatorReach": 0.22,
+    "operatorOverrideGap": 0.23,
+    "hiddenTimerHint": 0.25,
+    "scanCycleBoundTightness": 0.33,
+    "symbolicPathCoverage": 0.29,
+    "triggerRecoverability": 0.29,
+    "ladderNoise": 0.66,
+    "fbInstanceCount": 8,
+    "profile": "strict"
+  },
+  "expectedFbAware": {
+    "mode": "fb-aware",
+    "bombCatchRate": 23.39,
+    "triggerRecovery": 23.67,
+    "fbFidelity": 29.35,
+    "symbolicCoverage": 22.18,
+    "falseAlarmFit": 61.04,
+    "confidence": 23.78,
+    "overall": 28.15
+  },
+  "expectedDroppedFb": {
+    "mode": "dropped-fb",
+    "bombCatchRate": 29.48,
+    "triggerRecovery": 30.34,
+    "fbFidelity": 19.36,
+    "symbolicCoverage": 37.52,
+    "falseAlarmFit": 43.56,
+    "confidence": 30.28,
+    "overall": 31.2
+  }
+}
