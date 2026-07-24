@@ -1,0 +1,37 @@
+{
+  "id": "mss-002",
+  "input": {
+    "questionClarity": 0.22,
+    "searchBreadth": 0.21,
+    "screenDiscipline": 0.19,
+    "extractionCompleteness": 0.22,
+    "studyCount": 6,
+    "effectPrecision": 0.21,
+    "heterogeneityAware": 0.15,
+    "poolingQuality": 0.24,
+    "inclusionStrictness": 0.21,
+    "duplicateControl": 0.17,
+    "biasAssessment": 0.16,
+    "profile": "balanced"
+  },
+  "expectedAgentic": {
+    "mode": "agentic",
+    "planQuality": 13.81,
+    "screenCoverage": 17.64,
+    "extractionFidelity": 15.24,
+    "pooledConfidence": 16.88,
+    "heterogeneityScore": 16.98,
+    "auditTrail": 16.42,
+    "overall": 16.19
+  },
+  "expectedAdhoc": {
+    "mode": "adhoc",
+    "planQuality": 39.26,
+    "screenCoverage": 0,
+    "extractionFidelity": 46.91,
+    "pooledConfidence": 28.66,
+    "heterogeneityScore": 0,
+    "auditTrail": 15.18,
+    "overall": 25.66
+  }
+}

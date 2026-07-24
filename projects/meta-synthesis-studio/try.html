@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meta Synthesis Studio — try</title>
+  <style>
+    :root {
+      --forest: #1f5c3a;
+      --bg: #f7faf6;
+      --ink: #1a2e22;
+      --muted: #4d6658;
+      --line: #c9d9ce;
+      --panel: #fff;
+    }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #eef5ef, var(--bg));
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    header, main { max-width: 720px; margin: 0 auto; padding: 1.5rem; }
+    h1 { font-family: Literata, Georgia, serif; font-weight: 600; color: var(--forest); font-size: 2rem; margin: 0 0 0.5rem; }
+    .tag { color: var(--muted); margin-bottom: 1.5rem; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    label { display: block; font-size: 0.85rem; margin-top: 0.6rem; color: var(--muted); }
+    input[type="range"] { width: 100%; }
+    button {
+      margin-top: 1rem;
+      background: var(--forest);
+      color: #fff;
+      border: 0;
+      border-radius: 8px;
+      padding: 0.55rem 1rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .scores { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .score h3 { margin: 0 0 0.25rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    .big { font-family: Literata, Georgia, serif; font-size: 2rem; color: var(--forest); }
+    .bar { height: 8px; background: #e2ece5; border-radius: 4px; overflow: hidden; margin-top: 0.35rem; }
+    .bar > span { display: block; height: 100%; background: var(--forest); width: 0; transition: width 0.4s ease; }
+    .fence { font-size: 0.85rem; color: var(--muted); margin-top: 1.5rem; }
+    a { color: var(--forest); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meta Synthesis Studio</h1>
+    <p class="tag">Offline demo — agentic pipeline vs ad-hoc baseline. Soft sim only.</p>
+  </header>
+  <main>
+    <div class="panel">
+      <label>Screen discipline <span id="v-screen"></span></label>
+      <input id="screen" type="range" min="0" max="100" value="80" />
+      <label>Heterogeneity aware <span id="v-hetero"></span></label>
+      <input id="hetero" type="range" min="0" max="100" value="75" />
+      <label>Extraction completeness <span id="v-extract"></span></label>
+      <input id="extract" type="range" min="0" max="100" value="70" />
+      <button type="button" id="run">Compare plans</button>
+    </div>
+    <div class="scores">
+      <div class="panel">
+        <h3>Agentic</h3>
+        <div class="big" id="a-overall">—</div>
+        <div class="bar"><span id="a-bar"></span></div>
+        <p id="a-detail" style="font-size:0.85rem;color:var(--muted)"></p>
+      </div>
+      <div class="panel">
+        <h3>Ad-hoc</h3>
+        <div class="big" id="b-overall">—</div>
+        <div class="bar"><span id="b-bar"></span></div>
+        <p id="b-detail" style="font-size:0.85rem;color:var(--muted)"></p>
+      </div>
+    </div>
+    <p class="fence">
+      Inspired by <a href="https://arxiv.org/abs/2607.15247v1">arXiv:2607.15247</a>.
+      Not AutoSynthesis. Not live PubMed. Approximate demo — full studio needs <code>npm run dev</code>.
+    </p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function score(screen, hetero, extract, agentic) {
+      if (agentic) {
+        const screenCoverage = round2(clamp(screen * 0.85 + 8, 0, 100));
+        const heterogeneityScore = round2(clamp(hetero * 0.9 + 5, 0, 100));
+        const extractionFidelity = round2(clamp(extract * 0.8 + 10, 0, 100));
+        const overall = round2(clamp(screenCoverage * 0.35 + heterogeneityScore * 0.35 + extractionFidelity * 0.3, 0, 100));
+        return { overall, screenCoverage, heterogeneityScore };
+      }
+      const skip = clamp(0.4 + (1 - screen / 100) * 0.3 + (1 - hetero / 100) * 0.3, 0.35, 0.95);
+      const screenCoverage = round2(clamp(22 - skip * 18 + screen * 0.08, 0, 42));
+      const heterogeneityScore = round2(clamp(12 - skip * 10 + hetero * 0.05, 0, 28));
+      const extractionFidelity = round2(clamp(extract * 0.55 + 20, 0, 78));
+      const overall = round2(clamp(screenCoverage * 0.25 + heterogeneityScore * 0.15 + extractionFidelity * 0.6, 0, 100));
+      return { overall, screenCoverage, heterogeneityScore };
+    }
+    function syncLabels() {
+      document.getElementById("v-screen").textContent = document.getElementById("screen").value + "%";
+      document.getElementById("v-hetero").textContent = document.getElementById("hetero").value + "%";
+      document.getElementById("v-extract").textContent = document.getElementById("extract").value + "%";
+    }
+    function run() {
+      syncLabels();
+      const s = +document.getElementById("screen").value;
+      const h = +document.getElementById("hetero").value;
+      const e = +document.getElementById("extract").value;
+      const a = score(s, h, e, true);
+      const b = score(s, h, e, false);
+      document.getElementById("a-overall").textContent = a.overall;
+      document.getElementById("b-overall").textContent = b.overall;
+      document.getElementById("a-bar").style.width = a.overall + "%";
+      document.getElementById("b-bar").style.width = b.overall + "%";
+      document.getElementById("a-detail").textContent = "screen " + a.screenCoverage + " · hetero " + a.heterogeneityScore;
+      document.getElementById("b-detail").textContent = "screen " + b.screenCoverage + " · hetero " + b.heterogeneityScore;
+    }
+    ["screen", "hetero", "extract"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", syncLabels);
+    });
+    document.getElementById("run").addEventListener("click", run);
+    syncLabels();
+    run();
+  </script>
+</body>
+</html>

@@ -21,7 +21,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Data World Studio** | `data-world-studio` | **Complete** | DS world-model outcome forecasts |
 | **Neuro Guard Studio** | `neuro-guard-studio` | **Complete** | IIoT neuro-agentic defense + CPI |
 | **Prompt Cache Studio** | `prompt-cache-studio` | **Complete** | Cache-aware prompt compression |
-| **Meta Synthesis Studio** | `meta-synthesis-studio` | **Building** | Agentic meta-analysis pipeline |
+| **Meta Synthesis Studio** | `meta-synthesis-studio` | **Complete** | Agentic meta-analysis pipeline |
 
 ## Rules
 
