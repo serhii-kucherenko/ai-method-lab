@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data World Studio — try</title>
+    <style>
+      :root {
+        --teal: #0f766e;
+        --deep: #134e4a;
+        --bg: #eef6f5;
+        --panel: #fff;
+        --line: #b8d4cf;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: radial-gradient(
+            ellipse 70% 55% at 8% 0%,
+            #99f6e455,
+            transparent 55%
+          ),
+          linear-gradient(180deg, #e6f4f2, #eef6f5);
+        color: #14303a;
+        min-height: 100vh;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+        color: var(--deep);
+        margin: 0 0 0.5rem;
+      }
+      p {
+        color: #5b7a7a;
+        line-height: 1.5;
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 1.25rem;
+      }
+      label {
+        display: block;
+        font-size: 0.8rem;
+        margin: 0.75rem 0 0.25rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.4rem 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--teal);
+        color: #f0fdfa;
+        border: 0;
+        border-radius: 0.4rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #e2e8f0;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 0.25rem;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--teal);
+        width: 0;
+        transition: width 0.6s ease;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        margin-top: 0.65rem;
+      }
+      .note {
+        font-size: 0.75rem;
+        margin-top: 1rem;
+        color: #64748b;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Data World Studio</h1>
+      <p>
+        Offline demo: slide state coverage and exploration noise to see
+        world-model plan quality beat trial-and-error before you spend the run.
+      </p>
+      <div class="panel">
+        <label for="state">State coverage</label>
+        <input id="state" type="range" min="0" max="100" value="80" />
+        <label for="noise">Exploration noise</label>
+        <input id="noise" type="range" min="0" max="100" value="25" />
+        <button id="run" type="button">Forecast</button>
+        <div id="out"></div>
+        <p class="note">
+          Soft simulation only — not DSWorld, not a production LLM simulator.
+          Paper: https://arxiv.org/abs/2607.15901v1
+        </p>
+      </div>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreWorldModel(state, noise) {
+        const accuracy = round2(
+          clamp(state * 0.55 + (1 - noise) * 28 + 18, 0, 100),
+        );
+        const waste = round2(
+          clamp(60 + state * 0.2 - noise * 40, 0, 100),
+        );
+        const overall = round2(accuracy * 0.55 + waste * 0.45);
+        return { accuracy, waste, overall };
+      }
+      function scoreTrial(state, noise) {
+        const accuracy = round2(
+          clamp(38 + noise * 12 + state * 0.12, 0, 64),
+        );
+        const waste = round2(clamp(36 - noise * 18, 0, 55));
+        const overall = round2(accuracy * 0.55 + waste * 0.45);
+        return { accuracy, waste, overall };
+      }
+      function render() {
+        const state = Number(document.getElementById("state").value) / 100;
+        const noise = Number(document.getElementById("noise").value) / 100;
+        const a = scoreWorldModel(state, noise);
+        const b = scoreTrial(state, noise);
+        const winner =
+          a.overall > b.overall + 0.01
+            ? "world-model"
+            : b.overall > a.overall + 0.01
+              ? "trial-error"
+              : "tie";
+        document.getElementById("out").innerHTML = `
+          <div class="row"><span>World-model overall</span><span>${a.overall}%</span></div>
+          <div class="bar"><span style="width:${a.overall}%"></span></div>
+          <div class="row"><span>Trial-and-error overall</span><span>${b.overall}%</span></div>
+          <div class="bar"><span style="width:${b.overall}%;background:#64748b"></span></div>
+          <p style="margin-top:0.75rem;font-size:0.85rem">Winner: <strong>${winner}</strong></p>
+        `;
+      }
+      document.getElementById("run").addEventListener("click", render);
+      render();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "id": "dws-013",
+  "input": {
+    "stateCoverage": 0.5,
+    "costAwareness": 0.43,
+    "planHorizon": 0.4,
+    "simFidelity": 0.43,
+    "dataQuality": 0.47,
+    "featureRichness": 0.41,
+    "agentSkill": 0.47,
+    "explorationNoise": 0.51,
+    "retryBudget": 0.51,
+    "computeBudget": 0.5,
+    "opComplexity": 0.43,
+    "stepCount": 17,
+    "profile": "balanced"
+  },
+  "expectedWorldModel": {
+    "mode": "world-model",
+    "outcomeAccuracy": 37.13,
+    "costEfficiency": 25.98,
+    "planQuality": 40.54,
+    "simFit": 34.98,
+    "wasteAvoided": 57.9,
+    "confidence": 40.06,
+    "overall": 37.72
+  },
+  "expectedTrialError": {
+    "mode": "trial-error",
+    "outcomeAccuracy": 42.84,
+    "costEfficiency": 12.08,
+    "planQuality": 27.99,
+    "simFit": 28.9,
+    "wasteAvoided": 16.53,
+    "confidence": 28.78,
+    "overall": 27.51
+  }
+}

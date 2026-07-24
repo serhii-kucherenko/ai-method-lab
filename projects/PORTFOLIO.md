@@ -18,7 +18,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Secure Tutor Studio** | `secure-tutor-studio` | **Complete** | SYNAPSE |
 | **Agent Safety Studio** | `agent-safety-studio` | **Complete** | Structural monitoring |
 | **Ladder Bomb Studio** | `ladder-bomb-studio` | **Complete** | Formal LLB detection / trigger synth |
-| **Data World Studio** | `data-world-studio` | **Building** | DS world-model outcome forecasts |
+| **Data World Studio** | `data-world-studio` | **Complete** | DS world-model outcome forecasts |
 
 ## Rules
 
