@@ -1,0 +1,36 @@
+{
+  "id": "qss-004",
+  "input": {
+    "terrainRoughness": 0.71,
+    "perceptionQuality": 0.32,
+    "skillCoverage": 0.24,
+    "transitionSmoothness": 0.25,
+    "gaitStability": 0.34,
+    "energyEfficiency": 0.24,
+    "slipRisk": 0.6,
+    "slopeGrade": 0.58,
+    "trajectoryDensity": 0.29,
+    "skill": "climb",
+    "plan": "single_gait"
+  },
+  "expectedMultiSkill": {
+    "mode": "multi_skill",
+    "traversalScore": 28.85,
+    "transitionScore": 18.11,
+    "perceptionScore": 27.29,
+    "stabilityScore": 23.21,
+    "energyScore": 19.38,
+    "stallRisk": 35.42,
+    "overall": 24.99
+  },
+  "expectedSingleGait": {
+    "mode": "single_gait",
+    "traversalScore": 18.25,
+    "transitionScore": 5.61,
+    "perceptionScore": 9.14,
+    "stabilityScore": 4.26,
+    "energyScore": 9.16,
+    "stallRisk": 16.4,
+    "overall": 11.55
+  }
+}

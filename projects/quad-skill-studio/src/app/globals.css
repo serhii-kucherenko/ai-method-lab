@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Trail earth + electric lime — DESIGN brief */
+  --studio-bg: #ebe4d8;
+  --studio-ink: #2a241c;
+  --studio-ink-deep: #1a1612;
+  --studio-signal: #a8e048;
+  --studio-signal-ink: #1f2a0a;
+  --studio-signal-soft: #e4f5b8;
+  --studio-earth: #6b5344;
+  --studio-earth-soft: #d9cfc3;
+  --studio-panel: #fffaf3;
+  --studio-line: #c4b8a8;
+  --studio-wash: radial-gradient(ellipse 70% 55% at 12% 0%, #a8e04844 0%, transparent 55%),
+    radial-gradient(ellipse 45% 40% at 90% 8%, #6b534440 0%, transparent 50%),
+    linear-gradient(180deg, #cfc4b4 0%, #ebe4d8 42%, #ddd3c6 100%);
+
+  --background: #ebe4d8;
+  --foreground: #2a241c;
+  --card: #fffaf3;
+  --card-foreground: #2a241c;
+  --popover: #fffaf3;
+  --popover-foreground: #2a241c;
+  --primary: #6b8f1a;
+  --primary-foreground: #f4ffe0;
+  --secondary: #e5dccf;
+  --secondary-foreground: #2a241c;
+  --muted: #e5dccf;
+  --muted-foreground: #6a5e52;
+  --accent: #e4f5b8;
+  --accent-foreground: #1a1612;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #c4b8a8;
+  --input: #c4b8a8;
+  --ring: #6b8f1a;
+  --radius: 0.625rem;
+  --chart-1: #6b8f1a;
+  --chart-2: #6b5344;
+  --chart-3: #a8e048;
+  --chart-4: #8a7564;
+  --chart-5: #9aad4a;
+  --sidebar: #f5efe6;
+  --sidebar-foreground: #2a241c;
+  --sidebar-primary: #6b8f1a;
+  --sidebar-primary-foreground: #f4ffe0;
+  --sidebar-accent: #e4f5b8;
+  --sidebar-accent-foreground: #1a1612;
+  --sidebar-border: #c4b8a8;
+  --sidebar-ring: #6b8f1a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gait-morph {
+  0%,
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
+  50% {
+    transform: translateX(6px) scaleX(1.04);
+  }
+}
+
+@keyframes terrain-scrub {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 40%;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-gait-morph {
+  animation: gait-morph 2.4s ease-in-out infinite;
+}
+
+.animate-terrain-scrub {
+  animation: terrain-scrub 18s linear infinite;
+}
+
+.trail-grid {
+  background-image: linear-gradient(
+      color-mix(in srgb, var(--studio-signal) 14%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--studio-earth) 12%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 32px 32px;
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quad Skill Studio — try</title>
+    <style>
+      :root {
+        --bg: #ebe4d8;
+        --ink: #2a241c;
+        --signal: #a8e048;
+        --signal-ink: #1f2a0a;
+        --earth: #6b5344;
+        --panel: #fffaf3;
+        --line: #c4b8a8;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Barlow, "Segoe UI", sans-serif;
+        background: radial-gradient(
+            ellipse 70% 50% at 10% 0%,
+            #a8e04844,
+            transparent 55%
+          ),
+          linear-gradient(180deg, #cfc4b4, #ebe4d8 45%);
+        color: var(--ink);
+        min-height: 100vh;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: Oswald, "Segoe UI", sans-serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin: 0 0 0.5rem;
+        color: var(--signal-ink);
+      }
+      .sub {
+        max-w-width: 36rem;
+        max-width: 36rem;
+        color: #6a5e52;
+        margin-bottom: 1.5rem;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+        max-width: 40rem;
+      }
+      label {
+        display: grid;
+        gap: 0.35rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 0.75rem;
+        background: var(--signal);
+        color: var(--signal-ink);
+        border: 0;
+        border-radius: 0.5rem;
+        padding: 0.6rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .scores {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        max-width: 40rem;
+      }
+      @media (min-width: 720px) {
+        .scores {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 0.75rem;
+        padding: 1rem 1.1rem;
+      }
+      .card h2 {
+        font-family: Oswald, "Segoe UI", sans-serif;
+        margin: 0 0 0.35rem;
+        font-size: 1.15rem;
+      }
+      .big {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+      .note {
+        margin-top: 1.5rem;
+        max-width: 40rem;
+        font-size: 0.85rem;
+        color: #6a5e52;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quad Skill Studio</h1>
+    <p class="sub">
+      Approximate dual-score demo: multi-skill perceptive plans vs single-gait
+      stall baselines. Soft simulation only — not live robot control.
+    </p>
+    <div class="grid">
+      <label>
+        Terrain roughness
+        <input id="rough" type="range" min="0" max="100" value="42" />
+      </label>
+      <label>
+        Skill coverage
+        <input id="cover" type="range" min="0" max="100" value="78" />
+      </label>
+      <label>
+        Transition smoothness
+        <input id="smooth" type="range" min="0" max="100" value="84" />
+      </label>
+      <label>
+        Slip risk
+        <input id="slip" type="range" min="0" max="100" value="18" />
+      </label>
+      <button type="button" id="run">Score plans</button>
+    </div>
+    <div class="scores">
+      <div class="card">
+        <h2>Multi-skill (A)</h2>
+        <div class="big" id="a">—</div>
+        <p id="a-detail"></p>
+      </div>
+      <div class="card">
+        <h2>Single-gait (B)</h2>
+        <div class="big" id="b">—</div>
+        <p id="b-detail"></p>
+      </div>
+    </div>
+    <p class="note">
+      Sources:
+      <a href="https://arxiv.org/abs/2607.13579v1"
+        >https://arxiv.org/abs/2607.13579v1</a
+      >
+      · Not APT-RL. Full fidelity lives in the Next.js app.
+    </p>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function score(input, multi) {
+        const rough = input.rough;
+        const cover = input.cover;
+        const smooth = input.smooth;
+        const slip = input.slip;
+        if (multi) {
+          const traversal = clamp(
+            70 + cover * 22 + smooth * 12 - rough * 28 - slip * 10,
+            0,
+            100,
+          );
+          const transition = clamp(
+            55 + smooth * 35 + cover * 18 - slip * 12,
+            0,
+            100,
+          );
+          const stall = clamp(
+            100 - (slip * 38 + rough * 22 + Math.max(0, rough - cover) * 20),
+            0,
+            100,
+          );
+          const overall = round2(
+            traversal * 0.35 + transition * 0.4 + stall * 0.25,
+          );
+          return { overall, transition: round2(transition), stall: round2(stall) };
+        }
+        const penalty = clamp(
+          0.36 + rough * 0.26 + slip * 0.18 + (1 - cover) * 0.16,
+          0.26,
+          0.92,
+        );
+        const traversal = clamp((55 + cover * 20 - rough * 18) * penalty, 0, 100);
+        const transition = clamp((30 + smooth * 20) * penalty, 0, 100);
+        const stall = clamp(
+          100 - (slip * 55 + rough * 28 + (1 - cover) * 22 + 14),
+          0,
+          100,
+        );
+        const overall = round2(
+          traversal * 0.25 + transition * 0.2 + stall * 0.55,
+        );
+        return { overall, transition: round2(transition), stall: round2(stall) };
+      }
+      function read() {
+        return {
+          rough: Number(document.getElementById("rough").value) / 100,
+          cover: Number(document.getElementById("cover").value) / 100,
+          smooth: Number(document.getElementById("smooth").value) / 100,
+          slip: Number(document.getElementById("slip").value) / 100,
+        };
+      }
+      function run() {
+        const input = read();
+        const a = score(input, true);
+        const b = score(input, false);
+        document.getElementById("a").textContent = a.overall.toFixed(1);
+        document.getElementById("b").textContent = b.overall.toFixed(1);
+        document.getElementById("a-detail").textContent =
+          "transition " +
+          a.transition.toFixed(1) +
+          " · stall avoid " +
+          a.stall.toFixed(1);
+        document.getElementById("b-detail").textContent =
+          "transition " +
+          b.transition.toFixed(1) +
+          " · stall avoid " +
+          b.stall.toFixed(1);
+      }
+      document.getElementById("run").addEventListener("click", run);
+      run();
+    </script>
+  </body>
+</html>
