@@ -25,6 +25,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Tactile Chart Studio** | `tactile-chart-studio` | **Complete** | Conversational + tactile charts |
 | **Pack Rules Studio** | `pack-rules-studio` | **Complete** | Hard rules + soft packing prefs |
 | **On-Device Trip Studio** | `on-device-trip-studio` | **Complete** | Feasibility-first on-device itineraries |
+| **MSK Care Studio** | `msk-care-studio` | **Building** | Evidence-grounded MSK pathways |
 
 ## Rules
 
