@@ -1,0 +1,40 @@
+{
+  "id": "std-025",
+  "input": {
+    "vulnComplexity": 0.73,
+    "rubricItemCount": 16,
+    "tutorCoverage": 0.77,
+    "orchestrationRounds": 2,
+    "pedagogyDepth": 0.72,
+    "threatCoverage": 0.71,
+    "safetyGateStrength": 0.68,
+    "studentRiskLevel": 0.69,
+    "exploitHintRisk": 0.67,
+    "explainerSpecialization": 0.73,
+    "safetySpecialization": 0.74,
+    "rubricSpecialization": 0.7,
+    "profile": "strict"
+  },
+  "expectedOrchestrated": {
+    "mode": "orchestrated",
+    "pedagogyFit": 75.16,
+    "securityRubricPass": 80.2,
+    "safetyGateScore": 57.75,
+    "tutorCoverageScore": 73.02,
+    "orchestrationLift": 61.95,
+    "lessonStability": 56.57,
+    "confidence": 60.1,
+    "overall": 69.47
+  },
+  "expectedSingle": {
+    "mode": "single",
+    "pedagogyFit": 46.08,
+    "securityRubricPass": 39.01,
+    "safetyGateScore": 40.85,
+    "tutorCoverageScore": 48.47,
+    "orchestrationLift": 4.39,
+    "lessonStability": 29.12,
+    "confidence": 54.46,
+    "overall": 40.12
+  }
+}

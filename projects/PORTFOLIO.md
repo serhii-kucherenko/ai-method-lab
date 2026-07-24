@@ -15,7 +15,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Rhythm Read Studio** | `rhythm-read-studio` | **Complete** | AG-SCL ECG |
 | **Realtime Deploy Studio** | `realtime-deploy-studio` | **Complete** | FlashRT |
 | **Enterprise Agent Studio** | `enterprise-agent-studio` | **Complete** | Agentic ERP |
-| **Secure Tutor Studio** | `secure-tutor-studio` | **building** | SYNAPSE |
+| **Secure Tutor Studio** | `secure-tutor-studio` | **Complete** | SYNAPSE |
 
 ## Rules
 

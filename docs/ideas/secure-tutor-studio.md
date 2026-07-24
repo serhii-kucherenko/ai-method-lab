@@ -1,6 +1,6 @@
 # Secure Tutor Studio
 
-**State:** building  
+**State:** complete  
 **Slug:** `secure-tutor-studio`  
 **Paper:** https://arxiv.org/abs/2607.14601v1  
 **Authors’ code:** none  

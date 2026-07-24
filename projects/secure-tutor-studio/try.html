@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Secure Tutor Studio — try</title>
+    <style>
+      :root {
+        --forest: #1b5e3b;
+        --soft: #d8eee0;
+        --ink: #1c2b1f;
+        --muted: #5c6b60;
+        --bg: #f4f7f2;
+        --line: #d5e0d4;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        background: radial-gradient(ellipse 70% 55% at 8% 0%, #e4f0e6 0%, transparent 55%),
+          #f4f7f2;
+        color: var(--ink);
+        padding: 2rem;
+      }
+      h1 {
+        font-family: Literata, Georgia, serif;
+        color: var(--forest);
+        font-size: 2rem;
+        margin: 0 0 0.5rem;
+      }
+      p {
+        color: var(--muted);
+        max-width: 40rem;
+      }
+      .panel {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 1rem;
+        max-width: 28rem;
+        margin-top: 1.5rem;
+      }
+      label {
+        display: block;
+        font-size: 0.85rem;
+        margin-top: 0.75rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.4rem 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--forest);
+        color: #f0fdf4;
+        border: 0;
+        border-radius: 6px;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .bars {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .bar-wrap {
+        height: 100px;
+        background: #eef3ee;
+        border-radius: 6px;
+        display: flex;
+        align-items: end;
+        padding: 6px;
+      }
+      .bar {
+        width: 100%;
+        background: var(--forest);
+        border-radius: 4px;
+        transition: height 0.4s ease;
+      }
+      .bar.single {
+        background: #8a968c;
+      }
+      .caption {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-top: 0.35rem;
+      }
+      .fence {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Secure Tutor Studio</h1>
+    <p>
+      Offline demo of orchestrated multi-LLM tutoring quality vs a single-LLM
+      unchecked baseline. Soft simulation — not SYNAPSE.
+    </p>
+    <div class="panel">
+      <label>Tutor coverage (0–1)
+        <input id="coverage" type="number" min="0" max="1" step="0.05" value="0.85" />
+      </label>
+      <label>Safety gate (0–1)
+        <input id="safety" type="number" min="0" max="1" step="0.05" value="0.8" />
+      </label>
+      <label>Exploit hint risk (0–1)
+        <input id="risk" type="number" min="0" max="1" step="0.05" value="0.4" />
+      </label>
+      <button id="run">Compare scores</button>
+      <div class="bars">
+        <div>
+          <div class="bar-wrap"><div id="orchBar" class="bar" style="height: 40%"></div></div>
+          <div class="caption" id="orchCap">Orchestrated —</div>
+        </div>
+        <div>
+          <div class="bar-wrap"><div id="singleBar" class="bar single" style="height: 40%"></div></div>
+          <div class="caption" id="singleCap">Single —</div>
+        </div>
+      </div>
+    </div>
+    <p class="fence">
+      Method-lab soft simulation. Not a live multi-LLM classroom. Paper:
+      arXiv:2607.14601.
+    </p>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function score(coverage, safety, risk, orch) {
+        const pressure = clamp(0.35 + risk * 0.4 + (1 - safety) * 0.25, 0, 1);
+        if (orch) {
+          return round2(
+            clamp(
+              coverage * 38 +
+                safety * 34 +
+                (1 - risk) * 18 +
+                12 -
+                pressure * 16,
+              0,
+              100,
+            ),
+          );
+        }
+        return round2(
+          clamp(42 + coverage * 14 + safety * 12 - pressure * 28 - risk * 12, 0, 100),
+        );
+      }
+      function run() {
+        const coverage = Number(document.getElementById("coverage").value);
+        const safety = Number(document.getElementById("safety").value);
+        const risk = Number(document.getElementById("risk").value);
+        const o = score(coverage, safety, risk, true);
+        const s = score(coverage, safety, risk, false);
+        document.getElementById("orchBar").style.height = Math.max(8, o) + "%";
+        document.getElementById("singleBar").style.height = Math.max(8, s) + "%";
+        document.getElementById("orchCap").textContent = "Orchestrated " + o;
+        document.getElementById("singleCap").textContent = "Single " + s;
+      }
+      document.getElementById("run").addEventListener("click", run);
+      run();
+    </script>
+  </body>
+</html>

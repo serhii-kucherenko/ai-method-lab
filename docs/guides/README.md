@@ -46,6 +46,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 39 | [Rhythm Read Studio — what we learned](39-rhythm-read-studio-lessons.md) | Product `rhythm-read-studio` |
 | 40 | [Realtime Deploy Studio — what we learned](40-realtime-deploy-studio-lessons.md) | Product `realtime-deploy-studio` |
 | 41 | [Enterprise Agent Studio — what we learned](41-enterprise-agent-studio-lessons.md) | Product `enterprise-agent-studio` |
+| 42 | [Secure Tutor Studio — what we learned](42-secure-tutor-studio-lessons.md) | Product `secure-tutor-studio` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 
