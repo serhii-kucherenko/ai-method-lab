@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T05:28:39.639Z",
+  "updated_at": "2026-07-24T05:36:44.609Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,7 +11,7 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": false,
+    "product_complete_pending": true,
     "last_product_complete_email_id": "81e4ed5d-94a3-4588-a53f-04683a4aeba7",
     "last_idea_validated_email_id": "2dd9603a-1077-4dcd-9046-74890149626d",
     "digest_draft": null,
@@ -21,7 +21,7 @@
   "paused": false,
   "active_cell": null,
   "schema_version": "1.0.0",
-  "idle_reason": null,
+  "idle_reason": "awaiting_finish_email",
   "product_defaults": {
     "persistence": "sqlite",
     "stack": "nextjs-app-router",
@@ -39,15 +39,15 @@
     "stack_protocol": "docs/PRODUCT_STACK.md",
     "design_protocol": "protocols/DESIGN.md"
   },
-  "last_completed": "A03__P-sustain-001__on-device-trip-studio__r1",
+  "last_completed": "A03__P-sustain-001__msk-care-studio__r1",
   "last_error": null,
   "current_product": "msk-care-studio",
   "current_idea": "msk-care-studio",
   "next_research_idea": null,
-  "next_cell": "A03__P-smoke-001__msk-care-studio__r1",
+  "next_cell": null,
   "mode": "autonomous",
-  "phase": "running",
-  "notes": "On-Device Trip Studio finish emailed. MSK Care Studio opened from 2607.12527. Climb agent in flight. Parent owns Resend.",
+  "phase": "product_complete_pending_email",
+  "notes": "MSK Care Studio sustain-green. product_complete_pending=true. Parent must send finish email via Resend. DO NOT pick next paper until email sent.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,

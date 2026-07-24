@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MSK Care Studio — try</title>
+    <style>
+      :root {
+        --green: #1f6f5b;
+        --slate: #3a4a52;
+        --bg: #e6ecea;
+        --ink: #1a2422;
+      }
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        margin: 0;
+        background: linear-gradient(180deg, #c5d8d0, var(--bg));
+        color: var(--ink);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+        margin: 0 0 0.5rem;
+        color: var(--green);
+      }
+      p {
+        line-height: 1.5;
+        color: #4a5560;
+      }
+      label {
+        display: block;
+        margin-top: 0.85rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 1.25rem;
+        background: var(--green);
+        color: #fff;
+        border: 0;
+        border-radius: 0.5rem;
+        padding: 0.55rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        margin-top: 1.25rem;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #b5c4bf;
+        border-radius: 0.6rem;
+        padding: 0.85rem;
+      }
+      .card h2 {
+        margin: 0 0 0.4rem;
+        font-size: 0.95rem;
+      }
+      .fence {
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
+        color: #5a6864;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>MSK Care Studio</h1>
+      <p>
+        Approximate offline demo: evidence-grounded plan quality vs an
+        ungrounded LLM baseline. Full studio needs
+        <code>npm run dev</code>.
+      </p>
+      <label>Stream coverage <span id="s1v"></span></label>
+      <input id="s1" type="range" min="0" max="100" value="80" />
+      <label>Knowledge grounding <span id="s2v"></span></label>
+      <input id="s2" type="range" min="0" max="100" value="75" />
+      <label>Pathway progress <span id="s3v"></span></label>
+      <input id="s3" type="range" min="0" max="100" value="55" />
+      <label>Decision traceability <span id="s4v"></span></label>
+      <input id="s4" type="range" min="0" max="100" value="78" />
+      <button id="run" type="button">Score both</button>
+      <div class="row">
+        <div class="card">
+          <h2>A · Evidence-grounded</h2>
+          <div id="a"></div>
+        </div>
+        <div class="card">
+          <h2>B · Ungrounded LLM</h2>
+          <div id="b"></div>
+        </div>
+      </div>
+      <p class="fence">
+        Method-lab experiment — not clinical certification, not a live EHR, not
+        OrthoPilot. Paper:
+        <a href="https://arxiv.org/abs/2607.12527v1"
+          >https://arxiv.org/abs/2607.12527v1</a
+        >
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function grounded(input) {
+        const boost = 1.06;
+        const streamFit = round2(
+          clamp(
+            (input.stream * 45 + input.fresh * 20) * boost -
+              input.comorbidity * 8,
+            0,
+            100,
+          ),
+        );
+        const knowledgeFit = round2(
+          clamp((input.knowledge * 50 + input.trace * 20) * boost, 0, 100),
+        );
+        const decisionQuality = round2(
+          clamp(
+            (input.trace * 40 + input.stream * 25 + input.knowledge * 25) *
+              boost,
+            0,
+            100,
+          ),
+        );
+        const overall = round2(
+          clamp(
+            streamFit * 0.25 + knowledgeFit * 0.25 + decisionQuality * 0.5,
+            0,
+            100,
+          ),
+        );
+        return { streamFit, knowledgeFit, decisionQuality, overall };
+      }
+      function ungrounded(input) {
+        const skip = clamp(
+          0.4 + (1 - input.stream) * 0.25 + (1 - input.knowledge) * 0.25,
+          0.35,
+          0.9,
+        );
+        const decisionQuality = round2(
+          clamp(input.pathway * 55 + input.rehab * 20, 0, 100),
+        );
+        const streamFit = round2(clamp(input.stream * 20 * skip, 0, 100));
+        const knowledgeFit = round2(
+          clamp(input.knowledge * 22 * skip, 0, 100),
+        );
+        const overall = round2(
+          clamp(
+            decisionQuality * 0.5 + streamFit * 0.2 + knowledgeFit * 0.3,
+            0,
+            100,
+          ),
+        );
+        return { streamFit, knowledgeFit, decisionQuality, overall };
+      }
+      function read() {
+        const stream = Number(s1.value) / 100;
+        const knowledge = Number(s2.value) / 100;
+        const pathway = Number(s3.value) / 100;
+        const trace = Number(s4.value) / 100;
+        s1v.textContent = stream.toFixed(2);
+        s2v.textContent = knowledge.toFixed(2);
+        s3v.textContent = pathway.toFixed(2);
+        s4v.textContent = trace.toFixed(2);
+        return {
+          stream,
+          knowledge,
+          pathway,
+          trace,
+          fresh: 0.85,
+          rehab: pathway * 0.9,
+          comorbidity: 0.25,
+        };
+      }
+      function show(el, q) {
+        el.innerHTML =
+          "<div>Overall <strong>" +
+          q.overall +
+          "</strong></div><div>Stream " +
+          q.streamFit +
+          "</div><div>Knowledge " +
+          q.knowledgeFit +
+          "</div><div>Decision " +
+          q.decisionQuality +
+          "</div>";
+      }
+      const s1 = document.getElementById("s1");
+      const s2 = document.getElementById("s2");
+      const s3 = document.getElementById("s3");
+      const s4 = document.getElementById("s4");
+      const s1v = document.getElementById("s1v");
+      const s2v = document.getElementById("s2v");
+      const s3v = document.getElementById("s3v");
+      const s4v = document.getElementById("s4v");
+      function run() {
+        const input = read();
+        show(document.getElementById("a"), grounded(input));
+        show(document.getElementById("b"), ungrounded(input));
+      }
+      document.getElementById("run").addEventListener("click", run);
+      [s1, s2, s3, s4].forEach((el) => el.addEventListener("input", run));
+      run();
+    </script>
+  </body>
+</html>
