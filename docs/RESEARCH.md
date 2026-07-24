@@ -2,6 +2,10 @@
 
 Papers-driven lab. No freehand product farms.
 
+## 2026-07-24 — Ladder Bomb Studio finished; Data World Studio started
+
+Ladder Bomb Studio sustain-green (`d8697bb`); finish email sent (`eaeaf4b8`). Next unused score-2 pick: **Data World Studio** from paper `2607.15901` (DSWorld — predict DS op outcomes before execute; no public code). PM + design pack written; climb next.
+
 ## 2026-07-24 — Agent Safety Studio finished; Ladder Bomb Studio started
 
 Agent Safety Studio sustain-green (`96ac164`); finish email sent (`d6ce727e`). Next unused score-3 pick: **Ladder Bomb Studio** from paper `2607.08417` (formal LLB detection / trigger synthesis; no public code). PM + design pack written; idea email sent (`a1f6038b`); climb in flight.
