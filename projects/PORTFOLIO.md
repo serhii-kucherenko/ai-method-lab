@@ -33,6 +33,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Cardiac CT Studio** | `cardiac-ct-studio` | **Complete** | HITL cardiac CT segment + phenotype |
 | **Thorax Localize Studio** | `thorax-localize-studio` | **Complete** | CXR classify + lesion localize |
 | **Optical Stack Studio** | `optical-stack-studio` | **Complete** | Open-vocab multilayer coating design |
+| **Reason Frame Studio** | `reason-frame-studio` | **Building** | Game-theoretic multi-agent anti-hallucination |
 
 ## Rules
 
