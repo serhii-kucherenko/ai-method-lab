@@ -13,6 +13,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Pathology Slide Studio** | `pathology-slide-studio` | **Complete** | ALICE |
 | **Model Compile Studio** | `model-compile-studio` | **Complete** | MLIR / TPU-MLIR |
 | **Rhythm Read Studio** | `rhythm-read-studio` | **Complete** | AG-SCL ECG |
+| **Realtime Deploy Studio** | `realtime-deploy-studio` | **building** | FlashRT |
 
 ## Rules
 
