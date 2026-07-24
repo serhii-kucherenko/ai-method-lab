@@ -1,0 +1,35 @@
+{
+  "id": "ccs-019",
+  "input": {
+    "contrastQuality": 0.66,
+    "motionArtifact": 0.29,
+    "expertAnnotationCoverage": 0.66,
+    "structureCoverage": 0.64,
+    "foundationPrior": 0.62,
+    "phenotypeRichness": 0.65,
+    "sliceQuality": 0.64,
+    "calciumSignal": 0.59,
+    "chamberGeometry": 0.64,
+    "vesselClarity": 0.6,
+    "studyKind": "mixed",
+    "plan": "auto_only"
+  },
+  "expectedHitlFoundation": {
+    "mode": "hitl_foundation",
+    "segmentationQuality": 68,
+    "hitlIntegrity": 48.8,
+    "phenotypeConfidence": 50.1,
+    "structureCompleteness": 61,
+    "planCoherence": 35.51,
+    "overall": 52.49
+  },
+  "expectedAutoOnly": {
+    "mode": "auto_only",
+    "segmentationQuality": 44.88,
+    "hitlIntegrity": 0.03,
+    "phenotypeConfidence": 0,
+    "structureCompleteness": 43.56,
+    "planCoherence": 0,
+    "overall": 25.66
+  }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cardiac CT Studio — try</title>
+    <style>
+      :root {
+        --crimson: #b4233a;
+        --scan: #6b7c8a;
+        --bg: #e8ecef;
+        --panel: #f4f6f8;
+        --ink: #1f2933;
+      }
+      body {
+        margin: 0;
+        font-family: Figtree, system-ui, sans-serif;
+        background: radial-gradient(
+            ellipse 70% 55% at 10% 0%,
+            #b4233a33,
+            transparent 55%
+          ),
+          linear-gradient(180deg, #cfd7de, var(--bg));
+        color: var(--ink);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-weight: 400;
+        font-size: 2.4rem;
+        color: var(--crimson);
+        margin: 0 0 0.5rem;
+      }
+      p.lead {
+        color: #5a6874;
+        line-height: 1.5;
+      }
+      label {
+        display: block;
+        font-size: 0.85rem;
+        margin-top: 0.85rem;
+        color: var(--scan);
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .row {
+        background: var(--panel);
+        border: 1px solid #c5ced6;
+        border-radius: 0.6rem;
+        padding: 1rem;
+        margin-top: 1.25rem;
+      }
+      .scores {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .score {
+        background: white;
+        border-radius: 0.5rem;
+        padding: 0.85rem;
+        border: 1px solid #c5ced6;
+      }
+      .score strong {
+        display: block;
+        font-size: 1.6rem;
+        margin-top: 0.25rem;
+      }
+      .fence {
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
+        color: #5a6874;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Cardiac CT Studio</h1>
+      <p class="lead">
+        Offline sketch of HITL + foundation phenotyping vs auto-only. Soft
+        demo only — not clinical certification or live PACS.
+      </p>
+      <div class="row">
+        <label>Expert annotation coverage <span id="eLab"></span></label>
+        <input id="expert" type="range" min="0" max="100" value="78" />
+        <label>Structure coverage <span id="sLab"></span></label>
+        <input id="struct" type="range" min="0" max="100" value="72" />
+        <label>Motion artifact (worse →) <span id="mLab"></span></label>
+        <input id="motion" type="range" min="0" max="100" value="22" />
+        <div class="scores">
+          <div class="score">
+            HITL + foundation
+            <strong id="hitl">—</strong>
+          </div>
+          <div class="score">
+            Auto-only
+            <strong id="auto">—</strong>
+          </div>
+        </div>
+      </div>
+      <p class="fence">
+        Inspired by
+        <a href="https://arxiv.org/abs/2607.11287v1">arXiv:2607.11287</a>. Method
+        Lab experiment.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function score(expert, struct, motion, hitl) {
+        const boost = hitl ? 1.12 : 0.9;
+        const hitlIntegrity = clamp(
+          (expert * 44 + struct * 28 + (1 - motion) * 16 + (hitl ? 18 : 0)) *
+            boost -
+            (hitl ? 0 : (1 - expert) * 36),
+          0,
+          100,
+        );
+        const phenotype = clamp(
+          (struct * 30 + expert * 20 + (hitl ? 14 : 0) - motion * (hitl ? 8 : 28)) *
+            boost,
+          0,
+          100,
+        );
+        const segments = clamp(
+          (struct * 40 + (1 - motion) * 20) * boost,
+          0,
+          100,
+        );
+        return (
+          Math.round(
+            (hitlIntegrity * 0.35 + phenotype * 0.35 + segments * 0.3) * 100,
+          ) / 100
+        );
+      }
+      function render() {
+        const expert = Number(expertEl.value) / 100;
+        const struct = Number(structEl.value) / 100;
+        const motion = Number(motionEl.value) / 100;
+        eLab.textContent = Math.round(expert * 100) + "%";
+        sLab.textContent = Math.round(struct * 100) + "%";
+        mLab.textContent = Math.round(motion * 100) + "%";
+        hitlEl.textContent = score(expert, struct, motion, true).toFixed(1);
+        autoEl.textContent = score(expert, struct, motion, false).toFixed(1);
+      }
+      const expertEl = document.getElementById("expert");
+      const structEl = document.getElementById("struct");
+      const motionEl = document.getElementById("motion");
+      const eLab = document.getElementById("eLab");
+      const sLab = document.getElementById("sLab");
+      const mLab = document.getElementById("mLab");
+      const hitlEl = document.getElementById("hitl");
+      const autoEl = document.getElementById("auto");
+      [expertEl, structEl, motionEl].forEach((el) =>
+        el.addEventListener("input", render),
+      );
+      render();
+    </script>
+  </body>
+</html>

@@ -30,7 +30,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Quad Skill Studio** | `quad-skill-studio` | **Complete** | Multi-skill wild quadruped locomotion |
 | **Developable Molecule Studio** | `developable-molecule-studio` | **Complete** | Pocket + developability generation |
 | **Alzheimer Predict Studio** | `alzheimer-predict-studio` | **Complete** | Imputation-free AD risk + uncertainty |
-| **Cardiac CT Studio** | `cardiac-ct-studio` | **Building** | HITL cardiac CT segment + phenotype |
+| **Cardiac CT Studio** | `cardiac-ct-studio` | **Complete** | HITL cardiac CT segment + phenotype |
 
 ## Rules
 
