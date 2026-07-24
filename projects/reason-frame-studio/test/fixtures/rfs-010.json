@@ -1,0 +1,35 @@
+{
+  "id": "rfs-010",
+  "input": {
+    "ruleCoverage": 0.43,
+    "debateDepth": 0.37,
+    "consensusStrength": 0.42,
+    "challengerPressure": 0.37,
+    "bayesianUpdate": 0.41,
+    "evidenceGrounding": 0.42,
+    "fluencyBias": 0.46,
+    "teamCoordination": 0.42,
+    "priorConfidence": 0.39,
+    "contradictionRate": 0.46,
+    "domainKind": "physics",
+    "plan": "single_agent"
+  },
+  "expectedMultiAgent": {
+    "mode": "multi_agent",
+    "ruleFidelity": 45.69,
+    "debateIntegrity": 17.39,
+    "gameScore": 24,
+    "hallucinationResistance": 24.05,
+    "planCoherence": 7.96,
+    "overall": 24.33
+  },
+  "expectedSingleAgent": {
+    "mode": "single_agent",
+    "ruleFidelity": 19.64,
+    "debateIntegrity": 14.44,
+    "gameScore": 14.39,
+    "hallucinationResistance": 8.37,
+    "planCoherence": 0,
+    "overall": 10.81
+  }
+}

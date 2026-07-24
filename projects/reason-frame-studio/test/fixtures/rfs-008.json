@@ -1,0 +1,35 @@
+{
+  "id": "rfs-008",
+  "input": {
+    "ruleCoverage": 0.34,
+    "debateDepth": 0.36,
+    "consensusStrength": 0.39,
+    "challengerPressure": 0.37,
+    "bayesianUpdate": 0.33,
+    "evidenceGrounding": 0.33,
+    "fluencyBias": 0.52,
+    "teamCoordination": 0.33,
+    "priorConfidence": 0.36,
+    "contradictionRate": 0.52,
+    "domainKind": "math",
+    "plan": "single_agent"
+  },
+  "expectedMultiAgent": {
+    "mode": "multi_agent",
+    "ruleFidelity": 39.33,
+    "debateIntegrity": 14.69,
+    "gameScore": 16.78,
+    "hallucinationResistance": 16.76,
+    "planCoherence": 3.24,
+    "overall": 18.66
+  },
+  "expectedSingleAgent": {
+    "mode": "single_agent",
+    "ruleFidelity": 20.35,
+    "debateIntegrity": 14.8,
+    "gameScore": 16.91,
+    "hallucinationResistance": 10.21,
+    "planCoherence": 0,
+    "overall": 11.98
+  }
+}

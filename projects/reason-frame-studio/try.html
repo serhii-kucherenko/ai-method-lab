@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reason Frame Studio — try</title>
+    <style>
+      :root {
+        --ink: #0f0d0b;
+        --amber: #c9892e;
+        --panel: #1a1714;
+        --fg: #ece8e1;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: linear-gradient(180deg, #2a2520, var(--ink));
+        color: var(--fg);
+        min-height: 100vh;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+        margin: 0 0 0.35rem;
+        letter-spacing: -0.02em;
+        color: var(--amber);
+      }
+      .tag {
+        color: #c4b8a4;
+        margin-bottom: 1.5rem;
+      }
+      label {
+        display: block;
+        font-size: 0.8rem;
+        color: #9a9080;
+        margin-top: 0.75rem;
+      }
+      input[type="range"] {
+        width: 100%;
+        max-width: 28rem;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        max-width: 28rem;
+        font-size: 0.85rem;
+      }
+      .cards {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        max-width: 36rem;
+        grid-template-columns: 1fr 1fr;
+      }
+      .card {
+        border: 1px solid #3d352c;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .card h2 {
+        margin: 0 0 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #9a9080;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .score {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--amber);
+      }
+      .card.b .score {
+        color: #8a9bb0;
+      }
+      .note {
+        margin-top: 1.5rem;
+        max-width: 36rem;
+        font-size: 0.85rem;
+        color: #9a9080;
+        line-height: 1.45;
+      }
+      a {
+        color: var(--amber);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Reason Frame Studio</h1>
+    <p class="tag">Approximate offline demo — multi-agent game vs single-agent fluency</p>
+
+    <label>Rule coverage <span id="v-rule"></span></label>
+    <input id="rule" type="range" min="0" max="100" value="78" />
+    <label>Debate depth <span id="v-depth"></span></label>
+    <input id="depth" type="range" min="0" max="100" value="74" />
+    <label>Challenger pressure <span id="v-press"></span></label>
+    <input id="press" type="range" min="0" max="100" value="70" />
+    <label>Fluency bias (higher = worse for science) <span id="v-fluency"></span></label>
+    <input id="fluency" type="range" min="0" max="100" value="22" />
+
+    <div class="cards">
+      <div class="card">
+        <h2>A · Multi-agent</h2>
+        <div class="score" id="score-a">—</div>
+        <div class="row"><span>Game</span><span id="game-a"></span></div>
+        <div class="row"><span>Resist</span><span id="resist-a"></span></div>
+      </div>
+      <div class="card b">
+        <h2>B · Single-agent</h2>
+        <div class="score" id="score-b">—</div>
+        <div class="row"><span>Game</span><span id="game-b"></span></div>
+        <div class="row"><span>Resist</span><span id="resist-b"></span></div>
+      </div>
+    </div>
+
+    <p class="note">
+      Soft demo only — not a live LLM gateway, not G-Frame. Full studio:
+      <code>npm run dev</code> in <code>projects/reason-frame-studio</code>. Paper:
+      <a href="https://arxiv.org/abs/2607.08403v1">arXiv:2607.08403</a>.
+    </p>
+
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreMulti(input) {
+        const boost = 1.12;
+        const rules =
+          48 +
+          input.rule * 24 +
+          (1 - input.fluency) * 12 -
+          input.fluency * 8;
+        const team =
+          input.depth * 40 + input.press * 28 + (1 - input.fluency) * 16;
+        const game = round2(
+          clamp((input.depth * 36 + input.press * 22 + team * 0.15) * boost, 0, 100),
+        );
+        const resist = round2(
+          clamp(
+            ((1 - input.fluency) * 40 + input.rule * 28 + game * 0.12) * boost,
+            0,
+            100,
+          ),
+        );
+        const overall = round2(
+          clamp(rules * 0.25 + game * 0.35 + resist * 0.4, 0, 100),
+        );
+        return { overall, game, resist };
+      }
+      function scoreSingle(input) {
+        const bias = 0.55 + input.fluency * 0.35;
+        const game = round2(
+          clamp((input.fluency * 40 + (1 - input.depth) * 20) * bias * 100, 0, 100),
+        );
+        const resist = round2(
+          clamp(
+            (input.fluency * 35 + (1 - input.rule) * 25 + (1 - input.press) * 15) *
+              bias *
+              100,
+            0,
+            100,
+          ),
+        );
+        const overall = round2(clamp(game * 0.45 + resist * 0.55, 0, 100));
+        return { overall, game, resist };
+      }
+      function read() {
+        return {
+          rule: Number(rule.value) / 100,
+          depth: Number(depth.value) / 100,
+          press: Number(press.value) / 100,
+          fluency: Number(fluency.value) / 100,
+        };
+      }
+      function sync() {
+        const i = read();
+        vRule.textContent = Math.round(i.rule * 100) + "%";
+        vDepth.textContent = Math.round(i.depth * 100) + "%";
+        vPress.textContent = Math.round(i.press * 100) + "%";
+        vFluency.textContent = Math.round(i.fluency * 100) + "%";
+        const a = scoreMulti(i);
+        const b = scoreSingle(i);
+        scoreA.textContent = a.overall.toFixed(1);
+        scoreB.textContent = b.overall.toFixed(1);
+        gameA.textContent = a.game.toFixed(1);
+        gameB.textContent = b.game.toFixed(1);
+        resistA.textContent = a.resist.toFixed(1);
+        resistB.textContent = b.resist.toFixed(1);
+      }
+      const rule = document.getElementById("rule");
+      const depth = document.getElementById("depth");
+      const press = document.getElementById("press");
+      const fluency = document.getElementById("fluency");
+      const vRule = document.getElementById("v-rule");
+      const vDepth = document.getElementById("v-depth");
+      const vPress = document.getElementById("v-press");
+      const vFluency = document.getElementById("v-fluency");
+      const scoreA = document.getElementById("score-a");
+      const scoreB = document.getElementById("score-b");
+      const gameA = document.getElementById("game-a");
+      const gameB = document.getElementById("game-b");
+      const resistA = document.getElementById("resist-a");
+      const resistB = document.getElementById("resist-b");
+      [rule, depth, press, fluency].forEach((el) =>
+        el.addEventListener("input", sync),
+      );
+      sync();
+    </script>
+  </body>
+</html>

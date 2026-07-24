@@ -1,0 +1,35 @@
+{
+  "id": "rfs-012",
+  "input": {
+    "ruleCoverage": 0.44,
+    "debateDepth": 0.45,
+    "consensusStrength": 0.44,
+    "challengerPressure": 0.45,
+    "bayesianUpdate": 0.42,
+    "evidenceGrounding": 0.43,
+    "fluencyBias": 0.4,
+    "teamCoordination": 0.43,
+    "priorConfidence": 0.42,
+    "contradictionRate": 0.4,
+    "domainKind": "biology",
+    "plan": "multi_agent"
+  },
+  "expectedMultiAgent": {
+    "mode": "multi_agent",
+    "ruleFidelity": 68.01,
+    "debateIntegrity": 55.14,
+    "gameScore": 46.78,
+    "hallucinationResistance": 64.51,
+    "planCoherence": 52.54,
+    "overall": 57.33
+  },
+  "expectedSingleAgent": {
+    "mode": "single_agent",
+    "ruleFidelity": 19.17,
+    "debateIntegrity": 11.6,
+    "gameScore": 13.01,
+    "hallucinationResistance": 7.71,
+    "planCoherence": 0,
+    "overall": 9.72
+  }
+}

@@ -1,0 +1,149 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Deep ink + cautious amber — DESIGN brief */
+  --studio-bg: #ece8e1;
+  --studio-ink: #1a1714;
+  --studio-ink-deep: #0f0d0b;
+  --studio-amber: #c9892e;
+  --studio-amber-soft: #f3e4c8;
+  --studio-panel: #f5f1ea;
+  --studio-line: #d4cbbd;
+  --studio-wash: radial-gradient(ellipse 65% 50% at 12% 0%, #c9892e55 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 90% 18%, #3d4a5c44 0%, transparent 50%),
+    linear-gradient(180deg, #1a1714 0%, #0f0d0b 45%, #2a2520 100%);
+
+  --background: #ece8e1;
+  --foreground: #1a1714;
+  --card: #f5f1ea;
+  --card-foreground: #1a1714;
+  --popover: #f5f1ea;
+  --popover-foreground: #1a1714;
+  --primary: #c9892e;
+  --primary-foreground: #0f0d0b;
+  --secondary: #e0d8cc;
+  --secondary-foreground: #1a1714;
+  --muted: #e0d8cc;
+  --muted-foreground: #6b6358;
+  --accent: #f3e4c8;
+  --accent-foreground: #0f0d0b;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #d4cbbd;
+  --input: #d4cbbd;
+  --ring: #c9892e;
+  --radius: 0.625rem;
+  --chart-1: #c9892e;
+  --chart-2: #3d4a5c;
+  --chart-3: #1a1714;
+  --chart-4: #6b6358;
+  --chart-5: #a87835;
+  --sidebar: #f5f1ea;
+  --sidebar-foreground: #1a1714;
+  --sidebar-primary: #c9892e;
+  --sidebar-primary-foreground: #0f0d0b;
+  --sidebar-accent: #f3e4c8;
+  --sidebar-accent-foreground: #0f0d0b;
+  --sidebar-border: #d4cbbd;
+  --sidebar-ring: #c9892e;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes debate-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--studio-amber) 0%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--studio-amber) 22%, transparent);
+  }
+}
+
+@keyframes flag-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade > * {
+  animation: hero-fade 0.75s ease-out both;
+}
+
+.debate-pulse {
+  animation: debate-pulse 2.4s ease-in-out infinite;
+}
+
+.flag-rise {
+  animation: flag-rise 0.55s ease-out both;
+}

@@ -1,0 +1,35 @@
+{
+  "id": "rfs-011",
+  "input": {
+    "ruleCoverage": 0.47,
+    "debateDepth": 0.41,
+    "consensusStrength": 0.46,
+    "challengerPressure": 0.41,
+    "bayesianUpdate": 0.46,
+    "evidenceGrounding": 0.46,
+    "fluencyBias": 0.46,
+    "teamCoordination": 0.46,
+    "priorConfidence": 0.43,
+    "contradictionRate": 0.46,
+    "domainKind": "chemistry",
+    "plan": "single_agent"
+  },
+  "expectedMultiAgent": {
+    "mode": "multi_agent",
+    "ruleFidelity": 47.3,
+    "debateIntegrity": 19.66,
+    "gameScore": 26.9,
+    "hallucinationResistance": 25.53,
+    "planCoherence": 10.01,
+    "overall": 26.41
+  },
+  "expectedSingleAgent": {
+    "mode": "single_agent",
+    "ruleFidelity": 19.8,
+    "debateIntegrity": 14.19,
+    "gameScore": 13.98,
+    "hallucinationResistance": 8.09,
+    "planCoherence": 0,
+    "overall": 10.63
+  }
+}
