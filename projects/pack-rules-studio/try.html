@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pack Rules Studio — try</title>
+    <style>
+      :root {
+        --navy: #1e3a5f;
+        --tan: #b8956c;
+        --bg: #eef1f5;
+        --ink: #1a2433;
+      }
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: linear-gradient(180deg, #dce3ec, var(--bg));
+        color: var(--ink);
+        margin: 0;
+        padding: 2rem;
+      }
+      h1 {
+        color: var(--navy);
+        font-weight: 600;
+      }
+      .card {
+        max-width: 36rem;
+        background: #fff;
+        border: 1px solid #c5ced9;
+        border-radius: 0.75rem;
+        padding: 1.25rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.4rem 0.5rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--navy);
+        color: #fff;
+        border: 0;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+      }
+      .scores {
+        margin-top: 1rem;
+        display: grid;
+        gap: 0.5rem;
+      }
+      .a {
+        color: var(--navy);
+      }
+      .b {
+        color: #666;
+      }
+      .note {
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pack Rules Studio</h1>
+    <p>Offline demo: rules+prefs vs prefs-only packing plan quality.</p>
+    <div class="card">
+      <label
+        >Safety rule coverage
+        <input id="safety" type="range" min="0" max="1" step="0.01" value="0.82"
+      /></label>
+      <label
+        >Luggage headroom
+        <input id="luggage" type="range" min="0" max="1" step="0.01" value="0.74"
+      /></label>
+      <label
+        >Preference fit
+        <input id="pref" type="range" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Liquid volume risk
+        <input id="liquid" type="range" min="0" max="1" step="0.01" value="0.22"
+      /></label>
+      <button id="run">Score dual plan</button>
+      <div class="scores" id="out"></div>
+      <p class="note">
+        Soft simulation only — not a live airline baggage API. Paper:
+        https://arxiv.org/abs/2607.15562v1
+      </p>
+    </div>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function ruleSignal(input) {
+        return clamp(
+          input.safetyRuleCoverage * 32 +
+            input.ruleStrictness * 22 +
+            input.dependencySatisfaction * 20 +
+            input.batteryPolicyCompliance * 16 +
+            (1 - input.liquidVolumeRisk) * 10,
+          0,
+          100,
+        );
+      }
+      function prefSignal(input) {
+        return clamp(
+          input.preferenceFit * 36 +
+            input.preferenceWeight * 22 +
+            input.weatherAdaptability * 18 +
+            Math.min(30, input.tripDays) * 0.6 +
+            Math.min(60, input.itemCount) * 0.2,
+          0,
+          100,
+        );
+      }
+      function scoreRulesPrefs(input) {
+        const boost = 1.05;
+        const rules = ruleSignal(input);
+        const prefs = prefSignal(input);
+        const ruleCompliance = round2(
+          clamp(
+            (rules * 0.55 +
+              input.safetyRuleCoverage * 24 +
+              input.ruleStrictness * 14) *
+              boost -
+              input.liquidVolumeRisk * 8,
+            0,
+            100,
+          ),
+        );
+        const preferenceFit = round2(
+          clamp(
+            (prefs * 0.5 +
+              input.preferenceFit * 28 +
+              input.weatherAdaptability * 14) *
+              boost -
+              (1 - input.ruleStrictness) * 4,
+            0,
+            100,
+          ),
+        );
+        const safetyMargin = round2(
+          clamp(
+            (input.batteryPolicyCompliance * 34 +
+              (1 - input.liquidVolumeRisk) * 28 +
+              input.safetyRuleCoverage * 22 +
+              input.ruleStrictness * 12) *
+              boost,
+            0,
+            100,
+          ),
+        );
+        const overall = round2(
+          clamp(
+            ruleCompliance * 0.35 + preferenceFit * 0.3 + safetyMargin * 0.35,
+            0,
+            100,
+          ),
+        );
+        return { ruleCompliance, preferenceFit, safetyMargin, overall };
+      }
+      function scorePrefsOnly(input) {
+        const skipPenalty = clamp(
+          0.42 +
+            (1 - input.ruleStrictness) * 0.22 +
+            input.liquidVolumeRisk * 0.2 +
+            (1 - input.luggageLimitHeadroom) * 0.16,
+          0.35,
+          0.95,
+        );
+        const prefs = prefSignal(input);
+        const preferenceFit = round2(
+          clamp(prefs * 0.72 + input.preferenceWeight * 18, 0, 100),
+        );
+        const ruleCompliance = round2(
+          clamp(
+            (input.safetyRuleCoverage * 18 + input.ruleStrictness * 10) *
+              skipPenalty,
+            0,
+            100,
+          ),
+        );
+        const safetyMargin = round2(
+          clamp(
+            (input.batteryPolicyCompliance * 16 +
+              (1 - input.liquidVolumeRisk) * 12) *
+              skipPenalty,
+            0,
+            100,
+          ),
+        );
+        const overall = round2(
+          clamp(
+            preferenceFit * 0.45 +
+              ruleCompliance * 0.25 +
+              safetyMargin * 0.3,
+            0,
+            100,
+          ),
+        );
+        return { ruleCompliance, preferenceFit, safetyMargin, overall };
+      }
+      function run() {
+        const input = {
+          safetyRuleCoverage: Number(document.getElementById("safety").value),
+          luggageLimitHeadroom: Number(document.getElementById("luggage").value),
+          dependencySatisfaction: 0.78,
+          preferenceFit: Number(document.getElementById("pref").value),
+          ruleStrictness: 0.8,
+          preferenceWeight: 0.62,
+          itemCount: 28,
+          liquidVolumeRisk: Number(document.getElementById("liquid").value),
+          batteryPolicyCompliance: 0.86,
+          weatherAdaptability: 0.72,
+          tripDays: 7,
+        };
+        const a = scoreRulesPrefs(input);
+        const b = scorePrefsOnly(input);
+        document.getElementById("out").innerHTML =
+          '<div class="a"><strong>A rules+prefs</strong> overall ' +
+          a.overall +
+          " · rules " +
+          a.ruleCompliance +
+          " · safety " +
+          a.safetyMargin +
+          "</div>" +
+          '<div class="b"><strong>B prefs-only</strong> overall ' +
+          b.overall +
+          " · rules " +
+          b.ruleCompliance +
+          " · safety " +
+          b.safetyMargin +
+          "</div>";
+      }
+      document.getElementById("run").addEventListener("click", run);
+      run();
+    </script>
+  </body>
+</html>

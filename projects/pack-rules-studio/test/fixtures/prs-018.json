@@ -1,0 +1,37 @@
+{
+  "id": "prs-018",
+  "input": {
+    "safetyRuleCoverage": 0.63,
+    "luggageLimitHeadroom": 0.59,
+    "dependencySatisfaction": 0.55,
+    "preferenceFit": 0.56,
+    "ruleStrictness": 0.6,
+    "preferenceWeight": 0.58,
+    "itemCount": 26,
+    "liquidVolumeRisk": 0.26,
+    "batteryPolicyCompliance": 0.61,
+    "weatherAdaptability": 0.57,
+    "tripDays": 20,
+    "profile": "compliant"
+  },
+  "expectedRulesPrefs": {
+    "mode": "rules_prefs",
+    "ruleCompliance": 58.14,
+    "preferenceFit": 54.94,
+    "luggageFeasibility": 64.12,
+    "dependencyHealth": 52.05,
+    "safetyMargin": 65.65,
+    "auditTrail": 58.44,
+    "overall": 59.2
+  },
+  "expectedPrefsOnly": {
+    "mode": "prefs_only",
+    "ruleCompliance": 13.9,
+    "preferenceFit": 57.61,
+    "luggageFeasibility": 20.04,
+    "dependencyHealth": 20.44,
+    "safetyMargin": 15.6,
+    "auditTrail": 17.2,
+    "overall": 31.07
+  }
+}

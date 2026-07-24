@@ -23,7 +23,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Prompt Cache Studio** | `prompt-cache-studio` | **Complete** | Cache-aware prompt compression |
 | **Meta Synthesis Studio** | `meta-synthesis-studio` | **Complete** | Agentic meta-analysis pipeline |
 | **Tactile Chart Studio** | `tactile-chart-studio` | **Complete** | Conversational + tactile charts |
-| **Pack Rules Studio** | `pack-rules-studio` | **Building** | Hard rules + soft packing prefs |
+| **Pack Rules Studio** | `pack-rules-studio` | **Complete** | Hard rules + soft packing prefs |
 
 ## Rules
 
