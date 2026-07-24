@@ -1,6 +1,6 @@
 # Agent Safety Studio
 
-**State:** building  
+**State:** sustained  
 **Slug:** `agent-safety-studio`  
 **Paper:** https://arxiv.org/abs/2607.14570v1  
 **Authors’ code:** none  

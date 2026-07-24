@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agent Safety Studio — try</title>
+    <style>
+      :root {
+        --amber: #b45309;
+        --ink: #1f1c18;
+        --bg: #f7f5f0;
+        --line: #e7e0d4;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: radial-gradient(ellipse 70% 50% at 10% 0%, #f5e6c8, transparent 55%),
+          var(--bg);
+        color: var(--ink);
+        line-height: 1.5;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-size: 2rem;
+        margin: 0 0 0.5rem;
+        color: var(--amber);
+      }
+      .bar {
+        height: 10px;
+        background: #eee;
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 0.35rem 0 0.75rem;
+      }
+      .fill {
+        height: 100%;
+        background: var(--amber);
+        width: 0;
+        transition: width 0.5s ease;
+      }
+      .fill.dim {
+        opacity: 0.45;
+      }
+      label {
+        display: block;
+        font-size: 0.85rem;
+        margin-top: 0.75rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--amber);
+        color: #fffbeb;
+        border: 0;
+        padding: 0.55rem 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .note {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #6b6358;
+        border-top: 1px solid var(--line);
+        padding-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Agent Safety Studio</h1>
+      <p>
+        Offline demo: structural graph-delta catch rate vs threshold-only
+        baseline. Soft simulation — not IFG.
+      </p>
+      <label>Privilege broadening <span id="p-val"></span></label>
+      <input id="priv" type="range" min="0" max="100" value="55" />
+      <label>Monitor coverage <span id="c-val"></span></label>
+      <input id="cov" type="range" min="0" max="100" value="78" />
+      <label>Task justification <span id="t-val"></span></label>
+      <input id="task" type="range" min="0" max="100" value="32" />
+      <button id="run">Score plans</button>
+      <p>Structural overall</p>
+      <div class="bar"><div class="fill" id="s-bar"></div></div>
+      <p>Threshold-only overall</p>
+      <div class="bar"><div class="fill dim" id="t-bar"></div></div>
+      <p id="out"></p>
+      <p class="note">
+        Paper: https://arxiv.org/abs/2607.14570v1 · Authors’ code: none · Full
+        app: projects/agent-safety-studio
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function score(priv, cov, task, structural) {
+        const pressure = clamp(
+          priv * 0.35 + (1 - task) * 0.35 + (1 - cov) * 0.3,
+          0,
+          1,
+        );
+        if (structural) {
+          const catchRate = clamp(cov * 55 + priv * 25 - pressure * 12, 0, 100);
+          const sync = clamp(catchRate * 0.7 + cov * 20, 0, 100);
+          return round2(catchRate * 0.55 + sync * 0.45);
+        }
+        const catchRate = clamp(42 + (1 - cov) * 10 - pressure * 22, 0, 72);
+        return round2(catchRate * 0.7 + 20);
+      }
+      function run() {
+        const priv = Number(privEl.value) / 100;
+        const cov = Number(covEl.value) / 100;
+        const task = Number(taskEl.value) / 100;
+        pVal.textContent = priv.toFixed(2);
+        cVal.textContent = cov.toFixed(2);
+        tVal.textContent = task.toFixed(2);
+        const s = score(priv, cov, task, true);
+        const t = score(priv, cov, task, false);
+        sBar.style.width = s + "%";
+        tBar.style.width = t + "%";
+        out.textContent =
+          "Structural " +
+          s +
+          " vs threshold " +
+          t +
+          " · winner: " +
+          (s > t + 0.01 ? "structural" : t > s + 0.01 ? "threshold" : "tie");
+      }
+      const privEl = document.getElementById("priv");
+      const covEl = document.getElementById("cov");
+      const taskEl = document.getElementById("task");
+      const pVal = document.getElementById("p-val");
+      const cVal = document.getElementById("c-val");
+      const tVal = document.getElementById("t-val");
+      const sBar = document.getElementById("s-bar");
+      const tBar = document.getElementById("t-bar");
+      const out = document.getElementById("out");
+      document.getElementById("run").onclick = run;
+      privEl.oninput = covEl.oninput = taskEl.oninput = run;
+      run();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "id": "ass-009",
+  "input": {
+    "cfgDelta": 0.36,
+    "dfgDelta": 0.32,
+    "privilegeBroadening": 0.31,
+    "loggingDegradation": 0.24,
+    "denyGuardRemoval": 0.35,
+    "newSensitiveSinks": 0.29,
+    "taskJustification": 0.64,
+    "monitorCoverage": 0.38,
+    "suspicionThreshold": 4,
+    "codeDiffNoise": 0.28,
+    "hardeningRegression": 0.33,
+    "checkKindCount": 11,
+    "deployMode": "async",
+    "profile": "strict"
+  },
+  "expectedStructural": {
+    "mode": "structural",
+    "structuralCatchRate": 40.65,
+    "falsePositiveBudgetFit": 85.6,
+    "syncBlockEffectiveness": 32.3,
+    "asyncDetectionLift": 41.19,
+    "postureRegressionScore": 27.44,
+    "confidence": 58.67,
+    "overall": 46.49
+  },
+  "expectedThreshold": {
+    "mode": "threshold",
+    "structuralCatchRate": 59.57,
+    "falsePositiveBudgetFit": 49.28,
+    "syncBlockEffectiveness": 41.59,
+    "asyncDetectionLift": 46.79,
+    "postureRegressionScore": 40.75,
+    "confidence": 36.29,
+    "overall": 49.81
+  }
+}
