@@ -17,6 +17,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Enterprise Agent Studio** | `enterprise-agent-studio` | **Complete** | Agentic ERP |
 | **Secure Tutor Studio** | `secure-tutor-studio` | **Complete** | SYNAPSE |
 | **Agent Safety Studio** | `agent-safety-studio` | **Complete** | Structural monitoring |
+| **Ladder Bomb Studio** | `ladder-bomb-studio` | **Building** | Formal LLB detection / trigger synth |
 
 ## Rules
 

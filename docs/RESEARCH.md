@@ -2,6 +2,10 @@
 
 Papers-driven lab. No freehand product farms.
 
+## 2026-07-24 � Agent Safety Studio finished; Ladder Bomb Studio started
+
+Agent Safety Studio sustain-green (`96ac164`); finish email sent (`d6ce727e`). Next unused score-3 pick: **Ladder Bomb Studio** from paper `2607.08417` (formal LLB detection / trigger synthesis; no public code). PM + design pack written; idea email sent (`a1f6038b`); climb in flight.
+
 ## 2026-07-23 — Papers-driven reset
 
 Removed all product trees except **Filing Penalty Desk**. Wiped historical `docs/ideas/*` kits. Intake is **simple-papers** → pick implementable paper → build same tick. Human email only on validated idea and finished product. Hours / ready-to-build holds retired for paper-sourced work.
