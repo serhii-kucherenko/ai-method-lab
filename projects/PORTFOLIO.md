@@ -9,7 +9,8 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Filing Penalty Desk** | `filing-penalty-desk` | reference | Prior product |
 | **Graph RAG Studio** | `graph-rag-studio` | **Complete** | RAGU / multi-step GraphRAG |
 | **Disease Drug Studio** | `disease-drug-studio` | **Complete** | DrugGen-2 / disease-aware candidates |
-| **Virulence Predict Studio** | `virulence-predict-studio` | **Complete** | SEVA-class VF/ARG feature-integrated scores |
+| **Virulence Predict Studio** | `virulence-predict-studio` | **Complete** | SEVA |
+| **Pathology Slide Studio** | `pathology-slide-studio` | **building** | ALICE |
 
 ## Rules
 
