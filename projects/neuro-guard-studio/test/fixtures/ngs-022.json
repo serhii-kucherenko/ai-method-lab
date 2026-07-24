@@ -1,0 +1,38 @@
+{
+  "id": "ngs-022",
+  "input": {
+    "sensorCoverage": 0.7,
+    "physicsFidelity": 0.67,
+    "planHorizon": 0.66,
+    "threatSeverity": 0.65,
+    "anomalyConfidence": 0.67,
+    "latencyBudget": 0.64,
+    "actuatorRisk": 0.23,
+    "contextFreshness": 0.67,
+    "thresholdNoise": 0.36,
+    "isolationDepth": 0.69,
+    "cascadeRisk": 0.35,
+    "sensorCount": 5,
+    "profile": "balanced"
+  },
+  "expectedNeuroAgentic": {
+    "mode": "neuro-agentic",
+    "planSafety": 60.38,
+    "cpiFit": 50.93,
+    "interventionPrecision": 61.72,
+    "cascadeAvoided": 75.66,
+    "responseLatency": 46.21,
+    "confidence": 46.38,
+    "overall": 58.45
+  },
+  "expectedReactive": {
+    "mode": "reactive",
+    "planSafety": 40.3,
+    "cpiFit": 17.34,
+    "interventionPrecision": 22.05,
+    "cascadeAvoided": 20.34,
+    "responseLatency": 48.96,
+    "confidence": 29.2,
+    "overall": 30.74
+  }
+}

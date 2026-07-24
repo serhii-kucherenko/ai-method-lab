@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neuro Guard Studio — try</title>
+  <style>
+    :root {
+      --steel: #3b6ea5;
+      --deep: #1e3a5f;
+      --amber: #c47b1a;
+      --bg: #eef2f6;
+      --ink: #1a2332;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: radial-gradient(ellipse 70% 55% at 8% 0%, #93b4d655, transparent 55%),
+        linear-gradient(180deg, #e6ecf3, var(--bg));
+      color: var(--ink);
+      min-height: 100vh;
+    }
+    main { max-width: 36rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+    h1 { font-size: 1.75rem; color: var(--deep); margin: 0 0 0.35rem; }
+    .tag { color: var(--steel); font-size: 0.85rem; margin-bottom: 1rem; }
+    label { display: block; font-size: 0.85rem; margin: 1rem 0 0.35rem; }
+    input[type="range"] { width: 100%; }
+    .bars { margin-top: 1.5rem; display: grid; gap: 0.75rem; }
+    .bar-wrap { background: #fff; border: 1px solid #c5d0de; border-radius: 0.5rem; padding: 0.75rem; }
+    .bar { height: 0.5rem; background: #e2e8f0; border-radius: 999px; overflow: hidden; margin-top: 0.35rem; }
+    .fill-a { height: 100%; background: var(--steel); }
+    .fill-b { height: 100%; background: var(--amber); }
+    .winner { margin-top: 1rem; font-weight: 600; }
+    .note { margin-top: 1.5rem; font-size: 0.8rem; color: #5b6b7a; line-height: 1.45; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="tag">Offline soft demo</p>
+    <h1>Neuro Guard Studio</h1>
+    <p>Slide sensor coverage and threshold noise to compare neuro-agentic CPI vs reactive act-without-counterfactual.</p>
+    <label>Sensor coverage <span id="cov-v">0.80</span></label>
+    <input id="cov" type="range" min="0.1" max="1" step="0.01" value="0.8" />
+    <label>Threshold noise <span id="noise-v">0.25</span></label>
+    <input id="noise" type="range" min="0.05" max="0.9" step="0.01" value="0.25" />
+    <div class="bars">
+      <div class="bar-wrap">
+        <div>Neuro-agentic <strong id="a-score">—</strong></div>
+        <div class="bar"><div class="fill-a" id="a-bar" style="width:0%"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div>Reactive <strong id="b-score">—</strong></div>
+        <div class="bar"><div class="fill-b" id="b-bar" style="width:0%"></div></div>
+      </div>
+    </div>
+    <p class="winner" id="winner"></p>
+    <p class="note">
+      Approximate offline demo only — not live ICS control. Full studio: <code>npm run dev</code> in
+      <code>projects/neuro-guard-studio</code>. Paper:
+      <a href="https://arxiv.org/abs/2607.09076v1">arxiv.org/abs/2607.09076v1</a>.
+    </p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function scoreA(cov, noise) {
+      const safety = clamp(cov * 52 + (1 - noise) * 28 + 12, 0, 100);
+      const cascade = clamp(58 + cov * 22 - noise * 24, 0, 100);
+      return round2(safety * 0.55 + cascade * 0.45);
+    }
+    function scoreB(cov, noise) {
+      const safety = clamp(34 + cov * 12 + noise * 18, 0, 62);
+      const cascade = clamp(32 - noise * 16 - cov * 4, 0, 52);
+      return round2(safety * 0.55 + cascade * 0.45);
+    }
+    function render() {
+      const cov = Number(document.getElementById("cov").value);
+      const noise = Number(document.getElementById("noise").value);
+      document.getElementById("cov-v").textContent = cov.toFixed(2);
+      document.getElementById("noise-v").textContent = noise.toFixed(2);
+      const a = scoreA(cov, noise);
+      const b = scoreB(cov, noise);
+      document.getElementById("a-score").textContent = a + "%";
+      document.getElementById("b-score").textContent = b + "%";
+      document.getElementById("a-bar").style.width = a + "%";
+      document.getElementById("b-bar").style.width = b + "%";
+      const w =
+        a > b + 0.01 ? "Winner: neuro-agentic (CPI before act)" :
+        b > a + 0.01 ? "Winner: reactive (act without CPI)" : "Tie";
+      document.getElementById("winner").textContent = w;
+    }
+    document.getElementById("cov").addEventListener("input", render);
+    document.getElementById("noise").addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>
