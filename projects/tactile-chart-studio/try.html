@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tactile Chart Studio — try</title>
+    <style>
+      :root {
+        --ink: #1c2430;
+        --accent: #4a5d7a;
+        --sand: #c4a574;
+        --bg: #f3f4f7;
+      }
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--ink);
+        background: radial-gradient(ellipse 70% 50% at 10% 0%, #4a5d7a33, transparent 55%),
+          linear-gradient(180deg, #e8ebf1, var(--bg));
+        min-height: 100vh;
+        padding: 2rem 1.25rem 3rem;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 2rem;
+        margin: 0 0 0.5rem;
+      }
+      .tag {
+        color: var(--sand);
+        font-size: 0.9rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.85rem;
+        font-size: 0.85rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 1.25rem;
+      }
+      .card {
+        flex: 1;
+        background: #fff;
+        border: 1px solid #c8ced8;
+        border-radius: 0.5rem;
+        padding: 0.9rem 1rem;
+      }
+      .card strong {
+        display: block;
+        font-size: 1.4rem;
+        margin-top: 0.25rem;
+      }
+      .fence {
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
+        color: #5a6575;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--accent);
+        color: #fff;
+        border: 0;
+        border-radius: 0.4rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="tag">Offline demo · Tactile Chart Studio</p>
+      <h1>Feel the chart. Ask it questions.</h1>
+      <p>
+        Soft-simulate conversational + tactile plan quality vs a visual-only
+        baseline. Not live hardware. Not Graphy.
+      </p>
+
+      <label>Layer depth <span id="ld">0.7</span></label>
+      <input id="layerDepth" type="range" min="0" max="100" value="70" />
+
+      <label>Verify discipline <span id="vd">0.8</span></label>
+      <input id="verifyDiscipline" type="range" min="0" max="100" value="80" />
+
+      <label>Grammar coverage <span id="gc">0.65</span></label>
+      <input id="grammarCoverage" type="range" min="0" max="100" value="65" />
+
+      <button type="button" id="run">Score plans</button>
+
+      <div class="row">
+        <div class="card">
+          Conversational + tactile
+          <strong id="tactile">—</strong>
+        </div>
+        <div class="card">
+          Visual-only baseline
+          <strong id="visual">—</strong>
+        </div>
+      </div>
+
+      <p class="fence">
+        Honesty: method-lab approximation inspired by
+        <a href="https://arxiv.org/abs/2607.14588v1">arXiv:2607.14588</a>. Sources
+        and full studio live in the Next app.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreTactile(layer, verify, grammar) {
+        const plan = clamp(layer * 40 + grammar * 30 + verify * 30, 0, 100);
+        const overall = round2(
+          plan * 0.45 + verify * 100 * 0.35 + grammar * 100 * 0.2,
+        );
+        return overall;
+      }
+      function scoreVisual(layer, verify, grammar) {
+        const skip = 0.45 + (1 - layer) * 0.25 + (1 - verify) * 0.25;
+        return round2(
+          clamp(38 + grammar * 22 + verify * 8 - skip * 18, 0, 68),
+        );
+      }
+      function sync() {
+        const layer = Number(layerDepth.value) / 100;
+        const verify = Number(verifyDiscipline.value) / 100;
+        const grammar = Number(grammarCoverage.value) / 100;
+        ld.textContent = layer.toFixed(2);
+        vd.textContent = verify.toFixed(2);
+        gc.textContent = grammar.toFixed(2);
+        tactile.textContent = scoreTactile(layer, verify, grammar);
+        visual.textContent = scoreVisual(layer, verify, grammar);
+      }
+      run.addEventListener("click", sync);
+      [layerDepth, verifyDiscipline, grammarCoverage].forEach((el) =>
+        el.addEventListener("input", sync),
+      );
+      sync();
+    </script>
+  </body>
+</html>

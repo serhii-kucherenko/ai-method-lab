@@ -1,0 +1,37 @@
+{
+  "id": "tcs-014",
+  "input": {
+    "chartClarity": 0.54,
+    "layerDepth": 0.49,
+    "grammarCoverage": 0.49,
+    "verifyDiscipline": 0.5,
+    "selectConfirmRate": 0.5,
+    "askFidelity": 0.5,
+    "tactileResolution": 0.52,
+    "conversationTurns": 18,
+    "multimodalSync": 0.5,
+    "feedbackSpeed": 0.42,
+    "a11yReview": 0.48,
+    "profile": "baseline"
+  },
+  "expectedTactile": {
+    "mode": "tactile",
+    "planQuality": 44.36,
+    "layerCoverage": 47.74,
+    "grammarFidelity": 41.66,
+    "verifyScore": 46.37,
+    "conversationQuality": 43.88,
+    "auditTrail": 46.62,
+    "overall": 45.16
+  },
+  "expectedVisual": {
+    "mode": "visual",
+    "planQuality": 51.66,
+    "layerCoverage": 4.69,
+    "grammarFidelity": 52.09,
+    "verifyScore": 5.25,
+    "conversationQuality": 37.78,
+    "auditTrail": 20.97,
+    "overall": 33.47
+  }
+}
