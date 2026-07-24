@@ -12,6 +12,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Virulence Predict Studio** | `virulence-predict-studio` | **Complete** | SEVA |
 | **Pathology Slide Studio** | `pathology-slide-studio` | **Complete** | ALICE |
 | **Model Compile Studio** | `model-compile-studio` | **Complete** | MLIR / TPU-MLIR |
+| **Rhythm Read Studio** | `rhythm-read-studio` | **building** | AG-SCL ECG |
 
 ## Rules
 
