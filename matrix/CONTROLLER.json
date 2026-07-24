@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T04:42:09.715Z",
+  "updated_at": "2026-07-24T04:42:39.750Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -13,7 +13,7 @@
     "enabled": true,
     "product_complete_pending": false,
     "last_product_complete_email_id": "a544e0a7-0970-40b8-83d8-fdd2fe20461c",
-    "last_idea_validated_email_id": "8fc845b2-4091-4089-93fa-2be19fd4c0de",
+    "last_idea_validated_email_id": "cd03433f-c7bc-43b1-af10-e42ef2c032f8",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
