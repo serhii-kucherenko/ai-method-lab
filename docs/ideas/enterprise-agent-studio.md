@@ -1,6 +1,6 @@
 # Enterprise Agent Studio
 
-**State:** building  
+**State:** sustained  
 **Slug:** `enterprise-agent-studio`  
 **Paper:** https://arxiv.org/abs/2607.17331v1  
 **Authors’ code:** none  

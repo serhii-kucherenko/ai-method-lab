@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enterprise Agent Studio — try</title>
+    <style>
+      :root {
+        --bg: #eef2f6;
+        --panel: #ffffff;
+        --emerald: #0f766e;
+        --ink: #1e293b;
+        --muted: #64748b;
+        --line: #d0d8e2;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", system-ui, sans-serif;
+        background: radial-gradient(ellipse 70% 55% at 8% 0%, #dbe7f0 0%, transparent 55%), #eef2f6;
+        color: var(--ink);
+        min-height: 100vh;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: var(--emerald);
+        font-size: 2rem;
+        margin: 0 0 0.5rem;
+      }
+      p { color: var(--muted); max-width: 36rem; }
+      .grid {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        max-width: 40rem;
+      }
+      label { display: grid; gap: 0.35rem; font-size: 0.9rem; }
+      input, select {
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.65rem;
+        font: inherit;
+      }
+      button {
+        margin-top: 0.5rem;
+        background: var(--emerald);
+        color: #f0fdfa;
+        border: 0;
+        border-radius: 0.5rem;
+        padding: 0.65rem 1rem;
+        font: inherit;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.5rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        max-width: 40rem;
+      }
+      .bar {
+        height: 0.65rem;
+        background: #e2e8f0;
+        border-radius: 999px;
+        overflow: hidden;
+        margin: 0.35rem 0 0.75rem;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--emerald);
+      }
+      .bar.single > span { background: #94a3b8; }
+      .note { font-size: 0.85rem; color: var(--muted); margin-top: 1rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Enterprise Agent Studio</h1>
+    <p>
+      Offline demo: compare multi-agent role-orchestrated plan quality against a
+      single unchecked agent. Soft simulation — not Agentic ERP, not a live ERP.
+    </p>
+    <div class="grid">
+      <label>Domain complexity (0–1)
+        <input id="complexity" type="number" min="0" max="1" step="0.05" value="0.7" />
+      </label>
+      <label>Constraint count (1–20)
+        <input id="constraints" type="number" min="1" max="20" value="12" />
+      </label>
+      <label>Role coverage (0–1)
+        <input id="roles" type="number" min="0" max="1" step="0.05" value="0.85" />
+      </label>
+      <label>Coordination rounds (1–8)
+        <input id="rounds" type="number" min="1" max="8" value="4" />
+      </label>
+      <button id="run" type="button">Compare multi vs single</button>
+    </div>
+    <div class="out" id="out" hidden>
+      <div>Multi-agent overall: <strong id="m"></strong></div>
+      <div class="bar"><span id="mb"></span></div>
+      <div>Single-agent overall: <strong id="s"></strong></div>
+      <div class="bar single"><span id="sb"></span></div>
+      <div>Winner: <strong id="w"></strong></div>
+    </div>
+    <p class="note">
+      Paper: <a href="https://arxiv.org/abs/2607.17331v1">arXiv:2607.17331</a> ·
+      Approximate offline formulas (full product uses dual-impl goldens).
+    </p>
+    <script>
+      function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+      function round2(n) { return Math.round(n * 100) / 100; }
+      function pressure(c, k, t, v) {
+        return clamp(c * 0.32 + (k / 20) * 0.22 + t * 0.2 + v * 0.16 + 0.08, 0, 1);
+      }
+      function scoreMulti(c, k, r, rounds) {
+        const p = pressure(c, k, 0.6, 0.45);
+        const roles = clamp(r * 90 + 10, 0, 100);
+        const coord = clamp(rounds * 9.5 + r * 30 + (1 - p) * 12, 0, 100);
+        const constraints = clamp((1 - 0.6) * 22 + Math.min(20, k) * 1.8 + 40, 0, 100);
+        return round2(clamp(roles * 0.28 + coord * 0.34 + constraints * 0.28 + (1 - p) * 10, 0, 100));
+      }
+      function scoreSingle(c, k, r, rounds) {
+        const p = pressure(c, k, 0.6, 0.45);
+        return round2(clamp(44 + r * 12 + (1 - p) * 18 - (k / 20) * 16 - rounds * 0.5, 0, 100));
+      }
+      document.getElementById("run").onclick = () => {
+        const c = Number(document.getElementById("complexity").value);
+        const k = Number(document.getElementById("constraints").value);
+        const r = Number(document.getElementById("roles").value);
+        const rounds = Number(document.getElementById("rounds").value);
+        const multi = scoreMulti(c, k, r, rounds);
+        const single = scoreSingle(c, k, r, rounds);
+        document.getElementById("out").hidden = false;
+        document.getElementById("m").textContent = multi.toFixed(1);
+        document.getElementById("s").textContent = single.toFixed(1);
+        document.getElementById("mb").style.width = multi + "%";
+        document.getElementById("sb").style.width = single + "%";
+        document.getElementById("w").textContent =
+          multi > single + 0.01 ? "multi-agent" : single > multi + 0.01 ? "single-agent" : "tie";
+      };
+    </script>
+  </body>
+</html>

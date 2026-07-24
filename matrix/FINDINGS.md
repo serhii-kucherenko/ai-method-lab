@@ -2,6 +2,14 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-24 — Enterprise Agent Studio sustain GREEN (product complete email pending)
+
+- Ladder to sustain: 8 pages; 27 features; ≥4 aggregates; 30 dual-impl goldens; try.html; tutor guide `docs/guides/41-enterprise-agent-studio-lessons.md`
+- Stack: Next.js + Tailwind + shadcn; DESIGN note on file; marketing landing at `/`
+- Domain: multi-agent role-orchestrated plan quality vs single-agent unchecked baseline (never brand Agentic ERP; no desk clone IA)
+- Cell `A03__P-sustain-001__enterprise-agent-studio__r1`
+- `product_complete_pending: true` — parent sends finish email; do not Resend or pick next paper this tick
+
 ## 2026-07-24 — Model Compile Studio sustain GREEN (product complete email pending)
 
 - Ladder to sustain: 9 pages; 26 features; ≥4 aggregates; 30 dual-impl goldens; try.html; tutor guide `docs/guides/38-model-compile-studio-lessons.md`

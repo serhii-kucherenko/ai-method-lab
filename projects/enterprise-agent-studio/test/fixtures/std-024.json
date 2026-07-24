@@ -1,0 +1,40 @@
+{
+  "id": "std-024",
+  "input": {
+    "domainComplexity": 0.78,
+    "constraintCount": 15,
+    "roleCoverage": 0.73,
+    "coordinationRounds": 1,
+    "conflictResolutionDepth": 0.66,
+    "capacityTightness": 0.67,
+    "demandVolatility": 0.66,
+    "crossDomainLinks": 0,
+    "auditTrailStrictness": 0.74,
+    "plannerSpecialization": 0.69,
+    "allocatorSpecialization": 0.69,
+    "reviewerSpecialization": 0.76,
+    "profile": "balanced"
+  },
+  "expectedMulti": {
+    "mode": "multi",
+    "allocationFit": 63.17,
+    "constraintSatisfaction": 57.24,
+    "conflictResolution": 48.53,
+    "roleCoverageScore": 72.94,
+    "coordinationLift": 52.21,
+    "planStability": 48.19,
+    "confidence": 64.05,
+    "overall": 58.06
+  },
+  "expectedSingle": {
+    "mode": "single",
+    "allocationFit": 29.4,
+    "constraintSatisfaction": 38.83,
+    "conflictResolution": 46.62,
+    "roleCoverageScore": 46.81,
+    "coordinationLift": 2.95,
+    "planStability": 25.38,
+    "confidence": 51.88,
+    "overall": 34.19
+  }
+}

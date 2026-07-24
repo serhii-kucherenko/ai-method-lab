@@ -14,7 +14,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Model Compile Studio** | `model-compile-studio` | **Complete** | MLIR / TPU-MLIR |
 | **Rhythm Read Studio** | `rhythm-read-studio` | **Complete** | AG-SCL ECG |
 | **Realtime Deploy Studio** | `realtime-deploy-studio` | **Complete** | FlashRT |
-| **Enterprise Agent Studio** | `enterprise-agent-studio` | **building** | Agentic ERP |
+| **Enterprise Agent Studio** | `enterprise-agent-studio` | **Complete** | Agentic ERP |
 
 ## Rules
 
