@@ -43,6 +43,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 36 | [Virulence Predict Studio — what we learned](36-virulence-predict-studio-lessons.md) | Product `virulence-predict-studio` |
 | 37 | [Pathology Slide Studio — what we learned](37-pathology-slide-studio-lessons.md) | Product `pathology-slide-studio` |
 | 38 | [Model Compile Studio — what we learned](38-model-compile-studio-lessons.md) | Product `model-compile-studio` |
+| 39 | [Rhythm Read Studio — what we learned](39-rhythm-read-studio-lessons.md) | Product `rhythm-read-studio` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 

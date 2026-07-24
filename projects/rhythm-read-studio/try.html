@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rhythm Read Studio — try</title>
+    <style>
+      :root {
+        --coral: #c24f42;
+        --ink: #1e2936;
+        --line: #d5dce4;
+        --bg: #f4f6f8;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: radial-gradient(ellipse 70% 50% at 10% 0%, #f7d4ce, transparent 55%),
+          var(--bg);
+        color: var(--ink);
+        padding: 2rem;
+      }
+      h1 {
+        color: var(--coral);
+        font-weight: 600;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        font-size: 0.85rem;
+      }
+      input {
+        width: 7rem;
+        padding: 0.35rem 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+      }
+      button {
+        background: var(--coral);
+        color: #fff;
+        border: 0;
+        border-radius: 0.4rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .cards {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        margin-top: 1.5rem;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+        padding: 1rem;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #e8edf2;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 0.35rem;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--coral);
+      }
+      .note {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #526274;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rhythm Read Studio</h1>
+    <p>Offline demo: angular SCL-style long-tail score vs flat CE / no-tail.</p>
+    <div class="row">
+      <label>Head share <input id="head" type="number" step="0.01" value="0.72" /></label>
+      <label>Tail share <input id="tail" type="number" step="0.01" value="0.14" /></label>
+      <label>Anisotropy <input id="aniso" type="number" step="0.01" value="0.68" /></label>
+      <label>Angular cov <input id="ang" type="number" step="0.01" value="0.74" /></label>
+      <label>Adaptive logit <input id="logit" type="number" step="0.01" value="0.7" /></label>
+      <label>Band protect <input id="band" type="number" step="0.01" value="0.82" /></label>
+      <label>Sparsity <input id="sparse" type="number" step="0.01" value="0.58" /></label>
+    </div>
+    <button id="run">Score profiles</button>
+    <div class="cards">
+      <div class="card">
+        <strong>Angular SCL + long-tail</strong>
+        <div id="a-out"></div>
+      </div>
+      <div class="card">
+        <strong>Flat CE / no-tail</strong>
+        <div id="b-out"></div>
+      </div>
+    </div>
+    <p class="note">
+      Soft simulation only — not a clinical diagnostic device. Not branded as AG-SCL.
+    </p>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function input() {
+        return {
+          headClassShare: Number(head.value),
+          tailClassShare: Number(tail.value),
+          morphologyAnisotropy: Number(aniso.value),
+          angularCovariance: Number(ang.value),
+          adaptiveLogit: Number(logit.value),
+          bandProtectQrs: Number(band.value),
+          embeddingUniformity: 0.66,
+          labelSparsity: Number(sparse.value),
+          multiLabelDensity: 0.42,
+          profile: "full",
+        };
+      }
+      function scoreA(i) {
+        const pressure = clamp(
+          i.labelSparsity * 0.55 + (1 - i.tailClassShare) * 0.3 + i.headClassShare * 0.15,
+          0,
+          1,
+        );
+        const ang =
+          i.morphologyAnisotropy * 48 + i.angularCovariance * 34 + i.embeddingUniformity * 18;
+        const lg =
+          i.adaptiveLogit * 52 + (1 - i.labelSparsity) * 22 + i.multiLabelDensity * 26;
+        const bd =
+          i.bandProtectQrs * 58 + i.tailClassShare * 24 + i.morphologyAnisotropy * 18;
+        const rare = clamp(
+          (ang * 0.42 + lg * 0.28 + bd * 0.3) * 1.08 +
+            i.angularCovariance * 8 +
+            i.adaptiveLogit * 6 -
+            pressure * 12,
+          0,
+          100,
+        );
+        const bal = clamp(
+          (ang * 0.35 + lg * 0.32 + bd * 0.2 + i.embeddingUniformity * 13) * 1.08 +
+            i.tailClassShare * 10 -
+            pressure * 8,
+          0,
+          100,
+        );
+        const overall = round2(bal * 0.34 + rare * 0.32 + rare * 0.18 + (rare - 30) * 0.16);
+        return { overall: clamp(overall, 0, 100), rare: round2(rare), bal: round2(bal) };
+      }
+      function scoreB(i) {
+        const pressure = clamp(
+          i.labelSparsity * 0.55 + (1 - i.tailClassShare) * 0.3 + i.headClassShare * 0.15,
+          0,
+          1,
+        );
+        const rare = clamp(
+          38 + i.tailClassShare * 22 - pressure * 28 - i.labelSparsity * 14 + 3,
+          0,
+          100,
+        );
+        const headDom = i.headClassShare * 55 + (1 - i.tailClassShare) * 20 + 12;
+        const bal = clamp(headDom * 0.55 + rare * 0.25 + i.embeddingUniformity * 12 - pressure * 10, 0, 100);
+        return { overall: round2(bal * 0.4 + rare * 0.22 + rare * 0.2 + 78 * 0.18), rare: round2(rare), bal: round2(bal) };
+      }
+      function render(el, s) {
+        el.innerHTML =
+          "<p>Overall " +
+          s.overall +
+          "</p><div class='bar'><span style='width:" +
+          Math.min(100, s.overall) +
+          "%'></span></div><p>Rare sens " +
+          s.rare +
+          " · bal " +
+          s.bal +
+          "</p>";
+      }
+      document.getElementById("run").onclick = () => {
+        const i = input();
+        render(document.getElementById("a-out"), scoreA(i));
+        render(document.getElementById("b-out"), scoreB(i));
+      };
+      document.getElementById("run").click();
+    </script>
+  </body>
+</html>

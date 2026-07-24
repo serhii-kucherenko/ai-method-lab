@@ -1,0 +1,41 @@
+{
+  "id": "std-019",
+  "input": {
+    "headClassShare": 0.73,
+    "tailClassShare": 0.18,
+    "morphologyAnisotropy": 0.58,
+    "angularCovariance": 0.55,
+    "adaptiveLogit": 0.6,
+    "bandProtectQrs": 0.66,
+    "embeddingUniformity": 0.61,
+    "labelSparsity": 0.6,
+    "multiLabelDensity": 0.5,
+    "profile": "fast"
+  },
+  "expectedAngularScl": {
+    "mode": "angular_scl",
+    "balancedAccuracy": 49.72,
+    "rareSensitivity": 52.49,
+    "headSpecificity": 87.62,
+    "macroMap": 56.86,
+    "tailLift": 6.53,
+    "confidence": 57.3,
+    "angularContribution": 52.92,
+    "logitContribution": 47.7,
+    "bandContribution": 46.68,
+    "overall": 44.98
+  },
+  "expectedFlatCe": {
+    "mode": "flat_ce",
+    "balancedAccuracy": 41.76,
+    "rareSensitivity": 14.37,
+    "headSpecificity": 87.28,
+    "macroMap": 34.89,
+    "tailLift": 0,
+    "confidence": 47.35,
+    "angularContribution": 0,
+    "logitContribution": 0,
+    "bandContribution": 5.28,
+    "overall": 42.55
+  }
+}

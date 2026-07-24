@@ -1,6 +1,6 @@
 # Rhythm Read Studio
 
-**State:** building  
+**State:** sustain-green / complete  
 **Slug:** `rhythm-read-studio`  
 **Paper:** https://arxiv.org/abs/2607.14613v1  
 **Authors’ code:** https://github.com/Open-EXG/AG-SCL-for-Long-Tailed-ECG  
