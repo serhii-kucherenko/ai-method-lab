@@ -1,0 +1,37 @@
+{
+  "id": "odts-011",
+  "input": {
+    "scheduleFeasibility": 0.43,
+    "resourceHeadroom": 0.44,
+    "transferReliability": 0.42,
+    "desireAlignment": 0.47,
+    "constraintStrictness": 0.44,
+    "desireWeight": 0.36,
+    "stopCount": 15,
+    "weatherRisk": 0.43,
+    "offlineMapCoverage": 0.46,
+    "mobilityAdaptability": 0.41,
+    "tripHours": 19,
+    "planner": "cloud_style"
+  },
+  "expectedPlaFeasibility": {
+    "mode": "pla_feasibility",
+    "feasibility": 37.74,
+    "desireFit": 36.82,
+    "resourceMargin": 44.67,
+    "transferHealth": 37.34,
+    "adaptGain": 44.64,
+    "auditTrail": 36.86,
+    "overall": 39.92
+  },
+  "expectedDesireFirst": {
+    "mode": "desire_first",
+    "feasibility": 11.37,
+    "desireFit": 39.61,
+    "resourceMargin": 17.13,
+    "transferHealth": 17.62,
+    "adaptGain": 12.72,
+    "auditTrail": 7.02,
+    "overall": 22.22
+  }
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>On-Device Trip Studio — try</title>
+    <style>
+      :root {
+        --teal: #0d7377;
+        --dusk: #2c3e50;
+        --bg: #e8eef2;
+        --ink: #1c2834;
+      }
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        margin: 0;
+        background: linear-gradient(180deg, #c8dde3, var(--bg));
+        color: var(--ink);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+        margin: 0 0 0.5rem;
+        color: var(--teal);
+      }
+      p {
+        line-height: 1.5;
+        color: #4a5560;
+      }
+      label {
+        display: block;
+        margin-top: 0.85rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 1.25rem;
+        background: var(--teal);
+        color: #fff;
+        border: 0;
+        border-radius: 0.5rem;
+        padding: 0.55rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        margin-top: 1.25rem;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #b8c5d0;
+        border-radius: 0.6rem;
+        padding: 0.85rem;
+      }
+      .card h2 {
+        margin: 0 0 0.4rem;
+        font-size: 0.95rem;
+      }
+      .fence {
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
+        color: #5a6575;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>On-Device Trip Studio</h1>
+      <p>
+        Offline demo: feasibility-first Plan→Learn→Adapt vs desire-first
+        baseline. Soft simulation only.
+      </p>
+
+      <label>Schedule feasibility <span id="sfv"></span></label>
+      <input id="sf" type="range" min="0" max="100" value="82" />
+
+      <label>Resource headroom <span id="rhv"></span></label>
+      <input id="rh" type="range" min="0" max="100" value="74" />
+
+      <label>Desire alignment <span id="dav"></span></label>
+      <input id="da" type="range" min="0" max="100" value="70" />
+
+      <label>Constraint strictness <span id="csv"></span></label>
+      <input id="cs" type="range" min="0" max="100" value="80" />
+
+      <button id="run" type="button">Score both paths</button>
+
+      <div class="row">
+        <div class="card">
+          <h2>A · Feasibility-first</h2>
+          <div id="a">—</div>
+        </div>
+        <div class="card">
+          <h2>B · Desire-first</h2>
+          <div id="b">—</div>
+        </div>
+      </div>
+
+      <p class="fence">
+        Inspired by arXiv:2607.15552. Not a live maps/booking API. Not branded
+        as PLA. Full app: <code>npm run dev</code> in
+        <code>projects/on-device-trip-studio</code>.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function read() {
+        return {
+          scheduleFeasibility: Number(sf.value) / 100,
+          resourceHeadroom: Number(rh.value) / 100,
+          desireAlignment: Number(da.value) / 100,
+          constraintStrictness: Number(cs.value) / 100,
+        };
+      }
+      function scorePla(i) {
+        const feas = clamp(
+          i.scheduleFeasibility * 55 + i.constraintStrictness * 35,
+          0,
+          100,
+        );
+        const desire = clamp(
+          i.desireAlignment * 45 + i.constraintStrictness * 20,
+          0,
+          100,
+        );
+        const overall = round2(feas * 0.55 + desire * 0.45);
+        return { feasibility: round2(feas), desireFit: round2(desire), overall };
+      }
+      function scoreDesire(i) {
+        const skip = clamp(
+          0.4 + (1 - i.constraintStrictness) * 0.35,
+          0.35,
+          0.95,
+        );
+        const desire = clamp(i.desireAlignment * 70 + 15, 0, 100);
+        const feas = clamp(
+          (i.scheduleFeasibility * 40 + i.constraintStrictness * 20) * skip,
+          0,
+          100,
+        );
+        const overall = round2(desire * 0.6 + feas * 0.4);
+        return { feasibility: round2(feas), desireFit: round2(desire), overall };
+      }
+      function sync() {
+        sfv.textContent = sf.value + "%";
+        rhv.textContent = rh.value + "%";
+        dav.textContent = da.value + "%";
+        csv.textContent = cs.value + "%";
+      }
+      function run() {
+        const i = read();
+        const A = scorePla(i);
+        const B = scoreDesire(i);
+        a.innerHTML =
+          "Overall <strong>" +
+          A.overall +
+          "</strong><br/>Feasibility " +
+          A.feasibility +
+          "<br/>Desire " +
+          A.desireFit;
+        b.innerHTML =
+          "Overall <strong>" +
+          B.overall +
+          "</strong><br/>Feasibility " +
+          B.feasibility +
+          "<br/>Desire " +
+          B.desireFit;
+      }
+      [sf, rh, da, cs].forEach((el) => el.addEventListener("input", sync));
+      document.getElementById("run").addEventListener("click", run);
+      sync();
+      run();
+    </script>
+  </body>
+</html>

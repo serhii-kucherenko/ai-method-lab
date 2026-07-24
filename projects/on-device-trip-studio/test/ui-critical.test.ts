@@ -1,0 +1,64 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { describe, it } from "node:test";
+import { fileURLToPath } from "node:url";
+import { DISPLAY_NAME } from "../src/claim.ts";
+
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+
+const PAGES = [
+  "page.tsx",
+  "trips/page.tsx",
+  "constraints/page.tsx",
+  "desires/page.tsx",
+  "plans/page.tsx",
+  "adapt/page.tsx",
+  "compare/page.tsx",
+  "settings/page.tsx",
+  "honesty/page.tsx",
+] as const;
+
+describe("ui critical path", () => {
+  it("ships required IA pages without desk clone routes", () => {
+    for (const rel of PAGES) {
+      const text = readFileSync(join(root, "src/app", rel), "utf8");
+      assert.ok(text.length > 80, rel);
+    }
+    const landing = readFileSync(join(root, "src/app/page.tsx"), "utf8");
+    assert.ok(landing.includes("DISPLAY_NAME"));
+    assert.ok(landing.includes("/trips"));
+    assert.equal(DISPLAY_NAME, "On-Device Trip Studio");
+    assert.ok(!landing.includes('href="/jobs"'));
+    assert.ok(!landing.includes('href="/lifecycle"'));
+    assert.ok(!landing.includes('href="/scenario"'));
+    assert.ok(!landing.includes('href="/batch"'));
+    assert.ok(!landing.includes('href="/goldens"'));
+    assert.ok(!landing.includes('href="/profiles"'));
+    assert.ok(!landing.includes('href="/rules"'));
+    assert.ok(!landing.includes('href="/preferences"'));
+    assert.ok(!landing.includes('href="/checklists"'));
+  });
+
+  it("shell navigates trips constraints desires plans adapt compare", () => {
+    const shell = readFileSync(
+      join(root, "src/components/studio-shell.tsx"),
+      "utf8",
+    );
+    for (const href of [
+      "/trips",
+      "/constraints",
+      "/desires",
+      "/plans",
+      "/adapt",
+      "/compare",
+      "/settings",
+      "/honesty",
+    ]) {
+      assert.ok(shell.includes(href), href);
+    }
+    assert.ok(!shell.includes("/jobs"));
+    assert.ok(!shell.includes("/profiles"));
+    assert.ok(!shell.includes("/checklists"));
+  });
+});
