@@ -7,7 +7,8 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | Display name | Slug | Status | Notes |
 |--------------|------|--------|-------|
 | **Filing Penalty Desk** | `filing-penalty-desk` | reference | Prior product |
-| **Graph RAG Studio** | `graph-rag-studio` | **Complete** | Paper 2607.11683 + RAGU code — multi-step GraphRAG studio (not desk clone) |
+| **Graph RAG Studio** | `graph-rag-studio` | **Complete** | RAGU / multi-step GraphRAG |
+| **Disease Drug Studio** | `disease-drug-studio` | **building** | DrugGen-2 / disease-aware candidates |
 
 ## Rules
 
