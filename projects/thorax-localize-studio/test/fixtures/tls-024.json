@@ -1,0 +1,35 @@
+{
+  "id": "tls-024",
+  "input": {
+    "imageQuality": 0.73,
+    "viewClarity": 0.77,
+    "diseaseSignal": 0.71,
+    "localizationCoverage": 0.78,
+    "mapPeakStrength": 0.69,
+    "mapCoherence": 0.71,
+    "findingRichness": 0.71,
+    "lesionBoundaryClarity": 0.7,
+    "validationConfidence": 0.69,
+    "noiseLevel": 0.17,
+    "examKind": "mixed",
+    "plan": "classify_localize"
+  },
+  "expectedClassifyLocalize": {
+    "mode": "classify_localize",
+    "classificationQuality": 86.3,
+    "localizationIntegrity": 99.08,
+    "mapConfidence": 100,
+    "findingCompleteness": 78.99,
+    "planCoherence": 100,
+    "overall": 93.68
+  },
+  "expectedClassifyOnly": {
+    "mode": "classify_only",
+    "classificationQuality": 47.34,
+    "localizationIntegrity": 6.51,
+    "mapConfidence": 0,
+    "findingCompleteness": 45.63,
+    "planCoherence": 2.55,
+    "overall": 28.14
+  }
+}

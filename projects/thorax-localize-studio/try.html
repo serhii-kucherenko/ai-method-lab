@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thorax Localize Studio — try</title>
+    <style>
+      :root {
+        --cyan: #2a8f9a;
+        --charcoal: #1a2229;
+        --bg: #e8eef2;
+        --panel: #f0f4f6;
+        --ink: #1a2229;
+      }
+      body {
+        margin: 0;
+        font-family: "Public Sans", system-ui, sans-serif;
+        background: radial-gradient(
+            ellipse 70% 55% at 10% 0%,
+            #3db8c533,
+            transparent 55%
+          ),
+          linear-gradient(180deg, #cfd7de, var(--bg));
+        color: var(--ink);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: "Bricolage Grotesque", Georgia, sans-serif;
+        font-weight: 600;
+        font-size: 2.2rem;
+        color: var(--cyan);
+        margin: 0 0 0.5rem;
+      }
+      p.lead {
+        color: #5a6874;
+        line-height: 1.5;
+      }
+      label {
+        display: block;
+        font-size: 0.85rem;
+        margin-top: 0.85rem;
+        color: #5a6874;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .row {
+        background: var(--panel);
+        border: 1px solid #c3ced6;
+        border-radius: 0.6rem;
+        padding: 1rem;
+        margin-top: 1.25rem;
+      }
+      .scores {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .score {
+        background: white;
+        border-radius: 0.5rem;
+        padding: 0.85rem;
+        border: 1px solid #c3ced6;
+      }
+      .score strong {
+        display: block;
+        font-size: 1.6rem;
+        margin-top: 0.25rem;
+      }
+      .fence {
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
+        color: #5a6874;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Thorax Localize Studio</h1>
+      <p class="lead">
+        Offline sketch: classify + localize vs classify-only. Soft scores only —
+        not clinical certification or live PACS.
+      </p>
+      <div class="row">
+        <label
+          >Disease signal <span id="dVal"></span>
+          <input id="disease" type="range" min="0" max="100" value="76"
+        /></label>
+        <label
+          >Localization coverage <span id="lVal"></span>
+          <input id="loc" type="range" min="0" max="100" value="78"
+        /></label>
+        <label
+          >Map peak <span id="mVal"></span>
+          <input id="map" type="range" min="0" max="100" value="74"
+        /></label>
+        <div class="scores">
+          <div class="score">
+            Classify + localize
+            <strong id="aScore">—</strong>
+          </div>
+          <div class="score">
+            Classify-only
+            <strong id="bScore">—</strong>
+          </div>
+        </div>
+      </div>
+      <p class="fence">
+        Inspired by arXiv:2607.09305. Method Lab experiment. Not Inspectra.
+        Sources: https://arxiv.org/abs/2607.09305v1
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(d, l, m) {
+        const classify = clamp(40 + d * 35 + l * 10, 0, 100);
+        const localize = clamp(20 + l * 55 + m * 20, 0, 100);
+        const maps = clamp(15 + m * 60 + l * 15, 0, 100);
+        return round2(classify * 0.28 + localize * 0.4 + maps * 0.32);
+      }
+      function scoreB(d, l, m) {
+        const classify = clamp(45 + d * 40 + (1 - l) * 8, 0, 100);
+        const localize = clamp(5 + l * 12, 0, 100);
+        const maps = clamp(2 + m * 8, 0, 100);
+        return round2(classify * 0.7 + localize * 0.15 + maps * 0.15);
+      }
+      function render() {
+        const d = Number(disease.value) / 100;
+        const l = Number(loc.value) / 100;
+        const m = Number(map.value) / 100;
+        dVal.textContent = Math.round(d * 100) + "%";
+        lVal.textContent = Math.round(l * 100) + "%";
+        mVal.textContent = Math.round(m * 100) + "%";
+        aScore.textContent = scoreA(d, l, m).toFixed(1);
+        bScore.textContent = scoreB(d, l, m).toFixed(1);
+      }
+      [disease, loc, map].forEach((el) => el.addEventListener("input", render));
+      render();
+    </script>
+  </body>
+</html>
