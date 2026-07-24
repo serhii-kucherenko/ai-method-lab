@@ -1,0 +1,40 @@
+{
+  "id": "std-019",
+  "input": {
+    "graphComplexity": 0.62,
+    "operatorFusionPotential": 0.62,
+    "memoryLayoutFit": 0.58,
+    "quantizationHeadroom": 0.58,
+    "targetAffinity": 0.54,
+    "irDepth": 0.62,
+    "kernelCoverage": 0.62,
+    "passBudget": 9,
+    "profile": "fast"
+  },
+  "expectedMultiPass": {
+    "mode": "multi_pass",
+    "fusionScore": 70.02,
+    "memoryScore": 65.49,
+    "targetFitScore": 66.92,
+    "passEfficiency": 71.15,
+    "predictedArtifactTier": "optimized_ir",
+    "confidence": 10.85,
+    "fusionContribution": 58.28,
+    "memoryContribution": 54.17,
+    "targetContribution": 50.98,
+    "overall": 63.33
+  },
+  "expectedSinglePass": {
+    "mode": "single_pass",
+    "fusionScore": 54.56,
+    "memoryScore": 50.57,
+    "targetFitScore": 49.6,
+    "passEfficiency": 40.6,
+    "predictedArtifactTier": "mlir",
+    "confidence": 5.99,
+    "fusionContribution": 62,
+    "memoryContribution": 58.88,
+    "targetContribution": 0,
+    "overall": 46.72
+  }
+}

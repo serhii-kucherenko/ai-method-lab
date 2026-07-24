@@ -2,6 +2,14 @@
 
 Evidence log. Promote methods only per `docs/RUBRIC.md`.
 
+## 2026-07-24 — Model Compile Studio sustain GREEN (product complete email pending)
+
+- Ladder to sustain: 9 pages; 26 features; ≥4 aggregates; 30 dual-impl goldens; try.html; tutor guide `docs/guides/38-model-compile-studio-lessons.md`
+- Stack: Next.js + Tailwind + shadcn; DESIGN note on file; marketing landing at `/`
+- Domain: multi-pass MLIR-style compile plan quality vs naive single-pass / target-blind (never brand TPU-MLIR / Sophgo; no fake chip timing)
+- Cell `A03__P-sustain-001__model-compile-studio__r1`
+- `product_complete_pending: true` — parent sends finish email; do not Resend or pick next paper this tick
+
 ## 2026-07-23 — Data Science Desk sustain GREEN (product complete email pending)
 
 - Ladder to sustain: 9 pages; 18 features; ≥4 aggregates; goldens ≥28 dual-impl; try.html; tutor guide `docs/guides/16-data-science-desk-lessons.md`

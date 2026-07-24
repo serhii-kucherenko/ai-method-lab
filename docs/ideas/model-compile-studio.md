@@ -1,6 +1,6 @@
 # Model Compile Studio
 
-**State:** building  
+**State:** complete  
 **Slug:** `model-compile-studio`  
 **Paper:** https://arxiv.org/abs/2607.15865v1  
 **Authors’ code:** https://github.com/sophgo/tpu-mlir  

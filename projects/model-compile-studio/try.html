@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Model Compile Studio — try</title>
+  <style>
+    :root {
+      --bg: #e8ecef;
+      --ink: #1a2229;
+      --cyan: #067a8f;
+      --line: #c5d0d8;
+    }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      background: radial-gradient(ellipse 60% 40% at 10% 0%, #b8dce4, transparent),
+        var(--bg);
+      color: var(--ink);
+      padding: 2rem;
+    }
+    h1 {
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      color: var(--cyan);
+      font-size: 2rem;
+    }
+    .panel {
+      max-width: 520px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    label { display: block; margin-top: 0.75rem; font-size: 0.85rem; }
+    input { width: 100%; padding: 0.4rem; margin-top: 0.25rem; }
+    button {
+      margin-top: 1rem;
+      background: var(--cyan);
+      color: #fff;
+      border: 0;
+      padding: 0.55rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .bars { margin-top: 1rem; }
+    .bar {
+      height: 10px;
+      background: #d9e1e6;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 0.35rem 0;
+    }
+    .bar > span { display: block; height: 100%; background: #00a8c4; }
+    .muted { color: #4a5660; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Model Compile Studio</h1>
+  <p class="muted">Offline demo: multi-pass plan quality vs single-pass / target-blind. Soft simulation only.</p>
+  <div class="panel">
+    <label>Fusion potential (0–1)
+      <input id="fusion" type="number" min="0" max="1" step="0.01" value="0.74" />
+    </label>
+    <label>Target affinity (0–1)
+      <input id="affinity" type="number" min="0" max="1" step="0.01" value="0.78" />
+    </label>
+    <label>Pass budget (1–12)
+      <input id="budget" type="number" min="1" max="12" step="1" value="8" />
+    </label>
+    <button id="run">Score plans</button>
+    <div class="bars" id="out"></div>
+  </div>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function score(fusion, affinity, budget) {
+      const p = clamp(budget / 12, 0, 1);
+      const multi = clamp(fusion * 42 + affinity * 38 + p * 18, 0, 100);
+      const single = clamp(fusion * 55 + 0.2 * 20, 0, 88);
+      return { multi: Math.round(multi * 100) / 100, single: Math.round(single * 100) / 100 };
+    }
+    document.getElementById("run").onclick = () => {
+      const fusion = Number(document.getElementById("fusion").value);
+      const affinity = Number(document.getElementById("affinity").value);
+      const budget = Number(document.getElementById("budget").value);
+      const s = score(fusion, affinity, budget);
+      document.getElementById("out").innerHTML =
+        `<p><strong>Multi-pass</strong> ${s.multi}</p>
+         <div class="bar"><span style="width:${s.multi}%"></span></div>
+         <p><strong>Single-pass / target-blind</strong> ${s.single}</p>
+         <div class="bar"><span style="width:${s.single}%;background:#2c3640"></span></div>
+         <p class="muted">Winner: ${s.multi >= s.single ? "multi-pass" : "single-pass"}</p>`;
+    };
+  </script>
+</body>
+</html>
