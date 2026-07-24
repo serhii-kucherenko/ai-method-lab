@@ -31,6 +31,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Developable Molecule Studio** | `developable-molecule-studio` | **Complete** | Pocket + developability generation |
 | **Alzheimer Predict Studio** | `alzheimer-predict-studio` | **Complete** | Imputation-free AD risk + uncertainty |
 | **Cardiac CT Studio** | `cardiac-ct-studio` | **Complete** | HITL cardiac CT segment + phenotype |
+| **Thorax Localize Studio** | `thorax-localize-studio` | **Building** | CXR classify + lesion localize |
 
 ## Rules
 
