@@ -1,0 +1,38 @@
+{
+  "id": "std-016",
+  "input": {
+    "docs": 17,
+    "rawMentions": 132,
+    "uniqueEntities": 53,
+    "duplicateRate": 0.7,
+    "weakEdges": 2,
+    "strongEdges": 23,
+    "hopDepthUseful": 1,
+    "queryCoverage": 0.51,
+    "profile": "heavy"
+  },
+  "expectedMultiStep": {
+    "mode": "multi_step",
+    "extractScore": 100,
+    "consolidateScore": 69.25,
+    "retrievalScore": 57.05,
+    "overall": 72.67,
+    "entitiesKept": 53,
+    "edgesKept": 23,
+    "duplicatesRemoved": 92,
+    "noiseEdges": 0,
+    "hopTrailLength": 1
+  },
+  "expectedSingleShot": {
+    "mode": "single_shot",
+    "extractScore": 100,
+    "consolidateScore": 31.75,
+    "retrievalScore": 50.05,
+    "overall": 68.87,
+    "entitiesKept": 132,
+    "edgesKept": 25,
+    "duplicatesRemoved": 0,
+    "noiseEdges": 2,
+    "hopTrailLength": 1
+  }
+}

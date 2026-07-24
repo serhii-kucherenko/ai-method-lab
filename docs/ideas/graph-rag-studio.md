@@ -1,6 +1,6 @@
 # Graph RAG Studio
 
-**State:** building  
+**State:** complete (sustain)  
 **Slug:** `graph-rag-studio`  
 **Display name:** Graph RAG Studio  
 **Paper:** https://arxiv.org/abs/2607.11683v1  
