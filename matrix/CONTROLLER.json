@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T05:48:54.539Z",
+  "updated_at": "2026-07-24T05:50:56.958Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,9 +11,9 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "fb6b599a-bb2b-42e1-9712-ebf65a063d81",
-    "last_idea_validated_email_id": "552d345f-130a-482c-a66e-eefc45fd0d55",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "0b13739f-0e97-477a-8bd7-a623081c929d",
+    "last_idea_validated_email_id": "1a83de03-77d9-4538-bec7-8ff9201b8d56",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
@@ -41,13 +41,13 @@
   },
   "last_completed": "A03__P-sustain-001__legacy-infer-studio__r1",
   "last_error": null,
-  "current_product": "legacy-infer-studio",
-  "current_idea": "legacy-infer-studio",
+  "current_product": "quad-skill-studio",
+  "current_idea": "quad-skill-studio",
   "next_research_idea": null,
-  "next_cell": null,
+  "next_cell": "A03__P-smoke-001__quad-skill-studio__r1",
   "mode": "autonomous",
-  "phase": "product_complete_pending",
-  "notes": "Legacy Infer Studio sustain-green. product_complete_pending=true. Parent must send finish email. DO NOT pick next paper. No Resend from climb agent.",
+  "phase": "running",
+  "notes": "Legacy Infer Studio finish emailed. Quad Skill Studio opened from 2607.13579. Climb agent in flight. Parent owns Resend.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -60,11 +60,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.14568",
-      "slug": "legacy-infer-studio",
-      "displayName": "Legacy Infer Studio",
-      "at": "2026-07-24T05:38:06.844Z",
-      "url": "https://arxiv.org/abs/2607.14568v1",
+      "paperId": "2607.13579",
+      "slug": "quad-skill-studio",
+      "displayName": "Quad Skill Studio",
+      "at": "2026-07-24T05:50:39.603Z",
+      "url": "https://arxiv.org/abs/2607.13579v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
