@@ -2,6 +2,10 @@
 
 Papers-driven lab. No freehand product farms.
 
+## 2026-07-24 — Data World Studio finished; Neuro Guard Studio started
+
+Data World Studio sustain-green (`1af8fbe`); finish email sent (`2f6f779f`). Next unused score-2 pick: **Neuro Guard Studio** from paper `2607.09076` (neuro-agentic IIoT defense + counterfactual physics; no public code). PM + design pack written; climb next.
+
 ## 2026-07-24 — Ladder Bomb Studio finished; Data World Studio started
 
 Ladder Bomb Studio sustain-green (`d8697bb`); finish email sent (`eaeaf4b8`). Next unused score-2 pick: **Data World Studio** from paper `2607.15901` (DSWorld — predict DS op outcomes before execute; no public code). PM + design pack written; climb next.
