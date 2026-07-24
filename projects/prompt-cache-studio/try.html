@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prompt Cache Studio — try</title>
+  <style>
+    :root { --mint:#1f8a6e; --ink:#14241f; --bg:#eef6f3; --line:#c5d9d1; }
+    body { font-family: system-ui, sans-serif; margin:0; background:linear-gradient(180deg,#e4f2ec,#eef6f3); color:var(--ink); }
+    main { max-width:640px; margin:0 auto; padding:2rem 1.25rem; }
+    h1 { font-size:1.75rem; margin:0 0 .5rem; }
+    p { color:#4d665c; line-height:1.5; }
+    label { display:block; font-size:.85rem; margin-top:1rem; }
+    input[type=range] { width:100%; }
+    .row { display:flex; justify-content:space-between; font-size:.9rem; margin-top:.35rem; }
+    .bars { margin-top:1.5rem; display:grid; gap:1rem; }
+    .bar-wrap { background:#fff; border:1px solid var(--line); border-radius:8px; padding:1rem; }
+    .bar { height:10px; background:#dceae4; border-radius:4px; overflow:hidden; margin-top:.4rem; }
+    .fill-a { height:100%; background:var(--mint); width:0; transition:width .4s; }
+    .fill-b { height:100%; background:#94a3b8; width:0; transition:width .4s; }
+    .note { font-size:.8rem; margin-top:2rem; color:#64748b; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Prompt Cache Studio</h1>
+    <p>Offline demo: cache-aware compression preserves the shared prefix; naive compression busts the cache.</p>
+    <label>Prefix share <span id="ps">0.70</span></label>
+    <input id="prefixShare" type="range" min="0.1" max="0.95" step="0.01" value="0.70" />
+    <label>Rewrite aggression <span id="ra">0.30</span></label>
+    <input id="rewrite" type="range" min="0.05" max="0.95" step="0.01" value="0.30" />
+    <label>Tier discount <span id="td">0.75</span></label>
+    <input id="tier" type="range" min="0.1" max="0.95" step="0.01" value="0.75" />
+    <div class="bars">
+      <div class="bar-wrap">
+        <div class="row"><strong>Cache-aware overall</strong><span id="oa">—</span></div>
+        <div class="bar"><div class="fill-a" id="ba"></div></div>
+        <div class="row"><span>Hit / prefix / tier</span><span id="da">—</span></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="row"><strong>Naive-bust overall</strong><span id="ob">—</span></div>
+        <div class="bar"><div class="fill-b" id="bb"></div></div>
+        <div class="row"><span>Hit / prefix / tier</span><span id="db">—</span></div>
+      </div>
+    </div>
+    <p class="note">Approximate client-side scores. Full studio: <code>npm run dev</code> in projects/prompt-cache-studio. Paper: https://arxiv.org/abs/2607.15516v1</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function score(mode, prefixShare, rewrite, tierDiscount) {
+      const prefixStability = 0.8;
+      const hitPrior = 0.65;
+      const bust = clamp(0.35 + rewrite * 0.4 + 0.15, 0.3, 0.95);
+      if (mode === "a") {
+        const prefixPreserved = round2(clamp(prefixShare * 70 + prefixStability * 25 - rewrite * 12, 0, 100));
+        const cacheHitRate = round2(clamp(hitPrior * 40 + prefixPreserved * 0.35 + 10, 0, 100));
+        const tierSavings = round2(clamp(cacheHitRate * 0.4 + tierDiscount * 40, 0, 100));
+        const overall = round2(clamp(cacheHitRate * 0.35 + prefixPreserved * 0.3 + tierSavings * 0.35, 0, 100));
+        return { cacheHitRate, prefixPreserved, tierSavings, overall };
+      }
+      const prefixPreserved = round2(clamp(28 - bust * 22 - rewrite * 18, 0, 48));
+      const cacheHitRate = round2(clamp(22 - bust * 24, 0, 42));
+      const tierSavings = round2(clamp(14 + tierDiscount * 8 - bust * 16, 0, 38));
+      const overall = round2(clamp(cacheHitRate * 0.3 + prefixPreserved * 0.25 + tierSavings * 0.45, 0, 100));
+      return { cacheHitRate, prefixPreserved, tierSavings, overall };
+    }
+    function sync() {
+      const ps = +document.getElementById("prefixShare").value;
+      const ra = +document.getElementById("rewrite").value;
+      const td = +document.getElementById("tier").value;
+      document.getElementById("ps").textContent = ps.toFixed(2);
+      document.getElementById("ra").textContent = ra.toFixed(2);
+      document.getElementById("td").textContent = td.toFixed(2);
+      const a = score("a", ps, ra, td);
+      const b = score("b", ps, ra, td);
+      document.getElementById("oa").textContent = a.overall;
+      document.getElementById("ob").textContent = b.overall;
+      document.getElementById("ba").style.width = a.overall + "%";
+      document.getElementById("bb").style.width = b.overall + "%";
+      document.getElementById("da").textContent = a.cacheHitRate + " / " + a.prefixPreserved + " / " + a.tierSavings;
+      document.getElementById("db").textContent = b.cacheHitRate + " / " + b.prefixPreserved + " / " + b.tierSavings;
+    }
+    ["prefixShare","rewrite","tier"].forEach((id) => document.getElementById(id).addEventListener("input", sync));
+    sync();
+  </script>
+</body>
+</html>

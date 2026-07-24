@@ -1,0 +1,38 @@
+{
+  "id": "pcs-021",
+  "input": {
+    "prefixShare": 0.67,
+    "queryVolatility": 0.31,
+    "compressionTarget": 0.64,
+    "prefixStability": 0.69,
+    "cacheTtlFit": 0.62,
+    "hitRatePrior": 0.6,
+    "tokenVolume": 0.63,
+    "tierDiscount": 0.66,
+    "rewriteAggression": 0.24,
+    "suffixShare": 0.31,
+    "providerCacheSupport": 0.68,
+    "promptCount": 25,
+    "profile": "aggressive"
+  },
+  "expectedCacheAware": {
+    "mode": "cache-aware",
+    "cacheHitRate": 67.37,
+    "prefixPreserved": 64.06,
+    "tokensSaved": 40.42,
+    "tierSavings": 66.65,
+    "compressionYield": 42.91,
+    "confidence": 45.34,
+    "overall": 58.03
+  },
+  "expectedNaiveBust": {
+    "mode": "naive-bust",
+    "cacheHitRate": 9.22,
+    "prefixPreserved": 4.99,
+    "tokensSaved": 36.74,
+    "tierSavings": 2.09,
+    "compressionYield": 68.24,
+    "confidence": 29.82,
+    "overall": 21.2
+  }
+}
