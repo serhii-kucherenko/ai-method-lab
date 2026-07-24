@@ -15,3 +15,4 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 - Prefer papers with `code.url`
 - Buyer story + PM/design pack before climb
 - Distinct IA — not jobs/lifecycle/scenario desk shells
+| **Virulence Predict Studio** | `virulence-predict-studio` | **building** | SEVA |
