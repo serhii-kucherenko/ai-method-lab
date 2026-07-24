@@ -1,0 +1,157 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Soft rose-gray + deep teal — DESIGN brief */
+  --studio-bg: #f3eeef;
+  --studio-ink: #2a2426;
+  --studio-teal: #0f5c5c;
+  --studio-teal-ink: #0a3f3f;
+  --studio-rose: #b87a7a;
+  --studio-rose-soft: #eadfdf;
+  --studio-line: #d4c8c9;
+  --studio-wash: radial-gradient(ellipse 70% 50% at 8% 0%, #e8d4d4 0%, transparent 55%),
+    radial-gradient(ellipse 45% 40% at 95% 8%, #c5d8d6 0%, transparent 48%),
+    #f3eeef;
+
+  --background: #f3eeef;
+  --foreground: #2a2426;
+  --card: #ffffff;
+  --card-foreground: #2a2426;
+  --popover: #ffffff;
+  --popover-foreground: #2a2426;
+  --primary: #0f5c5c;
+  --primary-foreground: #f0faf8;
+  --secondary: #e8e0e1;
+  --secondary-foreground: #2a2426;
+  --muted: #ebe4e5;
+  --muted-foreground: #5c5254;
+  --accent: #eadfdf;
+  --accent-foreground: #0a3f3f;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #d4c8c9;
+  --input: #d4c8c9;
+  --ring: #0f5c5c;
+  --chart-1: #0f5c5c;
+  --chart-2: #b87a7a;
+  --chart-3: #5a6b66;
+  --chart-4: #2a2426;
+  --chart-5: #3d8a8a;
+  --radius: 0.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2a2426;
+  --sidebar-primary: #0f5c5c;
+  --sidebar-primary-foreground: #f0faf8;
+  --sidebar-accent: #eadfdf;
+  --sidebar-accent-foreground: #0a3f3f;
+  --sidebar-border: #d4c8c9;
+  --sidebar-ring: #0f5c5c;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-pan {
+  from {
+    transform: translateX(-6px);
+  }
+  to {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-slide-pan {
+  animation: slide-pan 3.2s ease-in-out infinite alternate;
+}
+
+.animate-bar-grow {
+  transform-origin: left center;
+  animation: bar-grow 0.85s ease-out both;
+}
+
+.slide-mesh {
+  background-image:
+    linear-gradient(90deg, rgb(15 92 92 / 0.08) 1px, transparent 1px),
+    linear-gradient(rgb(184 122 122 / 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+}

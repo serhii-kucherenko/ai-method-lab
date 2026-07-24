@@ -1,0 +1,38 @@
+{
+  "id": "std-010",
+  "input": {
+    "patchMorphology": 0.36,
+    "textureEntropy": 0.38,
+    "stainQuality": 0.45,
+    "languageAlign": 0.34,
+    "conceptMatch": 0.35,
+    "slideContext": 0.32,
+    "tissueHeterogeneity": 0.38,
+    "milAggregator": 42.83,
+    "profile": "full"
+  },
+  "expectedMultiSignal": {
+    "mode": "multi_signal",
+    "visionScore": 41.97,
+    "languageScore": 40.39,
+    "slideScore": 42.65,
+    "predictedTaskFit": "wsi",
+    "confidence": 8.68,
+    "visionContribution": 40.66,
+    "languageContribution": 37.92,
+    "slideContribution": 40.15,
+    "overall": 38.27
+  },
+  "expectedVisionOnly": {
+    "mode": "vision_only",
+    "visionScore": 37.67,
+    "languageScore": 20.39,
+    "slideScore": 20.82,
+    "predictedTaskFit": "roi",
+    "confidence": 18.85,
+    "visionContribution": 38.72,
+    "languageContribution": 0,
+    "slideContribution": 0,
+    "overall": 29.51
+  }
+}

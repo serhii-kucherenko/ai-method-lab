@@ -1,6 +1,6 @@
 # Pathology Slide Studio
 
-**State:** building  
+**State:** sustain-green  
 **Slug:** `pathology-slide-studio`  
 **Paper:** https://arxiv.org/abs/2607.09526v1  
 **Authors’ code:** https://github.com/WonderLandxD/ALICE  

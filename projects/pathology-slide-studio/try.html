@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pathology Slide Studio — try</title>
+  <style>
+    :root {
+      --bg: #f3eeef;
+      --ink: #2a2426;
+      --teal: #0f5c5c;
+      --rose: #b87a7a;
+      --line: #d4c8c9;
+    }
+    body {
+      margin: 0;
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: radial-gradient(ellipse 70% 50% at 8% 0%, #e8d4d4 0%, transparent 55%),
+        radial-gradient(ellipse 45% 40% at 95% 8%, #c5d8d6 0%, transparent 48%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+    h1 { font-family: Georgia, "Cormorant Garamond", serif; color: var(--teal); font-size: 2.2rem; margin: 0 0 0.5rem; }
+    .tag { color: #5c5254; margin-bottom: 1.5rem; }
+    label { display: block; font-size: 0.85rem; margin-top: 0.75rem; }
+    input, select { width: 100%; padding: 0.5rem; border: 1px solid var(--line); border-radius: 6px; box-sizing: border-box; }
+    button {
+      margin-top: 1rem; background: var(--teal); color: #f0faf8; border: 0;
+      padding: 0.65rem 1.1rem; border-radius: 6px; cursor: pointer; font-weight: 600;
+    }
+    .grid { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 1rem; margin-top: 1.25rem; }
+    .bar { height: 8px; background: #ebe4e5; border-radius: 4px; overflow: hidden; margin-top: 0.35rem; }
+    .bar > span { display: block; height: 100%; background: var(--teal); }
+    .bar.vision > span { background: #78716c; }
+    .fence { font-size: 0.85rem; color: #5c5254; margin-top: 1.5rem; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Pathology Slide Studio</h1>
+    <p class="tag">Offline demo — multi-signal vs vision-only. Not a clinical diagnostic product.</p>
+    <div class="grid">
+      <div>
+        <label>Patch morphology <input id="morph" type="range" min="0" max="1" step="0.01" value="0.72" /></label>
+        <label>Language align <input id="lang" type="range" min="0" max="1" step="0.01" value="0.64" /></label>
+        <label>Slide context <input id="slide" type="range" min="0" max="1" step="0.01" value="0.7" /></label>
+        <label>MIL aggregator <input id="mil" type="range" min="0" max="100" step="1" value="62" /></label>
+        <label>Profile
+          <select id="profile">
+            <option value="full">Full</option>
+            <option value="fast">Fast</option>
+          </select>
+        </label>
+        <button type="button" id="run">Score both paths</button>
+      </div>
+      <div>
+        <div class="card">
+          <strong>Multi-signal</strong>
+          <div id="ms">—</div>
+          <div class="bar"><span id="msBar" style="width:0%"></span></div>
+        </div>
+        <div class="card">
+          <strong>Vision-only</strong>
+          <div id="vo">—</div>
+          <div class="bar vision"><span id="voBar" style="width:0%"></span></div>
+        </div>
+        <div class="card" id="winner">Winner: —</div>
+      </div>
+    </div>
+    <p class="fence">
+      Inspired by public multi-signal pathology foundation research. Studio math only —
+      not authors' weights, not ALICE branding, not medical advice.
+    </p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function score(input, multi) {
+      const vision = clamp(input.morph * 48 + 0.55 * 28 + 0.8 * 24, 0, 100);
+      const language = clamp(input.lang * 52 + input.lang * 0.9 * 38 + input.morph * 8, 0, 100);
+      const mil = clamp(input.mil / 100, 0, 1);
+      const slide = clamp(input.slide * 46 + 0.5 * 28 + mil * 26, 0, 100);
+      const boost = input.profile === "full" ? 1.08 : 1;
+      if (!multi) {
+        const vs = round2(clamp(vision * 0.88 + 6.4, 0, 94));
+        return round2(clamp(vs * 0.55 + vision * 0.35 * 0.2 + 20, 0, 100));
+      }
+      const vs = round2(clamp((vision * 0.55 + language * 0.2 + slide * 0.25) * boost + 3.2, 0, 100));
+      const ls = round2(clamp((vision * 0.22 + language * 0.58 + slide * 0.2) * boost + input.lang * 6, 0, 100));
+      const ss = round2(clamp((vision * 0.18 + language * 0.22 + slide * 0.6) * boost + mil * 8, 0, 100));
+      const conf = round2(clamp(Math.max(vs, ls, ss) - [vs, ls, ss].sort((a,b)=>b-a)[1] + 8, 0, 100));
+      return round2(clamp(vs * 0.32 + ls * 0.34 + ss * 0.24 + conf * 0.1, 0, 100));
+    }
+    document.getElementById("run").onclick = () => {
+      const input = {
+        morph: +document.getElementById("morph").value,
+        lang: +document.getElementById("lang").value,
+        slide: +document.getElementById("slide").value,
+        mil: +document.getElementById("mil").value,
+        profile: document.getElementById("profile").value,
+      };
+      const ms = score(input, true);
+      const vo = score(input, false);
+      document.getElementById("ms").textContent = "Overall " + ms;
+      document.getElementById("vo").textContent = "Overall " + vo;
+      document.getElementById("msBar").style.width = ms + "%";
+      document.getElementById("voBar").style.width = vo + "%";
+      const w = ms > vo + 0.01 ? "multi-signal" : vo > ms + 0.01 ? "vision-only" : "tie";
+      document.getElementById("winner").textContent = "Winner: " + w;
+    };
+  </script>
+</body>
+</html>
