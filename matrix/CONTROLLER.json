@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T05:17:48.187Z",
+  "updated_at": "2026-07-24T05:19:23.119Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,9 +11,9 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "6a53f090-b7e1-4429-bf06-1caa8ffb903c",
-    "last_idea_validated_email_id": "ce06a447-6fbd-48a1-8b0f-97b71a20b25b",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "116900fc-0b94-4077-bc3e-4ced8ee194e5",
+    "last_idea_validated_email_id": "4921e0ad-a477-41e7-bf4a-7f18f7b9a229",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-fa24-4ee3-91d6-d9781ab8c451"
@@ -21,7 +21,7 @@
   "paused": false,
   "active_cell": null,
   "schema_version": "1.0.0",
-  "idle_reason": "awaiting_parent_finish_email",
+  "idle_reason": null,
   "product_defaults": {
     "persistence": "sqlite",
     "stack": "nextjs-app-router",
@@ -41,13 +41,13 @@
   },
   "last_completed": "A03__P-sustain-001__pack-rules-studio__r1",
   "last_error": null,
-  "current_product": "pack-rules-studio",
-  "current_idea": "pack-rules-studio",
+  "current_product": "on-device-trip-studio",
+  "current_idea": "on-device-trip-studio",
   "next_research_idea": null,
-  "next_cell": null,
+  "next_cell": "A03__P-smoke-001__on-device-trip-studio__r1",
   "mode": "autonomous",
-  "phase": "product_complete_pending_email",
-  "notes": "Pack Rules Studio sustain-green. product_complete_pending=true. Parent must send finish email via Resend. DO NOT pick next paper until email sent.",
+  "phase": "running",
+  "notes": "Pack Rules Studio finish emailed. On-Device Trip Studio opened from 2607.15552. Climb agent in flight. Parent owns Resend.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -60,11 +60,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.15562",
-      "slug": "pack-rules-studio",
-      "displayName": "Pack Rules Studio",
-      "at": "2026-07-24T05:10:58.313Z",
-      "url": "https://arxiv.org/abs/2607.15562v1",
+      "paperId": "2607.15552",
+      "slug": "on-device-trip-studio",
+      "displayName": "On-Device Trip Studio",
+      "at": "2026-07-24T05:19:08.918Z",
+      "url": "https://arxiv.org/abs/2607.15552v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."

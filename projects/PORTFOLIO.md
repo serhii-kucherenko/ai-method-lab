@@ -24,6 +24,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Meta Synthesis Studio** | `meta-synthesis-studio` | **Complete** | Agentic meta-analysis pipeline |
 | **Tactile Chart Studio** | `tactile-chart-studio` | **Complete** | Conversational + tactile charts |
 | **Pack Rules Studio** | `pack-rules-studio` | **Complete** | Hard rules + soft packing prefs |
+| **On-Device Trip Studio** | `on-device-trip-studio` | **Building** | PLA feasibility-first itineraries |
 
 ## Rules
 
