@@ -1,0 +1,35 @@
+{
+  "id": "oss-021",
+  "input": {
+    "briefClarity": 0.67,
+    "materialDiversity": 0.65,
+    "thicknessContinuity": 0.64,
+    "stackCoherence": 0.66,
+    "spectrumFit": 0.65,
+    "angleTolerance": 0.66,
+    "absorptionLoss": 0.23,
+    "fabricationFeasibility": 0.66,
+    "catalogCoverage": 0.63,
+    "noiseLevel": 0.23,
+    "bandKind": "nir",
+    "plan": "open_vocab"
+  },
+  "expectedOpenVocab": {
+    "mode": "open_vocab",
+    "briefFidelity": 88.07,
+    "materialSequenceQuality": 72.14,
+    "thicknessPlanQuality": 72.03,
+    "spectrumMatch": 83.02,
+    "planCoherence": 74.17,
+    "overall": 77.8
+  },
+  "expectedCatalogOnly": {
+    "mode": "catalog_only",
+    "briefFidelity": 22.52,
+    "materialSequenceQuality": 15.42,
+    "thicknessPlanQuality": 23.37,
+    "spectrumMatch": 15.35,
+    "planCoherence": 0,
+    "overall": 15.53
+  }
+}

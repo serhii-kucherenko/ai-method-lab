@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Optical Stack Studio — try</title>
+    <style>
+      :root {
+        --navy: #0a1020;
+        --cyan: #2ec4d6;
+        --magenta: #d65ca8;
+        --ink: #e8eef5;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: linear-gradient(180deg, #15203a, var(--navy));
+        color: var(--ink);
+        min-height: 100vh;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+        margin: 0 0 0.35rem;
+        letter-spacing: -0.02em;
+      }
+      .tag {
+        color: var(--cyan);
+        margin-bottom: 1.5rem;
+      }
+      label {
+        display: block;
+        font-size: 0.8rem;
+        color: #9aa8c0;
+        margin-top: 0.75rem;
+      }
+      input[type="range"] {
+        width: 100%;
+        max-width: 28rem;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        max-width: 28rem;
+        font-size: 0.85rem;
+      }
+      .cards {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        max-width: 36rem;
+        grid-template-columns: 1fr 1fr;
+      }
+      .card {
+        border: 1px solid #2a3a58;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .card h2 {
+        margin: 0 0 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #9aa8c0;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .score {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--cyan);
+      }
+      .card.b .score {
+        color: var(--magenta);
+      }
+      .bar {
+        height: 0.4rem;
+        border-radius: 99px;
+        background: #1a2744;
+        margin-top: 0.75rem;
+        overflow: hidden;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: linear-gradient(90deg, var(--cyan), var(--magenta));
+      }
+      .note {
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
+        color: #7a889e;
+        max-width: 36rem;
+      }
+      a {
+        color: var(--cyan);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Optical Stack Studio</h1>
+    <p class="tag">Say the coating. Get the stack. — offline approximate demo</p>
+
+    <label>Brief clarity <span id="bcv"></span></label>
+    <input id="briefClarity" type="range" min="0" max="100" value="76" />
+    <label>Material diversity <span id="mdv"></span></label>
+    <input id="materialDiversity" type="range" min="0" max="100" value="74" />
+    <label>Thickness continuity <span id="tcv"></span></label>
+    <input id="thicknessContinuity" type="range" min="0" max="100" value="72" />
+    <label>Spectrum fit <span id="sfv"></span></label>
+    <input id="spectrumFit" type="range" min="0" max="100" value="73" />
+
+    <div class="cards">
+      <div class="card">
+        <h2>A · open-vocab</h2>
+        <div class="score" id="openScore">—</div>
+        <div class="bar"><span id="openBar"></span></div>
+      </div>
+      <div class="card b">
+        <h2>B · catalog-only</h2>
+        <div class="score" id="catScore">—</div>
+        <div class="bar"><span id="catBar"></span></div>
+      </div>
+    </div>
+
+    <p class="note">
+      Approximate dual-score demo for open-vocabulary multilayer coating design.
+      Full studio: <code>npm run dev</code> in
+      <code>projects/optical-stack-studio</code>. Soft simulation only — not live
+      fab. Paper:
+      <a href="https://arxiv.org/abs/2607.08392v1">arXiv:2607.08392</a>
+    </p>
+
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function v(id) {
+        return Number(document.getElementById(id).value) / 100;
+      }
+      function scoreOpen(i) {
+        const boost = 1.12 * 1.06;
+        const brief =
+          50 + i.briefClarity * 22 + i.spectrumFit * 14 + i.materialDiversity * 10;
+        const briefFidelity = clamp(
+          (brief * 0.46 + i.briefClarity * 28 + i.spectrumFit * 12 + 14) * boost,
+          0,
+          100,
+        );
+        const materials = clamp(
+          (i.materialDiversity * 42 + 16 + 16) * boost,
+          0,
+          100,
+        );
+        const thickness = clamp(
+          (i.thicknessContinuity * 40 + 0.75 * 22 + 12) * boost,
+          0,
+          100,
+        );
+        const spectrum = clamp(
+          (i.spectrumFit * 36 + 0.7 * 18 + briefFidelity * 0.18 + 10) * boost,
+          0,
+          100,
+        );
+        return round2(
+          briefFidelity * 0.2 +
+            materials * 0.22 +
+            thickness * 0.22 +
+            spectrum * 0.2 +
+            70 * 0.16,
+        );
+      }
+      function scoreCatalog(i) {
+        const bias = clamp(
+          0.48 + 0.45 * 0.28 + (1 - i.briefClarity) * 0.16,
+          0.34,
+          0.94,
+        );
+        const briefFidelity = clamp(
+          (40 + (1 - i.briefClarity) * 24 + 18) * bias - i.briefClarity * 18,
+          0,
+          100,
+        );
+        const materials = clamp(
+          (45 + (1 - i.materialDiversity) * 10) * bias - i.materialDiversity * 16,
+          0,
+          100,
+        );
+        const thickness = clamp(
+          (i.thicknessContinuity * 28 + 16 + 12) * bias,
+          0,
+          100,
+        );
+        const spectrum = clamp(
+          (i.spectrumFit * 26 + 12 + 14) * bias - i.briefClarity * 10,
+          0,
+          100,
+        );
+        return round2(
+          briefFidelity * 0.14 +
+            materials * 0.22 +
+            thickness * 0.24 +
+            spectrum * 0.22 +
+            50 * 0.18,
+        );
+      }
+      function render() {
+        const i = {
+          briefClarity: v("briefClarity"),
+          materialDiversity: v("materialDiversity"),
+          thicknessContinuity: v("thicknessContinuity"),
+          spectrumFit: v("spectrumFit"),
+        };
+        document.getElementById("bcv").textContent = Math.round(i.briefClarity * 100) + "%";
+        document.getElementById("mdv").textContent =
+          Math.round(i.materialDiversity * 100) + "%";
+        document.getElementById("tcv").textContent =
+          Math.round(i.thicknessContinuity * 100) + "%";
+        document.getElementById("sfv").textContent =
+          Math.round(i.spectrumFit * 100) + "%";
+        const a = scoreOpen(i);
+        const b = scoreCatalog(i);
+        document.getElementById("openScore").textContent = a;
+        document.getElementById("catScore").textContent = b;
+        document.getElementById("openBar").style.width = a + "%";
+        document.getElementById("catBar").style.width = b + "%";
+      }
+      ["briefClarity", "materialDiversity", "thicknessContinuity", "spectrumFit"].forEach(
+        (id) => document.getElementById(id).addEventListener("input", render),
+      );
+      render();
+    </script>
+  </body>
+</html>
