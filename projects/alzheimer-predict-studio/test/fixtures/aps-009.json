@@ -1,0 +1,35 @@
+{
+  "id": "aps-009",
+  "input": {
+    "ageNorm": 0.38,
+    "cognitiveDecline": 0.43,
+    "imagingSignal": 0.35,
+    "biomarkerSignal": 0.37,
+    "missingnessRate": 0.48,
+    "missingnessMaskQuality": 0.38,
+    "calibrationPrior": 0.41,
+    "featureCompleteness": 0.37,
+    "temporalSpan": 0.4,
+    "comorbidityLoad": 0.49,
+    "modality": "cognitive",
+    "plan": "imputation_free"
+  },
+  "expectedImputationFree": {
+    "mode": "imputation_free",
+    "riskScore": 60.7,
+    "uncertaintyQuality": 60.17,
+    "missingnessHonesty": 60.04,
+    "discrimination": 53.99,
+    "calibration": 64.04,
+    "overall": 60.02
+  },
+  "expectedImputeThenPredict": {
+    "mode": "impute_then_predict",
+    "riskScore": 43.66,
+    "uncertaintyQuality": 0,
+    "missingnessHonesty": 0,
+    "discrimination": 42.22,
+    "calibration": 0,
+    "overall": 24.89
+  }
+}

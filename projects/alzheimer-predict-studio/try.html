@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alzheimer Predict Studio — try</title>
+    <style>
+      :root {
+        --bg: #e8eef5;
+        --ink: #1e293b;
+        --blue: #2b6cb0;
+        --lilac: #8b8fa8;
+        --panel: #f7f9fc;
+        --line: #c5d0de;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        background: radial-gradient(
+            ellipse 70% 50% at 10% 0%,
+            #2b6cb044,
+            transparent 55%
+          ),
+          linear-gradient(180deg, #c9d6e8, #e8eef5 45%);
+        color: var(--ink);
+        min-height: 100vh;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin: 0 0 0.5rem;
+        color: var(--blue);
+      }
+      .sub {
+        max-width: 36rem;
+        color: #5a6a7d;
+        margin-bottom: 1.5rem;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+        max-width: 40rem;
+      }
+      label {
+        display: grid;
+        gap: 0.35rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 0.75rem;
+        background: var(--blue);
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.6rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.25rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 0.75rem;
+        padding: 1rem;
+        max-width: 40rem;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin: 0.35rem 0;
+      }
+      .fence {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #5a6a7d;
+        max-width: 40rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Alzheimer Predict Studio</h1>
+    <p class="sub">
+      Offline dual-score demo: imputation-free + calibrated uncertainty vs
+      impute-then-predict. Approximate soft-simulation only.
+    </p>
+    <div class="grid">
+      <label>
+        Missingness rate
+        <input id="miss" type="range" min="0" max="100" value="30" />
+      </label>
+      <label>
+        Mask quality
+        <input id="mask" type="range" min="0" max="100" value="80" />
+      </label>
+      <label>
+        Cognitive decline
+        <input id="cog" type="range" min="0" max="100" value="65" />
+      </label>
+      <label>
+        Calibration prior
+        <input id="cal" type="range" min="0" max="100" value="70" />
+      </label>
+      <button type="button" id="go">Score both plans</button>
+    </div>
+    <div class="out" id="out">Scores appear here.</div>
+    <p class="fence">
+      Method-lab experiment — not clinical certification. Inspired by
+      <a href="https://arxiv.org/abs/2607.11656v1">arXiv:2607.11656</a>. Not
+      NITROGEN.
+    </p>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreFree(m, mask, cog, cal) {
+        const honesty = clamp(
+          mask * 42 + (1 - m) * 18 + 18 - m * 8,
+          0,
+          100,
+        );
+        const unc = clamp(cal * 28 + honesty * 0.35 + 16 - m * 8, 0, 100);
+        const risk = clamp(52 + cog * 22 + (1 - m) * 10, 0, 100);
+        const overall = round2(
+          risk * 0.18 + unc * 0.24 + honesty * 0.22 + risk * 0.16 + unc * 0.2,
+        );
+        return { overall, honesty: round2(honesty), unc: round2(unc) };
+      }
+      function scoreFill(m, mask, cog, cal) {
+        const honesty = clamp(mask * 12 + (1 - m) * 8 - m * 34, 0, 100);
+        const unc = clamp(cal * 14 - m * 38 - 10, 0, 100);
+        const risk = clamp(52 + cog * 16 + m * 20, 0, 100);
+        const overall = round2(
+          risk * 0.28 + unc * 0.12 + honesty * 0.1 + risk * 0.3 + unc * 0.2,
+        );
+        return { overall, honesty: round2(honesty), unc: round2(unc) };
+      }
+      document.getElementById("go").onclick = () => {
+        const m = Number(document.getElementById("miss").value) / 100;
+        const mask = Number(document.getElementById("mask").value) / 100;
+        const cog = Number(document.getElementById("cog").value) / 100;
+        const cal = Number(document.getElementById("cal").value) / 100;
+        const a = scoreFree(m, mask, cog, cal);
+        const b = scoreFill(m, mask, cog, cal);
+        const winner =
+          Math.abs(a.overall - b.overall) < 0.5
+            ? "tie"
+            : a.overall > b.overall
+              ? "imputation_free"
+              : "impute_then_predict";
+        document.getElementById("out").innerHTML =
+          "<div class='row'><strong>Imputation-free</strong><span>" +
+          a.overall +
+          "</span></div>" +
+          "<div class='row'><span>honesty / uncertainty</span><span>" +
+          a.honesty +
+          " / " +
+          a.unc +
+          "</span></div>" +
+          "<div class='row'><strong>Impute-then-predict</strong><span>" +
+          b.overall +
+          "</span></div>" +
+          "<div class='row'><span>honesty / uncertainty</span><span>" +
+          b.honesty +
+          " / " +
+          b.unc +
+          "</span></div>" +
+          "<div class='row'><strong>Winner</strong><span>" +
+          winner +
+          "</span></div>";
+      };
+    </script>
+  </body>
+</html>

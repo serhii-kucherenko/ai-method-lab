@@ -29,7 +29,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Legacy Infer Studio** | `legacy-infer-studio` | **Complete** | Stage-validated legacy GPU inference |
 | **Quad Skill Studio** | `quad-skill-studio` | **Complete** | Multi-skill wild quadruped locomotion |
 | **Developable Molecule Studio** | `developable-molecule-studio` | **Complete** | Pocket + developability generation |
-| **Alzheimer Predict Studio** | `alzheimer-predict-studio` | **Building** | Imputation-free AD risk + uncertainty |
+| **Alzheimer Predict Studio** | `alzheimer-predict-studio` | **Complete** | Imputation-free AD risk + uncertainty |
 
 ## Rules
 
