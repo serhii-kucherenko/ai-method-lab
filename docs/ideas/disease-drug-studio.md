@@ -1,6 +1,6 @@
 # Disease Drug Studio
 
-**State:** building  
+**State:** complete  
 **Slug:** `disease-drug-studio`  
 **Paper:** https://arxiv.org/abs/2607.08404v1  
 **Authors’ code:** https://github.com/alimotahharynia/DrugGen-2  

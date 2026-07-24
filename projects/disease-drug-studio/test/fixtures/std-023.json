@@ -1,0 +1,36 @@
+{
+  "id": "std-023",
+  "input": {
+    "meshDepth": 4,
+    "targetLength": 534,
+    "conditioningStrength": 0.3,
+    "seedDiversity": 0.81,
+    "batchSize": 260,
+    "noveltyPrior": 0.46,
+    "affinityPrior": 9.9,
+    "approvedSimilarityPrior": 0.55,
+    "profile": "sft"
+  },
+  "expectedDiseaseAware": {
+    "mode": "disease_aware",
+    "validityScore": 93,
+    "noveltyScore": 61.65,
+    "diversityScore": 72.7,
+    "affinityScore": 86,
+    "diseaseFitScore": 59.5,
+    "approvedSimilarity": 52,
+    "uniqueCandidates": 194,
+    "overall": 74.38
+  },
+  "expectedDiseaseBlind": {
+    "mode": "disease_blind",
+    "validityScore": 85.25,
+    "noveltyScore": 47.3,
+    "diversityScore": 54.95,
+    "affinityScore": 70.13,
+    "diseaseFitScore": 18.25,
+    "approvedSimilarity": 35.25,
+    "uniqueCandidates": 133,
+    "overall": 56.18
+  }
+}

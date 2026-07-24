@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T02:37:24.887Z",
+  "updated_at": "2026-07-24T02:47:23.000Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,7 +11,7 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": false,
+    "product_complete_pending": true,
     "last_product_complete_email_id": "eeddab62-c86c-4cb9-8e32-4873873c37ee",
     "last_idea_validated_email_id": "1aceb812-a46d-4b12-a9e8-9d6f3d8cb065",
     "digest_draft": null,
@@ -21,7 +21,7 @@
   "paused": false,
   "active_cell": null,
   "schema_version": "1.0.0",
-  "idle_reason": null,
+  "idle_reason": "awaiting_finish_email",
   "product_defaults": {
     "persistence": "sqlite",
     "stack": "nextjs-app-router",
@@ -39,15 +39,15 @@
     "stack_protocol": "docs/PRODUCT_STACK.md",
     "design_protocol": "protocols/DESIGN.md"
   },
-  "last_completed": "A03__P-sustain-001__graph-rag-studio__r1",
+  "last_completed": "A03__P-sustain-001__disease-drug-studio__r1",
   "last_error": null,
-  "current_product": "disease-drug-studio",
-  "current_idea": "disease-drug-studio",
+  "current_product": null,
+  "current_idea": null,
   "next_research_idea": null,
-  "next_cell": "A03__P-smoke-001__disease-drug-studio__r1",
+  "next_cell": null,
   "mode": "autonomous",
-  "phase": "running",
-  "notes": "Building Disease Drug Studio from DrugGen-2 (2607.08404). Finish email for Graph RAG Studio sent.",
+  "phase": "idle",
+  "notes": "Disease Drug Studio sustain-green. product_complete_pending for parent finish email. Do not pick next paper until email sent.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Disease Drug Studio — try</title>
+    <style>
+      :root {
+        --bg: #f3f7f6;
+        --ink: #0c1a1a;
+        --teal: #0f6b63;
+        --line: #cfdcdb;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", system-ui, sans-serif;
+        background: radial-gradient(ellipse 70% 40% at 10% 0%, #cfece7, transparent),
+          var(--bg);
+        color: var(--ink);
+        padding: 2rem;
+      }
+      h1 {
+        font-family: Literata, Georgia, serif;
+        color: #0a4f49;
+        font-weight: 500;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input,
+      select,
+      button {
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+      }
+      button {
+        background: var(--teal);
+        color: #f0fdfa;
+        border: none;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+      .row {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        max-width: 720px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 1rem;
+      }
+      .bar {
+        height: 8px;
+        background: #e7efee;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 0.35rem;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--teal);
+      }
+      .note {
+        max-width: 720px;
+        color: #475569;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Disease Drug Studio</h1>
+    <p class="note">
+      Offline demo of disease-aware vs disease-blind soft scores. Not clinical advice.
+    </p>
+    <div class="row">
+      <div>
+        <label>Conditioning strength (0–1)
+          <input id="cond" type="number" min="0" max="1" step="0.05" value="0.85" />
+        </label>
+        <label>MeSH depth (1–5)
+          <input id="mesh" type="number" min="1" max="5" value="3" />
+        </label>
+        <label>Affinity prior (4–12)
+          <input id="aff" type="number" min="4" max="12" step="0.1" value="8.5" />
+        </label>
+        <label>Profile
+          <select id="profile">
+            <option value="grpo">GRPO</option>
+            <option value="sft">SFT</option>
+          </select>
+        </label>
+        <button id="run" type="button">Compare scores</button>
+      </div>
+      <div>
+        <div class="card" id="aware">Disease-aware: —</div>
+        <div class="card" id="blind" style="margin-top: 0.75rem">Disease-blind: —</div>
+        <p id="winner" class="note"></p>
+      </div>
+    </div>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreAware(input) {
+        const cond = clamp(input.conditioningStrength, 0, 1);
+        const mesh = clamp(input.meshDepth, 1, 5);
+        const grpo = input.profile === "grpo";
+        const validity = round2(clamp(88 + cond * 8 + (grpo ? 3 : 0), 0, 100));
+        const affinity = round2(
+          clamp(((input.affinityPrior + cond * mesh * 0.35 + (grpo ? 0.8 : 0)) / 12) * 100, 0, 100),
+        );
+        const diseaseFit = round2(clamp(cond * 55 + mesh * 8 + 12, 0, 100));
+        const overall = round2(validity * 0.35 + affinity * 0.4 + diseaseFit * 0.25);
+        return { overall, affinity, diseaseFit };
+      }
+      function scoreBlind(input) {
+        const validity = 85;
+        const affinity = round2(clamp(((input.affinityPrior * 0.85) / 12) * 100, 0, 100));
+        const diseaseFit = 18;
+        const overall = round2(validity * 0.35 + affinity * 0.4 + diseaseFit * 0.25);
+        return { overall, affinity, diseaseFit };
+      }
+      function render(el, title, s) {
+        el.innerHTML =
+          "<strong>" +
+          title +
+          "</strong><div>Overall " +
+          s.overall +
+          '</div><div class="bar"><span style="width:' +
+          s.overall +
+          '%"></span></div><div style="margin-top:0.5rem">Disease fit ' +
+          s.diseaseFit +
+          " · Affinity " +
+          s.affinity +
+          "</div>";
+      }
+      document.getElementById("run").onclick = function () {
+        const input = {
+          conditioningStrength: Number(document.getElementById("cond").value),
+          meshDepth: Number(document.getElementById("mesh").value),
+          affinityPrior: Number(document.getElementById("aff").value),
+          profile: document.getElementById("profile").value,
+        };
+        const a = scoreAware(input);
+        const b = scoreBlind(input);
+        render(document.getElementById("aware"), "Disease-aware", a);
+        render(document.getElementById("blind"), "Disease-blind", b);
+        document.getElementById("winner").textContent =
+          a.overall > b.overall + 0.01
+            ? "Winner: disease-aware"
+            : b.overall > a.overall + 0.01
+              ? "Winner: disease-blind"
+              : "Tie";
+      };
+      document.getElementById("run").click();
+    </script>
+  </body>
+</html>

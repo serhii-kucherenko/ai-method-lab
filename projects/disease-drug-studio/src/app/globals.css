@@ -1,0 +1,169 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --studio-bg: #f3f7f6;
+  --studio-ink: #0c1a1a;
+  --studio-teal: #0f6b63;
+  --studio-teal-ink: #0a4f49;
+  --studio-teal-soft: #d5f0ec;
+  --studio-line: #cfdcdb;
+  --studio-wash: radial-gradient(ellipse 80% 50% at 15% 0%, #cfece7 0%, transparent 55%),
+    radial-gradient(ellipse 55% 40% at 90% 8%, #dbe4e8 0%, transparent 50%),
+    #f3f7f6;
+
+  --background: #f3f7f6;
+  --foreground: #0c1a1a;
+  --card: #ffffff;
+  --card-foreground: #0c1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #0c1a1a;
+  --primary: #0f6b63;
+  --primary-foreground: #f0fdfa;
+  --secondary: #e2eaea;
+  --secondary-foreground: #0c1a1a;
+  --muted: #e7efee;
+  --muted-foreground: #475569;
+  --accent: #d5f0ec;
+  --accent-foreground: #0a4f49;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #cfdcdb;
+  --input: #cfdcdb;
+  --ring: #0f6b63;
+  --chart-1: #0f6b63;
+  --chart-2: #64748b;
+  --chart-3: #0e7490;
+  --chart-4: #334155;
+  --chart-5: #14b8a6;
+  --radius: 0.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0c1a1a;
+  --sidebar-primary: #0f6b63;
+  --sidebar-primary-foreground: #f0fdfa;
+  --sidebar-accent: #d5f0ec;
+  --sidebar-accent-foreground: #0a4f49;
+  --sidebar-border: #cfdcdb;
+  --sidebar-ring: #0f6b63;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bar-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes cand-stagger {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-bar-draw {
+  transform-origin: left center;
+  animation: bar-draw 0.9s ease-out both;
+}
+
+.animate-cand {
+  animation: cand-stagger 0.55s ease-out both;
+}
+
+@keyframes stage-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(15 107 99 / 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgb(15 107 99 / 0);
+  }
+}
+
+.animate-stage-pulse {
+  animation: stage-pulse 2s ease-in-out infinite;
+}
+
+.molecule-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgb(15 107 99 / 0.14) 1px, transparent 0);
+  background-size: 20px 20px;
+}

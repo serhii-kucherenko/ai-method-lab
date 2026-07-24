@@ -39,6 +39,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 32 | [Consult Bench Desk — what we learned](32-consult-bench-desk-lessons.md) | Product `consult-bench-desk` |
 | 33 | [Truth Game Desk — what we learned](33-truth-game-desk-lessons.md) | Product `truth-game-desk` |
 | 34 | [Graph RAG Studio — what we learned](34-graph-rag-studio-lessons.md) | Product `graph-rag-studio` |
+| 35 | [Disease Drug Studio — what we learned](35-disease-drug-studio-lessons.md) | Product `disease-drug-studio` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 
