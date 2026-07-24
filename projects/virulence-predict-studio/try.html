@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Virulence Predict Studio — try</title>
+    <style>
+      :root {
+        --mint: #1a7a6a;
+        --ink: #1a2422;
+        --bg: #eef5f3;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background: radial-gradient(ellipse 70% 50% at 10% 0%, #c8e8df, transparent),
+          var(--bg);
+        color: var(--ink);
+        margin: 0;
+        padding: 2rem;
+        max-width: 40rem;
+      }
+      h1 {
+        color: #0f4f44;
+        font-size: 1.75rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input {
+        width: 100%;
+        padding: 0.4rem;
+        margin-top: 0.25rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--mint);
+        color: #fff;
+        border: 0;
+        padding: 0.6rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        background: #fff;
+        border: 1px solid #c5d6d1;
+      }
+      .bar {
+        height: 8px;
+        background: #d4ebe5;
+        margin: 0.35rem 0 0.75rem;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--mint);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Virulence Predict Studio</h1>
+    <p>Offline demo: feature-integrated vs sequence-only overall scores.</p>
+    <label>PSSM conservation (0–1)<input id="pssm" type="number" step="0.01" value="0.7" /></label>
+    <label>MSA depth (0–100)<input id="msa" type="number" step="1" value="50" /></label>
+    <label>Structure coverage (0–1)<input id="str" type="number" step="0.01" value="0.8" /></label>
+    <button type="button" id="go">Score</button>
+    <div class="out" id="out">Press Score.</div>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function integrated(pssm, msa, str) {
+        const seq = 55;
+        const evo = clamp(pssm * 48 + (msa / 100) * 42, 0, 100);
+        const s = clamp(str * 52 + 0.5 * 38, 0, 100);
+        return round2(seq * 0.28 + evo * 0.34 + s * 0.38);
+      }
+      function sequenceOnly() {
+        return round2(55 * 0.78);
+      }
+      document.getElementById("go").onclick = () => {
+        const pssm = Number(document.getElementById("pssm").value);
+        const msa = Number(document.getElementById("msa").value);
+        const str = Number(document.getElementById("str").value);
+        const a = integrated(pssm, msa, str);
+        const b = sequenceOnly();
+        document.getElementById("out").innerHTML =
+          "<p><strong>Feature-integrated</strong> " +
+          a +
+          '</p><div class="bar"><span style="width:' +
+          Math.min(100, a) +
+          '%"></span></div>' +
+          "<p><strong>Sequence-only</strong> " +
+          b +
+          '</p><div class="bar"><span style="width:' +
+          Math.min(100, b) +
+          '%;background:#5a6b66"></span></div>' +
+          "<p>Winner: " +
+          (a > b + 0.01 ? "feature-integrated" : a < b - 0.01 ? "sequence-only" : "tie") +
+          "</p>";
+      };
+    </script>
+  </body>
+</html>

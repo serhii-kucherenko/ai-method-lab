@@ -1,0 +1,159 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Cool mint + charcoal — distinct from purple AI / cream terracotta */
+  --studio-bg: #eef5f3;
+  --studio-ink: #1a2422;
+  --studio-mint: #1a7a6a;
+  --studio-mint-ink: #0f4f44;
+  --studio-mint-soft: #d4ebe5;
+  --studio-charcoal: #2c3532;
+  --studio-line: #c5d6d1;
+  --studio-wash: radial-gradient(ellipse 75% 55% at 10% 0%, #c8e8df 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 95% 5%, #d4dde0 0%, transparent 48%),
+    #eef5f3;
+
+  --background: #eef5f3;
+  --foreground: #1a2422;
+  --card: #ffffff;
+  --card-foreground: #1a2422;
+  --popover: #ffffff;
+  --popover-foreground: #1a2422;
+  --primary: #1a7a6a;
+  --primary-foreground: #f0faf7;
+  --secondary: #e0ebe8;
+  --secondary-foreground: #1a2422;
+  --muted: #e4eeeb;
+  --muted-foreground: #4a5c57;
+  --accent: #d4ebe5;
+  --accent-foreground: #0f4f44;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #c5d6d1;
+  --input: #c5d6d1;
+  --ring: #1a7a6a;
+  --chart-1: #1a7a6a;
+  --chart-2: #5a6b66;
+  --chart-3: #0e7490;
+  --chart-4: #2c3532;
+  --chart-5: #34a38f;
+  --radius: 0.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1a2422;
+  --sidebar-primary: #1a7a6a;
+  --sidebar-primary-foreground: #f0faf7;
+  --sidebar-accent: #d4ebe5;
+  --sidebar-accent-foreground: #0f4f44;
+  --sidebar-border: #c5d6d1;
+  --sidebar-ring: #1a7a6a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes compare-slide {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-bar-grow {
+  transform-origin: left center;
+  animation: bar-grow 0.85s ease-out both;
+}
+
+.animate-compare-slide {
+  animation: compare-slide 0.6s ease-out both;
+}
+
+.helix-pattern {
+  background-image:
+    radial-gradient(circle at 2px 2px, rgb(26 122 106 / 0.12) 1px, transparent 0),
+    linear-gradient(135deg, transparent 48%, rgb(26 122 106 / 0.06) 49%, rgb(26 122 106 / 0.06) 51%, transparent 52%);
+  background-size: 18px 18px, 36px 36px;
+}

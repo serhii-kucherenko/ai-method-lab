@@ -40,6 +40,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 | 33 | [Truth Game Desk — what we learned](33-truth-game-desk-lessons.md) | Product `truth-game-desk` |
 | 34 | [Graph RAG Studio — what we learned](34-graph-rag-studio-lessons.md) | Product `graph-rag-studio` |
 | 35 | [Disease Drug Studio — what we learned](35-disease-drug-studio-lessons.md) | Product `disease-drug-studio` |
+| 36 | [Virulence Predict Studio — what we learned](36-virulence-predict-studio-lessons.md) | Product `virulence-predict-studio` |
 
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 

@@ -1,6 +1,6 @@
 # Virulence Predict Studio
 
-**State:** building  
+**State:** complete  
 **Slug:** `virulence-predict-studio`  
 **Paper:** https://doi.org/10.1186/s40168-026-02467-w  
 **Authors’ code:** https://github.com/kaiqili2/SEVA  

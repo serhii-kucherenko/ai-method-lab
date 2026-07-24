@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T02:49:19.796Z",
+  "updated_at": "2026-07-24T02:58:15.355Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,7 +11,7 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": false,
+    "product_complete_pending": true,
     "last_product_complete_email_id": "293feef1-16c9-4c4f-9b61-5afd5c0f0518",
     "last_idea_validated_email_id": "32702b2b-b001-438d-947c-c325d759cfc9",
     "digest_draft": null,
@@ -21,7 +21,7 @@
   "paused": false,
   "active_cell": null,
   "schema_version": "1.0.0",
-  "idle_reason": null,
+  "idle_reason": "product_complete_pending_email",
   "product_defaults": {
     "persistence": "sqlite",
     "stack": "nextjs-app-router",
@@ -39,15 +39,15 @@
     "stack_protocol": "docs/PRODUCT_STACK.md",
     "design_protocol": "protocols/DESIGN.md"
   },
-  "last_completed": "A03__P-sustain-001__disease-drug-studio__r1",
+  "last_completed": "A03__P-sustain-001__virulence-predict-studio__r1",
   "last_error": null,
-  "current_product": "virulence-predict-studio",
-  "current_idea": "virulence-predict-studio",
+  "current_product": null,
+  "current_idea": null,
   "next_research_idea": null,
-  "next_cell": "A03__P-smoke-001__virulence-predict-studio__r1",
+  "next_cell": null,
   "mode": "autonomous",
-  "phase": "running",
-  "notes": "Building Virulence Predict Studio from SEVA (10.1186/s40168-026-02467-w). Finish email for Disease Drug Studio sent.",
+  "phase": "idle",
+  "notes": "Virulence Predict Studio sustain-green. Finish email pending for parent.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,

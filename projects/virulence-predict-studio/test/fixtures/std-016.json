@@ -1,0 +1,38 @@
+{
+  "id": "std-016",
+  "input": {
+    "seqLength": 469,
+    "aaCompositionEntropy": 0.53,
+    "hydrophobicFraction": 0.38,
+    "pssmConservation": 0.5,
+    "msaDepth": 54.38,
+    "structureCoverage": 0.54,
+    "contactMapDensity": 0.45,
+    "signalPeptideScore": 0.44,
+    "profile": "full"
+  },
+  "expectedFeatureIntegrated": {
+    "mode": "feature_integrated",
+    "vfScore": 55.15,
+    "argScore": 53.37,
+    "nsScore": 65.93,
+    "predictedClass": "NS",
+    "confidence": 18.78,
+    "structuralContribution": 54.54,
+    "evolutionaryContribution": 56.19,
+    "sequenceContribution": 45.51,
+    "overall": 49.29
+  },
+  "expectedSequenceOnly": {
+    "mode": "sequence_only",
+    "vfScore": 39.9,
+    "argScore": 37.33,
+    "nsScore": 82.53,
+    "predictedClass": "NS",
+    "confidence": 44.63,
+    "structuralContribution": 0,
+    "evolutionaryContribution": 0,
+    "sequenceContribution": 45.51,
+    "overall": 40.31
+  }
+}
