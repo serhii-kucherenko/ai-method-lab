@@ -1,0 +1,35 @@
+{
+  "id": "dms-012",
+  "input": {
+    "pocketFit": 0.44,
+    "pocketVolumeMatch": 0.47,
+    "hydrophobicityMatch": 0.42,
+    "hbondPotential": 0.41,
+    "qedScore": 0.45,
+    "solubility": 0.42,
+    "clearanceRisk": 0.42,
+    "toxicityRisk": 0.41,
+    "synthesizability": 0.43,
+    "lipophilicity": 0.44,
+    "family": "gpcr",
+    "plan": "pocket_developability"
+  },
+  "expectedPocketDevelopability": {
+    "mode": "pocket_developability",
+    "pocketScore": 63.23,
+    "developabilityScore": 43.05,
+    "affinityScore": 58.18,
+    "propertyScore": 37.66,
+    "clearanceAvoid": 70.52,
+    "overall": 54.43
+  },
+  "expectedAffinityOnly": {
+    "mode": "affinity_only",
+    "pocketScore": 28.88,
+    "developabilityScore": 0,
+    "affinityScore": 41.69,
+    "propertyScore": 0,
+    "clearanceAvoid": 41.24,
+    "overall": 32.28
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T06:03:29.937Z",
+  "updated_at": "2026-07-24T06:12:48.664Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,7 +11,7 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": false,
+    "product_complete_pending": true,
     "last_product_complete_email_id": "fa982218-1926-4980-bf75-eaefb7950a2c",
     "last_idea_validated_email_id": "a18777a6-dace-4d92-ae67-f019ec8b7494",
     "digest_draft": null,
@@ -21,7 +21,7 @@
   "paused": false,
   "active_cell": null,
   "schema_version": "1.0.0",
-  "idle_reason": null,
+  "idle_reason": "awaiting_finish_email",
   "product_defaults": {
     "persistence": "sqlite",
     "stack": "nextjs-app-router",
@@ -39,15 +39,15 @@
     "stack_protocol": "docs/PRODUCT_STACK.md",
     "design_protocol": "protocols/DESIGN.md"
   },
-  "last_completed": "A03__P-sustain-001__quad-skill-studio__r1",
+  "last_completed": "A03__P-sustain-001__developable-molecule-studio__r1",
   "last_error": null,
   "current_product": "developable-molecule-studio",
   "current_idea": "developable-molecule-studio",
   "next_research_idea": null,
-  "next_cell": "A03__P-smoke-001__developable-molecule-studio__r1",
+  "next_cell": null,
   "mode": "autonomous",
-  "phase": "running",
-  "notes": "Quad Skill Studio finish emailed. Developable Molecule Studio opened from 2607.12349. Climb agent in flight. Parent owns Resend.",
+  "phase": "awaiting_finish_email",
+  "notes": "Developable Molecule Studio sustain-green. product_complete_pending=true — parent must send finish email. Do NOT pick next paper.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,

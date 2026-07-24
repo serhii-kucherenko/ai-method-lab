@@ -1,0 +1,14 @@
+import { guard, json } from "@/lib/api";
+import { sampleGoldenInput, scorePlan } from "@/store";
+
+export async function GET(req: Request) {
+  const denied = guard(req);
+  if (denied) return denied;
+  const input = sampleGoldenInput();
+  const develop = scorePlan(input, "pocket_developability");
+  const affinity = scorePlan(
+    { ...input, plan: "affinity_only" },
+    "affinity_only",
+  );
+  return json({ input, develop, affinity });
+}

@@ -1,0 +1,35 @@
+{
+  "id": "dms-010",
+  "input": {
+    "pocketFit": 0.43,
+    "pocketVolumeMatch": 0.39,
+    "hydrophobicityMatch": 0.39,
+    "hbondPotential": 0.41,
+    "qedScore": 0.37,
+    "solubility": 0.41,
+    "clearanceRisk": 0.48,
+    "toxicityRisk": 0.49,
+    "synthesizability": 0.44,
+    "lipophilicity": 0.42,
+    "family": "kinase",
+    "plan": "affinity_only"
+  },
+  "expectedPocketDevelopability": {
+    "mode": "pocket_developability",
+    "pocketScore": 56.04,
+    "developabilityScore": 21.21,
+    "affinityScore": 51.15,
+    "propertyScore": 29.1,
+    "clearanceAvoid": 49.94,
+    "overall": 40.83
+  },
+  "expectedAffinityOnly": {
+    "mode": "affinity_only",
+    "pocketScore": 28.51,
+    "developabilityScore": 0,
+    "affinityScore": 41.22,
+    "propertyScore": 0,
+    "clearanceAvoid": 35.04,
+    "overall": 30.41
+  }
+}

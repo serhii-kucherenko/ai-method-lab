@@ -1,0 +1,35 @@
+{
+  "id": "dms-003",
+  "input": {
+    "pocketFit": 0.28,
+    "pocketVolumeMatch": 0.28,
+    "hydrophobicityMatch": 0.21,
+    "hbondPotential": 0.27,
+    "qedScore": 0.24,
+    "solubility": 0.28,
+    "clearanceRisk": 0.6,
+    "toxicityRisk": 0.64,
+    "synthesizability": 0.27,
+    "lipophilicity": 0.26,
+    "family": "nuclear",
+    "plan": "pocket_developability"
+  },
+  "expectedPocketDevelopability": {
+    "mode": "pocket_developability",
+    "pocketScore": 52.27,
+    "developabilityScore": 19.59,
+    "affinityScore": 46.45,
+    "propertyScore": 17.15,
+    "clearanceAvoid": 56.88,
+    "overall": 38.1
+  },
+  "expectedAffinityOnly": {
+    "mode": "affinity_only",
+    "pocketScore": 22.8,
+    "developabilityScore": 0,
+    "affinityScore": 32.28,
+    "propertyScore": 0,
+    "clearanceAvoid": 21.2,
+    "overall": 22.26
+  }
+}

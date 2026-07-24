@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Developable Molecule Studio — try</title>
+    <style>
+      :root {
+        --bg: #e8f2f0;
+        --ink: #1c2a28;
+        --teal: #0d9488;
+        --coral: #e07a5f;
+        --panel: #f7fcfb;
+        --line: #b7d4cf;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Karla, "Segoe UI", sans-serif;
+        background: radial-gradient(
+            ellipse 70% 50% at 10% 0%,
+            #0d948844,
+            transparent 55%
+          ),
+          linear-gradient(180deg, #c5ddd8, #e8f2f0 45%);
+        color: var(--ink);
+        min-height: 100vh;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin: 0 0 0.5rem;
+        color: var(--teal);
+      }
+      .sub {
+        max-width: 36rem;
+        color: #4a6460;
+        margin-bottom: 1.5rem;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+        max-width: 40rem;
+      }
+      label {
+        display: grid;
+        gap: 0.35rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 0.75rem;
+        background: var(--teal);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.65rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .scores {
+        margin-top: 1.5rem;
+        display: grid;
+        gap: 1rem;
+        max-width: 40rem;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 1rem;
+      }
+      .card h2 {
+        margin: 0 0 0.35rem;
+        font-size: 1rem;
+        color: #4a6460;
+        font-weight: 600;
+      }
+      .big {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+      .note {
+        margin-top: 1.5rem;
+        max-width: 40rem;
+        font-size: 0.85rem;
+        color: #4a6460;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Developable Molecule Studio</h1>
+    <p class="sub">
+      Approximate dual-score demo: pocket + developability (A) vs affinity-only
+      (B). Soft-simulation only — not wet-lab.
+    </p>
+    <div class="grid">
+      <label>
+        Pocket fit <span id="v-fit"></span>
+        <input id="pocketFit" type="range" min="0" max="100" value="78" />
+      </label>
+      <label>
+        QED / drug-likeness <span id="v-qed"></span>
+        <input id="qedScore" type="range" min="0" max="100" value="76" />
+      </label>
+      <label>
+        Solubility <span id="v-sol"></span>
+        <input id="solubility" type="range" min="0" max="100" value="68" />
+      </label>
+      <label>
+        Clearance risk <span id="v-clr"></span>
+        <input id="clearanceRisk" type="range" min="0" max="100" value="22" />
+      </label>
+      <button type="button" id="run">Score both plans</button>
+    </div>
+    <div class="scores">
+      <div class="card">
+        <h2>A · Pocket + developability</h2>
+        <div class="big" id="scoreA">—</div>
+      </div>
+      <div class="card">
+        <h2>B · Affinity-only</h2>
+        <div class="big" id="scoreB">—</div>
+      </div>
+    </div>
+    <p class="note">
+      Sources:
+      <a href="https://arxiv.org/abs/2607.12349v1"
+        >https://arxiv.org/abs/2607.12349v1</a
+      >
+      · Not conDitar-dev branding · Method Lab soft-simulation.
+    </p>
+    <script>
+      function n(id) {
+        return Number(document.getElementById(id).value) / 100;
+      }
+      function sync() {
+        document.getElementById("v-fit").textContent =
+          document.getElementById("pocketFit").value + "%";
+        document.getElementById("v-qed").textContent =
+          document.getElementById("qedScore").value + "%";
+        document.getElementById("v-sol").textContent =
+          document.getElementById("solubility").value + "%";
+        document.getElementById("v-clr").textContent =
+          document.getElementById("clearanceRisk").value + "%";
+      }
+      function clamp(x, lo, hi) {
+        return Math.max(lo, Math.min(hi, x));
+      }
+      function round2(x) {
+        return Math.round(x * 100) / 100;
+      }
+      function scoreA(inp) {
+        const boost = 1.1;
+        const pocket =
+          58 +
+          inp.pocketFit * 24 +
+          inp.pocketFit * 14 +
+          0.7 * 10 +
+          0.7 * 8 -
+          inp.clearanceRisk * 6;
+        const props =
+          inp.qedScore * 36 +
+          inp.solubility * 22 +
+          0.7 * 18 +
+          0.55 * 12 -
+          0.18 * 20 -
+          inp.clearanceRisk * 14;
+        const pocketScore = clamp(
+          (pocket * 0.55 + inp.pocketFit * 22 + 0.7 * 12) * boost,
+          0,
+          100,
+        );
+        const developabilityScore = clamp(
+          (props * 0.65 + inp.qedScore * 18 + inp.solubility * 14 + 14) *
+            boost -
+            inp.clearanceRisk * 10,
+          0,
+          100,
+        );
+        const affinityScore = clamp(
+          (pocket * 0.48 + inp.pocketFit * 20 + 0.7 * 16) * boost,
+          0,
+          100,
+        );
+        const propertyScore = clamp(
+          (inp.qedScore * 40 + inp.solubility * 22 + 0.7 * 18 + 0.55 * 12) *
+            boost -
+            0.18 * 14,
+          0,
+          100,
+        );
+        const clearanceAvoid = clamp(
+          100 -
+            (inp.clearanceRisk * 42 +
+              0.18 * 28 +
+              Math.max(0, 0.55 - inp.solubility) * 18),
+          0,
+          100,
+        );
+        return round2(
+          pocketScore * 0.22 +
+            developabilityScore * 0.24 +
+            affinityScore * 0.16 +
+            propertyScore * 0.18 +
+            clearanceAvoid * 0.2,
+        );
+      }
+      function scoreB(inp) {
+        const bias = clamp(
+          0.42 +
+            inp.pocketFit * 0.28 +
+            0.7 * 0.14 +
+            (1 - inp.qedScore) * 0.12 +
+            inp.clearanceRisk * 0.1,
+          0.28,
+          0.94,
+        );
+        const pocket =
+          58 +
+          inp.pocketFit * 24 +
+          inp.pocketFit * 14 +
+          0.7 * 10 +
+          0.7 * 8 -
+          inp.clearanceRisk * 6;
+        const affinityScore = clamp(
+          (pocket * 0.55 + inp.pocketFit * 24 + 0.7 * 10) * bias,
+          0,
+          100,
+        );
+        const clearanceAvoid = clamp(
+          100 -
+            (inp.clearanceRisk * 58 +
+              0.18 * 32 +
+              (1 - inp.solubility) * 16 +
+              12),
+          0,
+          100,
+        );
+        const pocketScore = clamp(
+          (pocket * 0.42 + inp.pocketFit * 16) * bias,
+          0,
+          100,
+        );
+        const developabilityScore = clamp(
+          (inp.qedScore * 8) * bias - inp.clearanceRisk * 18,
+          0,
+          100,
+        );
+        const propertyScore = clamp(
+          (inp.qedScore * 16 + inp.solubility * 8) * bias - 0.18 * 22,
+          0,
+          100,
+        );
+        return round2(
+          pocketScore * 0.14 +
+            developabilityScore * 0.08 +
+            affinityScore * 0.42 +
+            propertyScore * 0.1 +
+            clearanceAvoid * 0.26,
+        );
+      }
+      function run() {
+        sync();
+        const inp = {
+          pocketFit: n("pocketFit"),
+          qedScore: n("qedScore"),
+          solubility: n("solubility"),
+          clearanceRisk: n("clearanceRisk"),
+        };
+        document.getElementById("scoreA").textContent = String(scoreA(inp));
+        document.getElementById("scoreB").textContent = String(scoreB(inp));
+      }
+      ["pocketFit", "qedScore", "solubility", "clearanceRisk"].forEach((id) => {
+        document.getElementById(id).addEventListener("input", sync);
+      });
+      document.getElementById("run").addEventListener("click", run);
+      sync();
+      run();
+    </script>
+  </body>
+</html>

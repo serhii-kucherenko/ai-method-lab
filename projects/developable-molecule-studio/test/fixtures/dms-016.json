@@ -1,0 +1,35 @@
+{
+  "id": "dms-016",
+  "input": {
+    "pocketFit": 0.53,
+    "pocketVolumeMatch": 0.55,
+    "hydrophobicityMatch": 0.53,
+    "hbondPotential": 0.5,
+    "qedScore": 0.54,
+    "solubility": 0.51,
+    "clearanceRisk": 0.36,
+    "toxicityRisk": 0.34,
+    "synthesizability": 0.57,
+    "lipophilicity": 0.54,
+    "family": "protease",
+    "plan": "affinity_only"
+  },
+  "expectedPocketDevelopability": {
+    "mode": "pocket_developability",
+    "pocketScore": 62.05,
+    "developabilityScore": 36.64,
+    "affinityScore": 57.67,
+    "propertyScore": 42.76,
+    "clearanceAvoid": 58.82,
+    "overall": 51.13
+  },
+  "expectedAffinityOnly": {
+    "mode": "affinity_only",
+    "pocketScore": 32.59,
+    "developabilityScore": 2.43,
+    "affinityScore": 47.53,
+    "propertyScore": 1.85,
+    "clearanceAvoid": 48.4,
+    "overall": 37.49
+  }
+}
