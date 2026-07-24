@@ -1,0 +1,36 @@
+{
+  "id": "mskcs-028",
+  "input": {
+    "streamCoverage": 0.87,
+    "knowledgeGrounding": 0.78,
+    "pathwayProgress": 0.81,
+    "decisionTraceability": 0.84,
+    "patientStability": 0.78,
+    "rehabReadiness": 0.79,
+    "evidenceFreshness": 0.81,
+    "comorbidityLoad": 0.12,
+    "episodeDays": 31,
+    "careStage": "admission",
+    "planner": "ungrounded_llm"
+  },
+  "expectedEvidenceGrounded": {
+    "mode": "evidence_grounded",
+    "streamFit": 69.66,
+    "knowledgeFit": 63.42,
+    "pathwayCoherence": 64.55,
+    "decisionQuality": 70.22,
+    "rehabOutlook": 68.18,
+    "auditTrail": 65.74,
+    "overall": 67.1
+  },
+  "expectedUngroundedLlm": {
+    "mode": "ungrounded_llm",
+    "streamFit": 10.92,
+    "knowledgeFit": 10.3,
+    "pathwayCoherence": 23.76,
+    "decisionQuality": 65.38,
+    "rehabOutlook": 18.4,
+    "auditTrail": 9.84,
+    "overall": 32.65
+  }
+}

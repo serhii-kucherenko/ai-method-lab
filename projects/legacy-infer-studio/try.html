@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Legacy Infer Studio — try</title>
+    <style>
+      :root {
+        --bg: #e8ebe9;
+        --ink: #1c2220;
+        --signal: #2a9b6a;
+        --panel: #fff;
+        --line: #b4bcb8;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        background: radial-gradient(
+            ellipse 70% 50% at 10% 0%,
+            #2a9b6a33,
+            transparent 55%
+          ),
+          linear-gradient(180deg, #c5cec9, #e8ebe9 45%);
+        color: var(--ink);
+        min-height: 100vh;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: "Chakra Petch", "Segoe UI", sans-serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin: 0 0 0.5rem;
+        color: var(--signal);
+      }
+      .sub {
+        max-width: 36rem;
+        color: #5a6460;
+        margin-bottom: 1.5rem;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+        max-width: 40rem;
+      }
+      label {
+        display: grid;
+        gap: 0.35rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 0.75rem;
+        background: var(--signal);
+        color: #fff;
+        border: 0;
+        border-radius: 0.5rem;
+        padding: 0.6rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .scores {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        max-width: 40rem;
+      }
+      @media (min-width: 720px) {
+        .scores {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 0.75rem;
+        padding: 1rem 1.1rem;
+      }
+      .card h2 {
+        margin: 0 0 0.35rem;
+        font-size: 1rem;
+      }
+      .big {
+        font-size: 2rem;
+        font-family: "Chakra Petch", sans-serif;
+        color: var(--signal);
+      }
+      .fence {
+        margin-top: 2rem;
+        max-width: 40rem;
+        font-size: 0.85rem;
+        color: #5a6460;
+      }
+      a {
+        color: var(--signal);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Legacy Infer Studio</h1>
+    <p class="sub">
+      Approximate offline demo — stage-validated all-GPU plan vs naive host
+      offload. Full fidelity needs the local Next app.
+    </p>
+    <div class="grid">
+      <label
+        >Usable VRAM (GB)
+        <input id="vram" type="range" min="3" max="8" step="0.1" value="5.3" />
+        <span id="vramV">5.3</span>
+      </label>
+      <label
+        >Resident footprint (GB)
+        <input
+          id="resident"
+          type="range"
+          min="2"
+          max="8"
+          step="0.1"
+          value="4.3"
+        />
+        <span id="residentV">4.3</span>
+      </label>
+      <label
+        >Stage agreement
+        <input
+          id="agree"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.88"
+        />
+        <span id="agreeV">0.88</span>
+      </label>
+      <label
+        >Host spill
+        <input
+          id="spill"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.1"
+        />
+        <span id="spillV">0.10</span>
+      </label>
+      <button type="button" id="run">Score both</button>
+    </div>
+    <div class="scores">
+      <div class="card">
+        <h2>A · Stage-validated</h2>
+        <div class="big" id="aScore">—</div>
+        <p id="aDetail"></p>
+      </div>
+      <div class="card">
+        <h2>B · Naive offload</h2>
+        <div class="big" id="bScore">—</div>
+        <p id="bDetail"></p>
+      </div>
+    </div>
+    <p class="fence">
+      Honesty: soft-simulation only — not live CUDA on Tesla-class cards. Not
+      MiniCPM branding. Sources:
+      <a href="https://arxiv.org/abs/2607.14568v1"
+        >https://arxiv.org/abs/2607.14568v1</a
+      >
+    </p>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(v) {
+        const headroom = clamp(v.vram - v.resident, -2, 2.5);
+        const vramFit = clamp(
+          55 + headroom * 28 - v.spill * 22 + v.agree * 18,
+          0,
+          100,
+        );
+        const stage = clamp(v.agree * 70 + (1 - v.spill) * 20, 0, 100);
+        const spillSafety = clamp(100 - v.spill * 55, 0, 100);
+        const overall = round2(
+          vramFit * 0.4 + stage * 0.35 + spillSafety * 0.25,
+        );
+        return { overall, vramFit: round2(vramFit), stage: round2(stage) };
+      }
+      function scoreB(v) {
+        const pen = clamp(0.4 + v.spill * 0.35 + (1 - v.agree) * 0.2, 0.3, 0.95);
+        const vramFit = clamp((40 + (v.vram - v.resident) * 10) * pen, 0, 100);
+        const stage = clamp(v.agree * 35 * pen, 0, 100);
+        const spillSafety = clamp(100 - v.spill * 75 - 16, 0, 100);
+        const overall = round2(
+          vramFit * 0.25 + stage * 0.2 + spillSafety * 0.55,
+        );
+        return { overall, vramFit: round2(vramFit), stage: round2(stage) };
+      }
+      const ids = ["vram", "resident", "agree", "spill"];
+      ids.forEach((id) => {
+        const el = document.getElementById(id);
+        const lab = document.getElementById(id + "V");
+        el.addEventListener("input", () => {
+          lab.textContent = Number(el.value).toFixed(
+            id === "vram" || id === "resident" ? 1 : 2,
+          );
+        });
+      });
+      document.getElementById("run").onclick = () => {
+        const v = {
+          vram: Number(document.getElementById("vram").value),
+          resident: Number(document.getElementById("resident").value),
+          agree: Number(document.getElementById("agree").value),
+          spill: Number(document.getElementById("spill").value),
+        };
+        const a = scoreA(v);
+        const b = scoreB({ ...v, spill: Math.min(1, v.spill + 0.35) });
+        document.getElementById("aScore").textContent = a.overall.toFixed(1);
+        document.getElementById("bScore").textContent = b.overall.toFixed(1);
+        document.getElementById("aDetail").textContent =
+          "VRAM " + a.vramFit + " · stage " + a.stage;
+        document.getElementById("bDetail").textContent =
+          "VRAM " + b.vramFit + " · stage " + b.stage;
+      };
+    </script>
+  </body>
+</html>

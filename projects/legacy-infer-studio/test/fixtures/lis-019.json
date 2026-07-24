@@ -1,0 +1,36 @@
+{
+  "id": "lis-019",
+  "input": {
+    "vramGb": 5.81,
+    "residentGb": 4.38,
+    "stageAgreement": 0.68,
+    "kernelEfficiency": 0.65,
+    "hostSpill": 0.32,
+    "prefillThroughput": 0.59,
+    "decodeThroughput": 0.61,
+    "visionPortFit": 0.64,
+    "contextK": 7.1,
+    "stage": "decode",
+    "plan": "naive_offload"
+  },
+  "expectedStageValidated": {
+    "mode": "stage_validated",
+    "vramFit": 89.72,
+    "stagePass": 59.78,
+    "kernelScore": 48.66,
+    "throughputScore": 49.37,
+    "visionScore": 57.39,
+    "spillRisk": 70.4,
+    "overall": 63.86
+  },
+  "expectedNaiveOffload": {
+    "mode": "naive_offload",
+    "vramFit": 20.04,
+    "stagePass": 11.65,
+    "kernelScore": 10.94,
+    "throughputScore": 19.75,
+    "visionScore": 11.4,
+    "spillRisk": 60.33,
+    "overall": 29.1
+  }
+}

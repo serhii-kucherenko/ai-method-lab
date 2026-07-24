@@ -26,7 +26,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Pack Rules Studio** | `pack-rules-studio` | **Complete** | Hard rules + soft packing prefs |
 | **On-Device Trip Studio** | `on-device-trip-studio` | **Complete** | Feasibility-first on-device itineraries |
 | **MSK Care Studio** | `msk-care-studio` | **Complete** | Evidence-grounded MSK pathways |
-| **Legacy Infer Studio** | `legacy-infer-studio` | **Building** | Stage-validated legacy GPU inference |
+| **Legacy Infer Studio** | `legacy-infer-studio` | **Complete** | Stage-validated legacy GPU inference |
 
 ## Rules
 
