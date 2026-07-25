@@ -57,6 +57,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Oncology Report Studio** | `oncology-report-studio` | **Complete** | Multi-LLM collaborative MRI report vs single-LLM baseline |
 | **Federated CVD Studio** | `federated-cvd-studio` | **Complete** | Federated CVD risk vs centralized baseline |
 | **HCC Reason Studio** | `hcc-reason-studio` | **Complete** | Clinical-reasoning HCC risk vs non-reasoning baseline |
+| **Molecule Sample Studio** | `mol-sample-studio` | **Building** | Sample-efficient generative optimization vs naive generative baseline |
 | **HCC Reason Studio** | `hcc-reason-studio` | **Building** | Clinical-reasoning HCC risk vs non-reasoning baseline |
 
 ## Rules

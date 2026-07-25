@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T13:40:40.802Z",
+  "updated_at": "2026-07-25T13:43:31.976Z",
   "projects": [
     {
       "id": 1,
@@ -974,6 +974,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "mol-sample-studio",
+      "project": "Molecule Sample Studio",
+      "score": 62,
+      "tier": "B",
+      "business_idea": "Compare sample-efficient generative molecular optimization against naive generative baselines before locking a campaign pack",
+      "pmf": "Early signal with medicinal chemistry / generative design leads who already buy generative design tools",
+      "buyer": "Medicinal chemistry and generative design engineering leads",
+      "money_hook": "Bench seats + private campaign packs (method-lab experiment)",
+      "potential": "Sample budgets dominate generative campaigns; efficiency benches are underserved vs unconstrained generators",
+      "moat": "Sample-efficient generative optimization vs naive generative baseline",
+      "evidence": "Paper software claim (sample-efficient generative optimization pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer generative-design soft-sim with multi-flow bar; never claim wet-lab validation or live ELN",
+      "id": 50
     }
   ]
 }
