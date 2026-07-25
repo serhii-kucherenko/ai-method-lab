@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T15:10:09.268Z",
+  "updated_at": "2026-07-25T15:12:09.630Z",
   "projects": [
     {
       "id": 1,
@@ -1217,6 +1217,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "reaction-loop-studio",
+      "project": "Reaction Loop Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare chemist-in-the-loop VLM reaction-condition agents against open-loop VLM baselines before locking a campaign pack",
+      "pmf": "Early signal with process chemistry / manufacturing leads who already trial VLM condition assistants",
+      "buyer": "Process chemistry and manufacturing engineering leads",
+      "money_hook": "Bench seats + private campaign packs (method-lab experiment)",
+      "potential": "Chemist-gated VLM optimization is underserved vs open-loop condition pickers",
+      "moat": "Chemist-in-the-loop VLM vs open-loop VLM baseline",
+      "evidence": "Paper software claim (chemist-in-the-loop VLM pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer process-chem soft-sim with multi-flow bar; never claim live wet-lab control or manufacturing clearance",
+      "id": 59
     }
   ]
 }
