@@ -1532,7 +1532,7 @@
       "potential": "Modular multi-agent pest control is underserved vs single-species dumps without a dual bench",
       "moat": "Modular multi-agent pest control vs single-species baseline",
       "evidence": "Paper software claim (PesTwin modular agent-based control pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer vector-control soft-sim with multi-flow bar; never claim field-validated eradication or live spray-fleet write-back",
       "id": 75

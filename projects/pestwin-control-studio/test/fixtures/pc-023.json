@@ -1,0 +1,39 @@
+{
+  "id": "pc-023",
+  "input": {
+    "agentCoverage": 0.79,
+    "moduleCoordination": 0.76,
+    "suppressionProxy": 0.77,
+    "vectorPressureProxy": 0.8,
+    "singleSpeciesBreadth": 0.81,
+    "baselineOptimism": 0.36,
+    "controlHardness": 0.33,
+    "overclaimRisk": 0.25,
+    "controlBias": "species_first",
+    "profile": "modular_multiagent_pest_control"
+  },
+  "expectedMultiagent": {
+    "mode": "modular_multiagent_pest_control",
+    "agentScore": 49.06,
+    "coordinationScore": 67.38,
+    "suppressionScore": 53.76,
+    "coverageIntegrity": 49.49,
+    "baselineScore": 45.16,
+    "confidence": 69,
+    "multiagentContribution": 54.87,
+    "speciesContribution": 48.05,
+    "overall": 54.64
+  },
+  "expectedSpecies": {
+    "mode": "single_species_baseline",
+    "agentScore": 33.86,
+    "coordinationScore": 25.27,
+    "suppressionScore": 21.93,
+    "coverageIntegrity": 43.92,
+    "baselineScore": 84.72,
+    "confidence": 35.45,
+    "multiagentContribution": 41.94,
+    "speciesContribution": 71.35,
+    "overall": 60.74
+  }
+}

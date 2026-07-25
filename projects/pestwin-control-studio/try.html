@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pestwin Control Studio — offline try</title>
+    <style>
+      :root {
+        --pc-ink: #162018;
+        --pc-green: #3a7a4a;
+        --pc-mist: #eef2ef;
+        --pc-line: #c4cbc6;
+        --pc-amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: "DM Sans", "Segoe UI", sans-serif;
+        background: var(--pc-mist);
+        color: var(--pc-ink);
+      }
+      header {
+        background: linear-gradient(165deg, #0f1611, #162018 50%, #1a2a1e);
+        color: white;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      h1 {
+        font-family: Fraunces, Georgia, serif;
+        margin: 0;
+        color: #8fbf9a;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid var(--pc-line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--pc-green);
+        color: white;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--pc-line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        opacity: 0.75;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Pestwin Control Studio</h1>
+      <p>Offline soft-sim: modular multi-agent vs single-species baseline</p>
+    </header>
+    <main>
+      <label
+        >Agent coverage
+        <input id="cov" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Module coordination
+        <input id="coord" type="number" min="0" max="1" step="0.01" value="0.72"
+      /></label>
+      <label
+        >Suppression proxy
+        <input id="sup" type="number" min="0" max="1" step="0.01" value="0.68"
+      /></label>
+      <label
+        >Vector pressure proxy
+        <input id="vec" type="number" min="0" max="1" step="0.01" value="0.65"
+      /></label>
+      <label
+        >Single-species breadth
+        <input id="spec" type="number" min="0" max="1" step="0.01" value="0.55"
+      /></label>
+      <button id="go">Score A vs B</button>
+      <div class="out" id="out">Run a score to see multi-agent vs single-species deltas.</div>
+      <p class="note">
+        Soft-sim only — not field-validated eradication, not live spray-fleet
+        write-back, not the authors' system.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(i) {
+        const load = i.controlHardness * (1.25 - i.vectorPressureProxy * 0.5);
+        const agent =
+          (i.agentCoverage * 55 + i.moduleCoordination * 25 - load * 10) *
+            1.12 +
+          8 -
+          i.overclaimRisk * 6;
+        const coord =
+          i.moduleCoordination * 60 * 1.12 +
+          i.agentCoverage * 25 +
+          8 -
+          i.baselineOptimism * 4;
+        const sup =
+          i.suppressionProxy * 58 * 1.12 +
+          i.agentCoverage * 28 +
+          10 -
+          load * 12;
+        const cov =
+          i.vectorPressureProxy * 50 * 1.12 +
+          i.moduleCoordination * 25 +
+          i.agentCoverage * 15 +
+          8;
+        const multi = clamp(
+          (clamp(agent, 0, 100) * 0.26 +
+            clamp(coord, 0, 100) * 0.24 +
+            clamp(sup, 0, 100) * 0.28 +
+            clamp(cov, 0, 100) * 0.22) *
+            0.82 +
+            4,
+          0,
+          100,
+        );
+        return round2(multi);
+      }
+      function scoreB(i) {
+        const phys =
+          i.singleSpeciesBreadth * 58 * 1.08 +
+          i.baselineOptimism * 32 -
+          i.controlHardness * 10 +
+          8;
+        const overall = clamp(
+          clamp(phys, 0, 100) * 0.78 +
+            i.singleSpeciesBreadth * 12 -
+            i.controlHardness * 8,
+          0,
+          100,
+        );
+        return round2(overall);
+      }
+      document.getElementById("go").onclick = () => {
+        const i = {
+          agentCoverage: Number(document.getElementById("cov").value),
+          moduleCoordination: Number(document.getElementById("coord").value),
+          suppressionProxy: Number(document.getElementById("sup").value),
+          vectorPressureProxy: Number(document.getElementById("vec").value),
+          singleSpeciesBreadth: Number(document.getElementById("spec").value),
+          baselineOptimism: 0.4,
+          controlHardness: 0.35,
+          overclaimRisk: 0.25,
+        };
+        const a = scoreA(i);
+        const b = scoreB(i);
+        const winner =
+          a > b + 0.5
+            ? "modular_multiagent_pest_control"
+            : b > a + 0.5
+              ? "single_species_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "A (multi-agent) " +
+          a +
+          " · B (single-species) " +
+          b +
+          " · winner " +
+          winner +
+          " · gap " +
+          round2(Math.abs(a - b));
+      };
+    </script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 # Pestwin Control Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `pestwin-control-studio`  
 **Paper:** https://arxiv.org/abs/2607.09420v1  
 **Authors’ code:** none  
