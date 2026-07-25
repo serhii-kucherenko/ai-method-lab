@@ -1,0 +1,39 @@
+{
+  "id": "pd-026",
+  "input": {
+    "cooperativity": 0.83,
+    "domainCoverage": 0.83,
+    "bridgeCompleteness": 0.8,
+    "specificityDelta": 0.83,
+    "meltingSharpness": 0.84,
+    "physioNoise": 0.27,
+    "incompleteRisk": 0.34,
+    "overclaimRisk": 0.22,
+    "probeBias": "balanced",
+    "profile": "cooperative_multi_domain_probe"
+  },
+  "expectedCooperative": {
+    "mode": "cooperative_multi_domain_probe",
+    "cooperativityScore": 77.68,
+    "coverageScore": 83.17,
+    "bridgeScore": 80.3,
+    "specificityScore": 87.68,
+    "meltingScore": 47.68,
+    "confidence": 65.45,
+    "cooperativeContribution": 82.04,
+    "meltingContribution": 50.87,
+    "overall": 80.43
+  },
+  "expectedMeltingBaseline": {
+    "mode": "single_domain_melting_baseline",
+    "cooperativityScore": 33.17,
+    "coverageScore": 25.67,
+    "bridgeScore": 22.55,
+    "specificityScore": 44.32,
+    "meltingScore": 68.8,
+    "confidence": 37.1,
+    "cooperativeContribution": 38.9,
+    "meltingContribution": 63.04,
+    "overall": 54.25
+  }
+}

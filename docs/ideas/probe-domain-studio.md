@@ -1,6 +1,6 @@
 # Probe Domain Studio
 
-**State:** building  
+**State:** complete  
 **Slug:** `probe-domain-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15006161/v2  
 **Authors’ code:** none  

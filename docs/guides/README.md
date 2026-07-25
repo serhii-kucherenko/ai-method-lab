@@ -129,5 +129,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 126 | [Access Equity Studio - what we learned](126-access-equity-studio-lessons.md) | Product `access-equity-studio` |
 | 127 | [Citizen Pref Studio - what we learned](127-citizen-pref-studio-lessons.md) | Product `citizen-pref-studio` |
 | 128 | [Dialogue Design Studio - what we learned](128-dialogue-design-studio-lessons.md) | Product `dialogue-design-studio` |
+| 129 | [Probe Domain Studio - what we learned](129-probe-domain-studio-lessons.md) | Product `probe-domain-studio` |
 
 

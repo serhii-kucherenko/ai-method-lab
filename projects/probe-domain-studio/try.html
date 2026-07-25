@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Probe Domain Studio — offline try</title>
+  <style>
+    :root {
+      --pd-ink: #14191f;
+      --pd-teal: #2a6a72;
+      --pd-mist: #eef3f5;
+      --pd-line: #c2c8cd;
+      --pd-amber: #b8873a;
+    }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--pd-mist);
+      color: var(--pd-ink);
+    }
+    header {
+      padding: 2rem 1.5rem 1rem;
+      background: linear-gradient(165deg, #0b1016, #1a2326);
+      color: var(--pd-mist);
+    }
+    h1 { margin: 0; font-size: 1.75rem; color: var(--pd-amber); }
+    p { max-width: 36rem; }
+    main { padding: 1.5rem; max-width: 40rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input[type=range] { width: 100%; }
+    button {
+      margin-top: 1rem;
+      background: var(--pd-teal);
+      color: white;
+      border: 0;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+    }
+    .bars { margin-top: 1.25rem; }
+    .bar-label { font-size: 0.85rem; margin-top: 0.5rem; }
+    .track { height: 10px; background: var(--pd-line); border-radius: 4px; }
+    .fill { height: 100%; border-radius: 4px; }
+    .a { background: var(--pd-teal); }
+    .b { background: var(--pd-amber); }
+    .note { font-size: 0.85rem; color: #4a555c; margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Probe Domain Studio</h1>
+    <p>Approximate offline demo — cooperative multi-domain vs single-domain melting. Soft-sim only; not wet-lab validated IVD.</p>
+  </header>
+  <main>
+    <label>Cooperativity <span id="cVal"></span>
+      <input id="coop" type="range" min="0" max="100" value="62" />
+    </label>
+    <label>Domain coverage <span id="dVal"></span>
+      <input id="cov" type="range" min="0" max="100" value="70" />
+    </label>
+    <label>Bridge completeness <span id="bVal"></span>
+      <input id="bridge" type="range" min="0" max="100" value="74" />
+    </label>
+    <label>Melting sharpness (baseline fuel) <span id="mVal"></span>
+      <input id="melt" type="range" min="0" max="100" value="55" />
+    </label>
+    <button type="button" id="run">Score A vs B</button>
+    <div class="bars">
+      <div class="bar-label">A cooperative_multi_domain_probe: <strong id="aScore">—</strong></div>
+      <div class="track"><div id="aFill" class="fill a" style="width:0%"></div></div>
+      <div class="bar-label">B single_domain_melting_baseline: <strong id="bScore">—</strong></div>
+      <div class="track"><div id="bFill" class="fill b" style="width:0%"></div></div>
+      <p id="winner"></p>
+    </div>
+    <p class="note">Full fidelity needs the local Next.js app (<code>npm run dev</code>). This page is an approximate StackBlitz/digest attachment only.</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function score() {
+      const c = +document.getElementById('coop').value / 100;
+      const d = +document.getElementById('cov').value / 100;
+      const b = +document.getElementById('bridge').value / 100;
+      const m = +document.getElementById('melt').value / 100;
+      document.getElementById('cVal').textContent = c.toFixed(2);
+      document.getElementById('dVal').textContent = d.toFixed(2);
+      document.getElementById('bVal').textContent = b.toFixed(2);
+      document.getElementById('mVal').textContent = m.toFixed(2);
+      const a = clamp(c * 42 + d * 28 + b * 30 - m * 8 + 4, 0, 100);
+      const bas = clamp(m * 55 + (1 - b) * 25 + (1 - c) * 15, 0, 100);
+      document.getElementById('aScore').textContent = a.toFixed(1);
+      document.getElementById('bScore').textContent = bas.toFixed(1);
+      document.getElementById('aFill').style.width = a + '%';
+      document.getElementById('bFill').style.width = bas + '%';
+      let w = 'tie';
+      if (a > bas + 0.5) w = 'cooperative_multi_domain_probe';
+      else if (bas > a + 0.5) w = 'single_domain_melting_baseline';
+      document.getElementById('winner').textContent = 'Winner: ' + w;
+    }
+    document.getElementById('run').onclick = score;
+    ['coop','cov','bridge','melt'].forEach(id => {
+      document.getElementById(id).oninput = score;
+    });
+    score();
+  </script>
+</body>
+</html>
