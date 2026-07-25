@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T14:59:17.739Z",
+  "updated_at": "2026-07-25T15:01:29.140Z",
   "projects": [
     {
       "id": 1,
@@ -1190,6 +1190,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "chem-trace-studio",
+      "project": "Chem Trace Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare typed trace-state validation of agentic chemistry workflows against ungated agent baselines before locking a workflow pack",
+      "pmf": "Early signal with computational chemistry / platform leads who already run agentic chemistry workflows",
+      "buyer": "Computational chemistry and platform engineering leads",
+      "money_hook": "Bench seats + private workflow packs (method-lab experiment)",
+      "potential": "Typed information-flow validation for chemistry agents is underserved vs ungated LLM chemists",
+      "moat": "Typed trace-state validation vs ungated agent baseline",
+      "evidence": "Paper software claim (trace-state ASP validation pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer chemistry-workflow soft-sim with multi-flow bar; never claim certified compliance or live HPC",
+      "id": 58
     }
   ]
 }
