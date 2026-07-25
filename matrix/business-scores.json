@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T23:05:16.926Z",
+  "updated_at": "2026-07-25T23:18:11.584Z",
   "projects": [
     {
       "id": 1,
@@ -2151,7 +2151,7 @@
     {
       "slug": "fluoride-label-studio",
       "project": "Fluoride Label Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare fast isotopic fluorine-18 exchange labeling against multistep prosthetic-group baselines before locking a label pack",
       "pmf": "Early signal with radiopharma / PET tracer chemistry analytics leads who already trial labeling soft-sims",
       "buyer": "Radiopharma and PET tracer chemistry analytics engineering leads",
@@ -2174,6 +2174,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 99
+    },
+    {
+      "slug": "ion-hydrogel-studio",
+      "project": "Ion Hydrogel Studio",
+      "status": "building",
+      "business_idea": "Compare dynamic charge-regulating hydrogel ion transport against fixed-charge baselines before locking a gel pack",
+      "pmf": "Early signal with materials / soft-matter electrolyte analytics leads who already trial gel soft-sims",
+      "buyer": "Materials and soft-matter electrolyte analytics engineering leads",
+      "money_hook": "Bench seats + private gel packs (method-lab experiment)",
+      "potential": "Dynamic charge regulation ion transport is underserved vs fixed-charge dumps without honesty",
+      "moat": "Dynamic charge regulation vs fixed-charge baseline",
+      "evidence": "Paper materials soft-sim claim (charge-regulating hydrogels); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer materials soft-sim with multi-flow bar; never claim wet-lab validated membrane manufacturing, live plant ionics, or commercial battery cell qualification",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 100
     }
   ]
 }
