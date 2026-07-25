@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T16:23:55.654Z",
+  "updated_at": "2026-07-25T16:33:48.375Z",
   "projects": [
     {
       "id": 1,
@@ -1383,6 +1383,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer imaging-interop soft-sim with multi-flow bar; never claim clinical deployment, live PACS write-back, or diagnostic use",
       "id": 66
+    },
+    {
+      "slug": "sovereign-cost-studio",
+      "project": "Sovereign Cost Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare sovereign AI infrastructure water–energy–emissions accounting against naive cloud-footprint baselines before locking a cost pack",
+      "pmf": "Early signal with public-sector AI / sustainability leads who already model data-center footprints",
+      "buyer": "Public-sector AI and sustainability engineering leads",
+      "money_hook": "Bench seats + private cost packs (method-lab experiment)",
+      "potential": "Sovereign-infra W/E/E accounting is underserved vs naive cloud-only footprint scores",
+      "moat": "Sovereign-infra W/E/E accounting vs naive cloud-footprint baseline",
+      "evidence": "Paper software claim (sovereign AI infra environmental cost pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer sustainability soft-sim with multi-flow bar; never claim certified carbon audits, live grid metering, or national policy authority",
+      "id": 67
     }
   ]
 }

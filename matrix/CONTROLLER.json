@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T18:30:00.000Z",
+  "updated_at": "2026-07-25T16:33:48.464Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "1e1213cb-3b57-4b12-ae8a-ff89ee8d0f9d",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "c2a23f84-ba1f-4b52-b485-4b5f17de35eb",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__transducin-measure-studio__r1",
   "last_error": null,
-  "current_product": "transducin-measure-studio",
-  "current_idea": "transducin-measure-studio",
+  "current_product": "sovereign-cost-studio",
+  "current_idea": "sovereign-cost-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Transducin Measure Studio sustain complete — product_complete_pending=true; parent owns Resend finish email; do NOT send any Resend email from this agent. Soft-sim SNOMED-coded OCT recovery vs raw private-tag baseline; 13 pages; 35 features; 30 goldens.",
+  "phase": "build",
+  "notes": "Transducin finish email sent. Next climb: Sovereign Cost Studio (2607.13443) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.64898/2026.07.14.26357256",
-      "slug": "transducin-measure-studio",
-      "displayName": "Transducin Measure Studio",
-      "at": "2026-07-25T16:23:55.730Z",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.07.14.26357256v2",
+      "paperId": "2607.13443",
+      "slug": "sovereign-cost-studio",
+      "displayName": "Sovereign Cost Studio",
+      "at": "2026-07-25T16:33:48.465Z",
+      "url": "https://arxiv.org/abs/2607.13443v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T16:23:55.730Z",
+    "framing_started_at": "2026-07-25T16:33:48.465Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,
