@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T07:52:35.502Z",
+  "updated_at": "2026-07-25T08:04:59.083Z",
   "projects": [
     {
       "id": 1,
@@ -515,22 +515,49 @@
         "money": 7,
         "wedge": 7,
         "moat": 7,
-        "evidence": 5,
+        "evidence": 6,
         "feasibility": 8
       },
-      "business_idea": "Plan channel-aware quantization for edge CPU LLM inference before shipping a uniform bit-width that burns latency",
+      "business_idea": "Plan channel-aware quantization for edge CPU LLM inference before a uniform bit-width burns latency and memory",
       "pmf": "Early signal with edge/ML platform teams already paying for compilers and inference cost tools",
       "buyer": "ML platform / edge infra engineers shipping CPU LLM inference",
       "money_hook": "Toolchain seats + support on quant/compile plans (method-lab experiment)",
       "potential": "Direct cost and latency pain on CPU edge — clearer money than clinical clones",
       "moat": "Channel bit-width + compile-plan IA vs naive uniform quantization dashboards",
-      "evidence": "Paper software claim (PolyQ); no public author code in digest",
+      "evidence": "Paper software claim (PolyQ); 30 dual goldens; live app smoke green",
       "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Sustain-green — keep infra/cost B picks",
-      "score": 69,
+      "gc_notes": "Keep infra/cost pattern; prefer similar wedges over clinical stacks",
+      "score": 70,
       "tier": "B",
       "id": 30
+    },
+    {
+      "slug": "crystal-bind-studio",
+      "project": "Crystal Bind Studio",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 7,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 5,
+        "feasibility": 8
+      },
+      "business_idea": "Bind structure, diffraction, electronic density, and language descriptors so materials teams retrieve crystals that match across modalities",
+      "pmf": "Early signal with materials informatics / coatings engineers who already buy design and search tools",
+      "buyer": "Materials characterization and crystal informatics leads",
+      "money_hook": "Desktop seats + compute for bind/search runs (method-lab experiment)",
+      "potential": "Industrial design/search budgets — clearer than consumer or stacked clinical clones",
+      "moat": "Multimodal bind space vs single-modality crystal search",
+      "evidence": "Paper software claim (MatBind); no public author code in digest",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "A/B gate pass — industrial multimodal wedge; climb next",
+      "score": 68,
+      "tier": "B",
+      "id": 31
     }
   ]
 }
