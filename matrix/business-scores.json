@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T09:52:59.060Z",
+  "updated_at": "2026-07-25T09:58:02.918Z",
   "projects": [
     {
       "id": 1,
@@ -704,7 +704,7 @@
         "money": 7,
         "wedge": 7,
         "moat": 7,
-        "evidence": 5,
+        "evidence": 7,
         "feasibility": 8
       },
       "business_idea": "Inspect medical AI safety boundary failures by severity and gate type — why an answer failed — not only whether it scored correct",
@@ -712,14 +712,41 @@
       "buyer": "Health LLM eval and safety QA leads",
       "money_hook": "Bench seats + private fail-case packs (method-lab experiment)",
       "potential": "Eval and safety spend rising; failure taxonomy underserved vs accuracy-only benches",
-      "moat": "Clinician-built fail-gate taxonomy vs correctness-only medical eval desks",
-      "evidence": "Paper software claim (MedFailBench pattern); 30 dual goldens; 7 user flows; /pricing /demo /onboarding /flows shipped; never branded MedFailBench",
+      "moat": "Fail-gate taxonomy diagnosis vs correctness-only medical eval desks",
+      "evidence": "Paper software claim (MedFailBench pattern); 30 dual goldens; 7 user flows; 13 pages; /pricing /demo /onboarding /flows shipped; never branded MedFailBench",
       "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Keep eval/safety release-gate pattern with multi-flow bar; prefer similar bench wedges; do not brand as MedFailBench",
-      "score": 69,
+      "score": 71,
       "tier": "B",
       "id": 37
+    },
+    {
+      "slug": "drive-horizon-studio",
+      "project": "Drive Horizon Studio",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 7,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 5,
+        "feasibility": 7
+      },
+      "business_idea": "Compare hierarchical driving world-model forecasts (coarse scene + detail) against flat single-level predictions before AV teams trust a planner pack",
+      "pmf": "Early signal with AV simulation / world-model eval leads who already buy scenario benches",
+      "buyer": "AV simulation and world-model evaluation leads",
+      "money_hook": "Bench seats + scenario packs (method-lab experiment)",
+      "potential": "AV stack budgets need hierarchical fidelity checks, not only pretty video rollouts",
+      "moat": "Hierarchical coarse+detail world model vs flat single-level baseline",
+      "evidence": "Paper software claim (Orbis 2 pattern); no public author code in digest",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "A/B industrial AV sim pick — not Orbis brand; require multi-flow + platform must-haves; soft-sim honesty",
+      "score": 67,
+      "tier": "B",
+      "id": 38
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T09:52:36.088Z",
+  "updated_at": "2026-07-25T09:58:03.068Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "1cfa88bf-b64b-41f9-8ce2-c89fac3fd1ef",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "045f493e-2997-4c17-9d29-988ea912cd31",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__fail-gate-studio__r1",
   "last_error": null,
-  "current_product": "fail-gate-studio",
-  "current_idea": "fail-gate-studio",
+  "current_product": "drive-horizon-studio",
+  "current_idea": "drive-horizon-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Fail Gate Studio sustain green. product_complete_pending — parent sends finish email; do not Resend or pick next paper in climb agent.",
+  "phase": "climbing",
+  "notes": "Fail Gate finished (email sent). Climbing Drive Horizon Studio (Orbis 2 / 2607.15898) — A/B AV world-model pick. Require multi-flow + platform bar.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.15166",
-      "slug": "fail-gate-studio",
-      "displayName": "Fail Gate Studio",
-      "at": "2026-07-25T09:26:55.770Z",
-      "url": "https://arxiv.org/abs/2607.15166v1",
+      "paperId": "2607.15898",
+      "slug": "drive-horizon-studio",
+      "displayName": "Drive Horizon Studio",
+      "at": "2026-07-25T09:58:03.069Z",
+      "url": "https://arxiv.org/abs/2607.15898v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
