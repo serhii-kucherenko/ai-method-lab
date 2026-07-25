@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T19:48:56.861Z",
+  "updated_at": "2026-07-25T19:51:41.506Z",
   "projects": [
     {
       "id": 1,
@@ -1742,6 +1742,23 @@
         "evidence": 7,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "omic-prior-studio",
+      "project": "Omic Prior Studio",
+      "score": 66,
+      "tier": "B",
+      "business_idea": "Compare statistical-priors-informed transformers against priors-free omics baselines before locking an omic pack",
+      "pmf": "Early signal with precision-medicine / multi-omics analytics leads who already trial cross-population disease predictors",
+      "buyer": "Precision-medicine and multi-omics analytics engineering leads",
+      "money_hook": "Bench seats + private omic packs (method-lab experiment)",
+      "potential": "Priors-informed omics transformers are underserved vs priors-free dumps that fail under distribution shift",
+      "moat": "Priors-informed transformer vs priors-free baseline",
+      "evidence": "Paper software claim (OmicFormer statistical-priors transformer pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer multi-omics soft-sim with multi-flow bar; never claim clinical diagnostic use, live EHR write-back, or FDA clearance; never brand as OmicFormer",
+      "id": 84
     }
   ]
 }

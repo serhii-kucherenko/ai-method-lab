@@ -91,6 +91,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Care Query Studio** | `care-query-studio` | **Complete** | Multilingual POC medical query LLM vs local clinician baseline |
 | **Accel PD Studio** | `accel-pd-studio` | **Complete** | Multi-channel PA transformer vs handcrafted PA-feature baseline |
 | **Cache Hit Studio** | `cache-hit-studio` | **Complete** | Structured hit-finding vs naive docking baseline |
+| **Omic Prior Studio** | `omic-prior-studio` | **Building** | Priors-informed transformer vs priors-free omics baseline |
 
 ## Rules
 
