@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T09:26:55.651Z",
+  "updated_at": "2026-07-25T09:52:59.060Z",
   "projects": [
     {
       "id": 1,
@@ -713,10 +713,10 @@
       "money_hook": "Bench seats + private fail-case packs (method-lab experiment)",
       "potential": "Eval and safety spend rising; failure taxonomy underserved vs accuracy-only benches",
       "moat": "Clinician-built fail-gate taxonomy vs correctness-only medical eval desks",
-      "evidence": "Paper software claim (MedFailBench); no public author code in digest",
-      "status": "building",
+      "evidence": "Paper software claim (MedFailBench pattern); 30 dual goldens; 7 user flows; /pricing /demo /onboarding /flows shipped; never branded MedFailBench",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "A/B gate pass — eval/safety wedge (not carepath); require multi-flow + platform must-haves; do not brand as MedFailBench",
+      "gc_notes": "Keep eval/safety release-gate pattern with multi-flow bar; prefer similar bench wedges; do not brand as MedFailBench",
       "score": 69,
       "tier": "B",
       "id": 37

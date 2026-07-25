@@ -55,6 +55,9 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 64 | [Attest Proof Studio — what we learned](64-attest-proof-studio-lessons.md) | Product `attest-proof-studio` |
 | 65 | [Video Track Studio — what we learned](65-video-track-studio-lessons.md) | Product `video-track-studio` |
 | 66 | [Hold Match Studio — what we learned](66-hold-match-studio-lessons.md) | Product `hold-match-studio` |
+| 67 | [Sign Stream Studio — what we learned](67-sign-stream-studio-lessons.md) | Product `sign-stream-studio` |
+| 68 | [Terrain Fire Studio — what we learned](68-terrain-fire-studio-lessons.md) | Product `terrain-fire-studio` |
+| 69 | [Fail Gate Studio — what we learned](69-fail-gate-studio-lessons.md) | Product `fail-gate-studio` |
 
 ### Scoring notes
 

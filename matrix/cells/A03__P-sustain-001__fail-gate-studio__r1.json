@@ -1,0 +1,42 @@
+{
+  "cell_id": "A03__P-sustain-001__fail-gate-studio__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "method_id": "A03",
+  "method_version": "1.0.0",
+  "project_id": "P-sustain-001",
+  "phase": "P-sustain-001",
+  "run_id": "r1",
+  "status": "scored",
+  "product_path": "projects/fail-gate-studio",
+  "started_at": "2026-07-25T09:28:00.000Z",
+  "finished_at": "2026-07-25T09:52:59.070Z",
+  "created_at": "2026-07-25T09:52:59.070Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 0.5,
+    "interventions": 0,
+    "human_interventions": 0,
+    "retries": 0,
+    "regression_pass": true,
+    "recoverability_ok": true,
+    "wall_clock_minutes": 35
+  },
+  "scores": {
+    "rubric_version": "1.0.0",
+    "dimensions": {
+      "correctness": 5,
+      "completeness": 5,
+      "robustness": 5,
+      "maintainability": 5,
+      "efficiency": 4
+    },
+    "artifacts": [
+      "projects/fail-gate-studio",
+      "docs/guides/69-fail-gate-studio-lessons.md"
+    ],
+    "notes": "13 pages; 30 features; 30 dual-impl goldens; 7 named flows; app-up green; fail-gate IA (not desk/Consult Bench clone)"
+  },
+  "fail_tags": [],
+  "notes": "A03 Fail Gate Studio sustain — product_complete_pending=true; parent sends finish email"
+}

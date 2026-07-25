@@ -1,0 +1,40 @@
+{
+  "id": "fgs-027",
+  "input": {
+    "severityFit": 0.87,
+    "gateTypeFit": 0.81,
+    "boundaryCoherence": 0.84,
+    "evidenceStrength": 0.87,
+    "taxonomyCoverage": 0.82,
+    "answerMatch": 0.88,
+    "fluencyScore": 0.3,
+    "harmProximity": 0.27,
+    "scopeDrift": 0.17,
+    "gateBias": "boundary_first",
+    "profile": "correctness_only"
+  },
+  "expectedFailGate": {
+    "mode": "fail_gate",
+    "severityDiagnosis": 68.66,
+    "gateTypeDiagnosis": 81.73,
+    "boundaryReasonScore": 100,
+    "taxonomyIntegrity": 66.56,
+    "correctnessScore": 49.35,
+    "confidence": 75.9,
+    "failGateContribution": 80.11,
+    "correctnessContribution": 52.55,
+    "overall": 79.15
+  },
+  "expectedCorrectnessOnly": {
+    "mode": "correctness_only",
+    "severityDiagnosis": 30.78,
+    "gateTypeDiagnosis": 25.15,
+    "boundaryReasonScore": 21.81,
+    "taxonomyIntegrity": 45.12,
+    "correctnessScore": 45.22,
+    "confidence": 37.2,
+    "failGateContribution": 33.62,
+    "correctnessContribution": 49.74,
+    "overall": 43.01
+  }
+}
