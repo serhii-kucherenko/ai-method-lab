@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T19:57:52.942Z",
+  "updated_at": "2026-07-25T20:02:58.656Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "cfbbbdaf-b393-4265-a6cc-050a7b2885b2",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "086601a1-d261-403d-9aa8-d0a610be00ef",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__omic-prior-studio__r1",
   "last_error": null,
-  "current_product": "omic-prior-studio",
-  "current_idea": "omic-prior-studio",
+  "current_product": "track-map-studio",
+  "current_idea": "track-map-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Omic Prior Studio sustain complete. product_complete_pending=true; parent owns Resend finish email; do NOT send any Resend email from this agent.",
+  "phase": "build",
+  "notes": "Omic Prior finish email sent. Next climb: Track Map Studio (2607.08408) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.64898/2026.07.06.26357359",
-      "slug": "omic-prior-studio",
-      "displayName": "Omic Prior Studio",
-      "at": "2026-07-25T19:51:41.596Z",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.07.06.26357359v1",
+      "paperId": "2607.08408",
+      "slug": "track-map-studio",
+      "displayName": "Track Map Studio",
+      "at": "2026-07-25T20:02:58.658Z",
+      "url": "https://arxiv.org/abs/2607.08408v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T19:51:41.596Z",
+    "framing_started_at": "2026-07-25T20:02:58.658Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,

@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T19:57:53.037Z",
+  "updated_at": "2026-07-25T20:02:58.558Z",
   "projects": [
     {
       "id": 1,
@@ -1769,6 +1769,23 @@
         "evidence": 7,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "track-map-studio",
+      "project": "Track Map Studio",
+      "score": 65,
+      "tier": "B",
+      "business_idea": "Compare online deformable SLAM against offline kinematics-prior baselines before locking a track pack",
+      "pmf": "Early signal with surgical robotics / intraoperative vision leads who already trial deformable reconstruction pipelines",
+      "buyer": "Surgical robotics and intraoperative vision engineering leads",
+      "money_hook": "Bench seats + private track packs (method-lab experiment)",
+      "potential": "Online deformable SLAM is underserved vs offline kinematics-prior dumps without a dual bench",
+      "moat": "Online deformable SLAM vs offline kinematics-prior baseline",
+      "evidence": "Paper software claim (Track2Map online deformable SLAM pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer surgical-vision soft-sim with multi-flow bar; never claim live robot control, clinical diagnostic use, or FDA clearance; never brand as Track2Map",
+      "id": 85
     }
   ]
 }
