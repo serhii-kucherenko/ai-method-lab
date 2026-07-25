@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oncology Report Studio — try</title>
+    <style>
+      :root {
+        --ink: #15202b;
+        --teal: #2a7a7b;
+        --bone: #f0ebe4;
+        --line: #c8c0b6;
+        --coral: #c45c4a;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--bone);
+      }
+      header {
+        background: linear-gradient(165deg, #0e151c, #15202b 55%, #1f4a4b);
+        color: #fff;
+        padding: 3rem 1.5rem 2.5rem;
+      }
+      h1 {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 2.4rem;
+        margin: 0;
+        color: var(--teal);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dde3ea;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        background: var(--teal);
+        width: 0%;
+      }
+      .fill.b {
+        background: var(--coral);
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 1.25rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #556070;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Oncology Report Studio</h1>
+      <p>Offline soft-sim: multi-LLM collaborative draft vs single-LLM baseline.</p>
+    </header>
+    <main>
+      <label>
+        Collaborator coverage
+        <input id="collaboratorCoverage" type="range" min="0" max="100" value="58" />
+      </label>
+      <label>
+        Finding fidelity
+        <input id="findingFidelity" type="range" min="0" max="100" value="70" />
+      </label>
+      <label>
+        Schema fit
+        <input id="schemaFit" type="range" min="0" max="100" value="74" />
+      </label>
+      <label>
+        Single-model accuracy
+        <input id="singleModelAccuracy" type="range" min="0" max="100" value="82" />
+      </label>
+      <label>
+        Rare-finding hardness
+        <input id="rareFindingHardness" type="range" min="0" max="100" value="45" />
+      </label>
+      <div class="card">
+        <div>Multi-LLM collaborative (A): <strong id="aScore">—</strong></div>
+        <div class="bar"><div class="fill" id="aBar"></div></div>
+        <div style="margin-top: 0.75rem">
+          Single-LLM baseline (B): <strong id="bScore">—</strong>
+        </div>
+        <div class="bar"><div class="fill b" id="bBar"></div></div>
+        <p id="winner" style="margin-top: 0.75rem"></p>
+      </div>
+      <p class="note">
+        Soft-sim only — not clinical decision support, not live PACS, not the
+        authors’ system. Inspired by arXiv 2607.14581.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(input) {
+        const boost = 1.12;
+        const load = clamp(
+          input.rareFindingHardness * (1.25 - input.collaboratorCoverage * 0.5),
+          0,
+          1.5,
+        );
+        const findingDiagnosis = clamp(
+          (input.collaboratorCoverage * 55 +
+            input.findingFidelity * 25 -
+            load * 10) *
+            boost +
+            8 -
+            input.leakageRisk * 6,
+          0,
+          100,
+        );
+        const collaboratorDiagnosis = clamp(
+          input.findingFidelity * 60 * boost +
+            input.collaboratorCoverage * 25 +
+            8,
+          0,
+          100,
+        );
+        const schema = clamp(
+          input.consensusAgreement * 58 * boost +
+            input.collaboratorCoverage * 28 +
+            10 -
+            load * 12,
+          0,
+          100,
+        );
+        const pack = clamp(
+          input.schemaFit * 50 * boost +
+            input.findingFidelity * 25 +
+            input.collaboratorCoverage * 15 +
+            8,
+          0,
+          100,
+        );
+        const collaborator =
+          findingDiagnosis * 0.26 +
+          collaboratorDiagnosis * 0.24 +
+          schema * 0.28 +
+          pack * 0.22;
+        const baseline =
+          input.singleModelAccuracy * 55 * 0.7 +
+          input.singleModelAccuracy * 20 -
+          load * 12;
+        return round2(
+          clamp(collaborator * 0.82 + baseline * 0.18 + 4, 0, 100),
+        );
+      }
+      function scoreB(input) {
+        const boost = 1.08;
+        const load = clamp(
+          input.rareFindingHardness * (1.25 - input.collaboratorCoverage * 0.5),
+          0,
+          1.5,
+        );
+        const baselineScore = clamp(
+          input.singleModelAccuracy * 58 * boost +
+            input.soloOptimism * 32 -
+            input.rareFindingHardness * 10 +
+            8,
+          0,
+          100,
+        );
+        const collaborator = clamp(
+          input.singleModelAccuracy * 35 * boost -
+            input.rareFindingHardness * 22 -
+            input.leakageRisk * 12,
+          0,
+          100,
+        );
+        return round2(
+          clamp(
+            baselineScore * 0.78 +
+              collaborator * 0.22 -
+              input.rareFindingHardness * 8 -
+              input.leakageRisk * 6,
+            0,
+            100,
+          ),
+        );
+      }
+      function read() {
+        const v = (id) => Number(document.getElementById(id).value) / 100;
+        return {
+          collaboratorCoverage: v("collaboratorCoverage"),
+          findingFidelity: v("findingFidelity"),
+          schemaFit: v("schemaFit"),
+          consensusAgreement: 0.68,
+          singleModelAccuracy: v("singleModelAccuracy"),
+          soloOptimism: 0.55,
+          rareFindingHardness: v("rareFindingHardness"),
+          leakageRisk: 0.28,
+        };
+      }
+      function render() {
+        const input = read();
+        const a = scoreA(input);
+        const b = scoreB(input);
+        document.getElementById("aScore").textContent = a;
+        document.getElementById("bScore").textContent = b;
+        document.getElementById("aBar").style.width = a + "%";
+        document.getElementById("bBar").style.width = b + "%";
+        const winner =
+          a > b + 0.5
+            ? "multi_llm_collaborative"
+            : b > a + 0.5
+              ? "single_llm_baseline"
+              : "tie";
+        document.getElementById("winner").textContent =
+          "Winner: " + winner + " · gap " + round2(Math.abs(a - b));
+      }
+      document.querySelectorAll("input").forEach((el) => {
+        el.addEventListener("input", render);
+      });
+      render();
+    </script>
+  </body>
+</html>

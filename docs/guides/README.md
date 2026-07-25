@@ -67,6 +67,7 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 76 | [Quantum Kernel Studio — what we learned](76-quantum-kernel-studio-lessons.md) | Product `quantum-kernel-studio` |
 | 77 | [Script Lexicon Studio — what we learned](77-script-lexicon-studio-lessons.md) | Product `script-lexicon-studio` |
 | 78 | [Kinetics Surrogate Studio — what we learned](78-kinetics-surrogate-studio-lessons.md) | Product `kinetics-surrogate-studio` |
+| 79 | [Oncology Report Studio — what we learned](79-oncology-report-studio-lessons.md) | Product `oncology-report-studio` |
 
 ### Scoring notes
 

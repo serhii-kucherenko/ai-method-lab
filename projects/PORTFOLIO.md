@@ -54,7 +54,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Quantum Kernel Studio** | `quantum-kernel-studio` | **Complete** | Quantum multi-kernel QSAR vs classical kernel baseline |
 | **Script Lexicon Studio** | `script-lexicon-studio` | **Complete** | Expanded Geez lexicon vs baseline multilingual tokenizers |
 | **Kinetics Surrogate Studio** | `kinetics-surrogate-studio` | **Complete** | Entropy-constrained kinetics surrogate vs full-rate baselines |
-| **Oncology Report Studio** | `oncology-report-studio` | **Building** | Multi-LLM collaborative MRI report vs single-LLM baseline |
+| **Oncology Report Studio** | `oncology-report-studio` | **Complete** | Multi-LLM collaborative MRI report vs single-LLM baseline |
 
 ## Rules
 

@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T13:12:21.444Z",
+  "updated_at": "2026-07-25T13:19:57.668Z",
   "projects": [
     {
       "id": 1,
@@ -897,7 +897,7 @@
     {
       "slug": "oncology-report-studio",
       "project": "Oncology Report Studio",
-      "score": 63,
+      "score": 66,
       "tier": "B",
       "business_idea": "Compare multi-LLM collaborative MRI report drafts against single-model baselines before locking a report pack",
       "pmf": "Early signal with neuro-oncology imaging / radiology AI leads who already buy report-assist tools",
@@ -905,11 +905,21 @@
       "money_hook": "Bench seats + private report packs (method-lab experiment)",
       "potential": "Collaborative multi-LLM drafting is underserved vs single-model report assistants",
       "moat": "Multi-LLM collaborative draft vs single-LLM baseline",
-      "evidence": "Paper software claim (multi-LLM MRI report pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "evidence": "Paper software claim (multi-LLM MRI report pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer clinical-report soft-sim with multi-flow bar; never claim CDS clearance or live PACS",
-      "id": 47
+      "id": 47,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      }
     }
   ]
 }

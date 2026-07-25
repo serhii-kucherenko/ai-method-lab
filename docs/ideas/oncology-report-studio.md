@@ -1,6 +1,6 @@
 # Oncology Report Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `oncology-report-studio`  
 **Paper:** https://arxiv.org/abs/2607.14581v1  
 **Authors’ code:** none  
@@ -14,5 +14,5 @@ A studio to manage case packs, report schemas, collaborator configs, and dual co
 ## Why this paper
 The paper proposes multi-LLM collaborative MRI report generation for brain oncology visual instruction tuning. Clear software/eval claim — unused after Kinetics. Method Lab product inspired by the pattern, not an authors’ rebrand.
 
-## Business score (pre-climb)
-Tier B candidate: oncology imaging buyer + report packs; moat is multi-LLM collaborative drafting vs single-LLM baseline.
+## Business score
+Tier B complete: oncology imaging buyer + report packs; moat is multi-LLM collaborative drafting vs single-LLM baseline. 13 pages, 35 features, 30 dual goldens.

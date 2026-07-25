@@ -1,0 +1,39 @@
+{
+  "id": "ors-013",
+  "input": {
+    "collaboratorCoverage": 0.54,
+    "findingFidelity": 0.52,
+    "schemaFit": 0.56,
+    "consensusAgreement": 0.57,
+    "singleModelAccuracy": 0.6,
+    "soloOptimism": 0.39,
+    "rareFindingHardness": 0.42,
+    "leakageRisk": 0.36,
+    "reportBias": "single_first",
+    "profile": "multi_llm_collaborative"
+  },
+  "expectedMultiLlmCollaborative": {
+    "mode": "multi_llm_collaborative",
+    "findingDiagnosis": 29.13,
+    "collaboratorDiagnosis": 44.88,
+    "schemaReasonScore": 36.95,
+    "packIntegrity": 32.35,
+    "baselineScore": 31.2,
+    "confidence": 45.35,
+    "collaboratorContribution": 35.81,
+    "baselineContribution": 32.8,
+    "overall": 36.27
+  },
+  "expectedSingleLlmBaseline": {
+    "mode": "single_llm_baseline",
+    "findingDiagnosis": 22.62,
+    "collaboratorDiagnosis": 21.35,
+    "schemaReasonScore": 17.8,
+    "packIntegrity": 37.74,
+    "baselineScore": 67.02,
+    "confidence": 26.55,
+    "collaboratorContribution": 33.31,
+    "baselineContribution": 57.27,
+    "overall": 46.48
+  }
+}
