@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T13:51:51.865Z",
+  "updated_at": "2026-07-25T13:56:18.272Z",
   "projects": [
     {
       "id": 1,
@@ -1001,6 +1001,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "assay-guard-studio",
+      "project": "Assay Guard Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare assay-aware liquid-handling protocol validation against naive protocol runners before locking a deck pack",
+      "pmf": "Early signal with lab automation / liquid-handling leads who already buy OT-2 and protocol tools",
+      "buyer": "Lab automation and liquid-handling engineering leads",
+      "money_hook": "Bench seats + private deck packs (method-lab experiment)",
+      "potential": "Assay-rule misses dominate open-source liquid handling; validation benches are underserved",
+      "moat": "Assay-aware validation vs naive protocol runner",
+      "evidence": "Paper software claim (AEGIS-pattern assay-aware validation); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer lab-automation soft-sim with multi-flow bar; never claim certified compliance or live robot control",
+      "id": 51
     }
   ]
 }
