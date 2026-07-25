@@ -1,6 +1,6 @@
 # Pv Causal Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `pv-causal-studio`  
 **Paper:** https://www.medrxiv.org/content/10.64898/2026.07.01.26356874v1  
 **Authors’ code:** none  

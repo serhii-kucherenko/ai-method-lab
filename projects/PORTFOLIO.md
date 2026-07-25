@@ -94,7 +94,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Omic Prior Studio** | `omic-prior-studio` | **Complete** | Priors-informed transformer vs priors-free omics baseline |
 | **Track Map Studio** | `track-map-studio` | **Complete** | Online deformable SLAM vs offline kinematics-prior baseline |
 | **Nicu Ecg Studio** | `nicu-ecg-studio` | **Complete** | Alignment-free PPG-guided ECG vs alignment-dependent baseline |
-| **Pv Causal Studio** | `pv-causal-studio` | **Building** | Target-trial causal PV signals vs spontaneous-reporting baseline |
+| **Pv Causal Studio** | `pv-causal-studio` | **Complete** | Target-trial causal PV signals vs spontaneous-reporting baseline |
 
 ## Rules
 

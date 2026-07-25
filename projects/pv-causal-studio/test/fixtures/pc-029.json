@@ -1,0 +1,39 @@
+{
+  "id": "pc-029",
+  "input": {
+    "cohortCoverage": 0.87,
+    "exposureFidelity": 0.9,
+    "confounderControl": 0.91,
+    "packCompleteness": 0.87,
+    "spontaneousVolume": 0.87,
+    "tipLineOptimism": 0.33,
+    "trialHardness": 0.2,
+    "overclaimRisk": 0.18,
+    "signalBias": "balanced",
+    "profile": "target_trial_causal_signal"
+  },
+  "expectedTargetTrial": {
+    "mode": "target_trial_causal_signal",
+    "cohortScore": 84.21,
+    "exposureScore": 88.91,
+    "causalScore": 89.77,
+    "completenessScore": 92.27,
+    "tipLineScore": 50.59,
+    "confidence": 78.6,
+    "targetTrialContribution": 88.67,
+    "spontaneousContribution": 54.2,
+    "overall": 86.47
+  },
+  "expectedSpontaneous": {
+    "mode": "spontaneous_reporting_baseline",
+    "cohortScore": 36.33,
+    "exposureScore": 26.66,
+    "causalScore": 23.73,
+    "completenessScore": 45,
+    "tipLineScore": 71.06,
+    "confidence": 39.5,
+    "targetTrialContribution": 40.56,
+    "spontaneousContribution": 65.11,
+    "overall": 57.03
+  }
+}

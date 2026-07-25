@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T20:24:23.209Z",
+  "updated_at": "2026-07-25T20:31:59.115Z",
   "projects": [
     {
       "id": 1,
@@ -1836,10 +1836,20 @@
       "potential": "Target-trial causal PV is underserved vs spontaneous-reporting dumps without a defined population baseline",
       "moat": "Target-trial causal signals vs spontaneous-reporting baseline",
       "evidence": "Paper software claim (target trial emulation pharmacovigilance pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer pharmacovigilance soft-sim with multi-flow bar; never claim regulatory submission authority, live claims write-back, or FDA clearance",
-      "id": 87
+      "id": 87,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      }
     }
   ]
 }
