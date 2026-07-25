@@ -104,6 +104,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Access Equity Studio** | `access-equity-studio` | **Complete** | Equity-access AI vs accuracy-only baseline |
 | **Citizen Pref Studio** | `citizen-pref-studio` | **Complete** | Safety-first public oversight vs innovation-first baseline |
 | **Dialogue Design Studio** | `dialogue-design-studio` | **Complete** | Productive open-minded design vs engagement-maximizing baseline |
+| **Probe Domain Studio** | `probe-domain-studio` | Building | Cooperative multi-domain DNA probes vs single-domain melting |
 
 ## Rules
 

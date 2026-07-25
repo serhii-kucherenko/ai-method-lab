@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T22:20:25.857Z",
+  "updated_at": "2026-07-25T22:36:05.405Z",
   "projects": [
     {
       "id": 1,
@@ -2078,7 +2078,7 @@
       "potential": "Productive open-minded dialogue designs are underserved vs engagement-maximizing dumps without honesty",
       "moat": "Productive open-minded design vs engagement-maximizing baseline",
       "evidence": "Paper HCI/software claim (productive dialogue platform pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer civic dialogue soft-sim with multi-flow bar; never claim live social network deployment, moderation authority, or attitude-change clearance",
       "dimensions": {
@@ -2093,6 +2093,33 @@
       },
       "score": 66,
       "id": 96
+    },
+    {
+      "slug": "probe-domain-studio",
+      "project": "Probe Domain Studio",
+      "tier": "B",
+      "business_idea": "Compare cooperative multi-domain DNA probes against single-domain melting baselines before locking a probe pack",
+      "pmf": "Early signal with molecular diagnostics / assay-design analytics leads who already trial probe soft-sims",
+      "buyer": "Molecular diagnostics and assay-design analytics engineering leads",
+      "money_hook": "Bench seats + private probe packs (method-lab experiment)",
+      "potential": "Cooperative multi-domain DNA probes are underserved vs single-domain melting dumps without honesty",
+      "moat": "Cooperative multi-domain probe vs single-domain melting baseline",
+      "evidence": "Paper assay-design claim (cooperative multi-domain DNA probe pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer assay-design soft-sim with multi-flow bar; never claim wet-lab validated diagnostics, live IVD clearance, or whole-blood device deployment",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "id": 97
     }
   ]
 }
