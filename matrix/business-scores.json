@@ -1447,7 +1447,7 @@
       "potential": "R2maps from routine T1W/T2W are underserved vs dedicated-sequence R2 dumps without a dual bench",
       "moat": "GAN R2map translation vs conventional R2 estimation baseline",
       "evidence": "Paper software claim (GAN T1W/T2W→R2map for Parkinson's pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer neuroimaging soft-sim with multi-flow bar; never claim clinical diagnostic use, live PACS write-back, or FDA clearance",
       "id": 70

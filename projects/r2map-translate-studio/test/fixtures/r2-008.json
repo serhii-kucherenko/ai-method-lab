@@ -1,0 +1,39 @@
+{
+  "id": "r2-008",
+  "input": {
+    "t1wFidelity": 0.41,
+    "t2wFidelity": 0.43,
+    "ganStability": 0.46,
+    "mapCoherence": 0.45,
+    "conventionalMatchRate": 0.49,
+    "conventionalOptimism": 0.43,
+    "translationHardness": 0.47,
+    "overclaimRisk": 0.44,
+    "translateBias": "conventional_first",
+    "profile": "gan_r2map_translation"
+  },
+  "expectedGan": {
+    "mode": "gan_r2map_translation",
+    "t1wScore": 19.43,
+    "t2wScore": 35.43,
+    "ganScore": 27.76,
+    "mapIntegrity": 24.76,
+    "conventionalBaselineScore": 24.32,
+    "confidence": 34.35,
+    "ganContribution": 26.78,
+    "conventionalContribution": 25.37,
+    "overall": 27.53
+  },
+  "expectedConventional": {
+    "mode": "conventional_r2_baseline",
+    "t1wScore": 16.4,
+    "t2wScore": 20.36,
+    "ganScore": 16.52,
+    "mapIntegrity": 35.17,
+    "conventionalBaselineScore": 58.5,
+    "confidence": 22.7,
+    "ganContribution": 29.39,
+    "conventionalContribution": 51.04,
+    "overall": 39.88
+  }
+}

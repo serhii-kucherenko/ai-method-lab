@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>R2map Translate Studio — offline try</title>
+    <style>
+      :root {
+        --ink: #171c24;
+        --teal: #2f7a8a;
+        --mist: #eef2f4;
+        --line: #c3c9ce;
+        --amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        background: var(--mist);
+        color: var(--ink);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: Sora, "Segoe UI", sans-serif;
+        font-weight: 600;
+        color: var(--teal);
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 1.25rem;
+        background: var(--teal);
+        color: white;
+        border: 0;
+        padding: 0.6rem 1rem;
+        border-radius: 0.35rem;
+        cursor: pointer;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dfe3e8;
+        border-radius: 999px;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        border-radius: 999px;
+        background: var(--teal);
+      }
+      .fill.b {
+        background: var(--amber);
+      }
+      .note {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #4a515c;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>R2map Translate Studio</h1>
+      <p>
+        Offline soft-sim: GAN T1W/T2W→R2map translation vs conventional R2
+        estimation baseline for Parkinson neuroimaging.
+      </p>
+      <label>T1W fidelity <span id="wVal">0.62</span></label>
+      <input id="t1" type="range" min="0" max="1" step="0.01" value="0.62" />
+      <label>T2W fidelity <span id="eVal">0.70</span></label>
+      <input id="t2" type="range" min="0" max="1" step="0.01" value="0.70" />
+      <label>Conventional optimism <span id="cVal">0.55</span></label>
+      <input id="conv" type="range" min="0" max="1" step="0.01" value="0.55" />
+      <button id="run" type="button">Score A vs B</button>
+      <div id="out" style="margin-top: 1.25rem"></div>
+      <p class="note">
+        Soft-sim only — not clinical diagnostic use, not live PACS write-back,
+        not FDA cleared, not the authors’ system.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(t1, t2, conv) {
+        return round2(clamp(t1 * 55 + t2 * 30 - conv * 12 + 8, 0, 100));
+      }
+      function scoreB(t1, t2, conv) {
+        return round2(clamp(conv * 50 + t1 * 15 + t2 * 10 + 5, 0, 100));
+      }
+      const t1 = document.getElementById("t1");
+      const t2 = document.getElementById("t2");
+      const conv = document.getElementById("conv");
+      const wVal = document.getElementById("wVal");
+      const eVal = document.getElementById("eVal");
+      const cVal = document.getElementById("cVal");
+      const out = document.getElementById("out");
+      function sync() {
+        wVal.textContent = t1.value;
+        eVal.textContent = t2.value;
+        cVal.textContent = conv.value;
+      }
+      t1.addEventListener("input", sync);
+      t2.addEventListener("input", sync);
+      conv.addEventListener("input", sync);
+      document.getElementById("run").addEventListener("click", () => {
+        const a = scoreA(+t1.value, +t2.value, +conv.value);
+        const b = scoreB(+t1.value, +t2.value, +conv.value);
+        const winner =
+          a > b + 0.5
+            ? "gan_r2map_translation"
+            : b > a + 0.5
+              ? "conventional_r2_baseline"
+              : "tie";
+        out.innerHTML =
+          "<p><strong>A (GAN)</strong> " +
+          a +
+          '</p><div class="bar"><div class="fill" style="width:' +
+          a +
+          '%"></div></div>' +
+          "<p style='margin-top:0.75rem'><strong>B (conventional)</strong> " +
+          b +
+          '</p><div class="bar"><div class="fill b" style="width:' +
+          b +
+          '%"></div></div>' +
+          "<p style='margin-top:0.75rem'>Winner: " +
+          winner +
+          " · gap " +
+          round2(Math.abs(a - b)) +
+          "</p>";
+      });
+    </script>
+  </body>
+</html>
