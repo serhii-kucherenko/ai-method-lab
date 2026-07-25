@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reaction Loop Studio — offline try</title>
+    <style>
+      :root {
+        --ink: #1a1714;
+        --teal: #3a6f68;
+        --mist: #f0ece6;
+        --amber: #c48a2a;
+        --line: #c9c0b6;
+      }
+      body {
+        margin: 0;
+        font-family: Karla, "Segoe UI", sans-serif;
+        background: var(--mist);
+        color: var(--ink);
+      }
+      header {
+        background: linear-gradient(165deg, #100e0c, #1a1714 48%, #1f2a28);
+        color: var(--mist);
+        padding: 2.5rem 1.5rem 3rem;
+      }
+      h1 {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 2rem;
+        color: var(--amber);
+        margin: 0 0 0.5rem;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--teal);
+        color: #fff;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.6rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #5a524a;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Reaction Loop Studio</h1>
+      <p>Offline soft-sim: chemist-in-the-loop VLM vs open-loop VLM.</p>
+    </header>
+    <main>
+      <label
+        >Pack coverage
+        <input id="packCoverage" type="number" min="0" max="1" step="0.01" value="0.62"
+      /></label>
+      <label
+        >Reagent fidelity
+        <input id="reagentFidelity" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Loop clarity
+        <input id="loopClarity" type="number" min="0" max="1" step="0.01" value="0.74"
+      /></label>
+      <label
+        >Open-loop pass rate
+        <input id="openLoopPassRate" type="number" min="0" max="1" step="0.01" value="0.82"
+      /></label>
+      <button id="run">Score A/B</button>
+      <div class="out" id="out">Run to see chemist-in-loop vs open-loop scores.</div>
+      <p class="note">
+        Soft-sim only — not live wet-lab control, not manufacturing cleared, not
+        the authors’ system.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(i) {
+        const load = clamp(i.conditionHardness * (1.25 - i.packCoverage * 0.5), 0, 1.5);
+        const loop =
+          i.packCoverage * 40 +
+          i.reagentFidelity * 30 +
+          i.loopClarity * 25 -
+          load * 8 -
+          i.skipOptimism * 5;
+        return round2(clamp(loop * 1.12 + 4, 0, 100));
+      }
+      function scoreB(i) {
+        return round2(
+          clamp(
+            i.openLoopPassRate * 55 +
+              i.skipOptimism * 25 -
+              i.conditionHardness * 12,
+            0,
+            100,
+          ),
+        );
+      }
+      document.getElementById("run").onclick = () => {
+        const i = {
+          packCoverage: Number(document.getElementById("packCoverage").value),
+          reagentFidelity: Number(document.getElementById("reagentFidelity").value),
+          loopClarity: Number(document.getElementById("loopClarity").value),
+          openLoopPassRate: Number(document.getElementById("openLoopPassRate").value),
+          skipOptimism: 0.55,
+          conditionHardness: 0.4,
+        };
+        const a = scoreA(i);
+        const b = scoreB(i);
+        const winner =
+          a > b + 0.5 ? "chemist_in_loop_vlm" : b > a + 0.5 ? "open_loop_vlm" : "tie";
+        document.getElementById("out").textContent =
+          "A chemist-in-loop " + a + " · B open-loop " + b + " · winner " + winner;
+      };
+    </script>
+  </body>
+</html>

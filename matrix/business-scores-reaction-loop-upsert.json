@@ -1,0 +1,25 @@
+{
+  "slug": "reaction-loop-studio",
+  "project": "Reaction Loop Studio",
+  "id": 59,
+  "status": "complete",
+  "business_idea": "Compare chemist-in-the-loop VLM reaction-condition agents against open-loop VLM baselines before locking a campaign pack",
+  "pmf": "Early signal with process chemistry / manufacturing leads who already evaluate VLM condition agents and need an explicit chemist gate",
+  "buyer": "Process chemistry and manufacturing engineering leads",
+  "money_hook": "Bench seats + private campaign packs (method-lab experiment)",
+  "potential": "Chemist-in-the-loop VLM for reaction conditions is underserved vs open-loop VLM dumps",
+  "moat": "Chemist-in-the-loop VLM vs open-loop VLM baseline",
+  "evidence": "Paper software claim (chemist-in-the-loop VLM); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+  "gc_notes": "Prefer reaction soft-sim with multi-flow bar; never claim live wet-lab or manufacturing clearance; distinct from desk/jobs/lifecycle shells; not authors' brand",
+  "rubric": "biz-rubric-v1",
+  "dimensions": {
+    "buyer": 7,
+    "pain": 7,
+    "pmf": 6,
+    "money": 6,
+    "wedge": 7,
+    "moat": 7,
+    "evidence": 6,
+    "feasibility": 7
+  }
+}

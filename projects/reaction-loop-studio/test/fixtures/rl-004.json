@@ -1,0 +1,39 @@
+{
+  "id": "rl-004",
+  "input": {
+    "packCoverage": 0.33,
+    "reagentFidelity": 0.32,
+    "loopClarity": 0.39,
+    "runStability": 0.38,
+    "openLoopPassRate": 0.42,
+    "skipOptimism": 0.43,
+    "conditionHardness": 0.53,
+    "overclaimRisk": 0.46,
+    "loopBias": "balanced",
+    "profile": "chemist_in_loop_vlm"
+  },
+  "expectedChemistInLoop": {
+    "mode": "chemist_in_loop_vlm",
+    "conditionCoverage": 28.09,
+    "chemistGateScore": 36.03,
+    "loopOptScore": 33.07,
+    "packIntegrity": 42.23,
+    "openLoopScore": 18.93,
+    "confidence": 26.1,
+    "loopContribution": 34.5,
+    "openLoopContribution": 19.05,
+    "overall": 35.72
+  },
+  "expectedOpenLoop": {
+    "mode": "open_loop_vlm",
+    "conditionCoverage": 8.7,
+    "chemistGateScore": 17.81,
+    "loopOptScore": 13.75,
+    "packIntegrity": 32.79,
+    "openLoopScore": 42.77,
+    "confidence": 18.85,
+    "loopContribution": 23.16,
+    "openLoopContribution": 40.22,
+    "overall": 29.47
+  }
+}

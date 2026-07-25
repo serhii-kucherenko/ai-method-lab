@@ -66,7 +66,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **PBPK Structure Studio** | `pbpk-structure-studio` | **Complete** | Structure-only topology PBPK vs measured-lab baseline |
 | **Pore Inverse Studio** | `pore-inverse-studio` | **Complete** | Unified inverse pore design vs naive generative baseline |
 | **Chem Trace Studio** | `chem-trace-studio` | **Complete** | Typed trace-state chemistry agents vs ungated baseline |
-| **Reaction Loop Studio** | `reaction-loop-studio` | **Building** | Chemist-in-the-loop VLM vs open-loop VLM baseline |
+| **Reaction Loop Studio** | `reaction-loop-studio` | **Complete** | Chemist-in-the-loop VLM vs open-loop VLM baseline |
 
 ## Rules
 
