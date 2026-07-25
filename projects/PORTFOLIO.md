@@ -80,7 +80,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **R2map Translate Studio** | `r2map-translate-studio` | **Complete** | GAN T1W/T2W→R2map vs conventional R2 baseline |
 | **Aracot Agent Studio** | `aracot-agent-studio` | **Complete** | Arabic CoT distilled agents vs non-distilled multilingual baseline |
 | **Idia Quant Studio** | `idia-quant-studio` | **Complete** | Informed DIA vs naive DIA single-cell quant baseline |
-| **Chemicl Discover Studio** | `chemicl-discover-studio` | **Building** | Multimodal ChemICL vs text-only ICL baseline |
+| **Chemicl Discover Studio** | `chemicl-discover-studio` | **Complete** | Multimodal ChemICL vs text-only ICL baseline |
 
 ## Rules
 

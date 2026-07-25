@@ -1498,7 +1498,7 @@
       "potential": "Multimodal chemistry ICL is underserved vs text-only few-shot dumps without a dual bench",
       "moat": "Multimodal ChemICL vs text-only ICL baseline",
       "evidence": "Paper software claim (ChemICL multimodal ICL pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer chem-ML soft-sim with multi-flow bar; never claim wet-lab validated discovery or live ELN write-back",
       "id": 73

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chemicl Discover Studio — offline try</title>
+    <style>
+      :root {
+        --cd-ink: #171c22;
+        --cd-teal: #2f7a7a;
+        --cd-mist: #eef2f4;
+        --cd-line: #c3c9ce;
+        --cd-amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        background: var(--cd-mist);
+        color: var(--cd-ink);
+      }
+      header {
+        background: linear-gradient(165deg, #0f1419, #171c22 50%, #1a2828);
+        color: white;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      h1 {
+        font-family: Outfit, system-ui, sans-serif;
+        margin: 0;
+        color: #7eb8b8;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid var(--cd-line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--cd-teal);
+        color: white;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--cd-line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        opacity: 0.75;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Chemicl Discover Studio</h1>
+      <p>Offline soft-sim: multimodal ChemICL vs text-only ICL baseline</p>
+    </header>
+    <main>
+      <label
+        >Multimodal coverage
+        <input id="cov" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Modality fidelity
+        <input id="fid" type="number" min="0" max="1" step="0.01" value="0.72"
+      /></label>
+      <label
+        >Exemplar alignment
+        <input id="align" type="number" min="0" max="1" step="0.01" value="0.68"
+      /></label>
+      <label
+        >ICL precision
+        <input id="prec" type="number" min="0" max="1" step="0.01" value="0.65"
+      /></label>
+      <button id="go">Score A vs B</button>
+      <div class="out" id="out">Adjust inputs and score.</div>
+      <p class="note">
+        Soft-sim only — not wet-lab validated discovery, not live ELN
+        write-back, not the authors’ system. Approximate offline demo of the
+        dual scorers.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      document.getElementById("go").onclick = function () {
+        var cov = Number(document.getElementById("cov").value);
+        var fid = Number(document.getElementById("fid").value);
+        var align = Number(document.getElementById("align").value);
+        var prec = Number(document.getElementById("prec").value);
+        var a = round2(
+          clamp(cov * 40 + fid * 30 + align * 20 + prec * 10 + 4, 0, 100),
+        );
+        var b = round2(
+          clamp((1 - cov) * 25 + (1 - fid) * 20 + 0.7 * 35 + 15, 0, 100),
+        );
+        var winner =
+          a > b + 0.5
+            ? "multimodal_chemicl"
+            : b > a + 0.5
+              ? "text_only_icl_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "A " +
+          a +
+          " · B " +
+          b +
+          " · winner " +
+          winner +
+          " · gap " +
+          round2(Math.abs(a - b));
+      };
+    </script>
+  </body>
+</html>

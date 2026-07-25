@@ -1,0 +1,39 @@
+{
+  "id": "cd-025",
+  "input": {
+    "multimodalCoverage": 0.79,
+    "modalityFidelity": 0.79,
+    "exemplarAlignment": 0.77,
+    "iclPrecision": 0.8,
+    "textOnlyBreadth": 0.8,
+    "baselineOptimism": 0.33,
+    "chemistryHardness": 0.26,
+    "overclaimRisk": 0.21,
+    "discoverBias": "multimodal_first",
+    "profile": "multimodal_chemicl"
+  },
+  "expectedMultimodal": {
+    "mode": "multimodal_chemicl",
+    "coverageScore": 62.53,
+    "modalityScore": 79.52,
+    "exemplarScore": 54.88,
+    "precisionIntegrity": 100,
+    "baselineScore": 45.2,
+    "confidence": 70.35,
+    "multimodalContribution": 72.71,
+    "textContribution": 48.29,
+    "overall": 72.31
+  },
+  "expectedTextOnly": {
+    "mode": "text_only_icl_baseline",
+    "coverageScore": 19.5,
+    "modalityScore": 24.62,
+    "exemplarScore": 21.57,
+    "precisionIntegrity": 42.63,
+    "baselineScore": 43.52,
+    "confidence": 35.55,
+    "multimodalContribution": 30.37,
+    "textContribution": 48.07,
+    "overall": 40.84
+  }
+}

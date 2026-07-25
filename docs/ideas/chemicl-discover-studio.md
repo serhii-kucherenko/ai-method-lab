@@ -1,6 +1,6 @@
 # Chemicl Discover Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `chemicl-discover-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15006280/v1  
 **Authors’ code:** none  
