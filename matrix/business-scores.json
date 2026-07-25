@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T23:43:22.404Z",
+  "updated_at": "2026-07-25T23:55:38.153Z",
   "projects": [
     {
       "id": 1,
@@ -2232,7 +2232,7 @@
     {
       "slug": "nanodomain-target-studio",
       "project": "Nanodomain Target Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare localized cAMP/PKA nanodomain targeting against systemic phosphorylation baselines before locking a therapy pack",
       "pmf": "Early signal with cardio drug-discovery / precision-therapy analytics leads who already trial nanodomain soft-sims",
       "buyer": "Cardio drug-discovery and precision-therapy analytics engineering leads",
@@ -2255,6 +2255,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 102
+    },
+    {
+      "slug": "coload-order-studio",
+      "project": "Coload Order Studio",
+      "status": "building",
+      "business_idea": "Compare ordered chemo-photothermal co-load sequences against simultaneous-load baselines before locking a carrier pack",
+      "pmf": "Early signal with nanomedicine / formulation analytics leads who already trial carrier soft-sims",
+      "buyer": "Nanomedicine and formulation analytics engineering leads",
+      "money_hook": "Bench seats + private carrier packs (method-lab experiment)",
+      "potential": "Ordered co-load sequences are underserved vs simultaneous-load dumps without honesty",
+      "moat": "Ordered co-load sequence vs simultaneous-load baseline",
+      "evidence": "Paper formulation claim (HSN co-load order for docetaxel + ICG); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer formulation soft-sim with multi-flow bar; never claim wet-lab validated GMP nanomedicine manufacture, live patient dosing, or clinical oncology clearance",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 103
     }
   ]
 }
