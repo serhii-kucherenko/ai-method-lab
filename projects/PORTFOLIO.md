@@ -51,6 +51,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Feature Sufficiency Studio** | `feature-sufficiency-studio` | **Complete** | Partial-observation sufficiency vs full-feature baseline |
 | **Contact Arm Studio** | `contact-arm-studio` | **Complete** | Contact-centric tactile+vision vs vision-only baseline |
 | **Drag Wall Studio** | `drag-wall-studio` | **Complete** | ES closed-loop wall control vs open-loop/gradient baseline |
+| **Quantum Kernel Studio** | `quantum-kernel-studio` | **Complete** | Quantum multi-kernel QSAR vs classical kernel baseline |
 
 ## Rules
 

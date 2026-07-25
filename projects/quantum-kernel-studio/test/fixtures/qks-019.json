@@ -1,0 +1,39 @@
+{
+  "id": "qks-019",
+  "input": {
+    "fingerprintCoverage": 0.7,
+    "kernelFidelity": 0.65,
+    "targetFit": 0.7,
+    "multiKernelAgreement": 0.72,
+    "classicalAccuracy": 0.74,
+    "classicalOptimism": 0.36,
+    "bindingHardness": 0.38,
+    "leakageRisk": 0.28,
+    "kernelBias": "balanced",
+    "profile": "quantum_multi_kernel"
+  },
+  "expectedQuantumMultiKernel": {
+    "mode": "quantum_multi_kernel",
+    "bindingDiagnosis": 63.81,
+    "kernelDiagnosis": 67.74,
+    "fingerprintReasonScore": 69.47,
+    "targetIntegrity": 73.95,
+    "classicalScore": 39.94,
+    "confidence": 59.6,
+    "quantumContribution": 68.57,
+    "classicalContribution": 42.25,
+    "overall": 67.83
+  },
+  "expectedClassicalKernel": {
+    "mode": "classical_kernel",
+    "bindingDiagnosis": 26.25,
+    "kernelDiagnosis": 23.32,
+    "fingerprintReasonScore": 19.92,
+    "targetIntegrity": 41.65,
+    "classicalScore": 62.07,
+    "confidence": 31.7,
+    "quantumContribution": 34.64,
+    "classicalContribution": 57,
+    "overall": 47.36
+  }
+}

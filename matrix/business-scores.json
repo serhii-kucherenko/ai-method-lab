@@ -854,8 +854,8 @@
       "money_hook": "Bench seats + private molecule packs (method-lab experiment)",
       "potential": "QSAR remains a spend center; quantum multi-kernel eval is underserved vs classical-only tools",
       "moat": "Quantum multiple-kernel vs classical kernel baselines (soft-sim)",
-      "evidence": "Paper software claim (Q²SAR pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "evidence": "Paper software claim (Q²SAR pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer chem-informatics soft-sim with multi-flow bar; never claim live quantum hardware or wet-lab; not Q²SAR brand",
       "id": 44

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quantum Kernel Studio — try</title>
+    <style>
+      :root {
+        --ink: #12182a;
+        --lime: #8fb83a;
+        --chalk: #eef1f4;
+        --line: #c5ced8;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--chalk);
+      }
+      header {
+        background: linear-gradient(165deg, #0c101c, #12182a 55%, #1a3040);
+        color: #fff;
+        padding: 3rem 1.5rem 2.5rem;
+      }
+      h1 {
+        font-family: Outfit, "Segoe UI", sans-serif;
+        font-size: 2.4rem;
+        margin: 0;
+        color: var(--lime);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dde3ea;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        background: var(--lime);
+        width: 0%;
+      }
+      .fill.b {
+        background: #7a8799;
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 1.25rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #556070;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Quantum Kernel Studio</h1>
+      <p>Offline soft-sim: quantum multi-kernel vs classical kernel.</p>
+    </header>
+    <main>
+      <label>
+        Fingerprint coverage
+        <input id="fp" type="range" min="0" max="100" value="58" />
+      </label>
+      <label>
+        Kernel fidelity
+        <input id="kf" type="range" min="0" max="100" value="70" />
+      </label>
+      <label>
+        Binding hardness
+        <input id="bh" type="range" min="0" max="100" value="40" />
+      </label>
+      <div class="card">
+        <div>Quantum multi-kernel · <span id="aScore">—</span></div>
+        <div class="bar"><div class="fill" id="aBar"></div></div>
+        <div style="margin-top: 0.75rem">
+          Classical kernel · <span id="bScore">—</span>
+        </div>
+        <div class="bar"><div class="fill b" id="bBar"></div></div>
+        <p id="winner" style="margin-top: 0.75rem"></p>
+      </div>
+      <p class="note">
+        Soft-sim heuristic only — not wet-lab, not live quantum hardware, not
+        Q²SAR. Inspired by arXiv 2607.11701.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function score(fp, kf, bh, quantum) {
+        const load = bh * (1.25 - fp * 0.5);
+        const boost = quantum ? 1.12 : 1.08;
+        const binding = clamp(
+          (fp * 55 + kf * 25 - load * 10) * boost + (quantum ? 8 : 0),
+          0,
+          100,
+        );
+        const classical = clamp(
+          (1 - bh) * 40 + (1 - kf) * 20 + (quantum ? 18 : 55),
+          0,
+          100,
+        );
+        const overall = clamp(
+          quantum ? binding * 0.82 + classical * 0.18 + 4 : classical * 0.78 + binding * 0.22,
+          0,
+          100,
+        );
+        return Math.round(overall * 100) / 100;
+      }
+      function refresh() {
+        const fp = Number(fpEl.value) / 100;
+        const kf = Number(kfEl.value) / 100;
+        const bh = Number(bhEl.value) / 100;
+        const a = score(fp, kf, bh, true);
+        const b = score(fp, kf, bh, false);
+        aScore.textContent = a;
+        bScore.textContent = b;
+        aBar.style.width = a + "%";
+        bBar.style.width = b + "%";
+        let w = "tie";
+        if (a > b + 0.5) w = "quantum_multi_kernel";
+        else if (b > a + 0.5) w = "classical_kernel";
+        winner.textContent = "Winner: " + w + " · gap " + Math.abs(a - b).toFixed(2);
+      }
+      const fpEl = document.getElementById("fp");
+      const kfEl = document.getElementById("kf");
+      const bhEl = document.getElementById("bh");
+      const aScore = document.getElementById("aScore");
+      const bScore = document.getElementById("bScore");
+      const aBar = document.getElementById("aBar");
+      const bBar = document.getElementById("bBar");
+      const winner = document.getElementById("winner");
+      [fpEl, kfEl, bhEl].forEach((el) => el.addEventListener("input", refresh));
+      refresh();
+    </script>
+  </body>
+</html>
