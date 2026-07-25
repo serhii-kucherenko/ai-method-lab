@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T22:52:09.509Z",
+  "updated_at": "2026-07-25T23:05:16.926Z",
   "projects": [
     {
       "id": 1,
@@ -2124,7 +2124,7 @@
     {
       "slug": "encoded-library-studio",
       "project": "Encoded Library Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare iterative DNA-encoded library construct-and-screen cycles against single-pass library screens before locking a hit pack",
       "pmf": "Early signal with drug-discovery / DELT chemistry analytics leads who already trial library soft-sims",
       "buyer": "Drug-discovery and DELT chemistry analytics engineering leads",
@@ -2147,6 +2147,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 98
+    },
+    {
+      "slug": "fluoride-label-studio",
+      "project": "Fluoride Label Studio",
+      "status": "building",
+      "business_idea": "Compare fast isotopic fluorine-18 exchange labeling against multistep prosthetic-group baselines before locking a label pack",
+      "pmf": "Early signal with radiopharma / PET tracer chemistry analytics leads who already trial labeling soft-sims",
+      "buyer": "Radiopharma and PET tracer chemistry analytics engineering leads",
+      "money_hook": "Bench seats + private label packs (method-lab experiment)",
+      "potential": "Fast isotopic exchange labeling is underserved vs multistep prosthetic dumps without honesty",
+      "moat": "Fast isotopic exchange vs multistep prosthetic baseline",
+      "evidence": "Paper chemistry-workflow claim (fast [18F]fluoride exchange); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer radiopharma soft-sim with multi-flow bar; never claim wet-lab validated GMP batch release, live cyclotron control, or clinical PET dosing",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 99
     }
   ]
 }
