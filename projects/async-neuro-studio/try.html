@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Async Neuro Studio — try</title>
+  <style>
+    :root {
+      --an-ink: #14181f;
+      --an-teal: #2a6a72;
+      --an-mist: #eef3f5;
+      --an-amber: #b8873a;
+    }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--an-ink);
+      background: linear-gradient(165deg, #0b0f14, #14181f 50%, #1c2530);
+      min-height: 100vh;
+    }
+    main {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+      color: var(--an-mist);
+    }
+    h1 { font-size: 2.4rem; color: var(--an-amber); margin: 0 0 0.5rem; }
+    h2 { font-size: 1.25rem; font-weight: normal; margin: 0 0 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input { width: 100%; padding: 0.5rem; margin-top: 0.25rem; box-sizing: border-box; }
+    button {
+      margin-top: 1.25rem;
+      background: var(--an-amber);
+      color: var(--an-ink);
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      cursor: pointer;
+      font: inherit;
+    }
+    .out {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: rgba(238, 243, 245, 0.08);
+      border: 1px solid rgba(194, 200, 205, 0.35);
+    }
+    .fence { margin-top: 2rem; font-size: 0.85rem; opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Async Neuro Studio</h1>
+    <h2>Offline dual-score try — standardized async video vs ad-hoc baseline</h2>
+    <label>Protocol fidelity (0–1)
+      <input id="pf" type="number" min="0" max="1" step="0.01" value="0.72" />
+    </label>
+    <label>Site consistency (0–1)
+      <input id="sc" type="number" min="0" max="1" step="0.01" value="0.68" />
+    </label>
+    <label>Video completeness (0–1)
+      <input id="vc" type="number" min="0" max="1" step="0.01" value="0.74" />
+    </label>
+    <label>Ad-hoc adherence (0–1)
+      <input id="ah" type="number" min="0" max="1" step="0.01" value="0.8" />
+    </label>
+    <button type="button" id="run">Score A/B</button>
+    <div class="out" id="out">Run to compare soft-sim scores.</div>
+    <p class="fence">
+      Soft-sim only — not clinical diagnostic, not live telehealth write-back,
+      not FDA clearance, not VANE. Paper: medRxiv 10.64898/2026.07.15.26357456
+    </p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function scoreStd(i) {
+      const boost = 1.12;
+      const protocol = round2(clamp((i.pf * 55 + i.vc * 25) * boost * 1 + 8 - i.over * 6, 0, 100));
+      const site = round2(clamp(i.sc * 60 * boost + i.pf * 25 + 8 - i.drift * 4, 0, 100));
+      const video = round2(clamp(i.vc * 58 * boost + i.pf * 14 + i.sc * 14 + 10 - i.over * 10, 0, 100));
+      const ready = round2(clamp(0.7 * 50 * boost + i.sc * 25 + i.pf * 15 + 8, 0, 100));
+      const std = round2(clamp(protocol * 0.24 + site * 0.26 + video * 0.28 + ready * 0.22, 0, 100));
+      const ad = round2(clamp(i.ah * 55 * 0.7 + i.drift * 10, 0, 100));
+      return round2(clamp(std * 0.82 + ad * 0.18 + 4, 0, 100));
+    }
+    function scoreAd(i) {
+      const boost = 1.08;
+      const ad = round2(clamp(i.ah * 58 * boost + i.drift * 32 + 8, 0, 100));
+      const std = round2(clamp(i.ah * 35 * boost + 10 - i.noise * 22, 0, 100));
+      return round2(clamp(ad * 0.78 + std * 0.22 - i.noise * 8 - i.over * 6, 0, 100));
+    }
+    document.getElementById("run").onclick = () => {
+      const i = {
+        pf: Number(document.getElementById("pf").value),
+        sc: Number(document.getElementById("sc").value),
+        vc: Number(document.getElementById("vc").value),
+        ah: Number(document.getElementById("ah").value),
+        drift: 0.35,
+        noise: 0.28,
+        over: 0.2,
+      };
+      const a = scoreStd(i);
+      const b = scoreAd(i);
+      const winner = a > b + 0.5 ? "standardized_async_video_exam" : b > a + 0.5 ? "ad_hoc_exam_baseline" : "tie";
+      document.getElementById("out").textContent =
+        "A standardized: " + a + " · B ad-hoc: " + b + " · winner: " + winner + " · gap: " + round2(Math.abs(a - b));
+    };
+  </script>
+</body>
+</html>

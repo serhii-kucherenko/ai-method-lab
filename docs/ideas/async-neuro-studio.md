@@ -1,6 +1,6 @@
 # Async Neuro Studio
 
-**State:** building  
+**State:** complete  
 **Slug:** `async-neuro-studio`  
 **Paper:** https://www.medrxiv.org/content/10.64898/2026.07.15.26357456v1  
 **Authors’ code:** none  

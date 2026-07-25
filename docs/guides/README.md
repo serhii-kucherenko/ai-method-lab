@@ -124,5 +124,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 121 | [Mhc Design Studio - what we learned](121-mhc-design-studio-lessons.md) | Product `mhc-design-studio` |
 | 122 | [Paired Motion Studio - what we learned](122-paired-motion-studio-lessons.md) | Product `paired-motion-studio` |
 | 123 | [Surveil Gate Studio - what we learned](123-surveil-gate-studio-lessons.md) | Product `surveil-gate-studio` |
+| 124 | [Async Neuro Studio - what we learned](124-async-neuro-studio-lessons.md) | Product `async-neuro-studio` |
 
 

@@ -1,0 +1,39 @@
+{
+  "id": "an-006",
+  "input": {
+    "protocolFidelity": 0.41,
+    "siteConsistency": 0.34,
+    "videoCompleteness": 0.39,
+    "packReadiness": 0.45,
+    "adHocAdherence": 0.5,
+    "captureNoise": 0.54,
+    "examinerDrift": 0.4,
+    "overclaimRisk": 0.42,
+    "examBias": "balanced",
+    "profile": "ad_hoc_exam_baseline"
+  },
+  "expectedStandardized": {
+    "mode": "standardized_async_video_exam",
+    "protocolScore": 35.28,
+    "siteScore": 39.5,
+    "videoScore": 34.8,
+    "readinessScore": 47.85,
+    "adHocScore": 23.08,
+    "confidence": 27.75,
+    "standardizedContribution": 39.01,
+    "adHocContribution": 23.32,
+    "overall": 40.19
+  },
+  "expectedAdHoc": {
+    "mode": "ad_hoc_exam_baseline",
+    "protocolScore": 11.98,
+    "siteScore": 18.51,
+    "videoScore": 13.91,
+    "readinessScore": 34.78,
+    "adHocScore": 46.72,
+    "confidence": 20.5,
+    "standardizedContribution": 25.18,
+    "adHocContribution": 43.14,
+    "overall": 32.35
+  }
+}
