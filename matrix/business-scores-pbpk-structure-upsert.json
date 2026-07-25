@@ -1,0 +1,25 @@
+{
+  "slug": "pbpk-structure-studio",
+  "project": "PBPK Structure Studio",
+  "id": 56,
+  "status": "complete",
+  "business_idea": "Compare structure-only topology-compiled PBPK against measured-lab baselines before locking a compound pack",
+  "pmf": "Early signal with PK / ADME modeling leads who already buy PBPK tooling",
+  "buyer": "PK / ADME modeling engineering leads",
+  "money_hook": "Bench seats + private compound packs (method-lab experiment)",
+  "potential": "Structure-only early PBPK is underserved vs slow measured-lab pack cycles",
+  "moat": "Structure-only topology-compiled PBPK vs measured-lab baseline",
+  "evidence": "Paper software claim (Sisyphus topology-compiled PBPK pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+  "gc_notes": "Prefer PK/ADME soft-sim with multi-flow bar; never claim regulatory filing or live LIMS; distinct from desk/jobs/lifecycle shells; not Sisyphus brand",
+  "rubric": "biz-rubric-v1",
+  "dimensions": {
+    "buyer": 7,
+    "pain": 7,
+    "pmf": 6,
+    "money": 6,
+    "wedge": 7,
+    "moat": 7,
+    "evidence": 6,
+    "feasibility": 7
+  }
+}

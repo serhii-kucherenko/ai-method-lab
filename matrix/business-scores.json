@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T14:43:37.596Z",
+  "updated_at": "2026-07-25T14:49:55.488Z",
   "projects": [
     {
       "id": 1,
@@ -1140,19 +1140,29 @@
     {
       "slug": "pbpk-structure-studio",
       "project": "PBPK Structure Studio",
-      "score": 63,
+      "score": 66,
       "tier": "B",
-      "business_idea": "Compare topology-compiled structure-only PBPK predictions against measured-lab-data baselines before locking a compound pack",
-      "pmf": "Early signal with PK / ADME modeling leads who already buy PBPK tools and need early structure-only screening",
-      "buyer": "PK and ADME modeling engineering leads",
+      "business_idea": "Compare structure-only topology-compiled PBPK against measured-lab baselines before locking a compound pack",
+      "pmf": "Early signal with PK / ADME modeling leads who already buy PBPK tooling",
+      "buyer": "PK / ADME modeling engineering leads",
       "money_hook": "Bench seats + private compound packs (method-lab experiment)",
-      "potential": "Structure-only early PBPK is underserved vs measured-lab-gated modeling",
-      "moat": "Structure-only topology PBPK vs measured-lab baseline",
-      "evidence": "Paper software claim (Sisyphus-pattern PBPK); no public code; soft-sim honesty required",
-      "status": "building",
+      "potential": "Structure-only early PBPK is underserved vs slow measured-lab pack cycles",
+      "moat": "Structure-only topology-compiled PBPK vs measured-lab baseline",
+      "evidence": "Paper software claim (Sisyphus topology-compiled PBPK pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Prefer PK/ADME soft-sim with multi-flow bar; never claim regulatory filing or live LIMS",
-      "id": 56
+      "gc_notes": "Prefer PK/ADME soft-sim with multi-flow bar; never claim regulatory filing or live LIMS; distinct from desk/jobs/lifecycle shells; not Sisyphus brand",
+      "id": 56,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      }
     }
   ]
 }

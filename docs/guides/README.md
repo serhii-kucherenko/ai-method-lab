@@ -88,3 +88,4 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 85 | [World Cog Drive Studio — what we learned](85-world-cog-drive-studio-lessons.md) | Product `world-cog-drive-studio` |
 | 86 | [Governed Research Studio — what we learned](86-governed-research-studio-lessons.md) | Product `governed-research-studio` |
 | 87 | [Margin Fusion Studio — what we learned](87-margin-fusion-studio-lessons.md) | Product `margin-fusion-studio` |
+| 88 | [PBPK Structure Studio — what we learned](88-pbpk-structure-studio-lessons.md) | Product `pbpk-structure-studio` |

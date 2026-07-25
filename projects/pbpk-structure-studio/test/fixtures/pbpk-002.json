@@ -1,0 +1,39 @@
+{
+  "id": "pbpk-002",
+  "input": {
+    "structureCoverage": 0.33,
+    "topologyFidelity": 0.29,
+    "admeClarity": 0.32,
+    "compileStability": 0.38,
+    "labPassRate": 0.43,
+    "labOptimism": 0.46,
+    "topologyHardness": 0.6,
+    "overclaimRisk": 0.51,
+    "pbpkBias": "adme_first",
+    "profile": "structure_only"
+  },
+  "expectedStructureOnly": {
+    "mode": "structure_only",
+    "structureScore": 22.22,
+    "topologyScore": 33.9,
+    "admeScore": 34.39,
+    "compileScore": 31.9,
+    "labScore": 18.89,
+    "confidence": 23,
+    "structureOnlyContribution": 30.56,
+    "measuredLabContribution": 18.61,
+    "overall": 32.41
+  },
+  "expectedMeasuredLab": {
+    "mode": "measured_lab",
+    "structureScore": 2.43,
+    "topologyScore": 18.22,
+    "admeScore": 14.16,
+    "compileScore": 34.08,
+    "labScore": 31.53,
+    "confidence": 18.65,
+    "structureOnlyContribution": 20.08,
+    "measuredLabContribution": 34.53,
+    "overall": 23.49
+  }
+}

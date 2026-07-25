@@ -63,7 +63,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **World Cog Drive Studio** | `world-cog-drive-studio` | **Complete** | Dual-level world-cognitive VLA vs single-level VLA baseline |
 | **Governed Research Studio** | `governed-research-studio` | **Complete** | Governed research workflow vs ungated agent baseline |
 | **Margin Fusion Studio** | `margin-fusion-studio` | **Complete** | Marker-free deformable margin fusion vs marker-based baseline |
-| **PBPK Structure Studio** | `pbpk-structure-studio` | **Building** | Structure-only topology PBPK vs measured-lab baseline |
+| **PBPK Structure Studio** | `pbpk-structure-studio` | **Complete** | Structure-only topology PBPK vs measured-lab baseline |
 
 ## Rules
 

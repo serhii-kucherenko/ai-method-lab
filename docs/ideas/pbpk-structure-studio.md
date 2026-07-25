@@ -1,6 +1,6 @@
 # PBPK Structure Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `pbpk-structure-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15004452/v4  
 **Authors’ code:** none  
