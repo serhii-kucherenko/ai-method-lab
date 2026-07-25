@@ -61,6 +61,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Assay Guard Studio** | `assay-guard-studio` | **Complete** | Assay-aware protocol validation vs naive protocol runner |
 | **Skeleton Author Studio** | `skeleton-author-studio` | **Complete** | Scaffolded non-visual authoring vs naive linear baseline |
 | **World Cog Drive Studio** | `world-cog-drive-studio` | **Complete** | Dual-level world-cognitive VLA vs single-level VLA baseline |
+| **Governed Research Studio** | `governed-research-studio` | **Building** | Governed research workflow vs ungated agent baseline |
 
 ## Rules
 

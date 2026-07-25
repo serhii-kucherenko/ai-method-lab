@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T14:21:46.800Z",
+  "updated_at": "2026-07-25T14:24:28.474Z",
   "projects": [
     {
       "id": 1,
@@ -1082,6 +1082,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "governed-research-studio",
+      "project": "Governed Research Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare governed end-to-end research workflows against ungated agent baselines before locking a study pack",
+      "pmf": "Early signal with institutional research / bioinformatics leads who already run gated GWAS-style studies",
+      "buyer": "Institutional research and bioinformatics engineering leads",
+      "money_hook": "Bench seats + private study packs (method-lab experiment)",
+      "potential": "Governed research agents are underserved vs ungated LLM scientists that drift past privacy gates",
+      "moat": "Governed workflow vs ungated agent baseline",
+      "evidence": "Paper software claim (NVAITC AI Scientist pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer research-governance soft-sim with multi-flow bar; never claim IRB clearance or live PHI",
+      "id": 54
     }
   ]
 }
