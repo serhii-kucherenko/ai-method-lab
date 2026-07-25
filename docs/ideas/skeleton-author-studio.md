@@ -1,6 +1,6 @@
 # Skeleton Author Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `skeleton-author-studio`  
 **Paper:** https://arxiv.org/abs/2607.14579v1  
 **Authors’ code:** none  

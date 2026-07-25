@@ -84,3 +84,4 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 81 | [HCC Reason Studio — what we learned](81-hcc-reason-studio-lessons.md) | Product `hcc-reason-studio` |
 | 82 | [Molecule Sample Studio — what we learned](82-mol-sample-studio-lessons.md) | Product `mol-sample-studio` |
 | 83 | [Assay Guard Studio — what we learned](83-assay-guard-studio-lessons.md) | Product `assay-guard-studio` |
+| 84 | [Skeleton Author Studio — what we learned](84-skeleton-author-studio-lessons.md) | Product `skeleton-author-studio` |

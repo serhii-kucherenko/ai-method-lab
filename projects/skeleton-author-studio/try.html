@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skeleton Author Studio — try</title>
+    <style>
+      :root {
+        --ink: #1a1f24;
+        --lime: #8faf3a;
+        --blue: #3a6f8f;
+        --paper: #f0f2f4;
+        --line: #c4cacf;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+      }
+      header {
+        background: linear-gradient(165deg, #0f1317, #1a1f24 55%, #2a3a45);
+        color: #fff;
+        padding: 3rem 1.5rem 2.5rem;
+      }
+      h1 {
+        font-family: "Space Grotesk", "Segoe UI", sans-serif;
+        font-size: 2.4rem;
+        margin: 0;
+        color: var(--lime);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dfe4ea;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        background: var(--lime);
+        width: 0%;
+      }
+      .fill.b {
+        background: var(--blue);
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 1.25rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #4a5560;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Skeleton Author Studio</h1>
+      <p>Offline soft-sim: scaffolded authoring vs naive linear.</p>
+    </header>
+    <main>
+      <label>
+        Skeleton coverage
+        <input id="cov" type="range" min="0" max="100" value="60" />
+      </label>
+      <label>
+        Scaffold fidelity
+        <input id="fid" type="range" min="0" max="100" value="70" />
+      </label>
+      <label>
+        Linear pass rate
+        <input id="lin" type="range" min="0" max="100" value="80" />
+      </label>
+      <label>
+        Flatten optimism
+        <input id="flat" type="range" min="0" max="100" value="55" />
+      </label>
+      <div class="card">
+        <div>Scaffolded (A): <span id="aScore">—</span></div>
+        <div class="bar"><div id="aBar" class="fill"></div></div>
+        <div style="margin-top:0.75rem">Naive linear (B): <span id="bScore">—</span></div>
+        <div class="bar"><div id="bBar" class="fill b"></div></div>
+        <p id="winner" style="margin-top:0.75rem"></p>
+      </div>
+      <p class="note">
+        Soft-sim only; not WCAG certified; not live screen-reader OEM; not the
+        authors’ system. Inspired by arXiv 2607.14579.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function score() {
+        const cov = Number(covEl.value) / 100;
+        const fid = Number(fidEl.value) / 100;
+        const lin = Number(linEl.value) / 100;
+        const flat = Number(flatEl.value) / 100;
+        const a = clamp(
+          cov * 45 + fid * 40 - flat * 12 + 8,
+          0,
+          100,
+        );
+        const b = clamp(
+          lin * 50 + flat * 35 - cov * 10,
+          0,
+          100,
+        );
+        aScore.textContent = a.toFixed(1);
+        bScore.textContent = b.toFixed(1);
+        aBar.style.width = a + "%";
+        bBar.style.width = b + "%";
+        winner.textContent =
+          Math.abs(a - b) < 0.5
+            ? "Winner: tie"
+            : a > b
+              ? "Winner: scaffolded_authoring"
+              : "Winner: naive_linear";
+      }
+      const covEl = document.getElementById("cov");
+      const fidEl = document.getElementById("fid");
+      const linEl = document.getElementById("lin");
+      const flatEl = document.getElementById("flat");
+      const aScore = document.getElementById("aScore");
+      const bScore = document.getElementById("bScore");
+      const aBar = document.getElementById("aBar");
+      const bBar = document.getElementById("bBar");
+      const winner = document.getElementById("winner");
+      [covEl, fidEl, linEl, flatEl].forEach((el) =>
+        el.addEventListener("input", score),
+      );
+      score();
+    </script>
+  </body>
+</html>

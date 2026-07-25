@@ -1,0 +1,25 @@
+{
+  "slug": "skeleton-author-studio",
+  "project": "Skeleton Author Studio",
+  "id": 52,
+  "status": "complete",
+  "business_idea": "Compare scaffolded visual authoring of non-visual data experiences against naive linear baselines before locking an experience pack",
+  "pmf": "Early signal with accessibility and data-viz leads who already ship flat linear dumps",
+  "buyer": "Accessibility and data-viz engineering leads",
+  "money_hook": "Bench seats + private experience packs (method-lab experiment)",
+  "potential": "Scaffolded non-visual authoring is underserved vs linear dump desks",
+  "moat": "Scaffolded visual authoring vs naive linear baseline",
+  "evidence": "Paper software claim (visual authoring of non-visual data experiences); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+  "gc_notes": "Prefer experience soft-sim with multi-flow bar; never claim WCAG certification or live screen-reader OEM",
+  "rubric": "biz-rubric-v1",
+  "dimensions": {
+    "buyer": 7,
+    "pain": 7,
+    "pmf": 6,
+    "money": 6,
+    "wedge": 7,
+    "moat": 7,
+    "evidence": 6,
+    "feasibility": 7
+  }
+}

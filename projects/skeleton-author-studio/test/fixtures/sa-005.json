@@ -1,0 +1,39 @@
+{
+  "id": "sa-005",
+  "input": {
+    "skeletonCoverage": 0.37,
+    "scaffoldFidelity": 0.36,
+    "labelFit": 0.35,
+    "navIntegrity": 0.42,
+    "linearPassRate": 0.46,
+    "flattenOptimism": 0.45,
+    "experienceHardness": 0.53,
+    "leakageRisk": 0.47,
+    "authorBias": "scaffold_strict",
+    "profile": "scaffolded_authoring"
+  },
+  "expectedScaffoldedAuthoring": {
+    "mode": "scaffolded_authoring",
+    "structureCoverage": 26.86,
+    "scaffoldDiagnosis": 39.64,
+    "navigationOptScore": 23.89,
+    "labelIntegrity": 49.01,
+    "linearScore": 21.8,
+    "confidence": 27.6,
+    "scaffoldContribution": 33.97,
+    "linearContribution": 22.19,
+    "overall": 35.85
+  },
+  "expectedNaiveLinear": {
+    "mode": "naive_linear",
+    "structureCoverage": 0,
+    "scaffoldDiagnosis": 19.51,
+    "navigationOptScore": 15.76,
+    "labelIntegrity": 34.77,
+    "linearScore": 32.95,
+    "confidence": 21.05,
+    "scaffoldContribution": 20.6,
+    "linearContribution": 36.31,
+    "overall": 25.79
+  }
+}

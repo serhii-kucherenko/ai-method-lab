@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T14:05:14.303Z",
+  "updated_at": "2026-07-25T14:12:29.363Z",
   "projects": [
     {
       "id": 1,
@@ -1032,19 +1032,29 @@
     {
       "slug": "skeleton-author-studio",
       "project": "Skeleton Author Studio",
-      "score": 62,
+      "score": 66,
       "tier": "B",
       "business_idea": "Compare scaffolded visual authoring of non-visual data experiences against naive linear baselines before locking an experience pack",
-      "pmf": "Early signal with accessibility / data-viz leads who already build non-visual data experiences",
-      "buyer": "Accessibility and data visualization engineering leads",
+      "pmf": "Early signal with accessibility and data-viz leads who already ship flat linear dumps",
+      "buyer": "Accessibility and data-viz engineering leads",
       "money_hook": "Bench seats + private experience packs (method-lab experiment)",
-      "potential": "Navigation structure for non-visual data is underserved vs flat sonification dumps",
+      "potential": "Scaffolded non-visual authoring is underserved vs linear dump desks",
       "moat": "Scaffolded visual authoring vs naive linear baseline",
-      "evidence": "Paper software claim (Skeleton authoring pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "evidence": "Paper software claim (visual authoring of non-visual data experiences); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Prefer accessibility-authoring soft-sim with multi-flow bar; never claim WCAG certification or live screen-reader OEM",
-      "id": 52
+      "gc_notes": "Prefer experience soft-sim with multi-flow bar; never claim WCAG certification or live screen-reader OEM",
+      "id": 52,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      }
     }
   ]
 }
