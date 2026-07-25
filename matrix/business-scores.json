@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T15:01:29.140Z",
+  "updated_at": "2026-07-25T15:10:09.268Z",
   "projects": [
     {
       "id": 1,
@@ -1194,19 +1194,29 @@
     {
       "slug": "chem-trace-studio",
       "project": "Chem Trace Studio",
-      "score": 63,
+      "score": 66,
       "tier": "B",
-      "business_idea": "Compare typed trace-state validation of agentic chemistry workflows against ungated agent baselines before locking a workflow pack",
-      "pmf": "Early signal with computational chemistry / platform leads who already run agentic chemistry workflows",
+      "business_idea": "Compare typed trace-state validated agentic chemistry workflows against ungated agent baselines before locking a workflow pack",
+      "pmf": "Early signal with computational chemistry / platform leads who already run agentic chemistry workflows and need checkable trails",
       "buyer": "Computational chemistry and platform engineering leads",
       "money_hook": "Bench seats + private workflow packs (method-lab experiment)",
-      "potential": "Typed information-flow validation for chemistry agents is underserved vs ungated LLM chemists",
-      "moat": "Typed trace-state validation vs ungated agent baseline",
-      "evidence": "Paper software claim (trace-state ASP validation pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "potential": "Typed trace-state validation for agentic chemistry is underserved vs ungated agent dumps",
+      "moat": "Typed trace-state validated agentic chemistry vs ungated agent baseline",
+      "evidence": "Paper software claim (typed trace-state validation); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Prefer chemistry-workflow soft-sim with multi-flow bar; never claim certified compliance or live HPC",
-      "id": 58
+      "gc_notes": "Prefer chemistry soft-sim with multi-flow bar; never claim certified compliance or live HPC; distinct from desk/jobs/lifecycle shells; not authors' brand",
+      "id": 58,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      }
     }
   ]
 }

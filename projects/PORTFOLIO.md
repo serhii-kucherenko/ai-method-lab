@@ -65,7 +65,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Margin Fusion Studio** | `margin-fusion-studio` | **Complete** | Marker-free deformable margin fusion vs marker-based baseline |
 | **PBPK Structure Studio** | `pbpk-structure-studio` | **Complete** | Structure-only topology PBPK vs measured-lab baseline |
 | **Pore Inverse Studio** | `pore-inverse-studio` | **Complete** | Unified inverse pore design vs naive generative baseline |
-| **Chem Trace Studio** | `chem-trace-studio` | **Building** | Typed trace-state chemistry agents vs ungated baseline |
+| **Chem Trace Studio** | `chem-trace-studio` | **Complete** | Typed trace-state chemistry agents vs ungated baseline |
 
 ## Rules
 

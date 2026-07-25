@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chem Trace Studio — offline try</title>
+    <style>
+      :root {
+        --ink: #171d22;
+        --teal: #2a7f7a;
+        --chalk: #eef1f3;
+        --amber: #c4923a;
+        --line: #c3c9ce;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        background: var(--chalk);
+        color: var(--ink);
+      }
+      header {
+        background: linear-gradient(165deg, #0f1418, #171d22 48%, #1a2a2c);
+        color: var(--chalk);
+        padding: 2.5rem 1.5rem 3rem;
+      }
+      h1 {
+        font-family: Outfit, system-ui, sans-serif;
+        font-size: 2rem;
+        color: var(--teal);
+        margin: 0 0 0.5rem;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--teal);
+        color: #fff;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.6rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #4a5560;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Chem Trace Studio</h1>
+      <p>Offline soft-sim: typed trace-state validation vs ungated agent.</p>
+    </header>
+    <main>
+      <label
+        >Pack coverage
+        <input id="packCoverage" type="number" min="0" max="1" step="0.01" value="0.65"
+      /></label>
+      <label
+        >Rule fidelity
+        <input id="ruleFidelity" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Recovery clarity
+        <input id="recoveryClarity" type="number" min="0" max="1" step="0.01" value="0.72"
+      /></label>
+      <label
+        >Run stability
+        <input id="runStability" type="number" min="0" max="1" step="0.01" value="0.68"
+      /></label>
+      <label
+        >Ungated pass rate
+        <input id="ungatedPassRate" type="number" min="0" max="1" step="0.01" value="0.82"
+      /></label>
+      <label
+        >Skip optimism
+        <input id="skipOptimism" type="number" min="0" max="1" step="0.01" value="0.55"
+      /></label>
+      <button id="run">Score A/B</button>
+      <div class="out" id="out">Awaiting score…</div>
+      <p class="note">
+        Soft-sim only. Not certified compliance. Not live HPC. Not the authors'
+        system.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(input) {
+        const load = clamp(
+          input.transitionHardness * (1.25 - input.packCoverage * 0.5),
+          0,
+          1.5,
+        );
+        const validated =
+          input.packCoverage * 42 +
+          input.ruleFidelity * 28 +
+          input.recoveryClarity * 18 +
+          input.runStability * 12 -
+          load * 8 -
+          input.overclaimRisk * 6;
+        const ungated =
+          input.ungatedPassRate * 40 + input.skipOptimism * 25 - load * 10;
+        return {
+          overall: round2(clamp(validated * 0.82 + ungated * 0.18 + 4, 0, 100)),
+        };
+      }
+      function scoreB(input) {
+        const load = clamp(
+          input.transitionHardness * (1.25 - input.packCoverage * 0.5),
+          0,
+          1.5,
+        );
+        const ungated =
+          input.ungatedPassRate * 48 + input.skipOptimism * 32 - load * 6;
+        const validated =
+          input.packCoverage * 20 + input.ruleFidelity * 15 - load * 8;
+        return {
+          overall: round2(
+            clamp(ungated * 0.78 + validated * 0.22 - input.overclaimRisk * 6, 0, 100),
+          ),
+        };
+      }
+      document.getElementById("run").onclick = () => {
+        const input = {
+          packCoverage: Number(document.getElementById("packCoverage").value),
+          ruleFidelity: Number(document.getElementById("ruleFidelity").value),
+          recoveryClarity: Number(
+            document.getElementById("recoveryClarity").value,
+          ),
+          runStability: Number(document.getElementById("runStability").value),
+          ungatedPassRate: Number(
+            document.getElementById("ungatedPassRate").value,
+          ),
+          skipOptimism: Number(document.getElementById("skipOptimism").value),
+          transitionHardness: 0.35,
+          overclaimRisk: 0.28,
+        };
+        const a = scoreA(input);
+        const b = scoreB(input);
+        const winner =
+          a.overall > b.overall + 0.5
+            ? "typed_trace_validated"
+            : b.overall > a.overall + 0.5
+              ? "ungated_agent"
+              : "tie";
+        document.getElementById("out").textContent =
+          `A ${a.overall} · B ${b.overall} · winner ${winner}`;
+      };
+    </script>
+  </body>
+</html>

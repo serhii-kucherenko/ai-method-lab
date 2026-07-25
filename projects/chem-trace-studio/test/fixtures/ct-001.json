@@ -1,0 +1,39 @@
+{
+  "id": "ct-001",
+  "input": {
+    "packCoverage": 0.29,
+    "ruleFidelity": 0.25,
+    "recoveryClarity": 0.28,
+    "runStability": 0.34,
+    "ungatedPassRate": 0.39,
+    "skipOptimism": 0.45,
+    "transitionHardness": 0.59,
+    "overclaimRisk": 0.5,
+    "traceBias": "balanced",
+    "profile": "typed_trace_validated"
+  },
+  "expectedTypedTraceValidated": {
+    "mode": "typed_trace_validated",
+    "ruleCoverage": 22.56,
+    "traceDiagnosis": 30.25,
+    "recoveryOptScore": 23.49,
+    "packIntegrity": 37.64,
+    "ungatedScore": 16.4,
+    "confidence": 19.35,
+    "validatedContribution": 27.98,
+    "ungatedContribution": 15.96,
+    "overall": 29.82
+  },
+  "expectedUngatedAgent": {
+    "mode": "ungated_agent",
+    "ruleCoverage": 5.76,
+    "traceDiagnosis": 17.09,
+    "recoveryOptScore": 13.13,
+    "packIntegrity": 32.39,
+    "ungatedScore": 40.93,
+    "confidence": 17.1,
+    "validatedContribution": 21.86,
+    "ungatedContribution": 38.6,
+    "overall": 27.2
+  }
+}

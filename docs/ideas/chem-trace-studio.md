@@ -1,6 +1,6 @@
 # Chem Trace Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `chem-trace-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15006307/v1  
 **Authors’ code:** none  
