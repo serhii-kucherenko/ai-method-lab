@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T08:04:59.083Z",
+  "updated_at": "2026-07-25T08:17:54.933Z",
   "projects": [
     {
       "id": 1,
@@ -551,13 +551,40 @@
       "money_hook": "Desktop seats + compute for bind/search runs (method-lab experiment)",
       "potential": "Industrial design/search budgets — clearer than consumer or stacked clinical clones",
       "moat": "Multimodal bind space vs single-modality crystal search",
-      "evidence": "Paper software claim (MatBind); 30 dual goldens; live app smoke green; no public author code",
+      "evidence": "Paper software claim (MatBind); 30 dual goldens; live app smoke green",
       "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Keep industrial multimodal wedge; prefer similar over clinical clones",
-      "score": 70,
+      "gc_notes": "Keep industrial multimodal pattern; prefer similar wedges",
+      "score": 69,
       "tier": "B",
       "id": 31
+    },
+    {
+      "slug": "attest-proof-studio",
+      "project": "Attest Proof Studio",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 8,
+        "pmf": 6,
+        "money": 7,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 5,
+        "feasibility": 7
+      },
+      "business_idea": "Tie LLM empirical answers to tool-attested steps and checkable proof chains so teams catch fluent hallucinations before they ship",
+      "pmf": "Early signal with AI platform / trust-eval leads already buying eval and guardrail tooling",
+      "buyer": "AI platform and trust/eval engineering leads",
+      "money_hook": "Eval seats + per-attest run usage (method-lab experiment)",
+      "potential": "Trust/eval spend rising with agentic empirics — clearer than clinical clones",
+      "moat": "Tool-attest + soft-sim proof chain vs fluent-only or debate-only shells",
+      "evidence": "Paper software claim (EG-VAR); no public author code in digest",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "A/B gate pass — trust/eval wedge; climb next",
+      "score": 68,
+      "tier": "B",
+      "id": 32
     }
   ]
 }
