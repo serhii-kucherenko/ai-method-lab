@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T13:31:27.697Z",
+  "updated_at": "2026-07-25T13:33:07.010Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "d62cac21-a3af-47f1-881e-91dc02b01bb6",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "31a754b4-04cb-421f-a0b6-ea3084e6218e",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__federated-cvd-studio__r1",
   "last_error": null,
-  "current_product": "federated-cvd-studio",
-  "current_idea": "federated-cvd-studio",
+  "current_product": "hcc-reason-studio",
+  "current_idea": "hcc-reason-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Federated CVD Studio built. phase=sustain; product_complete_pending=true; parent owns Resend finish email — do not send from product agent.",
+  "phase": "build",
+  "notes": "Federated CVD finish email sent. Next climb: HCC Reason Studio (2607.08602) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.08595",
-      "slug": "federated-cvd-studio",
-      "displayName": "Federated CVD Studio",
-      "at": "2026-07-25T13:23:11.778Z",
-      "url": "https://arxiv.org/abs/2607.08595v1",
+      "paperId": "2607.08602",
+      "slug": "hcc-reason-studio",
+      "displayName": "HCC Reason Studio",
+      "at": "2026-07-25T13:33:07.011Z",
+      "url": "https://arxiv.org/abs/2607.08602v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T13:23:11.778Z",
+    "framing_started_at": "2026-07-25T13:33:07.011Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,

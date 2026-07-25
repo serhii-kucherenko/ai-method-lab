@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T13:30:35.861Z",
+  "updated_at": "2026-07-25T13:33:06.923Z",
   "projects": [
     {
       "id": 1,
@@ -947,6 +947,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "hcc-reason-studio",
+      "project": "HCC Reason Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare clinical-reasoning LLM HCC risk stratification against non-reasoning baselines before locking a pathway pack",
+      "pmf": "Early signal with hepatology / oncology decision-support leads who already buy pathway and risk tools",
+      "buyer": "Hepatology and oncology decision-support engineering leads",
+      "money_hook": "Bench seats + private pathway packs (method-lab experiment)",
+      "potential": "Clinical-reasoning HCC pathways are underserved vs opaque risk scores",
+      "moat": "Clinical-reasoning LLM vs non-reasoning baseline",
+      "evidence": "Paper software claim (HCC clinical-reasoning LLM pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer clinical-pathway soft-sim with multi-flow bar; never claim CDS clearance or live EHR",
+      "id": 49
     }
   ]
 }

@@ -56,6 +56,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Kinetics Surrogate Studio** | `kinetics-surrogate-studio` | **Complete** | Entropy-constrained kinetics surrogate vs full-rate baselines |
 | **Oncology Report Studio** | `oncology-report-studio` | **Complete** | Multi-LLM collaborative MRI report vs single-LLM baseline |
 | **Federated CVD Studio** | `federated-cvd-studio` | **Complete** | Federated CVD risk vs centralized baseline |
+| **HCC Reason Studio** | `hcc-reason-studio` | **Building** | Clinical-reasoning HCC risk vs non-reasoning baseline |
 
 ## Rules
 
