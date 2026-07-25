@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T15:37:39.571Z",
+  "updated_at": "2026-07-25T15:40:33.726Z",
   "projects": [
     {
       "id": 1,
@@ -1298,6 +1298,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "synth-confidence-studio",
+      "project": "Synth Confidence Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare confidence-gated AI retrosynthesis against naive AI route baselines before locking a route pack",
+      "pmf": "Early signal with process chemistry / route-design leads who already trial AI retrosynthesis tools",
+      "buyer": "Process chemistry and route-design engineering leads",
+      "money_hook": "Bench seats + private route packs (method-lab experiment)",
+      "potential": "Confidence-gated AI routes are underserved vs flashy untrusted retrosynthesis dumps",
+      "moat": "Confidence-gated AI retrosynthesis vs naive AI route baseline",
+      "evidence": "Paper software claim (Synthetic Confidence Score pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer route-design soft-sim with multi-flow bar; never claim wet-lab manufacturing validation or live ELN",
+      "id": 62
     }
   ]
 }
