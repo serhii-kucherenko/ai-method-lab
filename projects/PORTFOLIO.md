@@ -83,6 +83,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Chemicl Discover Studio** | `chemicl-discover-studio` | **Complete** | Multimodal ChemICL vs text-only ICL baseline |
 | **Chemgnn Membrane Studio** | `chemgnn-membrane-studio` | **Complete** | ChemGNN CNT membrane surrogate vs classical physics baseline |
 | **Pestwin Control Studio** | `pestwin-control-studio` | **Complete** | Modular multi-agent pest control vs single-species baseline |
+| **Phe Escalate Studio** | `phe-escalate-studio` | **Building** | AI-assisted PHE escalation vs manual triage baseline |
 
 ## Rules
 

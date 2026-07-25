@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T18:08:05.706Z",
+  "updated_at": "2026-07-25T18:18:05.515Z",
   "projects": [
     {
       "id": 1,
@@ -1536,6 +1536,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer vector-control soft-sim with multi-flow bar; never claim field-validated eradication or live spray-fleet write-back",
       "id": 75
+    },
+    {
+      "slug": "phe-escalate-studio",
+      "project": "Phe Escalate Studio",
+      "score": 64,
+      "tier": "B",
+      "business_idea": "Compare AI-assisted public-health emergency classification and escalation against manual triage baselines before locking an escalate pack",
+      "pmf": "Early signal with public-health emergency / surveillance ops leads who already trial outbreak DSS tools",
+      "buyer": "Public-health emergency and surveillance operations engineering leads",
+      "money_hook": "Bench seats + private escalate packs (method-lab experiment)",
+      "potential": "AI-assisted escalation is underserved vs slow inconsistent manual triage without a dual bench",
+      "moat": "AI-assisted escalation vs manual triage baseline",
+      "evidence": "Paper software claim (DMT-PHE AI Agent classification/escalation pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer public-health ops soft-sim with multi-flow bar; never claim operational MoH authority, live write-back, or clinical diagnosis",
+      "id": 76
     }
   ]
 }
