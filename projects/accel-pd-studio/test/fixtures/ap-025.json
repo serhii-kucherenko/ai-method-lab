@@ -1,0 +1,39 @@
+{
+  "id": "ap-025",
+  "input": {
+    "channelCoverage": 0.79,
+    "transformerFidelity": 0.79,
+    "activityGrounding": 0.77,
+    "representationCompleteness": 0.8,
+    "baselineConfidence": 0.8,
+    "baselineOptimism": 0.33,
+    "signalHardness": 0.26,
+    "overclaimRisk": 0.21,
+    "paBias": "transformer_first",
+    "profile": "multichannel_pa_transformer"
+  },
+  "expectedTransformer": {
+    "mode": "multichannel_pa_transformer",
+    "channelScore": 62.03,
+    "fidelityScore": 79.52,
+    "activityScore": 54.83,
+    "completenessScore": 100,
+    "baselineScore": 45.2,
+    "confidence": 70.35,
+    "transformerContribution": 72.57,
+    "baselineContribution": 48.24,
+    "overall": 72.19
+  },
+  "expectedBaseline": {
+    "mode": "handcrafted_pa_baseline",
+    "channelScore": 19.5,
+    "fidelityScore": 24.56,
+    "activityScore": 21.5,
+    "completenessScore": 42.63,
+    "baselineScore": 43.52,
+    "confidence": 35.55,
+    "transformerContribution": 30.34,
+    "baselineContribution": 48.04,
+    "overall": 40.81
+  }
+}

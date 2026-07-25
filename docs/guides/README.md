@@ -114,5 +114,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 111 | [Saffron Detect Studio - what we learned](111-saffron-detect-studio-lessons.md) | Product `saffron-detect-studio` |
 | 112 | [Therapy Prompt Studio - what we learned](112-therapy-prompt-studio-lessons.md) | Product `therapy-prompt-studio` |
 | 113 | [Care Query Studio - what we learned](113-care-query-studio-lessons.md) | Product `care-query-studio` |
+| 114 | [Accel PD Studio - what we learned](114-accel-pd-studio-lessons.md) | Product `accel-pd-studio` |
 
 

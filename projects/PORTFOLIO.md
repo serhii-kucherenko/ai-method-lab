@@ -89,7 +89,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Saffron Detect Studio** | `saffron-detect-studio` | **Complete** | CNN stigma adulteration detection vs visual inspection baseline |
 | **Therapy Prompt Studio** | `therapy-prompt-studio` | **Complete** | Structured therapy-safety gates vs prompt-only baseline |
 | **Care Query Studio** | `care-query-studio` | **Complete** | Multilingual POC medical query LLM vs local clinician baseline |
-| **Accel PD Studio** | `accel-pd-studio` | **Building** | Multi-channel PA transformer vs handcrafted PA-feature baseline |
+| **Accel PD Studio** | `accel-pd-studio` | **Complete** | Multi-channel PA transformer vs handcrafted PA-feature baseline |
 
 ## Rules
 

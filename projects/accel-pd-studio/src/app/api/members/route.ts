@@ -1,0 +1,17 @@
+import { guard, json } from "@/lib/api";
+import { inviteMember, listMembers } from "@/store";
+
+export async function GET(req: Request) {
+  const blocked = guard(req);
+  if (blocked) return blocked;
+  return json({ items: listMembers() });
+}
+
+export async function POST(req: Request) {
+  const blocked = guard(req);
+  if (blocked) return blocked;
+  const body = await req.json();
+  if (!body.email) return json({ error: "email_required" }, { status: 400 });
+  const member = inviteMember(body.email, body.role ?? "viewer");
+  return json({ member }, { status: 201 });
+}

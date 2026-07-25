@@ -1,6 +1,6 @@
 # Accel PD Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `accel-pd-studio`  
 **Paper:** https://www.medrxiv.org/content/10.1101/2025.08.12.25333460v2  
 **Authors’ code:** none  

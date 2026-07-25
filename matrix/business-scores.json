@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T19:27:16.476Z",
+  "updated_at": "2026-07-25T19:37:12.839Z",
   "projects": [
     {
       "id": 1,
@@ -1692,19 +1692,29 @@
     {
       "slug": "accel-pd-studio",
       "project": "Accel PD Studio",
-      "score": 65,
+      "score": 67,
       "tier": "B",
       "business_idea": "Compare multi-channel transformer physical-activity representations from wearables against handcrafted PA-feature baselines before locking an accel pack",
-      "pmf": "Early signal with digital biomarker / neurology analytics leads who already trial wearable Parkinson risk models",
+      "pmf": "Early signal with digital biomarker / neurology analytics leads who already trial wearable PA representation models",
       "buyer": "Digital biomarker and neurology analytics engineering leads",
       "money_hook": "Bench seats + private accel packs (method-lab experiment)",
-      "potential": "Free-living multi-channel PA transformers are underserved vs handcrafted feature dumps without a dual bench",
+      "potential": "Free-living wearable PA signals are underserved vs clinic-snapshot benches without a handcrafted PA-feature baseline",
       "moat": "Multi-channel PA transformer vs handcrafted PA-feature baseline",
-      "evidence": "Paper software claim (PABformer wearable accelerometry pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "evidence": "Paper software claim (PABformer-inspired multi-channel wearable PA bench); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Prefer digital-biomarker soft-sim with multi-flow bar; never claim clinical diagnostic use, live device write-back, or FDA clearance; never brand as PABformer",
-      "id": 82
+      "gc_notes": "Prefer digital-biomarker soft-sim with multi-flow bar; never claim diagnostic use, live device write-back, FDA clearance, or PABformer brand; distinct from desk/jobs/lifecycle shells",
+      "id": 82,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 7,
+        "feasibility": 7
+      }
     }
   ]
 }

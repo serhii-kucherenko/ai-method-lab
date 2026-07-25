@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accel PD Studio — offline try</title>
+    <style>
+      :root {
+        --ap-ink: #171c24;
+        --ap-teal: #2a6f6a;
+        --ap-mist: #eef2f4;
+        --ap-line: #c3c9ce;
+        --ap-amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: Manrope, "Segoe UI", sans-serif;
+        background: var(--ap-mist);
+        color: var(--ap-ink);
+      }
+      header {
+        background: linear-gradient(165deg, #0f1319, #171c24 50%, #222a34);
+        color: white;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      h1 {
+        font-family: Fraunces, Georgia, serif;
+        margin: 0;
+        color: var(--ap-amber);
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 1.25rem;
+        background: var(--ap-teal);
+        color: white;
+        border: 0;
+        padding: 0.65rem 1.1rem;
+        border-radius: 0.4rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--ap-line);
+        border-radius: 0.5rem;
+      }
+      .fence {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #4a5560;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Accel PD Studio</h1>
+      <p>Offline soft-sim: multi-channel PA transformer vs handcrafted PA baseline.</p>
+    </header>
+    <main>
+      <label>Channel coverage <span id="v1"></span></label>
+      <input id="channelCoverage" type="range" min="0" max="1" step="0.01" value="0.7" />
+      <label>Transformer fidelity <span id="v2"></span></label>
+      <input id="transformerFidelity" type="range" min="0" max="1" step="0.01" value="0.72" />
+      <label>Activity grounding <span id="v3"></span></label>
+      <input id="activityGrounding" type="range" min="0" max="1" step="0.01" value="0.68" />
+      <label>Representation completeness <span id="v4"></span></label>
+      <input id="representationCompleteness" type="range" min="0" max="1" step="0.01" value="0.65" />
+      <label>Baseline confidence <span id="v5"></span></label>
+      <input id="baselineConfidence" type="range" min="0" max="1" step="0.01" value="0.8" />
+      <button id="run">Score A/B</button>
+      <div class="out" id="out">Adjust sliders and score.</div>
+      <p class="fence">
+        Soft-sim only — not clinical diagnostic use, not live device write-back,
+        not FDA cleared, not PABformer, not the authors’ system.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreTransformer(input) {
+        const load = clamp(input.signalHardness * (1.25 - input.activityGrounding * 0.5), 0, 1.5);
+        const channel = round2(clamp(input.channelCoverage * 70 + input.activityGrounding * 20 - load * 8, 0, 100));
+        const fidelity = round2(clamp(input.transformerFidelity * 75 + input.channelCoverage * 15, 0, 100));
+        const overall = round2(clamp(channel * 0.4 + fidelity * 0.4 + input.representationCompleteness * 25, 0, 100));
+        return { overall, channel, fidelity };
+      }
+      function scoreBaseline(input) {
+        const overall = round2(
+          clamp(
+            input.baselineConfidence * 70 +
+              input.baselineOptimism * 20 -
+              input.signalHardness * 15,
+            0,
+            100,
+          ),
+        );
+        return { overall };
+      }
+      const ids = [
+        "channelCoverage",
+        "transformerFidelity",
+        "activityGrounding",
+        "representationCompleteness",
+        "baselineConfidence",
+      ];
+      function sync() {
+        ids.forEach((id, i) => {
+          document.getElementById("v" + (i + 1)).textContent =
+            document.getElementById(id).value;
+        });
+      }
+      ids.forEach((id) =>
+        document.getElementById(id).addEventListener("input", sync),
+      );
+      sync();
+      document.getElementById("run").onclick = () => {
+        const input = {
+          channelCoverage: +document.getElementById("channelCoverage").value,
+          transformerFidelity: +document.getElementById("transformerFidelity").value,
+          activityGrounding: +document.getElementById("activityGrounding").value,
+          representationCompleteness: +document.getElementById("representationCompleteness").value,
+          baselineConfidence: +document.getElementById("baselineConfidence").value,
+          baselineOptimism: 0.7,
+          signalHardness: 0.45,
+        };
+        const a = scoreTransformer(input);
+        const b = scoreBaseline(input);
+        let winner = "tie";
+        if (a.overall > b.overall + 0.5) winner = "multichannel_pa_transformer";
+        else if (b.overall > a.overall + 0.5) winner = "handcrafted_pa_baseline";
+        document.getElementById("out").textContent =
+          "Winner " +
+          winner +
+          " · transformer " +
+          a.overall +
+          " · baseline " +
+          b.overall;
+      };
+    </script>
+  </body>
+</html>
