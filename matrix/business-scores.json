@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T12:20:32.137Z",
+  "updated_at": "2026-07-25T12:34:09.733Z",
   "projects": [
     {
       "id": 1,
@@ -825,6 +825,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer robotics soft-sim with multi-flow bar; never claim live robot safety cert; not TACTIC brand",
       "id": 42
+    },
+    {
+      "slug": "drag-wall-studio",
+      "project": "Drag Wall Studio",
+      "score": 64,
+      "tier": "B",
+      "business_idea": "Compare evolution-strategy closed-loop wall controllers against open-loop baselines before locking a turbulent drag-reduction pack",
+      "pmf": "Early signal with turbulence / fluid-control eng leads who already buy CFD and controls benches",
+      "buyer": "Turbulence and fluid-control engineering leads",
+      "money_hook": "Bench seats + private channel packs (method-lab experiment)",
+      "potential": "Industrial drag reduction saves energy; ES closed-loop eval is underserved vs open-loop demos",
+      "moat": "ES closed-loop wall control vs open-loop/gradient baselines",
+      "evidence": "Paper software claim (ES wall controller pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer industrial fluid-control soft-sim with multi-flow bar; never claim live plant or certified CFD",
+      "id": 43
     }
   ]
 }
