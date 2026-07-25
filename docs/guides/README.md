@@ -117,5 +117,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 114 | [Accel PD Studio - what we learned](114-accel-pd-studio-lessons.md) | Product `accel-pd-studio` |
 | 115 | [Cache Hit Studio - what we learned](115-cache-hit-studio-lessons.md) | Product `cache-hit-studio` |
 | 116 | [Omic Prior Studio - what we learned](116-omic-prior-studio-lessons.md) | Product `omic-prior-studio` |
+| 117 | [Track Map Studio - what we learned](117-track-map-studio-lessons.md) | Product `track-map-studio` |
 
 

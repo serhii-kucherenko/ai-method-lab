@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T20:02:58.558Z",
+  "updated_at": "2026-07-25T20:10:22.569Z",
   "projects": [
     {
       "id": 1,
@@ -1773,19 +1773,29 @@
     {
       "slug": "track-map-studio",
       "project": "Track Map Studio",
-      "score": 65,
+      "score": 67,
       "tier": "B",
       "business_idea": "Compare online deformable SLAM against offline kinematics-prior baselines before locking a track pack",
-      "pmf": "Early signal with surgical robotics / intraoperative vision leads who already trial deformable reconstruction pipelines",
+      "pmf": "Early signal with surgical robotics / intraoperative vision eng leads who already trial deformable reconstruction packs",
       "buyer": "Surgical robotics and intraoperative vision engineering leads",
       "money_hook": "Bench seats + private track packs (method-lab experiment)",
-      "potential": "Online deformable SLAM is underserved vs offline kinematics-prior dumps without a dual bench",
+      "potential": "Online deformable SLAM is underserved vs offline kinematics-prior dumps that fail under tissue motion",
       "moat": "Online deformable SLAM vs offline kinematics-prior baseline",
-      "evidence": "Paper software claim (Track2Map online deformable SLAM pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "evidence": "Paper software claim (Track2Map pattern inspiration); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Prefer surgical-vision soft-sim with multi-flow bar; never claim live robot control, clinical diagnostic use, or FDA clearance; never brand as Track2Map",
-      "id": 85
+      "gc_notes": "Prefer surgical-vision soft-sim with multi-flow bar; never claim live robot control, clinical diagnostic use, or FDA clearance; never brand as Track2Map; distinct from desk/jobs/lifecycle shells",
+      "id": 85,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 7,
+        "feasibility": 7
+      }
     }
   ]
 }

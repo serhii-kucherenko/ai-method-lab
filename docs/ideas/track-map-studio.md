@@ -1,6 +1,6 @@
 # Track Map Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `track-map-studio`  
 **Paper:** https://arxiv.org/abs/2607.08408v1  
 **Authors’ code:** none  

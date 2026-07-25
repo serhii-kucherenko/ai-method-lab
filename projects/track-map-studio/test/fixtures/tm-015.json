@@ -1,0 +1,39 @@
+{
+  "id": "tm-015",
+  "input": {
+    "deformCoverage": 0.62,
+    "slamFidelity": 0.54,
+    "poseGrounding": 0.56,
+    "packCompleteness": 0.65,
+    "kinematicsConfidence": 0.67,
+    "kinematicsOptimism": 0.36,
+    "deformHardness": 0.44,
+    "overclaimRisk": 0.31,
+    "trackBias": "deform_first",
+    "profile": "offline_kinematics_prior_baseline"
+  },
+  "expectedOnlineSlam": {
+    "mode": "online_deformable_slam",
+    "deformScore": 46.23,
+    "fidelityScore": 58.35,
+    "poseScore": 39.15,
+    "completenessScore": 79.94,
+    "kinematicsScore": 34.55,
+    "confidence": 51.85,
+    "slamContribution": 54.57,
+    "kinematicsContribution": 36.06,
+    "overall": 55.24
+  },
+  "expectedOfflineKinematics": {
+    "mode": "offline_kinematics_prior_baseline",
+    "deformScore": 9.43,
+    "fidelityScore": 20.94,
+    "poseScore": 17.24,
+    "completenessScore": 39.27,
+    "kinematicsScore": 38.2,
+    "confidence": 27.75,
+    "slamContribution": 25.02,
+    "kinematicsContribution": 41.8,
+    "overall": 32.73
+  }
+}
