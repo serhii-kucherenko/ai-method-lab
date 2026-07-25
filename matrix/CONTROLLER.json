@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T15:28:48.902Z",
+  "updated_at": "2026-07-25T15:30:22.859Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "e15ec0ec-1492-4d44-b5c4-3c72155742f1",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "ed80e201-76c0-4f0a-9b29-a286b103d51b",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__shared-risk-studio__r1",
   "last_error": null,
-  "current_product": "shared-risk-studio",
-  "current_idea": "shared-risk-studio",
+  "current_product": "variant-probe-studio",
+  "current_idea": "variant-probe-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Shared Risk Studio complete (13 pages, 35 features, 30 goldens, app-up green). product_complete_pending=true — parent owns Resend finish email. DO NOT send Resend from this agent.",
+  "phase": "build",
+  "notes": "Shared Risk finish email sent. Next climb: Variant Probe Studio (bioRxiv 717844) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.64898/2026.07.07.26357373",
-      "slug": "shared-risk-studio",
-      "displayName": "Shared Risk Studio",
-      "at": "2026-07-25T15:21:09.757Z",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.07.07.26357373v1",
+      "paperId": "10.64898/2026.04.10.717844",
+      "slug": "variant-probe-studio",
+      "displayName": "Variant Probe Studio",
+      "at": "2026-07-25T15:30:22.860Z",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.04.10.717844v4",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T15:21:09.757Z",
+    "framing_started_at": "2026-07-25T15:30:22.860Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,

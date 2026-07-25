@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T15:27:43.710Z",
+  "updated_at": "2026-07-25T15:30:22.774Z",
   "projects": [
     {
       "id": 1,
@@ -1271,6 +1271,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "variant-probe-studio",
+      "project": "Variant Probe Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare interpretable genomic foundation-model probes against opaque pathogenicity baselines before locking a panel pack",
+      "pmf": "Early signal with clinical genomics / variant interpretation leads who already buy pathogenicity tools",
+      "buyer": "Clinical genomics and variant interpretation engineering leads",
+      "money_hook": "Bench seats + private panel packs (method-lab experiment)",
+      "potential": "Explainable FM probes are underserved vs black-box pathogenicity scores",
+      "moat": "Interpretable FM probes vs opaque pathogenicity baseline",
+      "evidence": "Paper software claim (interpretable genomic FM probe pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer genomics soft-sim with multi-flow bar; never claim diagnostic clearance or live LIMS",
+      "id": 61
     }
   ]
 }
