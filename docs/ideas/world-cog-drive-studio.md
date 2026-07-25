@@ -1,6 +1,6 @@
 # World Cog Drive Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `world-cog-drive-studio`  
 **Paper:** https://arxiv.org/abs/2607.08375v1  
 **Authors’ code:** none  

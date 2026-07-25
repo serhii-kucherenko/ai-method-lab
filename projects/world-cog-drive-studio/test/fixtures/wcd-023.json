@@ -1,0 +1,39 @@
+{
+  "id": "wcd-023",
+  "input": {
+    "worldForecastFit": 0.79,
+    "cognitiveDepth": 0.76,
+    "actionAlignment": 0.77,
+    "trajectoryIntegrity": 0.8,
+    "singleLevelPassRate": 0.81,
+    "reactiveOptimism": 0.36,
+    "routeHardness": 0.33,
+    "leakageRisk": 0.25,
+    "driveBias": "reactive_first",
+    "profile": "world_cognitive"
+  },
+  "expectedWorldCognitive": {
+    "mode": "world_cognitive",
+    "worldScore": 49.04,
+    "cognitiveScore": 67.38,
+    "actionScore": 53.74,
+    "trajectoryScore": 49.49,
+    "singleLevelScore": 45.16,
+    "confidence": 68.25,
+    "worldCognitiveContribution": 54.86,
+    "singleLevelContribution": 48.03,
+    "overall": 54.63
+  },
+  "expectedSingleLevel": {
+    "mode": "single_level",
+    "worldScore": 33.86,
+    "cognitiveScore": 25.25,
+    "actionScore": 22.05,
+    "trajectoryScore": 43.92,
+    "singleLevelScore": 84.72,
+    "confidence": 35.45,
+    "worldCognitiveContribution": 41.96,
+    "singleLevelContribution": 71.34,
+    "overall": 60.74
+  }
+}

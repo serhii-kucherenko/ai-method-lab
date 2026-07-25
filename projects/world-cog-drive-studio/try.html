@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>World Cog Drive Studio — offline try</title>
+    <style>
+      :root {
+        --ink: #12161c;
+        --amber: #d89a2a;
+        --fog: #e8ecf0;
+        --teal: #2f6f78;
+        --line: #b8c0c8;
+      }
+      body {
+        margin: 0;
+        font-family: "Work Sans", "Segoe UI", sans-serif;
+        background: var(--fog);
+        color: var(--ink);
+      }
+      header {
+        background: linear-gradient(165deg, #0a0d11, #12161c 48%, #1a2a30);
+        color: var(--fog);
+        padding: 2.5rem 1.5rem 3rem;
+      }
+      h1 {
+        font-family: Archivo, "Segoe UI", sans-serif;
+        font-size: 2rem;
+        color: var(--amber);
+        margin: 0 0 0.5rem;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--amber);
+        color: var(--ink);
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.6rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #4a5560;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>World Cog Drive Studio</h1>
+      <p>Offline soft-sim: dual-level world-cognitive vs single-level VLA.</p>
+    </header>
+    <main>
+      <label
+        >World forecast fit
+        <input id="world" type="number" min="0" max="1" step="0.01" value="0.62"
+      /></label>
+      <label
+        >Cognitive depth
+        <input id="cog" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Action alignment
+        <input id="act" type="number" min="0" max="1" step="0.01" value="0.74"
+      /></label>
+      <label
+        >Single-level pass rate
+        <input id="single" type="number" min="0" max="1" step="0.01" value="0.82"
+      /></label>
+      <button id="run" type="button">Score A/B</button>
+      <div class="out" id="out">Adjust inputs, then score.</div>
+      <p class="note">
+        Soft-sim only — not certified AV, not live vehicle control, not the
+        authors’ system. Heuristic offline scorer (not the studio’s full dual
+        impl).
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(w, c, a) {
+        return round2(
+          clamp(w * 42 + c * 28 + a * 22 + 6, 0, 100),
+        );
+      }
+      function scoreB(s, reactive) {
+        return round2(clamp(s * 55 + reactive * 28 - 4, 0, 100));
+      }
+      document.getElementById("run").onclick = () => {
+        const w = Number(document.getElementById("world").value);
+        const c = Number(document.getElementById("cog").value);
+        const a = Number(document.getElementById("act").value);
+        const s = Number(document.getElementById("single").value);
+        const A = scoreA(w, c, a);
+        const B = scoreB(s, 0.7);
+        const winner =
+          A > B + 0.5
+            ? "world_cognitive"
+            : B > A + 0.5
+              ? "single_level"
+              : "tie";
+        document.getElementById("out").textContent =
+          "A (world-cognitive) " +
+          A +
+          " · B (single-level) " +
+          B +
+          " · winner " +
+          winner;
+      };
+    </script>
+  </body>
+</html>
