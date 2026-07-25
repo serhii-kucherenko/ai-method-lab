@@ -1362,7 +1362,7 @@
       "potential": "Payload-aware ARC validation is underserved vs metadata-only crate checks",
       "moat": "Structural+semantic ARC validation vs metadata-only baseline",
       "evidence": "Paper software claim (BioHackEU25 ARC RO-Crate validation pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer FAIR soft-sim with multi-flow bar; never claim institutional repository write-back or live ARC farm control",
       "id": 65

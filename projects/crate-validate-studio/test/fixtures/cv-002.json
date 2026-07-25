@@ -1,0 +1,39 @@
+{
+  "id": "cv-002",
+  "input": {
+    "crateCoverage": 0.33,
+    "structuralFidelity": 0.29,
+    "semanticClarity": 0.32,
+    "checkStability": 0.38,
+    "metadataOnlyRate": 0.43,
+    "metadataOptimism": 0.46,
+    "payloadHardness": 0.6,
+    "overclaimRisk": 0.51,
+    "crateBias": "semantic_first",
+    "profile": "arc_structural_semantic_validation"
+  },
+  "expectedStructuralSemantic": {
+    "mode": "arc_structural_semantic_validation",
+    "crateCoverageScore": 22.22,
+    "structuralScore": 33.9,
+    "semanticScore": 34.39,
+    "payloadIntegrity": 31.9,
+    "metadataBaselineScore": 18.89,
+    "confidence": 23,
+    "structuralSemanticContribution": 30.56,
+    "metadataContribution": 18.61,
+    "overall": 32.41
+  },
+  "expectedBaseline": {
+    "mode": "metadata_only_baseline",
+    "crateCoverageScore": 2.43,
+    "structuralScore": 18.22,
+    "semanticScore": 14.16,
+    "payloadIntegrity": 34.08,
+    "metadataBaselineScore": 31.53,
+    "confidence": 18.65,
+    "structuralSemanticContribution": 20.08,
+    "metadataContribution": 34.53,
+    "overall": 23.49
+  }
+}

@@ -1,6 +1,6 @@
 # Crate Validate Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `crate-validate-studio`  
 **Paper:** https://osf.io/preprints/biohackrxiv/zah28_v3/  
 **Authors’ code:** none  

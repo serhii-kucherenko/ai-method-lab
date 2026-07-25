@@ -97,3 +97,4 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 94 | [Synth Confidence Studio — what we learned](94-synth-confidence-studio-lessons.md) | Product `synth-confidence-studio` |
 | 95 | [Folio Clip Studio — what we learned](95-folio-clip-studio-lessons.md) | Product `folio-clip-studio` |
 | 96 | [Atomistic Force Studio — what we learned](96-atomistic-force-studio-lessons.md) | Product `atomistic-force-studio` |
+| 97 | [Crate Validate Studio — what we learned](97-crate-validate-studio-lessons.md) | Product `crate-validate-studio` |

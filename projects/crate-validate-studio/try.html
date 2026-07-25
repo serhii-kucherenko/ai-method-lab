@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crate Validate Studio — offline demo</title>
+    <style>
+      :root {
+        --ink: #152028;
+        --teal: #2d7a78;
+        --mist: #eef2f3;
+        --line: #c3cacd;
+        --amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        background: var(--mist);
+        color: var(--ink);
+      }
+      .hero {
+        min-height: 70vh;
+        padding: 3rem 1.5rem;
+        background: linear-gradient(165deg, #0c1418 0%, #152028 48%, #1c282e 100%);
+        color: #fff;
+      }
+      h1 {
+        font-family: Outfit, "Segoe UI", sans-serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: var(--teal);
+        margin: 0;
+      }
+      .tag {
+        font-family: Outfit, "Segoe UI", sans-serif;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      }
+      .panel {
+        max-width: 40rem;
+        margin: -2rem auto 2rem;
+        padding: 1.25rem;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.4rem 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--teal);
+        color: #fff;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        font-size: 0.95rem;
+      }
+      .fence {
+        color: var(--amber);
+        font-size: 0.85rem;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Crate Validate Studio</h1>
+      <p class="tag">Crates that pass structure and substance.</p>
+      <p>Offline soft-sim: ARC structural+semantic validation vs metadata-only baseline.</p>
+    </div>
+    <div class="panel">
+      <label>Crate coverage (0–1)
+        <input id="crateCoverage" type="number" step="0.01" value="0.62" />
+      </label>
+      <label>Structural fidelity (0–1)
+        <input id="structuralFidelity" type="number" step="0.01" value="0.7" />
+      </label>
+      <label>Semantic clarity (0–1)
+        <input id="semanticClarity" type="number" step="0.01" value="0.74" />
+      </label>
+      <label>Metadata-only rate (0–1)
+        <input id="metadataOnlyRate" type="number" step="0.01" value="0.55" />
+      </label>
+      <button id="run">Score A vs B</button>
+      <div class="out" id="out">Ready.</div>
+      <p class="fence">
+        Soft-sim only — not institutional repo write-back, not live ARC farm, not the authors’ system.
+      </p>
+    </div>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(i) {
+        const overall = round2(
+          clamp(
+            i.crateCoverage * 40 +
+              i.structuralFidelity * 35 +
+              i.semanticClarity * 25 -
+              i.metadataOnlyRate * 12 +
+              8,
+            0,
+            100,
+          ),
+        );
+        return overall;
+      }
+      function scoreB(i) {
+        const overall = round2(
+          clamp(
+            i.metadataOnlyRate * 55 +
+              (1 - i.structuralFidelity) * 20 +
+              i.semanticClarity * 10,
+            0,
+            100,
+          ),
+        );
+        return overall;
+      }
+      document.getElementById("run").onclick = function () {
+        const i = {
+          crateCoverage: Number(document.getElementById("crateCoverage").value),
+          structuralFidelity: Number(document.getElementById("structuralFidelity").value),
+          semanticClarity: Number(document.getElementById("semanticClarity").value),
+          metadataOnlyRate: Number(document.getElementById("metadataOnlyRate").value),
+        };
+        const a = scoreA(i);
+        const b = scoreB(i);
+        const winner =
+          a > b + 0.5
+            ? "arc_structural_semantic_validation"
+            : b > a + 0.5
+              ? "metadata_only_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "A " + a + " · B " + b + " · winner " + winner + " (approx offline)";
+      };
+    </script>
+  </body>
+</html>

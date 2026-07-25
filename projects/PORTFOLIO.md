@@ -72,7 +72,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Synth Confidence Studio** | `synth-confidence-studio` | **Complete** | Confidence-gated AI retrosynthesis vs naive AI route baseline |
 | **Folio Clip Studio** | `folio-clip-studio` | **Complete** | Multimodal wearable plant stress vs single-sensor baseline |
 | **Atomistic Force Studio** | `atomistic-force-studio` | **Complete** | Foundation-model atomistics vs classical force-field baseline |
-| **Crate Validate Studio** | `crate-validate-studio` | **Building** | Structural+semantic ARC validation vs metadata-only baseline |
+| **Crate Validate Studio** | `crate-validate-studio` | **Complete** | Structural+semantic ARC validation vs metadata-only baseline |
 
 ## Rules
 
