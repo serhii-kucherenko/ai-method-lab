@@ -1,0 +1,39 @@
+{
+  "id": "nt-025",
+  "input": {
+    "nanodomainLocalization": 0.79,
+    "pdePryStrength": 0.8,
+    "diastolicGain": 0.71,
+    "systolicPreserve": 0.75,
+    "systemicSpillover": 0.33,
+    "phosphorylationCoverage": 0.66,
+    "assaySignal": 0.8,
+    "overclaimRisk": 0.21,
+    "targetBias": "nanodomain_first",
+    "profile": "localized_nanodomain_target"
+  },
+  "expectedLocalized": {
+    "mode": "localized_nanodomain_target",
+    "localizationScore": 96.56,
+    "diastolicScore": 51.8,
+    "systolicScore": 100,
+    "spilloverPenalty": 25.31,
+    "phosphorylationScore": 31.46,
+    "confidence": 59.5,
+    "nanodomainContribution": 80.92,
+    "systemicContribution": 28.29,
+    "overall": 75.45
+  },
+  "expectedSystemic": {
+    "mode": "systemic_phosphorylation_baseline",
+    "localizationScore": 5.71,
+    "diastolicScore": 41.29,
+    "systolicScore": 32.18,
+    "spilloverPenalty": 27.93,
+    "phosphorylationScore": 39.62,
+    "confidence": 46.92,
+    "nanodomainContribution": 38.17,
+    "systemicContribution": 32.86,
+    "overall": 28.03
+  }
+}

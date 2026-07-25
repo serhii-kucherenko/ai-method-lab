@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nanodomain Target Studio — try</title>
+    <style>
+      :root {
+        --nt-ink: #14161b;
+        --nt-crimson: #8b3a45;
+        --nt-mist: #f0f1f3;
+        --nt-line: #c5c8cd;
+        --nt-teal: #2d6368;
+      }
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        background: linear-gradient(165deg, #0c0e12, #14161b 50%, #1a1d23);
+        color: var(--nt-mist);
+        min-height: 100vh;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem 4rem;
+      }
+      h1 {
+        font-size: 2rem;
+        color: var(--nt-crimson);
+        margin: 0 0 0.5rem;
+      }
+      p {
+        line-height: 1.5;
+        opacity: 0.9;
+      }
+      label {
+        display: block;
+        margin-top: 0.85rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 1.25rem;
+        background: var(--nt-crimson);
+        color: white;
+        border: 0;
+        padding: 0.65rem 1rem;
+        cursor: pointer;
+      }
+      .bars {
+        margin-top: 1.5rem;
+      }
+      .bar {
+        height: 10px;
+        background: #ffffff18;
+        margin: 0.35rem 0 0.85rem;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .fill-a {
+        height: 100%;
+        background: var(--nt-teal);
+      }
+      .fill-b {
+        height: 100%;
+        background: var(--nt-crimson);
+      }
+      .fence {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        opacity: 0.75;
+        border-top: 1px solid var(--nt-line);
+        padding-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Nanodomain Target Studio</h1>
+      <p>
+        Offline soft-sim: localized nanodomain target vs systemic phosphorylation
+        baseline. Approximate demo — not IND/NDA, not live dosing, not clinical
+        heart-failure diagnosis.
+      </p>
+      <label>Nanodomain localization <span id="locV"></span></label>
+      <input id="loc" type="range" min="0" max="100" value="72" />
+      <label>PDE pry strength <span id="pryV"></span></label>
+      <input id="pry" type="range" min="0" max="100" value="68" />
+      <label>Systemic spillover <span id="spillV"></span></label>
+      <input id="spill" type="range" min="0" max="100" value="30" />
+      <label>Phosphorylation coverage <span id="phosV"></span></label>
+      <input id="phos" type="range" min="0" max="100" value="45" />
+      <button id="run" type="button">Score A/B</button>
+      <div class="bars">
+        <div>A localized <strong id="aOut">—</strong></div>
+        <div class="bar"><div class="fill-a" id="aBar" style="width: 0%"></div></div>
+        <div>B systemic <strong id="bOut">—</strong></div>
+        <div class="bar"><div class="fill-b" id="bBar" style="width: 0%"></div></div>
+        <div id="winner"></div>
+      </div>
+      <p class="fence">
+        Soft-sim heuristic only. Inspired by bioRxiv 10.1101/2025.11.18.689162 —
+        not the authors’ peptide system.
+      </p>
+    </main>
+    <script>
+      function n(id) {
+        return Number(document.getElementById(id).value) / 100;
+      }
+      function sync() {
+        document.getElementById("locV").textContent = n("loc").toFixed(2);
+        document.getElementById("pryV").textContent = n("pry").toFixed(2);
+        document.getElementById("spillV").textContent = n("spill").toFixed(2);
+        document.getElementById("phosV").textContent = n("phos").toFixed(2);
+      }
+      function score() {
+        const loc = n("loc");
+        const pry = n("pry");
+        const spill = n("spill");
+        const phos = n("phos");
+        const a = Math.max(
+          0,
+          Math.min(
+            100,
+            loc * 52 +
+              pry * 28 +
+              (1 - spill) * 18 -
+              phos * 8 +
+              6,
+          ),
+        );
+        const b = Math.max(
+          0,
+          Math.min(
+            100,
+            phos * 55 +
+              spill * 12 +
+              (1 - loc) * 15 +
+              (1 - pry) * 8 +
+              4,
+          ),
+        );
+        document.getElementById("aOut").textContent = a.toFixed(1);
+        document.getElementById("bOut").textContent = b.toFixed(1);
+        document.getElementById("aBar").style.width = a + "%";
+        document.getElementById("bBar").style.width = b + "%";
+        let w = "tie";
+        if (a > b + 0.5) w = "localized_nanodomain_target";
+        else if (b > a + 0.5) w = "systemic_phosphorylation_baseline";
+        document.getElementById("winner").textContent = "Winner: " + w;
+      }
+      ["loc", "pry", "spill", "phos"].forEach((id) => {
+        document.getElementById(id).addEventListener("input", sync);
+      });
+      document.getElementById("run").addEventListener("click", score);
+      sync();
+      score();
+    </script>
+  </body>
+</html>

@@ -134,5 +134,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 131 | [Fluoride Label Studio - what we learned](131-fluoride-label-studio-lessons.md) | Product `fluoride-label-studio` |
 | 132 | [Ion Hydrogel Studio - what we learned](132-ion-hydrogel-studio-lessons.md) | Product `ion-hydrogel-studio` |
 | 133 | [Liver Organoid Studio - what we learned](133-liver-organoid-studio-lessons.md) | Product `liver-organoid-studio` |
+| 134 | [Nanodomain Target Studio - what we learned](134-nanodomain-target-studio-lessons.md) | Product `nanodomain-target-studio` |
 
 

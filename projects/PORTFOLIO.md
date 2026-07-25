@@ -109,7 +109,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Fluoride Label Studio** | `fluoride-label-studio` | **Complete** | Fast isotopic F-18 exchange vs multistep prosthetic baseline |
 | **Ion Hydrogel Studio** | `ion-hydrogel-studio` | **Complete** | Dynamic charge regulation vs fixed-charge hydrogel baseline |
 | **Liver Organoid Studio** | `liver-organoid-studio` | **Complete** | Multicellular HLO vs single-lineage HLC MASLD baseline |
-| **Nanodomain Target Studio** | `nanodomain-target-studio` | Building | Localized nanodomain target vs systemic phosphorylation baseline |
+| **Nanodomain Target Studio** | `nanodomain-target-studio` | **Complete** | Localized nanodomain target vs systemic phosphorylation baseline |
 
 ## Rules
 

@@ -1,6 +1,6 @@
 # Nanodomain Target Studio
 
-**State:** framing  
+**State:** complete  
 **Slug:** `nanodomain-target-studio`  
 **Paper:** https://www.biorxiv.org/content/10.1101/2025.11.18.689162v3  
 **Authors’ code:** none  
