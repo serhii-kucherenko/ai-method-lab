@@ -1,6 +1,6 @@
 # Quantum Kernel Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `quantum-kernel-studio`  
 **Paper:** https://arxiv.org/abs/2607.11701v1  
 **Authors’ code:** none  
