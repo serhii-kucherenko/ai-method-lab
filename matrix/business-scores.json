@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T08:45:30.385Z",
+  "updated_at": "2026-07-25T08:55:54.807Z",
   "projects": [
     {
       "id": 1,
@@ -623,7 +623,7 @@
         "money": 7,
         "wedge": 7,
         "moat": 7,
-        "evidence": 5,
+        "evidence": 6,
         "feasibility": 8
       },
       "business_idea": "Decide when to hold a ride-hail match so passenger and driver experience improve instead of accepting the first feasible pair",
@@ -632,13 +632,40 @@
       "money_hook": "Ops seats + per-match-decision usage (method-lab experiment)",
       "potential": "Direct marketplace ops budgets — clearer money than clinical or consumer clones",
       "moat": "Experience-aware hold control vs first-feasible match dashboards",
-      "evidence": "Paper software claim (EXHOLD); no public author code in digest",
-      "status": "building",
+      "evidence": "Paper software claim (EXHOLD); 30 dual goldens; /pricing /demo /onboarding shipped",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "A/B gate pass — ops/money wedge; require /pricing /demo /onboarding",
-      "score": 71,
+      "gc_notes": "Keep ops/money pattern; require commercial surfaces on next picks too",
+      "score": 72,
       "tier": "B",
       "id": 34
+    },
+    {
+      "slug": "sign-stream-studio",
+      "project": "Sign Stream Studio",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 5,
+        "feasibility": 8
+      },
+      "business_idea": "Run sentence-level sign language translation streams with real-time latency honesty instead of offline batch gloss dumps",
+      "pmf": "Early signal with accessibility / edtech / civic language leads who already buy captioning and a11y tooling",
+      "buyer": "Accessibility and language-access product leads (institutions / platforms)",
+      "money_hook": "Institution seats + stream-minute usage (method-lab experiment)",
+      "potential": "Compliance-driven a11y demand; real-time sentence path is a sharper wedge than offline SLT demos",
+      "moat": "Real-time sentence stream plan vs offline batch translation dashboards",
+      "evidence": "Paper software claim (real-time SLT); no public author code in digest",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "A/B gate pass — a11y wedge; require /pricing /demo /onboarding",
+      "score": 66,
+      "tier": "B",
+      "id": 35
     }
   ]
 }
