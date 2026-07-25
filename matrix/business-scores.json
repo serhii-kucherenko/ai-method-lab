@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T21:54:13.897Z",
+  "updated_at": "2026-07-25T22:07:29.759Z",
   "projects": [
     {
       "id": 1,
@@ -2024,7 +2024,7 @@
       "potential": "Equity-access autism AI pathways are underserved vs accuracy-only dumps without honesty",
       "moat": "Equity-access AI vs accuracy-only baseline",
       "evidence": "Paper equity/eval claim (autism AI access pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer autism screening equity soft-sim with multi-flow bar; never claim clinical diagnostic use, live EHR write-back, or FDA clearance",
       "dimensions": {
@@ -2039,6 +2039,33 @@
       },
       "score": 66,
       "id": 94
+    },
+    {
+      "slug": "citizen-pref-studio",
+      "project": "Citizen Pref Studio",
+      "tier": "B",
+      "business_idea": "Compare safety-first public-oversight AI regulatory option packs against innovation-first self-regulation baselines before locking a policy pack",
+      "pmf": "Early signal with AI policy / product governance leads who already trial preference soft-sims",
+      "buyer": "AI policy and product governance engineering leads",
+      "money_hook": "Bench seats + private policy packs (method-lab experiment)",
+      "potential": "Safety-first public-oversight preference packs are underserved vs innovation-first dumps without honesty",
+      "moat": "Safety-first public oversight vs innovation-first self-regulation baseline",
+      "evidence": "Paper governance/eval claim (citizen AI regulation preference pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer AI policy preference soft-sim with multi-flow bar; never claim live regulatory authority, government deployment, or certified polling",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "id": 95
     }
   ]
 }

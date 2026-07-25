@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T22:04:26.775Z",
+  "updated_at": "2026-07-25T22:07:29.834Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,15 +10,15 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "5b1d4795-dc02-467c-83c0-6b67c94d5440",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "e1dd3ff2-4dee-4c3f-b024-6c0cf91731f8",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-91d6-d9781ab8c451"
   },
   "paused": false,
-  "active_cell": "A03__P-sustain-001__access-equity-studio__r1",
+  "active_cell": "A03__P-sustain-001__citizen-pref-studio__r1",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__access-equity-studio__r1",
   "last_error": null,
-  "current_product": "access-equity-studio",
-  "current_idea": "access-equity-studio",
+  "current_product": "citizen-pref-studio",
+  "current_idea": "citizen-pref-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Access Equity Studio climb complete (ae-001…ae-030; equity_access_task_sharing vs accuracy_only_classifier; app-up green). product_complete_pending=true — parent owns Resend finish email; climb agent did NOT send Resend.",
+  "phase": "build",
+  "notes": "Citizen Pref Studio climb armed after Access Equity finish email e1dd3ff2; depth pack ready; climb agent owns build — do NOT send Resend from climb.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.3389/fpubh.2026.1898818",
-      "slug": "access-equity-studio",
-      "displayName": "Access Equity Studio",
-      "at": "2026-07-25T21:54:13.963Z",
-      "url": "https://doi.org/10.3389/fpubh.2026.1898818",
+      "paperId": "2607.14585",
+      "slug": "citizen-pref-studio",
+      "displayName": "Citizen Pref Studio",
+      "at": "2026-07-25T22:07:29.834Z",
+      "url": "https://arxiv.org/abs/2607.14585v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T21:54:13.963Z",
+    "framing_started_at": "2026-07-25T22:07:29.834Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,
