@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T15:50:43.129Z",
+  "updated_at": "2026-07-25T15:53:44.834Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "79954f4b-6010-416c-92ac-df83b71fb722",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "06a335f5-cff3-4d7a-a316-4c08275e742d",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__synth-confidence-studio__r1",
   "last_error": null,
-  "current_product": "synth-confidence-studio",
-  "current_idea": "synth-confidence-studio",
+  "current_product": "folio-clip-studio",
+  "current_idea": "folio-clip-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Synth Confidence Studio sustained (13 pages, 35 features, 30 goldens, app-up green). product_complete_pending=true. Parent owns Resend finish email — do NOT send any Resend email from this agent.",
+  "phase": "build",
+  "notes": "Synth Confidence finish email sent. Next climb: Folio Clip Studio (chemrxiv.15005167) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.26434/chemrxiv.15006146",
-      "slug": "synth-confidence-studio",
-      "displayName": "Synth Confidence Studio",
-      "at": "2026-07-25T15:40:33.799Z",
-      "url": "https://doi.org/10.26434/chemrxiv.15006146/v1",
+      "paperId": "10.26434/chemrxiv.15005167",
+      "slug": "folio-clip-studio",
+      "displayName": "Folio Clip Studio",
+      "at": "2026-07-25T15:53:44.834Z",
+      "url": "https://doi.org/10.26434/chemrxiv.15005167/v2",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T15:40:33.799Z",
+    "framing_started_at": "2026-07-25T15:53:44.834Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,

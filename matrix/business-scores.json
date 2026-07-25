@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T15:40:33.726Z",
+  "updated_at": "2026-07-25T15:53:44.751Z",
   "projects": [
     {
       "id": 1,
@@ -1315,6 +1315,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer route-design soft-sim with multi-flow bar; never claim wet-lab manufacturing validation or live ELN",
       "id": 62
+    },
+    {
+      "slug": "folio-clip-studio",
+      "project": "Folio Clip Studio",
+      "score": 64,
+      "tier": "B",
+      "business_idea": "Compare multimodal wearable plant-stress sensing against single-sensor baselines before locking a clip pack",
+      "pmf": "Early signal with AgTech / crop-health product leads who already trial wearable leaf sensors",
+      "buyer": "AgTech and crop-health product engineering leads",
+      "money_hook": "Bench seats + private clip packs (method-lab experiment)",
+      "potential": "Multimodal early stress detection is underserved vs single-channel moisture/temp gadgets",
+      "moat": "Multimodal wearable stress detection vs single-sensor baseline",
+      "evidence": "Paper software claim (FolioClip multimodal wearable pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer crop-health soft-sim with multi-flow bar; never claim field-validated farm deployments or live greenhouse write-back",
+      "id": 63
     }
   ]
 }
