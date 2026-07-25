@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T14:02:55.502Z",
+  "updated_at": "2026-07-25T14:05:14.303Z",
   "projects": [
     {
       "id": 1,
@@ -1028,6 +1028,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "skeleton-author-studio",
+      "project": "Skeleton Author Studio",
+      "score": 62,
+      "tier": "B",
+      "business_idea": "Compare scaffolded visual authoring of non-visual data experiences against naive linear baselines before locking an experience pack",
+      "pmf": "Early signal with accessibility / data-viz leads who already build non-visual data experiences",
+      "buyer": "Accessibility and data visualization engineering leads",
+      "money_hook": "Bench seats + private experience packs (method-lab experiment)",
+      "potential": "Navigation structure for non-visual data is underserved vs flat sonification dumps",
+      "moat": "Scaffolded visual authoring vs naive linear baseline",
+      "evidence": "Paper software claim (Skeleton authoring pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer accessibility-authoring soft-sim with multi-flow bar; never claim WCAG certification or live screen-reader OEM",
+      "id": 52
     }
   ]
 }
