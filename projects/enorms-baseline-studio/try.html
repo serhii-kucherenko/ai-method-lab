@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enorms Baseline Studio — offline try</title>
+    <style>
+      :root {
+        --ink: #161c24;
+        --teal: #2a7a88;
+        --mist: #eef2f4;
+        --line: #c3c9ce;
+        --amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        background: var(--mist);
+        color: var(--ink);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: Literata, Georgia, serif;
+        font-weight: 600;
+        color: var(--teal);
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 1.25rem;
+        background: var(--teal);
+        color: white;
+        border: 0;
+        padding: 0.6rem 1rem;
+        border-radius: 0.35rem;
+        cursor: pointer;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dfe3e8;
+        border-radius: 999px;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        border-radius: 999px;
+        background: var(--teal);
+      }
+      .fill.b {
+        background: var(--amber);
+      }
+      .note {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #4a515c;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Enorms Baseline Studio</h1>
+      <p>
+        Offline soft-sim: patient-specific E-norms baselines vs population-norm
+        baseline for pediatric EEG seizure detection.
+      </p>
+      <label>Patient norm fit <span id="wVal">0.62</span></label>
+      <input id="fit" type="range" min="0" max="1" step="0.01" value="0.62" />
+      <label>Channel coverage <span id="eVal">0.70</span></label>
+      <input id="cov" type="range" min="0" max="1" step="0.01" value="0.70" />
+      <label>Population optimism <span id="cVal">0.55</span></label>
+      <input id="pop" type="range" min="0" max="1" step="0.01" value="0.55" />
+      <button id="run" type="button">Score A vs B</button>
+      <div id="out" style="margin-top: 1.25rem"></div>
+      <p class="note">
+        Soft-sim only — not clinical diagnostic use, not live EEG control, not
+        FDA cleared, not the authors’ system.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(fit, cov, pop) {
+        const overall = round2(
+          clamp(fit * 55 + cov * 30 - pop * 12 + 8, 0, 100),
+        );
+        return overall;
+      }
+      function scoreB(fit, cov, pop) {
+        const overall = round2(
+          clamp(pop * 50 + (1 - fit) * 20 + cov * 15, 0, 100),
+        );
+        return overall;
+      }
+      const fitEl = document.getElementById("fit");
+      const covEl = document.getElementById("cov");
+      const popEl = document.getElementById("pop");
+      const wVal = document.getElementById("wVal");
+      const eVal = document.getElementById("eVal");
+      const cVal = document.getElementById("cVal");
+      const out = document.getElementById("out");
+      function sync() {
+        wVal.textContent = fitEl.value;
+        eVal.textContent = covEl.value;
+        cVal.textContent = popEl.value;
+      }
+      fitEl.oninput = covEl.oninput = popEl.oninput = sync;
+      document.getElementById("run").onclick = () => {
+        const fit = Number(fitEl.value);
+        const cov = Number(covEl.value);
+        const pop = Number(popEl.value);
+        const a = scoreA(fit, cov, pop);
+        const b = scoreB(fit, cov, pop);
+        const winner =
+          a > b + 0.5
+            ? "patient_specific_enorms"
+            : b > a + 0.5
+              ? "population_norm_baseline"
+              : "tie";
+        out.innerHTML =
+          "<p><strong>A (patient-specific):</strong> " +
+          a +
+          '</p><div class="bar"><div class="fill" style="width:' +
+          a +
+          '%"></div></div>' +
+          "<p style='margin-top:0.75rem'><strong>B (population):</strong> " +
+          b +
+          '</p><div class="bar"><div class="fill b" style="width:' +
+          b +
+          '%"></div></div>' +
+          "<p style='margin-top:0.75rem'>Winner: " +
+          winner +
+          "</p>";
+      };
+      sync();
+    </script>
+  </body>
+</html>

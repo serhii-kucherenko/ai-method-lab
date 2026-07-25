@@ -1430,7 +1430,7 @@
       "potential": "Patient-specific E-norms are underserved vs population-norm dumps without a dual bench",
       "moat": "Patient-specific E-norms vs population-norm baseline",
       "evidence": "Paper software claim (E-norms patient-specific EEG baseline pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer EEG analytics soft-sim with multi-flow bar; never claim clinical diagnostic use, live EEG control, or FDA clearance",
       "id": 69

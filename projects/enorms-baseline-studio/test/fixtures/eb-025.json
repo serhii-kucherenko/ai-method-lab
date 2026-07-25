@@ -1,0 +1,39 @@
+{
+  "id": "eb-025",
+  "input": {
+    "patientNormFit": 0.79,
+    "channelCoverage": 0.79,
+    "enormsStability": 0.77,
+    "detectionSensitivity": 0.8,
+    "populationMatchRate": 0.8,
+    "populationOptimism": 0.33,
+    "seizureHardness": 0.26,
+    "overclaimRisk": 0.21,
+    "enormsBias": "patient_first",
+    "profile": "patient_specific_enorms"
+  },
+  "expectedPatient": {
+    "mode": "patient_specific_enorms",
+    "patientFitScore": 62.51,
+    "coverageScore": 79.52,
+    "stabilityScore": 94.88,
+    "detectionIntegrity": 64.24,
+    "populationBaselineScore": 45.2,
+    "confidence": 69.6,
+    "patientContribution": 76.04,
+    "populationContribution": 48.27,
+    "overall": 75.04
+  },
+  "expectedPopulation": {
+    "mode": "population_norm_baseline",
+    "patientFitScore": 19.5,
+    "coverageScore": 24.6,
+    "stabilityScore": 21.69,
+    "detectionIntegrity": 42.63,
+    "populationBaselineScore": 43.52,
+    "confidence": 35.55,
+    "patientContribution": 30.39,
+    "populationContribution": 48.06,
+    "overall": 40.83
+  }
+}

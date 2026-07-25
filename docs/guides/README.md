@@ -101,5 +101,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 98 | [Transducin Measure Studio â€” what we learned](98-transducin-measure-studio-lessons.md) | Product `transducin-measure-studio` |
 | 99 | [Sovereign Cost Studio - what we learned](99-sovereign-cost-studio-lessons.md) | Product `sovereign-cost-studio` |
 | 100 | [Roi Exemplar Studio - what we learned](100-roi-exemplar-studio-lessons.md) | Product `roi-exemplar-studio` |
+| 101 | [Enorms Baseline Studio - what we learned](101-enorms-baseline-studio-lessons.md) | Product `enorms-baseline-studio` |
 
 

@@ -76,7 +76,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Transducin Measure Studio** | `transducin-measure-studio` | **Complete** | SNOMED-coded OCT recovery vs raw private-tag baseline |
 | **Sovereign Cost Studio** | `sovereign-cost-studio` | **Complete** | Sovereign-infra W/E/E accounting vs naive cloud-footprint baseline |
 | **Roi Exemplar Studio** | `roi-exemplar-studio` | **Complete** | Optimized VLM ROI exemplars vs naive exemplar baseline |
-| **Enorms Baseline Studio** | `enorms-baseline-studio` | **Building** | Patient-specific E-norms vs population-norm EEG baseline |
+| **Enorms Baseline Studio** | `enorms-baseline-studio` | **Complete** | Patient-specific E-norms vs population-norm EEG baseline |
 
 ## Rules
 
