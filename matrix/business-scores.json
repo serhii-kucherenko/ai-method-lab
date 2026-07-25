@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T23:18:11.584Z",
+  "updated_at": "2026-07-25T23:30:02.649Z",
   "projects": [
     {
       "id": 1,
@@ -2178,7 +2178,7 @@
     {
       "slug": "ion-hydrogel-studio",
       "project": "Ion Hydrogel Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare dynamic charge-regulating hydrogel ion transport against fixed-charge baselines before locking a gel pack",
       "pmf": "Early signal with materials / soft-matter electrolyte analytics leads who already trial gel soft-sims",
       "buyer": "Materials and soft-matter electrolyte analytics engineering leads",
@@ -2201,6 +2201,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 100
+    },
+    {
+      "slug": "liver-organoid-studio",
+      "project": "Liver Organoid Studio",
+      "status": "building",
+      "business_idea": "Compare multicellular liver organoid (HLO) models against single-lineage hepatocyte-like cell (HLC) baselines before locking a model pack",
+      "pmf": "Early signal with organoid-platform / MASLD screening analytics leads who already trial organoid soft-sims",
+      "buyer": "Organoid-platform and MASLD screening analytics engineering leads",
+      "money_hook": "Bench seats + private model packs (method-lab experiment)",
+      "potential": "Multicellular HLO MASLD modelling is underserved vs single-lineage HLC dumps without honesty",
+      "moat": "Multicellular HLO vs single-lineage HLC baseline",
+      "evidence": "Paper organoid-platform claim (hepatic differentiation to HLC/HLO for MASLD); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer organoid soft-sim with multi-flow bar; never claim wet-lab validated organoid GMP manufacture, live patient transplant, or clinical MASLD diagnosis",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 101
     }
   ]
 }
