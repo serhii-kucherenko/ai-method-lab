@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T08:18:23.811Z",
+  "updated_at": "2026-07-25T08:25:28.765Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -46,7 +46,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "climbing",
-  "notes": "Crystal Bind finished (email sent). Climbing Attest Proof Studio (EG-VAR / 2607.12650) — A/B trust pick.",
+  "notes": "Crystal Bind finished (email sent). Climbing Attest Proof Studio (EG-VAR / 2607.12650) — A/B trust pick. Human steer: every product must ship /pricing (tiers), /demo (step-by-step), /onboarding (checklist).",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -86,7 +86,7 @@
     "require_tutor_guide_before_email": true,
     "require_readme_before_email": true,
     "min_features": 20,
-    "min_pages": 8,
+    "min_pages": 11,
     "min_aggregates": 4,
     "finish_and_email_before_next": true,
     "max_parallel_agents": 5,
@@ -105,7 +105,17 @@
     "ban_isomorphic_desk_clones": true,
     "ban_template_noun_swap": true,
     "require_distinct_business_story": true,
-    "prefer_papers_with_code": true
+    "prefer_papers_with_code": true,
+    "require_pricing_page": true,
+    "require_step_demo_page": true,
+    "require_onboarding_checklist": true,
+    "required_routes": [
+      "/",
+      "/pricing",
+      "/demo",
+      "/onboarding",
+      "/honesty"
+    ]
   },
   "defaults": {
     "always_commit": true,

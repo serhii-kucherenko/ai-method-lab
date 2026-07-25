@@ -15,6 +15,7 @@ Before opening `projects/<id>/`, confirm `docs/COMPREHENSIVE_PRODUCT.md` + archi
 - Vision / roadmap / PRD / ERD on file: `docs/ideas/<id>-{VISION,ROADMAP,PRD,ERD}.md`
 - Blueprint on file: `docs/ideas/<id>-COMPREHENSIVE-BLUEPRINT.md` (≥4 pages, ≥3 aggregates, ≥6 features beyond CRUD)
 - Not an isomorphic dual-gate / capacity clone
+- Sustain must include **`/pricing`** (plans + tiers), **`/demo`** (step-by-step guided demo), **`/onboarding`** (checklist with progress) — see `docs/COMPREHENSIVE_PRODUCT.md`
 
 Shallow single-page smokes fail the lab goal even if tests are green.
 

@@ -51,6 +51,9 @@ Mature display name (2–4 English words). Slug = hyphenated lowercase. Never br
 | Design note | `docs/ideas/<slug>-DESIGN.md` (includes landing brief) |
 | README | `projects/<slug>/README.md` |
 | Marketing landing | `/` — selling points, features, explanations (`protocols/DESIGN.md`) |
+| Pricing + tiers | `/pricing` — hypothetical plans/tiers aligned to money hook |
+| Step-by-step demo | `/demo` — guided in-app walkthrough of the core happy path |
+| Onboarding checklist | `/onboarding` — first-run checklist with visible progress |
 | App stack | Next.js + Tailwind + shadcn; Python sidecar when needed (`docs/PRODUCT_STACK.md`) |
 | Tutor guide | `docs/guides/NN-<slug>-lessons.md` |
 | Offline try | `projects/<slug>/try.html` |

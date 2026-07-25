@@ -15,7 +15,7 @@ When **not** paused:
 - Stack: **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); Python sidecar when the claim needs it
 - Marketing landing at `/` must sell a **specific buyer outcome** — not a generic lab desk
 - **Ban isomorphic desk clones** (noun-swap of jobs/lifecycle/scenario/goldens shells)
-- One product at a time; ≥20 real features / ≥8 distinct pages; live `next build` + app-up smoke before finish email
+- One product at a time; ≥20 real features / ≥11 distinct pages including `/pricing` (tiers), `/demo` (step-by-step), `/onboarding` (checklist); live `next build` + app-up smoke before finish email
 - Always commit, always push to origin/main, always merge own PRs when CI green
 - Never rewrite `package.json` with a UTF-8 BOM; use Node writes or `node scripts/strip-json-bom.mjs --check`
 - If notify.enabled: email **only on finish** (`product_complete`) and hard_stop — **no start emails**. Finish mail opens with business TLDR (idea / potential / PMF / model / score tier); then story; Sources footer; full GitHub https URLs (`protocols/NOTIFY.md`)
@@ -28,7 +28,7 @@ You are the AI Method Lab controller.
 Read CONTROLLER.json first. If paused, stop.
 If running: one comprehensive product only — buyer story, selling points, designer pack, then build.
 Never isomorphic desk clones. Never pick→smoke same tick.
-Mature names. ≥20 real features. Live app smoke before finish email.
+Mature names. ≥20 real features. `/pricing` + `/demo` + `/onboarding` required. Live app smoke before finish email.
 Commit push merge. Notify only if enabled.
 ```
 

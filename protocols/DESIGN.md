@@ -24,8 +24,9 @@ Minimum contents of the design note:
 4. **Layout rules** — one job per section; cards only when they contain interaction; no hero overlays / pill clusters / stat-strip clutter
 5. **Motion** — 2–3 intentional motions (presence/hierarchy, not noise)
 6. **shadcn theme** — radius, colors mapped to CSS variables; which components to add
-7. **Page map** — landing + each sustain desk page: purpose, primary CTA, empty/error states
+7. **Page map** — landing + each sustain page (including **pricing**, **step-by-step demo**, **onboarding checklist**): purpose, primary CTA, empty/error states
 8. **Anti-looks** — explicitly refuse purple-on-white AI defaults, warm-cream+terracotta cliché, broadsheet hairline newspaper layouts, dark-mode-by-default unless the product asks for it
+9. **Commercial surfaces** — `/pricing` tiers copy must match the dossier money hook; `/demo` is a guided in-app walkthrough; `/onboarding` is a checklist with progress — not a paragraph of docs
 
 ## Marketing landing page (hard — every product)
 
@@ -45,10 +46,19 @@ Every product ships a **landing page** that sells and explains the product in pl
 3. **Product** — what this desk does in concrete terms
 4. **Selling points** — 3–5 benefit statements (outcomes, not jargon)
 5. **Features** — the live ≥15 capabilities in readable language (grouped; not a raw CRUD dump)
-6. **How it works** — short steps (e.g. create job → compare scenario → audit)
-7. **Honesty / limits** — workflow experiment; not authors’ system; not clinical/commercial replacement as applicable
-8. **Sources** — paper URL + authors’ code URL (or “none published”)
-9. **Footer CTA** — repeat primary CTA into the desk
+6. **How it works** — short steps; link to full **`/demo`** step-by-step
+7. **Pricing tease** — one line + link to **`/pricing`** (plans/tiers); do not dump a full price table in the hero
+8. **Honesty / limits** — workflow experiment; not authors’ system; not clinical/commercial replacement as applicable
+9. **Sources** — paper URL + authors’ code URL (or “none published”)
+10. **Footer CTA** — primary → domain workspace; secondary → `/onboarding` or `/demo`
+
+### Required companion pages (every product)
+
+| Route | Job |
+|-------|-----|
+| `/pricing` | Hypothetical plans + tiers + included features; method-lab packaging honesty (no fake card checkout required) |
+| `/demo` | Numbered step-by-step guided demo of the core claim (interactive preferred) |
+| `/onboarding` | First-run checklist with visible progress (settings/org, first domain object, dual compare, honesty ack) |
 
 ### Design bar for the landing
 
