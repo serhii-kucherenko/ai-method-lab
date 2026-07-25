@@ -60,6 +60,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Molecule Sample Studio** | `mol-sample-studio` | **Complete** | Sample-efficient generative optimization vs naive generative baseline |
 | **Assay Guard Studio** | `assay-guard-studio` | **Complete** | Assay-aware protocol validation vs naive protocol runner |
 | **Skeleton Author Studio** | `skeleton-author-studio` | **Complete** | Scaffolded non-visual authoring vs naive linear baseline |
+| **World Cog Drive Studio** | `world-cog-drive-studio` | **Building** | Dual-level world-cognitive VLA vs single-level VLA baseline |
 
 ## Rules
 

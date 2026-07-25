@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T14:12:29.363Z",
+  "updated_at": "2026-07-25T14:14:44.849Z",
   "projects": [
     {
       "id": 1,
@@ -1055,6 +1055,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "world-cog-drive-studio",
+      "project": "World Cog Drive Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare dual-level world-cognitive VLA driving against single-level VLA baselines before locking a route pack",
+      "pmf": "Early signal with AV stack / autonomy ML leads who already buy end-to-end driving benches",
+      "buyer": "AV stack and autonomy ML engineering leads",
+      "money_hook": "Bench seats + private route packs (method-lab experiment)",
+      "potential": "Semantic world forecasting plus generative evolution is underserved vs flat VLA stacks",
+      "moat": "Dual-level world-cognitive VLA vs single-level VLA baseline",
+      "evidence": "Paper software claim (WCog-VLA pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer autonomy soft-sim with multi-flow bar; never claim certified AV or live vehicle control",
+      "id": 53
     }
   ]
 }
