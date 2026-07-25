@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T12:15:00.000Z",
+  "updated_at": "2026-07-25T12:07:04.237Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "1dbaa605-9a6b-4ba7-9931-1065cf890221",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "b6851f3d-f4c2-4768-92a9-a427c23b6a8c",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__persona-triage-studio__r1",
   "last_error": null,
-  "current_product": "persona-triage-studio",
-  "current_idea": "persona-triage-studio",
+  "current_product": "feature-sufficiency-studio",
+  "current_idea": "feature-sufficiency-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Persona Triage Studio sustain complete: build+test+app-up green; guide + portfolio + score complete. product_complete_pending true — parent owns Resend finish email (do not send from this agent).",
+  "phase": "build",
+  "notes": "Persona Triage finish email sent. Next climb: Feature Sufficiency Studio (2607.09165) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.08625",
-      "slug": "persona-triage-studio",
-      "displayName": "Persona Triage Studio",
-      "at": "2026-07-25T11:52:55.564Z",
-      "url": "https://arxiv.org/abs/2607.08625v1",
+      "paperId": "2607.09165",
+      "slug": "feature-sufficiency-studio",
+      "displayName": "Feature Sufficiency Studio",
+      "at": "2026-07-25T12:07:04.238Z",
+      "url": "https://arxiv.org/abs/2607.09165v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T11:52:55.564Z",
+    "framing_started_at": "2026-07-25T12:07:04.238Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,
