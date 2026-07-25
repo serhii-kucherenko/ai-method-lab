@@ -1,0 +1,23 @@
+import { guard, json } from "@/lib/api";
+import { exportComparesCsv, exportPacksJson } from "@/store";
+
+export async function GET(req: Request) {
+  const blocked = guard(req);
+  if (blocked) return blocked;
+  const url = new URL(req.url);
+  const format = url.searchParams.get("format") ?? "json";
+  if (format === "csv") {
+    return new Response(exportComparesCsv(), {
+      headers: {
+        "content-type": "text/csv; charset=utf-8",
+        "content-disposition": 'attachment; filename="delt-compares.csv"',
+      },
+    });
+  }
+  return new Response(exportPacksJson(), {
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "content-disposition": 'attachment; filename="library-packs.json"',
+    },
+  });
+}

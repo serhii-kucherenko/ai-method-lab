@@ -105,7 +105,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Citizen Pref Studio** | `citizen-pref-studio` | **Complete** | Safety-first public oversight vs innovation-first baseline |
 | **Dialogue Design Studio** | `dialogue-design-studio` | **Complete** | Productive open-minded design vs engagement-maximizing baseline |
 | **Probe Domain Studio** | `probe-domain-studio` | **Complete** | Cooperative multi-domain DNA probes vs single-domain melting |
-| **Encoded Library Studio** | `encoded-library-studio` | Building | Iterative DELT construct-and-screen vs single-pass library screen |
+| **Encoded Library Studio** | `encoded-library-studio` | **Complete** | Iterative DELT construct-and-screen vs single-pass library screen |
 
 ## Rules
 

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Encoded Library Studio — offline try</title>
+  <style>
+    :root {
+      --el-ink: #12181e;
+      --el-sea: #1f6b6e;
+      --el-mist: #eef2f3;
+      --el-line: #c4cacf;
+      --el-copper: #a8743c;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--el-mist);
+      color: var(--el-ink);
+    }
+    header {
+      background: linear-gradient(165deg, #0a1014, #12181e 50%, #182226);
+      color: var(--el-mist);
+      padding: 2.5rem 1.5rem;
+    }
+    h1 { margin: 0; color: var(--el-copper); font-size: 1.75rem; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input, select {
+      width: 100%; box-sizing: border-box; margin-top: 0.25rem;
+      padding: 0.5rem; border: 1px solid var(--el-line); border-radius: 0.35rem;
+    }
+    button {
+      margin-top: 1rem; background: var(--el-sea); color: white;
+      border: 0; padding: 0.6rem 1rem; border-radius: 0.35rem; cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem; padding: 1rem; background: white;
+      border: 1px solid var(--el-line); border-radius: 0.5rem;
+    }
+    .bar { height: 0.5rem; background: #dfe5e7; border-radius: 999px; overflow: hidden; margin: 0.35rem 0 0.75rem; }
+    .fill { height: 100%; background: var(--el-sea); }
+    .fill.b { background: var(--el-copper); }
+    .note { font-size: 0.85rem; color: #4a555c; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Encoded Library Studio</h1>
+    <p>Approximate offline demo — iterative DELT vs single-pass screen. Full fidelity needs the Next app.</p>
+  </header>
+  <main>
+    <label>Cycle depth <input id="cycleDepth" type="number" min="0" max="1" step="0.01" value="0.62" /></label>
+    <label>Enrichment fold <input id="enrichmentFold" type="number" min="0" max="1" step="0.01" value="0.7" /></label>
+    <label>Diversity retention <input id="diversityRetention" type="number" min="0" max="1" step="0.01" value="0.74" /></label>
+    <label>Hit precision <input id="hitPrecision" type="number" min="0" max="1" step="0.01" value="0.68" /></label>
+    <label>Library coverage (B) <input id="libraryCoverage" type="number" min="0" max="1" step="0.01" value="0.82" /></label>
+    <label>Bias
+      <select id="deltBias">
+        <option value="balanced">balanced</option>
+        <option value="iterative">iterative</option>
+        <option value="hit_first">hit_first</option>
+        <option value="coverage_first">coverage_first</option>
+      </select>
+    </label>
+    <button id="run" type="button">Compare soft-sim</button>
+    <div class="out" id="out">Run to see approximate A/B scores.</div>
+    <p class="note">Honesty: soft-sim only — not wet-lab validated IND/NDA, not live screening robotics, not clinical candidate nomination. ChemRxiv 10.26434/chemrxiv.15004709/v2.</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function scoreA(input) {
+      const boost = 1.12;
+      const wI = biasWeight(input.deltBias, "iterative");
+      const wH = biasWeight(input.deltBias, "hit_first");
+      const load = input.synthesisNoise * (1.25 - input.cycleDepth * 0.5);
+      const cycle = clamp((input.cycleDepth * 55 + input.enrichmentFold * 25 - load * 10) * boost + 8, 0, 100);
+      const enrich = clamp(input.enrichmentFold * 60 * boost + input.cycleDepth * 25 + 8, 0, 100);
+      const div = clamp(input.diversityRetention * 58 * boost * wI + 10, 0, 100);
+      const hit = clamp(input.hitPrecision * 50 * boost * wH + 8, 0, 100);
+      const iterative = clamp(cycle * 0.24 + enrich * 0.26 + div * 0.28 + hit * 0.22, 0, 100);
+      const single = clamp(input.libraryCoverage * 40, 0, 100);
+      return round2(iterative * 0.82 + single * 0.18 + 4);
+    }
+    function scoreB(input) {
+      const boost = 1.08;
+      const wC = biasWeight(input.deltBias, "coverage_first");
+      const coverage = clamp(input.libraryCoverage * 58 * boost * wC + input.selectionBias * 32 + 8, 0, 100);
+      const iterative = clamp(coverage * 0.5, 0, 100);
+      return round2(coverage * 0.78 + iterative * 0.22);
+    }
+    document.getElementById("run").onclick = () => {
+      const input = {
+        cycleDepth: +document.getElementById("cycleDepth").value,
+        enrichmentFold: +document.getElementById("enrichmentFold").value,
+        diversityRetention: +document.getElementById("diversityRetention").value,
+        hitPrecision: +document.getElementById("hitPrecision").value,
+        libraryCoverage: +document.getElementById("libraryCoverage").value,
+        synthesisNoise: 0.35,
+        selectionBias: 0.4,
+        deltBias: document.getElementById("deltBias").value,
+      };
+      const a = scoreA(input);
+      const b = scoreB(input);
+      const winner = Math.abs(a - b) < 0.5 ? "tie" : a > b ? "iterative_delt_optimize" : "single_pass_library_screen";
+      document.getElementById("out").innerHTML =
+        "<strong>Winner:</strong> " + winner +
+        "<div>A iterative " + a + '<div class="bar"><div class="fill" style="width:' + a + '%"></div></div>' +
+        "B single-pass " + b + '<div class="bar"><div class="fill b" style="width:' + b + '%"></div></div>';
+    };
+  </script>
+</body>
+</html>

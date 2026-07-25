@@ -1,0 +1,39 @@
+{
+  "id": "el-030",
+  "input": {
+    "cycleDepth": 0.91,
+    "enrichmentFold": 0.88,
+    "diversityRetention": 0.87,
+    "hitPrecision": 0.91,
+    "libraryCoverage": 0.91,
+    "synthesisNoise": 0.21,
+    "selectionBias": 0.28,
+    "overclaimRisk": 0.13,
+    "deltBias": "iterative",
+    "profile": "single_pass_library_screen"
+  },
+  "expectedIterative": {
+    "mode": "iterative_delt_optimize",
+    "cycleScore": 95.24,
+    "enrichmentScore": 88.77,
+    "diversityScore": 100,
+    "hitScore": 71.68,
+    "coverageScore": 51.88,
+    "confidence": 72.25,
+    "iterativeContribution": 89.71,
+    "singlePassContribution": 55.31,
+    "overall": 87.52
+  },
+  "expectedSinglePass": {
+    "mode": "single_pass_library_screen",
+    "cycleScore": 25.72,
+    "enrichmentScore": 25.3,
+    "diversityScore": 22.14,
+    "hitScore": 45.02,
+    "coverageScore": 46.21,
+    "confidence": 38.95,
+    "iterativeContribution": 32.88,
+    "singlePassContribution": 50.68,
+    "overall": 44.3
+  }
+}

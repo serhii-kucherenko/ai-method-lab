@@ -130,5 +130,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 127 | [Citizen Pref Studio - what we learned](127-citizen-pref-studio-lessons.md) | Product `citizen-pref-studio` |
 | 128 | [Dialogue Design Studio - what we learned](128-dialogue-design-studio-lessons.md) | Product `dialogue-design-studio` |
 | 129 | [Probe Domain Studio - what we learned](129-probe-domain-studio-lessons.md) | Product `probe-domain-studio` |
+| 130 | [Encoded Library Studio - what we learned](130-encoded-library-studio-lessons.md) | Product `encoded-library-studio` |
 
 

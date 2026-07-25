@@ -1,0 +1,248 @@
+import { mkdirSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const w = (rel, content) => {
+  const p = join(root, rel);
+  mkdirSync(dirname(p), { recursive: true });
+  writeFileSync(p, content, "utf8");
+  console.log("wrote", rel);
+};
+
+w(
+  "src/app/globals.css",
+  `@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --el-ink: #12181e;
+  --el-sea: #1f6b6e;
+  --el-mist: #eef2f3;
+  --el-line: #c4cacf;
+  --el-copper: #a8743c;
+  --studio-ink: var(--el-ink);
+  --studio-ink-deep: #0a1014;
+  --studio-accent: var(--el-sea);
+  --studio-accent-deep: #154f52;
+  --studio-accent-soft: #d0e2e3;
+  --studio-gauze-soft: #e0e6e8;
+  --studio-cyan: #1f6b6e;
+  --studio-cyan-soft: #d0e2e3;
+  --studio-white: #eef2f3;
+  --studio-bg: #eef2f3;
+  --studio-panel: #ffffff;
+  --studio-line: #c4cacf;
+  --studio-signal: #a8743c;
+  --studio-warn: #a8743c;
+  --studio-warn-soft: #efe6d8;
+  --studio-wash: radial-gradient(ellipse 55% 45% at 8% 0%, #1f6b6e55 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 92% 18%, #a8743c44 0%, transparent 50%),
+    linear-gradient(165deg, #0a1014 0%, #12181e 48%, #182226 100%);
+
+  --background: #eef2f3;
+  --foreground: #12181e;
+  --card: #ffffff;
+  --card-foreground: #12181e;
+  --popover: #ffffff;
+  --popover-foreground: #12181e;
+  --primary: #1f6b6e;
+  --primary-foreground: #eef2f3;
+  --secondary: #eef2f3;
+  --secondary-foreground: #12181e;
+  --muted: #eef2f3;
+  --muted-foreground: #4a555c;
+  --accent: #d0e2e3;
+  --accent-foreground: #12181e;
+  --destructive: #a8743c;
+  --border: #c4cacf;
+  --input: #c4cacf;
+  --ring: #1f6b6e;
+  --radius: 0.5rem;
+  --sidebar: #eef2f3;
+  --sidebar-foreground: #12181e;
+  --sidebar-primary: #1f6b6e;
+  --sidebar-primary-foreground: #eef2f3;
+  --sidebar-accent: #d0e2e3;
+  --sidebar-accent-foreground: #12181e;
+  --sidebar-border: #c4cacf;
+  --sidebar-ring: #1f6b6e;
+  --chart-1: #1f6b6e;
+  --chart-2: #a8743c;
+  --chart-3: #4a555c;
+  --chart-4: #12181e;
+  --chart-5: #c4cacf;
+}
+
+@keyframes mist-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes brand-underline {
+  from { width: 0; }
+  to { width: 7.5rem; }
+}
+@keyframes hero-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes route-focus {
+  from { background-color: transparent; }
+  to { background-color: var(--studio-accent-soft); }
+}
+@keyframes strand-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-40px); }
+}
+
+.hero-fade { animation: hero-fade 0.7s ease-out both; }
+.mist-fade { animation: mist-fade 1.1s ease-out both; }
+.signal-underline {
+  display: block;
+  height: 3px;
+  width: 7.5rem;
+  margin-top: 0.75rem;
+  background: var(--el-copper);
+  animation: brand-underline 0.8s ease-out 0.2s both;
+}
+.score-bar { transition: width 0.45s ease; }
+.row-lift { transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease; }
+.row-lift:hover, .row-lift:focus-within {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(10, 16, 20, 0.08);
+  background-color: var(--studio-gauze-soft);
+  animation: route-focus 0.25s ease both;
+}
+.schema-grid {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(31, 107, 110, 0.22) 1px, transparent 0),
+    linear-gradient(rgba(168, 116, 60, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px, 44px 44px;
+}
+.infra-mist {
+  background: linear-gradient(
+    135deg,
+    rgba(238, 242, 243, 0.16) 0%,
+    transparent 40%,
+    rgba(31, 107, 110, 0.1) 100%
+  );
+}
+.strand-mist {
+  background-image:
+    repeating-linear-gradient(
+      95deg,
+      rgba(31, 107, 110, 0.16) 0 1px,
+      transparent 1px 18px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(238, 242, 243, 0.06) 0 1px,
+      transparent 1px 32px
+    );
+  animation: strand-drift 18s linear infinite;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+`,
+);
+
+w(
+  "src/app/layout.tsx",
+  `import type { Metadata } from "next";
+import { Fraunces, Manrope } from "next/font/google";
+import { DISPLAY_NAME, TAGLINE } from "@/claim";
+import "./globals.css";
+
+const display = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display",
+});
+
+const sans = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+});
+
+export const metadata: Metadata = {
+  title: DISPLAY_NAME,
+  description: TAGLINE,
+};
+
+export function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={\`\${display.variable} \${sans.variable} h-full\`}>
+      <body className="min-h-full font-[family-name:var(--font-sans)] antialiased">
+        {children}
+      </body>
+    </html>
+  );
+}
+
+export default RootLayout;
+`,
+);
+
+console.log("phase1 ok");
