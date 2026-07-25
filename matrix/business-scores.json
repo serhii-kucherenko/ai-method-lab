@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T08:17:54.933Z",
+  "updated_at": "2026-07-25T08:33:27.571Z",
   "projects": [
     {
       "id": 1,
@@ -569,7 +569,7 @@
         "money": 7,
         "wedge": 7,
         "moat": 7,
-        "evidence": 5,
+        "evidence": 6,
         "feasibility": 7
       },
       "business_idea": "Tie LLM empirical answers to tool-attested steps and checkable proof chains so teams catch fluent hallucinations before they ship",
@@ -578,13 +578,40 @@
       "money_hook": "Eval seats + per-attest run usage (method-lab experiment)",
       "potential": "Trust/eval spend rising with agentic empirics — clearer than clinical clones",
       "moat": "Tool-attest + soft-sim proof chain vs fluent-only or debate-only shells",
-      "evidence": "Paper software claim (EG-VAR); no public author code in digest",
-      "status": "building",
+      "evidence": "Paper software claim (EG-VAR); 30 dual goldens; /pricing /demo /onboarding shipped",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "A/B gate pass — trust/eval wedge; climb next",
-      "score": 68,
+      "gc_notes": "Keep trust/eval pattern; first product with required commercial surfaces",
+      "score": 69,
       "tier": "B",
       "id": 32
+    },
+    {
+      "slug": "video-track-studio",
+      "project": "Video Track Studio",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 7,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 5,
+        "feasibility": 8
+      },
+      "business_idea": "Diagnose whether video chat models actually track a character across long footage instead of trusting benchmark scores that hide tracking failures",
+      "pmf": "Early signal with multimodal eval / video LLM product leads who already buy benches and red-team kits",
+      "buyer": "Multimodal eval and video LLM product / QA leads",
+      "money_hook": "Bench seats + private long-form clip packs (method-lab experiment)",
+      "potential": "Video-LLM eval spend rising; identity tracking is underserved vs short-clip scores",
+      "moat": "Character-track failure diagnosis vs generic VQA accuracy dashboards",
+      "evidence": "Paper software claim (Video-LLM character tracking); no public author code in digest",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "A/B gate pass — eval wedge; must ship /pricing /demo /onboarding",
+      "score": 68,
+      "tier": "B",
+      "id": 33
     }
   ]
 }
