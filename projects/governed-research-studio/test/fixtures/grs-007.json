@@ -1,0 +1,39 @@
+{
+  "id": "grs-007",
+  "input": {
+    "gateCoverage": 0.45,
+    "workflowIntegrity": 0.38,
+    "evidenceProvenance": 0.42,
+    "privacyControl": 0.49,
+    "ungatedPassRate": 0.53,
+    "agentOptimism": 0.42,
+    "studyHardness": 0.55,
+    "leakageRisk": 0.43,
+    "researchBias": "workflow_first",
+    "profile": "governed"
+  },
+  "expectedGoverned": {
+    "mode": "governed",
+    "gateScore": 31.59,
+    "workflowScore": 43.11,
+    "evidenceScore": 48.37,
+    "privacyScore": 39.34,
+    "ungatedScore": 25.15,
+    "confidence": 33.6,
+    "governedContribution": 40.76,
+    "ungatedContribution": 25.64,
+    "overall": 42.04
+  },
+  "expectedUngated": {
+    "mode": "ungated",
+    "gateScore": 8.27,
+    "workflowScore": 19.34,
+    "evidenceScore": 15.59,
+    "privacyScore": 36.3,
+    "ungatedScore": 34.2,
+    "confidence": 22.15,
+    "governedContribution": 22.74,
+    "ungatedContribution": 37.5,
+    "overall": 27.27
+  }
+}

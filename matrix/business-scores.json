@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T14:24:28.474Z",
+  "updated_at": "2026-07-25T14:31:28.262Z",
   "projects": [
     {
       "id": 1,
@@ -1086,19 +1086,29 @@
     {
       "slug": "governed-research-studio",
       "project": "Governed Research Studio",
-      "score": 63,
+      "score": 66,
       "tier": "B",
       "business_idea": "Compare governed end-to-end research workflows against ungated agent baselines before locking a study pack",
-      "pmf": "Early signal with institutional research / bioinformatics leads who already run gated GWAS-style studies",
-      "buyer": "Institutional research and bioinformatics engineering leads",
+      "pmf": "Early signal with institutional research and bioinformatics leads who already run agent-assisted GWAS/study pipelines",
+      "buyer": "Institutional research / bioinformatics leads",
       "money_hook": "Bench seats + private study packs (method-lab experiment)",
-      "potential": "Governed research agents are underserved vs ungated LLM scientists that drift past privacy gates",
-      "moat": "Governed workflow vs ungated agent baseline",
-      "evidence": "Paper software claim (NVAITC AI Scientist pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "potential": "Governed research workflow eval is underserved vs ungated agent desks",
+      "moat": "Governed end-to-end research vs ungated agent baseline",
+      "evidence": "Paper software claim (governed research system; hypertension GWAS case); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Prefer research-governance soft-sim with multi-flow bar; never claim IRB clearance or live PHI",
-      "id": 54
+      "gc_notes": "Prefer study soft-sim with multi-flow bar; never claim IRB clearance or live PHI; distinct from desk/jobs/lifecycle shells",
+      "id": 54,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      }
     }
   ]
 }

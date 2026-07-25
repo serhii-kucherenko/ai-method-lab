@@ -1,6 +1,6 @@
 # Governed Research Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `governed-research-studio`  
 **Paper:** https://arxiv.org/abs/2607.11084v1  
 **Authors’ code:** none  

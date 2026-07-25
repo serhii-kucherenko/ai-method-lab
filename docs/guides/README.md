@@ -86,3 +86,4 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 83 | [Assay Guard Studio — what we learned](83-assay-guard-studio-lessons.md) | Product `assay-guard-studio` |
 | 84 | [Skeleton Author Studio — what we learned](84-skeleton-author-studio-lessons.md) | Product `skeleton-author-studio` |
 | 85 | [World Cog Drive Studio — what we learned](85-world-cog-drive-studio-lessons.md) | Product `world-cog-drive-studio` |
+| 86 | [Governed Research Studio — what we learned](86-governed-research-studio-lessons.md) | Product `governed-research-studio` |

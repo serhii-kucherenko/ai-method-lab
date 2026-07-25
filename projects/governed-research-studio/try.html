@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Governed Research Studio — offline try</title>
+    <style>
+      :root {
+        --ink: #142033;
+        --brass: #b08d4a;
+        --parchment: #eef1f4;
+        --teal: #3a6f75;
+        --line: #c2c8d0;
+      }
+      body {
+        margin: 0;
+        font-family: Karla, "Segoe UI", sans-serif;
+        background: var(--parchment);
+        color: var(--ink);
+      }
+      header {
+        background: linear-gradient(165deg, #0c121c, #142033 48%, #1a3036);
+        color: var(--parchment);
+        padding: 2.5rem 1.5rem 3rem;
+      }
+      h1 {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 2rem;
+        color: var(--brass);
+        margin: 0 0 0.5rem;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--brass);
+        color: var(--ink);
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.6rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #4a5560;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Governed Research Studio</h1>
+      <p>Offline soft-sim: governed research vs ungated agent.</p>
+    </header>
+    <main>
+      <label
+        >Gate coverage
+        <input id="gate" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Workflow integrity
+        <input
+          id="workflow"
+          type="number"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.65"
+      /></label>
+      <label
+        >Evidence provenance
+        <input
+          id="evidence"
+          type="number"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.72"
+      /></label>
+      <label
+        >Ungated pass rate
+        <input
+          id="ungated"
+          type="number"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.8"
+      /></label>
+      <button id="run" type="button">Score A/B</button>
+      <div class="out" id="out">Adjust inputs, then score.</div>
+      <p class="note">
+        Soft-sim only — not IRB cleared, not live PHI, not the authors&apos;
+        system. arXiv 2607.11084.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreGoverned(g, w, e, u) {
+        const gate = g * 55 + w * 25;
+        const workflow = w * 60 + g * 25;
+        const evidence = e * 58 + g * 28;
+        const overall = round2(
+          clamp(gate * 0.28 + workflow * 0.26 + evidence * 0.28 + (1 - u) * 12, 0, 100),
+        );
+        return overall;
+      }
+      function scoreUngated(g, w, e, u) {
+        return round2(
+          clamp(u * 58 + (1 - g) * 20 + (1 - e) * 10, 0, 100),
+        );
+      }
+      document.getElementById("run").onclick = () => {
+        const g = Number(document.getElementById("gate").value);
+        const w = Number(document.getElementById("workflow").value);
+        const e = Number(document.getElementById("evidence").value);
+        const u = Number(document.getElementById("ungated").value);
+        const a = scoreGoverned(g, w, e, u);
+        const b = scoreUngated(g, w, e, u);
+        const winner = a > b + 0.5 ? "governed" : b > a + 0.5 ? "ungated" : "tie";
+        document.getElementById("out").textContent =
+          "Winner " +
+          winner +
+          " · A (governed) " +
+          a +
+          " · B (ungated) " +
+          b +
+          " · gap " +
+          round2(Math.abs(a - b));
+      };
+    </script>
+  </body>
+</html>
