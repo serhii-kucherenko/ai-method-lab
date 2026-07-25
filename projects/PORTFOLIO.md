@@ -103,6 +103,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Latent Path Studio** | `latent-path-studio` | **Complete** | Multi-domain latent trajectory vs single-domain baseline |
 | **Access Equity Studio** | `access-equity-studio` | **Complete** | Equity-access AI vs accuracy-only baseline |
 | **Citizen Pref Studio** | `citizen-pref-studio` | **Complete** | Safety-first public oversight vs innovation-first baseline |
+| **Dialogue Design Studio** | `dialogue-design-studio` | **Building** | Productive open-minded design vs engagement-maximizing baseline |
 
 ## Rules
 

@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T22:07:29.759Z",
+  "updated_at": "2026-07-25T22:20:25.857Z",
   "projects": [
     {
       "id": 1,
@@ -2051,7 +2051,7 @@
       "potential": "Safety-first public-oversight preference packs are underserved vs innovation-first dumps without honesty",
       "moat": "Safety-first public oversight vs innovation-first self-regulation baseline",
       "evidence": "Paper governance/eval claim (citizen AI regulation preference pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer AI policy preference soft-sim with multi-flow bar; never claim live regulatory authority, government deployment, or certified polling",
       "dimensions": {
@@ -2066,6 +2066,33 @@
       },
       "score": 66,
       "id": 95
+    },
+    {
+      "slug": "dialogue-design-studio",
+      "project": "Dialogue Design Studio",
+      "tier": "B",
+      "business_idea": "Compare productive open-minded dialogue feed designs against engagement-maximizing baselines before locking a feed pack",
+      "pmf": "Early signal with civic-tech / platform trust-and-safety / deliberative media leads who already trial feed soft-sims",
+      "buyer": "Civic-tech, platform trust-and-safety, and deliberative media engineering leads",
+      "money_hook": "Bench seats + private feed packs (method-lab experiment)",
+      "potential": "Productive open-minded dialogue designs are underserved vs engagement-maximizing dumps without honesty",
+      "moat": "Productive open-minded design vs engagement-maximizing baseline",
+      "evidence": "Paper HCI/software claim (productive dialogue platform pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer civic dialogue soft-sim with multi-flow bar; never claim live social network deployment, moderation authority, or attitude-change clearance",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "id": 96
     }
   ]
 }
