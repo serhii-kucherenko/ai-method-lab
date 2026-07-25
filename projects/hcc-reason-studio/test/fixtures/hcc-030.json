@@ -1,0 +1,39 @@
+{
+  "id": "hcc-030",
+  "input": {
+    "pathwayCoverage": 0.91,
+    "clinicalCueFidelity": 0.88,
+    "schemaFit": 0.87,
+    "reasoningDepth": 0.91,
+    "baselineAccuracy": 0.91,
+    "shortcutOptimism": 0.28,
+    "caseHardness": 0.21,
+    "leakageRisk": 0.13,
+    "hccBias": "reasoning_strict",
+    "profile": "non_reasoning_baseline"
+  },
+  "expectedClinicalReasoning": {
+    "mode": "clinical_reasoning",
+    "riskStratification": 71.59,
+    "reasoningDiagnosis": 88.77,
+    "schemaReasonScore": 64.69,
+    "packIntegrity": 100,
+    "baselineScore": 51.88,
+    "confidence": 80.35,
+    "reasoningContribution": 80.03,
+    "baselineContribution": 55.31,
+    "overall": 79.58
+  },
+  "expectedNonReasoningBaseline": {
+    "mode": "non_reasoning_baseline",
+    "riskStratification": 25.72,
+    "reasoningDiagnosis": 25.06,
+    "schemaReasonScore": 22.34,
+    "packIntegrity": 45.02,
+    "baselineScore": 46.21,
+    "confidence": 38.95,
+    "reasoningContribution": 32.87,
+    "baselineContribution": 50.68,
+    "overall": 44.3
+  }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HCC Reason Studio — try</title>
+    <style>
+      :root {
+        --ink: #2a1518;
+        --wine: #8b3a42;
+        --gold: #c4a35a;
+        --mist: #f3eee8;
+        --line: #d2c6ba;
+      }
+      body {
+        margin: 0;
+        font-family: "Nunito Sans", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--mist);
+      }
+      header {
+        background: linear-gradient(165deg, #1a0c0e, #2a1518 55%, #5a2a30);
+        color: #fff;
+        padding: 3rem 1.5rem 2.5rem;
+      }
+      h1 {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 2.4rem;
+        margin: 0;
+        color: var(--gold);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #e8ddd4;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        background: var(--wine);
+        width: 0%;
+      }
+      .fill.b {
+        background: var(--gold);
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 1.25rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #6a4a4e;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>HCC Reason Studio</h1>
+      <p>Offline soft-sim: clinical-reasoning vs non-reasoning baseline.</p>
+    </header>
+    <main>
+      <label>
+        Pathway coverage
+        <input id="pathway" type="range" min="0" max="100" value="60" />
+      </label>
+      <label>
+        Clinical cue fidelity
+        <input id="cues" type="range" min="0" max="100" value="70" />
+      </label>
+      <label>
+        Reasoning depth
+        <input id="depth" type="range" min="0" max="100" value="65" />
+      </label>
+      <label>
+        Shortcut optimism
+        <input id="shortcut" type="range" min="0" max="100" value="45" />
+      </label>
+      <div class="card">
+        <div>Clinical reasoning (A)</div>
+        <div class="bar"><div id="aFill" class="fill"></div></div>
+        <div id="aScore">0</div>
+        <div style="margin-top: 0.75rem">Non-reasoning baseline (B)</div>
+        <div class="bar"><div id="bFill" class="fill b"></div></div>
+        <div id="bScore">0</div>
+      </div>
+      <p class="note">
+        Soft-sim only; not CDS; not live EHR; not authors’ system. Inspired by
+        arXiv 2607.08602.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function score() {
+        const pathway = Number(pathwayEl.value) / 100;
+        const cues = Number(cuesEl.value) / 100;
+        const depth = Number(depthEl.value) / 100;
+        const shortcut = Number(shortcutEl.value) / 100;
+        const a = clamp(
+          pathway * 40 + cues * 30 + depth * 28 - shortcut * 12 + 8,
+          0,
+          100,
+        );
+        const b = clamp(
+          (1 - pathway) * 15 + shortcut * 42 + (1 - depth) * 25 + 20,
+          0,
+          100,
+        );
+        aFill.style.width = a.toFixed(1) + "%";
+        bFill.style.width = b.toFixed(1) + "%";
+        aScore.textContent = a.toFixed(1);
+        bScore.textContent = b.toFixed(1);
+      }
+      const pathwayEl = document.getElementById("pathway");
+      const cuesEl = document.getElementById("cues");
+      const depthEl = document.getElementById("depth");
+      const shortcutEl = document.getElementById("shortcut");
+      const aFill = document.getElementById("aFill");
+      const bFill = document.getElementById("bFill");
+      const aScore = document.getElementById("aScore");
+      const bScore = document.getElementById("bScore");
+      [pathwayEl, cuesEl, depthEl, shortcutEl].forEach((el) =>
+        el.addEventListener("input", score),
+      );
+      score();
+    </script>
+  </body>
+</html>
