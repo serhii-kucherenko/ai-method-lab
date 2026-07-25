@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T19:37:12.839Z",
+  "updated_at": "2026-07-25T19:40:18.577Z",
   "projects": [
     {
       "id": 1,
@@ -1715,6 +1715,23 @@
         "evidence": 7,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "cache-hit-studio",
+      "project": "Cache Hit Studio",
+      "score": 66,
+      "tier": "B",
+      "business_idea": "Compare structured CACHE-style computational hit-finding against naive docking baselines before locking a hit pack",
+      "pmf": "Early signal with computational chemistry / immuno-oncology discovery leads who already run prospective hit-finding challenges",
+      "buyer": "Computational chemistry and immuno-oncology discovery engineering leads",
+      "money_hook": "Bench seats + private hit packs (method-lab experiment)",
+      "potential": "Prospective hit-finding benches are underserved vs lucky dock-score dumps without a dual baseline",
+      "moat": "Structured hit-finding vs naive docking baseline",
+      "evidence": "Paper software claim (CACHE Challenge #4 CBLB hit-finding pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer discovery soft-sim with multi-flow bar; never claim wet-lab validated hits, live ELN write-back, or FDA clearance; never brand as CACHE",
+      "id": 83
     }
   ]
 }
