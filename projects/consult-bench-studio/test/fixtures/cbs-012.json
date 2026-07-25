@@ -1,0 +1,35 @@
+{
+  "id": "cbs-012",
+  "input": {
+    "imageRelevance": 0.44,
+    "visualGrounding": 0.45,
+    "clinicalCoherence": 0.44,
+    "turnClarity": 0.42,
+    "safetyDiscipline": 0.43,
+    "textFluency": 0.4,
+    "departmentFit": 0.43,
+    "historyCoverage": 0.42,
+    "urgencyRecognition": 0.45,
+    "hallucinationRisk": 0.4,
+    "department": "ophthalmology",
+    "plan": "multimodal"
+  },
+  "expectedMultimodal": {
+    "mode": "multimodal",
+    "visualFidelity": 55.09,
+    "clinicalPlan": 59.43,
+    "safetyScore": 50.98,
+    "departmentAlignment": 50.69,
+    "responseClarity": 50.38,
+    "overall": 53.68
+  },
+  "expectedTextOnly": {
+    "mode": "text_only",
+    "visualFidelity": 6.96,
+    "clinicalPlan": 18.43,
+    "safetyScore": 6.07,
+    "departmentAlignment": 8.57,
+    "responseClarity": 0,
+    "overall": 8.05
+  }
+}

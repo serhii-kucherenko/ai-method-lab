@@ -1,0 +1,35 @@
+{
+  "id": "cbs-028",
+  "input": {
+    "imageRelevance": 0.82,
+    "visualGrounding": 0.85,
+    "clinicalCoherence": 0.82,
+    "turnClarity": 0.78,
+    "safetyDiscipline": 0.8,
+    "textFluency": 0.12,
+    "departmentFit": 0.8,
+    "historyCoverage": 0.81,
+    "urgencyRecognition": 0.83,
+    "hallucinationRisk": 0.12,
+    "department": "orthopedics",
+    "plan": "text_only"
+  },
+  "expectedMultimodal": {
+    "mode": "multimodal",
+    "visualFidelity": 67.48,
+    "clinicalPlan": 65.18,
+    "safetyScore": 58.28,
+    "departmentAlignment": 53.9,
+    "responseClarity": 45.94,
+    "overall": 59.24
+  },
+  "expectedTextOnly": {
+    "mode": "text_only",
+    "visualFidelity": 0,
+    "clinicalPlan": 10.74,
+    "safetyScore": 0,
+    "departmentAlignment": 0,
+    "responseClarity": 0,
+    "overall": 2.36
+  }
+}

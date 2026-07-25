@@ -1,0 +1,35 @@
+{
+  "id": "cbs-016",
+  "input": {
+    "imageRelevance": 0.53,
+    "visualGrounding": 0.53,
+    "clinicalCoherence": 0.55,
+    "turnClarity": 0.51,
+    "safetyDiscipline": 0.52,
+    "textFluency": 0.35,
+    "departmentFit": 0.52,
+    "historyCoverage": 0.53,
+    "urgencyRecognition": 0.53,
+    "hallucinationRisk": 0.35,
+    "department": "radiology",
+    "plan": "text_only"
+  },
+  "expectedMultimodal": {
+    "mode": "multimodal",
+    "visualFidelity": 36.11,
+    "clinicalPlan": 45.06,
+    "safetyScore": 34.34,
+    "departmentAlignment": 33.74,
+    "responseClarity": 24.01,
+    "overall": 35.36
+  },
+  "expectedTextOnly": {
+    "mode": "text_only",
+    "visualFidelity": 1.69,
+    "clinicalPlan": 17.49,
+    "safetyScore": 4.55,
+    "departmentAlignment": 6.38,
+    "responseClarity": 0,
+    "overall": 6.27
+  }
+}

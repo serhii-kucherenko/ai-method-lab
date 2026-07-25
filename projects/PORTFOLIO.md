@@ -34,7 +34,7 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 | **Thorax Localize Studio** | `thorax-localize-studio` | **Complete** | CXR classify + lesion localize |
 | **Optical Stack Studio** | `optical-stack-studio` | **Complete** | Open-vocab multilayer coating design |
 | **Reason Frame Studio** | `reason-frame-studio` | **Complete** | Game-theoretic multi-agent anti-hallucination |
-| **Consult Bench Studio** | `consult-bench-studio` | **Building** | Multimodal medical consult eval |
+| **Consult Bench Studio** | `consult-bench-studio` | **Complete** | Multimodal medical consult eval |
 
 ## Rules
 

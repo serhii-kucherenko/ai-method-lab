@@ -1,0 +1,35 @@
+{
+  "id": "cbs-015",
+  "input": {
+    "imageRelevance": 0.57,
+    "visualGrounding": 0.49,
+    "clinicalCoherence": 0.51,
+    "turnClarity": 0.55,
+    "safetyDiscipline": 0.56,
+    "textFluency": 0.34,
+    "departmentFit": 0.56,
+    "historyCoverage": 0.49,
+    "urgencyRecognition": 0.49,
+    "hallucinationRisk": 0.34,
+    "department": "dermatology",
+    "plan": "multimodal"
+  },
+  "expectedMultimodal": {
+    "mode": "multimodal",
+    "visualFidelity": 64.38,
+    "clinicalPlan": 65.67,
+    "safetyScore": 60.22,
+    "departmentAlignment": 59.29,
+    "responseClarity": 59.7,
+    "overall": 62.17
+  },
+  "expectedTextOnly": {
+    "mode": "text_only",
+    "visualFidelity": 0.41,
+    "clinicalPlan": 15.98,
+    "safetyScore": 4.61,
+    "departmentAlignment": 6.24,
+    "responseClarity": 0,
+    "overall": 5.72
+  }
+}

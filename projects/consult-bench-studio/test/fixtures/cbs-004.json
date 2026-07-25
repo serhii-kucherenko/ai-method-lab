@@ -1,0 +1,35 @@
+{
+  "id": "cbs-004",
+  "input": {
+    "imageRelevance": 0.24,
+    "visualGrounding": 0.28,
+    "clinicalCoherence": 0.29,
+    "turnClarity": 0.24,
+    "safetyDiscipline": 0.24,
+    "textFluency": 0.57,
+    "departmentFit": 0.24,
+    "historyCoverage": 0.25,
+    "urgencyRecognition": 0.3,
+    "hallucinationRisk": 0.57,
+    "department": "general",
+    "plan": "text_only"
+  },
+  "expectedMultimodal": {
+    "mode": "multimodal",
+    "visualFidelity": 7.29,
+    "clinicalPlan": 23.1,
+    "safetyScore": 10.47,
+    "departmentAlignment": 12.77,
+    "responseClarity": 1.03,
+    "overall": 11.39
+  },
+  "expectedTextOnly": {
+    "mode": "text_only",
+    "visualFidelity": 22.01,
+    "clinicalPlan": 23.32,
+    "safetyScore": 10.48,
+    "departmentAlignment": 15,
+    "responseClarity": 8.73,
+    "overall": 15.58
+  }
+}

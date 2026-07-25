@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Consult Bench Studio — try</title>
+    <style>
+      :root {
+        --bg: #e8f0ed;
+        --ink: #14201c;
+        --mint: #3d9b84;
+        --panel: #f3f8f6;
+        --line: #c5d5cf;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.5;
+      }
+      header {
+        background: linear-gradient(180deg, #14201c, #0b1411);
+        color: #e8f0ed;
+        padding: 2.5rem 1.25rem 2rem;
+      }
+      h1 {
+        font-family: Fraunces, Georgia, serif;
+        font-weight: 600;
+        margin: 0 0 0.5rem;
+        color: var(--mint);
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem 3rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .scores {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+        padding: 1rem;
+      }
+      .big {
+        font-size: 2rem;
+        color: var(--mint);
+        font-family: Fraunces, Georgia, serif;
+      }
+      .note {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #5a6e67;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Consult Bench Studio</h1>
+      <p>Approximate offline dual score — multimodal vs text-only.</p>
+    </header>
+    <main>
+      <label>Image relevance <span id="ir">0.80</span>
+        <input id="imageRelevance" type="range" min="0" max="1" step="0.01" value="0.8" />
+      </label>
+      <label>Visual grounding <span id="vg">0.75</span>
+        <input id="visualGrounding" type="range" min="0" max="1" step="0.01" value="0.75" />
+      </label>
+      <label>Clinical coherence <span id="cc">0.72</span>
+        <input id="clinicalCoherence" type="range" min="0" max="1" step="0.01" value="0.72" />
+      </label>
+      <label>Text fluency <span id="tf">0.30</span>
+        <input id="textFluency" type="range" min="0" max="1" step="0.01" value="0.3" />
+      </label>
+      <div class="scores">
+        <div class="card">
+          <div>A · Multimodal</div>
+          <div class="big" id="scoreA">—</div>
+        </div>
+        <div class="card">
+          <div>B · Text-only</div>
+          <div class="big" id="scoreB" style="color: #14201c">—</div>
+        </div>
+      </div>
+      <p class="note">
+        Simplified JS demo for digests. Full fidelity lives in the Next.js app
+        (<code>npm run dev</code>). Method-lab only — not clinical certification.
+        Paper: https://arxiv.org/abs/2607.09142v1
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(ir, vg, cc, tf) {
+        const visual = clamp(ir * 40 + vg * 45 - tf * 12, 0, 100);
+        const clinical = clamp(cc * 55 + vg * 20 - (1 - ir) * 8, 0, 100);
+        return round2(visual * 0.55 + clinical * 0.45);
+      }
+      function scoreB(ir, vg, cc, tf) {
+        const visual = clamp(tf * 50 + (1 - ir) * 20 - vg * 15, 0, 100);
+        const clinical = clamp(tf * 40 + cc * 25 - ir * 18, 0, 100);
+        return round2(visual * 0.4 + clinical * 0.6);
+      }
+      function sync() {
+        const ir = +imageRelevance.value;
+        const vg = +visualGrounding.value;
+        const cc = +clinicalCoherence.value;
+        const tf = +textFluency.value;
+        document.getElementById("ir").textContent = ir.toFixed(2);
+        document.getElementById("vg").textContent = vg.toFixed(2);
+        document.getElementById("cc").textContent = cc.toFixed(2);
+        document.getElementById("tf").textContent = tf.toFixed(2);
+        document.getElementById("scoreA").textContent = scoreA(ir, vg, cc, tf);
+        document.getElementById("scoreB").textContent = scoreB(ir, vg, cc, tf);
+      }
+      ["imageRelevance", "visualGrounding", "clinicalCoherence", "textFluency"].forEach(
+        (id) => document.getElementById(id).addEventListener("input", sync),
+      );
+      sync();
+    </script>
+  </body>
+</html>
