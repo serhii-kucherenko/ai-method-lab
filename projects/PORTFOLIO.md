@@ -67,7 +67,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Pore Inverse Studio** | `pore-inverse-studio` | **Complete** | Unified inverse pore design vs naive generative baseline |
 | **Chem Trace Studio** | `chem-trace-studio` | **Complete** | Typed trace-state chemistry agents vs ungated baseline |
 | **Reaction Loop Studio** | `reaction-loop-studio` | **Complete** | Chemist-in-the-loop VLM vs open-loop VLM baseline |
-| **Shared Risk Studio** | `shared-risk-studio` | **Building** | Shared multi-disease risk representation vs disease-specific baseline |
+| **Shared Risk Studio** | `shared-risk-studio` | **Complete** | Shared multi-disease risk representation vs disease-specific baseline |
 
 ## Rules
 

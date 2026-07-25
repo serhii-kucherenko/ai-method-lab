@@ -1,0 +1,25 @@
+{
+  "slug": "shared-risk-studio",
+  "project": "Shared Risk Studio",
+  "id": 60,
+  "status": "complete",
+  "business_idea": "Compare shared multi-disease health representations against disease-specific baselines before locking a cohort pack",
+  "pmf": "Early signal with biobank / population-health ML leads who need an explicit shared vs disease-specific soft-sim gate",
+  "buyer": "Population health and biobank ML engineering leads",
+  "money_hook": "Bench seats + private cohort packs (method-lab experiment)",
+  "potential": "Shared multi-disease representation soft-sim is underserved vs disease-specific model dumps",
+  "moat": "Shared multi-disease representation vs disease-specific baseline",
+  "evidence": "Paper software claim (RisQ pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+  "gc_notes": "Prefer shared-risk soft-sim with multi-flow bar; never claim CDS or live EHR; distinct from desk/jobs/lifecycle shells; not authors' brand / not RisQ",
+  "rubric": "biz-rubric-v1",
+  "dimensions": {
+    "buyer": 7,
+    "pain": 7,
+    "pmf": 6,
+    "money": 6,
+    "wedge": 7,
+    "moat": 7,
+    "evidence": 6,
+    "feasibility": 7
+  }
+}

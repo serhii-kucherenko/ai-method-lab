@@ -1,6 +1,6 @@
 # Shared Risk Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `shared-risk-studio`  
 **Paper:** https://www.medrxiv.org/content/10.64898/2026.07.07.26357373v1  
 **Authors’ code:** none  

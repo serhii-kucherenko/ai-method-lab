@@ -1,0 +1,39 @@
+{
+  "id": "sr-020",
+  "input": {
+    "cohortCoverage": 0.66,
+    "modalityFidelity": 0.7,
+    "queryClarity": 0.66,
+    "runStability": 0.68,
+    "diseaseBaselineRate": 0.7,
+    "skipOptimism": 0.37,
+    "diseaseHardness": 0.31,
+    "overclaimRisk": 0.29,
+    "queryBias": "shared_first",
+    "profile": "shared_multi_disease"
+  },
+  "expectedShared": {
+    "mode": "shared_multi_disease",
+    "sharedCoverage": 52.86,
+    "modalityScore": 70.06,
+    "queryOptScore": 45.74,
+    "packIntegrity": 86.81,
+    "diseaseBaselineScore": 38.94,
+    "confidence": 58.35,
+    "sharedContribution": 62.46,
+    "diseaseContribution": 41.54,
+    "overall": 62.69
+  },
+  "expectedDisease": {
+    "mode": "disease_specific_baseline",
+    "sharedCoverage": 13.66,
+    "modalityScore": 23.93,
+    "queryOptScore": 20.75,
+    "packIntegrity": 40.51,
+    "diseaseBaselineScore": 40.86,
+    "confidence": 32.05,
+    "sharedContribution": 27.94,
+    "diseaseContribution": 45.29,
+    "overall": 37.25
+  }
+}

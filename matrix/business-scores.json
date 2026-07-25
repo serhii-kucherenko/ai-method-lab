@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T15:21:09.665Z",
+  "updated_at": "2026-07-25T15:27:43.710Z",
   "projects": [
     {
       "id": 1,
@@ -1248,19 +1248,29 @@
     {
       "slug": "shared-risk-studio",
       "project": "Shared Risk Studio",
-      "score": 63,
+      "score": 66,
       "tier": "B",
       "business_idea": "Compare shared multi-disease health representations against disease-specific baselines before locking a cohort pack",
-      "pmf": "Early signal with population health / biobank ML leads who already train disease-specific risk models",
+      "pmf": "Early signal with biobank / population-health ML leads who need an explicit shared vs disease-specific soft-sim gate",
       "buyer": "Population health and biobank ML engineering leads",
       "money_hook": "Bench seats + private cohort packs (method-lab experiment)",
-      "potential": "Shared cross-disease risk representations are underserved vs siloed disease models",
+      "potential": "Shared multi-disease representation soft-sim is underserved vs disease-specific model dumps",
       "moat": "Shared multi-disease representation vs disease-specific baseline",
-      "evidence": "Paper software claim (RisQ-pattern shared health representation); no public code; soft-sim honesty required",
-      "status": "building",
+      "evidence": "Paper software claim (RisQ pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Prefer population-health soft-sim with multi-flow bar; never claim CDS clearance or live EHR",
-      "id": 60
+      "gc_notes": "Prefer shared-risk soft-sim with multi-flow bar; never claim CDS or live EHR; distinct from desk/jobs/lifecycle shells; not authors' brand / not RisQ",
+      "id": 60,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      }
     }
   ]
 }

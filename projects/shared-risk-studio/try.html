@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shared Risk Studio — offline demo</title>
+    <style>
+      :root {
+        --ink: #142033;
+        --mint: #3a8f7a;
+        --paper: #eef2f4;
+        --line: #c2c9d0;
+        --coral: #c45a5a;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+      }
+      .hero {
+        min-height: 70vh;
+        padding: 3rem 1.5rem;
+        background: linear-gradient(165deg, #0c1420 0%, #142033 48%, #1a2f2a 100%);
+        color: #fff;
+      }
+      h1 {
+        font-family: Literata, Georgia, serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: var(--mint);
+        margin: 0;
+      }
+      .tag {
+        font-family: Literata, Georgia, serif;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      }
+      .panel {
+        max-width: 40rem;
+        margin: -2rem auto 2rem;
+        padding: 1.25rem;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.4rem 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--mint);
+        color: #fff;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        font-size: 0.95rem;
+      }
+      .fence {
+        color: var(--coral);
+        font-size: 0.85rem;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Shared Risk Studio</h1>
+      <p class="tag">One representation. Many disease horizons.</p>
+      <p>Offline soft-sim dual score — shared multi-disease vs disease-specific.</p>
+    </div>
+    <div class="panel">
+      <label>Cohort coverage (0–1)<input id="cov" type="number" step="0.01" value="0.65" /></label>
+      <label>Modality fidelity (0–1)<input id="fid" type="number" step="0.01" value="0.7" /></label>
+      <label>Query clarity (0–1)<input id="clr" type="number" step="0.01" value="0.72" /></label>
+      <label>Disease baseline rate (0–1)<input id="base" type="number" step="0.01" value="0.55" /></label>
+      <button id="run" type="button">Score A/B</button>
+      <div class="out" id="out"></div>
+      <p class="fence">
+        Soft-sim only · not CDS cleared · not live EHR · not authors’ system / not RisQ brand
+      </p>
+    </div>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreShared(i) {
+        const shared =
+          i.cov * 55 + i.fid * 25 + i.clr * 20 - (1 - i.base) * 8;
+        const disease = i.base * 40 + (1 - i.fid) * 15;
+        return {
+          overall: round2(clamp(shared * 0.82 + disease * 0.18 + 4, 0, 100)),
+        };
+      }
+      function scoreDisease(i) {
+        const disease = i.base * 58 + (1 - i.clr) * 12;
+        const shared = i.cov * 20 + i.fid * 15;
+        return {
+          overall: round2(clamp(disease * 0.78 + shared * 0.22, 0, 100)),
+        };
+      }
+      document.getElementById("run").onclick = function () {
+        const i = {
+          cov: Number(document.getElementById("cov").value),
+          fid: Number(document.getElementById("fid").value),
+          clr: Number(document.getElementById("clr").value),
+          base: Number(document.getElementById("base").value),
+        };
+        const a = scoreShared(i);
+        const b = scoreDisease(i);
+        const winner =
+          a.overall > b.overall + 0.5
+            ? "shared_multi_disease"
+            : b.overall > a.overall + 0.5
+              ? "disease_specific_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "Winner " +
+          winner +
+          " · A " +
+          a.overall +
+          " · B " +
+          b.overall +
+          " · gap " +
+          round2(Math.abs(a.overall - b.overall));
+      };
+    </script>
+  </body>
+</html>
