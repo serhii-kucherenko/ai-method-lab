@@ -36,7 +36,8 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Thorax Localize Studio** | `thorax-localize-studio` | **Complete** | CXR classify + lesion localize |
 | **Optical Stack Studio** | `optical-stack-studio` | **Complete** | Open-vocab multilayer coating design |
 | **Reason Frame Studio** | `reason-frame-studio` | **Complete** | Game-theoretic multi-agent anti-hallucination |
-| **Edge Quant Studio** | edge-quant-studio | **Building** | Channel-aware edge CPU LLM quant plans |
+| **Consult Bench Studio** | `consult-bench-studio` | **Complete** | Multimodal medical consult eval |
+| **Edge Quant Studio** | `edge-quant-studio` | **Building** | Channel-aware edge CPU LLM quant plans |
 
 ## Rules
 
