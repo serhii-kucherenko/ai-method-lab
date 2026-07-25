@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T17:18:40.966Z",
+  "updated_at": "2026-07-25T17:35:44.307Z",
   "projects": [
     {
       "id": 1,
@@ -1468,6 +1468,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer agentic soft-sim with multi-flow bar; never claim production Arabic LLM deployment or live chat write-back",
       "id": 71
+    },
+    {
+      "slug": "idia-quant-studio",
+      "project": "Idia Quant Studio",
+      "score": 65,
+      "tier": "B",
+      "business_idea": "Compare informed data-independent acquisition against naive DIA baselines before locking a single-cell quant pack",
+      "pmf": "Early signal with single-cell proteomics / mass-spec analytics leads who already trial DIA pipelines",
+      "buyer": "Single-cell proteomics and mass-spec analytics engineering leads",
+      "money_hook": "Bench seats + private quant packs (method-lab experiment)",
+      "potential": "Informed DIA for low-abundance regulatory proteins is underserved vs naive DIA dumps without a dual bench",
+      "moat": "Informed DIA vs naive DIA baseline",
+      "evidence": "Paper software claim (iDIA single-cell proteomics pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer scp-MS soft-sim with multi-flow bar; never claim wet-lab validated proteomics or live instrument write-back",
+      "id": 72
     }
   ]
 }
