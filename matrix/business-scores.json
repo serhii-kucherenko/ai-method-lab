@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T08:55:54.807Z",
+  "updated_at": "2026-07-25T09:10:43.968Z",
   "projects": [
     {
       "id": 1,
@@ -650,22 +650,49 @@
         "money": 6,
         "wedge": 7,
         "moat": 7,
-        "evidence": 5,
+        "evidence": 6,
         "feasibility": 8
       },
       "business_idea": "Run sentence-level sign language translation streams with real-time latency honesty instead of offline batch gloss dumps",
-      "pmf": "Early signal with accessibility / edtech / civic language leads who already buy captioning and a11y tooling",
+      "pmf": "Early signal with accessibility / language-access leads who already buy captioning and a11y tooling",
       "buyer": "Accessibility and language-access product leads (institutions / platforms)",
       "money_hook": "Institution seats + stream-minute usage (method-lab experiment)",
-      "potential": "Compliance-driven a11y demand; real-time sentence path is a sharper wedge than offline SLT demos",
+      "potential": "Compliance-driven a11y demand; real-time sentence path sharper than offline SLT demos",
       "moat": "Real-time sentence stream plan vs offline batch translation dashboards",
-      "evidence": "Paper software claim (real-time SLT); no public author code in digest",
-      "status": "building",
+      "evidence": "Paper software claim; 30 dual goldens; 8 user flows; /pricing /demo /onboarding /flows shipped",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "A/B gate pass — a11y wedge; require /pricing /demo /onboarding",
-      "score": 66,
+      "gc_notes": "Keep a11y pattern with multi-flow + platform must-haves; first product hitting ≥5 flows bar hard",
+      "score": 67,
       "tier": "B",
       "id": 35
+    },
+    {
+      "slug": "terrain-fire-studio",
+      "project": "Terrain Fire Studio",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 8,
+        "pmf": 6,
+        "money": 7,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 5,
+        "feasibility": 7
+      },
+      "business_idea": "Refresh wildfire-prone terrain models by aligning new aerial photos to older 3D maps before crews trust outdated ground",
+      "pmf": "Early signal with wildfire GIS / land-management / emergency planning teams who already buy terrain and mapping tools",
+      "buyer": "Wildfire GIS and land-management planning leads",
+      "money_hook": "Agency seats + per-refresh compute packs (method-lab experiment)",
+      "potential": "Public-safety mapping budgets; alignment-before-trust is a clear industrial wedge",
+      "moat": "Physics-aware photo-to-terrain refresh vs naive orthophoto overlays",
+      "evidence": "Paper software claim (LTM); no public author code in digest",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "A/B gate pass — industrial/public-safety wedge; require /pricing /demo /onboarding /flows ≥5 + platform must-haves",
+      "score": 68,
+      "tier": "B",
+      "id": 36
     }
   ]
 }
