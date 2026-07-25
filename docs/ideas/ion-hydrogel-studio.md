@@ -1,6 +1,6 @@
 # Ion Hydrogel Studio
 
-**State:** framing  
+**State:** complete  
 **Slug:** `ion-hydrogel-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15004897/v2  
 **Authors’ code:** none  

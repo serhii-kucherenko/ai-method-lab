@@ -1,0 +1,39 @@
+{
+  "id": "ih-010",
+  "input": {
+    "chargeRegulation": 0.5,
+    "fixedChargeDensity": 0.57,
+    "ionMobility": 0.45,
+    "bindingStrength": 0.49,
+    "saltLoad": 0.4,
+    "gelPermeability": 0.46,
+    "swellingRatio": 0.53,
+    "overclaimRisk": 0.39,
+    "chargeBias": "regulation_first",
+    "profile": "dynamic_charge_regulation"
+  },
+  "expectedRegulation": {
+    "mode": "dynamic_charge_regulation",
+    "regulationScore": 48.61,
+    "mobilityScore": 47.78,
+    "bindingScore": 54.44,
+    "saltScore": 36.8,
+    "fixedScore": 28.11,
+    "confidence": 32.65,
+    "regulationContribution": 47.2,
+    "fixedContribution": 29.79,
+    "overall": 48.07
+  },
+  "expectedFixed": {
+    "mode": "fixed_charge_baseline",
+    "regulationScore": 5.57,
+    "mobilityScore": 26.67,
+    "bindingScore": 21.08,
+    "saltScore": 34.6,
+    "fixedScore": 43.22,
+    "confidence": 30.9,
+    "regulationContribution": 26.23,
+    "fixedContribution": 47.15,
+    "overall": 37.01
+  }
+}

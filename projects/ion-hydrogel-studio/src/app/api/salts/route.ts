@@ -1,0 +1,31 @@
+import { guard, json } from "@/lib/api";
+import { archiveSalt, createSalt, listSalts } from "@/store";
+
+export async function GET(req: Request) {
+  const blocked = guard(req);
+  if (blocked) return blocked;
+  const url = new URL(req.url);
+  return json(
+    listSalts({
+      q: url.searchParams.get("q") ?? undefined,
+      packId: url.searchParams.get("packId") ?? undefined,
+      status: url.searchParams.get("status") ?? undefined,
+      page: Number(url.searchParams.get("page") ?? 1),
+      pageSize: Number(url.searchParams.get("pageSize") ?? 20),
+    }),
+  );
+}
+
+export async function POST(req: Request) {
+  const blocked = guard(req);
+  if (blocked) return blocked;
+  const body = await req.json();
+  if (body.action === "archive") {
+    const salt = archiveSalt(body.id);
+    if (!salt) return json({ error: "not_found" }, { status: 404 });
+    return json({ salt });
+  }
+  const salt = createSalt(body);
+  if (!salt) return json({ error: "bad_refs" }, { status: 400 });
+  return json({ salt }, { status: 201 });
+}

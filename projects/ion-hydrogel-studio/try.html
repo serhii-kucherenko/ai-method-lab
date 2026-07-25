@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ion Hydrogel Studio — offline try</title>
+  <style>
+    :root {
+      --ih-ink: #12171c;
+      --ih-sea: #1e6a6d;
+      --ih-mist: #eef3f4;
+      --ih-line: #c3c9ce;
+      --ih-copper: #a8763d;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--ih-mist);
+      color: var(--ih-ink);
+    }
+    header {
+      background: linear-gradient(165deg, #0a1012, #12171c 50%, #182022);
+      color: var(--ih-mist);
+      padding: 2.5rem 1.5rem;
+    }
+    h1 { margin: 0; color: var(--ih-copper); font-size: 1.75rem; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input, select {
+      width: 100%; box-sizing: border-box; margin-top: 0.25rem;
+      padding: 0.5rem; border: 1px solid var(--ih-line); border-radius: 0.35rem;
+    }
+    button {
+      margin-top: 1rem; background: var(--ih-sea); color: white;
+      border: 0; padding: 0.6rem 1rem; border-radius: 0.35rem; cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem; padding: 1rem; background: white;
+      border: 1px solid var(--ih-line); border-radius: 0.5rem;
+    }
+    .bar { height: 0.5rem; background: #dfe5e7; border-radius: 999px; overflow: hidden; margin: 0.35rem 0 0.75rem; }
+    .fill { height: 100%; background: var(--ih-sea); }
+    .fill.b { background: var(--ih-copper); }
+    .note { font-size: 0.85rem; color: #4a555c; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ion Hydrogel Studio</h1>
+    <p>Approximate offline demo — dynamic charge regulation vs fixed-charge baseline. Full fidelity needs the Next app.</p>
+  </header>
+  <main>
+    <label>Charge regulation <input id="chargeRegulation" type="number" min="0" max="1" step="0.01" value="0.62" /></label>
+    <label>Ion mobility <input id="ionMobility" type="number" min="0" max="1" step="0.01" value="0.7" /></label>
+    <label>Gel permeability <input id="gelPermeability" type="number" min="0" max="1" step="0.01" value="0.74" /></label>
+    <label>Swelling ratio <input id="swellingRatio" type="number" min="0" max="1" step="0.01" value="0.68" /></label>
+    <label>Fixed charge density (B) <input id="fixedChargeDensity" type="number" min="0" max="1" step="0.01" value="0.82" /></label>
+    <label>Bias
+      <select id="chargeBias">
+        <option value="balanced">balanced</option>
+        <option value="regulation_first">regulation_first</option>
+        <option value="mobility_first">mobility_first</option>
+        <option value="fixed_first">fixed_first</option>
+      </select>
+    </label>
+    <button id="run" type="button">Compare soft-sim</button>
+    <div class="out" id="out">Run to see approximate A/B scores.</div>
+    <p class="note">Honesty: soft-sim only — not wet-lab validated membrane manufacturing, not live plant ionics, not commercial battery cell qualification. ChemRxiv 10.26434/chemrxiv.15004897/v2.</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function scoreA(input) {
+      const boost = 1.12;
+      const wR = biasWeight(input.chargeBias, "regulation_first");
+      const wM = biasWeight(input.chargeBias, "mobility_first");
+      const drag = input.saltLoad * 0.55 + input.bindingStrength * 0.45;
+      const regulation = clamp((input.chargeRegulation * 55 + input.ionMobility * 25 - drag * 10) * boost * ((wR + wM + 1.45) / 3) + 8 - input.overclaimRisk * 6, 0, 100);
+      const mobility = clamp(input.ionMobility * 60 * boost + input.gelPermeability * 25 + 8 - input.bindingStrength * 4, 0, 100);
+      const overall = clamp(regulation * 0.45 + mobility * 0.35 + input.swellingRatio * 20 + 4, 0, 100);
+      return { overall: round2(overall), regulation: round2(regulation), mobility: round2(mobility) };
+    }
+    function scoreB(input) {
+      const boost = 1.08;
+      const wF = biasWeight(input.chargeBias, "fixed_first");
+      const fixed = clamp(input.fixedChargeDensity * 58 * boost * wF + input.bindingStrength * 22 + 8, 0, 100);
+      const overall = clamp(fixed * 0.78 + input.saltLoad * 10, 0, 100);
+      return { overall: round2(overall), fixed: round2(fixed) };
+    }
+    document.getElementById("run").onclick = () => {
+      const input = {
+        chargeRegulation: Number(document.getElementById("chargeRegulation").value),
+        ionMobility: Number(document.getElementById("ionMobility").value),
+        gelPermeability: Number(document.getElementById("gelPermeability").value),
+        swellingRatio: Number(document.getElementById("swellingRatio").value),
+        fixedChargeDensity: Number(document.getElementById("fixedChargeDensity").value),
+        bindingStrength: 0.7,
+        saltLoad: 0.45,
+        overclaimRisk: 0.28,
+        chargeBias: document.getElementById("chargeBias").value,
+      };
+      const a = scoreA(input);
+      const b = scoreB(input);
+      const winner = a.overall > b.overall + 0.5 ? "dynamic_charge_regulation" : b.overall > a.overall + 0.5 ? "fixed_charge_baseline" : "tie";
+      document.getElementById("out").innerHTML =
+        "<strong>Winner: " + winner + "</strong>" +
+        "<p>A regulation " + a.overall + "</p><div class='bar'><div class='fill' style='width:" + a.overall + "%'></div></div>" +
+        "<p>B fixed " + b.overall + "</p><div class='bar'><div class='fill b' style='width:" + b.overall + "%'></div></div>";
+    };
+  </script>
+</body>
+</html>

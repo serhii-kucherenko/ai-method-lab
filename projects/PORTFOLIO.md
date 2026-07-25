@@ -107,7 +107,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Probe Domain Studio** | `probe-domain-studio` | **Complete** | Cooperative multi-domain DNA probes vs single-domain melting |
 | **Encoded Library Studio** | `encoded-library-studio` | **Complete** | Iterative DELT construct-and-screen vs single-pass library screen |
 | **Fluoride Label Studio** | `fluoride-label-studio` | **Complete** | Fast isotopic F-18 exchange vs multistep prosthetic baseline |
-| **Ion Hydrogel Studio** | `ion-hydrogel-studio` | Building | Dynamic charge regulation vs fixed-charge hydrogel baseline |
+| **Ion Hydrogel Studio** | `ion-hydrogel-studio` | **Complete** | Dynamic charge regulation vs fixed-charge hydrogel baseline |
 
 ## Rules
 
