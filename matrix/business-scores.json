@@ -1549,7 +1549,7 @@
       "potential": "AI-assisted escalation is underserved vs slow inconsistent manual triage without a dual bench",
       "moat": "AI-assisted escalation vs manual triage baseline",
       "evidence": "Paper software claim (DMT-PHE AI Agent classification/escalation pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer public-health ops soft-sim with multi-flow bar; never claim operational MoH authority, live write-back, or clinical diagnosis",
       "id": 76

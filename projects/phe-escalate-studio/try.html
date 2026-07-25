@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phe Escalate Studio — offline try</title>
+    <style>
+      :root {
+        --pe-ink: #1a1f28;
+        --pe-teal: #2a7a88;
+        --pe-mist: #eef2f4;
+        --pe-line: #c3c9ce;
+        --pe-amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        background: var(--pe-mist);
+        color: var(--pe-ink);
+      }
+      header {
+        background: linear-gradient(165deg, #12161c, #1a1f28 50%, #1e2a30);
+        color: white;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      h1 {
+        font-family: Sora, "Segoe UI", sans-serif;
+        margin: 0;
+        color: #7eb8c2;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid var(--pe-line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--pe-teal);
+        color: white;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--pe-line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        opacity: 0.75;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Phe Escalate Studio</h1>
+      <p>Offline soft-sim: AI-assisted escalation vs manual triage baseline</p>
+    </header>
+    <main>
+      <label
+        >Signal clarity
+        <input id="sig" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Case velocity
+        <input id="vel" type="number" min="0" max="1" step="0.01" value="0.72"
+      /></label>
+      <label
+        >Geo spread proxy
+        <input id="geo" type="number" min="0" max="1" step="0.01" value="0.68"
+      /></label>
+      <label
+        >Lab confirm proxy
+        <input id="lab" type="number" min="0" max="1" step="0.01" value="0.65"
+      /></label>
+      <label
+        >Manual triage breadth
+        <input id="tri" type="number" min="0" max="1" step="0.01" value="0.55"
+      /></label>
+      <button id="go">Score A vs B</button>
+      <div class="out" id="out">
+        Run a score to see AI-assisted vs manual triage deltas.
+      </div>
+      <p class="note">
+        Soft-sim only — not operational MoH authority, not live write-back, not
+        clinical diagnosis, not the authors' system.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(i) {
+        const load = i.escalationHardness * (1.25 - i.geoSpreadProxy * 0.5);
+        const signal =
+          (i.signalClarity * 55 + i.caseVelocity * 25 - load * 10) * 1.12 +
+          8 -
+          i.overclaimRisk * 6;
+        const vel =
+          i.caseVelocity * 60 * 1.12 +
+          i.signalClarity * 25 +
+          8 -
+          i.baselineOptimism * 4;
+        const spread =
+          i.geoSpreadProxy * 58 * 1.12 +
+          i.signalClarity * 28 +
+          10 -
+          load * 12;
+        const confirm =
+          i.labConfirmProxy * 50 * 1.12 +
+          i.caseVelocity * 25 +
+          i.signalClarity * 15 +
+          8;
+        const ai = clamp(
+          (clamp(signal, 0, 100) * 0.26 +
+            clamp(vel, 0, 100) * 0.24 +
+            clamp(spread, 0, 100) * 0.28 +
+            clamp(confirm, 0, 100) * 0.22) *
+            0.82 +
+            4,
+          0,
+          100,
+        );
+        return round2(ai);
+      }
+      function scoreB(i) {
+        const triage =
+          i.manualTriageBreadth * 58 * 1.08 +
+          i.baselineOptimism * 32 -
+          i.escalationHardness * 10 +
+          8;
+        const overall = clamp(
+          clamp(triage, 0, 100) * 0.78 +
+            i.manualTriageBreadth * 12 -
+            i.escalationHardness * 8,
+          0,
+          100,
+        );
+        return round2(overall);
+      }
+      document.getElementById("go").onclick = () => {
+        const i = {
+          signalClarity: Number(document.getElementById("sig").value),
+          caseVelocity: Number(document.getElementById("vel").value),
+          geoSpreadProxy: Number(document.getElementById("geo").value),
+          labConfirmProxy: Number(document.getElementById("lab").value),
+          manualTriageBreadth: Number(document.getElementById("tri").value),
+          baselineOptimism: 0.4,
+          escalationHardness: 0.35,
+          overclaimRisk: 0.25,
+        };
+        const a = scoreA(i);
+        const b = scoreB(i);
+        const winner =
+          a > b + 0.5
+            ? "ai_assisted_phe_escalation"
+            : b > a + 0.5
+              ? "manual_triage_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "A (AI-assisted) " +
+          a +
+          " · B (manual triage) " +
+          b +
+          " · winner " +
+          winner +
+          " · gap " +
+          round2(Math.abs(a - b));
+      };
+    </script>
+  </body>
+</html>

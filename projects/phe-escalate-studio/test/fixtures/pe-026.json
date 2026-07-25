@@ -1,0 +1,39 @@
+{
+  "id": "pe-026",
+  "input": {
+    "signalClarity": 0.83,
+    "caseVelocity": 0.83,
+    "geoSpreadProxy": 0.8,
+    "labConfirmProxy": 0.83,
+    "manualTriageBreadth": 0.84,
+    "baselineOptimism": 0.34,
+    "escalationHardness": 0.27,
+    "overclaimRisk": 0.22,
+    "escalationBias": "balanced",
+    "profile": "ai_assisted_phe_escalation"
+  },
+  "expectedAi": {
+    "mode": "ai_assisted_phe_escalation",
+    "signalScore": 78.48,
+    "velocityScore": 83.17,
+    "spreadScore": 80.25,
+    "confirmIntegrity": 87.68,
+    "triageScore": 47.68,
+    "confidence": 73.75,
+    "aiContribution": 82.13,
+    "triageContribution": 50.82,
+    "overall": 80.49
+  },
+  "expectedTriage": {
+    "mode": "manual_triage_baseline",
+    "signalScore": 33.17,
+    "velocityScore": 25.61,
+    "spreadScore": 22.47,
+    "confirmIntegrity": 44.32,
+    "triageScore": 68.8,
+    "confidence": 37.1,
+    "aiContribution": 38.87,
+    "triageContribution": 63,
+    "overall": 54.21
+  }
+}
