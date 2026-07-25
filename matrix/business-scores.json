@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T08:33:27.571Z",
+  "updated_at": "2026-07-25T08:45:30.385Z",
   "projects": [
     {
       "id": 1,
@@ -596,22 +596,49 @@
         "money": 7,
         "wedge": 7,
         "moat": 7,
+        "evidence": 6,
+        "feasibility": 8
+      },
+      "business_idea": "Diagnose whether video chat models actually track a character across long footage instead of trusting short-clip benchmark scores",
+      "pmf": "Early signal with multimodal eval / video LLM product leads who already buy benches",
+      "buyer": "Multimodal eval and video LLM product / QA leads",
+      "money_hook": "Bench seats + private long-form clip packs (method-lab experiment)",
+      "potential": "Video-LLM eval spend rising; identity tracking underserved vs short-clip scores",
+      "moat": "Character-track failure diagnosis vs generic VQA accuracy dashboards",
+      "evidence": "Paper software claim; 30 dual goldens; /pricing /demo /onboarding shipped",
+      "status": "complete",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Keep eval pattern with commercial surfaces; avoid stacking more medical clinics",
+      "score": 69,
+      "tier": "B",
+      "id": 33
+    },
+    {
+      "slug": "hold-match-studio",
+      "project": "Hold Match Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 8,
+        "pmf": 6,
+        "money": 7,
+        "wedge": 7,
+        "moat": 7,
         "evidence": 5,
         "feasibility": 8
       },
-      "business_idea": "Diagnose whether video chat models actually track a character across long footage instead of trusting benchmark scores that hide tracking failures",
-      "pmf": "Early signal with multimodal eval / video LLM product leads who already buy benches and red-team kits",
-      "buyer": "Multimodal eval and video LLM product / QA leads",
-      "money_hook": "Bench seats + private long-form clip packs (method-lab experiment)",
-      "potential": "Video-LLM eval spend rising; identity tracking is underserved vs short-clip scores",
-      "moat": "Character-track failure diagnosis vs generic VQA accuracy dashboards",
-      "evidence": "Paper software claim (Video-LLM character tracking); no public author code in digest",
+      "business_idea": "Decide when to hold a ride-hail match so passenger and driver experience improve instead of accepting the first feasible pair",
+      "pmf": "Early signal with mobility marketplace ops who already pay for matching and ETA tooling",
+      "buyer": "Ride-hail / mobility marketplace operations and matching leads",
+      "money_hook": "Ops seats + per-match-decision usage (method-lab experiment)",
+      "potential": "Direct marketplace ops budgets — clearer money than clinical or consumer clones",
+      "moat": "Experience-aware hold control vs first-feasible match dashboards",
+      "evidence": "Paper software claim (EXHOLD); no public author code in digest",
       "status": "building",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "A/B gate pass — eval wedge; must ship /pricing /demo /onboarding",
-      "score": 68,
+      "gc_notes": "A/B gate pass — ops/money wedge; require /pricing /demo /onboarding",
+      "score": 71,
       "tier": "B",
-      "id": 33
+      "id": 34
     }
   ]
 }
