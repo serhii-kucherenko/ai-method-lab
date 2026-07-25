@@ -1,0 +1,39 @@
+{
+  "id": "ag-001",
+  "input": {
+    "deckCoverage": 0.29,
+    "assayFidelity": 0.25,
+    "assayFit": 0.28,
+    "protocolIntegrity": 0.34,
+    "naivePassRate": 0.39,
+    "skipOptimism": 0.45,
+    "protocolHardness": 0.59,
+    "leakageRisk": 0.5,
+    "assayBias": "balanced",
+    "profile": "assay_aware"
+  },
+  "expectedAssayAware": {
+    "mode": "assay_aware",
+    "ruleCoverage": 22.56,
+    "assayDiagnosis": 30.25,
+    "protocolOptScore": 27.38,
+    "deckIntegrity": 34.28,
+    "runnerScore": 16.4,
+    "confidence": 19.35,
+    "assayContribution": 28.33,
+    "runnerContribution": 15.96,
+    "overall": 30.1
+  },
+  "expectedNaiveProtocolRunner": {
+    "mode": "naive_protocol_runner",
+    "ruleCoverage": 5.76,
+    "assayDiagnosis": 17.09,
+    "protocolOptScore": 13.13,
+    "deckIntegrity": 32.39,
+    "runnerScore": 40.93,
+    "confidence": 17.1,
+    "assayContribution": 21.86,
+    "runnerContribution": 38.6,
+    "overall": 27.2
+  }
+}

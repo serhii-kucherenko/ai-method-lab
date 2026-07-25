@@ -1,6 +1,6 @@
 # Assay Guard Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `assay-guard-studio`  
 **Paper:** https://arxiv.org/abs/2607.15620v1  
 **Authors’ code:** none  

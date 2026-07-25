@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T13:56:18.272Z",
+  "updated_at": "2026-07-25T14:02:55.502Z",
   "projects": [
     {
       "id": 1,
@@ -1005,19 +1005,29 @@
     {
       "slug": "assay-guard-studio",
       "project": "Assay Guard Studio",
-      "score": 63,
+      "score": 66,
       "tier": "B",
-      "business_idea": "Compare assay-aware liquid-handling protocol validation against naive protocol runners before locking a deck pack",
-      "pmf": "Early signal with lab automation / liquid-handling leads who already buy OT-2 and protocol tools",
+      "business_idea": "Compare assay-aware protocol validation against naive protocol runners before locking a liquid-handling deck pack",
+      "pmf": "Early signal with lab-automation leads who already burn tips on naive runners",
       "buyer": "Lab automation and liquid-handling engineering leads",
       "money_hook": "Bench seats + private deck packs (method-lab experiment)",
-      "potential": "Assay-rule misses dominate open-source liquid handling; validation benches are underserved",
-      "moat": "Assay-aware validation vs naive protocol runner",
-      "evidence": "Paper software claim (AEGIS-pattern assay-aware validation); no public code; soft-sim honesty required",
-      "status": "building",
+      "potential": "Assay-aware protocol validation is underserved vs naive runner desks",
+      "moat": "Assay-aware protocol validation vs naive protocol runner",
+      "evidence": "Paper software claim (assay-aware validation + runtime monitoring pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Prefer lab-automation soft-sim with multi-flow bar; never claim certified compliance or live robot control",
-      "id": 51
+      "gc_notes": "Prefer deck soft-sim with multi-flow bar; never claim certified compliance or live robot control",
+      "id": 51,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      }
     }
   ]
 }
