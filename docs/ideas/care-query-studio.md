@@ -1,6 +1,6 @@
 # Care Query Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `care-query-studio`  
 **Paper:** https://www.medrxiv.org/content/10.64898/2026.07.05.26356776v1  
 **Authors’ code:** none  

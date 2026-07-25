@@ -1,0 +1,39 @@
+{
+  "id": "cq-013",
+  "input": {
+    "languageCoverage": 0.54,
+    "clinicalFidelity": 0.52,
+    "localeGrounding": 0.56,
+    "answerCompleteness": 0.57,
+    "clinicianConfidence": 0.6,
+    "baselineOptimism": 0.39,
+    "queryHardness": 0.42,
+    "overclaimRisk": 0.36,
+    "queryBias": "clinician_first",
+    "profile": "multilingual_poc_llm_answers"
+  },
+  "expectedLlm": {
+    "mode": "multilingual_poc_llm_answers",
+    "languageScore": 30.08,
+    "fidelityScore": 44.88,
+    "localeScore": 36.64,
+    "completenessScore": 32.66,
+    "clinicianScore": 31.2,
+    "confidence": 45.6,
+    "llmContribution": 36.04,
+    "clinicianContribution": 32.85,
+    "overall": 36.47
+  },
+  "expectedClinician": {
+    "mode": "local_clinician_baseline",
+    "languageScore": 22.62,
+    "fidelityScore": 21.42,
+    "localeScore": 17.82,
+    "completenessScore": 37.74,
+    "clinicianScore": 67.02,
+    "confidence": 26.55,
+    "llmContribution": 33.32,
+    "clinicianContribution": 57.3,
+    "overall": 46.5
+  }
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Care Query Studio — offline try</title>
+    <style>
+      :root {
+        --cq-ink: #1a2228;
+        --cq-teal: #2d6f6a;
+        --cq-mist: #eef3f2;
+        --cq-line: #c5cdcb;
+        --cq-amber: #b8893a;
+      }
+      body {
+        margin: 0;
+        font-family: Figtree, "Segoe UI", sans-serif;
+        background: var(--cq-mist);
+        color: var(--cq-ink);
+      }
+      header {
+        background: linear-gradient(165deg, #10161a, #1a2228 50%, #243038);
+        color: white;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      h1 {
+        font-family: Literata, Georgia, serif;
+        margin: 0;
+        color: var(--cq-amber);
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid var(--cq-line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--cq-teal);
+        color: white;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--cq-line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        opacity: 0.75;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Care Query Studio</h1>
+      <p>
+        Offline soft-sim: multilingual POC LLM answers vs local clinician
+        baseline
+      </p>
+    </header>
+    <main>
+      <label
+        >Language coverage
+        <input id="languageCoverage" type="number" min="0" max="1" step="0.01" value="0.62"
+      /></label>
+      <label
+        >Clinical fidelity
+        <input id="clinicalFidelity" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Locale grounding
+        <input id="localeGrounding" type="number" min="0" max="1" step="0.01" value="0.74"
+      /></label>
+      <label
+        >Answer completeness
+        <input id="answerCompleteness" type="number" min="0" max="1" step="0.01" value="0.68"
+      /></label>
+      <label
+        >Clinician confidence
+        <input id="clinicianConfidence" type="number" min="0" max="1" step="0.01" value="0.82"
+      /></label>
+      <button id="run">Score A/B</button>
+      <div class="out" id="out">Adjust proxies, then score.</div>
+      <p class="note">
+        Soft-sim only — not diagnostic, not live EHR, not FDA, not NigBench.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreLlm(i) {
+        const load = clamp(i.queryHardness * (1.25 - i.localeGrounding * 0.5), 0, 1.5);
+        const llm =
+          i.languageCoverage * 28 +
+          i.clinicalFidelity * 26 +
+          i.localeGrounding * 24 +
+          i.answerCompleteness * 22 -
+          load * 8 -
+          i.overclaimRisk * 6;
+        return round2(clamp(llm, 0, 100));
+      }
+      function scoreClinician(i) {
+        const c =
+          i.clinicianConfidence * 55 +
+          i.baselineOptimism * 30 -
+          i.queryHardness * 12 -
+          i.overclaimRisk * 8;
+        return round2(clamp(c, 0, 100));
+      }
+      document.getElementById("run").onclick = () => {
+        const i = {
+          languageCoverage: Number(languageCoverage.value),
+          clinicalFidelity: Number(clinicalFidelity.value),
+          localeGrounding: Number(localeGrounding.value),
+          answerCompleteness: Number(answerCompleteness.value),
+          clinicianConfidence: Number(clinicianConfidence.value),
+          baselineOptimism: 0.7,
+          queryHardness: 0.55,
+          overclaimRisk: 0.28,
+        };
+        const a = scoreLlm(i);
+        const b = scoreClinician(i);
+        const winner =
+          a > b + 0.5
+            ? "multilingual_poc_llm_answers"
+            : b > a + 0.5
+              ? "local_clinician_baseline"
+              : "tie";
+        out.textContent =
+          "A (LLM) " + a + " · B (clinician) " + b + " · winner " + winner;
+      };
+    </script>
+  </body>
+</html>
