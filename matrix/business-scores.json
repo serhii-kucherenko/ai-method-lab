@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T21:02:50.660Z",
+  "updated_at": "2026-07-25T21:14:40.280Z",
   "projects": [
     {
       "id": 1,
@@ -1916,7 +1916,7 @@
       "potential": "Distributed ego+exo fusion for in-the-wild HMD mocap is underserved vs ego-only dumps without honesty",
       "moat": "Distributed ego+exo fusion vs ego-only baseline",
       "evidence": "Paper software claim (distributed ego-exo HMD mocap pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer mocap soft-sim with multi-flow bar; never claim live HMD fleet control, production mocap suit replacement, or Meta/Aria deployment",
       "dimensions": {
@@ -1931,6 +1931,33 @@
       },
       "score": 66,
       "id": 90
+    },
+    {
+      "slug": "surveil-gate-studio",
+      "project": "Surveil Gate Studio",
+      "tier": "B",
+      "business_idea": "Compare six-pillar trust governance for generative AI in digital public health surveillance against explainability-only baselines before locking a surveillance pack",
+      "pmf": "Early signal with public-health AI governance / digital surveillance platform leads who already trial governance soft-sims",
+      "buyer": "Public-health AI governance and digital surveillance platform engineering leads",
+      "money_hook": "Bench seats + private surveillance packs (method-lab experiment)",
+      "potential": "Six-pillar trust governance for genAI surveillance is underserved vs explainability-only dumps without honesty",
+      "moat": "Six-pillar trust governance vs explainability-only baseline",
+      "evidence": "Paper governance claim (TRUST-GPH pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer public-health AI governance soft-sim with multi-flow bar; never claim live national surveillance, clinical diagnostic use, or regulatory certification",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "id": 91
     }
   ]
 }
