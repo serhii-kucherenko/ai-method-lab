@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T22:45:00.000Z",
+  "updated_at": "2026-07-25T22:36:05.469Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,15 +10,15 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "74e6426c-099c-4d0c-9e9c-573ed68e34d7",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "32738f85-637a-4dca-b6fb-d9dbbbda7776",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-91d6-d9781ab8c451"
   },
   "paused": false,
-  "active_cell": "A03__P-sustain-001__dialogue-design-studio__r1",
+  "active_cell": "A03__P-sustain-001__probe-domain-studio__r1",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__dialogue-design-studio__r1",
   "last_error": null,
-  "current_product": "dialogue-design-studio",
-  "current_idea": "dialogue-design-studio",
+  "current_product": "probe-domain-studio",
+  "current_idea": "probe-domain-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Dialogue Design Studio climb complete — product_complete_pending=true; parent owns Resend finish email; climb agent did NOT send Resend. 14 pages; 37 features; dd-001…dd-030; scorers productive_open_minded_design vs engagement_maximizing_baseline; npm test / build / test:app-up green.",
+  "phase": "build",
+  "notes": "Probe Domain Studio climb armed after Dialogue Design finish email 32738f85; depth pack ready; climb agent owns build — do NOT send Resend from climb.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.31235/osf.io/dngcj_v3",
-      "slug": "dialogue-design-studio",
-      "displayName": "Dialogue Design Studio",
-      "at": "2026-07-25T22:20:25.948Z",
-      "url": "https://osf.io/preprints/socarxiv/dngcj_v3/",
+      "paperId": "10.26434/chemrxiv.15006161/v2",
+      "slug": "probe-domain-studio",
+      "displayName": "Probe Domain Studio",
+      "at": "2026-07-25T22:36:05.469Z",
+      "url": "https://doi.org/10.26434/chemrxiv.15006161/v2",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T22:20:25.948Z",
+    "framing_started_at": "2026-07-25T22:36:05.469Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,
