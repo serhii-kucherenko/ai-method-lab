@@ -1,0 +1,39 @@
+{
+  "id": "sg-022",
+  "input": {
+    "pillarCoverage": 0.74,
+    "policyCompleteness": 0.72,
+    "signalIntegrity": 0.73,
+    "packReadiness": 0.76,
+    "explainOnlyAdherence": 0.77,
+    "hallucinationHardness": 0.32,
+    "trustErosionRisk": 0.34,
+    "overclaimRisk": 0.25,
+    "governanceBias": "policy_first",
+    "profile": "trust_gph_six_pillar"
+  },
+  "expectedTrust": {
+    "mode": "trust_gph_six_pillar",
+    "pillarScore": 76.68,
+    "policyScore": 73.52,
+    "signalScore": 50.62,
+    "readinessScore": 94.56,
+    "explainOnlyScore": 42.47,
+    "confidence": 57.7,
+    "trustContribution": 72.5,
+    "explainContribution": 45.13,
+    "overall": 71.57
+  },
+  "expectedExplain": {
+    "mode": "explainability_only_baseline",
+    "pillarScore": 24.57,
+    "policyScore": 23.93,
+    "signalScore": 20.46,
+    "readinessScore": 42.05,
+    "explainOnlyScore": 42.21,
+    "confidence": 33.35,
+    "trustContribution": 30.64,
+    "explainContribution": 46.55,
+    "overall": 38.99
+  }
+}

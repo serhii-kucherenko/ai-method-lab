@@ -98,7 +98,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Sepsis Therapy Studio** | `sepsis-therapy-studio` | **Complete** | CT-HMM therapy effectiveness vs static guideline baseline |
 | **Mhc Design Studio** | `mhc-design-studio` | **Complete** | Hybrid quantum–classical de novo vs classical generative baseline |
 | **Paired Motion Studio** | `paired-motion-studio` | **Complete** | Distributed ego+exo fusion vs ego-only baseline |
-| **Surveil Gate Studio** | `surveil-gate-studio` | **Building** | Six-pillar trust governance vs explainability-only baseline |
+| **Surveil Gate Studio** | `surveil-gate-studio` | **Complete** | Six-pillar trust governance vs explainability-only baseline |
 
 ## Rules
 

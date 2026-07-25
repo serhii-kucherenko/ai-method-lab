@@ -1,6 +1,6 @@
 # Surveil Gate Studio
 
-**State:** building  
+**State:** complete  
 **Slug:** `surveil-gate-studio`  
 **Paper:** https://doi.org/10.3389/fpubh.2026.1901894  
 **Authors’ code:** none  
