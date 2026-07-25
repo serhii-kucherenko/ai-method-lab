@@ -1,6 +1,6 @@
 # Crystal Bind Studio
 
-**State:** ready_to_build  
+**State:** complete  
 **Slug:** `crystal-bind-studio`  
 **Paper:** https://arxiv.org/abs/2607.08470v1  
 **Authors’ code:** none  

@@ -1,0 +1,41 @@
+{
+  "id": "cbs-019",
+  "input": {
+    "structureFidelity": 0.64,
+    "diffractionMatch": 0.65,
+    "dosAlignment": 0.6,
+    "languageClarity": 0.64,
+    "bindCoherence": 0.61,
+    "crossModalAgreement": 0.61,
+    "retrievalPrecision": 0.64,
+    "noiseLevel": 0.18,
+    "modalityBias": "balanced",
+    "profile": "multimodal"
+  },
+  "expectedMultimodal": {
+    "mode": "multimodal_bind",
+    "structureScore": 64,
+    "diffractionScore": 63.04,
+    "dosScore": 59.61,
+    "languageScore": 60.72,
+    "bindScore": 74.83,
+    "retrievalScore": 72.04,
+    "confidence": 19.67,
+    "modalityContribution": 61.84,
+    "crossModalContribution": 61,
+    "overall": 62.41
+  },
+  "expectedSingle": {
+    "mode": "single_modality",
+    "structureScore": 11.97,
+    "diffractionScore": 41.54,
+    "dosScore": 11.87,
+    "languageScore": 11.42,
+    "bindScore": 35.94,
+    "retrievalScore": 42.76,
+    "confidence": 4.74,
+    "modalityContribution": 45.5,
+    "crossModalContribution": 0,
+    "overall": 27.67
+  }
+}

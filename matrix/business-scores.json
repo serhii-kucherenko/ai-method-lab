@@ -542,7 +542,7 @@
         "money": 7,
         "wedge": 7,
         "moat": 7,
-        "evidence": 5,
+        "evidence": 6,
         "feasibility": 8
       },
       "business_idea": "Bind structure, diffraction, electronic density, and language descriptors so materials teams retrieve crystals that match across modalities",
@@ -551,11 +551,11 @@
       "money_hook": "Desktop seats + compute for bind/search runs (method-lab experiment)",
       "potential": "Industrial design/search budgets — clearer than consumer or stacked clinical clones",
       "moat": "Multimodal bind space vs single-modality crystal search",
-      "evidence": "Paper software claim (MatBind); no public author code in digest",
-      "status": "building",
+      "evidence": "Paper software claim (MatBind); 30 dual goldens; live app smoke green; no public author code",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "A/B gate pass — industrial multimodal wedge; climb next",
-      "score": 68,
+      "gc_notes": "Keep industrial multimodal wedge; prefer similar over clinical clones",
+      "score": 70,
       "tier": "B",
       "id": 31
     }

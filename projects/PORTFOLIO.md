@@ -38,6 +38,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Reason Frame Studio** | `reason-frame-studio` | **Complete** | Game-theoretic multi-agent anti-hallucination |
 | **Consult Bench Studio** | `consult-bench-studio` | **Complete** | Multimodal medical consult eval |
 | **Edge Quant Studio** | `edge-quant-studio` | **Complete** | Channel-aware edge CPU LLM quant plans |
+| **Crystal Bind Studio** | `crystal-bind-studio` | **Complete** | Multimodal crystal bind retrieve vs single-modality |
 
 ## Rules
 

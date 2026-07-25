@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crystal Bind Studio — try</title>
+    <style>
+      :root {
+        --bg: #e4f0ed;
+        --ink: #1a2421;
+        --teal: #116466;
+        --panel: #f3faf7;
+        --line: #c5d9d4;
+        --gold: #a8893a;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+      }
+      header {
+        padding: 2.5rem 1.5rem 1.5rem;
+        background: linear-gradient(180deg, #0d1412, #116466 55%, #1a3a38);
+        color: #e8f6f3;
+      }
+      h1 {
+        margin: 0;
+        font-size: 1.75rem;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin: 0.75rem 0 0.25rem;
+        font-size: 0.85rem;
+      }
+      input,
+      select,
+      button {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.5rem 0.65rem;
+        border: 1px solid var(--line);
+        border-radius: 0.4rem;
+        font: inherit;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--teal);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 0.55rem;
+        padding: 1rem;
+        margin-top: 1rem;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #d5ebe9;
+        border-radius: 999px;
+        overflow: hidden;
+        margin: 0.35rem 0;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--teal);
+      }
+      .bar.b > span {
+        background: var(--gold);
+      }
+      .note {
+        font-size: 0.8rem;
+        color: #4a635e;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Crystal Bind Studio</h1>
+      <p>Offline soft-sim: multimodal bind vs single-modality retrieve.</p>
+    </header>
+    <main>
+      <label>Structure fidelity</label>
+      <input id="s" type="range" min="0" max="1" step="0.01" value="0.78" />
+      <label>Diffraction match</label>
+      <input id="d" type="range" min="0" max="1" step="0.01" value="0.74" />
+      <label>DOS alignment</label>
+      <input id="o" type="range" min="0" max="1" step="0.01" value="0.71" />
+      <label>Language clarity</label>
+      <input id="l" type="range" min="0" max="1" step="0.01" value="0.76" />
+      <label>Bind coherence</label>
+      <input id="c" type="range" min="0" max="1" step="0.01" value="0.73" />
+      <label>Cross-modal agreement</label>
+      <input id="x" type="range" min="0" max="1" step="0.01" value="0.7" />
+      <button id="run" type="button">Score A vs B</button>
+      <div class="card">
+        <div>A multimodal <strong id="a">—</strong></div>
+        <div class="bar"><span id="abar" style="width:0%"></span></div>
+        <div>B single <strong id="b">—</strong></div>
+        <div class="bar b"><span id="bbar" style="width:0%"></span></div>
+        <div>Winner: <strong id="w">—</strong></div>
+      </div>
+      <p class="note">
+        Soft-sim only — not MatBind, not wet-lab spectra. Paper:
+        <a href="https://arxiv.org/abs/2607.08470v1">arXiv:2607.08470</a>
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(v) {
+        const boost = 1.12;
+        const lanes =
+          (v.s + v.d + v.o + v.l) * 18 * boost +
+          v.c * 28 +
+          v.x * 22 -
+          (1 - v.c) * 8;
+        return round2(clamp(lanes, 0, 100));
+      }
+      function scoreB(v) {
+        const solo = Math.max(v.s, v.d, v.o, v.l);
+        return round2(clamp(solo * 62 + v.c * 8, 0, 78));
+      }
+      function read() {
+        return {
+          s: +document.getElementById("s").value,
+          d: +document.getElementById("d").value,
+          o: +document.getElementById("o").value,
+          l: +document.getElementById("l").value,
+          c: +document.getElementById("c").value,
+          x: +document.getElementById("x").value,
+        };
+      }
+      function go() {
+        const v = read();
+        const a = scoreA(v);
+        const b = scoreB(v);
+        document.getElementById("a").textContent = a;
+        document.getElementById("b").textContent = b;
+        document.getElementById("abar").style.width = a + "%";
+        document.getElementById("bbar").style.width = b + "%";
+        document.getElementById("w").textContent =
+          a - b > 0.5 ? "multimodal_bind" : b - a > 0.5 ? "single_modality" : "tie";
+      }
+      document.getElementById("run").onclick = go;
+      go();
+    </script>
+  </body>
+</html>
