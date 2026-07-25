@@ -68,7 +68,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Chem Trace Studio** | `chem-trace-studio` | **Complete** | Typed trace-state chemistry agents vs ungated baseline |
 | **Reaction Loop Studio** | `reaction-loop-studio` | **Complete** | Chemist-in-the-loop VLM vs open-loop VLM baseline |
 | **Shared Risk Studio** | `shared-risk-studio` | **Complete** | Shared multi-disease risk representation vs disease-specific baseline |
-| **Variant Probe Studio** | `variant-probe-studio` | **Building** | Interpretable genomic FM probes vs opaque pathogenicity baseline |
+| **Variant Probe Studio** | `variant-probe-studio` | **Complete** | Interpretable genomic FM probes vs opaque pathogenicity baseline |
 
 ## Rules
 

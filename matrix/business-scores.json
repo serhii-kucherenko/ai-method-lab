@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T15:30:22.774Z",
+  "updated_at": "2026-07-25T15:37:39.571Z",
   "projects": [
     {
       "id": 1,
@@ -1275,19 +1275,29 @@
     {
       "slug": "variant-probe-studio",
       "project": "Variant Probe Studio",
-      "score": 63,
+      "score": 66,
       "tier": "B",
-      "business_idea": "Compare interpretable genomic foundation-model probes against opaque pathogenicity baselines before locking a panel pack",
-      "pmf": "Early signal with clinical genomics / variant interpretation leads who already buy pathogenicity tools",
+      "business_idea": "Compare interpretable genomic FM probes against opaque pathogenicity baselines before locking a panel pack",
+      "pmf": "Early signal with clinical genomics / variant-interpretation eng leads who need an explicit interpretable vs opaque soft-sim gate",
       "buyer": "Clinical genomics and variant interpretation engineering leads",
       "money_hook": "Bench seats + private panel packs (method-lab experiment)",
-      "potential": "Explainable FM probes are underserved vs black-box pathogenicity scores",
-      "moat": "Interpretable FM probes vs opaque pathogenicity baseline",
-      "evidence": "Paper software claim (interpretable genomic FM probe pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "potential": "Interpretable genomic FM probe soft-sim is underserved vs opaque pathogenicity score dumps",
+      "moat": "Interpretable genomic FM probes vs opaque pathogenicity baseline",
+      "evidence": "Paper software claim (bioRxiv 717844); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Prefer genomics soft-sim with multi-flow bar; never claim diagnostic clearance or live LIMS",
-      "id": 61
+      "gc_notes": "Prefer variant-probe soft-sim with multi-flow bar; never claim diagnostic or live LIMS; distinct from desk/jobs/lifecycle shells; not authors' brand",
+      "id": 61,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      }
     }
   ]
 }

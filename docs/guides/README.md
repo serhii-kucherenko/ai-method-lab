@@ -93,3 +93,4 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 90 | [Chem Trace Studio — what we learned](90-chem-trace-studio-lessons.md) | Product `chem-trace-studio` |
 | 91 | [Reaction Loop Studio — what we learned](91-reaction-loop-studio-lessons.md) | Product `reaction-loop-studio` |
 | 92 | [Shared Risk Studio — what we learned](92-shared-risk-studio-lessons.md) | Product `shared-risk-studio` |
+| 93 | [Variant Probe Studio — what we learned](93-variant-probe-studio-lessons.md) | Product `variant-probe-studio` |

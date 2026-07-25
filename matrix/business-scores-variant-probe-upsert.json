@@ -1,0 +1,25 @@
+{
+  "slug": "variant-probe-studio",
+  "project": "Variant Probe Studio",
+  "id": 61,
+  "status": "complete",
+  "business_idea": "Compare interpretable genomic FM probes against opaque pathogenicity baselines before locking a panel pack",
+  "pmf": "Early signal with clinical genomics / variant-interpretation eng leads who need an explicit interpretable vs opaque soft-sim gate",
+  "buyer": "Clinical genomics and variant interpretation engineering leads",
+  "money_hook": "Bench seats + private panel packs (method-lab experiment)",
+  "potential": "Interpretable genomic FM probe soft-sim is underserved vs opaque pathogenicity score dumps",
+  "moat": "Interpretable genomic FM probes vs opaque pathogenicity baseline",
+  "evidence": "Paper software claim (bioRxiv 717844); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+  "gc_notes": "Prefer variant-probe soft-sim with multi-flow bar; never claim diagnostic or live LIMS; distinct from desk/jobs/lifecycle shells; not authors' brand",
+  "rubric": "biz-rubric-v1",
+  "dimensions": {
+    "buyer": 7,
+    "pain": 7,
+    "pmf": 6,
+    "money": 6,
+    "wedge": 7,
+    "moat": 7,
+    "evidence": 6,
+    "feasibility": 7
+  }
+}

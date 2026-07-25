@@ -1,0 +1,39 @@
+{
+  "id": "vp-025",
+  "input": {
+    "panelCoverage": 0.79,
+    "probeFidelity": 0.79,
+    "mechanismClarity": 0.77,
+    "runStability": 0.8,
+    "opaqueBaselineRate": 0.8,
+    "skipOptimism": 0.33,
+    "mechanismHardness": 0.26,
+    "overclaimRisk": 0.21,
+    "probeBias": "probe_first",
+    "profile": "interpretable_fm_probe"
+  },
+  "expectedProbe": {
+    "mode": "interpretable_fm_probe",
+    "probeCoverage": 62.51,
+    "probeScore": 79.52,
+    "mechanismOptScore": 54.86,
+    "packIntegrity": 100,
+    "opaqueBaselineScore": 45.2,
+    "confidence": 69.6,
+    "probeContribution": 72.7,
+    "opaqueContribution": 48.27,
+    "overall": 72.3
+  },
+  "expectedOpaque": {
+    "mode": "opaque_pathogenicity_baseline",
+    "probeCoverage": 19.5,
+    "probeScore": 24.6,
+    "mechanismOptScore": 21.69,
+    "packIntegrity": 42.63,
+    "opaqueBaselineScore": 43.52,
+    "confidence": 35.55,
+    "probeContribution": 30.39,
+    "opaqueContribution": 48.06,
+    "overall": 40.83
+  }
+}

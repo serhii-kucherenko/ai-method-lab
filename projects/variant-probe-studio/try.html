@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Variant Probe Studio — offline demo</title>
+    <style>
+      :root {
+        --ink: #121820;
+        --teal: #2a7a7f;
+        --paper: #eef2f4;
+        --line: #c2c9cf;
+        --amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+      }
+      .hero {
+        min-height: 70vh;
+        padding: 3rem 1.5rem;
+        background: linear-gradient(165deg, #0a1016 0%, #121820 48%, #1a2f32 100%);
+        color: #fff;
+      }
+      h1 {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: var(--teal);
+        margin: 0;
+      }
+      .tag {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      }
+      .panel {
+        max-width: 40rem;
+        margin: -2rem auto 2rem;
+        padding: 1.25rem;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.4rem 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--teal);
+        color: #fff;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        font-size: 0.95rem;
+      }
+      .fence {
+        color: var(--amber);
+        font-size: 0.85rem;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Variant Probe Studio</h1>
+      <p class="tag">Variant scores you can explain.</p>
+      <p>Offline soft-sim dual score — interpretable FM probe vs opaque pathogenicity.</p>
+    </div>
+    <div class="panel">
+      <label>Panel coverage (0–1)<input id="cov" type="number" step="0.01" value="0.65" /></label>
+      <label>Probe fidelity (0–1)<input id="fid" type="number" step="0.01" value="0.7" /></label>
+      <label>Mechanism clarity (0–1)<input id="clr" type="number" step="0.01" value="0.72" /></label>
+      <label>Opaque baseline rate (0–1)<input id="base" type="number" step="0.01" value="0.55" /></label>
+      <button id="run" type="button">Score A/B</button>
+      <div class="out" id="out"></div>
+      <p class="fence">
+        Soft-sim only · not diagnostic cleared · not live LIMS · not authors’ system
+      </p>
+    </div>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreProbe(i) {
+        const probe =
+          i.cov * 55 + i.fid * 25 + i.clr * 20 - (1 - i.base) * 8;
+        const opaque = i.base * 40 + (1 - i.fid) * 15;
+        return {
+          overall: round2(clamp(probe * 0.82 + opaque * 0.18 + 4, 0, 100)),
+        };
+      }
+      function scoreOpaque(i) {
+        const opaque = i.base * 58 + (1 - i.clr) * 12;
+        const probe = i.cov * 20 + i.fid * 15;
+        return {
+          overall: round2(clamp(opaque * 0.78 + probe * 0.22, 0, 100)),
+        };
+      }
+      document.getElementById("run").onclick = function () {
+        const i = {
+          cov: Number(document.getElementById("cov").value),
+          fid: Number(document.getElementById("fid").value),
+          clr: Number(document.getElementById("clr").value),
+          base: Number(document.getElementById("base").value),
+        };
+        const a = scoreProbe(i);
+        const b = scoreOpaque(i);
+        const winner =
+          a.overall > b.overall + 0.5
+            ? "interpretable_fm_probe"
+            : b.overall > a.overall + 0.5
+              ? "opaque_pathogenicity_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "Winner " +
+          winner +
+          " · A " +
+          a.overall +
+          " · B " +
+          b.overall +
+          " · gap " +
+          round2(Math.abs(a.overall - b.overall));
+      };
+    </script>
+  </body>
+</html>
