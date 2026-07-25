@@ -1,0 +1,39 @@
+{
+  "id": "pore-009",
+  "input": {
+    "inverseCoverage": 0.46,
+    "poreFidelity": 0.41,
+    "targetClarity": 0.5,
+    "designerStability": 0.49,
+    "generativePassRate": 0.53,
+    "generativeOptimism": 0.39,
+    "poreHardness": 0.48,
+    "overclaimRisk": 0.38,
+    "poreBias": "balanced",
+    "profile": "naive_generative"
+  },
+  "expectedUnifiedInverse": {
+    "mode": "unified_inverse",
+    "inverseScore": 40.05,
+    "poreScore": 45.49,
+    "targetScore": 45.68,
+    "designerScore": 52.59,
+    "generativeScore": 25.81,
+    "confidence": 37.35,
+    "unifiedInverseContribution": 45.69,
+    "naiveGenerativeContribution": 26.69,
+    "overall": 46.27
+  },
+  "expectedNaiveGenerative": {
+    "mode": "naive_generative",
+    "inverseScore": 14.91,
+    "poreScore": 19.07,
+    "targetScore": 15.29,
+    "designerScore": 35.36,
+    "generativeScore": 48.88,
+    "confidence": 22.7,
+    "unifiedInverseContribution": 26.7,
+    "naiveGenerativeContribution": 45.27,
+    "overall": 35.06
+  }
+}

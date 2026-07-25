@@ -1,6 +1,6 @@
 # Pore Inverse Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `pore-inverse-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15005975/v1  
 **Authors’ code:** none  

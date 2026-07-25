@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pore Inverse Studio — offline try</title>
+    <style>
+      :root {
+        --ink: #161c22;
+        --aqua: #2f8a8f;
+        --ash: #e9eef0;
+        --copper: #b87a48;
+        --line: #c2c9ce;
+      }
+      body {
+        margin: 0;
+        font-family: "DM Sans", "Segoe UI", sans-serif;
+        background: var(--ash);
+        color: var(--ink);
+      }
+      header {
+        background: linear-gradient(165deg, #0e1318, #161c22 48%, #1a2c2e);
+        color: var(--ash);
+        padding: 2.5rem 1.5rem 3rem;
+      }
+      h1 {
+        font-family: Sora, system-ui, sans-serif;
+        font-size: 2rem;
+        color: var(--aqua);
+        margin: 0 0 0.5rem;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--aqua);
+        color: #fff;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.6rem 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #4a5560;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Pore Inverse Studio</h1>
+      <p>Offline soft-sim: unified inverse design vs naive generative.</p>
+    </header>
+    <main>
+      <label
+        >Inverse coverage
+        <input id="ic" type="number" min="0" max="1" step="0.01" value="0.65"
+      /></label>
+      <label
+        >Pore fidelity
+        <input id="pf" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Target clarity
+        <input id="tc" type="number" min="0" max="1" step="0.01" value="0.72"
+      /></label>
+      <label
+        >Generative pass rate
+        <input id="gp" type="number" min="0" max="1" step="0.01" value="0.8"
+      /></label>
+      <button id="go">Score A/B</button>
+      <div class="out" id="out">Run a soft-sim compare.</div>
+      <p class="note">
+        Soft-sim only; not certified performance; not live plant; not authors’
+        system / not PoreForge brand. ChemRxiv 10.26434/chemrxiv.15005975.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreInverse(i) {
+        const load = clamp(i.hard * (1.25 - i.ic * 0.5), 0, 1.5);
+        const inv = clamp(
+          (i.ic * 55 + i.pf * 25 - load * 10) * 1.12 + 8 - i.risk * 6,
+          0,
+          100,
+        );
+        const pore = clamp(i.pf * 60 * 1.12 + i.ic * 25 + 8 - i.opt * 4, 0, 100);
+        const target = clamp(
+          i.tc * 58 * 1.12 + i.ic * 28 + 10 - load * 12 - i.risk * 10,
+          0,
+          100,
+        );
+        const designer = clamp(
+          i.stab * 50 * 1.12 + i.pf * 25 + i.ic * 15 + 8,
+          0,
+          100,
+        );
+        const only = clamp(
+          inv * 0.26 + pore * 0.24 + target * 0.28 + designer * 0.22,
+          0,
+          100,
+        );
+        const gen = clamp(i.gp * 55 * 1.12 + i.opt * 20 - i.hard * 18 - 6, 0, 100);
+        const based = clamp(gen * 0.7 + i.gp * 20 + i.opt * 10 - load * 12, 0, 100);
+        return round2(only * 0.82 + based * 0.18 + 4);
+      }
+      function scoreGenerative(i) {
+        const load = clamp(i.hard * (1.25 - i.ic * 0.5), 0, 1.5);
+        const gen = clamp(
+          i.gp * 58 * 1.08 * 1.35 + i.opt * 32 - i.hard * 10 + 8,
+          0,
+          100,
+        );
+        const based = clamp(gen * 0.55 + i.opt * 30 + i.gp * 20 - load * 8, 0, 100);
+        const only = clamp(gen * 0.2 + based * 0.2, 0, 100);
+        return round2(based * 0.78 + only * 0.22 - i.hard * 8 - i.risk * 6);
+      }
+      document.getElementById("go").onclick = () => {
+        const i = {
+          ic: Number(document.getElementById("ic").value),
+          pf: Number(document.getElementById("pf").value),
+          tc: Number(document.getElementById("tc").value),
+          gp: Number(document.getElementById("gp").value),
+          stab: 0.68,
+          opt: 0.55,
+          hard: 0.35,
+          risk: 0.25,
+        };
+        const a = scoreInverse(i);
+        const b = scoreGenerative(i);
+        const winner =
+          a > b + 0.5
+            ? "unified_inverse"
+            : b > a + 0.5
+              ? "naive_generative"
+              : "tie";
+        document.getElementById("out").textContent =
+          "A unified inverse " +
+          a +
+          " · B naive generative " +
+          b +
+          " · winner " +
+          winner +
+          " · gap " +
+          round2(Math.abs(a - b));
+      };
+    </script>
+  </body>
+</html>

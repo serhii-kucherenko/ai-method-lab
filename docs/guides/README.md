@@ -89,3 +89,4 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 86 | [Governed Research Studio — what we learned](86-governed-research-studio-lessons.md) | Product `governed-research-studio` |
 | 87 | [Margin Fusion Studio — what we learned](87-margin-fusion-studio-lessons.md) | Product `margin-fusion-studio` |
 | 88 | [PBPK Structure Studio — what we learned](88-pbpk-structure-studio-lessons.md) | Product `pbpk-structure-studio` |
+| 89 | [Pore Inverse Studio — what we learned](89-pore-inverse-studio-lessons.md) | Product `pore-inverse-studio` |
