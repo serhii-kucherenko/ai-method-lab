@@ -1,6 +1,6 @@
 # Latent Path Studio
 
-**State:** building  
+**State:** complete  
 **Slug:** `latent-path-studio`  
 **Paper:** https://osf.io/preprints/psyarxiv/ed5nq_v1/  
 **Authors’ code:** none  

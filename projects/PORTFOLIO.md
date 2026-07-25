@@ -100,7 +100,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Paired Motion Studio** | `paired-motion-studio` | **Complete** | Distributed ego+exo fusion vs ego-only baseline |
 | **Surveil Gate Studio** | `surveil-gate-studio` | **Complete** | Six-pillar trust governance vs explainability-only baseline |
 | **Async Neuro Studio** | `async-neuro-studio` | **Complete** | Standardized async video exam vs ad-hoc exam baseline |
-| **Latent Path Studio** | `latent-path-studio` | **Building** | Multi-domain latent trajectory vs single-domain baseline |
+| **Latent Path Studio** | `latent-path-studio` | **Complete** | Multi-domain latent trajectory vs single-domain baseline |
 
 ## Rules
 

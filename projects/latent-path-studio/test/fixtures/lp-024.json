@@ -1,0 +1,39 @@
+{
+  "id": "lp-024",
+  "input": {
+    "multiDomainCoverage": 0.75,
+    "jointClassClarity": 0.75,
+    "trajectorySeparation": 0.81,
+    "packReadiness": 0.76,
+    "singleDomainAdherence": 0.77,
+    "predictorNoise": 0.25,
+    "domainIsolation": 0.31,
+    "overclaimRisk": 0.2,
+    "pathBias": "balanced",
+    "profile": "single_domain_baseline"
+  },
+  "expectedMultiDomain": {
+    "mode": "multi_domain_latent_trajectory",
+    "coverageScore": 73.23,
+    "classScore": 75.91,
+    "trajectoryScore": 78.99,
+    "readinessScore": 80.56,
+    "singleDomainScore": 43.13,
+    "confidence": 59.35,
+    "multiDomainContribution": 77.15,
+    "singleDomainContribution": 46.07,
+    "overall": 75.56
+  },
+  "expectedSingleDomain": {
+    "mode": "single_domain_baseline",
+    "coverageScore": 31.21,
+    "classScore": 23.36,
+    "trajectoryScore": 20.38,
+    "readinessScore": 41.11,
+    "singleDomainScore": 63.65,
+    "confidence": 33.9,
+    "multiDomainContribution": 35.94,
+    "singleDomainContribution": 57.96,
+    "overall": 49.92
+  }
+}

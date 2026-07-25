@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Latent Path Studio — try</title>
+  <style>
+    :root {
+      --lp-ink: #151a22;
+      --lp-teal: #2a6670;
+      --lp-mist: #eef2f5;
+      --lp-amber: #b8863a;
+    }
+    body {
+      margin: 0;
+      font-family: "Manrope", system-ui, sans-serif;
+      color: var(--lp-ink);
+      background: linear-gradient(165deg, #0c1016, #151a22 50%, #1a2430);
+      min-height: 100vh;
+    }
+    main {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+      color: var(--lp-mist);
+    }
+    h1 { font-family: Georgia, serif; font-size: 2.4rem; color: var(--lp-amber); margin: 0 0 0.5rem; }
+    h2 { font-size: 1.25rem; font-weight: normal; margin: 0 0 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input { width: 100%; padding: 0.5rem; margin-top: 0.25rem; box-sizing: border-box; }
+    button {
+      margin-top: 1.25rem;
+      background: var(--lp-amber);
+      color: var(--lp-ink);
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      cursor: pointer;
+      font: inherit;
+    }
+    .out {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: rgba(238, 242, 245, 0.08);
+      border: 1px solid rgba(195, 201, 206, 0.35);
+    }
+    .fence { margin-top: 2rem; font-size: 0.85rem; opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Latent Path Studio</h1>
+    <h2>Offline dual-score try — multi-domain latent path vs single-domain baseline</h2>
+    <label>Multi-domain coverage (0–1)
+      <input id="md" type="number" min="0" max="1" step="0.01" value="0.72" />
+    </label>
+    <label>Joint class clarity (0–1)
+      <input id="jc" type="number" min="0" max="1" step="0.01" value="0.68" />
+    </label>
+    <label>Trajectory separation (0–1)
+      <input id="ts" type="number" min="0" max="1" step="0.01" value="0.74" />
+    </label>
+    <label>Single-domain adherence (0–1)
+      <input id="sd" type="number" min="0" max="1" step="0.01" value="0.8" />
+    </label>
+    <button type="button" id="run">Score A/B</button>
+    <div class="out" id="out">Run to compare soft-sim scores.</div>
+    <p class="fence">
+      Soft-sim only — not clinical diagnostic, not crisis intervention,
+      not live EHR write-back, not suicide-risk clearance.
+      Paper: PsyArXiv ed5nq
+    </p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function scoreMulti(i) {
+      const boost = 1.12;
+      const coverage = round2(clamp((i.md * 55 + i.ts * 25) * boost + 8 - i.over * 6, 0, 100));
+      const klass = round2(clamp(i.jc * 60 * boost + i.md * 25 + 8 - i.iso * 4, 0, 100));
+      const traj = round2(clamp(i.ts * 58 * boost + i.md * 14 + i.jc * 14 + 10 - i.over * 10, 0, 100));
+      const ready = round2(clamp(0.7 * 50 * boost + i.jc * 25 + i.md * 15 + 8, 0, 100));
+      const multi = round2(clamp(coverage * 0.24 + klass * 0.26 + traj * 0.28 + ready * 0.22, 0, 100));
+      const single = round2(clamp(i.sd * 40 + i.iso * 20, 0, 100));
+      return round2(clamp(multi * 0.82 + single * 0.18 + 4, 0, 100));
+    }
+    function scoreSingle(i) {
+      const boost = 1.08;
+      const s = round2(clamp(i.sd * 58 * boost + i.iso * 32 + 8, 0, 100));
+      const multi = round2(clamp(i.md * 20 + i.jc * 20, 0, 100));
+      return round2(clamp(s * 0.78 + multi * 0.22 - i.noise * 8, 0, 100));
+    }
+    document.getElementById("run").onclick = () => {
+      const i = {
+        md: Number(document.getElementById("md").value),
+        jc: Number(document.getElementById("jc").value),
+        ts: Number(document.getElementById("ts").value),
+        sd: Number(document.getElementById("sd").value),
+        iso: 0.35,
+        noise: 0.25,
+        over: 0.2,
+      };
+      const a = scoreMulti(i);
+      const b = scoreSingle(i);
+      document.getElementById("out").textContent =
+        "multi_domain_latent_trajectory: " + a +
+        " · single_domain_baseline: " + b +
+        " · winner: " + (a > b + 0.5 ? "multi_domain" : b > a + 0.5 ? "single_domain" : "tie");
+    };
+  </script>
+</body>
+</html>
