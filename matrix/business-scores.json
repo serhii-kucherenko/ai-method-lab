@@ -1328,7 +1328,7 @@
       "potential": "Multimodal early stress detection is underserved vs single-channel moisture/temp gadgets",
       "moat": "Multimodal wearable stress detection vs single-sensor baseline",
       "evidence": "Paper software claim (FolioClip multimodal wearable pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer crop-health soft-sim with multi-flow bar; never claim field-validated farm deployments or live greenhouse write-back",
       "id": 63

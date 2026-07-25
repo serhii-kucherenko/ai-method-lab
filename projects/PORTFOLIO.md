@@ -70,7 +70,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Shared Risk Studio** | `shared-risk-studio` | **Complete** | Shared multi-disease risk representation vs disease-specific baseline |
 | **Variant Probe Studio** | `variant-probe-studio` | **Complete** | Interpretable genomic FM probes vs opaque pathogenicity baseline |
 | **Synth Confidence Studio** | `synth-confidence-studio` | **Complete** | Confidence-gated AI retrosynthesis vs naive AI route baseline |
-| **Folio Clip Studio** | `folio-clip-studio` | **Building** | Multimodal wearable plant stress vs single-sensor baseline |
+| **Folio Clip Studio** | `folio-clip-studio` | **Complete** | Multimodal wearable plant stress vs single-sensor baseline |
 
 ## Rules
 

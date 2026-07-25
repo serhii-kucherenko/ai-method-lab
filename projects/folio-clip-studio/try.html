@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Folio Clip Studio — offline demo</title>
+    <style>
+      :root {
+        --ink: #14201a;
+        --sap: #3f8f5a;
+        --mist: #eef3ef;
+        --line: #c5d0c8;
+        --amber: #c49a3a;
+      }
+      body {
+        margin: 0;
+        font-family: "DM Sans", "Segoe UI", sans-serif;
+        background: var(--mist);
+        color: var(--ink);
+      }
+      .hero {
+        min-height: 70vh;
+        padding: 3rem 1.5rem;
+        background: linear-gradient(165deg, #0c1511 0%, #14201a 48%, #1a2a22 100%);
+        color: #fff;
+      }
+      h1 {
+        font-family: Fraunces, Georgia, serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: var(--sap);
+        margin: 0;
+      }
+      .tag {
+        font-family: Fraunces, Georgia, serif;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      }
+      .panel {
+        max-width: 40rem;
+        margin: -2rem auto 2rem;
+        padding: 1.25rem;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.4rem 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--sap);
+        color: #fff;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        font-size: 0.95rem;
+      }
+      .fence {
+        color: var(--amber);
+        font-size: 0.85rem;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Folio Clip Studio</h1>
+      <p class="tag">Plant stress, clipped in multimodal.</p>
+      <p>Approximate offline dual-score demo — soft-sim only.</p>
+    </div>
+    <div class="panel">
+      <label>Clip coverage (0–1)
+        <input id="clipCoverage" type="number" min="0" max="1" step="0.01" value="0.62" />
+      </label>
+      <label>Multimodal fidelity (0–1)
+        <input id="multimodalFidelity" type="number" min="0" max="1" step="0.01" value="0.7" />
+      </label>
+      <label>Single-sensor rate (0–1)
+        <input id="singleSensorRate" type="number" min="0" max="1" step="0.01" value="0.82" />
+      </label>
+      <label>Channel optimism (0–1)
+        <input id="channelOptimism" type="number" min="0" max="1" step="0.01" value="0.7" />
+      </label>
+      <button type="button" id="run">Score A vs B</button>
+      <div class="out" id="out"></div>
+      <p class="fence">
+        Soft-sim only — not field-validated, not live greenhouse write-back, not authors’ system.
+      </p>
+    </div>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(i) {
+        const cov = i.clipCoverage * 55 + i.multimodalFidelity * 35;
+        const optimismPenalty = i.channelOptimism * 12;
+        return round2(clamp(cov - optimismPenalty + 8, 0, 100));
+      }
+      function scoreB(i) {
+        const base = i.singleSensorRate * 58 + i.channelOptimism * 28;
+        return round2(clamp(base - i.clipCoverage * 8, 0, 100));
+      }
+      document.getElementById("run").onclick = function () {
+        const i = {
+          clipCoverage: Number(document.getElementById("clipCoverage").value),
+          multimodalFidelity: Number(
+            document.getElementById("multimodalFidelity").value,
+          ),
+          singleSensorRate: Number(
+            document.getElementById("singleSensorRate").value,
+          ),
+          channelOptimism: Number(
+            document.getElementById("channelOptimism").value,
+          ),
+        };
+        const a = scoreA(i);
+        const b = scoreB(i);
+        const winner =
+          a > b + 0.5
+            ? "multimodal_wearable_stress"
+            : b > a + 0.5
+              ? "single_sensor_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "A (multimodal) " +
+          a +
+          " · B (single-sensor) " +
+          b +
+          " · winner " +
+          winner +
+          " (approximate offline demo)";
+      };
+    </script>
+  </body>
+</html>

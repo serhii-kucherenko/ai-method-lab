@@ -95,3 +95,4 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 92 | [Shared Risk Studio — what we learned](92-shared-risk-studio-lessons.md) | Product `shared-risk-studio` |
 | 93 | [Variant Probe Studio — what we learned](93-variant-probe-studio-lessons.md) | Product `variant-probe-studio` |
 | 94 | [Synth Confidence Studio — what we learned](94-synth-confidence-studio-lessons.md) | Product `synth-confidence-studio` |
+| 95 | [Folio Clip Studio — what we learned](95-folio-clip-studio-lessons.md) | Product `folio-clip-studio` |

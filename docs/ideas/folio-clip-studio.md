@@ -1,6 +1,6 @@
 # Folio Clip Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `folio-clip-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15005167/v2  
 **Authors’ code:** none  

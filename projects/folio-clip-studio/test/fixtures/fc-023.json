@@ -1,0 +1,39 @@
+{
+  "id": "fc-023",
+  "input": {
+    "clipCoverage": 0.79,
+    "multimodalFidelity": 0.76,
+    "sensorClarity": 0.77,
+    "runStability": 0.8,
+    "singleSensorRate": 0.81,
+    "channelOptimism": 0.36,
+    "stressHardness": 0.33,
+    "overclaimRisk": 0.25,
+    "stressBias": "baseline_first",
+    "profile": "multimodal_wearable_stress"
+  },
+  "expectedMultimodal": {
+    "mode": "multimodal_wearable_stress",
+    "clipCoverageScore": 49.04,
+    "multimodalScore": 67.38,
+    "sensorOptScore": 53.74,
+    "packIntegrity": 49.49,
+    "baselineScore": 45.16,
+    "confidence": 68.25,
+    "multimodalContribution": 54.86,
+    "baselineContribution": 48.03,
+    "overall": 54.63
+  },
+  "expectedBaseline": {
+    "mode": "single_sensor_baseline",
+    "clipCoverageScore": 33.86,
+    "multimodalScore": 25.25,
+    "sensorOptScore": 22.05,
+    "packIntegrity": 43.92,
+    "baselineScore": 84.72,
+    "confidence": 35.45,
+    "multimodalContribution": 41.96,
+    "baselineContribution": 71.34,
+    "overall": 60.74
+  }
+}
