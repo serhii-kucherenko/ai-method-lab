@@ -1,0 +1,39 @@
+{
+  "id": "fl-002",
+  "input": {
+    "exchangeRate": 0.33,
+    "precursorPurity": 0.29,
+    "leavingGroupEase": 0.32,
+    "amineAvailability": 0.38,
+    "prostheticStepBurden": 0.43,
+    "solventHarshness": 0.6,
+    "activationBarrier": 0.46,
+    "overclaimRisk": 0.51,
+    "labelBias": "speed_first",
+    "profile": "fast_isotopic_exchange"
+  },
+  "expectedExchange": {
+    "mode": "fast_isotopic_exchange",
+    "exchangeScore": 30.35,
+    "purityScore": 34.02,
+    "leavingScore": 19.28,
+    "amineScore": 49.33,
+    "prostheticScore": 18.89,
+    "confidence": 20.15,
+    "exchangeContribution": 32.38,
+    "prostheticContribution": 19.43,
+    "overall": 34.05
+  },
+  "expectedProsthetic": {
+    "mode": "multistep_prosthetic_baseline",
+    "exchangeScore": 2.43,
+    "purityScore": 19.24,
+    "leavingScore": 15.38,
+    "amineScore": 34.08,
+    "prostheticScore": 31.53,
+    "confidence": 18.65,
+    "exchangeContribution": 20.53,
+    "prostheticContribution": 35.08,
+    "overall": 24.02
+  }
+}

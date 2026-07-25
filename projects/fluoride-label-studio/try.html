@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fluoride Label Studio — offline try</title>
+  <style>
+    :root {
+      --fl-ink: #12161c;
+      --fl-cobalt: #2a5f7a;
+      --fl-mist: #eef2f5;
+      --fl-line: #c3c9cf;
+      --fl-amber: #b4833a;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--fl-mist);
+      color: var(--fl-ink);
+    }
+    header {
+      background: linear-gradient(165deg, #0a0e12, #12161c 50%, #182028);
+      color: var(--fl-mist);
+      padding: 2.5rem 1.5rem;
+    }
+    h1 { margin: 0; color: var(--fl-amber); font-size: 1.75rem; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input, select {
+      width: 100%; box-sizing: border-box; margin-top: 0.25rem;
+      padding: 0.5rem; border: 1px solid var(--fl-line); border-radius: 0.35rem;
+    }
+    button {
+      margin-top: 1rem; background: var(--fl-cobalt); color: white;
+      border: 0; padding: 0.6rem 1rem; border-radius: 0.35rem; cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem; padding: 1rem; background: white;
+      border: 1px solid var(--fl-line); border-radius: 0.5rem;
+    }
+    .bar { height: 0.5rem; background: #dfe5e7; border-radius: 999px; overflow: hidden; margin: 0.35rem 0 0.75rem; }
+    .fill { height: 100%; background: var(--fl-cobalt); }
+    .fill.b { background: var(--fl-amber); }
+    .note { font-size: 0.85rem; color: #4a555c; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fluoride Label Studio</h1>
+    <p>Approximate offline demo — fast isotopic exchange vs multistep prosthetic. Full fidelity needs the Next app.</p>
+  </header>
+  <main>
+    <label>Exchange rate <input id="exchangeRate" type="number" min="0" max="1" step="0.01" value="0.62" /></label>
+    <label>Precursor purity <input id="precursorPurity" type="number" min="0" max="1" step="0.01" value="0.7" /></label>
+    <label>Leaving-group ease <input id="leavingGroupEase" type="number" min="0" max="1" step="0.01" value="0.74" /></label>
+    <label>Amine availability <input id="amineAvailability" type="number" min="0" max="1" step="0.01" value="0.68" /></label>
+    <label>Prosthetic step burden (B) <input id="prostheticStepBurden" type="number" min="0" max="1" step="0.01" value="0.82" /></label>
+    <label>Bias
+      <select id="labelBias">
+        <option value="balanced">balanced</option>
+        <option value="exchange_first">exchange_first</option>
+        <option value="speed_first">speed_first</option>
+        <option value="prosthetic_first">prosthetic_first</option>
+      </select>
+    </label>
+    <button id="run" type="button">Compare soft-sim</button>
+    <div class="out" id="out">Run to see approximate A/B scores.</div>
+    <p class="note">Honesty: soft-sim only — not wet-lab validated radiopharmaceutical GMP batch release, not live cyclotron control, not clinical PET dosing. ChemRxiv 10.26434/chemrxiv.15005804/v2.</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function scoreA(input) {
+      const boost = 1.12;
+      const wE = biasWeight(input.labelBias, "exchange_first");
+      const wS = biasWeight(input.labelBias, "speed_first");
+      const wP = biasWeight(input.labelBias, "prosthetic_first");
+      const avgBias = (wE + wS + (2 - wP)) / 3;
+      const load = clamp(input.solventHarshness * 0.55 + input.activationBarrier * 0.55, 0, 1.5);
+      const exchangeScore = round2(clamp((input.exchangeRate * 55 + input.leavingGroupEase * 25 - load * 10) * boost * avgBias + 8 - input.overclaimRisk * 6, 0, 100));
+      const purityScore = round2(clamp(input.precursorPurity * 60 * boost + input.exchangeRate * 25 + 8 - input.prostheticStepBurden * 4, 0, 100));
+      const leavingScore = round2(clamp(input.leavingGroupEase * 58 * boost * wE + input.exchangeRate * 14 + input.amineAvailability * 14 + 10 - load * 12, 0, 100));
+      const amineScore = round2(clamp(input.amineAvailability * 50 * boost * wS + input.exchangeRate * 25 + input.precursorPurity * 15 + 8, 0, 100));
+      const exchangeContribution = round2(clamp(exchangeScore * 0.24 + purityScore * 0.26 + leavingScore * 0.28 + amineScore * 0.22, 0, 100));
+      const prostheticContribution = round2(clamp(input.prostheticStepBurden * 40 + input.activationBarrier * 20 - load * 12, 0, 100));
+      return round2(clamp(exchangeContribution * 0.82 + prostheticContribution * 0.18 + 4, 0, 100));
+    }
+    function scoreB(input) {
+      const boost = 1.08;
+      const wP = biasWeight(input.labelBias, "prosthetic_first");
+      const load = clamp(input.solventHarshness * 0.55 + input.activationBarrier * 0.55, 0, 1.5);
+      const prostheticScore = round2(clamp(input.prostheticStepBurden * 58 * boost * wP + input.activationBarrier * 32 - input.solventHarshness * 10 + 8, 0, 100));
+      const prostheticContribution = round2(clamp(prostheticScore * 0.55 + input.activationBarrier * 30 + input.prostheticStepBurden * 20 - load * 8, 0, 100));
+      const exchangeContribution = round2(clamp(input.prostheticStepBurden * 35 * boost + wP * 10 - input.solventHarshness * 22, 0, 100));
+      return round2(clamp(prostheticContribution * 0.78 + exchangeContribution * 0.22 - input.solventHarshness * 8 - input.overclaimRisk * 6, 0, 100));
+    }
+    document.getElementById("run").onclick = () => {
+      const input = {
+        exchangeRate: Number(document.getElementById("exchangeRate").value),
+        precursorPurity: Number(document.getElementById("precursorPurity").value),
+        leavingGroupEase: Number(document.getElementById("leavingGroupEase").value),
+        amineAvailability: Number(document.getElementById("amineAvailability").value),
+        prostheticStepBurden: Number(document.getElementById("prostheticStepBurden").value),
+        solventHarshness: 0.35,
+        activationBarrier: 0.4,
+        overclaimRisk: 0.25,
+        labelBias: document.getElementById("labelBias").value,
+      };
+      const a = scoreA(input);
+      const b = scoreB(input);
+      document.getElementById("out").innerHTML =
+        "<p><strong>A fast isotopic exchange</strong> " + a + "</p>" +
+        '<div class="bar"><div class="fill" style="width:' + a + '%"></div></div>' +
+        "<p><strong>B multistep prosthetic</strong> " + b + "</p>" +
+        '<div class="bar"><div class="fill b" style="width:' + b + '%"></div></div>' +
+        "<p>Winner: " + (a > b + 0.5 ? "fast_isotopic_exchange" : b > a + 0.5 ? "multistep_prosthetic_baseline" : "tie") + "</p>";
+    };
+  </script>
+</body>
+</html>

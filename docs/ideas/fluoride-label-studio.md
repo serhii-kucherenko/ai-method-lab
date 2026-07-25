@@ -1,6 +1,6 @@
 # Fluoride Label Studio
 
-**State:** framing  
+**State:** complete  
 **Slug:** `fluoride-label-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15005804/v2  
 **Authors’ code:** none  
@@ -16,3 +16,6 @@ Fast isotopic [18F]fluoride exchange in iminosulfur oxydifluorides and triflimid
 
 ## Business score (pre-climb)
 Tier B candidate: radiopharma / PET chemistry buyer + label packs; moat is fast isotopic exchange vs multistep prosthetic baseline.
+
+## Ship
+`projects/fluoride-label-studio` — sustain pending finish email (parent owns Resend).
