@@ -1,0 +1,39 @@
+{
+  "id": "ne-015",
+  "input": {
+    "ppgCoverage": 0.62,
+    "inpaintFidelity": 0.54,
+    "ecgRecovery": 0.56,
+    "packCompleteness": 0.65,
+    "alignmentConfidence": 0.67,
+    "alignmentOptimism": 0.36,
+    "segmentHardness": 0.44,
+    "overclaimRisk": 0.31,
+    "inpaintBias": "ppg_first",
+    "profile": "alignment_dependent_ppg_ecg_baseline"
+  },
+  "expectedAlignmentFree": {
+    "mode": "alignment_free_ppg_ecg",
+    "ppgScore": 46.23,
+    "fidelityScore": 58.35,
+    "ecgScore": 39.15,
+    "completenessScore": 79.94,
+    "alignmentScore": 34.55,
+    "confidence": 51.85,
+    "alignmentFreeContribution": 54.57,
+    "alignmentDependentContribution": 36.06,
+    "overall": 55.24
+  },
+  "expectedAlignmentDependent": {
+    "mode": "alignment_dependent_ppg_ecg_baseline",
+    "ppgScore": 9.43,
+    "fidelityScore": 20.94,
+    "ecgScore": 17.24,
+    "completenessScore": 39.27,
+    "alignmentScore": 38.2,
+    "confidence": 27.75,
+    "alignmentFreeContribution": 25.02,
+    "alignmentDependentContribution": 41.8,
+    "overall": 32.73
+  }
+}

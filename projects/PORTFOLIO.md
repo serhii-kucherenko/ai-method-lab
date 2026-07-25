@@ -93,7 +93,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Cache Hit Studio** | `cache-hit-studio` | **Complete** | Structured hit-finding vs naive docking baseline |
 | **Omic Prior Studio** | `omic-prior-studio` | **Complete** | Priors-informed transformer vs priors-free omics baseline |
 | **Track Map Studio** | `track-map-studio` | **Complete** | Online deformable SLAM vs offline kinematics-prior baseline |
-| **Nicu Ecg Studio** | `nicu-ecg-studio` | **Building** | Alignment-free PPG-guided ECG vs alignment-dependent baseline |
+| **Nicu Ecg Studio** | `nicu-ecg-studio` | **Complete** | Alignment-free PPG-guided ECG vs alignment-dependent baseline |
 
 ## Rules
 

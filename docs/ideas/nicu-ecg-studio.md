@@ -1,6 +1,6 @@
 # Nicu Ecg Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `nicu-ecg-studio`  
 **Paper:** https://www.medrxiv.org/content/10.64898/2026.07.06.26357087v1  
 **Authors’ code:** none  
