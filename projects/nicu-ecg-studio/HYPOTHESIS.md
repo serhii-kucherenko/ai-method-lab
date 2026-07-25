@@ -1,3 +1,3 @@
 # HYPOTHESIS
 
-Surgical robotics / intraoperative vision eng leads will use a soft-sim bench that versions track packs and dual-compares online deformable SLAM against offline kinematics-prior baselines before locking.
+NICU analytics / neonatal monitoring eng leads will use a soft-sim bench that versions ecg packs and dual-compares alignment-free PPG-guided ECG against alignment-dependent baselines before locking.
