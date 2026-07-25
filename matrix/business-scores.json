@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T17:08:19.894Z",
+  "updated_at": "2026-07-25T17:18:40.966Z",
   "projects": [
     {
       "id": 1,
@@ -1451,6 +1451,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer neuroimaging soft-sim with multi-flow bar; never claim clinical diagnostic use, live PACS write-back, or FDA clearance",
       "id": 70
+    },
+    {
+      "slug": "aracot-agent-studio",
+      "project": "Aracot Agent Studio",
+      "score": 64,
+      "tier": "B",
+      "business_idea": "Compare Arabic chain-of-thought distilled agents against non-distilled multilingual baselines before locking an agent pack",
+      "pmf": "Early signal with multilingual agent / Arabic NLP product leads who already trial agentic reasoning stacks",
+      "buyer": "Multilingual agent and Arabic NLP product engineering leads",
+      "money_hook": "Bench seats + private agent packs (method-lab experiment)",
+      "potential": "Arabic CoT distillation is underserved vs generic multilingual agent dumps without a dual bench",
+      "moat": "Arabic CoT distillation vs non-distilled multilingual baseline",
+      "evidence": "Paper software claim (AraCoT-Agent distillation pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer agentic soft-sim with multi-flow bar; never claim production Arabic LLM deployment or live chat write-back",
+      "id": 71
     }
   ]
 }
