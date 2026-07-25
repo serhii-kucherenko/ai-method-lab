@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T16:04:10.390Z",
+  "updated_at": "2026-07-25T16:15:02.688Z",
   "projects": [
     {
       "id": 1,
@@ -1349,6 +1349,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer simulation soft-sim with multi-flow bar; never claim DFT-validated manufacturing sims or live HPC write-back",
       "id": 64
+    },
+    {
+      "slug": "crate-validate-studio",
+      "project": "Crate Validate Studio",
+      "score": 64,
+      "tier": "B",
+      "business_idea": "Compare structural+semantic ARC RO-Crate validation against metadata-only baselines before locking a crate pack",
+      "pmf": "Early signal with research-data / FAIR tooling leads who already run RO-Crate validators",
+      "buyer": "Research-data and FAIR tooling engineering leads",
+      "money_hook": "Bench seats + private crate packs (method-lab experiment)",
+      "potential": "Payload-aware ARC validation is underserved vs metadata-only crate checks",
+      "moat": "Structural+semantic ARC validation vs metadata-only baseline",
+      "evidence": "Paper software claim (BioHackEU25 ARC RO-Crate validation pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer FAIR soft-sim with multi-flow bar; never claim institutional repository write-back or live ARC farm control",
+      "id": 65
     }
   ]
 }
