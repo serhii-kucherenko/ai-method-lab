@@ -1,0 +1,40 @@
+{
+  "id": "eqs-008",
+  "input": {
+    "saliencySkew": 0.32,
+    "activationEnergy": 0.38,
+    "avgBitBudget": 3.81,
+    "paletteSpan": 0.35,
+    "clusterRegularity": 0.37,
+    "layoutMerge": 0.33,
+    "memoryHeadroom": 0.33,
+    "targetAffinity": 0.38,
+    "profile": "channel"
+  },
+  "expectedChannelAware": {
+    "mode": "channel_aware",
+    "budgetFit": 34.97,
+    "saliencyMatch": 40.47,
+    "clusterScore": 41.45,
+    "runtimeScore": 41.35,
+    "memoryScore": 32.39,
+    "confidence": 13.08,
+    "saliencyContribution": 37.97,
+    "budgetContribution": 26.51,
+    "layoutContribution": 38.83,
+    "overall": 36.61
+  },
+  "expectedUniform": {
+    "mode": "uniform",
+    "budgetFit": 20.54,
+    "saliencyMatch": 22.21,
+    "clusterScore": 17.61,
+    "runtimeScore": 15.96,
+    "memoryScore": 23.3,
+    "confidence": 3.67,
+    "saliencyContribution": 0,
+    "budgetContribution": 25.01,
+    "layoutContribution": 15.68,
+    "overall": 19.12
+  }
+}

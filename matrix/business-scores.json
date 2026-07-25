@@ -525,9 +525,9 @@
       "potential": "Direct cost and latency pain on CPU edge — clearer money than clinical clones",
       "moat": "Channel bit-width + compile-plan IA vs naive uniform quantization dashboards",
       "evidence": "Paper software claim (PolyQ); no public author code in digest",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "A/B gate pass — prefer infra/cost wedge; climb next",
+      "gc_notes": "Sustain-green — keep infra/cost B picks",
       "score": 69,
       "tier": "B",
       "id": 30

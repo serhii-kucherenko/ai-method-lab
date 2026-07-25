@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edge Quant Studio — try</title>
+    <style>
+      :root {
+        --bg: #e6eef4;
+        --ink: #0f1c28;
+        --cyan: #1a9bb8;
+        --panel: #f2f6fa;
+        --line: #c5d3df;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.5;
+      }
+      header {
+        background: linear-gradient(180deg, #0f1c28, #081018);
+        color: #e6eef4;
+        padding: 2.5rem 1.25rem 2rem;
+      }
+      h1 {
+        font-family: Syne, system-ui, sans-serif;
+        font-weight: 700;
+        margin: 0 0 0.5rem;
+        color: var(--cyan);
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem 3rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .scores {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+        padding: 1rem;
+      }
+      .big {
+        font-size: 2rem;
+        color: var(--cyan);
+        font-family: Syne, system-ui, sans-serif;
+      }
+      .note {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #4a6278;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Edge Quant Studio</h1>
+      <p>Offline soft-sim: channel-aware plan quality vs uniform bit-width.</p>
+    </header>
+    <main>
+      <label>Saliency skew <span id="salV"></span>
+        <input id="sal" type="range" min="0" max="100" value="78" />
+      </label>
+      <label>Avg bit budget <span id="bitV"></span>
+        <input id="bit" type="range" min="20" max="160" value="37" />
+      </label>
+      <label>Cluster regularity <span id="cluV"></span>
+        <input id="clu" type="range" min="0" max="100" value="74" />
+      </label>
+      <label>Memory headroom <span id="memV"></span>
+        <input id="mem" type="range" min="0" max="100" value="68" />
+      </label>
+      <div class="scores">
+        <div class="card">
+          <div>Channel-aware (A)</div>
+          <div class="big" id="aScore">—</div>
+        </div>
+        <div class="card">
+          <div>Uniform (B)</div>
+          <div class="big" id="bScore">—</div>
+        </div>
+      </div>
+      <p class="note">
+        Approximate demo only — not PolyQ, not measured silicon. Open the full
+        Next app for packs, channels, runtime, and goldens.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function score(sal, bit, clu, mem, channel) {
+        const b = clamp((bit - 2) / 14, 0, 1);
+        const salB = clamp(sal * 48 + 0.7 * 32 + 0.8 * 20, 0, 100);
+        const budB = clamp(b * 42 + mem * 36 + 0.8 * 22, 0, 100);
+        const cluB = clamp(clu * 55 + 0.7 * 30 + 0.75 * 15, 0, 100);
+        const boost = channel ? 1.1 : 0.85;
+        const overall = round2(
+          clamp(
+            (budB * 0.24 + salB * 0.28 + cluB * 0.22 + mem * 40 * 0.08) * boost,
+            0,
+            100,
+          ),
+        );
+        return overall;
+      }
+      function render() {
+        const sal = Number(salEl.value) / 100;
+        const bit = Number(bitEl.value) / 10;
+        const clu = Number(cluEl.value) / 100;
+        const mem = Number(memEl.value) / 100;
+        salV.textContent = sal.toFixed(2);
+        bitV.textContent = bit.toFixed(1);
+        cluV.textContent = clu.toFixed(2);
+        memV.textContent = mem.toFixed(2);
+        aScore.textContent = score(sal, bit, clu, mem, true).toFixed(1);
+        bScore.textContent = score(sal, bit, clu, mem, false).toFixed(1);
+      }
+      const salEl = document.getElementById("sal");
+      const bitEl = document.getElementById("bit");
+      const cluEl = document.getElementById("clu");
+      const memEl = document.getElementById("mem");
+      const salV = document.getElementById("salV");
+      const bitV = document.getElementById("bitV");
+      const cluV = document.getElementById("cluV");
+      const memV = document.getElementById("memV");
+      const aScore = document.getElementById("aScore");
+      const bScore = document.getElementById("bScore");
+      [salEl, bitEl, cluEl, memEl].forEach((el) =>
+        el.addEventListener("input", render),
+      );
+      render();
+    </script>
+  </body>
+</html>

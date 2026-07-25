@@ -1,6 +1,6 @@
 # Edge Quant Studio
 
-**State:** ready_to_build  
+**State:** complete  
 **Slug:** `edge-quant-studio`  
 **Paper:** https://arxiv.org/abs/2607.14618v1  
 **Authors’ code:** none  
