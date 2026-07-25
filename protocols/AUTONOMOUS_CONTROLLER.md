@@ -2,7 +2,7 @@
 
 **Default mode for this lab.** Experiment by building products under `projects/`. After any product phase finishes (score + findings), immediately start the next phase or next paper pick. Do **not** ask the human to confirm.
 
-Human contact is **email only** for validated ideas and finished products (`protocols/NOTIFY.md`). Hard stops only for credentials / corruption / explicit pause.
+Human contact is **email only** for finished products (`product_complete`) and hard stops (`protocols/NOTIFY.md`). Do **not** email on pick/start. Hard stops only for credentials / corruption / explicit pause.
 
 ## Goal
 
@@ -21,7 +21,7 @@ Read/write: `matrix/CONTROLLER.json`
 | `phase` | `idle` \| `running` \| `scoring` \| `learning` \| `starting_next` |
 | `intake` | `{ source: "simple-papers", mode: "pick_then_build", … }` |
 | `ask_human` | Always `false` unless hard stop |
-| `notify` | Resend — **only** `idea_validated`, `product_complete`, `hard_stop` |
+| `notify` | Resend — **only** `product_complete`, `hard_stop` (no start / `idea_validated`) |
 
 ## Agent roles
 
@@ -41,7 +41,7 @@ Cap parallel agents at `depth_policy.max_parallel_agents` (default **20**). One 
 
 1. Load `matrix/CONTROLLER.json`. If `mode` is `paused` or `hard_stop`, stop.
 2. If `phase` is `running` / `scoring` / `learning` for a cell, **resume that phase**.
-3. If idle / no `current_product`: run paper picker (`docs/PAPERS_INTAKE.md`) → scaffold product → email `idea_validated` → set `phase: running` / smoke cell. **Do not** invent freehand seeds. **Do not** wait hours or `ready_to_build`.
+3. If idle / no `current_product`: run paper picker (`docs/PAPERS_INTAKE.md`) → scaffold product **without** start email → set `phase: running` / smoke cell. **Do not** invent freehand seeds. **Do not** wait hours or `ready_to_build`.
 4. Execute `protocols/PRODUCT_RUNBOOK.md` for the current product.
 5. Score; update portfolio.
 6. **Notify** only for idea validated / product complete / hard stop.

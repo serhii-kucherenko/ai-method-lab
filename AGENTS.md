@@ -18,7 +18,7 @@ When **not** paused:
 - One product at a time; ≥20 real features / ≥8 distinct pages; live `next build` + app-up smoke before finish email
 - Always commit, always push to origin/main, always merge own PRs when CI green
 - Never rewrite `package.json` with a UTF-8 BOM; use Node writes or `node scripts/strip-json-bom.mjs --check`
-- If notify.enabled: email only per `protocols/NOTIFY.md` — story first; Sources footer; full GitHub https URLs
+- If notify.enabled: email **only on finish** (`product_complete`) and hard_stop — **no start emails**. Finish mail opens with business TLDR (idea / potential / PMF / model); then story; Sources footer; full GitHub https URLs (`protocols/NOTIFY.md`)
 
 Wake prompt (also in `docs/AUTOMATION.md`):
 

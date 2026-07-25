@@ -4,14 +4,18 @@ Email delivers **what changed** to `notify.to`. The human should understand the 
 
 **Audience assumption (hard):** the reader knows **none** of our acronyms, statute codes, paper jargon, or repo slang. Write a **full, detailed, simple plain narrative** — as if explaining to a smart friend who has never heard of this lab, never read a research paper abstract, and never opened GitHub. Spell things out the first time; prefer everyday words over shorthand forever after.
 
+**Finish-only (2026-07-25):** do **not** send start / `idea_validated` emails. Human mail is **`product_complete`** (and `hard_stop` if blocked). Opening a product is silent.
+
 Story first; links are not the payload — except these **required** link blocks:
 
-- Every `idea_validated` and `product_complete` email ends with a **Sources** footer (paper URL + authors’ code URL when known).
+- Every `product_complete` email ends with a **Sources** footer (paper URL + authors’ code URL when known).
 - Every successful `product_complete` also includes try-artifacts (attachment + browser playground link) and **full GitHub https links** for how-to-run, lessons guide, design note, and the product folder (never bare repo paths like `projects/foo/README.md`).
 
 ## Config
 
 `matrix/CONTROLLER.json` → `notify` (`enabled`, `to`, `from`, `on`).
+
+Default `on`: `["product_complete", "hard_stop"]` — **not** `idea_validated`.
 
 **GitHub link base (required whenever naming a repo file):**  
 `https://github.com/serhii-kucherenko/ai-method-lab/blob/main/`
@@ -32,33 +36,31 @@ Browser playground try base: `https://stackblitz.com/fork/github/serhii-kucheren
 
 | Event | Trigger | Human action? |
 |-------|---------|---------------|
-| `idea_validated` | Paper passed implementable filter; product folder opened | No |
 | `product_complete` | Product finished (README + guide + try) or abandoned with autopsy | No |
 | `hard_stop` | Controller blocked (credentials / corruption) | Yes — unblock only |
 
-Do **not** email per-cell pass/fail, phase complete, or “continuing to next cell.”
-
-### Validated idea (`idea_validated`)
-
-**Subject:** `[Method Lab] Starting: <display name>` (human product name only)
-
-**Body — plain narrative (no bullet farm of jargon):**
-
-Write several short paragraphs a stranger can follow:
-
-1. **What happened** — we picked a research paper and started a small software project inspired by it.
-2. **What the paper is about** — in ordinary words (who it helps, what problem, what the authors claim). Do not dump author abbreviations unexplained.
-3. **What we will build** — what the app will do for a user, in concrete everyday terms.
-4. **Why this paper** — e.g. the authors published working source code, or the idea is clearly something a software team can implement and test.
-5. **What you will get later** — another email when it is finished, with a simple offline demo and a link to try the project in the browser.
-6. **Sources** — required footer; use the **Sources footer template** below.
+Do **not** email on pick / start / scaffold. Do **not** email per-cell pass/fail, phase complete, or “continuing to next cell.”
 
 ### Product finished (`product_complete`)
 
-Same plain-narrative bar, **longer and more complete**:
+**Subject:** `[Method Lab] Finished: <display name>` (human product name only)
+
+**Body — open with a business TLDR, then the build story:**
+
+#### 0. TLDR (required first — before anything else)
+
+A short plain block a stranger can skim in under a minute. Use these labeled lines (or tight paragraphs with the same headings):
+
+1. **Idea** — who it is for and what painful job it does (one or two sentences).
+2. **Potential** — why this could matter if it worked in the real world (market wedge / urgency — not hype).
+3. **PMF signal** — who would pay or adopt first, and what evidence from the paper or buyer story supports that (honest: “early signal,” not “proven PMF”).
+4. **Business model** — how value would be captured if this left the lab (e.g. seat license, usage, services). Say **method-lab experiment** if we are not claiming a go-to-market yet.
+5. **Risk / honesty** — one sentence on what could kill the idea or what we are *not* claiming.
+
+Then continue with the full narrative:
 
 1. **Outcome** — the named product is finished; one sentence of what it does.
-2. **The idea** — 3–6 sentences: who hurts, what goes wrong today, what we set out to prove (workflow experiment, not “we beat commercial vendors”).
+2. **The idea (expanded)** — 3–6 sentences: who hurts, what goes wrong today, what we set out to prove.
 3. **The project** — what lives in the product folder, in plain words (screens, calculations, rules).
 4. **What we built** — concrete pieces a non-engineer can picture.
 5. **What we proved** — verification in plain words (named scenarios, rejects, scale). Avoid “ladder green.”
@@ -66,11 +68,11 @@ Same plain-narrative bar, **longer and more complete**:
 7. **What did not change** — still not a commercial pitch if true.
 8. **Next** — one sentence.
 9. **Try it** — attached offline page + browser playground link; **full GitHub https URLs** for how-to-run, lessons guide, design note (see templates below). Never paste bare paths.
-10. **Sources** — required footer; same template as the start letter.
+10. **Sources** — required footer.
 
-## Sources footer template (required on start + finish emails)
+## Sources footer template (required on finish emails)
 
-Paste this block **verbatim at the end** of every `idea_validated` and `product_complete` email. Fill the URLs from the pick (`docs/ideas/<slug>.md` or picker JSON). Never omit the heading. Never substitute “see the dossier” for the URLs.
+Paste this block **verbatim at the end** of every `product_complete` email. Fill the URLs from the pick (`docs/ideas/<slug>.md` or picker JSON). Never omit the heading. Never substitute “see the dossier” for the URLs.
 
 ```text
 Sources
@@ -97,23 +99,18 @@ Design note: https://github.com/serhii-kucherenko/ai-method-lab/blob/main/docs/i
 Product folder: https://github.com/serhii-kucherenko/ai-method-lab/tree/main/projects/<slug>
 ```
 
-On **start** letters, optional but preferred when the folder already exists:
-
-```text
-Project folder: https://github.com/serhii-kucherenko/ai-method-lab/tree/main/projects/<slug>
-```
-
 ## Hard rules
 
-1. **Explain before you celebrate.** The reader must learn *what the idea was*, *what the project is*, and *what we actually built* — not only that tests passed.
-2. **Lead with the story, then the proof.** Full narrative first; counts only as supporting detail.
-3. **Never force a re-read of the repo.** When you name a file, paste the **clickable GitHub https URL** — do not leave bare paths.
-4. **Link budget:** hard-stop → at most one optional deep link. Idea start and product finished → **Sources footer always** (paper URL + code URL or “none published”). Product finished also → **try-page attachment + browser-playground try link + full GitHub links** for README, guide, design, product folder.
-5. **Honest framing in plain words:** this is a workflow experiment unless we say otherwise.
-6. **No unexplained acronyms or internal codes** in subject or body. If a technical term is unavoidable, define it in the same sentence in everyday language.
-7. **No paper-id or statute-code branding** in the subject; use the mature display name only.
-8. **Do not send** a start or finish email without the Sources footer.
-9. **Do not send** a finish email that only names `projects/<slug>/README.md` or `docs/guides/...` without the matching `https://github.com/...` URL.
+1. **Business TLDR first.** Idea / potential / PMF signal / business model / honesty risk open the finish email — before build narrative or test counts.
+2. **Explain before you celebrate.** The reader must learn *what the idea was*, *what the project is*, and *what we actually built* — not only that tests passed.
+3. **Lead with the story, then the proof.** Full narrative after the TLDR; counts only as supporting detail.
+4. **Never force a re-read of the repo.** When you name a file, paste the **clickable GitHub https URL** — do not leave bare paths.
+5. **Link budget:** hard-stop → at most one optional deep link. Product finished → **Sources footer always** (paper URL + code URL or “none published”) + **try-page attachment + browser-playground try link + full GitHub links** for README, guide, design, product folder.
+6. **Honest framing in plain words:** this is a workflow experiment unless we say otherwise.
+7. **No unexplained acronyms or internal codes** in subject or body. If a technical term is unavoidable, define it in the same sentence in everyday language.
+8. **No paper-id or statute-code branding** in the subject; use the mature display name only.
+9. **Do not send** start / `idea_validated` emails.
+10. **Do not send** a finish email without the Sources footer, or that only names bare `projects/<slug>/...` paths without `https://github.com/...` URLs.
 
 ## Plain language (never assume these are known)
 
