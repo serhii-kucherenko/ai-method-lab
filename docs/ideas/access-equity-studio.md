@@ -1,6 +1,6 @@
 # Access Equity Studio
 
-**State:** building  
+**State:** complete  
 **Slug:** `access-equity-studio`  
 **Paper:** https://doi.org/10.3389/fpubh.2026.1898818  
 **Authors’ code:** none  

@@ -1,0 +1,39 @@
+{
+  "id": "ae-025",
+  "input": {
+    "accessReach": 0.79,
+    "equityGapClosure": 0.79,
+    "taskSharingFidelity": 0.77,
+    "packReadiness": 0.8,
+    "accuracyAdherence": 0.8,
+    "screenNoise": 0.26,
+    "accuracyTunnel": 0.33,
+    "overclaimRisk": 0.21,
+    "equityBias": "access_first",
+    "profile": "equity_access_task_sharing"
+  },
+  "expectedEquityAccess": {
+    "mode": "equity_access_task_sharing",
+    "accessScore": 83,
+    "equityScore": 79.52,
+    "sharingScore": 94.88,
+    "readinessScore": 64.24,
+    "accuracyScore": 45.2,
+    "confidence": 62.45,
+    "equityAccessContribution": 81.29,
+    "accuracyOnlyContribution": 48.27,
+    "overall": 79.35
+  },
+  "expectedAccuracyOnly": {
+    "mode": "accuracy_only_classifier",
+    "accessScore": 19.5,
+    "equityScore": 24.6,
+    "sharingScore": 21.54,
+    "readinessScore": 42.63,
+    "accuracyScore": 43.52,
+    "confidence": 35.55,
+    "equityAccessContribution": 30.36,
+    "accuracyOnlyContribution": 48.06,
+    "overall": 40.83
+  }
+}

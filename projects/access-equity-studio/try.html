@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Access Equity Studio — try</title>
+  <style>
+    :root {
+      --ae-ink: #14191f;
+      --ae-teal: #2a6a68;
+      --ae-mist: #eef3f2;
+      --ae-amber: #b8873a;
+    }
+    body {
+      margin: 0;
+      font-family: "Manrope", system-ui, sans-serif;
+      color: var(--ae-ink);
+      background: linear-gradient(165deg, #0b1014, #14191f 50%, #1a2624);
+      min-height: 100vh;
+    }
+    main {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+      color: var(--ae-mist);
+    }
+    h1 { font-family: Georgia, serif; font-size: 2.4rem; color: var(--ae-amber); margin: 0 0 0.5rem; }
+    h2 { font-size: 1.25rem; font-weight: normal; margin: 0 0 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input { width: 100%; padding: 0.5rem; margin-top: 0.25rem; box-sizing: border-box; }
+    button {
+      margin-top: 1.25rem;
+      background: var(--ae-amber);
+      color: var(--ae-ink);
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      cursor: pointer;
+      font: inherit;
+    }
+    .out {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: rgba(238, 243, 242, 0.08);
+      border: 1px solid rgba(194, 201, 199, 0.35);
+    }
+    .fence { margin-top: 2rem; font-size: 0.85rem; opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Access Equity Studio</h1>
+    <h2>Offline dual-score try — equity-access task-sharing vs accuracy-only classifier</h2>
+    <label>Access reach (0–1)
+      <input id="ar" type="number" min="0" max="1" step="0.01" value="0.72" />
+    </label>
+    <label>Equity gap closure (0–1)
+      <input id="eg" type="number" min="0" max="1" step="0.01" value="0.68" />
+    </label>
+    <label>Task-sharing fidelity (0–1)
+      <input id="ts" type="number" min="0" max="1" step="0.01" value="0.74" />
+    </label>
+    <label>Accuracy adherence (0–1)
+      <input id="aa" type="number" min="0" max="1" step="0.01" value="0.8" />
+    </label>
+    <button type="button" id="run">Score A/B</button>
+    <div class="out" id="out">Run to compare soft-sim scores.</div>
+    <p class="fence">
+      Soft-sim only — not clinical diagnostic, not live EHR write-back,
+      not FDA clearance, not an autism diagnosis product.
+      Paper: Frontiers DOI 10.3389/fpubh.2026.1898818
+    </p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function scoreEquity(i) {
+      const boost = 1.12;
+      const access = round2(clamp((i.ar * 55 + i.eg * 25) * boost + 8 - i.over * 6, 0, 100));
+      const equity = round2(clamp(i.eg * 60 * boost + i.ar * 25 + 8 - i.tunnel * 4, 0, 100));
+      const share = round2(clamp(i.ts * 58 * boost + i.ar * 14 + i.eg * 14 + 10 - i.over * 10, 0, 100));
+      const ready = round2(clamp(i.ready * 50 * boost + i.eg * 25 + i.ar * 15 + 8, 0, 100));
+      const overall = round2(clamp(access * 0.24 + equity * 0.26 + share * 0.28 + ready * 0.22 + 4, 0, 100));
+      return { access, equity, share, ready, overall };
+    }
+    function scoreAccuracy(i) {
+      const boost = 1.08;
+      const acc = round2(clamp(i.aa * 58 * boost + i.tunnel * 32 + 8, 0, 100));
+      const overall = round2(clamp(acc * 0.78 + i.aa * 10 + 5 - i.noise * 8, 0, 100));
+      return { acc, overall };
+    }
+    document.getElementById("run").onclick = () => {
+      const i = {
+        ar: Number(document.getElementById("ar").value),
+        eg: Number(document.getElementById("eg").value),
+        ts: Number(document.getElementById("ts").value),
+        aa: Number(document.getElementById("aa").value),
+        ready: 0.7,
+        tunnel: 0.35,
+        over: 0.2,
+        noise: 0.25,
+      };
+      const a = scoreEquity(i);
+      const b = scoreAccuracy(i);
+      const winner = a.overall > b.overall + 0.5
+        ? "equity_access_task_sharing"
+        : b.overall > a.overall + 0.5
+          ? "accuracy_only_classifier"
+          : "tie";
+      document.getElementById("out").textContent =
+        "Winner: " + winner + " · equity-access " + a.overall + " · accuracy-only " + b.overall;
+    };
+  </script>
+</body>
+</html>

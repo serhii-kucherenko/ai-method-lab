@@ -126,5 +126,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 123 | [Surveil Gate Studio - what we learned](123-surveil-gate-studio-lessons.md) | Product `surveil-gate-studio` |
 | 124 | [Async Neuro Studio - what we learned](124-async-neuro-studio-lessons.md) | Product `async-neuro-studio` |
 | 125 | [Latent Path Studio - what we learned](125-latent-path-studio-lessons.md) | Product `latent-path-studio` |
+| 126 | [Access Equity Studio - what we learned](126-access-equity-studio-lessons.md) | Product `access-equity-studio` |
 
 
