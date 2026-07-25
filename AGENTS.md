@@ -18,7 +18,8 @@ When **not** paused:
 - One product at a time; ≥20 real features / ≥8 distinct pages; live `next build` + app-up smoke before finish email
 - Always commit, always push to origin/main, always merge own PRs when CI green
 - Never rewrite `package.json` with a UTF-8 BOM; use Node writes or `node scripts/strip-json-bom.mjs --check`
-- If notify.enabled: email **only on finish** (`product_complete`) and hard_stop — **no start emails**. Finish mail opens with business TLDR (idea / potential / PMF / model); then story; Sources footer; full GitHub https URLs (`protocols/NOTIFY.md`)
+- If notify.enabled: email **only on finish** (`product_complete`) and hard_stop — **no start emails**. Finish mail opens with business TLDR (idea / potential / PMF / model / score tier); then story; Sources footer; full GitHub https URLs (`protocols/NOTIFY.md`)
+- **Garbage collector:** score every finished product; prefer A/B picks only; keep improving `docs/BUSINESS_RUBRIC.md` (`protocols/GARBAGE_COLLECTOR.md`, `matrix/BUSINESS_SCORECARD.md`)
 
 Wake prompt (also in `docs/AUTOMATION.md`):
 
@@ -52,9 +53,10 @@ Evidence that the workflow can produce **one sophisticated product a stranger wo
 - Workflow: `docs/DEVELOPMENT_WORKFLOW.md`
 - Controller: `protocols/AUTONOMOUS_CONTROLLER.md` + `matrix/CONTROLLER.json`
 - Email: `protocols/NOTIFY.md`
-- Scoring: `docs/RUBRIC.md`
+- Scoring: `docs/RUBRIC.md` (cells) · `docs/BUSINESS_RUBRIC.md` + `matrix/BUSINESS_SCORECARD.md` (ideas)
 - Backlog: `docs/BACKLOG.md`
 - Comprehensive bar: `docs/COMPREHENSIVE_PRODUCT.md`
+- Garbage collector: `protocols/GARBAGE_COLLECTOR.md`
 
 ## Cursor Cloud specific instructions
 

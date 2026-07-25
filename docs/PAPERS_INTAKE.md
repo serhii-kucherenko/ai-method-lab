@@ -12,11 +12,23 @@ When digests are available and the lab is idle (no `current_product`) **and** CO
 4. Architect + designer commit Vision / PRD / ERD / blueprint / DESIGN
 5. Only then open `projects/<slug>/` and climb
 6. Ship a **comprehensive** product (`docs/COMPREHENSIVE_PRODUCT.md`) — README + guide + try + live app gate
-7. Email **product finished** only when the product is genuinely distinct
-8. Clear slot → **pause or deepen research** before the next product (never a 10-minute clone cadence)
+7. Email **product finished** only when the product is genuinely distinct — TLDR first + Sources (`protocols/NOTIFY.md`)
+8. Run **garbage collector**: score the product into `matrix/business-scores.json`, regenerate scorecard, kill/park weak backlog ideas (`protocols/GARBAGE_COLLECTOR.md`)
+9. Clear slot → next pick only from ideas that would score **A/B** under `docs/BUSINESS_RUBRIC.md`
 
 Never invent freehand statute-code seeds while simple-papers digests exist.
 Never noun-swap a prior desk with a new scoring function.
+
+## Business score gate
+
+Before `--choose` / opening `projects/<slug>/`:
+
+1. Draft buyer, money hook, PMF signal (even if early)
+2. Score with `docs/BUSINESS_RUBRIC.md`
+3. **Abort** if tier **Kill** or **C** (finish in-flight only; do not start new C/Kill)
+4. Upsert row: `node scripts/score-business.mjs --write-md` after editing `matrix/business-scores.json`
+
+Scorecard: `matrix/BUSINESS_SCORECARD.md`
 
 ## Eligibility
 

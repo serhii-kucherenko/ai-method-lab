@@ -49,13 +49,13 @@ Do **not** email on pick / start / scaffold. Do **not** email per-cell pass/fail
 
 #### 0. TLDR (required first — before anything else)
 
-A short plain block a stranger can skim in under a minute. Use these labeled lines (or tight paragraphs with the same headings):
+A short plain block a stranger can skim in under a minute. Use these labeled lines (or tight paragraphs with the same headings). **Align with** the project row in `matrix/BUSINESS_SCORECARD.md` / `matrix/business-scores.json` (run garbage collector if the row is missing):
 
 1. **Idea** — who it is for and what painful job it does (one or two sentences).
 2. **Potential** — why this could matter if it worked in the real world (market wedge / urgency — not hype).
-3. **PMF signal** — who would pay or adopt first, and what evidence from the paper or buyer story supports that (honest: “early signal,” not “proven PMF”).
-4. **Business model** — how value would be captured if this left the lab (e.g. seat license, usage, services). Say **method-lab experiment** if we are not claiming a go-to-market yet.
-5. **Risk / honesty** — one sentence on what could kill the idea or what we are *not* claiming.
+3. **PMF signal** — who would pay or adopt first, and what evidence supports that (honest: “early signal,” not “proven PMF”).
+4. **Business model** — how value would be captured if this left the lab (seat / usage / services). Say **method-lab experiment** if we are not claiming go-to-market yet.
+5. **Score / tier** — one line: composite score + tier (A/B/C) from the business rubric, plus one risk that could kill the idea.
 
 Then continue with the full narrative:
 

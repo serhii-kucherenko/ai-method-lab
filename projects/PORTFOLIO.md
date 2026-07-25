@@ -4,6 +4,8 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 
 ## Active / complete
 
+Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBRIC.md`, protocol `protocols/GARBAGE_COLLECTOR.md`). Prefer next climbs from tier **A/B** only.
+
 | Display name | Slug | Status | Notes |
 |--------------|------|--------|-------|
 | **Filing Penalty Desk** | `filing-penalty-desk` | reference | Prior product |
@@ -41,3 +43,5 @@ Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One com
 - Prefer papers with `code.url`
 - Buyer story + PM/design pack before climb
 - Distinct IA — not jobs/lifecycle/scenario desk shells
+- Score into business scorecard; garbage-collect C/Kill ideas before the next climb
+- Scoring: `docs/RUBRIC.md` (cells) · `docs/BUSINESS_RUBRIC.md` (ideas)

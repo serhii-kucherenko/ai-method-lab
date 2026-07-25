@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T07:45:09.638Z",
+  "updated_at": "2026-07-25T07:46:43.178Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -46,7 +46,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "product_complete_pending",
-  "notes": "Consult Bench Studio sustain-green. product_complete_pending=true. Parent must send finish email. DO NOT pick next paper.",
+  "notes": "Consult Bench Studio climbing. Notify finish-only + business TLDR. Garbage collector + biz-rubric-v1 scorecard live — prefer A/B picks.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
