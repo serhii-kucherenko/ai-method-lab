@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Script Lexicon Studio — try</title>
+    <style>
+      :root {
+        --ink: #1c1714;
+        --teal: #2f7a6b;
+        --stone: #ece8e2;
+        --line: #cfc6bc;
+      }
+      body {
+        margin: 0;
+        font-family: Figtree, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--stone);
+      }
+      header {
+        background: linear-gradient(165deg, #120e0c, #1c1714 55%, #243832);
+        color: #fff;
+        padding: 3rem 1.5rem 2.5rem;
+      }
+      h1 {
+        font-family: Newsreader, Georgia, serif;
+        font-size: 2.4rem;
+        margin: 0;
+        color: var(--teal);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dde3ea;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        background: var(--teal);
+        width: 0%;
+      }
+      .fill.b {
+        background: #7a8799;
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 1.25rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #556070;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Script Lexicon Studio</h1>
+      <p>Offline soft-sim: expanded Ge'ez lexicon vs baseline multilingual tokenizer.</p>
+    </header>
+    <main>
+      <label>
+        Lexicon coverage
+        <input id="lexiconCoverage" type="range" min="0" max="100" value="58" />
+      </label>
+      <label>
+        Expansion fidelity
+        <input id="expansionFidelity" type="range" min="0" max="100" value="70" />
+      </label>
+      <label>
+        Script fit
+        <input id="scriptFit" type="range" min="0" max="100" value="74" />
+      </label>
+      <label>
+        Morphology hardness
+        <input id="morphologyHardness" type="range" min="0" max="100" value="45" />
+      </label>
+      <div class="card">
+        <div>Expanded Ge'ez lexicon</div>
+        <div class="bar"><div id="fillA" class="fill"></div></div>
+        <div id="scoreA">—</div>
+      </div>
+      <div class="card">
+        <div>Baseline multilingual</div>
+        <div class="bar"><div id="fillB" class="fill b"></div></div>
+        <div id="scoreB">—</div>
+      </div>
+      <p class="note">
+        Soft-sim only — not production MT certification, not VEXMLM. Inspired by
+        arXiv 2607.15209.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreExpanded(input) {
+        const boost = 1.12;
+        const load = clamp(
+          input.morphologyHardness * (1.25 - input.lexiconCoverage * 0.5),
+          0,
+          1.5,
+        );
+        const coverage =
+          (input.lexiconCoverage * 55 + input.expansionFidelity * 25 - load * 10) *
+            boost +
+          8;
+        const expansion =
+          input.expansionFidelity * 60 * boost + input.lexiconCoverage * 25 + 8;
+        const script =
+          input.scriptFit * 50 * boost +
+          input.expansionFidelity * 25 +
+          input.lexiconCoverage * 15 +
+          8;
+        const overall = round2(
+          clamp(
+            (coverage * 0.26 + expansion * 0.24 + script * 0.28) * 0.82 + 4,
+            0,
+            100,
+          ),
+        );
+        return overall;
+      }
+      function scoreBaseline(input) {
+        const boost = 1.08;
+        const overall = round2(
+          clamp(
+            input.lexiconCoverage * 20 * boost +
+              (1 - input.morphologyHardness) * 40 +
+              input.expansionFidelity * 15,
+            0,
+            100,
+          ),
+        );
+        return overall;
+      }
+      function refresh() {
+        const input = {
+          lexiconCoverage: Number(lexiconCoverage.value) / 100,
+          expansionFidelity: Number(expansionFidelity.value) / 100,
+          scriptFit: Number(scriptFit.value) / 100,
+          morphologyHardness: Number(morphologyHardness.value) / 100,
+        };
+        const a = scoreExpanded(input);
+        const b = scoreBaseline(input);
+        scoreA.textContent = String(a);
+        scoreB.textContent = String(b);
+        fillA.style.width = a + "%";
+        fillB.style.width = b + "%";
+      }
+      ["lexiconCoverage", "expansionFidelity", "scriptFit", "morphologyHardness"].forEach(
+        (id) => document.getElementById(id).addEventListener("input", refresh),
+      );
+      refresh();
+    </script>
+  </body>
+</html>

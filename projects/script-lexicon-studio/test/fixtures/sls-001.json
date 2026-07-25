@@ -1,0 +1,39 @@
+{
+  "id": "sls-001",
+  "input": {
+    "lexiconCoverage": 0.29,
+    "expansionFidelity": 0.25,
+    "scriptFit": 0.28,
+    "subwordAgreement": 0.34,
+    "baselineAccuracy": 0.39,
+    "multilingualOptimism": 0.45,
+    "morphologyHardness": 0.59,
+    "leakageRisk": 0.5,
+    "lexiconBias": "balanced",
+    "profile": "expanded_geez_lexicon"
+  },
+  "expectedExpandedGeezLexicon": {
+    "mode": "expanded_geez_lexicon",
+    "coverageDiagnosis": 22.56,
+    "expansionDiagnosis": 30.25,
+    "scriptReasonScore": 27.38,
+    "packIntegrity": 34.28,
+    "baselineScore": 16.4,
+    "confidence": 19.35,
+    "lexiconContribution": 28.33,
+    "baselineContribution": 15.96,
+    "overall": 30.1
+  },
+  "expectedBaselineMultilingual": {
+    "mode": "baseline_multilingual",
+    "coverageDiagnosis": 5.76,
+    "expansionDiagnosis": 17.09,
+    "scriptReasonScore": 13.13,
+    "packIntegrity": 32.39,
+    "baselineScore": 40.93,
+    "confidence": 17.1,
+    "lexiconContribution": 21.86,
+    "baselineContribution": 38.6,
+    "overall": 27.2
+  }
+}

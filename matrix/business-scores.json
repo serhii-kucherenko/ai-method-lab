@@ -871,8 +871,8 @@
       "money_hook": "Bench seats + private language packs (method-lab experiment)",
       "potential": "Low-resource script coverage is underserved; lexicon expansion eval is a clear wedge",
       "moat": "Expanded Ge'ez lexicon vs baseline multilingual tokenizers",
-      "evidence": "Paper software claim (VEXMLM pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "evidence": "Paper software claim (VEXMLM pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer NLP soft-sim with multi-flow bar; never claim production MT certification; not VEXMLM brand",
       "id": 45

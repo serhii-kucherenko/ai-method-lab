@@ -52,7 +52,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Contact Arm Studio** | `contact-arm-studio` | **Complete** | Contact-centric tactile+vision vs vision-only baseline |
 | **Drag Wall Studio** | `drag-wall-studio` | **Complete** | ES closed-loop wall control vs open-loop/gradient baseline |
 | **Quantum Kernel Studio** | `quantum-kernel-studio` | **Complete** | Quantum multi-kernel QSAR vs classical kernel baseline |
-| **Script Lexicon Studio** | `script-lexicon-studio` | **Building** | Expanded Geez lexicon vs baseline multilingual tokenizers |
+| **Script Lexicon Studio** | `script-lexicon-studio` | **Complete** | Expanded Geez lexicon vs baseline multilingual tokenizers |
 
 ## Rules
 

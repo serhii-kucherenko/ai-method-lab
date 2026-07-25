@@ -1,6 +1,6 @@
 # Script Lexicon Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `script-lexicon-studio`  
 **Paper:** https://arxiv.org/abs/2607.15209v1  
 **Authors’ code:** none  

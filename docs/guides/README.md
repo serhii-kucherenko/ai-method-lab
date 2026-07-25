@@ -65,6 +65,7 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 74 | [Contact Arm Studio — what we learned](74-contact-arm-studio-lessons.md) | Product `contact-arm-studio` |
 | 75 | [Drag Wall Studio — what we learned](75-drag-wall-studio-lessons.md) | Product `drag-wall-studio` |
 | 76 | [Quantum Kernel Studio — what we learned](76-quantum-kernel-studio-lessons.md) | Product `quantum-kernel-studio` |
+| 77 | [Script Lexicon Studio — what we learned](77-script-lexicon-studio-lessons.md) | Product `script-lexicon-studio` |
 
 ### Scoring notes
 
