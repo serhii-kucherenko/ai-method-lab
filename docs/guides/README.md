@@ -111,5 +111,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 108 | [Phe Escalate Studio - what we learned](108-phe-escalate-studio-lessons.md) | Product `phe-escalate-studio` |
 | 109 | [Share Colearn Studio - what we learned](109-share-colearn-studio-lessons.md) | Product `share-colearn-studio` |
 | 110 | [Atlas Flow Studio - what we learned](110-atlas-flow-studio-lessons.md) | Product `atlas-flow-studio` |
+| 111 | [Saffron Detect Studio - what we learned](111-saffron-detect-studio-lessons.md) | Product `saffron-detect-studio` |
 
 

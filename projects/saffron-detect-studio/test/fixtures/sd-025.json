@@ -1,0 +1,39 @@
+{
+  "id": "sd-025",
+  "input": {
+    "stigmaClarity": 0.79,
+    "adulterantContrast": 0.79,
+    "cnnConfidence": 0.77,
+    "textureIntegrity": 0.8,
+    "visualConfidence": 0.8,
+    "baselineOptimism": 0.33,
+    "detectHardness": 0.26,
+    "overclaimRisk": 0.21,
+    "detectBias": "cnn_first",
+    "profile": "cnn_adulteration_detection"
+  },
+  "expectedCnn": {
+    "mode": "cnn_adulteration_detection",
+    "stigmaScore": 62.49,
+    "contrastScore": 79.52,
+    "cnnScore": 54.83,
+    "textureIntegrity": 100,
+    "visualScore": 45.2,
+    "confidence": 70.35,
+    "cnnContribution": 72.68,
+    "visualContribution": 48.24,
+    "overall": 72.28
+  },
+  "expectedVisual": {
+    "mode": "visual_inspection_baseline",
+    "stigmaScore": 19.5,
+    "contrastScore": 24.56,
+    "cnnScore": 21.5,
+    "textureIntegrity": 42.63,
+    "visualScore": 43.52,
+    "confidence": 35.55,
+    "cnnContribution": 30.34,
+    "visualContribution": 48.04,
+    "overall": 40.81
+  }
+}

@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T18:54:44.718Z",
+  "updated_at": "2026-07-25T19:01:50.105Z",
   "projects": [
     {
       "id": 1,
@@ -1611,19 +1611,29 @@
     {
       "slug": "saffron-detect-studio",
       "project": "Saffron Detect Studio",
-      "score": 63,
+      "score": 67,
       "tier": "B",
-      "business_idea": "Compare CNN stigma-image adulteration detection against visual inspection baselines before locking a detect pack",
-      "pmf": "Early signal with food-quality / spice authenticity leads who already trial image classifiers for high-value spices",
+      "business_idea": "Compare CNN stigma-image adulteration detection against visual inspection baselines before locking a saffron detect pack",
+      "pmf": "Early signal with food-quality / spice authenticity eng leads who already stitch visual + imaging checks",
       "buyer": "Food-quality and spice authenticity engineering leads",
       "money_hook": "Bench seats + private detect packs (method-lab experiment)",
-      "potential": "CNN stigma authenticity is underserved vs slow inconsistent visual dumps without a dual bench",
+      "potential": "Authenticity detect packs are underserved vs naked-eye-only inspection without a dual bench",
       "moat": "CNN adulteration detection vs visual inspection baseline",
-      "evidence": "Paper software claim (CNN saffron stigma adulteration pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "evidence": "Paper software claim (comparative CNN stigma adulteration pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Prefer food-authenticity soft-sim with multi-flow bar; never claim customs authority, live supply-chain write-back, or certified lab accreditation",
-      "id": 79
+      "gc_notes": "Prefer food-authenticity soft-sim with multi-flow bar; never claim customs authority, live supply-chain write-back, or certified lab accreditation; distinct from desk/jobs/lifecycle shells",
+      "id": 79,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 7,
+        "feasibility": 7
+      }
     }
   ]
 }

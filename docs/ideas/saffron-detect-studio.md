@@ -1,6 +1,6 @@
 # Saffron Detect Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `saffron-detect-studio`  
 **Paper:** https://doi.org/10.21203/rs.3.rs-10292094/v1  
 **Authors’ code:** none  

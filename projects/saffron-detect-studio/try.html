@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Saffron Detect Studio — offline try</title>
+    <style>
+      :root {
+        --sd-ink: #1c1712;
+        --sd-amber: #c4842a;
+        --sd-mist: #f3efe8;
+        --sd-line: #d2c8b8;
+        --sd-teal: #3a6f6a;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        background: var(--sd-mist);
+        color: var(--sd-ink);
+      }
+      header {
+        background: linear-gradient(165deg, #120f0c, #1c1712 50%, #2a2218);
+        color: white;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      h1 {
+        font-family: "Libre Baskerville", Georgia, serif;
+        margin: 0;
+        color: var(--sd-amber);
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid var(--sd-line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--sd-teal);
+        color: white;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--sd-line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        opacity: 0.75;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Saffron Detect Studio</h1>
+      <p>
+        Offline soft-sim: CNN adulteration detection vs visual inspection
+        baseline
+      </p>
+    </header>
+    <main>
+      <label
+        >Stigma clarity
+        <input id="stigmaClarity" type="number" step="0.01" value="0.65"
+      /></label>
+      <label
+        >Adulterant contrast
+        <input id="adulterantContrast" type="number" step="0.01" value="0.7"
+      /></label>
+      <label
+        >CNN confidence
+        <input id="cnnConfidence" type="number" step="0.01" value="0.74"
+      /></label>
+      <label
+        >Texture integrity
+        <input id="textureIntegrity" type="number" step="0.01" value="0.68"
+      /></label>
+      <label
+        >Visual confidence
+        <input id="visualConfidence" type="number" step="0.01" value="0.82"
+      /></label>
+      <label
+        >Baseline optimism
+        <input id="baselineOptimism" type="number" step="0.01" value="0.7"
+      /></label>
+      <button id="run">Score A/B</button>
+      <div class="out" id="out">Run soft-sim to see CNN vs visual scores.</div>
+      <p class="note">
+        Soft-sim only — not customs authority, not certified lab accreditation,
+        not live supply-chain write-back, not the authors’ system.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreCnn(input) {
+        const boost = 1.12;
+        const load = clamp(
+          input.detectHardness * (1.25 - input.cnnConfidence * 0.5),
+          0,
+          1.5,
+        );
+        const stigmaScore = round2(
+          clamp(
+            (input.stigmaClarity * 55 +
+              input.adulterantContrast * 25 -
+              load * 10) *
+              boost +
+              8 -
+              input.overclaimRisk * 6,
+            0,
+            100,
+          ),
+        );
+        const contrastScore = round2(
+          clamp(
+            input.adulterantContrast * 60 * boost +
+              input.stigmaClarity * 25 +
+              8 -
+              input.baselineOptimism * 4,
+            0,
+            100,
+          ),
+        );
+        const cnnScore = round2(
+          clamp(
+            input.cnnConfidence * 58 * boost +
+              input.stigmaClarity * 28 +
+              10 -
+              load * 12 -
+              input.overclaimRisk * 10,
+            0,
+            100,
+          ),
+        );
+        const textureIntegrity = round2(
+          clamp(
+            input.textureIntegrity * 50 * boost +
+              input.adulterantContrast * 25 +
+              input.stigmaClarity * 15 +
+              8,
+            0,
+            100,
+          ),
+        );
+        const cnnContribution = round2(
+          clamp(
+            stigmaScore * 0.26 +
+              contrastScore * 0.24 +
+              cnnScore * 0.28 +
+              textureIntegrity * 0.22,
+            0,
+            100,
+          ),
+        );
+        const visualScore = round2(
+          clamp(
+            input.visualConfidence * 55 * boost +
+              input.baselineOptimism * 20 -
+              input.detectHardness * 18 -
+              6,
+            0,
+            100,
+          ),
+        );
+        const visualContribution = round2(
+          clamp(
+            visualScore * 0.7 +
+              input.visualConfidence * 20 +
+              input.baselineOptimism * 10 -
+              load * 12,
+            0,
+            100,
+          ),
+        );
+        return round2(
+          clamp(cnnContribution * 0.82 + visualContribution * 0.18 + 4, 0, 100),
+        );
+      }
+      function scoreVisual(input) {
+        const boost = 1.08;
+        const load = clamp(
+          input.detectHardness * (1.25 - input.cnnConfidence * 0.5),
+          0,
+          1.5,
+        );
+        const visualScore = round2(
+          clamp(
+            input.visualConfidence * 58 * boost +
+              input.baselineOptimism * 32 -
+              input.detectHardness * 10 +
+              8,
+            0,
+            100,
+          ),
+        );
+        const visualContribution = round2(
+          clamp(
+            visualScore * 0.55 +
+              input.baselineOptimism * 30 +
+              input.visualConfidence * 20 -
+              load * 8,
+            0,
+            100,
+          ),
+        );
+        const cnnContribution = round2(
+          clamp(input.baselineOptimism * 40 + input.visualConfidence * 30, 0, 100),
+        );
+        return round2(
+          clamp(
+            visualContribution * 0.78 +
+              cnnContribution * 0.22 -
+              input.detectHardness * 8 -
+              input.overclaimRisk * 6,
+            0,
+            100,
+          ),
+        );
+      }
+      document.getElementById("run").onclick = () => {
+        const input = {
+          stigmaClarity: Number(document.getElementById("stigmaClarity").value),
+          adulterantContrast: Number(
+            document.getElementById("adulterantContrast").value,
+          ),
+          cnnConfidence: Number(document.getElementById("cnnConfidence").value),
+          textureIntegrity: Number(
+            document.getElementById("textureIntegrity").value,
+          ),
+          visualConfidence: Number(
+            document.getElementById("visualConfidence").value,
+          ),
+          baselineOptimism: Number(
+            document.getElementById("baselineOptimism").value,
+          ),
+          detectHardness: 0.45,
+          overclaimRisk: 0.28,
+        };
+        const cnn = scoreCnn(input);
+        const visual = scoreVisual(input);
+        const winner =
+          cnn > visual + 0.5
+            ? "cnn_adulteration_detection"
+            : visual > cnn + 0.5
+              ? "visual_inspection_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "CNN " +
+          cnn +
+          " · visual " +
+          visual +
+          " · winner " +
+          winner +
+          " · gap " +
+          Math.abs(cnn - visual).toFixed(2);
+      };
+    </script>
+  </body>
+</html>
