@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T21:40:21.337Z",
+  "updated_at": "2026-07-25T21:54:13.897Z",
   "projects": [
     {
       "id": 1,
@@ -1997,7 +1997,7 @@
       "potential": "Multi-domain latent trajectories for adolescent MH analytics are underserved vs single-domain dumps without honesty",
       "moat": "Multi-domain latent trajectory vs single-domain baseline",
       "evidence": "Paper analytics claim (latent class growth trajectory pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer adolescent MH analytics soft-sim with multi-flow bar; never claim clinical diagnostic use, crisis intervention, or live EHR write-back",
       "dimensions": {
@@ -2012,6 +2012,33 @@
       },
       "score": 66,
       "id": 93
+    },
+    {
+      "slug": "access-equity-studio",
+      "project": "Access Equity Studio",
+      "tier": "B",
+      "business_idea": "Compare equity-access autism AI screening designs against accuracy-only classification baselines before locking a pathway pack",
+      "pmf": "Early signal with autism program / digital screening product leads who already trial pathway soft-sims",
+      "buyer": "Autism program and digital screening product engineering leads",
+      "money_hook": "Bench seats + private pathway packs (method-lab experiment)",
+      "potential": "Equity-access autism AI pathways are underserved vs accuracy-only dumps without honesty",
+      "moat": "Equity-access AI vs accuracy-only baseline",
+      "evidence": "Paper equity/eval claim (autism AI access pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer autism screening equity soft-sim with multi-flow bar; never claim clinical diagnostic use, live EHR write-back, or FDA clearance",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "id": 94
     }
   ]
 }
