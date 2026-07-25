@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T12:34:09.733Z",
+  "updated_at": "2026-07-25T12:43:34.827Z",
   "projects": [
     {
       "id": 1,
@@ -842,6 +842,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer industrial fluid-control soft-sim with multi-flow bar; never claim live plant or certified CFD",
       "id": 43
+    },
+    {
+      "slug": "quantum-kernel-studio",
+      "project": "Quantum Kernel Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare quantum multiple-kernel QSAR plans against classical kernel baselines before locking a binding-prediction pack",
+      "pmf": "Early signal with computational chemistry / chem-informatics leads who already buy QSAR benches",
+      "buyer": "Computational chemistry and chem-informatics leads",
+      "money_hook": "Bench seats + private molecule packs (method-lab experiment)",
+      "potential": "QSAR remains a spend center; quantum multi-kernel eval is underserved vs classical-only tools",
+      "moat": "Quantum multiple-kernel vs classical kernel baselines (soft-sim)",
+      "evidence": "Paper software claim (Q²SAR pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer chem-informatics soft-sim with multi-flow bar; never claim live quantum hardware or wet-lab; not Q²SAR brand",
+      "id": 44
     }
   ]
 }
