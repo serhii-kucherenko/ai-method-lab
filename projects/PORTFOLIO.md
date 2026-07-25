@@ -96,6 +96,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Nicu Ecg Studio** | `nicu-ecg-studio` | **Complete** | Alignment-free PPG-guided ECG vs alignment-dependent baseline |
 | **Pv Causal Studio** | `pv-causal-studio` | **Complete** | Target-trial causal PV signals vs spontaneous-reporting baseline |
 | **Sepsis Therapy Studio** | `sepsis-therapy-studio` | **Complete** | CT-HMM therapy effectiveness vs static guideline baseline |
+| **Mhc Design Studio** | `mhc-design-studio` | **Building** | Hybrid quantum–classical de novo vs classical generative baseline |
 | **Sepsis Therapy Studio** | `sepsis-therapy-studio` | **Building** | CT-HMM therapy effectiveness vs static guideline baseline |
 
 ## Rules

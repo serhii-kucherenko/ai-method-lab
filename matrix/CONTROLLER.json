@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T22:15:00.000Z",
+  "updated_at": "2026-07-25T20:47:08.940Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "8efdf88c-576c-43da-b026-c9d026ff4d0e",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "2109ec89-41d6-4770-9445-f2e97e4e351a",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__sepsis-therapy-studio__r1",
   "last_error": null,
-  "current_product": "sepsis-therapy-studio",
-  "current_idea": "sepsis-therapy-studio",
+  "current_product": "mhc-design-studio",
+  "current_idea": "mhc-design-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Sepsis Therapy Studio sustain complete: 13 pages, 35 features, 30 goldens (st-001…st-030), npm test + build + test:app-up green. product_complete_pending=true — parent owns Resend finish email; do NOT send any Resend email from this agent.",
+  "phase": "build",
+  "notes": "Sepsis Therapy finish email sent. Next climb: Mhc Design Studio (736951) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.64898/2026.07.03.26357092",
-      "slug": "sepsis-therapy-studio",
-      "displayName": "Sepsis Therapy Studio",
-      "at": "2026-07-25T20:37:13.997Z",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.07.03.26357092v1",
+      "paperId": "10.64898/2026.07.09.736951",
+      "slug": "mhc-design-studio",
+      "displayName": "Mhc Design Studio",
+      "at": "2026-07-25T20:47:08.941Z",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.09.736951v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T20:37:13.997Z",
+    "framing_started_at": "2026-07-25T20:47:08.941Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,

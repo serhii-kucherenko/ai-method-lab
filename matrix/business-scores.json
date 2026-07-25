@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T20:44:06.295Z",
+  "updated_at": "2026-07-25T20:47:08.858Z",
   "projects": [
     {
       "id": 1,
@@ -1877,6 +1877,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "mhc-design-studio",
+      "project": "Mhc Design Studio",
+      "score": 65,
+      "tier": "B",
+      "business_idea": "Compare hybrid quantum–classical de novo MHC-binding peptide design against classical generative baselines before locking a peptide pack",
+      "pmf": "Early signal with immuno-oncology / vaccine design analytics leads who already trial generative peptide design",
+      "buyer": "Immuno-oncology and vaccine design analytics engineering leads",
+      "money_hook": "Bench seats + private peptide packs (method-lab experiment)",
+      "potential": "Hybrid quantum–classical peptide design is underserved vs classical generative dumps under scarce training data",
+      "moat": "Hybrid quantum–classical de novo vs classical generative baseline",
+      "evidence": "Paper software claim (hybrid quantum–classical MHC peptide design pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer immuno-design soft-sim with multi-flow bar; never claim wet-lab validated binders, live ELN write-back, or FDA clearance",
+      "id": 89
     }
   ]
 }
