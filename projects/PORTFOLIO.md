@@ -62,6 +62,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Skeleton Author Studio** | `skeleton-author-studio` | **Complete** | Scaffolded non-visual authoring vs naive linear baseline |
 | **World Cog Drive Studio** | `world-cog-drive-studio` | **Complete** | Dual-level world-cognitive VLA vs single-level VLA baseline |
 | **Governed Research Studio** | `governed-research-studio` | **Complete** | Governed research workflow vs ungated agent baseline |
+| **Margin Fusion Studio** | `margin-fusion-studio` | **Building** | Marker-free deformable margin fusion vs marker-based baseline |
 
 ## Rules
 

@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T14:31:28.262Z",
+  "updated_at": "2026-07-25T14:33:03.493Z",
   "projects": [
     {
       "id": 1,
@@ -1109,6 +1109,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "margin-fusion-studio",
+      "project": "Margin Fusion Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare marker-free deformable AR margin fusion against marker-based baselines before locking a surgical case pack",
+      "pmf": "Early signal with surgical imaging / AR OR leads who already buy margin mapping tools",
+      "buyer": "Surgical imaging and AR OR engineering leads",
+      "money_hook": "Bench seats + private case packs (method-lab experiment)",
+      "potential": "Marker-free deformable fusion is underserved vs brittle marker-based AR overlays",
+      "moat": "Marker-free deformable fusion vs marker-based baseline",
+      "evidence": "Paper software claim (marker-free AR margin fusion pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer surgical-imaging soft-sim with multi-flow bar; never claim device clearance or live OR",
+      "id": 55
     }
   ]
 }
