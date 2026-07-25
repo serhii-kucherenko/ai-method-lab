@@ -1,6 +1,6 @@
 # Atlas Flow Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `atlas-flow-studio`  
 **Paper:** https://www.biorxiv.org/content/10.64898/2026.07.15.737186v1  
 **Authors’ code:** none  

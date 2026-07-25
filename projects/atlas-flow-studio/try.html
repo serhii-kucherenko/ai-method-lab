@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atlas Flow Studio — offline try</title>
+    <style>
+      :root {
+        --af-ink: #1a1f28;
+        --af-teal: #2a7a7a;
+        --af-mist: #eef2f5;
+        --af-line: #c2c8ce;
+        --af-amber: #b8893a;
+      }
+      body {
+        margin: 0;
+        font-family: Manrope, "Segoe UI", sans-serif;
+        background: var(--af-mist);
+        color: var(--af-ink);
+      }
+      header {
+        background: linear-gradient(165deg, #12161d, #1a1f28 50%, #1a2a2a);
+        color: white;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      h1 {
+        font-family: Fraunces, Georgia, serif;
+        margin: 0;
+        color: #7eb8b8;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid var(--af-line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--af-teal);
+        color: white;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--af-line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        opacity: 0.75;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Atlas Flow Studio</h1>
+      <p>
+        Offline soft-sim: integrated atlas workflow vs fragmented multi-tool
+        baseline
+      </p>
+    </header>
+    <main>
+      <label
+        >Registration fidelity
+        <input id="fid" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Region coverage
+        <input id="cov" type="number" min="0" max="1" step="0.01" value="0.65"
+      /></label>
+      <label
+        >Atlas alignment
+        <input id="align" type="number" min="0" max="1" step="0.01" value="0.72"
+      /></label>
+      <label
+        >Quant stability
+        <input id="stab" type="number" min="0" max="1" step="0.01" value="0.68"
+      /></label>
+      <label
+        >Fragment tool confidence
+        <input id="frag" type="number" min="0" max="1" step="0.01" value="0.8"
+      /></label>
+      <label
+        >Baseline optimism
+        <input id="opt" type="number" min="0" max="1" step="0.01" value="0.55"
+      /></label>
+      <button id="go" type="button">Score A/B</button>
+      <div class="out" id="out">Run soft-sim to see winner + gap.</div>
+      <p class="note">
+        Approximate offline demo — not live microscope control, not diagnostic,
+        not FDA, not NeuroFlow. Full fidelity: <code>npm run dev</code> in
+        projects/atlas-flow-studio.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(i) {
+        const load = i.workflowHardness * (1.25 - i.atlasAlignment * 0.5);
+        const integrated =
+          i.registrationFidelity * 42 +
+          i.regionCoverage * 28 +
+          i.atlasAlignment * 18 +
+          i.quantStability * 16 -
+          load * 8 -
+          i.baselineOptimism * 6;
+        return round2(clamp(integrated, 0, 100));
+      }
+      function scoreB(i) {
+        const frag =
+          i.fragmentToolConfidence * 48 +
+          i.baselineOptimism * 32 -
+          i.workflowHardness * 14 -
+          i.registrationFidelity * 6;
+        return round2(clamp(frag, 0, 100));
+      }
+      document.getElementById("go").onclick = function () {
+        const input = {
+          registrationFidelity: Number(document.getElementById("fid").value),
+          regionCoverage: Number(document.getElementById("cov").value),
+          atlasAlignment: Number(document.getElementById("align").value),
+          quantStability: Number(document.getElementById("stab").value),
+          fragmentToolConfidence: Number(document.getElementById("frag").value),
+          baselineOptimism: Number(document.getElementById("opt").value),
+          workflowHardness: 0.35,
+        };
+        const a = scoreA(input);
+        const b = scoreB(input);
+        const gap = round2(Math.abs(a - b));
+        const winner =
+          a > b + 0.5
+            ? "integrated_atlas_workflow"
+            : b > a + 0.5
+              ? "fragmented_multi_tool_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "Winner " +
+          winner +
+          " · gap " +
+          gap +
+          " · integrated " +
+          a +
+          " vs fragmented " +
+          b;
+      };
+    </script>
+  </body>
+</html>

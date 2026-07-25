@@ -1,0 +1,39 @@
+{
+  "id": "af-022",
+  "input": {
+    "registrationFidelity": 0.74,
+    "regionCoverage": 0.72,
+    "atlasAlignment": 0.73,
+    "quantStability": 0.76,
+    "fragmentToolConfidence": 0.77,
+    "baselineOptimism": 0.34,
+    "workflowHardness": 0.32,
+    "overclaimRisk": 0.25,
+    "registrationBias": "region_first",
+    "profile": "integrated_atlas_workflow"
+  },
+  "expectedIntegrated": {
+    "mode": "integrated_atlas_workflow",
+    "registrationScore": 57.6,
+    "coverageScore": 73.52,
+    "alignmentScore": 88.84,
+    "quantIntegrity": 60.51,
+    "fragmentScore": 42.47,
+    "confidence": 65.1,
+    "integratedContribution": 70.81,
+    "fragmentContribution": 45.13,
+    "overall": 70.19
+  },
+  "expectedFragmented": {
+    "mode": "fragmented_multi_tool_baseline",
+    "registrationScore": 24.57,
+    "coverageScore": 23.77,
+    "alignmentScore": 20.46,
+    "quantIntegrity": 42.05,
+    "fragmentScore": 42.21,
+    "confidence": 33.35,
+    "integratedContribution": 30.61,
+    "fragmentContribution": 46.55,
+    "overall": 38.98
+  }
+}
