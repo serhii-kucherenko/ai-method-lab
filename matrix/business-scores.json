@@ -1413,7 +1413,7 @@
       "potential": "Optimized in-context exemplars for ROI selection are underserved vs naive few-shot dumps",
       "moat": "Optimized in-context exemplars vs naive exemplar baseline",
       "evidence": "Paper software claim (VLM ROI in-context exemplar optimization pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer VLM soft-sim with multi-flow bar; never claim clinical diagnostic use or live PACS write-back",
       "id": 68

@@ -100,6 +100,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 97 | [Crate Validate Studio â€” what we learned](97-crate-validate-studio-lessons.md) | Product `crate-validate-studio` |
 | 98 | [Transducin Measure Studio â€” what we learned](98-transducin-measure-studio-lessons.md) | Product `transducin-measure-studio` |
 | 99 | [Sovereign Cost Studio - what we learned](99-sovereign-cost-studio-lessons.md) | Product `sovereign-cost-studio` |
-
+| 100 | [Roi Exemplar Studio - what we learned](100-roi-exemplar-studio-lessons.md) | Product `roi-exemplar-studio` |
 
 

@@ -1,0 +1,39 @@
+{
+  "id": "re-009",
+  "input": {
+    "localizationPrecision": 0.46,
+    "coverageBreadth": 0.41,
+    "exemplarDiversity": 0.5,
+    "promptFit": 0.49,
+    "naiveDumpRate": 0.53,
+    "naiveOptimism": 0.39,
+    "roiHardness": 0.48,
+    "overclaimRisk": 0.38,
+    "exemplarBias": "balanced",
+    "profile": "naive_exemplar_baseline"
+  },
+  "expectedOptimized": {
+    "mode": "optimized_incontext_exemplars",
+    "localizationScore": 40.05,
+    "coverageScore": 45.49,
+    "diversityScore": 45.68,
+    "promptIntegrity": 52.59,
+    "naiveBaselineScore": 25.81,
+    "confidence": 37.35,
+    "optimizedContribution": 45.69,
+    "naiveContribution": 26.69,
+    "overall": 46.27
+  },
+  "expectedNaive": {
+    "mode": "naive_exemplar_baseline",
+    "localizationScore": 14.91,
+    "coverageScore": 19.07,
+    "diversityScore": 15.29,
+    "promptIntegrity": 35.36,
+    "naiveBaselineScore": 48.88,
+    "confidence": 22.7,
+    "optimizedContribution": 26.7,
+    "naiveContribution": 45.27,
+    "overall": 35.06
+  }
+}

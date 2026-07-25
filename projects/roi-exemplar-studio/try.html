@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roi Exemplar Studio — offline try</title>
+    <style>
+      :root {
+        --ink: #1a1f28;
+        --coral: #c45a4a;
+        --mist: #eef1f4;
+        --line: #c4c9cf;
+        --teal: #2f7a7a;
+      }
+      body {
+        margin: 0;
+        font-family: "DM Sans", "Segoe UI", sans-serif;
+        background: var(--mist);
+        color: var(--ink);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: Sora, "Segoe UI", sans-serif;
+        font-weight: 600;
+        color: var(--coral);
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 1.25rem;
+        background: var(--coral);
+        color: white;
+        border: 0;
+        padding: 0.6rem 1rem;
+        border-radius: 0.35rem;
+        cursor: pointer;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dfe3e8;
+        border-radius: 999px;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        border-radius: 999px;
+        background: var(--coral);
+      }
+      .fill.b {
+        background: var(--teal);
+      }
+      .note {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #4a515c;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Roi Exemplar Studio</h1>
+      <p>
+        Offline soft-sim: optimized in-context exemplars for ROI selection vs
+        naive exemplar baseline.
+      </p>
+      <label>Localization precision <span id="wVal">0.62</span></label>
+      <input id="loc" type="range" min="0" max="1" step="0.01" value="0.62" />
+      <label>Coverage breadth <span id="eVal">0.70</span></label>
+      <input id="cov" type="range" min="0" max="1" step="0.01" value="0.70" />
+      <label>Naive optimism <span id="cVal">0.55</span></label>
+      <input id="naive" type="range" min="0" max="1" step="0.01" value="0.55" />
+      <button id="run" type="button">Score A vs B</button>
+      <div style="margin-top: 1.25rem">
+        <div>Optimized in-context (A): <strong id="aScore">—</strong></div>
+        <div class="bar"><div id="aBar" class="fill" style="width: 0%"></div></div>
+        <div style="margin-top: 0.75rem">
+          Naive baseline (B): <strong id="bScore">—</strong>
+        </div>
+        <div class="bar"><div id="bBar" class="fill b" style="width: 0%"></div></div>
+        <p id="winner" style="margin-top: 0.75rem"></p>
+      </div>
+      <p class="note">
+        Soft-sim only — not clinical diagnostic use, not live PACS write-back,
+        not the authors’ system. Paper: iScience 10.1016/j.isci.2026.116518.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(loc, cov, naive) {
+        const localization = loc * 55 + cov * 25 + 8 - naive * 6;
+        const coverage = cov * 60 + loc * 25 + 8 - naive * 4;
+        const diversity = loc * 40 + cov * 30 + 10;
+        const overall = clamp((localization + coverage + diversity) / 3, 0, 100);
+        return round2(overall);
+      }
+      function scoreB(loc, cov, naive) {
+        const dump = naive * 58 + (1 - loc) * 20 + 8;
+        const overall = clamp(dump * 0.7 + cov * 15, 0, 100);
+        return round2(overall);
+      }
+      const loc = document.getElementById("loc");
+      const cov = document.getElementById("cov");
+      const naive = document.getElementById("naive");
+      function sync() {
+        document.getElementById("wVal").textContent = loc.value;
+        document.getElementById("eVal").textContent = cov.value;
+        document.getElementById("cVal").textContent = naive.value;
+      }
+      loc.oninput = cov.oninput = naive.oninput = sync;
+      document.getElementById("run").onclick = () => {
+        const a = scoreA(+loc.value, +cov.value, +naive.value);
+        const b = scoreB(+loc.value, +cov.value, +naive.value);
+        document.getElementById("aScore").textContent = a;
+        document.getElementById("bScore").textContent = b;
+        document.getElementById("aBar").style.width = a + "%";
+        document.getElementById("bBar").style.width = b + "%";
+        const winner =
+          a > b + 0.5
+            ? "optimized_incontext_exemplars"
+            : b > a + 0.5
+              ? "naive_exemplar_baseline"
+              : "tie";
+        document.getElementById("winner").textContent =
+          "Winner: " + winner + " · gap " + round2(Math.abs(a - b));
+      };
+      sync();
+    </script>
+  </body>
+</html>

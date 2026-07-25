@@ -1,6 +1,6 @@
 # Roi Exemplar Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `roi-exemplar-studio`  
 **Paper:** https://doi.org/10.1016/j.isci.2026.116518  
 **Authors’ code:** none  
