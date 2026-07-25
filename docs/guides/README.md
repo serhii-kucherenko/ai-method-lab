@@ -133,5 +133,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 130 | [Encoded Library Studio - what we learned](130-encoded-library-studio-lessons.md) | Product `encoded-library-studio` |
 | 131 | [Fluoride Label Studio - what we learned](131-fluoride-label-studio-lessons.md) | Product `fluoride-label-studio` |
 | 132 | [Ion Hydrogel Studio - what we learned](132-ion-hydrogel-studio-lessons.md) | Product `ion-hydrogel-studio` |
+| 133 | [Liver Organoid Studio - what we learned](133-liver-organoid-studio-lessons.md) | Product `liver-organoid-studio` |
 
 

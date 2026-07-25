@@ -108,7 +108,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Encoded Library Studio** | `encoded-library-studio` | **Complete** | Iterative DELT construct-and-screen vs single-pass library screen |
 | **Fluoride Label Studio** | `fluoride-label-studio` | **Complete** | Fast isotopic F-18 exchange vs multistep prosthetic baseline |
 | **Ion Hydrogel Studio** | `ion-hydrogel-studio` | **Complete** | Dynamic charge regulation vs fixed-charge hydrogel baseline |
-| **Liver Organoid Studio** | `liver-organoid-studio` | Building | Multicellular HLO vs single-lineage HLC MASLD baseline |
+| **Liver Organoid Studio** | `liver-organoid-studio` | **Complete** | Multicellular HLO vs single-lineage HLC MASLD baseline |
 
 ## Rules
 

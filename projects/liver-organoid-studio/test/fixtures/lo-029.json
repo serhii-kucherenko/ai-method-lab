@@ -1,0 +1,39 @@
+{
+  "id": "lo-029",
+  "input": {
+    "multicellularComplexity": 0.87,
+    "hepatocyteLikeFidelity": 0.87,
+    "stellatePresence": 0.8,
+    "cholangiocyteMix": 0.67,
+    "lipidAccumulation": 0.37,
+    "inflammationCue": 0.72,
+    "differentiationDay": 0.87,
+    "overclaimRisk": 0.18,
+    "lineageBias": "balanced",
+    "profile": "multicellular_hlo_model"
+  },
+  "expectedHlo": {
+    "mode": "multicellular_hlo_model",
+    "multicellularScore": 84.96,
+    "hepatocyteScore": 83.34,
+    "lineageScore": 84.79,
+    "masldScore": 54.7,
+    "baselineScore": 45.97,
+    "confidence": 66,
+    "hloContribution": 77.36,
+    "hlcContribution": 48.5,
+    "overall": 76.17
+  },
+  "expectedHlc": {
+    "mode": "single_lineage_hlc_baseline",
+    "multicellularScore": 26.33,
+    "hepatocyteScore": 77.42,
+    "lineageScore": 39.06,
+    "masldScore": 27.31,
+    "baselineScore": 73.78,
+    "confidence": 57.28,
+    "hloContribution": 48.78,
+    "hlcContribution": 66.5,
+    "overall": 56.72
+  }
+}

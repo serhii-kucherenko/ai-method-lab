@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liver Organoid Studio — offline try</title>
+  <style>
+    :root {
+      --lo-ink: #14161a;
+      --lo-rust: #8a4a3a;
+      --lo-mist: #f1f0ed;
+      --lo-line: #c8c6c1;
+      --lo-teal: #2f6568;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--lo-mist);
+      color: var(--lo-ink);
+    }
+    header {
+      background: linear-gradient(165deg, #0c0e11, #14161a 50%, #1a1e22);
+      color: var(--lo-mist);
+      padding: 2.5rem 1.5rem;
+    }
+    h1 { margin: 0; color: var(--lo-rust); font-size: 1.75rem; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input, select {
+      width: 100%; box-sizing: border-box; margin-top: 0.25rem;
+      padding: 0.5rem; border: 1px solid var(--lo-line); border-radius: 0.35rem;
+    }
+    button {
+      margin-top: 1rem; background: var(--lo-teal); color: white;
+      border: 0; padding: 0.6rem 1rem; border-radius: 0.35rem; cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem; padding: 1rem; background: white;
+      border: 1px solid var(--lo-line); border-radius: 0.5rem;
+    }
+    .bar { height: 0.5rem; background: #e0ddd8; border-radius: 999px; overflow: hidden; margin: 0.35rem 0 0.75rem; }
+    .fill { height: 100%; background: var(--lo-teal); }
+    .fill.b { background: var(--lo-rust); }
+    .note { font-size: 0.85rem; color: #4f5459; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Liver Organoid Studio</h1>
+    <p>Approximate offline demo — multicellular HLO vs single-lineage HLC. Full fidelity needs the Next app.</p>
+  </header>
+  <main>
+    <label>Multicellular complexity <input id="multicellularComplexity" type="number" min="0" max="1" step="0.01" value="0.68" /></label>
+    <label>Hepatocyte-like fidelity <input id="hepatocyteLikeFidelity" type="number" min="0" max="1" step="0.01" value="0.72" /></label>
+    <label>Stellate presence <input id="stellatePresence" type="number" min="0" max="1" step="0.01" value="0.4" /></label>
+    <label>Lipid accumulation <input id="lipidAccumulation" type="number" min="0" max="1" step="0.01" value="0.55" /></label>
+    <label>Differentiation day <input id="differentiationDay" type="number" min="0" max="1" step="0.01" value="0.74" /></label>
+    <label>Bias
+      <select id="lineageBias">
+        <option value="balanced">balanced</option>
+        <option value="hlo_first">hlo_first</option>
+        <option value="lipid_first">lipid_first</option>
+        <option value="hlc_first">hlc_first</option>
+      </select>
+    </label>
+    <button id="run" type="button">Compare soft-sim</button>
+    <div class="out" id="out">Run to see approximate A/B scores.</div>
+    <p class="note">Honesty: soft-sim only — not wet-lab validated organoid GMP manufacture, not live patient transplant, not clinical MASLD diagnosis. bioRxiv 10.64898/2026.06.02.729501.</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function scoreA(input) {
+      const boost = 1.12;
+      const wH = biasWeight(input.lineageBias, "hlo_first");
+      const drag = input.lipidAccumulation * 0.5;
+      const overall = round2(clamp(
+        (input.multicellularComplexity * 50 + input.stellatePresence * 20 + input.differentiationDay * 15) * boost * wH
+        + 8 - drag * 10 - (input.lineageBias === "hlc_first" ? 12 : 0),
+        0, 100
+      ));
+      return overall;
+    }
+    function scoreB(input) {
+      const boost = 1.08;
+      const wC = biasWeight(input.lineageBias, "hlc_first");
+      const overall = round2(clamp(
+        input.hepatocyteLikeFidelity * 60 * boost * wC + input.differentiationDay * 20 + 8
+        - input.stellatePresence * 12,
+        0, 100
+      ));
+      return overall;
+    }
+    document.getElementById("run").onclick = () => {
+      const input = {
+        multicellularComplexity: +document.getElementById("multicellularComplexity").value,
+        hepatocyteLikeFidelity: +document.getElementById("hepatocyteLikeFidelity").value,
+        stellatePresence: +document.getElementById("stellatePresence").value,
+        lipidAccumulation: +document.getElementById("lipidAccumulation").value,
+        differentiationDay: +document.getElementById("differentiationDay").value,
+        lineageBias: document.getElementById("lineageBias").value,
+      };
+      const a = scoreA(input);
+      const b = scoreB(input);
+      const winner = a > b + 0.5 ? "multicellular_hlo_model" : b > a + 0.5 ? "single_lineage_hlc_baseline" : "tie";
+      document.getElementById("out").innerHTML =
+        "<p><strong>A HLO</strong> " + a + "</p><div class='bar'><div class='fill' style='width:" + a + "%'></div></div>" +
+        "<p><strong>B HLC</strong> " + b + "</p><div class='bar'><div class='fill b' style='width:" + b + "%'></div></div>" +
+        "<p>Winner: " + winner + " · gap " + round2(Math.abs(a - b)) + "</p>";
+    };
+  </script>
+</body>
+</html>

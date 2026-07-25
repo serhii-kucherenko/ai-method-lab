@@ -1,6 +1,6 @@
 # Liver Organoid Studio
 
-**State:** framing  
+**State:** complete  
 **Slug:** `liver-organoid-studio`  
 **Paper:** https://www.biorxiv.org/content/10.64898/2026.06.02.729501v3  
 **Authors’ code:** none  
