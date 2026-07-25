@@ -1,6 +1,6 @@
 # Drive Horizon Studio
 
-**State:** ready_to_build  
+**State:** complete  
 **Slug:** `drive-horizon-studio`  
 **Paper:** https://arxiv.org/abs/2607.15898v1  
 **Authors’ code:** none  

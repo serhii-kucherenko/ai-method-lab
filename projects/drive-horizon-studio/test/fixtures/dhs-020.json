@@ -1,0 +1,40 @@
+{
+  "id": "dhs-020",
+  "input": {
+    "structureFit": 0.66,
+    "detailFidelity": 0.7,
+    "temporalConsistency": 0.66,
+    "evidenceStrength": 0.68,
+    "sceneCoverage": 0.71,
+    "rolloutSmoothness": 0.7,
+    "fluencyScore": 0.37,
+    "surprisePressure": 0.31,
+    "horizonDrift": 0.29,
+    "horizonBias": "structure_first",
+    "profile": "hierarchical"
+  },
+  "expectedHierarchical": {
+    "mode": "hierarchical",
+    "structureScore": 52.52,
+    "detailScore": 71.31,
+    "temporalScore": 46.45,
+    "sceneIntegrity": 89.08,
+    "flatRolloutScore": 38.94,
+    "confidence": 59.45,
+    "hierarchicalContribution": 63.37,
+    "flatContribution": 41.69,
+    "overall": 63.47
+  },
+  "expectedFlat": {
+    "mode": "flat",
+    "structureScore": 13.66,
+    "detailScore": 23.72,
+    "temporalScore": 20.99,
+    "sceneIntegrity": 40.01,
+    "flatRolloutScore": 40.86,
+    "confidence": 32.05,
+    "hierarchicalContribution": 27.85,
+    "flatContribution": 45.4,
+    "overall": 37.32
+  }
+}

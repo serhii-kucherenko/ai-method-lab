@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Drive Horizon Studio — offline try</title>
+  <style>
+    :root {
+      --bg: #f7f9fb;
+      --ink: #121820;
+      --amber: #d97706;
+      --teal: #0f766e;
+      --panel: #fff;
+      --line: #d5dde6;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    header {
+      background: linear-gradient(180deg, #1c2430, #121820);
+      color: #f7f9fb;
+      padding: 2.5rem 1.25rem 2rem;
+    }
+    header h1 { margin: 0; color: var(--amber); font-size: 1.85rem; }
+    header p { margin: 0.75rem 0 0; max-width: 36rem; opacity: 0.9; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+    label { display: block; font-size: 0.85rem; margin-top: 0.85rem; }
+    input, select {
+      width: 100%; box-sizing: border-box; margin-top: 0.25rem;
+      padding: 0.5rem 0.6rem; border: 1px solid var(--line); border-radius: 0.35rem;
+    }
+    button {
+      margin-top: 1.25rem; background: var(--amber); color: #fff; border: 0;
+      padding: 0.65rem 1rem; border-radius: 0.35rem; cursor: pointer; font-weight: 600;
+    }
+    .panel {
+      background: var(--panel); border: 1px solid var(--line);
+      border-radius: 0.45rem; padding: 1rem; margin-top: 1.25rem;
+    }
+    .bar { height: 0.45rem; background: #e4eaef; border-radius: 999px; overflow: hidden; margin: 0.35rem 0 0.7rem; }
+    .fill { height: 100%; background: var(--amber); }
+    .muted { color: #5a6675; font-size: 0.85rem; }
+    .grid { display: grid; gap: 1rem; }
+    @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Drive Horizon Studio</h1>
+    <p>Offline approximate demo — hierarchical coarse+detail vs flat naive rollout. Soft-sim only; not live vehicle deployment; not Orbis.</p>
+  </header>
+  <main>
+    <label>Structure fit <input id="structureFit" type="range" min="0" max="1" step="0.01" value="0.74" /></label>
+    <label>Detail fidelity <input id="detailFidelity" type="range" min="0" max="1" step="0.01" value="0.78" /></label>
+    <label>Temporal consistency <input id="temporalConsistency" type="range" min="0" max="1" step="0.01" value="0.72" /></label>
+    <label>Rollout smoothness (B fuel) <input id="rolloutSmoothness" type="range" min="0" max="1" step="0.01" value="0.8" /></label>
+    <label>Fluency theater <input id="fluencyScore" type="range" min="0" max="1" step="0.01" value="0.65" /></label>
+    <label>Horizon bias
+      <select id="horizonBias">
+        <option value="balanced">balanced</option>
+        <option value="structure_first">structure_first</option>
+        <option value="detail_first">detail_first</option>
+        <option value="rollout_first">rollout_first</option>
+      </select>
+    </label>
+    <button type="button" id="run">Score A vs B</button>
+    <p class="muted">Approximate JS port of the studio dual score. Full fidelity: run the Next app locally.</p>
+    <div class="grid">
+      <div class="panel">
+        <strong>A · Hierarchical</strong>
+        <div id="aBars"></div>
+        <p id="aOverall"></p>
+      </div>
+      <div class="panel">
+        <strong>B · Flat rollout</strong>
+        <div id="bBars"></div>
+        <p id="bOverall"></p>
+      </div>
+    </div>
+    <p id="winner" class="panel"></p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function surpriseLoad(s, e) { return clamp(s * (1.15 - e * 0.4), 0, 1.5); }
+
+    function scoreHierarchical(input) {
+      const hier = true;
+      const boost = 1.12;
+      const wS = biasWeight(input.horizonBias, "structure_first");
+      const wD = biasWeight(input.horizonBias, "detail_first");
+      const wR = biasWeight(input.horizonBias, "rollout_first");
+      const avgBias = (wS + wD + wR) / 3;
+      const pressure = surpriseLoad(input.surprisePressure, input.evidenceStrength);
+      const structureScore = round2(clamp((input.structureFit * 55 + input.evidenceStrength * 25 - pressure * 10) * boost * avgBias + 8 - input.horizonDrift * 6 - (input.horizonBias === "rollout_first" ? 12 : 0), 0, 100));
+      const detailScore = round2(clamp(input.detailFidelity * 60 * boost + input.sceneCoverage * 25 + 8 - input.fluencyScore * 4 - (input.horizonBias === "rollout_first" ? 10 : 0), 0, 100));
+      const temporalScore = round2(clamp(input.temporalConsistency * 58 * boost * wD + input.evidenceStrength * 28 + 10 - pressure * 12 - input.horizonDrift * 10, 0, 100));
+      const sceneIntegrity = round2(clamp(input.sceneCoverage * 50 * boost * wS + input.detailFidelity * 25 + input.structureFit * 15 + 8 - (input.horizonBias === "rollout_first" ? 14 : 0), 0, 100));
+      const flatRolloutScore = round2(clamp(input.rolloutSmoothness * 55 * boost + input.fluencyScore * 20 - input.surprisePressure * 18 - 6, 0, 100));
+      const hierarchicalContribution = round2(clamp(structureScore * 0.26 + detailScore * 0.24 + temporalScore * 0.28 + sceneIntegrity * 0.22, 0, 100));
+      const flatContribution = round2(clamp(flatRolloutScore * 0.7 + input.rolloutSmoothness * 20 + input.fluencyScore * 10 - pressure * 12, 0, 100));
+      const overall = round2(clamp(hierarchicalContribution * 0.82 + flatContribution * 0.18 + 4 - (input.horizonBias === "rollout_first" ? 3 : 0), 0, 100));
+      return { structureScore, detailScore, temporalScore, sceneIntegrity, flatRolloutScore, overall };
+    }
+
+    function scoreFlat(input) {
+      const boost = 1.08;
+      const wR = biasWeight(input.horizonBias, "rollout_first");
+      const pressure = surpriseLoad(input.surprisePressure, input.evidenceStrength);
+      const structureScore = round2(clamp(input.rolloutSmoothness * 35 * boost + wR * 10 - input.surprisePressure * 22 - input.horizonDrift * 12 - (input.horizonBias === "structure_first" ? 8 : 0), 0, 100));
+      const detailScore = round2(clamp(input.fluencyScore * 40 * boost + input.rolloutSmoothness * 25 - pressure * 15 - input.sceneCoverage * 8, 0, 100));
+      const temporalScore = round2(clamp(input.fluencyScore * 38 * boost + input.rolloutSmoothness * 20 - input.temporalConsistency * 5 - pressure * 18, 0, 100));
+      const sceneIntegrity = round2(clamp(input.rolloutSmoothness * 42 * boost + input.fluencyScore * 28 - input.sceneCoverage * 10 + 5, 0, 100));
+      const flatRolloutScore = round2(clamp(input.rolloutSmoothness * 58 * boost * wR + input.fluencyScore * 32 - input.surprisePressure * 10 + 8, 0, 100));
+      const hierarchicalContribution = round2(clamp(structureScore * 0.2 + detailScore * 0.2 + temporalScore * 0.2 + sceneIntegrity * 0.2 + flatRolloutScore * 0.2, 0, 100));
+      const flatContribution = round2(clamp(flatRolloutScore * 0.55 + input.fluencyScore * 30 + input.rolloutSmoothness * 20 - pressure * 8, 0, 100));
+      const overall = round2(clamp(flatContribution * 0.78 + hierarchicalContribution * 0.22 - input.surprisePressure * 8 - input.horizonDrift * 6, 0, 100));
+      return { structureScore, detailScore, temporalScore, sceneIntegrity, flatRolloutScore, overall };
+    }
+
+    function bar(label, value) {
+      return `<div>${label} ${value.toFixed(1)}<div class="bar"><div class="fill" style="width:${Math.min(100, value)}%"></div></div></div>`;
+    }
+
+    function run() {
+      const input = {
+        structureFit: +document.getElementById("structureFit").value,
+        detailFidelity: +document.getElementById("detailFidelity").value,
+        temporalConsistency: +document.getElementById("temporalConsistency").value,
+        evidenceStrength: 0.7,
+        sceneCoverage: 0.72,
+        rolloutSmoothness: +document.getElementById("rolloutSmoothness").value,
+        fluencyScore: +document.getElementById("fluencyScore").value,
+        surprisePressure: 0.35,
+        horizonDrift: 0.28,
+        horizonBias: document.getElementById("horizonBias").value,
+      };
+      const a = scoreHierarchical(input);
+      const b = scoreFlat(input);
+      document.getElementById("aBars").innerHTML =
+        bar("Structure", a.structureScore) + bar("Detail", a.detailScore) + bar("Temporal", a.temporalScore);
+      document.getElementById("bBars").innerHTML =
+        bar("Flat rollout", b.flatRolloutScore) + bar("Structure (naive)", b.structureScore) + bar("Detail (naive)", b.detailScore);
+      document.getElementById("aOverall").textContent = "Overall " + a.overall.toFixed(1);
+      document.getElementById("bOverall").textContent = "Overall " + b.overall.toFixed(1);
+      let winner = "tie";
+      if (a.overall > b.overall + 0.5) winner = "hierarchical";
+      else if (b.overall > a.overall + 0.5) winner = "flat";
+      document.getElementById("winner").textContent = "Winner: " + winner + " · gap " + Math.abs(a.overall - b.overall).toFixed(2);
+    }
+    document.getElementById("run").addEventListener("click", run);
+    run();
+  </script>
+</body>
+</html>
