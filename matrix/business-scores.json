@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T17:45:56.642Z",
+  "updated_at": "2026-07-25T17:56:56.181Z",
   "projects": [
     {
       "id": 1,
@@ -1502,6 +1502,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer chem-ML soft-sim with multi-flow bar; never claim wet-lab validated discovery or live ELN write-back",
       "id": 73
+    },
+    {
+      "slug": "chemgnn-membrane-studio",
+      "project": "Chemgnn Membrane Studio",
+      "score": 64,
+      "tier": "B",
+      "business_idea": "Compare ChemGNN graph-surrogate CNT membrane design against classical physics baselines before locking a membrane pack",
+      "pmf": "Early signal with membrane / desalination ML leads who already trial GNN surrogates for materials design",
+      "buyer": "Membrane and desalination ML engineering leads",
+      "money_hook": "Bench seats + private membrane packs (method-lab experiment)",
+      "potential": "GNN membrane surrogates are underserved vs slow classical physics dumps without a dual bench",
+      "moat": "ChemGNN surrogate vs classical physics baseline",
+      "evidence": "Paper software claim (ChemGNN CNT membrane design pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer membrane-ML soft-sim with multi-flow bar; never claim wet-lab validated desalination membranes or live plant write-back",
+      "id": 74
     }
   ]
 }
