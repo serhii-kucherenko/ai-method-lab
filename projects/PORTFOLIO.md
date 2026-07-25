@@ -73,7 +73,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Folio Clip Studio** | `folio-clip-studio` | **Complete** | Multimodal wearable plant stress vs single-sensor baseline |
 | **Atomistic Force Studio** | `atomistic-force-studio` | **Complete** | Foundation-model atomistics vs classical force-field baseline |
 | **Crate Validate Studio** | `crate-validate-studio` | **Complete** | Structural+semantic ARC validation vs metadata-only baseline |
-| **Transducin Measure Studio** | `transducin-measure-studio` | **Building** | SNOMED-coded OCT recovery vs raw private-tag baseline |
+| **Transducin Measure Studio** | `transducin-measure-studio` | **Complete** | SNOMED-coded OCT recovery vs raw private-tag baseline |
 
 ## Rules
 

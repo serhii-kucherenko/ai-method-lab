@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Transducin Measure Studio — offline demo</title>
+    <style>
+      :root {
+        --ink: #141c24;
+        --teal: #2a7d8c;
+        --mist: #eef2f4;
+        --line: #c3c9ce;
+        --amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: Figtree, "Segoe UI", sans-serif;
+        background: var(--mist);
+        color: var(--ink);
+      }
+      .hero {
+        min-height: 70vh;
+        padding: 3rem 1.5rem;
+        background: linear-gradient(165deg, #0b1218 0%, #141c24 48%, #1a252e 100%);
+        color: #fff;
+      }
+      h1 {
+        font-family: Literata, Georgia, serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: var(--teal);
+        margin: 0;
+      }
+      .tag {
+        font-family: Literata, Georgia, serif;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      }
+      .panel {
+        max-width: 40rem;
+        margin: -2rem auto 2rem;
+        padding: 1.25rem;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.4rem 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--teal);
+        color: #fff;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1rem;
+        font-size: 0.95rem;
+      }
+      .fence {
+        color: var(--amber);
+        font-size: 0.85rem;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Transducin Measure Studio</h1>
+      <p class="tag">Proprietary OCT measures, coded for care.</p>
+      <p>Offline soft-sim: SNOMED-coded OCT recovery vs raw private-tag baseline.</p>
+    </div>
+    <div class="panel">
+      <label>Measure coverage (0–1)
+        <input id="measureCoverage" type="number" step="0.01" value="0.62" />
+      </label>
+      <label>Parse fidelity (0–1)
+        <input id="parseFidelity" type="number" step="0.01" value="0.7" />
+      </label>
+      <label>SNOMED clarity (0–1)
+        <input id="snomedClarity" type="number" step="0.01" value="0.74" />
+      </label>
+      <label>Private-tag rate (0–1)
+        <input id="privateTagRate" type="number" step="0.01" value="0.55" />
+      </label>
+      <button id="run">Score A vs B</button>
+      <div class="out" id="out">Ready.</div>
+      <p class="fence">
+        Soft-sim only — not clinical deployment, not live PACS write-back, not diagnostic use, not the authors’ system.
+      </p>
+    </div>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(i) {
+        const overall = round2(
+          clamp(
+            i.measureCoverage * 40 +
+              i.parseFidelity * 35 +
+              i.snomedClarity * 25 -
+              i.privateTagRate * 12 +
+              8,
+            0,
+            100,
+          ),
+        );
+        return overall;
+      }
+      function scoreB(i) {
+        const overall = round2(
+          clamp(
+            i.privateTagRate * 55 +
+              (1 - i.parseFidelity) * 20 +
+              i.snomedClarity * 10,
+            0,
+            100,
+          ),
+        );
+        return overall;
+      }
+      document.getElementById("run").onclick = function () {
+        const i = {
+          measureCoverage: Number(document.getElementById("measureCoverage").value),
+          parseFidelity: Number(document.getElementById("parseFidelity").value),
+          snomedClarity: Number(document.getElementById("snomedClarity").value),
+          privateTagRate: Number(document.getElementById("privateTagRate").value),
+        };
+        const a = scoreA(i);
+        const b = scoreB(i);
+        const winner =
+          a > b + 0.5
+            ? "snomed_coded_oct_recovery"
+            : b > a + 0.5
+              ? "raw_private_tag_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "A " + a + " · B " + b + " · winner " + winner + " (approx offline)";
+      };
+    </script>
+  </body>
+</html>

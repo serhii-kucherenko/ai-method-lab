@@ -1379,7 +1379,7 @@
       "potential": "Coded OCT recovery is underserved vs opaque private-tag dumps without a dual bench",
       "moat": "SNOMED-coded OCT recovery vs raw private-tag baseline",
       "evidence": "Paper software claim (Transducin Optopol/Zeiss→DICOM SR pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer imaging-interop soft-sim with multi-flow bar; never claim clinical deployment, live PACS write-back, or diagnostic use",
       "id": 66

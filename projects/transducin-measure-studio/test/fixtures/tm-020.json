@@ -1,0 +1,39 @@
+{
+  "id": "tm-020",
+  "input": {
+    "measureCoverage": 0.66,
+    "parseFidelity": 0.7,
+    "snomedClarity": 0.66,
+    "exportStability": 0.68,
+    "privateTagRate": 0.7,
+    "privateTagOptimism": 0.37,
+    "formatHardness": 0.31,
+    "overclaimRisk": 0.29,
+    "measureBias": "snomed_first",
+    "profile": "snomed_coded_oct_recovery"
+  },
+  "expectedSnomedCoded": {
+    "mode": "snomed_coded_oct_recovery",
+    "measureCoverageScore": 52.86,
+    "parseScore": 70.06,
+    "snomedScore": 80.04,
+    "exportIntegrity": 56.34,
+    "privateTagBaselineScore": 38.94,
+    "confidence": 58.35,
+    "snomedCodedContribution": 65.36,
+    "privateTagContribution": 41.54,
+    "overall": 65.07
+  },
+  "expectedPrivateTagBaseline": {
+    "mode": "raw_private_tag_baseline",
+    "measureCoverageScore": 13.66,
+    "parseScore": 23.93,
+    "snomedScore": 20.75,
+    "exportIntegrity": 40.51,
+    "privateTagBaselineScore": 40.86,
+    "confidence": 32.05,
+    "snomedCodedContribution": 27.94,
+    "privateTagContribution": 45.29,
+    "overall": 37.25
+  }
+}
