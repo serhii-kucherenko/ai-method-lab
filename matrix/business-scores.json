@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T15:53:44.751Z",
+  "updated_at": "2026-07-25T16:04:10.390Z",
   "projects": [
     {
       "id": 1,
@@ -1332,6 +1332,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer crop-health soft-sim with multi-flow bar; never claim field-validated farm deployments or live greenhouse write-back",
       "id": 63
+    },
+    {
+      "slug": "atomistic-force-studio",
+      "project": "Atomistic Force Studio",
+      "score": 65,
+      "tier": "B",
+      "business_idea": "Compare foundation-model atomistic simulations against classical force-field baselines before locking a sim pack",
+      "pmf": "Early signal with computational chemistry / drug-design simulation leads who already trial ML potentials",
+      "buyer": "Computational chemistry and drug-design simulation engineering leads",
+      "money_hook": "Bench seats + private sim packs (method-lab experiment)",
+      "potential": "Foundation-model atomistics are underserved vs classical force-field dumps without a dual bench",
+      "moat": "Foundation-model atomistics vs classical force-field baseline",
+      "evidence": "Paper software claim (FeNNix-Bio1-style FM pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer simulation soft-sim with multi-flow bar; never claim DFT-validated manufacturing sims or live HPC write-back",
+      "id": 64
     }
   ]
 }

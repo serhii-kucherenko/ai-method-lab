@@ -71,6 +71,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Variant Probe Studio** | `variant-probe-studio` | **Complete** | Interpretable genomic FM probes vs opaque pathogenicity baseline |
 | **Synth Confidence Studio** | `synth-confidence-studio` | **Complete** | Confidence-gated AI retrosynthesis vs naive AI route baseline |
 | **Folio Clip Studio** | `folio-clip-studio` | **Complete** | Multimodal wearable plant stress vs single-sensor baseline |
+| **Atomistic Force Studio** | `atomistic-force-studio` | **Building** | Foundation-model atomistics vs classical force-field baseline |
 
 ## Rules
 
