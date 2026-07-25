@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T20:20:28.146Z",
+  "updated_at": "2026-07-25T20:24:23.209Z",
   "projects": [
     {
       "id": 1,
@@ -1823,6 +1823,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "pv-causal-studio",
+      "project": "Pv Causal Studio",
+      "score": 66,
+      "tier": "B",
+      "business_idea": "Compare target-trial causal pharmacovigilance signal detection against spontaneous-reporting baselines before locking a pv pack",
+      "pmf": "Early signal with pharmacovigilance / RWE analytics leads who already trial proactive ADE signal detection",
+      "buyer": "Pharmacovigilance and real-world evidence analytics engineering leads",
+      "money_hook": "Bench seats + private pv packs (method-lab experiment)",
+      "potential": "Target-trial causal PV is underserved vs spontaneous-reporting dumps without a defined population baseline",
+      "moat": "Target-trial causal signals vs spontaneous-reporting baseline",
+      "evidence": "Paper software claim (target trial emulation pharmacovigilance pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer pharmacovigilance soft-sim with multi-flow bar; never claim regulatory submission authority, live claims write-back, or FDA clearance",
+      "id": 87
     }
   ]
 }
