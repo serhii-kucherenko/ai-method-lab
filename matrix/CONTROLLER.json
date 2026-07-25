@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T17:05:51.108Z",
+  "updated_at": "2026-07-25T17:08:19.965Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "6f4d4aef-66c1-4aed-afd3-d06c12e464d9",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "53f24f8e-c1f3-42e7-b329-e2a0140a1cae",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__enorms-baseline-studio__r1",
   "last_error": null,
-  "current_product": "enorms-baseline-studio",
-  "current_idea": "enorms-baseline-studio",
+  "current_product": "r2map-translate-studio",
+  "current_idea": "r2map-translate-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Enorms Baseline Studio sustain complete. product_complete_pending=true. Parent owns Resend finish email — do NOT send any Resend email from the build agent.",
+  "phase": "build",
+  "notes": "Enorms finish email sent. Next climb: R2map Translate Studio (mp.70561) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.64898/2026.07.13.26357876",
-      "slug": "enorms-baseline-studio",
-      "displayName": "Enorms Baseline Studio",
-      "at": "2026-07-25T16:57:31.938Z",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.07.13.26357876v1",
+      "paperId": "10.1002/mp.70561",
+      "slug": "r2map-translate-studio",
+      "displayName": "R2map Translate Studio",
+      "at": "2026-07-25T17:08:19.966Z",
+      "url": "https://doi.org/10.1002/mp.70561",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T16:57:31.938Z",
+    "framing_started_at": "2026-07-25T17:08:19.966Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,

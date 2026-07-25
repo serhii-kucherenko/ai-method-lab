@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T16:57:31.853Z",
+  "updated_at": "2026-07-25T17:08:19.894Z",
   "projects": [
     {
       "id": 1,
@@ -1434,6 +1434,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer EEG analytics soft-sim with multi-flow bar; never claim clinical diagnostic use, live EEG control, or FDA clearance",
       "id": 69
+    },
+    {
+      "slug": "r2map-translate-studio",
+      "project": "R2map Translate Studio",
+      "score": 64,
+      "tier": "B",
+      "business_idea": "Compare GAN T1W/T2W→R2map translation against conventional R2 estimation baselines before locking a translate pack",
+      "pmf": "Early signal with neuroimaging / Parkinson MRI analytics leads who already trial quantitative MRI pipelines",
+      "buyer": "Neuroimaging and Parkinson MRI analytics engineering leads",
+      "money_hook": "Bench seats + private translate packs (method-lab experiment)",
+      "potential": "R2maps from routine T1W/T2W are underserved vs dedicated-sequence R2 dumps without a dual bench",
+      "moat": "GAN R2map translation vs conventional R2 estimation baseline",
+      "evidence": "Paper software claim (GAN T1W/T2W→R2map for Parkinson's pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer neuroimaging soft-sim with multi-flow bar; never claim clinical diagnostic use, live PACS write-back, or FDA clearance",
+      "id": 70
     }
   ]
 }
