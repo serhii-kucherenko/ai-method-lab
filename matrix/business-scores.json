@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T16:44:02.852Z",
+  "updated_at": "2026-07-25T16:57:31.853Z",
   "projects": [
     {
       "id": 1,
@@ -1417,6 +1417,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer VLM soft-sim with multi-flow bar; never claim clinical diagnostic use or live PACS write-back",
       "id": 68
+    },
+    {
+      "slug": "enorms-baseline-studio",
+      "project": "Enorms Baseline Studio",
+      "score": 64,
+      "tier": "B",
+      "business_idea": "Compare patient-specific E-norms EEG baselines against population-norm baselines before locking a baseline pack",
+      "pmf": "Early signal with pediatric EEG / epilepsy analytics leads who already trial seizure-detection pipelines",
+      "buyer": "Pediatric EEG and epilepsy analytics engineering leads",
+      "money_hook": "Bench seats + private baseline packs (method-lab experiment)",
+      "potential": "Patient-specific E-norms are underserved vs population-norm dumps without a dual bench",
+      "moat": "Patient-specific E-norms vs population-norm baseline",
+      "evidence": "Paper software claim (E-norms patient-specific EEG baseline pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer EEG analytics soft-sim with multi-flow bar; never claim clinical diagnostic use, live EEG control, or FDA clearance",
+      "id": 69
     }
   ]
 }

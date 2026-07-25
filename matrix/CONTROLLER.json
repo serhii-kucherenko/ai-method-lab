@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T18:15:00.000Z",
+  "updated_at": "2026-07-25T16:57:31.937Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "b326f6f8-b604-4efb-ad7d-49cf5eee5c21",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "6f4d4aef-66c1-4aed-afd3-d06c12e464d9",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__roi-exemplar-studio__r1",
   "last_error": null,
-  "current_product": "roi-exemplar-studio",
-  "current_idea": "roi-exemplar-studio",
+  "current_product": "enorms-baseline-studio",
+  "current_idea": "enorms-baseline-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Roi Exemplar Studio sustain complete — product_complete_pending=true; parent owns Resend finish email; do NOT send any Resend email from this agent. 13 pages; 35 features; 30 goldens (re-001…re-030); npm test + build + app-up green.",
+  "phase": "build",
+  "notes": "Roi Exemplar finish email sent. Next climb: Enorms Baseline Studio (26357876) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.1016/j.isci.2026.116518",
-      "slug": "roi-exemplar-studio",
-      "displayName": "Roi Exemplar Studio",
-      "at": "2026-07-25T16:44:02.944Z",
-      "url": "https://doi.org/10.1016/j.isci.2026.116518",
+      "paperId": "10.64898/2026.07.13.26357876",
+      "slug": "enorms-baseline-studio",
+      "displayName": "Enorms Baseline Studio",
+      "at": "2026-07-25T16:57:31.938Z",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.07.13.26357876v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T16:44:02.944Z",
+    "framing_started_at": "2026-07-25T16:57:31.938Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,
