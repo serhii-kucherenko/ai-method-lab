@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T18:52:02.739Z",
+  "updated_at": "2026-07-25T18:54:44.718Z",
   "projects": [
     {
       "id": 1,
@@ -1607,6 +1607,23 @@
         "evidence": 7,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "saffron-detect-studio",
+      "project": "Saffron Detect Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare CNN stigma-image adulteration detection against visual inspection baselines before locking a detect pack",
+      "pmf": "Early signal with food-quality / spice authenticity leads who already trial image classifiers for high-value spices",
+      "buyer": "Food-quality and spice authenticity engineering leads",
+      "money_hook": "Bench seats + private detect packs (method-lab experiment)",
+      "potential": "CNN stigma authenticity is underserved vs slow inconsistent visual dumps without a dual bench",
+      "moat": "CNN adulteration detection vs visual inspection baseline",
+      "evidence": "Paper software claim (CNN saffron stigma adulteration pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer food-authenticity soft-sim with multi-flow bar; never claim customs authority, live supply-chain write-back, or certified lab accreditation",
+      "id": 79
     }
   ]
 }
