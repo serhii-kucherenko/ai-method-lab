@@ -1,0 +1,41 @@
+{
+  "id": "hms-027",
+  "input": {
+    "passengerWaitRisk": 0.22,
+    "driverIdleCost": 0.18,
+    "cancelBeforeAccept": 0.16,
+    "cancelAfterAccept": 0.21,
+    "supplyDemandStress": 0.17,
+    "pickupEtaPressure": 0.21,
+    "fareStrength": 0.85,
+    "holdIntensity": 0.58,
+    "tierBias": "hold_long",
+    "profile": "first_feasible"
+  },
+  "expectedExperienceAware": {
+    "mode": "experience_aware",
+    "passengerScore": 67.85,
+    "driverScore": 68.22,
+    "completionScore": 87.78,
+    "cancelReductionScore": 63.22,
+    "guardrailScore": 72.17,
+    "funnelScore": 50.45,
+    "confidence": 70.97,
+    "holdContribution": 66.43,
+    "feasibleContribution": 24.78,
+    "overall": 72.63
+  },
+  "expectedFirstFeasible": {
+    "mode": "first_feasible",
+    "passengerScore": 24.24,
+    "driverScore": 25.02,
+    "completionScore": 32.1,
+    "cancelReductionScore": 20.25,
+    "guardrailScore": 41.08,
+    "funnelScore": 70.53,
+    "confidence": 47.5,
+    "holdContribution": 24.63,
+    "feasibleContribution": 59.5,
+    "overall": 52.4
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hold Match Studio — try</title>
+    <style>
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        max-width: 40rem;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        color: #1e2a36;
+        background: #eef2f4;
+      }
+      h1 {
+        color: #c47a2c;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #cfd8de;
+        border-radius: 999px;
+        margin: 0.35rem 0 1rem;
+      }
+      .fill {
+        height: 100%;
+        border-radius: 999px;
+        background: #c47a2c;
+      }
+      .fill.b {
+        background: #1f7a6c;
+      }
+      button {
+        background: #c47a2c;
+        color: #fff;
+        border: 0;
+        padding: 0.5rem 1rem;
+        border-radius: 0.35rem;
+        cursor: pointer;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #5a6874;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hold Match Studio</h1>
+    <p>
+      Offline soft-sim: experience-aware hold (A) vs first-feasible (B). Not
+      EXHOLD / DiDi production control.
+    </p>
+    <label>
+      Passenger wait risk
+      <input id="pwr" type="range" min="0" max="100" value="34" />
+    </label>
+    <label>
+      Hold intensity
+      <input id="hi" type="range" min="0" max="100" value="40" />
+    </label>
+    <p>
+      <button id="run" type="button">Compare</button>
+    </p>
+    <p>A experience-aware: <span id="a">—</span></p>
+    <div class="bar"><div id="af" class="fill" style="width: 0%"></div></div>
+    <p>B first-feasible: <span id="b">—</span></p>
+    <div class="bar"><div id="bf" class="fill b" style="width: 0%"></div></div>
+    <p id="winner"></p>
+    <p class="note">
+      Sources: https://arxiv.org/abs/2607.09090v1 · authors’ code: none
+    </p>
+    <script>
+      function score(pwr, hi) {
+        const passenger = Math.max(
+          0,
+          Math.min(100, (1 - pwr) * 55 + (1 - hi) * 20 + 10),
+        );
+        const feasible = Math.max(
+          0,
+          Math.min(100, (1 - hi) * 70 + 18),
+        );
+        const aware = Math.max(
+          0,
+          Math.min(100, passenger * 0.55 + (1 - pwr) * 30 + hi * 15),
+        );
+        return { aware: +aware.toFixed(1), feasible: +feasible.toFixed(1) };
+      }
+      function run() {
+        const pwr = Number(document.getElementById("pwr").value) / 100;
+        const hi = Number(document.getElementById("hi").value) / 100;
+        const s = score(pwr, hi);
+        document.getElementById("a").textContent = s.aware;
+        document.getElementById("b").textContent = s.feasible;
+        document.getElementById("af").style.width = s.aware + "%";
+        document.getElementById("bf").style.width = s.feasible + "%";
+        const gap = s.aware - s.feasible;
+        document.getElementById("winner").textContent =
+          gap > 1
+            ? "Winner: experience_aware"
+            : gap < -1
+              ? "Winner: first_feasible"
+              : "Winner: tie";
+      }
+      document.getElementById("run").onclick = run;
+      run();
+    </script>
+  </body>
+</html>

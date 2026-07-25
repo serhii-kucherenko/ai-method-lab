@@ -41,7 +41,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Crystal Bind Studio** | `crystal-bind-studio` | **Complete** | Multimodal crystal bind retrieve vs single-modality |
 | **Attest Proof Studio** | `attest-proof-studio` | **Complete** | Tool-attested proof chains for LLM empirics |
 | **Video Track Studio** | `video-track-studio` | **Complete** | Long-form character-track failure diagnosis |
-| **Hold Match Studio** | `hold-match-studio` | **Building** | Experience-aware ride-hail hold control |
+| **Hold Match Studio** | `hold-match-studio` | **Complete** | Experience-aware ride-hail hold control |
 
 ## Rules
 

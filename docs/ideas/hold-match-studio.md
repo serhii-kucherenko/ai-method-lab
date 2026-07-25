@@ -1,6 +1,6 @@
 # Hold Match Studio
 
-**State:** ready_to_build  
+**State:** sustained  
 **Slug:** `hold-match-studio`  
 **Paper:** https://arxiv.org/abs/2607.09090v1  
 **Authors’ code:** none  

@@ -54,6 +54,7 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 63 | [Crystal Bind Studio — what we learned](63-crystal-bind-studio-lessons.md) | Product `crystal-bind-studio` |
 | 64 | [Attest Proof Studio — what we learned](64-attest-proof-studio-lessons.md) | Product `attest-proof-studio` |
 | 65 | [Video Track Studio — what we learned](65-video-track-studio-lessons.md) | Product `video-track-studio` |
+| 66 | [Hold Match Studio — what we learned](66-hold-match-studio-lessons.md) | Product `hold-match-studio` |
 
 ### Scoring notes
 
