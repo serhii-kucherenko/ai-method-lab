@@ -85,6 +85,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Pestwin Control Studio** | `pestwin-control-studio` | **Complete** | Modular multi-agent pest control vs single-species baseline |
 | **Phe Escalate Studio** | `phe-escalate-studio` | **Complete** | AI-assisted PHE escalation vs manual triage baseline |
 | **Share Colearn Studio** | `share-colearn-studio` | **Complete** | Human–AI co-learning vs AI-only disease activity labeling |
+| **Atlas Flow Studio** | `atlas-flow-studio` | **Building** | Integrated atlas registration+quant vs fragmented multi-tool baseline |
 
 ## Rules
 

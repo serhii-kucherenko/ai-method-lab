@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T18:38:38.480Z",
+  "updated_at": "2026-07-25T18:41:49.071Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "81ec866a-ab0a-4a39-bc12-e6d1d9868987",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "a6a0ccc0-c91a-40f9-b39f-e18661e4e9cf",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__share-colearn-studio__r1",
   "last_error": null,
-  "current_product": "share-colearn-studio",
-  "current_idea": "share-colearn-studio",
+  "current_product": "atlas-flow-studio",
+  "current_idea": "atlas-flow-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Share Colearn Studio sustain complete — product_complete_pending=true; parent owns Resend finish email; do NOT send any Resend email from this agent. 13 pages, 35 features, 30 goldens, app-up green.",
+  "phase": "build",
+  "notes": "Share Colearn finish email sent. Next climb: Atlas Flow Studio (737186) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.64898/2026.07.16.26358271",
-      "slug": "share-colearn-studio",
-      "displayName": "Share Colearn Studio",
-      "at": "2026-07-25T18:28:09.588Z",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.07.16.26358271v1",
+      "paperId": "10.64898/2026.07.15.737186",
+      "slug": "atlas-flow-studio",
+      "displayName": "Atlas Flow Studio",
+      "at": "2026-07-25T18:41:49.072Z",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.15.737186v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T18:28:09.588Z",
+    "framing_started_at": "2026-07-25T18:41:49.072Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,

@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T18:38:38.394Z",
+  "updated_at": "2026-07-25T18:41:48.988Z",
   "projects": [
     {
       "id": 1,
@@ -1580,6 +1580,23 @@
         "evidence": 7,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "atlas-flow-studio",
+      "project": "Atlas Flow Studio",
+      "score": 65,
+      "tier": "B",
+      "business_idea": "Compare an integrated brain-atlas registration and quantification workflow against fragmented multi-tool baselines before locking an atlas pack",
+      "pmf": "Early signal with neuroimaging / histology analytics leads who already stitch multi-package atlas workflows",
+      "buyer": "Neuroimaging and histology analytics engineering leads",
+      "money_hook": "Bench seats + private atlas packs (method-lab experiment)",
+      "potential": "Integrated atlas workflows are underserved vs fragmented multi-package dumps without a dual bench",
+      "moat": "Integrated registration+quant vs fragmented multi-tool baseline",
+      "evidence": "Paper software claim (NeuroFlow integrated atlas workflow pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer neuroimaging soft-sim with multi-flow bar; never claim live microscope control, clinical diagnostic use, or FDA clearance; never brand as NeuroFlow",
+      "id": 78
     }
   ]
 }
