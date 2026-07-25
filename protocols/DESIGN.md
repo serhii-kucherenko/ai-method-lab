@@ -59,6 +59,11 @@ Every product ships a **landing page** that sells and explains the product in pl
 | `/pricing` | Hypothetical plans + tiers + included features; method-lab packaging honesty (no fake card checkout required) |
 | `/demo` | Numbered step-by-step guided demo of the core claim (interactive preferred) |
 | `/onboarding` | First-run checklist with visible progress (settings/org, first domain object, dual compare, honesty ack) |
+| `/flows` (or equiv.) | Index of **≥5** named user flows with entry CTAs; each flow is a real multi-step journey, not a paragraph |
+
+### Multi-flow + platform bar (hard)
+
+Design note and page map must name ≥5 flows (actor, job, steps, success, empty/error). Identify the product **category** and include that category’s must-haves (audit, export, orgs, search, webhooks, goldens, SLA boards, glossary, etc. as applicable). `/demo` showcases one path; it does **not** replace the multi-flow index.
 
 ### Design bar for the landing
 

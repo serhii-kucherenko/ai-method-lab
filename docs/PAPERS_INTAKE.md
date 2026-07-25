@@ -54,6 +54,8 @@ Mature display name (2–4 English words). Slug = hyphenated lowercase. Never br
 | Pricing + tiers | `/pricing` — hypothetical plans/tiers aligned to money hook |
 | Step-by-step demo | `/demo` — guided in-app walkthrough of the core happy path |
 | Onboarding checklist | `/onboarding` — first-run checklist with visible progress |
+| Multi-flow index | `/flows` (or equiv.) — ≥5 named sophisticated user journeys with entry CTAs |
+| Platform must-haves | Category-standard surfaces (audit, export, orgs, search, webhooks, goldens, SLA, glossary, …) per `docs/COMPREHENSIVE_PRODUCT.md` |
 | App stack | Next.js + Tailwind + shadcn; Python sidecar when needed (`docs/PRODUCT_STACK.md`) |
 | Tutor guide | `docs/guides/NN-<slug>-lessons.md` |
 | Offline try | `projects/<slug>/try.html` |

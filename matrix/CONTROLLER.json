@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T08:55:54.955Z",
+  "updated_at": "2026-07-25T09:05:09.366Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -46,7 +46,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "climbing",
-  "notes": "Hold Match finished (email sent). Climbing Sign Stream Studio (2607.09611) — A/B a11y pick. Require /pricing /demo /onboarding.",
+  "notes": "Hold Match finished (email sent). Climbing Sign Stream Studio (2607.09611) — A/B a11y pick. Require /pricing /demo /onboarding. Human steer: ≥5 sophisticated user flows + category platform must-haves/best practices on every product.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -85,7 +85,7 @@
     "require_mature_display_name": true,
     "require_tutor_guide_before_email": true,
     "require_readme_before_email": true,
-    "min_features": 20,
+    "min_features": 25,
     "min_pages": 11,
     "min_aggregates": 4,
     "finish_and_email_before_next": true,
@@ -114,8 +114,13 @@
       "/pricing",
       "/demo",
       "/onboarding",
-      "/honesty"
-    ]
+      "/honesty",
+      "/flows"
+    ],
+    "min_user_flows": 5,
+    "require_multi_flow_index": true,
+    "require_platform_must_haves": true,
+    "require_category_best_practices": true
   },
   "defaults": {
     "always_commit": true,
