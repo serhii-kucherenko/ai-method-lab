@@ -66,6 +66,7 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 75 | [Drag Wall Studio — what we learned](75-drag-wall-studio-lessons.md) | Product `drag-wall-studio` |
 | 76 | [Quantum Kernel Studio — what we learned](76-quantum-kernel-studio-lessons.md) | Product `quantum-kernel-studio` |
 | 77 | [Script Lexicon Studio — what we learned](77-script-lexicon-studio-lessons.md) | Product `script-lexicon-studio` |
+| 78 | [Kinetics Surrogate Studio — what we learned](78-kinetics-surrogate-studio-lessons.md) | Product `kinetics-surrogate-studio` |
 
 ### Scoring notes
 

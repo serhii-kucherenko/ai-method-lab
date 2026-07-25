@@ -1,6 +1,6 @@
 # Kinetics Surrogate Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `kinetics-surrogate-studio`  
 **Paper:** https://arxiv.org/abs/2607.09582v1  
 **Authors’ code:** none  

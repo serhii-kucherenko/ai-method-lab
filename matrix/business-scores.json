@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T13:02:25.870Z",
+  "updated_at": "2026-07-25T13:09:31.021Z",
   "projects": [
     {
       "id": 1,
@@ -880,7 +880,7 @@
     {
       "slug": "kinetics-surrogate-studio",
       "project": "Kinetics Surrogate Studio",
-      "score": 61,
+      "score": 64,
       "tier": "B",
       "business_idea": "Compare entropy-constrained chemical kinetics surrogates against full-rate baselines before locking a chemistry pack",
       "pmf": "Early signal with combustion / reacting-flow simulation leads who already buy CFD and kinetics tools",
@@ -888,8 +888,8 @@
       "money_hook": "Bench seats + private chemistry packs (method-lab experiment)",
       "potential": "Kinetics cost dominates reacting-flow sims; entropy-honest surrogates are underserved vs unconstrained speedups",
       "moat": "Entropy-constrained surrogate vs full-rate / unconstrained baselines",
-      "evidence": "Paper software claim (entropy-constrained kinetics ML pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "evidence": "Paper software claim (entropy-constrained kinetics ML pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer industrial kinetics soft-sim with multi-flow bar; never claim certified CFD or live plant",
       "id": 46

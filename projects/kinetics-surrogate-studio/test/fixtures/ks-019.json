@@ -1,0 +1,39 @@
+{
+  "id": "ks-019",
+  "input": {
+    "rateCoverage": 0.7,
+    "entropyFidelity": 0.65,
+    "mechanismFit": 0.7,
+    "rateAgreement": 0.72,
+    "fullRateAccuracy": 0.74,
+    "unconstrainedOptimism": 0.36,
+    "stiffnessHardness": 0.38,
+    "leakageRisk": 0.28,
+    "kineticsBias": "balanced",
+    "profile": "entropy_constrained"
+  },
+  "expectedEntropyConstrained": {
+    "mode": "entropy_constrained",
+    "rateDiagnosis": 63.81,
+    "entropyDiagnosis": 67.74,
+    "mechanismReasonScore": 69.47,
+    "packIntegrity": 73.95,
+    "baselineScore": 39.94,
+    "confidence": 59.6,
+    "surrogateContribution": 68.57,
+    "baselineContribution": 42.25,
+    "overall": 67.83
+  },
+  "expectedFullRateBaseline": {
+    "mode": "full_rate_baseline",
+    "rateDiagnosis": 26.25,
+    "entropyDiagnosis": 23.32,
+    "mechanismReasonScore": 19.92,
+    "packIntegrity": 41.65,
+    "baselineScore": 62.07,
+    "confidence": 31.7,
+    "surrogateContribution": 34.64,
+    "baselineContribution": 57,
+    "overall": 47.36
+  }
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kinetics Surrogate Studio — try</title>
+    <style>
+      :root {
+        --ink: #1a1210;
+        --amber: #d4872a;
+        --ash: #ebe6e1;
+        --line: #c9bfb6;
+        --teal: #3a6f68;
+      }
+      body {
+        margin: 0;
+        font-family: Karla, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--ash);
+      }
+      header {
+        background: linear-gradient(165deg, #120c0a, #1a1210 55%, #2a3d3a);
+        color: #fff;
+        padding: 3rem 1.5rem 2.5rem;
+      }
+      h1 {
+        font-family: Syne, system-ui, sans-serif;
+        font-size: 2.4rem;
+        margin: 0;
+        color: var(--amber);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dde3ea;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        background: var(--amber);
+        width: 0%;
+      }
+      .fill.b {
+        background: var(--teal);
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 1.25rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #556070;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Kinetics Surrogate Studio</h1>
+      <p>Offline soft-sim: entropy-constrained surrogate vs full-rate baseline.</p>
+    </header>
+    <main>
+      <label>
+        Rate coverage
+        <input id="rateCoverage" type="range" min="0" max="100" value="58" />
+      </label>
+      <label>
+        Entropy fidelity
+        <input id="entropyFidelity" type="range" min="0" max="100" value="70" />
+      </label>
+      <label>
+        Mechanism fit
+        <input id="mechanismFit" type="range" min="0" max="100" value="74" />
+      </label>
+      <label>
+        Full-rate accuracy
+        <input id="fullRateAccuracy" type="range" min="0" max="100" value="82" />
+      </label>
+      <label>
+        Stiffness hardness
+        <input id="stiffnessHardness" type="range" min="0" max="100" value="45" />
+      </label>
+      <div class="card">
+        <div>Entropy-constrained (A): <strong id="aScore">—</strong></div>
+        <div class="bar"><div class="fill" id="aBar"></div></div>
+        <div style="margin-top: 0.75rem">
+          Full-rate baseline (B): <strong id="bScore">—</strong>
+        </div>
+        <div class="bar"><div class="fill b" id="bBar"></div></div>
+        <p id="winner" style="margin-top: 0.75rem"></p>
+      </div>
+      <p class="note">
+        Soft-sim only — not certified CFD, not live plant, not the authors’
+        system. Inspired by arXiv 2607.09582.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(input) {
+        const boost = 1.12;
+        const load = clamp(
+          input.stiffnessHardness * (1.25 - input.rateCoverage * 0.5),
+          0,
+          1.5,
+        );
+        const rateDiagnosis = clamp(
+          (input.rateCoverage * 55 + input.entropyFidelity * 25 - load * 10) *
+            boost +
+            8 -
+            input.leakageRisk * 6,
+          0,
+          100,
+        );
+        const entropyDiagnosis = clamp(
+          input.entropyFidelity * 60 * boost + input.rateCoverage * 25 + 8,
+          0,
+          100,
+        );
+        const mechanism = clamp(
+          input.rateAgreement * 58 * boost + input.rateCoverage * 28 + 10 - load * 12,
+          0,
+          100,
+        );
+        const pack = clamp(
+          input.mechanismFit * 50 * boost +
+            input.entropyFidelity * 25 +
+            input.rateCoverage * 15 +
+            8,
+          0,
+          100,
+        );
+        const surrogate =
+          rateDiagnosis * 0.26 +
+          entropyDiagnosis * 0.24 +
+          mechanism * 0.28 +
+          pack * 0.22;
+        const baseline =
+          input.fullRateAccuracy * 55 * 0.7 +
+          input.fullRateAccuracy * 20 -
+          load * 12;
+        return round2(clamp(surrogate * 0.82 + baseline * 0.18 + 4, 0, 100));
+      }
+      function scoreB(input) {
+        const boost = 1.08;
+        const load = clamp(
+          input.stiffnessHardness * (1.25 - input.rateCoverage * 0.5),
+          0,
+          1.5,
+        );
+        const baselineScore = clamp(
+          input.fullRateAccuracy * 58 * boost +
+            input.unconstrainedOptimism * 32 -
+            input.stiffnessHardness * 10 +
+            8,
+          0,
+          100,
+        );
+        const surrogate = clamp(
+          input.fullRateAccuracy * 35 * boost -
+            input.stiffnessHardness * 22 -
+            input.leakageRisk * 12,
+          0,
+          100,
+        );
+        return round2(
+          clamp(
+            baselineScore * 0.78 +
+              surrogate * 0.22 -
+              input.stiffnessHardness * 8 -
+              input.leakageRisk * 6,
+            0,
+            100,
+          ),
+        );
+      }
+      function read() {
+        const v = (id) => Number(document.getElementById(id).value) / 100;
+        return {
+          rateCoverage: v("rateCoverage"),
+          entropyFidelity: v("entropyFidelity"),
+          mechanismFit: v("mechanismFit"),
+          rateAgreement: 0.68,
+          fullRateAccuracy: v("fullRateAccuracy"),
+          unconstrainedOptimism: 0.55,
+          stiffnessHardness: v("stiffnessHardness"),
+          leakageRisk: 0.28,
+        };
+      }
+      function render() {
+        const input = read();
+        const a = scoreA(input);
+        const b = scoreB(input);
+        document.getElementById("aScore").textContent = a;
+        document.getElementById("bScore").textContent = b;
+        document.getElementById("aBar").style.width = a + "%";
+        document.getElementById("bBar").style.width = b + "%";
+        const winner =
+          a > b + 0.5
+            ? "entropy_constrained"
+            : b > a + 0.5
+              ? "full_rate_baseline"
+              : "tie";
+        document.getElementById("winner").textContent =
+          "Winner: " + winner + " · gap " + round2(Math.abs(a - b));
+      }
+      document.querySelectorAll("input").forEach((el) => {
+        el.addEventListener("input", render);
+      });
+      render();
+    </script>
+  </body>
+</html>
