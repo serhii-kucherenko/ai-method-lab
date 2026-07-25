@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T22:00:00.000Z",
+  "updated_at": "2026-07-25T18:28:09.586Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "accdad8b-c14a-475a-9472-a8f2510022ad",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "81ec866a-ab0a-4a39-bc12-e6d1d9868987",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__phe-escalate-studio__r1",
   "last_error": null,
-  "current_product": "phe-escalate-studio",
-  "current_idea": "phe-escalate-studio",
+  "current_product": "share-colearn-studio",
+  "current_idea": "share-colearn-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Phe Escalate Studio sustain complete. product_complete_pending=true. Parent owns Resend; do NOT send any Resend email from this agent.",
+  "phase": "build",
+  "notes": "Phe Escalate finish email sent. Next climb: Share Colearn Studio (26358271) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.64898/2026.07.07.26357475",
-      "slug": "phe-escalate-studio",
-      "displayName": "Phe Escalate Studio",
-      "at": "2026-07-25T18:18:05.615Z",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.07.07.26357475v1",
+      "paperId": "10.64898/2026.07.16.26358271",
+      "slug": "share-colearn-studio",
+      "displayName": "Share Colearn Studio",
+      "at": "2026-07-25T18:28:09.588Z",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.07.16.26358271v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T18:18:05.615Z",
+    "framing_started_at": "2026-07-25T18:28:09.588Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,

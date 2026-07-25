@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T18:18:05.515Z",
+  "updated_at": "2026-07-25T18:29:07.809Z",
   "projects": [
     {
       "id": 1,
@@ -1553,6 +1553,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer public-health ops soft-sim with multi-flow bar; never claim operational MoH authority, live write-back, or clinical diagnosis",
       "id": 76
+    },
+    {
+      "slug": "share-colearn-studio",
+      "project": "Share Colearn Studio",
+      "score": 65,
+      "tier": "B",
+      "business_idea": "Compare human–AI co-learning disease activity labeling against AI-only baselines before locking a colearn pack",
+      "pmf": "Early signal with rheumatology / EHR analytics leads who already trial AI labeling of disease activity",
+      "buyer": "Rheumatology and EHR analytics engineering leads",
+      "money_hook": "Bench seats + private colearn packs (method-lab experiment)",
+      "potential": "Human–AI co-learning for EHR labels is underserved vs AI-only dumps without a dual bench",
+      "moat": "Human–AI co-learning vs AI-only labeling baseline",
+      "evidence": "Paper software claim (SHARE human–AI co-learning pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer EHR labeling soft-sim with multi-flow bar; never claim clinical diagnostic use, live EHR write-back, or FDA clearance",
+      "id": 77
     }
   ]
 }
