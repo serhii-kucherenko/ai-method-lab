@@ -82,6 +82,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Idia Quant Studio** | `idia-quant-studio` | **Complete** | Informed DIA vs naive DIA single-cell quant baseline |
 | **Chemicl Discover Studio** | `chemicl-discover-studio` | **Complete** | Multimodal ChemICL vs text-only ICL baseline |
 | **Chemgnn Membrane Studio** | `chemgnn-membrane-studio` | **Complete** | ChemGNN CNT membrane surrogate vs classical physics baseline |
+| **Pestwin Control Studio** | `pestwin-control-studio` | **Building** | Modular multi-agent pest control vs single-species baseline |
 
 ## Rules
 

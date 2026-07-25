@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T17:56:56.181Z",
+  "updated_at": "2026-07-25T18:08:05.706Z",
   "projects": [
     {
       "id": 1,
@@ -1519,6 +1519,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer membrane-ML soft-sim with multi-flow bar; never claim wet-lab validated desalination membranes or live plant write-back",
       "id": 74
+    },
+    {
+      "slug": "pestwin-control-studio",
+      "project": "Pestwin Control Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare modular multi-agent pest/vector control against single-species baselines before locking a control pack",
+      "pmf": "Early signal with ag / vector-control simulation leads who already trial agent-based population models",
+      "buyer": "Agriculture and vector-control simulation engineering leads",
+      "money_hook": "Bench seats + private control packs (method-lab experiment)",
+      "potential": "Modular multi-agent pest control is underserved vs single-species dumps without a dual bench",
+      "moat": "Modular multi-agent pest control vs single-species baseline",
+      "evidence": "Paper software claim (PesTwin modular agent-based control pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer vector-control soft-sim with multi-flow bar; never claim field-validated eradication or live spray-fleet write-back",
+      "id": 75
     }
   ]
 }
