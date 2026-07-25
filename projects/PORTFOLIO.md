@@ -75,6 +75,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Crate Validate Studio** | `crate-validate-studio` | **Complete** | Structural+semantic ARC validation vs metadata-only baseline |
 | **Transducin Measure Studio** | `transducin-measure-studio` | **Complete** | SNOMED-coded OCT recovery vs raw private-tag baseline |
 | **Sovereign Cost Studio** | `sovereign-cost-studio` | **Complete** | Sovereign-infra W/E/E accounting vs naive cloud-footprint baseline |
+| **Roi Exemplar Studio** | `roi-exemplar-studio` | **Building** | Optimized VLM ROI exemplars vs naive exemplar baseline |
 
 ## Rules
 
