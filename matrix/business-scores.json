@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T13:23:11.687Z",
+  "updated_at": "2026-07-25T13:30:35.861Z",
   "projects": [
     {
       "id": 1,
@@ -924,7 +924,7 @@
     {
       "slug": "federated-cvd-studio",
       "project": "Federated CVD Studio",
-      "score": 62,
+      "score": 66,
       "tier": "B",
       "business_idea": "Compare federated CVD risk models against centralized baselines before locking a cohort pack",
       "pmf": "Early signal with digital health / cardiology ML leads who already buy risk models under privacy constraints",
@@ -932,11 +932,21 @@
       "money_hook": "Bench seats + private cohort packs (method-lab experiment)",
       "potential": "Site privacy blocks centralized CVD training; federated eval benches are underserved",
       "moat": "Federated CVD risk vs centralized baseline",
-      "evidence": "Paper software claim (federated CVD risk pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "evidence": "Paper software claim (federated CVD risk pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer privacy/federated soft-sim with multi-flow bar; never claim FDA clearance or live EHR",
-      "id": 48
+      "id": 48,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      }
     }
   ]
 }

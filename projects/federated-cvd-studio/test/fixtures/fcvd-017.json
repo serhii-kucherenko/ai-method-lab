@@ -1,0 +1,39 @@
+{
+  "id": "fcvd-017",
+  "input": {
+    "siteParticipation": 0.62,
+    "featureFidelity": 0.63,
+    "schemaFit": 0.63,
+    "federationAgreement": 0.64,
+    "centralizedAccuracy": 0.67,
+    "centralOptimism": 0.39,
+    "heterogeneityHardness": 0.37,
+    "leakageRisk": 0.33,
+    "cvdBias": "federated_first",
+    "profile": "federated_cvd_risk"
+  },
+  "expectedFederatedCvdRisk": {
+    "mode": "federated_cvd_risk",
+    "riskDiagnosis": 48.43,
+    "federationDiagnosis": 64.28,
+    "schemaReasonScore": 76.01,
+    "packIntegrity": 52.45,
+    "baselineScore": 36.41,
+    "confidence": 53.6,
+    "federationContribution": 60.84,
+    "baselineContribution": 38.61,
+    "overall": 60.84
+  },
+  "expectedCentralizedBaseline": {
+    "mode": "centralized_baseline",
+    "riskDiagnosis": 18.73,
+    "federationDiagnosis": 23.42,
+    "schemaReasonScore": 20,
+    "packIntegrity": 40.11,
+    "baselineScore": 39.86,
+    "confidence": 30.3,
+    "federationContribution": 28.42,
+    "baselineContribution": 44.24,
+    "overall": 35.82
+  }
+}

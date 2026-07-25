@@ -1,6 +1,6 @@
 # Federated CVD Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `federated-cvd-studio`  
 **Paper:** https://arxiv.org/abs/2607.08595v1  
 **Authors’ code:** none  

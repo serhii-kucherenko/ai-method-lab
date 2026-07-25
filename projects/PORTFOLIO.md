@@ -1,6 +1,6 @@
 # Portfolio
 
-Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One comprehensive product at a time — **ban isomorphic desk clones**.
+Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One comprehensive product at a time â€” **ban isomorphic desk clones**.
 
 ## Active / complete
 
@@ -55,12 +55,12 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Script Lexicon Studio** | `script-lexicon-studio` | **Complete** | Expanded Geez lexicon vs baseline multilingual tokenizers |
 | **Kinetics Surrogate Studio** | `kinetics-surrogate-studio` | **Complete** | Entropy-constrained kinetics surrogate vs full-rate baselines |
 | **Oncology Report Studio** | `oncology-report-studio` | **Complete** | Multi-LLM collaborative MRI report vs single-LLM baseline |
-| **Federated CVD Studio** | `federated-cvd-studio` | **Building** | Federated CVD risk vs centralized baseline |
+| **Federated CVD Studio** | `federated-cvd-studio` | **Complete** | Federated CVD risk vs centralized baseline |
 
 ## Rules
 
 - Prefer papers with `code.url`
 - Buyer story + PM/design pack before climb
-- Distinct IA — not jobs/lifecycle/scenario desk shells
+- Distinct IA â€” not jobs/lifecycle/scenario desk shells
 - Score into business scorecard; garbage-collect C/Kill ideas before the next climb
-- Scoring: `docs/RUBRIC.md` (cells) · `docs/BUSINESS_RUBRIC.md` (ideas)
+- Scoring: `docs/RUBRIC.md` (cells) Â· `docs/BUSINESS_RUBRIC.md` (ideas)

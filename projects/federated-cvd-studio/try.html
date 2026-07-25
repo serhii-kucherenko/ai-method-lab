@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Federated CVD Studio — try</title>
+    <style>
+      :root {
+        --ink: #0f1c2e;
+        --teal: #2f6f73;
+        --mist: #e8eef4;
+        --line: #b7c4d1;
+        --rose: #c45a6a;
+      }
+      body {
+        margin: 0;
+        font-family: "DM Sans", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--mist);
+      }
+      header {
+        background: linear-gradient(165deg, #0a1420, #0f1c2e 55%, #1a4548);
+        color: #fff;
+        padding: 3rem 1.5rem 2.5rem;
+      }
+      h1 {
+        font-family: Literata, Georgia, serif;
+        font-size: 2.4rem;
+        margin: 0;
+        color: var(--teal);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dde3ea;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        background: var(--teal);
+        width: 0%;
+      }
+      .fill.b {
+        background: var(--rose);
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 1.25rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #556070;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Federated CVD Studio</h1>
+      <p>Offline soft-sim: federated CVD risk vs centralized baseline.</p>
+    </header>
+    <main>
+      <label>
+        Site participation
+        <input id="site" type="range" min="0" max="100" value="58" />
+      </label>
+      <label>
+        Feature fidelity
+        <input id="feat" type="range" min="0" max="100" value="70" />
+      </label>
+      <label>
+        Federation agreement
+        <input id="agree" type="range" min="0" max="100" value="68" />
+      </label>
+      <label>
+        Centralized accuracy
+        <input id="central" type="range" min="0" max="100" value="82" />
+      </label>
+      <div class="card">
+        <div>Federated CVD risk · <span id="aScore">0</span></div>
+        <div class="bar"><div id="aBar" class="fill"></div></div>
+        <div style="margin-top:0.75rem">Centralized baseline · <span id="bScore">0</span></div>
+        <div class="bar"><div id="bBar" class="fill b"></div></div>
+        <p id="winner" style="margin-top:1rem;font-weight:600"></p>
+      </div>
+      <p class="note">
+        Soft-sim only; not FDA cleared; not live EHR; not the authors' system.
+        Inspired by arXiv 2607.08595.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function score() {
+        const site = Number(document.getElementById("site").value) / 100;
+        const feat = Number(document.getElementById("feat").value) / 100;
+        const agree = Number(document.getElementById("agree").value) / 100;
+        const central = Number(document.getElementById("central").value) / 100;
+        const a = clamp(
+          site * 42 + feat * 28 + agree * 22 + 8 - (1 - site) * 10,
+          0,
+          100,
+        );
+        const b = clamp(
+          central * 55 + (1 - site) * 18 + 12 - feat * 8,
+          0,
+          100,
+        );
+        document.getElementById("aScore").textContent = a.toFixed(1);
+        document.getElementById("bScore").textContent = b.toFixed(1);
+        document.getElementById("aBar").style.width = a + "%";
+        document.getElementById("bBar").style.width = b + "%";
+        let w = "tie";
+        if (a > b + 0.5) w = "federated_cvd_risk";
+        else if (b > a + 0.5) w = "centralized_baseline";
+        document.getElementById("winner").textContent =
+          "Winner: " + w + " · gap " + Math.abs(a - b).toFixed(1);
+      }
+      ["site", "feat", "agree", "central"].forEach((id) => {
+        document.getElementById(id).addEventListener("input", score);
+      });
+      score();
+    </script>
+  </body>
+</html>
