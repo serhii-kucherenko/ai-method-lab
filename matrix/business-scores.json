@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T09:58:02.918Z",
+  "updated_at": "2026-07-25T10:12:27.700Z",
   "projects": [
     {
       "id": 1,
@@ -731,7 +731,7 @@
         "money": 7,
         "wedge": 7,
         "moat": 7,
-        "evidence": 5,
+        "evidence": 7,
         "feasibility": 7
       },
       "business_idea": "Compare hierarchical driving world-model forecasts (coarse scene + detail) against flat single-level predictions before AV teams trust a planner pack",
@@ -740,13 +740,40 @@
       "money_hook": "Bench seats + scenario packs (method-lab experiment)",
       "potential": "AV stack budgets need hierarchical fidelity checks, not only pretty video rollouts",
       "moat": "Hierarchical coarse+detail world model vs flat single-level baseline",
-      "evidence": "Paper software claim (Orbis 2 pattern); no public author code in digest",
-      "status": "building",
+      "evidence": "Paper software claim (Orbis 2 pattern); 30 dual goldens; 7 user flows; 12 pages; /pricing /demo /onboarding /flows shipped; never branded Orbis",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "A/B industrial AV sim pick — not Orbis brand; require multi-flow + platform must-haves; soft-sim honesty",
-      "score": 67,
+      "gc_notes": "Keep industrial AV sim / world-model eval pattern with multi-flow bar; soft-sim honesty; do not brand as Orbis",
+      "score": 69,
       "tier": "B",
       "id": 38
+    },
+    {
+      "slug": "retro-route-studio",
+      "project": "Retro Route Studio",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 8,
+        "pmf": 6,
+        "money": 7,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 5,
+        "feasibility": 7
+      },
+      "business_idea": "Plan multi-step chemical synthesis routes with a structured search memory — seeing tried paths and intermediates — instead of local greedy reaction picks",
+      "pmf": "Early signal with medicinal chemistry / synthesis-planning leads who already buy retrosynthesis tools",
+      "buyer": "Medicinal chemistry and synthesis-planning leads",
+      "money_hook": "Bench seats + private route packs (method-lab experiment)",
+      "potential": "Pharma R&D spends heavily on route finding; global search memory is underserved vs single-step suggestors",
+      "moat": "Structured-memory agentic retrosynthesis vs naive local search",
+      "evidence": "Paper software claim (RetroAgent pattern); no public author code in digest",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "A/B chem software pick — not RetroAgent brand; not carepath; require multi-flow + platform must-haves; soft-sim honesty",
+      "score": 68,
+      "tier": "B",
+      "id": 39
     }
   ]
 }
