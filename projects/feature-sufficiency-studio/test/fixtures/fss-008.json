@@ -1,0 +1,39 @@
+{
+  "id": "fss-008",
+  "input": {
+    "maskCoverage": 0.41,
+    "featureSalience": 0.43,
+    "cohortFit": 0.46,
+    "labelAgreement": 0.45,
+    "fullFeatureAccuracy": 0.49,
+    "imputationOptimism": 0.43,
+    "missingnessPressure": 0.47,
+    "leakageRisk": 0.44,
+    "sufficiencyBias": "full_first",
+    "profile": "partial_observation"
+  },
+  "expectedPartialObservation": {
+    "mode": "partial_observation",
+    "coverageDiagnosis": 19.33,
+    "salienceDiagnosis": 35.43,
+    "sufficiencyReasonScore": 27.26,
+    "cohortIntegrity": 25.07,
+    "fullFeatureScore": 24.32,
+    "confidence": 34.35,
+    "partialContribution": 26.68,
+    "fullContribution": 25.23,
+    "overall": 27.42
+  },
+  "expectedFullFeature": {
+    "mode": "full_feature",
+    "coverageDiagnosis": 16.4,
+    "salienceDiagnosis": 20.18,
+    "sufficiencyReasonScore": 16.31,
+    "cohortIntegrity": 35.17,
+    "fullFeatureScore": 58.5,
+    "confidence": 22.7,
+    "partialContribution": 29.31,
+    "fullContribution": 50.95,
+    "overall": 39.79
+  }
+}

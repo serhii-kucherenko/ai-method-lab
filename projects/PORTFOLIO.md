@@ -48,6 +48,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Drive Horizon Studio** | `drive-horizon-studio` | **Complete** | Hierarchical vs flat AV world-model eval |
 | **Retro Route Studio** | `retro-route-studio` | **Complete** | Structured-memory vs naive retrosynthesis planning |
 | **Persona Triage Studio** | `persona-triage-studio` | **Complete** | Style-aware vs idealized-patient triage eval |
+| **Feature Sufficiency Studio** | `feature-sufficiency-studio` | **Complete** | Partial-observation sufficiency vs full-feature baseline |
 
 ## Rules
 

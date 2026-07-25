@@ -804,7 +804,7 @@
       "potential": "Partial EHR observations are common; sufficiency checks are underserved vs accuracy-only benches",
       "moat": "Sufficiency-under-partial-observation vs full-feature-only eval desks",
       "evidence": "Paper software claim (Feature Sufficiency Analysis pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer clinical-ML-eval soft-sim with multi-flow bar; never claim FDA/clinical advice; distinct from Persona Triage and Consult Bench",
       "id": 41
