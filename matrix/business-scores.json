@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T19:23:47.405Z",
+  "updated_at": "2026-07-25T19:27:16.476Z",
   "projects": [
     {
       "id": 1,
@@ -1688,6 +1688,23 @@
         "evidence": 7,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "accel-pd-studio",
+      "project": "Accel PD Studio",
+      "score": 65,
+      "tier": "B",
+      "business_idea": "Compare multi-channel transformer physical-activity representations from wearables against handcrafted PA-feature baselines before locking an accel pack",
+      "pmf": "Early signal with digital biomarker / neurology analytics leads who already trial wearable Parkinson risk models",
+      "buyer": "Digital biomarker and neurology analytics engineering leads",
+      "money_hook": "Bench seats + private accel packs (method-lab experiment)",
+      "potential": "Free-living multi-channel PA transformers are underserved vs handcrafted feature dumps without a dual bench",
+      "moat": "Multi-channel PA transformer vs handcrafted PA-feature baseline",
+      "evidence": "Paper software claim (PABformer wearable accelerometry pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer digital-biomarker soft-sim with multi-flow bar; never claim clinical diagnostic use, live device write-back, or FDA clearance; never brand as PABformer",
+      "id": 82
     }
   ]
 }
