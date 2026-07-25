@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T23:30:02.649Z",
+  "updated_at": "2026-07-25T23:43:22.404Z",
   "projects": [
     {
       "id": 1,
@@ -2205,7 +2205,7 @@
     {
       "slug": "liver-organoid-studio",
       "project": "Liver Organoid Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare multicellular liver organoid (HLO) models against single-lineage hepatocyte-like cell (HLC) baselines before locking a model pack",
       "pmf": "Early signal with organoid-platform / MASLD screening analytics leads who already trial organoid soft-sims",
       "buyer": "Organoid-platform and MASLD screening analytics engineering leads",
@@ -2228,6 +2228,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 101
+    },
+    {
+      "slug": "nanodomain-target-studio",
+      "project": "Nanodomain Target Studio",
+      "status": "building",
+      "business_idea": "Compare localized cAMP/PKA nanodomain targeting against systemic phosphorylation baselines before locking a therapy pack",
+      "pmf": "Early signal with cardio drug-discovery / precision-therapy analytics leads who already trial nanodomain soft-sims",
+      "buyer": "Cardio drug-discovery and precision-therapy analytics engineering leads",
+      "money_hook": "Bench seats + private therapy packs (method-lab experiment)",
+      "potential": "Localized nanodomain targeting is underserved vs systemic phosphorylation dumps without honesty",
+      "moat": "Localized nanodomain target vs systemic phosphorylation baseline",
+      "evidence": "Paper cardio soft-sim claim (precision troponin I nanodomain targeting); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer cardio soft-sim with multi-flow bar; never claim wet-lab validated IND/NDA, live patient dosing, or clinical heart-failure diagnosis",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 102
     }
   ]
 }
