@@ -40,7 +40,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Edge Quant Studio** | `edge-quant-studio` | **Complete** | Channel-aware edge CPU LLM quant plans |
 | **Crystal Bind Studio** | `crystal-bind-studio` | **Complete** | Multimodal crystal bind retrieve vs single-modality |
 | **Attest Proof Studio** | `attest-proof-studio` | **Complete** | Tool-attested proof chains for LLM empirics |
-| **Video Track Studio** | `video-track-studio` | **Building** | Long-form character-track failure diagnosis |
+| **Video Track Studio** | `video-track-studio` | **Complete** | Long-form character-track failure diagnosis |
 
 ## Rules
 

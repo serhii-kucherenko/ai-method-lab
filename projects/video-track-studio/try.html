@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Video Track Studio — try</title>
+    <style>
+      :root {
+        --bg: #f0f2f5;
+        --ink: #1a2332;
+        --coral: #e85d4c;
+        --cyan: #2a9fb5;
+        --panel: #fafbfc;
+        --line: #d0d6de;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+      }
+      header {
+        padding: 2.5rem 1.5rem 1.5rem;
+        background: linear-gradient(180deg, #121820, #1a2332 45%, #1f3a48);
+        color: #e8f0f4;
+      }
+      h1 {
+        margin: 0;
+        font-size: 1.75rem;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin: 0.75rem 0 0.25rem;
+        font-size: 0.85rem;
+      }
+      input,
+      select,
+      button {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.5rem 0.65rem;
+        border: 1px solid var(--line);
+        border-radius: 0.4rem;
+        font: inherit;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--coral);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 1rem;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #e8ecf0;
+        border-radius: 999px;
+        overflow: hidden;
+        margin: 0.35rem 0;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--coral);
+      }
+      .bar.b > span {
+        background: var(--cyan);
+      }
+      .note {
+        font-size: 0.8rem;
+        color: #5a6575;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Video Track Studio</h1>
+      <p>Offline soft-sim: track-aware diagnosis vs fluency baseline</p>
+    </header>
+    <main>
+      <label>Name sensitivity (0–1)</label>
+      <input id="sens" type="number" min="0" max="1" step="0.01" value="0.32" />
+      <label>Identity bind (0–1)</label>
+      <input id="bind" type="number" min="0" max="1" step="0.01" value="0.35" />
+      <label>Fluency prior (0–1)</label>
+      <input id="flu" type="number" min="0" max="1" step="0.01" value="0.74" />
+      <label>Gender-cue reliance (0–1, worse when high)</label>
+      <input id="gender" type="number" min="0" max="1" step="0.01" value="0.4" />
+      <button type="button" id="run">Compare A vs B</button>
+      <div class="card" id="out">Run to see soft-sim scores.</div>
+      <p class="note">
+        Approximate offline demo only — not production Video-LLM certification.
+        Full app: projects/video-track-studio · paper arXiv 2607.11078.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function trackAware(input) {
+        const boost = 1.12;
+        const sensitivity = round2(
+          clamp(
+            input.nameSensitivity * 55 +
+              input.temporal * 25 -
+              input.noise * 18 +
+              input.nameSensitivity * 8 +
+              6 -
+              input.genderCueReliance * 22,
+            0,
+            100,
+          ) * (boost / 1.05),
+        );
+        const identity = round2(
+          clamp(
+            input.identityBind * 55 +
+              input.temporal * 20 -
+              input.genderCueReliance * 18 +
+              5,
+            0,
+            100,
+          ),
+        );
+        const overall = round2(
+          clamp(
+            sensitivity * 0.35 + identity * 0.35 + (100 - input.fluencyPrior * 40) * 0.15 + 20,
+            0,
+            100,
+          ),
+        );
+        return { sensitivity, identity, overall };
+      }
+      function fluencyOnly(input) {
+        const fluency = round2(
+          clamp(
+            input.fluencyPrior * 62 +
+              0.65 * 22 -
+              input.genderCueReliance * 8 -
+              input.noise * 10,
+            0,
+            100,
+          ),
+        );
+        const overall = round2(
+          clamp(fluency * 0.55 + input.fluencyPrior * 30 + 10, 0, 100),
+        );
+        return { fluency, overall };
+      }
+      document.getElementById("run").onclick = function () {
+        const input = {
+          nameSensitivity: Number(document.getElementById("sens").value),
+          identityBind: Number(document.getElementById("bind").value),
+          fluencyPrior: Number(document.getElementById("flu").value),
+          genderCueReliance: Number(document.getElementById("gender").value),
+          temporal: 0.55,
+          noise: 0.2,
+        };
+        const a = trackAware(input);
+        const b = fluencyOnly(input);
+        const gap = round2(a.overall - b.overall);
+        const winner =
+          gap > 1 ? "track_aware" : gap < -1 ? "fluency_only" : "tie";
+        document.getElementById("out").innerHTML =
+          "<p><strong>Winner:</strong> " +
+          winner +
+          " (gap " +
+          gap +
+          ")</p>" +
+          "<p>A · track-aware " +
+          a.overall +
+          "</p><div class='bar'><span style='width:" +
+          Math.min(100, a.overall) +
+          "%'></span></div>" +
+          "<p>B · fluency-only " +
+          b.overall +
+          "</p><div class='bar b'><span style='width:" +
+          Math.min(100, b.overall) +
+          "%'></span></div>";
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "id": "vts-008",
+  "input": {
+    "nameSensitivity": 0.32,
+    "identityBind": 0.38,
+    "temporalCoverage": 0.36,
+    "outfitOrderFidelity": 0.32,
+    "probeSpecificity": 0.37,
+    "fluencyPrior": 0.49,
+    "genderCueReliance": 0.29,
+    "noiseLevel": 0.25,
+    "probeBias": "frame_boost",
+    "profile": "track_aware"
+  },
+  "expectedTrackAware": {
+    "mode": "track_aware",
+    "sensitivityScore": 22,
+    "identityScore": 25.04,
+    "temporalScore": 36.88,
+    "outfitScore": 25.74,
+    "specificityScore": 38.61,
+    "fluencyScore": 22.25,
+    "confidence": 27.35,
+    "trackContribution": 24.26,
+    "fluencyContribution": 13.5,
+    "overall": 29.27
+  },
+  "expectedFluency": {
+    "mode": "fluency_only",
+    "sensitivityScore": 7.76,
+    "identityScore": 11.15,
+    "temporalScore": 8.76,
+    "outfitScore": 7.46,
+    "specificityScore": 33.62,
+    "fluencyScore": 35.39,
+    "confidence": 34.9,
+    "trackContribution": 9.46,
+    "fluencyContribution": 34.3,
+    "overall": 32.26
+  }
+}

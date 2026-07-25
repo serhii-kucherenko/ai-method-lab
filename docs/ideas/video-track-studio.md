@@ -1,6 +1,6 @@
 # Video Track Studio
 
-**State:** ready_to_build  
+**State:** complete  
 **Slug:** `video-track-studio`  
 **Paper:** https://arxiv.org/abs/2607.11078v1  
 **Authors’ code:** none  
