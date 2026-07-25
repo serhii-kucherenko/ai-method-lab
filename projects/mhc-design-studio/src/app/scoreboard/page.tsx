@@ -1,0 +1,6 @@
+"use client";
+import { useEffect, useState } from "react";
+import { StudioShell } from "@/components/studio-shell"; import { api } from "@/lib/client-api";
+type Compare={id:string;name:string;winner:string;gap:number;hybrid:{overall:number};classical:{overall:number}};
+export function ScoreboardPage(){const[items,setItems]=useState<Compare[]>([]),[error,setError]=useState("");useEffect(()=>{void api<{items:Compare[]}>("/api/scoreboard").then(x=>setItems(x.items)).catch(e=>setError(e instanceof Error?e.message:"Could not load scoreboard"))},[]);return <StudioShell title="Scoreboard" subtitle="Ranked method comparisons, for soft-sim evaluation only.">{error&&<p className="text-sm text-red-700">{error}</p>}<div className="overflow-hidden rounded-lg border bg-white"><div className="grid grid-cols-[1fr_repeat(3,auto)] gap-5 border-b p-4 text-sm font-semibold"><span>Comparison</span><span>Hybrid</span><span>Classical</span><span>Winner / gap</span></div>{items.length?items.map(x=><div key={x.id} className="grid grid-cols-[1fr_repeat(3,auto)] gap-5 border-b p-4 last:border-0"><span>{x.name}</span><span>{x.hybrid.overall}</span><span>{x.classical.overall}</span><span>{x.winner} / {x.gap}</span></div>):<p className="p-5 text-slate-600">No comparisons yet. Run an A/B compare to create a ranked result.</p>}</div></StudioShell>}
+export default ScoreboardPage;

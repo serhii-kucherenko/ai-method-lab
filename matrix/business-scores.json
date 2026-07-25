@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T20:47:08.858Z",
+  "updated_at": "2026-07-25T20:55:21.318Z",
   "projects": [
     {
       "id": 1,
@@ -1881,19 +1881,29 @@
     {
       "slug": "mhc-design-studio",
       "project": "Mhc Design Studio",
-      "score": 65,
+      "score": 66,
       "tier": "B",
       "business_idea": "Compare hybrid quantum–classical de novo MHC-binding peptide design against classical generative baselines before locking a peptide pack",
-      "pmf": "Early signal with immuno-oncology / vaccine design analytics leads who already trial generative peptide design",
+      "pmf": "Early signal with immuno-oncology / vaccine design analytics leads who already trial MHC soft-sims",
       "buyer": "Immuno-oncology and vaccine design analytics engineering leads",
       "money_hook": "Bench seats + private peptide packs (method-lab experiment)",
-      "potential": "Hybrid quantum–classical peptide design is underserved vs classical generative dumps under scarce training data",
+      "potential": "Hybrid quantum–classical de novo for limited-training-data MHC targets is underserved vs classical generative dumps without honesty",
       "moat": "Hybrid quantum–classical de novo vs classical generative baseline",
       "evidence": "Paper software claim (hybrid quantum–classical MHC peptide design pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Prefer immuno-design soft-sim with multi-flow bar; never claim wet-lab validated binders, live ELN write-back, or FDA clearance",
-      "id": 89
+      "gc_notes": "Prefer immuno design soft-sim with multi-flow bar; never claim wet-lab validated binders, live ELN write-back, or FDA clearance",
+      "id": 89,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      }
     }
   ]
 }

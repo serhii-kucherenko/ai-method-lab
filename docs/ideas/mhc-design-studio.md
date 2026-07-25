@@ -1,6 +1,6 @@
 # Mhc Design Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `mhc-design-studio`  
 **Paper:** https://www.biorxiv.org/content/10.64898/2026.07.09.736951v1  
 **Authors’ code:** none  

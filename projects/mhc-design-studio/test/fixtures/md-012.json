@@ -1,0 +1,39 @@
+{
+  "id": "md-012",
+  "input": {
+    "peptideCoverage": 0.5,
+    "alleleFidelity": 0.48,
+    "hybridClarity": 0.53,
+    "packCompleteness": 0.53,
+    "classicalAdherence": 0.56,
+    "generativeOptimism": 0.37,
+    "designHardness": 0.42,
+    "overclaimRisk": 0.35,
+    "designBias": "allele_first",
+    "profile": "classical_generative_baseline"
+  },
+  "expectedHybrid": {
+    "mode": "hybrid_quantum_classical_de_novo",
+    "peptideScore": 51.69,
+    "alleleScore": 51.28,
+    "hybridScore": 34.47,
+    "completenessScore": 67.57,
+    "classicalScore": 28.34,
+    "confidence": 42.1,
+    "hybridContribution": 50.26,
+    "classicalContribution": 29.77,
+    "overall": 50.57
+  },
+  "expectedClassical": {
+    "mode": "classical_generative_baseline",
+    "peptideScore": 13.23,
+    "alleleScore": 19.78,
+    "hybridScore": 16.29,
+    "completenessScore": 35.76,
+    "classicalScore": 34.93,
+    "confidence": 24.35,
+    "hybridContribution": 24,
+    "classicalContribution": 38.2,
+    "overall": 29.62
+  }
+}
