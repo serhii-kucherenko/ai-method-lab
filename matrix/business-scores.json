@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T14:40:58.003Z",
+  "updated_at": "2026-07-25T14:43:37.596Z",
   "projects": [
     {
       "id": 1,
@@ -1136,6 +1136,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "pbpk-structure-studio",
+      "project": "PBPK Structure Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare topology-compiled structure-only PBPK predictions against measured-lab-data baselines before locking a compound pack",
+      "pmf": "Early signal with PK / ADME modeling leads who already buy PBPK tools and need early structure-only screening",
+      "buyer": "PK and ADME modeling engineering leads",
+      "money_hook": "Bench seats + private compound packs (method-lab experiment)",
+      "potential": "Structure-only early PBPK is underserved vs measured-lab-gated modeling",
+      "moat": "Structure-only topology PBPK vs measured-lab baseline",
+      "evidence": "Paper software claim (Sisyphus-pattern PBPK); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer PK/ADME soft-sim with multi-flow bar; never claim regulatory filing or live LIMS",
+      "id": 56
     }
   ]
 }
