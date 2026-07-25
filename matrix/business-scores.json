@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T13:43:31.976Z",
+  "updated_at": "2026-07-25T13:51:51.865Z",
   "projects": [
     {
       "id": 1,
@@ -978,19 +978,29 @@
     {
       "slug": "mol-sample-studio",
       "project": "Molecule Sample Studio",
-      "score": 62,
+      "score": 66,
       "tier": "B",
-      "business_idea": "Compare sample-efficient generative molecular optimization against naive generative baselines before locking a campaign pack",
-      "pmf": "Early signal with medicinal chemistry / generative design leads who already buy generative design tools",
+      "business_idea": "Compare sample-efficient generative optimization against naive generative baselines before locking a campaign pack",
+      "pmf": "Early signal with medchem / generative design leads who already burn samples on naive campaigns",
       "buyer": "Medicinal chemistry and generative design engineering leads",
       "money_hook": "Bench seats + private campaign packs (method-lab experiment)",
-      "potential": "Sample budgets dominate generative campaigns; efficiency benches are underserved vs unconstrained generators",
+      "potential": "Sample-efficient generative campaigns are underserved vs blind sampling desks",
       "moat": "Sample-efficient generative optimization vs naive generative baseline",
-      "evidence": "Paper software claim (sample-efficient generative optimization pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "evidence": "Paper software claim (sample-efficient generative optimization pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Prefer generative-design soft-sim with multi-flow bar; never claim wet-lab validation or live ELN",
-      "id": 50
+      "gc_notes": "Prefer campaign soft-sim with multi-flow bar; never claim wet-lab validation or live ELN",
+      "id": 50,
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      }
     }
   ]
 }

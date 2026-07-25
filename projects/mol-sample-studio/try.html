@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Molecule Sample Studio — try</title>
+    <style>
+      :root {
+        --ink: #121826;
+        --accent: #7a9e2f;
+        --teal: #3d6b72;
+        --porcelain: #eef1f4;
+        --line: #c5ccd6;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--porcelain);
+      }
+      header {
+        background: linear-gradient(165deg, #0a0e16, #121826 55%, #2a3d48);
+        color: #fff;
+        padding: 3rem 1.5rem 2.5rem;
+      }
+      h1 {
+        font-family: Outfit, "Segoe UI", sans-serif;
+        font-size: 2.4rem;
+        margin: 0;
+        color: var(--accent);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dfe4ea;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        background: var(--accent);
+        width: 0%;
+      }
+      .fill.b {
+        background: var(--teal);
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 1.25rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        color: #4a5568;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Molecule Sample Studio</h1>
+      <p>Offline soft-sim: sample-efficient vs naive generative baseline.</p>
+    </header>
+    <main>
+      <label>
+        Sample efficiency
+        <input id="eff" type="range" min="0" max="100" value="68" />
+      </label>
+      <label>
+        Campaign coverage
+        <input id="cov" type="range" min="0" max="100" value="58" />
+      </label>
+      <label>
+        Blind optimism (naive fuel)
+        <input id="blind" type="range" min="0" max="100" value="70" />
+      </label>
+      <div class="card">
+        <div>A · sample-efficient <span id="aScore">—</span></div>
+        <div class="bar"><div id="aFill" class="fill"></div></div>
+        <div style="margin-top: 0.75rem">
+          B · naive generative <span id="bScore">—</span>
+        </div>
+        <div class="bar"><div id="bFill" class="fill b"></div></div>
+        <p id="winner" style="margin-top: 1rem; font-weight: 600"></p>
+      </div>
+      <p class="note">
+        Soft-sim only — not wet-lab validated, not live ELN, not the authors’
+        system. Inspired by arXiv 2607.12488.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function score() {
+        const eff = Number(document.getElementById("eff").value) / 100;
+        const cov = Number(document.getElementById("cov").value) / 100;
+        const blind = Number(document.getElementById("blind").value) / 100;
+        const a = clamp(eff * 62 + cov * 28 + 8 - blind * 8, 0, 100);
+        const b = clamp(blind * 55 + (1 - eff) * 25 + 10 - cov * 10, 0, 100);
+        document.getElementById("aScore").textContent = a.toFixed(1);
+        document.getElementById("bScore").textContent = b.toFixed(1);
+        document.getElementById("aFill").style.width = a + "%";
+        document.getElementById("bFill").style.width = b + "%";
+        let w = "tie";
+        if (a > b + 0.5) w = "sample_efficient";
+        else if (b > a + 0.5) w = "naive_generative_baseline";
+        document.getElementById("winner").textContent =
+          "Winner: " + w + " · gap " + Math.abs(a - b).toFixed(1);
+      }
+      ["eff", "cov", "blind"].forEach((id) =>
+        document.getElementById(id).addEventListener("input", score),
+      );
+      score();
+    </script>
+  </body>
+</html>

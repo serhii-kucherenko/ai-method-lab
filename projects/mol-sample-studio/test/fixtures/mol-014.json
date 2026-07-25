@@ -1,0 +1,39 @@
+{
+  "id": "mol-014",
+  "input": {
+    "campaignCoverage": 0.58,
+    "targetFidelity": 0.56,
+    "targetFit": 0.6,
+    "sampleEfficiency": 0.61,
+    "naiveYield": 0.63,
+    "blindOptimism": 0.4,
+    "designHardness": 0.43,
+    "leakageRisk": 0.36,
+    "molBias": "balanced",
+    "profile": "sample_efficient"
+  },
+  "expectedSampleEfficient": {
+    "mode": "sample_efficient",
+    "hitEnrichment": 52.62,
+    "efficiencyDiagnosis": 58.53,
+    "targetOptScore": 57.31,
+    "packIntegrity": 64.3,
+    "baselineScore": 33.07,
+    "confidence": 49,
+    "efficiencyContribution": 57.92,
+    "baselineContribution": 34.8,
+    "overall": 57.76
+  },
+  "expectedNaiveGenerativeBaseline": {
+    "mode": "naive_generative_baseline",
+    "hitEnrichment": 20.03,
+    "efficiencyDiagnosis": 22.2,
+    "targetOptScore": 18.59,
+    "packIntegrity": 38.98,
+    "baselineScore": 55.96,
+    "confidence": 27.85,
+    "efficiencyContribution": 31.15,
+    "baselineContribution": 52.08,
+    "overall": 41.88
+  }
+}

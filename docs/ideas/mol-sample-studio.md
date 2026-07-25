@@ -1,6 +1,6 @@
 # Molecule Sample Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `mol-sample-studio`  
 **Paper:** https://arxiv.org/abs/2607.12488v1  
 **Authors’ code:** none  

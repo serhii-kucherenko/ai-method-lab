@@ -82,3 +82,4 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 - Link scoring notes when maturity failed or passed
 | 80 | [Federated CVD Studio — what we learned](80-federated-cvd-studio-lessons.md) | Product `federated-cvd-studio` |
 | 81 | [HCC Reason Studio — what we learned](81-hcc-reason-studio-lessons.md) | Product `hcc-reason-studio` |
+| 82 | [Molecule Sample Studio — what we learned](82-mol-sample-studio-lessons.md) | Product `mol-sample-studio` |
