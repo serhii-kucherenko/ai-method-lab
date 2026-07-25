@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T21:27:37.898Z",
+  "updated_at": "2026-07-25T21:40:21.337Z",
   "projects": [
     {
       "id": 1,
@@ -1970,7 +1970,7 @@
       "potential": "Standardized async video neuro exams for multi-site AD/ADRD studies are underserved vs ad-hoc exam dumps without honesty",
       "moat": "Standardized async video exam vs ad-hoc exam baseline",
       "evidence": "Paper workflow claim (VANE pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer multi-center exam-ops soft-sim with multi-flow bar; never claim clinical diagnostic use, live telehealth write-back, or FDA clearance",
       "dimensions": {
@@ -1985,6 +1985,33 @@
       },
       "score": 66,
       "id": 92
+    },
+    {
+      "slug": "latent-path-studio",
+      "project": "Latent Path Studio",
+      "tier": "B",
+      "business_idea": "Compare multi-dimensional latent adolescent symptom trajectory classes against single-domain baselines before locking a cohort pack",
+      "pmf": "Early signal with adolescent mental-health analytics / digital screening product leads who already trial cohort soft-sims",
+      "buyer": "Adolescent mental-health analytics and digital screening product engineering leads",
+      "money_hook": "Bench seats + private cohort packs (method-lab experiment)",
+      "potential": "Multi-domain latent trajectories for adolescent MH analytics are underserved vs single-domain dumps without honesty",
+      "moat": "Multi-domain latent trajectory vs single-domain baseline",
+      "evidence": "Paper analytics claim (latent class growth trajectory pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer adolescent MH analytics soft-sim with multi-flow bar; never claim clinical diagnostic use, crisis intervention, or live EHR write-back",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "id": 93
     }
   ]
 }
