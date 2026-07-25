@@ -1,6 +1,6 @@
 # Idia Quant Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `idia-quant-studio`  
 **Paper:** https://www.biorxiv.org/content/10.1101/2025.05.30.656945v3  
 **Authors’ code:** none  

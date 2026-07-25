@@ -1,0 +1,39 @@
+{
+  "id": "iq-007",
+  "input": {
+    "targetCoverage": 0.45,
+    "spectrumInformedness": 0.38,
+    "proteinDetectability": 0.42,
+    "quantPrecision": 0.49,
+    "naiveWindowBreadth": 0.53,
+    "baselineOptimism": 0.42,
+    "abundanceHardness": 0.55,
+    "overclaimRisk": 0.43,
+    "quantBias": "target_first",
+    "profile": "informed_dia_quant"
+  },
+  "expectedInformed": {
+    "mode": "informed_dia_quant",
+    "coverageScore": 31.69,
+    "spectrumScore": 43.11,
+    "detectabilityScore": 48.5,
+    "precisionIntegrity": 39.34,
+    "baselineScore": 25.15,
+    "confidence": 35.35,
+    "informedContribution": 40.82,
+    "naiveContribution": 25.77,
+    "overall": 42.11
+  },
+  "expectedNaive": {
+    "mode": "naive_dia_baseline",
+    "coverageScore": 8.27,
+    "spectrumScore": 19.5,
+    "detectabilityScore": 15.44,
+    "precisionIntegrity": 36.3,
+    "baselineScore": 34.2,
+    "confidence": 22.15,
+    "informedContribution": 22.74,
+    "naiveContribution": 37.59,
+    "overall": 27.34
+  }
+}

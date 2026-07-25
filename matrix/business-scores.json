@@ -1481,7 +1481,7 @@
       "potential": "Informed DIA for low-abundance regulatory proteins is underserved vs naive DIA dumps without a dual bench",
       "moat": "Informed DIA vs naive DIA baseline",
       "evidence": "Paper software claim (iDIA single-cell proteomics pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer scp-MS soft-sim with multi-flow bar; never claim wet-lab validated proteomics or live instrument write-back",
       "id": 72

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Idia Quant Studio — offline try</title>
+    <style>
+      :root {
+        --iq-ink: #151c24;
+        --iq-teal: #2a7a88;
+        --iq-mist: #eef2f4;
+        --iq-line: #c3c9ce;
+        --iq-amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        background: var(--iq-mist);
+        color: var(--iq-ink);
+      }
+      header {
+        background: linear-gradient(165deg, #0e141a, #151c24 50%, #1a2830);
+        color: white;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      h1 {
+        font-family: Sora, system-ui, sans-serif;
+        margin: 0;
+        color: #7eb8c2;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid var(--iq-line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--iq-teal);
+        color: white;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--iq-line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        opacity: 0.75;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Idia Quant Studio</h1>
+      <p>Offline soft-sim: informed DIA vs naive DIA baseline</p>
+    </header>
+    <main>
+      <label
+        >Target coverage
+        <input id="cov" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Spectrum informedness
+        <input id="inf" type="number" min="0" max="1" step="0.01" value="0.72"
+      /></label>
+      <label
+        >Protein detectability
+        <input id="det" type="number" min="0" max="1" step="0.01" value="0.68"
+      /></label>
+      <label
+        >Quant precision
+        <input id="prec" type="number" min="0" max="1" step="0.01" value="0.65"
+      /></label>
+      <button id="go">Score A vs B</button>
+      <div class="out" id="out">Adjust inputs and score.</div>
+      <p class="note">
+        Soft-sim only — not wet-lab validated, not instrument write-back, not
+        the authors’ system. Approximate offline demo of the dual scorers.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function informed(cov, inf, det, prec) {
+        const a =
+          cov * 42 + inf * 28 + det * 18 + prec * 12 - (1 - prec) * 8;
+        return round2(clamp(a, 0, 100));
+      }
+      function naive(cov, inf, det, prec) {
+        const b =
+          (1 - cov) * 20 +
+          55 +
+          (1 - inf) * 10 +
+          (1 - det) * 8 -
+          prec * 12;
+        return round2(clamp(b, 0, 100));
+      }
+      document.getElementById("go").onclick = () => {
+        const cov = Number(document.getElementById("cov").value);
+        const inf = Number(document.getElementById("inf").value);
+        const det = Number(document.getElementById("det").value);
+        const prec = Number(document.getElementById("prec").value);
+        const A = informed(cov, inf, det, prec);
+        const B = naive(cov, inf, det, prec);
+        const winner =
+          A > B + 0.5
+            ? "informed_dia_quant"
+            : B > A + 0.5
+              ? "naive_dia_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "A (informed) " +
+          A +
+          " · B (naive) " +
+          B +
+          " · winner " +
+          winner +
+          " · gap " +
+          round2(Math.abs(A - B));
+      };
+    </script>
+  </body>
+</html>
