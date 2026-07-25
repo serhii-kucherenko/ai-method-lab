@@ -821,7 +821,7 @@
       "potential": "Contact-rich manipulation spend is rising; tactile+vision plan eval is underserved vs vision-only demos",
       "moat": "Contact-centric tactile+vision vs vision-only baselines",
       "evidence": "Paper software claim (TACTIC pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer robotics soft-sim with multi-flow bar; never claim live robot safety cert; not TACTIC brand",
       "id": 42

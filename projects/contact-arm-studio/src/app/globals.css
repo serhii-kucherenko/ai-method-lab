@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --studio-graphite: #1b1f24;
+  --studio-orange: #d9772f;
+  --studio-steel: #5b7c8a;
+  --studio-mist: #e8eef1;
+  --studio-bg: #f6f8f9;
+  --studio-ink: #1b1f24;
+  --studio-ink-deep: #101317;
+  --studio-orange-deep: #aa5520;
+  --studio-orange-soft: #f6e2d3;
+  --studio-panel: #ffffff;
+  --studio-line: #cad5da;
+  --studio-warn: #b94f3c;
+  --studio-warn-soft: #f4ddd8;
+  --studio-wash: radial-gradient(ellipse 55% 45% at 8% 0%, #d9772f55 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 92% 18%, #5b7c8a55 0%, transparent 50%),
+    linear-gradient(165deg, #101317 0%, #1b1f24 48%, #31414a 100%);
+
+  --background: #f6f8f9;
+  --foreground: #1b1f24;
+  --card: #ffffff;
+  --card-foreground: #1b1f24;
+  --popover: #ffffff;
+  --popover-foreground: #1b1f24;
+  --primary: #d9772f;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eef1;
+  --secondary-foreground: #1b1f24;
+  --muted: #e8eef1;
+  --muted-foreground: #55707b;
+  --accent: #f6e2d3;
+  --accent-foreground: #1b1f24;
+  --destructive: #b94f3c;
+  --border: #cad5da;
+  --input: #cad5da;
+  --ring: #d9772f;
+  --radius: 0.5rem;
+}
+
+@keyframes mist-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes brand-underline {
+  from { width: 0; }
+  to { width: 7.5rem; }
+}
+@keyframes hero-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes contact-focus {
+  from { background-color: transparent; }
+  to { background-color: var(--studio-orange-soft); }
+}
+
+.hero-fade { animation: hero-fade 0.7s ease-out both; }
+.mist-fade { animation: mist-fade 1.1s ease-out both; }
+.signal-underline {
+  display: block;
+  height: 3px;
+  width: 7.5rem;
+  margin-top: 0.75rem;
+  background: var(--studio-orange);
+  animation: brand-underline 0.8s ease-out 0.2s both;
+}
+.score-bar { transition: width 0.45s ease; }
+.row-lift { transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease; }
+.row-lift:hover, .row-lift:focus-within {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(21, 32, 43, 0.08);
+  background-color: var(--studio-orange-soft);
+  animation: contact-focus 0.25s ease both;
+}
+.contact-grid {
+  background-image:
+    linear-gradient(rgba(217, 119, 47, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 124, 138, 0.09) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.sand-mist {
+  background: linear-gradient(
+    135deg,
+    rgba(232, 238, 241, 0.12) 0%,
+    transparent 40%,
+    rgba(217, 119, 47, 0.08) 100%
+  );
+}

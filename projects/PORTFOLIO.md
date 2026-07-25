@@ -49,6 +49,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Retro Route Studio** | `retro-route-studio` | **Complete** | Structured-memory vs naive retrosynthesis planning |
 | **Persona Triage Studio** | `persona-triage-studio` | **Complete** | Style-aware vs idealized-patient triage eval |
 | **Feature Sufficiency Studio** | `feature-sufficiency-studio` | **Complete** | Partial-observation sufficiency vs full-feature baseline |
+| **Contact Arm Studio** | `contact-arm-studio` | **Complete** | Contact-centric tactile+vision vs vision-only baseline |
 
 ## Rules
 

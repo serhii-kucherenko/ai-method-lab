@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Arm Studio — offline try</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #1b1f24;
+        --orange: #d9772f;
+        --steel: #5b7c8a;
+        --mist: #e8eef1;
+        --line: #c5d0d6;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        background: var(--mist);
+        color: var(--ink);
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-weight: 600;
+        color: var(--orange);
+        margin: 0 0 0.5rem;
+      }
+      .sub { color: var(--steel); max-width: 36rem; }
+      .grid {
+        display: grid;
+        gap: 0.75rem;
+        margin: 1.5rem 0;
+        max-width: 28rem;
+      }
+      label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9rem; }
+      input[type="range"] { width: 100%; }
+      button {
+        background: var(--orange);
+        color: #fff;
+        border: 0;
+        border-radius: 0.5rem;
+        padding: 0.65rem 1.1rem;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+        background: #ffffff;
+        max-width: 28rem;
+      }
+      .bar {
+        height: 8px;
+        border-radius: 4px;
+        background: var(--orange);
+        margin: 0.35rem 0 0.75rem;
+      }
+      .bar.b { background: var(--steel); }
+      footer { margin-top: 2rem; font-size: 0.85rem; color: var(--steel); max-width: 36rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Contact Arm Studio</h1>
+    <p class="sub">
+      Offline soft-sim: contact-centric tactile+vision vs vision-only baseline.
+      Plan contact where the arm actually touches — not live robot control.
+    </p>
+    <div class="grid" id="inputs"></div>
+    <button type="button" id="score">Score A/B</button>
+    <div class="out" id="out"></div>
+    <footer>
+      Soft-sim only. Not live robot control. Not safety certification. Not TACTIC brand.
+      Inspired by arXiv 2607.09218 — authors’ code none published.
+    </footer>
+    <script>
+      const fields = [
+        ["contactCoverage", 0.42],
+        ["tactileSalience", 0.7],
+        ["planFit", 0.74],
+        ["sensingAgreement", 0.68],
+        ["visionOnlyAccuracy", 0.82],
+        ["visionOptimism", 0.7],
+        ["contactPressure", 0.55],
+        ["leakageRisk", 0.28],
+      ];
+      const box = document.getElementById("inputs");
+      const state = {};
+      for (const [k, v] of fields) {
+        state[k] = v;
+        const lab = document.createElement("label");
+        lab.innerHTML =
+          k +
+          ' <span data-v></span><input type="range" min="0" max="1" step="0.01" value="' +
+          v +
+          '" />';
+        const span = lab.querySelector("[data-v]");
+        const input = lab.querySelector("input");
+        span.textContent = v.toFixed(2);
+        input.addEventListener("input", () => {
+          state[k] = Number(input.value);
+          span.textContent = state[k].toFixed(2);
+        });
+        box.appendChild(lab);
+      }
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreContact(s) {
+        const load = clamp(s.contactPressure * (1.25 - s.contactCoverage * 0.5), 0, 1.5);
+        const contactDiagnosis = round2(
+          clamp(
+            (s.contactCoverage * 55 + s.tactileSalience * 25 - load * 10) * 1.12 + 8 - s.leakageRisk * 6,
+            0,
+            100,
+          ),
+        );
+        const tactileDiagnosis = round2(
+          clamp(
+            s.tactileSalience * 60 * 1.12 + s.contactCoverage * 25 + 8 - s.visionOptimism * 4,
+            0,
+            100,
+          ),
+        );
+        const planReasonScore = round2(
+          clamp(
+            s.sensingAgreement * 58 * 1.12 + s.contactCoverage * 28 + 10 - load * 12 - s.leakageRisk * 10,
+            0,
+            100,
+          ),
+        );
+        const sensingIntegrity = round2(
+          clamp(
+            s.planFit * 50 * 1.12 + s.tactileSalience * 25 + s.contactCoverage * 15 + 8,
+            0,
+            100,
+          ),
+        );
+        const contactContribution = round2(
+          clamp(
+            contactDiagnosis * 0.26 +
+              tactileDiagnosis * 0.24 +
+              planReasonScore * 0.28 +
+              sensingIntegrity * 0.22,
+            0,
+            100,
+          ),
+        );
+        const visionContribution = round2(
+          clamp(s.visionOnlyAccuracy * 40 + s.visionOptimism * 20 - load * 8, 0, 100),
+        );
+        return round2(clamp(contactContribution * 0.82 + visionContribution * 0.18 + 4, 0, 100));
+      }
+      function scoreVision(s) {
+        const load = clamp(s.contactPressure * (1.25 - s.contactCoverage * 0.5), 0, 1.5);
+        const visionOnlyScore = round2(
+          clamp(s.visionOnlyAccuracy * 58 * 1.08 + s.visionOptimism * 32 - s.contactPressure * 10 + 8, 0, 100),
+        );
+        const visionContribution = round2(
+          clamp(visionOnlyScore * 0.55 + s.visionOptimism * 30 + s.visionOnlyAccuracy * 20 - load * 8, 0, 100),
+        );
+        const contactContribution = round2(
+          clamp(s.visionOnlyAccuracy * 35 + s.visionOptimism * 25 - load * 10, 0, 100),
+        );
+        return round2(
+          clamp(visionContribution * 0.78 + contactContribution * 0.22 - s.contactPressure * 8 - s.leakageRisk * 6, 0, 100),
+        );
+      }
+      document.getElementById("score").addEventListener("click", () => {
+        const a = scoreContact(state);
+        const b = scoreVision(state);
+        let winner = "tie";
+        if (a > b + 0.5) winner = "contact_centric";
+        else if (b > a + 0.5) winner = "vision_only";
+        const out = document.getElementById("out");
+        out.innerHTML =
+          "<div>Contact-centric (A): <strong>" +
+          a +
+          '</strong><div class="bar" style="width:' +
+          a +
+          '%"></div></div>' +
+          "<div>Vision-only (B): <strong>" +
+          b +
+          '</strong><div class="bar b" style="width:' +
+          b +
+          '%"></div></div>' +
+          "<div>Winner: <strong>" +
+          winner +
+          "</strong> · gap " +
+          Math.abs(a - b).toFixed(2) +
+          "</div>";
+      });
+    </script>
+  </body>
+</html>

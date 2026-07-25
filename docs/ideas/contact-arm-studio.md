@@ -1,6 +1,6 @@
 # Contact Arm Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `contact-arm-studio`  
 **Paper:** https://arxiv.org/abs/2607.09218v1  
 **Authors’ code:** none  

@@ -62,6 +62,7 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 71 | [Retro Route Studio — what we learned](71-retro-route-studio-lessons.md) | Product `retro-route-studio` |
 | 72 | [Persona Triage Studio — what we learned](72-persona-triage-studio-lessons.md) | Product `persona-triage-studio` |
 | 73 | [Feature Sufficiency Studio — what we learned](73-feature-sufficiency-studio-lessons.md) | Product `feature-sufficiency-studio` |
+| 74 | [Contact Arm Studio — what we learned](74-contact-arm-studio-lessons.md) | Product `contact-arm-studio` |
 
 ### Scoring notes
 

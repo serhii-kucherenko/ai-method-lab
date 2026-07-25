@@ -1,0 +1,39 @@
+{
+  "id": "cas-019",
+  "input": {
+    "contactCoverage": 0.7,
+    "tactileSalience": 0.65,
+    "planFit": 0.7,
+    "sensingAgreement": 0.72,
+    "visionOnlyAccuracy": 0.74,
+    "visionOptimism": 0.36,
+    "contactPressure": 0.38,
+    "leakageRisk": 0.28,
+    "contactBias": "balanced",
+    "profile": "contact_centric"
+  },
+  "expectedContactCentric": {
+    "mode": "contact_centric",
+    "contactDiagnosis": 63.81,
+    "tactileDiagnosis": 67.74,
+    "planReasonScore": 69.47,
+    "sensingIntegrity": 73.95,
+    "visionOnlyScore": 39.94,
+    "confidence": 59.6,
+    "contactContribution": 68.57,
+    "visionContribution": 42.25,
+    "overall": 67.83
+  },
+  "expectedVisionOnly": {
+    "mode": "vision_only",
+    "contactDiagnosis": 26.25,
+    "tactileDiagnosis": 23.32,
+    "planReasonScore": 19.92,
+    "sensingIntegrity": 41.65,
+    "visionOnlyScore": 62.07,
+    "confidence": 31.7,
+    "contactContribution": 34.64,
+    "visionContribution": 57,
+    "overall": 47.36
+  }
+}
