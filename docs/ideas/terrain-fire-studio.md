@@ -1,6 +1,6 @@
 # Terrain Fire Studio
 
-**State:** ready_to_build  
+**State:** complete / sustained  
 **Slug:** `terrain-fire-studio`  
 **Paper:** https://arxiv.org/abs/2607.08711v1  
 **Authors’ code:** none  

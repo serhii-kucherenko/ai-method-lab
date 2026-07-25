@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T09:10:43.968Z",
+  "updated_at": "2026-07-25T09:22:43.853Z",
   "projects": [
     {
       "id": 1,
@@ -686,10 +686,10 @@
       "money_hook": "Agency seats + per-refresh compute packs (method-lab experiment)",
       "potential": "Public-safety mapping budgets; alignment-before-trust is a clear industrial wedge",
       "moat": "Physics-aware photo-to-terrain refresh vs naive orthophoto overlays",
-      "evidence": "Paper software claim (LTM); no public author code in digest",
-      "status": "building",
+      "evidence": "Paper software claim (LTM); 30 dual goldens; 7 user flows; /pricing /demo /onboarding /flows shipped",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "A/B gate pass — industrial/public-safety wedge; require /pricing /demo /onboarding /flows ≥5 + platform must-haves",
+      "gc_notes": "Keep industrial GIS pattern with multi-flow + platform must-haves",
       "score": 68,
       "tier": "B",
       "id": 36

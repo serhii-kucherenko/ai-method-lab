@@ -1,0 +1,40 @@
+{
+  "id": "tfs-021",
+  "input": {
+    "photoResolutionCm": 23.56,
+    "cloudCover": 0.19,
+    "overlapRatio": 0.7,
+    "elevationChangeM": 7.94,
+    "slopeSteepness": 0.25,
+    "fuelDrift": 0.25,
+    "controlPointDensity": 0.71,
+    "elevationPriorStrength": 0.69,
+    "seamBudgetM": 5.74,
+    "alignmentBias": "balanced",
+    "profile": "naive_overlay"
+  },
+  "expectedPhysicsAware": {
+    "mode": "physics_aware",
+    "elevationFidelity": 50.4,
+    "slopeCoherence": 70.45,
+    "seamContinuity": 20.78,
+    "fuelLayerFidelity": 67.8,
+    "photogrammetryScore": 71.57,
+    "confidence": 66.83,
+    "physicsContribution": 53.67,
+    "overlayContribution": 50.56,
+    "overall": 56.99
+  },
+  "expectedNaiveOverlay": {
+    "mode": "naive_overlay",
+    "elevationFidelity": 27.4,
+    "slopeCoherence": 17.94,
+    "seamContinuity": 4.47,
+    "fuelLayerFidelity": 64.6,
+    "photogrammetryScore": 70.11,
+    "confidence": 38.73,
+    "physicsContribution": 36.9,
+    "overlayContribution": 57.59,
+    "overall": 41.5
+  }
+}
