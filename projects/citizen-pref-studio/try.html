@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Citizen Pref Studio — try</title>
+  <style>
+    :root {
+      --cp-ink: #151a22;
+      --cp-teal: #2a6670;
+      --cp-mist: #eef2f5;
+      --cp-amber: #b8863a;
+    }
+    body {
+      margin: 0;
+      font-family: "Manrope", system-ui, sans-serif;
+      color: var(--cp-ink);
+      background: linear-gradient(165deg, #0b1016, #151a22 50%, #1a2428);
+      min-height: 100vh;
+    }
+    main {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+      color: var(--cp-mist);
+    }
+    h1 { font-family: Georgia, serif; font-size: 2.4rem; color: var(--cp-amber); margin: 0 0 0.5rem; }
+    h2 { font-size: 1.25rem; font-weight: normal; margin: 0 0 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input { width: 100%; padding: 0.5rem; margin-top: 0.25rem; box-sizing: border-box; }
+    button {
+      margin-top: 1.25rem;
+      background: var(--cp-amber);
+      color: var(--cp-ink);
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      cursor: pointer;
+      font: inherit;
+    }
+    .out {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: rgba(42, 102, 112, 0.25);
+      border: 1px solid rgba(195, 201, 206, 0.35);
+    }
+    .note { margin-top: 2rem; font-size: 0.85rem; opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Citizen Pref Studio</h1>
+    <h2>Offline soft-sim: safety vs innovation preference</h2>
+    <label>Safety preference (0–1)
+      <input id="safety" type="number" min="0" max="1" step="0.05" value="0.7" />
+    </label>
+    <label>Oversight support (0–1)
+      <input id="oversight" type="number" min="0" max="1" step="0.05" value="0.72" />
+    </label>
+    <label>Innovation adherence (0–1)
+      <input id="innovation" type="number" min="0" max="1" step="0.05" value="0.55" />
+    </label>
+    <button type="button" id="run">Score soft-sim</button>
+    <div class="out" id="out">Run to see A/B scores.</div>
+    <p class="note">Soft-sim only — not live regulatory authority, not government deployment, not certified polling, not authors’ survey brand. Paper: arXiv 2607.14585</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function scoreA(s, o, i) {
+      const safety = clamp(s * 70 + o * 20 - i * 10 + 8, 0, 100);
+      const overall = clamp(safety * 0.7 + o * 25, 0, 100);
+      return { safety: round2(safety), overall: round2(overall) };
+    }
+    function scoreB(s, o, i) {
+      const innovation = clamp(i * 75 + (1 - s) * 15 + 5, 0, 100);
+      const overall = clamp(innovation * 0.75 + i * 20, 0, 100);
+      return { innovation: round2(innovation), overall: round2(overall) };
+    }
+    document.getElementById("run").onclick = () => {
+      const s = Number(document.getElementById("safety").value);
+      const o = Number(document.getElementById("oversight").value);
+      const i = Number(document.getElementById("innovation").value);
+      const a = scoreA(s, o, i);
+      const b = scoreB(s, o, i);
+      const winner = a.overall > b.overall + 0.5
+        ? "safety_first_public_oversight"
+        : b.overall > a.overall + 0.5
+          ? "innovation_first_self_regulation"
+          : "tie";
+      document.getElementById("out").textContent =
+        "A safety-oversight " + a.overall + " · B innovation-self " + b.overall + " · winner " + winner;
+    };
+  </script>
+</body>
+</html>

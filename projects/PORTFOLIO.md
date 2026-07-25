@@ -102,7 +102,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Async Neuro Studio** | `async-neuro-studio` | **Complete** | Standardized async video exam vs ad-hoc exam baseline |
 | **Latent Path Studio** | `latent-path-studio` | **Complete** | Multi-domain latent trajectory vs single-domain baseline |
 | **Access Equity Studio** | `access-equity-studio` | **Complete** | Equity-access AI vs accuracy-only baseline |
-| **Citizen Pref Studio** | `citizen-pref-studio` | **Building** | Safety-first public oversight vs innovation-first baseline |
+| **Citizen Pref Studio** | `citizen-pref-studio` | **Complete** | Safety-first public oversight vs innovation-first baseline |
 
 ## Rules
 

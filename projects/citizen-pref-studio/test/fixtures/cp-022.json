@@ -1,0 +1,39 @@
+{
+  "id": "cp-022",
+  "input": {
+    "safetyPreference": 0.74,
+    "oversightSupport": 0.72,
+    "coordinationPreference": 0.73,
+    "packReadiness": 0.76,
+    "innovationAdherence": 0.77,
+    "surveyNoise": 0.32,
+    "innovationTunnel": 0.34,
+    "overclaimRisk": 0.25,
+    "prefBias": "oversight_first",
+    "profile": "safety_first_public_oversight"
+  },
+  "expectedSafetyOversight": {
+    "mode": "safety_first_public_oversight",
+    "safetyScore": 76.39,
+    "oversightScore": 73.52,
+    "coordinationScore": 50.64,
+    "readinessScore": 94.56,
+    "innovationScore": 42.47,
+    "confidence": 57.7,
+    "safetyOversightContribution": 72.43,
+    "innovationSelfContribution": 45.15,
+    "overall": 71.52
+  },
+  "expectedInnovationSelf": {
+    "mode": "innovation_first_self_regulation",
+    "safetyScore": 24.57,
+    "oversightScore": 23.95,
+    "coordinationScore": 20.48,
+    "readinessScore": 42.05,
+    "innovationScore": 42.21,
+    "confidence": 33.35,
+    "safetyOversightContribution": 30.65,
+    "innovationSelfContribution": 46.56,
+    "overall": 39
+  }
+}

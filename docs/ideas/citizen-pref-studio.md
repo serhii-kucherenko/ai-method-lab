@@ -1,6 +1,6 @@
 # Citizen Pref Studio
 
-**State:** building  
+**State:** complete  
 **Slug:** `citizen-pref-studio`  
 **Paper:** https://arxiv.org/abs/2607.14585v1  
 **Authors’ code:** none  
