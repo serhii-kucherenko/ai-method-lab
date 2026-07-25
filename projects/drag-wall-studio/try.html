@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Drag Wall Studio — offline try</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Sora:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0f1c2e;
+        --cyan: #2a9bb5;
+        --mist: #e6eef3;
+        --line: #b7c7d1;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        background: var(--mist);
+        color: var(--ink);
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: Sora, system-ui, sans-serif;
+        font-weight: 600;
+        color: var(--cyan);
+        margin: 0 0 0.5rem;
+      }
+      .sub { color: #4a6575; max-width: 36rem; }
+      .grid {
+        display: grid;
+        gap: 0.75rem;
+        margin: 1.5rem 0;
+        max-width: 28rem;
+      }
+      label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9rem; }
+      input[type="range"] { width: 100%; }
+      button {
+        background: var(--cyan);
+        color: #fff;
+        border: 0;
+        border-radius: 0.5rem;
+        padding: 0.65rem 1.1rem;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+        background: #ffffff;
+        max-width: 28rem;
+      }
+      .bar {
+        height: 8px;
+        border-radius: 4px;
+        background: var(--cyan);
+        margin: 0.35rem 0 0.75rem;
+      }
+      .bar.b { background: #4a6575; }
+      footer { margin-top: 2rem; font-size: 0.85rem; color: #4a6575; max-width: 36rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Drag Wall Studio</h1>
+    <p class="sub">
+      Offline soft-sim: ES closed-loop wall controller vs open-loop / gradient baseline.
+      Cut wall drag with a closed loop you can compare — not live plant control.
+    </p>
+    <div class="grid" id="inputs"></div>
+    <button type="button" id="score">Score A/B</button>
+    <div class="out" id="out"></div>
+    <footer>
+      Soft-sim only. Not live plant control. Not certified CFD. Not authors&apos; brand.
+      Inspired by arXiv 2607.12626 — authors&apos; code none published.
+    </footer>
+    <script>
+      const fields = [
+        ["wallCoverage", 0.42],
+        ["sensorFidelity", 0.7],
+        ["channelFit", 0.74],
+        ["closedLoopAgreement", 0.68],
+        ["openLoopAccuracy", 0.82],
+        ["openLoopOptimism", 0.7],
+        ["dragPressure", 0.55],
+        ["leakageRisk", 0.28],
+      ];
+      const box = document.getElementById("inputs");
+      const state = {};
+      for (const [k, v] of fields) {
+        state[k] = v;
+        const lab = document.createElement("label");
+        lab.innerHTML =
+          k +
+          ' <span data-v></span><input type="range" min="0" max="1" step="0.01" value="' +
+          v +
+          '" />';
+        const span = lab.querySelector("[data-v]");
+        const input = lab.querySelector("input");
+        span.textContent = v.toFixed(2);
+        input.addEventListener("input", () => {
+          state[k] = Number(input.value);
+          span.textContent = state[k].toFixed(2);
+        });
+        box.appendChild(lab);
+      }
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreEs(s) {
+        const load = clamp(s.dragPressure * (1.25 - s.wallCoverage * 0.5), 0, 1.5);
+        const dragDiagnosis = round2(
+          clamp(
+            (s.wallCoverage * 55 + s.sensorFidelity * 25 - load * 10) * 1.12 + 8 - s.leakageRisk * 6,
+            0,
+            100,
+          ),
+        );
+        const shearDiagnosis = round2(
+          clamp(
+            s.sensorFidelity * 60 * 1.12 + s.wallCoverage * 25 + 8 - s.openLoopOptimism * 4,
+            0,
+            100,
+          ),
+        );
+        const actuatorReasonScore = round2(
+          clamp(
+            s.closedLoopAgreement * 58 * 1.12 + s.wallCoverage * 28 + 10 - load * 12 - s.leakageRisk * 10,
+            0,
+            100,
+          ),
+        );
+        const sensorIntegrity = round2(
+          clamp(
+            s.channelFit * 50 * 1.12 + s.sensorFidelity * 25 + s.wallCoverage * 15 + 8,
+            0,
+            100,
+          ),
+        );
+        const closedLoopContribution = round2(
+          clamp(
+            dragDiagnosis * 0.26 +
+              shearDiagnosis * 0.24 +
+              actuatorReasonScore * 0.28 +
+              sensorIntegrity * 0.22,
+            0,
+            100,
+          ),
+        );
+        const openLoopContribution = round2(
+          clamp(s.openLoopAccuracy * 40 + s.openLoopOptimism * 20 - load * 8, 0, 100),
+        );
+        return round2(clamp(closedLoopContribution * 0.82 + openLoopContribution * 0.18 + 4, 0, 100));
+      }
+      function scoreOpen(s) {
+        const load = clamp(s.dragPressure * (1.25 - s.wallCoverage * 0.5), 0, 1.5);
+        const openLoopScore = round2(
+          clamp(s.openLoopAccuracy * 58 * 1.08 + s.openLoopOptimism * 32 - s.dragPressure * 10 + 8, 0, 100),
+        );
+        const openLoopContribution = round2(
+          clamp(openLoopScore * 0.55 + s.openLoopOptimism * 30 + s.openLoopAccuracy * 20 - load * 8, 0, 100),
+        );
+        const closedLoopContribution = round2(
+          clamp(s.openLoopAccuracy * 35 + s.openLoopOptimism * 25 - load * 10, 0, 100),
+        );
+        return round2(
+          clamp(openLoopContribution * 0.78 + closedLoopContribution * 0.22 - s.dragPressure * 8 - s.leakageRisk * 6, 0, 100),
+        );
+      }
+      document.getElementById("score").addEventListener("click", () => {
+        const a = scoreEs(state);
+        const b = scoreOpen(state);
+        let winner = "tie";
+        if (a > b + 0.5) winner = "es_closed_loop";
+        else if (b > a + 0.5) winner = "open_loop_gradient";
+        const out = document.getElementById("out");
+        out.innerHTML =
+          "<div>ES closed-loop (A): <strong>" +
+          a +
+          '</strong><div class="bar" style="width:' +
+          a +
+          '%"></div></div>' +
+          "<div>Open-loop / gradient (B): <strong>" +
+          b +
+          '</strong><div class="bar b" style="width:' +
+          b +
+          '%"></div></div>' +
+          "<div>Winner: <strong>" +
+          winner +
+          "</strong> · gap " +
+          Math.abs(a - b).toFixed(2) +
+          "</div>";
+      });
+    </script>
+  </body>
+</html>

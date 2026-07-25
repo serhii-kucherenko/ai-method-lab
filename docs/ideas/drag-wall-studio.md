@@ -1,6 +1,6 @@
 # Drag Wall Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `drag-wall-studio`  
 **Paper:** https://arxiv.org/abs/2607.12626v1  
 **Authors’ code:** none  

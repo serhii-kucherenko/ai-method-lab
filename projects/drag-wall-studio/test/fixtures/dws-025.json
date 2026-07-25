@@ -1,0 +1,39 @@
+{
+  "id": "dws-025",
+  "input": {
+    "wallCoverage": 0.79,
+    "sensorFidelity": 0.79,
+    "channelFit": 0.77,
+    "closedLoopAgreement": 0.8,
+    "openLoopAccuracy": 0.8,
+    "openLoopOptimism": 0.33,
+    "dragPressure": 0.26,
+    "leakageRisk": 0.21,
+    "controlBias": "es_strict",
+    "profile": "es_closed_loop"
+  },
+  "expectedEsClosedLoop": {
+    "mode": "es_closed_loop",
+    "dragDiagnosis": 62.51,
+    "shearDiagnosis": 79.52,
+    "actuatorReasonScore": 55.93,
+    "sensorIntegrity": 97.81,
+    "openLoopScore": 45.2,
+    "confidence": 69.6,
+    "closedLoopContribution": 72.52,
+    "openLoopContribution": 48.27,
+    "overall": 72.16
+  },
+  "expectedOpenLoopGradient": {
+    "mode": "open_loop_gradient",
+    "dragDiagnosis": 19.5,
+    "shearDiagnosis": 24.6,
+    "actuatorReasonScore": 21.69,
+    "sensorIntegrity": 42.63,
+    "openLoopScore": 43.52,
+    "confidence": 35.55,
+    "closedLoopContribution": 30.39,
+    "openLoopContribution": 48.06,
+    "overall": 40.83
+  }
+}
