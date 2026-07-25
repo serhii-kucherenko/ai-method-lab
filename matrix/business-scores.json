@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T14:49:55.488Z",
+  "updated_at": "2026-07-25T14:52:24.958Z",
   "projects": [
     {
       "id": 1,
@@ -1163,6 +1163,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "pore-inverse-studio",
+      "project": "Pore Inverse Studio",
+      "score": 62,
+      "tier": "B",
+      "business_idea": "Compare unified inverse design of nanoporous materials against naive generative baselines before locking a materials pack",
+      "pmf": "Early signal with materials / energy-storage leads who already buy inverse-design tools for pores and separators",
+      "buyer": "Materials and energy-storage engineering leads",
+      "money_hook": "Bench seats + private materials packs (method-lab experiment)",
+      "potential": "Unified multi-application pore inverse design is underserved vs single-task generative dumps",
+      "moat": "Unified inverse design vs naive generative baseline",
+      "evidence": "Paper software claim (PoreForge-pattern inverse design); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer materials soft-sim with multi-flow bar; never claim certified performance or live plant",
+      "id": 57
     }
   ]
 }
