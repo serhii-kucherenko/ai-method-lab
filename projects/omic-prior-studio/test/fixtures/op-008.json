@@ -1,0 +1,39 @@
+{
+  "id": "op-008",
+  "input": {
+    "priorCoverage": 0.41,
+    "transformerFidelity": 0.43,
+    "traitGrounding": 0.46,
+    "packCompleteness": 0.45,
+    "baselineConfidence": 0.49,
+    "baselineOptimism": 0.43,
+    "traitHardness": 0.47,
+    "overclaimRisk": 0.44,
+    "priorBias": "baseline_first",
+    "profile": "priors_informed_transformer"
+  },
+  "expectedPriorsInformed": {
+    "mode": "priors_informed_transformer",
+    "priorScore": 20.12,
+    "fidelityScore": 35.43,
+    "traitScore": 27.76,
+    "completenessScore": 24.76,
+    "baselineScore": 24.32,
+    "confidence": 34.1,
+    "priorsContribution": 26.95,
+    "baselineContribution": 25.37,
+    "overall": 27.67
+  },
+  "expectedPriorsFree": {
+    "mode": "priors_free_omics_baseline",
+    "priorScore": 16.4,
+    "fidelityScore": 20.36,
+    "traitScore": 16.57,
+    "completenessScore": 35.17,
+    "baselineScore": 58.5,
+    "confidence": 22.7,
+    "priorsContribution": 29.4,
+    "baselineContribution": 51.04,
+    "overall": 39.88
+  }
+}

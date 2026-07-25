@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Omic Prior Studio — offline demo</title>
+  <style>
+    :root {
+      --ink: #171c24;
+      --teal: #2a6f6a;
+      --mist: #eef2f4;
+      --line: #c3c9ce;
+      --amber: #c4923a;
+    }
+    body {
+      margin: 0;
+      font-family: Figtree, "Segoe UI", sans-serif;
+      background: var(--mist);
+      color: var(--ink);
+    }
+    header {
+      background: linear-gradient(165deg, #0f1319 0%, #171c24 48%, #222a34 100%);
+      color: var(--mist);
+      padding: 3rem 1.5rem 2.5rem;
+    }
+    h1 {
+      font-family: Literata, Georgia, serif;
+      font-size: 2.4rem;
+      margin: 0;
+      color: var(--amber);
+    }
+    .tag { margin-top: 0.75rem; max-width: 36rem; opacity: 0.92; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input[type="range"] { width: 100%; }
+    button {
+      margin-top: 1.25rem;
+      background: var(--teal);
+      color: var(--mist);
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      border-radius: 0.4rem;
+      cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 0.5rem;
+    }
+    .bar { height: 8px; background: #d2e3e1; border-radius: 4px; margin-top: 0.4rem; }
+    .fill { height: 100%; background: var(--teal); border-radius: 4px; }
+    footer { margin-top: 2rem; font-size: 0.85rem; opacity: 0.75; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Omic Prior Studio</h1>
+    <p class="tag">Put biological priors in the model, not only in the slide deck. Offline soft-sim demo.</p>
+  </header>
+  <main>
+    <p>Approximate dual score: priors-informed transformer vs priors-free baseline. Full fidelity needs the Next.js app.</p>
+    <label>Prior coverage <span id="v1"></span>
+      <input id="prior" type="range" min="0" max="100" value="62" />
+    </label>
+    <label>Transformer fidelity <span id="v2"></span>
+      <input id="fidelity" type="range" min="0" max="100" value="70" />
+    </label>
+    <label>Trait grounding <span id="v3"></span>
+      <input id="trait" type="range" min="0" max="100" value="74" />
+    </label>
+    <label>Baseline optimism <span id="v4"></span>
+      <input id="optimism" type="range" min="0" max="100" value="55" />
+    </label>
+    <button id="run" type="button">Compare A/B</button>
+    <div class="out" id="out">Run compare to see soft-sim scores.</div>
+    <footer>
+      Soft-sim only — not diagnostic, not live EHR, not FDA, not OmicFormer.
+      Paper: medRxiv 10.64898/2026.07.06.26357359 · authors’ code: none.
+    </footer>
+  </main>
+  <script>
+    function n(id) { return Number(document.getElementById(id).value) / 100; }
+    function sync() {
+      document.getElementById("v1").textContent = n("prior").toFixed(2);
+      document.getElementById("v2").textContent = n("fidelity").toFixed(2);
+      document.getElementById("v3").textContent = n("trait").toFixed(2);
+      document.getElementById("v4").textContent = n("optimism").toFixed(2);
+    }
+    ["prior","fidelity","trait","optimism"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", sync);
+    });
+    sync();
+    function clamp(x) { return Math.max(0, Math.min(100, x)); }
+    function round2(x) { return Math.round(x * 100) / 100; }
+    document.getElementById("run").onclick = () => {
+      const p = n("prior"), f = n("fidelity"), t = n("trait"), o = n("optimism");
+      const informed = round2(clamp(p * 42 + f * 38 + t * 28 - o * 18 + 8));
+      const free = round2(clamp(o * 55 + (1 - p) * 20 + 22));
+      const winner = informed > free + 0.5 ? "priors_informed_transformer"
+        : free > informed + 0.5 ? "priors_free_omics_baseline" : "tie";
+      document.getElementById("out").innerHTML =
+        "<strong>Winner:</strong> " + winner +
+        "<br/>Priors-informed overall: " + informed +
+        '<div class="bar"><div class="fill" style="width:' + informed + '%"></div></div>' +
+        "Priors-free overall: " + free +
+        '<div class="bar"><div class="fill" style="width:' + free + '%;background:#c4923a"></div></div>';
+    };
+  </script>
+</body>
+</html>

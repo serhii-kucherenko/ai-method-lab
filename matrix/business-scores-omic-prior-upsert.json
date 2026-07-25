@@ -1,0 +1,25 @@
+{
+  "slug": "omic-prior-studio",
+  "project": "Omic Prior Studio",
+  "id": 84,
+  "status": "complete",
+  "business_idea": "Compare statistical-priors-informed transformers against priors-free omics baselines before locking an omic pack",
+  "pmf": "Early signal with precision-medicine / multi-omics analytics leads who already trial cross-population disease predictors",
+  "buyer": "Precision-medicine and multi-omics analytics engineering leads",
+  "money_hook": "Bench seats + private omic packs (method-lab experiment)",
+  "potential": "Priors-informed omics transformers are underserved vs priors-free dumps that fail under distribution shift",
+  "moat": "Priors-informed transformer vs priors-free baseline",
+  "evidence": "Paper software claim (OmicFormer statistical-priors transformer pattern); no public code; soft-sim honesty required; 30 dual goldens; /pricing /demo /onboarding /flows shipped; 13 pages; 35 features",
+  "gc_notes": "Prefer multi-omics soft-sim with multi-flow bar; never claim clinical diagnostic use, live EHR write-back, or FDA clearance; never brand as OmicFormer; distinct from desk/jobs/lifecycle shells",
+  "rubric": "biz-rubric-v1",
+  "dimensions": {
+    "buyer": 7,
+    "pain": 7,
+    "pmf": 6,
+    "money": 6,
+    "wedge": 7,
+    "moat": 7,
+    "evidence": 7,
+    "feasibility": 7
+  }
+}

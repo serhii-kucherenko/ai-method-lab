@@ -1,6 +1,6 @@
 # Omic Prior Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `omic-prior-studio`  
 **Paper:** https://www.medrxiv.org/content/10.64898/2026.07.06.26357359v1  
 **Authors’ code:** none  
