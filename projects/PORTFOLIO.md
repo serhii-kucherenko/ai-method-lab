@@ -53,6 +53,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Drag Wall Studio** | `drag-wall-studio` | **Complete** | ES closed-loop wall control vs open-loop/gradient baseline |
 | **Quantum Kernel Studio** | `quantum-kernel-studio` | **Complete** | Quantum multi-kernel QSAR vs classical kernel baseline |
 | **Script Lexicon Studio** | `script-lexicon-studio` | **Complete** | Expanded Geez lexicon vs baseline multilingual tokenizers |
+| **Kinetics Surrogate Studio** | `kinetics-surrogate-studio` | **Building** | Entropy-constrained kinetics surrogate vs full-rate baselines |
 
 ## Rules
 
