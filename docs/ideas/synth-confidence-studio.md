@@ -1,6 +1,6 @@
 # Synth Confidence Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `synth-confidence-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15006146/v1  
 **Authors’ code:** none  

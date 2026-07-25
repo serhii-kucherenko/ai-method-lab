@@ -1311,7 +1311,7 @@
       "potential": "Confidence-gated AI routes are underserved vs flashy untrusted retrosynthesis dumps",
       "moat": "Confidence-gated AI retrosynthesis vs naive AI route baseline",
       "evidence": "Paper software claim (Synthetic Confidence Score pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer route-design soft-sim with multi-flow bar; never claim wet-lab manufacturing validation or live ELN",
       "id": 62

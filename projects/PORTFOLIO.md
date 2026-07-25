@@ -69,7 +69,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Reaction Loop Studio** | `reaction-loop-studio` | **Complete** | Chemist-in-the-loop VLM vs open-loop VLM baseline |
 | **Shared Risk Studio** | `shared-risk-studio` | **Complete** | Shared multi-disease risk representation vs disease-specific baseline |
 | **Variant Probe Studio** | `variant-probe-studio` | **Complete** | Interpretable genomic FM probes vs opaque pathogenicity baseline |
-| **Synth Confidence Studio** | `synth-confidence-studio` | **Building** | Confidence-gated AI retrosynthesis vs naive AI route baseline |
+| **Synth Confidence Studio** | `synth-confidence-studio` | **Complete** | Confidence-gated AI retrosynthesis vs naive AI route baseline |
 
 ## Rules
 

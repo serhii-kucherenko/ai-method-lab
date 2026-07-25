@@ -1,0 +1,39 @@
+{
+  "id": "sc-011",
+  "input": {
+    "packCoverage": 0.54,
+    "confidenceFidelity": 0.49,
+    "candidateClarity": 0.49,
+    "runStability": 0.57,
+    "naiveBaselineRate": 0.6,
+    "skipOptimism": 0.42,
+    "routeHardness": 0.49,
+    "overclaimRisk": 0.4,
+    "routeBias": "balanced",
+    "profile": "confidence_gated_ai_retrosynthesis"
+  },
+  "expectedGated": {
+    "mode": "confidence_gated_ai_retrosynthesis",
+    "routeCoverage": 47.21,
+    "confidenceScore": 52.75,
+    "candidateOptScore": 47.19,
+    "packIntegrity": 60.27,
+    "naiveBaselineScore": 30.54,
+    "confidence": 42.25,
+    "gatedContribution": 51.41,
+    "naiveContribution": 31.82,
+    "overall": 51.88
+  },
+  "expectedNaive": {
+    "mode": "naive_ai_route_baseline",
+    "routeCoverage": 17.1,
+    "confidenceScore": 21.62,
+    "candidateOptScore": 18.14,
+    "packIntegrity": 38.58,
+    "naiveBaselineScore": 54.12,
+    "confidence": 26.1,
+    "gatedContribution": 29.91,
+    "naiveContribution": 50.52,
+    "overall": 39.67
+  }
+}
