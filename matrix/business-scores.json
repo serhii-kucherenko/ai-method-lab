@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T07:45:00.000Z",
+  "updated_at": "2026-07-25T07:52:35.502Z",
   "projects": [
     {
       "id": 1,
@@ -482,18 +482,55 @@
       "id": 29,
       "slug": "consult-bench-studio",
       "project": "Consult Bench Studio",
-      "score": 65,
+      "score": 67,
       "tier": "B",
-      "business_idea": "Benchmark multimodal next replies for online medical consults",
-      "pmf": "Eval vendors + health LLM teams need benches; Chinese-market paper — adapt carefully",
-      "buyer": "Health LLM eval / QA leads",
-      "money_hook": "Bench seats + private case packs",
-      "potential": "Eval market growing",
-      "moat": "Multimodal vs text-only consult moments",
-      "evidence": "Paper software claim (benchmark)",
+      "business_idea": "Benchmark multimodal next replies for online medical consults so eval teams catch unsafe or weak answers before go-live",
+      "pmf": "Early signal with health LLM eval / QA leads who already buy benches and red-team packs; not proven hospital procurement",
+      "buyer": "Health LLM eval and QA leads at consult-platform and model vendors",
+      "money_hook": "Bench seats plus private multimodal case packs (method-lab experiment, not a live clinic product)",
+      "potential": "Eval and safety spend is rising as consult LLMs ship; multimodal moments are underserved vs text-only benches",
+      "moat": "Multimodal consult-turn scoring vs text-only reply rubrics",
+      "evidence": "Paper software claim (MedRealMM-inspired); no public author code; 30 dual goldens in-lab",
+      "status": "complete",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Keep as B eval pattern; do not stack more clinical carepath clones — prefer benches with clear money hook",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 8
+      }
+    },
+    {
+      "slug": "edge-quant-studio",
+      "project": "Edge Quant Studio",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 8,
+        "pmf": 6,
+        "money": 7,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 5,
+        "feasibility": 8
+      },
+      "business_idea": "Plan channel-aware quantization for edge CPU LLM inference before shipping a uniform bit-width that burns latency",
+      "pmf": "Early signal with edge/ML platform teams already paying for compilers and inference cost tools",
+      "buyer": "ML platform / edge infra engineers shipping CPU LLM inference",
+      "money_hook": "Toolchain seats + support on quant/compile plans (method-lab experiment)",
+      "potential": "Direct cost and latency pain on CPU edge — clearer money than clinical clones",
+      "moat": "Channel bit-width + compile-plan IA vs naive uniform quantization dashboards",
+      "evidence": "Paper software claim (PolyQ); no public author code in digest",
       "status": "building",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "In flight — finish; re-score after sustain"
+      "gc_notes": "A/B gate pass — prefer infra/cost wedge; climb next",
+      "score": 69,
+      "tier": "B",
+      "id": 30
     }
   ]
 }

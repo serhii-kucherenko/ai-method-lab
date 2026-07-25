@@ -34,14 +34,15 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 26 | Thorax Localize Studio | 58 | C | Classify CXR disease and show where lesions are | Crowded CXR AI; hospitals buy suites not lab apps | Radiology AI program leads | Site license — crowded | Large but saturated | Localize vs classify-only | Paper software claim | complete | biz-rubric-v1 | Stop stacking more CXR/CT studios without unique money |
 | 27 | Optical Stack Studio | 73 | B | Inverse-design multilayer optical coatings from open-vocabulary specs | Optics/coatings engineers already buy design tools | Optical coatings / thin-film engineers | Desktop seats + compute for design runs | Clear industrial software wedge | Open-vocab vs catalog-only | Paper software claim | complete | biz-rubric-v1 | Prefer industrial design tools like this |
 | 28 | Reason Frame Studio | 72 | B | Use multi-agent game checks so scientific LLM answers don’t hallucinate rules | Sci/tech LLM apps need trust tooling; budgets forming | AI platform / domain LLM product leads in rule-heavy fields | Eval seats + per-debate run | Trust/eval spend rising | Game-theoretic debates vs single-agent fluent | Paper software claim | complete | biz-rubric-v1 | Keep trust/eval products with money hook |
-| 29 | Consult Bench Studio | 65 | B | Benchmark multimodal next replies for online medical consults | Eval vendors + health LLM teams need benches; Chinese-market paper — adapt carefully | Health LLM eval / QA leads | Bench seats + private case packs | Eval market growing | Multimodal vs text-only consult moments | Paper software claim (benchmark) | building | biz-rubric-v1 | In flight — finish; re-score after sustain |
+| 29 | Consult Bench Studio | 67 | B | Benchmark multimodal next replies for online medical consults so eval teams catch unsafe or weak answers before go-live | Early signal with health LLM eval / QA leads who already buy benches and red-team packs; not proven hospital procurement | Health LLM eval and QA leads at consult-platform and model vendors | Bench seats plus private multimodal case packs (method-lab experiment, not a live clinic product) | Eval and safety spend is rising as consult LLMs ship; multimodal moments are underserved vs text-only benches | Multimodal consult-turn scoring vs text-only reply rubrics | Paper software claim (MedRealMM-inspired); no public author code; 30 dual goldens in-lab | complete | biz-rubric-v1 | Keep as B eval pattern; do not stack more clinical carepath clones — prefer benches with clear money hook |
+| 30 | Edge Quant Studio | 69 | B | Plan channel-aware quantization for edge CPU LLM inference before shipping a uniform bit-width that burns latency | Early signal with edge/ML platform teams already paying for compilers and inference cost tools | ML platform / edge infra engineers shipping CPU LLM inference | Toolchain seats + support on quant/compile plans (method-lab experiment) | Direct cost and latency pain on CPU edge — clearer money than clinical clones | Channel bit-width + compile-plan IA vs naive uniform quantization dashboards | Paper software claim (PolyQ); no public author code in digest | building | biz-rubric-v1 | A/B gate pass — prefer infra/cost wedge; climb next |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 17 |
+| B | 18 |
 | C | 12 |
 | Kill | 0 |
 
