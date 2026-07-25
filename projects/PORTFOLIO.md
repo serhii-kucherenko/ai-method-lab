@@ -55,6 +55,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Script Lexicon Studio** | `script-lexicon-studio` | **Complete** | Expanded Geez lexicon vs baseline multilingual tokenizers |
 | **Kinetics Surrogate Studio** | `kinetics-surrogate-studio` | **Complete** | Entropy-constrained kinetics surrogate vs full-rate baselines |
 | **Oncology Report Studio** | `oncology-report-studio` | **Complete** | Multi-LLM collaborative MRI report vs single-LLM baseline |
+| **Federated CVD Studio** | `federated-cvd-studio` | **Building** | Federated CVD risk vs centralized baseline |
 
 ## Rules
 
