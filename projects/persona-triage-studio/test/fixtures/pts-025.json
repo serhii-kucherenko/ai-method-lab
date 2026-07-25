@@ -1,0 +1,39 @@
+{
+  "id": "pts-025",
+  "input": {
+    "styleFit": 0.79,
+    "personaCoherence": 0.79,
+    "urgencyAlignment": 0.77,
+    "diversityCoverage": 0.8,
+    "articulationScore": 0.8,
+    "cooperationScore": 0.33,
+    "ambiguityPressure": 0.26,
+    "affectPressure": 0.21,
+    "styleBias": "style_strict",
+    "profile": "style_aware"
+  },
+  "expectedStyleAware": {
+    "mode": "style_aware",
+    "styleDiagnosis": 62.78,
+    "personaDiagnosis": 79.77,
+    "urgencyReasonScore": 54.91,
+    "diversityIntegrity": 100,
+    "idealizedScore": 45.2,
+    "confidence": 70.4,
+    "styleAwareContribution": 72.84,
+    "idealizedContribution": 48.32,
+    "overall": 72.43
+  },
+  "expectedIdealizedPatient": {
+    "mode": "idealized_patient",
+    "styleDiagnosis": 19.5,
+    "personaDiagnosis": 24.58,
+    "urgencyReasonScore": 21.66,
+    "diversityIntegrity": 42.53,
+    "idealizedScore": 43.52,
+    "confidence": 35.55,
+    "styleAwareContribution": 30.36,
+    "idealizedContribution": 48.09,
+    "overall": 40.85
+  }
+}

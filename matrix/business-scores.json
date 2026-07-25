@@ -786,8 +786,8 @@
       "money_hook": "Bench seats + private persona/eval packs (method-lab experiment)",
       "potential": "Triage chatbots are scaling; style-driven outcome shifts are underserved vs accuracy-only benches",
       "moat": "Style-aware persona triage vs idealized-patient-only eval desks",
-      "evidence": "Paper software claim (patient-centred conversational AI pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "evidence": "Paper software claim (patient-centred conversational AI pattern); 30 dual goldens; 6 user flows; 13 pages; /pricing /demo /onboarding /flows shipped; soft-sim honesty; never authors' brand",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer clinical-eval soft-sim with multi-flow bar; never claim FDA/clinical advice; distinct from Consult Bench",
       "id": 40

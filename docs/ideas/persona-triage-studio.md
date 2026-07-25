@@ -1,6 +1,6 @@
 # Persona Triage Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `persona-triage-studio`  
 **Paper:** https://arxiv.org/abs/2607.08625v1  
 **Authors’ code:** none  
@@ -14,5 +14,5 @@ A studio to manage persona packs, conversation cases, communication-style axes, 
 ## Why this paper
 The paper shows communication style can significantly alter triage outcomes across five patient personae, and that idealized simulators miss real diversity. Clear software/eval claim — unused after Retro Route. Method Lab product inspired by the pattern, not a rebrand of the authors’ system.
 
-## Business score (pre-climb)
-Tier B candidate: clinical AI eval buyer + persona/eval packs; moat is style-diversity triage vs idealized-patient-only benches.
+## Business score
+Tier B · status complete (see `matrix/business-scores.json`).

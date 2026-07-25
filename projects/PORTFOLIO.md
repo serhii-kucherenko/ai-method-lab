@@ -47,6 +47,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Fail Gate Studio** | `fail-gate-studio` | **Complete** | Medical AI safety fail-gate taxonomy eval |
 | **Drive Horizon Studio** | `drive-horizon-studio` | **Complete** | Hierarchical vs flat AV world-model eval |
 | **Retro Route Studio** | `retro-route-studio` | **Complete** | Structured-memory vs naive retrosynthesis planning |
+| **Persona Triage Studio** | `persona-triage-studio` | **Complete** | Style-aware vs idealized-patient triage eval |
 
 ## Rules
 

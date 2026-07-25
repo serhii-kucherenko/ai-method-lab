@@ -60,6 +60,7 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 69 | [Fail Gate Studio — what we learned](69-fail-gate-studio-lessons.md) | Product `fail-gate-studio` |
 | 70 | [Drive Horizon Studio — what we learned](70-drive-horizon-studio-lessons.md) | Product `drive-horizon-studio` |
 | 71 | [Retro Route Studio — what we learned](71-retro-route-studio-lessons.md) | Product `retro-route-studio` |
+| 72 | [Persona Triage Studio — what we learned](72-persona-triage-studio-lessons.md) | Product `persona-triage-studio` |
 
 ### Scoring notes
 

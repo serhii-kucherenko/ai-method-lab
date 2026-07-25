@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Persona Triage Studio — try</title>
+    <style>
+      :root {
+        --ink: #1a2433;
+        --coral: #c45c4a;
+        --mint: #3d8f7a;
+        --mist: #eef3f1;
+      }
+      body {
+        margin: 0;
+        font-family: "DM Sans", "Segoe UI", system-ui, sans-serif;
+        background: linear-gradient(160deg, #101820, #1a2433 45%, #243447);
+        color: #eef3f1;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        background: color-mix(in srgb, var(--mist) 10%, transparent);
+        border: 1px solid color-mix(in srgb, var(--coral) 40%, transparent);
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+      }
+      h1 {
+        margin: 0 0 0.5rem;
+        color: var(--coral);
+        font-size: 1.75rem;
+        font-family: Literata, Georgia, serif;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+      input,
+      select {
+        width: 100%;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.55rem;
+        border-radius: 0.5rem;
+        border: 1px solid #5a6a63;
+        background: #101820;
+        color: #eef3f1;
+        box-sizing: border-box;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--mint);
+        color: white;
+        border: 0;
+        border-radius: 0.5rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 1rem;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(213, 224, 219, 0.25);
+        border-radius: 0.5rem;
+        padding: 0.75rem;
+      }
+      .note {
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        opacity: 0.75;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Persona Triage Studio</h1>
+      <p>Offline soft-sim: style-aware triage vs idealized-patient baseline.</p>
+      <label>Style fit <input id="styleFit" type="range" min="0" max="1" step="0.01" value="0.72" /></label>
+      <label>Persona coherence <input id="personaCoherence" type="range" min="0" max="1" step="0.01" value="0.68" /></label>
+      <label>Urgency alignment <input id="urgencyAlignment" type="range" min="0" max="1" step="0.01" value="0.7" /></label>
+      <label>Diversity coverage <input id="diversityCoverage" type="range" min="0" max="1" step="0.01" value="0.65" /></label>
+      <label>Articulation <input id="articulationScore" type="range" min="0" max="1" step="0.01" value="0.8" /></label>
+      <label>Cooperation <input id="cooperationScore" type="range" min="0" max="1" step="0.01" value="0.75" /></label>
+      <label>Ambiguity pressure <input id="ambiguityPressure" type="range" min="0" max="1" step="0.01" value="0.45" /></label>
+      <label>Affect pressure <input id="affectPressure" type="range" min="0" max="1" step="0.01" value="0.4" /></label>
+      <button id="run" type="button">Score A/B</button>
+      <div class="grid">
+        <div class="card">
+          <strong>Style-aware (A)</strong>
+          <div id="aOut">—</div>
+        </div>
+        <div class="card">
+          <strong>Idealized patient (B)</strong>
+          <div id="bOut">—</div>
+        </div>
+      </div>
+      <p id="winner"></p>
+      <p class="note">
+        Approximate offline formulas — not clinical advice, not FDA, not the authors’ system.
+        Soft-sim only. Paper: arXiv 2607.08625.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function read() {
+        return {
+          styleFit: +document.getElementById("styleFit").value,
+          personaCoherence: +document.getElementById("personaCoherence").value,
+          urgencyAlignment: +document.getElementById("urgencyAlignment").value,
+          diversityCoverage: +document.getElementById("diversityCoverage").value,
+          articulationScore: +document.getElementById("articulationScore").value,
+          cooperationScore: +document.getElementById("cooperationScore").value,
+          ambiguityPressure: +document.getElementById("ambiguityPressure").value,
+          affectPressure: +document.getElementById("affectPressure").value,
+        };
+      }
+      function scoreStyleAware(i) {
+        const load = i.ambiguityPressure * (1.2 - i.diversityCoverage * 0.45);
+        const style =
+          i.styleFit * 55 + i.diversityCoverage * 25 - load * 10 + 8;
+        const persona =
+          i.personaCoherence * 60 + i.diversityCoverage * 25 + 8 - i.cooperationScore * 4;
+        const urgency = i.urgencyAlignment * 58 + i.styleFit * 28 + 10 - load * 12;
+        const diversity =
+          i.diversityCoverage * 50 + i.personaCoherence * 25 + i.styleFit * 15 + 8;
+        const contrib =
+          style * 0.26 + persona * 0.24 + urgency * 0.28 + diversity * 0.22;
+        const ideal =
+          i.articulationScore * 55 + i.cooperationScore * 20 - i.ambiguityPressure * 18 - 6;
+        return round2(clamp(contrib * 0.82 + ideal * 0.18 + 4, 0, 100));
+      }
+      function scoreIdealized(i) {
+        const load = i.ambiguityPressure * (1.2 - i.diversityCoverage * 0.45);
+        const ideal =
+          i.articulationScore * 58 + i.cooperationScore * 32 - i.ambiguityPressure * 10 + 8;
+        const weak =
+          i.cooperationScore * 40 + i.articulationScore * 25 - load * 15;
+        return round2(clamp(ideal * 0.78 + weak * 0.22 - i.ambiguityPressure * 8, 0, 100));
+      }
+      document.getElementById("run").onclick = () => {
+        const i = read();
+        const a = scoreStyleAware(i);
+        const b = scoreIdealized(i);
+        document.getElementById("aOut").textContent = a.toFixed(2);
+        document.getElementById("bOut").textContent = b.toFixed(2);
+        let w = "tie";
+        if (a > b + 0.5) w = "style_aware";
+        else if (b > a + 0.5) w = "idealized_patient";
+        document.getElementById("winner").textContent =
+          "Winner: " + w + " · gap " + Math.abs(a - b).toFixed(2);
+      };
+      document.getElementById("run").click();
+    </script>
+  </body>
+</html>
