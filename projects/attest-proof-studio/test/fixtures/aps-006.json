@@ -1,0 +1,41 @@
+{
+  "id": "aps-006",
+  "input": {
+    "toolCoverage": 0.31,
+    "evidenceGrounding": 0.3,
+    "proofChainIntegrity": 0.27,
+    "attestationFreshness": 0.32,
+    "claimSpecificity": 0.28,
+    "fluentConfidence": 0.42,
+    "unsupportedClaims": 0.29,
+    "noiseLevel": 0.28,
+    "toolBias": "search",
+    "profile": "fluent"
+  },
+  "expectedAttested": {
+    "mode": "tool_attested",
+    "coverageScore": 18.34,
+    "groundingScore": 17.66,
+    "proofScore": 29.38,
+    "freshnessScore": 22.62,
+    "specificityScore": 29.59,
+    "fluencyScore": 18.1,
+    "confidence": 20.95,
+    "toolContribution": 19.54,
+    "proofContribution": 28.2,
+    "overall": 23.08
+  },
+  "expectedFluent": {
+    "mode": "fluent_only",
+    "coverageScore": 7.08,
+    "groundingScore": 9.3,
+    "proofScore": 7.2,
+    "freshnessScore": 6.76,
+    "specificityScore": 26.67,
+    "fluencyScore": 28.43,
+    "confidence": 27.7,
+    "toolContribution": 8.19,
+    "proofContribution": 4.05,
+    "overall": 25.82
+  }
+}

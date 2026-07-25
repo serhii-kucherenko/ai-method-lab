@@ -1,6 +1,6 @@
 # Attest Proof Studio
 
-**State:** ready_to_build  
+**State:** complete  
 **Slug:** `attest-proof-studio`  
 **Paper:** https://arxiv.org/abs/2607.12650v1  
 **Authors’ code:** none  

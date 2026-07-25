@@ -52,6 +52,7 @@ Written by the **best-practices tutor** role (`protocols/AGENT_ROLES.md`).
 Papers-driven reset (Correction 7): new products also get a guide before the finish email.
 
 | 63 | [Crystal Bind Studio — what we learned](63-crystal-bind-studio-lessons.md) | Product `crystal-bind-studio` |
+| 64 | [Attest Proof Studio — what we learned](64-attest-proof-studio-lessons.md) | Product `attest-proof-studio` |
 
 ### Scoring notes
 

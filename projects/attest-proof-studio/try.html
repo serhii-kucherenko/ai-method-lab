@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Attest Proof Studio — try</title>
+    <style>
+      :root {
+        --bg: #eef3f7;
+        --ink: #0f1c2e;
+        --teal: #1a7a6d;
+        --panel: #f7fafc;
+        --line: #c8d4de;
+        --gold: #c4892a;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+      }
+      header {
+        padding: 2.5rem 1.5rem 1.5rem;
+        background: linear-gradient(180deg, #0a1420, #1a7a6d 55%, #0f2a3a);
+        color: #e8f4f2;
+      }
+      h1 {
+        margin: 0;
+        font-size: 1.75rem;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin: 0.75rem 0 0.25rem;
+        font-size: 0.85rem;
+      }
+      input,
+      select,
+      button {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.5rem 0.65rem;
+        border: 1px solid var(--line);
+        border-radius: 0.4rem;
+        font: inherit;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--teal);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 0.55rem;
+        padding: 1rem;
+        margin-top: 1rem;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #d5ebe7;
+        border-radius: 999px;
+        overflow: hidden;
+        margin: 0.35rem 0;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--teal);
+      }
+      .bar.b > span {
+        background: var(--gold);
+      }
+      .note {
+        font-size: 0.8rem;
+        color: #4a5c6a;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Attest Proof Studio</h1>
+      <p>Offline soft-sim: tool-attested vs fluent-only</p>
+    </header>
+    <main>
+      <label>Tool coverage (0–1)</label>
+      <input id="cov" type="number" min="0" max="1" step="0.01" value="0.78" />
+      <label>Evidence grounding</label>
+      <input id="ground" type="number" min="0" max="1" step="0.01" value="0.74" />
+      <label>Proof integrity</label>
+      <input id="proof" type="number" min="0" max="1" step="0.01" value="0.71" />
+      <label>Fluent confidence</label>
+      <input id="fluent" type="number" min="0" max="1" step="0.01" value="0.82" />
+      <label>Unsupported claims</label>
+      <input id="unsup" type="number" min="0" max="1" step="0.01" value="0.12" />
+      <button id="run" type="button">Score compare</button>
+      <div class="card" id="out">Run to compare A (attested) vs B (fluent).</div>
+      <p class="note">
+        Soft-sim demo only — not EG-VAR, not Lean 4 production certification.
+        Paper: https://arxiv.org/abs/2607.12650v1
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreAttested(i) {
+        const boost = 1.12;
+        const coverage =
+          clamp(i.cov * 55 + i.proof * 25 - 0.18 * 18, 0, 100) * boost +
+          i.cov * 8 +
+          6 -
+          i.unsup * 22;
+        const grounding =
+          clamp(i.ground * 55 + i.proof * 25 - 0.18 * 18, 0, 100) * boost +
+          i.ground * 7 +
+          5 -
+          i.unsup * 18;
+        const proof =
+          (i.proof * 50 + i.cov * 28 + i.ground * 18 - 0.18 * 16 - i.unsup * 20) *
+            boost +
+          10;
+        const overall = round2(
+          clamp(
+            round2(clamp(coverage, 0, 100)) * 0.22 +
+              round2(clamp(grounding, 0, 100)) * 0.22 +
+              round2(clamp(proof, 0, 100)) * 0.28 +
+              70 * 0.12 +
+              70 * 0.1 +
+              60 * 0.06,
+            0,
+            100,
+          ),
+        );
+        return overall;
+      }
+      function scoreFluent(i) {
+        const fluency = clamp(
+          (i.fluent * 62 + 0.7 * 22 - i.unsup * 8 - 0.18 * 10) * 1.05,
+          0,
+          100,
+        );
+        return round2(clamp(fluency * 0.45 + 55 * 0.25 + 60 * 0.2 + 10 * 0.1, 0, 100));
+      }
+      document.getElementById("run").onclick = () => {
+        const i = {
+          cov: Number(document.getElementById("cov").value),
+          ground: Number(document.getElementById("ground").value),
+          proof: Number(document.getElementById("proof").value),
+          fluent: Number(document.getElementById("fluent").value),
+          unsup: Number(document.getElementById("unsup").value),
+        };
+        const a = scoreAttested(i);
+        const b = scoreFluent(i);
+        const winner =
+          a - b > 1 ? "tool_attested" : b - a > 1 ? "fluent_only" : "tie";
+        document.getElementById("out").innerHTML =
+          "<p><strong>Winner:</strong> " +
+          winner +
+          "</p><p>A tool-attested " +
+          a +
+          '</p><div class="bar"><span style="width:' +
+          Math.min(100, a) +
+          '%"></span></div><p>B fluent-only ' +
+          b +
+          '</p><div class="bar b"><span style="width:' +
+          Math.min(100, b) +
+          '%"></span></div>';
+      };
+    </script>
+  </body>
+</html>

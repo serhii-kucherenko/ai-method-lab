@@ -1,0 +1,162 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Ink navy + proof teal + attestation amber — DESIGN brief */
+  --studio-bg: #eef3f7;
+  --studio-ink: #0f1c2e;
+  --studio-ink-deep: #0a1420;
+  --studio-teal: #1a7a6d;
+  --studio-teal-deep: #145f55;
+  --studio-teal-soft: #d5ebe7;
+  --studio-jade: #2a9b8c;
+  --studio-gold: #c4892a;
+  --studio-panel: #f7fafc;
+  --studio-line: #c8d4de;
+  --studio-wash: radial-gradient(ellipse 65% 50% at 12% 0%, #1a7a6d66 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 90% 18%, #c4892a33 0%, transparent 50%),
+    linear-gradient(180deg, #0a1420 0%, #1a7a6d 42%, #0f2a3a 100%);
+
+  --background: #eef3f7;
+  --foreground: #0f1c2e;
+  --card: #f7fafc;
+  --card-foreground: #0f1c2e;
+  --popover: #f7fafc;
+  --popover-foreground: #0f1c2e;
+  --primary: #1a7a6d;
+  --primary-foreground: #f7fafc;
+  --secondary: #d5ebe7;
+  --secondary-foreground: #0f1c2e;
+  --muted: #d5ebe7;
+  --muted-foreground: #4a5c6a;
+  --accent: #d5ebe7;
+  --accent-foreground: #0a1420;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #c8d4de;
+  --input: #c8d4de;
+  --ring: #1a7a6d;
+  --radius: 0.55rem;
+  --chart-1: #1a7a6d;
+  --chart-2: #2a9b8c;
+  --chart-3: #c4892a;
+  --chart-4: #145f55;
+  --chart-5: #6a8f99;
+  --sidebar: #f7fafc;
+  --sidebar-foreground: #0f1c2e;
+  --sidebar-primary: #1a7a6d;
+  --sidebar-primary-foreground: #f7fafc;
+  --sidebar-accent: #d5ebe7;
+  --sidebar-accent-foreground: #0a1420;
+  --sidebar-border: #c8d4de;
+  --sidebar-ring: #1a7a6d;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lattice-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes plan-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes score-grow {
+  from {
+    width: 0%;
+  }
+}
+
+.hero-fade > * {
+  animation: hero-fade 0.75s ease-out both;
+}
+
+.lattice-pulse {
+  animation: lattice-pulse 3.4s ease-in-out infinite;
+}
+
+.plan-rise {
+  animation: plan-rise 0.55s ease-out both;
+}
+
+.score-bar {
+  animation: score-grow 0.8s ease-out both;
+}

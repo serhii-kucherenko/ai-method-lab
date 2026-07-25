@@ -39,7 +39,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Consult Bench Studio** | `consult-bench-studio` | **Complete** | Multimodal medical consult eval |
 | **Edge Quant Studio** | `edge-quant-studio` | **Complete** | Channel-aware edge CPU LLM quant plans |
 | **Crystal Bind Studio** | `crystal-bind-studio` | **Complete** | Multimodal crystal bind retrieve vs single-modality |
-| **Attest Proof Studio** | `attest-proof-studio` | **Building** | Tool-attested proof chains for LLM empirics |
+| **Attest Proof Studio** | `attest-proof-studio` | **Complete** | Tool-attested proof chains for LLM empirics |
 
 ## Rules
 
