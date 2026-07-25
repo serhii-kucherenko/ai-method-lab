@@ -87,6 +87,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Share Colearn Studio** | `share-colearn-studio` | **Complete** | Human–AI co-learning vs AI-only disease activity labeling |
 | **Atlas Flow Studio** | `atlas-flow-studio` | **Complete** | Integrated atlas registration+quant vs fragmented multi-tool baseline |
 | **Saffron Detect Studio** | `saffron-detect-studio` | **Complete** | CNN stigma adulteration detection vs visual inspection baseline |
+| **Therapy Prompt Studio** | `therapy-prompt-studio` | **Building** | Structured therapy-safety gates vs prompt-only baseline |
 
 ## Rules
 

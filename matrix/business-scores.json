@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T19:01:50.105Z",
+  "updated_at": "2026-07-25T19:05:51.636Z",
   "projects": [
     {
       "id": 1,
@@ -1634,6 +1634,23 @@
         "evidence": 7,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "therapy-prompt-studio",
+      "project": "Therapy Prompt Studio",
+      "score": 66,
+      "tier": "B",
+      "business_idea": "Compare structured therapy-safety gates against prompt-only LLM safety baselines before locking a prompt pack",
+      "pmf": "Early signal with mental-health product / LLM safety leads who already trial consumer therapy chatbots",
+      "buyer": "Mental-health product and LLM safety engineering leads",
+      "money_hook": "Bench seats + private prompt packs (method-lab experiment)",
+      "potential": "Structured therapy-safety gates are underserved vs prompt-only dumps without a dual bench",
+      "moat": "Structured therapy-safety gates vs prompt-only baseline",
+      "evidence": "Paper software claim (prompt-engineering limitations for psychotherapy safety); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer LLM-safety soft-sim with multi-flow bar; never claim clinical therapy, crisis hotline replacement, live patient chat write-back, or FDA clearance",
+      "id": 80
     }
   ]
 }
