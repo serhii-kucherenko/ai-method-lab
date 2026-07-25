@@ -1,0 +1,42 @@
+{
+  "id": "sss-012",
+  "input": {
+    "glossClarity": 0.53,
+    "motionStability": 0.59,
+    "boundaryConfidence": 0.56,
+    "latencyMs": 789.48,
+    "budgetMs": 787.59,
+    "vocabularyCoverage": 0.53,
+    "signerPace": 0.4,
+    "occlusionNoise": 0.29,
+    "streamJitter": 0.27,
+    "segmentBias": "wait_boundary",
+    "profile": "offline_batch"
+  },
+  "expectedRealtime": {
+    "mode": "realtime_stream",
+    "sentenceScore": 46.3,
+    "latencyScore": 5.14,
+    "continuityScore": 66.28,
+    "glossaryScore": 35.54,
+    "boundaryScore": 44.74,
+    "fidelityScore": 32.75,
+    "confidence": 36.62,
+    "streamContribution": 39.24,
+    "batchContribution": 15.9,
+    "overall": 38.12
+  },
+  "expectedOfflineBatch": {
+    "mode": "offline_batch",
+    "sentenceScore": 47.39,
+    "latencyScore": 51.35,
+    "continuityScore": 31.25,
+    "glossaryScore": 38.89,
+    "boundaryScore": 38,
+    "fidelityScore": 43.65,
+    "confidence": 33.91,
+    "streamContribution": 39.32,
+    "batchContribution": 37.1,
+    "overall": 40.72
+  }
+}

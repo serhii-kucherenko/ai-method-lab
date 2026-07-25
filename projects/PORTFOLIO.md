@@ -42,7 +42,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Attest Proof Studio** | `attest-proof-studio` | **Complete** | Tool-attested proof chains for LLM empirics |
 | **Video Track Studio** | `video-track-studio` | **Complete** | Long-form character-track failure diagnosis |
 | **Hold Match Studio** | `hold-match-studio` | **Complete** | Experience-aware ride-hail hold control |
-| **Sign Stream Studio** | `sign-stream-studio` | **Building** | Real-time sentence-level sign translation streams |
+| **Sign Stream Studio** | `sign-stream-studio` | **Complete** | Real-time sentence-level sign translation streams |
 
 ## Rules
 

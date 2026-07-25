@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign Stream Studio — try</title>
+    <style>
+      :root {
+        --ink: #132a3a;
+        --aqua: #1a9aaa;
+        --lime: #6f9a3c;
+        --mist: #e8f1f3;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: linear-gradient(160deg, #0c1a24, #132a3a 45%, #1a3a48);
+        color: #f4fafb;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        background: color-mix(in srgb, var(--mist) 12%, transparent);
+        border: 1px solid color-mix(in srgb, var(--aqua) 40%, transparent);
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+      }
+      h1 {
+        margin: 0 0 0.5rem;
+        color: var(--aqua);
+        font-size: 1.75rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+      input,
+      select {
+        width: 100%;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.55rem;
+        border-radius: 0.4rem;
+        border: 1px solid #4a6570;
+        background: #0c1a24;
+        color: #f4fafb;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--aqua);
+        color: white;
+        border: 0;
+        border-radius: 0.4rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .scores {
+        margin-top: 1.25rem;
+        display: grid;
+        gap: 0.75rem;
+      }
+      .bar {
+        height: 0.55rem;
+        background: #2a4450;
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--aqua);
+      }
+      .bar.batch > span {
+        background: var(--lime);
+      }
+      .note {
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        opacity: 0.75;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Sign Stream Studio</h1>
+      <p>Offline soft-sim: real-time sentence stream vs offline-batch.</p>
+      <label
+        >Gloss clarity
+        <input id="clarity" type="range" min="0" max="1" step="0.01" value="0.72"
+      /></label>
+      <label
+        >Boundary confidence
+        <input id="boundary" type="range" min="0" max="1" step="0.01" value="0.8"
+      /></label>
+      <label
+        >Latency ms
+        <input id="latency" type="number" value="650"
+      /></label>
+      <label
+        >Budget ms
+        <input id="budget" type="number" value="800"
+      /></label>
+      <label
+        >Vocabulary coverage
+        <input id="vocab" type="range" min="0" max="1" step="0.01" value="0.78"
+      /></label>
+      <button id="run" type="button">Score A vs B</button>
+      <div class="scores">
+        <div>
+          <div>A real-time: <strong id="aScore">—</strong></div>
+          <div class="bar"><span id="aBar" style="width: 0%"></span></div>
+        </div>
+        <div>
+          <div>B offline-batch: <strong id="bScore">—</strong></div>
+          <div class="bar batch"><span id="bBar" style="width: 0%"></span></div>
+        </div>
+        <div>Winner: <strong id="winner">—</strong></div>
+      </div>
+      <p class="note">
+        Method-lab soft-sim only — not live interpreter certification. Paper:
+        arXiv 2607.09611.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreRealtime(input) {
+        const pressure = input.budgetMs <= 0 ? 1 : clamp(input.latencyMs / input.budgetMs, 0, 2);
+        const sentence =
+          input.glossClarity * 55 + input.vocabularyCoverage * 25 + input.boundaryConfidence * 14;
+        const latency = (1 - Math.min(1, pressure)) * 70 + 10;
+        const overall = clamp(sentence * 0.35 + latency * 0.35 + input.boundaryConfidence * 30, 0, 100);
+        return round2(overall);
+      }
+      function scoreBatch(input) {
+        const fidelity =
+          input.glossClarity * 50 + input.vocabularyCoverage * 35 + input.boundaryConfidence * 15;
+        return round2(clamp(fidelity, 0, 100));
+      }
+      document.getElementById("run").onclick = () => {
+        const input = {
+          glossClarity: Number(document.getElementById("clarity").value),
+          boundaryConfidence: Number(document.getElementById("boundary").value),
+          latencyMs: Number(document.getElementById("latency").value),
+          budgetMs: Number(document.getElementById("budget").value),
+          vocabularyCoverage: Number(document.getElementById("vocab").value),
+        };
+        const a = scoreRealtime(input);
+        const b = scoreBatch(input);
+        document.getElementById("aScore").textContent = a;
+        document.getElementById("bScore").textContent = b;
+        document.getElementById("aBar").style.width = a + "%";
+        document.getElementById("bBar").style.width = b + "%";
+        let winner = "tie";
+        if (a - b > 1) winner = "realtime_stream";
+        else if (b - a > 1) winner = "offline_batch";
+        document.getElementById("winner").textContent = winner;
+      };
+    </script>
+  </body>
+</html>
