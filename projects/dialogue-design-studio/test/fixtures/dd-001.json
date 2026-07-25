@@ -1,0 +1,39 @@
+{
+  "id": "dd-001",
+  "input": {
+    "openMindedness": 0.29,
+    "badgeClarity": 0.25,
+    "topicBalance": 0.28,
+    "packReadiness": 0.34,
+    "engagementPull": 0.39,
+    "feedNoise": 0.59,
+    "outrageTunnel": 0.45,
+    "overclaimRisk": 0.5,
+    "dialogueBias": "balanced",
+    "profile": "productive_open_minded_design"
+  },
+  "expectedProductiveOpen": {
+    "mode": "productive_open_minded_design",
+    "dialogueScore": 22.56,
+    "badgeScore": 30.25,
+    "topicScore": 22.93,
+    "readinessScore": 37.64,
+    "engagementScore": 16.4,
+    "confidence": 17.95,
+    "productiveContribution": 27.98,
+    "engagementContribution": 15.96,
+    "overall": 29.82
+  },
+  "expectedEngagementMax": {
+    "mode": "engagement_maximizing_baseline",
+    "dialogueScore": 5.76,
+    "badgeScore": 17.41,
+    "topicScore": 12.83,
+    "readinessScore": 32.39,
+    "engagementScore": 40.93,
+    "confidence": 17.1,
+    "productiveContribution": 21.86,
+    "engagementContribution": 38.6,
+    "overall": 27.2
+  }
+}

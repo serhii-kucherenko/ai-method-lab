@@ -1,6 +1,6 @@
 # Dialogue Design Studio
 
-**State:** building  
+**State:** complete  
 **Slug:** `dialogue-design-studio`  
 **Paper:** https://osf.io/preprints/socarxiv/dngcj_v3/  
 **Authors’ code:** none  

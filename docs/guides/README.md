@@ -128,5 +128,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 125 | [Latent Path Studio - what we learned](125-latent-path-studio-lessons.md) | Product `latent-path-studio` |
 | 126 | [Access Equity Studio - what we learned](126-access-equity-studio-lessons.md) | Product `access-equity-studio` |
 | 127 | [Citizen Pref Studio - what we learned](127-citizen-pref-studio-lessons.md) | Product `citizen-pref-studio` |
+| 128 | [Dialogue Design Studio - what we learned](128-dialogue-design-studio-lessons.md) | Product `dialogue-design-studio` |
 
 

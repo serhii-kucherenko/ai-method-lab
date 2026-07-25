@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dialogue Design Studio — try</title>
+  <style>
+    :root {
+      --dd-ink: #14191f;
+      --dd-teal: #2a6a68;
+      --dd-mist: #eef3f2;
+      --dd-amber: #b8873a;
+    }
+    body {
+      margin: 0;
+      font-family: "Manrope", system-ui, sans-serif;
+      color: var(--dd-ink);
+      background: linear-gradient(165deg, #0b1016, #14191f 50%, #1a2426);
+      min-height: 100vh;
+    }
+    main {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+      color: var(--dd-mist);
+    }
+    h1 { font-family: Georgia, serif; font-size: 2.4rem; color: var(--dd-amber); margin: 0 0 0.5rem; }
+    h2 { font-size: 1.25rem; font-weight: normal; margin: 0 0 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input { width: 100%; padding: 0.5rem; margin-top: 0.25rem; box-sizing: border-box; }
+    button {
+      margin-top: 1.25rem;
+      background: var(--dd-amber);
+      color: var(--dd-ink);
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      cursor: pointer;
+      font: inherit;
+    }
+    .out {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: rgba(42, 106, 104, 0.25);
+      border: 1px solid rgba(194, 201, 199, 0.35);
+    }
+    .note { margin-top: 2rem; font-size: 0.85rem; opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Dialogue Design Studio</h1>
+    <h2>Offline soft-sim: open-minded vs engagement</h2>
+    <label>Open-mindedness (0–1)
+      <input id="open" type="number" min="0" max="1" step="0.05" value="0.7" />
+    </label>
+    <label>Badge clarity (0–1)
+      <input id="badge" type="number" min="0" max="1" step="0.05" value="0.72" />
+    </label>
+    <label>Engagement pull (0–1)
+      <input id="engage" type="number" min="0" max="1" step="0.05" value="0.55" />
+    </label>
+    <button type="button" id="run">Score soft-sim</button>
+    <div class="out" id="out">Run to see A/B scores.</div>
+    <p class="note">Soft-sim only — not live social network, not moderation authority, not attitude-change clearance, not authors’ platform brand. Paper: SocArXiv dngcj</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function scoreA(o, b, e) {
+      const dialogue = clamp(o * 70 + b * 20 - e * 10 + 8, 0, 100);
+      const overall = clamp(dialogue * 0.7 + b * 25, 0, 100);
+      return { dialogue: round2(dialogue), overall: round2(overall) };
+    }
+    function scoreB(o, b, e) {
+      const engagement = clamp(e * 75 + (1 - o) * 15 + 5, 0, 100);
+      const overall = clamp(engagement * 0.75 + e * 20, 0, 100);
+      return { engagement: round2(engagement), overall: round2(overall) };
+    }
+    document.getElementById("run").onclick = () => {
+      const o = Number(document.getElementById("open").value);
+      const b = Number(document.getElementById("badge").value);
+      const e = Number(document.getElementById("engage").value);
+      const a = scoreA(o, b, e);
+      const bb = scoreB(o, b, e);
+      const winner = a.overall > bb.overall + 0.5
+        ? "productive_open_minded_design"
+        : bb.overall > a.overall + 0.5
+          ? "engagement_maximizing_baseline"
+          : "tie";
+      document.getElementById("out").textContent =
+        "A productive " + a.overall + " · B engagement " + bb.overall + " · winner " + winner;
+    };
+  </script>
+</body>
+</html>
