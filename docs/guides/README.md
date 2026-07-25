@@ -109,5 +109,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 106 | [Chemgnn Membrane Studio - what we learned](106-chemgnn-membrane-studio-lessons.md) | Product `chemgnn-membrane-studio` |
 | 107 | [Pestwin Control Studio - what we learned](107-pestwin-control-studio-lessons.md) | Product `pestwin-control-studio` |
 | 108 | [Phe Escalate Studio - what we learned](108-phe-escalate-studio-lessons.md) | Product `phe-escalate-studio` |
+| 109 | [Share Colearn Studio - what we learned](109-share-colearn-studio-lessons.md) | Product `share-colearn-studio` |
 
 

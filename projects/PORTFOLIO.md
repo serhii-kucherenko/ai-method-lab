@@ -84,7 +84,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Chemgnn Membrane Studio** | `chemgnn-membrane-studio` | **Complete** | ChemGNN CNT membrane surrogate vs classical physics baseline |
 | **Pestwin Control Studio** | `pestwin-control-studio` | **Complete** | Modular multi-agent pest control vs single-species baseline |
 | **Phe Escalate Studio** | `phe-escalate-studio` | **Complete** | AI-assisted PHE escalation vs manual triage baseline |
-| **Share Colearn Studio** | `share-colearn-studio` | **Building** | Human–AI co-learning vs AI-only disease activity labeling |
+| **Share Colearn Studio** | `share-colearn-studio` | **Complete** | Human–AI co-learning vs AI-only disease activity labeling |
 
 ## Rules
 

@@ -1,6 +1,6 @@
 # Share Colearn Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `share-colearn-studio`  
 **Paper:** https://www.medrxiv.org/content/10.64898/2026.07.16.26358271v1  
 **Authors’ code:** none  

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Share Colearn Studio — offline try</title>
+    <style>
+      :root {
+        --sc-ink: #171c24;
+        --sc-teal: #2f7a7a;
+        --sc-mist: #eef2f4;
+        --sc-line: #c3c9ce;
+        --sc-amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: Figtree, "Segoe UI", sans-serif;
+        background: var(--sc-mist);
+        color: var(--sc-ink);
+      }
+      header {
+        background: linear-gradient(165deg, #10141a, #171c24 50%, #1c2a2a);
+        color: white;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      h1 {
+        font-family: Literata, Georgia, serif;
+        margin: 0;
+        color: #7eb8b8;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid var(--sc-line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--sc-teal);
+        color: white;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--sc-line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        opacity: 0.75;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Share Colearn Studio</h1>
+      <p>Offline soft-sim: human–AI co-learning vs AI-only labeling baseline</p>
+    </header>
+    <main>
+      <label
+        >Clinician agreement
+        <input id="agree" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Activity signal
+        <input id="act" type="number" min="0" max="1" step="0.01" value="0.72"
+      /></label>
+      <label
+        >EHR completeness
+        <input id="ehr" type="number" min="0" max="1" step="0.01" value="0.68"
+      /></label>
+      <label
+        >Label stability
+        <input id="stab" type="number" min="0" max="1" step="0.01" value="0.65"
+      /></label>
+      <label
+        >AI-only confidence
+        <input id="ai" type="number" min="0" max="1" step="0.01" value="0.8"
+      /></label>
+      <button id="go">Score A/B</button>
+      <div class="out" id="out">Run soft-sim to compare scorers.</div>
+      <p class="note">
+        Approximate offline demo. Soft-sim only — not clinical diagnostic use,
+        not live EHR write-back, not FDA cleared, not the authors' system.
+        Full fidelity: npm run dev in projects/share-colearn-studio.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(i) {
+        const agreement = clamp(i.agree * 70 + i.act * 20 - i.ai * 8, 0, 100);
+        const activity = clamp(i.act * 65 + i.agree * 25 - i.ai * 5, 0, 100);
+        const overall = round2(agreement * 0.55 + activity * 0.45 + 6);
+        return { overall, agreement: round2(agreement), activity: round2(activity) };
+      }
+      function scoreB(i) {
+        const aiOnly = clamp(i.ai * 70 + (1 - i.agree) * 15, 0, 100);
+        const overall = round2(aiOnly * 0.85 + i.act * 10);
+        return { overall, aiOnly: round2(aiOnly) };
+      }
+      document.getElementById("go").onclick = () => {
+        const i = {
+          agree: Number(document.getElementById("agree").value),
+          act: Number(document.getElementById("act").value),
+          ehr: Number(document.getElementById("ehr").value),
+          stab: Number(document.getElementById("stab").value),
+          ai: Number(document.getElementById("ai").value),
+        };
+        const a = scoreA(i);
+        const b = scoreB(i);
+        const winner =
+          a.overall > b.overall + 0.5
+            ? "human_ai_colearning_labeling"
+            : b.overall > a.overall + 0.5
+              ? "ai_only_labeling_baseline"
+              : "tie";
+        document.getElementById("out").innerHTML =
+          "<strong>Winner:</strong> " +
+          winner +
+          "<br/>Human–AI: " +
+          a.overall +
+          "<br/>AI-only: " +
+          b.overall +
+          "<br/>Gap: " +
+          round2(Math.abs(a.overall - b.overall));
+      };
+    </script>
+  </body>
+</html>

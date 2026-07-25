@@ -1,0 +1,39 @@
+{
+  "id": "sc-002",
+  "input": {
+    "clinicianAgreement": 0.33,
+    "activitySignal": 0.29,
+    "ehrCompleteness": 0.32,
+    "labelStability": 0.38,
+    "aiOnlyConfidence": 0.43,
+    "baselineOptimism": 0.46,
+    "labelingHardness": 0.6,
+    "overclaimRisk": 0.51,
+    "labelingBias": "activity_first",
+    "profile": "human_ai_colearning_labeling"
+  },
+  "expectedHumanAi": {
+    "mode": "human_ai_colearning_labeling",
+    "agreementScore": 22.19,
+    "activityScore": 33.9,
+    "ehrScore": 34.35,
+    "stabilityIntegrity": 31.9,
+    "aiOnlyScore": 18.89,
+    "confidence": 24.5,
+    "humanAiContribution": 30.54,
+    "aiOnlyContribution": 18.58,
+    "overall": 32.39
+  },
+  "expectedAiOnly": {
+    "mode": "ai_only_labeling_baseline",
+    "agreementScore": 2.43,
+    "activityScore": 18.17,
+    "ehrScore": 13.81,
+    "stabilityIntegrity": 34.08,
+    "aiOnlyScore": 31.53,
+    "confidence": 18.65,
+    "humanAiContribution": 20,
+    "aiOnlyContribution": 34.51,
+    "overall": 23.46
+  }
+}
