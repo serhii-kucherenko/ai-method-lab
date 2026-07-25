@@ -106,5 +106,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 103 | [Aracot Agent Studio - what we learned](103-aracot-agent-studio-lessons.md) | Product `aracot-agent-studio` |
 | 104 | [Idia Quant Studio - what we learned](104-idia-quant-studio-lessons.md) | Product `idia-quant-studio` |
 | 105 | [Chemicl Discover Studio - what we learned](105-chemicl-discover-studio-lessons.md) | Product `chemicl-discover-studio` |
+| 106 | [Chemgnn Membrane Studio - what we learned](106-chemgnn-membrane-studio-lessons.md) | Product `chemgnn-membrane-studio` |
 
 

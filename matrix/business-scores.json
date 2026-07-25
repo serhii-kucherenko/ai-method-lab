@@ -1515,7 +1515,7 @@
       "potential": "GNN membrane surrogates are underserved vs slow classical physics dumps without a dual bench",
       "moat": "ChemGNN surrogate vs classical physics baseline",
       "evidence": "Paper software claim (ChemGNN CNT membrane design pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer membrane-ML soft-sim with multi-flow bar; never claim wet-lab validated desalination membranes or live plant write-back",
       "id": 74

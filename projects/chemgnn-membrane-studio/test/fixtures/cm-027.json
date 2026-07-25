@@ -1,0 +1,39 @@
+{
+  "id": "cm-027",
+  "input": {
+    "graphCoverage": 0.87,
+    "poreGeometryFidelity": 0.81,
+    "saltRejectionProxy": 0.84,
+    "waterFluxProxy": 0.87,
+    "classicalPhysicsBreadth": 0.88,
+    "baselineOptimism": 0.3,
+    "membraneHardness": 0.27,
+    "overclaimRisk": 0.17,
+    "membraneBias": "flux_first",
+    "profile": "classical_physics_baseline"
+  },
+  "expectedChemgnn": {
+    "mode": "chemgnn_surrogate",
+    "graphScore": 67.26,
+    "poreScore": 82.98,
+    "rejectionScore": 100,
+    "fluxIntegrity": 68.1,
+    "baselineScore": 49.35,
+    "confidence": 76.35,
+    "surrogateContribution": 80.38,
+    "physicsContribution": 52.5,
+    "overall": 79.36
+  },
+  "expectedClassical": {
+    "mode": "classical_physics_baseline",
+    "graphScore": 30.78,
+    "poreScore": 24.7,
+    "rejectionScore": 21.6,
+    "fluxIntegrity": 44.62,
+    "baselineScore": 45.22,
+    "confidence": 37.2,
+    "surrogateContribution": 33.38,
+    "physicsContribution": 49.71,
+    "overall": 42.94
+  }
+}

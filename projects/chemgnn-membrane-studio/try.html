@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chemgnn Membrane Studio — offline try</title>
+    <style>
+      :root {
+        --cm-ink: #141c22;
+        --cm-teal: #2a7a8a;
+        --cm-mist: #eef2f4;
+        --cm-line: #c3c9ce;
+        --cm-amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        background: var(--cm-mist);
+        color: var(--cm-ink);
+      }
+      header {
+        background: linear-gradient(165deg, #0e1519, #141c22 50%, #1a2a2e);
+        color: white;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      h1 {
+        font-family: Sora, system-ui, sans-serif;
+        margin: 0;
+        color: #7eb8c4;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid var(--cm-line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--cm-teal);
+        color: white;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--cm-line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        opacity: 0.75;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Chemgnn Membrane Studio</h1>
+      <p>Offline soft-sim: ChemGNN surrogate vs classical physics baseline</p>
+    </header>
+    <main>
+      <label
+        >Graph coverage
+        <input id="cov" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Pore geometry fidelity
+        <input id="pore" type="number" min="0" max="1" step="0.01" value="0.72"
+      /></label>
+      <label
+        >Salt rejection proxy
+        <input id="rej" type="number" min="0" max="1" step="0.01" value="0.68"
+      /></label>
+      <label
+        >Water flux proxy
+        <input id="flux" type="number" min="0" max="1" step="0.01" value="0.65"
+      /></label>
+      <label
+        >Classical physics breadth
+        <input id="phys" type="number" min="0" max="1" step="0.01" value="0.55"
+      /></label>
+      <button id="go">Score A vs B</button>
+      <div class="out" id="out">Run a score to see ChemGNN vs classical deltas.</div>
+      <p class="note">
+        Soft-sim only — not wet-lab validated desalination, not live plant
+        write-back, not the authors' system.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(i) {
+        const load = i.membraneHardness * (1.25 - i.waterFluxProxy * 0.5);
+        const graph =
+          (i.graphCoverage * 55 + i.poreGeometryFidelity * 25 - load * 10) *
+            1.12 +
+          8 -
+          i.overclaimRisk * 6;
+        const pore =
+          i.poreGeometryFidelity * 60 * 1.12 +
+          i.graphCoverage * 25 +
+          8 -
+          i.baselineOptimism * 4;
+        const rej =
+          i.saltRejectionProxy * 58 * 1.12 +
+          i.graphCoverage * 28 +
+          10 -
+          load * 12;
+        const flux =
+          i.waterFluxProxy * 50 * 1.12 +
+          i.poreGeometryFidelity * 25 +
+          i.graphCoverage * 15 +
+          8;
+        const surr = clamp(
+          (clamp(graph, 0, 100) * 0.26 +
+            clamp(pore, 0, 100) * 0.24 +
+            clamp(rej, 0, 100) * 0.28 +
+            clamp(flux, 0, 100) * 0.22) *
+            0.82 +
+            4,
+          0,
+          100,
+        );
+        return round2(surr);
+      }
+      function scoreB(i) {
+        const phys =
+          i.classicalPhysicsBreadth * 58 * 1.08 +
+          i.baselineOptimism * 32 -
+          i.membraneHardness * 10 +
+          8;
+        const overall = clamp(
+          clamp(phys, 0, 100) * 0.78 +
+            i.classicalPhysicsBreadth * 12 -
+            i.membraneHardness * 8,
+          0,
+          100,
+        );
+        return round2(overall);
+      }
+      document.getElementById("go").onclick = () => {
+        const i = {
+          graphCoverage: Number(document.getElementById("cov").value),
+          poreGeometryFidelity: Number(document.getElementById("pore").value),
+          saltRejectionProxy: Number(document.getElementById("rej").value),
+          waterFluxProxy: Number(document.getElementById("flux").value),
+          classicalPhysicsBreadth: Number(document.getElementById("phys").value),
+          baselineOptimism: 0.4,
+          membraneHardness: 0.35,
+          overclaimRisk: 0.25,
+        };
+        const a = scoreA(i);
+        const b = scoreB(i);
+        const winner =
+          a > b + 0.5
+            ? "chemgnn_surrogate"
+            : b > a + 0.5
+              ? "classical_physics_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "A (ChemGNN) " +
+          a +
+          " · B (classical) " +
+          b +
+          " · winner " +
+          winner +
+          " · gap " +
+          round2(Math.abs(a - b));
+      };
+    </script>
+  </body>
+</html>

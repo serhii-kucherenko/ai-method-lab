@@ -1,6 +1,6 @@
 # Chemgnn Membrane Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `chemgnn-membrane-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15006282/v1  
 **Authors’ code:** none  
