@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T09:22:43.853Z",
+  "updated_at": "2026-07-25T09:26:55.651Z",
   "projects": [
     {
       "id": 1,
@@ -677,11 +677,11 @@
         "money": 7,
         "wedge": 7,
         "moat": 7,
-        "evidence": 5,
+        "evidence": 6,
         "feasibility": 7
       },
       "business_idea": "Refresh wildfire-prone terrain models by aligning new aerial photos to older 3D maps before crews trust outdated ground",
-      "pmf": "Early signal with wildfire GIS / land-management / emergency planning teams who already buy terrain and mapping tools",
+      "pmf": "Early signal with wildfire GIS / land-management teams who already buy terrain and mapping tools",
       "buyer": "Wildfire GIS and land-management planning leads",
       "money_hook": "Agency seats + per-refresh compute packs (method-lab experiment)",
       "potential": "Public-safety mapping budgets; alignment-before-trust is a clear industrial wedge",
@@ -689,10 +689,37 @@
       "evidence": "Paper software claim (LTM); 30 dual goldens; 7 user flows; /pricing /demo /onboarding /flows shipped",
       "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "Keep industrial GIS pattern with multi-flow + platform must-haves",
-      "score": 68,
+      "gc_notes": "Keep industrial GIS pattern with multi-flow bar; prefer similar public-safety/ops wedges",
+      "score": 69,
       "tier": "B",
       "id": 36
+    },
+    {
+      "slug": "fail-gate-studio",
+      "project": "Fail Gate Studio",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 8,
+        "pmf": 6,
+        "money": 7,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 5,
+        "feasibility": 8
+      },
+      "business_idea": "Inspect medical AI safety boundary failures by severity and gate type — why an answer failed — not only whether it scored correct",
+      "pmf": "Early signal with health LLM eval / safety QA leads who already buy benches and red-team packs",
+      "buyer": "Health LLM eval and safety QA leads",
+      "money_hook": "Bench seats + private fail-case packs (method-lab experiment)",
+      "potential": "Eval and safety spend rising; failure taxonomy underserved vs accuracy-only benches",
+      "moat": "Clinician-built fail-gate taxonomy vs correctness-only medical eval desks",
+      "evidence": "Paper software claim (MedFailBench); no public author code in digest",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "A/B gate pass — eval/safety wedge (not carepath); require multi-flow + platform must-haves; do not brand as MedFailBench",
+      "score": 69,
+      "tier": "B",
+      "id": 37
     }
   ]
 }
