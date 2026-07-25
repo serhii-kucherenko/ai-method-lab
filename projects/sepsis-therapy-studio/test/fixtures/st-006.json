@@ -1,0 +1,39 @@
+{
+  "id": "st-006",
+  "input": {
+    "onsetCoverage": 0.41,
+    "regimenFidelity": 0.34,
+    "hmmStateClarity": 0.39,
+    "packCompleteness": 0.45,
+    "guidelineAdherence": 0.5,
+    "cultureLagOptimism": 0.4,
+    "sepsisHardness": 0.54,
+    "overclaimRisk": 0.42,
+    "therapyBias": "balanced",
+    "profile": "static_guideline_baseline"
+  },
+  "expectedCtHmm": {
+    "mode": "ct_hmm_therapy_effectiveness",
+    "onsetScore": 35.28,
+    "regimenScore": 39.5,
+    "hmmScore": 35.78,
+    "completenessScore": 47.85,
+    "guidelineScore": 23.08,
+    "confidence": 31.85,
+    "ctHmmContribution": 39.2,
+    "guidelineContribution": 23.32,
+    "overall": 40.34
+  },
+  "expectedGuideline": {
+    "mode": "static_guideline_baseline",
+    "onsetScore": 11.98,
+    "regimenScore": 17.95,
+    "hmmScore": 13.91,
+    "completenessScore": 34.78,
+    "guidelineScore": 46.72,
+    "confidence": 20.5,
+    "ctHmmContribution": 25.07,
+    "guidelineContribution": 43.14,
+    "overall": 32.32
+  }
+}

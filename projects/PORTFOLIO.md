@@ -95,6 +95,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Track Map Studio** | `track-map-studio` | **Complete** | Online deformable SLAM vs offline kinematics-prior baseline |
 | **Nicu Ecg Studio** | `nicu-ecg-studio` | **Complete** | Alignment-free PPG-guided ECG vs alignment-dependent baseline |
 | **Pv Causal Studio** | `pv-causal-studio` | **Complete** | Target-trial causal PV signals vs spontaneous-reporting baseline |
+| **Sepsis Therapy Studio** | `sepsis-therapy-studio` | **Complete** | CT-HMM therapy effectiveness vs static guideline baseline |
 | **Sepsis Therapy Studio** | `sepsis-therapy-studio` | **Building** | CT-HMM therapy effectiveness vs static guideline baseline |
 
 ## Rules

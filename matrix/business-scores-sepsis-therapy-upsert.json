@@ -1,0 +1,25 @@
+{
+  "slug": "sepsis-therapy-studio",
+  "project": "Sepsis Therapy Studio",
+  "status": "complete",
+  "score": 66,
+  "tier": "B",
+  "business_idea": "Compare continuous-time HMM antibiotic therapy effectiveness against static guideline baselines before locking a therapy pack",
+  "pmf": "Early signal with hospital analytics / critical-care decision-support leads who already trial early sepsis antibiotic soft-sims",
+  "buyer": "Hospital analytics and critical-care decision-support engineering leads",
+  "money_hook": "Bench seats + private therapy packs (method-lab experiment)",
+  "potential": "CT-HMM therapy effectiveness is underserved vs static guideline dumps without onset-window honesty",
+  "moat": "CT-HMM therapy effectiveness vs static guideline baseline",
+  "evidence": "Paper software claim (continuous-time HMM antibiotic therapy pattern); no public code; soft-sim honesty required",
+  "gc_notes": "Prefer critical-care soft-sim with multi-flow bar; never claim clinical diagnostic use, live EHR write-back, or FDA clearance",
+  "dimensions": {
+    "buyer": 7,
+    "pain": 7,
+    "pmf": 6,
+    "money": 6,
+    "wedge": 7,
+    "moat": 7,
+    "evidence": 6,
+    "feasibility": 7
+  }
+}

@@ -1,6 +1,6 @@
 # Sepsis Therapy Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `sepsis-therapy-studio`  
 **Paper:** https://www.medrxiv.org/content/10.64898/2026.07.03.26357092v1  
 **Authors’ code:** none  

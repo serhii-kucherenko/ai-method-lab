@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sepsis Therapy Studio — offline demo</title>
+  <style>
+    :root {
+      --ink: #171c24;
+      --teal: #2a6f6a;
+      --mist: #eef2f4;
+      --line: #c3c9ce;
+      --amber: #c4923a;
+    }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      background: var(--mist);
+      color: var(--ink);
+    }
+    header {
+      background: linear-gradient(165deg, #0f1319 0%, #171c24 48%, #222a34 100%);
+      color: var(--mist);
+      padding: 3rem 1.5rem 2.5rem;
+    }
+    h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 2.4rem;
+      margin: 0;
+      color: var(--amber);
+    }
+    .tag { margin-top: 0.75rem; max-width: 36rem; opacity: 0.92; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input[type="range"] { width: 100%; }
+    button {
+      margin-top: 1.25rem;
+      background: var(--teal);
+      color: var(--mist);
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      border-radius: 0.4rem;
+      cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 0.5rem;
+    }
+    .bar { height: 8px; background: #d2e3e1; border-radius: 4px; margin-top: 0.4rem; }
+    .fill { height: 100%; background: var(--teal); border-radius: 4px; }
+    footer { margin-top: 2rem; font-size: 0.85rem; opacity: 0.75; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sepsis Therapy Studio</h1>
+    <p class="tag">Judge the regimen before the culture comes back. Offline soft-sim demo.</p>
+  </header>
+  <main>
+    <p>Approximate dual score: continuous-time HMM therapy effectiveness vs static guideline baseline. Full fidelity needs the Next.js app.</p>
+    <label>Onset coverage <span id="v1"></span>
+      <input id="onset" type="range" min="0" max="100" value="62" />
+    </label>
+    <label>Regimen fidelity <span id="v2"></span>
+      <input id="fid" type="range" min="0" max="100" value="70" />
+    </label>
+    <label>HMM state clarity <span id="v3"></span>
+      <input id="hmm" type="range" min="0" max="100" value="74" />
+    </label>
+    <label>Culture-lag optimism <span id="v4"></span>
+      <input id="optimism" type="range" min="0" max="100" value="55" />
+    </label>
+    <button id="run" type="button">Compare A/B</button>
+    <div class="out" id="out">Run compare to see soft-sim scores.</div>
+    <footer>
+      Soft-sim only — not clinical diagnostic use, not live EHR write-back, not FDA.
+      Paper: medRxiv 10.64898/2026.07.03.26357092 · authors’ code: none.
+    </footer>
+  </main>
+  <script>
+    function n(id) { return Number(document.getElementById(id).value) / 100; }
+    function sync() {
+      document.getElementById("v1").textContent = n("onset").toFixed(2);
+      document.getElementById("v2").textContent = n("fid").toFixed(2);
+      document.getElementById("v3").textContent = n("hmm").toFixed(2);
+      document.getElementById("v4").textContent = n("optimism").toFixed(2);
+    }
+    ["onset", "fid", "hmm", "optimism"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", sync);
+    });
+    sync();
+    document.getElementById("run").addEventListener("click", () => {
+      const onset = n("onset");
+      const fid = n("fid");
+      const hmm = n("hmm");
+      const opt = n("optimism");
+      const a = Math.round(100 * Math.min(1, onset * 0.35 + fid * 0.3 + hmm * 0.35 - opt * 0.12));
+      const b = Math.round(100 * Math.min(1, opt * 0.45 + (1 - hmm) * 0.25 + (1 - onset) * 0.15 + 0.2));
+      const winner = a > b + 2 ? "ct_hmm_therapy_effectiveness" : b > a + 2 ? "static_guideline_baseline" : "tie";
+      document.getElementById("out").innerHTML =
+        "<strong>Winner:</strong> " + winner +
+        "<div style='margin-top:0.75rem'>A CT-HMM " + a +
+        "<div class='bar'><div class='fill' style='width:" + a + "%'></div></div></div>" +
+        "<div style='margin-top:0.75rem'>B Guideline " + b +
+        "<div class='bar'><div class='fill' style='width:" + b + "%'></div></div></div>";
+    });
+  </script>
+</body>
+</html>

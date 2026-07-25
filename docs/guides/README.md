@@ -120,5 +120,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 117 | [Track Map Studio - what we learned](117-track-map-studio-lessons.md) | Product `track-map-studio` |
 | 118 | [Nicu Ecg Studio - what we learned](118-nicu-ecg-studio-lessons.md) | Product `nicu-ecg-studio` |
 | 119 | [Pv Causal Studio - what we learned](119-pv-causal-studio-lessons.md) | Product `pv-causal-studio` |
+| 120 | [Sepsis Therapy Studio - what we learned](120-sepsis-therapy-studio-lessons.md) | Product `sepsis-therapy-studio` |
 
 
