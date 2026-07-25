@@ -112,5 +112,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 109 | [Share Colearn Studio - what we learned](109-share-colearn-studio-lessons.md) | Product `share-colearn-studio` |
 | 110 | [Atlas Flow Studio - what we learned](110-atlas-flow-studio-lessons.md) | Product `atlas-flow-studio` |
 | 111 | [Saffron Detect Studio - what we learned](111-saffron-detect-studio-lessons.md) | Product `saffron-detect-studio` |
+| 112 | [Therapy Prompt Studio - what we learned](112-therapy-prompt-studio-lessons.md) | Product `therapy-prompt-studio` |
 
 

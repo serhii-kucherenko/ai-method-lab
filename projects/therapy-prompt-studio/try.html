@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Therapy Prompt Studio — offline try</title>
+    <style>
+      :root {
+        --tp-ink: #1a2228;
+        --tp-teal: #2f6f6a;
+        --tp-mist: #eef3f2;
+        --tp-line: #c5cdcb;
+        --tp-amber: #b8893a;
+      }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        background: var(--tp-mist);
+        color: var(--tp-ink);
+      }
+      header {
+        background: linear-gradient(165deg, #10161a, #1a2228 50%, #243038);
+        color: white;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      h1 {
+        font-family: "Source Serif 4", Georgia, serif;
+        margin: 0;
+        color: var(--tp-amber);
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid var(--tp-line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        background: var(--tp-teal);
+        color: white;
+        border: 0;
+        border-radius: 0.35rem;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+      }
+      .out {
+        margin-top: 1.25rem;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--tp-line);
+        border-radius: 0.5rem;
+      }
+      .note {
+        font-size: 0.85rem;
+        opacity: 0.75;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Therapy Prompt Studio</h1>
+      <p>
+        Offline soft-sim: structured therapy-safety gates vs prompt-only
+        safety baseline
+      </p>
+    </header>
+    <main>
+      <label
+        >Gate coverage
+        <input id="gateCoverage" type="number" min="0" max="1" step="0.01" value="0.65"
+      /></label>
+      <label
+        >Refusal strength
+        <input id="refusalStrength" type="number" min="0" max="1" step="0.01" value="0.7"
+      /></label>
+      <label
+        >Crisis escalation
+        <input id="crisisEscalation" type="number" min="0" max="1" step="0.01" value="0.72"
+      /></label>
+      <label
+        >Boundary clarity
+        <input id="boundaryClarity" type="number" min="0" max="1" step="0.01" value="0.68"
+      /></label>
+      <label
+        >Prompt-only confidence
+        <input id="promptOnlyConfidence" type="number" min="0" max="1" step="0.01" value="0.55"
+      /></label>
+      <label
+        >Baseline optimism
+        <input id="baselineOptimism" type="number" min="0" max="1" step="0.01" value="0.5"
+      /></label>
+      <button id="score">Score A/B</button>
+      <div class="out" id="out">Adjust inputs, then score.</div>
+      <p class="note">
+        Soft-sim only — not clinical therapy, not a crisis line, not live patient
+        chat, not FDA cleared. Approximate offline demo.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreGates(i) {
+        const boost = 1.12;
+        const load = clamp(i.scenarioHardness * (1.25 - i.refusalStrength * 0.5), 0, 1.5);
+        const gateScore = round2(clamp((i.gateCoverage * 55 + i.refusalStrength * 25 - load * 10) * boost + 8 - i.overclaimRisk * 6, 0, 100));
+        const refusalScore = round2(clamp(i.refusalStrength * 60 * boost + i.gateCoverage * 25 + 8 - i.baselineOptimism * 4, 0, 100));
+        const crisisScore = round2(clamp(i.crisisEscalation * 58 * boost + i.gateCoverage * 28 + 10 - load * 12 - i.overclaimRisk * 10, 0, 100));
+        const boundaryScore = round2(clamp(i.boundaryClarity * 50 * boost + i.refusalStrength * 25 + i.gateCoverage * 15 + 8, 0, 100));
+        const promptOnlyScore = round2(clamp(i.promptOnlyConfidence * 55 * boost + i.baselineOptimism * 20 - i.scenarioHardness * 18 - 6, 0, 100));
+        const gatesContribution = round2(clamp(gateScore * 0.26 + refusalScore * 0.24 + crisisScore * 0.28 + boundaryScore * 0.22, 0, 100));
+        const promptContribution = round2(clamp(promptOnlyScore * 0.7 + i.promptOnlyConfidence * 20 + i.baselineOptimism * 10 - load * 12, 0, 100));
+        const overall = round2(clamp(gatesContribution * 0.82 + promptContribution * 0.18 + 4, 0, 100));
+        return { overall, gatesContribution, promptContribution };
+      }
+      function scorePrompt(i) {
+        const boost = 1.08;
+        const load = clamp(i.scenarioHardness * (1.25 - i.refusalStrength * 0.5), 0, 1.5);
+        const promptOnlyScore = round2(clamp(i.promptOnlyConfidence * 58 * boost + i.baselineOptimism * 32 - i.scenarioHardness * 10 + 8, 0, 100));
+        const gatesContribution = round2(clamp(promptOnlyScore * 0.4, 0, 100));
+        const promptContribution = round2(clamp(promptOnlyScore * 0.55 + i.baselineOptimism * 30 + i.promptOnlyConfidence * 20 - load * 8, 0, 100));
+        const overall = round2(clamp(promptContribution * 0.78 + gatesContribution * 0.22 - i.scenarioHardness * 8 - i.overclaimRisk * 6, 0, 100));
+        return { overall, gatesContribution, promptContribution };
+      }
+      document.getElementById("score").onclick = () => {
+        const i = {
+          gateCoverage: Number(document.getElementById("gateCoverage").value),
+          refusalStrength: Number(document.getElementById("refusalStrength").value),
+          crisisEscalation: Number(document.getElementById("crisisEscalation").value),
+          boundaryClarity: Number(document.getElementById("boundaryClarity").value),
+          promptOnlyConfidence: Number(document.getElementById("promptOnlyConfidence").value),
+          baselineOptimism: Number(document.getElementById("baselineOptimism").value),
+          scenarioHardness: 0.45,
+          overclaimRisk: 0.3,
+        };
+        const a = scoreGates(i);
+        const b = scorePrompt(i);
+        const winner =
+          a.overall > b.overall + 0.5
+            ? "structured_therapy_safety_gates"
+            : b.overall > a.overall + 0.5
+              ? "prompt_only_safety_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "Winner " + winner + " · gates " + a.overall + " vs prompt-only " + b.overall +
+          " · gap " + round2(Math.abs(a.overall - b.overall));
+      };
+    </script>
+  </body>
+</html>

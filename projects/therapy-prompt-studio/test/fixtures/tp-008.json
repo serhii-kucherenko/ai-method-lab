@@ -1,0 +1,39 @@
+{
+  "id": "tp-008",
+  "input": {
+    "gateCoverage": 0.41,
+    "refusalStrength": 0.43,
+    "crisisEscalation": 0.46,
+    "boundaryClarity": 0.45,
+    "promptOnlyConfidence": 0.49,
+    "baselineOptimism": 0.43,
+    "scenarioHardness": 0.47,
+    "overclaimRisk": 0.44,
+    "therapyBias": "prompt_first",
+    "profile": "structured_therapy_safety_gates"
+  },
+  "expectedGates": {
+    "mode": "structured_therapy_safety_gates",
+    "gateScore": 19.37,
+    "refusalScore": 35.43,
+    "crisisScore": 27.68,
+    "boundaryScore": 24.76,
+    "promptOnlyScore": 24.32,
+    "confidence": 34.1,
+    "gatesContribution": 26.74,
+    "promptContribution": 25.29,
+    "overall": 27.48
+  },
+  "expectedPrompt": {
+    "mode": "prompt_only_safety_baseline",
+    "gateScore": 16.4,
+    "refusalScore": 20.25,
+    "crisisScore": 16.44,
+    "boundaryScore": 35.17,
+    "promptOnlyScore": 58.5,
+    "confidence": 22.7,
+    "gatesContribution": 29.35,
+    "promptContribution": 50.98,
+    "overall": 39.82
+  }
+}
