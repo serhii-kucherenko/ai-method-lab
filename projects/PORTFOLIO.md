@@ -99,6 +99,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Mhc Design Studio** | `mhc-design-studio` | **Complete** | Hybrid quantum–classical de novo vs classical generative baseline |
 | **Paired Motion Studio** | `paired-motion-studio` | **Complete** | Distributed ego+exo fusion vs ego-only baseline |
 | **Surveil Gate Studio** | `surveil-gate-studio` | **Complete** | Six-pillar trust governance vs explainability-only baseline |
+| **Async Neuro Studio** | `async-neuro-studio` | **Building** | Standardized async video exam vs ad-hoc exam baseline |
 
 ## Rules
 

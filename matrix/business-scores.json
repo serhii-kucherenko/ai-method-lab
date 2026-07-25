@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T21:14:40.280Z",
+  "updated_at": "2026-07-25T21:27:37.898Z",
   "projects": [
     {
       "id": 1,
@@ -1943,7 +1943,7 @@
       "potential": "Six-pillar trust governance for genAI surveillance is underserved vs explainability-only dumps without honesty",
       "moat": "Six-pillar trust governance vs explainability-only baseline",
       "evidence": "Paper governance claim (TRUST-GPH pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer public-health AI governance soft-sim with multi-flow bar; never claim live national surveillance, clinical diagnostic use, or regulatory certification",
       "dimensions": {
@@ -1958,6 +1958,33 @@
       },
       "score": 66,
       "id": 91
+    },
+    {
+      "slug": "async-neuro-studio",
+      "project": "Async Neuro Studio",
+      "tier": "B",
+      "business_idea": "Compare standardized video-based asynchronous neurological exams against ad-hoc exam baselines before locking an exam pack",
+      "pmf": "Early signal with AD/ADRD multi-center study ops / neurology trial analytics leads who already trial exam soft-sims",
+      "buyer": "AD/ADRD multi-center study ops and neurology trial analytics engineering leads",
+      "money_hook": "Bench seats + private exam packs (method-lab experiment)",
+      "potential": "Standardized async video neuro exams for multi-site AD/ADRD studies are underserved vs ad-hoc exam dumps without honesty",
+      "moat": "Standardized async video exam vs ad-hoc exam baseline",
+      "evidence": "Paper workflow claim (VANE pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer multi-center exam-ops soft-sim with multi-flow bar; never claim clinical diagnostic use, live telehealth write-back, or FDA clearance",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "id": 92
     }
   ]
 }
