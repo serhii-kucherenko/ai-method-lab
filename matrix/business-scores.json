@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T12:07:04.154Z",
+  "updated_at": "2026-07-25T12:20:32.137Z",
   "projects": [
     {
       "id": 1,
@@ -808,6 +808,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer clinical-ML-eval soft-sim with multi-flow bar; never claim FDA/clinical advice; distinct from Persona Triage and Consult Bench",
       "id": 41
+    },
+    {
+      "slug": "contact-arm-studio",
+      "project": "Contact Arm Studio",
+      "score": 65,
+      "tier": "B",
+      "business_idea": "Compare tactile+vision contact-centric whole-arm control plans against vision-only baselines before locking a manipulator pack",
+      "pmf": "Early signal with robotics / contact-rich manipulation eng leads who already buy sim benches",
+      "buyer": "Robotics and contact-rich manipulation engineering leads",
+      "money_hook": "Bench seats + private manipulator packs (method-lab experiment)",
+      "potential": "Contact-rich manipulation spend is rising; tactile+vision plan eval is underserved vs vision-only demos",
+      "moat": "Contact-centric tactile+vision vs vision-only baselines",
+      "evidence": "Paper software claim (TACTIC pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer robotics soft-sim with multi-flow bar; never claim live robot safety cert; not TACTIC brand",
+      "id": 42
     }
   ]
 }
