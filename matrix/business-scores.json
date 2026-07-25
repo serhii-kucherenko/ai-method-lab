@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T15:18:33.272Z",
+  "updated_at": "2026-07-25T15:21:09.665Z",
   "projects": [
     {
       "id": 1,
@@ -1244,6 +1244,23 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "shared-risk-studio",
+      "project": "Shared Risk Studio",
+      "score": 63,
+      "tier": "B",
+      "business_idea": "Compare shared multi-disease health representations against disease-specific baselines before locking a cohort pack",
+      "pmf": "Early signal with population health / biobank ML leads who already train disease-specific risk models",
+      "buyer": "Population health and biobank ML engineering leads",
+      "money_hook": "Bench seats + private cohort packs (method-lab experiment)",
+      "potential": "Shared cross-disease risk representations are underserved vs siloed disease models",
+      "moat": "Shared multi-disease representation vs disease-specific baseline",
+      "evidence": "Paper software claim (RisQ-pattern shared health representation); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer population-health soft-sim with multi-flow bar; never claim CDS clearance or live EHR",
+      "id": 60
     }
   ]
 }
