@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paired Motion Studio — offline demo</title>
+  <style>
+    :root {
+      --ink: #14181f;
+      --teal: #2c6b73;
+      --mist: #eef3f5;
+      --line: #c2c8cd;
+      --amber: #c08a3a;
+    }
+    body {
+      margin: 0;
+      font-family: Manrope, "Segoe UI", sans-serif;
+      background: var(--mist);
+      color: var(--ink);
+    }
+    header {
+      background: linear-gradient(165deg, #0c1016 0%, #14181f 48%, #1f2832 100%);
+      color: var(--mist);
+      padding: 3rem 1.5rem 2.5rem;
+    }
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 2.4rem;
+      margin: 0;
+      color: var(--amber);
+    }
+    .tag { margin-top: 0.75rem; max-width: 36rem; opacity: 0.92; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input[type="range"] { width: 100%; }
+    button {
+      margin-top: 1.25rem;
+      background: var(--teal);
+      color: var(--mist);
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      border-radius: 0.4rem;
+      cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 0.5rem;
+    }
+    .bar { height: 8px; background: #d3e4e7; border-radius: 4px; margin-top: 0.4rem; }
+    .fill { height: 100%; background: var(--teal); border-radius: 4px; }
+    footer { margin-top: 2rem; font-size: 0.85rem; opacity: 0.75; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Paired Motion Studio</h1>
+    <p class="tag">Capture whole-body motion when one view is not enough. Offline soft-sim demo.</p>
+  </header>
+  <main>
+    <p>Approximate dual score: distributed ego+exo fusion vs ego-only baseline. Full fidelity needs the Next.js app.</p>
+    <label>Ego coverage <span id="v1"></span>
+      <input id="ego" type="range" min="0" max="100" value="62" />
+    </label>
+    <label>Exo coverage <span id="v2"></span>
+      <input id="exo" type="range" min="0" max="100" value="70" />
+    </label>
+    <label>Fusion clarity <span id="v3"></span>
+      <input id="fusion" type="range" min="0" max="100" value="74" />
+    </label>
+    <label>Drift risk <span id="v4"></span>
+      <input id="drift" type="range" min="0" max="100" value="55" />
+    </label>
+    <button id="run" type="button">Compare A/B</button>
+    <div class="out" id="out">Run compare to see soft-sim scores.</div>
+    <footer>
+      Soft-sim only — not live HMD fleet control, not production mocap suit, not Meta/Aria, not EgoExoMoCap.
+      Paper: arXiv 2607.15868 · authors’ code: none.
+    </footer>
+  </main>
+  <script>
+    const ids = ["ego", "exo", "fusion", "drift"];
+    const labels = ["v1", "v2", "v3", "v4"];
+    function sync() {
+      ids.forEach((id, i) => {
+        document.getElementById(labels[i]).textContent =
+          (document.getElementById(id).value / 100).toFixed(2);
+      });
+    }
+    ids.forEach((id) => document.getElementById(id).addEventListener("input", sync));
+    sync();
+    document.getElementById("run").addEventListener("click", () => {
+      const ego = +document.getElementById("ego").value / 100;
+      const exo = +document.getElementById("exo").value / 100;
+      const fusion = +document.getElementById("fusion").value / 100;
+      const drift = +document.getElementById("drift").value / 100;
+      const fusionOverall = Math.round(
+        (ego * 28 + exo * 32 + fusion * 34 - drift * 12) * 100,
+      ) / 100;
+      const egoOnlyOverall = Math.round(
+        (ego * 45 + drift * 30 - exo * 10 - fusion * 8) * 100,
+      ) / 100;
+      const winner =
+        fusionOverall > egoOnlyOverall + 0.5
+          ? "distributed_ego_exo_fusion"
+          : egoOnlyOverall > fusionOverall + 0.5
+            ? "ego_only_baseline"
+            : "tie";
+      document.getElementById("out").innerHTML =
+        "<p><strong>Fusion</strong> " + fusionOverall +
+        '</p><div class="bar"><div class="fill" style="width:' +
+        Math.min(100, fusionOverall) + '%"></div></div>' +
+        "<p style='margin-top:0.75rem'><strong>Ego-only</strong> " + egoOnlyOverall +
+        '</p><div class="bar"><div class="fill" style="width:' +
+        Math.min(100, egoOnlyOverall) + '%"></div></div>' +
+        "<p style='margin-top:0.75rem'>Winner: " + winner + "</p>";
+    });
+  </script>
+</body>
+</html>

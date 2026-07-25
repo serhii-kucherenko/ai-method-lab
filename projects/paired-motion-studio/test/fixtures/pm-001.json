@@ -1,0 +1,39 @@
+{
+  "id": "pm-001",
+  "input": {
+    "egoCoverage": 0.29,
+    "exoCoverage": 0.25,
+    "fusionClarity": 0.28,
+    "packCompleteness": 0.34,
+    "egoOnlyAdherence": 0.39,
+    "occlusionHardness": 0.59,
+    "driftRisk": 0.45,
+    "overclaimRisk": 0.5,
+    "motionBias": "balanced",
+    "profile": "distributed_ego_exo_fusion"
+  },
+  "expectedFusion": {
+    "mode": "distributed_ego_exo_fusion",
+    "egoScore": 23.37,
+    "exoScore": 30.25,
+    "fusionScore": 22.89,
+    "completenessScore": 37.64,
+    "egoOnlyScore": 16.4,
+    "confidence": 17.95,
+    "fusionContribution": 28.16,
+    "egoOnlyContribution": 15.92,
+    "overall": 29.96
+  },
+  "expectedEgoOnly": {
+    "mode": "ego_only_baseline",
+    "egoScore": 5.76,
+    "exoScore": 17.37,
+    "fusionScore": 12.78,
+    "completenessScore": 32.39,
+    "egoOnlyScore": 40.93,
+    "confidence": 17.1,
+    "fusionContribution": 21.85,
+    "egoOnlyContribution": 38.57,
+    "overall": 27.17
+  }
+}
