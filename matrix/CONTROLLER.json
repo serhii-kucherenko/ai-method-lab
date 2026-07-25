@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T12:50:53.498Z",
+  "updated_at": "2026-07-25T12:52:15.604Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "f05e1f39-40f3-4b78-996e-035151f30f3c",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "dd4a0a7b-b605-4987-8ace-7b363ca44255",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__quantum-kernel-studio__r1",
   "last_error": null,
-  "current_product": "quantum-kernel-studio",
-  "current_idea": "quantum-kernel-studio",
+  "current_product": "script-lexicon-studio",
+  "current_idea": "script-lexicon-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Quantum Kernel Studio sustain complete: build+test+app-up green; guide + portfolio + score complete. product_complete_pending true — parent owns Resend finish email.",
+  "phase": "build",
+  "notes": "Quantum Kernel finish email sent. Next climb: Script Lexicon Studio (2607.15209) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2607.11701",
-      "slug": "quantum-kernel-studio",
-      "displayName": "Quantum Kernel Studio",
-      "at": "2026-07-25T12:43:34.919Z",
-      "url": "https://arxiv.org/abs/2607.11701v1",
+      "paperId": "2607.15209",
+      "slug": "script-lexicon-studio",
+      "displayName": "Script Lexicon Studio",
+      "at": "2026-07-25T12:52:15.605Z",
+      "url": "https://arxiv.org/abs/2607.15209v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T12:43:34.919Z",
+    "framing_started_at": "2026-07-25T12:52:15.605Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,
