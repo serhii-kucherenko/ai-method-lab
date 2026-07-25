@@ -1,0 +1,39 @@
+{
+  "id": "aa-006",
+  "input": {
+    "cotStepQuality": 0.41,
+    "arabicFluency": 0.34,
+    "distillFidelity": 0.39,
+    "agentGrounding": 0.45,
+    "multilingualCoverage": 0.5,
+    "baselineOptimism": 0.4,
+    "reasoningHardness": 0.54,
+    "overclaimRisk": 0.42,
+    "agentBias": "balanced",
+    "profile": "nondistilled_multilingual_baseline"
+  },
+  "expectedDistilled": {
+    "mode": "arabic_cot_distilled_agent",
+    "cotScore": 33.88,
+    "arabicScore": 39.5,
+    "distillScore": 35.78,
+    "groundingIntegrity": 47.85,
+    "baselineScore": 23.08,
+    "confidence": 30.35,
+    "distilledContribution": 38.83,
+    "baselineContribution": 23.32,
+    "overall": 40.04
+  },
+  "expectedBaseline": {
+    "mode": "nondistilled_multilingual_baseline",
+    "cotScore": 11.98,
+    "arabicScore": 17.95,
+    "distillScore": 14.21,
+    "groundingIntegrity": 34.78,
+    "baselineScore": 46.72,
+    "confidence": 20.5,
+    "distilledContribution": 25.13,
+    "baselineContribution": 43.14,
+    "overall": 32.34
+  }
+}

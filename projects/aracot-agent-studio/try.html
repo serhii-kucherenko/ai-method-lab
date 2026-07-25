@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aracot Agent Studio — offline try</title>
+    <style>
+      :root {
+        --ink: #1a1f24;
+        --green: #3a7a5a;
+        --mist: #eef2f0;
+        --line: #c4cac7;
+        --amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: Figtree, "Segoe UI", sans-serif;
+        background: var(--mist);
+        color: var(--ink);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: Literata, Georgia, serif;
+        font-weight: 600;
+        color: var(--green);
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 1.25rem;
+        background: var(--green);
+        color: white;
+        border: 0;
+        padding: 0.6rem 1rem;
+        border-radius: 0.35rem;
+        cursor: pointer;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dfe3e0;
+        border-radius: 0.25rem;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        border-radius: 0.25rem;
+        background: var(--green);
+      }
+      .fill.b {
+        background: var(--amber);
+      }
+      .note {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #4a5154;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Aracot Agent Studio</h1>
+      <p>
+        Offline soft-sim: Arabic CoT distilled agent vs non-distilled
+        multilingual baseline.
+      </p>
+      <label>CoT step quality <span id="cotVal">0.62</span></label>
+      <input id="cot" type="range" min="0" max="1" step="0.01" value="0.62" />
+      <label>Arabic fluency <span id="arVal">0.70</span></label>
+      <input id="ar" type="range" min="0" max="1" step="0.01" value="0.70" />
+      <label>Baseline optimism <span id="bVal">0.55</span></label>
+      <input id="base" type="range" min="0" max="1" step="0.01" value="0.55" />
+      <button id="run" type="button">Score A vs B</button>
+      <p id="out" style="margin-top: 1rem"></p>
+      <div>
+        <div>A · arabic_cot_distilled_agent</div>
+        <div class="bar"><div id="aFill" class="fill" style="width: 0%"></div></div>
+      </div>
+      <div style="margin-top: 0.75rem">
+        <div>B · nondistilled_multilingual_baseline</div>
+        <div class="bar"><div id="bFill" class="fill b" style="width: 0%"></div></div>
+      </div>
+      <p class="note">
+        Soft-sim only — not production Arabic LLM deployment, not live chat
+        write-back, not the authors' system. Research Square rs-10196257.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(cot, ar, opt) {
+        const distill = 0.7;
+        const load = clamp((1 - distill) * 0.4 + (1 - cot) * 0.3, 0, 1);
+        return round2(
+          clamp(
+            cot * 42 + ar * 38 + distill * 20 - opt * 18 - load * 12 + 6,
+            0,
+            100,
+          ),
+        );
+      }
+      function scoreB(cot, ar, opt) {
+        const coverage = 0.75;
+        return round2(
+          clamp(
+            coverage * 48 + opt * 36 - cot * 10 - ar * 8 + 4,
+            0,
+            100,
+          ),
+        );
+      }
+      const cot = document.getElementById("cot");
+      const ar = document.getElementById("ar");
+      const base = document.getElementById("base");
+      const cotVal = document.getElementById("cotVal");
+      const arVal = document.getElementById("arVal");
+      const bVal = document.getElementById("bVal");
+      function sync() {
+        cotVal.textContent = cot.value;
+        arVal.textContent = ar.value;
+        bVal.textContent = base.value;
+      }
+      cot.oninput = ar.oninput = base.oninput = sync;
+      document.getElementById("run").onclick = () => {
+        const a = scoreA(+cot.value, +ar.value, +base.value);
+        const b = scoreB(+cot.value, +ar.value, +base.value);
+        document.getElementById("aFill").style.width = a + "%";
+        document.getElementById("bFill").style.width = b + "%";
+        const winner =
+          a > b + 0.5
+            ? "arabic_cot_distilled_agent"
+            : b > a + 0.5
+              ? "nondistilled_multilingual_baseline"
+              : "tie";
+        document.getElementById("out").textContent =
+          "A " + a + " · B " + b + " · winner " + winner;
+      };
+      sync();
+    </script>
+  </body>
+</html>

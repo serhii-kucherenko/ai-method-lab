@@ -103,5 +103,6 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 100 | [Roi Exemplar Studio - what we learned](100-roi-exemplar-studio-lessons.md) | Product `roi-exemplar-studio` |
 | 101 | [Enorms Baseline Studio - what we learned](101-enorms-baseline-studio-lessons.md) | Product `enorms-baseline-studio` |
 | 102 | [R2map Translate Studio - what we learned](102-r2map-translate-studio-lessons.md) | Product `r2map-translate-studio` |
+| 103 | [Aracot Agent Studio - what we learned](103-aracot-agent-studio-lessons.md) | Product `aracot-agent-studio` |
 
 

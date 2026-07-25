@@ -78,7 +78,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Roi Exemplar Studio** | `roi-exemplar-studio` | **Complete** | Optimized VLM ROI exemplars vs naive exemplar baseline |
 | **Enorms Baseline Studio** | `enorms-baseline-studio` | **Complete** | Patient-specific E-norms vs population-norm EEG baseline |
 | **R2map Translate Studio** | `r2map-translate-studio` | **Complete** | GAN T1W/T2W→R2map vs conventional R2 baseline |
-| **Aracot Agent Studio** | `aracot-agent-studio` | **Building** | Arabic CoT distilled agents vs non-distilled multilingual baseline |
+| **Aracot Agent Studio** | `aracot-agent-studio` | **Complete** | Arabic CoT distilled agents vs non-distilled multilingual baseline |
 
 ## Rules
 

@@ -1,6 +1,6 @@
 # Aracot Agent Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `aracot-agent-studio`  
 **Paper:** https://doi.org/10.21203/rs.3.rs-10196257/v1  
 **Authors’ code:** none  

@@ -1464,7 +1464,7 @@
       "potential": "Arabic CoT distillation is underserved vs generic multilingual agent dumps without a dual bench",
       "moat": "Arabic CoT distillation vs non-distilled multilingual baseline",
       "evidence": "Paper software claim (AraCoT-Agent distillation pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer agentic soft-sim with multi-flow bar; never claim production Arabic LLM deployment or live chat write-back",
       "id": 71
