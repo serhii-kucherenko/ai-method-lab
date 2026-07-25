@@ -88,6 +88,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Atlas Flow Studio** | `atlas-flow-studio` | **Complete** | Integrated atlas registration+quant vs fragmented multi-tool baseline |
 | **Saffron Detect Studio** | `saffron-detect-studio` | **Complete** | CNN stigma adulteration detection vs visual inspection baseline |
 | **Therapy Prompt Studio** | `therapy-prompt-studio` | **Complete** | Structured therapy-safety gates vs prompt-only baseline |
+| **Care Query Studio** | `care-query-studio` | **Building** | Multilingual POC medical query LLM vs local clinician baseline |
 
 ## Rules
 

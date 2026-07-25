@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T19:12:53.403Z",
+  "updated_at": "2026-07-25T19:15:32.099Z",
   "projects": [
     {
       "id": 1,
@@ -1661,6 +1661,23 @@
         "evidence": 7,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "care-query-studio",
+      "project": "Care Query Studio",
+      "score": 66,
+      "tier": "B",
+      "business_idea": "Compare multilingual point-of-care medical query LLMs against local clinician baselines before locking a query pack",
+      "pmf": "Early signal with global-health / clinical LLM eval leads who already trial bedside AI assistants",
+      "buyer": "Global-health and clinical LLM evaluation engineering leads",
+      "money_hook": "Bench seats + private query packs (method-lab experiment)",
+      "potential": "Multilingual POC medical query benches are underserved vs English demo chats without a dual clinician baseline",
+      "moat": "Multilingual POC LLM bench vs local clinician baseline",
+      "evidence": "Paper software claim (NigBench multilingual POC medical query pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer clinical-LLM-eval soft-sim with multi-flow bar; never claim clinical diagnostic use, live EHR write-back, or FDA clearance; never brand as NigBench",
+      "id": 81
     }
   ]
 }

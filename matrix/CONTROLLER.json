@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T19:12:53.296Z",
+  "updated_at": "2026-07-25T19:15:32.194Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,8 +10,8 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "bad745cc-a8b4-4d22-9ffe-0379efbcdce6",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "68294034-a764-4195-8542-9ce383b4e52b",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__therapy-prompt-studio__r1",
   "last_error": null,
-  "current_product": "therapy-prompt-studio",
-  "current_idea": "therapy-prompt-studio",
+  "current_product": "care-query-studio",
+  "current_idea": "care-query-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Therapy Prompt Studio sustain complete. product_complete_pending=true; parent owns Resend finish email; do NOT send any Resend email from this agent.",
+  "phase": "build",
+  "notes": "Therapy Prompt finish email sent. Next climb: Care Query Studio (26356776) — depth pack ready; building.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.64898/2026.07.16.26358261",
-      "slug": "therapy-prompt-studio",
-      "displayName": "Therapy Prompt Studio",
-      "at": "2026-07-25T19:05:51.726Z",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.07.16.26358261v1",
+      "paperId": "10.64898/2026.07.05.26356776",
+      "slug": "care-query-studio",
+      "displayName": "Care Query Studio",
+      "at": "2026-07-25T19:15:32.195Z",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.07.05.26356776v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-25T19:05:51.726Z",
+    "framing_started_at": "2026-07-25T19:15:32.195Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,
