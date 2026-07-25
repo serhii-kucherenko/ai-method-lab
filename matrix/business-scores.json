@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T17:35:44.307Z",
+  "updated_at": "2026-07-25T17:45:56.642Z",
   "projects": [
     {
       "id": 1,
@@ -1485,6 +1485,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer scp-MS soft-sim with multi-flow bar; never claim wet-lab validated proteomics or live instrument write-back",
       "id": 72
+    },
+    {
+      "slug": "chemicl-discover-studio",
+      "project": "Chemicl Discover Studio",
+      "score": 65,
+      "tier": "B",
+      "business_idea": "Compare multimodal ChemICL against text-only ICL baselines before locking a chemistry discovery pack",
+      "pmf": "Early signal with chemistry discovery / ML-for-chem leads who already trial in-context learning for molecules",
+      "buyer": "Chemistry discovery and ML-for-chem engineering leads",
+      "money_hook": "Bench seats + private discover packs (method-lab experiment)",
+      "potential": "Multimodal chemistry ICL is underserved vs text-only few-shot dumps without a dual bench",
+      "moat": "Multimodal ChemICL vs text-only ICL baseline",
+      "evidence": "Paper software claim (ChemICL multimodal ICL pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer chem-ML soft-sim with multi-flow bar; never claim wet-lab validated discovery or live ELN write-back",
+      "id": 73
     }
   ]
 }
