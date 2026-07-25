@@ -1,0 +1,39 @@
+{
+  "id": "af-018",
+  "input": {
+    "packCoverage": 0.66,
+    "fmFidelity": 0.61,
+    "forceClarity": 0.67,
+    "runStability": 0.68,
+    "classicalFfRate": 0.7,
+    "ffOptimism": 0.34,
+    "reactionHardness": 0.38,
+    "overclaimRisk": 0.27,
+    "forceBias": "baseline_first",
+    "profile": "classical_force_field_baseline"
+  },
+  "expectedFoundation": {
+    "mode": "foundation_model_atomistics",
+    "packCoverageScore": 38.33,
+    "fmScore": 54.13,
+    "forceOptScore": 45.52,
+    "packIntegrity": 40.09,
+    "baselineScore": 37.08,
+    "confidence": 56.35,
+    "fmContribution": 44.52,
+    "baselineContribution": 39.16,
+    "overall": 44.56
+  },
+  "expectedBaseline": {
+    "mode": "classical_force_field_baseline",
+    "packCoverageScore": 28.36,
+    "fmScore": 21.66,
+    "forceOptScore": 18.31,
+    "packIntegrity": 39.67,
+    "baselineScore": 74.27,
+    "confidence": 29.5,
+    "fmContribution": 36.45,
+    "baselineContribution": 62.25,
+    "overall": 51.91
+  }
+}

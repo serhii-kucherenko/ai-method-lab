@@ -1345,7 +1345,7 @@
       "potential": "Foundation-model atomistics are underserved vs classical force-field dumps without a dual bench",
       "moat": "Foundation-model atomistics vs classical force-field baseline",
       "evidence": "Paper software claim (FeNNix-Bio1-style FM pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer simulation soft-sim with multi-flow bar; never claim DFT-validated manufacturing sims or live HPC write-back",
       "id": 64
