@@ -13,3 +13,6 @@ Thumbs.db
 projects/**/data/
 *.sqlite
 *.db
+
+**/.next/
+

@@ -90,7 +90,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Therapy Prompt Studio** | `therapy-prompt-studio` | **Complete** | Structured therapy-safety gates vs prompt-only baseline |
 | **Care Query Studio** | `care-query-studio` | **Complete** | Multilingual POC medical query LLM vs local clinician baseline |
 | **Accel PD Studio** | `accel-pd-studio` | **Complete** | Multi-channel PA transformer vs handcrafted PA-feature baseline |
-| **Cache Hit Studio** | `cache-hit-studio` | **Building** | Structured hit-finding vs naive docking baseline |
+| **Cache Hit Studio** | `cache-hit-studio` | **Complete** | Structured hit-finding vs naive docking baseline |
 
 ## Rules
 

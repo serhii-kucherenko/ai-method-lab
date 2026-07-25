@@ -1,0 +1,39 @@
+{
+  "id": "ch-007",
+  "input": {
+    "pocketCoverage": 0.45,
+    "hitFidelity": 0.38,
+    "ligandGrounding": 0.42,
+    "packCompleteness": 0.49,
+    "dockingConfidence": 0.53,
+    "dockingOptimism": 0.42,
+    "pocketHardness": 0.55,
+    "overclaimRisk": 0.43,
+    "hitBias": "pocket_first",
+    "profile": "structured_hit_finding"
+  },
+  "expectedStructured": {
+    "mode": "structured_hit_finding",
+    "pocketScore": 32.43,
+    "fidelityScore": 43.11,
+    "ligandScore": 48.27,
+    "completenessScore": 39.34,
+    "dockingScore": 25.15,
+    "confidence": 35.35,
+    "structureContribution": 40.95,
+    "dockingContribution": 25.54,
+    "overall": 42.18
+  },
+  "expectedDocking": {
+    "mode": "naive_docking_baseline",
+    "pocketScore": 8.27,
+    "fidelityScore": 19.21,
+    "ligandScore": 15.09,
+    "completenessScore": 36.3,
+    "dockingScore": 34.2,
+    "confidence": 22.15,
+    "structureContribution": 22.61,
+    "dockingContribution": 37.43,
+    "overall": 27.19
+  }
+}

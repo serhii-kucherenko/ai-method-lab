@@ -1,6 +1,6 @@
 # Cache Hit Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `cache-hit-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15005792/v2  
 **Authors’ code:** none  
