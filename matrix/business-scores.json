@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T12:43:34.827Z",
+  "updated_at": "2026-07-25T12:51:51.222Z",
   "projects": [
     {
       "id": 1,
@@ -859,6 +859,23 @@
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer chem-informatics soft-sim with multi-flow bar; never claim live quantum hardware or wet-lab; not Q²SAR brand",
       "id": 44
+    },
+    {
+      "slug": "script-lexicon-studio",
+      "project": "Script Lexicon Studio",
+      "score": 62,
+      "tier": "B",
+      "business_idea": "Compare expanded Ge'ez-script lexicon models against baseline multilingual tokenizers before locking a language pack",
+      "pmf": "Early signal with NLP / localization leads serving Amharic and Tigrinya who already buy tokenizer benches",
+      "buyer": "NLP and localization engineering leads",
+      "money_hook": "Bench seats + private language packs (method-lab experiment)",
+      "potential": "Low-resource script coverage is underserved; lexicon expansion eval is a clear wedge",
+      "moat": "Expanded Ge'ez lexicon vs baseline multilingual tokenizers",
+      "evidence": "Paper software claim (VEXMLM pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer NLP soft-sim with multi-flow bar; never claim production MT certification; not VEXMLM brand",
+      "id": 45
     }
   ]
 }
