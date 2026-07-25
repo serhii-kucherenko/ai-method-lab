@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T22:36:05.405Z",
+  "updated_at": "2026-07-25T22:52:09.509Z",
   "projects": [
     {
       "id": 1,
@@ -2105,7 +2105,7 @@
       "potential": "Cooperative multi-domain DNA probes are underserved vs single-domain melting dumps without honesty",
       "moat": "Cooperative multi-domain probe vs single-domain melting baseline",
       "evidence": "Paper assay-design claim (cooperative multi-domain DNA probe pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer assay-design soft-sim with multi-flow bar; never claim wet-lab validated diagnostics, live IVD clearance, or whole-blood device deployment",
       "dimensions": {
@@ -2120,6 +2120,33 @@
       },
       "score": 66,
       "id": 97
+    },
+    {
+      "slug": "encoded-library-studio",
+      "project": "Encoded Library Studio",
+      "status": "building",
+      "business_idea": "Compare iterative DNA-encoded library construct-and-screen cycles against single-pass library screens before locking a hit pack",
+      "pmf": "Early signal with drug-discovery / DELT chemistry analytics leads who already trial library soft-sims",
+      "buyer": "Drug-discovery and DELT chemistry analytics engineering leads",
+      "money_hook": "Bench seats + private library packs (method-lab experiment)",
+      "potential": "Iterative DELT macrocycle discovery is underserved vs single-pass library dumps without honesty",
+      "moat": "Iterative DELT optimize vs single-pass library screen",
+      "evidence": "Paper chemistry-informatics claim (iterative DNA-encoded library construct-and-screen); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer DELT soft-sim with multi-flow bar; never claim wet-lab validated IND/NDA, live screening robotics, or clinical candidate nomination",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 98
     }
   ]
 }
