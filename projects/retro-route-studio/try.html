@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Retro Route Studio — offline try</title>
+  <style>
+    :root {
+      --bg: #f4faf8;
+      --ink: #0f2a2e;
+      --teal: #1a7a6d;
+      --amber: #c47a1a;
+      --panel: #fff;
+      --line: #c9ddd8;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    header {
+      background: linear-gradient(165deg, #0f2a2e, #145c53);
+      color: #f4faf8;
+      padding: 2.5rem 1.25rem 2rem;
+    }
+    header h1 { margin: 0; color: var(--amber); font-size: 1.85rem; }
+    header p { margin: 0.75rem 0 0; max-width: 36rem; opacity: 0.9; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+    label { display: block; font-size: 0.85rem; margin-top: 0.85rem; }
+    input, select {
+      width: 100%; box-sizing: border-box; margin-top: 0.25rem;
+      padding: 0.5rem 0.6rem; border: 1px solid var(--line); border-radius: 0.35rem;
+    }
+    button {
+      margin-top: 1.25rem; background: var(--teal); color: #fff; border: 0;
+      padding: 0.65rem 1rem; border-radius: 0.35rem; cursor: pointer; font-weight: 600;
+    }
+    .panel {
+      background: var(--panel); border: 1px solid var(--line);
+      border-radius: 0.45rem; padding: 1rem; margin-top: 1.25rem;
+    }
+    .bar { height: 0.45rem; background: #e0ebe8; border-radius: 999px; overflow: hidden; margin: 0.35rem 0 0.7rem; }
+    .fill { height: 100%; background: var(--teal); }
+    .fill-b { height: 100%; background: var(--amber); }
+    .muted { color: #4a6562; font-size: 0.85rem; }
+    .grid { display: grid; gap: 1rem; }
+    @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Retro Route Studio</h1>
+    <p>Offline approximate demo — structured-memory agentic vs naive local greedy search. Soft-sim only; not wet-lab execution; not RetroAgent.</p>
+  </header>
+  <main>
+    <label>Memory coverage <input id="memoryCoverage" type="range" min="0" max="1" step="0.01" value="0.72" /></label>
+    <label>Tried path recall <input id="triedPathRecall" type="range" min="0" max="1" step="0.01" value="0.7" /></label>
+    <label>Intermediate coverage <input id="intermediateCoverage" type="range" min="0" max="1" step="0.01" value="0.68" /></label>
+    <label>Local greedy fit (B fuel) <input id="localGreedyFit" type="range" min="0" max="1" step="0.01" value="0.8" /></label>
+    <label>Single-step fluency <input id="singleStepFluency" type="range" min="0" max="1" step="0.01" value="0.65" /></label>
+    <label>Memory bias
+      <select id="memoryBias">
+        <option value="balanced">balanced</option>
+        <option value="memory_first">memory_first</option>
+        <option value="intermediate_first">intermediate_first</option>
+        <option value="greedy_first">greedy_first</option>
+      </select>
+    </label>
+    <button type="button" id="run">Score A vs B</button>
+    <p class="muted">Approximate JS port of the studio dual score. Full fidelity: run the Next app locally.</p>
+    <div class="grid">
+      <div class="panel">
+        <strong>A · Structured memory</strong>
+        <div id="aBars"></div>
+        <p id="aOverall"></p>
+      </div>
+      <div class="panel">
+        <strong>B · Naive local</strong>
+        <div id="bBars"></div>
+        <p id="bOverall"></p>
+      </div>
+    </div>
+    <p id="winner" class="muted"></p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function scoreA(input) {
+      const boost = 1.12;
+      const wM = biasWeight(input.memoryBias, "memory_first");
+      const mem = round2(clamp((input.memoryCoverage * 55 + input.triedPathRecall * 25) * boost * wM + 8, 0, 100));
+      const inter = round2(clamp(input.intermediateCoverage * 60 * boost + 8 - input.singleStepFluency * 4, 0, 100));
+      const overall = round2(clamp(mem * 0.4 + inter * 0.35 + (1 - input.singleStepFluency) * 25, 0, 100));
+      return { mem, inter, overall };
+    }
+    function scoreB(input) {
+      const boost = 1.08;
+      const greedy = round2(clamp(input.localGreedyFit * 58 * boost + input.singleStepFluency * 32, 0, 100));
+      const overall = round2(clamp(greedy * 0.7 + input.singleStepFluency * 25, 0, 100));
+      return { greedy, overall };
+    }
+    function bar(label, v, cls) {
+      return label + " " + v + '<div class="bar"><div class="' + cls + '" style="width:' + v + '%"></div></div>';
+    }
+    document.getElementById("run").onclick = function () {
+      const input = {
+        memoryCoverage: +document.getElementById("memoryCoverage").value,
+        triedPathRecall: +document.getElementById("triedPathRecall").value,
+        intermediateCoverage: +document.getElementById("intermediateCoverage").value,
+        localGreedyFit: +document.getElementById("localGreedyFit").value,
+        singleStepFluency: +document.getElementById("singleStepFluency").value,
+        memoryBias: document.getElementById("memoryBias").value,
+      };
+      const a = scoreA(input);
+      const b = scoreB(input);
+      document.getElementById("aBars").innerHTML = bar("memory", a.mem, "fill") + bar("intermediate", a.inter, "fill");
+      document.getElementById("bBars").innerHTML = bar("greedy", b.greedy, "fill-b");
+      document.getElementById("aOverall").textContent = "Overall " + a.overall;
+      document.getElementById("bOverall").textContent = "Overall " + b.overall;
+      const gap = Math.abs(a.overall - b.overall);
+      let winner = "tie";
+      if (a.overall > b.overall + 0.5) winner = "structured_memory";
+      else if (b.overall > a.overall + 0.5) winner = "naive_local";
+      document.getElementById("winner").textContent = "Winner: " + winner + " · gap " + round2(gap);
+    };
+  </script>
+</body>
+</html>

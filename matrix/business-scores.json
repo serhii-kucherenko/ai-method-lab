@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T10:12:27.700Z",
+  "updated_at": "2026-07-25T10:25:31.656Z",
   "projects": [
     {
       "id": 1,
@@ -758,7 +758,7 @@
         "money": 7,
         "wedge": 7,
         "moat": 7,
-        "evidence": 5,
+        "evidence": 7,
         "feasibility": 7
       },
       "business_idea": "Plan multi-step chemical synthesis routes with a structured search memory — seeing tried paths and intermediates — instead of local greedy reaction picks",
@@ -767,10 +767,10 @@
       "money_hook": "Bench seats + private route packs (method-lab experiment)",
       "potential": "Pharma R&D spends heavily on route finding; global search memory is underserved vs single-step suggestors",
       "moat": "Structured-memory agentic retrosynthesis vs naive local search",
-      "evidence": "Paper software claim (RetroAgent pattern); no public author code in digest",
-      "status": "building",
+      "evidence": "Paper software claim (RetroAgent pattern); 30 dual goldens; 7 user flows; 13 pages; /pricing /demo /onboarding /flows shipped; never branded RetroAgent",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
-      "gc_notes": "A/B chem software pick — not RetroAgent brand; not carepath; require multi-flow + platform must-haves; soft-sim honesty",
+      "gc_notes": "Keep chem soft-sim planning pattern with multi-flow bar; not RetroAgent brand; soft-sim honesty; prefer similar software wedges over wet-lab claims",
       "score": 68,
       "tier": "B",
       "id": 39

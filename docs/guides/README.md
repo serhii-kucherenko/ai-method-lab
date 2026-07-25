@@ -59,6 +59,7 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 68 | [Terrain Fire Studio — what we learned](68-terrain-fire-studio-lessons.md) | Product `terrain-fire-studio` |
 | 69 | [Fail Gate Studio — what we learned](69-fail-gate-studio-lessons.md) | Product `fail-gate-studio` |
 | 70 | [Drive Horizon Studio — what we learned](70-drive-horizon-studio-lessons.md) | Product `drive-horizon-studio` |
+| 71 | [Retro Route Studio — what we learned](71-retro-route-studio-lessons.md) | Product `retro-route-studio` |
 
 ### Scoring notes
 

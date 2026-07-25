@@ -1,0 +1,40 @@
+{
+  "id": "rrs-028",
+  "input": {
+    "memoryCoverage": 0.83,
+    "triedPathRecall": 0.86,
+    "intermediateCoverage": 0.87,
+    "branchAvoidance": 0.83,
+    "routeCoherence": 0.86,
+    "localGreedyFit": 0.84,
+    "singleStepFluency": 0.31,
+    "deadEndPressure": 0.2,
+    "routeDrift": 0.17,
+    "memoryBias": "greedy_first",
+    "profile": "structured_memory"
+  },
+  "expectedStructured": {
+    "mode": "structured_memory",
+    "memoryScore": 54.9,
+    "intermediateScore": 76.72,
+    "branchScore": 60.07,
+    "routeIntegrity": 54.69,
+    "greedyLocalScore": 48.34,
+    "confidence": 76.3,
+    "structuredContribution": 61.54,
+    "naiveContribution": 51.77,
+    "overall": 60.78
+  },
+  "expectedNaive": {
+    "mode": "naive_local",
+    "memoryScore": 38.81,
+    "intermediateScore": 24.98,
+    "branchScore": 22.43,
+    "routeIntegrity": 43.18,
+    "greedyLocalScore": 86.95,
+    "confidence": 37.65,
+    "structuredContribution": 43.27,
+    "naiveContribution": 72.61,
+    "overall": 63.54
+  }
+}
