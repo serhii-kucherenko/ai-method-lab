@@ -1,6 +1,6 @@
 # Margin Fusion Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `margin-fusion-studio`  
 **Paper:** https://arxiv.org/abs/2607.13343v1  
 **Authors’ code:** none  

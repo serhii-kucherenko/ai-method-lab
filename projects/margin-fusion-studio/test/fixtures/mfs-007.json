@@ -1,0 +1,39 @@
+{
+  "id": "mfs-007",
+  "input": {
+    "deformableQuality": 0.45,
+    "surfaceFidelity": 0.38,
+    "marginClarity": 0.42,
+    "fusionStability": 0.49,
+    "markerPassRate": 0.53,
+    "markerOptimism": 0.42,
+    "deformationHardness": 0.55,
+    "overclaimRisk": 0.43,
+    "fusionBias": "surface_first",
+    "profile": "marker_free"
+  },
+  "expectedMarkerFree": {
+    "mode": "marker_free",
+    "deformableScore": 31.59,
+    "surfaceScore": 43.11,
+    "marginScore": 48.37,
+    "stabilityScore": 39.34,
+    "markerScore": 25.15,
+    "confidence": 33.6,
+    "markerFreeContribution": 40.76,
+    "markerBasedContribution": 25.64,
+    "overall": 42.04
+  },
+  "expectedMarkerBased": {
+    "mode": "marker_based",
+    "deformableScore": 8.27,
+    "surfaceScore": 19.34,
+    "marginScore": 15.59,
+    "stabilityScore": 36.3,
+    "markerScore": 34.2,
+    "confidence": 22.15,
+    "markerFreeContribution": 22.74,
+    "markerBasedContribution": 37.5,
+    "overall": 27.27
+  }
+}
