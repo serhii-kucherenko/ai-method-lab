@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T20:10:22.569Z",
+  "updated_at": "2026-07-25T20:13:23.383Z",
   "projects": [
     {
       "id": 1,
@@ -1796,6 +1796,23 @@
         "evidence": 7,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "nicu-ecg-studio",
+      "project": "Nicu Ecg Studio",
+      "score": 65,
+      "tier": "B",
+      "business_idea": "Compare alignment-free PPG-guided neonatal ECG inpainting against alignment-dependent baselines before locking an ecg pack",
+      "pmf": "Early signal with NICU analytics / neonatal monitoring leads who already trial PPG-to-ECG reconstruction",
+      "buyer": "NICU analytics and neonatal monitoring engineering leads",
+      "money_hook": "Bench seats + private ecg packs (method-lab experiment)",
+      "potential": "Alignment-free neonatal ECG inpainting is underserved vs alignment-dependent dumps that fail under neonate motion",
+      "moat": "Alignment-free PPG-guided ECG vs alignment-dependent baseline",
+      "evidence": "Paper software claim (alignment-free RoPE dual-stream PPG-guided ECG pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer NICU signal soft-sim with multi-flow bar; never claim clinical diagnostic use, live device write-back, or FDA clearance",
+      "id": 86
     }
   ]
 }
