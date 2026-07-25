@@ -1,0 +1,39 @@
+{
+  "id": "sc-004",
+  "input": {
+    "waterIntensity": 0.33,
+    "energyIntensity": 0.32,
+    "emissionsClarity": 0.39,
+    "scenarioStability": 0.38,
+    "cloudFootprintRate": 0.42,
+    "cloudOptimism": 0.43,
+    "infraHardness": 0.53,
+    "overclaimRisk": 0.46,
+    "costBias": "balanced",
+    "profile": "sovereign_infra_wee_accounting"
+  },
+  "expectedSovereignWee": {
+    "mode": "sovereign_infra_wee_accounting",
+    "waterScore": 28.09,
+    "energyScore": 36.03,
+    "emissionsScore": 33.07,
+    "scenarioIntegrity": 42.23,
+    "cloudBaselineScore": 18.93,
+    "confidence": 26.1,
+    "sovereignContribution": 34.5,
+    "cloudContribution": 19.05,
+    "overall": 35.72
+  },
+  "expectedNaiveCloud": {
+    "mode": "naive_cloud_footprint_baseline",
+    "waterScore": 8.7,
+    "energyScore": 17.81,
+    "emissionsScore": 13.75,
+    "scenarioIntegrity": 32.79,
+    "cloudBaselineScore": 42.77,
+    "confidence": 18.85,
+    "sovereignContribution": 23.16,
+    "cloudContribution": 40.22,
+    "overall": 29.47
+  }
+}

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sovereign Cost Studio — offline try</title>
+    <style>
+      :root {
+        --ink: #1a2220;
+        --teal: #2f7a6e;
+        --mist: #eef2f1;
+        --line: #c4cbc8;
+        --amber: #c4923a;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        background: var(--mist);
+        color: var(--ink);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-family: Fraunces, Georgia, serif;
+        font-weight: 600;
+        color: var(--teal);
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      button {
+        margin-top: 1.25rem;
+        background: var(--teal);
+        color: white;
+        border: 0;
+        padding: 0.6rem 1rem;
+        border-radius: 0.35rem;
+        cursor: pointer;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dfe6e3;
+        border-radius: 999px;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        border-radius: 999px;
+        background: var(--teal);
+      }
+      .fill.b {
+        background: var(--amber);
+      }
+      .note {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #4a5551;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Sovereign Cost Studio</h1>
+      <p>
+        Offline soft-sim: sovereign-infra water–energy–emissions accounting vs
+        naive cloud-footprint baseline.
+      </p>
+      <label>Water intensity <span id="wVal">0.62</span></label>
+      <input id="water" type="range" min="0" max="1" step="0.01" value="0.62" />
+      <label>Energy intensity <span id="eVal">0.70</span></label>
+      <input id="energy" type="range" min="0" max="1" step="0.01" value="0.70" />
+      <label>Cloud optimism <span id="cVal">0.55</span></label>
+      <input id="cloud" type="range" min="0" max="1" step="0.01" value="0.55" />
+      <button id="run" type="button">Score A vs B</button>
+      <div style="margin-top: 1.25rem">
+        <div>Sovereign W/E/E (A): <strong id="aScore">—</strong></div>
+        <div class="bar"><div id="aBar" class="fill" style="width: 0%"></div></div>
+        <div style="margin-top: 0.75rem">
+          Naive cloud (B): <strong id="bScore">—</strong>
+        </div>
+        <div class="bar"><div id="bBar" class="fill b" style="width: 0%"></div></div>
+        <p id="winner" style="margin-top: 0.75rem"></p>
+      </div>
+      <p class="note">
+        Soft-sim only — not certified carbon audits, not live grid metering, not
+        national policy authority, not the authors’ system. Paper:
+        arXiv 2607.13443.
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreA(w, e, c) {
+        const water = w * 55 + e * 25 + 8 - c * 6;
+        const energy = e * 60 + w * 25 + 8 - c * 4;
+        const emis = w * 40 + e * 30 + 10;
+        const overall = clamp((water + energy + emis) / 3, 0, 100);
+        return round2(overall);
+      }
+      function scoreB(w, e, c) {
+        const cloud = c * 58 + (1 - w) * 20 + 8;
+        const overall = clamp(cloud * 0.7 + e * 15, 0, 100);
+        return round2(overall);
+      }
+      const water = document.getElementById("water");
+      const energy = document.getElementById("energy");
+      const cloud = document.getElementById("cloud");
+      function sync() {
+        document.getElementById("wVal").textContent = water.value;
+        document.getElementById("eVal").textContent = energy.value;
+        document.getElementById("cVal").textContent = cloud.value;
+      }
+      water.oninput = energy.oninput = cloud.oninput = sync;
+      document.getElementById("run").onclick = () => {
+        const a = scoreA(+water.value, +energy.value, +cloud.value);
+        const b = scoreB(+water.value, +energy.value, +cloud.value);
+        document.getElementById("aScore").textContent = a;
+        document.getElementById("bScore").textContent = b;
+        document.getElementById("aBar").style.width = a + "%";
+        document.getElementById("bBar").style.width = b + "%";
+        const winner =
+          a > b + 0.5
+            ? "sovereign_infra_wee_accounting"
+            : b > a + 0.5
+              ? "naive_cloud_footprint_baseline"
+              : "tie";
+        document.getElementById("winner").textContent =
+          "Winner: " + winner + " · gap " + round2(Math.abs(a - b));
+      };
+      sync();
+    </script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T16:33:48.375Z",
+  "updated_at": "2026-07-25T16:40:13.690Z",
   "projects": [
     {
       "id": 1,
@@ -1396,7 +1396,7 @@
       "potential": "Sovereign-infra W/E/E accounting is underserved vs naive cloud-only footprint scores",
       "moat": "Sovereign-infra W/E/E accounting vs naive cloud-footprint baseline",
       "evidence": "Paper software claim (sovereign AI infra environmental cost pattern); no public code; soft-sim honesty required",
-      "status": "building",
+      "status": "complete",
       "rubric": "biz-rubric-v1",
       "gc_notes": "Prefer sustainability soft-sim with multi-flow bar; never claim certified carbon audits, live grid metering, or national policy authority",
       "id": 67

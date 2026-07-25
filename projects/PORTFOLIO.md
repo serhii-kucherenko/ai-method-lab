@@ -74,7 +74,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Atomistic Force Studio** | `atomistic-force-studio` | **Complete** | Foundation-model atomistics vs classical force-field baseline |
 | **Crate Validate Studio** | `crate-validate-studio` | **Complete** | Structural+semantic ARC validation vs metadata-only baseline |
 | **Transducin Measure Studio** | `transducin-measure-studio` | **Complete** | SNOMED-coded OCT recovery vs raw private-tag baseline |
-| **Sovereign Cost Studio** | `sovereign-cost-studio` | **Building** | Sovereign-infra W/E/E accounting vs naive cloud-footprint baseline |
+| **Sovereign Cost Studio** | `sovereign-cost-studio` | **Complete** | Sovereign-infra W/E/E accounting vs naive cloud-footprint baseline |
 
 ## Rules
 
