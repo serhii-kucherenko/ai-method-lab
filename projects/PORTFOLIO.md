@@ -97,6 +97,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Pv Causal Studio** | `pv-causal-studio` | **Complete** | Target-trial causal PV signals vs spontaneous-reporting baseline |
 | **Sepsis Therapy Studio** | `sepsis-therapy-studio` | **Complete** | CT-HMM therapy effectiveness vs static guideline baseline |
 | **Mhc Design Studio** | `mhc-design-studio` | **Complete** | Hybrid quantum–classical de novo vs classical generative baseline |
+| **Paired Motion Studio** | `paired-motion-studio` | **Building** | Distributed ego+exo fusion vs ego-only baseline |
 
 ## Rules
 

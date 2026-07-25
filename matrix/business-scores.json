@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T20:55:21.318Z",
+  "updated_at": "2026-07-25T21:02:50.660Z",
   "projects": [
     {
       "id": 1,
@@ -1904,6 +1904,33 @@
         "evidence": 6,
         "feasibility": 7
       }
+    },
+    {
+      "slug": "paired-motion-studio",
+      "project": "Paired Motion Studio",
+      "tier": "B",
+      "business_idea": "Compare distributed ego+exo HMD motion capture against ego-only baselines before locking a capture pack",
+      "pmf": "Early signal with embodied AI / VR-AR / mocap analytics leads who already trial HMD soft-sims",
+      "buyer": "Embodied AI, VR-AR, and mocap analytics engineering leads",
+      "money_hook": "Bench seats + private capture packs (method-lab experiment)",
+      "potential": "Distributed ego+exo fusion for in-the-wild HMD mocap is underserved vs ego-only dumps without honesty",
+      "moat": "Distributed ego+exo fusion vs ego-only baseline",
+      "evidence": "Paper software claim (distributed ego-exo HMD mocap pattern); no public code; soft-sim honesty required",
+      "status": "building",
+      "rubric": "biz-rubric-v1",
+      "gc_notes": "Prefer mocap soft-sim with multi-flow bar; never claim live HMD fleet control, production mocap suit replacement, or Meta/Aria deployment",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "id": 90
     }
   ]
 }
