@@ -118,7 +118,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Split Endo Studio** | `split-endo-studio` | **Complete** | One-hole split endoscopy vs open laminectomy |
 | **Disaster Liaison Studio** | `disaster-liaison-studio` | **Complete** | Pediatric-perinatal liaison vs generic disaster HQ |
 | **Pavement Retrofit Studio** | `pavement-retrofit-studio` | **Complete** | Photocatalytic pavement retrofit vs conventional preservation |
-| **Pneumonia Implement Studio** | `pneumonia-implement-studio` | **Building** | CFIR co-design primary care vs status-quo pathway |
+| **Pneumonia Implement Studio** | `pneumonia-implement-studio` | **Complete** | CFIR co-design primary care vs status-quo pathway |
 
 ## Rules
 

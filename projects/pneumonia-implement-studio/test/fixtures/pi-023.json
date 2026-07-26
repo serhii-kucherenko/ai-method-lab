@@ -1,0 +1,39 @@
+{
+  "id": "pi-023",
+  "input": {
+    "codesignIntensity": 0.8,
+    "communityEngagement": 0.8,
+    "caretakerDelay": 0.26,
+    "referralFriction": 0.25,
+    "pathwayClarity": 0.8,
+    "districtCoverage": 0.8,
+    "fidelitySignal": 0.8,
+    "overclaimRisk": 0.25,
+    "implementationBias": "status_quo_first",
+    "profile": "cfir_codesign_primary_care"
+  },
+  "expectedCfir": {
+    "mode": "cfir_codesign_primary_care",
+    "careAccessScore": 43.99,
+    "fidelityScore": 64.36,
+    "pathwayCoverage": 54.81,
+    "costEfficiency": 48.34,
+    "statusQuoPenalty": 40.87,
+    "confidence": 53.4,
+    "codesignContribution": 50.7,
+    "pathwayContribution": 46.88,
+    "overall": 51.01
+  },
+  "expectedStatusQuo": {
+    "mode": "status_quo_pathway",
+    "careAccessScore": 51.62,
+    "fidelityScore": 70.46,
+    "pathwayCoverage": 49.96,
+    "costEfficiency": 67.01,
+    "statusQuoPenalty": 0,
+    "confidence": 54,
+    "codesignContribution": 67.81,
+    "pathwayContribution": 60.2,
+    "overall": 56.37
+  }
+}

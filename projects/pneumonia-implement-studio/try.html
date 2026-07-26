@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pneumonia Implement Studio — offline try</title>
+  <style>
+    :root {
+      --ink: #14181c;
+      --teal: #1a6460;
+      --chalk: #eef2f1;
+      --amber: #a87a2e;
+      --line: #c5cbc9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: linear-gradient(165deg, #eef2f1 0%, #dce8e6 100%);
+      color: var(--ink);
+      padding: 2rem 1.25rem 3rem;
+    }
+    h1 { font-size: 1.75rem; margin: 0 0 0.35rem; color: var(--teal); }
+    .tag { color: var(--amber); font-weight: 600; margin-bottom: 1.5rem; }
+    .grid { display: grid; gap: 1rem; max-width: 40rem; }
+    label { display: block; font-size: 0.85rem; margin-bottom: 0.25rem; }
+    input[type="range"] { width: 100%; }
+    button {
+      background: var(--teal);
+      color: white;
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .out {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      white-space: pre-wrap;
+      font-family: ui-monospace, monospace;
+      font-size: 0.85rem;
+    }
+    .note { margin-top: 1.5rem; font-size: 0.8rem; color: #556660; max-width: 40rem; }
+  </style>
+</head>
+<body>
+  <h1>Pneumonia Implement Studio</h1>
+  <p class="tag">Offline approximate demo — soft-sim only</p>
+  <div class="grid">
+    <div>
+      <label>CFIR co-design intensity <span id="v1"></span></label>
+      <input id="codesign" type="range" min="0" max="100" value="55" />
+    </div>
+    <div>
+      <label>Fidelity signal <span id="v2"></span></label>
+      <input id="fidelity" type="range" min="0" max="100" value="70" />
+    </div>
+    <div>
+      <label>Caretaker delay (worse ↑) <span id="v3"></span></label>
+      <input id="delay" type="range" min="0" max="100" value="30" />
+    </div>
+    <div>
+      <label>Pathway clarity (status-quo) <span id="v4"></span></label>
+      <input id="clarity" type="range" min="0" max="100" value="40" />
+    </div>
+    <button type="button" id="run">Compare CFIR vs status-quo</button>
+  </div>
+  <pre class="out" id="out">Adjust sliders, then compare.</pre>
+  <p class="note">
+    Approximate offline math — not live clinical triage, not EMR write-back,
+    not government program authority. Full dual scorers live in the Next.js app
+    (<code>cfir_codesign_primary_care</code> vs <code>status_quo_pathway</code>).
+  </p>
+  <script>
+    function n(id) { return Number(document.getElementById(id).value) / 100; }
+    function sync() {
+      document.getElementById("v1").textContent = n("codesign").toFixed(2);
+      document.getElementById("v2").textContent = n("fidelity").toFixed(2);
+      document.getElementById("v3").textContent = n("delay").toFixed(2);
+      document.getElementById("v4").textContent = n("clarity").toFixed(2);
+    }
+    ["codesign","fidelity","delay","clarity"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", sync);
+    });
+    sync();
+    function approxCfir(c, f, d, cl) {
+      return Math.round(Math.min(100, Math.max(0,
+        c * 42 + f * 28 + (1 - d) * 18 + (1 - cl) * 8 + 6
+      )) * 100) / 100;
+    }
+    function approxSq(c, f, d, cl) {
+      return Math.round(Math.min(100, Math.max(0,
+        cl * 40 + f * 22 + (1 - d) * 18 - c * 12 + 10
+      )) * 100) / 100;
+    }
+    document.getElementById("run").onclick = () => {
+      const c = n("codesign"), f = n("fidelity"), d = n("delay"), cl = n("clarity");
+      const cfir = approxCfir(c, f, d, cl);
+      const sq = approxSq(c, f, d, cl);
+      const winner = cfir > sq + 0.5 ? "cfir_codesign_primary_care"
+        : sq > cfir + 0.5 ? "status_quo_pathway" : "tie";
+      document.getElementById("out").textContent =
+        "Approximate offline soft-sim\n" +
+        "CFIR co-design overall: " + cfir + "\n" +
+        "Status-quo pathway overall: " + sq + "\n" +
+        "Winner: " + winner + "\n" +
+        "Gap: " + Math.abs(cfir - sq).toFixed(2) + "\n\n" +
+        "Lock only when CFIR beats status-quo and honesty stays visible.";
+    };
+  </script>
+</body>
+</html>
