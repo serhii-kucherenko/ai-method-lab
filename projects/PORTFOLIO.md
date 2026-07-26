@@ -114,6 +114,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Ageing Wisely Studio** | `ageing-wisely-studio` | **Complete** | Therapist-supported iCBT vs waitlist/self-guided baseline |
 | **Dengue Suit Studio** | `dengue-suit-studio` | **Complete** | CMIP6 thermal suitability vs static historical dengue baseline |
 | **Enhanced Flu Studio** | `enhanced-flu-studio` | **Complete** | Expanded EIV program vs current national policy baseline |
+| **Immunize Impact Studio** | `immunize-impact-studio` | **Building** | Immunization-linked mortality vs coverage-only dashboard |
 
 ## Rules
 

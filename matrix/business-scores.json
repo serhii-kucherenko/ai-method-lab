@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T00:25:53.936Z",
+  "updated_at": "2026-07-26T00:38:45.311Z",
   "projects": [
     {
       "id": 1,
@@ -2340,7 +2340,7 @@
     {
       "slug": "enhanced-flu-studio",
       "project": "Enhanced Flu Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare expanded enhanced influenza vaccine programs for adults 65+ against current national policy baselines before locking a program pack",
       "pmf": "Early signal with public-health / vaccine-program analytics leads who already trial program soft-sims",
       "buyer": "Public-health and vaccine-program analytics engineering leads",
@@ -2363,6 +2363,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 106
+    },
+    {
+      "slug": "immunize-impact-studio",
+      "project": "Immunize Impact Studio",
+      "status": "building",
+      "business_idea": "Compare immunization-linked under-five mortality panels against coverage-only dashboards before locking an impact pack",
+      "pmf": "Early signal with public-health / immunization-program analytics leads who already trial program soft-sims",
+      "buyer": "Public-health and immunization-program analytics engineering leads",
+      "money_hook": "Bench seats + private impact packs (method-lab experiment)",
+      "potential": "Immunization-linked mortality planning is underserved vs coverage-only dumps without honesty",
+      "moat": "Immunization-linked mortality vs coverage-only dashboard",
+      "evidence": "Paper ecological-panel claim (SSA immunization coverage vs under-five mortality); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer impact soft-sim with multi-flow bar; never claim live immunization logistics, clinical prescribing, or national policy authority",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 107
     }
   ]
 }

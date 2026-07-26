@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-26T01:30:00.000Z",
+  "updated_at": "2026-07-26T01:45:00.000Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,15 +10,15 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "f2500937-ccc4-479a-b449-de43e6c86d72",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "17ba23b4-5764-4f25-a69f-13744fd84e0f",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-91d6-d9781ab8c451"
   },
   "paused": false,
-  "active_cell": "A03__P-sustain-001__enhanced-flu-studio__r1",
+  "active_cell": "A03__P-sustain-001__immunize-impact-studio__r1",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__enhanced-flu-studio__r1",
   "last_error": null,
-  "current_product": "enhanced-flu-studio",
-  "current_idea": "enhanced-flu-studio",
+  "current_product": "immunize-impact-studio",
+  "current_idea": "immunize-impact-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Enhanced Flu Studio climb finished — product_complete_pending=true; parent should send finish email. Do NOT send Resend from climb agent.",
+  "phase": "build",
+  "notes": "Enhanced Flu finish email sent (17ba23b4). Immunize Impact Studio depth pack ready — climb in flight. Climb must NOT send Resend; set product_complete_pending on sustain.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.1016/j.vaccine.2026.128934",
-      "slug": "enhanced-flu-studio",
-      "displayName": "Enhanced Flu Studio",
-      "at": "2026-07-26T00:25:53.985Z",
-      "url": "https://doi.org/10.1016/j.vaccine.2026.128934",
+      "paperId": "10.21203/rs.3.rs-10174350/v1",
+      "slug": "immunize-impact-studio",
+      "displayName": "Immunize Impact Studio",
+      "at": "2026-07-26T01:45:00.000Z",
+      "url": "https://doi.org/10.21203/rs.3.rs-10174350/v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-26T00:25:53.985Z",
+    "framing_started_at": "2026-07-26T01:45:00.000Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,
