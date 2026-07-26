@@ -8,12 +8,13 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| — | **Download Gate Studio** | **complete** | Finish mail 2ae2b85d |
-| — | **Service Credit Studio** | **complete** | Finish mail 9453ede2 |
-| — | **Eval Budget Studio** | **complete** | Finish mail c7b27792 |
-| — | **Selective Trust Studio** | **complete** | Finish mail c44b64f5 |
-| — | **Judge Reliability Studio** | **complete** | Finish mail 04900bdf |
-| — | **Rubric Compiler Studio** | **complete** | Finish mail 51304661 |
+| ? | **Tool Scope Studio** | **complete** | Finish mail 4ec07dd7 |
+| ? | **Download Gate Studio** | **complete** | Finish mail 2ae2b85d |
+| ? | **Service Credit Studio** | **complete** | Finish mail 9453ede2 |
+| ? | **Eval Budget Studio** | **complete** | Finish mail c7b27792 |
+| ? | **Selective Trust Studio** | **complete** | Finish mail c44b64f5 |
+| ? | **Judge Reliability Studio** | **complete** | Finish mail 04900bdf |
+| ? | **Rubric Compiler Studio** | **complete** | Finish mail 51304661 |
 
 ## Prefer next
 
