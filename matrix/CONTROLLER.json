@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-26T14:14:35.805Z",
+  "updated_at": "2026-07-26T14:15:18.572Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__eval-budget-studio__r1",
   "last_error": null,
-  "current_product": null,
-  "current_idea": null,
+  "current_product": "service-credit-studio",
+  "current_idea": "service-credit-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "idle",
-  "notes": "Idle after Eval Budget finish (c7b27792). Hourly loop PID 23232.",
+  "phase": "product_delivery",
+  "notes": "Hourly wake follow-up: climbing Service Credit Studio (literal-dollar SLA credits). Loop PID 23232.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,12 +59,13 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "2407.18370",
-      "slug": "selective-trust-studio",
-      "displayName": "Selective Trust Studio",
-      "at": "2026-07-26T13:25:22.462Z",
-      "url": "https://arxiv.org/abs/2407.18370",
-      "codeUrl": null
+      "paperId": null,
+      "slug": "service-credit-studio",
+      "displayName": "Service Credit Studio",
+      "at": "2026-07-26T14:15:18.572Z",
+      "url": null,
+      "codeUrl": null,
+      "source": "business-first"
     },
     "notes": "biz-rubric-v2. Refuse device/clinical/wet-lab/retail."
   },
