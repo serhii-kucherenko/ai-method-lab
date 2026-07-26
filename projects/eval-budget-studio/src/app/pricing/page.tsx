@@ -1,0 +1,10 @@
+import { StaticPage } from "@/components/workspace-page";
+
+export default function Page() {
+  return (
+    <StaticPage
+      title="Pricing"
+      body="Three hypothetical tiers: Evaluator seats for small review teams, Platform seats plus diagnostic run usage, and a site license for private judge and item libraries."
+    />
+  );
+}
