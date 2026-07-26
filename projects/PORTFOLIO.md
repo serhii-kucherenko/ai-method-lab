@@ -125,7 +125,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Blood Loss Studio** | `blood-loss-studio` | **Complete** | Weighed-swab measured vs haemoglobin-calculated blood loss |
 | **Mof Capture Studio** | `mof-capture-studio` | **Complete** | Anionic MOF capture vs conventional sorbent |
 | **Abe Precision Studio** | `abe-precision-studio` | **Complete** | Domain-insertion ABE vs baseline ABE |
-| **Abe Precision Studio** | `abe-precision-studio` | **Building** | Domain-insertion ABE vs baseline ABE |
+| **Tubule Mps Studio** | `tubule-mps-studio` | **Building** | Voclosporin MPS vs cyclosporine A |
 
 ## Rules
 

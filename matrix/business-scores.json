@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T02:17:14.137Z",
+  "updated_at": "2026-07-26T02:26:09.030Z",
   "projects": [
     {
       "id": 1,
@@ -2637,15 +2637,42 @@
     {
       "slug": "abe-precision-studio",
       "project": "Abe Precision Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare domain-insertion adenine base editor precision against baseline ABE windows before locking an editor pack",
       "pmf": "Early signal with gene-editing / therapeutic design analytics leads who already trial editor soft-sims",
       "buyer": "Gene-editing and therapeutic design analytics engineering leads",
       "money_hook": "Bench seats + private editor packs (method-lab experiment)",
       "potential": "ABE precision planning is underserved vs baseline editor dumps without honesty",
       "moat": "Domain-insertion ABE vs baseline ABE",
-      "evidence": "Paper gene-edit claim (domain insertion narrows ABE editing window); no public code; soft-sim honesty required",
+      "evidence": "Paper gene-edit claim (domain insertion narrows ABE editing window); no public code; soft-sim honesty required; 13 pages; dual scorers; 30 goldens; build + app-up green",
       "gc_notes": "Prefer editor soft-sim with multi-flow bar; never claim wet-lab validation, IND/NDA readiness, patient dosing, or clinical gene-therapy advice; not authors’ brand",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 7,
+        "feasibility": 7
+      },
+      "score": 67,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 117
+    },
+    {
+      "slug": "tubule-mps-studio",
+      "project": "Tubule Mps Studio",
+      "status": "building",
+      "business_idea": "Compare voclosporin mitochondrial preservation against cyclosporine A baselines in proximal-tubule MPS packs before locking a regimen pack",
+      "pmf": "Early signal with transplant nephrology / MPS analytics leads who already trial calcineurin soft-sims",
+      "buyer": "Transplant nephrology and microphysiological-system analytics engineering leads",
+      "money_hook": "Bench seats + private tubule packs (method-lab experiment)",
+      "potential": "MPS calcineurin planning is underserved vs 2D culture dumps without honesty",
+      "moat": "Voclosporin MPS vs cyclosporine A",
+      "evidence": "Paper MPS claim (voclosporin preserves mitochondria vs cyclosporine A in proximal-tubule MPS); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer MPS soft-sim with multi-flow bar; never claim wet-lab MPS validation, transplant dosing advice, IND/NDA readiness, or live patient care; not authors’ brand",
       "dimensions": {
         "buyer": 7,
         "pain": 7,
@@ -2659,7 +2686,7 @@
       "score": 66,
       "tier": "B",
       "rubric": "biz-rubric-v1",
-      "id": 117
+      "id": 118
     }
   ]
 }
