@@ -17,6 +17,7 @@ When digests are available and the lab is idle (no `current_product`) **and** CO
 9. Clear slot → next pick only from ideas that would score **A/B** under `docs/BUSINESS_RUBRIC.md`
 
 Never invent freehand statute-code seeds while simple-papers digests exist.
+Local Method Lab handoff digests may also live at `docs/ideas/_paper-picks/digests/` — the picker merges them when present (bridge into simple-papers via `SIMPLE_PAPERS_HANDOFF.md`).
 Never noun-swap a prior desk with a new scoring function.
 
 ## Business score gate
