@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T00:59:12.475Z",
+  "updated_at": "2026-07-26T01:09:27.195Z",
   "projects": [
     {
       "id": 1,
@@ -2421,7 +2421,7 @@
     {
       "slug": "disaster-liaison-studio",
       "project": "Disaster Liaison Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare pediatric-perinatal disaster liaison frameworks against generic disaster-headquarters baselines before locking a response pack",
       "pmf": "Early signal with public-health / emergency-ops analytics leads who already trial response soft-sims",
       "buyer": "Public-health and emergency-ops analytics engineering leads",
@@ -2444,6 +2444,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 109
+    },
+    {
+      "slug": "pavement-retrofit-studio",
+      "project": "Pavement Retrofit Studio",
+      "status": "building",
+      "business_idea": "Compare photocatalytic pavement retrofit pathways against conventional pavement-preservation baselines before locking a corridor pack",
+      "pmf": "Early signal with infrastructure / climate-road analytics leads who already trial corridor soft-sims",
+      "buyer": "Infrastructure and climate-road analytics engineering leads",
+      "money_hook": "Bench seats + private corridor packs (method-lab experiment)",
+      "potential": "Photocatalytic pavement retrofit planning is underserved vs conventional preservation dumps without honesty",
+      "moat": "Photocatalytic pavement retrofit vs conventional preservation",
+      "evidence": "Paper infrastructure claim (photocatalytic pavement retrofit / PlusTi-style); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer corridor soft-sim with multi-flow bar; never claim live road construction, certified emissions audits, or municipal procurement authority",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 110
     }
   ]
 }
