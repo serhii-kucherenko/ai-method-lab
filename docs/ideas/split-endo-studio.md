@@ -1,6 +1,6 @@
 # Split Endo Studio
 
-**State:** ready_to_build  
+**State:** complete  
 **Slug:** `split-endo-studio`  
 **Paper:** https://doi.org/10.21203/rs.3.rs-10158488/v1  
 **Authors’ code:** none  

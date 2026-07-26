@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Split Endo Studio — offline try</title>
+  <style>
+    :root {
+      --ink: #12161a;
+      --teal: #1c5f68;
+      --linen: #eef2f3;
+      --amber: #a87a32;
+      --line: #c4cacd;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--linen);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    header {
+      background: linear-gradient(165deg, #0a0e10, #1a2628);
+      color: #fff;
+      padding: 2rem 1.25rem 2.5rem;
+    }
+    h1 { margin: 0; font-size: 1.75rem; color: var(--amber); }
+    .tag { margin-top: 0.5rem; opacity: 0.9; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.85rem; }
+    input[type="range"] { width: 100%; }
+    button {
+      margin-top: 1.25rem;
+      background: var(--teal);
+      color: #fff;
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+    }
+    .note { font-size: 0.8rem; color: #556066; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Split Endo Studio</h1>
+    <p class="tag">Offline soft-sim — OSE vs open laminectomy (approximate)</p>
+  </header>
+  <main>
+    <p>Adjust soft-sim burden indices (higher = worse) and see which pathway wins.</p>
+    <label>Blood loss <span id="blv"></span></label>
+    <input id="bloodLoss" type="range" min="0" max="100" value="28" />
+    <label>Hospital stay <span id="hsv"></span></label>
+    <input id="hospitalStay" type="range" min="0" max="100" value="32" />
+    <label>Complications <span id="cv"></span></label>
+    <input id="complication" type="range" min="0" max="100" value="22" />
+    <label>Recovery signal <span id="rv"></span></label>
+    <input id="recovery" type="range" min="0" max="100" value="70" />
+    <button type="button" id="run">Score pathways</button>
+    <div class="out" id="out">Press score to compare.</div>
+    <p class="note">
+      Soft-sim only — not live OR control, not device clearance, not clinical advice.
+      Full fidelity needs the Next.js app locally.
+    </p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function val(id) { return Number(document.getElementById(id).value) / 100; }
+    function sync() {
+      document.getElementById("blv").textContent = val("bloodLoss").toFixed(2);
+      document.getElementById("hsv").textContent = val("hospitalStay").toFixed(2);
+      document.getElementById("cv").textContent = val("complication").toFixed(2);
+      document.getElementById("rv").textContent = val("recovery").toFixed(2);
+    }
+    ["bloodLoss","hospitalStay","complication","recovery"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", sync);
+    });
+    sync();
+    function scoreOse(i) {
+      const load = i.bloodLoss * 0.4 + i.hospitalStay * 0.35 + i.complication * 0.25;
+      const blood = clamp(((1 - i.bloodLoss) * 55 + i.recovery * 25 - load * 8) * 1.1 + 6, 0, 100);
+      const stay = clamp((1 - i.hospitalStay) * 60 + i.recovery * 20 + 6, 0, 100);
+      const overall = round2(clamp(blood * 0.45 + stay * 0.55, 0, 100));
+      return overall;
+    }
+    function scoreOpen(i) {
+      const load = i.bloodLoss * 0.4 + i.hospitalStay * 0.35 + i.complication * 0.25;
+      const blood = clamp((1 - i.bloodLoss) * 35 + (1 - i.complication) * 40 - load * 5, 0, 100);
+      const stay = clamp((1 - i.hospitalStay) * 30 + 40, 0, 100);
+      return round2(clamp(blood * 0.55 + stay * 0.45, 0, 100));
+    }
+    document.getElementById("run").addEventListener("click", () => {
+      const i = {
+        bloodLoss: val("bloodLoss"),
+        hospitalStay: val("hospitalStay"),
+        complication: val("complication"),
+        recovery: val("recovery"),
+      };
+      const ose = scoreOse(i);
+      const open = scoreOpen(i);
+      const winner = ose > open + 0.5 ? "one_hole_split_endoscopy"
+        : open > ose + 0.5 ? "open_laminectomy" : "tie";
+      document.getElementById("out").innerHTML =
+        "<strong>Winner:</strong> " + winner +
+        "<br/>OSE overall: " + ose +
+        "<br/>Open laminectomy overall: " + open +
+        "<br/>Gap: " + round2(Math.abs(ose - open));
+    });
+  </script>
+</body>
+</html>

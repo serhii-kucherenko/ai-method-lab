@@ -1,0 +1,39 @@
+{
+  "id": "se-019",
+  "input": {
+    "bloodLoss": 0.3,
+    "operativeTime": 0.31,
+    "hospitalStay": 0.3,
+    "complicationRate": 0.28,
+    "decompressionQuality": 0.72,
+    "recoverySignal": 0.72,
+    "assaySignal": 0.72,
+    "overclaimRisk": 0.28,
+    "approachBias": "balanced",
+    "profile": "one_hole_split_endoscopy"
+  },
+  "expectedOse": {
+    "mode": "one_hole_split_endoscopy",
+    "bloodLossScore": 76.33,
+    "stayScore": 75.25,
+    "safetyScore": 78.34,
+    "recoveryScore": 65.49,
+    "openPenalty": 20.56,
+    "confidence": 47.4,
+    "oseContribution": 76.99,
+    "openContribution": 62.85,
+    "overall": 78.44
+  },
+  "expectedOpenLam": {
+    "mode": "open_laminectomy",
+    "bloodLossScore": 52.48,
+    "stayScore": 54.95,
+    "safetyScore": 43.6,
+    "recoveryScore": 40.93,
+    "openPenalty": 3.15,
+    "confidence": 46.48,
+    "oseContribution": 57.76,
+    "openContribution": 49.5,
+    "overall": 45.44
+  }
+}

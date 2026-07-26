@@ -115,7 +115,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Dengue Suit Studio** | `dengue-suit-studio` | **Complete** | CMIP6 thermal suitability vs static historical dengue baseline |
 | **Enhanced Flu Studio** | `enhanced-flu-studio` | **Complete** | Expanded EIV program vs current national policy baseline |
 | **Immunize Impact Studio** | `immunize-impact-studio` | **Complete** | Immunization-linked mortality vs coverage-only dashboard |
-| **Split Endo Studio** | `split-endo-studio` | **Building** | One-hole split endoscopy vs open laminectomy |
+| **Split Endo Studio** | `split-endo-studio` | **Complete** | One-hole split endoscopy vs open laminectomy |
 
 ## Rules
 
