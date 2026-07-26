@@ -1,0 +1,39 @@
+{
+  "id": "ap-019",
+  "input": {
+    "windowNarrowing": 0.72,
+    "baselineWindowBreadth": 0.28,
+    "assayFidelity": 0.72,
+    "insertionCompleteness": 0.72,
+    "evidenceStrength": 0.72,
+    "editorFollowThrough": 0.72,
+    "assayReadout": 0.72,
+    "overclaimRisk": 0.28,
+    "scoringBias": "balanced",
+    "profile": "domain_insertion_abe"
+  },
+  "expectedInsertion": {
+    "mode": "domain_insertion_abe",
+    "insertionPrecisionScore": 85.73,
+    "baselineScore": 32.22,
+    "insertionCoverage": 72.66,
+    "editorEfficiency": 76.99,
+    "baselineOnlyPenalty": 18.84,
+    "confidence": 46.96,
+    "insertionContribution": 79.33,
+    "baselineContribution": 54.24,
+    "overall": 78.81
+  },
+  "expectedBaseline": {
+    "mode": "baseline_abe",
+    "insertionPrecisionScore": 26.31,
+    "baselineScore": 31.45,
+    "insertionCoverage": 34.46,
+    "editorEfficiency": 34.38,
+    "baselineOnlyPenalty": 3,
+    "confidence": 35,
+    "insertionContribution": 44.72,
+    "baselineContribution": 28.4,
+    "overall": 26.71
+  }
+}

@@ -1,6 +1,6 @@
 # Abe Precision Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `abe-precision-studio`  
 **Paper:** https://www.biorxiv.org/content/10.64898/2026.07.03.736350v1  
 **Authors’ code:** none  
