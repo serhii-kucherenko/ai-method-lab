@@ -1,0 +1,39 @@
+{
+  "id": "ds-009",
+  "input": {
+    "dockingFit": 0.49,
+    "libraryHitRate": 0.38,
+    "pharmacophoreMatch": 0.58,
+    "parasiteSelectivity": 0.49,
+    "evidenceStrength": 0.49,
+    "screenFollowThrough": 0.49,
+    "assayReadout": 0.49,
+    "overclaimRisk": 0.38,
+    "scoringBias": "balanced",
+    "profile": "naive_library_baseline"
+  },
+  "expectedStructure": {
+    "mode": "structure_based_dhodh",
+    "dockingScore": 58.75,
+    "libraryScore": 32.72,
+    "pharmacophoreCoverage": 44.44,
+    "screenEfficiency": 59.67,
+    "selectivityGap": 38.64,
+    "confidence": 23.13,
+    "structureContribution": 55.42,
+    "libraryContribution": 44.87,
+    "overall": 55.84
+  },
+  "expectedLibrary": {
+    "mode": "naive_library_baseline",
+    "dockingScore": 32.17,
+    "libraryScore": 41.62,
+    "pharmacophoreCoverage": 33.04,
+    "screenEfficiency": 36.23,
+    "selectivityGap": 12.75,
+    "confidence": 28.48,
+    "structureContribution": 46.06,
+    "libraryContribution": 34.31,
+    "overall": 36.24
+  }
+}

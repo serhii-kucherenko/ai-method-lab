@@ -128,7 +128,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Tubule Mps Studio** | `tubule-mps-studio` | **Complete** | Voclosporin MPS vs cyclosporine A |
 | **Usher Dual Studio** | `usher-dual-studio` | **Complete** | MYO7A supplementation vs Myo7b activation |
 | **Aminoaryl Studio** | `aminoaryl-studio` | **Complete** | Photocatalytic vs copper-catalyzed aminoarylation |
-| **Dhodh Screen Studio** | `dhodh-screen-studio` | **Building** | Structure-based DHODH VS vs naive library |
+| **Dhodh Screen Studio** | `dhodh-screen-studio` | **Complete** | Structure-based DHODH VS vs naive library |
 
 ## Rules
 
