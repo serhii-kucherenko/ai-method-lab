@@ -130,6 +130,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Aminoaryl Studio** | `aminoaryl-studio` | **Complete** | Photocatalytic vs copper-catalyzed aminoarylation |
 | **Dhodh Screen Studio** | `dhodh-screen-studio` | **Complete** | Structure-based DHODH VS vs naive library |
 | **Map Anchor Studio** | `map-anchor-studio` | **Killed** | Wet-lab biologics soft-sim — not software-solvable (biz-rubric-v2) |
+| **Rubric Compiler Studio** | `rubric-compiler-studio` | **Building** | Compile locked rubrics → evidence-anchored scores |
 
 ## Rules
 

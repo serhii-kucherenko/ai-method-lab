@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-26T08:50:00.000Z",
+  "updated_at": "2026-07-26T13:15:00.000Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -18,7 +18,7 @@
     "last_fpd_reemail_id": "9a9d8b3e-91d6-d9781ab8c451"
   },
   "paused": false,
-  "active_cell": null,
+  "active_cell": "A03__P-smoke-001__rubric-compiler-studio__r1",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__dhodh-screen-studio__r1",
   "last_error": null,
-  "current_product": null,
+  "current_product": "rubric-compiler-studio",
   "current_idea": "rubric-compiler-studio",
-  "next_research_idea": "rubric-compiler-studio",
+  "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "research",
-  "notes": "2026-07-26 human steer: business ideas software can fix — not devices/healthcare/wet-lab/retail. Killed map-anchor-studio mid-climb. Next: Rubric Compiler Studio (idea-first from RESEARCH scoring queue). biz-rubric-v2. No Resend until product_complete.",
+  "phase": "build",
+  "notes": "Human steer: business-first + keep going. Depth pack complete (PM-GO). Climb Rubric Compiler Studio. 1h loop PID 28224. No Resend until product_complete_pending on sustain.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -62,12 +62,12 @@
       "paperId": null,
       "slug": "rubric-compiler-studio",
       "displayName": "Rubric Compiler Studio",
-      "at": "2026-07-26T08:50:00.000Z",
+      "at": "2026-07-26T13:15:00.000Z",
       "url": "https://arxiv.org/abs/2601.08654",
       "codeUrl": null,
-      "note": "Idea-first from scoring/rubric research queue — not paper→wet-lab climb"
+      "note": "Idea-first scoring/rubric product — software-solvable"
     },
-    "notes": "Papers are optional research input. Must clear IDEA_DEPTH + PM go + designer pack + biz-rubric-v2 A/B before projects/. Refuse device/clinical/wet-lab/retail."
+    "notes": "biz-rubric-v2. Refuse device/clinical/wet-lab/retail."
   },
   "depth_policy": {
     "max_active_products": 1,
@@ -78,7 +78,7 @@
     "min_hours_research_before_ready": 24,
     "framing_started_at": "2026-07-26T08:50:00.000Z",
     "min_research_ticks_before_ready": 3,
-    "research_ticks_on_idea": 0,
+    "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,
     "require_architect_pack": true,
     "require_pm_go": true,
@@ -135,10 +135,10 @@
     "interval": "1h",
     "sentinel": "AGENT_LOOP_TICK_keep_executing",
     "purpose": "keep_executing",
-    "pid": null,
+    "pid": 28224,
     "chain": "business_idea_depth_build_email_next",
     "do_not_rearm_if_alive": true,
     "ticks_observed": 0,
-    "depth_note": "Business-first: software-solvable A/B ideas only (biz-rubric-v2)."
+    "depth_note": "Business-first 1h keep-going loop armed."
   }
 }

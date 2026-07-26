@@ -1,6 +1,6 @@
 # Rubric Compiler Studio
 
-**State:** framed  
+**State:** building  
 **Slug:** `rubric-compiler-studio`  
 **Display name:** Rubric Compiler Studio  
 **Research seeds:** [RULERS](https://arxiv.org/abs/2601.08654), [Autorubric](https://arxiv.org/abs/2603.00077), [PReMISE](https://arxiv.org/abs/2605.30803)  
