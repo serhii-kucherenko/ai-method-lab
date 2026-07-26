@@ -8,7 +8,8 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| ? | **Idle Seat Studio** | **complete ? email pending** | Finish mail fe60a68d |
+| ? | **Bypass Audit Studio** | **complete ? email pending** | Finish mail 7eff623f |
+| ? | **Idle Seat Studio** | **complete** | Finish mail fe60a68d |
 | ? | **Tool Scope Studio** | **complete** | Finish mail 4ec07dd7 |
 | ? | **Download Gate Studio** | **complete** | Finish mail 2ae2b85d |
 | ? | **Service Credit Studio** | **complete** | Finish mail 9453ede2 |
