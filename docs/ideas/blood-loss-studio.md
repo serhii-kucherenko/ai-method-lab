@@ -1,6 +1,6 @@
 # Blood Loss Studio
 
-**State:** ready_to_build  
+**State:** complete  
 **Slug:** `blood-loss-studio`  
 **Paper:** https://www.medrxiv.org/content/10.64898/2026.07.16.26358295v1  
 **Authors’ code:** none  

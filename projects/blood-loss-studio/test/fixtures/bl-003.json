@@ -1,0 +1,39 @@
+{
+  "id": "bl-003",
+  "input": {
+    "swabMassFidelity": 0.42,
+    "hbDeltaCoverage": 0.46,
+    "assayFidelity": 0.42,
+    "methodCompleteness": 0.42,
+    "evidenceStrength": 0.42,
+    "birthFollowThrough": 0.42,
+    "assayReadout": 0.42,
+    "overclaimRisk": 0.46,
+    "scoringBias": "hb_first",
+    "profile": "haemoglobin_calculated"
+  },
+  "expectedMeasured": {
+    "mode": "weighed_swab_measured",
+    "measuredLossScore": 19.24,
+    "calculatedLossScore": 37.37,
+    "methodCoverage": 29.25,
+    "birthEfficiency": 29.71,
+    "calculatedOnlyPenalty": 54.68,
+    "confidence": 21.46,
+    "measuredContribution": 29.04,
+    "calculatedContribution": 28.7,
+    "overall": 29.98
+  },
+  "expectedCalculated": {
+    "mode": "haemoglobin_calculated",
+    "measuredLossScore": 26.43,
+    "calculatedLossScore": 45.98,
+    "methodCoverage": 32.6,
+    "birthEfficiency": 37.55,
+    "calculatedOnlyPenalty": 16.76,
+    "confidence": 21.76,
+    "measuredContribution": 45.16,
+    "calculatedContribution": 32.84,
+    "overall": 30.69
+  }
+}

@@ -122,7 +122,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Shigella Growth Studio** | `shigella-growth-studio` | **Complete** | Antibiotic-treated Shigella vs untreated diarrhea growth |
 | **Cardiac Pocus Studio** | `cardiac-pocus-studio` | **Complete** | Cardiac POCUS COPD patterns vs lung-ultrasound baseline |
 | **Responsible Index Studio** | `responsible-index-studio` | **Complete** | Structured country index vs naive commitment checklist |
-| **Blood Loss Studio** | `blood-loss-studio` | **Building** | Weighed-swab measured vs haemoglobin-calculated blood loss |
+| **Blood Loss Studio** | `blood-loss-studio` | **Complete** | Weighed-swab measured vs haemoglobin-calculated blood loss |
 
 ## Rules
 
