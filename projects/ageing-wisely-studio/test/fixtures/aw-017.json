@@ -1,0 +1,39 @@
+{
+  "id": "aw-017",
+  "input": {
+    "therapistSupportFidelity": 0.62,
+    "moduleCompletion": 0.64,
+    "engagementAdherence": 0.57,
+    "symptomReliefSignal": 0.62,
+    "coDesignFit": 0.62,
+    "dropoutRisk": 0.39,
+    "sessionSignal": 0.64,
+    "overclaimRisk": 0.33,
+    "careBias": "self_guided_first",
+    "profile": "therapist_supported_icbt"
+  },
+  "expectedTherapist": {
+    "mode": "therapist_supported_icbt",
+    "supportScore": 61.93,
+    "completionScore": 37.18,
+    "engagementScore": 38.07,
+    "reliefScore": 50.77,
+    "dropoutPenalty": 25.24,
+    "confidence": 43.5,
+    "therapistContribution": 51.58,
+    "waitlistContribution": 35.41,
+    "overall": 52.67
+  },
+  "expectedWaitlist": {
+    "mode": "waitlist_self_guided_baseline",
+    "supportScore": 20.52,
+    "completionScore": 50.45,
+    "engagementScore": 36.09,
+    "reliefScore": 59.8,
+    "dropoutPenalty": 21.22,
+    "confidence": 36.39,
+    "therapistContribution": 49.13,
+    "waitlistContribution": 50.04,
+    "overall": 44.14
+  }
+}

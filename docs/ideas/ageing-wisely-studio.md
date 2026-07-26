@@ -1,6 +1,6 @@
 # Ageing Wisely Studio
 
-**State:** framing  
+**State:** complete  
 **Slug:** `ageing-wisely-studio`  
 **Paper:** https://osf.io/preprints/psyarxiv/hukx9_v1/  
 **Authors’ code:** none  

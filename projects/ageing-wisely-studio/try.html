@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ageing Wisely Studio — offline soft-sim</title>
+  <style>
+    :root { --aw-ink:#16181c; --aw-sage:#3d6a5e; --aw-mist:#eef2f1; --aw-amber:#a87d3c; }
+    body { font-family: Georgia, serif; margin: 0; background: var(--aw-mist); color: var(--aw-ink); }
+    main { max-width: 40rem; margin: 0 auto; padding: 2rem 1.25rem; }
+    h1 { font-size: 1.75rem; }
+    label { display:block; margin-top: .75rem; font-size: .9rem; }
+    input, select { width: 100%; padding: .45rem; margin-top: .25rem; }
+    button { margin-top: 1rem; background: var(--aw-sage); color: white; border: 0; padding: .6rem 1rem; }
+    .out { margin-top: 1.25rem; padding: 1rem; background: white; border: 1px solid #c5cac7; }
+    .note { font-size: .85rem; color: #5a6560; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Ageing Wisely Studio</h1>
+    <p>Offline soft-sim: therapist-supported iCBT vs waitlist / self-guided baseline.</p>
+    <label>Therapist support fidelity <input id="support" type="number" min="0" max="1" step="0.01" value="0.72" /></label>
+    <label>Module completion <input id="completion" type="number" min="0" max="1" step="0.01" value="0.68" /></label>
+    <label>Engagement adherence <input id="engagement" type="number" min="0" max="1" step="0.01" value="0.74" /></label>
+    <label>Symptom relief signal <input id="relief" type="number" min="0" max="1" step="0.01" value="0.6" /></label>
+    <label>Co-design fit <input id="codesign" type="number" min="0" max="1" step="0.01" value="0.55" /></label>
+    <label>Dropout risk <input id="dropout" type="number" min="0" max="1" step="0.01" value="0.3" /></label>
+    <label>Care bias
+      <select id="bias">
+        <option value="balanced">balanced</option>
+        <option value="therapist_first">therapist_first</option>
+        <option value="self_guided_first">self_guided_first</option>
+        <option value="waitlist_first">waitlist_first</option>
+      </select>
+    </label>
+    <button type="button" id="run">Score A/B</button>
+    <div class="out" id="out">Run to see soft-sim scores.</div>
+    <p class="note">Not clinical diagnosis, not live therapist replacement, not regulated digital therapeutic clearance.</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function scoreTherapist(input) {
+      const only = true;
+      const boost = 1.12;
+      const wT = biasWeight(input.careBias, "therapist_first");
+      const supportScore = round2(clamp(input.therapistSupportFidelity * 55 * boost * wT + input.coDesignFit * 20 + 8 - input.overclaimRisk * 6, 0, 100));
+      const completionScore = round2(clamp(input.moduleCompletion * 55 * boost + input.therapistSupportFidelity * 20, 0, 100));
+      const engagementScore = round2(clamp(input.engagementAdherence * 50 * boost + (1 - input.dropoutRisk) * 20, 0, 100));
+      const reliefScore = round2(clamp(input.symptomReliefSignal * 45 * boost + input.moduleCompletion * 20, 0, 100));
+      const overall = round2(clamp(supportScore * 0.35 + completionScore * 0.3 + engagementScore * 0.2 + reliefScore * 0.15, 0, 100));
+      return { supportScore, completionScore, engagementScore, reliefScore, overall };
+    }
+    function scoreWaitlist(input) {
+      const boost = 1.08;
+      const supportScore = round2(clamp(input.moduleCompletion * 20 * boost + input.engagementAdherence * 20 - input.therapistSupportFidelity * 18, 0, 100));
+      const completionScore = round2(clamp(input.moduleCompletion * 42 * boost + (1 - input.therapistSupportFidelity) * 18, 0, 100));
+      const engagementScore = round2(clamp(input.engagementAdherence * 38 * boost + input.symptomReliefSignal * 25, 0, 100));
+      const reliefScore = round2(clamp(input.symptomReliefSignal * 50 * boost - input.therapistSupportFidelity * 10, 0, 100));
+      const overall = round2(clamp(reliefScore * 0.45 + completionScore * 0.3 + engagementScore * 0.25, 0, 100));
+      return { supportScore, completionScore, engagementScore, reliefScore, overall };
+    }
+    document.getElementById("run").onclick = () => {
+      const input = {
+        therapistSupportFidelity: Number(support.value),
+        moduleCompletion: Number(completion.value),
+        engagementAdherence: Number(engagement.value),
+        symptomReliefSignal: Number(relief.value),
+        coDesignFit: Number(codesign.value),
+        dropoutRisk: Number(dropout.value),
+        overclaimRisk: 0.28,
+        careBias: bias.value,
+      };
+      const a = scoreTherapist(input);
+      const b = scoreWaitlist(input);
+      const winner = a.overall > b.overall + 0.5 ? "therapist_supported_icbt" : b.overall > a.overall + 0.5 ? "waitlist_self_guided_baseline" : "tie";
+      out.textContent = "A therapist " + a.overall + " · B waitlist " + b.overall + " · winner " + winner;
+    };
+  </script>
+</body>
+</html>

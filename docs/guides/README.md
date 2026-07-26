@@ -136,5 +136,5 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 133 | [Liver Organoid Studio - what we learned](133-liver-organoid-studio-lessons.md) | Product `liver-organoid-studio` |
 | 134 | [Nanodomain Target Studio - what we learned](134-nanodomain-target-studio-lessons.md) | Product `nanodomain-target-studio` |
 | 135 | [Coload Order Studio - what we learned](135-coload-order-studio-lessons.md) | Product `coload-order-studio` |
-
+| 136 | [Ageing Wisely Studio - what we learned](136-ageing-wisely-studio-lessons.md) | Product `ageing-wisely-studio` |
 
