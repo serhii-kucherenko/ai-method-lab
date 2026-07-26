@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T00:49:01.984Z",
+  "updated_at": "2026-07-26T00:59:12.475Z",
   "projects": [
     {
       "id": 1,
@@ -2394,7 +2394,7 @@
     {
       "slug": "split-endo-studio",
       "project": "Split Endo Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare one-hole split endoscopy pathways against open laminectomy baselines before locking a case pack",
       "pmf": "Early signal with spine / MIS surgical analytics leads who already trial pathway soft-sims",
       "buyer": "Spine and minimally invasive surgical analytics engineering leads",
@@ -2417,6 +2417,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 108
+    },
+    {
+      "slug": "disaster-liaison-studio",
+      "project": "Disaster Liaison Studio",
+      "status": "building",
+      "business_idea": "Compare pediatric-perinatal disaster liaison frameworks against generic disaster-headquarters baselines before locking a response pack",
+      "pmf": "Early signal with public-health / emergency-ops analytics leads who already trial response soft-sims",
+      "buyer": "Public-health and emergency-ops analytics engineering leads",
+      "money_hook": "Bench seats + private response packs (method-lab experiment)",
+      "potential": "Embedded pediatric-perinatal liaison planning is underserved vs generic HQ dumps without honesty",
+      "moat": "Pediatric-perinatal liaison vs generic disaster HQ",
+      "evidence": "Paper emergency-ops claim (Japan DLPPM Noto Earthquake analysis); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer response soft-sim with multi-flow bar; never claim live emergency dispatch, clinical triage authority, or government command systems",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 109
     }
   ]
 }

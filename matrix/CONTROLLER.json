@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-26T00:56:27.788Z",
+  "updated_at": "2026-07-26T02:10:00.000Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,15 +10,15 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "52536a3f-d475-4be0-bb0e-3b0919788dae",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "fe836aaf-20b6-4039-b6e9-88f2d6703e51",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-91d6-d9781ab8c451"
   },
   "paused": false,
-  "active_cell": "A03__P-sustain-001__split-endo-studio__r1",
+  "active_cell": "A03__P-sustain-001__disaster-liaison-studio__r1",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
