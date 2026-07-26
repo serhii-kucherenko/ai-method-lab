@@ -1,15 +1,15 @@
 {
   "date": "2026-07-26",
   "source": "ai-method-lab-handoff",
-  "title": "People / recruiter scoring shortlist",
-  "notes": "Seeded from Method Lab frontier screen (2026-07-26): 1944 unique arXiv papers, 686 relevant, top 10 + honorable mentions for scoring people with rubrics (recruiting + adjacent). Drop this file into simple-papers data/digests/.",
+  "title": "Good scoring / good rubrics shortlist",
+  "notes": "Refocused Method Lab screen: scoring quality & rubrics (not hiring apps). From 1944 unique papers \u2192 162 method-strong \u2192 top 10 + 5 craft adjacent.",
   "methodLabHandoff": {
     "fromRepo": "https://github.com/serhii-kucherenko/ai-method-lab",
     "researchDoc": "https://github.com/serhii-kucherenko/ai-method-lab/blob/serhii/people-scoring-papers-5987/docs/RESEARCH.md",
     "pr": "https://github.com/serhii-kucherenko/ai-method-lab/pull/6",
     "screenedUnique": 1944,
-    "relevant": 686,
-    "theme": "people-scoring-rubrics-recruiting"
+    "methodStrong": 162,
+    "theme": "good-scoring-rubrics"
   },
   "papers": [
     {
@@ -29,130 +29,22 @@
         "developer-tools"
       ],
       "relevanceScore": 0.99,
-      "summary": "RULERS compiles natural-language rubrics into executable, versioned criteria with evidence checks and scale calibration for reliable LLM judging.",
-      "summarySimple": "Turns scoring rubrics into executable checklists so AI judges score more like careful humans.",
+      "summary": "RULERS compiles natural-language rubrics into executable, versioned criteria with evidence-anchored scoring and scale calibration.",
+      "summarySimple": "Turns scoring rubrics into locked, executable checklists with evidence and calibrated scores.",
       "code": {
         "url": "https://github.com/LabRAI/Rulers"
       },
       "impact": {
-        "forTech": "Build a rubric compiler + evidence-anchored scorer that versions criteria, verifies cited evidence, and calibrates score scales for hiring scorecards, essay grading, or any analytic rubric.",
-        "forBusiness": "Selling point: replace one-shot holistic LLM scores with auditable, versioned rubrics recruiters and educators can trust."
+        "forTech": "Build a rubric compiler + evidence-anchored scorer: version criteria, verify cited evidence, calibrate score scales.",
+        "forBusiness": "Replace holistic AI scores with auditable, versioned rubrics buyers can trust."
       },
       "methodLab": {
         "tier": "top10",
         "rank": 1,
         "domains": [
           "rubrics",
-          "llm-judge",
-          "cross-domain"
-        ]
-      }
-    },
-    {
-      "id": "2603.01775",
-      "title": "Beyond the Resum\u00e9: A Rubric-Aware Automatic Interview System for Information Elicitation",
-      "url": "https://arxiv.org/abs/2603.01775",
-      "published": "2026-03-02",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.HC"
-      ],
-      "tags": [
-        "llm",
-        "nlp",
-        "machine-learning",
-        "developer-tools"
-      ],
-      "relevanceScore": 0.98,
-      "summary": "Open multi-turn interview system that updates calibrated belief over rubric-oriented candidate KSAs instead of one-shot resume scores.",
-      "summarySimple": "An AI interviewer that fills a job rubric by asking better questions and updating confidence as answers come in.",
-      "code": {
-        "url": "https://github.com/mbzuai-nlp/beyond-the-resume"
-      },
-      "impact": {
-        "forTech": "Ship a recruiter interview desk: role rubrics, belief updates per KSA, calibrated saturation stopping, and exportable score trails with public demo/code.",
-        "forBusiness": "Early hiring wedge: cheaper than SME interviews, richer than resume screens."
-      },
-      "methodLab": {
-        "tier": "top10",
-        "rank": 2,
-        "domains": [
-          "recruiting",
-          "interviews",
-          "rubrics"
-        ]
-      }
-    },
-    {
-      "id": "2407.18370",
-      "title": "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
-      "url": "https://arxiv.org/abs/2407.18370",
-      "published": "2024-07-25",
-      "categories": [
-        "cs.CL",
-        "cs.LG",
-        "cs.AI"
-      ],
-      "tags": [
-        "llm",
-        "machine-learning",
-        "nlp",
-        "developer-tools"
-      ],
-      "relevanceScore": 0.97,
-      "summary": "Selective LLM evaluation with confidence estimation and cascaded escalation that guarantees a target human-agreement level.",
-      "summarySimple": "Only trust an AI score when it is confident; otherwise escalate to a stronger model or a human.",
-      "code": {
-        "url": null
-      },
-      "impact": {
-        "forTech": "Add a selective scoring layer: estimate judge confidence, abstain/escalate under a user-set human-agreement guarantee, cascade cheap\u2192strong judges.",
-        "forBusiness": "Required reliability control for any product that scores people."
-      },
-      "methodLab": {
-        "tier": "top10",
-        "rank": 3,
-        "domains": [
-          "reliability",
-          "llm-judge",
-          "high-stakes"
-        ]
-      }
-    },
-    {
-      "id": "2603.16215",
-      "title": "CoMAI: A Collaborative Multi-Agent Framework for Robust and Equitable Interview Evaluation",
-      "url": "https://arxiv.org/abs/2603.16215",
-      "published": "2026-03-17",
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.MA"
-      ],
-      "tags": [
-        "llm",
-        "machine-learning",
-        "developer-tools",
-        "security"
-      ],
-      "relevanceScore": 0.96,
-      "summary": "Multi-agent interview framework with question, security, rubric scoring, and summarization agents; validated in admissions.",
-      "summarySimple": "A team of specialized AI agents runs safer, fairer interviews with rubric scoring instead of one chat bot.",
-      "code": {
-        "url": null
-      },
-      "impact": {
-        "forTech": "Implement modular interview agents (question gen, injection defense, rubric score, audit summary) with FSM orchestration for hiring/admissions.",
-        "forBusiness": "Ports admissions-validated interview scoring to recruiting with security against prompt injection."
-      },
-      "methodLab": {
-        "tier": "top10",
-        "rank": 4,
-        "domains": [
-          "recruiting",
-          "admissions",
-          "multi-agent"
+          "scoring-engine",
+          "llm-judge"
         ]
       }
     },
@@ -171,23 +63,90 @@
         "machine-learning",
         "developer-tools"
       ],
-      "relevanceScore": 0.95,
-      "summary": "Unifies ensemble judging, bias mitigation, and few-shot calibration for rubric-based LLM evaluation into one framework.",
-      "summarySimple": "A practical toolkit that combines the best tricks for making AI rubric scoring consistent.",
+      "relevanceScore": 0.98,
+      "summary": "Unifies rubric design, ensemble judging, few-shot calibration, bias mitigations, and psychometric reliability metrics into one framework.",
+      "summarySimple": "One playbook for building reliable rubric-based AI graders.",
       "code": {
         "url": null
       },
       "impact": {
-        "forTech": "Productize a unified rubric-judge pipeline: criterion decomposition, jury ensembles, bias counters, few-shot calibration, structured outputs.",
-        "forBusiness": "Platform layer for any scorecard product."
+        "forTech": "Ship a scoring platform with per-criterion judges, ensembles, calibration sets, and kappa/QWK reporting.",
+        "forBusiness": "Turns scattered eval tricks into a repeatable scoring product."
       },
       "methodLab": {
         "tier": "top10",
-        "rank": 5,
+        "rank": 2,
         "domains": [
           "rubrics",
-          "platform",
+          "reliability",
           "llm-judge"
+        ]
+      }
+    },
+    {
+      "id": "2605.30803",
+      "title": "PReMISE: Policy Rubrics as Measurement Specifications for LLM Judges",
+      "url": "https://arxiv.org/abs/2605.30803",
+      "published": "2026-05-29",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "tags": [
+        "llm",
+        "nlp",
+        "machine-learning"
+      ],
+      "relevanceScore": 0.97,
+      "summary": "Frames rubrics as measurement specifications so vague quality language becomes scoreable, policy-grade criteria.",
+      "summarySimple": "Makes fuzzy scoring policies into clear, measurable rubric specs.",
+      "code": {
+        "url": null
+      },
+      "impact": {
+        "forTech": "Authoring UX that compiles policy language into measurable rubric items before any judge runs.",
+        "forBusiness": "Stops 'vibes scoring'\u2014buyers get criteria they can audit."
+      },
+      "methodLab": {
+        "tier": "top10",
+        "rank": 3,
+        "domains": [
+          "rubric-design",
+          "measurement"
+        ]
+      }
+    },
+    {
+      "id": "2407.18370",
+      "title": "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
+      "url": "https://arxiv.org/abs/2407.18370",
+      "published": "2024-07-25",
+      "categories": [
+        "cs.CL",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "tags": [
+        "llm",
+        "machine-learning",
+        "nlp"
+      ],
+      "relevanceScore": 0.96,
+      "summary": "Selective evaluation with confidence estimation and cascaded judges that guarantee a target human-agreement level.",
+      "summarySimple": "Only auto-scores when confident; otherwise escalates to a stronger judge or human.",
+      "code": {
+        "url": null
+      },
+      "impact": {
+        "forTech": "Add selective scoring + escalation gates with coverage vs agreement knobs.",
+        "forBusiness": "High-stakes scoring with a reliability SLA, not blind automation."
+      },
+      "methodLab": {
+        "tier": "top10",
+        "rank": 4,
+        "domains": [
+          "reliability",
+          "selective-scoring"
         ]
       }
     },
@@ -198,31 +157,29 @@
       "published": "2026-01-31",
       "categories": [
         "cs.CL",
-        "cs.AI",
-        "stat.AP"
+        "cs.AI"
       ],
       "tags": [
         "llm",
         "nlp",
         "machine-learning"
       ],
-      "relevanceScore": 0.94,
-      "summary": "Applies Item Response Theory to treat LLM judges as measurement instruments and diagnose reliability beyond surface agreement.",
-      "summarySimple": "Uses exam-design math to check whether an AI scorer is a stable measuring tool, not just often agreeing with humans.",
+      "relevanceScore": 0.95,
+      "summary": "Applies Item Response Theory to diagnose whether LLM judges behave as stable measurement instruments.",
+      "summarySimple": "Uses psychometrics to test if an AI judge is a trustworthy measuring tool.",
       "code": {
         "url": null
       },
       "impact": {
-        "forTech": "Add IRT diagnostics for judges/scorecards: item difficulty, judge discrimination, reliability curves before shipping people-scores.",
-        "forBusiness": "Psychometric credibility for education, hiring, and performance scoring products."
+        "forTech": "Add IRT dashboards for judge ability, item difficulty, and score validity checks.",
+        "forBusiness": "Prove scores measure the intended trait\u2014not just rater agreement."
       },
       "methodLab": {
         "tier": "top10",
-        "rank": 6,
+        "rank": 5,
         "domains": [
           "psychometrics",
-          "education",
-          "reliability"
+          "validity"
         ]
       }
     },
@@ -240,129 +197,154 @@
         "nlp",
         "machine-learning"
       ],
-      "relevanceScore": 0.93,
-      "summary": "Defines and measures scoring-specific biases: rubric order, score ID labeling, and reference-answer effects.",
-      "summarySimple": "Shows how tiny prompt/rubric tweaks quietly change AI scores \u2014 and how to test for that.",
+      "relevanceScore": 0.94,
+      "summary": "Defines and measures scoring biases from rubric order, score IDs, and reference-answer prompts.",
+      "summarySimple": "Shows how tiny prompt/rubric tweaks quietly change AI scores.",
       "code": {
         "url": null
       },
       "impact": {
-        "forTech": "Ship a scoring-bias audit suite for scorecards: shuffle rubric order, vary score IDs, ablate references; report stability metrics.",
-        "forBusiness": "Compliance and trust feature for recruiter/HR AI scoring."
+        "forTech": "Build a scoring-bias audit suite that perturbs rubrics/IDs/references and reports score drift.",
+        "forBusiness": "Hardens scorecards before they ship to production."
       },
       "methodLab": {
         "tier": "top10",
-        "rank": 7,
+        "rank": 6,
         "domains": [
           "bias",
-          "llm-judge",
-          "scorecards"
+          "scoring"
         ]
       }
     },
     {
-      "id": "2601.10321",
-      "title": "An Efficient Long-Context Ranking Architecture With Calibrated LLM Distillation: Application to Person-Job Fit",
-      "url": "https://arxiv.org/abs/2601.10321",
-      "published": "2026-01-15",
-      "categories": [
-        "cs.IR",
-        "cs.LG",
-        "cs.CL"
-      ],
-      "tags": [
-        "machine-learning",
-        "nlp",
-        "llm",
-        "developer-tools"
-      ],
-      "relevanceScore": 0.92,
-      "summary": "Late cross-attention re-ranker for long multilingual resumes with calibrated distillation for person-job fit.",
-      "summarySimple": "A fast, calibrated ranking model that matches long resumes to jobs without burning a giant chat model on every candidate.",
-      "code": {
-        "url": null
-      },
-      "impact": {
-        "forTech": "Build a calibrated resume\u2194job re-ranker for long/multilingual CVs with distill-from-LLM teacher scores and production latency.",
-        "forBusiness": "Screening-at-scale product for recruiters and staffing platforms."
-      },
-      "methodLab": {
-        "tier": "top10",
-        "rank": 8,
-        "domains": [
-          "recruiting",
-          "ranking",
-          "person-job-fit"
-        ]
-      }
-    },
-    {
-      "id": "2405.19699",
-      "title": "Fairness in AI-Driven Recruitment: Challenges, Metrics, Methods, and Future Directions",
-      "url": "https://arxiv.org/abs/2405.19699",
-      "published": "2024-05-30",
-      "categories": [
-        "cs.CY",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "tags": [
-        "machine-learning",
-        "security",
-        "developer-tools"
-      ],
-      "relevanceScore": 0.91,
-      "summary": "Survey of bias sources, fairness metrics, and mitigations across sourcing, screening, interviewing, and selection.",
-      "summarySimple": "A field guide to measuring and fixing unfairness in AI hiring tools end to end.",
-      "code": {
-        "url": null
-      },
-      "impact": {
-        "forTech": "Encode hiring-stage fairness checks (demographic parity, equalized odds, impact ratio) into scoring/audit products with stage-aware mitigations.",
-        "forBusiness": "Operating manual for compliant recruiter scoring products."
-      },
-      "methodLab": {
-        "tier": "top10",
-        "rank": 9,
-        "domains": [
-          "recruiting",
-          "fairness"
-        ]
-      }
-    },
-    {
-      "id": "2504.01420",
-      "title": "FAIRE: Assessing Racial and Gender Bias in AI-Driven Resume Evaluations",
-      "url": "https://arxiv.org/abs/2504.01420",
-      "published": "2025-04-02",
+      "id": "2606.19544",
+      "title": "Reliability without Validity: A Systematic, Large-Scale Evaluation of LLM-as-a-Judge Models Across Agreement, Consistency, and Bias",
+      "url": "https://arxiv.org/abs/2606.19544",
+      "published": "2026-06-01",
       "categories": [
         "cs.CL",
-        "cs.CY",
         "cs.AI"
       ],
       "tags": [
         "llm",
         "nlp",
-        "machine-learning",
-        "developer-tools"
+        "machine-learning"
       ],
-      "relevanceScore": 0.9,
-      "summary": "Benchmark and code for testing racial and gender bias in LLM resume evaluation.",
-      "summarySimple": "A ready-made test set to audit whether resume-scoring AI treats people differently by race or gender.",
+      "relevanceScore": 0.93,
+      "summary": "Large-scale study showing common agreement metrics can look good while validity fails; pushes better protocols.",
+      "summarySimple": "Warns that consistent AI scores can still be wrong about what they claim to measure.",
       "code": {
-        "url": "https://github.com/athenawen/FAIRE-Fairness-Assessment-In-Resume-Evaluation"
+        "url": null
       },
       "impact": {
-        "forTech": "Integrate FAIRE-style resume audit packs into any LLM screener: counterfactual names/demographics, impact-ratio reports, regression tests.",
-        "forBusiness": "Audit/compliance wedge for AI recruiting vendors and buyers."
+        "forTech": "Require reliability+validity test packs before promoting a scoring model.",
+        "forBusiness": "Avoid shipping 'reliable' scores that do not measure the real outcome."
+      },
+      "methodLab": {
+        "tier": "top10",
+        "rank": 7,
+        "domains": [
+          "validity",
+          "reliability"
+        ]
+      }
+    },
+    {
+      "id": "2606.08625",
+      "title": "From Holistic Evaluation to Structured Criteria: Rubrics Across the Evolving LLM Landscape",
+      "url": "https://arxiv.org/abs/2606.08625",
+      "published": "2026-06-01",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "tags": [
+        "llm",
+        "nlp",
+        "machine-learning"
+      ],
+      "relevanceScore": 0.92,
+      "summary": "Survey of the field's shift from scalar holistic scores to structured, verifiable rubric criteria.",
+      "summarySimple": "Maps why good scoring moved from one overall score to clear multi-criteria rubrics.",
+      "code": {
+        "url": null
+      },
+      "impact": {
+        "forTech": "Design vocabulary and architecture: analytic dimensions, checklist items, meta-eval layers.",
+        "forBusiness": "Explains the category story: structured rubrics beat vibes scores."
+      },
+      "methodLab": {
+        "tier": "top10",
+        "rank": 8,
+        "domains": [
+          "survey",
+          "rubric-design"
+        ]
+      }
+    },
+    {
+      "id": "2605.25240",
+      "title": "JudgmentBench: Comparing Rubric and Preference Evaluation for Quality Assessment",
+      "url": "https://arxiv.org/abs/2605.25240",
+      "published": "2026-05-01",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "tags": [
+        "llm",
+        "nlp",
+        "machine-learning"
+      ],
+      "relevanceScore": 0.91,
+      "summary": "Benchmark comparing rubric-based scoring vs preference judging for quality assessment.",
+      "summarySimple": "Tests when rubric scores beat pairwise 'which is better' judgments.",
+      "code": {
+        "url": null
+      },
+      "impact": {
+        "forTech": "Support both rubric and preference modes with an A/B meta-eval harness.",
+        "forBusiness": "Pick the right scoring mode per task instead of one default."
+      },
+      "methodLab": {
+        "tier": "top10",
+        "rank": 9,
+        "domains": [
+          "meta-eval",
+          "rubrics-vs-preferences"
+        ]
+      }
+    },
+    {
+      "id": "2603.25133",
+      "title": "RubricEval: A Rubric-Level Meta-Evaluation Benchmark for LLM Judges in Instruction Following",
+      "url": "https://arxiv.org/abs/2603.25133",
+      "published": "2026-03-01",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "tags": [
+        "llm",
+        "nlp",
+        "machine-learning"
+      ],
+      "relevanceScore": 0.9,
+      "summary": "Criterion-level meta-evaluation: checks whether judges correctly evaluate each rubric item.",
+      "summarySimple": "Checks if the AI grader got each rubric line right\u2014not just the final score.",
+      "code": {
+        "url": null
+      },
+      "impact": {
+        "forTech": "Add criterion-level goldens and meta-eval loops for every rubric dimension.",
+        "forBusiness": "Catches silent criterion failures that overall scores hide."
       },
       "methodLab": {
         "tier": "top10",
         "rank": 10,
         "domains": [
-          "recruiting",
-          "fairness",
-          "audit"
+          "meta-eval",
+          "criterion-level"
         ]
       }
     },
@@ -381,29 +363,28 @@
         "machine-learning"
       ],
       "relevanceScore": 0.88,
-      "summary": "Open evaluator LM trained for fine-grained, user-defined rubric scoring as an alternative to proprietary judges.",
-      "summarySimple": "An open AI judge trained to score answers against custom rubrics without needing GPT-4 every time.",
+      "summary": "Open fine-grained rubric judges as an alternative to proprietary GPT judges.",
+      "summarySimple": "Open fine-grained rubric judges as an alternative to proprietary GPT judges.",
       "code": {
-        "url": "https://github.com/kaistAI/prometheus"
+        "url": "https://github.com/prometheus-eval/prometheus"
       },
       "impact": {
-        "forTech": "Host an open rubric judge model for offline/private scoring of candidate answers and essays.",
-        "forBusiness": "Cost and privacy path for rubric scoring at scale."
+        "forTech": "Useful scoring-craft reference for rubric authoring, calibration, or meta-eval.",
+        "forBusiness": "Strengthens scoring quality without a domain costume."
       },
       "methodLab": {
-        "tier": "honorable",
-        "rank": 11,
+        "tier": "adjacent",
+        "rank": 1,
         "domains": [
-          "rubrics",
-          "open-judge"
+          "scoring-craft"
         ]
       }
     },
     {
-      "id": "2306.05685",
-      "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
-      "url": "https://arxiv.org/abs/2306.05685",
-      "published": "2023-06-09",
+      "id": "2501.00274",
+      "title": "LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Generation",
+      "url": "https://arxiv.org/abs/2501.00274",
+      "published": "2024-12-30",
       "categories": [
         "cs.CL",
         "cs.AI"
@@ -411,33 +392,31 @@
       "tags": [
         "llm",
         "nlp",
-        "machine-learning",
-        "developer-tools"
+        "machine-learning"
       ],
       "relevanceScore": 0.87,
-      "summary": "Foundational LLM-as-judge protocol with MT-Bench and human preference arena; still the comparison baseline.",
-      "summarySimple": "The classic playbook for using AI models to judge other AI answers, checked against human votes.",
+      "summary": "Multidimensional calibrated rubric scoring for NLG.",
+      "summarySimple": "Multidimensional calibrated rubric scoring for NLG.",
       "code": {
-        "url": "https://github.com/lm-sys/FastChat"
+        "url": null
       },
       "impact": {
-        "forTech": "Keep pairwise preference + arena-style human calibration as a baseline lane beside analytic rubric scores.",
-        "forBusiness": "Benchmarking backbone for judge quality."
+        "forTech": "Useful scoring-craft reference for rubric authoring, calibration, or meta-eval.",
+        "forBusiness": "Strengthens scoring quality without a domain costume."
       },
       "methodLab": {
-        "tier": "honorable",
-        "rank": 12,
+        "tier": "adjacent",
+        "rank": 2,
         "domains": [
-          "llm-judge",
-          "benchmarks"
+          "scoring-craft"
         ]
       }
     },
     {
-      "id": "2411.15594",
-      "title": "A Survey on LLM-as-a-Judge",
-      "url": "https://arxiv.org/abs/2411.15594",
-      "published": "2024-11-23",
+      "id": "2602.02219",
+      "title": "Am I More Pointwise or Pairwise? Revealing Position Bias in Rubric-Based LLM-as-a-Judge",
+      "url": "https://arxiv.org/abs/2602.02219",
+      "published": "2026-02-01",
       "categories": [
         "cs.CL",
         "cs.AI"
@@ -448,63 +427,28 @@
         "machine-learning"
       ],
       "relevanceScore": 0.86,
-      "summary": "Survey taxonomy of LLM-as-a-judge methods, biases, and reliability practices.",
-      "summarySimple": "A map of how people use AI judges, where they fail, and what actually improves reliability.",
+      "summary": "Position bias when mixing pointwise and pairwise rubric judging.",
+      "summarySimple": "Position bias when mixing pointwise and pairwise rubric judging.",
       "code": {
         "url": null
       },
       "impact": {
-        "forTech": "Use as design checklist when building judge pipelines: pointwise vs pairwise, bias classes, meta-eval.",
-        "forBusiness": "Reduces reinventing known judge failure modes."
+        "forTech": "Useful scoring-craft reference for rubric authoring, calibration, or meta-eval.",
+        "forBusiness": "Strengthens scoring quality without a domain costume."
       },
       "methodLab": {
-        "tier": "honorable",
-        "rank": 13,
+        "tier": "adjacent",
+        "rank": 3,
         "domains": [
-          "survey",
-          "llm-judge"
+          "scoring-craft"
         ]
       }
     },
     {
-      "id": "2309.13933",
-      "title": "Fairness and Bias in Algorithmic Hiring: a Multidisciplinary Survey",
-      "url": "https://arxiv.org/abs/2309.13933",
-      "published": "2023-09-25",
-      "categories": [
-        "cs.CY",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "tags": [
-        "machine-learning",
-        "security"
-      ],
-      "relevanceScore": 0.85,
-      "summary": "Multidisciplinary survey of fairness in algorithmic hiring across ML, law, and I-O psychology narratives.",
-      "summarySimple": "Looks at unfair hiring algorithms from tech, legal, and workplace-psychology angles together.",
-      "code": {
-        "url": null
-      },
-      "impact": {
-        "forTech": "Ground hiring-score products in multidisciplinary fairness constraints, not ML metrics alone.",
-        "forBusiness": "Buyer education and policy alignment for AI recruiting."
-      },
-      "methodLab": {
-        "tier": "honorable",
-        "rank": 14,
-        "domains": [
-          "recruiting",
-          "fairness",
-          "survey"
-        ]
-      }
-    },
-    {
-      "id": "2605.30803",
-      "title": "PReMISE: Policy Rubrics as Measurement Specifications for LLM Judges",
-      "url": "https://arxiv.org/abs/2605.30803",
-      "published": "2026-05-29",
+      "id": "2602.05125",
+      "title": "Rethinking Rubric Generation for Improving LLM Judge and Reward Modeling for Open-ended Tasks",
+      "url": "https://arxiv.org/abs/2602.05125",
+      "published": "2026-02-01",
       "categories": [
         "cs.CL",
         "cs.AI"
@@ -512,26 +456,55 @@
       "tags": [
         "llm",
         "nlp",
-        "machine-learning",
-        "developer-tools"
+        "machine-learning"
       ],
-      "relevanceScore": 0.84,
-      "summary": "Treats policy rubrics as measurement specifications so vague criteria become scoreable, stable judge inputs.",
-      "summarySimple": "Turns fuzzy policies like \u201cbe helpful and fair\u201d into clear, measurable scoring specs for AI judges.",
+      "relevanceScore": 0.85,
+      "summary": "Better rubric generation improves both judging and reward modeling.",
+      "summarySimple": "Better rubric generation improves both judging and reward modeling.",
       "code": {
         "url": null
       },
       "impact": {
-        "forTech": "Add a policy\u2192measurement-spec compiler for scorecards used in hiring, content, and performance review.",
-        "forBusiness": "Makes company policies into enforceable scoring rules."
+        "forTech": "Useful scoring-craft reference for rubric authoring, calibration, or meta-eval.",
+        "forBusiness": "Strengthens scoring quality without a domain costume."
       },
       "methodLab": {
-        "tier": "honorable",
-        "rank": 15,
+        "tier": "adjacent",
+        "rank": 4,
         "domains": [
-          "rubrics",
-          "policy",
-          "measurement"
+          "scoring-craft"
+        ]
+      }
+    },
+    {
+      "id": "2604.12227",
+      "title": "Designing Reliable LLM-Assisted Rubric Scoring for Constructed Responses: Evidence from Physics Exams",
+      "url": "https://arxiv.org/abs/2604.12227",
+      "published": "2026-04-01",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "tags": [
+        "llm",
+        "nlp",
+        "machine-learning"
+      ],
+      "relevanceScore": 0.84,
+      "summary": "Practical pattern for reliable LLM-assisted rubric scoring of constructed responses.",
+      "summarySimple": "Practical pattern for reliable LLM-assisted rubric scoring of constructed responses.",
+      "code": {
+        "url": null
+      },
+      "impact": {
+        "forTech": "Useful scoring-craft reference for rubric authoring, calibration, or meta-eval.",
+        "forBusiness": "Strengthens scoring quality without a domain costume."
+      },
+      "methodLab": {
+        "tier": "adjacent",
+        "rank": 5,
+        "domains": [
+          "scoring-craft"
         ]
       }
     }

@@ -1,39 +1,27 @@
-# simple-papers handoff — people / recruiter scoring (2026-07-26)
+# simple-papers handoff — good scoring / rubrics (2026-07-26)
 
 ## Why
 
-Method Lab screened **1944** papers and shortlisted **top 10 + 5 adjacent** for scoring people with rubrics (recruiters first, then education / LLM judges / fairness / psychometrics).
-
-simple-papers is the intake source for Method Lab. This folder is the **import package** so those papers enter digests.
+Method Lab screened **1944** papers and shortlisted **top 10 + 5 craft adjacent** focused on **good scoring and good rubrics** (reliability, validity, calibration, bias, executable criteria)—not recruiting apps.
 
 ## Drop into simple-papers
 
-Copy the digest JSON into the simple-papers repo:
-
 ```bash
 cp docs/ideas/_paper-picks/digests/2026-07-26.json \
-  "$SIMPLE_PAPERS_ROOT/data/digests/2026-07-26-people-scoring.json"
-# or merge into that day's digest if one already exists
+  "$SIMPLE_PAPERS_ROOT/data/digests/2026-07-26-good-scoring-rubrics.json"
 ```
 
 Suggested commit message in simple-papers:
 
-> Add people-scoring rubric shortlist from Method Lab screen
+> Add good-scoring / rubric-methods shortlist from Method Lab
 
-## Contents
+## Theme tags
 
-| File | Role |
-| --- | --- |
-| `digests/2026-07-26.json` | Digest-shaped papers with `tags`, `impact.forTech`, `code.url` when known |
-| This README | Import instructions |
+`rubrics` · `scoring` · `llm-judge` · `calibration` · `psychometrics` · `meta-eval` · `reliability` · `validity`
 
-## Theme stack (for digest tags / topics)
+## Source
 
-`recruiting` · `rubrics` · `llm-judge` · `fairness` · `psychometrics` · `person-job-fit` · `interview-scoring`
-
-## Source write-up
-
-- Research log: `docs/RESEARCH.md` (2026-07-26 section)
+- `docs/RESEARCH.md` (2026-07-26 Focus: good scoring & good rubrics)
 - PR: https://github.com/serhii-kucherenko/ai-method-lab/pull/6
 
 ## Do not
