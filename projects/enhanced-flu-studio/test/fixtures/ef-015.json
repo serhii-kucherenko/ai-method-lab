@@ -1,0 +1,39 @@
+{
+  "id": "ef-015",
+  "input": {
+    "coverage65Plus": 0.62,
+    "eivUptakeShare": 0.65,
+    "winterBurdenIndex": 0.34,
+    "hospitalPressure": 0.31,
+    "policyStickiness": 0.36,
+    "nordicParity": 0.62,
+    "assaySignal": 0.65,
+    "overclaimRisk": 0.31,
+    "programBias": "eiv_first",
+    "profile": "current_policy_baseline"
+  },
+  "expectedExpanded": {
+    "mode": "expanded_eiv_program",
+    "coverageScore": 78.82,
+    "eivScore": 77.55,
+    "winterScore": 41.99,
+    "hospitalScore": 55.86,
+    "policyPenalty": 19.32,
+    "confidence": 44.9,
+    "expandedContribution": 69.96,
+    "baselineContribution": 47.13,
+    "overall": 69.85
+  },
+  "expectedBaseline": {
+    "mode": "current_policy_baseline",
+    "coverageScore": 8.86,
+    "eivScore": 28.3,
+    "winterScore": 22.82,
+    "hospitalScore": 34.99,
+    "policyPenalty": 25.84,
+    "confidence": 40.07,
+    "expandedContribution": 33.83,
+    "baselineContribution": 29.64,
+    "overall": 24.8
+  }
+}

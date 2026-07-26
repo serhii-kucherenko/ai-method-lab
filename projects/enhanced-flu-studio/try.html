@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced Flu Studio — offline soft-sim</title>
+  <style>
+    :root { --ef-ink:#12171c; --ef-teal:#2a5f6a; --ef-mist:#eef2f4; --ef-amber:#b4833a; }
+    body { font-family: Georgia, serif; margin: 0; background: var(--ef-mist); color: var(--ef-ink); }
+    main { max-width: 40rem; margin: 0 auto; padding: 2rem 1.25rem; }
+    h1 { font-size: 1.75rem; }
+    label { display:block; margin-top: .75rem; font-size: .9rem; }
+    input, select { width: 100%; padding: .45rem; margin-top: .25rem; }
+    button { margin-top: 1rem; background: var(--ef-teal); color: white; border: 0; padding: .6rem 1rem; }
+    .out { margin-top: 1.25rem; padding: 1rem; background: white; border: 1px solid #c4c9ce; }
+    .note { font-size: .85rem; color: #556066; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Enhanced Flu Studio</h1>
+    <p>Offline soft-sim: expanded EIV program vs current policy baseline.</p>
+    <label>Coverage ≥65 <input id="coverage" type="number" min="0" max="1" step="0.01" value="0.72" /></label>
+    <label>EIV uptake share <input id="eiv" type="number" min="0" max="1" step="0.01" value="0.68" /></label>
+    <label>Winter burden index <input id="winter" type="number" min="0" max="1" step="0.01" value="0.28" /></label>
+    <label>Hospital pressure <input id="hosp" type="number" min="0" max="1" step="0.01" value="0.35" /></label>
+    <label>Policy stickiness <input id="policy" type="number" min="0" max="1" step="0.01" value="0.3" /></label>
+    <label>Nordic parity <input id="parity" type="number" min="0" max="1" step="0.01" value="0.55" /></label>
+    <label>Program bias
+      <select id="bias">
+        <option value="balanced">balanced</option>
+        <option value="eiv_first">eiv_first</option>
+        <option value="coverage_first">coverage_first</option>
+        <option value="baseline_first">baseline_first</option>
+      </select>
+    </label>
+    <button type="button" id="run">Score A/B</button>
+    <div class="out" id="out">Run to see soft-sim scores.</div>
+    <p class="note">Not live immunization logistics, not clinical prescribing, not national policy adoption.</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function scoreExpanded(input) {
+      const boost = 1.12;
+      const wE = biasWeight(input.programBias, "eiv_first");
+      const coverageScore = round2(clamp(input.coverage65Plus * 55 * boost * wE + input.nordicParity * 20 + 8 - input.overclaimRisk * 6, 0, 100));
+      const eivScore = round2(clamp(input.eivUptakeShare * 55 * boost + input.coverage65Plus * 20, 0, 100));
+      const winterScore = round2(clamp((1 - input.winterBurdenIndex) * 50 * boost + (1 - input.hospitalPressure) * 20, 0, 100));
+      const hospitalScore = round2(clamp((1 - input.hospitalPressure) * 45 * boost + input.eivUptakeShare * 20, 0, 100));
+      const overall = round2(clamp(coverageScore * 0.35 + eivScore * 0.3 + winterScore * 0.2 + hospitalScore * 0.15, 0, 100));
+      return { coverageScore, eivScore, winterScore, hospitalScore, overall };
+    }
+    function scoreBaseline(input) {
+      const boost = 1.08;
+      const coverageScore = round2(clamp(input.coverage65Plus * 20 * boost + input.nordicParity * 20 - input.eivUptakeShare * 18, 0, 100));
+      const eivScore = round2(clamp(input.coverage65Plus * 42 * boost + input.policyStickiness * 18, 0, 100));
+      const winterScore = round2(clamp(input.policyStickiness * 38 * boost + input.assaySignal * 25, 0, 100));
+      const hospitalScore = round2(clamp((1 - input.hospitalPressure) * 50 * boost - input.eivUptakeShare * 10, 0, 100));
+      const overall = round2(clamp(hospitalScore * 0.45 + eivScore * 0.3 + winterScore * 0.25, 0, 100));
+      return { coverageScore, eivScore, winterScore, hospitalScore, overall };
+    }
+    document.getElementById("run").onclick = () => {
+      const input = {
+        coverage65Plus: Number(coverage.value),
+        eivUptakeShare: Number(eiv.value),
+        winterBurdenIndex: Number(winter.value),
+        hospitalPressure: Number(hosp.value),
+        policyStickiness: Number(policy.value),
+        nordicParity: Number(parity.value),
+        assaySignal: 0.7,
+        overclaimRisk: 0.28,
+        programBias: bias.value,
+      };
+      const a = scoreExpanded(input);
+      const b = scoreBaseline(input);
+      const winner = a.overall > b.overall + 0.5 ? "expanded_eiv_program" : b.overall > a.overall + 0.5 ? "current_policy_baseline" : "tie";
+      out.textContent = "Winner " + winner + " · expanded " + a.overall + " · baseline " + b.overall;
+    };
+  </script>
+</body>
+</html>

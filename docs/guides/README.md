@@ -138,4 +138,5 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 135 | [Coload Order Studio - what we learned](135-coload-order-studio-lessons.md) | Product `coload-order-studio` |
 | 136 | [Ageing Wisely Studio - what we learned](136-ageing-wisely-studio-lessons.md) | Product `ageing-wisely-studio` |
 | 137 | [Dengue Suit Studio - what we learned](137-dengue-suit-studio-lessons.md) | Product `dengue-suit-studio` |
+| 138 | [Enhanced Flu Studio - what we learned](138-enhanced-flu-studio-lessons.md) | Product `enhanced-flu-studio` |
 

@@ -1,6 +1,6 @@
 # Enhanced Flu Studio
 
-**State:** framing  
+**State:** complete  
 **Slug:** `enhanced-flu-studio`  
 **Paper:** https://doi.org/10.1016/j.vaccine.2026.128934  
 **Authors’ code:** none  
