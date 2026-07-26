@@ -2,6 +2,32 @@
 
 Soft-sim studio for public-health / climate-surveillance analytics leads who need to compare **CMIP6 thermal-suitability** dengue risk maps against **static historical baselines** before locking a surveillance pack.
 
+## Screenshots
+
+### Landing
+
+![Landing](screenshots/01-landing.png)
+
+### Primary workspace
+
+![Primary workspace](screenshots/02-workspace.png)
+
+### Pricing
+
+![Pricing](screenshots/03-pricing.png)
+
+### Demo
+
+![Demo](screenshots/04-demo.png)
+
+### Onboarding
+
+![Onboarding](screenshots/05-onboarding.png)
+
+### Flows
+
+![Flows](screenshots/06-flows.png)
+
 ## Run
 
 ```bash

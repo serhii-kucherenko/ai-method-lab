@@ -60,7 +60,8 @@ Mature display name (2–4 English words). Slug = hyphenated lowercase. Never br
 |----------|------|
 | PM pack | `docs/ideas/<slug>-{PM-GO,VISION,ROADMAP,PRD,ERD,COMPREHENSIVE-BLUEPRINT}.md` |
 | Design note | `docs/ideas/<slug>-DESIGN.md` (includes landing brief) |
-| README | `projects/<slug>/README.md` |
+| README | `projects/<slug>/README.md` (must embed live platform screenshots) |
+| Screenshots | `projects/<slug>/screenshots/*.png` — landing, primary workspace, `/pricing`, `/demo`, plus `/onboarding` or `/flows` |
 | Marketing landing | `/` — selling points, features, explanations (`protocols/DESIGN.md`) |
 | Pricing + tiers | `/pricing` — hypothetical plans/tiers aligned to money hook |
 | Step-by-step demo | `/demo` — guided in-app walkthrough of the core happy path |

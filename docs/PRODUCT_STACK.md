@@ -32,6 +32,7 @@ Papers often ship **Python** models, notebooks, or CLIs. Using Python is fine â€
 projects/<slug>/
   app/ or src/app/          # Next.js UI
   lib/ or src/              # TS domain + API routes / server actions
+  screenshots/              # live UI PNGs embedded in README (required)
   python/                   # optional Python package
     pyproject.toml          # or requirements.txt
     README.md               # how to create venv + run
@@ -40,7 +41,18 @@ projects/<slug>/
   scripts/
     dev.mjs                 # starts Next + Python together (preferred)
   try.html                  # offline JS demo of the claim (may be approximate)
+  README.md                 # run story + Screenshots section with embedded PNGs
 ```
+
+### README screenshots (required)
+
+Every product README must show the real platform UI. Capture from a running app:
+
+```bash
+node scripts/capture-product-screenshots.mjs projects/<slug> --start
+```
+
+Minimum embeds: landing `/`, primary workspace, `/pricing`, `/demo`, and `/onboarding` or `/flows`. Store under `screenshots/`; link with relative paths in a **Screenshots** section.
 
 ### How to run (local â€” required in README)
 

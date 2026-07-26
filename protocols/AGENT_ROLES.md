@@ -98,6 +98,7 @@ Implement UI with **Next.js + Tailwind + shadcn**, matching `<slug>-DESIGN.md`. 
 3. Sustain: ≥6 views (including marketing landing at `/`), ≥15 features live, mature display name in UI chrome
 4. No sustain on raw unstyled static HTML shells when the stack default is Next/shadcn (offline `try.html` is the exception)
 5. No sustain / finish email until **`npm run build` + live `/` smoke** pass (app must actually boot — not only API harness tests)
+5b. No sustain / finish email until **README embeds live platform screenshots** under `projects/<slug>/screenshots/` (landing, primary workspace, `/pricing`, `/demo`, plus `/onboarding` or `/flows`)
 5. Landing UI critical path: brand, primary CTA, Sources links
 
 **Exit:** scored phase + FINDINGS → tutor guide → PM findings email. No next product until email sent.

@@ -23,6 +23,7 @@ This does **not** waive `protocols/IDEA_DEPTH.md`. It raises what “ready_to_bu
 | **Tests** | Depth suite for unique claim (≥25) **plus** UI critical path for every page |
 | **Guides** | Best-practices tutor writes ≥1 guide under `docs/guides/` before sustain email |
 | **Try artifact** | Offline `try.html` demos core claim; product remains multi-page |
+| **README screenshots** | Real PNGs of the live platform UI under `projects/<slug>/screenshots/`, embedded in `README.md` (landing, primary workspace, `/pricing`, `/demo`, plus `/onboarding` or `/flows`) — capture via `scripts/capture-product-screenshots.mjs`; not mocks, not `try.html`-only |
 | **Live app** | **`npm run build` green** and a **live smoke** that starts the finished app (`next start` or `npm run start`) and HTTP-gets `/` (and preferably `/jobs`) asserting the display name and honesty fence — unit/API green alone is **not** enough |
 | **Scoring** | Phase cells scored with maturity rubric (`docs/RUBRIC.md`) — not pass-count theater |
 
@@ -80,6 +81,7 @@ Tutor guide must list which category practices shipped and which were deferred (
 - Paper-claim UI with **no** category platform must-haves (no audit/export/org/search/webhooks/etc. where the category expects them)
 - Pass-count digests without story + money honesty
 - Shipping without a tutor guide for what was learned
+- Sustaining with a README that has **no** live platform screenshots (empty or missing `screenshots/`, or images that are not the product's own UI)
 
 ## What “comprehensive” means (non-negotiable)
 

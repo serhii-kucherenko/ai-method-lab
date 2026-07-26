@@ -72,6 +72,8 @@ If `notify.enabled`, email per `protocols/NOTIFY.md` — story first (idea, proj
 
 On **product finished**: commit `projects/<id>/try.html` (standalone offline demo), attach it to the Resend email as `try-<id>.html`, and include one StackBlitz try link. See `protocols/NOTIFY.md` → Try artifacts.
 
+**README screenshots required:** before sustain, capture live platform screens into `projects/<id>/screenshots/` and embed them in `README.md` (landing, primary workspace, `/pricing`, `/demo`, plus `/onboarding` or `/flows`). Use `node scripts/capture-product-screenshots.mjs projects/<id> --start`. Do **not** send `product_complete` with a screenshot-less README.
+
 **Live app required:** run `npm run build` and a live smoke that starts the finished server and GETs `/` (see `test/app-up.test.ts` pattern). Do **not** send `product_complete` if the Next app fails to build or serve. API-only harness green is insufficient.
 
 ## 7. Close + continue

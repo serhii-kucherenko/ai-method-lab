@@ -17,6 +17,7 @@ When **not** paused:
 - Marketing landing at `/` must sell a **specific buyer outcome** — not a generic lab desk
 - **Ban isomorphic desk clones** (noun-swap of jobs/lifecycle/scenario/goldens shells)
 - One product at a time; ≥25 real features / ≥11 pages including `/pricing`, `/demo`, `/onboarding`, and ≥5 sophisticated user flows plus category platform must-haves; live `next build` + app-up smoke before finish email
+- Every product README must embed live platform screenshots under `projects/<slug>/screenshots/` (landing, primary workspace, pricing, demo, onboarding/flows) - capture with `scripts/capture-product-screenshots.mjs` before sustain
 - Always commit, always push to origin/main, always merge own PRs when CI green
 - Never rewrite `package.json` with a UTF-8 BOM; use Node writes or `node scripts/strip-json-bom.mjs --check`
 - If notify.enabled: email **only on finish** (`product_complete`) and hard_stop — **no start emails**. Finish mail opens with business TLDR (idea / potential / PMF / model / score tier); then story; Sources footer; full GitHub https URLs (`protocols/NOTIFY.md`)
@@ -29,7 +30,7 @@ You are the AI Method Lab controller.
 Read CONTROLLER.json first. If paused, stop.
 If running: one comprehensive product only — software-solvable business idea, buyer story, selling points, designer pack, then build.
 Never devices / clinical carepaths / wet-lab / retail novelty. Never isomorphic desk clones. Never pick→smoke same tick.
-Mature names. ≥25 real features. `/pricing` + `/demo` + `/onboarding` + ≥5 user flows + platform must-haves. Live app smoke before finish email.
+Mature names. ≥25 real features. `/pricing` + `/demo` + `/onboarding` + ≥5 user flows + platform must-haves. Live app smoke + README screenshots before finish email.
 Commit push merge. Notify only if enabled.
 ```
 

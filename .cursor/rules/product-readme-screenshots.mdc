@@ -1,0 +1,34 @@
+---
+description: Every demo product must ship platform screenshots in its README
+alwaysApply: true
+---
+
+# Product README screenshots (always)
+
+Every product under `projects/<slug>/` must include **real screenshots of the live platform UI** in that product's `README.md` before sustain / finish.
+
+## Required
+
+- Capture from the **running app** (dev or production), not mockups or AI-generated placeholders
+- Store PNGs under `projects/<slug>/screenshots/`
+- Embed them in `projects/<slug>/README.md` in a **Screenshots** section near the top (after the one-line product pitch)
+- Minimum set (viewport captures of the real UI):
+  1. Marketing landing `/`
+  2. Primary workspace / domain screen (the main product surface)
+  3. `/pricing`
+  4. `/demo`
+  5. `/onboarding` or `/flows` (at least one of these)
+
+## How
+
+```bash
+node scripts/capture-product-screenshots.mjs projects/<slug> --start
+```
+
+Then confirm the README embeds the PNGs with relative paths (e.g. `screenshots/01-landing.png`).
+
+## Fails
+
+- Sustaining with a README that has no screenshot images
+- Empty `screenshots/` folder, or images that are not the product's own UI
+- Screenshots of `try.html` only (offline try is not a substitute)
