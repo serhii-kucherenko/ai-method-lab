@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T02:36:17.806Z",
+  "updated_at": "2026-07-26T02:45:26.202Z",
   "projects": [
     {
       "id": 1,
@@ -2691,15 +2691,42 @@
     {
       "slug": "usher-dual-studio",
       "project": "Usher Dual Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare MYO7A gene supplementation against Myo7b activation pathways for Usher syndrome 1B before locking an allele pack",
       "pmf": "Early signal with gene-therapy / sensory-disorder analytics leads who already trial pathway soft-sims",
       "buyer": "Gene-therapy and sensory-disorder analytics engineering leads",
       "money_hook": "Bench seats + private allele packs (method-lab experiment)",
       "potential": "Usher 1B dual-pathway planning is underserved vs single-vector dumps without honesty",
       "moat": "MYO7A supplementation vs Myo7b activation",
-      "evidence": "Paper gene-therapy claim (MYO7A dual AAV vs Myo7b activation for Usher 1B); no public code; soft-sim honesty required",
+      "evidence": "Paper gene-therapy claim (MYO7A dual AAV vs Myo7b activation for Usher 1B); no public code; soft-sim honesty required; 13 pages; dual scorers; 30 goldens; build + app-up green",
       "gc_notes": "Prefer allele soft-sim with multi-flow bar; never claim wet-lab validation, IND/NDA readiness, patient dosing, or clinical gene-therapy advice; not authors’ brand",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 7,
+        "feasibility": 7
+      },
+      "score": 67,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 119
+    },
+    {
+      "slug": "aminoaryl-studio",
+      "project": "Aminoaryl Studio",
+      "status": "building",
+      "business_idea": "Compare photocatalytic 1,3-aminoarylation against copper-catalyzed baselines before locking a route pack",
+      "pmf": "Early signal with medicinal chemistry / route-planning analytics leads who already trial route soft-sims",
+      "buyer": "Medicinal chemistry and route-planning analytics engineering leads",
+      "money_hook": "Bench seats + private route packs (method-lab experiment)",
+      "potential": "Complementary aminoarylation route planning is underserved vs single-mechanism dumps without honesty",
+      "moat": "Photocatalytic vs copper-catalyzed aminoarylation",
+      "evidence": "Paper chemistry claim (photocatalytic and copper-catalyzed 1,3-aminoarylation of aryl cyclopropanes); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer route soft-sim with multi-flow bar; never claim wet-lab validation, scale-up manufacturing control, or regulatory filing authority; not authors’ brand",
       "dimensions": {
         "buyer": 7,
         "pain": 7,
@@ -2713,7 +2740,7 @@
       "score": 66,
       "tier": "B",
       "rubric": "biz-rubric-v1",
-      "id": 119
+      "id": 120
     }
   ]
 }
