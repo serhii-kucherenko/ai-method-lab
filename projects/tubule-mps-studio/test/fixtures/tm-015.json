@@ -1,0 +1,39 @@
+{
+  "id": "tm-015",
+  "input": {
+    "mpsPreservation": 0.65,
+    "cyclosporineHarm": 0.31,
+    "culture2dMasking": 0.46,
+    "perfusionFidelity": 0.65,
+    "evidenceStrength": 0.65,
+    "regimenFollowThrough": 0.65,
+    "assayReadout": 0.65,
+    "overclaimRisk": 0.31,
+    "scoringBias": "mps_first",
+    "profile": "cyclosporine_mps"
+  },
+  "expectedVoclosporin": {
+    "mode": "voclosporin_mps",
+    "mitochondrialPreservationScore": 85.64,
+    "cyclosporineBaselineScore": 25.05,
+    "mpsCoverage": 44.99,
+    "regimenEfficiency": 41.09,
+    "culture2dMaskPenalty": 32.89,
+    "confidence": 35.73,
+    "voclosporinContribution": 61.12,
+    "cyclosporineContribution": 46.35,
+    "overall": 60.62
+  },
+  "expectedCyclosporine": {
+    "mode": "cyclosporine_mps",
+    "mitochondrialPreservationScore": 19.7,
+    "cyclosporineBaselineScore": 29.75,
+    "mpsCoverage": 36.78,
+    "regimenEfficiency": 30.94,
+    "culture2dMaskPenalty": 7.16,
+    "confidence": 35.83,
+    "voclosporinContribution": 42,
+    "cyclosporineContribution": 23.74,
+    "overall": 26.33
+  }
+}

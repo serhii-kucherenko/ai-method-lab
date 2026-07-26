@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tubule Mps Studio — try</title>
+  <style>
+    :root {
+      --ink: #14181c;
+      --teal: #1a5c66;
+      --mist: #eef3f4;
+      --amber: #a67a30;
+      --line: #c5cbce;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--mist);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    header {
+      background: linear-gradient(165deg, #0a0d0f, #1a2426);
+      color: #fff;
+      padding: 2.5rem 1.5rem 2rem;
+    }
+    header h1 { margin: 0; font-size: 1.75rem; color: var(--amber); }
+    header p { margin: 0.75rem 0 0; max-width: 36rem; color: var(--mist); }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.85rem; }
+    input, select, button {
+      width: 100%;
+      margin-top: 0.25rem;
+      padding: 0.5rem 0.65rem;
+      border: 1px solid var(--line);
+      border-radius: 0.4rem;
+      font: inherit;
+    }
+    button {
+      margin-top: 1rem;
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 0.5rem;
+      white-space: pre-wrap;
+      font-size: 0.9rem;
+    }
+    footer {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: #556065;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tubule Mps Studio</h1>
+    <p>Preserve the tubule. Compare the regimen — offline soft-sim of voclosporin_mps vs cyclosporine_mps.</p>
+  </header>
+  <main>
+    <label>MPS preservation <input id="mps" type="number" min="0" max="1" step="0.01" value="0.55" /></label>
+    <label>Cyclosporine harm <input id="csa" type="number" min="0" max="1" step="0.01" value="0.35" /></label>
+    <label>2D culture masking <input id="mask" type="number" min="0" max="1" step="0.01" value="0.7" /></label>
+    <label>Assay readout <input id="readout" type="number" min="0" max="1" step="0.01" value="0.65" /></label>
+    <label>Bias
+      <select id="bias">
+        <option value="balanced">balanced</option>
+        <option value="mps_first">mps_first</option>
+        <option value="cyclosporine_first">cyclosporine_first</option>
+        <option value="assay_first">assay_first</option>
+      </select>
+    </label>
+    <button type="button" id="run">Run dual compare</button>
+    <div class="out" id="out">Results appear here.</div>
+  </main>
+  <footer>
+    Soft-sim only — not wet-lab MPS validated, not transplant dosing advice, not IND/NDA ready, not live patient care. Not authors’ brand.
+  </footer>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function mitoBurden(csa, mask, over) {
+      return clamp(csa * 0.35 + mask * 0.25 + over * 0.4 - 0.06, 0, 1.5);
+    }
+    function scoreVoc(input) {
+      const voc = true;
+      const boost = 1.12;
+      const wM = biasWeight(input.scoringBias, "mps_first");
+      const wA = biasWeight(input.scoringBias, "assay_first");
+      const wC = biasWeight(input.scoringBias, "cyclosporine_first");
+      const avgBias = (wM + wA + (2 - wC)) / 3;
+      const burden = mitoBurden(input.cyclosporineHarm, input.culture2dMasking, input.overclaimRisk);
+      const mito = round2(clamp((input.mpsPreservation * 35 + input.evidenceStrength * 25 + input.assayReadout * 30 + input.regimenFollowThrough * 10 - burden * 5) * boost * avgBias + 8 - input.overclaimRisk * 6 - (input.scoringBias === "cyclosporine_first" ? 12 : 0), 0, 100));
+      const csaScore = round2(clamp(input.cyclosporineHarm * 35 * 0.7 + input.perfusionFidelity * 25 * wC + (1 - input.mpsPreservation) * 20 + 4 - input.overclaimRisk * 8, 0, 100));
+      const cov = round2(clamp(input.assayReadout * 40 * boost * wA + input.mpsPreservation * 30 + input.regimenFollowThrough * 15 + 8 - input.culture2dMasking * 18 - (input.scoringBias === "cyclosporine_first" ? 8 : 0), 0, 100));
+      const eff = round2(clamp(((1 - burden) * 40 + input.regimenFollowThrough * 25 + input.perfusionFidelity * 20) * boost * wA + 8 - input.overclaimRisk * 8, 0, 100));
+      const pen = round2(clamp((input.scoringBias === "cyclosporine_first" ? 40 : 18) * boost + input.culture2dMasking * 28 + burden * 12 - input.mpsPreservation * 12 + (1 - input.regimenFollowThrough) * 12, 0, 100));
+      const vCon = round2(clamp(mito * 0.32 + cov * 0.28 + eff * 0.22 + (100 - pen) * 0.18, 0, 100));
+      const cCon = round2(clamp(mito * 0.35 + csaScore * 0.35 + eff * 0.2 + pen * 0.1 - input.mpsPreservation * 6, 0, 100));
+      const overall = round2(clamp(vCon * 0.82 + cCon * 0.18 + 4 - (input.scoringBias === "cyclosporine_first" ? 3 : 0) - input.culture2dMasking * 4, 0, 100));
+      return { mode: "voclosporin_mps", overall, mito, pen };
+    }
+    function scoreCsa(input) {
+      const boost = 1.08;
+      const wC = biasWeight(input.scoringBias, "cyclosporine_first");
+      const wA = biasWeight(input.scoringBias, "assay_first");
+      const burden = mitoBurden(input.cyclosporineHarm, input.culture2dMasking, input.overclaimRisk);
+      const mito = round2(clamp((1 - input.cyclosporineHarm) * 28 * boost + input.culture2dMasking * 22 * boost + (wC + wA) * 5 - input.mpsPreservation * 10 - input.overclaimRisk * 10 - (input.scoringBias === "mps_first" ? 8 : 0), 0, 100));
+      const csaScore = round2(clamp(input.cyclosporineHarm * 20 * boost + input.culture2dMasking * 35 * boost * Math.max(wC, wA) + (1 - burden) * 15 + 8 - input.mpsPreservation * 8, 0, 100));
+      const cov = round2(clamp(input.assayReadout * 40 * boost + input.culture2dMasking * 25 - input.mpsPreservation * 12 + 5, 0, 100));
+      const eff = round2(clamp(input.culture2dMasking * 35 * boost * Math.max(wC, wA) + input.assayReadout * 25 + 8 - burden * 10, 0, 100));
+      const pen = round2(clamp((1 - input.mpsPreservation) * 25 * boost + burden * 12 - input.culture2dMasking * 4 - input.regimenFollowThrough * 6, 0, 100));
+      const vCon = round2(clamp(mito * 0.2 + csaScore * 0.2 + cov * 0.2 + (100 - pen) * 0.2 + eff * 0.2, 0, 100));
+      const cCon = round2(clamp(mito * 0.45 + csaScore * 0.35 + eff * 0.2 - burden * 6, 0, 100));
+      const overall = round2(clamp(cCon * 0.78 + vCon * 0.22 - input.mpsPreservation * 5 - input.overclaimRisk * 6 + input.culture2dMasking * 8, 0, 100));
+      return { mode: "cyclosporine_mps", overall, mito, pen };
+    }
+    document.getElementById("run").onclick = () => {
+      const input = {
+        mpsPreservation: Number(document.getElementById("mps").value),
+        cyclosporineHarm: Number(document.getElementById("csa").value),
+        culture2dMasking: Number(document.getElementById("mask").value),
+        perfusionFidelity: 0.5,
+        evidenceStrength: 0.5,
+        regimenFollowThrough: 0.5,
+        assayReadout: Number(document.getElementById("readout").value),
+        overclaimRisk: 0.3,
+        scoringBias: document.getElementById("bias").value,
+      };
+      const a = scoreVoc(input);
+      const b = scoreCsa(input);
+      let winner = "tie";
+      if (a.overall > b.overall + 0.5) winner = "voclosporin_mps";
+      else if (b.overall > a.overall + 0.5) winner = "cyclosporine_mps";
+      document.getElementById("out").textContent =
+        "winner: " + winner + "\n" +
+        "voclosporin_mps overall: " + a.overall + " (2D mask penalty " + a.pen + ")\n" +
+        "cyclosporine_mps overall: " + b.overall + "\n" +
+        "gap: " + round2(Math.abs(a.overall - b.overall)) +
+        (input.culture2dMasking >= 0.6 ? "\nNote: high 2D masking — scorers may disagree on MPS harm." : "");
+    };
+  </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Tubule Mps Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `tubule-mps-studio`  
 **Paper:** https://www.biorxiv.org/content/10.64898/2026.07.07.737071v1  
 **Authors’ code:** none  

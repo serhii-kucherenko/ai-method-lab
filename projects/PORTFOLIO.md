@@ -1,6 +1,6 @@
-# Portfolio
+﻿# Portfolio
 
-Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One comprehensive product at a time â€” **ban isomorphic desk clones**.
+Never-stop loop (2026-07-24). Prefer simple-papers with **public code**. One comprehensive product at a time Ã¢â‚¬â€ **ban isomorphic desk clones**.
 
 ## Active / complete
 
@@ -77,14 +77,14 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Sovereign Cost Studio** | `sovereign-cost-studio` | **Complete** | Sovereign-infra W/E/E accounting vs naive cloud-footprint baseline |
 | **Roi Exemplar Studio** | `roi-exemplar-studio` | **Complete** | Optimized VLM ROI exemplars vs naive exemplar baseline |
 | **Enorms Baseline Studio** | `enorms-baseline-studio` | **Complete** | Patient-specific E-norms vs population-norm EEG baseline |
-| **R2map Translate Studio** | `r2map-translate-studio` | **Complete** | GAN T1W/T2W→R2map vs conventional R2 baseline |
+| **R2map Translate Studio** | `r2map-translate-studio` | **Complete** | GAN T1W/T2Wâ†’R2map vs conventional R2 baseline |
 | **Aracot Agent Studio** | `aracot-agent-studio` | **Complete** | Arabic CoT distilled agents vs non-distilled multilingual baseline |
 | **Idia Quant Studio** | `idia-quant-studio` | **Complete** | Informed DIA vs naive DIA single-cell quant baseline |
 | **Chemicl Discover Studio** | `chemicl-discover-studio` | **Complete** | Multimodal ChemICL vs text-only ICL baseline |
 | **Chemgnn Membrane Studio** | `chemgnn-membrane-studio` | **Complete** | ChemGNN CNT membrane surrogate vs classical physics baseline |
 | **Pestwin Control Studio** | `pestwin-control-studio` | **Complete** | Modular multi-agent pest control vs single-species baseline |
 | **Phe Escalate Studio** | `phe-escalate-studio` | **Complete** | AI-assisted PHE escalation vs manual triage baseline |
-| **Share Colearn Studio** | `share-colearn-studio` | **Complete** | Human–AI co-learning vs AI-only disease activity labeling |
+| **Share Colearn Studio** | `share-colearn-studio` | **Complete** | Humanâ€“AI co-learning vs AI-only disease activity labeling |
 | **Atlas Flow Studio** | `atlas-flow-studio` | **Complete** | Integrated atlas registration+quant vs fragmented multi-tool baseline |
 | **Saffron Detect Studio** | `saffron-detect-studio` | **Complete** | CNN stigma adulteration detection vs visual inspection baseline |
 | **Therapy Prompt Studio** | `therapy-prompt-studio` | **Complete** | Structured therapy-safety gates vs prompt-only baseline |
@@ -96,7 +96,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Nicu Ecg Studio** | `nicu-ecg-studio` | **Complete** | Alignment-free PPG-guided ECG vs alignment-dependent baseline |
 | **Pv Causal Studio** | `pv-causal-studio` | **Complete** | Target-trial causal PV signals vs spontaneous-reporting baseline |
 | **Sepsis Therapy Studio** | `sepsis-therapy-studio` | **Complete** | CT-HMM therapy effectiveness vs static guideline baseline |
-| **Mhc Design Studio** | `mhc-design-studio` | **Complete** | Hybrid quantum–classical de novo vs classical generative baseline |
+| **Mhc Design Studio** | `mhc-design-studio` | **Complete** | Hybrid quantumâ€“classical de novo vs classical generative baseline |
 | **Paired Motion Studio** | `paired-motion-studio` | **Complete** | Distributed ego+exo fusion vs ego-only baseline |
 | **Surveil Gate Studio** | `surveil-gate-studio` | **Complete** | Six-pillar trust governance vs explainability-only baseline |
 | **Async Neuro Studio** | `async-neuro-studio` | **Complete** | Standardized async video exam vs ad-hoc exam baseline |
@@ -125,12 +125,12 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Blood Loss Studio** | `blood-loss-studio` | **Complete** | Weighed-swab measured vs haemoglobin-calculated blood loss |
 | **Mof Capture Studio** | `mof-capture-studio` | **Complete** | Anionic MOF capture vs conventional sorbent |
 | **Abe Precision Studio** | `abe-precision-studio` | **Complete** | Domain-insertion ABE vs baseline ABE |
-| **Tubule Mps Studio** | `tubule-mps-studio` | **Building** | Voclosporin MPS vs cyclosporine A |
+| **Tubule Mps Studio** | `tubule-mps-studio` | **Complete** | Voclosporin MPS vs cyclosporine A |
 
 ## Rules
 
 - Prefer papers with `code.url`
 - Buyer story + PM/design pack before climb
-- Distinct IA â€” not jobs/lifecycle/scenario desk shells
+- Distinct IA Ã¢â‚¬â€ not jobs/lifecycle/scenario desk shells
 - Score into business scorecard; garbage-collect C/Kill ideas before the next climb
-- Scoring: `docs/RUBRIC.md` (cells) Â· `docs/BUSINESS_RUBRIC.md` (ideas)
+- Scoring: `docs/RUBRIC.md` (cells) Ã‚Â· `docs/BUSINESS_RUBRIC.md` (ideas)
