@@ -1,0 +1,24 @@
+{
+  "slug": "eval-budget-studio",
+  "project": "Eval Budget Studio",
+  "dimensions": {
+    "buyer": 8,
+    "pain": 9,
+    "pmf": 7,
+    "money": 8,
+    "wedge": 8,
+    "moat": 7,
+    "evidence": 6,
+    "feasibility": 9
+  },
+  "business_idea": "Forecast and cap LLM evaluation spend before unconstrained always-max runs burn the bill",
+  "pmf": "Early signal with platform/FinOps leads already paying judge and bench invoices",
+  "buyer": "AI platform / FinOps leads",
+  "money_hook": "Seats + forecast-run usage + private budget packs",
+  "potential": "Literal-dollar FinOps wedge after scoring products",
+  "moat": "Budget-aware forecast+cap vs always-max dashboards",
+  "evidence": "Idea-first FinOps; 30 dual goldens; live app smoke",
+  "status": "complete",
+  "rubric": "biz-rubric-v2",
+  "gc_notes": "Prefer; software FinOps pattern"
+}

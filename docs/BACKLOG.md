@@ -8,13 +8,13 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **Judge Reliability Studio** (`judge-reliability-studio`) | **building** | IRT judge diagnostics; depth pack ready; climb in flight |
-| — | **Rubric Compiler Studio** (`rubric-compiler-studio`) | **complete** | Finish email sent `51304661` |
-| — | **Map Anchor Studio** (`map-anchor-studio`) | **killed** | Not software-solvable |
-| ref | **Filing Penalty Desk** | **sustained** | Literal-dollar reference |
+| — | **Eval Budget Studio** | **complete — email pending** | FinOps climb after hourly wake |
+| — | **Selective Trust Studio** | **complete** | Finish mail c44b64f5 |
+| — | **Judge Reliability Studio** | **complete** | Finish mail 04900bdf |
+| — | **Rubric Compiler Studio** | **complete** | Finish mail 51304661 |
 
 ## Prefer next
 
-FinOps / cost consoles · agent safety / trust-eval · OT/ICS software · literal-dollar compliance
+OT/ICS software · agent safety · literal-dollar compliance · more FinOps
 
-1h keep-going loop armed (`AGENT_LOOP_TICK_keep_executing`).
+1h keep-going loop armed (PID 23232).
