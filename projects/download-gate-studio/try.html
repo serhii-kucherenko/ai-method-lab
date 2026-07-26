@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Download Gate Studio</title>
+<style>
+  body { font: 16px Manrope, system-ui; background: #071018; color: #e2e8f0; max-width: 720px; margin: 10vh auto; }
+  button { background: #22d3ee; border: 0; padding: 12px 16px; color: #071018; font-weight: 600; cursor: pointer; }
+  strong { color: #22d3ee; }
+</style>
+<h1>Download Gate Studio</h1>
+<p>Prove the interlocks before the download.</p>
+<button onclick="run()">Compare paths</button>
+<p id="result"></p>
+<script>
+function run() {
+  result.innerHTML =
+    "<strong>Interlock-aware A: HOLD</strong> — critical guard check failed.<br>" +
+    "Calendar-window B: OPEN — maintenance window active, no interlock proof.";
+}
+</script>

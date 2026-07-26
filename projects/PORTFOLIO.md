@@ -144,3 +144,5 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Eval Budget Studio** | eval-budget-studio | **Complete** | Forecast and cap eval spend before always-max burns the bill |
 
 | **Service Credit Studio** | service-credit-studio | **Complete** | Forecast SLA credits in dollars vs calendar-only |
+
+| **Download Gate Studio** | download-gate-studio | **Complete** | Gate OT downloads with interlocks vs calendar-only |

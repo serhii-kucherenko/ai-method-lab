@@ -133,13 +133,14 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 125 | Selective Trust Studio | 76 | B | Cascade cheap-to-strong judges with escalate-when-unsure gates and cost honesty | Early signal with eval leads burning budget on always-max models | Platform / eval engineering leads | Seats + cascade-run usage + policy packs | Cost vs quality wedge after Rubric Compiler / Judge Reliability | Selective escalate cascade vs always-strong baselines | arXiv 2407.18370 Trust or Escalate pattern; 30 dual goldens | complete | biz-rubric-v2 | Keep; software FinOps+trust pattern |
 | 126 | Eval Budget Studio | 78 | B | Forecast and cap LLM evaluation spend before unconstrained always-max runs burn the bill | Early signal with platform/FinOps leads already paying judge and bench invoices | AI platform / FinOps leads | Seats + forecast-run usage + private budget packs | Literal-dollar FinOps wedge after scoring products | Budget-aware forecast+cap vs always-max dashboards | Idea-first FinOps; 30 dual goldens; live app smoke | complete | biz-rubric-v2 | Prefer; software FinOps pattern |
 | 127 | Service Credit Studio | 79 | B | Forecast SLA service credits in literal dollars from incidents and contract tiers before Finance sees the invoice | Early signal with CS/FinOps leads who already reconcile SLA credits and refunds | Customer success / platform FinOps leads | CS seats + forecast-run usage + private contract packs | Literal-dollar compliance wedge adjacent to Filing Penalty Desk | Credit-aware dollar math vs calendar-breach-only flags | Idea-first; 30 dual goldens; live app smoke on 43158 | complete | biz-rubric-v2 | Prefer; literal-dollar SLA pattern |
+| 128 | Download Gate Studio | 78 | B | Gate OT/ICS program downloads behind signed permits and critical interlocks before a calendar window alone opens the gate | Early signal with OT/ICS security and controls engineers who already buy change-management tooling | OT / ICS security and controls engineers | Plant/site seats + gate-run usage + private plant packs | Industrial safety ops wedge adjacent to Ladder Bomb buyer family | Interlock-aware fail-closed gate vs calendar-window-only opens | Idea-first OT; 30 dual goldens; live app smoke on 43159 | complete | biz-rubric-v2 | Prefer; OT/ICS software pattern |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 114 |
+| B | 115 |
 | C | 12 |
 | Kill | 1 |
 

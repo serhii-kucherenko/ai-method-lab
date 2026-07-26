@@ -2931,6 +2931,33 @@
       "score": 79,
       "tier": "B",
       "id": 127
+    },
+    {
+      "slug": "download-gate-studio",
+      "project": "Download Gate Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 9,
+        "pmf": 7,
+        "money": 7,
+        "wedge": 8,
+        "moat": 8,
+        "evidence": 6,
+        "feasibility": 9
+      },
+      "business_idea": "Gate OT/ICS program downloads behind signed permits and critical interlocks before a calendar window alone opens the gate",
+      "pmf": "Early signal with OT/ICS security and controls engineers who already buy change-management tooling",
+      "buyer": "OT / ICS security and controls engineers",
+      "money_hook": "Plant/site seats + gate-run usage + private plant packs",
+      "potential": "Industrial safety ops wedge adjacent to Ladder Bomb buyer family",
+      "moat": "Interlock-aware fail-closed gate vs calendar-window-only opens",
+      "evidence": "Idea-first OT; 30 dual goldens; live app smoke on 43159",
+      "status": "complete",
+      "rubric": "biz-rubric-v2",
+      "gc_notes": "Prefer; OT/ICS software pattern",
+      "score": 78,
+      "tier": "B",
+      "id": 128
     }
   ]
 }
