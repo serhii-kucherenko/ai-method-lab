@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T02:54:04.315Z",
+  "updated_at": "2026-07-26T03:04:15.544Z",
   "projects": [
     {
       "id": 1,
@@ -2745,15 +2745,42 @@
     {
       "slug": "dhodh-screen-studio",
       "project": "Dhodh Screen Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare structure-based PfDHODH virtual screening against naive library baselines before locking a screen pack",
       "pmf": "Early signal with antimalarial discovery / computational chemistry leads who already trial screen soft-sims",
       "buyer": "Antimalarial discovery and computational chemistry engineering leads",
       "money_hook": "Bench seats + private screen packs (method-lab experiment)",
       "potential": "Structure-based DHODH screening is underserved vs naive library dumps without honesty",
       "moat": "Structure-based DHODH VS vs naive library baseline",
-      "evidence": "Paper computational claim (structure-based VS for parasite-selective PfDHODH inhibitors); no public code; soft-sim honesty required",
+      "evidence": "Paper computational claim (structure-based VS for parasite-selective PfDHODH inhibitors); no public code; soft-sim honesty required; 13 pages; dual scorers; 30 goldens; build + app-up green",
       "gc_notes": "Prefer screen soft-sim with multi-flow bar; never claim wet-lab validation, clinical antimalarial advice, IND/NDA readiness, or live compound procurement; not authors’ brand",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 7,
+        "feasibility": 7
+      },
+      "score": 67,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 121
+    },
+    {
+      "slug": "map-anchor-studio",
+      "project": "Map Anchor Studio",
+      "status": "building",
+      "business_idea": "Compare mucus-anchoring MAP antibody conjugates against conventional monoclonal antibodies before locking a conjugate pack",
+      "pmf": "Early signal with antiviral antibody / mucosal-delivery analytics leads who already trial conjugate soft-sims",
+      "buyer": "Antiviral antibody and mucosal-delivery analytics engineering leads",
+      "money_hook": "Bench seats + private conjugate packs (method-lab experiment)",
+      "potential": "MAP-anchored antiviral antibody planning is underserved vs conventional mAb dumps without honesty",
+      "moat": "mAb-MAP conjugate vs conventional mAb",
+      "evidence": "Paper biologics claim (MAP–antibody conjugates to enhance antiviral efficacy); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer conjugate soft-sim with multi-flow bar; never claim wet-lab validation, clinical antiviral advice, IND/NDA readiness, or live patient dosing; not authors’ brand",
       "dimensions": {
         "buyer": 7,
         "pain": 7,
@@ -2767,7 +2794,7 @@
       "score": 66,
       "tier": "B",
       "rubric": "biz-rubric-v1",
-      "id": 121
+      "id": 122
     }
   ]
 }

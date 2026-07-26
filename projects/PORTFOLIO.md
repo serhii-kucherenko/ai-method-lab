@@ -129,6 +129,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Usher Dual Studio** | `usher-dual-studio` | **Complete** | MYO7A supplementation vs Myo7b activation |
 | **Aminoaryl Studio** | `aminoaryl-studio` | **Complete** | Photocatalytic vs copper-catalyzed aminoarylation |
 | **Dhodh Screen Studio** | `dhodh-screen-studio` | **Complete** | Structure-based DHODH VS vs naive library |
+| **Map Anchor Studio** | `map-anchor-studio` | **Building** | mAb-MAP conjugate vs conventional mAb |
 
 ## Rules
 
