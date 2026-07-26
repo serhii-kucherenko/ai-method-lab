@@ -1,0 +1,42 @@
+{
+  "cell_id": "A03__P-sustain-001__usher-dual-studio__r1",
+  "approach_id": "A03",
+  "approach_version": 1,
+  "method_id": "A03",
+  "method_version": "1.0.0",
+  "project_id": "P-sustain-001",
+  "phase": "P-sustain-001",
+  "run_id": "r1",
+  "status": "scored",
+  "product_path": "projects/usher-dual-studio",
+  "started_at": "2026-07-26T08:15:00.000Z",
+  "finished_at": "2026-07-26T22:00:00.000Z",
+  "created_at": "2026-07-26T22:00:00.000Z",
+  "metrics": {
+    "correctness_pass": true,
+    "cycle_time_hours": 2.5,
+    "interventions": 0,
+    "human_interventions": 0,
+    "retries": 0,
+    "regression_pass": true,
+    "recoverability_ok": true,
+    "wall_clock_minutes": 150
+  },
+  "scores": {
+    "rubric_version": "1.0.0",
+    "dimensions": {
+      "correctness": 5,
+      "completeness": 5,
+      "robustness": 5,
+      "maintainability": 5,
+      "efficiency": 4
+    },
+    "artifacts": [
+      "projects/usher-dual-studio",
+      "docs/guides/151-usher-dual-studio-lessons.md"
+    ],
+    "notes": "13 pages; ≥25 features; 30 dual-impl goldens (ud-001…ud-030); 5 named flows; packs/alleles/vectors/assays IA (not desk clone); scorers myo7a_gene_supplement vs myo7b_activation"
+  },
+  "fail_tags": [],
+  "notes": "A03 Usher Dual Studio sustain — product_complete_pending=true; parent owns Resend finish email; do NOT send any Resend email from this agent"
+}

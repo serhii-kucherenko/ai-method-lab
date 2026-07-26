@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Usher Dual Studio — try</title>
+  <style>
+    :root {
+      --ink: #14181c;
+      --teal: #1a5c66;
+      --mist: #eef3f4;
+      --amber: #a67a30;
+      --line: #c5cbce;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--mist);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    header {
+      background: linear-gradient(165deg, #0a0d0f, #1a2426);
+      color: #fff;
+      padding: 2.5rem 1.5rem 2rem;
+    }
+    header h1 { margin: 0; font-size: 1.75rem; color: var(--amber); }
+    header p { margin: 0.75rem 0 0; max-width: 36rem; color: var(--mist); }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.85rem; }
+    input, select, button {
+      width: 100%;
+      margin-top: 0.25rem;
+      padding: 0.5rem 0.65rem;
+      border: 1px solid var(--line);
+      border-radius: 0.4rem;
+      font: inherit;
+    }
+    button {
+      margin-top: 1rem;
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 0.5rem;
+      white-space: pre-wrap;
+      font-size: 0.9rem;
+    }
+    footer {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: #556065;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Usher Dual Studio</h1>
+    <p>Two pathways. One compare — offline soft-sim of myo7a_gene_supplement vs myo7b_activation.</p>
+  </header>
+  <main>
+    <label>MYO7A rescue <input id="rescue" type="number" min="0" max="1" step="0.01" value="0.55" /></label>
+    <label>Myo7b activation <input id="act" type="number" min="0" max="1" step="0.01" value="0.35" /></label>
+    <label>Allele gap <input id="gap" type="number" min="0" max="1" step="0.01" value="0.7" /></label>
+    <label>Assay readout <input id="readout" type="number" min="0" max="1" step="0.01" value="0.65" /></label>
+    <label>Bias
+      <select id="bias">
+        <option value="balanced">balanced</option>
+        <option value="myo7a_first">myo7a_first</option>
+        <option value="myo7b_first">myo7b_first</option>
+        <option value="assay_first">assay_first</option>
+      </select>
+    </label>
+    <button type="button" id="run">Run dual compare</button>
+    <div class="out" id="out">Results appear here.</div>
+  </main>
+  <footer>
+    Soft-sim only — not wet-lab validated, not IND/NDA ready, not patient dosing, not clinical gene-therapy advice. Not authors’ brand.
+  </footer>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function pathwayBurden(act, gap, over) {
+      return clamp(act * 0.35 + gap * 0.25 + over * 0.4 - 0.06, 0, 1.5);
+    }
+    function scoreMyo7a(input) {
+      const myo = true;
+      const boost = 1.12;
+      const wA = biasWeight(input.scoringBias, "myo7a_first");
+      const wS = biasWeight(input.scoringBias, "assay_first");
+      const wB = biasWeight(input.scoringBias, "myo7b_first");
+      const avgBias = (wA + wS + (2 - wB)) / 3;
+      const burden = pathwayBurden(input.myo7bActivation, input.alleleGap, input.overclaimRisk);
+      const myo7aRescueScore = round2(clamp(
+        (input.myo7aRescue * 35 + input.evidenceStrength * 25 + input.assayReadout * 30 + input.pathwayFollowThrough * 10 - burden * 5) * boost * avgBias + 8 - input.overclaimRisk * 6 - (input.scoringBias === "myo7b_first" ? 12 : 0), 0, 100));
+      const myo7bActivationScore = round2(clamp(input.myo7bActivation * 35 * 0.7 + input.vectorDelivery * 25 * wB + (1 - input.myo7aRescue) * 20 + 4 - input.overclaimRisk * 8, 0, 100));
+      const vectorCoverage = round2(clamp(input.assayReadout * 40 * boost * wS + input.myo7aRescue * 30 + input.pathwayFollowThrough * 15 + 8 - input.alleleGap * 18 - (input.scoringBias === "myo7b_first" ? 8 : 0), 0, 100));
+      const pathwayEfficiency = round2(clamp(((1 - burden) * 40 + input.pathwayFollowThrough * 25 + input.vectorDelivery * 20) * boost * wS + 8 - input.overclaimRisk * 8, 0, 100));
+      const alleleGapPenalty = round2(clamp((input.scoringBias === "myo7b_first" ? 40 : 18) * boost + input.alleleGap * 28 + burden * 12 - input.myo7aRescue * 12 + (1 - input.pathwayFollowThrough) * 12, 0, 100));
+      const myo7aContribution = round2(clamp(myo7aRescueScore * 0.32 + vectorCoverage * 0.28 + pathwayEfficiency * 0.22 + (100 - alleleGapPenalty) * 0.18, 0, 100));
+      const myo7bContribution = round2(clamp(myo7aRescueScore * 0.35 + myo7bActivationScore * 0.35 + pathwayEfficiency * 0.2 + alleleGapPenalty * 0.1 - input.myo7aRescue * 6, 0, 100));
+      const overall = round2(clamp(myo7aContribution * 0.82 + myo7bContribution * 0.18 + 4 - (input.scoringBias === "myo7b_first" ? 3 : 0) - input.alleleGap * 4, 0, 100));
+      return { mode: "myo7a_gene_supplement", overall, myo7aRescueScore, myo7bActivationScore };
+    }
+    function scoreMyo7b(input) {
+      const boost = 1.08;
+      const wB = biasWeight(input.scoringBias, "myo7b_first");
+      const wS = biasWeight(input.scoringBias, "assay_first");
+      const burden = pathwayBurden(input.myo7bActivation, input.alleleGap, input.overclaimRisk);
+      const myo7aRescueScore = round2(clamp((1 - input.myo7bActivation) * 28 * boost + input.alleleGap * 22 * boost + (wB + wS) * 5 - input.myo7aRescue * 10 - input.overclaimRisk * 10 - (input.scoringBias === "myo7a_first" ? 8 : 0), 0, 100));
+      const myo7bActivationScore = round2(clamp(input.myo7bActivation * 20 * boost + input.alleleGap * 35 * boost * Math.max(wB, wS) + (1 - burden) * 15 + 8 - input.myo7aRescue * 8, 0, 100));
+      const pathwayEfficiency = round2(clamp(input.alleleGap * 35 * boost * Math.max(wB, wS) + input.assayReadout * 25 + 8 - burden * 10, 0, 100));
+      const myo7aContribution = round2(clamp(myo7aRescueScore * 0.2 + myo7bActivationScore * 0.2 + pathwayEfficiency * 0.2 + 40, 0, 100));
+      const myo7bContribution = round2(clamp(myo7aRescueScore * 0.45 + myo7bActivationScore * 0.35 + pathwayEfficiency * 0.2 - burden * 6, 0, 100));
+      const overall = round2(clamp(myo7bContribution * 0.78 + myo7aContribution * 0.22 - input.myo7aRescue * 5 - input.overclaimRisk * 6 + input.alleleGap * 8, 0, 100));
+      return { mode: "myo7b_activation", overall, myo7aRescueScore, myo7bActivationScore };
+    }
+    document.getElementById("run").onclick = () => {
+      const input = {
+        myo7aRescue: Number(document.getElementById("rescue").value),
+        myo7bActivation: Number(document.getElementById("act").value),
+        alleleGap: Number(document.getElementById("gap").value),
+        vectorDelivery: 0.55,
+        evidenceStrength: 0.55,
+        pathwayFollowThrough: 0.55,
+        assayReadout: Number(document.getElementById("readout").value),
+        overclaimRisk: 0.3,
+        scoringBias: document.getElementById("bias").value,
+      };
+      const a = scoreMyo7a(input);
+      const b = scoreMyo7b(input);
+      const winner = a.overall > b.overall + 0.5 ? "myo7a_gene_supplement" : b.overall > a.overall + 0.5 ? "myo7b_activation" : "tie";
+      document.getElementById("out").textContent =
+        "Winner: " + winner + "\nMYO7A overall: " + a.overall + "\nMyo7b overall: " + b.overall +
+        "\nGap: " + round2(Math.abs(a.overall - b.overall)) +
+        "\n\nSoft-sim approximate — use the Next app for dual-impl goldens.";
+    };
+  </script>
+</body>
+</html>

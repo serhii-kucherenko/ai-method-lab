@@ -1,0 +1,39 @@
+{
+  "id": "ud-022",
+  "input": {
+    "myo7aRescue": 0.76,
+    "myo7bActivation": 0.25,
+    "alleleGap": 0.35,
+    "vectorDelivery": 0.76,
+    "evidenceStrength": 0.76,
+    "pathwayFollowThrough": 0.76,
+    "assayReadout": 0.76,
+    "overclaimRisk": 0.25,
+    "scoringBias": "assay_first",
+    "profile": "myo7a_gene_supplement"
+  },
+  "expectedMyo7a": {
+    "mode": "myo7a_gene_supplement",
+    "myo7aRescueScore": 100,
+    "myo7bActivationScore": 23.38,
+    "vectorCoverage": 81.86,
+    "pathwayEfficiency": 100,
+    "alleleGapPenalty": 26.3,
+    "confidence": 46.28,
+    "myo7aContribution": 90.19,
+    "myo7bContribution": 61.25,
+    "overall": 87.58
+  },
+  "expectedMyo7b": {
+    "mode": "myo7b_activation",
+    "myo7aRescueScore": 30.4,
+    "myo7bActivationScore": 36.96,
+    "vectorCoverage": 37.46,
+    "pathwayEfficiency": 42.71,
+    "alleleGapPenalty": 3.1,
+    "confidence": 39.29,
+    "myo7aContribution": 48.89,
+    "myo7bContribution": 33.87,
+    "overall": 34.67
+  }
+}

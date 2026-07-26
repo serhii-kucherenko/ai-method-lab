@@ -1,6 +1,6 @@
 # Usher Dual Studio
 
-**State:** framed  
+**State:** shipped  
 **Slug:** `usher-dual-studio`  
 **Paper:** https://www.biorxiv.org/content/10.64898/2026.07.02.736025v1  
 **Authors’ code:** none  
