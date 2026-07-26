@@ -1,0 +1,27 @@
+{
+  "slug": "service-credit-studio",
+  "project": "Service Credit Studio",
+  "dimensions": {
+    "buyer": 8,
+    "pain": 9,
+    "pmf": 7,
+    "money": 9,
+    "wedge": 8,
+    "moat": 7,
+    "evidence": 6,
+    "feasibility": 9
+  },
+  "business_idea": "Forecast SLA service credits in literal dollars from incidents and contract tiers before Finance sees the invoice",
+  "pmf": "Early signal with CS/FinOps leads who already reconcile SLA credits and refunds",
+  "buyer": "Customer success / platform FinOps leads",
+  "money_hook": "CS seats + forecast-run usage + private contract packs",
+  "potential": "Literal-dollar compliance wedge adjacent to Filing Penalty Desk",
+  "moat": "Credit-aware dollar math vs calendar-breach-only flags",
+  "evidence": "Idea-first; 30 dual goldens; live app smoke on 43158",
+  "status": "complete",
+  "rubric": "biz-rubric-v2",
+  "gc_notes": "Prefer; literal-dollar SLA pattern",
+  "score": 79,
+  "tier": "B",
+  "id": 127
+}

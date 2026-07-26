@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Service Credit Studio</title>
+<style>
+  body { font: 16px Manrope, system-ui; background: #0c1220; color: #e2e8f0; max-width: 720px; margin: 10vh auto; }
+  button { background: #fbbf24; border: 0; padding: 12px 16px; color: #0c1220; font-weight: 600; cursor: pointer; }
+  strong { color: #fbbf24; }
+</style>
+<h1>Service Credit Studio</h1>
+<p>Forecast the credit before Finance sees the invoice.</p>
+<button onclick="run()">Compare paths</button>
+<p id="result"></p>
+<script>
+function run() {
+  const aware = 412.5, calendar = 1250;
+  result.innerHTML =
+    "<strong>Credit-aware A: $" + aware + "</strong> with caps and exclusions.<br>" +
+    "Calendar-only B: $" + calendar + " — binary breach without tiered credit math.";
+}
+</script>

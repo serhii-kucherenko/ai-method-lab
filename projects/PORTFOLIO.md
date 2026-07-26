@@ -142,3 +142,5 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 - Score into business scorecard; garbage-collect C/Kill ideas before the next climb
 - Scoring: `docs/RUBRIC.md` (cells) Ã‚Â· `docs/BUSINESS_RUBRIC.md` (ideas)
 | **Eval Budget Studio** | eval-budget-studio | **Complete** | Forecast and cap eval spend before always-max burns the bill |
+
+| **Service Credit Studio** | service-credit-studio | **Complete** | Forecast SLA credits in dollars vs calendar-only |
