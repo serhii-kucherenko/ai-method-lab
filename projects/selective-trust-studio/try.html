@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Selective Trust Studio</title>
+<style>
+  body { font: 16px Manrope, system-ui; background: #0f172a; color: #e2e8f0; max-width: 720px; margin: 10vh auto; }
+  button { background: #f59e0b; border: 0; padding: 12px 16px; color: #0f172a; font-weight: 600; cursor: pointer; }
+  strong { color: #f59e0b; }
+</style>
+<h1>Selective Trust Studio</h1>
+<p>Escalate when unsure.</p>
+<button onclick="run()">Compare paths</button>
+<p id="result"></p>
+<script>
+function run() {
+  const uncertainty = 55;
+  const selective = Math.round(100 - uncertainty * 0.45 + 8);
+  const always = Math.round(82 + 4 - uncertainty * 0.1);
+  result.innerHTML =
+    "<strong>Selective A: " + selective + "</strong> — cascade escalates; lower spend.<br>" +
+    "Always-strong B: " + always + " — never escalate; higher spend.";
+}
+</script>

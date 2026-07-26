@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v2",
-  "updated_at": "2026-07-26T13:25:22.517Z",
+  "updated_at": "2026-07-26T13:29:40.651Z",
   "projects": [
     {
       "id": 1,
@@ -2870,10 +2870,10 @@
       "money_hook": "Seats + cascade-run usage + policy packs",
       "potential": "Cost vs quality wedge after Rubric Compiler / Judge Reliability",
       "moat": "Selective escalate cascade vs always-strong baselines",
-      "evidence": "arXiv 2407.18370 Trust or Escalate pattern",
-      "status": "building",
+      "evidence": "arXiv 2407.18370 Trust or Escalate pattern; 30 dual goldens",
+      "status": "complete",
       "rubric": "biz-rubric-v2",
-      "gc_notes": "Prefer climb; software FinOps+trust pattern",
+      "gc_notes": "Keep; software FinOps+trust pattern",
       "score": 76,
       "tier": "B",
       "id": 125
