@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T00:38:45.311Z",
+  "updated_at": "2026-07-26T00:49:01.984Z",
   "projects": [
     {
       "id": 1,
@@ -2367,7 +2367,7 @@
     {
       "slug": "immunize-impact-studio",
       "project": "Immunize Impact Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare immunization-linked under-five mortality panels against coverage-only dashboards before locking an impact pack",
       "pmf": "Early signal with public-health / immunization-program analytics leads who already trial program soft-sims",
       "buyer": "Public-health and immunization-program analytics engineering leads",
@@ -2390,6 +2390,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 107
+    },
+    {
+      "slug": "split-endo-studio",
+      "project": "Split Endo Studio",
+      "status": "building",
+      "business_idea": "Compare one-hole split endoscopy pathways against open laminectomy baselines before locking a case pack",
+      "pmf": "Early signal with spine / MIS surgical analytics leads who already trial pathway soft-sims",
+      "buyer": "Spine and minimally invasive surgical analytics engineering leads",
+      "money_hook": "Bench seats + private case packs (method-lab experiment)",
+      "potential": "OSE vs open laminectomy planning is underserved vs single-approach dumps without honesty",
+      "moat": "One-hole split endoscopy vs open laminectomy",
+      "evidence": "Paper surgical claim (OSE vs open laminectomy for thoracic OLF); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer surgical soft-sim with multi-flow bar; never claim live OR control, device clearance, or clinical advice",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 108
     }
   ]
 }
