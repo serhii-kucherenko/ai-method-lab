@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-26T23:45:00.000Z",
+  "updated_at": "2026-07-26T22:35:00.000Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -10,15 +10,15 @@
       "hard_stop"
     ],
     "enabled": true,
-    "product_complete_pending": true,
-    "last_product_complete_email_id": "664e80b7-f571-4b41-9172-2ed1483e4c59",
+    "product_complete_pending": false,
+    "last_product_complete_email_id": "4202b85a-2091-4e67-94ae-e97157927e3c",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
     "last_fpd_reemail_id": "9a9d8b3e-91d6-d9781ab8c451"
   },
   "paused": false,
-  "active_cell": "A03__P-sustain-001__aminoaryl-studio__r1",
+  "active_cell": "A03__P-sustain-001__dhodh-screen-studio__r1",
   "schema_version": "1.0.0",
   "idle_reason": null,
   "product_defaults": {
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__aminoaryl-studio__r1",
   "last_error": null,
-  "current_product": "aminoaryl-studio",
-  "current_idea": "aminoaryl-studio",
+  "current_product": "dhodh-screen-studio",
+  "current_idea": "dhodh-screen-studio",
   "next_research_idea": null,
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "sustain",
-  "notes": "Aminoaryl Studio climb complete — product_complete_pending=true. Parent owns Resend finish email. Do NOT clear pending from climb agent.",
+  "phase": "build",
+  "notes": "Aminoaryl finish email sent (4202b85a). Dhodh Screen Studio depth pack ready — climb in flight. Climb must NOT send Resend; set product_complete_pending on sustain.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -59,11 +59,11 @@
     "days": 14,
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
-      "paperId": "10.26434/chemrxiv.15005923/v1",
-      "slug": "aminoaryl-studio",
-      "displayName": "Aminoaryl Studio",
-      "at": "2026-07-26T22:20:00.000Z",
-      "url": "https://doi.org/10.26434/chemrxiv.15005923/v1",
+      "paperId": "10.26434/chemrxiv.15005938/v1",
+      "slug": "dhodh-screen-studio",
+      "displayName": "Dhodh Screen Studio",
+      "at": "2026-07-26T22:35:00.000Z",
+      "url": "https://doi.org/10.26434/chemrxiv.15005938/v1",
       "codeUrl": null
     },
     "notes": "Paper pick is research input only. Must clear IDEA_DEPTH + PM go + designer pack before projects/. No same-tick smoke scaffolds."
@@ -75,7 +75,7 @@
     "paper_sourced_skip_ready_to_build": false,
     "block_isomorphic_dual_gate": true,
     "min_hours_research_before_ready": 24,
-    "framing_started_at": "2026-07-26T22:20:00.000Z",
+    "framing_started_at": "2026-07-26T22:35:00.000Z",
     "min_research_ticks_before_ready": 3,
     "research_ticks_on_idea": 3,
     "require_comprehensive_blueprint": true,
