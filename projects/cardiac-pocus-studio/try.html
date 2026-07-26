@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cardiac Pocus Studio — offline try</title>
+  <style>
+    :root { --ink:#12161a; --teal:#1a5f68; --mist:#eef2f3; --amber:#a87a32; }
+    body { font-family: Georgia, serif; margin:0; background:var(--mist); color:var(--ink); }
+    main { max-width:40rem; margin:0 auto; padding:2rem 1.25rem; }
+    h1 { font-size:1.75rem; color:var(--teal); }
+    label { display:block; margin-top:0.75rem; font-size:0.9rem; }
+    input, select { width:100%; padding:0.4rem; margin-top:0.25rem; }
+    button { margin-top:1rem; background:var(--amber); color:#fff; border:0; padding:0.55rem 1rem; cursor:pointer; }
+    .out { margin-top:1.25rem; padding:1rem; background:#fff; border:1px solid #c4cacd; }
+    .fence { font-size:0.85rem; color:#556; margin-top:1.5rem; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Cardiac Pocus Studio</h1>
+  <p>Offline soft-sim: <code>cardiac_pocus_copd</code> vs <code>lung_ultrasound_baseline</code>.</p>
+  <label>Cardiac pattern signal <input id="c" type="number" min="0" max="1" step="0.01" value="0.55" /></label>
+  <label>Lung baseline signal <input id="l" type="number" min="0" max="1" step="0.01" value="0.35" /></label>
+  <label>COPD association <input id="a" type="number" min="0" max="1" step="0.01" value="0.5" /></label>
+  <label>Assay readout <input id="r" type="number" min="0" max="1" step="0.01" value="0.6" /></label>
+  <label>Overclaim risk <input id="o" type="number" min="0" max="1" step="0.01" value="0.25" /></label>
+  <label>Imaging bias
+    <select id="b">
+      <option value="balanced">balanced</option>
+      <option value="cardiac_first">cardiac_first</option>
+      <option value="pattern_first">pattern_first</option>
+      <option value="lung_first">lung_first</option>
+    </select>
+  </label>
+  <button type="button" id="go">Score A/B</button>
+  <div class="out" id="out">Run soft-sim to see dual scores.</div>
+  <p class="fence">Soft-sim only — not diagnostic clearance, not clinical advice, not PACS write-back. Approximate offline demo; full fidelity needs the Next.js app.</p>
+</main>
+<script>
+function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+function round2(n) { return Math.round(n * 100) / 100; }
+function biasWeight(bias, lane) {
+  if (bias === "balanced") return 1;
+  return bias === lane ? 1.35 : 0.55;
+}
+function scoreCardiac(input) {
+  const cardiac = true;
+  const boost = 1.12;
+  const wC = biasWeight(input.imagingBias, "cardiac_first");
+  const wP = biasWeight(input.imagingBias, "pattern_first");
+  const wL = biasWeight(input.imagingBias, "lung_first");
+  const avgBias = (wC + wP + (2 - wL)) / 3;
+  const overall = round2(clamp(
+    (input.cardiacPatternSignal * 40 + input.copdAssociation * 25 + input.assayReadout * 25) * boost * avgBias
+      + 8 - input.overclaimRisk * 10 - input.lungBaselineSignal * 8
+      - (input.imagingBias === "lung_first" ? 12 : 0),
+    0, 100
+  ));
+  return { mode: "cardiac_pocus_copd", overall };
+}
+function scoreLung(input) {
+  const boost = 1.08;
+  const wL = biasWeight(input.imagingBias, "lung_first");
+  const overall = round2(clamp(
+    (input.lungBaselineSignal * 45 + (1 - input.cardiacPatternSignal) * 20) * boost * Math.max(wL, 1)
+      + 8 - input.cardiacPatternSignal * 10 - input.overclaimRisk * 8,
+    0, 100
+  ));
+  return { mode: "lung_ultrasound_baseline", overall };
+}
+document.getElementById("go").onclick = () => {
+  const input = {
+    cardiacPatternSignal: +document.getElementById("c").value,
+    lungBaselineSignal: +document.getElementById("l").value,
+    copdAssociation: +document.getElementById("a").value,
+    assayReadout: +document.getElementById("r").value,
+    overclaimRisk: +document.getElementById("o").value,
+    imagingBias: document.getElementById("b").value,
+  };
+  const A = scoreCardiac(input);
+  const B = scoreLung(input);
+  const winner = A.overall > B.overall + 0.5 ? A.mode : B.overall > A.overall + 0.5 ? B.mode : "tie";
+  document.getElementById("out").innerHTML =
+    "<strong>Winner:</strong> " + winner +
+    "<br/>cardiac_pocus_copd: " + A.overall +
+    "<br/>lung_ultrasound_baseline: " + B.overall +
+    "<br/><em>Approximate offline demo.</em>";
+};
+</script>
+</body>
+</html>

@@ -120,7 +120,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Pavement Retrofit Studio** | `pavement-retrofit-studio` | **Complete** | Photocatalytic pavement retrofit vs conventional preservation |
 | **Pneumonia Implement Studio** | `pneumonia-implement-studio` | **Complete** | CFIR co-design primary care vs status-quo pathway |
 | **Shigella Growth Studio** | `shigella-growth-studio` | **Complete** | Antibiotic-treated Shigella vs untreated diarrhea growth |
-| **Cardiac Pocus Studio** | `cardiac-pocus-studio` | **Building** | Cardiac POCUS COPD patterns vs lung-ultrasound baseline |
+| **Cardiac Pocus Studio** | `cardiac-pocus-studio` | **Complete** | Cardiac POCUS COPD patterns vs lung-ultrasound baseline |
 
 ## Rules
 

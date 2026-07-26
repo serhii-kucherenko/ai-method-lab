@@ -145,4 +145,5 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 142 | [Pavement Retrofit Studio - what we learned](142-pavement-retrofit-studio-lessons.md) | Product `pavement-retrofit-studio` |
 | 143 | [Pneumonia Implement Studio - what we learned](143-pneumonia-implement-studio-lessons.md) | Product `pneumonia-implement-studio` |
 | 144 | [Shigella Growth Studio - what we learned](144-shigella-growth-studio-lessons.md) | Product `shigella-growth-studio` |
+| 145 | [Cardiac Pocus Studio - what we learned](145-cardiac-pocus-studio-lessons.md) | Product `cardiac-pocus-studio` |
 

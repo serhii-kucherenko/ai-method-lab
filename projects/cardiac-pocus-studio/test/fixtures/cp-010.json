@@ -1,0 +1,39 @@
+{
+  "id": "cp-010",
+  "input": {
+    "cardiacPatternSignal": 0.53,
+    "lungBaselineSignal": 0.39,
+    "probeQuality": 0.53,
+    "viewCompleteness": 0.53,
+    "copdAssociation": 0.53,
+    "examFollowThrough": 0.53,
+    "assayReadout": 0.53,
+    "overclaimRisk": 0.39,
+    "imagingBias": "cardiac_first",
+    "profile": "cardiac_pocus_copd"
+  },
+  "expectedCardiac": {
+    "mode": "cardiac_pocus_copd",
+    "cardiacDetectionScore": 69.71,
+    "lungBaselineScore": 27.12,
+    "patternCoverage": 44.91,
+    "examEfficiency": 35.39,
+    "lungOnlyPenalty": 25.88,
+    "confidence": 30.89,
+    "cardiacContribution": 56.01,
+    "lungContribution": 40.38,
+    "overall": 57.2
+  },
+  "expectedLung": {
+    "mode": "lung_ultrasound_baseline",
+    "cardiacDetectionScore": 14.36,
+    "lungBaselineScore": 27.02,
+    "patternCoverage": 33.29,
+    "examEfficiency": 25.78,
+    "lungOnlyPenalty": 11.69,
+    "confidence": 26.59,
+    "cardiacContribution": 37.75,
+    "lungContribution": 18.93,
+    "overall": 18.08
+  }
+}
