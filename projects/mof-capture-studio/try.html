@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mof Capture Studio — offline try</title>
+  <style>
+    :root { --ink:#12161a; --teal:#1a5f68; --mist:#eef2f3; --amber:#a87a32; }
+    body { font-family: Georgia, serif; margin: 0; background: var(--mist); color: var(--ink); }
+    main { max-width: 40rem; margin: 0 auto; padding: 2rem 1.25rem; }
+    h1 { font-size: 1.75rem; color: var(--teal); }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input { width: 100%; padding: 0.4rem; box-sizing: border-box; }
+    button { margin-top: 1rem; background: var(--amber); color: #fff; border: 0; padding: 0.55rem 1rem; cursor: pointer; }
+    .out { margin-top: 1.25rem; padding: 1rem; background: #fff; border: 1px solid #c4cacd; }
+    .fence { font-size: 0.8rem; color: #556; margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Mof Capture Studio</h1>
+    <p>Approximate offline demo: anionic_mof_capture vs conventional_sorbent soft-sim.</p>
+    <label>Ion-exchange fidelity (0–1)
+      <input id="ion" type="number" min="0" max="1" step="0.01" value="0.62" />
+    </label>
+    <label>Conventional capacity (0–1)
+      <input id="conv" type="number" min="0" max="1" step="0.01" value="0.38" />
+    </label>
+    <label>Overclaim risk (0–1)
+      <input id="risk" type="number" min="0" max="1" step="0.01" value="0.25" />
+    </label>
+    <button type="button" id="run">Compare</button>
+    <div class="out" id="out">Run to see MOF vs conventional soft-sim scores.</div>
+    <p class="fence">Soft-sim only — not live plant control, not certified water audits, not municipal procurement. Full fidelity needs the local Next.js app.</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function scoreMof(ion, conv, risk) {
+      return round2(clamp(ion * 72 + (1 - conv) * 18 - risk * 20 + 8, 0, 100));
+    }
+    function scoreConv(ion, conv, risk) {
+      return round2(clamp(conv * 68 + (1 - ion) * 16 - risk * 18 + 4, 0, 100));
+    }
+    document.getElementById("run").onclick = function () {
+      const ion = Number(document.getElementById("ion").value);
+      const conv = Number(document.getElementById("conv").value);
+      const risk = Number(document.getElementById("risk").value);
+      const m = scoreMof(ion, conv, risk);
+      const c = scoreConv(ion, conv, risk);
+      let winner = "tie";
+      if (m > c + 0.5) winner = "anionic_mof_capture";
+      else if (c > m + 0.5) winner = "conventional_sorbent";
+      document.getElementById("out").innerHTML =
+        "<strong>Winner:</strong> " + winner +
+        "<br/>anionic_mof_capture: " + m +
+        "<br/>conventional_sorbent: " + c +
+        "<br/>gap: " + round2(Math.abs(m - c));
+    };
+  </script>
+</body>
+</html>

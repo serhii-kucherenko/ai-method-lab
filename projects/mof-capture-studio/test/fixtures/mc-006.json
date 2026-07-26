@@ -1,0 +1,39 @@
+{
+  "id": "mc-006",
+  "input": {
+    "ionExchangeFidelity": 0.45,
+    "conventionalCapacity": 0.42,
+    "assayFidelity": 0.45,
+    "sorbentCompleteness": 0.45,
+    "evidenceStrength": 0.45,
+    "waterFollowThrough": 0.45,
+    "assayReadout": 0.45,
+    "overclaimRisk": 0.42,
+    "scoringBias": "balanced",
+    "profile": "conventional_sorbent"
+  },
+  "expectedMof": {
+    "mode": "anionic_mof_capture",
+    "mofCaptureScore": 53.61,
+    "conventionalScore": 33.18,
+    "sorbentCoverage": 48.41,
+    "waterEfficiency": 53.95,
+    "conventionalOnlyPenalty": 28.66,
+    "confidence": 24.45,
+    "mofContribution": 55.42,
+    "conventionalContribution": 41.33,
+    "overall": 56.88
+  },
+  "expectedConventional": {
+    "mode": "conventional_sorbent",
+    "mofCaptureScore": 27.75,
+    "conventionalScore": 36.7,
+    "sorbentCoverage": 32.79,
+    "waterEfficiency": 31.07,
+    "conventionalOnlyPenalty": 15.22,
+    "confidence": 22.92,
+    "mofContribution": 42.62,
+    "conventionalContribution": 29.11,
+    "overall": 27.31
+  }
+}

@@ -148,4 +148,5 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 145 | [Cardiac Pocus Studio - what we learned](145-cardiac-pocus-studio-lessons.md) | Product `cardiac-pocus-studio` |
 | 146 | [Responsible Index Studio - what we learned](146-responsible-index-studio-lessons.md) | Product `responsible-index-studio` |
 | 147 | [Blood Loss Studio - what we learned](147-blood-loss-studio-lessons.md) | Product `blood-loss-studio` |
+| 148 | [Mof Capture Studio - what we learned](148-mof-capture-studio-lessons.md) | Product `mof-capture-studio` |
 

@@ -1,6 +1,6 @@
 # Mof Capture Studio
 
-**State:** ready_to_build  
+**State:** complete  
 **Slug:** `mof-capture-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15006194/v1  
 **Authors’ code:** none  

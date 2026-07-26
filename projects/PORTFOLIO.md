@@ -123,7 +123,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Cardiac Pocus Studio** | `cardiac-pocus-studio` | **Complete** | Cardiac POCUS COPD patterns vs lung-ultrasound baseline |
 | **Responsible Index Studio** | `responsible-index-studio` | **Complete** | Structured country index vs naive commitment checklist |
 | **Blood Loss Studio** | `blood-loss-studio` | **Complete** | Weighed-swab measured vs haemoglobin-calculated blood loss |
-| **Mof Capture Studio** | `mof-capture-studio` | **Building** | Anionic MOF capture vs conventional sorbent |
+| **Mof Capture Studio** | `mof-capture-studio` | **Complete** | Anionic MOF capture vs conventional sorbent |
 
 ## Rules
 
