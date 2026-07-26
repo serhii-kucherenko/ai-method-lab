@@ -131,6 +131,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Dhodh Screen Studio** | `dhodh-screen-studio` | **Complete** | Structure-based DHODH VS vs naive library |
 | **Map Anchor Studio** | `map-anchor-studio` | **Killed** | Wet-lab biologics soft-sim — not software-solvable (biz-rubric-v2) |
 | **Rubric Compiler Studio** | `rubric-compiler-studio` | **Complete** | Compile locked rubrics → evidence-anchored scores |
+| **Judge Reliability Studio** | `judge-reliability-studio` | **Complete** | IRT judge diagnostics vs agreement-only baselines |
 
 ## Rules
 

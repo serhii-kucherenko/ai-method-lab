@@ -129,13 +129,14 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 121 | Dhodh Screen Studio | 67 | B | Compare structure-based PfDHODH virtual screening against naive library baselines before locking a screen pack | Early signal with antimalarial discovery / computational chemistry leads who already trial screen soft-sims | Antimalarial discovery and computational chemistry engineering leads | Bench seats + private screen packs (method-lab experiment) | Structure-based DHODH screening is underserved vs naive library dumps without honesty | Structure-based DHODH VS vs naive library baseline | Paper computational claim (structure-based VS for parasite-selective PfDHODH inhibitors); no public code; soft-sim honesty required; 13 pages; dual scorers; 30 goldens; build + app-up green | complete | biz-rubric-v1 | Prefer screen soft-sim with multi-flow bar; never claim wet-lab validation, clinical antimalarial advice, IND/NDA readiness, or live compound procurement; not authors’ brand |
 | 122 | Map Anchor Studio | 32 | Kill | Compare mucus-anchoring antibody conjugates vs conventional mAbs before locking a conjugate pack | None for method-lab SaaS — wet-lab biologics path | Antiviral biologics analytics (hypothetical) | None credible without wet-lab partnership | Wrong category for software-only lab | n/a — killed | ChemRxiv MAP conjugate paper; no public code | killed | biz-rubric-v2 | Kill: not software-solvable (wet-lab biologics). Human steer 2026-07-26. |
 | 123 | Rubric Compiler Studio | 77 | B | Compile locked rubrics into evidence-anchored scores with calibration and selective escalation | Evaluation and QA teams already buy scoring tools and need auditable quality gates | Platform, evaluation, QA, and learning operations leads | Team seats, score-run usage, and private rubric libraries | Strong wedge into governed AI evaluation workflows | Locked measurement specs, evidence anchors, calibration, and selective trust | Method synthesis informed by three scoring research seeds | complete | biz-rubric-v2 | Tier B: strong software wedge; validate willingness to pay against established evaluation platforms |
+| 124 | Judge Reliability Studio | 77 | B | Diagnose whether LLM judges are stable measurement instruments with IRT — not only whether they agree | Early signal with platform/eval leads already running LLM-as-a-judge benches | Platform / eval engineering leads | Eval seats + private judge/item packs + diagnostic run usage | Natural sequel to Rubric Compiler; reliability spend rising | IRT ability/difficulty/discrimination vs agreement-only dashboards | arXiv 2602.00521 IRT judge diagnostics; 30 dual goldens; live app smoke green | complete | biz-rubric-v2 | Tier B: IRT reliability vs agreement-only; natural sequel to Rubric Compiler |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 110 |
+| B | 111 |
 | C | 12 |
 | Kill | 1 |
 

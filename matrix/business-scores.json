@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v2",
-  "updated_at": "2026-07-26T13:16:26.856Z",
+  "updated_at": "2026-07-26T13:20:14.404Z",
   "projects": [
     {
       "id": 1,
@@ -2823,6 +2823,33 @@
       "score": 77,
       "tier": "B",
       "id": 123
+    },
+    {
+      "slug": "judge-reliability-studio",
+      "project": "Judge Reliability Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 8,
+        "pmf": 7,
+        "money": 7,
+        "wedge": 8,
+        "moat": 8,
+        "evidence": 7,
+        "feasibility": 9
+      },
+      "business_idea": "Diagnose whether LLM judges are stable measurement instruments with IRT — not only whether they agree",
+      "pmf": "Early signal with platform/eval leads already running LLM-as-a-judge benches",
+      "buyer": "Platform / eval engineering leads",
+      "money_hook": "Eval seats + private judge/item packs + diagnostic run usage",
+      "potential": "Natural sequel to Rubric Compiler; reliability spend rising",
+      "moat": "IRT ability/difficulty/discrimination vs agreement-only dashboards",
+      "evidence": "arXiv 2602.00521 IRT judge diagnostics; 30 dual goldens; live app smoke green",
+      "status": "complete",
+      "rubric": "biz-rubric-v2",
+      "gc_notes": "Tier B: IRT reliability vs agreement-only; natural sequel to Rubric Compiler",
+      "score": 77,
+      "tier": "B",
+      "id": 124
     }
   ]
 }

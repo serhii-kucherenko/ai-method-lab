@@ -1,0 +1,42 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Judge Reliability Studio</title>
+<style>
+  body {
+    font: 16px "DM Sans", system-ui;
+    background: #0f172a;
+    color: #e2e8f0;
+    max-width: 720px;
+    margin: 10vh auto;
+  }
+  button {
+    background: #14b8a6;
+    border: 0;
+    padding: 12px 16px;
+    color: #0f172a;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  strong {
+    color: #14b8a6;
+  }
+</style>
+<h1>Judge Reliability Studio</h1>
+<p>Agreement is not reliability.</p>
+<button onclick="run()">Compare paths</button>
+<p id="result"></p>
+<script>
+  function run() {
+    const responses = 2,
+      fit = 68,
+      coverage = 1,
+      irt = Math.round((coverage * 0.72 + fit / 100 * 0.28) * 100),
+      agreement = Math.round(74 + responses * 2 + fit * 0.08);
+    result.innerHTML =
+      "<strong>IRT A: " +
+      irt +
+      "</strong> — ability/difficulty/discrimination panels; trust gate active.<br>Agreement B: " +
+      agreement +
+      " — pairwise score; no IRT diagnostics or escalation.";
+  }
+</script>
