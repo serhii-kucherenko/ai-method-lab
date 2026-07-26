@@ -3,6 +3,7 @@
 **State:** framing  
 **Slug:** `dengue-suit-studio`  
 **Paper:** https://www.medrxiv.org/content/10.64898/2026.07.02.26357126v2  
+**Local copy:** `docs/papers/dengue-suit-studio/` (`paper.pdf`, `full.txt`, `SOURCE.md`)  
 **Authors’ code:** none  
 
 ## Buyer

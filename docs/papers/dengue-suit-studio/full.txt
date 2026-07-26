@@ -1,0 +1,435 @@
+Global shifts in thermal suitability and population at risk for dengue transmission by Aedes spp. mosquitoes under CMIP6 scenarios
+==================================================================================================================================
+
+* Sadie J. Ryan
+* Catherine A. Lippi
+* Leah R. Johnson
+* Jakob Meredith
+
+## Abstract
+
+Dengue fever risk and burden has increased globally in the past decade, with record-breaking outbreaks driving high case numbers, outbreaks increasing in existing transmission suitable regions, and occurring in new locations. A combination of global change processes, including climate change, have provided the environmental backdrop for introductions and resurgences of mosquito-transmitted dengue virus. Understanding shifts in exposure risk is integral to public health preparedness. This study provides global mapping of the thermal suitability of dengue transmission for CMIP6 climate scenarios, across a range of general circulation models (GCMs), and we created spatially explicit demographic projections of transmission risk using year-matched RCP-SSP frameworks for demographic and emissions scenarios. Globally, poleward shifts in projected distributions of suitability for transmission for both *Ae. aegypti* and *Ae. albopictus* suitability are shown in both the near term (2030s) and longer term (2050). Under a ‘middle of the road’ climate scenario (CMIP6 SSP2-4.5), regions in Africa and Asia are the major areas driving increases in year-round (12 months) population at risk (PAR) through 2050, with an anticipated net gain in 932 million people at risk for *Ae. aegypti* transmission and 24 million for *Ae. albopictus*, which includes multiple regions losing areas of year-round suitability as temperatures exceed the higher thermal boundary for transmission. In contrast, the estimated net increase in PAR for one or more months of transmission suitability at a global scale by 2050 is 3.29 billion people for *Ae. aegypti* transmission and 3.30 billion for *Ae. albopictus* transmission. This snapshot of a ‘middle-of-the-road’ combination of climate and demographic driven increases in potential dengue transmission exposure emphasizes the importance of both expanding suitability in new areas, and growing populations in areas approaching and becoming exposed year-round. Globalization, urbanization, and shipping will continue to provide the potential for introductions into newly suitable areas as season lengths increase, sparking outbreaks in unexposed populations. This is compounded and becomes ever more probable as the number of people and places at year-round risk also increases. This project provides all global gridded outputs for onward mapping and reuse, to add to the toolkit to anticipate and prepare for prevention and response to dengue in a changing world.
+
+## Introduction
+
+Dengue fever is caused by an orthoflaviviral infection by one of four serotypes of dengue virus (DENV 1-4), manifesting a range of symptoms and severity, from asymptomatic or mild flu-like symptoms to severe manifestations of dengue shock syndrome (DSS) and dengue hemorrhagic fever (DHF) [1]. Cases of dengue fever have been rising around the world, with outbreaks occurring with record case numbers (e.g. Nepal, Brazil), and occurring or recurring in new locations (e.g. France, California) [2–5]. In 2024, the World Health Organization’s global surveillance system reported over 14 million cases of dengue, which was double the number seen the year before and 12 times as many as in 2014 [2,6]. A combination of global change processes, including climate change [7], increased global travel and trade [8–10], and a relaxation of vector control activities in historical dengue hotspots due to a lack of economic or political investment [11] have provided the environmental backdrop for introductions and resurgences of *Aedes aegypti* and *Aedes albopictus* mosquito-transmitted dengue virus.
+
+The mosquito vectors for dengue are now well adapted to human environments. *Ae. aegypti* is a competent vector for yellow fever, Zika virus, chikungunya, and many more human febrile diseases [12]. The spread of *Ae. aegypti* is facilitated by anthropophily - an evolved biting preference for humans and close association with human activity [13], and as a result has successfully exploited intercontinental invasion pathways driven by human movements [10,14,15]. It was likely introduced into the Americas from Africa multiple times, but significantly as a function of the slave trade [16,17], and has become well-established in much of North and South America. It is now reported to be present in 167 countries, and predicted to continue to spread into more tropical, subtropical, and temperate areas with little previous exposure [18]. *Ae. aegypti* is well adapted to the human built landscape and exploits urban and rapidly urbanizing environments around the world, taking advantage of water left in the environment, for larval habitat. It breeds in and around houses, planters, water storage containers, puddles, pockets in rubbish that can hold water, food containers, and non-residential areas such as construction sites, which can provide ample potential larval habitat - even independently of rainfall events [19]. *Ae. albopictus*, originally from Asia, has more recently also been introduced to new regions, and as a more temperate mosquito, has rapidly spread into regions not prepared for diseases previously assumed to be strictly ‘tropical’ [5,20]. In its native range, *Ae. albopictus* exploits a variety of natural and artificial habitats for oviposition, including bamboo stumps, tree holes, discarded tires, and catch basins [21]. In the US, *Ae. albopictus* is less suited to urban environments, and is instead associated with natural grassy or forested areas where there is ample larval habitat such as tree holes, making them a greater threat to communities at the edge of wooded areas or suburbs [22]. The role of *Ae. albopictus* spread in Europe in recent years is thought to be key to increasing reports of both dengue and chikungunya virus in the region [23,24].
+
+In 2017, Mordecai et al. [25] developed and published a thermal suitability model for dengue transmission for both *Ae. aegypti* and *Ae. albopictus*, and Ryan et al. 2019 [26] used this model to project baseline and future predicted thermal suitability and population at risk (PAR) from future shifts in the thermal limits to suitability, using climate projections developed for the AR5 coupled model intercomparison project (CMIP5). The resultant output projections were subsequently also adapted and incorporated into the narrative for Chapter 12 on Central and South America of the IPCC6 report [27], among other re-uses of the publicly available gridded outputs, e.g. [28,29]. Since the development of these original projections in 2019, the CMIP6 climate scenarios have been developed and described in the 2023 IPCC report, and spatially explicit projections using the newer RCP-SSP (which we will refer to SSP in this paper) framework have been developed and made publicly accessible (e.g. [WorldClim.org](https://WorldClim.org) [30]).
+
+This study provides updated global mapping of the thermal suitability of dengue transmission by *Ae. aegypti* and *Ae. albopictus* using CMIP6 products. While there are many modeling approaches to climate-driven dengue prediction and transmission [31–35], the goal here is only to provide an update on gridded output, and a summary of CMIP6 driven outcomes, through the lens of populations at risk (PAR). An important aspect of our use of updated climate models is to frame them in context of a concern raised in response to the AR6 ensemble used in the IPCC6 scenario projections, which is that some of the models were thought to predict higher rates and levels of global warming than expected, perhaps leading to overly pessimistic projections in the ensemble model used [36]. We thus take an approach of using not an ensemble but a range of outcomes from 5 general circulation models (GCMs), which balance two key sensitivity metrics within the range of ‘likely’ global warming outcomes; this is detailed in the methods section.
+
+In this study, we present updated gridded climate-driven dengue transmission suitability outcomes using a different but overlapping suite of GCMs than in prior work (2019, 2023). We generated outcomes for 2021-2040, referred to as 2030, and 2041-2060, referred to as 2050, across five GCMs (see methods), under two scenarios of greenhouse gas emissions, SSP 2-4.5 and SSP 5-8.5, but we focus on describing RCP2-4.5, a “middle of the road” scenario, in this paper. These are projected from a baseline period of 1970-2000 [30], which we refer to as baseline. The projections are mapped to explore the shifting geography of the number of months suitable for transmission into 2030 and 2050, and we explore the impact of these shifts through the lens of time-matched projected populations at risk (PAR) across global regions.
+
+## Methods and Materials
+
+### Thermal Transmission Suitability Models
+
+Thermal boundaries for dengue transmission by the two mosquito vectors, *Aedes aegypti* and *Aedes albopictus* are described in [26]. The thermal boundaries for dengue transmission by *Ae. aegypti* and *Ae. albopictus* used here were originally calculated using a mechanistic modelling approach, fitting thermal performance curves for each component in the transmission life cycle to derive an overall *R* curve as a function of temperature [25]. Subsequently, Ryan et al. [26] evaluated the probability that *R* > 0 at each 0.1℃ temperature, for a conservative posterior probability Prob(*R* > 0) = 0.975 to derive dengue transmission suitability (S(T)) as a function of temperature for each species [26]. The thermal suitability bounds for dengue transmission by *Ae. aegypti* were 21.3°C and 34°C, and 19.9°C and 29.4°C for *Ae. albopictus* [26].
+
+### Climate Data
+
+Baseline (1970-2000) monthly mean temperature data were obtained from [WorldClim.org](https://WorldClim.org) [30]. For downscaled future projected climate we selected five global circulation models (GCMs) for the period we refer to as 2030 (2021-2040), and 2050 (2041-2060), for CMIP6 SSP 2-4.5 and SSP 5-8.5. All climate data were downloaded at a 30s resolution.
+
+To account for an issue in CMIP6 models used in the AR6 IPCC reporting, known colloquially as “the hot model issue”, wherein several GCMs included in the AR6 ensemble predicted larger temperature increases, and may have introduced a hotter bias into interpreted description of impact [36], we chose to assess and select GCMs for our projected climate scenarios as follows. We examined two key sensitivity metrics for the individual GCMs, transient climate response (TCR), and equilibrium climate sensitivity (ECS), and chose a set of GCMs spanning a range of sensitivities. Specifically, following the logic presented in [36], wherein TCR =1.4-2.2 falls in the ‘likely’ range, and ECS=2.5-4 falls in the ‘likely’ range, we assigned GCMs with metrics within the range as medium (M), and thus values of TCR and ECS outside these ranges are high (H) or low (L). We chose five GCMs to demonstrate the range, as shown in Table 1, consistent with methodology in [37].
+
+View this table:
+[Table 1.](http://medrxiv.org/content/early/2026/07/11/2026.07.02.26357126/T1)
+
+Table 1. The five general circulation models (GCMs) selected
+(abbreviations (ABB) and full model names (GCM)) to illustrate the range of model outcomes within the CMIP6 suite, using measures of model sensitivity (transient climate response, TCR, and equilibrium climate sensitivity, ECS), designated Low (L), Medium (M) and High (H) to rank ‘hottest’ to ‘coldest’ projections (see methods). (adapted from [37])
+
+### Population Data
+
+For population data and demographic projections, we used the approach described in projecting Zika transmission exposures in Ryan et al 2021 [38], which deviates from the Ryan et al. 2019 [26] methodology, in that future population at risk (PAR) estimates are based on matched Shared Socioeconomic Pathway (SSP) projections [39,40], instead of an assumption of constant population size. This responds to the 2019 paper, which pointed to the unavailability of the projected population grids at that time. Additionally, this paper updates the SSP projections to the 2020 release of the ‘revision 01 dataset’ [39], which enables regional population calculations on grids with higher resolution pixels. Importantly, the terminology for CMIP6 models shifted from CMIP5 to include SSPs explicitly, so the correct matching underlying population projections are relevant here, that is the SSP2 and SSP5 projections. For our baseline population, we used the baseline year 2000, based on the Gridded Population of the World, v4 [41], and the baseline used for the projected SSP population products here [39]. Note that this sets our baseline year back an additional 15 years in contrast to the 2019 paper. These gridded population data were downloaded from NASA Earth Data ([https://search.earthdata.nasa.gov/](https://search.earthdata.nasa.gov/)) at their 0.125 degree resolution. Lastly, we subdivided the global populations and corresponding suitability into 21 geographic and socioeconomic regions as defined by the Global Burden of Disease (GBD) studies [42]. We shortened these region names for visualisation purposes, and full and shortened names are given in Table S1. Regionalized PAR was calculated using a modified version of the R package ‘fasterize’ [43], R package ‘terra’ [44], and a study specific version of our generalized script pipeline for mapping thermal suitability as a function of climate data layers found at: [https://github.com/RyanLab/stephensimaps](https://github.com/RyanLab/stephensimaps) [45].
+
+View this table:
+[Table S1:](http://medrxiv.org/content/early/2026/07/11/2026.07.02.26357126/T4)
+
+Table S1: Global burden of disease (GBD) regions (n=21) full and shortened names
+
+## Results
+
+The baseline pattern of predicted thermal suitability for dengue transmission aligns with the expected pattern for viruses transmitted by *Ae. aegypti* and *Ae. albopictus*, where much of the tropics are suitable for year-round transmission (Figs. 1 and 2, panels A and B). Dengue transmission suitability is expected to shift geographically in the future for both mosquito species under all projected combinations of climate models and development scenarios. There is a marked poleward expansion of transmission suitability seen for both mosquito species, where previously unsuitable locations on the periphery of baseline ranges become marginally suitable for dengue transmission into the future (Figs. 1 and 2). This includes marginal northward expansion of suitability into Canada, Central Europe, and Russia, which is more pronounced for *Ae. albopictus* (Figs. 1 and 2 panel D). Although poleward gains in suitability are less pronounced for *Ae. aegypti*, future extension of the transmission season is seen across ‘cooler’ (Fig. 1C) and ‘hotter’ (Fig. 2C) climate models, particularly along mid-latitude regions that border the subtropics at baseline. In contrast, some reduction in the length of dengue transmission seasons is expected to occur with *Ae. albopictus* throughout the tropics, and these reductions are more extensive under the ‘hotter’ climate model, as temperatures exceed the maximum suitability (Fig. 2D).
+
+![Fig. 1.](http://medrxiv.org/https://www.medrxiv.org/content/medrxiv/early/2026/07/11/2026.07.02.26357126/F1.medium.gif)
+
+[Fig. 1.](http://medrxiv.org/content/early/2026/07/11/2026.07.02.26357126/F1)
+
+Fig. 1. 
+Number of months (0-12) of suitability for dengue transmission (S(T)>0, with 97.5% probability), for *Aedes aegypti* (A, C, E) and *Aedes albopictus* (B, D, F) at baseline (A, B), 2030 (C,D) and 2050 (E,F) for the MIR GCM (‘coolest’ See Table 1), for CMIP6 SSP 2-4.5. Maps made using Natural Earth Data in R [46]
+
+![Fig. 2.](http://medrxiv.org/https://www.medrxiv.org/content/medrxiv/early/2026/07/11/2026.07.02.26357126/F2.medium.gif)
+
+[Fig. 2.](http://medrxiv.org/content/early/2026/07/11/2026.07.02.26357126/F2)
+
+Fig. 2. 
+Number of months of suitability for dengue transmission (S(T)>0, with 97.5% probability), for *Aedes aegypti* (A, C, E) and *Aedes albopictus* (B, D, F) at baseline (A, B), 2030 (C,D) and 2050 (E,F) for the HAD GCM (‘hottest’ See Table 1), for CMIP6 SSP 2-4.5. Maps made using Natural Earth Data in R [46]
+
+Geographic shifts in transmission suitability are accompanied by changes in the projected population at risk of exposure to dengue (PAR). We illustrate these changes for the middle-road scenario SSP2-4.5, and in terms of one or more months (Figure 3) or year-round (12 months) exposure (Figure 4). Figure S1 depicts maps of the most extreme scenario combination generated (HAD, SSP5-8.5, 2050) in contrast to baseline, for both *Ae. aegypti* and *Ae. albopictus* transmission, as an illustration of the unlikely nature of SSP5-8.5 and the ‘hottest’ GCM.
+
+![Supplemental Figure 1:](http://medrxiv.org/https://www.medrxiv.org/content/medrxiv/early/2026/07/11/2026.07.02.26357126/F5.medium.gif)
+
+[Supplemental Figure 1:](http://medrxiv.org/content/early/2026/07/11/2026.07.02.26357126/F5)
+
+Supplemental Figure 1: 
+Number of months of suitability for dengue transmission (S(T)>0, with 97.5% probability), for *Aedes aegypti* (A, C) and *Aedes albopictus* (B, D) at baseline (A, B), and 2050 (C,D) for the HAD GCM (‘hottest’ See Table 1), for CMIP6 RCP 5-8.5. Maps made using Natural Earth Data in R [46]
+
+![Fig 3.](http://medrxiv.org/https://www.medrxiv.org/content/medrxiv/early/2026/07/11/2026.07.02.26357126/F3.medium.gif)
+
+[Fig 3.](http://medrxiv.org/content/early/2026/07/11/2026.07.02.26357126/F3)
+
+Fig 3. 
+population at risk (PAR) for one or more months of dengue transmission suitability for *Aedes aegypti* (A, B) and *Aedes albopictus* (C, D) in 2030 (A, C) and 2050 (B, D) by GCM for SSP2-4.5, including baseline (BASE) PAR (for full tabulated results and GBD region names, See Tables 1–4). Note that regions are ordered by BASE PAR, which differs by *Aedes* species.
+
+![Fig 4.](http://medrxiv.org/https://www.medrxiv.org/content/medrxiv/early/2026/07/11/2026.07.02.26357126/F4.medium.gif)
+
+[Fig 4.](http://medrxiv.org/content/early/2026/07/11/2026.07.02.26357126/F4)
+
+Fig 4. 
+population at risk (PAR) year-round for dengue transmission suitability for *Aedes aegypti* (A, B) and *Aedes albopictus* (C, D) in 2030 (A, C) and 2050 (B, D) by GCM for SSP2-4.5, including baseline (BASE) PAR (for full tabulated results and GBD region names, See Tables 1–4). Note that regions are ordered by BASE PAR, which differs by *Aedes* species.
+
+The highest projected change in numbers for PAR is for one or more months of dengue transmission suitability, as expected. The South and East Asia regions are expected to have the most PAR, for both mosquito species, across all climate models through 2050 (Fig. 3). With the exception of the High-Income Pacific Asia region, every region is projected to experience a net gain in PAR for at least one month of dengue transmission suitability (Table 2). This reflects the increase in geographic area for even low numbers of months of suitability (Figs. 1 and 2), overlaid on the projected growth of the population itself across different regions (Table S2). Note that this is a middle-road (SSP2-4.5) scenario, and using extreme scenarios for geographic shifts (Figure S1) would likely generate far larger estimates of PAR. The estimated net increase in PAR for one or more months of transmission suitability at a global scale by 2050 is 3.29 billion people for *Ae. aegypti* transmission and 3.30 billion for *Ae. albopictus* transmission.
+
+View this table:
+[Table S2:](http://medrxiv.org/content/early/2026/07/11/2026.07.02.26357126/T5)
+
+Table S2: Population by GBD region (n=21) for 2000 and projected SSPs in 2030 and 2050 for SSP2-4.5 and SSP5-8.5
+
+View this table:
+[Table 2:](http://medrxiv.org/content/early/2026/07/11/2026.07.02.26357126/T2)
+
+Table 2: 
+Increase in estimated population at risk (PAR) from 2000 to 2050 under SSP 2-45 for *Aedes aegypti* (A) and *Aedes albopictus* (B) for one or more months of dengue transmission suitability, taking the mean across our five GCMs. Global Burden of Disease (GBD) Regions ordered from highest to lowest PAR; decreased PAR indicated by (parentheses).
+
+By the year 2030, we expect to see increases in the year-round PAR of dengue exposure by *Ae. aegypti* across 9 GBD regions under all climate models, which will continue to increase by 2050. The largest increases in PAR of year-round dengue exposure from *Ae. aegypti* will be in Southeast Asia, western sub-Saharan Africa, southern Asia, and eastern sub-Saharan Africa (Fig. 4A, 4B). In contrast, many regions will see smaller increases in PAR of year round dengue exposure from *Ae. albopictus* (Fig. 4C, 4D). By the year 2050, some regions including southeast Asia, western sub-Saharan Africa, and central Latin America are expected to have decreases in PAR as increasing temperatures in these regions become too hot to support year-round transmission (Fig. 4D).
+
+In total, the estimated net increase in year-round PAR through 2050 is 932.4 million for *Ae. aegypti*, and 24.1 million for *Ae. albopictus* transmission suitability (Table 3). *Ae. aegypti* is only expected to have future reductions in year-round PAR in North Africa and the Middle East, and the large net gains in PAR are driven by increases in both areas suitable for transmission and the length of transmission seasons. Despite considerable reductions in transmission suitability and PAR throughout many regions (Table 3), overall increases in transmission suitability for *Ae. albopictus* are expected to drive net increases in PAR that will outpace any localized decreases.
+
+View this table:
+[Table 3:](http://medrxiv.org/content/early/2026/07/11/2026.07.02.26357126/T3)
+
+Table 3: 
+Increase in estimated population at risk (PAR) from 2000 to 2050 under SSP 2-45 for *Aedes aegypti* (A) and *Aedes albopictus* (B) for year-round dengue transmission suitability, taking the mean across our five GCMs. Global Burden of Disease (GBD) Regions ordered from highest to lowest PAR; decreased PAR indicated by (parentheses).
+
+In this paper we tabulated summaries and charted information for the SSP 2-4.5 scenario, to highlight a middle-road future with changing climate and population growth. We additionally modeled SSP 5-8.5 scenarios, and all global gridded model outputs (n=42) are available through Harvard Dataverse ([https://dataverse.harvard.edu/dataverse/DEN_CMIP6](https://dataverse.harvard.edu/dataverse/DEN_CMIP6)).
+
+## Discussion
+
+In this study, we provide an overview of projected geographic and demographic changes in dengue thermal suitability of transmission from 2000 to 2030 and 2050 using the CMIP6 scenarios framework. Echoing findings for CMIP5 scenarios, we see poleward shifts in suitability for both *Ae. aegypti* and *Ae. albopictus* in the near (2030s) and longer term (2050) projections (Figures 1,2). This general pattern holds true across the ‘coolest’ and ‘hottest’ GCMs (Table 1) in this study. However, differences in the impact of the choice of GCM can be seen in the degree of poleward shifts (for example, along the Canada border and into Northern Europe), and the degree to which suitability decreases, in terms of the number of months suitable, in Brazil, for example, for *Ae. albopictus* transmission, as predicted temperatures exceed suitability maximum in some months in 2030 and 2050 (Figures 1 and 2). This provides an update to previous work [26], which presented a striking view of potential geographic shifts and impacts under the most optimistic (RCP 2.6) and most pessimistic (RCP 8.5) projections of climate. In this study, we describe a ‘middle of the road’ SSP2-4.5 view instead, but we also provide gridded output estimates for both CMIP6 SSP2-4.5 and SSP5-8.5 across a suite of GCMs for 2030 and 2050 for onward reuse ([https://dataverse.harvard.edu/dataverse/DEN_CMIP6](https://dataverse.harvard.edu/dataverse/DEN_CMIP6)).
+
+Recent work emphasizes a necessary shift away from RCP8.5/SSP 5-8.5 framings as we move into the new cycle of CMIP7 [47], as they represent an overly extreme and unlikely future scenario (see Fig S1). Our ‘middle of the road’ SSP2-4.5 approach nonetheless found that an estimated 3.29 billion additional people are projected to be newly at risk for dengue transmission suitability by *Ae. aegypti* 2050, and 3.30 billion by *Ae. albopictus*.
+
+The SSP framework provides a means to incorporate differential projected demographic responses at a global scale, under the different socioeconomic pathways prescribed. This is reflected in both regional underlying demographic trajectories in this study, and the global scale differences in projected population growth. In our example scenario, summing across our GBD regions for this gridded SSP population product [39], the overall global population changes from 5.46 billion in 2000 to 8.33 billion under SSP2-4.5 in 2050. In an apparent paradox, this is higher than the summed population under SSP5-8.5 for 2050, of 7.74 billion, as the population in more extreme SSPs is anticipated to peak and decline earlier in the century. In order to describe the potential impact of shifting geography of dengue transmission suitability under future climate scenarios, we calculated the population at risk (PAR) of both one or more months of suitability, and year-round suitability (12 months). To remain concise, we show PAR in raw numbers, as projected, in Figures 3 and 4, under the SSP 2-4.5 scenario in 2050, across 21 regions [42]. Figure 3 shows largest net gains in PAR in Asian and SSA regions, with some re-ordering of regional impact by mosquito, also shown in Table 2, wherein *Ae. albopictus* transmission shows more gains in the Latin American Andean region and Oceania than other regions. Figure 4, whose population axis is roughly one third that of Figure 3, highlights the impact of increased endemic (12 month) risk anticipated in Asian and sub-Saharan African (SSA) regions, and to a smaller but important degree, tropical Latin America. This depiction of impact incorporating the SSP projected demographies creates a striking regional distribution of PAR, and these changes are distributed differently across the regions (Table S2), leading to large regional increases in risk amplified by demographic shifts in regions of geographic shifts. In the previous study [26], regions in Europe contributed greatly to projected PAR totals, topping the list of individual regions contributing to overall PAR increases in 2080. The previous study described outcomes under the CMIP5 RCP8.5 scenario which predicted dramatic poleward shifts in risk (see 2019 Figure 2B) and a much larger geographic distribution of exposure to that risk, comparable to our Figure S1C and D, posing a striking contrast to our current use of SSP 2-4.5. While this study generates less extreme estimates of population at risk (PAR) than the previous study, we nonetheless find that 3.29 billion additional people are estimated to be at risk from dengue transmission suitability (one or more months) from *Ae. aegypti*, and 3.30 billion from *Ae. albopictus* by 2050 compared to baseline. Our results also place regions in Africa and Asia as the major areas driving increases in year-round (12 months) PAR through 2050, with regions in Europe accounting for none of the net changes (Table 2), indicating that under this middle-road climate scenario, endemic dengue risk concentrates in regions of high population growth. However, if we look at areas experiencing one or more months of risk, we see gains in every region, except high income Asia (Table 3). This suggests that we will see increased outbreaks in new regions, as new areas are exposed to suitable temperatures for more of the year, and season length will increase in non-endemic areas.
+
+Incorporating the thermal suitability limits of each vector species into models underlies the development of biologically meaningful projections and risk assessments. Explicitly accounting for the role that temperature plays in determining broad environmental suitability is important, given that nearly every aspect of mosquito life history and pathogen transmission is heavily dependent on temperature. That said, in the environment the thermal limits of mosquito populations may not be quite as rigid as implemented in this work. *Ae. aegypti* has some capacity for local physiological thermal adaptation [48], as well as behavioral shifts, such as microhabitat selection of cooler areas [49], that may determine habitat and thus transmission suitability on localized scales. Further, temperature is not the only factor that determines habitat or transmission suitability in mosquitoes. Although our global projections are limited to temperature suitability, other factors such as humidity also contribute to whether mosquitoes can successfully occupy an environment [50]. However, the empirical evidence necessary to begin to fully incorporate these factors into models for these species of mosquitoes are not currently available. There is also evidence to suggest that thermal adaptation of the vector may not alter viral and bacterial temperature response [51]. Thus, despite these limitations, these thermal boundaries reflect biological constraints on mosquitoes and can describe general patterns of thermal transmission suitability.
+
+## Conclusion
+
+Globalization, urbanization, and international trade will continue to provide potential introduction pathways for dengue vectors into newly suitable areas, sparking outbreaks in unexposed human populations as transmission seasons increase in length. This study provides an updated snapshot of a ‘middle-of-the-road’ scenario, combining climate and demographic driven increases in potential dengue transmission exposure. This work emphasizes the importance of both expanding suitability in new locations and growing populations, as the number of people and places at year-round risk of dengue exposure also increases. Providing updated estimates of potential shifts in dengue exposure is important to ensure that public health planning and policy decisions are made with the best information possible. By producing outputs that leverage best available climate products and newer development scenarios, we are providing a resource to support the uptake of newer climate information into modeling and policy. To that end, this project provides all global gridded outputs ([https://dataverse.harvard.edu/dataverse/DEN_CMIP6](https://dataverse.harvard.edu/dataverse/DEN_CMIP6)) for onward mapping and reuse, to add to the toolkit to anticipate and prepare for prevention and response to dengue in a changing world.
+
+## Data Availability
+
+All global gridded model outputs (n=42) are available through Harvard Dataverse ([https://dataverse.harvard.edu/dataverse/DEN_CMIP6](https://dataverse.harvard.edu/dataverse/DEN_CMIP6))
+
+[https://dataverse.harvard.edu/dataverse/DEN\_CMIP6](https://dataverse.harvard.edu/dataverse/DEN_CMIP6) 
+
+## Supporting Information
+
+S1 Table: Global burden of disease (GBD) regions (n=21) full and shortened names
+
+S2 Table: Population by GBD region (n=21) for 2000 and projected SSPs in 2030 and 2050 for SSP2-4.5 and SSP5-8.5
+
+S1 Figure: Number of months of suitability for dengue transmission (S(T)>0, with 97.5% probability), for *Aedes aegypti* (A, C) and *Aedes albopictus* (B, D) at baseline (A, B), and 2050 (C, D) for the HAD GCM (hottest’ See Table 1), for CMIP6 RCP 5-8.5. Maps made using Natural Earth Data in R [46]
+
+## Acknowledgments
+
+This work was supported by the Centers for Disease Control (CDC) Cooperative Agreement Numbers 1U01CK000510 and 1U01CK000662: Southeastern Regional Center of Excellence in Vector-Borne Diseases: The Gateway Program. Its contents are solely the responsibility of the authors and do not necessarily represent the official views of the Centers for Disease Control and Prevention or the Department of Health and Human Services. SJR, CAL and LRJ were supported by NSF DBI 2016265 and NSF DBI 2016264 as part of CIBR: VectorByte: A Global Informatics Platform for studying the Ecology of Vector-Borne Diseases. SJR would like to thank Jaye Madden for all the work and admin support at UF throughout this project.
+
+## Funder Information Declared
+
+U.S. National Science Foundation, 2016265, U.S. National Science Foundation, 2016264
+
+Centers for Disease Control and Prevention, https://ror.org/042twtr12, 1U01CK000510, 1U01CK000662
+
+## Footnotes
+
+*   Acknowledgments updated to include correct funding information
+
+*   Received July 2, 2026.
+*   Revision received July 11, 2026.
+*   Accepted July 11, 2026.
+
+
+*   © 2026, Posted by openRxiv
+
+This pre-print is available under a Creative Commons License (Attribution 4.0 International), CC BY 4.0, as described at [http://creativecommons.org/licenses/by/4.0/](http://creativecommons.org/licenses/by/4.0/)
+
+## References
+
+1.  1.Guzman MG, Gubler DJ, Izquierdo A, Martinez E, Halstead SB. Dengue infection. Nat Rev Dis Primers. 2016;2: 16055. doi:10.1038/nrdp.2016.55
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1038/nrdp.2016.55&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=27534439&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+2.  2.Haider N, Hasan MN, Onyango J, Billah M, Khan S, Papakonstantinou D, et al. Global dengue epidemic worsens with record 14 million cases and 9000 deaths reported in 2024. Int J Infect Dis. 2025;158: 107940. doi:10.1016/j.ijid.2025.107940
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1016/j.ijid.2025.107940&link_type=DOI) 
+
+3.  3.Bhandari S, Blackburn JK, Ryan SJ. Spatial patterns of dengue incidence in Nepal during record outbreaks in 2022 and 2023: Implications for public Health interventions. Am J Trop Med Hyg. 2025;113: 366–373. doi:10.4269/ajtmh.24-0747
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.4269/ajtmh.24-0747&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=40494337&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+4.  4.Vaughan AM, Park C, Ngo VP, Contreras ZA, Lee JJ, Danza P, et al. Investigation of and response to autochthonous dengue, Los Angeles County, California, USA, August-November 2024. Emerg Infect Dis. 2026;32: 720–727. doi:10.3201/eid3205.251812
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.3201/eid3205.251812&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=41941668&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+5.  5.Sacco C, Liverani A, Venturi G, Gavaudan S, Riccardo F, Salvoni G, et al. Autochthonous dengue outbreak in Marche Region, Central Italy, August to October 2024. Euro Surveill. 2024;29. doi:10.2807/1560-7917.ES.2024.29.47.2400713
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.2807/1560-7917.ES.2024.29.47.2400713&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=39574388&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+6.  6.Ospina D, Mirazo P, Allan RP, Basnett S, Bastos A, Bhattarai N, et al. Ten new insights in climate science 2025. Glob Sustain. 2026; 1–73. doi:10.1017/sus.2025.10043
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1017/sus.2025.10043&link_type=DOI) 
+
+7.  7.Childs ML, Lyberger K, Harris MJ, Burke M, Mordecai EA. Climate warming is expanding dengue burden in the Americas and Asia. Proc Natl Acad Sci U S A. 2025;122: e2512350122. doi:10.1073/pnas.2512350122
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1073/pnas.2512350122&link_type=DOI) 
+
+8.  8.Rezza G. Aedes albopictus and the reemergence of Dengue. BMC Public Health. 2012;12: 72. doi:10.1186/1471-2458-12-72
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1186/1471-2458-12-72&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=22272602&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+9.  9.Swan T, Russell TL, Staunton KM, Field MA, Ritchie SA, Burkot TR. A literature review of dispersal pathways of Aedes albopictus across different spatial scales: implications for vector surveillance. Parasit Vectors. 2022;15: 303. doi:10.1186/s13071-022-05413-5
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1186/s13071-022-05413-5&link_type=DOI) 
+
+10. 10.Kraemer MUG, Reiner RC Jr., Brady OJ, Messina JP, Gilbert M, Pigott DM, et al. Past and future spread of the arbovirus vectors Aedes aegypti and Aedes albopictus. Nat Microbiol. 2019;4: 854–863. doi:10.1038/s41564-019-0376-y
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1038/s41564-019-0376-y&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=30833735&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+11. 11.Gubler DJ. Resurgent vector-borne diseases as a global health problem. Emerg Infect Dis. 1998;4: 442–450. doi:10.3201/eid0403.980326
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.3201/eid0403.980326&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=9716967&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+    
+    [Web of Science](http://medrxiv.org/lookup/external-ref?access_num=000075433800026&link_type=ISI) 
+
+12. 12.Powell JR. Mosquito-Borne Human Viral Diseases: Why Aedes aegypti? Am J Trop Med Hyg. 2018;98: 1563–1565. doi:10.4269/ajtmh.17-0866
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.4269/ajtmh.17-0866&link_type=DOI) 
+
+13. 13.Rose NH, Badolo A, Sylla M, Akorli J, Otoo S, Gloria-Soria A, et al. Dating the origin and spread of specialization on human hosts in Aedes aegypti mosquitoes. Elife. 2023;12: e83524. doi:10.7554/eLife.83524
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.7554/eLife.83524&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=36897062&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+14. 14.Powell JR. Mosquitoes on the move. Science. 2016;354: 971–972. doi:10.1126/science.aal1717
+    
+    [Abstract/FREE Full Text](http://medrxiv.org/lookup/ijlink/YTozOntzOjQ6InBhdGgiO3M6MTQ6Ii9sb29rdXAvaWpsaW5rIjtzOjU6InF1ZXJ5IjthOjQ6e3M6ODoibGlua1R5cGUiO3M6NDoiQUJTVCI7czoxMToiam91cm5hbENvZGUiO3M6Mzoic2NpIjtzOjU6InJlc2lkIjtzOjEyOiIzNTQvNjMxNS85NzEiO3M6NDoiYXRvbSI7czo1MDoiL21lZHJ4aXYvZWFybHkvMjAyNi8wNy8xMS8yMDI2LjA3LjAyLjI2MzU3MTI2LmF0b20iO31zOjg6ImZyYWdtZW50IjtzOjA6IiI7fQ==) 
+
+15. 15.Powell JR, Tabachnick WJ. History of domestication and spread of Aedes aegypti--a review. Mem Inst Oswaldo Cruz. 2013;108 Suppl 1: 11–17. doi:10.1590/0074-0276130395
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1590/0074-0276130395&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=24473798&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+    
+    [Web of Science](http://medrxiv.org/lookup/external-ref?access_num=000330037800003&link_type=ISI) 
+
+16. 16.Crawford JE, Balcazar D, Redmond S, Rose NH, Youd HA, Lucas ER, et al. 1206 genomes reveal origin and movement of Aedes aegypti driving increased dengue risk. Science. 2025;389: eads3732. doi:10.1126/science.ads3732
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1126/science.ads3732&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=40966355&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+17. 17.Powell JR, Gloria-Soria A, Kotsakiozi P. Recent History of Aedes aegypti: Vector Genomics and Epidemiology Records. Bioscience. 2018;68: 854–860. doi:10.1093/biosci/biy119
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1093/biosci/biy119&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=30464351&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+18. 18.Laporta GZ, Potter AM, Oliveira JFA, Bourke BP, Pecor DB, Linton Y-M. Global Distribution of Aedes aegypti and Aedes albopictus in a Climate Change Scenario of Regional Rivalry. Insects. 2023;14: 49. doi:10.3390/insects14010049
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.3390/insects14010049&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=36661976&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+19. 19.Stewart Ibarra AM, Ryan SJ, Beltrán E, Mejía R, Silva M, Muñoz A. Dengue vector dynamics (Aedes aegypti) influenced by climate and social factors in Ecuador: implications for targeted control. Mores CN, editor. PLoS One. 2013;8: e78263. doi:10.1371/journal.pone.0078263
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1371/journal.pone.0078263&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=24324542&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+20. 20.Erazo D, Grant L, Ghisbain G, Marini G, Colón-González FJ, Wint W, et al. Contribution of climate change to the spatial expansion of West Nile virus in Europe. Nat Commun. 2024;15: 1196. doi:10.1038/s41467-024-45290-3
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1038/s41467-024-45290-3&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=38331945&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+21. 21.Higa Y. Dengue Vectors and their Spatial Distribution. Trop Med Health. 2011;39: 17–27. doi:10.2149/tmh.2011-S04
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.2149/tmh.2011-S04&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=22500133&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+22. 22.Westby KM, Adalsteinsson SA, Biro EG, Beckermann AJ, Medley KA. Aedes albopictus populations and larval habitat characteristics across the landscape: Significant differences exist between urban and rural land use types. Insects. 2021;12: 196. doi:10.3390/insects12030196
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.3390/insects12030196&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=33668917&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+23. 23.Tegar S, Brass DP, Purse BV, Cobbold CA, White SM. Temperature-sensitive incubation, transmissibility and risk of Aedes albopictus-borne chikungunya virus in Europe. J R Soc Interface. 2026;23. doi:10.1098/rsif.2025.0707
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1098/rsif.2025.0707&link_type=DOI) 
+
+24. 24.Georgiades P, Proestos Y, Lelieveld J, Erguler K. Machine learning modeling of Aedes albopictus habitat suitability in the 21st century. Insects. 2023;14: 447. doi:10.3390/insects14050447
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.3390/insects14050447&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=37233075&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+25. 25.Mordecai EA, Cohen JM, Evans MV, Gudapati P, Johnson LR, Lippi CA, et al. Detecting the impact of temperature on transmission of Zika, dengue, and chikungunya using mechanistic models. PLoS Negl Trop Dis. 2017;11: e0005568. doi:10.1371/journal.pntd.0005568
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1371/journal.pntd.0005568&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=PMCPMC542369&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+26. 26.Ryan SJ, Carlson CJ, Mordecai EA, Johnson LR. Global expansion and redistribution of Aedes-borne virus transmission risk with climate change. PLoS Negl Trop Dis. 2019;13: e0007213. doi:10.1371/journal.pntd.0007213
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1371/journal.pntd.0007213&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=30921321&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+27. 27.Castellanos EJ, Lemos MF, Astigarraga L, Chacón N, Cuvi N, Huggel C, et al. Central and South America. In: Pörtner H, Roberts D, Tignor M, Poloczanska E, Mintenbeck K, Alegria A, et al., editor. Climate Change 2022: Impacts, Adaptation and Vulnerability Contribution of Working Group II to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change. Cambridge University Press; 2022. pp. 1689–1816. Available: [https://repositorio.inta.gob.ar/handle/20.500.12123/12589](https://repositorio.inta.gob.ar/handle/20.500.12123/12589)
+    
+    
+
+28. 28.Ryan SJ, Lippi CA, Stewart-Ibarra AM. Mapping geographic and demographic shifts for container breeding mosquito-borne disease transmission suitability in Central and South America in a warming world. PLOS Clim. 2024;3: e0000312. doi:10.1371/journal.pclm.0000312
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1371/journal.pclm.0000312&link_type=DOI) 
+
+29. 29.Ryan SJ. Aedes climate modeling. 2019. Available: [https://dataverse.harvard.edu/dataverse/Aedesmaps](https://dataverse.harvard.edu/dataverse/Aedesmaps)
+    
+    
+
+30. 30.Fick SE, Hijmans RJ. WorldClim 2: new 1-km spatial resolution climate surfaces for global land areas. Int J Climatol. 2017;37: 4302–4315. doi:10.1002/joc.5086
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1002/joc.5086&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=30089903&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+31. 31.Ramadona AL, Lazuardi L, Hii YL, Holmner Å, Kusnanto H, Rocklöv J. Prediction of dengue outbreaks based on disease surveillance and meteorological data. PLoS One. 2016;11: e0152688. doi:10.1371/journal.pone.0152688
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1371/journal.pone.0152688&link_type=DOI) 
+
+32. 32.Muñoz ÁG, Chourio X, Rivière-Cinnamond A, Diuk-Wasser MA, Kache PA, Mordecai EA, et al. AeDES: a next-generation monitoring and forecasting system for environmental suitability of Aedes-borne disease transmission. Sci Rep. 2020;10: 12640. doi:10.1038/s41598-020-69625-4
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1038/s41598-020-69625-4&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=32724218&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+33. 33.Bannister-Tyrrell M, Williams C, Ritchie SA, Rau G, Lindesay J, Mercer G, et al. Weather-driven variation in dengue activity in Australia examined using a process-based modeling approach. Am J Trop Med Hyg. 2013;88: 65–72. doi:10.4269/ajtmh.2012.11-0451
+    
+    [Abstract/FREE Full Text](http://medrxiv.org/lookup/ijlink/YTozOntzOjQ6InBhdGgiO3M6MTQ6Ii9sb29rdXAvaWpsaW5rIjtzOjU6InF1ZXJ5IjthOjQ6e3M6ODoibGlua1R5cGUiO3M6NDoiQUJTVCI7czoxMToiam91cm5hbENvZGUiO3M6NzoidHJvcG1lZCI7czo1OiJyZXNpZCI7czo3OiI4OC8xLzY1IjtzOjQ6ImF0b20iO3M6NTA6Ii9tZWRyeGl2L2Vhcmx5LzIwMjYvMDcvMTEvMjAyNi4wNy4wMi4yNjM1NzEyNi5hdG9tIjt9czo4OiJmcmFnbWVudCI7czowOiIiO30=) 
+
+34. 34.Hussain-Alkhateeb L, Kroeger A, Olliaro P, Rocklöv J, Sewe MO, Tejeda G, et al. Early warning and response system (EWARS) for dengue outbreaks: Recent advancements towards widespread applications in critical settings. PLoS One. 2018;13: e0196811. doi:10.1371/journal.pone.0196811
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1371/journal.pone.0196811&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=29727447&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+35. 35.Obolski U, Perez PN, Villabona-Arenas CJ, Thézé J, Faria NR, Lourenço J. MVSE: An R-package that estimates a climate-driven mosquito-borne viral suitability index. Methods Ecol Evol. 2019;10: 1357–1370. doi:10.1111/2041-210X.13205
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1111/2041-210X.13205&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=32391139&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+36. 36.Hausfather Z, Marvel K, Schmidt GA, Nielsen-Gammon JW, Zelinka M. Climate simulations: recognize the “hot model” problem. Nature. 2022;605: 26–29. doi:10.1038/d41586-022-01192-2
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1038/d41586-022-01192-2&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=35508771&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+37. 37.Ryan SJ, Lippi CA. Management implications of shifting Culex quinquefasciatus West Nile virus transmission suitability in Florida. Vector Borne Zoonotic Dis. 2026; 15303667261426902. doi:10.1177/15303667261426902
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1177/15303667261426902&link_type=DOI) 
+
+38. 38.Ryan SJ, Carlson CJ, Tesla B, Bonds MH, Ngonghala CN, Mordecai EA, et al. Warming temperatures could expose more than 1.3 billion new people to Zika virus risk by 2050. Glob Chang Biol. 2021;27: 84–93. doi:10.1111/gcb.15384
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1111/gcb.15384&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=33037740&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+39. 39.Jones B, ONeill BC, Gao J. Global one-eighth degree population base year and projection grids for the shared socioeconomic pathways (SSPs), revision 01. Palisades, New York: Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC); 2020. doi:10.7927/M30P-J498
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.7927/M30P-J498&link_type=DOI) 
+
+40. 40.O’Neill BC, Kriegler E, Ebi KL, Kemp-Benedict E, Riahi K, Rothman DS, et al. The roads ahead: Narratives for shared socioeconomic pathways describing world futures in the 21st century. Glob Environ Change. 2017;42: 169–180. doi:10.1016/j.gloenvcha.2015.01.004
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1016/j.gloenvcha.2015.01.004&link_type=DOI) 
+
+41. 41.Center for International Earth Science Information Network-CIESIN - Columbia University. Gridded Population of the World, Version 4 (GPWv4): Population Count Adjusted to match 2015 Revision of UN WPP Country Totals. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC); 2016. doi:10.7927/H4SF2T42
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.7927/H4SF2T42&link_type=DOI) 
+
+42. 42.Moran AE, Oliver JT, Mirzaie M, Forouzanfar MH, Chilov M, Anderson L, et al. Assessing the Global Burden of Ischemic Heart Disease: Part 1: Methods for a Systematic Review of the Global Epidemiology of Ischemic Heart Disease in 1990 and 2010. Glob Heart. 2012;7: 315–329. doi:10.1016/j.gheart.2012.10.004
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1016/j.gheart.2012.10.004&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=23682350&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+43. 43.Ross N. fasterize: high performance raster conversion for modern spatial data. Available: [https://github.com/hypertidy/fasterize](https://github.com/hypertidy/fasterize)
+    
+    
+
+44. 44.Hijmans RJ, Bivand R, Forner K, Ooms J, Pebesma E, Sumner MD. Package ‘terra.’ Maintainer: Vienna, Austria. 2022. Available: [http://cran.uni-muenster.de/web/packages/terra/terra.pdf](http://cran.uni-muenster.de/web/packages/terra/terra.pdf)
+    
+    
+
+45. 45.Ryan SJ, Lippi CA, Villena OC, Singh A, Murdock CC, Johnson LR. Mapping current and future thermal limits to suitability for malaria transmission by the invasive mosquito Anopheles stephensi. Malar J. 2023;22: 104. doi:10.1186/s12936-023-04531-4
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1186/s12936-023-04531-4&link_type=DOI) 
+
+46. 46.Massicotte P, South A. rnaturalearth: World Map Data from Natural Earth; R package version 1.1.0.9000. 2025 Jul. Available: [https://docs.ropensci.org/rnaturalearth/](https://docs.ropensci.org/rnaturalearth/)
+    
+    
+
+47. 47.Van Vuuren DP, O’Neill BC, Tebaldi C, Sanderson BM, Chini LP, Friedlingstein P, et al. The scenario model intercomparison project for CMIP7 (ScenarioMIP-CMIP7). Geosci Model Dev. 2026;19: 2627–2656. doi:10.5194/gmd-19-2627-2026
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.5194/gmd-19-2627-2026&link_type=DOI) 
+
+48. 48.Dennington NL, Grossman MK, Ware-Gilmore F, Teeple JL, Johnson LR, Shocket MS, et al. Phenotypic adaptation to temperature in the mosquito vector, Aedes aegypti. Glob Chang Biol. 2024;30: e17041. doi:10.1111/gcb.17041
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1111/gcb.17041&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=38273521&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+49. 49.Hug DOH, Kropf A, Amann MO, Koella JC, Verhulst NO. Unexpected behavioural adaptation of yellow fever mosquitoes in response to high temperatures. Sci Rep. 2024;14: 3659. doi:10.1038/s41598-024-54374-5
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1038/s41598-024-54374-5&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=38351076&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+50. 50.Brown JJ, Pascual M, Wimberly MC, Johnson LR, Murdock CC. Humidity - The overlooked variable in the thermal biology of mosquito-borne disease. Ecol Lett. 2023;26: 1029–1049. doi:10.1111/ele.14228
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1111/ele.14228&link_type=DOI) 
+    
+    [PubMed](http://medrxiv.org/lookup/external-ref?access_num=37349261&link_type=MED&atom=%2Fmedrxiv%2Fearly%2F2026%2F07%2F11%2F2026.07.02.26357126.atom) 
+
+51. 51.Kropf A, Dabo S, Amann MO, Lambrechts L, Koella JC. Thermal adaptation in Aedes aegypti does not constrain temperature-sensitive growth of bacteria or dengue virus. Proc Biol Sci. 2025;292: 20250832. doi:10.1098/rspb.2025.0832
+    
+    [CrossRef](http://medrxiv.org/lookup/external-ref?access_num=10.1098/rspb.2025.0832&link_type=DOI)
