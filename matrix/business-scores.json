@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T01:28:14.916Z",
+  "updated_at": "2026-07-26T01:37:23.742Z",
   "projects": [
     {
       "id": 1,
@@ -2502,7 +2502,7 @@
     {
       "slug": "shigella-growth-studio",
       "project": "Shigella Growth Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare antibiotic-treated Shigella pathways against untreated diarrhea growth baselines before locking a cohort pack",
       "pmf": "Early signal with child-health / infectious-disease epidemiology leads who already trial growth soft-sims",
       "buyer": "Child-health and infectious-disease epidemiology analytics engineering leads",
@@ -2525,6 +2525,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 112
+    },
+    {
+      "slug": "cardiac-pocus-studio",
+      "project": "Cardiac Pocus Studio",
+      "status": "building",
+      "business_idea": "Compare cardiac POCUS COPD detection patterns against lung-ultrasound baselines before locking an exam pack",
+      "pmf": "Early signal with pulmonary / POCUS analytics leads who already trial exam soft-sims",
+      "buyer": "Pulmonary and point-of-care ultrasound analytics engineering leads",
+      "money_hook": "Bench seats + private exam packs (method-lab experiment)",
+      "potential": "Cardiac POCUS COPD pattern planning is underserved vs lung-ultrasound dumps without honesty",
+      "moat": "Cardiac POCUS COPD patterns vs lung-ultrasound baseline",
+      "evidence": "Paper diagnostic claim (cardiac POCUS patterns for COPD vs lung ultrasound); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer exam soft-sim with multi-flow bar; never claim live diagnostic clearance, clinical advice, or PACS write-back",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 113
     }
   ]
 }
