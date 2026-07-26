@@ -117,7 +117,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Immunize Impact Studio** | `immunize-impact-studio` | **Complete** | Immunization-linked mortality vs coverage-only dashboard |
 | **Split Endo Studio** | `split-endo-studio` | **Complete** | One-hole split endoscopy vs open laminectomy |
 | **Disaster Liaison Studio** | `disaster-liaison-studio` | **Complete** | Pediatric-perinatal liaison vs generic disaster HQ |
-| **Pavement Retrofit Studio** | `pavement-retrofit-studio` | **Building** | Photocatalytic pavement retrofit vs conventional preservation |
+| **Pavement Retrofit Studio** | `pavement-retrofit-studio` | **Complete** | Photocatalytic pavement retrofit vs conventional preservation |
 
 ## Rules
 

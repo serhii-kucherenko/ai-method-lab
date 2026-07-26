@@ -1,0 +1,39 @@
+{
+  "id": "pr-020",
+  "input": {
+    "tio2Loading": 0.68,
+    "trafficDensity": 0.31,
+    "noxBaseline": 0.24,
+    "co2Baseline": 0.29,
+    "preservationQuality": 0.68,
+    "corridorExposure": 0.68,
+    "assaySignal": 0.68,
+    "overclaimRisk": 0.29,
+    "treatmentBias": "photocatalytic_first",
+    "profile": "photocatalytic_pavement_retrofit"
+  },
+  "expectedPhotocatalytic": {
+    "mode": "photocatalytic_pavement_retrofit",
+    "emissionScore": 94.4,
+    "durabilityScore": 68.89,
+    "coverageScore": 79.88,
+    "costEfficiency": 43.87,
+    "preservationPenalty": 19.71,
+    "confidence": 43.84,
+    "retrofitContribution": 76.68,
+    "preservationContribution": 63.82,
+    "overall": 78.37
+  },
+  "expectedConventional": {
+    "mode": "conventional_preservation",
+    "emissionScore": 36.49,
+    "durabilityScore": 36.44,
+    "coverageScore": 43.22,
+    "costEfficiency": 36.99,
+    "preservationPenalty": 4.42,
+    "confidence": 44.25,
+    "retrofitContribution": 49.74,
+    "preservationContribution": 35.28,
+    "overall": 33.32
+  }
+}

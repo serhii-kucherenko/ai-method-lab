@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pavement Retrofit Studio — offline try</title>
+  <style>
+    :root {
+      --ink: #121518;
+      --teal: #1b6360;
+      --mist: #eef2f1;
+      --amber: #a87a2e;
+      --line: #c4cac8;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--mist);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    header {
+      background: linear-gradient(165deg, #0a0e10, #1a2624);
+      color: #fff;
+      padding: 2rem 1.25rem 2.5rem;
+    }
+    h1 { margin: 0; font-size: 1.75rem; color: var(--amber); }
+    .tag { margin-top: 0.5rem; opacity: 0.9; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.85rem; }
+    input[type="range"] { width: 100%; }
+    button {
+      margin-top: 1.25rem;
+      background: var(--teal);
+      color: #fff;
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+    }
+    .note { font-size: 0.8rem; color: #556660; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pavement Retrofit Studio</h1>
+    <p class="tag">Offline soft-sim — photocatalytic retrofit vs conventional preservation (approximate)</p>
+  </header>
+  <main>
+    <p>Adjust soft-sim indices and see which pavement pathway wins.</p>
+    <label>TiO2 loading <span id="tlv"></span></label>
+    <input id="tio2Loading" type="range" min="0" max="100" value="70" />
+    <label>NOx baseline (worse↑) <span id="nxv"></span></label>
+    <input id="noxBaseline" type="range" min="0" max="100" value="32" />
+    <label>Corridor exposure <span id="cev"></span></label>
+    <input id="corridorExposure" type="range" min="0" max="100" value="55" />
+    <label>Preservation quality <span id="pqv"></span></label>
+    <input id="preservationQuality" type="range" min="0" max="100" value="45" />
+    <button type="button" id="run">Score pathways</button>
+    <div class="out" id="out">Press score to compare.</div>
+    <p class="note">
+      Soft-sim only — not live road construction control, not certified emissions audits,
+      not municipal procurement. Full fidelity needs the Next.js app locally.
+    </p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function val(id) { return Number(document.getElementById(id).value) / 100; }
+    function sync() {
+      document.getElementById("tlv").textContent = val("tio2Loading").toFixed(2);
+      document.getElementById("nxv").textContent = val("noxBaseline").toFixed(2);
+      document.getElementById("cev").textContent = val("corridorExposure").toFixed(2);
+      document.getElementById("pqv").textContent = val("preservationQuality").toFixed(2);
+    }
+    function scorePhoto(t, n, e, p) {
+      return round2(clamp(t * 42 + (1 - n) * 28 + e * 18 + p * 8 + 6, 0, 100));
+    }
+    function scoreConv(t, n, e, p) {
+      return round2(clamp(p * 45 + (1 - n) * 20 + e * 10 - t * 8 + 12, 0, 100));
+    }
+    document.getElementById("run").onclick = function () {
+      sync();
+      var t = val("tio2Loading"), n = val("noxBaseline"), e = val("corridorExposure"), p = val("preservationQuality");
+      var a = scorePhoto(t, n, e, p), b = scoreConv(t, n, e, p);
+      var winner = a > b + 0.5 ? "photocatalytic_pavement_retrofit" : b > a + 0.5 ? "conventional_preservation" : "tie";
+      document.getElementById("out").innerHTML =
+        "<strong>Winner:</strong> " + winner +
+        "<br/>Retrofit " + a + " · Conventional " + b +
+        "<br/>Gap " + round2(Math.abs(a - b));
+    };
+    ["tio2Loading","noxBaseline","corridorExposure","preservationQuality"].forEach(function (id) {
+      document.getElementById(id).oninput = sync;
+    });
+    sync();
+  </script>
+</body>
+</html>

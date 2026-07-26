@@ -142,4 +142,5 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 139 | [Immunize Impact Studio - what we learned](139-immunize-impact-studio-lessons.md) | Product `immunize-impact-studio` |
 | 140 | [Split Endo Studio - what we learned](140-split-endo-studio-lessons.md) | Product `split-endo-studio` |
 | 141 | [Disaster Liaison Studio - what we learned](141-disaster-liaison-studio-lessons.md) | Product `disaster-liaison-studio` |
+| 142 | [Pavement Retrofit Studio - what we learned](142-pavement-retrofit-studio-lessons.md) | Product `pavement-retrofit-studio` |
 

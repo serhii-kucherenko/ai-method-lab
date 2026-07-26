@@ -1,6 +1,6 @@
 # Pavement Retrofit Studio
 
-**State:** ready_to_build  
+**State:** complete  
 **Slug:** `pavement-retrofit-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15006236/v1  
 **Authors’ code:** none  
