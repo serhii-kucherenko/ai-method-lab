@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T01:37:23.742Z",
+  "updated_at": "2026-07-26T01:47:23.117Z",
   "projects": [
     {
       "id": 1,
@@ -2529,7 +2529,7 @@
     {
       "slug": "cardiac-pocus-studio",
       "project": "Cardiac Pocus Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare cardiac POCUS COPD detection patterns against lung-ultrasound baselines before locking an exam pack",
       "pmf": "Early signal with pulmonary / POCUS analytics leads who already trial exam soft-sims",
       "buyer": "Pulmonary and point-of-care ultrasound analytics engineering leads",
@@ -2552,6 +2552,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 113
+    },
+    {
+      "slug": "responsible-index-studio",
+      "project": "Responsible Index Studio",
+      "status": "building",
+      "business_idea": "Compare structured country-level responsible-AI indexes against naive commitment checklists before locking a country pack",
+      "pmf": "Early signal with AI governance / public-policy analytics leads who already trial index soft-sims",
+      "buyer": "AI governance and public-policy analytics engineering leads",
+      "money_hook": "Bench seats + private country packs (method-lab experiment)",
+      "potential": "Structured country responsible-AI indexing is underserved vs naive commitment checklist dumps without honesty",
+      "moat": "Structured country index vs naive commitment checklist",
+      "evidence": "Paper governance claim (Global Index on Responsible AI 2026 pattern); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer index soft-sim with multi-flow bar; never claim live national policy authority, certified AI audits, or government command systems; not GIRAI brand",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 114
     }
   ]
 }

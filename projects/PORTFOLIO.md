@@ -121,6 +121,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Pneumonia Implement Studio** | `pneumonia-implement-studio` | **Complete** | CFIR co-design primary care vs status-quo pathway |
 | **Shigella Growth Studio** | `shigella-growth-studio` | **Complete** | Antibiotic-treated Shigella vs untreated diarrhea growth |
 | **Cardiac Pocus Studio** | `cardiac-pocus-studio` | **Complete** | Cardiac POCUS COPD patterns vs lung-ultrasound baseline |
+| **Responsible Index Studio** | `responsible-index-studio` | **Building** | Structured country index vs naive commitment checklist |
 
 ## Rules
 
