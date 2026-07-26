@@ -134,13 +134,14 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 126 | Eval Budget Studio | 78 | B | Forecast and cap LLM evaluation spend before unconstrained always-max runs burn the bill | Early signal with platform/FinOps leads already paying judge and bench invoices | AI platform / FinOps leads | Seats + forecast-run usage + private budget packs | Literal-dollar FinOps wedge after scoring products | Budget-aware forecast+cap vs always-max dashboards | Idea-first FinOps; 30 dual goldens; live app smoke | complete | biz-rubric-v2 | Prefer; software FinOps pattern |
 | 127 | Service Credit Studio | 79 | B | Forecast SLA service credits in literal dollars from incidents and contract tiers before Finance sees the invoice | Early signal with CS/FinOps leads who already reconcile SLA credits and refunds | Customer success / platform FinOps leads | CS seats + forecast-run usage + private contract packs | Literal-dollar compliance wedge adjacent to Filing Penalty Desk | Credit-aware dollar math vs calendar-breach-only flags | Idea-first; 30 dual goldens; live app smoke on 43158 | complete | biz-rubric-v2 | Prefer; literal-dollar SLA pattern |
 | 128 | Download Gate Studio | 78 | B | Gate OT/ICS program downloads behind signed permits and critical interlocks before a calendar window alone opens the gate | Early signal with OT/ICS security and controls engineers who already buy change-management tooling | OT / ICS security and controls engineers | Plant/site seats + gate-run usage + private plant packs | Industrial safety ops wedge adjacent to Ladder Bomb buyer family | Interlock-aware fail-closed gate vs calendar-window-only opens | Idea-first OT; 30 dual goldens; live app smoke on 43159 | complete | biz-rubric-v2 | Prefer; OT/ICS software pattern |
+| 129 | Tool Scope Studio | 78 | B | Bound agent tool calls to declared capability scopes before open-tool runtimes grant shell and network by default | Early signal with AI platform / agent safety eng leads who already buy guardrail tooling | AI platform / agent safety engineering leads | Fleet seats + grant-run usage + private scope packs | Agent productionization spend; clearer than monitor-only desks | Scope-bound grants vs open-tools baselines | Idea-first agent safety; 30 dual goldens; live app smoke on 43160 | complete | biz-rubric-v2 | Prefer; agent safety software pattern |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 115 |
+| B | 116 |
 | C | 12 |
 | Kill | 1 |
 

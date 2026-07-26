@@ -146,3 +146,5 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Service Credit Studio** | service-credit-studio | **Complete** | Forecast SLA credits in dollars vs calendar-only |
 
 | **Download Gate Studio** | download-gate-studio | **Complete** | Gate OT downloads with interlocks vs calendar-only |
+
+| **Tool Scope Studio** | tool-scope-studio | **Complete** | Scope-bound agent tool grants vs open-tools |
