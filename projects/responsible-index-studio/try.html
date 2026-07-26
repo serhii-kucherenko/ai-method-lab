@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsible Index Studio — offline try</title>
+  <style>
+    :root { --ink:#13171b; --teal:#1a5f6a; --ash:#eef1f2; --amber:#a87830; }
+    body { font-family: Georgia, serif; margin:0; background:var(--ash); color:var(--ink); }
+    main { max-width:40rem; margin:0 auto; padding:2rem 1.25rem; }
+    h1 { font-size:1.75rem; color:var(--teal); }
+    label { display:block; margin-top:0.75rem; font-size:0.9rem; }
+    input, select { width:100%; padding:0.4rem; margin-top:0.25rem; }
+    button { margin-top:1rem; background:var(--amber); color:#fff; border:0; padding:0.55rem 1rem; cursor:pointer; }
+    .out { margin-top:1.25rem; padding:1rem; background:#fff; border:1px solid #c5cacd; }
+    .fence { font-size:0.85rem; color:#556; margin-top:1.5rem; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Responsible Index Studio</h1>
+  <p>Offline soft-sim: <code>structured_country_index</code> vs <code>naive_commitment_checklist</code>.</p>
+  <label>Structured depth <input id="s" type="number" min="0" max="1" step="0.01" value="0.55" /></label>
+  <label>Checklist coverage <input id="c" type="number" min="0" max="1" step="0.01" value="0.35" /></label>
+  <label>Evidence strength <input id="e" type="number" min="0" max="1" step="0.01" value="0.5" /></label>
+  <label>Indicator readout <input id="r" type="number" min="0" max="1" step="0.01" value="0.6" /></label>
+  <label>Overclaim risk <input id="o" type="number" min="0" max="1" step="0.01" value="0.25" /></label>
+  <label>Scoring bias
+    <select id="b">
+      <option value="balanced">balanced</option>
+      <option value="dimension_first">dimension_first</option>
+      <option value="indicator_first">indicator_first</option>
+      <option value="checklist_first">checklist_first</option>
+    </select>
+  </label>
+  <button type="button" id="go">Score A/B</button>
+  <div class="out" id="out">Run soft-sim to see dual scores.</div>
+  <p class="fence">Soft-sim only — not live national policy authority, not certified AI audits, not government command. Approximate offline demo; full fidelity needs the Next.js app. Not branded as GIRAI.</p>
+</main>
+<script>
+function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+function round2(n) { return Math.round(n * 100) / 100; }
+function biasWeight(bias, lane) {
+  if (bias === "balanced") return 1;
+  return bias === lane ? 1.35 : 0.55;
+}
+function scoreStructured(input) {
+  const boost = 1.12;
+  const wD = biasWeight(input.scoringBias, "dimension_first");
+  const wI = biasWeight(input.scoringBias, "indicator_first");
+  const wC = biasWeight(input.scoringBias, "checklist_first");
+  const avgBias = (wD + wI + (2 - wC)) / 3;
+  const overall = round2(clamp(
+    (input.structuredDepth * 40 + input.evidenceStrength * 25 + input.indicatorReadout * 25) * boost * avgBias
+      + 8 - input.overclaimRisk * 10 - input.checklistCoverage * 8
+      - (input.scoringBias === "checklist_first" ? 12 : 0),
+    0, 100
+  ));
+  return { mode: "structured_country_index", overall };
+}
+function scoreChecklist(input) {
+  const boost = 1.08;
+  const wC = biasWeight(input.scoringBias, "checklist_first");
+  const overall = round2(clamp(
+    (input.checklistCoverage * 45 + (1 - input.structuredDepth) * 20) * boost * Math.max(wC, 1)
+      + 8 - input.structuredDepth * 10 - input.overclaimRisk * 8,
+    0, 100
+  ));
+  return { mode: "naive_commitment_checklist", overall };
+}
+document.getElementById("go").onclick = () => {
+  const input = {
+    structuredDepth: +document.getElementById("s").value,
+    checklistCoverage: +document.getElementById("c").value,
+    evidenceStrength: +document.getElementById("e").value,
+    indicatorReadout: +document.getElementById("r").value,
+    overclaimRisk: +document.getElementById("o").value,
+    scoringBias: document.getElementById("b").value,
+  };
+  const a = scoreStructured(input);
+  const b = scoreChecklist(input);
+  const winner = a.overall > b.overall + 0.5 ? a.mode : b.overall > a.overall + 0.5 ? b.mode : "tie";
+  document.getElementById("out").innerHTML =
+    "<strong>Winner:</strong> " + winner +
+    "<br/>Structured overall: " + a.overall +
+    "<br/>Checklist overall: " + b.overall +
+    "<br/>Gap: " + round2(Math.abs(a.overall - b.overall));
+};
+</script>
+</body>
+</html>

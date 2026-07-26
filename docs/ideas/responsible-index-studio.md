@@ -1,6 +1,6 @@
 # Responsible Index Studio
 
-**State:** ready_to_build  
+**State:** complete  
 **Slug:** `responsible-index-studio`  
 **Paper:** https://arxiv.org/abs/2607.14782v1  
 **Authors’ code:** none  

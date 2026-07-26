@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-display);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+}
+
+:root {
+  --ri-ink: #13171b;
+  --ri-teal: #1a5f6a;
+  --ri-ash: #eef1f2;
+  --ri-line: #c5cacd;
+  --ri-amber: #a87830;
+  --studio-ink: var(--ri-ink);
+  --studio-ink-deep: #080b0d;
+  --studio-accent: var(--ri-teal);
+  --studio-accent-deep: #12444b;
+  --studio-accent-soft: #d2e4e7;
+  --studio-gauze-soft: #e1eaec;
+  --studio-bg: #eef1f2;
+  --studio-panel: #ffffff;
+  --studio-line: #c5cacd;
+  --studio-signal: #a87830;
+  --studio-wash: radial-gradient(ellipse 55% 45% at 10% 0%, #1a5f6a55 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 90% 20%, #a8783044 0%, transparent 50%),
+    linear-gradient(165deg, #080b0d 0%, #13171b 48%, #1a2528 100%);
+
+  --background: #eef1f2;
+  --foreground: #13171b;
+  --card: #ffffff;
+  --card-foreground: #13171b;
+  --popover: #ffffff;
+  --popover-foreground: #13171b;
+  --primary: #1a5f6a;
+  --primary-foreground: #eef1f2;
+  --secondary: #e1eaec;
+  --secondary-foreground: #13171b;
+  --muted: #e1eaec;
+  --muted-foreground: #556068;
+  --accent: #d2e4e7;
+  --accent-foreground: #13171b;
+  --destructive: #8b3a45;
+  --border: #c5cacd;
+  --input: #c5cacd;
+  --ring: #1a5f6a;
+  --radius: 0.5rem;
+}
+
+body {
+  background: var(--studio-bg);
+  color: var(--studio-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.hero-fade {
+  animation: hero-in 0.9s ease-out both;
+}
+
+.mist-fade {
+  animation: mist-drift 14s ease-in-out infinite alternate;
+}
+
+.signal-underline {
+  display: block;
+  width: 4.5rem;
+  height: 3px;
+  margin-top: 0.75rem;
+  background: var(--ri-amber);
+  animation: underline-grow 0.7s ease-out 0.25s both;
+}
+
+.schema-grid {
+  background-image:
+    linear-gradient(to right, #ffffff0d 1px, transparent 1px),
+    linear-gradient(to bottom, #ffffff0d 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.ash-mist {
+  background:
+    radial-gradient(ellipse 70% 50% at 30% 80%, #1a5f6a33 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 30%, #ffffff14 0%, transparent 55%);
+}
+
+.row-lift {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.row-lift:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px #13171b14;
+}
+
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes mist-drift {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(-8px) scale(1.03); }
+}
+@keyframes underline-grow {
+  from { width: 0; opacity: 0; }
+  to { width: 4.5rem; opacity: 1; }
+}

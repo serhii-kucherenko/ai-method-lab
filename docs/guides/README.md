@@ -146,4 +146,5 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 143 | [Pneumonia Implement Studio - what we learned](143-pneumonia-implement-studio-lessons.md) | Product `pneumonia-implement-studio` |
 | 144 | [Shigella Growth Studio - what we learned](144-shigella-growth-studio-lessons.md) | Product `shigella-growth-studio` |
 | 145 | [Cardiac Pocus Studio - what we learned](145-cardiac-pocus-studio-lessons.md) | Product `cardiac-pocus-studio` |
+| 146 | [Responsible Index Studio - what we learned](146-responsible-index-studio-lessons.md) | Product `responsible-index-studio` |
 

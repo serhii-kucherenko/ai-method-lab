@@ -1,0 +1,39 @@
+{
+  "id": "ri-017",
+  "input": {
+    "structuredDepth": 0.64,
+    "checklistCoverage": 0.33,
+    "indicatorFidelity": 0.64,
+    "dimensionCompleteness": 0.64,
+    "evidenceStrength": 0.64,
+    "countryFollowThrough": 0.64,
+    "indicatorReadout": 0.64,
+    "overclaimRisk": 0.33,
+    "scoringBias": "indicator_first",
+    "profile": "structured_country_index"
+  },
+  "expectedStructured": {
+    "mode": "structured_country_index",
+    "structuredIndexScore": 84.31,
+    "checklistScore": 25.45,
+    "dimensionCoverage": 75.51,
+    "countryEfficiency": 92.42,
+    "checklistOnlyPenalty": 21.85,
+    "confidence": 40.12,
+    "structuredContribution": 82.52,
+    "checklistContribution": 55.25,
+    "overall": 81.61
+  },
+  "expectedChecklist": {
+    "mode": "naive_commitment_checklist",
+    "structuredIndexScore": 25.89,
+    "checklistScore": 38.92,
+    "dimensionCoverage": 33.97,
+    "countryEfficiency": 38.03,
+    "checklistOnlyPenalty": 6.69,
+    "confidence": 31.49,
+    "structuredContribution": 46.02,
+    "checklistContribution": 31.2,
+    "overall": 29.28
+  }
+}
