@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T01:55:46.067Z",
+  "updated_at": "2026-07-26T02:05:53.885Z",
   "projects": [
     {
       "id": 1,
@@ -2583,7 +2583,7 @@
     {
       "slug": "blood-loss-studio",
       "project": "Blood Loss Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare weighed-swab measured blood loss against haemoglobin-calculated baselines after caesarean birth before locking a birth pack",
       "pmf": "Early signal with obstetric / perinatal analytics leads who already trial method soft-sims",
       "buyer": "Obstetric and perinatal analytics engineering leads",
@@ -2606,6 +2606,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 115
+    },
+    {
+      "slug": "mof-capture-studio",
+      "project": "Mof Capture Studio",
+      "status": "building",
+      "business_idea": "Compare anionic MOF heavy-metal capture pathways against conventional sorbent baselines before locking a water pack",
+      "pmf": "Early signal with water-remediation / materials analytics leads who already trial sorbent soft-sims",
+      "buyer": "Water-remediation and materials analytics engineering leads",
+      "money_hook": "Bench seats + private water packs (method-lab experiment)",
+      "potential": "Anionic MOF capture planning is underserved vs conventional sorbent dumps without honesty",
+      "moat": "Anionic MOF capture vs conventional sorbent",
+      "evidence": "Paper materials claim (anionic MOF SU-102-style heavy-metal capture); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer water soft-sim with multi-flow bar; never claim live plant control, certified water audits, or municipal procurement authority; not SU-102 brand",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 116
     }
   ]
 }
