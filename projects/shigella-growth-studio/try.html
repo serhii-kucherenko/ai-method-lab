@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shigella Growth Studio — offline try</title>
+  <style>
+    :root {
+      --ink: #14181c;
+      --teal: #1a6462;
+      --chalk: #eef2f1;
+      --amber: #a87a2e;
+      --line: #c5cbc9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: linear-gradient(165deg, #eef2f1 0%, #dce8e7 100%);
+      color: var(--ink);
+      padding: 2rem 1.25rem 3rem;
+    }
+    h1 { font-size: 1.75rem; margin: 0 0 0.35rem; color: var(--teal); }
+    .tag { color: var(--amber); font-weight: 600; margin-bottom: 1.5rem; }
+    .grid { display: grid; gap: 1rem; max-width: 40rem; }
+    label { display: block; font-size: 0.85rem; margin-bottom: 0.25rem; }
+    input[type="range"] { width: 100%; }
+    button {
+      background: var(--teal);
+      color: white;
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .out {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      white-space: pre-wrap;
+      font-family: ui-monospace, monospace;
+      font-size: 0.85rem;
+    }
+    .note { margin-top: 1.5rem; font-size: 0.8rem; color: #556660; max-width: 40rem; }
+  </style>
+</head>
+<body>
+  <h1>Shigella Growth Studio</h1>
+  <p class="tag">Offline approximate demo — soft-sim only</p>
+  <div class="grid">
+    <div>
+      <label>Antibiotic coverage <span id="v1"></span></label>
+      <input id="abx" type="range" min="0" max="100" value="55" />
+    </div>
+    <div>
+      <label>Growth assay signal <span id="v2"></span></label>
+      <input id="assay" type="range" min="0" max="100" value="70" />
+    </div>
+    <div>
+      <label>Untreated duration (worse ↑) <span id="v3"></span></label>
+      <input id="duration" type="range" min="0" max="100" value="30" />
+    </div>
+    <div>
+      <label>Episode severity (worse ↑) <span id="v4"></span></label>
+      <input id="severity" type="range" min="0" max="100" value="40" />
+    </div>
+    <button type="button" id="run">Compare antibiotic vs untreated</button>
+  </div>
+  <pre class="out" id="out">Adjust sliders, then compare.</pre>
+  <p class="note">
+    Approximate offline math — not live clinical prescribing, not diagnostic
+    clearance, not national treatment guideline authority. Full dual scorers
+    live in the Next.js app
+    (<code>antibiotic_treated_shigella</code> vs <code>untreated_diarrhea_growth</code>).
+  </p>
+  <script>
+    function n(id) { return Number(document.getElementById(id).value) / 100; }
+    function sync() {
+      document.getElementById("v1").textContent = n("abx").toFixed(2);
+      document.getElementById("v2").textContent = n("assay").toFixed(2);
+      document.getElementById("v3").textContent = n("duration").toFixed(2);
+      document.getElementById("v4").textContent = n("severity").toFixed(2);
+    }
+    ["abx","assay","duration","severity"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", sync);
+    });
+    sync();
+    function approxAbx(a, g, d, s) {
+      return Math.round(Math.min(100, Math.max(0,
+        a * 42 + g * 28 + (1 - d) * 18 + (1 - s) * 8 + 6
+      )) * 100) / 100;
+    }
+    function approxUnt(a, g, d, s) {
+      return Math.round(Math.min(100, Math.max(0,
+        (1 - d) * 40 + g * 22 + (1 - s) * 18 - a * 12 + 10
+      )) * 100) / 100;
+    }
+    document.getElementById("run").onclick = () => {
+      const a = n("abx"), g = n("assay"), d = n("duration"), s = n("severity");
+      const abx = approxAbx(a, g, d, s);
+      const unt = approxUnt(a, g, d, s);
+      const winner = abx > unt + 0.5 ? "antibiotic_treated_shigella"
+        : unt > abx + 0.5 ? "untreated_diarrhea_growth" : "tie";
+      document.getElementById("out").textContent =
+        "Approximate offline soft-sim\n" +
+        "Antibiotic-treated Shigella overall: " + abx + "\n" +
+        "Untreated diarrhea growth overall: " + unt + "\n" +
+        "Winner: " + winner + "\n" +
+        "Gap: " + Math.abs(abx - unt).toFixed(2) + "\n\n" +
+        "Lock only when antibiotic-treated Shigella beats untreated diarrhea growth and honesty stays visible.";
+    };
+  </script>
+</body>
+</html>

@@ -119,7 +119,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Disaster Liaison Studio** | `disaster-liaison-studio` | **Complete** | Pediatric-perinatal liaison vs generic disaster HQ |
 | **Pavement Retrofit Studio** | `pavement-retrofit-studio` | **Complete** | Photocatalytic pavement retrofit vs conventional preservation |
 | **Pneumonia Implement Studio** | `pneumonia-implement-studio` | **Complete** | CFIR co-design primary care vs status-quo pathway |
-| **Shigella Growth Studio** | `shigella-growth-studio` | **Building** | Antibiotic-treated Shigella vs untreated diarrhea growth |
+| **Shigella Growth Studio** | `shigella-growth-studio` | **Complete** | Antibiotic-treated Shigella vs untreated diarrhea growth |
 
 ## Rules
 

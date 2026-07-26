@@ -1,0 +1,39 @@
+{
+  "id": "sg-017",
+  "input": {
+    "antibioticCoverage": 0.64,
+    "shigellaConfirmation": 0.64,
+    "episodeSeverity": 0.3,
+    "untreatedDuration": 0.33,
+    "growthVulnerability": 0.64,
+    "cohortFollowUp": 0.64,
+    "growthAssaySignal": 0.64,
+    "overclaimRisk": 0.33,
+    "treatmentBias": "growth_first",
+    "profile": "antibiotic_treated_shigella"
+  },
+  "expectedAntibiotic": {
+    "mode": "antibiotic_treated_shigella",
+    "growthProtectionScore": 83.96,
+    "episodeControlScore": 53.25,
+    "assayCoverage": 75.51,
+    "cohortEfficiency": 89,
+    "untreatedPenalty": 22.87,
+    "confidence": 40.12,
+    "antibioticContribution": 81.47,
+    "untreatedContribution": 64.27,
+    "overall": 82.37
+  },
+  "expectedUntreated": {
+    "mode": "untreated_diarrhea_growth",
+    "growthProtectionScore": 33.67,
+    "episodeControlScore": 62.07,
+    "assayCoverage": 33.97,
+    "cohortEfficiency": 54.82,
+    "untreatedPenalty": 6.55,
+    "confidence": 40.55,
+    "antibioticContribution": 55.6,
+    "untreatedContribution": 45.82,
+    "overall": 42.79
+  }
+}
