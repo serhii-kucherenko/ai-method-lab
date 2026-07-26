@@ -130,13 +130,14 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 122 | Map Anchor Studio | 32 | Kill | Compare mucus-anchoring antibody conjugates vs conventional mAbs before locking a conjugate pack | None for method-lab SaaS — wet-lab biologics path | Antiviral biologics analytics (hypothetical) | None credible without wet-lab partnership | Wrong category for software-only lab | n/a — killed | ChemRxiv MAP conjugate paper; no public code | killed | biz-rubric-v2 | Kill: not software-solvable (wet-lab biologics). Human steer 2026-07-26. |
 | 123 | Rubric Compiler Studio | 77 | B | Compile locked rubrics into evidence-anchored scores with calibration and selective escalation | Evaluation and QA teams already buy scoring tools and need auditable quality gates | Platform, evaluation, QA, and learning operations leads | Team seats, score-run usage, and private rubric libraries | Strong wedge into governed AI evaluation workflows | Locked measurement specs, evidence anchors, calibration, and selective trust | Method synthesis informed by three scoring research seeds | complete | biz-rubric-v2 | Tier B: strong software wedge; validate willingness to pay against established evaluation platforms |
 | 124 | Judge Reliability Studio | 77 | B | Diagnose whether LLM judges are stable measurement instruments with IRT — not only whether they agree | Early signal with platform/eval leads already running LLM-as-a-judge benches | Platform / eval engineering leads | Eval seats + private judge/item packs + diagnostic run usage | Natural sequel to Rubric Compiler; reliability spend rising | IRT ability/difficulty/discrimination vs agreement-only dashboards | arXiv 2602.00521 IRT judge diagnostics; 30 dual goldens; live app smoke green | complete | biz-rubric-v2 | Tier B: IRT reliability vs agreement-only; natural sequel to Rubric Compiler |
+| 125 | Selective Trust Studio | 76 | B | Cascade cheap-to-strong judges with escalate-when-unsure gates and cost honesty | Early signal with eval leads burning budget on always-max models | Platform / eval engineering leads | Seats + cascade-run usage + policy packs | Cost vs quality wedge after Rubric Compiler / Judge Reliability | Selective escalate cascade vs always-strong baselines | arXiv 2407.18370 Trust or Escalate pattern | building | biz-rubric-v2 | Prefer climb; software FinOps+trust pattern |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 111 |
+| B | 112 |
 | C | 12 |
 | Kill | 1 |
 

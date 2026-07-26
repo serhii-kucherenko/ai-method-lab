@@ -1,0 +1,24 @@
+{
+  "slug": "selective-trust-studio",
+  "project": "Selective Trust Studio",
+  "dimensions": {
+    "buyer": 8,
+    "pain": 8,
+    "pmf": 7,
+    "money": 7,
+    "wedge": 8,
+    "moat": 7,
+    "evidence": 7,
+    "feasibility": 9
+  },
+  "business_idea": "Cascade cheap-to-strong judges with escalate-when-unsure gates and cost honesty",
+  "pmf": "Early signal with eval leads burning budget on always-max models",
+  "buyer": "Platform / eval engineering leads",
+  "money_hook": "Seats + cascade-run usage + policy packs",
+  "potential": "Cost vs quality wedge after Rubric Compiler / Judge Reliability",
+  "moat": "Selective escalate cascade vs always-strong baselines",
+  "evidence": "arXiv 2407.18370 Trust or Escalate pattern",
+  "status": "building",
+  "rubric": "biz-rubric-v2",
+  "gc_notes": "Prefer climb; software FinOps+trust pattern"
+}
