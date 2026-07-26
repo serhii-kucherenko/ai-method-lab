@@ -1,6 +1,6 @@
 # Dengue Suit Studio
 
-**State:** framing  
+**State:** complete  
 **Slug:** `dengue-suit-studio`  
 **Paper:** https://www.medrxiv.org/content/10.64898/2026.07.02.26357126v2  
 **Authors’ code:** none  

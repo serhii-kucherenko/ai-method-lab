@@ -1,0 +1,39 @@
+{
+  "id": "ds-023",
+  "input": {
+    "thermalSuitIndex": 0.79,
+    "populationAtRisk": 0.8,
+    "climateShiftSignal": 0.69,
+    "vectorNicheFidelity": 0.74,
+    "spatialCoverage": 0.76,
+    "historicalStickiness": 0.36,
+    "assaySignal": 0.8,
+    "overclaimRisk": 0.25,
+    "climateBias": "historical_first",
+    "profile": "cmip6_thermal_suitability"
+  },
+  "expectedCmip6": {
+    "mode": "cmip6_thermal_suitability",
+    "thermalScore": 64.13,
+    "populationScore": 54.1,
+    "shiftScore": 44.5,
+    "nicheScore": 64.78,
+    "historicalPenalty": 21.85,
+    "confidence": 57.2,
+    "cmip6Contribution": 59.13,
+    "historicalContribution": 44.28,
+    "overall": 57.46
+  },
+  "expectedHistorical": {
+    "mode": "static_historical_baseline",
+    "thermalScore": 25.98,
+    "populationScore": 57.81,
+    "shiftScore": 25.97,
+    "nicheScore": 70.05,
+    "historicalPenalty": 34.13,
+    "confidence": 48.62,
+    "cmip6Contribution": 49.14,
+    "historicalContribution": 54.6,
+    "overall": 47.16
+  }
+}

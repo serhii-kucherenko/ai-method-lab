@@ -1,0 +1,136 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-display);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+}
+
+:root {
+  --ds-ink: #12171c;
+  --ds-teal: #1f6a6e;
+  --ds-mist: #eef3f4;
+  --ds-line: #c3c9ce;
+  --ds-amber: #b4833a;
+  --studio-ink: var(--ds-ink);
+  --studio-ink-deep: #0a0e11;
+  --studio-accent: var(--ds-teal);
+  --studio-accent-deep: #164e52;
+  --studio-accent-soft: #d3e4e5;
+  --studio-gauze-soft: #e2eaec;
+  --studio-bg: #eef3f4;
+  --studio-panel: #ffffff;
+  --studio-line: #c3c9ce;
+  --studio-signal: #b4833a;
+  --studio-wash: radial-gradient(ellipse 55% 45% at 10% 0%, #1f6a6e55 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 90% 20%, #b4833a44 0%, transparent 50%),
+    linear-gradient(165deg, #0a0e11 0%, #12171c 48%, #1a2426 100%);
+
+  --background: #eef3f4;
+  --foreground: #12171c;
+  --card: #ffffff;
+  --card-foreground: #12171c;
+  --popover: #ffffff;
+  --popover-foreground: #12171c;
+  --primary: #1f6a6e;
+  --primary-foreground: #eef3f4;
+  --secondary: #e2eaec;
+  --secondary-foreground: #12171c;
+  --muted: #e2eaec;
+  --muted-foreground: #556066;
+  --accent: #d3e4e5;
+  --accent-foreground: #12171c;
+  --destructive: #8b3a45;
+  --border: #c3c9ce;
+  --input: #c3c9ce;
+  --ring: #1f6a6e;
+  --radius: 0.5rem;
+}
+
+body {
+  background: var(--studio-bg);
+  color: var(--studio-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.hero-fade {
+  animation: heroIn 1.1s ease-out both;
+}
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.mist-fade {
+  animation: mistPulse 8s ease-in-out infinite alternate;
+}
+@keyframes mistPulse {
+  from { opacity: 0.45; }
+  to { opacity: 0.85; }
+}
+.schema-grid {
+  background-image:
+    linear-gradient(to right, #1f6a6e22 1px, transparent 1px),
+    linear-gradient(to bottom, #1f6a6e22 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: gridDrift 18s linear infinite;
+}
+@keyframes gridDrift {
+  from { background-position: 0 0; }
+  to { background-position: 48px 24px; }
+}
+.thermal-mist {
+  background:
+    radial-gradient(ellipse 40% 30% at 30% 40%, #1f6a6e66 0%, transparent 60%),
+    radial-gradient(ellipse 35% 40% at 70% 60%, #b4833a44 0%, transparent 55%);
+  animation: thermalShift 10s ease-in-out infinite alternate;
+}
+@keyframes thermalShift {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.05) translate(2%, -1%); }
+}
+.signal-underline {
+  display: block;
+  width: 4rem;
+  height: 3px;
+  margin-top: 0.75rem;
+  background: var(--ds-amber);
+  animation: underlineGrow 0.9s ease-out 0.3s both;
+}
+@keyframes underlineGrow {
+  from { width: 0; opacity: 0; }
+  to { width: 4rem; opacity: 1; }
+}
+.row-lift {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.row-lift:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px #12171c14;
+}
+.score-bar {
+  transition: width 0.6s ease;
+}

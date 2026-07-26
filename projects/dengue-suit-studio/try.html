@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dengue Suit Studio — offline soft-sim</title>
+  <style>
+    :root { --ds-ink:#12171c; --ds-teal:#1f6a6e; --ds-mist:#eef3f4; --ds-amber:#b4833a; }
+    body { font-family: Georgia, serif; margin: 0; background: var(--ds-mist); color: var(--ds-ink); }
+    main { max-width: 40rem; margin: 0 auto; padding: 2rem 1.25rem; }
+    h1 { font-size: 1.75rem; }
+    label { display:block; margin-top: .75rem; font-size: .9rem; }
+    input, select { width: 100%; padding: .45rem; margin-top: .25rem; }
+    button { margin-top: 1rem; background: var(--ds-teal); color: white; border: 0; padding: .6rem 1rem; }
+    .out { margin-top: 1.25rem; padding: 1rem; background: white; border: 1px solid #c3c9ce; }
+    .note { font-size: .85rem; color: #556066; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Dengue Suit Studio</h1>
+    <p>Offline soft-sim: CMIP6 thermal suitability vs static historical baseline.</p>
+    <label>Thermal suit index <input id="thermal" type="number" min="0" max="1" step="0.01" value="0.72" /></label>
+    <label>Population at risk <input id="par" type="number" min="0" max="1" step="0.01" value="0.68" /></label>
+    <label>Climate shift signal <input id="shift" type="number" min="0" max="1" step="0.01" value="0.74" /></label>
+    <label>Vector niche fidelity <input id="niche" type="number" min="0" max="1" step="0.01" value="0.6" /></label>
+    <label>Spatial coverage <input id="spatial" type="number" min="0" max="1" step="0.01" value="0.55" /></label>
+    <label>Historical stickiness <input id="hist" type="number" min="0" max="1" step="0.01" value="0.3" /></label>
+    <label>Climate bias
+      <select id="bias">
+        <option value="balanced">balanced</option>
+        <option value="ssp585_first">ssp585_first</option>
+        <option value="ssp126_first">ssp126_first</option>
+        <option value="historical_first">historical_first</option>
+      </select>
+    </label>
+    <button type="button" id="run">Score A/B</button>
+    <div class="out" id="out">Run to see soft-sim scores.</div>
+    <p class="note">Not live outbreak prediction, not clinical diagnosis, not operational mosquito control deployment.</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function scoreCmip6(input) {
+      const boost = 1.12;
+      const wS = biasWeight(input.climateBias, "ssp585_first");
+      const thermalScore = round2(clamp(input.thermalSuitIndex * 55 * boost * wS + input.vectorNicheFidelity * 20 + 8 - input.overclaimRisk * 6, 0, 100));
+      const populationScore = round2(clamp(input.populationAtRisk * 55 * boost + input.spatialCoverage * 20, 0, 100));
+      const shiftScore = round2(clamp(input.climateShiftSignal * 50 * boost + (1 - input.historicalStickiness) * 20, 0, 100));
+      const nicheScore = round2(clamp(input.vectorNicheFidelity * 45 * boost + input.thermalSuitIndex * 20, 0, 100));
+      const overall = round2(clamp(thermalScore * 0.35 + populationScore * 0.3 + shiftScore * 0.2 + nicheScore * 0.15, 0, 100));
+      return { thermalScore, populationScore, shiftScore, nicheScore, overall };
+    }
+    function scoreHistorical(input) {
+      const boost = 1.08;
+      const thermalScore = round2(clamp(input.populationAtRisk * 20 * boost + input.spatialCoverage * 20 - input.thermalSuitIndex * 18, 0, 100));
+      const populationScore = round2(clamp(input.populationAtRisk * 42 * boost + (1 - input.climateShiftSignal) * 18, 0, 100));
+      const shiftScore = round2(clamp(input.historicalStickiness * 38 * boost + input.assaySignal * 25, 0, 100));
+      const nicheScore = round2(clamp(input.vectorNicheFidelity * 50 * boost - input.thermalSuitIndex * 10, 0, 100));
+      const overall = round2(clamp(nicheScore * 0.45 + populationScore * 0.3 + shiftScore * 0.25, 0, 100));
+      return { thermalScore, populationScore, shiftScore, nicheScore, overall };
+    }
+    document.getElementById("run").onclick = () => {
+      const input = {
+        thermalSuitIndex: Number(thermal.value),
+        populationAtRisk: Number(par.value),
+        climateShiftSignal: Number(shift.value),
+        vectorNicheFidelity: Number(niche.value),
+        spatialCoverage: Number(spatial.value),
+        historicalStickiness: Number(hist.value),
+        assaySignal: 0.7,
+        overclaimRisk: 0.28,
+        climateBias: bias.value,
+      };
+      const a = scoreCmip6(input);
+      const b = scoreHistorical(input);
+      out.textContent = "CMIP6 overall " + a.overall + " · Historical overall " + b.overall;
+    };
+  </script>
+</body>
+</html>
