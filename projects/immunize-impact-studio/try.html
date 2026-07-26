@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Immunize Impact Studio — offline soft-sim</title>
+  <style>
+    :root { --ii-ink:#14181d; --ii-teal:#1a6b63; --ii-chalk:#eef2f1; --ii-amber:#b07a2e; }
+    body { font-family: Georgia, serif; margin: 0; background: var(--ii-chalk); color: var(--ii-ink); }
+    main { max-width: 40rem; margin: 0 auto; padding: 2rem 1.25rem; }
+    h1 { font-size: 1.75rem; }
+    label { display:block; margin-top: .75rem; font-size: .9rem; }
+    input, select { width: 100%; padding: .45rem; margin-top: .25rem; }
+    button { margin-top: 1rem; background: var(--ii-teal); color: white; border: 0; padding: .6rem 1rem; }
+    .out { margin-top: 1.25rem; padding: 1rem; background: white; border: 1px solid #c5cbc9; }
+    .note { font-size: .85rem; color: #556066; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Immunize Impact Studio</h1>
+    <p>Offline soft-sim: immunization-linked mortality vs coverage-only dashboard.</p>
+    <label>DTP3 coverage <input id="dtp3" type="number" min="0" max="1" step="0.01" value="0.72" /></label>
+    <label>Measles coverage <input id="measles" type="number" min="0" max="1" step="0.01" value="0.68" /></label>
+    <label>Under-five mortality index <input id="mort" type="number" min="0" max="1" step="0.01" value="0.28" /></label>
+    <label>Panel years <input id="years" type="number" min="0" max="1" step="0.01" value="0.55" /></label>
+    <label>Equity gap <input id="equity" type="number" min="0" max="1" step="0.01" value="0.3" /></label>
+    <label>Antigen breadth <input id="breadth" type="number" min="0" max="1" step="0.01" value="0.5" /></label>
+    <label>Impact bias
+      <select id="bias">
+        <option value="balanced">balanced</option>
+        <option value="mortality_first">mortality_first</option>
+        <option value="coverage_first">coverage_first</option>
+        <option value="dashboard_first">dashboard_first</option>
+      </select>
+    </label>
+    <button type="button" id="run">Score A/B</button>
+    <div class="out" id="out">Run to see soft-sim scores.</div>
+    <p class="note">Not live immunization logistics, not clinical prescribing, not national policy authority.</p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function scoreLinked(input) {
+      const boost = 1.12;
+      const wM = biasWeight(input.impactBias, "mortality_first");
+      const coverageScore = round2(clamp(input.dtp3Coverage * 50 * boost * wM + input.measlesCoverage * 25 + 8 - input.overclaimRisk * 6, 0, 100));
+      const mortalityLinkScore = round2(clamp((1 - input.underFiveMortality) * 50 * boost + input.dtp3Coverage * 30, 0, 100));
+      const equityScore = round2(clamp((1 - input.equityGap) * 50 * boost + input.antigenBreadth * 20, 0, 100));
+      const panelScore = round2(clamp(input.panelYears * 45 * boost + input.assaySignal * 25, 0, 100));
+      const overall = round2(clamp(coverageScore * 0.3 + mortalityLinkScore * 0.35 + equityScore * 0.2 + panelScore * 0.15, 0, 100));
+      return { coverageScore, mortalityLinkScore, equityScore, panelScore, overall };
+    }
+    function scoreCoverage(input) {
+      const boost = 1.08;
+      const coverageScore = round2(clamp(input.dtp3Coverage * 55 * boost + input.measlesCoverage * 25 - (1 - input.underFiveMortality) * 12, 0, 100));
+      const mortalityLinkScore = round2(clamp(input.dtp3Coverage * 35 * boost + input.antigenBreadth * 20, 0, 100));
+      const equityScore = round2(clamp(input.antigenBreadth * 40 * boost + input.assaySignal * 25, 0, 100));
+      const panelScore = round2(clamp(input.panelYears * 30 * boost - (1 - input.underFiveMortality) * 12, 0, 100));
+      const overall = round2(clamp(coverageScore * 0.5 + mortalityLinkScore * 0.25 + panelScore * 0.25, 0, 100));
+      return { coverageScore, mortalityLinkScore, equityScore, panelScore, overall };
+    }
+    document.getElementById("run").onclick = () => {
+      const input = {
+        dtp3Coverage: Number(dtp3.value),
+        measlesCoverage: Number(measles.value),
+        underFiveMortality: Number(mort.value),
+        panelYears: Number(years.value),
+        equityGap: Number(equity.value),
+        antigenBreadth: Number(breadth.value),
+        assaySignal: 0.7,
+        overclaimRisk: 0.28,
+        impactBias: bias.value,
+      };
+      const a = scoreLinked(input);
+      const b = scoreCoverage(input);
+      const winner = a.overall > b.overall + 0.5 ? "immunization_linked_mortality" : b.overall > a.overall + 0.5 ? "coverage_only_dashboard" : "tie";
+      out.textContent = "Linked overall " + a.overall + " · Coverage-only overall " + b.overall + " · Winner " + winner;
+    };
+  </script>
+</body>
+</html>

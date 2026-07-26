@@ -1,0 +1,39 @@
+{
+  "id": "ii-023",
+  "input": {
+    "dtp3Coverage": 0.79,
+    "measlesCoverage": 0.8,
+    "underFiveMortality": 0.27,
+    "panelYears": 0.76,
+    "equityGap": 0.25,
+    "antigenBreadth": 0.8,
+    "assaySignal": 0.8,
+    "overclaimRisk": 0.25,
+    "impactBias": "dashboard_first",
+    "profile": "immunization_linked_mortality"
+  },
+  "expectedLinked": {
+    "mode": "immunization_linked_mortality",
+    "coverageScore": 43.19,
+    "mortalityLinkScore": 57.58,
+    "equityScore": 48.32,
+    "panelScore": 71.6,
+    "dashboardPenalty": 42.31,
+    "confidence": 54.72,
+    "mortalityContribution": 51.53,
+    "coverageContribution": 45.39,
+    "overall": 51.42
+  },
+  "expectedCoverageOnly": {
+    "mode": "coverage_only_dashboard",
+    "coverageScore": 66.77,
+    "mortalityLinkScore": 62.69,
+    "equityScore": 48.31,
+    "panelScore": 52.48,
+    "dashboardPenalty": 0,
+    "confidence": 53.93,
+    "mortalityContribution": 66.05,
+    "coverageContribution": 61.92,
+    "overall": 56.95
+  }
+}
