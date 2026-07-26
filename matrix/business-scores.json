@@ -2985,6 +2985,33 @@
       "score": 78,
       "tier": "B",
       "id": 129
+    },
+    {
+      "slug": "idle-seat-studio",
+      "project": "Idle Seat Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 9,
+        "pmf": 7,
+        "money": 9,
+        "wedge": 8,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 9
+      },
+      "business_idea": "Forecast idle SaaS seat waste in dollars from login activity before headcount renewals hide the bill",
+      "pmf": "Early signal with SaaS FinOps/procurement leads who already reconcile seat renewals",
+      "buyer": "SaaS FinOps / procurement leads",
+      "money_hook": "Org seats + forecast-run usage + private seat packs",
+      "potential": "Literal-dollar FinOps wedge on SaaS renewals",
+      "moat": "Usage-aware waste dollars vs headcount-only licensing",
+      "evidence": "Idea-first FinOps; 30 dual goldens; live app smoke on 43161",
+      "status": "complete",
+      "rubric": "biz-rubric-v2",
+      "gc_notes": "Prefer; SaaS seat FinOps pattern",
+      "score": 79,
+      "tier": "B",
+      "id": 130
     }
   ]
 }

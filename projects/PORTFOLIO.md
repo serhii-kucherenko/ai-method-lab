@@ -148,3 +148,5 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Download Gate Studio** | download-gate-studio | **Complete** | Gate OT downloads with interlocks vs calendar-only |
 
 | **Tool Scope Studio** | tool-scope-studio | **Complete** | Scope-bound agent tool grants vs open-tools |
+
+| **Idle Seat Studio** | idle-seat-studio | **Complete** | Idle SaaS seat waste dollars vs headcount-only |
