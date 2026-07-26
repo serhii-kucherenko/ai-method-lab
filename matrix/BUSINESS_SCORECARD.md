@@ -1,6 +1,6 @@
 # Business scorecard
 
-Rubric: **biz-rubric-v1** · Source: `matrix/business-scores.json` · Protocol: `protocols/GARBAGE_COLLECTOR.md`
+Rubric: **biz-rubric-v2** · Source: `matrix/business-scores.json` · Protocol: `protocols/GARBAGE_COLLECTOR.md`
 
 Regenerate: `node scripts/score-business.mjs --write-md`
 
@@ -127,7 +127,8 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 119 | Usher Dual Studio | 67 | B | Compare MYO7A gene supplementation against Myo7b activation pathways for Usher syndrome 1B before locking an allele pack | Early signal with gene-therapy / sensory-disorder analytics leads who already trial pathway soft-sims | Gene-therapy and sensory-disorder analytics engineering leads | Bench seats + private allele packs (method-lab experiment) | Usher 1B dual-pathway planning is underserved vs single-vector dumps without honesty | MYO7A supplementation vs Myo7b activation | Paper gene-therapy claim (MYO7A dual AAV vs Myo7b activation for Usher 1B); no public code; soft-sim honesty required; 13 pages; dual scorers; 30 goldens; build + app-up green | complete | biz-rubric-v1 | Prefer allele soft-sim with multi-flow bar; never claim wet-lab validation, IND/NDA readiness, patient dosing, or clinical gene-therapy advice; not authors’ brand |
 | 120 | Aminoaryl Studio | 67 | B | Compare photocatalytic 1,3-aminoarylation against copper-catalyzed baselines before locking a route pack | Early signal with medicinal chemistry / route-planning analytics leads who already trial route soft-sims | Medicinal chemistry and route-planning analytics engineering leads | Bench seats + private route packs (method-lab experiment) | Complementary aminoarylation route planning is underserved vs single-mechanism dumps without honesty | Photocatalytic vs copper-catalyzed aminoarylation | Paper chemistry claim (photocatalytic and copper-catalyzed 1,3-aminoarylation of aryl cyclopropanes); no public code; soft-sim honesty required; 13 pages; dual scorers; 30 goldens; build + app-up green | complete | biz-rubric-v1 | Prefer route soft-sim with multi-flow bar; never claim wet-lab validation, scale-up manufacturing control, or regulatory filing authority; not authors’ brand |
 | 121 | Dhodh Screen Studio | 67 | B | Compare structure-based PfDHODH virtual screening against naive library baselines before locking a screen pack | Early signal with antimalarial discovery / computational chemistry leads who already trial screen soft-sims | Antimalarial discovery and computational chemistry engineering leads | Bench seats + private screen packs (method-lab experiment) | Structure-based DHODH screening is underserved vs naive library dumps without honesty | Structure-based DHODH VS vs naive library baseline | Paper computational claim (structure-based VS for parasite-selective PfDHODH inhibitors); no public code; soft-sim honesty required; 13 pages; dual scorers; 30 goldens; build + app-up green | complete | biz-rubric-v1 | Prefer screen soft-sim with multi-flow bar; never claim wet-lab validation, clinical antimalarial advice, IND/NDA readiness, or live compound procurement; not authors’ brand |
-| 122 | Map Anchor Studio | 66 | B | Compare mucus-anchoring MAP antibody conjugates against conventional monoclonal antibodies before locking a conjugate pack | Early signal with antiviral antibody / mucosal-delivery analytics leads who already trial conjugate soft-sims | Antiviral antibody and mucosal-delivery analytics engineering leads | Bench seats + private conjugate packs (method-lab experiment) | MAP-anchored antiviral antibody planning is underserved vs conventional mAb dumps without honesty | mAb-MAP conjugate vs conventional mAb | Paper biologics claim (MAP–antibody conjugates to enhance antiviral efficacy); no public code; soft-sim honesty required | building | biz-rubric-v1 | Prefer conjugate soft-sim with multi-flow bar; never claim wet-lab validation, clinical antiviral advice, IND/NDA readiness, or live patient dosing; not authors’ brand |
+| 122 | Map Anchor Studio | 32 | Kill | Compare mucus-anchoring antibody conjugates vs conventional mAbs before locking a conjugate pack | None for method-lab SaaS — wet-lab biologics path | Antiviral biologics analytics (hypothetical) | None credible without wet-lab partnership | Wrong category for software-only lab | n/a — killed | ChemRxiv MAP conjugate paper; no public code | killed | biz-rubric-v2 | Kill: not software-solvable (wet-lab biologics). Human steer 2026-07-26. |
+| 123 | Rubric Compiler Studio | 77 | B | Compile locked rubrics into evidence-anchored scores with calibration and selective escalation | Early signal with platform/eval leads already buying LLM judges and benches | Platform / eval engineering leads; L&D and QA scoring owners | Team seats + per-score-run / private rubric packs | Scoring quality is the product; domain skins later | Compile + evidence + calibration + selective trust vs holistic chat judges | RULERS / Autorubric / PReMISE research cluster; idea-first | parked | biz-rubric-v2 | Active research idea (framed). Prefer climb after PM-GO + depth ticks; software-solvable A/B pattern |
 
 ## Tier counts
 
@@ -136,7 +137,7 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | A | 0 |
 | B | 110 |
 | C | 12 |
-| Kill | 0 |
+| Kill | 1 |
 
 ## Rules
 

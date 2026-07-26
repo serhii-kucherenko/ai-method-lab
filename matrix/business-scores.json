@@ -1,6 +1,6 @@
 {
-  "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T03:04:15.544Z",
+  "rubric_version": "biz-rubric-v2",
+  "updated_at": "2026-07-26T08:48:10.108Z",
   "projects": [
     {
       "id": 1,
@@ -2772,29 +2772,57 @@
     {
       "slug": "map-anchor-studio",
       "project": "Map Anchor Studio",
-      "status": "building",
-      "business_idea": "Compare mucus-anchoring MAP antibody conjugates against conventional monoclonal antibodies before locking a conjugate pack",
-      "pmf": "Early signal with antiviral antibody / mucosal-delivery analytics leads who already trial conjugate soft-sims",
-      "buyer": "Antiviral antibody and mucosal-delivery analytics engineering leads",
-      "money_hook": "Bench seats + private conjugate packs (method-lab experiment)",
-      "potential": "MAP-anchored antiviral antibody planning is underserved vs conventional mAb dumps without honesty",
-      "moat": "mAb-MAP conjugate vs conventional mAb",
-      "evidence": "Paper biologics claim (MAP–antibody conjugates to enhance antiviral efficacy); no public code; soft-sim honesty required",
-      "gc_notes": "Prefer conjugate soft-sim with multi-flow bar; never claim wet-lab validation, clinical antiviral advice, IND/NDA readiness, or live patient dosing; not authors’ brand",
+      "status": "killed",
+      "business_idea": "Compare mucus-anchoring antibody conjugates vs conventional mAbs before locking a conjugate pack",
+      "pmf": "None for method-lab SaaS — wet-lab biologics path",
+      "buyer": "Antiviral biologics analytics (hypothetical)",
+      "money_hook": "None credible without wet-lab partnership",
+      "potential": "Wrong category for software-only lab",
+      "moat": "n/a — killed",
+      "evidence": "ChemRxiv MAP conjugate paper; no public code",
+      "gc_notes": "Kill: not software-solvable (wet-lab biologics). Human steer 2026-07-26.",
       "dimensions": {
-        "buyer": 7,
-        "pain": 7,
-        "pmf": 6,
-        "money": 6,
-        "wedge": 7,
-        "moat": 7,
-        "evidence": 6,
-        "feasibility": 7
+        "buyer": 4,
+        "pain": 3,
+        "pmf": 2,
+        "money": 2,
+        "wedge": 3,
+        "moat": 4,
+        "evidence": 3,
+        "feasibility": 5
       },
-      "score": 66,
+      "score": 32,
+      "tier": "Kill",
+      "rubric": "biz-rubric-v2",
+      "id": 122,
+      "hard_kill": true
+    },
+    {
+      "slug": "rubric-compiler-studio",
+      "project": "Rubric Compiler Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 8,
+        "pmf": 7,
+        "money": 7,
+        "wedge": 8,
+        "moat": 7,
+        "evidence": 8,
+        "feasibility": 9
+      },
+      "business_idea": "Compile locked rubrics into evidence-anchored scores with calibration and selective escalation",
+      "pmf": "Early signal with platform/eval leads already buying LLM judges and benches",
+      "buyer": "Platform / eval engineering leads; L&D and QA scoring owners",
+      "money_hook": "Team seats + per-score-run / private rubric packs",
+      "potential": "Scoring quality is the product; domain skins later",
+      "moat": "Compile + evidence + calibration + selective trust vs holistic chat judges",
+      "evidence": "RULERS / Autorubric / PReMISE research cluster; idea-first",
+      "status": "parked",
+      "rubric": "biz-rubric-v2",
+      "gc_notes": "Active research idea (framed). Prefer climb after PM-GO + depth ticks; software-solvable A/B pattern",
+      "score": 77,
       "tier": "B",
-      "rubric": "biz-rubric-v1",
-      "id": 122
+      "id": 123
     }
   ]
 }

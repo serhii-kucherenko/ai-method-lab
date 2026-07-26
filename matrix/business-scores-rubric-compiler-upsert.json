@@ -1,0 +1,24 @@
+{
+  "slug": "rubric-compiler-studio",
+  "project": "Rubric Compiler Studio",
+  "dimensions": {
+    "buyer": 8,
+    "pain": 8,
+    "pmf": 7,
+    "money": 7,
+    "wedge": 8,
+    "moat": 7,
+    "evidence": 8,
+    "feasibility": 9
+  },
+  "business_idea": "Compile locked rubrics into evidence-anchored scores with calibration and selective escalation",
+  "pmf": "Early signal with platform/eval leads already buying LLM judges and benches",
+  "buyer": "Platform / eval engineering leads; L&D and QA scoring owners",
+  "money_hook": "Team seats + per-score-run / private rubric packs",
+  "potential": "Scoring quality is the product; domain skins later",
+  "moat": "Compile + evidence + calibration + selective trust vs holistic chat judges",
+  "evidence": "RULERS / Autorubric / PReMISE research cluster; idea-first",
+  "status": "parked",
+  "rubric": "biz-rubric-v2",
+  "gc_notes": "Active research idea (framed). Prefer climb after PM-GO + depth ticks; software-solvable A/B pattern"
+}

@@ -8,8 +8,9 @@ If `matrix/CONTROLLER.json` says `paused` / `hard_stop`, **do not** pick papers 
 
 When **not** paused:
 
-- Read `protocols/AUTONOMOUS_CONTROLLER.md`, `docs/PAPERS_INTAKE.md`, `docs/COMPREHENSIVE_PRODUCT.md`, `docs/DEPTH_RESTART.md` first
-- Papers are **research input** — never same-tick pick→smoke→sustain
+- Read `protocols/AUTONOMOUS_CONTROLLER.md`, `docs/PAPERS_INTAKE.md`, `docs/COMPREHENSIVE_PRODUCT.md`, `docs/DEPTH_RESTART.md`, `docs/BUSINESS_RUBRIC.md` first
+- **Business ideas first:** only problems **software engineering can fix** (SaaS / tooling / benches / ops). Ban devices, healthcare carepaths, wet-lab biologics, and retail/consumer novelty soft-sims (`biz-rubric-v2`)
+- Papers are **optional research input** — never same-tick pick→smoke→sustain; never climb a paper that fails the software-solvable gate
 - Roles: researcher → product manager → senior architect → **product designer** → product delivery → best-practices tutor
 - Require **PM go + Vision/Roadmap/PRD/ERD/blueprint + DESIGN** before `projects/<slug>/`
 - Stack: **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); Python sidecar when the claim needs it
@@ -26,15 +27,15 @@ Wake prompt (also in `docs/AUTOMATION.md`):
 ```text
 You are the AI Method Lab controller.
 Read CONTROLLER.json first. If paused, stop.
-If running: one comprehensive product only — buyer story, selling points, designer pack, then build.
-Never isomorphic desk clones. Never pick→smoke same tick.
+If running: one comprehensive product only — software-solvable business idea, buyer story, selling points, designer pack, then build.
+Never devices / clinical carepaths / wet-lab / retail novelty. Never isomorphic desk clones. Never pick→smoke same tick.
 Mature names. ≥25 real features. `/pricing` + `/demo` + `/onboarding` + ≥5 user flows + platform must-haves. Live app smoke before finish email.
 Commit push merge. Notify only if enabled.
 ```
 
 ## What to optimize for
 
-Evidence that the workflow can produce **one sophisticated product a stranger would recognize as a product** — not a high count of template desks.
+Evidence that the workflow can produce **one sophisticated software product a stranger would pay for** — not a high count of paper soft-sims or template desks.
 
 ## Hard constraints
 

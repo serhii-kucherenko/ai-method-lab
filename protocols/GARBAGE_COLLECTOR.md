@@ -58,6 +58,7 @@ Extend JSON with extra keys anytime; regenerator prints known columns and folds 
 3. Finish-in-flight products may complete even if re-scored C — but **do not start** the next C/Kill
 4. Every rubric bump needs a changelog entry
 5. Finish emails’ business TLDR must match the scorecard row (`protocols/NOTIFY.md`)
+6. **biz-rubric-v2+:** abort climbs that fail the software-solvable gate (devices, clinical carepaths, wet-lab, retail novelty)
 
 ## Pointers
 

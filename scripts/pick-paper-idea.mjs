@@ -28,6 +28,13 @@ const WET_ONLY = new Set(["healthcare", "biotech", "public-health"]);
 const FPD_BLOCK =
   /late[- ]?(file|pay)|tax addition|filing penalty|6651|assessable payment|4980h|esrp/i;
 
+/** Hard refuse: not software-solvable business (biz-rubric-v2). */
+const NON_SOFTWARE_BLOCK =
+  /\b(medical device|fda|cds clearance|emr write[- ]?back|live or\b|wet[- ]?lab|biologics?|monoclonal|mucosal|conjugate pack|patholog|cardiolog|neonatal|eeg|ecg|cxr|pacs|retrosynthesis|qsar|proteomics|itinerary|packing list|retail shopper|point[- ]of[- ]sale)\b/i;
+
+const PREFER_SOFTWARE =
+  /\b(finops|prompt cache|llm cost|agent safety|eval bench|rubric|scoring|toolchain|compiler|ot\/ics|plc|ladder logic|compliance|penalty|ops console|developer tools?)\b/i;
+
 function parseArgs(argv) {
   const out = { days: 14, writeShortlist: false, choose: 0, json: false };
   for (let i = 2; i < argv.length; i++) {
@@ -91,11 +98,10 @@ function hasCsCategory(categories) {
 
 function isEligible(paper) {
   const tags = tagsOf(paper);
-  const blob = `${paper.title || ""} ${paper.summary || ""} ${paper.abstract || ""}`;
+  const blob = `${paper.title || ""} ${paper.summary || ""} ${paper.abstract || ""} ${paper?.impact?.forTech || ""}`;
   if (FPD_BLOCK.test(blob)) return false;
-  if (!paper?.code?.url && tags.length && tags.every((t) => WET_ONLY.has(t))) {
-    return false;
-  }
+  if (NON_SOFTWARE_BLOCK.test(blob)) return false;
+  if (tags.some((t) => WET_ONLY.has(String(t)))) return false;
   if (paper?.code?.url) return true;
   const soft = tags.some((t) => SOFTWARE_TAGS.has(t));
   const cs = hasCsCategory(paper.categories);
@@ -108,10 +114,12 @@ function isEligible(paper) {
 function scorePaper(paper, cutoff) {
   let score = 0;
   const tags = tagsOf(paper);
+  const blob = `${paper.title || ""} ${paper.summary || ""} ${paper?.impact?.forTech || ""}`;
   if (paper?.code?.url) score += 3;
   if (tags.some((t) => ["developer-tools", "systems", "security"].includes(t))) {
     score += 2;
   }
+  if (PREFER_SOFTWARE.test(blob)) score += 2;
   if (typeof paper.relevanceScore === "number" && paper.relevanceScore >= cutoff) {
     score += 1;
   }

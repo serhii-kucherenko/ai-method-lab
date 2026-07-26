@@ -1,30 +1,18 @@
 # Research log
 
-Papers-driven lab. No freehand product farms.
+Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
-## 2026-07-24 � Data World Studio finished; Neuro Guard Studio started
+## 2026-07-26 — Pivot: business ideas, not devices / healthcare / retail soft-sims
 
-Data World Studio sustain-green (`1af8fbe`); finish email sent (`2f6f779f`). Next unused score-2 pick: **Neuro Guard Studio** from paper `2607.09076` (neuro-agentic IIoT defense + counterfactual physics; no public code). PM + design pack written; climb next.
+**Human steer:** stop climbing paper soft-sims that software cannot productize (devices, clinical carepaths, wet-lab biologics, retail/consumer novelty). Work on **business ideas software engineering can fix**.
 
-## 2026-07-24 � Ladder Bomb Studio finished; Data World Studio started
+**Actions:**
+- Bumped `docs/BUSINESS_RUBRIC.md` → **biz-rubric-v2** (hard fails for non-software + retail novelty)
+- Hardened `scripts/pick-paper-idea.mjs` refuse list
+- **Killed** Map Anchor Studio mid-climb
+- Seeded **Rubric Compiler Studio** (idea-first from scoring queue below)
 
-Ladder Bomb Studio sustain-green (`d8697bb`); finish email sent (`eaeaf4b8`). Next unused score-2 pick: **Data World Studio** from paper `2607.15901` (DSWorld � predict DS op outcomes before execute; no public code). PM + design pack written; climb next.
-
-## 2026-07-24 � Agent Safety Studio finished; Ladder Bomb Studio started
-
-Agent Safety Studio sustain-green (`96ac164`); finish email sent (`d6ce727e`). Next unused score-3 pick: **Ladder Bomb Studio** from paper `2607.08417` (formal LLB detection / trigger synthesis; no public code). PM + design pack written; idea email sent (`a1f6038b`); climb in flight.
-
-## 2026-07-23 — Papers-driven reset
-
-Removed all product trees except **Filing Penalty Desk**. Wiped historical `docs/ideas/*` kits. Intake is **simple-papers** → pick implementable paper → build same tick. Human email only on validated idea and finished product. Hours / ready-to-build holds retired for paper-sourced work.
-
-**First pick:** **Model Compiler Desk** (`model-compiler-desk`) from paper `2607.15865` (MLIR compilation for LLMs, public code). Smoke green. Idea-validated email sent (`c9728f6e`). Filing Penalty Desk finish re-email hit Resend Unauthorized — retry next tick.
-
-**Skeptical one-liner:** A thinner portfolio only helps if the picker actually refuses non-software papers.
-
-## 2026-07-23 � Model Compiler Desk finished; Graph Retrieval Desk started
-
-Model Compiler Desk sustain GREEN (33 tests, 9 pages, 18 features). Finish letter emailed (plain narrative). Filing Penalty Desk finish letter resent. Next pick: **Graph Retrieval Desk** from paper 2607.11683 (multi-step graph retrieval, public code). Smoke green; idea email sent.
+**Skeptical one-liner:** A rubric studio only wins if the money story is seats+usage for eval leads — not another noun-swapped soft-sim desk.
 
 ## 2026-07-26 — Focus: good scoring & good rubrics
 
@@ -57,26 +45,9 @@ Model Compiler Desk sustain GREEN (33 tests, 9 pages, 18 features). Finish lette
 | 9 | [JudgmentBench](https://arxiv.org/abs/2605.25240) | Head-to-head: **rubric vs preference** evaluation for quality assessment |
 | 10 | [RubricEval](https://arxiv.org/abs/2603.25133) | Meta-eval at **criterion level** — did the judge get each rubric item right? |
 
-### Strong adjacent (scoring craft)
+### Product implication
 
-- [Prometheus](https://arxiv.org/abs/2310.08491) — open fine-grained rubric judges
-- [LLM-Rubric](https://arxiv.org/abs/2501.00274) — multidimensional + calibrated NLP evaluation
-- [Am I More Pointwise or Pairwise?](https://arxiv.org/abs/2602.02219) — position bias in rubric judging
-- [Rethinking Rubric Generation](https://arxiv.org/abs/2602.05125) — better rubrics improve both judges and rewards
-- [Designing Reliable LLM-Assisted Rubric Scoring](https://arxiv.org/abs/2604.12227) — practice pattern for constructed-response scoring
-
-### Product implication (research only)
-
-If we later build a scoring product, the core is a **Rubric Studio**: author → lock/compile → score with evidence → calibrate → audit reliability/validity → escalate when unsure. Domain (hiring, education, clinical) is a skin on that kernel — not the product.
-
-Prior recruiting shortlist remains below for buyer wedges; **method priority is this section**.
-
-
-## 2026-07-26 — Earlier screen note (recruiting apps; deprioritized)
-
-Initial ask mixed recruiters + adjacent. Full screen stats: **1,944** unique / **686** people-scoring relevant. Recruiting apps (Beyond the Resumé, CoMAI, FAIRE, person–job rankers, hiring fairness surveys) remain useful **buyer wedges**, but the steer is now **scoring/rubric quality** (section above).
-
-### simple-papers handoff
+**Rubric Compiler Studio** is the active idea: author → lock/compile → score with evidence → calibrate → audit reliability/validity → escalate when unsure. Domain (hiring, education, support) is a skin — not the product. Clinical/device skins are **out of scope**.
 
 Private `simple-papers` was not writable from this agent. Seeded an import package:
 

@@ -1,0 +1,25 @@
+{
+  "slug": "map-anchor-studio",
+  "project": "Map Anchor Studio",
+  "hard_kill": true,
+  "dimensions": {
+    "buyer": 4,
+    "pain": 3,
+    "pmf": 2,
+    "money": 2,
+    "wedge": 3,
+    "moat": 4,
+    "evidence": 3,
+    "feasibility": 5
+  },
+  "business_idea": "Compare mucus-anchoring antibody conjugates vs conventional mAbs before locking a conjugate pack",
+  "pmf": "None for method-lab SaaS — wet-lab biologics path",
+  "buyer": "Antiviral biologics analytics (hypothetical)",
+  "money_hook": "None credible without wet-lab partnership",
+  "potential": "Wrong category for software-only lab",
+  "moat": "n/a — killed",
+  "evidence": "ChemRxiv MAP conjugate paper; no public code",
+  "status": "killed",
+  "rubric": "biz-rubric-v2",
+  "gc_notes": "Kill: not software-solvable (wet-lab biologics). Human steer 2026-07-26."
+}

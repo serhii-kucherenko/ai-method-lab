@@ -1,39 +1,37 @@
 # Experiment backlog
 
-## Strategy (papers-driven)
+## Strategy (business-first, software-solvable)
 
-Fully autonomous. **simple-papers** digests feed the picker. A validated paper opens `projects/<slug>/` the same tick. Human is emailed only for **validated idea** and **finished product**.
+Fully autonomous. **Idea quality first** under `docs/BUSINESS_RUBRIC.md` (**biz-rubric-v2**). Papers may feed research; they do **not** entitle a climb unless software engineering can fix the buyer’s job.
 
-See `docs/PAPERS_INTAKE.md`, `docs/DEPTH_RESTART.md` (Correction 7).
+**Refuse:** medical devices, clinical carepaths, wet-lab biologics, retail/consumer novelty soft-sims.
+
+See `docs/PAPERS_INTAKE.md`, `docs/DEPTH_RESTART.md`, `docs/BUSINESS_RUBRIC.md`.
 
 ## Active
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| 1 | **Graph Retrieval Desk** (`graph-retrieval-desk`) | **smoke green → climb** | Paper 2607.11683; pick→build |
-| 1 | **Model Compiler Desk** (`model-compiler-desk`) | **sustained — findings emailed** | 33 tests; 9 pages; 18 features |
-| 1 | **Filing Penalty Desk** (`filing-penalty-desk`) | **sustained** | Reference product; finish letter resent |
+| 1 | **Rubric Compiler Studio** (`rubric-compiler-studio`) | **framed — research** | Idea-first from scoring queue; depth pack next; no `projects/` until PM-GO + A/B |
+| — | **Map Anchor Studio** (`map-anchor-studio`) | **killed** | Wet-lab biologics — not software-solvable |
+| ref | **Filing Penalty Desk** (`filing-penalty-desk`) | **sustained** | Reference literal-dollar software product |
+
+## Prefer next (A/B patterns)
+
+| Priority | Idea seed | Why |
+| --- | --- | --- |
+| R1 | Rubric compiler + evidence-anchored scoring | Software method is the product |
+| R1 | Autorubric-style judge stack (ensembles, calibration, bias) | Production scoring recipe |
+| R1 | FinOps / prompt-cache style cost consoles | Existing bill = acute pain |
+| R2 | Agent safety / trust-eval benches | Platform budgets |
+| R2 | OT/ICS software claims (ladder / neuro-guard family) | Niche, paid |
+| R2 | Literal-dollar compliance (Filing Penalty pattern) | Buyer feels $ |
 
 ## Explicitly retired
 
+- Paper→wet-lab / clinical / device soft-sim conveyor
 - Freehand statute-code / glue-noun product farms
-- Multi-hour research holds and `ready_to_build` waits for paper-sourced ideas
-- Historical `docs/ideas/*` kits (wiped 2026-07-23; git history retains)
+- Consumer packing / itinerary / retail novelty without B2B money
+- Multi-hour pick→clone→email loops
 
-## Research queue — good scoring / rubrics (2026-07-26)
-
-Steer: **scoring quality & rubrics**, not hiring apps. Screen: 1,944 → 162 method-strong → top 10 in `docs/RESEARCH.md`.
-
-| Priority | Idea seed | State | Notes |
-| --- | --- | --- | --- |
-| R1 | Rubric compiler + evidence-anchored scoring (RULERS) | research-parked | Kernel of any scoring product |
-| R1 | Autorubric-style judge stack (ensembles, calibration, bias guards) | research-parked | Production scoring recipe |
-| R1 | Policy rubrics as measurement specs (PReMISE) | research-parked | Stops vague criteria |
-| R1 | Selective trust/escalate with human-agreement guarantees | research-parked | High-stakes gate |
-| R2 | IRT / psychometric reliability diagnostics for judges | research-parked | Reliability + validity, not just agreement |
-| R2 | Scoring-bias audit harness (order, IDs, references, position) | research-parked | Hardens scorecards |
-| R2 | Criterion-level meta-eval (RubricEval / JudgmentBench) | research-parked | Did each rubric item get judged right? |
-
-Do **not** promote into `projects/` while another product is in flight.
-
-Handoff: `docs/ideas/_paper-picks/SIMPLE_PAPERS_HANDOFF.md` + `digests/2026-07-26.json`.
+Do **not** open `projects/` while depth + PM-GO incomplete.

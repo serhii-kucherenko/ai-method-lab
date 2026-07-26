@@ -1,5 +1,20 @@
 # Business rubric changelog
 
+## biz-rubric-v2 — 2026-07-26
+
+**Why:** Human steer — work on **business ideas software engineering can fix**, not devices, healthcare carepaths, wet-lab biologics, or retail/consumer novelty soft-sims.
+
+**Added hard fails:**
+- Not software-solvable (devices, live clinical, wet-lab/biologics, EMR write-back, FDA/CDS, physical retail-only)
+- Consumer / retail novelty without B2B money path
+- Paper as costume for a domain the lab cannot productize as software
+
+**Prefer list locked:** literal-dollar compliance, FinOps/LLM cost, trust/eval, OT/ICS software, ML/dev infra, rubric/scoring quality.
+
+**Immediate kill:** Map Anchor Studio (mAb–MAP conjugate biologics soft-sim) — wrong category mid-climb.
+
+**Prior scores:** historical rows stay labeled `biz-rubric-v1`; new picks and re-scores use v2.
+
 ## biz-rubric-v1 — 2026-07-25
 
 **Why:** Human steer — finish-only email with business TLDR; need a garbage collector to clean bad paper→studio ideas and keep improving the scoring rubric.
