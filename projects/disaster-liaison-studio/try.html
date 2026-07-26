@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Disaster Liaison Studio — offline try</title>
+  <style>
+    :root {
+      --ink: #13171b;
+      --teal: #1a5f6a;
+      --ash: #eef1f2;
+      --amber: #a87830;
+      --line: #c5cacd;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--ash);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    header {
+      background: linear-gradient(165deg, #0a0e10, #1a2628);
+      color: #fff;
+      padding: 2rem 1.25rem 2.5rem;
+    }
+    h1 { margin: 0; font-size: 1.75rem; color: var(--amber); }
+    .tag { margin-top: 0.5rem; opacity: 0.9; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.85rem; }
+    input[type="range"] { width: 100%; }
+    button {
+      margin-top: 1.25rem;
+      background: var(--teal);
+      color: #fff;
+      border: 0;
+      padding: 0.65rem 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+    }
+    .note { font-size: 0.8rem; color: #556066; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Disaster Liaison Studio</h1>
+    <p class="tag">Offline soft-sim — pediatric-perinatal liaison vs generic HQ (approximate)</p>
+  </header>
+  <main>
+    <p>Adjust soft-sim indices and see which coordination pathway wins.</p>
+    <label>Liaison coverage <span id="lcv"></span></label>
+    <input id="liaisonCoverage" type="range" min="0" max="100" value="70" />
+    <label>Handoff latency (worse↑) <span id="hlv"></span></label>
+    <input id="handoffLatency" type="range" min="0" max="100" value="32" />
+    <label>Perinatal risk (worse↑) <span id="prv"></span></label>
+    <input id="perinatalRisk" type="range" min="0" max="100" value="22" />
+    <label>Surge pressure (worse↑) <span id="spv"></span></label>
+    <input id="surgePressure" type="range" min="0" max="100" value="40" />
+    <button type="button" id="run">Score pathways</button>
+    <div class="out" id="out">Press score to compare.</div>
+    <p class="note">
+      Soft-sim only — not live emergency dispatch, not clinical triage authority,
+      not government command. Full fidelity needs the Next.js app locally.
+    </p>
+  </main>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function val(id) { return Number(document.getElementById(id).value) / 100; }
+    function sync() {
+      document.getElementById("lcv").textContent = val("liaisonCoverage").toFixed(2);
+      document.getElementById("hlv").textContent = val("handoffLatency").toFixed(2);
+      document.getElementById("prv").textContent = val("perinatalRisk").toFixed(2);
+      document.getElementById("spv").textContent = val("surgePressure").toFixed(2);
+    }
+    ["liaisonCoverage", "handoffLatency", "perinatalRisk", "surgePressure"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", sync);
+    });
+    sync();
+    function approxLiaison(cov, lat, risk, surge) {
+      return round2(clamp(cov * 55 + (1 - lat) * 25 + (1 - risk) * 15 - surge * 10 + 8, 0, 100));
+    }
+    function approxHq(cov, lat, risk, surge) {
+      return round2(clamp((1 - surge) * 40 + (1 - lat) * 25 + (1 - risk) * 20 - cov * 8 + 5, 0, 100));
+    }
+    document.getElementById("run").addEventListener("click", () => {
+      const cov = val("liaisonCoverage");
+      const lat = val("handoffLatency");
+      const risk = val("perinatalRisk");
+      const surge = val("surgePressure");
+      const a = approxLiaison(cov, lat, risk, surge);
+      const b = approxHq(cov, lat, risk, surge);
+      let winner = "tie";
+      if (a > b + 0.5) winner = "pediatric_perinatal_liaison";
+      else if (b > a + 0.5) winner = "generic_disaster_hq";
+      document.getElementById("out").innerHTML =
+        "<strong>Winner:</strong> " + winner +
+        "<br/>Liaison ≈ " + a +
+        "<br/>Generic HQ ≈ " + b +
+        "<br/>Gap ≈ " + round2(Math.abs(a - b));
+    });
+  </script>
+</body>
+</html>

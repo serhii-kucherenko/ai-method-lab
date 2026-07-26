@@ -1,0 +1,39 @@
+{
+  "id": "dl-019",
+  "input": {
+    "pediatricLoad": 0.3,
+    "perinatalRisk": 0.31,
+    "liaisonCoverage": 0.72,
+    "handoffLatency": 0.3,
+    "hqCoordination": 0.72,
+    "surgePressure": 0.28,
+    "assaySignal": 0.72,
+    "overclaimRisk": 0.28,
+    "liaisonBias": "balanced",
+    "profile": "pediatric_perinatal_liaison"
+  },
+  "expectedPediatric": {
+    "mode": "pediatric_perinatal_liaison",
+    "specialtyScore": 75.92,
+    "coverageScore": 76.62,
+    "handoffScore": 77.22,
+    "surgeScore": 65.39,
+    "hqPenalty": 20.37,
+    "confidence": 47.96,
+    "liaisonContribution": 77.1,
+    "hqContribution": 62.39,
+    "overall": 78.45
+  },
+  "expectedGenericHq": {
+    "mode": "generic_disaster_hq",
+    "specialtyScore": 52.1,
+    "coverageScore": 54.93,
+    "handoffScore": 42.44,
+    "surgeScore": 40.93,
+    "hqPenalty": 3.02,
+    "confidence": 46.9,
+    "liaisonContribution": 57.48,
+    "hqContribution": 49.27,
+    "overall": 45.2
+  }
+}

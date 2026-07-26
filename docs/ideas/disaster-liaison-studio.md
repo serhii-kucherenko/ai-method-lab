@@ -1,6 +1,6 @@
 # Disaster Liaison Studio
 
-**State:** ready_to_build  
+**State:** sustained  
 **Slug:** `disaster-liaison-studio`  
 **Paper:** https://doi.org/10.1111/ped.70488  
 **Authors’ code:** none  
@@ -16,3 +16,6 @@ A system-level analysis of Japan’s Disaster Liaison for Pediatric and Perinata
 
 ## Business score (pre-climb)
 Tier B candidate: emergency-ops analytics buyer + response packs; moat is pediatric-perinatal liaison vs generic disaster HQ.
+
+## Sustain
+Product at `projects/disaster-liaison-studio`. Cell `A03__P-sustain-001__disaster-liaison-studio__r1`. Guide `docs/guides/141-disaster-liaison-studio-lessons.md`.
