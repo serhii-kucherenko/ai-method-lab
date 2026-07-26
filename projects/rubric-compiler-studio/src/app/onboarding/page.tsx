@@ -1,0 +1,1 @@
+import { StaticPage } from '@/components/workspace-page'; export default function Page(){return <StaticPage title='Onboarding' body='1. Name your organization. 2. Create a rubric pack. 3. Lock criteria. 4. Run a calibration case. 5. Review an escalation.'/>}

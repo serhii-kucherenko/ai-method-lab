@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v2",
-  "updated_at": "2026-07-26T08:48:10.108Z",
+  "updated_at": "2026-07-26T13:16:26.856Z",
   "projects": [
     {
       "id": 1,
@@ -2811,15 +2811,15 @@
         "feasibility": 9
       },
       "business_idea": "Compile locked rubrics into evidence-anchored scores with calibration and selective escalation",
-      "pmf": "Early signal with platform/eval leads already buying LLM judges and benches",
-      "buyer": "Platform / eval engineering leads; L&D and QA scoring owners",
-      "money_hook": "Team seats + per-score-run / private rubric packs",
-      "potential": "Scoring quality is the product; domain skins later",
-      "moat": "Compile + evidence + calibration + selective trust vs holistic chat judges",
-      "evidence": "RULERS / Autorubric / PReMISE research cluster; idea-first",
-      "status": "parked",
+      "pmf": "Evaluation and QA teams already buy scoring tools and need auditable quality gates",
+      "buyer": "Platform, evaluation, QA, and learning operations leads",
+      "money_hook": "Team seats, score-run usage, and private rubric libraries",
+      "potential": "Strong wedge into governed AI evaluation workflows",
+      "moat": "Locked measurement specs, evidence anchors, calibration, and selective trust",
+      "evidence": "Method synthesis informed by three scoring research seeds",
+      "status": "complete",
       "rubric": "biz-rubric-v2",
-      "gc_notes": "Active research idea (framed). Prefer climb after PM-GO + depth ticks; software-solvable A/B pattern",
+      "gc_notes": "Tier B: strong software wedge; validate willingness to pay against established evaluation platforms",
       "score": 77,
       "tier": "B",
       "id": 123

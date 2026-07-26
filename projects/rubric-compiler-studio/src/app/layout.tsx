@@ -1,0 +1,2 @@
+import { Fraunces, Source_Sans_3 } from "next/font/google"; import type { Metadata } from "next"; import "./globals.css";
+const display=Fraunces({subsets:["latin"],variable:"--font-display"}); const sans=Source_Sans_3({subsets:["latin"],variable:"--font-sans"}); export const metadata:Metadata={title:"Rubric Compiler Studio",description:"Lock the rubric. Score with evidence."}; export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en" className={`${display.variable} ${sans.variable}`}><body>{children}</body></html>}

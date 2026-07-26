@@ -1,0 +1,1 @@
+import { StaticPage } from '@/components/workspace-page'; export default function Page(){return <StaticPage title='Flows' body='Five sophisticated journeys: compile a release gate; calibrate against human ratings; investigate a low-trust case; compare compiled vs holistic scoring; govern access and export audits.'/>}

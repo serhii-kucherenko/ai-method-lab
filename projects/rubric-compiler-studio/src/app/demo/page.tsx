@@ -1,0 +1,1 @@
+import { StaticPage } from '@/components/workspace-page'; export default function Page(){return <StaticPage title='Demo' body='Walk through a pack ? locked criteria ? evidence-backed run ? calibration fit ? low-trust escalation ? A/B comparison.'/>}
