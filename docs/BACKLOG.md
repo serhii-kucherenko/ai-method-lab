@@ -20,20 +20,20 @@ See `docs/PAPERS_INTAKE.md`, `docs/DEPTH_RESTART.md` (Correction 7).
 - Multi-hour research holds and `ready_to_build` waits for paper-sourced ideas
 - Historical `docs/ideas/*` kits (wiped 2026-07-23; git history retains)
 
+## Research queue — good scoring / rubrics (2026-07-26)
 
-## Research queue — people / rubric scoring (2026-07-26)
-
-Screened **1,944** arXiv papers → **686** relevant → **top 10** in `docs/RESEARCH.md`.
+Steer: **scoring quality & rubrics**, not hiring apps. Screen: 1,944 → 162 method-strong → top 10 in `docs/RESEARCH.md`.
 
 | Priority | Idea seed | State | Notes |
 | --- | --- | --- | --- |
-| R1 | Executable rubric compiler + evidence-anchored scores (RULERS pattern) | research-parked | Cross-domain kernel; not a desk clone |
-| R1 | Rubric-belief interview elicitation for early hiring (Beyond the Resumé) | research-parked | Recruiter buyer; has public code |
-| R1 | Selective “trust or escalate” layer with human-agreement guarantees | research-parked | Required for any people-score product |
-| R2 | Multi-agent interview scoring + injection defenses (CoMAI) | research-parked | Admissions→hiring port |
-| R2 | Resume scorer fairness audit harness (FAIRE + hiring fairness surveys) | research-parked | Compliance / audit wedge |
-| R2 | Calibrated long-context person–job re-ranker | research-parked | Screening scale problem |
+| R1 | Rubric compiler + evidence-anchored scoring (RULERS) | research-parked | Kernel of any scoring product |
+| R1 | Autorubric-style judge stack (ensembles, calibration, bias guards) | research-parked | Production scoring recipe |
+| R1 | Policy rubrics as measurement specs (PReMISE) | research-parked | Stops vague criteria |
+| R1 | Selective trust/escalate with human-agreement guarantees | research-parked | High-stakes gate |
+| R2 | IRT / psychometric reliability diagnostics for judges | research-parked | Reliability + validity, not just agreement |
+| R2 | Scoring-bias audit harness (order, IDs, references, position) | research-parked | Hardens scorecards |
+| R2 | Criterion-level meta-eval (RubricEval / JudgmentBench) | research-parked | Did each rubric item get judged right? |
 
-Do **not** promote these into `projects/` while another product is in flight. Research / backlog only.
+Do **not** promote into `projects/` while another product is in flight.
 
-Handoff package for simple-papers: `docs/ideas/_paper-picks/SIMPLE_PAPERS_HANDOFF.md` + `docs/ideas/_paper-picks/digests/2026-07-26.json`.
+Handoff: `docs/ideas/_paper-picks/SIMPLE_PAPERS_HANDOFF.md` + `digests/2026-07-26.json`.
