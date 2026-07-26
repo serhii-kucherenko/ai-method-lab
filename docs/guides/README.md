@@ -152,3 +152,4 @@ Papers-driven reset (Correction 7): new products also get a guide before the fin
 | 149 | [Abe Precision Studio - what we learned](149-abe-precision-studio-lessons.md) | Product `abe-precision-studio` |
 | 150 | [Tubule Mps Studio - what we learned](150-tubule-mps-studio-lessons.md) | Product `tubule-mps-studio` |
 | 151 | [Usher Dual Studio - what we learned](151-usher-dual-studio-lessons.md) | Product `usher-dual-studio` |
+| 152 | [Aminoaryl Studio - what we learned](152-aminoaryl-studio-lessons.md) | Product `aminoaryl-studio` |

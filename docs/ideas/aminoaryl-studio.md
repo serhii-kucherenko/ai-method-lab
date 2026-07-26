@@ -1,6 +1,6 @@
 # Aminoaryl Studio
 
-**State:** framed  
+**State:** complete  
 **Slug:** `aminoaryl-studio`  
 **Paper:** https://doi.org/10.26434/chemrxiv.15005923/v1  
 **Authors’ code:** none  

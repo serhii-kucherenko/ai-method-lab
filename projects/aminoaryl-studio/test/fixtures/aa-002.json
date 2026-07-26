@@ -1,0 +1,39 @@
+{
+  "id": "aa-002",
+  "input": {
+    "photoYield": 0.38,
+    "copperYield": 0.51,
+    "cyclopropaneStrain": 0.75,
+    "catalystFidelity": 0.38,
+    "evidenceStrength": 0.38,
+    "routeFollowThrough": 0.38,
+    "assayReadout": 0.38,
+    "overclaimRisk": 0.51,
+    "scoringBias": "assay_first",
+    "profile": "photocatalytic_aminoaryl"
+  },
+  "expectedPhoto": {
+    "mode": "photocatalytic_aminoaryl",
+    "photoYieldScore": 49.28,
+    "copperYieldScore": 30.04,
+    "catalystCoverage": 34.58,
+    "routeEfficiency": 59.41,
+    "strainPenalty": 50.16,
+    "confidence": 8.54,
+    "photoContribution": 47.49,
+    "copperContribution": 42.38,
+    "overall": 47.57
+  },
+  "expectedCopper": {
+    "mode": "copper_catalyzed_aminoaryl",
+    "photoYieldScore": 33.24,
+    "copperYieldScore": 61.6,
+    "catalystCoverage": 35.61,
+    "routeEfficiency": 50.67,
+    "strainPenalty": 17.58,
+    "confidence": 26.75,
+    "photoContribution": 52.71,
+    "copperContribution": 43.59,
+    "overall": 46.64
+  }
+}

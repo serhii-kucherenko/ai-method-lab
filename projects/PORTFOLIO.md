@@ -127,7 +127,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Abe Precision Studio** | `abe-precision-studio` | **Complete** | Domain-insertion ABE vs baseline ABE |
 | **Tubule Mps Studio** | `tubule-mps-studio` | **Complete** | Voclosporin MPS vs cyclosporine A |
 | **Usher Dual Studio** | `usher-dual-studio` | **Complete** | MYO7A supplementation vs Myo7b activation |
-| **Aminoaryl Studio** | `aminoaryl-studio` | **Building** | Photocatalytic vs copper-catalyzed aminoarylation |
+| **Aminoaryl Studio** | `aminoaryl-studio` | **Complete** | Photocatalytic vs copper-catalyzed aminoarylation |
 
 ## Rules
 

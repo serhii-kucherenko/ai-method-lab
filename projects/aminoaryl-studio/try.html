@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aminoaryl Studio — try</title>
+  <style>
+    :root {
+      --ink: #14181c;
+      --teal: #1a5c66;
+      --mist: #eef3f4;
+      --amber: #a67a30;
+      --line: #c5cbce;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--mist);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    header {
+      background: linear-gradient(165deg, #0a0d0f, #1a2426);
+      color: #fff;
+      padding: 2.5rem 1.5rem 2rem;
+    }
+    header h1 { margin: 0; font-size: 1.75rem; color: var(--amber); }
+    header p { margin: 0.75rem 0 0; max-width: 36rem; color: var(--mist); }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.85rem; }
+    input, select, button {
+      width: 100%;
+      margin-top: 0.25rem;
+      padding: 0.5rem 0.65rem;
+      border: 1px solid var(--line);
+      border-radius: 0.4rem;
+      font: inherit;
+    }
+    button {
+      margin-top: 1rem;
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .out {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 0.5rem;
+      white-space: pre-wrap;
+      font-size: 0.9rem;
+    }
+    footer {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: #556065;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aminoaryl Studio</h1>
+    <p>Light or copper. Compare the route — offline soft-sim of photocatalytic_aminoaryl vs copper_catalyzed_aminoaryl.</p>
+  </header>
+  <main>
+    <label>Photo yield <input id="photo" type="number" min="0" max="1" step="0.01" value="0.55" /></label>
+    <label>Copper yield <input id="copper" type="number" min="0" max="1" step="0.01" value="0.35" /></label>
+    <label>Cyclopropane strain <input id="strain" type="number" min="0" max="1" step="0.01" value="0.7" /></label>
+    <label>Assay readout <input id="readout" type="number" min="0" max="1" step="0.01" value="0.65" /></label>
+    <label>Bias
+      <select id="bias">
+        <option value="balanced">balanced</option>
+        <option value="photo_first">photo_first</option>
+        <option value="copper_first">copper_first</option>
+        <option value="assay_first">assay_first</option>
+      </select>
+    </label>
+    <button type="button" id="run">Run dual compare</button>
+    <div class="out" id="out">Results appear here.</div>
+  </main>
+  <footer>
+    Soft-sim only — not wet-lab validated, not scale-up manufacturing control, not regulatory filing authority. Not authors’ brand.
+  </footer>
+  <script>
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function round2(n) { return Math.round(n * 100) / 100; }
+    function biasWeight(bias, lane) {
+      if (bias === "balanced") return 1;
+      return bias === lane ? 1.35 : 0.55;
+    }
+    function routeBurden(copper, strain, over) {
+      return clamp(copper * 0.35 + strain * 0.25 + over * 0.4 - 0.06, 0, 1.5);
+    }
+    function scorePhoto(input) {
+      const boost = 1.12;
+      const wA = biasWeight(input.scoringBias, "photo_first");
+      const wS = biasWeight(input.scoringBias, "assay_first");
+      const wB = biasWeight(input.scoringBias, "copper_first");
+      const avgBias = (wA + wS + (2 - wB)) / 3;
+      const burden = routeBurden(input.copperYield, input.cyclopropaneStrain, input.overclaimRisk);
+      const photoYieldScore = round2(clamp(
+        (input.photoYield * 35 + input.evidenceStrength * 25 + input.assayReadout * 30 + input.routeFollowThrough * 10 - burden * 5) * boost * avgBias + 8 - input.overclaimRisk * 6 - (input.scoringBias === "copper_first" ? 12 : 0), 0, 100));
+      const copperYieldScore = round2(clamp(input.copperYield * 35 * 0.7 + input.catalystFidelity * 25 * wB + (1 - input.photoYield) * 20 + 4 - input.overclaimRisk * 8, 0, 100));
+      const catalystCoverage = round2(clamp(input.assayReadout * 40 * boost * wS + input.photoYield * 30 + input.routeFollowThrough * 15 + 8 - input.cyclopropaneStrain * 18 - (input.scoringBias === "copper_first" ? 8 : 0), 0, 100));
+      const routeEfficiency = round2(clamp(((1 - burden) * 40 + input.routeFollowThrough * 25 + input.catalystFidelity * 20) * boost * wS + 8 - input.overclaimRisk * 8, 0, 100));
+      const strainPenalty = round2(clamp((input.scoringBias === "copper_first" ? 40 : 18) * boost + input.cyclopropaneStrain * 28 + burden * 12 - input.photoYield * 12 + (1 - input.routeFollowThrough) * 12, 0, 100));
+      const photoContribution = round2(clamp(photoYieldScore * 0.32 + catalystCoverage * 0.28 + routeEfficiency * 0.22 + (100 - strainPenalty) * 0.18, 0, 100));
+      const copperContribution = round2(clamp(photoYieldScore * 0.35 + copperYieldScore * 0.35 + routeEfficiency * 0.2 + strainPenalty * 0.1 - input.photoYield * 6, 0, 100));
+      const overall = round2(clamp(photoContribution * 0.82 + copperContribution * 0.18 + 4 - (input.scoringBias === "copper_first" ? 3 : 0) - input.cyclopropaneStrain * 4, 0, 100));
+      return { mode: "photocatalytic_aminoaryl", overall, photoYieldScore, copperYieldScore };
+    }
+    function scoreCopper(input) {
+      const boost = 1.08;
+      const wB = biasWeight(input.scoringBias, "copper_first");
+      const wS = biasWeight(input.scoringBias, "assay_first");
+      const burden = routeBurden(input.copperYield, input.cyclopropaneStrain, input.overclaimRisk);
+      const photoYieldScore = round2(clamp((1 - input.copperYield) * 28 * boost + input.cyclopropaneStrain * 22 * boost + (wB + wS) * 5 - input.photoYield * 10 - input.overclaimRisk * 10 - (input.scoringBias === "photo_first" ? 8 : 0), 0, 100));
+      const copperYieldScore = round2(clamp(input.copperYield * 20 * boost + input.cyclopropaneStrain * 35 * boost * Math.max(wB, wS) + (1 - burden) * 15 + 8 - input.photoYield * 8, 0, 100));
+      const routeEfficiency = round2(clamp(input.cyclopropaneStrain * 35 * boost * Math.max(wB, wS) + input.assayReadout * 25 + 8 - burden * 10, 0, 100));
+      const photoContribution = round2(clamp(photoYieldScore * 0.2 + copperYieldScore * 0.2 + routeEfficiency * 0.2 + 40, 0, 100));
+      const copperContribution = round2(clamp(photoYieldScore * 0.45 + copperYieldScore * 0.35 + routeEfficiency * 0.2 - burden * 6, 0, 100));
+      const overall = round2(clamp(copperContribution * 0.78 + photoContribution * 0.22 - input.photoYield * 5 - input.overclaimRisk * 6 + input.cyclopropaneStrain * 8, 0, 100));
+      return { mode: "copper_catalyzed_aminoaryl", overall, photoYieldScore, copperYieldScore };
+    }
+    document.getElementById("run").onclick = () => {
+      const input = {
+        photoYield: Number(document.getElementById("photo").value),
+        copperYield: Number(document.getElementById("copper").value),
+        cyclopropaneStrain: Number(document.getElementById("strain").value),
+        catalystFidelity: 0.55,
+        evidenceStrength: 0.55,
+        routeFollowThrough: 0.55,
+        assayReadout: Number(document.getElementById("readout").value),
+        overclaimRisk: 0.3,
+        scoringBias: document.getElementById("bias").value,
+      };
+      const a = scorePhoto(input);
+      const b = scoreCopper(input);
+      const winner = a.overall > b.overall + 0.5 ? "photocatalytic_aminoaryl" : b.overall > a.overall + 0.5 ? "copper_catalyzed_aminoaryl" : "tie";
+      document.getElementById("out").textContent =
+        "Winner: " + winner + "\nPhoto overall: " + a.overall + "\nCopper overall: " + b.overall +
+        "\nGap: " + round2(Math.abs(a.overall - b.overall)) +
+        "\n\nSoft-sim approximate — use the Next app for dual-impl goldens.";
+    };
+  </script>
+</body>
+</html>
