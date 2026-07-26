@@ -124,6 +124,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Responsible Index Studio** | `responsible-index-studio` | **Complete** | Structured country index vs naive commitment checklist |
 | **Blood Loss Studio** | `blood-loss-studio` | **Complete** | Weighed-swab measured vs haemoglobin-calculated blood loss |
 | **Mof Capture Studio** | `mof-capture-studio` | **Complete** | Anionic MOF capture vs conventional sorbent |
+| **Abe Precision Studio** | `abe-precision-studio` | **Building** | Domain-insertion ABE vs baseline ABE |
 
 ## Rules
 

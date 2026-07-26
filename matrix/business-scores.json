@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T02:05:53.885Z",
+  "updated_at": "2026-07-26T02:17:14.137Z",
   "projects": [
     {
       "id": 1,
@@ -2610,15 +2610,42 @@
     {
       "slug": "mof-capture-studio",
       "project": "Mof Capture Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare anionic MOF heavy-metal capture pathways against conventional sorbent baselines before locking a water pack",
       "pmf": "Early signal with water-remediation / materials analytics leads who already trial sorbent soft-sims",
       "buyer": "Water-remediation and materials analytics engineering leads",
       "money_hook": "Bench seats + private water packs (method-lab experiment)",
       "potential": "Anionic MOF capture planning is underserved vs conventional sorbent dumps without honesty",
       "moat": "Anionic MOF capture vs conventional sorbent",
-      "evidence": "Paper materials claim (anionic MOF SU-102-style heavy-metal capture); no public code; soft-sim honesty required",
+      "evidence": "Paper materials claim (anionic MOF SU-102-style heavy-metal capture); no public code; soft-sim honesty required; 13 pages; dual scorers; 30 goldens; build + app-up green",
       "gc_notes": "Prefer water soft-sim with multi-flow bar; never claim live plant control, certified water audits, or municipal procurement authority; not SU-102 brand",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 7,
+        "feasibility": 7
+      },
+      "score": 67,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 116
+    },
+    {
+      "slug": "abe-precision-studio",
+      "project": "Abe Precision Studio",
+      "status": "building",
+      "business_idea": "Compare domain-insertion adenine base editor precision against baseline ABE windows before locking an editor pack",
+      "pmf": "Early signal with gene-editing / therapeutic design analytics leads who already trial editor soft-sims",
+      "buyer": "Gene-editing and therapeutic design analytics engineering leads",
+      "money_hook": "Bench seats + private editor packs (method-lab experiment)",
+      "potential": "ABE precision planning is underserved vs baseline editor dumps without honesty",
+      "moat": "Domain-insertion ABE vs baseline ABE",
+      "evidence": "Paper gene-edit claim (domain insertion narrows ABE editing window); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer editor soft-sim with multi-flow bar; never claim wet-lab validation, IND/NDA readiness, patient dosing, or clinical gene-therapy advice; not authors’ brand",
       "dimensions": {
         "buyer": 7,
         "pain": 7,
@@ -2632,7 +2659,7 @@
       "score": 66,
       "tier": "B",
       "rubric": "biz-rubric-v1",
-      "id": 116
+      "id": 117
     }
   ]
 }
