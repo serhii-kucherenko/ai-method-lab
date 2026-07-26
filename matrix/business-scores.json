@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T01:18:36.436Z",
+  "updated_at": "2026-07-26T01:28:14.916Z",
   "projects": [
     {
       "id": 1,
@@ -2475,7 +2475,7 @@
     {
       "slug": "pneumonia-implement-studio",
       "project": "Pneumonia Implement Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare CFIR co-designed childhood pneumonia primary-care models against status-quo pathway baselines before locking a district pack",
       "pmf": "Early signal with public-health / primary-care implementation leads who already trial pathway soft-sims",
       "buyer": "Public-health and primary-care implementation analytics engineering leads",
@@ -2498,6 +2498,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 111
+    },
+    {
+      "slug": "shigella-growth-studio",
+      "project": "Shigella Growth Studio",
+      "status": "building",
+      "business_idea": "Compare antibiotic-treated Shigella pathways against untreated diarrhea growth baselines before locking a cohort pack",
+      "pmf": "Early signal with child-health / infectious-disease epidemiology leads who already trial growth soft-sims",
+      "buyer": "Child-health and infectious-disease epidemiology analytics engineering leads",
+      "money_hook": "Bench seats + private cohort packs (method-lab experiment)",
+      "potential": "Antibiotic-treated Shigella growth planning is underserved vs untreated diarrhea dumps without honesty",
+      "moat": "Antibiotic-treated Shigella vs untreated diarrhea growth",
+      "evidence": "Paper epidemiology claim (IPD meta-analysis Shigella diarrhea + antibiotics vs growth); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer growth soft-sim with multi-flow bar; never claim live clinical prescribing, diagnostic clearance, or national guideline authority",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 112
     }
   ]
 }
