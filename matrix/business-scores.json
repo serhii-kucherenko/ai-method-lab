@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-26T00:06:36.918Z",
+  "updated_at": "2026-07-26T00:16:02.045Z",
   "projects": [
     {
       "id": 1,
@@ -2286,7 +2286,7 @@
     {
       "slug": "ageing-wisely-studio",
       "project": "Ageing Wisely Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare therapist-supported internet CBT designs against waitlist or self-guided baselines before locking a care pack",
       "pmf": "Early signal with geriatric digital mental-health / care-delivery analytics leads who already trial care soft-sims",
       "buyer": "Geriatric digital mental-health and care-delivery analytics engineering leads",
@@ -2309,6 +2309,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 104
+    },
+    {
+      "slug": "dengue-suit-studio",
+      "project": "Dengue Suit Studio",
+      "status": "building",
+      "business_idea": "Compare CMIP6 thermal-suitability dengue risk maps against static historical baselines before locking a surveillance pack",
+      "pmf": "Early signal with public-health / climate-surveillance analytics leads who already trial risk soft-sims",
+      "buyer": "Public-health and climate-surveillance analytics engineering leads",
+      "money_hook": "Bench seats + private risk packs (method-lab experiment)",
+      "potential": "CMIP6 thermal suitability dengue mapping is underserved vs static historical dumps without honesty",
+      "moat": "CMIP6 thermal suitability vs static historical baseline",
+      "evidence": "Paper climate-health claim (CMIP6 dengue thermal suitability + population at risk); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer surveillance soft-sim with multi-flow bar; never claim live outbreak prediction, clinical diagnosis, or operational mosquito control deployment",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 105
     }
   ]
 }

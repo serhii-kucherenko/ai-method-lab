@@ -112,6 +112,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Nanodomain Target Studio** | `nanodomain-target-studio` | **Complete** | Localized nanodomain target vs systemic phosphorylation baseline |
 | **Coload Order Studio** | `coload-order-studio` | **Complete** | Ordered co-load sequence vs simultaneous-load baseline |
 | **Ageing Wisely Studio** | `ageing-wisely-studio` | **Complete** | Therapist-supported iCBT vs waitlist/self-guided baseline |
+| **Dengue Suit Studio** | `dengue-suit-studio` | Building | CMIP6 thermal suitability vs static historical dengue baseline |
 
 ## Rules
 
