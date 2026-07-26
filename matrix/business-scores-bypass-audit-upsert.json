@@ -1,0 +1,27 @@
+{
+  "slug": "bypass-audit-studio",
+  "project": "Bypass Audit Studio",
+  "dimensions": {
+    "buyer": 8,
+    "pain": 9,
+    "pmf": 7,
+    "money": 7,
+    "wedge": 8,
+    "moat": 8,
+    "evidence": 6,
+    "feasibility": 9
+  },
+  "business_idea": "Expire temporary OT safety bypasses before they harden into permanent opens",
+  "pmf": "Early signal with OT/ICS safety engineers who already run MOC and bypass logs",
+  "buyer": "OT / ICS safety and controls engineers",
+  "money_hook": "Site seats + audit-run usage + private bypass packs",
+  "potential": "Industrial safety ops wedge adjacent to Download Gate and Ladder Bomb",
+  "moat": "Expiry-aware bypass audits vs permanent-open baselines",
+  "evidence": "Idea-first OT; 30 dual goldens; live app smoke on 43162",
+  "status": "complete",
+  "rubric": "biz-rubric-v2",
+  "gc_notes": "Prefer; OT bypass expiry pattern",
+  "score": 78,
+  "tier": "B",
+  "id": 131
+}

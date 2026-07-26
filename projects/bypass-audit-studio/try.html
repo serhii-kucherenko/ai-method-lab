@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Bypass Audit Studio</title>
+<style>
+  body { font: 16px Manrope, system-ui; background: #140c08; color: #e2e8f0; max-width: 720px; margin: 10vh auto; }
+  button { background: #fb923c; border: 0; padding: 12px 16px; color: #140c08; font-weight: 600; cursor: pointer; }
+  strong { color: #fb923c; }
+</style>
+<h1>Bypass Audit Studio</h1>
+<p>Expire temporary safety bypasses before they become permanent.</p>
+<button onclick="run()">Compare paths</button>
+<p id="result"></p>
+<script>
+function run() {
+  result.innerHTML =
+    "<strong>Expiry-aware A: 1 overdue</strong> — critical bypass past max hours.<br>" +
+    "Permanent-open B: 0 overdue — expiry ignored.";
+}
+</script>

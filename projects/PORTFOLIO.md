@@ -150,3 +150,5 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Tool Scope Studio** | tool-scope-studio | **Complete** | Scope-bound agent tool grants vs open-tools |
 
 | **Idle Seat Studio** | idle-seat-studio | **Complete** | Idle SaaS seat waste dollars vs headcount-only |
+
+| **Bypass Audit Studio** | bypass-audit-studio | **Complete** | Expire OT temporary bypasses vs permanent-open |
