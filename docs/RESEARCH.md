@@ -65,3 +65,14 @@ Ranked for transferability into a real scoring product (recruiting first, then g
 Most “hiring AI” papers still do resume similarity. The **solvable** stack is: executable rubrics (1) + belief/elicitation interviews (2,4) + selective human escalation (3) + psychometric + scoring-bias guards (6,7) + calibrated rankers + fairness audits (8–10). Do **not** ship a single LLM holistic score as a person score.
 
 **Next (research only):** keep this shortlist out of product climb until Immunize Impact Studio finishes; if a scoring product is picked later, start from RULERS + Beyond-the-Resumé + Trust-or-Escalate, not another desk clone.
+
+
+### simple-papers handoff
+
+Private `simple-papers` was not writable from this agent. Seeded an import package so digests can absorb the shortlist:
+
+- Digest JSON: `docs/ideas/_paper-picks/digests/2026-07-26.json` (top 10 + 5 adjacent; `impact.forTech` + code URLs)
+- Drop instructions: `docs/ideas/_paper-picks/SIMPLE_PAPERS_HANDOFF.md`
+- Picker now also reads local handoff digests under `docs/ideas/_paper-picks/digests/` when `SIMPLE_PAPERS_ROOT` is missing or empty
+
+Action for simple-papers maintainer: copy the JSON into `data/digests/` (or merge into that day’s digest) and tag topic `people-scoring-rubrics-recruiting`.

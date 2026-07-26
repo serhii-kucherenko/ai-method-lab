@@ -35,3 +35,5 @@ Screened **1,944** arXiv papers → **686** relevant → **top 10** in `docs/RES
 | R2 | Calibrated long-context person–job re-ranker | research-parked | Screening scale problem |
 
 Do **not** promote these into `projects/` while another product is in flight. Research / backlog only.
+
+Handoff package for simple-papers: `docs/ideas/_paper-picks/SIMPLE_PAPERS_HANDOFF.md` + `docs/ideas/_paper-picks/digests/2026-07-26.json`.

@@ -47,14 +47,37 @@ function digestRoot() {
   return null;
 }
 
-function listDigestFiles(root, days) {
-  const dir = path.join(root, "data", "digests");
+/** Local Method Lab mirror — handoffs when simple-papers is unavailable. */
+function localDigestDir() {
+  return path.join(LAB_ROOT, "docs", "ideas", "_paper-picks", "digests");
+}
+
+function listDigestFilesInDir(dir, days) {
+  if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
-    .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+    .filter((f) => /^\d{4}-\d{2}-\d{2}(?:-[a-z0-9-]+)?\.json$/i.test(f))
     .sort()
     .slice(-Math.max(1, days))
     .map((f) => path.join(dir, f));
+}
+
+function listDigestFiles(root, days) {
+  const primary = root
+    ? listDigestFilesInDir(path.join(root, "data", "digests"), days)
+    : [];
+  const local = listDigestFilesInDir(localDigestDir(), days);
+  // Prefer simple-papers files; always include local handoff digests.
+  const seen = new Set(primary.map((p) => path.basename(p)));
+  const merged = [...primary];
+  for (const f of local) {
+    const base = path.basename(f);
+    if (!seen.has(base)) {
+      merged.push(f);
+      seen.add(base);
+    }
+  }
+  return merged.sort();
 }
 
 function tagsOf(paper) {
@@ -392,16 +415,20 @@ function patchController(slug, displayName, candidate) {
 function main() {
   const args = parseArgs(process.argv);
   const root = digestRoot();
-  if (!root) {
-    console.error("No simple-papers digests found. Set SIMPLE_PAPERS_ROOT.");
+  const files = listDigestFiles(root, args.days);
+  if (!files.length) {
+    console.error(
+      "No digests found. Set SIMPLE_PAPERS_ROOT or add JSON under docs/ideas/_paper-picks/digests/.",
+    );
     process.exit(1);
   }
-  const files = listDigestFiles(root, args.days);
   const candidates = loadCandidates(files);
   if (args.json) {
     process.stdout.write(JSON.stringify({ count: candidates.length, candidates }, null, 2) + "\n");
   } else {
-    console.log(`Candidates: ${candidates.length} (root=${root})`);
+    console.log(
+      `Candidates: ${candidates.length} (simple-papers=${root || "none"}; local handoff digests included)`,
+    );
     candidates.slice(0, 10).forEach((c, i) => {
       console.log(`  ${i + 1}. [${c.score}] ${c.id} — ${c.title.slice(0, 80)}${c.codeUrl ? " [code]" : ""}`);
     });
