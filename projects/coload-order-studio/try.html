@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Coload Order Studio — try</title>
+    <style>
+      :root {
+        --co-ink: #12161b;
+        --co-slate: #3a5566;
+        --co-mist: #eef2f4;
+        --co-line: #c4c9ce;
+        --co-amber: #b4833a;
+      }
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        background: var(--co-mist);
+        color: var(--co-ink);
+      }
+      header {
+        padding: 2.5rem 1.5rem 1.5rem;
+        background: linear-gradient(165deg, #0a0d10, #12161b 50%, #1a2228);
+        color: var(--co-mist);
+      }
+      h1 {
+        margin: 0;
+        font-size: 2rem;
+        color: var(--co-amber);
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.25rem;
+        padding: 0.45rem 0.55rem;
+        border: 1px solid var(--co-line);
+        border-radius: 0.35rem;
+      }
+      button {
+        margin-top: 1rem;
+        padding: 0.55rem 1rem;
+        border: 0;
+        border-radius: 0.35rem;
+        background: var(--co-amber);
+        color: white;
+        cursor: pointer;
+      }
+      .bar {
+        height: 0.5rem;
+        background: #dde3e7;
+        border-radius: 999px;
+        margin-top: 0.35rem;
+      }
+      .fill {
+        height: 100%;
+        border-radius: 999px;
+        background: var(--co-slate);
+      }
+      .fill.a {
+        background: var(--co-amber);
+      }
+      .note {
+        font-size: 0.8rem;
+        color: #5a6570;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Coload Order Studio</h1>
+      <p>Offline soft-sim: ordered co-load vs simultaneous baseline.</p>
+    </header>
+    <main>
+      <label
+        >Order fidelity
+        <input id="order" type="range" min="0" max="100" value="72"
+      /></label>
+      <label
+        >Chemo encapsulation
+        <input id="chemo" type="range" min="0" max="100" value="68"
+      /></label>
+      <label
+        >Photo encapsulation
+        <input id="photo" type="range" min="0" max="100" value="74"
+      /></label>
+      <label
+        >Burst leak risk
+        <input id="leak" type="range" min="0" max="100" value="32"
+      /></label>
+      <button id="run" type="button">Score A/B</button>
+      <div id="out" style="margin-top: 1.25rem"></div>
+      <p class="note">
+        Soft-sim only — not wet-lab validated GMP nanomedicine manufacture, not
+        live patient dosing, not clinical oncology clearance. Inspired by
+        https://doi.org/10.3390/nano16130805
+      </p>
+    </main>
+    <script>
+      function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+      }
+      function round2(n) {
+        return Math.round(n * 100) / 100;
+      }
+      function scoreOrdered(o, c, p, leak) {
+        const orderScore = clamp(o * 55 + c * 20 + p * 15 - leak * 10 + 8, 0, 100);
+        const overall = clamp(orderScore * 0.7 + (100 - leak * 100) * 0.3, 0, 100);
+        return round2(overall);
+      }
+      function scoreSim(o, c, p, leak) {
+        const synergy = clamp((c + p) * 40 + (1 - o) * 15 - leak * 20 + 5, 0, 100);
+        return round2(synergy);
+      }
+      function render() {
+        const o = Number(order.value) / 100;
+        const c = Number(chemo.value) / 100;
+        const p = Number(photo.value) / 100;
+        const leak = Number(leakEl.value) / 100;
+        const a = scoreOrdered(o, c, p, leak);
+        const b = scoreSim(o, c, p, leak);
+        const winner =
+          a > b + 0.5
+            ? "ordered_coload_sequence"
+            : b > a + 0.5
+              ? "simultaneous_load_baseline"
+              : "tie";
+        out.innerHTML =
+          "<p><strong>Ordered:</strong> " +
+          a +
+          '</p><div class="bar"><div class="fill a" style="width:' +
+          a +
+          '%"></div></div>' +
+          "<p style='margin-top:0.75rem'><strong>Simultaneous:</strong> " +
+          b +
+          '</p><div class="bar"><div class="fill" style="width:' +
+          b +
+          '%"></div></div>' +
+          "<p style='margin-top:0.75rem'>Winner: " +
+          winner +
+          "</p>";
+      }
+      const order = document.getElementById("order");
+      const chemo = document.getElementById("chemo");
+      const photo = document.getElementById("photo");
+      const leakEl = document.getElementById("leak");
+      const out = document.getElementById("out");
+      document.getElementById("run").addEventListener("click", render);
+      render();
+    </script>
+  </body>
+</html>

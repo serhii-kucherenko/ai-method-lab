@@ -1,0 +1,39 @@
+{
+  "id": "co-025",
+  "input": {
+    "orderFidelity": 0.79,
+    "chemoEncapsulation": 0.8,
+    "photoEncapsulation": 0.71,
+    "poreFillUniformity": 0.75,
+    "photothermalResponse": 0.76,
+    "burstLeakRisk": 0.33,
+    "assaySignal": 0.8,
+    "overclaimRisk": 0.21,
+    "loadBias": "chemo_first",
+    "profile": "ordered_coload_sequence"
+  },
+  "expectedOrdered": {
+    "mode": "ordered_coload_sequence",
+    "orderScore": 94.74,
+    "chemoScore": 94.28,
+    "photoScore": 45.81,
+    "leakPenalty": 20.57,
+    "synergyScore": 64.54,
+    "confidence": 58.25,
+    "orderedContribution": 80.11,
+    "simultaneousContribution": 54.38,
+    "overall": 79.48
+  },
+  "expectedSimultaneous": {
+    "mode": "simultaneous_load_baseline",
+    "orderScore": 13.38,
+    "chemoScore": 27.9,
+    "photoScore": 46.54,
+    "leakPenalty": 20.19,
+    "synergyScore": 38.67,
+    "confidence": 49.28,
+    "orderedContribution": 41.26,
+    "simultaneousContribution": 34.67,
+    "overall": 30.12
+  }
+}
