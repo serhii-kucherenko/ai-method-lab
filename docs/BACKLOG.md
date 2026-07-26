@@ -8,6 +8,7 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
+| ? | **Idle Seat Studio** | **complete ? email pending** | Finish mail fe60a68d |
 | ? | **Tool Scope Studio** | **complete** | Finish mail 4ec07dd7 |
 | ? | **Download Gate Studio** | **complete** | Finish mail 2ae2b85d |
 | ? | **Service Credit Studio** | **complete** | Finish mail 9453ede2 |
@@ -18,6 +19,6 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 
 ## Prefer next
 
-OT/ICS software · agent safety · literal-dollar compliance · more FinOps
+OT/ICS software ï¿½ agent safety ï¿½ literal-dollar compliance ï¿½ more FinOps
 
 1h keep-going loop armed (PID 23232).
