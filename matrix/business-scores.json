@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v1",
-  "updated_at": "2026-07-25T23:55:38.153Z",
+  "updated_at": "2026-07-26T00:06:36.918Z",
   "projects": [
     {
       "id": 1,
@@ -2259,7 +2259,7 @@
     {
       "slug": "coload-order-studio",
       "project": "Coload Order Studio",
-      "status": "building",
+      "status": "complete",
       "business_idea": "Compare ordered chemo-photothermal co-load sequences against simultaneous-load baselines before locking a carrier pack",
       "pmf": "Early signal with nanomedicine / formulation analytics leads who already trial carrier soft-sims",
       "buyer": "Nanomedicine and formulation analytics engineering leads",
@@ -2282,6 +2282,33 @@
       "tier": "B",
       "rubric": "biz-rubric-v1",
       "id": 103
+    },
+    {
+      "slug": "ageing-wisely-studio",
+      "project": "Ageing Wisely Studio",
+      "status": "building",
+      "business_idea": "Compare therapist-supported internet CBT designs against waitlist or self-guided baselines before locking a care pack",
+      "pmf": "Early signal with geriatric digital mental-health / care-delivery analytics leads who already trial care soft-sims",
+      "buyer": "Geriatric digital mental-health and care-delivery analytics engineering leads",
+      "money_hook": "Bench seats + private care packs (method-lab experiment)",
+      "potential": "Therapist-supported iCBT for older adults is underserved vs waitlist/self-guided dumps without honesty",
+      "moat": "Therapist-supported iCBT vs waitlist/self-guided baseline",
+      "evidence": "Paper digital mental-health claim (Ageing Wisely Online co-design + RCT); no public code; soft-sim honesty required",
+      "gc_notes": "Prefer care soft-sim with multi-flow bar; never claim clinical diagnosis, live therapist replacement, or regulated digital therapeutic clearance",
+      "dimensions": {
+        "buyer": 7,
+        "pain": 7,
+        "pmf": 6,
+        "money": 6,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 7
+      },
+      "score": 66,
+      "tier": "B",
+      "rubric": "biz-rubric-v1",
+      "id": 104
     }
   ]
 }

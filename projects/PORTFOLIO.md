@@ -111,7 +111,7 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Liver Organoid Studio** | `liver-organoid-studio` | **Complete** | Multicellular HLO vs single-lineage HLC MASLD baseline |
 | **Nanodomain Target Studio** | `nanodomain-target-studio` | **Complete** | Localized nanodomain target vs systemic phosphorylation baseline |
 | **Coload Order Studio** | `coload-order-studio` | **Complete** | Ordered co-load sequence vs simultaneous-load baseline |
-| **Coload Order Studio** | `coload-order-studio` | Building | Ordered co-load sequence vs simultaneous-load baseline |
+| **Ageing Wisely Studio** | `ageing-wisely-studio` | Building | Therapist-supported iCBT vs waitlist/self-guided baseline |
 
 ## Rules
 
