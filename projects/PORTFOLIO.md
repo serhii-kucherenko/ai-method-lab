@@ -152,3 +152,5 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Idle Seat Studio** | idle-seat-studio | **Complete** | Idle SaaS seat waste dollars vs headcount-only |
 
 | **Bypass Audit Studio** | bypass-audit-studio | **Complete** | Expire OT temporary bypasses vs permanent-open |
+
+| **Secret Redact Studio** | secret-redact-studio | **Complete** | Redact agent-trace secrets vs raw-export |

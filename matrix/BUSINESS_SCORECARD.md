@@ -137,13 +137,14 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 129 | Tool Scope Studio | 78 | B | Bound agent tool calls to declared capability scopes before open-tool runtimes grant shell and network by default | Early signal with AI platform / agent safety eng leads who already buy guardrail tooling | AI platform / agent safety engineering leads | Fleet seats + grant-run usage + private scope packs | Agent productionization spend; clearer than monitor-only desks | Scope-bound grants vs open-tools baselines | Idea-first agent safety; 30 dual goldens; live app smoke on 43160 | complete | biz-rubric-v2 | Prefer; agent safety software pattern |
 | 130 | Idle Seat Studio | 79 | B | Forecast idle SaaS seat waste in dollars from login activity before headcount renewals hide the bill | Early signal with SaaS FinOps/procurement leads who already reconcile seat renewals | SaaS FinOps / procurement leads | Org seats + forecast-run usage + private seat packs | Literal-dollar FinOps wedge on SaaS renewals | Usage-aware waste dollars vs headcount-only licensing | Idea-first FinOps; 30 dual goldens; live app smoke on 43161 | complete | biz-rubric-v2 | Prefer; SaaS seat FinOps pattern |
 | 131 | Bypass Audit Studio | 78 | B | Expire temporary OT safety bypasses before they harden into permanent opens | Early signal with OT/ICS safety engineers who already run MOC and bypass logs | OT / ICS safety and controls engineers | Site seats + audit-run usage + private bypass packs | Industrial safety ops wedge adjacent to Download Gate and Ladder Bomb | Expiry-aware bypass audits vs permanent-open baselines | Idea-first OT; 30 dual goldens; live app smoke on 43162 | complete | biz-rubric-v2 | Prefer; OT bypass expiry pattern |
+| 132 | Secret Redact Studio | 78 | B | Redact secrets from agent traces before export instead of shipping raw logs that leak credentials | Early signal with AI platform/agent safety leads who already buy DLP and guardrail tooling | AI platform / agent safety engineering leads | Fleet seats + redact-run usage + private pattern packs | Agent productionization + secret hygiene spend | Pattern-redact coverage vs raw-export leak baselines | Idea-first agent safety; 30 dual goldens; live app smoke on 43163 | complete | biz-rubric-v2 | Prefer; agent secret-redact pattern |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 118 |
+| B | 119 |
 | C | 12 |
 | Kill | 1 |
 

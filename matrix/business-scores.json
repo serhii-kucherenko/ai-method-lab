@@ -3039,6 +3039,33 @@
       "score": 78,
       "tier": "B",
       "id": 131
+    },
+    {
+      "slug": "secret-redact-studio",
+      "project": "Secret Redact Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 9,
+        "pmf": 7,
+        "money": 7,
+        "wedge": 8,
+        "moat": 8,
+        "evidence": 6,
+        "feasibility": 9
+      },
+      "business_idea": "Redact secrets from agent traces before export instead of shipping raw logs that leak credentials",
+      "pmf": "Early signal with AI platform/agent safety leads who already buy DLP and guardrail tooling",
+      "buyer": "AI platform / agent safety engineering leads",
+      "money_hook": "Fleet seats + redact-run usage + private pattern packs",
+      "potential": "Agent productionization + secret hygiene spend",
+      "moat": "Pattern-redact coverage vs raw-export leak baselines",
+      "evidence": "Idea-first agent safety; 30 dual goldens; live app smoke on 43163",
+      "status": "complete",
+      "rubric": "biz-rubric-v2",
+      "gc_notes": "Prefer; agent secret-redact pattern",
+      "score": 78,
+      "tier": "B",
+      "id": 132
     }
   ]
 }
