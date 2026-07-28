@@ -139,13 +139,14 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 131 | Bypass Audit Studio | 78 | B | Expire temporary OT safety bypasses before they harden into permanent opens | Early signal with OT/ICS safety engineers who already run MOC and bypass logs | OT / ICS safety and controls engineers | Site seats + audit-run usage + private bypass packs | Industrial safety ops wedge adjacent to Download Gate and Ladder Bomb | Expiry-aware bypass audits vs permanent-open baselines | Idea-first OT; 30 dual goldens; live app smoke on 43162 | complete | biz-rubric-v2 | Prefer; OT bypass expiry pattern |
 | 132 | Secret Redact Studio | 78 | B | Redact secrets from agent traces before export instead of shipping raw logs that leak credentials | Early signal with AI platform/agent safety leads who already buy DLP and guardrail tooling | AI platform / agent safety engineering leads | Fleet seats + redact-run usage + private pattern packs | Agent productionization + secret hygiene spend | Pattern-redact coverage vs raw-export leak baselines | Idea-first agent safety; 30 dual goldens; live app smoke on 43163 | complete | biz-rubric-v2 | Prefer; agent secret-redact pattern |
 | 133 | True Up Studio | 79 | B | Forecast SaaS true-up dollars from metered overages before seat renewals hide the bill | Early signal with SaaS FinOps/procurement leads who already reconcile vendor renewals | SaaS FinOps / procurement leads | Vendor seats + forecast-run usage + private meter packs | Literal-dollar FinOps wedge on SaaS renewals and true-ups | Usage true-up dollars vs seat-renewal-only baselines | Idea-first FinOps; 30 dual goldens; live app smoke on 43164 | complete | biz-rubric-v2 | Prefer; SaaS true-up FinOps pattern |
+| 134 | Change Freeze Studio | 78 | B | Hold risky OT production changes during freeze windows instead of always-allowing ticketed changes | Early signal with OT/ICS change and safety leads who already run MOC and freeze calendars | OT / ICS change and safety leads | Plant/site seats + freeze-run usage + private freeze packs | Industrial change-control wedge adjacent to Download Gate and Bypass Audit | Freeze-aware holds vs always-allow baselines | Idea-first OT; 30 dual goldens; live app smoke on 43165 | complete | biz-rubric-v2 | Prefer; OT change-freeze pattern |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 120 |
+| B | 121 |
 | C | 12 |
 | Kill | 1 |
 

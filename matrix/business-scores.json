@@ -3093,6 +3093,33 @@
       "score": 79,
       "tier": "B",
       "id": 133
+    },
+    {
+      "slug": "change-freeze-studio",
+      "project": "Change Freeze Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 9,
+        "pmf": 7,
+        "money": 7,
+        "wedge": 8,
+        "moat": 8,
+        "evidence": 6,
+        "feasibility": 9
+      },
+      "business_idea": "Hold risky OT production changes during freeze windows instead of always-allowing ticketed changes",
+      "pmf": "Early signal with OT/ICS change and safety leads who already run MOC and freeze calendars",
+      "buyer": "OT / ICS change and safety leads",
+      "money_hook": "Plant/site seats + freeze-run usage + private freeze packs",
+      "potential": "Industrial change-control wedge adjacent to Download Gate and Bypass Audit",
+      "moat": "Freeze-aware holds vs always-allow baselines",
+      "evidence": "Idea-first OT; 30 dual goldens; live app smoke on 43165",
+      "status": "complete",
+      "rubric": "biz-rubric-v2",
+      "gc_notes": "Prefer; OT change-freeze pattern",
+      "score": 78,
+      "tier": "B",
+      "id": 134
     }
   ]
 }

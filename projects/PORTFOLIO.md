@@ -156,3 +156,5 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Secret Redact Studio** | secret-redact-studio | **Complete** | Redact agent-trace secrets vs raw-export |
 
 | **True Up Studio** | true-up-studio | **Complete** | Forecast SaaS true-up dollars vs seat-renewal |
+
+| **Change Freeze Studio** | change-freeze-studio | **Complete** | Hold OT changes during freezes vs always-allow |
