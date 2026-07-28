@@ -3066,6 +3066,33 @@
       "score": 78,
       "tier": "B",
       "id": 132
+    },
+    {
+      "slug": "true-up-studio",
+      "project": "True Up Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 9,
+        "pmf": 7,
+        "money": 9,
+        "wedge": 8,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 9
+      },
+      "business_idea": "Forecast SaaS true-up dollars from metered overages before seat renewals hide the bill",
+      "pmf": "Early signal with SaaS FinOps/procurement leads who already reconcile vendor renewals",
+      "buyer": "SaaS FinOps / procurement leads",
+      "money_hook": "Vendor seats + forecast-run usage + private meter packs",
+      "potential": "Literal-dollar FinOps wedge on SaaS renewals and true-ups",
+      "moat": "Usage true-up dollars vs seat-renewal-only baselines",
+      "evidence": "Idea-first FinOps; 30 dual goldens; live app smoke on 43164",
+      "status": "complete",
+      "rubric": "biz-rubric-v2",
+      "gc_notes": "Prefer; SaaS true-up FinOps pattern",
+      "score": 79,
+      "tier": "B",
+      "id": 133
     }
   ]
 }

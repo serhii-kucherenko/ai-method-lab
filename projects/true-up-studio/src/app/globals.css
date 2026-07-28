@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --studio-bg: #061412;
+  --studio-accent: #2dd4bf;
+}
+
+body {
+  margin: 0;
+  background: var(--studio-bg);
+  font-family: var(--font-sans);
+}
+
+.mesh {
+  background-image:
+    linear-gradient(#2dd4bf10 1px, transparent 1px),
+    linear-gradient(90deg, #2dd4bf10 1px, transparent 1px),
+    radial-gradient(circle at 74% 16%, #0f766e33, transparent 28%),
+    linear-gradient(160deg, #061412, #0d2420 55%, #061412);
+  background-size: 32px 32px, 32px 32px, auto, auto;
+}
+
+.brand-rise {
+  animation: rise 0.7s ease-out both;
+}
+
+.compare-slide {
+  animation: slide 0.8s ease-out both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

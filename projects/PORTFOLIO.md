@@ -154,3 +154,5 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Bypass Audit Studio** | bypass-audit-studio | **Complete** | Expire OT temporary bypasses vs permanent-open |
 
 | **Secret Redact Studio** | secret-redact-studio | **Complete** | Redact agent-trace secrets vs raw-export |
+
+| **True Up Studio** | true-up-studio | **Complete** | Forecast SaaS true-up dollars vs seat-renewal |
