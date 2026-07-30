@@ -1,0 +1,197 @@
+{
+  "generated_at": "2026-07-30T12:56:38.384Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "PReMISE: Policy Rubrics as Measurement Specifications for LLM Judges",
+    "doi": null,
+    "arxiv": "2605.30803"
+  },
+  "seed_record": {
+    "id": "2605.30803",
+    "title": "PReMISE: Policy Rubrics as Measurement Specifications for LLM Judges",
+    "year": 2026,
+    "doi": null,
+    "url": "https://arxiv.org/abs/2605.30803",
+    "oa_url": "https://arxiv.org/pdf/2605.30803",
+    "venue": "arXiv",
+    "cited_by": null,
+    "authors": [],
+    "summary": "LLM judges are increasingly used to evaluate open-ended responses, but their scores depend strongly on the rubrics that condition them. A vague rubric asking for a response to be ``helpful and factual'' can reward polished answers that invent facts or violate user intent. We treat reusable rubrics as measurement specifications: changing the rubric changes the response quality measurement induced b",
+    "source_index": "arxiv"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W7124227905",
+      "title": "From Rubrics to Reliable Scores: Evidence-Grounded Text Evaluation with LLM Judges",
+      "year": 2026,
+      "doi": null,
+      "url": "http://arxiv.org/abs/2601.08654",
+      "oa_url": "https://arxiv.org/pdf/2601.08654",
+      "venue": "ArXiv.org",
+      "cited_by": 0,
+      "authors": [
+        "Yihan Hong",
+        "Yao, Huaiyuan",
+        "Bolin Shen",
+        "Wanpeng Xu",
+        "Hua Wei",
+        "Yushun Dong"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7166799387",
+      "title": "Diagnosing and Mitigating Sycophancy and Skepticism in LLM Causal Judgment",
+      "year": 2026,
+      "doi": "10.18653/v1/2026.findings-acl.427",
+      "url": "https://doi.org/10.18653/v1/2026.findings-acl.427",
+      "oa_url": "https://aclanthology.org/2026.findings-acl.427.pdf",
+      "venue": null,
+      "cited_by": 1,
+      "authors": [
+        "Edward Y Chang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7133364606",
+      "title": "Autorubric: Unifying Rubric-based LLM Evaluation",
+      "year": 2026,
+      "doi": null,
+      "url": "http://arxiv.org/abs/2603.00077",
+      "oa_url": "https://arxiv.org/pdf/2603.00077",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Delip Rao",
+        "Chris Callison-Burch"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7159733955",
+      "title": "A Scoping Review of LLM-as-a-Judge in Healthcare and the MedJUDGE Framework",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2604.25933",
+      "oa_url": "https://arxiv.org/pdf/2604.25933",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Chenyu Li",
+        "Zohaib Akhtar",
+        "Mingu Kwak",
+        "Yuelyu Ji",
+        "Hang Zhang",
+        "Tracey Obi",
+        "Yufan Ren",
+        "Xizhi Wu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4406840771",
+      "title": "A benchmark of expert-level academic questions to assess AI capabilities",
+      "year": 2026,
+      "doi": "10.1038/s41586-025-09962-4",
+      "url": "https://doi.org/10.1038/s41586-025-09962-4",
+      "oa_url": "https://www.nature.com/articles/s41586-025-09962-4.pdf",
+      "venue": "Nature",
+      "cited_by": 15,
+      "authors": [
+        "Taom Sakal",
+        "Alice Gatti",
+        "Nathaniel Li",
+        "Adam Khoja",
+        "Ryan Kim",
+        "Richard Ren",
+        "Jason Hausenloy",
+        "Oliver Zhang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4385188626",
+      "title": "Financial Machine Learning",
+      "year": 2023,
+      "doi": "10.3386/w31502",
+      "url": "https://doi.org/10.3386/w31502",
+      "oa_url": "https://doi.org/10.3386/w31502",
+      "venue": "National Bureau of Economic Research",
+      "cited_by": 12,
+      "authors": [
+        "Bryan Kelly",
+        "Dacheng Xiu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4414117510",
+      "title": "Data Access and AI Explainability",
+      "year": 2025,
+      "doi": "10.1017/9781009627351",
+      "url": "https://doi.org/10.1017/9781009627351",
+      "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E78C29A981519DAFF382A7946DE90A58/9781009627368AR.pdf/data-access-and-ai-explainability.pdf",
+      "venue": "Cambridge University Press eBooks",
+      "cited_by": 5,
+      "authors": [
+        "Frank Pasquale"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7130681088",
+      "title": "Suppressing echo cascades in language-model agents with multi-critic plan selection",
+      "year": 2026,
+      "doi": "10.21203/rs.3.rs-8769125/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-8769125/v1",
+      "oa_url": "https://www.researchsquare.com/article/rs-8769125/latest.pdf",
+      "venue": "Research Square",
+      "cited_by": 3,
+      "authors": [
+        "Rui Li",
+        "Shuang Cao",
+        "Ruihua Liu",
+        "Alexandre Duprey"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4415688741",
+      "title": "Analysing the role of LLMs in cybersecurity incident management",
+      "year": 2025,
+      "doi": "10.1007/s10207-025-01144-7",
+      "url": "https://doi.org/10.1007/s10207-025-01144-7",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10207-025-01144-7.pdf",
+      "venue": "International Journal of Information Security",
+      "cited_by": 1,
+      "authors": [
+        "G. H. Gethin Jones",
+        "Dimitrios Kasimatis",
+        "Nikolaos Pitropakis",
+        "Richard Macfarlane",
+        "William J. Buchanan"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7160824208",
+      "title": "ZeroPaper: An Autonomous Research System",
+      "year": 2026,
+      "doi": "10.5281/zenodo.20127842",
+      "url": "https://instituteforautomatedresearch.org/papers/iar-m/iar-m-001",
+      "oa_url": "https://instituteforautomatedresearch.org/papers/iar-m/iar-m-001.pdf",
+      "venue": "Open MIND",
+      "cited_by": 1,
+      "authors": [
+        "Alejandro Lopez-Lira"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}

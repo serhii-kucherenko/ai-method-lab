@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — ARS tick: PReMISE → measurement-spec module (not a new climb)
+
+Deepened [PReMISE](https://arxiv.org/abs/2605.30803) via hourly ARS loop. Fold **policy / measurement-spec locks** into Rubric Compiler Studio; reject standalone product. Artifacts: `docs/ideas/premise-measurement-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. SER-103.
+
 ## 2026-07-30 — ARS tick: Autorubric folded into Rubric Compiler (not a new climb)
 
 Deepened [Autorubric](https://arxiv.org/abs/2603.00077) via ARS-on-Cursor. Kill rounds reject a second product; treat as recipe input for Rubric Compiler Studio. Artifacts: `docs/ideas/autorubric-method-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. SER-103.
