@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-30T22:00:23.167Z",
+  "updated_at": "2026-07-30T23:11:38.349Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -42,11 +42,11 @@
   "last_error": null,
   "current_product": null,
   "current_idea": null,
-  "next_research_idea": null,
+  "next_research_idea": "commitment-coverage-studio",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "idle",
-  "notes": "Idle. API-CONTRACT landed. Single hourly loop PID 67789 (A/B research next or climb when armed). SER-103.",
+  "notes": "Idle. Seeded Commitment Coverage Studio (FinOps A/B). Score before climb. Hourly loop PID 67789. SER-103.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,

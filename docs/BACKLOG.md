@@ -25,4 +25,6 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 
 OT/ICS software · agent safety · literal-dollar compliance · more FinOps
 
-1h keep-going loop armed (PID 22636).
+**Research seed:** Commitment Coverage Studio — cloud commitment (SP/RI/CUD) coverage gaps in dollars (`docs/ideas/commitment-coverage-studio-ARS-BRIEF.md`). Score before climb.
+
+1h keep-going loop armed (ARS synthesize / A/B; see CONTROLLER `ars_research.loop_pid`).

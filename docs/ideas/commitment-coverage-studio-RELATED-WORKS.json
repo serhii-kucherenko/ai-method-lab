@@ -1,0 +1,187 @@
+{
+  "generated_at": "2026-07-30T23:11:21.368Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "cloud savings plan reserved instance commitment coverage FinOps",
+    "doi": null,
+    "arxiv": null
+  },
+  "seed_record": {
+    "id": "https://openalex.org/W4410061876",
+    "title": "AI-Enabled FinOps for Cloud Cost Optimization: Enhancing Financial Governance in Cloud Environments",
+    "year": 2025,
+    "doi": "10.37745/ejcsit.2013/vol13n111729",
+    "url": "https://doi.org/10.37745/ejcsit.2013/vol13n111729",
+    "oa_url": "https://eajournals.org/ejcsit/wp-content/uploads/sites/21/2025/05/AI-Enabled-FinOps.pdf",
+    "venue": "European Journal of Computer Science and Information Technology",
+    "cited_by": 1,
+    "authors": [
+      "Prasen Reddy Yakkanti"
+    ],
+    "source_index": "openalex"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W4391052828",
+      "title": "Artificial intelligence in Finance: a comprehensive review through bibliometric and content analysis",
+      "year": 2024,
+      "doi": "10.1007/s43546-023-00618-x",
+      "url": "https://doi.org/10.1007/s43546-023-00618-x",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s43546-023-00618-x.pdf",
+      "venue": "SN Business & Economics",
+      "cited_by": 197,
+      "authors": [
+        "Salman Bahoo",
+        "Marco Cucculelli",
+        "Xhoana Goga",
+        "Jasmine Mondolo"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4414975155",
+      "title": "Cost Optimization Strategies for Data-Intensive Financial Applications in the Cloud",
+      "year": 2025,
+      "doi": "10.32996/jcsts.2025.7.10.14",
+      "url": "https://doi.org/10.32996/jcsts.2025.7.10.14",
+      "oa_url": "https://al-kindipublisher.com/index.php/jcsts/article/download/11074/9850",
+      "venue": "Journal of Computer Science and Technology Studies",
+      "cited_by": 0,
+      "authors": [
+        "Naga Chand Putta"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4406329198",
+      "title": "The Role of FinOps in Large-Scale Cloud Cost Optimization",
+      "year": 2025,
+      "doi": "10.55041/ijsrem28086",
+      "url": "https://doi.org/10.55041/ijsrem28086",
+      "oa_url": "https://ijsrem.com/download/the-role-of-finops-in-large-scale-cloud-cost-optimization/?wpdmdl=42670&refresh=678603e2aa2761736836066",
+      "venue": "INTERANTIONAL JOURNAL OF SCIENTIFIC RESEARCH IN ENGINEERING AND MANAGEMENT",
+      "cited_by": 4,
+      "authors": [
+        "Parag Bhardwaj"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4362673056",
+      "title": "An efficient dynamic decision-based task optimization and scheduling approach for microservice-based cost management in mobile cloud computing applications",
+      "year": 2023,
+      "doi": "10.1016/j.pmcj.2023.101785",
+      "url": "https://doi.org/10.1016/j.pmcj.2023.101785",
+      "oa_url": null,
+      "venue": "Pervasive and Mobile Computing",
+      "cited_by": 22,
+      "authors": [
+        "Mahmood ul Hassan",
+        "Amin A. Al-Awady",
+        "Abid Ali",
+        "Muhammad Munwar Iqbal",
+        "Muhammad Usman Akram",
+        "Jahangir Khan",
+        "Ali Ahmad AbuOdeh"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7124556544",
+      "title": "Evaluating the Implementation of the FinOps Framework for Cloud Infrastructure Cost Management: A Case Study of Technology Companies in Indonesia",
+      "year": 2026,
+      "doi": "10.15294/sji.v12i4.36226",
+      "url": "https://doi.org/10.15294/sji.v12i4.36226",
+      "oa_url": "https://journal.unnes.ac.id/journals/sji/article/download/36226/8162",
+      "venue": "Scientific Journal of Informatics",
+      "cited_by": 0,
+      "authors": [
+        "Hierony Manurung",
+        "Rizal Fathoni Aji"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4410618577",
+      "title": "The Convergence of Financial Efficiency and Sustainability in Enterprise Cloud Management",
+      "year": 2025,
+      "doi": "10.32996/jcsts.2025.7.4.110",
+      "url": "https://doi.org/10.32996/jcsts.2025.7.4.110",
+      "oa_url": "https://al-kindipublisher.com/index.php/jcsts/article/download/9681/8323",
+      "venue": "Journal of Computer Science and Technology Studies",
+      "cited_by": 0,
+      "authors": [
+        "John Wesly Sajja",
+        "Govindaraja Babu Komarina",
+        "Narendra Kumar Reddy Choppa"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7135085118",
+      "title": "Optimizing Cloud Infrastructure for Large-Scale Electronic Health Record Systems",
+      "year": 2026,
+      "doi": "10.14293/pr2199.003152.v1",
+      "url": "https://doi.org/10.14293/pr2199.003152.v1",
+      "oa_url": "https://www.scienceopen.com/document_file/6811df19-ec8f-4da7-9c04-7d7b77efd868/ScienceOpenPreprint/Optimizing%20Cloud%20Infrastructure%20for%20Large-Scale%20Electronic%20Health%20Record%20Systems.pdf",
+      "venue": null,
+      "cited_by": 0,
+      "authors": [
+        "Alex Meyer",
+        "Max Lillian"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7119547359",
+      "title": "Optimizing Cloud Data Costs: FinOps and Usage-Based Workload Segmentation Strategies",
+      "year": 2026,
+      "doi": "10.52783/jisem.v11i1s.14037",
+      "url": "https://doi.org/10.52783/jisem.v11i1s.14037",
+      "oa_url": "https://jisem-journal.com/index.php/journal/article/download/14037/6684",
+      "venue": "Journal of Information Systems Engineering & Management",
+      "cited_by": 0,
+      "authors": [
+        "Venkateswarlu Boggavarapu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4409168078",
+      "title": "Enhancing Digital Connectivity, Smart Transportation, and Sustainable Energy Solutions Through Advanced Computational Models and Secure Network Architectures",
+      "year": 2023,
+      "doi": "10.53555/jrtdd.v6i10s(2).3535",
+      "url": "https://doi.org/10.53555/jrtdd.v6i10s(2).3535",
+      "oa_url": "https://jrtdd.com/index.php/journal/article/download/3535/2671",
+      "venue": null,
+      "cited_by": 22,
+      "authors": [
+        "Hara Krishna Reddy Koppolu",
+        "Venkata Bhardwaj Komaragiri",
+        "Venkata Narasareddy Annapareddy",
+        "Sai Teja Nuka",
+        "Anil Lokesh Gadi"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4410005709",
+      "title": "Modernizing legacy enterprise platforms: A cloud-native migration case study",
+      "year": 2025,
+      "doi": "10.30574/gjeta.2025.23.1.0125",
+      "url": "https://doi.org/10.30574/gjeta.2025.23.1.0125",
+      "oa_url": "https://gjeta.com/sites/default/files/GJETA-2025-0125.pdf",
+      "venue": "Global Journal of Engineering and Technology Advances",
+      "cited_by": 1,
+      "authors": [
+        "Abhyudaya Gurram"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}
