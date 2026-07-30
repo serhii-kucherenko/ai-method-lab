@@ -1,0 +1,248 @@
+{
+  "generated_at": "2026-07-30T15:56:35.177Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "Evaluating Scoring Bias in LLM-as-a-Judge",
+    "doi": null,
+    "arxiv": "2506.22316"
+  },
+  "seed_record": {
+    "id": "2506.22316",
+    "title": "Evaluating Scoring Bias in LLM-as-a-Judge",
+    "year": 2025,
+    "doi": null,
+    "url": "https://arxiv.org/abs/2506.22316",
+    "oa_url": "https://arxiv.org/pdf/2506.22316",
+    "venue": "arXiv",
+    "cited_by": null,
+    "authors": [],
+    "summary": "The \"LLM-as-a-Judge\" paradigm, using Large Language Models (LLMs) as automated evaluators, is pivotal to LLM development, offering scalable feedback for complex tasks. However, the reliability of these judges is compromised by various biases. Existing research has heavily concentrated on biases in comparative evaluations. In contrast, scoring-based evaluations-which assign an absolute score and ar",
+    "source_index": "arxiv"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W4380353763",
+      "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+      "year": 2023,
+      "doi": "10.48550/arxiv.2306.05685",
+      "url": "http://arxiv.org/abs/2306.05685",
+      "oa_url": "https://arxiv.org/pdf/2306.05685",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 473,
+      "authors": [
+        "Zheng, Lianmin",
+        "Wei-Lin Chiang",
+        "Ying Sheng",
+        "Siyuan Zhuang",
+        "Zhanghao Wu",
+        "Yonghao Zhuang",
+        "Lin Zi",
+        "Zhuohan Li"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4384071683",
+      "title": "Large language models encode clinical knowledge",
+      "year": 2023,
+      "doi": "10.1038/s41586-023-06291-2",
+      "url": "https://doi.org/10.1038/s41586-023-06291-2",
+      "oa_url": "https://www.nature.com/articles/s41586-023-06291-2.pdf",
+      "venue": "Nature",
+      "cited_by": 3397,
+      "authors": [
+        "Karan Singhal",
+        "Shekoofeh Azizi",
+        "Tao Tu",
+        "S. Sara Mahdavi",
+        "Jason Lee",
+        "Hyung Won Chung",
+        "Nathan Scales",
+        "Ajay Kumar Tanwani"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4378509449",
+      "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "year": 2023,
+      "doi": "10.48550/arxiv.2305.14314",
+      "url": "http://arxiv.org/abs/2305.14314",
+      "oa_url": "https://arxiv.org/pdf/2305.14314",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 501,
+      "authors": [
+        "Tim Dettmers",
+        "Artidoro Pagnoni",
+        "Ari Holtzman",
+        "Luke Zettlemoyer"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4327810158",
+      "title": "GPT-4 Technical Report",
+      "year": 2023,
+      "doi": "10.4230/lipics.cosit.2024.11",
+      "url": "http://arxiv.org/abs/2303.08774",
+      "oa_url": "https://arxiv.org/pdf/2303.08774",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 2425,
+      "authors": [
+        "OpenAI",
+        "Achiam, Josh",
+        "Adler, Steven",
+        "Agarwal, Sandhini",
+        "Ahmad, Lama",
+        "Akkaya, Ilge",
+        "Aleman, Florencia Leoni",
+        "Almeida, Diogo"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4389519254",
+      "title": "G-Eval: NLG Evaluation using Gpt-4 with Better Human Alignment",
+      "year": 2023,
+      "doi": "10.18653/v1/2023.emnlp-main.153",
+      "url": "https://doi.org/10.18653/v1/2023.emnlp-main.153",
+      "oa_url": "https://aclanthology.org/2023.emnlp-main.153.pdf",
+      "venue": null,
+      "cited_by": 650,
+      "authors": [
+        "Yang Liu",
+        "Dan Iter",
+        "Xu Yi‐chong",
+        "Shuohang Wang",
+        "Ruochen Xu",
+        "Chenguang Zhu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4322622443",
+      "title": "Assessing the Accuracy and Reliability of AI-Generated Medical Responses: An Evaluation of the Chat-GPT Model",
+      "year": 2023,
+      "doi": "10.21203/rs.3.rs-2566942/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-2566942/v1",
+      "oa_url": "https://www.researchsquare.com/article/rs-2566942/latest.pdf",
+      "venue": "Research Square",
+      "cited_by": 603,
+      "authors": [
+        "Douglas B. Johnson",
+        "Rachel Goodman",
+        "James R. Patrinely",
+        "Cosby A. Stone",
+        "Eli E. Zimmerman",
+        "Rebecca Donald",
+        "Sam S. Chang",
+        "Sean T. Berkowitz"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4410343193",
+      "title": "A framework to assess clinical safety and hallucination rates of LLMs for medical text summarisation",
+      "year": 2025,
+      "doi": "10.1038/s41746-025-01670-7",
+      "url": "https://doi.org/10.1038/s41746-025-01670-7",
+      "oa_url": "https://www.nature.com/articles/s41746-025-01670-7.pdf",
+      "venue": "npj Digital Medicine",
+      "cited_by": 267,
+      "authors": [
+        "Elham Asgari",
+        "Nina Montaña-Brown",
+        "Magda Dubois",
+        "Saleh Khalil",
+        "Jasmine Balloch",
+        "Joshua Au Yeung",
+        "Dominic Pimenta"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4392503764",
+      "title": "Mental-LLM",
+      "year": 2024,
+      "doi": "10.1145/3643540",
+      "url": "https://doi.org/10.1145/3643540",
+      "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11806945/pdf/nihms-2052486.pdf",
+      "venue": "Proceedings of the ACM on Interactive Mobile Wearable and Ubiquitous Technologies",
+      "cited_by": 185,
+      "authors": [
+        "Xuhai Xu",
+        "Bingsheng Yao",
+        "Yuanzhe Dong",
+        "Saadia Gabriel",
+        "Hong Yu",
+        "James Hendler",
+        "Marzyeh Ghassemi",
+        "Anind K. Dey"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4394947904",
+      "title": "Bias and Unfairness in Information Retrieval Systems: New Challenges in the LLM Era",
+      "year": 2024,
+      "doi": "10.1145/3637528.3671458",
+      "url": "https://doi.org/10.1145/3637528.3671458",
+      "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3637528.3671458",
+      "venue": null,
+      "cited_by": 113,
+      "authors": [
+        "Sunhao Dai",
+        "Xu Chen",
+        "Shicheng Xu",
+        "Liang Pang",
+        "Zhenhua Dong",
+        "Jun Xu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4416037109",
+      "title": "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+      "year": 2025,
+      "doi": "10.18653/v1/2025.emnlp-main.138",
+      "url": "https://doi.org/10.18653/v1/2025.emnlp-main.138",
+      "oa_url": "https://aclanthology.org/2025.emnlp-main.138.pdf",
+      "venue": null,
+      "cited_by": 77,
+      "authors": [
+        "Da-Wei Li",
+        "Bohan Jiang",
+        "Lili Huang",
+        "Alimohammad Beigi",
+        "Chengshuai Zhao",
+        "Zhen Tan",
+        "Amrita Bhattacharjee",
+        "Yuxuan Jiang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4404782878",
+      "title": "Humans or LLMs as the Judge? A Study on Judgement Bias",
+      "year": 2024,
+      "doi": "10.18653/v1/2024.emnlp-main.474",
+      "url": "https://doi.org/10.18653/v1/2024.emnlp-main.474",
+      "oa_url": "https://aclanthology.org/2024.emnlp-main.474.pdf",
+      "venue": null,
+      "cited_by": 52,
+      "authors": [
+        "Guiming Hardy Chen",
+        "Shunian Chen",
+        "Ziche Liu",
+        "Feng Jiang",
+        "Benyou Wang"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}
