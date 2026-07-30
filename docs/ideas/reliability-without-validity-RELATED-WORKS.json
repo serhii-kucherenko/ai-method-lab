@@ -1,0 +1,230 @@
+{
+  "generated_at": "2026-07-30T16:56:29.473Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "Reliability without Validity LLM-as-a-Judge exact-match agreement",
+    "doi": null,
+    "arxiv": "2606.19544"
+  },
+  "seed_record": {
+    "id": "2606.19544",
+    "title": "Reliability without Validity: A Systematic, Large-Scale Evaluation of LLM-as-a-Judge Models Across Agreement, Consistency, and Bias",
+    "year": 2026,
+    "doi": null,
+    "url": "https://arxiv.org/abs/2606.19544",
+    "oa_url": "https://arxiv.org/pdf/2606.19544",
+    "venue": "arXiv",
+    "cited_by": null,
+    "authors": [],
+    "summary": "LLM-as-a-Judge has become the dominant evaluation paradigm for language models, but judge validation in practice relies on exact-match agreement, a metric that does not correct for chance and systematically overstates discriminative ability. We present the largest systematic evaluation of LLM-as-a-Judge to date: 21 judges from nine providers across MT-Bench, JudgeBench, and RewardBench, evaluated ",
+    "source_index": "arxiv"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W4402909345",
+      "title": "A framework for human evaluation of large language models in healthcare derived from literature review",
+      "year": 2024,
+      "doi": "10.1038/s41746-024-01258-7",
+      "url": "https://doi.org/10.1038/s41746-024-01258-7",
+      "oa_url": "https://www.nature.com/articles/s41746-024-01258-7.pdf",
+      "venue": "npj Digital Medicine",
+      "cited_by": 313,
+      "authors": [
+        "Thomas Yu Chow Tam",
+        "Sonish Sivarajkumar",
+        "Sumit Kapoor",
+        "Alisa V Stolyar",
+        "Katelyn Polanska",
+        "Karleigh R McCarthy",
+        "Hunter Osterhoudt",
+        "Xizhi Wu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4384071683",
+      "title": "Large language models encode clinical knowledge",
+      "year": 2023,
+      "doi": "10.1038/s41586-023-06291-2",
+      "url": "https://doi.org/10.1038/s41586-023-06291-2",
+      "oa_url": "https://www.nature.com/articles/s41586-023-06291-2.pdf",
+      "venue": "Nature",
+      "cited_by": 3397,
+      "authors": [
+        "Karan Singhal",
+        "Shekoofeh Azizi",
+        "Tao Tu",
+        "S. Sara Mahdavi",
+        "Jason Lee",
+        "Hyung Won Chung",
+        "Nathan Scales",
+        "Ajay Kumar Tanwani"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4389636360",
+      "title": "Can Large Language Models Transform Computational Social Science?",
+      "year": 2023,
+      "doi": "10.1162/coli_a_00502",
+      "url": "https://doi.org/10.1162/coli_a_00502",
+      "oa_url": "https://direct.mit.edu/coli/article-pdf/doi/10.1162/coli_a_00502/2191886/coli_a_00502.pdf",
+      "venue": "Computational Linguistics",
+      "cited_by": 452,
+      "authors": [
+        "Caleb Ziems",
+        "William A. Held",
+        "Omar Ahmed Shaikh",
+        "Jiaao Chen",
+        "Zhehao Zhang",
+        "Diyi Yang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4378509449",
+      "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "year": 2023,
+      "doi": "10.48550/arxiv.2305.14314",
+      "url": "http://arxiv.org/abs/2305.14314",
+      "oa_url": "https://arxiv.org/pdf/2305.14314",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 501,
+      "authors": [
+        "Tim Dettmers",
+        "Artidoro Pagnoni",
+        "Ari Holtzman",
+        "Luke Zettlemoyer"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4360836968",
+      "title": "Sparks of Artificial General Intelligence: Early experiments with GPT-4",
+      "year": 2023,
+      "doi": "10.48550/arxiv.2303.12712",
+      "url": "http://arxiv.org/abs/2303.12712",
+      "oa_url": "https://arxiv.org/pdf/2303.12712",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 1560,
+      "authors": [
+        "Sébastien Bubeck",
+        "Varun Chandrasekaran",
+        "Ronen Eldan",
+        "Johannes Gehrke",
+        "Eric Horvitz",
+        "Ece Kamar",
+        "Peter Lee",
+        "Yin Tat Lee"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4327810158",
+      "title": "GPT-4 Technical Report",
+      "year": 2023,
+      "doi": "10.4230/lipics.cosit.2024.11",
+      "url": "http://arxiv.org/abs/2303.08774",
+      "oa_url": "https://arxiv.org/pdf/2303.08774",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 2425,
+      "authors": [
+        "OpenAI",
+        "Achiam, Josh",
+        "Adler, Steven",
+        "Agarwal, Sandhini",
+        "Ahmad, Lama",
+        "Akkaya, Ilge",
+        "Aleman, Florencia Leoni",
+        "Almeida, Diogo"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4416037109",
+      "title": "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+      "year": 2025,
+      "doi": "10.18653/v1/2025.emnlp-main.138",
+      "url": "https://doi.org/10.18653/v1/2025.emnlp-main.138",
+      "oa_url": "https://aclanthology.org/2025.emnlp-main.138.pdf",
+      "venue": null,
+      "cited_by": 77,
+      "authors": [
+        "Da-Wei Li",
+        "Bohan Jiang",
+        "Lili Huang",
+        "Alimohammad Beigi",
+        "Chengshuai Zhao",
+        "Zhen Tan",
+        "Amrita Bhattacharjee",
+        "Yuxuan Jiang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4382538068",
+      "title": "LLM-Assisted Content Analysis: Using Large Language Models to Support Deductive Coding",
+      "year": 2023,
+      "doi": "10.48550/arxiv.2306.14924",
+      "url": "http://arxiv.org/abs/2306.14924",
+      "oa_url": "https://arxiv.org/pdf/2306.14924",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 68,
+      "authors": [
+        "Robert Chew",
+        "John Bollenbacher",
+        "Michael Wenger",
+        "Jessica Speer",
+        "Annice Kim"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4404986534",
+      "title": "A Survey on LLM-as-a-Judge",
+      "year": 2024,
+      "doi": "10.48550/arxiv.2411.15594",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42254963",
+      "oa_url": "https://arxiv.org/pdf/2411.15594",
+      "venue": "PubMed",
+      "cited_by": 38,
+      "authors": [
+        "Jiawei Gu",
+        "Jiang, Xuhui",
+        "Zhichao Shi",
+        "Hexiang Tan",
+        "Zhai, Xuehao",
+        "Chengjin Xu",
+        "Wei Li",
+        "Yinghan Shen"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4405253355",
+      "title": "LLMs-as-Judges: A Comprehensive Survey on LLM-based Evaluation Methods",
+      "year": 2024,
+      "doi": "10.48550/arxiv.2412.05579",
+      "url": "http://arxiv.org/abs/2412.05579",
+      "oa_url": "https://arxiv.org/pdf/2412.05579",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 34,
+      "authors": [
+        "Haitao Li",
+        "Qian Dong",
+        "Junjie Chen",
+        "Huixue Su",
+        "Yujia Zhou",
+        "Qingyao Ai",
+        "Ziyi Ye",
+        "Yiqun Liu"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}

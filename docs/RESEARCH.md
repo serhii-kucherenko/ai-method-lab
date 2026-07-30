@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — ARS tick: Reliability without Validity → Validity Suite module
+
+Deepened [Reliability without Validity](https://arxiv.org/abs/2606.19544) via hourly ARS loop. Fold **validity vs agreement** protocols into Rubric Compiler Studio; refuse standalone climb. Artifacts: `docs/ideas/reliability-without-validity-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. SER-103.
+
 ## 2026-07-30 — ARS tick: scoring bias → Bias Hardening module
 
 Deepened [Evaluating Scoring Bias in LLM-as-a-Judge](https://arxiv.org/abs/2506.22316) via hourly ARS loop. Fold **scoring-mode bias gates** into Rubric Compiler Studio; refuse standalone climb and clinical bleed. Artifacts: `docs/ideas/scoring-bias-judge-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. SER-103.
