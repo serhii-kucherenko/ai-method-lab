@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — ARS tick: Trust or Escalate → selective-trust module
+
+Deepened [Trust or Escalate](https://arxiv.org/abs/2407.18370) via hourly ARS loop. Fold **escalate / abstention queues** into Rubric Compiler Studio; reject standalone climb. Artifacts: `docs/ideas/trust-or-escalate-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. SER-103.
+
 ## 2026-07-30 — ARS tick: PReMISE → measurement-spec module (not a new climb)
 
 Deepened [PReMISE](https://arxiv.org/abs/2605.30803) via hourly ARS loop. Fold **policy / measurement-spec locks** into Rubric Compiler Studio; reject standalone product. Artifacts: `docs/ideas/premise-measurement-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. SER-103.

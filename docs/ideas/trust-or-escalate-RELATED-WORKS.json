@@ -1,0 +1,245 @@
+{
+  "generated_at": "2026-07-30T13:56:36.050Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "LLM Judges with Provable Guarantees for Human Agreement selective prediction",
+    "doi": null,
+    "arxiv": "2407.18370"
+  },
+  "seed_record": {
+    "id": "2407.18370",
+    "title": "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
+    "year": 2024,
+    "doi": null,
+    "url": "https://arxiv.org/abs/2407.18370",
+    "oa_url": "https://arxiv.org/pdf/2407.18370",
+    "venue": "arXiv",
+    "cited_by": null,
+    "authors": [],
+    "summary": "We present a principled approach to provide LLM-based evaluation with a rigorous guarantee of human agreement. We first propose that a reliable evaluation method should not uncritically rely on model preferences for pairwise evaluation, but rather assess the confidence of judge models and selectively decide when to trust its judgement. We then show that under this selective evaluation framework, h",
+    "source_index": "arxiv"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W4416037109",
+      "title": "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+      "year": 2025,
+      "doi": "10.18653/v1/2025.emnlp-main.138",
+      "url": "https://doi.org/10.18653/v1/2025.emnlp-main.138",
+      "oa_url": "https://aclanthology.org/2025.emnlp-main.138.pdf",
+      "venue": null,
+      "cited_by": 77,
+      "authors": [
+        "Da-Wei Li",
+        "Bohan Jiang",
+        "Lili Huang",
+        "Alimohammad Beigi",
+        "Chengshuai Zhao",
+        "Zhen Tan",
+        "Amrita Bhattacharjee",
+        "Yuxuan Jiang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4388274718",
+      "title": "AI Alignment: A Comprehensive Survey",
+      "year": 2023,
+      "doi": "10.48550/arxiv.2310.19852",
+      "url": "http://arxiv.org/abs/2310.19852",
+      "oa_url": "https://arxiv.org/pdf/2310.19852",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 73,
+      "authors": [
+        "Jiaming Ji",
+        "Tianyi Qiu",
+        "Boyuan Chen",
+        "Borong Zhang",
+        "Hantao Lou",
+        "Kaile Wang",
+        "Yawen Duan",
+        "Zhonghao He"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4404986534",
+      "title": "A Survey on LLM-as-a-Judge",
+      "year": 2024,
+      "doi": "10.48550/arxiv.2411.15594",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42254963",
+      "oa_url": "https://arxiv.org/pdf/2411.15594",
+      "venue": "PubMed",
+      "cited_by": 38,
+      "authors": [
+        "Jiawei Gu",
+        "Jiang, Xuhui",
+        "Zhichao Shi",
+        "Hexiang Tan",
+        "Zhai, Xuehao",
+        "Chengjin Xu",
+        "Wei Li",
+        "Yinghan Shen"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4390215524",
+      "title": "A Survey of Reinforcement Learning from Human Feedback",
+      "year": 2023,
+      "doi": "10.48550/arxiv.2312.14925",
+      "url": "http://arxiv.org/abs/2312.14925",
+      "oa_url": "https://arxiv.org/pdf/2312.14925",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 36,
+      "authors": [
+        "Timo Kaufmann",
+        "Paul Weng",
+        "Viktor Bengs",
+        "Eyke Hüllermeier"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4410823677",
+      "title": "Leveraging LLMs for Collaborative Human-AI Decision Making",
+      "year": 2025,
+      "doi": "10.1609/aaaiss.v5i1.35556",
+      "url": "https://doi.org/10.1609/aaaiss.v5i1.35556",
+      "oa_url": "https://ojs.aaai.org/index.php/AAAI-SS/article/download/35556/37711",
+      "venue": "Proceedings of the AAAI Symposium Series",
+      "cited_by": 1,
+      "authors": [
+        "Anthony Favier",
+        "Pulkit Verma",
+        "Ngoc La",
+        "Julie A. Shah"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4404781419",
+      "title": "Can LLM be a Personalized Judge?",
+      "year": 2024,
+      "doi": "10.18653/v1/2024.findings-emnlp.592",
+      "url": "https://doi.org/10.18653/v1/2024.findings-emnlp.592",
+      "oa_url": "https://aclanthology.org/2024.findings-emnlp.592.pdf",
+      "venue": null,
+      "cited_by": 18,
+      "authors": [
+        "Yijiang River Dong",
+        "Tiancheng Hu",
+        "Nigel Collier"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4404987920",
+      "title": "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+      "year": 2024,
+      "doi": "10.48550/arxiv.2411.16594",
+      "url": "http://arxiv.org/abs/2411.16594",
+      "oa_url": "https://arxiv.org/pdf/2411.16594",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 12,
+      "authors": [
+        "Dawei Li",
+        "Jiang, Bohan",
+        "Lili Huang",
+        "Alimohammad Beigi",
+        "Chengshuai Zhao",
+        "Zhen Tan",
+        "Amrita Bhattacharjee",
+        "Yuxuan Jiang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4414128359",
+      "title": "Unique Security and Privacy Threats of Large Language Models: A Comprehensive Survey",
+      "year": 2025,
+      "doi": "10.1145/3764113",
+      "url": "https://doi.org/10.1145/3764113",
+      "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3764113",
+      "venue": "ACM Computing Surveys",
+      "cited_by": 23,
+      "authors": [
+        "Shang Wang",
+        "Tianqing Zhu",
+        "Bo Liu",
+        "Ming Ding",
+        "Dayong Ye",
+        "Wanlei Zhou",
+        "Philip S. Yu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4411934268",
+      "title": "Know Your Limits: A Survey of Abstention in Large Language Models",
+      "year": 2025,
+      "doi": "10.1162/tacl_a_00754",
+      "url": "https://doi.org/10.1162/tacl_a_00754",
+      "oa_url": "https://direct.mit.edu/tacl/article-pdf/doi/10.1162/tacl_a_00754/2534960/tacl_a_00754.pdf",
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "cited_by": 22,
+      "authors": [
+        "Bingbing Wen",
+        "Jihan Yao",
+        "Shangbin Feng",
+        "Chenjun Xu",
+        "Yulia Tsvetkov",
+        "Bill Howe",
+        "Lucy Lu Wang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4407308865",
+      "title": "When One LLM Drools, Multi-LLM Collaboration Rules",
+      "year": 2026,
+      "doi": "10.18653/v1/2026.acl-long.775",
+      "url": "https://doi.org/10.18653/v1/2026.acl-long.775",
+      "oa_url": "https://aclanthology.org/2026.acl-long.775.pdf",
+      "venue": null,
+      "cited_by": 1,
+      "authors": [
+        "Shangbin Feng",
+        "Wenxuan Ding",
+        "Alisa Liu",
+        "Zifeng Wang",
+        "Weijia Shi",
+        "Yike Wang",
+        "Zejiang Shen",
+        "Xiaochuang Han"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4413175758",
+      "title": "Deconstructing the ethics of large language models from long-standing issues to new-emerging dilemmas: a survey",
+      "year": 2025,
+      "doi": "10.1007/s43681-025-00797-3",
+      "url": "https://doi.org/10.1007/s43681-025-00797-3",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s43681-025-00797-3.pdf",
+      "venue": "AI and Ethics",
+      "cited_by": 17,
+      "authors": [
+        "Chengyuan Deng",
+        "Yiqun Duan",
+        "Xin Jin",
+        "Heng Chang",
+        "Yijun Tian",
+        "Han Liu",
+        "Yi‐Chen Wang",
+        "Kuofeng Gao"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}
