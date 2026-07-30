@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — Synthesize tick: MODULE-MAP → ERD + DESIGN
+
+Extended Rubric Compiler ERD aggregates and DESIGN secondary routes for recipes/policy/health/bias/validity/mode-compare. Duplicate hourly loops aborted; single loop PID 54407 remains. SER-103.
+
 ## 2026-07-30 — Synthesize tick: MODULE-MAP → Rubric Compiler ROADMAP/BLUEPRINT/PRD
 
 Merged ARS Top-10 modules into `rubric-compiler-studio-{ROADMAP,COMPREHENSIVE-BLUEPRINT,PRD}.md` (recipes, policy lock, judge health, bias, validity, mode compare, criterion meta-eval). No new product climb. Deduped hourly loops to one synthesize/A/B loop. SER-103.

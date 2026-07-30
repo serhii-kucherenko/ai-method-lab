@@ -19,10 +19,14 @@ CTA primary → `/rubrics` · secondary → `/demo`
 ## Domain IA (primary nav)
 `/rubrics` `/criteria` `/runs` `/calibration` `/escalations` `/compare` `/scoreboard`
 
+## Secondary / module surfaces (same product)
+`/recipes` `/policy` `/health` `/bias` `/validity` — reachable from pack detail + flows; not desk-clone jobs shells.
+
 ## Forbidden
 - Desk clone: `/jobs` `/lifecycle` `/scenario` `/batch` `/goldens` as primary nav  
 - Clinical / device / wet-lab imagery or claims  
 - Purple glow / cream terracotta / broadsheet look  
+- Sibling scoring-studio brands for Autorubric / PReMISE / JudgmentBench / etc.
 
 ## Honesty
-Method-lab soft-sim. Not a certified psychometric instrument. Not a live production judge write-back. Not RULERS / Autorubric / PReMISE branded products.
+Method-lab soft-sim. Not a certified psychometric instrument. Not a live production judge write-back. Not RULERS / Autorubric / PReMISE branded products. ARS papers are research input for modules only (`docs/ideas/rubric-compiler-studio-MODULE-MAP.md`).
