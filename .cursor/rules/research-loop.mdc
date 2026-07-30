@@ -10,7 +10,8 @@ alwaysApply: false
 
 When running a research / Frontier rotation:
 
-- Only edit `docs/RESEARCH.md` and `docs/BACKLOG.md` (plus tiny related docs clarifications if required)
+- Prefer docs-only: `docs/RESEARCH.md`, `docs/BACKLOG.md`, and paper-depth artifacts under `docs/ideas/*-{ARS-BRIEF,KILL-ROUNDS,RELATED-WORKS}*`
+- Paper deepening uses `protocols/ARS_PAPER_RESEARCH.md` + skill `ars-lab-paper-research` (OpenAlex/arXiv; no Anthropic key)
 - Do not write application code, sandboxes, or approach card rewrites mid-research
 - Do not promote to a default playbook or “ROADMAP” from research alone
 - One research change-set at a time; finish learn notes before stacking another

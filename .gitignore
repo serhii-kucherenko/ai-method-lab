@@ -16,3 +16,7 @@ projects/**/data/
 
 **/.next/
 
+# Optional local Academic Research Skills clone (CC-BY-NC; bootstrap via scripts/bootstrap-ars.mjs)
+vendor/academic-research-skills/
+matrix/ARS_LOCAL.json
+

@@ -9,7 +9,7 @@ Human steer (2026-07-26): **business ideas software can fix** — not devices, h
 When digests are available and the lab is idle (no `current_product`) **and** CONTROLLER is not `paused`:
 
 1. Shortlist papers (`node scripts/pick-paper-idea.mjs --days 14 --write-shortlist`) — picker refuses device/clinical/wet-lab/retail costumes
-2. Researcher writes idea dossier + unique claim (not dual-gate costume) — **job-to-be-done first**, paper second
+2. Researcher deepens the pick with **ARS-on-Cursor** (`protocols/ARS_PAPER_RESEARCH.md`): related works via `node scripts/ars-related-works.mjs` (OpenAlex/arXiv, **no Anthropic key**), then writes idea dossier + unique claim (not dual-gate costume) — **job-to-be-done first**, paper second
 3. PM writes buyer, outcome, selling points, roadmap, **PM-GO** — abort if not software-solvable
 4. Architect + designer commit Vision / PRD / ERD / blueprint / DESIGN
 5. Only then open `projects/<slug>/` and climb

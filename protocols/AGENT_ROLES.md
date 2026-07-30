@@ -50,7 +50,10 @@ No `projects/<slug>/` until (full depth path):
 
 ## Researcher
 
-Follow `protocols/IDEA_DEPTH.md` + `docs/PRODUCT_NAMING.md`. Kill early. Money honesty.  
+Follow `protocols/IDEA_DEPTH.md` + `docs/PRODUCT_NAMING.md`. Kill early. Money honesty.
+
+When a paper (or paper-backed seed) is in play, deepen with `protocols/ARS_PAPER_RESEARCH.md` and Cursor skill `ars-lab-paper-research` — related works via free bibliographic APIs, **no Anthropic key**. Produce `<slug>-ARS-BRIEF.md` + `<slug>-KILL-ROUNDS.md` under `docs/ideas/` before claiming G3/G6.
+
 **Exit:** skeptical G6 + `ready_to_build` **or** park/kill — always with a mature display name.
 
 ## Product manager

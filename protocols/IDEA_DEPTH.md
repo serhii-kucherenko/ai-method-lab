@@ -52,6 +52,8 @@ At least **three** independent kill attempts, each answered or accepted:
 
 If any kill stands unanswered → `killed` or stay in `adversarial`.
 
+For paper-sourced / paper-backed ideas, log kills in `docs/ideas/<slug>-KILL-ROUNDS.md` using ARS-on-Cursor (`protocols/ARS_PAPER_RESEARCH.md`) so claims cite related-works records, not invented papers.
+
 ### G4 — Falsifiers before code
 
 At least **two** falsifiers that would abandon the product *after* build starts, e.g.:

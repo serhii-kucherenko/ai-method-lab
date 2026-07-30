@@ -11,6 +11,7 @@ When **not** paused:
 - Read `protocols/AUTONOMOUS_CONTROLLER.md`, `docs/PAPERS_INTAKE.md`, `docs/COMPREHENSIVE_PRODUCT.md`, `docs/DEPTH_RESTART.md`, `docs/BUSINESS_RUBRIC.md` first
 - **Business ideas first:** only problems **software engineering can fix** (SaaS / tooling / benches / ops). Ban devices, healthcare carepaths, wet-lab biologics, and retail/consumer novelty soft-sims (`biz-rubric-v2`)
 - Papers are **optional research input** — never same-tick pick→smoke→sustain; never climb a paper that fails the software-solvable gate
+- **Paper deepening:** Researcher uses Cursor skill `ars-lab-paper-research` + `protocols/ARS_PAPER_RESEARCH.md` (OpenAlex/arXiv; **no Anthropic key**) before PM go when a paper backs the idea
 - Roles: researcher → product manager → senior architect → **product designer** → product delivery → best-practices tutor
 - Require **PM go + Vision/Roadmap/PRD/ERD/blueprint + DESIGN** before `projects/<slug>/`
 - Stack: **Next.js + Tailwind + shadcn** (`docs/PRODUCT_STACK.md`); Python sidecar when the claim needs it
@@ -49,9 +50,11 @@ Evidence that the workflow can produce **one sophisticated software product a st
 
 ## Pointers
 
+- `project_tracker: linear` — [ai-method-lab](https://linear.app/serhii-kucherenko/project/ai-method-lab-27d1b78be235)
 - Portfolio: `projects/PORTFOLIO.md`
 - Agent roles: `protocols/AGENT_ROLES.md`
 - Product runbook: `protocols/PRODUCT_RUNBOOK.md`
+- Paper research (ARS / Cursor): `protocols/ARS_PAPER_RESEARCH.md` · `docs/ARS_CURSOR.md`
 - Workflow: `docs/DEVELOPMENT_WORKFLOW.md`
 - Controller: `protocols/AUTONOMOUS_CONTROLLER.md` + `matrix/CONTROLLER.json`
 - Email: `protocols/NOTIFY.md`

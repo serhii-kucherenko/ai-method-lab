@@ -2,6 +2,19 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — ARS-on-Cursor for paper deepening (no Anthropic key)
+
+Wired [Academic Research Skills](https://github.com/Imbad0202/academic-research-skills) into the Researcher path without Claude Code / `ANTHROPIC_API_KEY`:
+
+- Protocol `protocols/ARS_PAPER_RESEARCH.md` · guide `docs/ARS_CURSOR.md`
+- Cursor skill `.cursor/skills/ars-lab-paper-research/`
+- Scripts: `bootstrap-ars.mjs`, `resolve-ars-root.mjs`, `ars-related-works.mjs` (OpenAlex + arXiv)
+- First pass on **Rubric Compiler Studio** / RULERS (`2601.08654`): RELATED-WORKS + ARS-BRIEF + KILL-ROUNDS
+
+Linear: [ai-method-lab](https://linear.app/serhii-kucherenko/project/ai-method-lab-27d1b78be235) · SER-102
+
+**Skeptical one-liner:** Related-works quality depends on query tightness - vague “rubrics” pulls education lit; LLM-judge phrasing recovers the right neighborhood.
+
 ## 2026-07-26 — Pivot: business ideas, not devices / healthcare / retail soft-sims
 
 **Human steer:** stop climbing paper soft-sims that software cannot productize (devices, clinical carepaths, wet-lab biologics, retail/consumer novelty). Work on **business ideas software engineering can fix**.

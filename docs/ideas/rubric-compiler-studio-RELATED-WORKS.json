@@ -1,0 +1,197 @@
+{
+  "generated_at": "2026-07-30T11:52:38.766Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "Evidence-Grounded Text Evaluation with LLM Judges rubrics",
+    "doi": null,
+    "arxiv": "2601.08654"
+  },
+  "seed_record": {
+    "id": "2601.08654",
+    "title": "From Rubrics to Reliable Scores: Evidence-Grounded Text Evaluation with LLM Judges",
+    "year": 2026,
+    "doi": null,
+    "url": "https://arxiv.org/abs/2601.08654",
+    "oa_url": "https://arxiv.org/pdf/2601.08654",
+    "venue": "arXiv",
+    "cited_by": null,
+    "authors": [],
+    "summary": "Rubric-based text evaluation increasingly uses large language models (LLMs) as scalable judges, but aligning frozen black-box models with human scoring standards remains challenging. We formulate this challenge as a criteria-transfer problem: the goal is not merely to prompt an LLM to assign a score, but to transfer human rubric intent into a stable, auditable, and human-aligned scoring protocol. ",
+    "source_index": "arxiv"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W4362515116",
+      "title": "A Survey of Large Language Models",
+      "year": 2026,
+      "doi": "10.1007/s11704-026-60308-3",
+      "url": "https://doi.org/10.1007/s11704-026-60308-3",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s11704-026-60308-3.pdf",
+      "venue": "Frontiers of Computer Science",
+      "cited_by": 1423,
+      "authors": [
+        "Wayne Xin Zhao",
+        "Kun Zhou",
+        "Junyi Li",
+        "Tianyi Tang",
+        "Zican Dong",
+        "Yupeng Hou",
+        "Beichen Zhang",
+        "Yingqian Min"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4416037109",
+      "title": "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+      "year": 2025,
+      "doi": "10.18653/v1/2025.emnlp-main.138",
+      "url": "https://doi.org/10.18653/v1/2025.emnlp-main.138",
+      "oa_url": "https://aclanthology.org/2025.emnlp-main.138.pdf",
+      "venue": null,
+      "cited_by": 77,
+      "authors": [
+        "Da-Wei Li",
+        "Bohan Jiang",
+        "Lili Huang",
+        "Alimohammad Beigi",
+        "Chengshuai Zhao",
+        "Zhen Tan",
+        "Amrita Bhattacharjee",
+        "Yuxuan Jiang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4405253355",
+      "title": "LLMs-as-Judges: A Comprehensive Survey on LLM-based Evaluation Methods",
+      "year": 2024,
+      "doi": "10.48550/arxiv.2412.05579",
+      "url": "http://arxiv.org/abs/2412.05579",
+      "oa_url": "https://arxiv.org/pdf/2412.05579",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 34,
+      "authors": [
+        "Haitao Li",
+        "Qian Dong",
+        "Junjie Chen",
+        "Huixue Su",
+        "Yujia Zhou",
+        "Qingyao Ai",
+        "Ziyi Ye",
+        "Yiqun Liu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4402671039",
+      "title": "How Johnny Can Persuade LLMs to Jailbreak Them: Rethinking Persuasion to Challenge AI Safety by Humanizing LLMs",
+      "year": 2024,
+      "doi": "10.18653/v1/2024.acl-long.773",
+      "url": "https://doi.org/10.18653/v1/2024.acl-long.773",
+      "oa_url": "https://aclanthology.org/2024.acl-long.773.pdf",
+      "venue": null,
+      "cited_by": 78,
+      "authors": [
+        "Yi Zeng",
+        "Hongpeng Lin",
+        "Jingwen Zhang",
+        "Diyi Yang",
+        "Ruoxi Jia",
+        "Weiyan Shi"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4402671506",
+      "title": "LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts",
+      "year": 2024,
+      "doi": "10.18653/v1/2024.acl-long.745",
+      "url": "https://doi.org/10.18653/v1/2024.acl-long.745",
+      "oa_url": "https://aclanthology.org/2024.acl-long.745.pdf",
+      "venue": null,
+      "cited_by": 37,
+      "authors": [
+        "Helia Hashemi",
+        "Jason Eisner",
+        "Corby Rosset",
+        "Benjamin Van Durme",
+        "Chris Kedzie"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4412673258",
+      "title": "Principles and Guidelines for the Use of LLM Judges",
+      "year": 2025,
+      "doi": "10.1145/3731120.3744588",
+      "url": "https://doi.org/10.1145/3731120.3744588",
+      "oa_url": "https://arxiv.org/pdf/2504.19076",
+      "venue": null,
+      "cited_by": 22,
+      "authors": [
+        "Laura Dietz",
+        "Oleg Zendel",
+        "Peter Bailey",
+        "Charles L. A. Clarke",
+        "Ellese Cotterill",
+        "Jeff Dalton",
+        "Faegheh Hasibi",
+        "Mark Sanderson"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7119224602",
+      "title": "A MODULAR BENCHMARKING FRAMEWORK FOR EVALUATING LLM-BASED AGENT APPLICATIONS",
+      "year": 2026,
+      "doi": "10.34218/ijrcait_09_01_001",
+      "url": "https://doi.org/10.34218/ijrcait_09_01_001",
+      "oa_url": "https://doi.org/10.34218/ijrcait_09_01_001",
+      "venue": "INTERNATIONAL JOURNAL OF RESEARCH IN COMPUTER APPLICATIONS AND INFORMATION TECHNOLOGY",
+      "cited_by": 29,
+      "authors": [
+        "Karthik Perikala"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4400267611",
+      "title": "Open Source Language Models Can Provide Feedback: Evaluating LLMs' Ability to Help Students Using GPT-4-As-A-Judge",
+      "year": 2024,
+      "doi": "10.1145/3649217.3653612",
+      "url": "https://doi.org/10.1145/3649217.3653612",
+      "oa_url": "https://doi.org/10.1145/3649217.3653612",
+      "venue": null,
+      "cited_by": 45,
+      "authors": [
+        "Charles Koutcheme",
+        "Nicola Dainese",
+        "Sami Sarsa",
+        "Arto Hellas",
+        "Juho Leinonen",
+        "Paul Denny"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4311350156",
+      "title": "A rubric for human-like agents and NeuroAI",
+      "year": 2022,
+      "doi": "10.1098/rstb.2021.0446",
+      "url": "https://doi.org/10.1098/rstb.2021.0446",
+      "oa_url": "https://royalsocietypublishing.org/doi/pdf/10.1098/rstb.2021.0446",
+      "venue": "Philosophical Transactions of the Royal Society B Biological Sciences",
+      "cited_by": 40,
+      "authors": [
+        "Ida Momennejad"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}
