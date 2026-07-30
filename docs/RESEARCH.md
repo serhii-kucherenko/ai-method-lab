@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — Synthesize tick: API-CONTRACT
+
+Added `rubric-compiler-studio-API-CONTRACT.md` for core + ARS module endpoints. Duplicate loops 168799/168800 aborted earlier; loop PID 67789 remains. SER-103.
+
 ## 2026-07-30 — Synthesize tick: PAGE-SPECS + PHASE-BRIEFS
 
 Added `rubric-compiler-studio-PAGE-SPECS.md` and `PHASE-BRIEFS.md` for core + ARS module routes. Deduped hourly loops again (keep one). SER-103.
