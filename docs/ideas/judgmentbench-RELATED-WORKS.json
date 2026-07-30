@@ -1,0 +1,101 @@
+{
+  "generated_at": "2026-07-30T18:57:01.926Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "JudgmentBench: Comparing Rubric and Preference Evaluation for Quality Assessment",
+    "doi": null,
+    "arxiv": "2605.25240"
+  },
+  "seed_record": {
+    "id": "2605.25240",
+    "title": "JudgmentBench: Comparing Rubric and Preference Evaluation for Quality Assessment",
+    "year": 2026,
+    "doi": null,
+    "url": "https://arxiv.org/abs/2605.25240",
+    "oa_url": "https://arxiv.org/pdf/2605.25240",
+    "venue": "arXiv",
+    "cited_by": null,
+    "authors": [],
+    "summary": "Two methodologies dominate current practices of benchmarking: rubric-based scoring evaluates items against predefined criteria, whereas comparative judgment elicits pairwise preferences between outputs. Although both methodologies are widely used, the choice between them is rarely justified. We release JudgmentBench, a benchmark of 30 real-world legal tasks, paired with 1,539 rubric scores and 1,5",
+    "source_index": "arxiv"
+  },
+  "related": [
+    {
+      "id": "2602.13576",
+      "title": "Rubrics as an Attack Surface: Stealthy Preference Drift in LLM Judges",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2602.13576",
+      "oa_url": "https://arxiv.org/pdf/2602.13576",
+      "venue": "arXiv",
+      "cited_by": null,
+      "authors": [],
+      "source_index": "arxiv"
+    },
+    {
+      "id": "2602.02219",
+      "title": "Am I More Pointwise or Pairwise? Revealing Position Bias in Rubric-Based LLM-as-a-Judge",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2602.02219",
+      "oa_url": "https://arxiv.org/pdf/2602.02219",
+      "venue": "arXiv",
+      "cited_by": null,
+      "authors": [],
+      "source_index": "arxiv"
+    },
+    {
+      "id": "2512.16041",
+      "title": "Are We on the Right Way to Assessing LLM-as-a-Judge?",
+      "year": 2025,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2512.16041",
+      "oa_url": "https://arxiv.org/pdf/2512.16041",
+      "venue": "arXiv",
+      "cited_by": null,
+      "authors": [],
+      "source_index": "arxiv"
+    },
+    {
+      "id": "2504.17087",
+      "title": "Leveraging LLMs as Meta-Judges: A Multi-Agent Framework for Evaluating LLM Judgments",
+      "year": 2025,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2504.17087",
+      "oa_url": "https://arxiv.org/pdf/2504.17087",
+      "venue": "arXiv",
+      "cited_by": null,
+      "authors": [],
+      "source_index": "arxiv"
+    },
+    {
+      "id": "2606.03043",
+      "title": "The Geometry of LLM-as-Judge: Why Inter-LLM Consensus Is Not Human Alignment",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2606.03043",
+      "oa_url": "https://arxiv.org/pdf/2606.03043",
+      "venue": "arXiv",
+      "cited_by": null,
+      "authors": [],
+      "source_index": "arxiv"
+    },
+    {
+      "id": "2412.05579",
+      "title": "LLMs-as-Judges: A Comprehensive Survey on LLM-based Evaluation Methods",
+      "year": 2024,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2412.05579",
+      "oa_url": "https://arxiv.org/pdf/2412.05579",
+      "venue": "arXiv",
+      "cited_by": null,
+      "authors": [],
+      "source_index": "arxiv"
+    }
+  ],
+  "note": "OpenAlex neighbor search was weak for this seed; related list enriched from arXiv API query (rubric+preference+LLM+judge). Do not invent citations beyond these records."
+}
