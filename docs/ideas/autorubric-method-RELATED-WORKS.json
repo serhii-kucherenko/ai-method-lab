@@ -1,0 +1,173 @@
+{
+  "generated_at": "2026-07-30T11:55:32.743Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "Autorubric: Unifying Rubric-based LLM Evaluation",
+    "doi": null,
+    "arxiv": "2603.00077"
+  },
+  "seed_record": {
+    "id": "2603.00077",
+    "title": "Autorubric: Unifying Rubric-based LLM Evaluation",
+    "year": 2026,
+    "doi": null,
+    "url": "https://arxiv.org/abs/2603.00077",
+    "oa_url": "https://arxiv.org/pdf/2603.00077",
+    "venue": "arXiv",
+    "cited_by": null,
+    "authors": [],
+    "summary": "Techniques for reliable rubric-based LLM evaluation -- ensemble judging, bias mitigation, few-shot calibration -- are scattered across papers with inconsistent terminology and partial implementations. We introduce Autorubric, an open-source framework that unifies these rubric-based LLM evaluation lessons with opinionated defaults: analytic rubrics with binary, ordinal, and nominal criteria; single",
+    "source_index": "arxiv"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W7166887968",
+      "title": "AutoRubric: Rubric-Based Generative Rewards for Faithful Multimodal Reasoning",
+      "year": 2026,
+      "doi": "10.18653/v1/2026.findings-acl.1282",
+      "url": "https://doi.org/10.18653/v1/2026.findings-acl.1282",
+      "oa_url": "https://aclanthology.org/2026.findings-acl.1282.pdf",
+      "venue": null,
+      "cited_by": 0,
+      "authors": [
+        "Mengzhao Jia",
+        "Zhihan Zhang",
+        "Ignacio Cases",
+        "Zheyuan Liu",
+        "Meng Jiang",
+        "Peng Qi"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7163597402",
+      "title": "Agreement Metrics for LLM-as-Judge Evaluation: What to Report and Why",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2606.00093",
+      "oa_url": "https://arxiv.org/pdf/2606.00093",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Delip Rao",
+        "Chris Callison-Burch"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7163597864",
+      "title": "AnyAudio-Judge: A Dynamic Rubric-Based Benchmark and Evaluator for Audio Instruction Following",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2606.03116",
+      "oa_url": "https://arxiv.org/pdf/2606.03116",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Haitao Li",
+        "Tian Tan",
+        "Yuguang Yang",
+        "Shan Yang",
+        "Xie Chen"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7135156227",
+      "title": "Beyond the Illusion of Consensus: From Surface Heuristics to Knowledge-Grounded Evaluation in LLM-as-a-Judge",
+      "year": 2026,
+      "doi": null,
+      "url": "http://arxiv.org/abs/2603.11027",
+      "oa_url": "https://arxiv.org/pdf/2603.11027",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Mingyang Song",
+        "Mao Zheng",
+        "Chenning Xu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7162044679",
+      "title": "Not Every Rubric Teaches Equally: Policy-Aware Rubric Rewards for RLVR",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2605.20164",
+      "oa_url": "https://arxiv.org/pdf/2605.20164",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Utkarsh Tyagi",
+        "Xingang Guo",
+        "MohammadHossein Rezaei",
+        "Daniel George",
+        "Anas Mahmoud",
+        "Jackson Lee",
+        "Liu, Bing, 1975-",
+        "Yunzhong He"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7164234126",
+      "title": "ComplexConstraints and Beyond: Expert Rubrics for RLVR",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2606.09118",
+      "oa_url": "https://arxiv.org/pdf/2606.09118",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Sushant Mehta",
+        "Liudas Panavas",
+        "Garre, Suhaas",
+        "Edwin Chen"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7166857223",
+      "title": "Complex-IF and Beyond: Expert Rubrics for RLVR",
+      "year": 2026,
+      "doi": "10.18653/v1/2026.gem-main.61",
+      "url": "https://doi.org/10.18653/v1/2026.gem-main.61",
+      "oa_url": "https://aclanthology.org/2026.gem-main.61.pdf",
+      "venue": null,
+      "cited_by": 0,
+      "authors": [
+        "Sushant Mehta",
+        "Liudas Panavas",
+        "Eleanor Fleming",
+        "Paul Mains",
+        "Edwin Chen"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7167380667",
+      "title": "SkillCoach: Self-Evolving Rubrics for Evaluating and Enhancing Agentic Skill-Use",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2607.01874",
+      "oa_url": "https://arxiv.org/pdf/2607.01874",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "J ZHU",
+        "Kelong Mao",
+        "Yudong Guo",
+        "Dengbo He",
+        "S Xu",
+        "Simiu Gu",
+        "Yutao Yue"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}

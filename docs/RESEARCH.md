@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — ARS tick: Autorubric folded into Rubric Compiler (not a new climb)
+
+Deepened [Autorubric](https://arxiv.org/abs/2603.00077) via ARS-on-Cursor. Kill rounds reject a second product; treat as recipe input for Rubric Compiler Studio. Artifacts: `docs/ideas/autorubric-method-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. SER-103.
+
 ## 2026-07-30 — ARS-on-Cursor for paper deepening (no Anthropic key)
 
 Wired [Academic Research Skills](https://github.com/Imbad0202/academic-research-skills) into the Researcher path without Claude Code / `ANTHROPIC_API_KEY`:
