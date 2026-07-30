@@ -14,8 +14,13 @@
 | `/runs` | Score runs with evidence anchors |
 | `/calibration` | Human-reference calibration sets |
 | `/escalations` | Selective-trust escalation queue |
-| `/compare` | Compiled rubric (A) vs holistic (B) |
-| `/scoreboard` | Pack / run leaderboard |
+| `/compare` | Compiled rubric (A) vs holistic (B); **Mode Compare** also rubric vs preference |
+| `/scoreboard` | Pack / run leaderboard + **Criterion Meta-Eval** views |
+| `/recipes` | Autorubric-style production recipe templates (criterion types, ensembles) |
+| `/policy` | Measurement Spec / Policy Lock ledger (who locked, suite pin, rollback) |
+| `/health` | Judge Health diagnostics (reliability signals, plain language) |
+| `/bias` | Bias Hardening suite results (order / score-ID / reference gates) |
+| `/validity` | Validity Suite — gold anchors + agreement≠validity warnings |
 | `/settings` | Org, members, webhook, exports |
 | `/honesty` | Soft-sim fence + Sources |
 
@@ -60,10 +65,18 @@ Forbidden primary IA: `/jobs` `/lifecycle` `/scenario` `/batch` `/audit` `/golde
 28. Audit trail  
 29. try.html offline demo  
 30. In-app guide link  
+31. Recipe template apply (Autorubric-inspired)  
+32. Policy Lock ledger + rollback (PReMISE)  
+33. Judge Health reliability panel (IRT-inspired, non-clinical)  
+34. Bias Hardening CI gates (order / IDs / references)  
+35. Validity Suite gold anchors + warnings  
+36. Mode Compare: rubric vs preference run  
+37. Criterion Meta-Eval per-item judge accuracy  
+38. Structured-criteria onboarding narrative (survey-backed)  
 
 ## Aggregates
 
-RubricPack, Criterion, ScoreRun, EvidenceAnchor, CalibrationSet, Escalation, CompareResult (+ Org/Members/Audits)
+RubricPack, Criterion, ScoreRun, EvidenceAnchor, CalibrationSet, Escalation, CompareResult, RecipeTemplate, PolicyLock, JudgeHealthSnapshot, BiasSuiteRun, ValidityAnchor, PreferenceCompare, CriterionJudgeScore (+ Org/Members/Audits)
 
 ## Test themes
 

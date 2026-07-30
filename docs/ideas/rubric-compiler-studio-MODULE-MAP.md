@@ -27,6 +27,10 @@ Research-only synthesis. No new product climbs. Sources: `docs/ideas/*-{ARS-BRIE
 - No clinical, education-grading, or RLVR infra pivots
 - Hourly ARS loop after Top 10: upgrade Rubric Compiler pack from this map, or deepen non-isomorphic A/B ideas only
 
+## Pack merge status (2026-07-30 synthesize tick)
+
+Wired into `rubric-compiler-studio-{ROADMAP,COMPREHENSIVE-BLUEPRINT,PRD}.md`: recipes, policy lock, judge health, bias hardening, validity suite, mode compare, criterion meta-eval (+ escalations already present). Next ticks: ERD/DESIGN page specs for new routes, or non-isomorphic A/B research.
+
 ## Next engineering/docs work (when climb resumes)
 
 1. Merge modules into `rubric-compiler-studio-COMPREHENSIVE-BLUEPRINT.md` / ROADMAP

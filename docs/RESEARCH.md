@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — Synthesize tick: MODULE-MAP → Rubric Compiler ROADMAP/BLUEPRINT/PRD
+
+Merged ARS Top-10 modules into `rubric-compiler-studio-{ROADMAP,COMPREHENSIVE-BLUEPRINT,PRD}.md` (recipes, policy lock, judge health, bias, validity, mode compare, criterion meta-eval). No new product climb. Deduped hourly loops to one synthesize/A/B loop. SER-103.
+
 ## 2026-07-30 — ARS Top 10 complete → Rubric Compiler module map
 
 Finished hourly deepening of all 10 scoring/rubric shortlist papers. Last: [RubricEval](https://arxiv.org/abs/2603.25133) → **Criterion Meta-Eval**. Synthesis: `docs/ideas/rubric-compiler-studio-MODULE-MAP.md`. No new product climbs from this set. SER-103.
