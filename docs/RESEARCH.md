@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — ARS tick: IRT judge diagnosis → Judge Health module
+
+Deepened [Diagnosing LLM-as-a-Judge via IRT](https://arxiv.org/abs/2602.00521) via hourly ARS loop. Fold **judge reliability diagnostics** into Rubric Compiler Studio; refuse clinical psychometrics cosplay and standalone climb. Artifacts: `docs/ideas/irt-judge-diagnosis-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. SER-103.
+
 ## 2026-07-30 — ARS tick: Trust or Escalate → selective-trust module
 
 Deepened [Trust or Escalate](https://arxiv.org/abs/2407.18370) via hourly ARS loop. Fold **escalate / abstention queues** into Rubric Compiler Studio; reject standalone climb. Artifacts: `docs/ideas/trust-or-escalate-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. SER-103.

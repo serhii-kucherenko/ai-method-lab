@@ -1,0 +1,212 @@
+{
+  "generated_at": "2026-07-30T14:56:29.736Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "Diagnosing LLM-as-a-Judge via Item Response Theory",
+    "doi": null,
+    "arxiv": "2602.00521"
+  },
+  "seed_record": {
+    "id": "2602.00521",
+    "title": "Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory",
+    "year": 2026,
+    "doi": null,
+    "url": "https://arxiv.org/abs/2602.00521",
+    "oa_url": "https://arxiv.org/pdf/2602.00521",
+    "venue": "arXiv",
+    "cited_by": null,
+    "authors": [],
+    "summary": "While LLM-as-a-Judge is widely used in automated evaluation, existing validation practices primarily operate at the level of observed outputs, offering limited insight into whether LLM judges themselves function as stable and reliable measurement instruments. To address this limitation, we introduce a two-phase diagnostic framework for assessing reliability of LLM-as-a-Judge, grounded in Item Resp",
+    "source_index": "arxiv"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W4391971084",
+      "title": "Prompt engineering in consistency and reliability with the evidence-based guideline for LLMs",
+      "year": 2024,
+      "doi": "10.1038/s41746-024-01029-4",
+      "url": "https://doi.org/10.1038/s41746-024-01029-4",
+      "oa_url": "https://www.nature.com/articles/s41746-024-01029-4.pdf",
+      "venue": "npj Digital Medicine",
+      "cited_by": 352,
+      "authors": [
+        "Wang Li",
+        "Xi Chen",
+        "Xiangwen Deng",
+        "Hao Wen",
+        "Mingke You",
+        "Weizhi Liu",
+        "Qi Li",
+        "Jian Li"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W3210675652",
+      "title": "Contemporary Psychometrics",
+      "year": 2005,
+      "doi": "10.4324/9781410612977",
+      "url": "https://doi.org/10.4324/9781410612977",
+      "oa_url": "https://www.intechopen.com/chapter/pdf-download/1214887",
+      "venue": "Psychology Press eBooks",
+      "cited_by": 310,
+      "authors": [
+        "Albert Maydeu-Olivares",
+        "John J. McArdle"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4383605161",
+      "title": "A Survey on Evaluation of Large Language Models",
+      "year": 2023,
+      "doi": "10.48550/arxiv.2307.03109",
+      "url": "http://arxiv.org/abs/2307.03109",
+      "oa_url": "https://arxiv.org/pdf/2307.03109",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 201,
+      "authors": [
+        "Yupeng Chang",
+        "Xu Wang",
+        "Jindong Wang",
+        "Yuan-Hsuan Wu",
+        "Linyi Yang",
+        "Kaijie Zhu",
+        "Hao Chen",
+        "Xiaoyuan Yi"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4384920109",
+      "title": "Challenges and Applications of Large Language Models",
+      "year": 2023,
+      "doi": "10.48550/arxiv.2307.10169",
+      "url": "http://arxiv.org/abs/2307.10169",
+      "oa_url": "https://arxiv.org/pdf/2307.10169",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 179,
+      "authors": [
+        "Jean Kaddour",
+        "Joshua Harris",
+        "Maximilian Mozes",
+        "Herbie Bradley",
+        "Roberta Răileanu",
+        "Robert McHardy"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4385774833",
+      "title": "Trustworthy LLMs: a Survey and Guideline for Evaluating Large Language Models' Alignment",
+      "year": 2023,
+      "doi": "10.48550/arxiv.2308.05374",
+      "url": "http://arxiv.org/abs/2308.05374",
+      "oa_url": "https://arxiv.org/pdf/2308.05374",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 72,
+      "authors": [
+        "Yang Liu",
+        "Yuanshun Yao",
+        "Jean-François Ton",
+        "Xiaoying Zhang",
+        "Guo, Ruocheng",
+        "Cheng, Hao",
+        "Yegor Klochkov",
+        "Muhammad Faaiz Taufiq"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4405562067",
+      "title": "Can You Trust LLM Judgments? Reliability of LLM-as-a-Judge",
+      "year": 2024,
+      "doi": "10.48550/arxiv.2412.12509",
+      "url": "http://arxiv.org/abs/2412.12509",
+      "oa_url": "https://arxiv.org/pdf/2412.12509",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 5,
+      "authors": [
+        "Kayla Schroeder",
+        "Zach Wood-Doughty"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7124460067",
+      "title": "Artificial Authority: The Promise and Perils of LLM Judges in Healthcare",
+      "year": 2026,
+      "doi": "10.3390/bioengineering13010108",
+      "url": "https://doi.org/10.3390/bioengineering13010108",
+      "oa_url": "https://www.mdpi.com/2306-5354/13/1/108/pdf?version=1768556216",
+      "venue": "Bioengineering",
+      "cited_by": 5,
+      "authors": [
+        "Ariana Genovese",
+        "Lars Hegstrom",
+        "Srinivasagam Prabha",
+        "Cesar A. Gomez-Cabello",
+        "Syed Ali Haider",
+        "Bernardo Gabriele Collaço",
+        "Nadia Wood",
+        "Antonio Jorge Forte"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4388092128",
+      "title": "Can LLMs Keep a Secret? Testing Privacy Implications of Language Models via Contextual Integrity Theory",
+      "year": 2023,
+      "doi": "10.48550/arxiv.2310.17884",
+      "url": "http://arxiv.org/abs/2310.17884",
+      "oa_url": "https://arxiv.org/pdf/2310.17884",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 12,
+      "authors": [
+        "Niloofar Mireshghallah",
+        "Hyunwoo Kim",
+        "Xuhui Zhou",
+        "Yulia Tsvetkov",
+        "Maarten Sap",
+        "Reza Shokri",
+        "Yejin Choi"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4411394707",
+      "title": "Medical reasoning in LLMs: an in-depth analysis of DeepSeek R1",
+      "year": 2025,
+      "doi": "10.3389/frai.2025.1616145",
+      "url": "https://doi.org/10.3389/frai.2025.1616145",
+      "oa_url": "https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1616145/pdf",
+      "venue": "Frontiers in Artificial Intelligence",
+      "cited_by": 27,
+      "authors": [
+        "Birger Moëll",
+        "Fredrik Sand Aronsson",
+        "Sanian Akbar"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4399410016",
+      "title": "Enhancing Trust in LLMs: Algorithms for Comparing and Interpreting LLMs",
+      "year": 2024,
+      "doi": "10.48550/arxiv.2406.01943",
+      "url": "http://arxiv.org/abs/2406.01943",
+      "oa_url": "https://arxiv.org/pdf/2406.01943",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 12,
+      "authors": [
+        "Nik Bear Brown"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}
