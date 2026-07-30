@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-28T11:17:15.821Z",
+  "updated_at": "2026-07-30T11:56:11.259Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -46,7 +46,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "idle",
-  "notes": "Idle after Change Freeze finish (75857cf1). Hourly loop PID 22636.",
+  "notes": "Idle after Change Freeze. ARS-on-Cursor wired (SER-102). Hourly ARS research loop PID 55699 (SER-103). Prefer deepen scoring papers into Rubric Compiler; no Anthropic key.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -140,5 +140,13 @@
     "do_not_rearm_if_alive": true,
     "ticks_observed": 8,
     "depth_note": "Business-first 1h keep-going loop armed."
+  },
+  "ars_research": {
+    "enabled": true,
+    "protocol": "protocols/ARS_PAPER_RESEARCH.md",
+    "anthropic_required": false,
+    "loop_pid": 55699,
+    "interval": "1h",
+    "linear_issue": "SER-103"
   }
 }
