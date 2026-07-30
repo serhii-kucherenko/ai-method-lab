@@ -1,0 +1,157 @@
+{
+  "generated_at": "2026-07-30T19:56:32.286Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "RubricEval criterion-level meta-evaluation LLM judge",
+    "doi": null,
+    "arxiv": "2603.25133"
+  },
+  "seed_record": {
+    "id": "2603.25133",
+    "title": "RubricEval: A Rubric-Level Meta-Evaluation Benchmark for LLM Judges in Instruction Following",
+    "year": 2026,
+    "doi": null,
+    "url": "https://arxiv.org/abs/2603.25133",
+    "oa_url": "https://arxiv.org/pdf/2603.25133",
+    "venue": "arXiv",
+    "cited_by": null,
+    "authors": [],
+    "summary": "Rubric-based evaluation has become a prevailing paradigm for evaluating instruction following in large language models (LLMs). Despite its widespread use, the reliability of these rubric-level evaluations remains unclear, calling for meta-evaluation. However, prior meta-evaluation efforts largely focus on the response level, failing to assess the fine-grained judgment accuracy that rubric-based ev",
+    "source_index": "arxiv"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W7162894207",
+      "title": "RUBRIC-ARROW: Alternating Pointwise Rubric Reward Modeling for LLM Post-training in Non-verifiable Domains",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2605.29156",
+      "oa_url": "https://arxiv.org/pdf/2605.29156",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Haoxiang Jiang",
+        "Zihan Dong",
+        "Tianci Liu",
+        "Wanying Wang",
+        "Ran Xu",
+        "Tony Yu",
+        "Linjun Zhang",
+        "Haoyu Wang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7163596816",
+      "title": "Mitigating False Credit Propagation: Probabilistic Graphical Reward Aggregation for Rubric-Based Reinforcement Learning",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2606.03361",
+      "oa_url": "https://arxiv.org/pdf/2606.03361",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Can Lv",
+        "Mingju Chen",
+        "Heng Chang",
+        "Shiji Zhou"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7166900994",
+      "title": "Can LLM-as-a-Judge Reliably Verify Rubrics in Agentic Scenarios?",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2606.29920",
+      "oa_url": "https://arxiv.org/pdf/2606.29920",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "彭扬达",
+        "Yunjia Qi",
+        "H H Peng",
+        "Haotian Xia",
+        "Guanzhong He",
+        "Xintong Shi",
+        "Richeng Xuan",
+        "Songyuanyi Lu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7161090270",
+      "title": "Auto-Rubric as Reward: From Implicit Preferences to Explicit Multimodal Generative Criteria",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2605.08354",
+      "oa_url": "https://arxiv.org/pdf/2605.08354",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Juanxi Tian",
+        "Fengyuan Liu",
+        "Jiaming Han",
+        "Yilei Jiang",
+        "Yongliang Wu",
+        "Yesheng Liu",
+        "Haodong Li",
+        "Furong Xu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7163993259",
+      "title": "Code Translation Agent as a Judge with AgentBeats",
+      "year": 2026,
+      "doi": "10.21203/rs.3.rs-9664774/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-9664774/v1",
+      "oa_url": "https://www.researchsquare.com/article/rs-9664774/latest.pdf",
+      "venue": "Research Square",
+      "cited_by": 0,
+      "authors": [
+        "Samer Attrah"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7164234902",
+      "title": "Support Vector Rubrics: Closing the Gap Between Self-Generated and Human Rubrics",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2606.08077",
+      "oa_url": "https://arxiv.org/pdf/2606.08077",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Mengyuan Sun",
+        "Yu Li",
+        "Zhuohao Yu",
+        "Shikun Zhang",
+        "Wei Ye"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7153672017",
+      "title": "An Imperfect Verifier is Good Enough: Learning with Noisy Rewards",
+      "year": 2026,
+      "doi": null,
+      "url": "http://arxiv.org/abs/2604.07666",
+      "oa_url": "https://arxiv.org/pdf/2604.07666",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Andreas Plesner",
+        "Francisco Guzmán",
+        "Anish Athalye"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}

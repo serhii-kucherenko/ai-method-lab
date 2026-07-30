@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — ARS Top 10 complete → Rubric Compiler module map
+
+Finished hourly deepening of all 10 scoring/rubric shortlist papers. Last: [RubricEval](https://arxiv.org/abs/2603.25133) → **Criterion Meta-Eval**. Synthesis: `docs/ideas/rubric-compiler-studio-MODULE-MAP.md`. No new product climbs from this set. SER-103.
+
 ## 2026-07-30 — ARS tick: JudgmentBench → Mode Compare module
 
 Deepened [JudgmentBench](https://arxiv.org/abs/2605.25240) via hourly ARS loop. Fold **rubric vs preference compare** into Rubric Compiler Studio; refuse standalone climb. Related-works enriched via arXiv API after weak OpenAlex neighbors. Artifacts: `docs/ideas/judgmentbench-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. SER-103.
