@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — ARS tick: holistic→structured survey → narrative module
+
+Deepened [From Holistic Evaluation to Structured Criteria](https://arxiv.org/abs/2606.08625) via hourly ARS loop. Fold into Rubric Compiler **onboarding/landing narrative** only; refuse new climb and education-grading pivot. Artifacts: `docs/ideas/holistic-to-structured-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. SER-103.
+
 ## 2026-07-30 — ARS tick: Reliability without Validity → Validity Suite module
 
 Deepened [Reliability without Validity](https://arxiv.org/abs/2606.19544) via hourly ARS loop. Fold **validity vs agreement** protocols into Rubric Compiler Studio; refuse standalone climb. Artifacts: `docs/ideas/reliability-without-validity-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. SER-103.

@@ -1,0 +1,216 @@
+{
+  "generated_at": "2026-07-30T17:56:31.180Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "From Holistic Evaluation to Structured Criteria LLM rubrics survey",
+    "doi": null,
+    "arxiv": "2606.08625"
+  },
+  "seed_record": {
+    "id": "2606.08625",
+    "title": "From Holistic Evaluation to Structured Criteria: Rubrics Across the Evolving LLM Landscape",
+    "year": 2026,
+    "doi": null,
+    "url": "https://arxiv.org/abs/2606.08625",
+    "oa_url": "https://arxiv.org/pdf/2606.08625",
+    "venue": "arXiv",
+    "cited_by": null,
+    "authors": [],
+    "summary": "As Large Language Models (LLMs) advance toward open-ended autonomous agents, the mechanisms used to evaluate and guide their behavior must evolve accordingly. This work introduces the rubric as a unifying framework capturing this evolution, characterizing rubrics as a dynamic response to successive LLM paradigm shifts that recurs across otherwise independent efforts in evaluation, reinforcement le",
+    "source_index": "arxiv"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W4362515116",
+      "title": "A Survey of Large Language Models",
+      "year": 2026,
+      "doi": "10.1007/s11704-026-60308-3",
+      "url": "https://doi.org/10.1007/s11704-026-60308-3",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s11704-026-60308-3.pdf",
+      "venue": "Frontiers of Computer Science",
+      "cited_by": 1423,
+      "authors": [
+        "Wayne Xin Zhao",
+        "Kun Zhou",
+        "Junyi Li",
+        "Tianyi Tang",
+        "Zican Dong",
+        "Yupeng Hou",
+        "Beichen Zhang",
+        "Yingqian Min"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4387809804",
+      "title": "Leveraging Generative AI and Large Language Models: A Comprehensive Roadmap for Healthcare Integration",
+      "year": 2023,
+      "doi": "10.3390/healthcare11202776",
+      "url": "https://doi.org/10.3390/healthcare11202776",
+      "oa_url": "https://www.mdpi.com/2227-9032/11/20/2776/pdf?version=1697783532",
+      "venue": "Healthcare",
+      "cited_by": 245,
+      "authors": [
+        "Ping Yu",
+        "Hua Xu",
+        "Xia Hu",
+        "Chao Deng"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4385732922",
+      "title": "Survey on Explainable AI: From Approaches, Limitations and Applications Aspects",
+      "year": 2023,
+      "doi": "10.1007/s44230-023-00038-y",
+      "url": "https://doi.org/10.1007/s44230-023-00038-y",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s44230-023-00038-y.pdf",
+      "venue": "Human-Centric Intelligent Systems",
+      "cited_by": 215,
+      "authors": [
+        "Wenli Yang",
+        "Yu-Chen Wei",
+        "Hanyu Wei",
+        "Yanyu Chen",
+        "Guan Huang",
+        "Xiang Li",
+        "Renjie Li",
+        "Naimeng Yao"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4392632345",
+      "title": "Using ChatGPT-4 to Create Structured Medical Notes From Audio Recordings of Physician-Patient Encounters: Comparative Study",
+      "year": 2024,
+      "doi": "10.2196/54419",
+      "url": "https://doi.org/10.2196/54419",
+      "oa_url": "https://www.jmir.org/2024/1/e54419/PDF",
+      "venue": "Journal of Medical Internet Research",
+      "cited_by": 111,
+      "authors": [
+        "Annessa Kernberg",
+        "Jeffrey A. Gold",
+        "Vishnu Mohan"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4416037109",
+      "title": "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+      "year": 2025,
+      "doi": "10.18653/v1/2025.emnlp-main.138",
+      "url": "https://doi.org/10.18653/v1/2025.emnlp-main.138",
+      "oa_url": "https://aclanthology.org/2025.emnlp-main.138.pdf",
+      "venue": null,
+      "cited_by": 77,
+      "authors": [
+        "Da-Wei Li",
+        "Bohan Jiang",
+        "Lili Huang",
+        "Alimohammad Beigi",
+        "Chengshuai Zhao",
+        "Zhen Tan",
+        "Amrita Bhattacharjee",
+        "Yuxuan Jiang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4392223637",
+      "title": "From COBIT to ISO 42001: Evaluating cybersecurity frameworks for opportunities, risks, and regulatory compliance in commercializing large language models",
+      "year": 2024,
+      "doi": "10.1016/j.cose.2024.103964",
+      "url": "https://doi.org/10.1016/j.cose.2024.103964",
+      "oa_url": "https://doi.org/10.1016/j.cose.2024.103964",
+      "venue": "Computers & Security",
+      "cited_by": 72,
+      "authors": [
+        "Timothy R. McIntosh",
+        "Teo Sušnjak",
+        "Tong Liu",
+        "Paul Watters",
+        "Dan Xu",
+        "Dongwei Liu",
+        "Raza Nowrozy",
+        "Malka N. Halgamuge"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4389518687",
+      "title": "A Confederacy of Models: a Comprehensive Evaluation of LLMs on Creative Writing",
+      "year": 2023,
+      "doi": "10.18653/v1/2023.findings-emnlp.966",
+      "url": "https://doi.org/10.18653/v1/2023.findings-emnlp.966",
+      "oa_url": "https://aclanthology.org/2023.findings-emnlp.966.pdf",
+      "venue": null,
+      "cited_by": 54,
+      "authors": [
+        "Carlos Gómez‐Rodríguez",
+        "Paul Williams"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4405253355",
+      "title": "LLMs-as-Judges: A Comprehensive Survey on LLM-based Evaluation Methods",
+      "year": 2024,
+      "doi": "10.48550/arxiv.2412.05579",
+      "url": "http://arxiv.org/abs/2412.05579",
+      "oa_url": "https://arxiv.org/pdf/2412.05579",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 34,
+      "authors": [
+        "Haitao Li",
+        "Qian Dong",
+        "Junjie Chen",
+        "Huixue Su",
+        "Yujia Zhou",
+        "Qingyao Ai",
+        "Ziyi Ye",
+        "Yiqun Liu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4400485493",
+      "title": "Harnessing LLMs for multi-dimensional writing assessment: Reliability and alignment with human judgments",
+      "year": 2024,
+      "doi": "10.1016/j.heliyon.2024.e34262",
+      "url": "https://doi.org/10.1016/j.heliyon.2024.e34262",
+      "oa_url": "http://www.cell.com/article/S2405844024102939/pdf",
+      "venue": "Heliyon",
+      "cited_by": 53,
+      "authors": [
+        "Xiaoyi Tang",
+        "Hongwei Chen",
+        "Daoyu Lin",
+        "Kexin Li"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4398184732",
+      "title": "LLMs in Automated Essay Evaluation: A Case Study",
+      "year": 2024,
+      "doi": "10.1609/aaaiss.v3i1.31193",
+      "url": "https://doi.org/10.1609/aaaiss.v3i1.31193",
+      "oa_url": "https://ojs.aaai.org/index.php/AAAI-SS/article/download/31193/33353",
+      "venue": "Proceedings of the AAAI Symposium Series",
+      "cited_by": 19,
+      "authors": [
+        "Milan Kostić",
+        "Hans Friedrich Witschel",
+        "Knut Hinkelmann",
+        "Maja Spahic-Bogdanovic"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}
