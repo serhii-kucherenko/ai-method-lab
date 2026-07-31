@@ -33,5 +33,6 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 | 6 | **Schema Drift Studio** | B 74 | Pack ready - after #1–5 |
 | 7 | **Webhook Retry Debt Studio** | B 74 | Pack ready - after #1–6 |
 | 8 | **Egress Spill Studio** | B 75 | Pack ready - after #1–7 |
+| 9 | **Canary Budget Studio** | B 74 | Seed + score - deepen next |
 
 See `docs/ideas/CLIMB-QUEUE.md`.

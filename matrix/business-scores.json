@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v2",
-  "updated_at": "2026-07-31T19:16:07.534Z",
+  "updated_at": "2026-07-31T21:16:35.226Z",
   "projects": [
     {
       "id": 1,
@@ -3336,6 +3336,33 @@
       "score": 75,
       "tier": "B",
       "id": 142
+    },
+    {
+      "slug": "canary-budget-studio",
+      "project": "Canary Budget Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 8,
+        "pmf": 7,
+        "money": 7,
+        "wedge": 8,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 8
+      },
+      "business_idea": "Show how much canary error budget remains before auto-promote, with blast radius if they ship anyway",
+      "pmf": "Early signal with platform / SRE / release leads who already run progressive delivery",
+      "buyer": "Platform, SRE, and release engineering leads at product orgs with canary rollouts",
+      "money_hook": "Org seats + canary-window sync usage",
+      "potential": "Release-ops wedge adjacent to Stale Flag and Schema Drift without cloning Eval Budget",
+      "moat": "Canary error budget → promote/hold + blast radius vs generic rollout consoles",
+      "evidence": "ARS related-works on canary/progressive delivery; kill rounds fence Flagger UI and Eval Budget clones",
+      "status": "research",
+      "rubric": "biz-rubric-v2",
+      "gc_notes": "Prefer if promote/hold budget claim stays locked; Kill if Flagger UI mirror or Eval Budget noun-swap",
+      "score": 74,
+      "tier": "B",
+      "id": 143
     }
   ]
 }

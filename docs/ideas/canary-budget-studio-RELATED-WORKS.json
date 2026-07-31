@@ -1,0 +1,227 @@
+{
+  "generated_at": "2026-07-31T21:16:05.038Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "canary deployment error budget progressive delivery release engineering",
+    "doi": null,
+    "arxiv": null
+  },
+  "seed_record": {
+    "id": "https://openalex.org/W16884164",
+    "title": "Spain: Health System Review.",
+    "year": 2010,
+    "doi": null,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/21224176",
+    "oa_url": "http://eprints.lse.ac.uk/125586/1/9789289059695-eng.pdf",
+    "venue": "PubMed",
+    "cited_by": 490,
+    "authors": [
+      "Bernal-Delgado E",
+      "Sandra García-Armesto",
+      "J Oliva",
+      "Fernando Ignacio Sanchez Martinez",
+      "Jose Ramon Repullo",
+      "Luz María Peña-Longobardo",
+      "Manuel Ridao-López",
+      "Cristina Hernández‐Quevedo"
+    ],
+    "source_index": "openalex"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W155190195",
+      "title": "Health systems in transition.",
+      "year": 2010,
+      "doi": null,
+      "url": "http://apps.who.int/iris/bitstream/10665/108590/1/e95045.pdf",
+      "oa_url": null,
+      "venue": "European Observatory on Health Systems and Policies eBooks",
+      "cited_by": 604,
+      "authors": [
+        "Ghafur Khodjamurodov",
+        "Bernd Rechel"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2997680860",
+      "title": "Health Care Quality Indicators Project",
+      "year": 2006,
+      "doi": "10.1787/440134737301",
+      "url": "https://doi.org/10.1787/440134737301",
+      "oa_url": "https://www.oecd-ilibrary.org/health-care-quality-indicators-project_5l9t19m240hc.pdf?itemId=%2Fcontent%2Fpaper%2F440134737301&mimeType=pdf",
+      "venue": "OECD health working papers",
+      "cited_by": 383,
+      "authors": [
+        "Edward Kelley",
+        "Jeremy Hurst"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2157835363",
+      "title": "Incidence of adverse events related to health care in Spain: results of the Spanish National Study of Adverse Events",
+      "year": 2008,
+      "doi": "10.1136/jech.2007.065227",
+      "url": "https://doi.org/10.1136/jech.2007.065227",
+      "oa_url": null,
+      "venue": "Journal of Epidemiology & Community Health",
+      "cited_by": 283,
+      "authors": [
+        "Jesús María Aranaz Andrés",
+        "C Aibar-Remón",
+        "J Vitaller-Murillo",
+        "Pedro Ruiz López",
+        "Ramón Limón-Ramírez",
+        "Enrique Terol-García",
+        "the ENEAS work group"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W3185406853",
+      "title": "Knowledge Management",
+      "year": 2005,
+      "doi": null,
+      "url": "https://www.amazon.com/Knowledge-Management-Shelda-Debowski/dp/9812532269",
+      "oa_url": null,
+      "venue": null,
+      "cited_by": 2573,
+      "authors": [
+        "Debowski"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2079996519",
+      "title": "WHO Regional Office for Europe",
+      "year": 1993,
+      "doi": "10.1016/0140-6736(93)91122-3",
+      "url": "https://doi.org/10.1016/0140-6736(93)91122-3",
+      "oa_url": null,
+      "venue": "The Lancet",
+      "cited_by": 874,
+      "authors": [
+        "Mark S. Tsechkovski"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2262309301",
+      "title": "Annual Report 2008",
+      "year": 2009,
+      "doi": "10.1080/09535310903561924",
+      "url": "https://doi.org/10.1080/09535310903561924",
+      "oa_url": null,
+      "venue": "Economic Systems Research",
+      "cited_by": 869,
+      "authors": [
+        "Jan Oosterhaven",
+        "Norbert Rainer",
+        "Thijs ten Raa",
+        "Joaquim José Martins Guilhoto",
+        "Jodie Gonzalez Jennings",
+        "José M. Rueda-Cantuch",
+        "Erik Dietzenbacher",
+        "Bent Thage"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4210691114",
+      "title": "Changing Ocean, Marine Ecosystems, and Dependent Communities",
+      "year": 2022,
+      "doi": "10.1017/9781009157964.007",
+      "url": "https://doi.org/10.1017/9781009157964.007",
+      "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EA9AAC25B2A0E030A689E870B42A4E00/stamped-9781009157971c5_447-588.pdf/changing-ocean-marine-ecosystems-and-dependent-communities.pdf",
+      "venue": "Cambridge University Press eBooks",
+      "cited_by": 297,
+      "authors": [
+        "Intergovernmental Panel on Climate Change (IPCC)"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2158929412",
+      "title": "Health in all policies",
+      "year": 2007,
+      "doi": "10.1093/eurpub/ckm048",
+      "url": "https://doi.org/10.1093/eurpub/ckm048",
+      "oa_url": "https://academic.oup.com/eurpub/article-pdf/17/4/328/1353186/ckm048.pdf",
+      "venue": "European Journal of Public Health",
+      "cited_by": 179,
+      "authors": [
+        "Pekka Puska"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2480346368",
+      "title": "Evolve or Die",
+      "year": 2016,
+      "doi": "10.1145/2934872.2934891",
+      "url": "https://doi.org/10.1145/2934872.2934891",
+      "oa_url": "https://dl.acm.org/doi/pdf/10.1145/2934872.2934891",
+      "venue": null,
+      "cited_by": 214,
+      "authors": [
+        "Ramesh Govindan",
+        "Ina Minei",
+        "Mahesh Kallahalla",
+        "Bikash Koley",
+        "Amin Vahdat"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W1971907618",
+      "title": "Diagnosis Related Groups: Understanding Hospital Performance",
+      "year": 1991,
+      "doi": "10.1287/inte.21.1.6",
+      "url": "https://doi.org/10.1287/inte.21.1.6",
+      "oa_url": null,
+      "venue": "INFORMS Journal on Applied Analytics",
+      "cited_by": 168,
+      "authors": [
+        "Robert B. Fetter"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2108749038",
+      "title": "Health Status Determinants",
+      "year": 2008,
+      "doi": "10.1787/240858500130",
+      "url": "https://doi.org/10.1787/240858500130",
+      "oa_url": "https://www.oecd-ilibrary.org/health-status-determinants_5kzg5s11ktwf.pdf?itemId=%2Fcontent%2Fpaper%2F240858500130&mimeType=pdf",
+      "venue": "OECD Economics Department working papers",
+      "cited_by": 88,
+      "authors": [
+        "Isabelle Joumard",
+        "Christophe André",
+        "Chantal Nicq",
+        "Olivier Chatal"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W1541431000",
+      "title": "Compression of Morbidity",
+      "year": 2002,
+      "doi": "10.1002/0470858885.ch2",
+      "url": "https://doi.org/10.1002/0470858885.ch2",
+      "oa_url": null,
+      "venue": null,
+      "cited_by": 78,
+      "authors": [
+        "Wilma J. Nusselder"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}

@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-31 — ARS tick: Canary Budget Studio (B 74)
+
+Seeded non-isomorphic release-ops idea **Canary Budget Studio** (remaining canary error budget → promote/hold + blast radius). Related works + brief + kill rounds. Scored **B 74**. Queued behind eight pack-ready climbs. Hourly loop docs-only.
+
 ## 2026-07-31 — Depth pack complete: Egress Spill Studio
 
 Wrote PM-GO through DESIGN + PAGE/PHASE/API for **Egress Spill Studio** (B 75). Pack ready; queued after seven earlier pack-ready climbs. No `projects/`. Hourly loop docs-only.
