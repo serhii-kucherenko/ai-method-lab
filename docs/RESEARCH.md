@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-31 — ARS tick: Schema Drift Studio (B 74)
+
+Seeded non-isomorphic release-ops idea **Schema Drift Studio** (approved migration pack ↔ live schema → release evidence). Related works + brief + kill rounds. Scored **B 74**. Queued behind five pack-ready climbs. Hourly loop docs-only.
+
 ## 2026-07-31 — Depth pack complete: Stale Flag Studio
 
 Wrote PM-GO through DESIGN + PAGE/PHASE/API for **Stale Flag Studio** (B 74). Pack ready; queued after Commitment Coverage → Online Diff → Delegation → Contract Rate Variance. No `projects/`. Hourly loop docs-only.

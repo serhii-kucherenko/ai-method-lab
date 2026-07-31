@@ -145,13 +145,14 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 137 | Delegation Expiry Studio | 74 | B | Issue time-boxed agent tool/delegation grants that auto-expire with an audit ledger | Early signal with AI platform security leads standing up agent fleets and MCP tool gates | AI platform / security engineers for agent fleets | Fleet seats + grant-event usage | Agent-safety wedge adjacent to Tool Scope without cloning static ACLs | TTL delegation grant lifecycle vs permanent scope matrices or OT bypass tickets | ARS-related AC4A / zero-trust agent access papers + kill rounds | research | biz-rubric-v2 | Prefer if grant TTL stays the claim; Kill if generic IAM wrapper |
 | 138 | Contract Rate Variance Studio | 75 | B | Show where vendor invoice unit rates disagree with the contracted SKU price, in dollars, before the payment batch posts | Early signal with AP / FinOps leads who already dispute invoices and maintain contract rate cards | AP ops and FinOps / procurement systems leads at mid-market+ SaaS and cloud vendor shops | AP seats + variance-run usage + private contract catalogs | Literal-dollar AP wedge adjacent to True Up and Service Credit without cloning either | Contract catalog ↔ invoice line rate match → $ variance vs generic invoice OCR or PO three-way desks | Idea-first; ARS related-works noisy on P2P contracting; kill rounds fence ERP clone and OCR theater | research | biz-rubric-v2 | Prefer if contract-catalog rate claim stays locked; Kill if generic AP OCR or SAP three-way mirror |
 | 139 | Stale Flag Studio | 74 | B | Show which feature flags are past expiry or unused, with owner and blast radius, before the next release freeze | Early signal with platform / release leads who already run flag fleets and freeze windows | Platform engineering and release managers at product orgs with multi-squad flag inventories | Org seats + flag-inventory sync usage | Release-ops wedge adjacent to Change Freeze and Delegation Expiry without cloning either | Stale/expired/unused flag → owner blast-radius queue vs generic flag admin consoles | ARS related-works on flag/tech debt; kill rounds fence vendor console and OT/agent clones | research | biz-rubric-v2 | Prefer if freeze-debt queue claim stays locked; Kill if LaunchDarkly UI mirror only |
+| 140 | Schema Drift Studio | 74 | B | Show where live database schema drifted from the last approved migration pack and attach the evidence to the release gate | Early signal with platform / data eng leads who already gate releases on migrations | Platform and data engineering leads at product orgs with migration-gated releases | Org seats + drift-run usage | Release-ops wedge adjacent to Online Diff and Stale Flag without cloning either | Approved migration pack ↔ live schema diff → release evidence vs generic migration consoles | ARS related-works on schema drift; kill rounds fence vendor CLI and OT clones | research | biz-rubric-v2 | Prefer if release-evidence pack claim stays locked; Kill if Flyway UI mirror or live DDL claims |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 126 |
+| B | 127 |
 | C | 12 |
 | Kill | 1 |
 

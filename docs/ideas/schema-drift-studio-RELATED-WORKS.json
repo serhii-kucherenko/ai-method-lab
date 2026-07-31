@@ -1,0 +1,247 @@
+{
+  "generated_at": "2026-07-31T15:15:29.975Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "database schema drift detection migration pack production schema comparison software engineering",
+    "doi": null,
+    "arxiv": null
+  },
+  "seed_record": {
+    "id": "https://openalex.org/W4382940595",
+    "title": "Battery State of Health Estimate Strategies: From Data Analysis to End-Cloud Collaborative Framework",
+    "year": 2023,
+    "doi": "10.3390/batteries9070351",
+    "url": "https://doi.org/10.3390/batteries9070351",
+    "oa_url": "https://www.mdpi.com/2313-0105/9/7/351/pdf?version=1688208721",
+    "venue": "Batteries",
+    "cited_by": 50,
+    "authors": [
+      "Kaiyi Yang",
+      "Lisheng Zhang",
+      "Zhengjie Zhang",
+      "Hanqing Yu",
+      "Wentao Wang",
+      "Mengzheng Ouyang",
+      "Cheng Zhang",
+      "Qi Sun"
+    ],
+    "source_index": "openalex"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W2051349350",
+      "title": "Comparison of Modeling Predictions with Experimental Data from Plastic Lithium Ion Cells",
+      "year": 1996,
+      "doi": "10.1149/1.1836921",
+      "url": "https://doi.org/10.1149/1.1836921",
+      "oa_url": null,
+      "venue": "Journal of The Electrochemical Society",
+      "cited_by": 1568,
+      "authors": [
+        "Marc Doyle",
+        "John Newman",
+        "Antoni S. Góźdź",
+        "C. Schmutz",
+        "Jean‐Marie Tarascon"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2167503549",
+      "title": "Enhanced coulomb counting method for estimating state-of-charge and state-of-health of lithium-ion batteries",
+      "year": 2009,
+      "doi": "10.1016/j.apenergy.2008.11.021",
+      "url": "https://doi.org/10.1016/j.apenergy.2008.11.021",
+      "oa_url": null,
+      "venue": "Applied Energy",
+      "cited_by": 1608,
+      "authors": [
+        "Kong Soon Ng",
+        "Chin‐Sien Moo",
+        "Yiping Chen",
+        "Yao‐Ching Hsieh"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2055873761",
+      "title": "Remaining useful life estimation – A review on the statistical data driven approaches",
+      "year": 2010,
+      "doi": "10.1016/j.ejor.2010.11.018",
+      "url": "https://doi.org/10.1016/j.ejor.2010.11.018",
+      "oa_url": null,
+      "venue": "European Journal of Operational Research",
+      "cited_by": 2064,
+      "authors": [
+        "Xiaosheng Si",
+        "Wenbin Wang",
+        "Chang-Hua Hu",
+        "Dong-Hua Zhou"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2962135525",
+      "title": "A review on the key issues of the lithium ion battery degradation among the whole life cycle",
+      "year": 2019,
+      "doi": "10.1016/j.etran.2019.100005",
+      "url": "https://doi.org/10.1016/j.etran.2019.100005",
+      "oa_url": null,
+      "venue": "eTransportation",
+      "cited_by": 1688,
+      "authors": [
+        "Xuebing Han",
+        "Languang Lu",
+        "Yuejiu Zheng",
+        "Xuning Feng",
+        "Zhe Li",
+        "Jianqiu Li",
+        "Minggao Ouyang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2967686386",
+      "title": "Lithium-ion battery fast charging: A review",
+      "year": 2019,
+      "doi": "10.1016/j.etran.2019.100011",
+      "url": "https://doi.org/10.1016/j.etran.2019.100011",
+      "oa_url": "https://doi.org/10.1016/j.etran.2019.100011",
+      "venue": "eTransportation",
+      "cited_by": 1535,
+      "authors": [
+        "A. Tomaszewska",
+        "Zhengyu Chu",
+        "Xuning Feng",
+        "Simon E. J. O’Kane",
+        "Xinhua Liu",
+        "Jingyi Chen",
+        "Chenzhen Ji",
+        "Elizabeth Endler"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2999951339",
+      "title": "Battery Lifetime Prognostics",
+      "year": 2020,
+      "doi": "10.1016/j.joule.2019.11.018",
+      "url": "https://doi.org/10.1016/j.joule.2019.11.018",
+      "oa_url": "http://www.cell.com/article/S2542435119305859/pdf",
+      "venue": "Joule",
+      "cited_by": 1258,
+      "authors": [
+        "Xiaosong Hu",
+        "Le Xu",
+        "Xianke Lin",
+        "Michael Pecht"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2113449668",
+      "title": "Modeling of Galvanostatic Charge and Discharge of the Lithium/Polymer/Insertion Cell",
+      "year": 1993,
+      "doi": "10.1149/1.2221597",
+      "url": "https://doi.org/10.1149/1.2221597",
+      "oa_url": null,
+      "venue": "Journal of The Electrochemical Society",
+      "cited_by": 4208,
+      "authors": [
+        "Marc Doyle",
+        "Thomas F. Fuller",
+        "John Newman"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4281630554",
+      "title": "The timescale identification decoupling complicated kinetic processes in lithium batteries",
+      "year": 2022,
+      "doi": "10.1016/j.joule.2022.05.005",
+      "url": "https://doi.org/10.1016/j.joule.2022.05.005",
+      "oa_url": null,
+      "venue": "Joule",
+      "cited_by": 2139,
+      "authors": [
+        "Yang Lu",
+        "Chen‐Zi Zhao",
+        "Jia‐Qi Huang",
+        "Qiang Zhang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2169518199",
+      "title": "Simulation and Optimization of the Dual Lithium Ion Insertion Cell",
+      "year": 1994,
+      "doi": "10.1149/1.2054684",
+      "url": "https://doi.org/10.1149/1.2054684",
+      "oa_url": "https://iopscience.iop.org/article/10.1149/1.2054684/pdf",
+      "venue": "Journal of The Electrochemical Society",
+      "cited_by": 2026,
+      "authors": [
+        "Thomas F. Fuller",
+        "Marc Doyle",
+        "John Newman"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2563343938",
+      "title": "Degradation diagnostics for lithium ion cells",
+      "year": 2016,
+      "doi": "10.1016/j.jpowsour.2016.12.011",
+      "url": "https://doi.org/10.1016/j.jpowsour.2016.12.011",
+      "oa_url": "https://doi.org/10.1016/j.jpowsour.2016.12.011",
+      "venue": "Journal of Power Sources",
+      "cited_by": 1802,
+      "authors": [
+        "Christoph Birkl",
+        "Matthew Roberts",
+        "Euan McTurk",
+        "Peter G. Bruce",
+        "David A. Howey"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W1998665038",
+      "title": "Guided Lamb waves for identification of damage in composite structures: A review",
+      "year": 2006,
+      "doi": "10.1016/j.jsv.2006.01.020",
+      "url": "https://doi.org/10.1016/j.jsv.2006.01.020",
+      "oa_url": null,
+      "venue": "Journal of Sound and Vibration",
+      "cited_by": 1521,
+      "authors": [
+        "Zhongqing Su",
+        "Lin Ye",
+        "Ye Lü"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2790625295",
+      "title": "Long Short-Term Memory Recurrent Neural Network for Remaining Useful Life Prediction of Lithium-Ion Batteries",
+      "year": 2018,
+      "doi": "10.1109/tvt.2018.2805189",
+      "url": "https://doi.org/10.1109/tvt.2018.2805189",
+      "oa_url": null,
+      "venue": "IEEE Transactions on Vehicular Technology",
+      "cited_by": 1278,
+      "authors": [
+        "Yongzhi Zhang",
+        "Rui Xiong",
+        "Hongwen He",
+        "Michael Pecht"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}

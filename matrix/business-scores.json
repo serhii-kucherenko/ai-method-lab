@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v2",
-  "updated_at": "2026-07-31T13:16:06.199Z",
+  "updated_at": "2026-07-31T15:15:57.019Z",
   "projects": [
     {
       "id": 1,
@@ -3255,6 +3255,33 @@
       "score": 74,
       "tier": "B",
       "id": 139
+    },
+    {
+      "slug": "schema-drift-studio",
+      "project": "Schema Drift Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 8,
+        "pmf": 7,
+        "money": 7,
+        "wedge": 8,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 8
+      },
+      "business_idea": "Show where live database schema drifted from the last approved migration pack and attach the evidence to the release gate",
+      "pmf": "Early signal with platform / data eng leads who already gate releases on migrations",
+      "buyer": "Platform and data engineering leads at product orgs with migration-gated releases",
+      "money_hook": "Org seats + drift-run usage",
+      "potential": "Release-ops wedge adjacent to Online Diff and Stale Flag without cloning either",
+      "moat": "Approved migration pack ↔ live schema diff → release evidence vs generic migration consoles",
+      "evidence": "ARS related-works on schema drift; kill rounds fence vendor CLI and OT clones",
+      "status": "research",
+      "rubric": "biz-rubric-v2",
+      "gc_notes": "Prefer if release-evidence pack claim stays locked; Kill if Flyway UI mirror or live DDL claims",
+      "score": 74,
+      "tier": "B",
+      "id": 140
     }
   ]
 }
