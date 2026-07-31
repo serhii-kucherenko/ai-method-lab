@@ -23,8 +23,7 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 
 ## Prefer next
 
-OT/ICS software · agent safety · literal-dollar compliance · more FinOps
+1. **Commitment Coverage Studio** — FinOps B 76; **full pack + DESIGN ready** - arm climb when slot opens  
+2. **Online Diff Studio** — OT B 71; research seed (`docs/ideas/online-diff-studio-ARS-BRIEF.md`) - depth pack after Commitment Coverage climbs or if FinOps deferred  
 
-**Research seed:** Commitment Coverage Studio — **B 76**; depth pack + **DESIGN** ready. Arm climb only when idle slot opens; refuse Cost Explorer / Idle Seat / True Up clones.
-
-1h keep-going loop armed (ARS synthesize / A/B; see CONTROLLER `ars_research.loop_pid`).
+OT/ICS · agent safety · literal-dollar · FinOps remain preferred patterns.

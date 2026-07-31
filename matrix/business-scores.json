@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v2",
-  "updated_at": "2026-07-31T00:11:35.274Z",
+  "updated_at": "2026-07-31T04:16:23.133Z",
   "projects": [
     {
       "id": 1,
@@ -3147,6 +3147,33 @@
       "score": 76,
       "tier": "B",
       "id": 135
+    },
+    {
+      "slug": "online-diff-studio",
+      "project": "Online Diff Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 8,
+        "pmf": 6,
+        "money": 7,
+        "wedge": 7,
+        "moat": 7,
+        "evidence": 5,
+        "feasibility": 8
+      },
+      "business_idea": "Diff last approved offline PLC/control program against what is running online and attach the pack to MOC",
+      "pmf": "Early signal with OT change owners who already export programs for audits",
+      "buyer": "OT / ICS controls engineers and change owners",
+      "money_hook": "Plant/site seats + diff-run usage",
+      "potential": "OT software wedge adjacent to Change Freeze and Download Gate without cloning them",
+      "moat": "Online↔approved offline drift evidence vs freeze holds or download interlocks alone",
+      "evidence": "Idea-first OT; related works thin (NIST/ICS context); honesty soft-sim fence",
+      "status": "research",
+      "rubric": "biz-rubric-v2",
+      "gc_notes": "Prefer if MOC evidence pack stays the claim; Kill if vendor IDE mirror only",
+      "score": 71,
+      "tier": "B",
+      "id": 136
     }
   ]
 }

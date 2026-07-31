@@ -141,13 +141,14 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 133 | True Up Studio | 79 | B | Forecast SaaS true-up dollars from metered overages before seat renewals hide the bill | Early signal with SaaS FinOps/procurement leads who already reconcile vendor renewals | SaaS FinOps / procurement leads | Vendor seats + forecast-run usage + private meter packs | Literal-dollar FinOps wedge on SaaS renewals and true-ups | Usage true-up dollars vs seat-renewal-only baselines | Idea-first FinOps; 30 dual goldens; live app smoke on 43164 | complete | biz-rubric-v2 | Prefer; SaaS true-up FinOps pattern |
 | 134 | Change Freeze Studio | 78 | B | Hold risky OT production changes during freeze windows instead of always-allowing ticketed changes | Early signal with OT/ICS change and safety leads who already run MOC and freeze calendars | OT / ICS change and safety leads | Plant/site seats + freeze-run usage + private freeze packs | Industrial change-control wedge adjacent to Download Gate and Bypass Audit | Freeze-aware holds vs always-allow baselines | Idea-first OT; 30 dual goldens; live app smoke on 43165 | complete | biz-rubric-v2 | Prefer; OT change-freeze pattern |
 | 135 | Commitment Coverage Studio | 76 | B | Show where cloud Savings Plans / RIs / CUDs are under-covered or wasted versus on-demand spill, in dollars, before renewal | Early signal with FinOps leads who already renew commitments and reconcile Cost Explorer vs finance spreadsheets | Cloud FinOps / platform leads at mid-market+ AWS/GCP/Azure shops | Seats on coverage console + connected-account usage | Literal-dollar FinOps wedge adjacent to Idle Seat and True Up without cloning either | Commitment inventory ↔ usage matching → $ coverage gap vs generic cost dashboards | ARS-related FinOps literature + kill rounds; idea-first (no paper code) | research | biz-rubric-v2 | Prefer next if multi-cloud + renewal workflow stays the claim; Kill if single-cloud Cost Explorer mirror |
+| 136 | Online Diff Studio | 71 | B | Diff last approved offline PLC/control program against what is running online and attach the pack to MOC | Early signal with OT change owners who already export programs for audits | OT / ICS controls engineers and change owners | Plant/site seats + diff-run usage | OT software wedge adjacent to Change Freeze and Download Gate without cloning them | Online↔approved offline drift evidence vs freeze holds or download interlocks alone | Idea-first OT; related works thin (NIST/ICS context); honesty soft-sim fence | research | biz-rubric-v2 | Prefer if MOC evidence pack stays the claim; Kill if vendor IDE mirror only |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 122 |
+| B | 123 |
 | C | 12 |
 | Kill | 1 |
 

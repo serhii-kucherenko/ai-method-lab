@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — ARS tick: Online Diff Studio OT seed (B 71)
+
+Seeded **Online Diff Studio** (approved offline ↔ online program drift for MOC packs). Scored **B 71**. Queued behind Commitment Coverage climb. SER-103.
+
 ## 2026-07-30 — Specs complete: Commitment Coverage PAGE/PHASE/API
 
 Added PAGE-SPECS, PHASE-BRIEFS, API-CONTRACT. Pack is delivery-ready; climb when controller arms the slot. SER-103.

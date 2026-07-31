@@ -1,0 +1,191 @@
+{
+  "generated_at": "2026-07-31T04:16:03.544Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "industrial control system PLC program change detection integrity",
+    "doi": null,
+    "arxiv": null
+  },
+  "seed_record": {
+    "id": "https://openalex.org/W2619874920",
+    "title": "Guide to Industrial Control Systems (ICS) Security",
+    "year": 2015,
+    "doi": "10.6028/nist.sp.800-82r2",
+    "url": "https://doi.org/10.6028/nist.sp.800-82r2",
+    "oa_url": "https://doi.org/10.6028/nist.sp.800-82r2",
+    "venue": null,
+    "cited_by": 1342,
+    "authors": [
+      "Keith Stouffer",
+      "Victoria Pillitteri",
+      "Suzanne Lightman",
+      "Marshall D. Abrams",
+      "Adam Hahn"
+    ],
+    "source_index": "openalex"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W2678934292",
+      "title": "Guide to Intrusion Detection and Prevention Systems (IDPS)",
+      "year": 2007,
+      "doi": "10.6028/nist.sp.800-94",
+      "url": "https://doi.org/10.6028/nist.sp.800-94",
+      "oa_url": "https://doi.org/10.6028/nist.sp.800-94",
+      "venue": null,
+      "cited_by": 1246,
+      "authors": [
+        "Karen Scarfone",
+        "Peter Mell"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2789825598",
+      "title": "Security and Privacy Controls for Federal Information Systems and Organizations",
+      "year": 2013,
+      "doi": "10.6028/nist.sp.800-53r4",
+      "url": "https://doi.org/10.6028/nist.sp.800-53r4",
+      "oa_url": "https://doi.org/10.6028/nist.sp.800-53r4",
+      "venue": null,
+      "cited_by": 470,
+      "authors": [
+        "Joint Task Force Transformation Initiative"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2617200927",
+      "title": "Computer Security Incident Handling Guide : Recommendations of the National Institute of Standards and Technology",
+      "year": 2012,
+      "doi": "10.6028/nist.sp.800-61r2",
+      "url": "https://doi.org/10.6028/nist.sp.800-61r2",
+      "oa_url": "https://doi.org/10.6028/nist.sp.800-61r2",
+      "venue": null,
+      "cited_by": 481,
+      "authors": [
+        "Paul Cichonski",
+        "Tom Millar",
+        "Tim Grance",
+        "Karen Scarfone"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W609417443",
+      "title": "Plantwide process control",
+      "year": 1999,
+      "doi": null,
+      "url": "http://ci.nii.ac.jp/ncid/BA4183865X",
+      "oa_url": null,
+      "venue": "Wiley eBooks",
+      "cited_by": 439,
+      "authors": [
+        "Kelvin T. Erickson",
+        "John L. Hedrick"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2628759714",
+      "title": "Guide to integrating forensic techniques into incident response",
+      "year": 2006,
+      "doi": "10.6028/nist.sp.800-86",
+      "url": "https://doi.org/10.6028/nist.sp.800-86",
+      "oa_url": "https://doi.org/10.6028/nist.sp.800-86",
+      "venue": null,
+      "cited_by": 580,
+      "authors": [
+        "Karen Kent",
+        "Sébastien Chevalier",
+        "T Grance",
+        "H Dang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2617872846",
+      "title": "Guide to protecting the confidentiality of Personally Identifiable Information (PII)",
+      "year": 2010,
+      "doi": "10.6028/nist.sp.800-122",
+      "url": "https://doi.org/10.6028/nist.sp.800-122",
+      "oa_url": "https://doi.org/10.6028/nist.sp.800-122",
+      "venue": null,
+      "cited_by": 333,
+      "authors": [
+        "Erika McCallister",
+        "T Grance",
+        "Karen Scarfone"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2940895343",
+      "title": "Machine Learning-Based Network Vulnerability Analysis of Industrial Internet of Things",
+      "year": 2019,
+      "doi": "10.1109/jiot.2019.2912022",
+      "url": "https://doi.org/10.1109/jiot.2019.2912022",
+      "oa_url": "https://ieeexplore.ieee.org/ielx7/6488907/8784345/08693904.pdf",
+      "venue": "IEEE Internet of Things Journal",
+      "cited_by": 514,
+      "authors": [
+        "Maede Zolanvari",
+        "Márcio Andrey Teixeira",
+        "Lav Gupta",
+        "Khaled M. Khan",
+        "Raj Jain"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2113188272",
+      "title": "Identifying, understanding, and analyzing critical infrastructure interdependencies",
+      "year": 2001,
+      "doi": "10.1109/37.969131",
+      "url": "https://doi.org/10.1109/37.969131",
+      "oa_url": null,
+      "venue": "IEEE Control Systems",
+      "cited_by": 2781,
+      "authors": [
+        "Steven M. Rinaldi",
+        "J.P. Peerenboom",
+        "Terrence Kelly"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W1701471885",
+      "title": "One size fits all?",
+      "year": 2005,
+      "doi": "10.1016/j.respol.2005.01.018",
+      "url": "https://doi.org/10.1016/j.respol.2005.01.018",
+      "oa_url": null,
+      "venue": "Research Policy",
+      "cited_by": 2546,
+      "authors": [
+        "Franz Tödtling",
+        "Michaela Trippl"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W3109089382",
+      "title": "Change Management",
+      "year": 2003,
+      "doi": null,
+      "url": "https://openlibrary.org/books/OL8800988M/Change_Management",
+      "oa_url": null,
+      "venue": null,
+      "cited_by": 659,
+      "authors": [
+        "Jeffrey M. Hiatt"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}
