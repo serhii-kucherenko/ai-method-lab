@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — DESIGN + specs: Online Diff Studio
+
+Hallmark DESIGN, PAGE-SPECS, PHASE-BRIEFS, API-CONTRACT landed. Both Commitment Coverage and Online Diff are pack-ready; climb Commitment Coverage first. SER-103.
+
 ## 2026-07-30 — Depth pack started: Online Diff Studio
 
 PM-GO through blueprint written. DESIGN still required before climb. Queued behind Commitment Coverage. SER-103.
