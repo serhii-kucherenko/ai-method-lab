@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — DESIGN landed: Commitment Coverage Studio
+
+Hallmark design note committed (`commitment-coverage-studio-DESIGN.md`). Depth pack complete enough for climb arming when controller picks it - still no same-tick smoke. SER-103.
+
 ## 2026-07-30 — Depth pack started: Commitment Coverage Studio
 
 Wrote PM-GO (GO), VISION, ROADMAP, PRD, ERD, COMPREHENSIVE-BLUEPRINT. Still need DESIGN before `projects/`. Score B 76. SER-103.

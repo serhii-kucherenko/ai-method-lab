@@ -25,6 +25,6 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 
 OT/ICS software · agent safety · literal-dollar compliance · more FinOps
 
-**Research seed:** Commitment Coverage Studio — cloud commitment (SP/RI/CUD) coverage gaps in dollars. **Scored B 76** (`biz-rubric-v2`). Brief: `docs/ideas/commitment-coverage-studio-ARS-BRIEF.md`. Depth pack next before climb.
+**Research seed:** Commitment Coverage Studio — **B 76**; depth pack + **DESIGN** ready. Arm climb only when idle slot opens; refuse Cost Explorer / Idle Seat / True Up clones.
 
 1h keep-going loop armed (ARS synthesize / A/B; see CONTROLLER `ars_research.loop_pid`).
