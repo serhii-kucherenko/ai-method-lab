@@ -144,13 +144,14 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 136 | Online Diff Studio | 71 | B | Diff last approved offline PLC/control program against what is running online and attach the pack to MOC | Early signal with OT change owners who already export programs for audits | OT / ICS controls engineers and change owners | Plant/site seats + diff-run usage | OT software wedge adjacent to Change Freeze and Download Gate without cloning them | Online↔approved offline drift evidence vs freeze holds or download interlocks alone | Idea-first OT; related works thin (NIST/ICS context); honesty soft-sim fence | research | biz-rubric-v2 | Prefer if MOC evidence pack stays the claim; Kill if vendor IDE mirror only |
 | 137 | Delegation Expiry Studio | 74 | B | Issue time-boxed agent tool/delegation grants that auto-expire with an audit ledger | Early signal with AI platform security leads standing up agent fleets and MCP tool gates | AI platform / security engineers for agent fleets | Fleet seats + grant-event usage | Agent-safety wedge adjacent to Tool Scope without cloning static ACLs | TTL delegation grant lifecycle vs permanent scope matrices or OT bypass tickets | ARS-related AC4A / zero-trust agent access papers + kill rounds | research | biz-rubric-v2 | Prefer if grant TTL stays the claim; Kill if generic IAM wrapper |
 | 138 | Contract Rate Variance Studio | 75 | B | Show where vendor invoice unit rates disagree with the contracted SKU price, in dollars, before the payment batch posts | Early signal with AP / FinOps leads who already dispute invoices and maintain contract rate cards | AP ops and FinOps / procurement systems leads at mid-market+ SaaS and cloud vendor shops | AP seats + variance-run usage + private contract catalogs | Literal-dollar AP wedge adjacent to True Up and Service Credit without cloning either | Contract catalog ↔ invoice line rate match → $ variance vs generic invoice OCR or PO three-way desks | Idea-first; ARS related-works noisy on P2P contracting; kill rounds fence ERP clone and OCR theater | research | biz-rubric-v2 | Prefer if contract-catalog rate claim stays locked; Kill if generic AP OCR or SAP three-way mirror |
+| 139 | Stale Flag Studio | 74 | B | Show which feature flags are past expiry or unused, with owner and blast radius, before the next release freeze | Early signal with platform / release leads who already run flag fleets and freeze windows | Platform engineering and release managers at product orgs with multi-squad flag inventories | Org seats + flag-inventory sync usage | Release-ops wedge adjacent to Change Freeze and Delegation Expiry without cloning either | Stale/expired/unused flag → owner blast-radius queue vs generic flag admin consoles | ARS related-works on flag/tech debt; kill rounds fence vendor console and OT/agent clones | research | biz-rubric-v2 | Prefer if freeze-debt queue claim stays locked; Kill if LaunchDarkly UI mirror only |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 125 |
+| B | 126 |
 | C | 12 |
 | Kill | 1 |
 

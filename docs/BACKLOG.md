@@ -29,5 +29,6 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 | 2 | **Online Diff Studio** | B 71 | Pack ready - after #1 |
 | 3 | **Delegation Expiry Studio** | B 74 | Pack ready - after #2 |
 | 4 | **Contract Rate Variance Studio** | B 75 | Pack ready - after #1–3 |
+| 5 | **Stale Flag Studio** | B 74 | Seed + score - deepen next |
 
 See `docs/ideas/CLIMB-QUEUE.md`.

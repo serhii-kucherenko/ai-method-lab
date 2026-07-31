@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v2",
-  "updated_at": "2026-07-31T11:16:54.519Z",
+  "updated_at": "2026-07-31T13:16:06.199Z",
   "projects": [
     {
       "id": 1,
@@ -3228,6 +3228,33 @@
       "score": 75,
       "tier": "B",
       "id": 138
+    },
+    {
+      "slug": "stale-flag-studio",
+      "project": "Stale Flag Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 7,
+        "pmf": 7,
+        "money": 7,
+        "wedge": 8,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 9
+      },
+      "business_idea": "Show which feature flags are past expiry or unused, with owner and blast radius, before the next release freeze",
+      "pmf": "Early signal with platform / release leads who already run flag fleets and freeze windows",
+      "buyer": "Platform engineering and release managers at product orgs with multi-squad flag inventories",
+      "money_hook": "Org seats + flag-inventory sync usage",
+      "potential": "Release-ops wedge adjacent to Change Freeze and Delegation Expiry without cloning either",
+      "moat": "Stale/expired/unused flag → owner blast-radius queue vs generic flag admin consoles",
+      "evidence": "ARS related-works on flag/tech debt; kill rounds fence vendor console and OT/agent clones",
+      "status": "research",
+      "rubric": "biz-rubric-v2",
+      "gc_notes": "Prefer if freeze-debt queue claim stays locked; Kill if LaunchDarkly UI mirror only",
+      "score": 74,
+      "tier": "B",
+      "id": 139
     }
   ]
 }

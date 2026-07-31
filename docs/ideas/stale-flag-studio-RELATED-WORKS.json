@@ -1,0 +1,198 @@
+{
+  "generated_at": "2026-07-31T13:15:33.707Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "feature flag debt stale flags technical debt blast radius software engineering",
+    "doi": null,
+    "arxiv": null
+  },
+  "seed_record": {
+    "id": "https://openalex.org/W4319323816",
+    "title": "Understanding the Issues, Their Causes and Solutions in Microservices Systems: An Empirical Study",
+    "year": 2023,
+    "doi": "10.48550/arxiv.2302.01894",
+    "url": "http://arxiv.org/abs/2302.01894",
+    "oa_url": "https://arxiv.org/pdf/2302.01894",
+    "venue": "arXiv (Cornell University)",
+    "cited_by": 1,
+    "authors": [
+      "Muhammad Waseem",
+      "Peng Liang",
+      "Aakash Ahmad",
+      "Arif Ali Khan",
+      "Mojtaba Shahin",
+      "Pekka Abrahamsson",
+      "Ali Rezaei Nasab",
+      "Tommi Mikkonen"
+    ],
+    "source_index": "openalex"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W7159890969",
+      "title": "The Grand Software Supply Chain of AI Systems",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2604.27781",
+      "oa_url": "https://arxiv.org/pdf/2604.27781",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Carmine Cesarano",
+        "Martin Monperrus"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7132825564",
+      "title": "Cradle-to-Grave Device Lifecycle Management for HVAC and Water Heating Systems A Systems Architecture for Secure, Intelligent, and Resilient Cyber-Physical Products",
+      "year": 2026,
+      "doi": "10.63282/3050-9246.ijetcsit-v7i1p126",
+      "url": "https://doi.org/10.63282/3050-9246.ijetcsit-v7i1p126",
+      "oa_url": "https://ijetcsit.org/index.php/ijetcsit/article/download/588/530",
+      "venue": "International Journal of Emerging Trends in Computer Science and Information Technology",
+      "cited_by": 0,
+      "authors": [
+        "Vignesh Alagappan"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4416399039",
+      "title": "Process Automation Framework for Enhancing Procurement Efficiency and Transparency",
+      "year": 2021,
+      "doi": "10.32628/shisrrj214458",
+      "url": "https://doi.org/10.32628/shisrrj214458",
+      "oa_url": "https://shisrrj.com/paper/SHISRRJ214458.pdf",
+      "venue": "Shodhshauryam International Scientific Refereed Research Journal",
+      "cited_by": 2,
+      "authors": [
+        "Oluwafunmilayo Kehinde Akinleye",
+        "Omolara Adeyoyin"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7161354925",
+      "title": "Large Language Models for Agentic NetOps and AIOps: Architectures, Evaluation, and Safety",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2605.12729",
+      "oa_url": "https://arxiv.org/pdf/2605.12729",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Muhammad Bilal",
+        "Jon Crowcroft",
+        "Ruizhi Wang",
+        "Xiaolong Xu",
+        "Schahram Dustdar"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7138887013",
+      "title": "AI-Driven Metadata Intelligence and SLA-Aware Framework for Resilient Cloud Migration",
+      "year": 2026,
+      "doi": "10.48047/jocaaa.2026.35.01.25",
+      "url": "https://doi.org/10.48047/jocaaa.2026.35.01.25",
+      "oa_url": "https://www.eudoxuspress.com/index.php/pub/article/download/4693/3499",
+      "venue": "Journal of Computational Analysis and Applications",
+      "cited_by": 0,
+      "authors": [
+        "Thananjayan Kasi"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7162496031",
+      "title": "Auditable LLM Autonomy for Operational Decision-Making: Big Data Evidence and Decision Traces",
+      "year": 2026,
+      "doi": "10.32604/cmc.2026.082270",
+      "url": "https://doi.org/10.32604/cmc.2026.082270",
+      "oa_url": "https://www.techscience.com/cmc/online/detail/26995/pdf",
+      "venue": "Computers, materials & continua/Computers, materials & continua (Print)",
+      "cited_by": 0,
+      "authors": [
+        "Leonidas Theodorakopoulos",
+        "Alexandra Theodoropoulou"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4417120251",
+      "title": "Dynamic Frontend Architecture for Runtime Component Versioning and Feature Flag Resolution in Regulated Applications",
+      "year": 2025,
+      "doi": "10.3390/software4040032",
+      "url": "https://doi.org/10.3390/software4040032",
+      "oa_url": "https://www.mdpi.com/2674-113X/4/4/32/pdf",
+      "venue": "Software",
+      "cited_by": 0,
+      "authors": [
+        "Roman Fedytskyi"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4410468338",
+      "title": "Benchmarking cross‑platform AI: Web Assembly, ONNX Runtime and TVM for Real‑Time Web, Mobile, and IoT Deployment",
+      "year": 2025,
+      "doi": "10.30574/wjarr.2025.26.2.1832",
+      "url": "https://doi.org/10.30574/wjarr.2025.26.2.1832",
+      "oa_url": "https://journalwjarr.com/sites/default/files/fulltext_pdf/WJARR-2025-1832.pdf",
+      "venue": "World Journal of Advanced Research and Reviews",
+      "cited_by": 0,
+      "authors": [
+        "Aravind Chinnaraju"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7165405055",
+      "title": "Machine Learning-Enabled Self-Healing Data Pipelines: An Autonomous Architecture for Failure Detection, Diagnostic Reasoning, and Automated Remediation",
+      "year": 2024,
+      "doi": "10.63282/3117-5481/aijcst-v6i6p110",
+      "url": "https://doi.org/10.63282/3117-5481/aijcst-v6i6p110",
+      "oa_url": "https://aijcst.org/index.php/aijcst/article/download/271/255",
+      "venue": "American International Journal of Computer Science and Technology",
+      "cited_by": 0,
+      "authors": [
+        "Vineeth Kumar Reddy Mittamidi"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7119068236",
+      "title": "Agentforce Unleashed: How AI Agents Will Automate 70% of Salesforce Development Tasks",
+      "year": 2025,
+      "doi": "10.63282/3050-9416.ijaibdcms-v6i4p123",
+      "url": "https://doi.org/10.63282/3050-9416.ijaibdcms-v6i4p123",
+      "oa_url": "https://ijaibdcms.org/index.php/ijaibdcms/article/download/347/344",
+      "venue": "International Journal of AI BigData Computational and Management Studies",
+      "cited_by": 0,
+      "authors": [
+        "Alpesh Kanubhai Patel"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7165497028",
+      "title": "Repository Migration from Azure DevOps to GitHub",
+      "year": 2026,
+      "doi": null,
+      "url": "https://hdl.handle.net/11012/259613",
+      "oa_url": "https://dspace.vut.cz/bitstreams/2c6f3567-b818-41ce-b0b8-cfc1e6af1b77/download",
+      "venue": "Brno University of Technology Digital Library (Brno University of Technology)",
+      "cited_by": 0,
+      "authors": [
+        "Daniel Sedláček"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}
