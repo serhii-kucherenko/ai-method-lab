@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — Specs complete: Commitment Coverage PAGE/PHASE/API
+
+Added PAGE-SPECS, PHASE-BRIEFS, API-CONTRACT. Pack is delivery-ready; climb when controller arms the slot. SER-103.
+
 ## 2026-07-30 — DESIGN landed: Commitment Coverage Studio
 
 Hallmark design note committed (`commitment-coverage-studio-DESIGN.md`). Depth pack complete enough for climb arming when controller picks it - still no same-tick smoke. SER-103.
