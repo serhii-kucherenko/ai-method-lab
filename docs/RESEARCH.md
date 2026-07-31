@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-31 — Depth pack started: Delegation Expiry Studio
+
+PM-GO through blueprint written. DESIGN still required. Queued behind Commitment Coverage and Online Diff. SER-103.
+
 ## 2026-07-31 — ARS tick: Delegation Expiry Studio (B 74)
 
 Seeded **Delegation Expiry Studio** (time-boxed agent tool grants + audit). Scored **B 74**. Queued behind Commitment Coverage and Online Diff. SER-103.
