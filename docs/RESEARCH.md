@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — Depth pack started: Online Diff Studio
+
+PM-GO through blueprint written. DESIGN still required before climb. Queued behind Commitment Coverage. SER-103.
+
 ## 2026-07-30 — ARS tick: Online Diff Studio OT seed (B 71)
 
 Seeded **Online Diff Studio** (approved offline ↔ online program drift for MOC packs). Scored **B 71**. Queued behind Commitment Coverage climb. SER-103.
