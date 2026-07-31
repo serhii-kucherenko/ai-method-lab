@@ -10,6 +10,6 @@ Research phase for SER-103 is complete. Arm builds in order:
 | 4 | Contract Rate Variance Studio | B 75 | Full + DESIGN | (after #1–3) |
 | 5 | Stale Flag Studio | B 74 | Full + DESIGN | (after #1–4) |
 | 6 | Schema Drift Studio | B 74 | Full + DESIGN | (after #1–5) |
-| 7 | Webhook Retry Debt Studio | B 74 | Seed + ARS + score | deepen pack next |
+| 7 | Webhook Retry Debt Studio | B 74 | Full + DESIGN | (after #1–6) |
 
 Do not open isomorphic scoring studios from the old Top-10 map - those folded into Rubric Compiler (already complete).

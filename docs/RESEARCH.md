@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-31 — Depth pack complete: Webhook Retry Debt Studio
+
+Wrote PM-GO through DESIGN + PAGE/PHASE/API for **Webhook Retry Debt Studio** (B 74). Pack ready; queued after six earlier pack-ready climbs. No `projects/`. Hourly loop docs-only.
+
 ## 2026-07-31 — ARS tick: Webhook Retry Debt Studio (B 74)
 
 Seeded non-isomorphic reliability idea **Webhook Retry Debt Studio** (failed/pending deliveries → age + blast-radius queue). Related works + brief + kill rounds. Scored **B 74**. Queued behind six pack-ready climbs. Hourly loop docs-only.
