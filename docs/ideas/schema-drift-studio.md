@@ -1,18 +1,18 @@
 # Schema Drift Studio — research seed
 
 **Tier:** B (74) under `biz-rubric-v2`.  
-**Status:** research (seed + ARS; not building yet).
+**Status:** research — **full depth pack ready** (not building yet).
 
 ## Artifacts
-- `schema-drift-studio-ARS-BRIEF.md`
-- `schema-drift-studio-KILL-ROUNDS.md`
-- `schema-drift-studio-RELATED-WORKS.json`
+- ARS: RELATED-WORKS, ARS-BRIEF, KILL-ROUNDS  
+- Depth: PM-GO, VISION, ROADMAP, PRD, ERD, COMPREHENSIVE-BLUEPRINT  
+- Designer: DESIGN, PAGE-SPECS, PHASE-BRIEFS, API-CONTRACT  
 - Score row id 140 in `matrix/business-scores.json`
 
 ## Gate before `projects/`
-1. Full depth pack (PM-GO through DESIGN + PAGE/PHASE/API)  
-2. Claim must stay **approved migration pack ↔ live schema drift → release evidence pack**  
-3. Refuse Liquibase/Flyway console clones, Online Diff OT mirrors, and desk jobs shells
+1. Pack is complete - arm climb when slot opens (after prior queue, or human reorders)  
+2. Claim must stay **approved migration pack ↔ live schema → release evidence**  
+3. Refuse Flyway UI clones, live DDL claims, Online Diff OT mirrors
 
 ## One-liner
 Show platform leads where live database schema drifted from the last approved migration pack, and attach the pack to the release gate.
