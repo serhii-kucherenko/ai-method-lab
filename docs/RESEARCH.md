@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — Depth pack started: Commitment Coverage Studio
+
+Wrote PM-GO (GO), VISION, ROADMAP, PRD, ERD, COMPREHENSIVE-BLUEPRINT. Still need DESIGN before `projects/`. Score B 76. SER-103.
+
 ## 2026-07-30 — ARS tick: scored Commitment Coverage Studio B 76
 
 Upserted business score for **Commitment Coverage Studio** → **B / 76** (`biz-rubric-v2`). Climb-eligible only with multi-cloud + renewal workflow claim. Seed note: `docs/ideas/commitment-coverage-studio.md`. SER-103.
