@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-30 — ARS tick: scored Commitment Coverage Studio B 76
+
+Upserted business score for **Commitment Coverage Studio** → **B / 76** (`biz-rubric-v2`). Climb-eligible only with multi-cloud + renewal workflow claim. Seed note: `docs/ideas/commitment-coverage-studio.md`. SER-103.
+
 ## 2026-07-30 — ARS tick: Commitment Coverage Studio (FinOps A/B seed)
 
 Lab idle; Rubric Compiler pack/contracts complete and product already sustained per BACKLOG. Seeded non-isomorphic FinOps idea **Commitment Coverage Studio** (SP/RI/CUD coverage gaps in $) via ARS-related-works. Artifacts: `docs/ideas/commitment-coverage-studio-{RELATED-WORKS,ARS-BRIEF,KILL-ROUNDS}.*`. Next: biz-rubric score before climb. SER-103.

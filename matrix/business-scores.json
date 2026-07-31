@@ -1,6 +1,6 @@
 {
   "rubric_version": "biz-rubric-v2",
-  "updated_at": "2026-07-26T14:14:09.661Z",
+  "updated_at": "2026-07-31T00:11:35.274Z",
   "projects": [
     {
       "id": 1,
@@ -3120,6 +3120,33 @@
       "score": 78,
       "tier": "B",
       "id": 134
+    },
+    {
+      "slug": "commitment-coverage-studio",
+      "project": "Commitment Coverage Studio",
+      "dimensions": {
+        "buyer": 8,
+        "pain": 8,
+        "pmf": 7,
+        "money": 8,
+        "wedge": 8,
+        "moat": 7,
+        "evidence": 6,
+        "feasibility": 8
+      },
+      "business_idea": "Show where cloud Savings Plans / RIs / CUDs are under-covered or wasted versus on-demand spill, in dollars, before renewal",
+      "pmf": "Early signal with FinOps leads who already renew commitments and reconcile Cost Explorer vs finance spreadsheets",
+      "buyer": "Cloud FinOps / platform leads at mid-market+ AWS/GCP/Azure shops",
+      "money_hook": "Seats on coverage console + connected-account usage",
+      "potential": "Literal-dollar FinOps wedge adjacent to Idle Seat and True Up without cloning either",
+      "moat": "Commitment inventory ↔ usage matching → $ coverage gap vs generic cost dashboards",
+      "evidence": "ARS-related FinOps literature + kill rounds; idea-first (no paper code)",
+      "status": "research",
+      "rubric": "biz-rubric-v2",
+      "gc_notes": "Prefer next if multi-cloud + renewal workflow stays the claim; Kill if single-cloud Cost Explorer mirror",
+      "score": 76,
+      "tier": "B",
+      "id": 135
     }
   ]
 }

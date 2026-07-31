@@ -140,13 +140,14 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 132 | Secret Redact Studio | 78 | B | Redact secrets from agent traces before export instead of shipping raw logs that leak credentials | Early signal with AI platform/agent safety leads who already buy DLP and guardrail tooling | AI platform / agent safety engineering leads | Fleet seats + redact-run usage + private pattern packs | Agent productionization + secret hygiene spend | Pattern-redact coverage vs raw-export leak baselines | Idea-first agent safety; 30 dual goldens; live app smoke on 43163 | complete | biz-rubric-v2 | Prefer; agent secret-redact pattern |
 | 133 | True Up Studio | 79 | B | Forecast SaaS true-up dollars from metered overages before seat renewals hide the bill | Early signal with SaaS FinOps/procurement leads who already reconcile vendor renewals | SaaS FinOps / procurement leads | Vendor seats + forecast-run usage + private meter packs | Literal-dollar FinOps wedge on SaaS renewals and true-ups | Usage true-up dollars vs seat-renewal-only baselines | Idea-first FinOps; 30 dual goldens; live app smoke on 43164 | complete | biz-rubric-v2 | Prefer; SaaS true-up FinOps pattern |
 | 134 | Change Freeze Studio | 78 | B | Hold risky OT production changes during freeze windows instead of always-allowing ticketed changes | Early signal with OT/ICS change and safety leads who already run MOC and freeze calendars | OT / ICS change and safety leads | Plant/site seats + freeze-run usage + private freeze packs | Industrial change-control wedge adjacent to Download Gate and Bypass Audit | Freeze-aware holds vs always-allow baselines | Idea-first OT; 30 dual goldens; live app smoke on 43165 | complete | biz-rubric-v2 | Prefer; OT change-freeze pattern |
+| 135 | Commitment Coverage Studio | 76 | B | Show where cloud Savings Plans / RIs / CUDs are under-covered or wasted versus on-demand spill, in dollars, before renewal | Early signal with FinOps leads who already renew commitments and reconcile Cost Explorer vs finance spreadsheets | Cloud FinOps / platform leads at mid-market+ AWS/GCP/Azure shops | Seats on coverage console + connected-account usage | Literal-dollar FinOps wedge adjacent to Idle Seat and True Up without cloning either | Commitment inventory ↔ usage matching → $ coverage gap vs generic cost dashboards | ARS-related FinOps literature + kill rounds; idea-first (no paper code) | research | biz-rubric-v2 | Prefer next if multi-cloud + renewal workflow stays the claim; Kill if single-cloud Cost Explorer mirror |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 121 |
+| B | 122 |
 | C | 12 |
 | Kill | 1 |
 
