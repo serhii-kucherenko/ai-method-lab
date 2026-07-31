@@ -25,6 +25,6 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 
 1. **Commitment Coverage Studio** — FinOps B 76; **full pack + DESIGN ready** - arm climb when slot opens  
 2. **Online Diff Studio** — OT B 71; **DESIGN + specs ready** - queue behind Commitment Coverage  
-3. **Delegation Expiry Studio** — Agent safety B 74; research seed - depth pack after the two above  
+3. **Delegation Expiry Studio** — Agent safety B 74; **DESIGN + specs ready** - queue third
 
 OT/ICS · agent safety · literal-dollar · FinOps remain preferred patterns.

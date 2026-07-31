@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-31 — DESIGN + specs: Delegation Expiry Studio
+
+Hallmark DESIGN + PAGE/PHASE/API specs landed. Three pack-ready ideas: Commitment Coverage → Online Diff → Delegation Expiry. SER-103.
+
 ## 2026-07-31 — Depth pack started: Delegation Expiry Studio
 
 PM-GO through blueprint written. DESIGN still required. Queued behind Commitment Coverage and Online Diff. SER-103.
