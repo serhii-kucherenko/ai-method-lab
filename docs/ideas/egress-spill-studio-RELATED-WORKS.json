@@ -1,0 +1,249 @@
+{
+  "generated_at": "2026-07-31T19:15:40.056Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "cloud network egress billing data transfer cost optimization",
+    "doi": null,
+    "arxiv": null
+  },
+  "seed_record": {
+    "id": "https://openalex.org/W2615459164",
+    "title": "On Multi-Access Edge Computing: A Survey of the Emerging 5G Network Edge Cloud Architecture and Orchestration",
+    "year": 2017,
+    "doi": "10.1109/comst.2017.2705720",
+    "url": "https://doi.org/10.1109/comst.2017.2705720",
+    "oa_url": "https://zenodo.org/record/3494767",
+    "venue": "IEEE Communications Surveys & Tutorials",
+    "cited_by": 1749,
+    "authors": [
+      "Tarik Taleb",
+      "Konstantinos Samdanis",
+      "Badr Eddine Mada",
+      "Hannu Flinck",
+      "Sunny Dutta",
+      "Dario Sabella"
+    ],
+    "source_index": "openalex"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W2104237724",
+      "title": "A survey of mobile cloud computing: architecture, applications, and approaches",
+      "year": 2011,
+      "doi": "10.1002/wcm.1203",
+      "url": "https://doi.org/10.1002/wcm.1203",
+      "oa_url": null,
+      "venue": "Wireless Communications and Mobile Computing",
+      "cited_by": 2396,
+      "authors": [
+        "Hoang T. Dinh",
+        "Chonho Lee",
+        "Dusit Niyato",
+        "Ping Wang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2195423816",
+      "title": "Efficient Multi-User Computation Offloading for Mobile-Edge Cloud Computing",
+      "year": 2015,
+      "doi": "10.1109/tnet.2015.2487344",
+      "url": "https://doi.org/10.1109/tnet.2015.2487344",
+      "oa_url": null,
+      "venue": "IEEE/ACM Transactions on Networking",
+      "cited_by": 2659,
+      "authors": [
+        "Xu Chen",
+        "Lei Jiao",
+        "Wenzhong Li",
+        "Xiaoming Fu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2416799949",
+      "title": "Edge Computing: Vision and Challenges",
+      "year": 2016,
+      "doi": "10.1109/jiot.2016.2579198",
+      "url": "https://doi.org/10.1109/jiot.2016.2579198",
+      "oa_url": null,
+      "venue": "IEEE Internet of Things Journal",
+      "cited_by": 8082,
+      "authors": [
+        "Weisong Shi",
+        "Jie Cao",
+        "Quan Zhang",
+        "Youhuizi Li",
+        "Lanyu Xu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2114623221",
+      "title": "Fog computing and its role in the internet of things",
+      "year": 2012,
+      "doi": "10.1145/2342509.2342513",
+      "url": "https://doi.org/10.1145/2342509.2342513",
+      "oa_url": "https://dl.acm.org/doi/pdf/10.1145/2342509.2342513",
+      "venue": null,
+      "cited_by": 6005,
+      "authors": [
+        "Flavio Bonomi",
+        "Rodolfo Milito",
+        "Jiang Zhu",
+        "Sateesh Addepalli"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2260783129",
+      "title": "Network Function Virtualization: State-of-the-Art and Research Challenges",
+      "year": 2015,
+      "doi": "10.1109/comst.2015.2477041",
+      "url": "https://doi.org/10.1109/comst.2015.2477041",
+      "oa_url": "https://arxiv.org/pdf/1509.07675",
+      "venue": "IEEE Communications Surveys & Tutorials",
+      "cited_by": 1893,
+      "authors": [
+        "Rashid Mijumbi",
+        "Joan Serrat",
+        "Juan‐Luis Gorricho",
+        "Niels Bouten",
+        "Filip De Turck",
+        "Raouf Boutaba"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2144554277",
+      "title": "Mobile cloud computing: A survey",
+      "year": 2012,
+      "doi": "10.1016/j.future.2012.05.023",
+      "url": "https://doi.org/10.1016/j.future.2012.05.023",
+      "oa_url": null,
+      "venue": "Future Generation Computer Systems",
+      "cited_by": 1659,
+      "authors": [
+        "Niroshinie Fernando",
+        "Seng W. Loke",
+        "Wenny Rahayu"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2135099885",
+      "title": "The Case for VM-Based Cloudlets in Mobile Computing",
+      "year": 2009,
+      "doi": "10.1109/mprv.2009.82",
+      "url": "https://doi.org/10.1109/mprv.2009.82",
+      "oa_url": null,
+      "venue": "IEEE Pervasive Computing",
+      "cited_by": 3674,
+      "authors": [
+        "Mahadev Satyanarayanan",
+        "Paramvir Bahl",
+        "Rafaela Cáceres",
+        "Nigel Davies"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2052190282",
+      "title": "Scenarios for 5G mobile and wireless communications: the vision of the METIS project",
+      "year": 2014,
+      "doi": "10.1109/mcom.2014.6815890",
+      "url": "https://doi.org/10.1109/mcom.2014.6815890",
+      "oa_url": null,
+      "venue": "IEEE Communications Magazine",
+      "cited_by": 2040,
+      "authors": [
+        "Afif Osseiran",
+        "Federico Boccardi",
+        "Volker Braun",
+        "Katsutoshi Kusume",
+        "Patrick Marsch",
+        "Michał Maternia",
+        "Olav Queseth",
+        "Malte Schellmann"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2809684781",
+      "title": "A comprehensive survey on machine learning for networking: evolution, applications and research opportunities",
+      "year": 2018,
+      "doi": "10.1186/s13174-018-0087-2",
+      "url": "https://doi.org/10.1186/s13174-018-0087-2",
+      "oa_url": "https://jisajournal.springeropen.com/track/pdf/10.1186/s13174-018-0087-2",
+      "venue": "Journal of Internet Services and Applications",
+      "cited_by": 1004,
+      "authors": [
+        "Raouf Boutaba",
+        "Mohammad A. Salahuddin",
+        "Noura Limam",
+        "Sara Ayoubi",
+        "Nashid Shahriar",
+        "Felipe Estrada‐Solano",
+        "Oscar Maurício Caicedo Rendón"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2472333518",
+      "title": "Fog and IoT: An Overview of Research Opportunities",
+      "year": 2016,
+      "doi": "10.1109/jiot.2016.2584538",
+      "url": "https://doi.org/10.1109/jiot.2016.2584538",
+      "oa_url": null,
+      "venue": "IEEE Internet of Things Journal",
+      "cited_by": 2360,
+      "authors": [
+        "Mung Chiang",
+        "Tao Zhang"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2909391844",
+      "title": "The internet of things for smart manufacturing: A review",
+      "year": 2019,
+      "doi": "10.1080/24725854.2018.1555383",
+      "url": "https://doi.org/10.1080/24725854.2018.1555383",
+      "oa_url": "https://arxiv.org/pdf/2607.16172",
+      "venue": "IISE Transactions",
+      "cited_by": 432,
+      "authors": [
+        "Hui Yang",
+        "Soundar Kumara",
+        "Satish Bukkapatnam",
+        "Fugee Tsung"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2054692642",
+      "title": "What Will 5G Be?",
+      "year": 2014,
+      "doi": "10.1109/jsac.2014.2328098",
+      "url": "https://doi.org/10.1109/jsac.2014.2328098",
+      "oa_url": "https://repositori.upf.edu/bitstreams/fc28283a-2b87-4440-8960-ea80da00759d/download",
+      "venue": "IEEE Journal on Selected Areas in Communications",
+      "cited_by": 8212,
+      "authors": [
+        "Jeffrey G. Andrews",
+        "Stefano Buzzi",
+        "Wan Choi",
+        "Stephen V. Hanly",
+        "Angel Lozano",
+        "Anthony C. K. Soong",
+        "Jianzhong Charlie Zhang"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}

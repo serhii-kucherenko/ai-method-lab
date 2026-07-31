@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-31T18:16:05.116Z",
+  "updated_at": "2026-07-31T19:16:18.736Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -42,11 +42,11 @@
   "last_error": null,
   "current_product": null,
   "current_idea": "commitment-coverage-studio",
-  "next_research_idea": "commitment-coverage-studio",
+  "next_research_idea": "egress-spill-studio",
   "next_cell": null,
   "mode": "autonomous",
   "phase": "idle",
-  "notes": "Webhook Retry Debt pack complete (B74). Seven pack-ready ideas. Climb still SER-224. Loop PID 67789 docs-only.",
+  "notes": "Tick: seeded Egress Spill Studio B75. Next deepen its pack. Climb still SER-224. Loop PID 67789 docs-only.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
