@@ -1,17 +1,17 @@
 # Contract Rate Variance Studio — research seed
 
 **Tier:** B (75) under `biz-rubric-v2`.  
-**Status:** research (seed + ARS brief; not building yet).
+**Status:** research — **full depth pack ready** (not building yet).
 
 ## Artifacts
-- `contract-rate-variance-studio-ARS-BRIEF.md`
-- `contract-rate-variance-studio-KILL-ROUNDS.md`
-- `contract-rate-variance-studio-RELATED-WORKS.json`
+- ARS: RELATED-WORKS, ARS-BRIEF, KILL-ROUNDS  
+- Depth: PM-GO, VISION, ROADMAP, PRD, ERD, COMPREHENSIVE-BLUEPRINT  
+- Designer: DESIGN, PAGE-SPECS, PHASE-BRIEFS, API-CONTRACT  
 - Score row id 138 in `matrix/business-scores.json`
 
 ## Gate before `projects/`
-1. Full depth pack (PM-GO through DESIGN + PAGE/PHASE/API)
-2. Claim must stay **invoice line ↔ contracted unit rate → $ variance**
+1. Pack is complete - arm climb when slot opens (after Commitment Coverage → Online Diff → Delegation, or human reorders)  
+2. Claim must stay **invoice line ↔ contracted unit rate → $ variance**  
 3. Refuse generic invoice OCR desks, True Up seat clones, and Commitment Coverage mirrors
 
 ## One-liner

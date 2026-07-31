@@ -28,6 +28,6 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 | 1 | **Commitment Coverage Studio** | B 76 | **Arm climb** - [SER-224](https://linear.app/serhii-kucherenko/issue/SER-224) |
 | 2 | **Online Diff Studio** | B 71 | Pack ready - after #1 |
 | 3 | **Delegation Expiry Studio** | B 74 | Pack ready - after #2 |
-| 4 | **Contract Rate Variance Studio** | B 75 | Seed + score - deepen after #1–3 |
+| 4 | **Contract Rate Variance Studio** | B 75 | Pack ready - after #1–3 |
 
 See `docs/ideas/CLIMB-QUEUE.md`.

@@ -2,6 +2,10 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
+## 2026-07-31 — Depth pack complete: Contract Rate Variance Studio
+
+Wrote PM-GO through DESIGN + PAGE/PHASE/API for **Contract Rate Variance Studio** (B 75). Pack ready; still queued after Commitment Coverage → Online Diff → Delegation. No `projects/`. Hourly loop docs-only.
+
 ## 2026-07-31 — ARS tick: Contract Rate Variance Studio (B 75)
 
 Seeded non-isomorphic literal-dollar AP idea **Contract Rate Variance Studio** (invoice unit rate ↔ contracted catalog → $). Related works + brief + kill rounds. Scored **B 75**. Queued after the three pack-ready climbs. Hourly loop docs-only.
