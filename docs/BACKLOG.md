@@ -23,8 +23,10 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 
 ## Prefer next
 
-1. **Commitment Coverage Studio** — FinOps B 76; **full pack + DESIGN ready** - arm climb when slot opens  
-2. **Online Diff Studio** — OT B 71; **DESIGN + specs ready** - queue behind Commitment Coverage  
-3. **Delegation Expiry Studio** — Agent safety B 74; **DESIGN + specs ready** - queue third
+| # | Idea | Score | State |
+|---|------|-------|-------|
+| 1 | **Commitment Coverage Studio** | B 76 | **Arm climb** - [SER-104](https://linear.app/serhii-kucherenko/issue/SER-104) |
+| 2 | **Online Diff Studio** | B 71 | Pack ready - after #1 |
+| 3 | **Delegation Expiry Studio** | B 74 | Pack ready - after #2 |
 
-OT/ICS · agent safety · literal-dollar · FinOps remain preferred patterns.
+See `docs/ideas/CLIMB-QUEUE.md`.
