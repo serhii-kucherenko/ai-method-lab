@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-07-31T07:15:48.219Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "LLM agent tool permission temporary grant expiry audit",
+    "doi": null,
+    "arxiv": null
+  },
+  "seed_record": {
+    "id": "https://openalex.org/W4412900973",
+    "title": "SAIA: a seamless Slurm-native solution for HPC-based services",
+    "year": 2026,
+    "doi": "10.1007/s11227-026-08508-3",
+    "url": "https://doi.org/10.1007/s11227-026-08508-3",
+    "oa_url": "https://link.springer.com/content/pdf/10.1007/s11227-026-08508-3.pdf",
+    "venue": "The Journal of Supercomputing",
+    "cited_by": 5,
+    "authors": [
+      "Ali Doosthosseini",
+      "Jonathan Decker",
+      "Hendrik Nolte",
+      "Julian Kunkel"
+    ],
+    "source_index": "openalex"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W7130530777",
+      "title": "Zero-Trust Architecture for MCP-Based AI Agents: A Unified CLI Approach",
+      "year": 2026,
+      "doi": "10.36227/techrxiv.177155647.75363542/v1",
+      "url": "https://doi.org/10.36227/techrxiv.177155647.75363542/v1",
+      "oa_url": "https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.177155647.75363542/v1",
+      "venue": null,
+      "cited_by": 0,
+      "authors": [
+        "Yoshihiro Ando"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7114993509",
+      "title": "Enterprise Data Marketplace for Secure Access and Governance",
+      "year": 2024,
+      "doi": "10.17762/ijisae.v12i23s.7966",
+      "url": "https://doi.org/10.17762/ijisae.v12i23s.7966",
+      "oa_url": "https://www.ijisae.org/index.php/IJISAE/article/download/7966/6983",
+      "venue": "International Journal of Intelligent Systems and Applications in Engineering",
+      "cited_by": 1,
+      "authors": [
+        "Koteswara Rao Chirumamilla"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7140347233",
+      "title": "AC4A: Access Control for Agents",
+      "year": 2026,
+      "doi": null,
+      "url": "http://arxiv.org/abs/2603.20933",
+      "oa_url": "https://arxiv.org/pdf/2603.20933",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Reshabh K Sharma",
+        "Dan Grossman"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4406239551",
+      "title": "The Implementation of U-space: Open Challenges from the Legal-Private Perspective",
+      "year": 2025,
+      "doi": "10.1007/978-3-031-74889-9_22",
+      "url": "https://doi.org/10.1007/978-3-031-74889-9_22",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/978-3-031-74889-9_22.pdf",
+      "venue": "Law, governance and technology series",
+      "cited_by": 5,
+      "authors": [
+        "Yolanda B. Bustos Moreno"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4407208977",
+      "title": "When Anti-Fraud Laws Become a Barrier to Computer Science Research",
+      "year": 2025,
+      "doi": "10.48550/arxiv.2502.02767",
+      "url": "http://arxiv.org/abs/2502.02767",
+      "oa_url": "https://arxiv.org/pdf/2502.02767",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 1,
+      "authors": [
+        "Xiao Ma",
+        "Andrew Sellars",
+        "Sarah Scheffler"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7120272042",
+      "title": "Autonomous Agents on Blockchains: Standards, Execution Models, and Trust Boundaries",
+      "year": 2026,
+      "doi": null,
+      "url": "http://arxiv.org/abs/2601.04583",
+      "oa_url": "https://arxiv.org/pdf/2601.04583",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Saad Alqithami"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W7166399811",
+      "title": "Chai: Agentic Discovery of Cryptographic Misuse Vulnerabilities",
+      "year": 2026,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2606.26933",
+      "oa_url": "https://arxiv.org/pdf/2606.26933",
+      "venue": "arXiv (Cornell University)",
+      "cited_by": 0,
+      "authors": [
+        "Corban Villa",
+        "Sohee Kim",
+        "Austin Chu",
+        "Alon Shakevsky",
+        "Raluca Ada Popa"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}
