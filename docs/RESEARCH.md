@@ -4,7 +4,7 @@ Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2
 
 ## 2026-07-31 — Research queue closed; climb SER-104
 
-Three pack-ready ideas documented in `docs/ideas/CLIMB-QUEUE.md`. SER-103 done. Next build: Commitment Coverage ([SER-104](https://linear.app/serhii-kucherenko/issue/SER-104/climb-commitment-coverage-studio-pack-ready)).
+Three pack-ready ideas documented in `docs/ideas/CLIMB-QUEUE.md`. SER-103 done. Next build: Commitment Coverage ([SER-224](https://linear.app/serhii-kucherenko/issue/SER-224/climb-commitment-coverage-studio-pack-ready)).
 
 ## 2026-07-31 — DESIGN + specs: Delegation Expiry Studio
 
