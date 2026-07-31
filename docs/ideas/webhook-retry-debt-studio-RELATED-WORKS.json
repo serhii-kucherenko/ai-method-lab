@@ -1,0 +1,231 @@
+{
+  "generated_at": "2026-07-31T17:15:32.500Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "webhook delivery retry backlog dead letter queue reliability engineering",
+    "doi": null,
+    "arxiv": null
+  },
+  "seed_record": {
+    "id": "https://openalex.org/W4416399039",
+    "title": "Process Automation Framework for Enhancing Procurement Efficiency and Transparency",
+    "year": 2021,
+    "doi": "10.32628/shisrrj214458",
+    "url": "https://doi.org/10.32628/shisrrj214458",
+    "oa_url": "https://shisrrj.com/paper/SHISRRJ214458.pdf",
+    "venue": "Shodhshauryam International Scientific Refereed Research Journal",
+    "cited_by": 2,
+    "authors": [
+      "Oluwafunmilayo Kehinde Akinleye",
+      "Omolara Adeyoyin"
+    ],
+    "source_index": "openalex"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W4200330769",
+      "title": "International Journal of Scientific Research in Computer Science, Engineering and Information Technology",
+      "year": 2017,
+      "doi": "10.32628/ijsrcseit",
+      "url": "https://doi.org/10.32628/ijsrcseit",
+      "oa_url": "https://doi.org/10.32628/ijsrcseit",
+      "venue": "International Journal of Scientific Research in Computer Science Engineering and Information Technology",
+      "cited_by": 154,
+      "authors": [
+        "IJSRCSEIT",
+        "Dr. Harikrishna Jethva"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4412583145",
+      "title": "The Role of Storytelling and Emotional Intelligence in Enhancing Passenger Experience",
+      "year": 2021,
+      "doi": "10.54660/.ijmrge.2021.2.5.517-531",
+      "url": "https://doi.org/10.54660/.ijmrge.2021.2.5.517-531",
+      "oa_url": "https://www.allmultidisciplinaryjournal.com/uploads/archives/20250723105421_MGE-2025-4-112.1.pdf",
+      "venue": "International Journal of Multidisciplinary Research and Growth Evaluation",
+      "cited_by": 29,
+      "authors": [
+        "Maida Nkonye Asata",
+        "Daphine Nyangoma",
+        "Chinelo Harriet Okolo"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4414998922",
+      "title": "End-to-End Product Lifecycle Management as a Strategic Framework for Innovation in Telecommunications Services",
+      "year": 2020,
+      "doi": "10.54660/ijmer.2020.1.2.54-64",
+      "url": "https://doi.org/10.54660/ijmer.2020.1.2.54-64",
+      "oa_url": "https://www.internationalmultiresearch.com/uploads/archives/20251009131639_MER-2025-1-051.1.pdf",
+      "venue": "International Journal of Multidisciplinary Evolutionary Research",
+      "cited_by": 32,
+      "authors": [
+        "Omorinsola Bibire Seyi-Lande",
+        "Adesola Abdul-Gafar Arowogbadamu",
+        "Stanley Tochukwu Oziri"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4413308527",
+      "title": "A Trial Optimization Framework for FMCG Products Through Experiential Trade Activation",
+      "year": 2021,
+      "doi": "10.54660/.ijmrge.2021.2.3.676-685",
+      "url": "https://doi.org/10.54660/.ijmrge.2021.2.3.676-685",
+      "oa_url": "https://www.allmultidisciplinaryjournal.com/uploads/archives/20250819164158_MGE-2025-4-265.1.pdf",
+      "venue": "International Journal of Multidisciplinary Research and Growth Evaluation",
+      "cited_by": 28,
+      "authors": [
+        "Oluwatosin Balogun",
+        "Ololade Shukrah Abass",
+        "Paul Uche Didi"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4412473411",
+      "title": "AI-Based Threat Detection Systems for Cloud Infrastructure: Architecture, Challenges, and Opportunities",
+      "year": 2021,
+      "doi": "10.54660/.ijfmr.2021.2.2.61-67",
+      "url": "https://doi.org/10.54660/.ijfmr.2021.2.2.61-67",
+      "oa_url": "https://www.multidisciplinaryfrontiers.com/uploads/archives/20250716163150_FMR-2025-2-007.1.pdf",
+      "venue": "Journal of Frontiers in Multidisciplinary Research",
+      "cited_by": 29,
+      "authors": [
+        "Jeanette Uddoh",
+        "Daniel Ajiga",
+        "Babawale Patrick Okare",
+        "Tope David Aduloju"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4413399708",
+      "title": "Marketing Intelligence as a Catalyst for Business Resilience and Consumer Behavior Shifts During and After Global Crises",
+      "year": 2021,
+      "doi": "10.54660/.jfmr.2021.2.2.195-203",
+      "url": "https://doi.org/10.54660/.jfmr.2021.2.2.195-203",
+      "oa_url": "https://www.multidisciplinaryfrontiers.com/uploads/archives/20250821171654_FMR-2025-2-071.1.pdf",
+      "venue": "Journal of Frontiers in Multidisciplinary Research",
+      "cited_by": 33,
+      "authors": [
+        "Oyenmwen Umoren",
+        "Paul Uche Didi",
+        "Oluwatosin Balogun",
+        "Ololade Shukrah Abass",
+        "Oluwatolani Vivian Akinrinoye"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4413412896",
+      "title": "Integrated Communication Funnel Optimization for Awareness, Engagement, and Conversion Across Omnichannel Consumer Touchpoints",
+      "year": 2021,
+      "doi": "10.54660/.jfmr.2021.2.2.186-194",
+      "url": "https://doi.org/10.54660/.jfmr.2021.2.2.186-194",
+      "oa_url": "https://www.multidisciplinaryfrontiers.com/uploads/archives/20250821165728_FMR-2025-2-070.1.pdf",
+      "venue": "Journal of Frontiers in Multidisciplinary Research",
+      "cited_by": 30,
+      "authors": [
+        "Oyenmwen Umoren",
+        "Paul Uche Didi",
+        "Oluwatosin Balogun",
+        "Ololade Shukrah Abass",
+        "Oluwatolani Vivian Akinrinoye"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4414999765",
+      "title": "Evidence-informed Advisory for Ultra-High-Net-Worth Clients: Portfolio Governance and Fiduciary Risk Controls",
+      "year": 2020,
+      "doi": "10.54660/.ijfmr.2020.1.2.112-120",
+      "url": "https://doi.org/10.54660/.ijfmr.2020.1.2.112-120",
+      "oa_url": "https://www.multidisciplinaryfrontiers.com/uploads/archives/20251009130640_FMR-2025-2-132.1.pdf",
+      "venue": "Journal of Frontiers in Multidisciplinary Research",
+      "cited_by": 34,
+      "authors": [
+        "Akindamola Samuel Akinola",
+        "Chizoba Michael Okafor",
+        "Omoize Fatimetu Dako",
+        "Olaolu Samuel Adesanya"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4414998727",
+      "title": "Geo-Marketing Analytics for Driving Strategic Retail Expansion and Improving Market Penetration in Telecommunications",
+      "year": 2020,
+      "doi": "10.54660/ijmfd.2020.1.2.50-60",
+      "url": "https://doi.org/10.54660/ijmfd.2020.1.2.50-60",
+      "oa_url": "https://www.transdisciplinaryjournal.com/uploads/archives/20251009134624_MFD-2025-1-044.1.pdf",
+      "venue": "International Journal of Multidisciplinary Futuristic Development",
+      "cited_by": 29,
+      "authors": [
+        "Adesola Abdul-Gafar Arowogbadamu",
+        "Stanley Tochukwu Oziri",
+        "Omorinsola Bibire Seyi-Lande"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4412139752",
+      "title": "Hybrid Workforce Governance Models: A Technical Review of Digital Monitoring Systems, Productivity Analytics, and Adaptive Engagement Frameworks",
+      "year": 2021,
+      "doi": "10.54660/.ijmrge.2021.2.3.589-597",
+      "url": "https://doi.org/10.54660/.ijmrge.2021.2.3.589-597",
+      "oa_url": "https://www.allmultidisciplinaryjournal.com/uploads/archives/20250710104709_MGE-2025-3-415.1.pdf",
+      "venue": "International Journal of Multidisciplinary Research and Growth Evaluation",
+      "cited_by": 36,
+      "authors": [
+        "Immaculata Omemma Evans-Uzosike",
+        "Chinenye Gbemisola Okatta",
+        "Bisayo Oluwatosin Otokiti",
+        "Onyinye Gift Ejike",
+        "Omolola Temitope Kufile"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4414975919",
+      "title": "Translating Finance Bills into Strategy: Sectoral Impact Mapping and Regulatory Scenario Analysis",
+      "year": 2020,
+      "doi": "10.54660/.ijfmr.2020.1.2.102-111",
+      "url": "https://doi.org/10.54660/.ijfmr.2020.1.2.102-111",
+      "oa_url": "https://www.multidisciplinaryfrontiers.com/uploads/archives/20251009125913_FMR-2025-2-131.1.pdf",
+      "venue": "Journal of Frontiers in Multidisciplinary Research",
+      "cited_by": 31,
+      "authors": [
+        "Blessing Olajumoke Farounbi",
+        "Ogochukwu Prisca Onyelucheya",
+        "Chizoba Michael Okafor",
+        "Akindamola Samuel Akinola"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4413310041",
+      "title": "Developing a Content Matrix for Marketing Modular Gas Infrastructure in Decentralized Energy Markets",
+      "year": 2021,
+      "doi": "10.54660/.ijmrge.2021.2.4.1007-1016",
+      "url": "https://doi.org/10.54660/.ijmrge.2021.2.4.1007-1016",
+      "oa_url": "https://www.allmultidisciplinaryjournal.com/uploads/archives/20250819165716_MGE-2025-4-266.1.pdf",
+      "venue": "International Journal of Multidisciplinary Research and Growth Evaluation",
+      "cited_by": 28,
+      "authors": [
+        "Paul Uche Didi",
+        "Ololade Shukrah Abass",
+        "Oluwatosin Balogun"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}

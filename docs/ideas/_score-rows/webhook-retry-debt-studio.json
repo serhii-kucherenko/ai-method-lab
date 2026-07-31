@@ -1,0 +1,24 @@
+{
+  "slug": "webhook-retry-debt-studio",
+  "project": "Webhook Retry Debt Studio",
+  "dimensions": {
+    "buyer": 8,
+    "pain": 7,
+    "pmf": 7,
+    "money": 7,
+    "wedge": 8,
+    "moat": 7,
+    "evidence": 6,
+    "feasibility": 9
+  },
+  "business_idea": "Show failed and pending webhook deliveries by age and blast radius before the next incident review",
+  "pmf": "Early signal with platform / reliability leads who already run outbound event fleets and DLQs",
+  "buyer": "Platform and reliability engineering leads at product orgs with multi-destination webhooks",
+  "money_hook": "Org seats + delivery-debt sync usage",
+  "potential": "Reliability wedge adjacent to Stale Flag without cloning flag debt or cloud queue consoles",
+  "moat": "Failed/pending delivery → age + owner blast-radius queue vs generic webhook settings or broker UIs",
+  "evidence": "ARS related-works on retry/DLQ; kill rounds fence cloud console and settings-test clones",
+  "status": "research",
+  "rubric": "biz-rubric-v2",
+  "gc_notes": "Prefer if delivery-debt queue claim stays locked; Kill if SQS console mirror or settings-only webhook ping"
+}

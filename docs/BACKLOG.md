@@ -31,5 +31,6 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 | 4 | **Contract Rate Variance Studio** | B 75 | Pack ready - after #1–3 |
 | 5 | **Stale Flag Studio** | B 74 | Pack ready - after #1–4 |
 | 6 | **Schema Drift Studio** | B 74 | Pack ready - after #1–5 |
+| 7 | **Webhook Retry Debt Studio** | B 74 | Seed + score - deepen next |
 
 See `docs/ideas/CLIMB-QUEUE.md`.
