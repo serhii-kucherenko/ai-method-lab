@@ -1,0 +1,215 @@
+{
+  "generated_at": "2026-07-31T11:16:08.613Z",
+  "anthropic_required": false,
+  "indexes": [
+    "openalex",
+    "arxiv"
+  ],
+  "seed": {
+    "title": "invoice price variance detection procure-to-pay audit contracted unit price",
+    "doi": null,
+    "arxiv": null
+  },
+  "seed_record": {
+    "id": "https://openalex.org/W1529796395",
+    "title": "Performance-Based Contracting for Roadway Maintenance Operations in Indiana",
+    "year": 2009,
+    "doi": "10.5703/1288284313438",
+    "url": "https://doi.org/10.5703/1288284313438",
+    "oa_url": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1786&context=jtrp",
+    "venue": null,
+    "cited_by": 14,
+    "authors": [
+      "Bob McCullouch",
+      "Kumares C. Sinha",
+      "Panagiotis Ch. Anastasopoulos"
+    ],
+    "source_index": "openalex"
+  },
+  "related": [
+    {
+      "id": "https://openalex.org/W1485147006",
+      "title": "Statistical and Econometric Methods for Transportation Data Analysis",
+      "year": 2003,
+      "doi": "10.1201/9780203497111",
+      "url": "https://doi.org/10.1201/9780203497111",
+      "oa_url": null,
+      "venue": null,
+      "cited_by": 1917,
+      "authors": [
+        "Simon Washington",
+        "Matthew G. Karlaftis",
+        "Fred Mannering"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W1963257285",
+      "title": "SWOT analysis: It's time for a product recall",
+      "year": 1997,
+      "doi": "10.1016/s0024-6301(96)00095-7",
+      "url": "https://doi.org/10.1016/s0024-6301(96)00095-7",
+      "oa_url": null,
+      "venue": "Long Range Planning",
+      "cited_by": 1029,
+      "authors": [
+        "Terry Hill",
+        "Roy Westbrook"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4285708997",
+      "title": "Statistical and Econometric Methods for Transportation Data Analysis",
+      "year": 2020,
+      "doi": "10.1201/9780429244018",
+      "url": "https://doi.org/10.1201/9780429244018",
+      "oa_url": null,
+      "venue": null,
+      "cited_by": 935,
+      "authors": [
+        "Simon Washington",
+        "Matthew G. Karlaftis",
+        "Fred Mannering",
+        "Panagiotis Ch. Anastasopoulos"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2004877180",
+      "title": "A Method for Minimizing the Impact of Distributional Assumptions in Econometric Models for Duration Data",
+      "year": 1984,
+      "doi": "10.2307/1911491",
+      "url": "https://doi.org/10.2307/1911491",
+      "oa_url": null,
+      "venue": "Econometrica",
+      "cited_by": 2826,
+      "authors": [
+        "James J. Heckman",
+        "Burton H. Singer"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2095033980",
+      "title": "Impact of roadside features on the frequency and severity of run-off-roadway accidents: an empirical analysis",
+      "year": 2002,
+      "doi": "10.1016/s0001-4575(01)00009-4",
+      "url": "https://doi.org/10.1016/s0001-4575(01)00009-4",
+      "oa_url": null,
+      "venue": "Accident Analysis & Prevention",
+      "cited_by": 495,
+      "authors": [
+        "Jinsun Lee",
+        "Fred Mannering"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2098910318",
+      "title": "Limited-dependent and qualitative variables in econometrics",
+      "year": 1983,
+      "doi": "10.1017/cbo9780511810176",
+      "url": "https://doi.org/10.1017/cbo9780511810176",
+      "oa_url": null,
+      "venue": "Cambridge University Press eBooks",
+      "cited_by": 13526,
+      "authors": [
+        "G. S. Maddala"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W1559339763",
+      "title": "Linear Probability, Logit, and Probit Models",
+      "year": 1984,
+      "doi": "10.4135/9781412984744",
+      "url": "https://doi.org/10.4135/9781412984744",
+      "oa_url": null,
+      "venue": null,
+      "cited_by": 2624,
+      "authors": [
+        "John H. Aldrich",
+        "Forrest D. Nelson"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2070047061",
+      "title": "Pseudo Maximum Likelihood Methods: Theory",
+      "year": 1984,
+      "doi": "10.2307/1913471",
+      "url": "https://doi.org/10.2307/1913471",
+      "oa_url": "http://www.cepremap.fr/depot/couv_orange/co8129.pdf",
+      "venue": "Econometrica",
+      "cited_by": 1419,
+      "authors": [
+        "Christian Gouriéroux",
+        "Alain Monfort",
+        "Alain Trognon"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W3121726158",
+      "title": "Limited-Dependent and Qualitative Variables in Econometrics.",
+      "year": 1985,
+      "doi": "10.2307/2233228",
+      "url": "https://doi.org/10.2307/2233228",
+      "oa_url": null,
+      "venue": "The Economic Journal",
+      "cited_by": 1353,
+      "authors": [
+        "Hedley Rees",
+        "G. S. Maddala"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2075583391",
+      "title": "Regression Analysis when the Dependent Variable Is Truncated Normal",
+      "year": 1973,
+      "doi": "10.2307/1914031",
+      "url": "https://doi.org/10.2307/1914031",
+      "oa_url": null,
+      "venue": "Econometrica",
+      "cited_by": 1141,
+      "authors": [
+        "Takeshi Amemiya"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W4244155226",
+      "title": "Advanced Econometrics.",
+      "year": 1987,
+      "doi": "10.2307/2554459",
+      "url": "https://doi.org/10.2307/2554459",
+      "oa_url": null,
+      "venue": "Economica",
+      "cited_by": 844,
+      "authors": [
+        "A. C. Harvey",
+        "Takeshi Amemiya"
+      ],
+      "source_index": "openalex"
+    },
+    {
+      "id": "https://openalex.org/W2008909284",
+      "title": "Highway accident severities and the mixed logit model: An exploratory empirical analysis",
+      "year": 2007,
+      "doi": "10.1016/j.aap.2007.06.006",
+      "url": "https://doi.org/10.1016/j.aap.2007.06.006",
+      "oa_url": null,
+      "venue": "Accident Analysis & Prevention",
+      "cited_by": 842,
+      "authors": [
+        "John Milton",
+        "Venky Shankar",
+        "Fred Mannering"
+      ],
+      "source_index": "openalex"
+    }
+  ],
+  "note": "Ground citations in these records. Do not invent papers."
+}

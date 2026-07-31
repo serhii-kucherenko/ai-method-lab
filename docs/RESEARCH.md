@@ -2,7 +2,11 @@
 
 Business-first lab. Papers optional. Software-solvable ideas only (biz-rubric-v2).
 
-## 2026-07-31 — Research queue closed; climb SER-104
+## 2026-07-31 — ARS tick: Contract Rate Variance Studio (B 75)
+
+Seeded non-isomorphic literal-dollar AP idea **Contract Rate Variance Studio** (invoice unit rate ↔ contracted catalog → $). Related works + brief + kill rounds. Scored **B 75**. Queued after the three pack-ready climbs. Hourly loop docs-only.
+
+## 2026-07-31 — Research queue closed; climb SER-224
 
 Three pack-ready ideas documented in `docs/ideas/CLIMB-QUEUE.md`. SER-103 done. Next build: Commitment Coverage ([SER-224](https://linear.app/serhii-kucherenko/issue/SER-224/climb-commitment-coverage-studio-pack-ready)).
 

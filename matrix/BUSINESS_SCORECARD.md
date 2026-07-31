@@ -143,13 +143,14 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 135 | Commitment Coverage Studio | 76 | B | Show where cloud Savings Plans / RIs / CUDs are under-covered or wasted versus on-demand spill, in dollars, before renewal | Early signal with FinOps leads who already renew commitments and reconcile Cost Explorer vs finance spreadsheets | Cloud FinOps / platform leads at mid-market+ AWS/GCP/Azure shops | Seats on coverage console + connected-account usage | Literal-dollar FinOps wedge adjacent to Idle Seat and True Up without cloning either | Commitment inventory ↔ usage matching → $ coverage gap vs generic cost dashboards | ARS-related FinOps literature + kill rounds; idea-first (no paper code) | research | biz-rubric-v2 | Prefer next if multi-cloud + renewal workflow stays the claim; Kill if single-cloud Cost Explorer mirror |
 | 136 | Online Diff Studio | 71 | B | Diff last approved offline PLC/control program against what is running online and attach the pack to MOC | Early signal with OT change owners who already export programs for audits | OT / ICS controls engineers and change owners | Plant/site seats + diff-run usage | OT software wedge adjacent to Change Freeze and Download Gate without cloning them | Online↔approved offline drift evidence vs freeze holds or download interlocks alone | Idea-first OT; related works thin (NIST/ICS context); honesty soft-sim fence | research | biz-rubric-v2 | Prefer if MOC evidence pack stays the claim; Kill if vendor IDE mirror only |
 | 137 | Delegation Expiry Studio | 74 | B | Issue time-boxed agent tool/delegation grants that auto-expire with an audit ledger | Early signal with AI platform security leads standing up agent fleets and MCP tool gates | AI platform / security engineers for agent fleets | Fleet seats + grant-event usage | Agent-safety wedge adjacent to Tool Scope without cloning static ACLs | TTL delegation grant lifecycle vs permanent scope matrices or OT bypass tickets | ARS-related AC4A / zero-trust agent access papers + kill rounds | research | biz-rubric-v2 | Prefer if grant TTL stays the claim; Kill if generic IAM wrapper |
+| 138 | Contract Rate Variance Studio | 75 | B | Show where vendor invoice unit rates disagree with the contracted SKU price, in dollars, before the payment batch posts | Early signal with AP / FinOps leads who already dispute invoices and maintain contract rate cards | AP ops and FinOps / procurement systems leads at mid-market+ SaaS and cloud vendor shops | AP seats + variance-run usage + private contract catalogs | Literal-dollar AP wedge adjacent to True Up and Service Credit without cloning either | Contract catalog ↔ invoice line rate match → $ variance vs generic invoice OCR or PO three-way desks | Idea-first; ARS related-works noisy on P2P contracting; kill rounds fence ERP clone and OCR theater | research | biz-rubric-v2 | Prefer if contract-catalog rate claim stays locked; Kill if generic AP OCR or SAP three-way mirror |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 124 |
+| B | 125 |
 | C | 12 |
 | Kill | 1 |
 
