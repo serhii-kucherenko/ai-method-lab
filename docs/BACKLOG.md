@@ -8,7 +8,7 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
-| — | **Spend Cap Studio** | **complete** | Finish mail pending |
+| — | **Spend Cap Studio** | **complete** | Finish mail 5f6fc592 |
 | — | **Change Freeze Studio** | **complete** | Finish mail 75857cf1 |
 | — | **True Up Studio** | **complete** | Finish mail 910812d6 |
 | — | **Secret Redact Studio** | **complete** | Finish mail 6b4c4fc9 |

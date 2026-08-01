@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-01T08:29:50.854Z",
+  "updated_at": "2026-08-01T08:30:50.962Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -11,7 +11,7 @@
     ],
     "enabled": true,
     "product_complete_pending": false,
-    "last_product_complete_email_id": "75857cf1-dd5e-4824-aeb9-01a78ff9594b",
+    "last_product_complete_email_id": "5f6fc592-7a32-4cbd-8eb7-8a5f1d4537da",
     "last_idea_validated_email_id": "a904d2cd-fc68-47d4-9e7e-0bbdbd31663b",
     "digest_draft": null,
     "fpd_reemail_pending": false,
@@ -38,15 +38,15 @@
     "stack_protocol": "docs/PRODUCT_STACK.md",
     "design_protocol": "protocols/DESIGN.md"
   },
-  "last_completed": "A03__P-sustain-001__change-freeze-studio__r1",
+  "last_completed": "A03__P-sustain-001__spend-cap-studio__r1",
   "last_error": null,
-  "current_product": "spend-cap-studio",
-  "current_idea": "spend-cap-studio",
+  "current_product": null,
+  "current_idea": "commitment-coverage-studio",
   "next_research_idea": "commitment-coverage-studio",
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "building",
-  "notes": "Shipping Spend Cap Studio (rebase after remote research packs). Hourly loop PID 20216.",
+  "phase": "idle",
+  "notes": "Idle after Spend Cap finish (5f6fc592). Climb queue still SER-224 Commitment Coverage. Hourly loop PID 20216.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
