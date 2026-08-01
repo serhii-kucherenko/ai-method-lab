@@ -149,13 +149,14 @@ Regenerate: `node scripts/score-business.mjs --write-md`
 | 141 | Webhook Retry Debt Studio | 74 | B | Show failed and pending webhook deliveries by age and blast radius before the next incident review | Early signal with platform / reliability leads who already run outbound event fleets and DLQs | Platform and reliability engineering leads at product orgs with multi-destination webhooks | Org seats + delivery-debt sync usage | Reliability wedge adjacent to Stale Flag without cloning flag debt or cloud queue consoles | Failed/pending delivery → age + owner blast-radius queue vs generic webhook settings or broker UIs | ARS related-works on retry/DLQ; kill rounds fence cloud console and settings-test clones | research | biz-rubric-v2 | Prefer if delivery-debt queue claim stays locked; Kill if SQS console mirror or settings-only webhook ping |
 | 142 | Egress Spill Studio | 75 | B | Show where unexpected cloud egress and data-transfer spill is burning dollars versus the planned budget before the invoice lands | Early signal with FinOps leads who already chase surprise data-transfer lines on cloud invoices | Cloud FinOps / platform leads at mid-market+ AWS/GCP/Azure shops | Seats + egress-window sync usage | Literal-dollar FinOps wedge adjacent to Commitment Coverage without cloning SP/RI coverage | Egress/transfer ↔ budget → $ spill queue vs generic cost dashboards | Idea-first; ARS related-works on egress/transfer cost; kill rounds fence Cost Explorer and commit clones | research | biz-rubric-v2 | Prefer if budget-vs-spill claim stays locked; Kill if Cost Explorer mirror or Commitment Coverage noun-swap |
 | 143 | Canary Budget Studio | 74 | B | Show how much canary error budget remains before auto-promote, with blast radius if they ship anyway | Early signal with platform / SRE / release leads who already run progressive delivery | Platform, SRE, and release engineering leads at product orgs with canary rollouts | Org seats + canary-window sync usage | Release-ops wedge adjacent to Stale Flag and Schema Drift without cloning Eval Budget | Canary error budget → promote/hold + blast radius vs generic rollout consoles | ARS related-works on canary/progressive delivery; kill rounds fence Flagger UI and Eval Budget clones | research | biz-rubric-v2 | Prefer if promote/hold budget claim stays locked; Kill if Flagger UI mirror or Eval Budget noun-swap |
+| 144 | Spend Cap Studio | 79 | B | Hard-stop over-budget cloud charges instead of soft-warning while spend keeps posting | Early signal with FinOps and platform cost owners who already set budgets and fight invoice surprises | FinOps / cloud cost owners | Account/org seats + cap-run usage + private cap packs | Literal-dollar FinOps wedge adjacent to Idle Seat and True Up | Hard-cap blocks vs soft-warn baselines | Idea-first FinOps; 30 dual goldens; live app smoke on 43166 | complete | biz-rubric-v2 | Prefer; literal-dollar hard-cap pattern |
 
 ## Tier counts
 
 | Tier | Count |
 |------|------:|
 | A | 0 |
-| B | 130 |
+| B | 131 |
 | C | 12 |
 | Kill | 1 |
 

@@ -1,0 +1,24 @@
+{
+  "capUsd": 500,
+  "spentUsd": 450,
+  "charges": [
+    {
+      "id": "ch-6-0",
+      "amountUsd": 98,
+      "wouldExceed": true,
+      "overrideApproved": false
+    },
+    {
+      "id": "ch-6-1",
+      "amountUsd": 115,
+      "wouldExceed": true,
+      "overrideApproved": false
+    },
+    {
+      "id": "ch-6-2",
+      "amountUsd": 132,
+      "wouldExceed": true,
+      "overrideApproved": false
+    }
+  ]
+}

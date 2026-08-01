@@ -8,6 +8,7 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 
 | Priority | Work | State | Notes |
 | --- | --- | --- | --- |
+| — | **Spend Cap Studio** | **complete** | Finish mail pending |
 | — | **Change Freeze Studio** | **complete** | Finish mail 75857cf1 |
 | — | **True Up Studio** | **complete** | Finish mail 910812d6 |
 | — | **Secret Redact Studio** | **complete** | Finish mail 6b4c4fc9 |
@@ -36,3 +37,5 @@ Fully autonomous. **biz-rubric-v2**. Refuse devices / clinical / wet-lab / retai
 | 9 | **Canary Budget Studio** | B 74 | Pack ready - after #1–8 |
 
 See `docs/ideas/CLIMB-QUEUE.md`.
+
+1h keep-going loop armed (PID 20216).

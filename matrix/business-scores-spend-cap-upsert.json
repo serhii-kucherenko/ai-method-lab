@@ -1,0 +1,26 @@
+{
+  "slug": "spend-cap-studio",
+  "project": "Spend Cap Studio",
+  "dimensions": {
+    "buyer": 8,
+    "pain": 9,
+    "pmf": 7,
+    "money": 8,
+    "wedge": 8,
+    "moat": 8,
+    "evidence": 6,
+    "feasibility": 9
+  },
+  "business_idea": "Hard-stop over-budget cloud charges instead of soft-warning while spend keeps posting",
+  "pmf": "Early signal with FinOps and platform cost owners who already set budgets and fight invoice surprises",
+  "buyer": "FinOps / cloud cost owners",
+  "money_hook": "Account/org seats + cap-run usage + private cap packs",
+  "potential": "Literal-dollar FinOps wedge adjacent to Idle Seat and True Up",
+  "moat": "Hard-cap blocks vs soft-warn baselines",
+  "evidence": "Idea-first FinOps; 30 dual goldens; live app smoke on 43166",
+  "status": "complete",
+  "rubric": "biz-rubric-v2",
+  "gc_notes": "Prefer; literal-dollar hard-cap pattern",
+  "score": 79,
+  "tier": "B"
+}

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-31T22:16:13.040Z",
+  "updated_at": "2026-08-01T08:29:50.854Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -40,13 +40,13 @@
   },
   "last_completed": "A03__P-sustain-001__change-freeze-studio__r1",
   "last_error": null,
-  "current_product": null,
-  "current_idea": "commitment-coverage-studio",
+  "current_product": "spend-cap-studio",
+  "current_idea": "spend-cap-studio",
   "next_research_idea": "commitment-coverage-studio",
   "next_cell": null,
   "mode": "autonomous",
-  "phase": "idle",
-  "notes": "Canary Budget pack complete (B74). Nine pack-ready ideas. Climb still SER-224. Loop PID 67789 docs-only.",
+  "phase": "building",
+  "notes": "Shipping Spend Cap Studio (rebase after remote research packs). Hourly loop PID 20216.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -60,9 +60,9 @@
     "picker": "scripts/pick-paper-idea.mjs",
     "last_pick": {
       "paperId": null,
-      "slug": "service-credit-studio",
-      "displayName": "Service Credit Studio",
-      "at": "2026-07-26T14:15:18.572Z",
+      "slug": "spend-cap-studio",
+      "displayName": "Spend Cap Studio",
+      "at": "2026-08-01T08:29:50.855Z",
       "url": null,
       "codeUrl": null,
       "source": "business-first"
@@ -135,11 +135,13 @@
     "interval": "1h",
     "sentinel": "AGENT_LOOP_TICK_keep_executing",
     "purpose": "keep_executing",
-    "pid": 22636,
+    "pid": 20216,
     "chain": "business_idea_depth_build_email_next",
     "do_not_rearm_if_alive": true,
     "ticks_observed": 8,
-    "depth_note": "Business-first 1h keep-going loop armed."
+    "depth_note": "Business-first 1h keep-going loop rearmed.",
+    "interval_s": 3600,
+    "rearmed_at": "2026-08-01T08:29:50.855Z"
   },
   "ars_research": {
     "enabled": true,
