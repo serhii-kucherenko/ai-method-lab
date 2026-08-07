@@ -88,4 +88,28 @@ describe("smoke-mkt: DESIGN tokens and brand landing", () => {
       "hero must not invent numeric KPI metrics",
     );
   });
+
+  it("honesty page states soft-sim fence, not Idle Seat or True Up, with Sources", () => {
+    const honestyPath = join(root, "src/app/honesty/page.tsx");
+    assert.ok(existsSync(honestyPath), "src/app/honesty/page.tsx must exist");
+    const honesty = read("src/app/honesty/page.tsx");
+    const claim = existsSync(join(root, "src/lib/claim.ts"))
+      ? read("src/lib/claim.ts")
+      : "";
+    const blob = `${honesty}\n${claim}`;
+
+    assert.ok(/soft-sim/i.test(blob), "honesty must state soft-sim");
+    assert.ok(
+      /system of record/i.test(blob) || /billing/i.test(blob),
+      "honesty must fence cloud billing system of record",
+    );
+    assert.ok(/Idle Seat/i.test(blob), "honesty must name Idle Seat");
+    assert.ok(/True Up/i.test(blob), "honesty must name True Up");
+    assert.ok(/Sources/i.test(blob), "honesty must include Sources");
+    assert.ok(
+      honesty.includes('from "@/lib/claim"') ||
+        honesty.includes("from '@/lib/claim'"),
+      "honesty must import shared copy from @/lib/claim",
+    );
+  });
 });
