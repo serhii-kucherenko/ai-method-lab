@@ -855,3 +855,139 @@ describe("domain-api: renewals pack", () => {
     assert.equal(dismissAudits.length, 1);
   });
 });
+
+describe("domain-api: org settings + members (PLT-01)", () => {
+  const dir = mkdtempSync(join(tmpdir(), "ccs-org-"));
+  const dbPath = join(dir, "coverage.db");
+
+  before(() => {
+    process.env.CCS_DB_PATH = dbPath;
+    closeDb();
+    resetDbForTests(dbPath);
+  });
+
+  after(() => {
+    closeDb();
+    rmSync(dir, { recursive: true, force: true });
+    delete process.env.CCS_DB_PATH;
+  });
+
+  it("GET /api/org without Bearer returns 401", async () => {
+    const { GET } = await import("../src/app/api/org/route");
+    const res = await GET(jsonReq("http://local/api/org"));
+    assert.equal(res.status, 401);
+  });
+
+  it("PATCH /api/org without Bearer returns 401", async () => {
+    const { PATCH } = await import("../src/app/api/org/route");
+    const res = await PATCH(
+      jsonReq("http://local/api/org", {
+        method: "PATCH",
+        json: { name: "Renamed Org" },
+      }),
+    );
+    assert.equal(res.status, 401);
+  });
+
+  it("GET /api/members without Bearer returns 401", async () => {
+    const { GET } = await import("../src/app/api/members/route");
+    const res = await GET(jsonReq("http://local/api/members"));
+    assert.equal(res.status, 401);
+  });
+
+  it("POST /api/members without Bearer returns 401", async () => {
+    const { POST } = await import("../src/app/api/members/route");
+    const res = await POST(
+      jsonReq("http://local/api/members", {
+        method: "POST",
+        json: { email: "ops@example.com", role: "admin" },
+      }),
+    );
+    assert.equal(res.status, 401);
+  });
+
+  it("with Bearer: GET org, PATCH name/tier, GET/POST members", async () => {
+    const orgApi = await import("../src/app/api/org/route");
+    const membersApi = await import("../src/app/api/members/route");
+
+    const getRes = await orgApi.GET(
+      jsonReq("http://local/api/org", { headers: auth }),
+    );
+    assert.equal(getRes.status, 200);
+    const getBody = await getRes.json();
+    assert.equal(getBody.softSim, true);
+    assert.ok(getBody.org);
+    assert.ok(typeof getBody.org.name === "string");
+    assert.ok(typeof getBody.org.seatTier === "string");
+    assert.ok(
+      getBody.org.webhookSecretMasked === null ||
+        typeof getBody.org.webhookSecretMasked === "string",
+    );
+    assert.equal(
+      Object.prototype.hasOwnProperty.call(getBody.org, "webhookSecret"),
+      false,
+      "raw webhookSecret must not leak on GET",
+    );
+
+    const patchRes = await orgApi.PATCH(
+      jsonReq("http://local/api/org", {
+        method: "PATCH",
+        headers: auth,
+        json: {
+          name: "Coverage Demo Org",
+          seatTier: "platform",
+          webhookSecret: "whsec_soft_sim_demo",
+        },
+      }),
+    );
+    assert.equal(patchRes.status, 200);
+    const patched = await patchRes.json();
+    assert.equal(patched.softSim, true);
+    assert.equal(patched.org.name, "Coverage Demo Org");
+    assert.equal(patched.org.seatTier, "platform");
+    assert.ok(
+      typeof patched.org.webhookSecretMasked === "string" &&
+        patched.org.webhookSecretMasked.includes("…"),
+      "masked secret after set",
+    );
+    assert.equal(
+      Object.prototype.hasOwnProperty.call(patched.org, "webhookSecret"),
+      false,
+    );
+
+    const listRes = await membersApi.GET(
+      jsonReq("http://local/api/members", { headers: auth }),
+    );
+    assert.equal(listRes.status, 200);
+    const listBody = await listRes.json();
+    assert.equal(listBody.softSim, true);
+    assert.ok(Array.isArray(listBody.members));
+    assert.ok(
+      listBody.members.length >= 1,
+      "seed demo member when empty",
+    );
+
+    const postRes = await membersApi.POST(
+      jsonReq("http://local/api/members", {
+        method: "POST",
+        headers: auth,
+        json: { email: "finops@example.com", role: "viewer" },
+      }),
+    );
+    assert.equal(postRes.status, 201);
+    const created = await postRes.json();
+    assert.equal(created.softSim, true);
+    assert.equal(created.member.email, "finops@example.com");
+    assert.equal(created.member.role, "viewer");
+
+    const listedAgain = await membersApi.GET(
+      jsonReq("http://local/api/members", { headers: auth }),
+    );
+    const again = await listedAgain.json();
+    assert.ok(
+      again.members.some(
+        (m: { email: string }) => m.email === "finops@example.com",
+      ),
+    );
+  });
+});
