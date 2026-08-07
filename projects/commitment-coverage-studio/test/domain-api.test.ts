@@ -1065,3 +1065,185 @@ describe("domain-api: audit trail (PLT-04)", () => {
     }
   });
 });
+
+describe("domain-api: webhook HMAC + export (PLT-02, PLT-03)", () => {
+  const dir = mkdtempSync(join(tmpdir(), "ccs-wh-"));
+  const dbPath = join(dir, "coverage.db");
+  const secret = "whsec_soft_sim_test_key";
+
+  before(() => {
+    process.env.CCS_DB_PATH = dbPath;
+    closeDb();
+    resetDbForTests(dbPath);
+  });
+
+  after(() => {
+    closeDb();
+    rmSync(dir, { recursive: true, force: true });
+    delete process.env.CCS_DB_PATH;
+  });
+
+  it("POST /api/webhooks/test rejects missing/invalid signature; accepts HMAC; replay 409", async () => {
+    const { signPayload } = await import("../src/lib/webhook");
+    const orgApi = await import("../src/app/api/org/route");
+    const { POST } = await import("../src/app/api/webhooks/test/route");
+
+    await orgApi.PATCH(
+      jsonReq("http://local/api/org", {
+        method: "PATCH",
+        headers: auth,
+        json: { webhookSecret: secret },
+      }),
+    );
+
+    const body = JSON.stringify({ event: "soft-sim.ping", n: 1 });
+    const bad = await POST(
+      new Request("http://local/api/webhooks/test", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "idempotency-key": "idem-1",
+        },
+        body,
+      }),
+    );
+    assert.equal(bad.status, 401);
+
+    const sig = signPayload(secret, body);
+    const ok = await POST(
+      new Request("http://local/api/webhooks/test", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "x-ccs-signature": sig,
+          "idempotency-key": "idem-1",
+        },
+        body,
+      }),
+    );
+    assert.equal(ok.status, 200);
+    const accepted = await ok.json();
+    assert.equal(accepted.softSim, true);
+    assert.equal(accepted.accepted, true);
+
+    const replay = await POST(
+      new Request("http://local/api/webhooks/test", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "x-ccs-signature": sig,
+          "idempotency-key": "idem-1",
+        },
+        body,
+      }),
+    );
+    assert.equal(replay.status, 409);
+  });
+
+  it("GET /api/export returns JSON and CSV for gaps/renewals/compares with Bearer", async () => {
+    const { GET } = await import("../src/app/api/export/route");
+
+    const noAuth = await GET(
+      jsonReq("http://local/api/export?kind=gaps&format=json"),
+    );
+    assert.equal(noAuth.status, 401);
+
+    for (const kind of ["gaps", "renewals", "compares"] as const) {
+      const jsonRes = await GET(
+        jsonReq(`http://local/api/export?kind=${kind}&format=json`, {
+          headers: auth,
+        }),
+      );
+      assert.equal(jsonRes.status, 200, `json ${kind}`);
+      assert.match(
+        jsonRes.headers.get("content-type") ?? "",
+        /application\/json/,
+      );
+      const jsonBody = await jsonRes.json();
+      assert.equal(jsonBody.softSim, true);
+      assert.equal(jsonBody.kind, kind);
+      assert.ok(Array.isArray(jsonBody.rows));
+
+      const csvRes = await GET(
+        jsonReq(`http://local/api/export?kind=${kind}&format=csv`, {
+          headers: auth,
+        }),
+      );
+      assert.equal(csvRes.status, 200, `csv ${kind}`);
+      assert.match(csvRes.headers.get("content-type") ?? "", /text\/csv/);
+      const csvText = await csvRes.text();
+      assert.equal(typeof csvText, "string");
+    }
+  });
+});
+
+describe("domain-api: rate limit middleware (PLT-05)", () => {
+  it("checkRateLimit denies after CCS_RATE_LIMIT_MAX and returns Retry-After headers", async () => {
+    const prevMax = process.env.CCS_RATE_LIMIT_MAX;
+    const prevWin = process.env.CCS_RATE_LIMIT_WINDOW_MS;
+    process.env.CCS_RATE_LIMIT_MAX = "2";
+    process.env.CCS_RATE_LIMIT_WINDOW_MS = "60000";
+    const {
+      checkRateLimit,
+      resetRateLimitForTests,
+      rateLimitHeaders,
+    } = await import("../src/lib/rate-limit");
+    resetRateLimitForTests();
+
+    const a = checkRateLimit("test-key-a");
+    assert.equal(a.allowed, true);
+    const b = checkRateLimit("test-key-a");
+    assert.equal(b.allowed, true);
+    const c = checkRateLimit("test-key-a");
+    assert.equal(c.allowed, false);
+    assert.equal(c.remaining, 0);
+    assert.ok(c.retryAfterSec >= 1);
+    const headers = rateLimitHeaders(c) as Record<string, string>;
+    assert.equal(headers["X-RateLimit-Limit"], "2");
+    assert.equal(headers["X-RateLimit-Remaining"], "0");
+    assert.ok(headers["Retry-After"]);
+
+    if (prevMax === undefined) delete process.env.CCS_RATE_LIMIT_MAX;
+    else process.env.CCS_RATE_LIMIT_MAX = prevMax;
+    if (prevWin === undefined) delete process.env.CCS_RATE_LIMIT_WINDOW_MS;
+    else process.env.CCS_RATE_LIMIT_WINDOW_MS = prevWin;
+    resetRateLimitForTests();
+  });
+
+  it("middleware returns 429 on mutating /api paths under low ceiling", async () => {
+    const prevMax = process.env.CCS_RATE_LIMIT_MAX;
+    process.env.CCS_RATE_LIMIT_MAX = "1";
+    const { resetRateLimitForTests } = await import("../src/lib/rate-limit");
+    resetRateLimitForTests();
+    const { middleware } = await import("../src/middleware");
+    const { NextRequest } = await import("next/server");
+
+    const mk = (path: string, method: string) =>
+      new NextRequest(new URL(path, "http://local"), {
+        method,
+        headers: { authorization: `Bearer ${DEMO_BEARER_TOKEN}` },
+      });
+
+    const first = middleware(mk("http://local/api/accounts", "POST"));
+    assert.notEqual(first.status, 429);
+
+    const secondAccounts = middleware(mk("http://local/api/accounts", "POST"));
+    assert.equal(secondAccounts.status, 429);
+    assert.ok(secondAccounts.headers.get("Retry-After"));
+    assert.ok(secondAccounts.headers.get("X-RateLimit-Limit"));
+
+    resetRateLimitForTests();
+    process.env.CCS_RATE_LIMIT_MAX = "1";
+    const renewFirst = middleware(mk("http://local/api/renewals", "POST"));
+    assert.notEqual(renewFirst.status, 429);
+    const renewSecond = middleware(mk("http://local/api/renewals", "PATCH"));
+    assert.equal(renewSecond.status, 429);
+
+    const getOk = middleware(mk("http://local/api/accounts", "GET"));
+    assert.notEqual(getOk.status, 429);
+
+    if (prevMax === undefined) delete process.env.CCS_RATE_LIMIT_MAX;
+    else process.env.CCS_RATE_LIMIT_MAX = prevMax;
+    resetRateLimitForTests();
+  });
+});

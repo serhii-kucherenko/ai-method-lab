@@ -140,12 +140,23 @@ CREATE TABLE IF NOT EXISTS audit_entries (
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
+CREATE TABLE IF NOT EXISTS webhook_deliveries (
+  id TEXT PRIMARY KEY,
+  org_id TEXT NOT NULL,
+  idempotency_key TEXT NOT NULL,
+  signature_ok INTEGER NOT NULL DEFAULT 0,
+  payload_json TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  UNIQUE(org_id, idempotency_key)
+);
+
 CREATE INDEX IF NOT EXISTS idx_commitments_org ON commitments(org_id);
 CREATE INDEX IF NOT EXISTS idx_usage_account ON usage_slices(cloud_account_id);
 CREATE INDEX IF NOT EXISTS idx_coverage_account ON coverage_snapshots(cloud_account_id);
 CREATE INDEX IF NOT EXISTS idx_renewal_cases_org ON renewal_cases(org_id);
 CREATE INDEX IF NOT EXISTS idx_audit_entries_org ON audit_entries(org_id);
 CREATE INDEX IF NOT EXISTS idx_members_org ON members(org_id);
+CREATE INDEX IF NOT EXISTS idx_webhook_deliveries_org ON webhook_deliveries(org_id);
 `;
 
 function ensureOrgColumns(db: CoverageDb): void {

@@ -8,7 +8,7 @@ import {
   LoadingState,
 } from "@/components/studio-states";
 import { Button } from "@/components/ui/button";
-import { apiJson } from "@/lib/api";
+import { apiFetch, apiJson } from "@/lib/api";
 
 type OrgPublic = {
   id: string;
@@ -148,6 +148,35 @@ export default function SettingsPage() {
     setMemberEmail("");
     setMemberRole("viewer");
     await load();
+  }
+
+  async function downloadExport(
+    kind: "gaps" | "compares",
+    format: "json" | "csv",
+  ) {
+    setError(null);
+    const res = await apiFetch("/api/export", {
+      searchParams: { kind, format },
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      let message = `Export failed (${res.status})`;
+      try {
+        const body = JSON.parse(text) as { message?: string };
+        if (body.message) message = body.message;
+      } catch {
+        /* keep default */
+      }
+      setError(message);
+      return;
+    }
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${kind}-export.${format}`;
+    a.click();
+    URL.revokeObjectURL(url);
   }
 
   return (
@@ -311,6 +340,49 @@ export default function SettingsPage() {
                 </table>
               </div>
             ) : null}
+          </section>
+
+          <section aria-labelledby="export-heading">
+            <h2
+              id="export-heading"
+              className="font-[family-name:var(--font-display)] text-xl font-semibold text-foreground"
+            >
+              Export
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Download gaps or compare packs as soft-sim JSON or CSV via /api/export.
+              Renewals export also lives on the renewals page.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => void downloadExport("gaps", "json")}
+              >
+                Gaps JSON
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => void downloadExport("gaps", "csv")}
+              >
+                Gaps CSV
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => void downloadExport("compares", "json")}
+              >
+                Compares JSON
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => void downloadExport("compares", "csv")}
+              >
+                Compares CSV
+              </Button>
+            </div>
           </section>
 
           <section aria-labelledby="audit-heading">

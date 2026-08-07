@@ -105,15 +105,28 @@ export default function RenewalsPage() {
 
   function exportPack() {
     if (!cases || cases.length === 0) return;
-    const blob = new Blob([JSON.stringify({ softSim: true, cases }, null, 2)], {
-      type: "application/json",
-    });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "renewal-pack.json";
-    a.click();
-    URL.revokeObjectURL(url);
+    void (async () => {
+      setError(null);
+      const res = await apiJson<{ softSim: boolean; kind: string; rows: unknown[] }>(
+        "/api/export",
+        {
+          searchParams: { kind: "renewals", format: "json" },
+        },
+      );
+      if (!res.ok) {
+        setError(res.message);
+        return;
+      }
+      const blob = new Blob([JSON.stringify(res.data, null, 2)], {
+        type: "application/json",
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "renewal-pack.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    })();
   }
 
   async function setCaseStatus(id: string, status: "acted" | "dismissed") {
