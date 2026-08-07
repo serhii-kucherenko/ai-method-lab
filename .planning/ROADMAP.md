@@ -108,7 +108,12 @@ Plans:
   3. README embeds live screenshots (landing, primary workspace, pricing, demo, onboarding/flows) from `screenshots/` of the running app
   4. Offline `try.html` dual-claim digest exists with an in-app guide link
 
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 05-01-PLAN.md — ≥25 features, ≥11 pages, try.html, build + app-up smoke
+- [ ] 05-02-PLAN.md — Live screenshots + README embeds
+
 **UI hint**: yes
 
 ## Progress
@@ -119,7 +124,7 @@ Plans:
 | 2. Domain claim core | 3/3 | Complete   | 2026-08-07 |
 | 3. Studio UI | 3/3 | Complete   | 2026-08-07 |
 | 4. Renewals, commercial, platform | 5/5 | Complete    | 2026-08-07 |
-| 5. Sustain bar | 0/TBD | Not started | - |
+| 5. Sustain bar | 0/2 | Planned | - |
 
 ## Coverage map
 
