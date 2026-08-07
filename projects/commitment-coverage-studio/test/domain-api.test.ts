@@ -611,3 +611,183 @@ describe("domain-api: scoreboard empty org", () => {
     assert.deepEqual(body.scoreboard, []);
   });
 });
+
+describe("domain-api: renewals pack", () => {
+  const dir = mkdtempSync(join(tmpdir(), "ccs-renew-"));
+  const dbPath = join(dir, "coverage.db");
+  let overAccountId = "";
+  let underAccountId = "";
+
+  before(async () => {
+    process.env.CCS_DB_PATH = dbPath;
+    closeDb();
+    const db = resetDbForTests(dbPath);
+    const { aws, gcp } = seedMultiCloud(db);
+    overAccountId = aws.id;
+    underAccountId = gcp.id;
+
+    const commitments = await import("../src/app/api/commitments/route");
+    const imports = await import("../src/app/api/imports/route");
+    const coverage = await import("../src/app/api/coverage/route");
+
+    await commitments.POST(
+      jsonReq("http://local/api/commitments", {
+        method: "POST",
+        headers: auth,
+        json: {
+          cloudAccountId: aws.id,
+          name: "SP over renew",
+          instrumentType: "SP",
+          provider: "aws",
+          termMonths: 12,
+          rateUsd: 1000,
+          lockStart: "2026-01-01",
+          lockEnd: "2026-02-01",
+          family: "compute",
+        },
+      }),
+    );
+    await imports.POST(
+      jsonReq("http://local/api/imports", {
+        method: "POST",
+        headers: auth,
+        json: {
+          clientKey: "renew-over",
+          rows: [
+            {
+              cloudAccountId: aws.id,
+              windowStart: "2026-01-01",
+              windowEnd: "2026-02-01",
+              eligibleSpendUsd: 400,
+              family: "compute",
+            },
+          ],
+        },
+      }),
+    );
+    await coverage.POST(
+      jsonReq("http://local/api/coverage", {
+        method: "POST",
+        headers: auth,
+        json: {
+          cloudAccountId: aws.id,
+          windowStart: "2026-01-01",
+          windowEnd: "2026-02-01",
+        },
+      }),
+    );
+
+    await commitments.POST(
+      jsonReq("http://local/api/commitments", {
+        method: "POST",
+        headers: auth,
+        json: {
+          cloudAccountId: gcp.id,
+          name: "CUD under renew",
+          instrumentType: "CUD",
+          provider: "gcp",
+          termMonths: 12,
+          rateUsd: 200,
+          lockStart: "2026-01-01",
+          lockEnd: "2026-02-01",
+          family: "compute",
+        },
+      }),
+    );
+    await imports.POST(
+      jsonReq("http://local/api/imports", {
+        method: "POST",
+        headers: auth,
+        json: {
+          clientKey: "renew-under",
+          rows: [
+            {
+              cloudAccountId: gcp.id,
+              windowStart: "2026-01-01",
+              windowEnd: "2026-02-01",
+              eligibleSpendUsd: 800,
+              family: "compute",
+            },
+          ],
+        },
+      }),
+    );
+    await coverage.POST(
+      jsonReq("http://local/api/coverage", {
+        method: "POST",
+        headers: auth,
+        json: {
+          cloudAccountId: gcp.id,
+          windowStart: "2026-01-01",
+          windowEnd: "2026-02-01",
+        },
+      }),
+    );
+  });
+
+  after(() => {
+    closeDb();
+    rmSync(dir, { recursive: true, force: true });
+    delete process.env.CCS_DB_PATH;
+  });
+
+  it("POST /api/renewals without Bearer returns 401", async () => {
+    const { POST } = await import("../src/app/api/renewals/route");
+    const res = await POST(
+      jsonReq("http://local/api/renewals", { method: "POST", json: {} }),
+    );
+    assert.equal(res.status, 401);
+  });
+
+  it("POST pack returns cases with recommendedAction buy|reduce|hold tied to gap $", async () => {
+    const renewals = await import("../src/app/api/renewals/route");
+    const res = await renewals.POST(
+      jsonReq("http://local/api/renewals", {
+        method: "POST",
+        headers: auth,
+        json: {},
+      }),
+    );
+    assert.equal(res.status, 201);
+    const body = await res.json();
+    assert.equal(body.softSim, true);
+    assert.ok(Array.isArray(body.cases));
+    assert.ok(body.cases.length >= 1);
+    for (const c of body.cases) {
+      assert.ok(
+        ["buy", "reduce", "hold"].includes(c.recommendedAction),
+        `unexpected recommendedAction ${c.recommendedAction}`,
+      );
+      assert.ok(typeof c.gapUsd === "number");
+      assert.ok(c.renewBy);
+      assert.equal(c.status, "open");
+    }
+    const overCase = body.cases.find(
+      (c: { cloudAccountId: string }) => c.cloudAccountId === overAccountId,
+    );
+    const underCase = body.cases.find(
+      (c: { cloudAccountId: string }) => c.cloudAccountId === underAccountId,
+    );
+    assert.ok(overCase, "expected unused-dominant reduce case");
+    assert.equal(overCase.recommendedAction, "reduce");
+    assert.ok(underCase, "expected spill-dominant buy case");
+    assert.equal(underCase.recommendedAction, "buy");
+
+    const listed = await renewals.GET(
+      jsonReq("http://local/api/renewals", { headers: auth }),
+    );
+    assert.equal(listed.status, 200);
+    const listBody = await listed.json();
+    assert.equal(listBody.softSim, true);
+    assert.ok(Array.isArray(listBody.cases));
+    assert.ok(listBody.cases.length >= 1);
+    assert.ok(
+      listBody.cases.some(
+        (c: { recommendedAction: string }) =>
+          c.recommendedAction === "buy" ||
+          c.recommendedAction === "reduce" ||
+          c.recommendedAction === "hold",
+      ),
+    );
+  });
+});
