@@ -198,12 +198,26 @@ describe("smoke-ui: StudioShell IA + domain pages", () => {
     const { GET } = await import("../src/app/api/features/route");
     const res = await GET();
     const body = await res.json();
-    for (const f of ["webhook-hmac", "export-json-csv", "audit"]) {
+    for (const f of [
+      "webhook-hmac",
+      "export-json-csv",
+      "audit",
+      "rate-limit",
+    ]) {
       assert.ok(
         body.features.includes(f),
         `features must include ${f}`,
       );
     }
+  });
+
+  it("api.ts surfaces rate-limit feedback on 429", () => {
+    const api = read("src/lib/api.ts");
+    assert.ok(api.includes("429"), "api.ts must handle 429");
+    assert.ok(
+      /rate.?limit|Rate limited/i.test(api),
+      "api.ts must mention rate limit feedback",
+    );
   });
 
   it("renewals and settings wire export via /api/export", () => {
