@@ -7,9 +7,9 @@
 
 ### Trust & marketing
 
-- [ ] **MKT-01**: Stranger landing `/` sells dollar coverage gap before renewal with brand-first hero
+- [x] **MKT-01**: Stranger landing `/` sells dollar coverage gap before renewal with brand-first hero
 - [ ] **MKT-02**: `/honesty` states soft-sim fence (not billing SOR; not Idle Seat / True Up) with Sources
-- [ ] **MKT-03**: DESIGN tokens applied (no isomorphic desk chrome)
+- [x] **MKT-03**: DESIGN tokens applied (no isomorphic desk chrome)
 
 ### Domain claim
 
@@ -66,9 +66,9 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| MKT-01 | Phase 1 | Pending |
+| MKT-01 | Phase 1 | Complete |
 | MKT-02 | Phase 1 | Pending |
-| MKT-03 | Phase 1 | Pending |
+| MKT-03 | Phase 1 | Complete |
 | DOM-01 | Phase 2 | Pending |
 | DOM-02 | Phase 2 | Pending |
 | DOM-03 | Phase 2 | Pending |

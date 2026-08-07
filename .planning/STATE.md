@@ -1,12 +1,19 @@
 ---
-gsd_state_version: '1.0'
-status: ready_to_execute
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+current_phase: 01
+current_phase_name: smoke-trust
+status: executing
+stopped_at: Completed 01-01-PLAN.md
+last_updated: "2026-08-07T07:35:04.641Z"
+last_activity: 2026-08-07
+last_activity_desc: Phase 01 execution started
 progress:
-  total_phases: 5
+  total_phases: 1
   completed_phases: 0
   total_plans: 2
-  completed_plans: 0
-  percent: 0
+  completed_plans: 1
 ---
 
 # Project State
@@ -16,20 +23,21 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-07)
 
 **Core value:** Show where commitments are under-covered or wasted, in dollars, before renewal.
-**Current focus:** Phase 1 — Smoke & trust
+**Current focus:** Phase 01 — smoke-trust
 
 ## Current Position
 
-Phase: 1 of 5 (Smoke & trust)
-Plan: 1 of 2 in current phase
+Phase: 01 (smoke-trust) — EXECUTING
+Plan: 2 of 2
 Status: Ready to execute
-Last activity: 2026-08-07 — Phase 1 planned (2 plans, checker PASS)
+Last activity: 2026-08-07 — Phase 01 execution started
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
+
 - Total plans completed: 0
 - Average duration: —
 - Total execution time: 0 hours
@@ -41,10 +49,16 @@ Progress: [░░░░░░░░░░] 0%
 | - | - | - | - |
 
 **Recent Trend:**
+
 - Last 5 plans: —
 - Trend: —
 
 *Updated after each plan completion*
+**Per-Plan Metrics:**
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
+| Phase 01-smoke-trust P01 | 13min | 3 tasks | 25 files |
 
 ## Accumulated Context
 
@@ -58,6 +72,8 @@ Recent decisions affecting current work:
 - GSD phase loop for delivery; standard granularity, YOLO auto
 - 5-phase roadmap from research SUMMARY (honesty → claim → UI → commercial/platform → sustain)
 - No Python sidecar; pure TS dual scorers
+- [Phase ?]: Mapped shadcn primary/destructive/background/radius to DESIGN teal/gap/paper/sm
+- [Phase ?]: Restored Source_Sans_3 after shadcn init injected Geist (D-05)
 
 ### Pending Todos
 
@@ -76,7 +92,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-08-07
-Stopped at: Phase 1 plans written (01-01, 01-02); plan-checker PASS
+Last session: 2026-08-07T07:35:04.621Z
+Stopped at: Completed 01-01-PLAN.md
 Resume file: None
 Next: `/gsd-execute-phase 1`
