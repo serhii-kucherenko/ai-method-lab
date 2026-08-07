@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-07T10:06:40.739Z",
+  "updated_at": "2026-08-07T10:08:03.335Z",
   "notify": {
     "from": "AI Method Lab <onboarding@resend.dev>",
     "to": [
@@ -46,7 +46,7 @@
   "next_cell": null,
   "mode": "autonomous",
   "phase": "idle",
-  "notes": "Idle after Commitment Coverage finish (33fc3815). Score B 78. GSD 5/5 phases done. 15m gsd_auto PID 20808 still armed.",
+  "notes": "Idle after Commitment Coverage finish (33fc3815). Score B 78. gsd_auto loop stopped.",
   "hard_stop": false,
   "ask_human": false,
   "hard_stop_reason": null,
@@ -135,13 +135,14 @@
     "interval": "15m",
     "sentinel": "AGENT_LOOP_TICK_gsd_auto",
     "purpose": "gsd_auto",
-    "pid": 20808,
+    "pid": null,
     "chain": "gsd_discuss_plan_execute_verify_ship",
     "do_not_rearm_if_alive": true,
     "ticks_observed": 12,
-    "depth_note": "GSD Core auto loop every 15m for Commitment Coverage Studio.",
+    "depth_note": "Stopped: Commitment Coverage complete; do not re-arm until next product.",
     "interval_s": 900,
-    "rearmed_at": "2026-08-07T06:55:01.803Z"
+    "rearmed_at": "2026-08-07T06:55:01.803Z",
+    "stopped_at": "2026-08-07T10:08:03.335Z"
   },
   "ars_research": {
     "enabled": true,
