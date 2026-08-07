@@ -8,7 +8,7 @@ verified: 2026-08-07
 
 ## Goal
 
-FinOps leads leave with a renewal action pack; strangers can price, demo, onboard, and run ≥5 flows; platform baselines (org/members, HMAC webhooks, export, audit, rate-limit feedback) work.
+FinOps leads leave with a renewal action pack; strangers can price, demo, onboard, and run at least five flows; platform baselines (org/members, HMAC webhooks, export, audit, rate-limit feedback) work.
 
 ## Must-haves
 
@@ -16,7 +16,7 @@ FinOps leads leave with a renewal action pack; strangers can price, demo, onboar
 |-------|--------|----------|
 | Renewal packs buy/reduce/hold (UI-01) | pass | 04-01 SUMMARY + domain-api renewals pack |
 | /pricing seats + connected accounts, no live checkout (COM-01) | pass | smoke-mkt commercial |
-| Guided /demo Import→Match→Gap→Renew + A vs B (COM-02) | pass | smoke-mkt |
+| Guided /demo Import → Match → Gap → Renew + A vs B (COM-02) | pass | smoke-mkt |
 | /onboarding checklist + progress (COM-03) | pass | smoke-mkt |
 | /flows ≥5 journeys (COM-04) | pass | smoke-mkt |
 | Org/members Bearer APIs + /settings (PLT-01) | pass | domain-api org + smoke-ui settings |
@@ -32,19 +32,12 @@ FinOps leads leave with a renewal action pack; strangers can price, demo, onboar
 cd projects/commitment-coverage-studio && npm test && npm run build
 ```
 
-- **Tests:** 64 passed (0 failed)
-- **Build:** Next.js 16.3.0 green (middleware deprecation warning only)
+- **Tests:** 65 passed (0 failed)
+- **Build:** Next.js 16.3.0 green (middleware deprecation warning only; still active as Proxy)
 
 ## Pages shipped
 
-`/pricing` `/demo` `/onboarding` `/flows` `/settings` (+ Phase 1–3 domain routes)
-
-## APIs shipped (Phase 4)
-
-- `GET/POST /api/renewals`, `PATCH /api/renewals/:id`
-- `GET/PATCH /api/org`, `GET/POST /api/members`, `GET /api/audit`
-- `POST /api/webhooks/test`, `GET /api/export`
-- Rate-limit middleware on mutating `/api/*`
+`/pricing` `/demo` `/onboarding` `/flows` `/settings` (+ Phase 1-3 domain routes)
 
 ## Plans
 
@@ -56,11 +49,12 @@ cd projects/commitment-coverage-studio && npm test && npm run build
 | 04-04 | 04-04-SUMMARY.md | complete |
 | 04-05 | 04-05-SUMMARY.md | complete |
 
-## Gaps / follow-ups
+## Gaps / watch-outs for Phase 5
 
-- Phase 5: README screenshots, try.html, ≥25 feature sustain polish
-- Optional later: migrate Next middleware → proxy convention when ready
+- Next.js 16 warns `middleware` → `proxy` rename; keep until sustain/codemod
+- Live app-up smoke + README screenshots still Phase 5
+- Feature bar count (≥25) and try.html dual-claim digest still Phase 5
 
 ## Verdict
 
-**PASSED** — Phase 4 ready for Phase 5 plan (sustain).
+**PASSED** — Phase 4 success criteria met. Next: plan Phase 5 sustain bar.

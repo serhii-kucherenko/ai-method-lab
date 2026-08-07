@@ -35,10 +35,10 @@
 - [x] **COM-03**: `/onboarding` first-run checklist with progress
 - [x] **COM-04**: `/flows` index with ≥5 named journeys and CTAs
 - [x] **PLT-01**: Org settings + members + bearer auth
-- [ ] **PLT-02**: Webhook HMAC inbound (soft-sim events)
-- [ ] **PLT-03**: Export JSON/CSV for gaps/renewals/compare
+- [x] **PLT-02**: Webhook HMAC inbound (soft-sim events)
+- [x] **PLT-03**: Export JSON/CSV for gaps/renewals/compare
 - [x] **PLT-04**: Audit trail (not primary IA)
-- [ ] **PLT-05**: Rate-limit feedback on APIs
+- [x] **PLT-05**: Rate-limit feedback on APIs
 
 ### Sustain bar
 
@@ -85,10 +85,10 @@
 | COM-03 | Phase 4 | Complete |
 | COM-04 | Phase 4 | Complete |
 | PLT-01 | Phase 4 | Complete |
-| PLT-02 | Phase 4 | Pending |
-| PLT-03 | Phase 4 | Pending |
+| PLT-02 | Phase 4 | Complete |
+| PLT-03 | Phase 4 | Complete |
 | PLT-04 | Phase 4 | Complete |
-| PLT-05 | Phase 4 | Pending |
+| PLT-05 | Phase 4 | Complete |
 | SUS-01 | Phase 5 | Pending |
 | SUS-02 | Phase 5 | Pending |
 | SUS-03 | Phase 5 | Pending |

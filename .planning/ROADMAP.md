@@ -9,7 +9,7 @@ Ship a FinOps soft-sim that imports multi-cloud commitment inventory and usage, 
 - [x] **Phase 1: Smoke & trust** - Brand landing, honesty fence, and DESIGN tokens before domain theater (completed 2026-08-07)
 - [x] **Phase 2: Domain claim core** - Inventory, imports, coverage/gaps, dual scorers, and ≥30 goldens (completed 2026-08-07)
 - [x] **Phase 3: Studio UI** - Live domain IA pages with filters and empty/error paths (completed 2026-08-07)
-- [ ] **Phase 4: Renewals, commercial, platform** - Renewal packs, commercial surfaces, and platform must-haves
+- [x] **Phase 4: Renewals, commercial, platform** - Renewal packs, commercial surfaces, and platform must-haves (completed 2026-08-07)
 - [ ] **Phase 5: Sustain bar** - Live build, app-up smoke, README screenshots, try.html, feature bar
 
 ## Phase Details
@@ -84,15 +84,15 @@ Plans:
   2. Stranger can use real `/pricing` (seats + connected-account tiers, no live checkout), `/demo` (Import → Match → Gap → Renew including A vs B), `/onboarding` (checklist with progress), and `/flows` (≥5 named journeys with CTAs)
   3. Org admin can manage settings/members with bearer auth, receive HMAC-verified soft-sim webhooks, export gaps/renewals/compare as JSON/CSV, and see audit trail (non-primary) plus rate-limit feedback on APIs
 
-**Plans:** 3/5 plans executed
+**Plans:** 5/5 plans complete
 
 Plans:
 
 - [x] 04-01-PLAN.md — RenewalCase packs buy/reduce/hold + act/dismiss audit
 - [x] 04-02-PLAN.md — Commercial /pricing /demo /onboarding /flows (≥5 journeys)
 - [x] 04-03-PLAN.md — Org settings, members, bearer, audit under /settings
-- [ ] 04-04-PLAN.md — Webhook HMAC + export JSON/CSV
-- [ ] 04-05-PLAN.md — Rate-limit all mutating /api/* + client 429 feedback
+- [x] 04-04-PLAN.md — Webhook HMAC + export JSON/CSV
+- [x] 04-05-PLAN.md — Rate-limit all mutating /api/* + client 429 feedback
 
 **UI hint**: yes
 
@@ -118,7 +118,7 @@ Plans:
 | 1. Smoke & trust | 2/2 | Complete    | 2026-08-07 |
 | 2. Domain claim core | 3/3 | Complete   | 2026-08-07 |
 | 3. Studio UI | 3/3 | Complete   | 2026-08-07 |
-| 4. Renewals, commercial, platform | 3/5 | In Progress|  |
+| 4. Renewals, commercial, platform | 5/5 | Complete    | 2026-08-07 |
 | 5. Sustain bar | 0/TBD | Not started | - |
 
 ## Coverage map
