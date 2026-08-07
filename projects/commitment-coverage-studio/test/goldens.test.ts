@@ -8,106 +8,111 @@ import {
   scoreOnDemandBlind,
 } from "../src/domain/scoring";
 import type { ScoreInput } from "../src/domain/types";
-import { closeDb, openTestDb } from "../src/lib/db";
+import { closeDb, migrate, openDb } from "../src/lib/db";
 
-const window = {
-  start: "2026-01-01T00:00:00Z",
-  end: "2026-02-01T00:00:00Z",
+const overCover: ScoreInput = {
+  window: { start: "2026-01-01", end: "2026-02-01" },
+  commitments: [
+    {
+      id: "c-over",
+      rateUsd: 1000,
+      termMonths: 12,
+      lockStart: "2026-01-01",
+      lockEnd: "2026-02-01",
+      family: "compute",
+    },
+  ],
+  usage: [
+    {
+      windowStart: "2026-01-01",
+      windowEnd: "2026-02-01",
+      eligibleSpendUsd: 400,
+      family: "compute",
+    },
+  ],
 };
 
-describe("goldens tracer: A vs B divergence + SQLite", () => {
+const underCover: ScoreInput = {
+  window: { start: "2026-01-01", end: "2026-02-01" },
+  commitments: [
+    {
+      id: "c-under",
+      rateUsd: 200,
+      termMonths: 12,
+      lockStart: "2026-01-01",
+      lockEnd: "2026-02-01",
+      family: "compute",
+    },
+  ],
+  usage: [
+    {
+      windowStart: "2026-01-01",
+      windowEnd: "2026-02-01",
+      eligibleSpendUsd: 800,
+      family: "compute",
+    },
+  ],
+};
+
+describe("tracer: dual scorers diverge", () => {
   it("over-cover: A unusedCommitUsd differs from B (B unused is 0)", () => {
-    const input: ScoreInput = {
-      window,
-      commitments: [
-        {
-          id: "c-over",
-          rateUsd: 1000,
-          termMonths: 12,
-          lockStart: "2026-01-01T00:00:00Z",
-          lockEnd: "2027-01-01T00:00:00Z",
-        },
-      ],
-      usage: [
-        {
-          windowStart: "2026-01-01T00:00:00Z",
-          windowEnd: "2026-02-01T00:00:00Z",
-          eligibleSpendUsd: 400,
-        },
-      ],
-    };
-    const a = scoreCommitMatched(input);
-    const b = scoreOnDemandBlind(input);
-    assert.ok(a.unusedCommitUsd > 0, "A should show unused commit dollars");
-    assert.equal(b.unusedCommitUsd, 0, "B unused must be 0");
+    const a = scoreCommitMatched(overCover);
+    const b = scoreOnDemandBlind(overCover);
+    assert.ok(a.unusedCommitUsd > 0, "A should have unused commit dollars");
+    assert.equal(b.unusedCommitUsd, 0);
     assert.notEqual(a.unusedCommitUsd, b.unusedCommitUsd);
-    assert.ok(Math.abs(a.gapUsd - b.gapUsd) > 0, "gap dollars must diverge");
+    assert.ok(Math.abs(a.gapUsd - b.gapUsd) > 0);
   });
 
-  it("under-cover: A coveragePct greater than B and spill differs", () => {
-    const input: ScoreInput = {
-      window,
-      commitments: [
-        {
-          id: "c-under",
-          rateUsd: 200,
-          termMonths: 12,
-          lockStart: "2026-01-01T00:00:00Z",
-          lockEnd: "2027-01-01T00:00:00Z",
-        },
-      ],
-      usage: [
-        {
-          windowStart: "2026-01-01T00:00:00Z",
-          windowEnd: "2026-02-01T00:00:00Z",
-          eligibleSpendUsd: 800,
-        },
-      ],
-    };
-    const a = scoreCommitMatched(input);
-    const b = scoreOnDemandBlind(input);
-    assert.ok(a.coveragePct > b.coveragePct, "A coverage must beat B (0)");
-    assert.notEqual(a.onDemandSpillUsd, b.onDemandSpillUsd);
-    assert.ok(a.coveredUsd > 0);
-    assert.equal(b.coveredUsd, 0);
+  it("under-cover: A coveragePct greater than B; spill narratives differ", () => {
+    const a = scoreCommitMatched(underCover);
+    const b = scoreOnDemandBlind(underCover);
+    assert.ok(a.coveragePct > b.coveragePct);
+    assert.ok(a.onDemandSpillUsd < b.onDemandSpillUsd);
+    assert.notEqual(a.gapUsd, b.gapUsd);
+  });
+});
+
+describe("tracer: sqlite migrate round-trip", () => {
+  const dir = mkdtempSync(join(tmpdir(), "ccs-db-"));
+  const dbPath = join(dir, "coverage.db");
+
+  after(() => {
+    closeDb();
+    rmSync(dir, { recursive: true, force: true });
   });
 
-  it("SQLite migrate creates commitments and round-trips one row", () => {
-    const dir = mkdtempSync(join(tmpdir(), "ccs-db-"));
-    const path = join(dir, "coverage.db");
-    try {
-      const db = openTestDb(path);
-      db.prepare(
-        `INSERT INTO cloud_accounts (id, org_id, provider, external_key, name)
-         VALUES (?, ?, ?, ?, ?)`,
-      ).run("acc1", "org_demo", "aws", "111", "AWS Prod");
-      db.prepare(
-        `INSERT INTO commitments (
-          id, org_id, cloud_account_id, name, instrument_type, provider_tag,
-          term_months, rate_usd, lock_start, lock_end
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      ).run(
-        "cm1",
-        "org_demo",
-        "acc1",
-        "SP compute",
-        "SP",
-        "aws",
-        12,
-        500,
-        "2026-01-01T00:00:00Z",
-        "2027-01-01T00:00:00Z",
-      );
-      const row = db
-        .prepare("SELECT id, rate_usd, lock_start FROM commitments WHERE id = ?")
-        .get("cm1") as { id: string; rate_usd: number; lock_start: string };
-      assert.equal(row.id, "cm1");
-      assert.equal(row.rate_usd, 500);
-      assert.equal(row.lock_start, "2026-01-01T00:00:00Z");
-      assert.ok(path.includes("coverage.db"));
-    } finally {
-      closeDb();
-      rmSync(dir, { recursive: true, force: true });
-    }
+  it("creates commitments table and round-trips one row", () => {
+    const db = openDb(dbPath);
+    migrate(db);
+    db.prepare(
+      `INSERT INTO cloud_accounts (id, org_id, provider, account_key, display_name)
+       VALUES (?, ?, ?, ?, ?)`,
+    ).run("acc-1", "org-demo", "aws", "111", "AWS Prod");
+    db.prepare(
+      `INSERT INTO commitments (
+         id, org_id, cloud_account_id, name, instrument_type, provider,
+         term_months, rate_usd, lock_start, lock_end, family
+       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    ).run(
+      "cm-1",
+      "org-demo",
+      "acc-1",
+      "SP compute",
+      "SP",
+      "aws",
+      12,
+      500,
+      "2026-01-01",
+      "2027-01-01",
+      "compute",
+    );
+    const row = db
+      .prepare("SELECT id, rate_usd, lock_start FROM commitments WHERE id = ?")
+      .get("cm-1") as { id: string; rate_usd: number; lock_start: string };
+    assert.equal(row.id, "cm-1");
+    assert.equal(row.rate_usd, 500);
+    assert.equal(row.lock_start, "2026-01-01");
+    db.close();
   });
 });
