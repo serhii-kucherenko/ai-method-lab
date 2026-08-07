@@ -6,9 +6,9 @@ current_phase: 4
 current_phase_name: Renewals, commercial, platform
 status: in_progress
 stopped_at: Completed 04-02-PLAN.md
-last_updated: "2026-08-07T09:31:32.902Z"
+last_updated: "2026-08-07T09:32:43.933Z"
 last_activity: 2026-08-07
-last_activity_desc: Completed 04-01 RenewalCase packs (buy/reduce/hold + act/dismiss audit)
+last_activity_desc: Completed 04-02 commercial /pricing /demo /onboarding /flows
 progress:
   total_phases: 4
   completed_phases: 3
@@ -30,7 +30,7 @@ See: .planning/PROJECT.md (updated 2026-08-07)
 Phase: 4 — Renewals, commercial, platform
 Plan: 3 of 05
 Status: Ready to execute
-Last activity: 2026-08-07 — Completed 04-01 RenewalCase packs (buy/reduce/hold + act/dismiss audit)
+Last activity: 2026-08-07 — Completed 04-02 commercial /pricing /demo /onboarding /flows
 
 Progress: [████████░░] 77%
 
@@ -70,6 +70,7 @@ Progress: [████████░░] 77%
 | Phase 03-studio-ui P03 | 15min | 3 tasks | 6 files |
 | Phase 04 P01 | 28min | 3 tasks | 9 files |
 | Phase 04 P02 | 28min | 3 tasks | 5 files |
+| Phase 04 P02 | 13min | 3 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -95,6 +96,7 @@ Recent decisions affecting current work:
 - [Phase ?]: Pricing soft-sim only - no live card checkout (D-03)
 - [Phase ?]: Onboarding progress via localStorage not SQLite (D-05)
 - [Phase ?]: Flows journey names match FEATURES F1-F5 (D-06)
+- [Phase ?]: D-03..D-06: commercial pricing/demo/onboarding/flows soft-sim, no live checkout
 
 ### Pending Todos
 
@@ -113,7 +115,7 @@ None. Next: execute 04-02 commercial /pricing /demo /onboarding /flows.
 
 ## Session Continuity
 
-Last session: 2026-08-07T09:31:32.871Z
+Last session: 2026-08-07T09:32:43.892Z
 Stopped at: Completed 04-02-PLAN.md
 Resume file: None
 Next: Execute 04-02-PLAN.md (commercial surfaces)

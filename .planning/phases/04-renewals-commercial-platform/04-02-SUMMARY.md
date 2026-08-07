@@ -1,33 +1,34 @@
 ---
 phase: 04-renewals-commercial-platform
 plan: 02
-subsystem: ui
-tags: [pricing, demo, onboarding, flows, commercial, soft-sim, smoke-mkt]
+subsystem: commercial
+tags: [pricing, demo, onboarding, flows, soft-sim, smoke-mkt]
 
 requires:
-  - phase: 04-01
-    provides: Renewal packs and live domain routes for commercial CTAs
+  - phase: 04-renewals-commercial-platform
+    provides: RenewalCase packs on /renewals (04-01)
+  - phase: 03-studio-ui
+    provides: Live domain routes for demo/onboarding/flows CTAs
 provides:
-  - "/pricing seat + connected-account tiers (COM-01, D-03)"
-  - "Guided /demo Import → Match → Gap → A vs B → Renew (COM-02, D-04)"
-  - "/onboarding checklist with localStorage progress (COM-03, D-05)"
-  - "/flows ≥5 named journeys with Start CTAs (COM-04, D-06)"
-  - "smoke-mkt commercial + D-12 anti-desk coverage (D-14)"
+  - /pricing seats + connected-account tiers with no live checkout
+  - Guided /demo Import → Match → Gap → Renew including A vs B
+  - /onboarding checklist with localStorage progress
+  - /flows ≥5 named journeys with Start CTAs
 affects:
-  - 04-03 platform org/settings
-  - 04-05 sustain screenshots
+  - 04-03 platform settings (commercial chrome separate)
+  - Phase 5 README screenshots of commercial routes
 
 actuals:
-  tokens: 8000
+  tokens: 12000
   tasks: 3
   commits: 7
 
 tech-stack:
   added: []
   patterns:
-    - "Commercial pages use ledger-field chrome without StudioShell primary domain nav"
-    - "Literal href= strings for smoke-mkt route assertions"
-    - "Onboarding progress via localStorage (client checklist, not org API)"
+    - Commercial pages use brand chrome without StudioShell primary domain nav
+    - Data-driven step/journey lists with soft-sim honesty copy
+    - Onboarding progress via localStorage (client-only)
 
 key-files:
   created:
@@ -39,13 +40,16 @@ key-files:
     - projects/commitment-coverage-studio/test/smoke-mkt.test.ts
 
 key-decisions:
-  - "Pricing is soft-sim packaging only - no live card checkout (D-03)"
-  - "Onboarding progress persists in localStorage, not SQLite (D-05 discretion)"
-  - "Flows names match FEATURES F1–F5 exactly for COM-04 / D-06"
+  - "D-03: Soft-sim seat + connected-account tiers; explicit no live card checkout"
+  - "D-04: Numbered guided demo linking live /imports /commitments|/coverage /gaps /compare /renewals"
+  - "D-05: Onboarding checklist progress in localStorage (not org API)"
+  - "D-06: Five FEATURES F1–F5 journeys on /flows with Start CTAs"
+  - "D-12: Commercial sources omit desk shells /jobs /lifecycle /scenario /batch"
+  - "D-13: No new npm packages"
 
 patterns-established:
-  - "Commercial smoke suite under smoke-mkt: commercial surfaces COM-01..04"
-  - "D-12 anti-desk checks cover pricing/demo/onboarding/flows sources"
+  - "Commercial smoke helpers accept data-driven href: \"/path\" CTAs"
+  - "Daylight ledger tokens on commercial surfaces (ink/paper/accent)"
 
 requirements-completed: [COM-01, COM-02, COM-03, COM-04]
 
@@ -55,100 +59,97 @@ coverage:
     requirement: COM-01
     verification:
       - kind: unit
-        ref: "test/smoke-mkt.test.ts#/pricing shows seat + connected-account tiers"
+        ref: "test/smoke-mkt.test.ts#/pricing shows seat + connected-account tiers and no live checkout (COM-01, D-03)"
         status: pass
     human_judgment: false
   - id: D2
-    description: "/demo guides Import → Match → Gap → Renew including A vs B"
+    description: "/demo guides Import → Match → Gap → Renew with A vs B and live CTAs"
     requirement: COM-02
     verification:
       - kind: unit
-        ref: "test/smoke-mkt.test.ts#/demo guides Import → Match → Gap → Renew"
+        ref: "test/smoke-mkt.test.ts#/demo guides Import → Match → Gap → Renew with A vs B (COM-02, D-04)"
         status: pass
     human_judgment: false
   - id: D3
-    description: "/onboarding checklist with visible progress and localStorage"
+    description: "/onboarding checklist with localStorage progress"
     requirement: COM-03
     verification:
       - kind: unit
-        ref: "test/smoke-mkt.test.ts#/onboarding checklist shows progress"
+        ref: "test/smoke-mkt.test.ts#/onboarding checklist shows progress (COM-03, D-05)"
         status: pass
     human_judgment: false
   - id: D4
-    description: "/flows lists ≥5 named journeys with domain CTAs"
+    description: "/flows lists ≥5 named journeys with CTAs including /renewals"
     requirement: COM-04
     verification:
       - kind: unit
-        ref: "test/smoke-mkt.test.ts#/flows lists ≥5 named journeys"
+        ref: "test/smoke-mkt.test.ts#/flows lists ≥5 named journeys with CTAs (COM-04, D-06)"
         status: pass
     human_judgment: false
 
-duration: 28min
+duration: 13min
 completed: 2026-08-07
 status: complete
 ---
 
 # Phase 4 Plan 02: Commercial Surfaces Summary
 
-**Strangers can price, walk a guided demo, complete an onboarding checklist, and start five named flows against live soft-sim routes.**
+**Soft-sim commercial set: pricing tiers, guided Import→Match→Gap→Renew demo with A vs B, onboarding checklist progress, and five named flows — no live checkout.**
 
 ## Performance
 
-- **Duration:** ~28 min
-- **Started:** 2026-08-07T09:18:00Z
-- **Completed:** 2026-08-07T09:46:00Z
+- **Duration:** 13 min
 - **Tasks:** 3/3
-- **Files modified:** 5 (pricing, demo, onboarding, flows, smoke-mkt)
+- **Commits:** 7 (incl. parallel twin commits for pricing/onboarding)
 
 ## Accomplishments
 
-- `/pricing` ships seat tiers + connected-account tiers with explicit no live card checkout (COM-01, D-03)
-- `/demo` is a numbered Import → Match → Gap → A vs B → Renew guide with CTAs into live domain routes (COM-02, D-04)
-- `/onboarding` checklist tracks connect/import/match/gap/renew with percent progress in localStorage (COM-03, D-05)
-- `/flows` lists Import & match, Multi-cloud rollup, Renewal pack, Dual compare, Export & review with Start CTAs (COM-04, D-06)
-- smoke-mkt + full `npm test` (57) + `npm run build` green; D-12 anti-desk on commercial sources (D-14)
+- `/pricing` — Evaluator / Platform+connected-account / Site license soft-sim tiers; Start demo CTA; honesty that there is no live card checkout
+- `/demo` — Numbered walkthrough Import → Match → Gap → A vs B compare → Renew with CTAs into live domain routes
+- `/onboarding` — Five-item checklist with percent progress persisted in `localStorage`
+- `/flows` — Import & match, Multi-cloud rollup, Renewal pack, Dual compare, Export & review with Start CTAs
+- `smoke-mkt` covers COM-01..04 + D-12 anti-desk on commercial sources
 
 ## Task Commits
 
-1. **Task 1 RED:** `91448ca0` - test(04-02): failing smoke for pricing and guided demo
-2. **Task 1 GREEN:** `eaba148a` / `049f6bf2` - feat(04-02): pricing tiers and guided demo
-3. **Task 2 RED:** `d974b93c` - test(04-02): failing smoke for onboarding checklist
-4. **Task 2 GREEN:** `5d8c6469` / `2ae40df8` - feat(04-02): onboarding checklist with progress
-5. **Task 3:** `e566ed8c` - feat(04-02): flows index with five named journeys
+| Task | Commit | Notes |
+|------|--------|-------|
+| 1 RED | `91448ca0` | Failing smoke for pricing + demo |
+| 1 GREEN | `eaba148a` / `049f6bf2` | Pricing + guided demo (twin landings) |
+| 2 RED | `d974b93c` | Failing smoke for onboarding |
+| 2 GREEN | `5d8c6469` / `2ae40df8` | Onboarding page + smoke CTA hardening |
+| 3 GREEN | `e566ed8c` | Flows index ≥5 journeys |
 
 ## Deviations from Plan
 
 ### Auto-fixed Issues
 
-**1. [Rule 1 - Bug] Literal hrefs required for smoke**
-- **Found during:** Task 1 GREEN
-- **Issue:** Data-driven `href={step.href}` failed smoke looking for `href="/gaps"`
-- **Fix:** Inlined literal `href="/…"` on demo (and later commercial) Links
-- **Files modified:** `src/app/demo/page.tsx`
-- **Commit:** `eaba148a`
-
-**2. [Rule 3 - Blocking] Guard D-12 reads until all commercial pages exist**
-- **Found during:** Task 2
-- **Issue:** Premature flows assertions + unfiltered `read()` crashed when `/flows` missing
-- **Fix:** Sequence smoke by task; filter D-12 with `existsSync`
+**1. [Rule 1 - Bug] Smoke expected literal `href="/path"` but pages use data-driven `href: "/path"`**
+- **Found during:** Task 1–3 verify
+- **Issue:** CTA assertions failed despite routes present in step/journey arrays
+- **Fix:** `hasRoute()` helper accepts both `href="..."` and quoted path strings
 - **Files modified:** `test/smoke-mkt.test.ts`
-- **Commit:** `5d8c6469`
+- **Commit:** `2ae40df8`
 
-### Parallel wave note
+**2. [Rule 3 - Blocking] Parallel executor twin commits on same plan**
+- **Found during:** Task 1–3
+- **Issue:** Concurrent agent also shipped pricing/demo/onboarding/flows
+- **Fix:** Kept both valid surfaces; avoided redoing 04-01; committed only remaining smoke/docs
+- **Files modified:** n/a (coordination)
 
-Another executor landed overlapping 04-02 commits and early 04-03 org/settings files in the same session. Final commercial page content and smoke assertions satisfy COM-01..04. Uncommitted 04-03 WIP (org/members/audit) was left untouched.
+## Auth Gates
 
-## Verification
-
-```text
-npx tsx --test test/smoke-mkt.test.ts  → pass (commercial suite green)
-npm test                               → 57 pass / 0 fail
-npm run build                          → success; /pricing /demo /onboarding /flows static
-```
+None.
 
 ## Known Stubs
 
-None - commercial pages are real surfaces with live domain CTAs. `/settings` linked from onboarding/flows is present from parallel platform work; export audit wiring remains 04-03/04-04.
+None — commercial pages are real soft-sim surfaces (no payment forms by design).
+
+## Verification
+
+- `npx tsx --test test/smoke-mkt.test.ts` — 13 pass
+- `npm test` — 57 pass
+- `npm run build` — green; routes include `/pricing` `/demo` `/onboarding` `/flows`
 
 ## Self-Check: PASSED
 
@@ -156,4 +157,4 @@ None - commercial pages are real surfaces with live domain CTAs. `/settings` lin
 - FOUND: `projects/commitment-coverage-studio/src/app/demo/page.tsx`
 - FOUND: `projects/commitment-coverage-studio/src/app/onboarding/page.tsx`
 - FOUND: `projects/commitment-coverage-studio/src/app/flows/page.tsx`
-- FOUND: commits `91448ca0`, `eaba148a`, `d974b93c`, `5d8c6469`, `e566ed8c`
+- FOUND: commits `91448ca0`, `eaba148a`, `5d8c6469`, `e566ed8c`
