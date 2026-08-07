@@ -6,11 +6,11 @@ current_phase: 5
 current_phase_name: Sustain bar
 status: planning
 stopped_at: Phase 4 complete - Phase 5 ready_to_plan
-last_updated: "2026-08-07T09:39:32.722Z"
+last_updated: "2026-08-07T09:42:54.315Z"
 last_activity: 2026-08-07
 last_activity_desc: Phase 4 complete, transitioned to Phase 5
 progress:
-  total_phases: 4
+  total_phases: 5
   completed_phases: 4
   total_plans: 13
   completed_plans: 13
@@ -73,7 +73,9 @@ Progress: [██████████] 100%
 | Phase 04 P02 | 28min | 3 tasks | 5 files |
 | Phase 04 P02 | 13min | 3 tasks | 5 files |
 | Phase 04 P03 | 25min | 3 tasks | 11 files |
+| Phase 04 P04 | 25min | 3 tasks | 9 files |
 | Phase 4 P05 | 15min | 3 tasks | 6 files |
+| Phase 04 P04 | 25min | 3 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -102,6 +104,7 @@ Recent decisions affecting current work:
 - [Phase ?]: D-03..D-06: commercial pricing/demo/onboarding/flows soft-sim, no live checkout
 - [Phase 04]: D-07 Bearer org GET/PATCH + members GET/POST under /settings
 - [Phase 04]: D-10 audit under settings; webhook secret masked on GET; no primary audit nav
+- [Phase 04]: D-08/D-09: HMAC webhook + Bearer export JSON/CSV (04-04)
 - [Phase ?]: D-11: Middleware rate-limits all mutating /api/*
 
 ### Pending Todos
@@ -110,7 +113,7 @@ None yet.
 
 ### Blockers/Concerns
 
-None. Next: execute 04-04 webhook HMAC + export JSON/CSV.
+None.
 
 ## Deferred Items
 
@@ -121,7 +124,7 @@ None. Next: execute 04-04 webhook HMAC + export JSON/CSV.
 
 ## Session Continuity
 
-Last session: 2026-08-07T09:39:32.686Z
-Stopped at: Phase 4 complete - Phase 5 ready_to_plan
+Last session: 2026-08-07T09:42:00.000Z
+Stopped at: Completed 04-04-PLAN.md
 Resume file: None
-Next: Execute 04-04-PLAN.md (webhook HMAC + export)
+Next: Phase 5 sustain bar (ready_to_plan)
