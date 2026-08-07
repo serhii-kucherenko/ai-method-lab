@@ -112,4 +112,36 @@ describe("smoke-mkt: DESIGN tokens and brand landing", () => {
       "honesty must import shared copy from @/lib/claim",
     );
   });
+
+  it("CTA placeholders exist for /commitments and /demo", () => {
+    assert.ok(
+      existsSync(join(root, "src/app/commitments/page.tsx")),
+      "commitments placeholder must exist",
+    );
+    assert.ok(
+      existsSync(join(root, "src/app/demo/page.tsx")),
+      "demo placeholder must exist",
+    );
+  });
+
+  it("primary marketing routes avoid isomorphic desk IA links", () => {
+    const files = [
+      "src/app/page.tsx",
+      "src/components/landing/below-fold.tsx",
+      "src/app/honesty/page.tsx",
+      "src/app/commitments/page.tsx",
+      "src/app/demo/page.tsx",
+    ];
+    const blob = files
+      .filter((rel) => existsSync(join(root, rel)))
+      .map((rel) => read(rel))
+      .join("\n");
+
+    for (const desk of ["/jobs", "/lifecycle", "/scenario", "/batch"]) {
+      assert.ok(
+        !blob.includes(`href="${desk}"`) && !blob.includes(`href='${desk}'`),
+        `marketing IA must not link to ${desk}`,
+      );
+    }
+  });
 });
