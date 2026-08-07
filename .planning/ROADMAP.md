@@ -63,7 +63,13 @@ Plans:
   2. User can open `/scoreboard` and see an account/gap leaderboard rollup across clouds
   3. Primary nav has no `/jobs` `/lifecycle` `/scenario` `/batch` desk shells (audit/goldens not primary IA)
 
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — StudioShell + Bearer client + live /commitments /imports (UI-03 tracer)
+- [ ] 03-02-PLAN.md — Live /coverage /gaps /compare with filters and motion
+- [ ] 03-03-PLAN.md — /scoreboard API+UI (UI-02) + /renewals queue + full IA smoke
+
 **UI hint**: yes
 
 ### Phase 4: Renewals, commercial, platform
@@ -101,7 +107,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Smoke & trust | 2/2 | Complete    | 2026-08-07 |
 | 2. Domain claim core | 3/3 | Complete   | 2026-08-07 |
-| 3. Studio UI | 0/TBD | Not started | - |
+| 3. Studio UI | 0/3 | Planned | - |
 | 4. Renewals, commercial, platform | 0/TBD | Not started | - |
 | 5. Sustain bar | 0/TBD | Not started | - |
 
