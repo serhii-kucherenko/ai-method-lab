@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Mono, Source_Sans_3 } from "next/font/google";
 import { DISPLAY_NAME, TAGLINE } from "@/lib/claim";
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -32,11 +33,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${sourceSans.variable} ${ibmPlexMono.variable} h-full antialiased`}
+      className={cn(
+        "h-full antialiased font-sans",
+        fraunces.variable,
+        sourceSans.variable,
+        ibmPlexMono.variable,
+      )}
     >
-      <body className="min-h-full flex flex-col font-sans text-ink bg-paper">
-        {children}
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
