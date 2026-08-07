@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 4
 current_phase_name: Renewals, commercial, platform
 status: in_progress
-stopped_at: Completed 04-01-PLAN.md
-last_updated: "2026-08-07T09:16:01.876Z"
+stopped_at: Completed 04-02-PLAN.md
+last_updated: "2026-08-07T09:31:32.902Z"
 last_activity: 2026-08-07
 last_activity_desc: Completed 04-01 RenewalCase packs (buy/reduce/hold + act/dismiss audit)
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 13
-  completed_plans: 9
+  completed_plans: 10
 ---
 
 # Project State
@@ -28,11 +28,11 @@ See: .planning/PROJECT.md (updated 2026-08-07)
 ## Current Position
 
 Phase: 4 — Renewals, commercial, platform
-Plan: 02 of 05
+Plan: 3 of 05
 Status: Ready to execute
 Last activity: 2026-08-07 — Completed 04-01 RenewalCase packs (buy/reduce/hold + act/dismiss audit)
 
-Progress: [███████░░░] 69%
+Progress: [████████░░] 77%
 
 ## Performance Metrics
 
@@ -69,6 +69,7 @@ Progress: [███████░░░] 69%
 | Phase 03-studio-ui P02 | 20min | 3 tasks | 6 files |
 | Phase 03-studio-ui P03 | 15min | 3 tasks | 6 files |
 | Phase 04 P01 | 28min | 3 tasks | 9 files |
+| Phase 04 P02 | 28min | 3 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -91,6 +92,9 @@ Recent decisions affecting current work:
 - [Phase 04]: RenewalPacker: spill→buy, unused→reduce, near-zero/balanced→hold (D-01)
 - [Phase 04]: POST pack replaces open renewal_cases; client JSON export until 04-04
 - [Phase 04]: D-10 partial: audit on renewals act/dismiss; no primary audit nav
+- [Phase ?]: Pricing soft-sim only - no live card checkout (D-03)
+- [Phase ?]: Onboarding progress via localStorage not SQLite (D-05)
+- [Phase ?]: Flows journey names match FEATURES F1-F5 (D-06)
 
 ### Pending Todos
 
@@ -109,7 +113,7 @@ None. Next: execute 04-02 commercial /pricing /demo /onboarding /flows.
 
 ## Session Continuity
 
-Last session: 2026-08-07T09:16:01.855Z
-Stopped at: Completed 04-01-PLAN.md
+Last session: 2026-08-07T09:31:32.871Z
+Stopped at: Completed 04-02-PLAN.md
 Resume file: None
 Next: Execute 04-02-PLAN.md (commercial surfaces)

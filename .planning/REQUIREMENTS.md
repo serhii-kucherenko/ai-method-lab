@@ -30,10 +30,10 @@
 
 ### Commercial & platform
 
-- [ ] **COM-01**: `/pricing` seats + connected-account tiers (no live card checkout)
-- [ ] **COM-02**: `/demo` guided Import → Match → Gap → Renew including A vs B
-- [ ] **COM-03**: `/onboarding` first-run checklist with progress
-- [ ] **COM-04**: `/flows` index with ≥5 named journeys and CTAs
+- [x] **COM-01**: `/pricing` seats + connected-account tiers (no live card checkout)
+- [x] **COM-02**: `/demo` guided Import → Match → Gap → Renew including A vs B
+- [x] **COM-03**: `/onboarding` first-run checklist with progress
+- [x] **COM-04**: `/flows` index with ≥5 named journeys and CTAs
 - [ ] **PLT-01**: Org settings + members + bearer auth
 - [ ] **PLT-02**: Webhook HMAC inbound (soft-sim events)
 - [ ] **PLT-03**: Export JSON/CSV for gaps/renewals/compare
@@ -80,10 +80,10 @@
 | UI-02 | Phase 3 | Complete |
 | UI-03 | Phase 3 | Complete |
 | UI-01 | Phase 4 | Complete |
-| COM-01 | Phase 4 | Pending |
-| COM-02 | Phase 4 | Pending |
-| COM-03 | Phase 4 | Pending |
-| COM-04 | Phase 4 | Pending |
+| COM-01 | Phase 4 | Complete |
+| COM-02 | Phase 4 | Complete |
+| COM-03 | Phase 4 | Complete |
+| COM-04 | Phase 4 | Complete |
 | PLT-01 | Phase 4 | Pending |
 | PLT-02 | Phase 4 | Pending |
 | PLT-03 | Phase 4 | Pending |
