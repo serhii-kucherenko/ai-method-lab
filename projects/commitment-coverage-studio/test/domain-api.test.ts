@@ -341,3 +341,227 @@ describe("domain-api: import batches", () => {
     assert.equal(res.status, 422);
   });
 });
+
+describe("domain-api: coverage, gaps, compare", () => {
+  const dir = mkdtempSync(join(tmpdir(), "ccs-cov-"));
+  const dbPath = join(dir, "coverage.db");
+  let overAccountId = "";
+  let underAccountId = "";
+
+  before(async () => {
+    process.env.CCS_DB_PATH = dbPath;
+    closeDb();
+    const db = resetDbForTests(dbPath);
+    const { aws, gcp } = seedMultiCloud(db);
+
+    const commitments = await import("../src/app/api/commitments/route");
+    const imports = await import("../src/app/api/imports/route");
+
+    // Over-cover on aws: high commit, low usage
+    await commitments.POST(
+      jsonReq("http://local/api/commitments", {
+        method: "POST",
+        headers: auth,
+        json: {
+          cloudAccountId: aws.id,
+          name: "SP over",
+          instrumentType: "SP",
+          provider: "aws",
+          termMonths: 12,
+          rateUsd: 1000,
+          lockStart: "2026-01-01",
+          lockEnd: "2026-02-01",
+          family: "compute",
+        },
+      }),
+    );
+    await imports.POST(
+      jsonReq("http://local/api/imports", {
+        method: "POST",
+        headers: auth,
+        json: {
+          clientKey: "cov-over",
+          rows: [
+            {
+              cloudAccountId: aws.id,
+              windowStart: "2026-01-01",
+              windowEnd: "2026-02-01",
+              eligibleSpendUsd: 400,
+              family: "compute",
+            },
+          ],
+        },
+      }),
+    );
+    overAccountId = aws.id;
+
+    // Under-cover on gcp: low commit, high usage
+    await commitments.POST(
+      jsonReq("http://local/api/commitments", {
+        method: "POST",
+        headers: auth,
+        json: {
+          cloudAccountId: gcp.id,
+          name: "CUD under",
+          instrumentType: "CUD",
+          provider: "gcp",
+          termMonths: 12,
+          rateUsd: 200,
+          lockStart: "2026-01-01",
+          lockEnd: "2026-02-01",
+          family: "compute",
+        },
+      }),
+    );
+    await imports.POST(
+      jsonReq("http://local/api/imports", {
+        method: "POST",
+        headers: auth,
+        json: {
+          clientKey: "cov-under",
+          rows: [
+            {
+              cloudAccountId: gcp.id,
+              windowStart: "2026-01-01",
+              windowEnd: "2026-02-01",
+              eligibleSpendUsd: 800,
+              family: "compute",
+            },
+          ],
+        },
+      }),
+    );
+    underAccountId = gcp.id;
+  });
+
+  after(() => {
+    closeDb();
+    rmSync(dir, { recursive: true, force: true });
+    delete process.env.CCS_DB_PATH;
+  });
+
+  it("POST coverage returns A-only snapshot; missing usage yields 422", async () => {
+    const coverage = await import("../src/app/api/coverage/route");
+    const ok = await coverage.POST(
+      jsonReq("http://local/api/coverage", {
+        method: "POST",
+        headers: auth,
+        json: {
+          cloudAccountId: overAccountId,
+          windowStart: "2026-01-01",
+          windowEnd: "2026-02-01",
+        },
+      }),
+    );
+    assert.equal(ok.status, 201);
+    const body = await ok.json();
+    assert.ok(body.snapshot.coverage_pct >= 0);
+    assert.ok(body.snapshot.unused_commit_usd > 0);
+
+    const missing = await coverage.POST(
+      jsonReq("http://local/api/coverage", {
+        method: "POST",
+        headers: auth,
+        json: {
+          cloudAccountId: overAccountId,
+          windowStart: "2025-01-01",
+          windowEnd: "2025-02-01",
+        },
+      }),
+    );
+    assert.equal(missing.status, 422);
+    const err = await missing.json();
+    assert.match(err.message, /soft-sim/i);
+  });
+
+  it("GET gaps exposes unused_commit and ondemand_spill findings", async () => {
+    const coverage = await import("../src/app/api/coverage/route");
+    const gaps = await import("../src/app/api/gaps/route");
+
+    await coverage.POST(
+      jsonReq("http://local/api/coverage", {
+        method: "POST",
+        headers: auth,
+        json: {
+          cloudAccountId: underAccountId,
+          windowStart: "2026-01-01",
+          windowEnd: "2026-02-01",
+        },
+      }),
+    );
+
+    const overGaps = await gaps.GET(
+      jsonReq(
+        `http://local/api/gaps?cloudAccountId=${overAccountId}&windowStart=2026-01-01&windowEnd=2026-02-01`,
+        { headers: auth },
+      ),
+    );
+    const overBody = await overGaps.json();
+    assert.ok(
+      overBody.gaps.some(
+        (g: { kind: string }) => g.kind === "unused_commit",
+      ),
+    );
+
+    const underGaps = await gaps.GET(
+      jsonReq(
+        `http://local/api/gaps?cloudAccountId=${underAccountId}&windowStart=2026-01-01&windowEnd=2026-02-01`,
+        { headers: auth },
+      ),
+    );
+    const underBody = await underGaps.json();
+    assert.ok(
+      underBody.gaps.some(
+        (g: { kind: string }) => g.kind === "ondemand_spill",
+      ),
+    );
+  });
+
+  it("POST compares returns material A vs B deltaUsd", async () => {
+    const compares = await import("../src/app/api/compares/route");
+    const detail = await import("../src/app/api/compares/[id]/route");
+
+    const res = await compares.POST(
+      jsonReq("http://local/api/compares", {
+        method: "POST",
+        headers: auth,
+        json: {
+          mode: "commit_vs_ondemand",
+          cloudAccountId: overAccountId,
+          windowStart: "2026-01-01",
+          windowEnd: "2026-02-01",
+        },
+      }),
+    );
+    assert.equal(res.status, 201);
+    const body = await res.json();
+    assert.ok(Math.abs(body.deltaUsd) > 0);
+    assert.ok(body.pathA);
+    assert.ok(body.pathB);
+    assert.notDeepEqual(body.pathA, body.pathB);
+
+    const get = await detail.GET(
+      jsonReq(`http://local/api/compares/${body.compare.id}`, {
+        headers: auth,
+      }),
+      { params: Promise.resolve({ id: body.compare.id }) },
+    );
+    assert.equal(get.status, 200);
+    const stored = await get.json();
+    assert.ok(Math.abs(stored.deltaUsd) > 0);
+
+    const badMode = await compares.POST(
+      jsonReq("http://local/api/compares", {
+        method: "POST",
+        headers: auth,
+        json: {
+          mode: "twin_equivalence",
+          cloudAccountId: overAccountId,
+          windowStart: "2026-01-01",
+          windowEnd: "2026-02-01",
+        },
+      }),
+    );
+    assert.equal(badMode.status, 422);
+  });
+});
