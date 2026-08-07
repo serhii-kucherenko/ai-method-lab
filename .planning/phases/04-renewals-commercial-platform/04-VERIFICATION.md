@@ -32,7 +32,7 @@ FinOps leads leave with a renewal action pack; strangers can price, demo, onboar
 cd projects/commitment-coverage-studio && npm test && npm run build
 ```
 
-- **Tests:** 65 passed (0 failed)
+- **Tests:** 66 passed (0 failed)
 - **Build:** Next.js 16.3.0 green (middleware deprecation warning only; still active as Proxy)
 
 ## Pages shipped

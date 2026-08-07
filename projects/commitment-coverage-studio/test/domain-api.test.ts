@@ -1176,3 +1176,74 @@ describe("domain-api: webhook HMAC + export (PLT-02, PLT-03)", () => {
     }
   });
 });
+
+describe("domain-api: rate limit middleware (PLT-05)", () => {
+  it("checkRateLimit denies after CCS_RATE_LIMIT_MAX and returns Retry-After headers", async () => {
+    const prevMax = process.env.CCS_RATE_LIMIT_MAX;
+    const prevWin = process.env.CCS_RATE_LIMIT_WINDOW_MS;
+    process.env.CCS_RATE_LIMIT_MAX = "2";
+    process.env.CCS_RATE_LIMIT_WINDOW_MS = "60000";
+    const {
+      checkRateLimit,
+      resetRateLimitForTests,
+      rateLimitHeaders,
+    } = await import("../src/lib/rate-limit");
+    resetRateLimitForTests();
+
+    const a = checkRateLimit("test-key-a");
+    assert.equal(a.allowed, true);
+    const b = checkRateLimit("test-key-a");
+    assert.equal(b.allowed, true);
+    const c = checkRateLimit("test-key-a");
+    assert.equal(c.allowed, false);
+    assert.equal(c.remaining, 0);
+    assert.ok(c.retryAfterSec >= 1);
+    const headers = rateLimitHeaders(c) as Record<string, string>;
+    assert.equal(headers["X-RateLimit-Limit"], "2");
+    assert.equal(headers["X-RateLimit-Remaining"], "0");
+    assert.ok(headers["Retry-After"]);
+
+    if (prevMax === undefined) delete process.env.CCS_RATE_LIMIT_MAX;
+    else process.env.CCS_RATE_LIMIT_MAX = prevMax;
+    if (prevWin === undefined) delete process.env.CCS_RATE_LIMIT_WINDOW_MS;
+    else process.env.CCS_RATE_LIMIT_WINDOW_MS = prevWin;
+    resetRateLimitForTests();
+  });
+
+  it("middleware returns 429 on mutating /api paths under low ceiling", async () => {
+    const prevMax = process.env.CCS_RATE_LIMIT_MAX;
+    process.env.CCS_RATE_LIMIT_MAX = "1";
+    const { resetRateLimitForTests } = await import("../src/lib/rate-limit");
+    resetRateLimitForTests();
+    const { middleware } = await import("../src/middleware");
+    const { NextRequest } = await import("next/server");
+
+    const mk = (path: string, method: string) =>
+      new NextRequest(new URL(path, "http://local"), {
+        method,
+        headers: { authorization: `Bearer ${DEMO_BEARER_TOKEN}` },
+      });
+
+    const first = middleware(mk("http://local/api/accounts", "POST"));
+    assert.notEqual(first.status, 429);
+
+    const secondAccounts = middleware(mk("http://local/api/accounts", "POST"));
+    assert.equal(secondAccounts.status, 429);
+    assert.ok(secondAccounts.headers.get("Retry-After"));
+    assert.ok(secondAccounts.headers.get("X-RateLimit-Limit"));
+
+    resetRateLimitForTests();
+    process.env.CCS_RATE_LIMIT_MAX = "1";
+    const renewFirst = middleware(mk("http://local/api/renewals", "POST"));
+    assert.notEqual(renewFirst.status, 429);
+    const renewSecond = middleware(mk("http://local/api/renewals", "PATCH"));
+    assert.equal(renewSecond.status, 429);
+
+    const getOk = middleware(mk("http://local/api/accounts", "GET"));
+    assert.notEqual(getOk.status, 429);
+
+    if (prevMax === undefined) delete process.env.CCS_RATE_LIMIT_MAX;
+    else process.env.CCS_RATE_LIMIT_MAX = prevMax;
+    resetRateLimitForTests();
+  });
+});

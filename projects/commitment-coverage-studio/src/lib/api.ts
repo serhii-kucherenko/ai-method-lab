@@ -51,12 +51,19 @@ export async function apiJson<T>(
     }
     if (!res.ok) {
       const message =
-        body &&
-        typeof body === "object" &&
-        "message" in body &&
-        typeof (body as { message: unknown }).message === "string"
-          ? (body as { message: string }).message
-          : `Request failed (${res.status}) — soft-sim lab desk`;
+        res.status === 429
+          ? body &&
+            typeof body === "object" &&
+            "message" in body &&
+            typeof (body as { message: unknown }).message === "string"
+            ? (body as { message: string }).message
+            : `Rate limited (429) — soft-sim; retry after ${res.headers.get("Retry-After") ?? "a moment"}`
+          : body &&
+              typeof body === "object" &&
+              "message" in body &&
+              typeof (body as { message: unknown }).message === "string"
+            ? (body as { message: string }).message
+            : `Request failed (${res.status}) — soft-sim lab desk`;
       return { ok: false, status: res.status, message };
     }
     return { ok: true, data: body as T };
