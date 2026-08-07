@@ -564,4 +564,50 @@ describe("domain-api: coverage, gaps, compare", () => {
     );
     assert.equal(badMode.status, 422);
   });
+
+  it("GET /api/scoreboard returns account gap rows ranked by gapUsd", async () => {
+    const { GET } = await import("../src/app/api/scoreboard/route");
+    const res = await GET(
+      jsonReq("http://local/api/scoreboard", { headers: auth }),
+    );
+    assert.equal(res.status, 200);
+    const body = await res.json();
+    assert.ok(Array.isArray(body.scoreboard));
+    assert.ok(body.scoreboard.length >= 1);
+    const row = body.scoreboard[0];
+    assert.ok("gapUsd" in row);
+    assert.ok("unusedCommitUsd" in row);
+    assert.ok("ondemandSpillUsd" in row);
+    assert.ok("provider" in row);
+    for (let i = 1; i < body.scoreboard.length; i += 1) {
+      assert.ok(body.scoreboard[i - 1].gapUsd >= body.scoreboard[i].gapUsd);
+    }
+  });
+});
+
+describe("domain-api: scoreboard empty org", () => {
+  const dir = mkdtempSync(join(tmpdir(), "ccs-score-empty-"));
+  const dbPath = join(dir, "coverage.db");
+
+  before(() => {
+    process.env.CCS_DB_PATH = dbPath;
+    closeDb();
+    resetDbForTests(dbPath);
+  });
+
+  after(() => {
+    closeDb();
+    rmSync(dir, { recursive: true, force: true });
+    delete process.env.CCS_DB_PATH;
+  });
+
+  it("GET /api/scoreboard empty org yields empty array", async () => {
+    const { GET } = await import("../src/app/api/scoreboard/route");
+    const res = await GET(
+      jsonReq("http://local/api/scoreboard", { headers: auth }),
+    );
+    assert.equal(res.status, 200);
+    const body = await res.json();
+    assert.deepEqual(body.scoreboard, []);
+  });
 });
