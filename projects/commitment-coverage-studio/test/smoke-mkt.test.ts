@@ -60,4 +60,29 @@ describe("smoke-mkt: DESIGN tokens and brand landing", () => {
       "layout must load IBM_Plex_Mono",
     );
   });
+
+  it("landing below-fold includes Problem, Product, Honesty tease and links to /honesty", () => {
+    const page = read("src/app/page.tsx");
+    const claim = existsSync(join(root, "src/lib/claim.ts"))
+      ? read("src/lib/claim.ts")
+      : "";
+    const blob = `${page}\n${claim}`;
+
+    assert.ok(/Problem/i.test(blob), "landing must include Problem section");
+    assert.ok(/Product/i.test(blob), "landing must include Product section");
+    assert.ok(/Honesty/i.test(blob), "landing must include Honesty tease");
+    assert.ok(
+      page.includes('href="/honesty"') || page.includes("href='/honesty'"),
+      "landing must link to /honesty",
+    );
+  });
+
+  it("first viewport has no invented numeric KPI strip", () => {
+    const page = read("src/app/page.tsx");
+    const heroSlice = page.split(/Problem|below-fold|BelowFold/i)[0] ?? page;
+    assert.ok(
+      !/\b\d{2,}%\b/.test(heroSlice) && !/\$\d{2,}/.test(heroSlice),
+      "hero must not invent numeric KPI metrics",
+    );
+  });
 });
