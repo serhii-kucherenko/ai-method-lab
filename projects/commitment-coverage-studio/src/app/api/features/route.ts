@@ -21,6 +21,15 @@ const FEATURES = [
   "webhook-hmac",
   "export-json-csv",
   "rate-limit",
+  "import-batches",
+  "commitment-inventory",
+  "coverage-engine-a",
+  "gap-findings",
+  "compare-ab",
+  "scoreboard-aggregates",
+  "accounts-api",
+  "settings-shell",
+  "bearer-auth",
 ] as const;
 
 /**
