@@ -10,7 +10,7 @@ Ship a FinOps soft-sim that imports multi-cloud commitment inventory and usage, 
 - [x] **Phase 2: Domain claim core** - Inventory, imports, coverage/gaps, dual scorers, and ≥30 goldens (completed 2026-08-07)
 - [x] **Phase 3: Studio UI** - Live domain IA pages with filters and empty/error paths (completed 2026-08-07)
 - [x] **Phase 4: Renewals, commercial, platform** - Renewal packs, commercial surfaces, and platform must-haves (completed 2026-08-07)
-- [ ] **Phase 5: Sustain bar** - Live build, app-up smoke, README screenshots, try.html, feature bar
+- [x] **Phase 5: Sustain bar** - Live build, app-up smoke, README screenshots, try.html, feature bar
 
 ## Phase Details
 
@@ -108,12 +108,12 @@ Plans:
   3. README embeds live screenshots (landing, primary workspace, pricing, demo, onboarding/flows) from `screenshots/` of the running app
   4. Offline `try.html` dual-claim digest exists with an in-app guide link
 
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans executed
 
 Plans:
 
 - [x] 05-01-PLAN.md — ≥25 features, ≥11 pages, try.html, build + app-up smoke
-- [ ] 05-02-PLAN.md — Live screenshots + README embeds
+- [x] 05-02-PLAN.md — Live screenshots + README embeds
 
 **UI hint**: yes
 
@@ -125,7 +125,7 @@ Plans:
 | 2. Domain claim core | 3/3 | Complete   | 2026-08-07 |
 | 3. Studio UI | 3/3 | Complete   | 2026-08-07 |
 | 4. Renewals, commercial, platform | 5/5 | Complete    | 2026-08-07 |
-| 5. Sustain bar | 1/2 | In Progress|  |
+| 5. Sustain bar | 2/2 | Complete    | 2026-08-07 |
 
 ## Coverage map
 

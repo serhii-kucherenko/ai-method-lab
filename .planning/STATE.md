@@ -4,16 +4,16 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 5
 current_phase_name: Sustain bar
-status: executing
-stopped_at: Completed 05-01-PLAN.md
-last_updated: "2026-08-07T09:56:02.949Z"
+status: complete
+stopped_at: Phase 5 sustain bar complete — ready for finish email / score
+last_updated: "2026-08-07T10:00:00.000Z"
 last_activity: 2026-08-07
-last_activity_desc: 05-01 revised ID lock verified (72 tests)
+last_activity_desc: Phase 5 sustain bar complete (72 tests, screenshots, try.html)
 progress:
   total_phases: 5
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 15
-  completed_plans: 14
+  completed_plans: 15
 ---
 
 # Project State
@@ -23,24 +23,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-07)
 
 **Core value:** Show where commitments are under-covered or wasted, in dollars, before renewal.
-**Current focus:** Phase 05 — Sustain bar (05-01 done; next 05-02 screenshots)
+**Current focus:** Phase 05 — Sustain bar **complete**. Product near finish gate.
 
 ## Current Position
 
 Phase: 5 — Sustain bar
-Plan: 2 of 2 (05-01 complete)
-Status: Ready to execute 05-02
-Last activity: 2026-08-07 — 05-01 revised ID lock verified (72 tests)
+Plan: 2 of 2 complete
+Status: Milestone ready for ship / sustain email / garbage-collector score
+Last activity: 2026-08-07 — Phase 5 sustain bar complete (72 tests, live screenshots)
 
-Progress: [█████████░] 93%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 13
+- Total plans completed: 15
 - Average duration: ~20 min
-- Total execution time: ~2.5 hours
 
 **By Phase:**
 
@@ -49,14 +48,9 @@ Progress: [█████████░] 93%
 | 01 | 2 | ~31min | ~15min |
 | 02 | 3 | ~70min | ~23min |
 | 03 | 3 | ~60min | ~20min |
-| 4 | 5 | - | - |
+| 04 | 5 | - | - |
+| 05 | 2 | ~45min | ~22min |
 
-**Recent Trend:**
-
-- Last 8 plans: Phase 1×2 + Phase 2×3 + Phase 3×3
-- Trend: stable
-
-*Updated after each plan completion*
 **Per-Plan Metrics:**
 
 | Plan | Duration | Tasks | Files |
@@ -71,14 +65,11 @@ Progress: [█████████░] 93%
 | Phase 03-studio-ui P03 | 15min | 3 tasks | 6 files |
 | Phase 04 P01 | 28min | 3 tasks | 9 files |
 | Phase 04 P02 | 28min | 3 tasks | 5 files |
-| Phase 04 P02 | 13min | 3 tasks | 5 files |
 | Phase 04 P03 | 25min | 3 tasks | 11 files |
 | Phase 04 P04 | 25min | 3 tasks | 9 files |
 | Phase 4 P05 | 15min | 3 tasks | 6 files |
-| Phase 04 P04 | 25min | 3 tasks | 9 files |
-| Phase 05 P01 | 25min | 3 tasks | 9 files |
-| Phase 05-sustain-bar P01 | 35min | 3 tasks | 9 files |
 | Phase 05 P01 | 30min | 3 tasks | 10 files |
+| Phase 05 P02 | 20min | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -92,30 +83,13 @@ Recent decisions affecting current work:
 - GSD phase loop for delivery; standard granularity, YOLO auto
 - 5-phase roadmap from research SUMMARY (honesty → claim → UI → commercial/platform → sustain)
 - No Python sidecar; pure TS dual scorers
-- better-sqlite3 on Windows; A prorates by lock overlap; B never aliases A
-- Demo bearer ccs-demo-token; import max 500 rows; clientKey 409
-- CoverageEngine A-only; CompareService A+B on shared ScoreInput
-- Literal hrefs in StudioShell so IA smoke can assert primary routes
-- Thin GET /api/renewals upgraded to RenewalCase packs (04-01)
-- Scoreboard aggregates gap_findings + latest coverage_pct; empty org returns []
-- [Phase 04]: RenewalPacker: spill→buy, unused→reduce, near-zero/balanced→hold (D-01)
-- [Phase 04]: POST pack replaces open renewal_cases; client JSON export until 04-04
-- [Phase 04]: D-10 partial: audit on renewals act/dismiss; no primary audit nav
-- [Phase ?]: Pricing soft-sim only - no live card checkout (D-03)
-- [Phase ?]: Onboarding progress via localStorage not SQLite (D-05)
-- [Phase ?]: Flows journey names match FEATURES F1-F5 (D-06)
-- [Phase ?]: D-03..D-06: commercial pricing/demo/onboarding/flows soft-sim, no live checkout
-- [Phase 04]: D-07 Bearer org GET/PATCH + members GET/POST under /settings
-- [Phase 04]: D-10 audit under settings; webhook secret masked on GET; no primary audit nav
-- [Phase 04]: D-08/D-09: HMAC webhook + Bearer export JSON/CSV (04-04)
-- [Phase ?]: D-11: Middleware rate-limits all mutating /api/*
-- [Phase ?]: try.html root + public mirror for Next /try.html
-- [Phase ?]: Domain FEATURES use locked page-mapped IDs (commitments/coverage/gaps/renewals/imports/compare/scoreboard)
-- [Phase ?]: Domain FEATURES use locked page-mapped IDs; try.html root+public; app-up free-port next start
+- Domain FEATURES use locked page-mapped IDs; try.html root+public; app-up free-port next start
+- Primary workspace screenshots use /commitments path
+- Capture script resolves product-local Playwright on Windows
 
 ### Pending Todos
 
-None yet.
+None — next lab step is sustain finish email + garbage-collector score.
 
 ### Blockers/Concerns
 
@@ -130,7 +104,7 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-08-07T09:56:02.917Z
-Stopped at: Completed 05-01-PLAN.md
+Last session: 2026-08-07T10:00:00.000Z
+Stopped at: Phase 5 sustain bar complete — ready for finish email / score
 Resume file: None
-Next: 05-02 screenshots + README embeds (SUS-03)
+Next: Product complete notify (`product_complete`) + score in BUSINESS_SCORECARD
