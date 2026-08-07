@@ -112,6 +112,9 @@ export default function DemoPage() {
           <Button asChild variant="outline">
             <Link href="/coverage">Jump to coverage</Link>
           </Button>
+          <Button asChild variant="outline">
+            <a href="/try.html">Offline dual-claim guide</a>
+          </Button>
           <Button asChild variant="ghost">
             <Link href="/">Home</Link>
           </Button>

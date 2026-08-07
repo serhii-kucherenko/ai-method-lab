@@ -42,6 +42,9 @@ export default function HonestyPage() {
           <Button asChild variant="outline">
             <Link href="/commitments">Open commitments</Link>
           </Button>
+          <Button asChild variant="outline">
+            <a href="/try.html">Offline dual-claim guide</a>
+          </Button>
         </div>
       </article>
     </main>
