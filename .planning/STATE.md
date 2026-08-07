@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 3
 current_phase_name: Studio UI
 status: ready_to_execute
-stopped_at: Phase 3 plans created (03-01..03-03); checker PASS; execute 03-01 started
-last_updated: "2026-08-07T08:45:00.000Z"
+stopped_at: Completed 03-01-PLAN.md
+last_updated: "2026-08-07T08:46:00.000Z"
 last_activity: 2026-08-07
-last_activity_desc: Phase 3 Studio UI planned and checker-passed; wave 1 execute started
+last_activity_desc: Completed 03-01 StudioShell tracer; next 03-02
 progress:
   total_phases: 5
   completed_phases: 2
   total_plans: 8
-  completed_plans: 5
+  completed_plans: 6
 ---
 
 # Project State
@@ -28,19 +28,19 @@ See: .planning/PROJECT.md (updated 2026-08-07)
 ## Current Position
 
 Phase: 3 — Studio UI
-Plan: (none yet)
-Status: Ready to plan
-Last activity: 2026-08-07 — Phase 2 Domain claim core executed and verified
+Plan: 2 of 3
+Status: Ready to execute
+Last activity: 2026-08-07 — Completed 03-01 StudioShell + live commitments/imports
 
-Progress: [██████████] 100% of planned plans so far (Phases 1–2); Phase 3 plans TBD
+Progress: [████████░░] 75%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 5
-- Average duration: ~20 min
-- Total execution time: ~1.5 hours
+- Total plans completed: 6
+- Average duration: ~21 min
+- Total execution time: ~2 hours
 
 **By Phase:**
 
@@ -48,10 +48,11 @@ Progress: [██████████] 100% of planned plans so far (Phases 
 |-------|-------|-------|----------|
 | 01 | 2 | ~31min | ~15min |
 | 02 | 3 | ~70min | ~23min |
+| 03 | 1/3 | ~25min | ~25min |
 
 **Recent Trend:**
 
-- Last 5 plans: Phase 1×2 + Phase 2×3
+- Last 6 plans: Phase 1×2 + Phase 2×3 + Phase 3×1
 - Trend: stable
 
 *Updated after each plan completion*
@@ -64,6 +65,7 @@ Progress: [██████████] 100% of planned plans so far (Phases 
 | Phase 02 P01 | 25min | 3 tasks | 9 files |
 | Phase 02 P02 | 20min | 3 tasks | 11 files |
 | Phase 02 P03 | 25min | 3 tasks | 8 files |
+| Phase 03-studio-ui P01 | 25min | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -80,6 +82,8 @@ Recent decisions affecting current work:
 - better-sqlite3 on Windows; A prorates by lock overlap; B never aliases A
 - Demo bearer ccs-demo-token; import max 500 rows; clientKey 409
 - CoverageEngine A-only; CompareService A+B on shared ScoreInput
+- Literal hrefs in StudioShell so IA smoke can assert primary routes
+- Client-side provider filter on commitments; search hits API search param
 
 ### Pending Todos
 
@@ -87,7 +91,7 @@ None yet.
 
 ### Blockers/Concerns
 
-None open for Phase 2. Phase 3 needs plan-phase for domain page chrome.
+None. Next: execute 03-02 (coverage / gaps / compare).
 
 ## Deferred Items
 
@@ -98,7 +102,7 @@ None open for Phase 2. Phase 3 needs plan-phase for domain page chrome.
 
 ## Session Continuity
 
-Last session: 2026-08-07T08:22:00.000Z
-Stopped at: Completed phase 2 Domain claim core (02-01..02-03); VERIFICATION passed
+Last session: 2026-08-07T08:46:00.000Z
+Stopped at: Completed 03-01-PLAN.md
 Resume file: None
-Next: `/gsd-plan-phase 3` (or `/gsd-discuss-phase 3` if discuss not skipped)
+Next: Execute 03-02-PLAN.md (live /coverage /gaps /compare)
