@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BelowFold } from "@/components/landing/below-fold";
 import { Button } from "@/components/ui/button";
 import {
   DISPLAY_NAME,
@@ -30,6 +31,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <BelowFold />
     </main>
   );
 }

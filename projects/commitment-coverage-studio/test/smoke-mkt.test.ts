@@ -66,20 +66,23 @@ describe("smoke-mkt: DESIGN tokens and brand landing", () => {
     const claim = existsSync(join(root, "src/lib/claim.ts"))
       ? read("src/lib/claim.ts")
       : "";
-    const blob = `${page}\n${claim}`;
+    const below = existsSync(join(root, "src/components/landing/below-fold.tsx"))
+      ? read("src/components/landing/below-fold.tsx")
+      : "";
+    const blob = `${page}\n${claim}\n${below}`;
 
     assert.ok(/Problem/i.test(blob), "landing must include Problem section");
     assert.ok(/Product/i.test(blob), "landing must include Product section");
     assert.ok(/Honesty/i.test(blob), "landing must include Honesty tease");
     assert.ok(
-      page.includes('href="/honesty"') || page.includes("href='/honesty'"),
+      blob.includes('href="/honesty"') || blob.includes("href='/honesty'"),
       "landing must link to /honesty",
     );
   });
 
   it("first viewport has no invented numeric KPI strip", () => {
     const page = read("src/app/page.tsx");
-    const heroSlice = page.split(/Problem|below-fold|BelowFold/i)[0] ?? page;
+    const heroSlice = page.split(/BelowFold|below-fold/i)[0] ?? page;
     assert.ok(
       !/\b\d{2,}%\b/.test(heroSlice) && !/\$\d{2,}/.test(heroSlice),
       "hero must not invent numeric KPI metrics",
