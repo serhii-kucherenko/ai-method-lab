@@ -160,3 +160,5 @@ Business scoring: **`matrix/BUSINESS_SCORECARD.md`** (rubric `docs/BUSINESS_RUBR
 | **Change Freeze Studio** | change-freeze-studio | **Complete** | Hold OT changes during freezes vs always-allow |
 
 | **Spend Cap Studio** | spend-cap-studio | **Complete** | Hard-stop cloud spend vs soft-warn |
+
+| **Commitment Coverage Studio** | commitment-coverage-studio | **Complete** | Commitment gap $ before renewal |
