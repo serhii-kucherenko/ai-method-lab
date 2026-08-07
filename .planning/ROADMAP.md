@@ -45,9 +45,10 @@ Plans:
   3. System produces coverage %/$ by account/window and separate under-cover + unused-commit gap findings in dollars (scorer A)
   4. Same fixtures yield material $ divergence between commit-matched (A) and on-demand-blind (B) on compare, backed by ≥30 dual-impl goldens
 
-**Plans**: 3 plans
+**Plans**: 1/3 plans executed
 Plans:
-- [ ] 02-01-PLAN.md — Dual scorers A/B, ≥30 goldens, SQLite bootstrap, goldens/features APIs
+
+- [x] 02-01-PLAN.md — Dual scorers A/B, ≥30 goldens, SQLite bootstrap, goldens/features APIs
 - [ ] 02-02-PLAN.md — Accounts/commitments CRUD + usage import batches (Bearer)
 - [ ] 02-03-PLAN.md — Coverage snapshots, gap findings, A vs B compare APIs
 
@@ -99,7 +100,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Smoke & trust | 2/2 | Complete    | 2026-08-07 |
-| 2. Domain claim core | 0/TBD | Not started | - |
+| 2. Domain claim core | 1/3 | In Progress|  |
 | 3. Studio UI | 0/TBD | Not started | - |
 | 4. Renewals, commercial, platform | 0/TBD | Not started | - |
 | 5. Sustain bar | 0/TBD | Not started | - |

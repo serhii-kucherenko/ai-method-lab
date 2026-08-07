@@ -17,10 +17,10 @@
 - [ ] **DOM-02**: Usage/billing import batches with status on `/imports`
 - [ ] **DOM-03**: Coverage % and $ by account/window on `/coverage`
 - [ ] **DOM-04**: Under-cover + unused-commit gap findings in $ on `/gaps`
-- [ ] **DOM-05**: Scorer A commit-matched coverage path
-- [ ] **DOM-06**: Scorer B on-demand-blind baseline path
+- [x] **DOM-05**: Scorer A commit-matched coverage path
+- [x] **DOM-06**: Scorer B on-demand-blind baseline path
 - [ ] **DOM-07**: Side-by-side A vs B on `/compare` with material $ divergence
-- [ ] **DOM-08**: ≥30 dual-impl goldens + goldens/features APIs
+- [x] **DOM-08**: ≥30 dual-impl goldens + goldens/features APIs
 
 ### Studio surfaces
 
@@ -73,10 +73,10 @@
 | DOM-02 | Phase 2 | Pending |
 | DOM-03 | Phase 2 | Pending |
 | DOM-04 | Phase 2 | Pending |
-| DOM-05 | Phase 2 | Pending |
-| DOM-06 | Phase 2 | Pending |
+| DOM-05 | Phase 2 | Complete |
+| DOM-06 | Phase 2 | Complete |
 | DOM-07 | Phase 2 | Pending |
-| DOM-08 | Phase 2 | Pending |
+| DOM-08 | Phase 2 | Complete |
 | UI-02 | Phase 3 | Pending |
 | UI-03 | Phase 3 | Pending |
 | UI-01 | Phase 4 | Pending |
