@@ -2,33 +2,31 @@
 phase: 04-renewals-commercial-platform
 plan: 03
 subsystem: platform
-tags: [org, members, audit, settings, bearer, soft-sim]
+tags: [settings, org, members, audit, bearer]
 
 requires:
   - phase: 04-renewals-commercial-platform
-    provides: audit_entries helper from 04-01
-  - phase: 02-coverage-engine
-    provides: SQLite migrate + demo org
+    provides: audit_entries table + renewals audit writes (04-01)
 provides:
-  - GET/PATCH /api/org with masked webhook secret
-  - GET/POST /api/members with seed demo admin
-  - GET /api/audit under settings (not primary nav)
-  - /settings org + members + audit panel
+  - GET/PATCH /api/org with Bearer and masked webhook_secret
+  - GET/POST /api/members with Bearer
+  - GET /api/audit audit trail list
+  - /settings org + members + audit panel (not primary IA)
 affects:
-  - 04-04 webhook secret + export audit
-  - PLT-01 PLT-04 verification
+  - 04-04 webhook HMAC (org webhook_secret)
+  - 04-05 rate-limit (mutating org/members routes)
 
 actuals:
-  tokens: 14000
+  tokens: 18000
   tasks: 3
   commits: 4
 
 tech-stack:
   added: []
   patterns:
-    - Org webhook secret set-only; GET returns webhookSecretMasked only
-    - Settings footer utility link; seven primary domain routes unchanged
-    - Audit append on org.patch and members.create
+    - Settings under StudioShell as utility/footer link, not eighth primary domain nav
+    - Org webhook_secret set-only on PATCH; GET returns masked
+    - Audit panel lists audit_entries for demo org
 
 key-files:
   created:
@@ -40,40 +38,40 @@ key-files:
     - projects/commitment-coverage-studio/src/app/settings/page.tsx
   modified:
     - projects/commitment-coverage-studio/src/lib/db.ts
+    - projects/commitment-coverage-studio/src/services/audit.ts
     - projects/commitment-coverage-studio/src/components/studio-shell.tsx
     - projects/commitment-coverage-studio/src/app/api/features/route.ts
     - projects/commitment-coverage-studio/test/domain-api.test.ts
     - projects/commitment-coverage-studio/test/smoke-ui.test.ts
 
 key-decisions:
-  - "D-07: Bearer org/members APIs; soft-sim single DEMO_ORG_ID"
-  - "D-10: Audit under /settings only - no primary /audit nav"
-  - "T-04-09: Never return raw webhookSecret on GET"
+  - "D-07: Bearer org/members APIs; /settings admin surface"
+  - "D-10: Audit under settings panel, not primary StudioShell nav"
+  - "D-12: Settings is utility link; seven domain routes stay primary"
+  - "D-13: Schema via migrate; no new npm packages"
+  - "D-14: domain-api + smoke-ui cover org/members/audit"
 
 patterns-established:
-  - "toOrgPublic masks secrets; PATCH set-only for webhookSecret"
-  - "StudioShell footer Settings link keeps primary IA at seven routes"
+  - "Platform chrome is /settings with secondary audit section"
+  - "Features inventory updated for org-settings, members, audit + commercial ids from 04-02"
 
 requirements-completed: [PLT-01, PLT-04]
 
 coverage:
   - id: D1
-    description: "Org GET/PATCH and members GET/POST with Bearer"
+    description: Org GET/PATCH and members GET/POST with Bearer
     requirement: PLT-01
     verification:
       - kind: unit
-        ref: "test/domain-api.test.ts#domain-api: org settings + members (PLT-01)"
+        ref: test/domain-api.test.ts
         status: pass
     human_judgment: false
   - id: D2
-    description: "Audit list under settings for org/member mutations"
+    description: Audit trail under settings (non-primary IA)
     requirement: PLT-04
     verification:
       - kind: unit
-        ref: "test/domain-api.test.ts#domain-api: audit trail (PLT-04)"
-        status: pass
-      - kind: unit
-        ref: "test/smoke-ui.test.ts#settings page wires org/members and audit"
+        ref: test/smoke-ui.test.ts#settings page wires org/members and audit
         status: pass
     human_judgment: false
 
@@ -82,32 +80,22 @@ completed: 2026-08-07
 status: complete
 ---
 
-# Phase 4 Plan 03: Org, members, audit Summary
+# Phase 04 Plan 03: Org settings, members, audit
 
-**Bearer-protected org/members APIs and an audit panel under `/settings` — not an eighth primary domain nav item.**
-
-## Performance
-
-- **Duration:** ~25 min
-- **Tasks:** 3
-- **Files modified:** 11
+**PLT-01 and PLT-04 shipped:** `/settings` manages org + members with Bearer APIs; audit trail is listed under settings, not as a primary desk nav.
 
 ## Accomplishments
 
-- Migrated orgs with seat_tier / webhook_secret and members table; seed demo admin
-- `/settings` loads/saves org, adds members, lists audit via `/api/audit`
-- Features inventory includes commercial + org/members/audit; smoke-ui asserts footer-only settings
+- Org settings columns + members table in SQLite migrate
+- `GET/PATCH /api/org`, `GET/POST /api/members`, `GET /api/audit`
+- `/settings` UI with audit panel; StudioShell utility link only
+- Features inventory includes org-settings, members, audit (+ commercial ids)
+- Smoke + domain-api coverage for settings wiring
 
-## Task Commits
+## Deviations
 
-1. **Task 1: Tracer — org/members** - `cd78127a` (test) + `85333c88` / related feat commits
-2. **Task 2: Audit API + panel** - `647913dc` / `85333c88`
-3. **Task 3: Smoke + features** - `a5f30f89`
-
-## Deviations from Plan
-
-None - plan executed as written (parallel wave commits coalesced).
+Background executor stalled before SUMMARY; closed from commits already on `main` (`cd78127a`…`a5f30f89`). Wave-3 webhook/export WIP left uncommitted for 04-04.
 
 ## Self-Check: PASSED
 
-- FOUND: org/members/audit routes, settings page, smoke-ui settings assertions
+Org/members/audit routes and settings smoke present; ROADMAP checkbox updated with this close-out.

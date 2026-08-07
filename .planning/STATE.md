@@ -8,7 +8,7 @@ status: in_progress
 stopped_at: Completed 04-03-PLAN.md
 last_updated: "2026-08-07T09:35:04.132Z"
 last_activity: 2026-08-07
-last_activity_desc: Completed 04-02 commercial /pricing /demo /onboarding /flows
+last_activity_desc: Completed 04-03 org settings, members, audit under /settings
 progress:
   total_phases: 4
   completed_phases: 3
@@ -30,7 +30,7 @@ See: .planning/PROJECT.md (updated 2026-08-07)
 Phase: 4 — Renewals, commercial, platform
 Plan: 4 of 05
 Status: Ready to execute
-Last activity: 2026-08-07 — Completed 04-02 commercial /pricing /demo /onboarding /flows
+Last activity: 2026-08-07 — Completed 04-03 org settings, members, audit under /settings
 
 Progress: [█████████░] 85%
 
@@ -98,8 +98,8 @@ Recent decisions affecting current work:
 - [Phase ?]: Onboarding progress via localStorage not SQLite (D-05)
 - [Phase ?]: Flows journey names match FEATURES F1-F5 (D-06)
 - [Phase ?]: D-03..D-06: commercial pricing/demo/onboarding/flows soft-sim, no live checkout
-- [Phase ?]: Mask
-- [Phase ?]: Audit
+- [Phase 04]: D-07 Bearer org GET/PATCH + members GET/POST under /settings
+- [Phase 04]: D-10 audit under settings; webhook secret masked on GET; no primary audit nav
 
 ### Pending Todos
 
@@ -107,7 +107,7 @@ None yet.
 
 ### Blockers/Concerns
 
-None. Next: execute 04-02 commercial /pricing /demo /onboarding /flows.
+None. Next: execute 04-04 webhook HMAC + export JSON/CSV.
 
 ## Deferred Items
 
@@ -121,4 +121,4 @@ None. Next: execute 04-02 commercial /pricing /demo /onboarding /flows.
 Last session: 2026-08-07T09:35:04.109Z
 Stopped at: Completed 04-03-PLAN.md
 Resume file: None
-Next: Execute 04-02-PLAN.md (commercial surfaces)
+Next: Execute 04-04-PLAN.md (webhook HMAC + export)
