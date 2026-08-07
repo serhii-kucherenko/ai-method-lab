@@ -108,8 +108,10 @@ body {
   background-size: 28px 28px, 28px 28px, auto, auto;
 }
 
-.brand-fade {
-  animation: brand-fade-in 0.85s ease-out both;
+@media (prefers-reduced-motion: no-preference) {
+  .brand-fade {
+    animation: brand-fade-in 0.85s ease-out both;
+  }
 }
 
 @keyframes brand-fade-in {
