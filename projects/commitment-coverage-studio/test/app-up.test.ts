@@ -9,7 +9,7 @@ import { setTimeout as delay } from "node:timers/promises";
 import { describe, it } from "node:test";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { DISPLAY_NAME } from "../src/lib/claim.ts";
+import { DISPLAY_NAME } from "../src/lib/claim";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const isWin = process.platform === "win32";
