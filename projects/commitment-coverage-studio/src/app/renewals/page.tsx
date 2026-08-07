@@ -11,21 +11,42 @@ import {
 import { Button } from "@/components/ui/button";
 import { apiJson } from "@/lib/api";
 
-type RenewRow = {
+type RecommendedAction = "buy" | "reduce" | "hold";
+
+type RenewalCase = {
+  id: string;
   commitmentId: string;
-  name: string;
+  commitmentName: string;
   cloudAccountId: string;
-  lockEnd: string;
   provider: string;
+  renewBy: string;
+  gapUsd: number;
+  recommendedAction: RecommendedAction;
+  status: "open" | "acted" | "dismissed";
 };
 
-type RenewalsResponse = { softSim: boolean; renewals: RenewRow[] };
+type RenewalsResponse = { softSim: boolean; cases: RenewalCase[] };
+
+const ACTION_LABEL: Record<RecommendedAction, string> = {
+  buy: "Buy",
+  reduce: "Reduce",
+  hold: "Hold",
+};
+
+function formatUsd(n: number): string {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(n);
+}
 
 export default function RenewalsPage() {
   const [account, setAccount] = useState("");
-  const [rows, setRows] = useState<RenewRow[] | null>(null);
+  const [cases, setCases] = useState<RenewalCase[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [packing, setPacking] = useState(false);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -36,12 +57,12 @@ export default function RenewalsPage() {
       },
     });
     if (!result.ok) {
-      setRows(null);
+      setCases(null);
       setError(result.message);
       setLoading(false);
       return;
     }
-    setRows(result.data.renewals);
+    setCases(result.data.cases);
     setLoading(false);
   }, [account]);
 
@@ -50,9 +71,44 @@ export default function RenewalsPage() {
   }, [load]);
 
   const ordered = useMemo(() => {
-    if (!rows) return [];
-    return [...rows].sort((a, b) => a.lockEnd.localeCompare(b.lockEnd));
-  }, [rows]);
+    if (!cases) return [];
+    return [...cases].sort((a, b) => a.renewBy.localeCompare(b.renewBy));
+  }, [cases]);
+
+  const buildPack = async () => {
+    setPacking(true);
+    setError(null);
+    const result = await apiJson<RenewalsResponse>("/api/renewals", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        cloudAccountId: account || undefined,
+      }),
+    });
+    setPacking(false);
+    if (!result.ok) {
+      setError(result.message);
+      return;
+    }
+    setCases(result.data.cases);
+  };
+
+  const exportPack = () => {
+    const payload = {
+      softSim: true,
+      exportedAt: new Date().toISOString(),
+      cases: ordered,
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "renewal-pack.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  };
 
   return (
     <StudioShell title="Renewals">
@@ -66,14 +122,25 @@ export default function RenewalsPage() {
             className="h-8 rounded-md border border-input bg-background px-2.5 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
           />
         </label>
+        <Button type="button" onClick={() => void buildPack()} disabled={packing}>
+          {packing ? "Building…" : "Build pack"}
+        </Button>
+        <Button
+          type="button"
+          variant="outline"
+          onClick={exportPack}
+          disabled={!ordered.length}
+        >
+          Export
+        </Button>
         <Button asChild variant="outline">
           <Link href="/gaps">Open gaps</Link>
         </Button>
       </div>
 
       <p className="mb-4 text-sm text-muted-foreground">
-        Renew-by queue from commitment lock ends. Buy/reduce/hold packs ship
-        later.
+        RenewalCase packs tie renew-by (lock_end) to linked gap $ with buy /
+        reduce / hold recommendations.
       </p>
 
       {loading ? <LoadingState label="Loading renew-by dates…" /> : null}
@@ -85,30 +152,39 @@ export default function RenewalsPage() {
       ) : null}
       {!loading && !error && ordered.length > 0 ? (
         <div className="overflow-x-auto border border-border">
-          <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
+          <table className="w-full min-w-[42rem] border-collapse text-left text-sm">
             <thead className="border-b border-border bg-muted/40 text-muted-foreground">
               <tr>
                 <th className="px-3 py-2 font-medium">Renew-by (lock_end)</th>
                 <th className="px-3 py-2 font-medium">Commitment</th>
+                <th className="px-3 py-2 font-medium">Recommendation</th>
+                <th className="px-3 py-2 font-medium">Gap $</th>
+                <th className="px-3 py-2 font-medium">Status</th>
                 <th className="px-3 py-2 font-medium">Provider</th>
-                <th className="px-3 py-2 font-medium">Account</th>
               </tr>
             </thead>
             <tbody>
               {ordered.map((row) => (
                 <tr
-                  key={row.commitmentId}
+                  key={row.id}
                   className="border-b border-border/70 last:border-0"
                 >
                   <td className="px-3 py-2 font-[family-name:var(--font-mono)] text-xs">
-                    {row.lockEnd.slice(0, 10)}
+                    {row.renewBy.slice(0, 10)}
                   </td>
-                  <td className="px-3 py-2">{row.name}</td>
-                  <td className="px-3 py-2 font-[family-name:var(--font-mono)] text-xs uppercase">
-                    {row.provider}
+                  <td className="px-3 py-2">{row.commitmentName}</td>
+                  <td className="px-3 py-2">
+                    <span data-recommended-action={row.recommendedAction}>
+                      {ACTION_LABEL[row.recommendedAction]}
+                    </span>
+                    <span className="sr-only">{row.recommendedAction}</span>
                   </td>
                   <td className="px-3 py-2 font-[family-name:var(--font-mono)] text-xs">
-                    {row.cloudAccountId.slice(0, 12)}…
+                    {formatUsd(row.gapUsd)}
+                  </td>
+                  <td className="px-3 py-2 capitalize">{row.status}</td>
+                  <td className="px-3 py-2 font-[family-name:var(--font-mono)] text-xs uppercase">
+                    {row.provider}
                   </td>
                 </tr>
               ))}

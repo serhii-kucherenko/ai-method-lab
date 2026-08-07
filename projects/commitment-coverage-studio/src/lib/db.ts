@@ -103,9 +103,36 @@ CREATE TABLE IF NOT EXISTS compare_results (
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
+CREATE TABLE IF NOT EXISTS renewal_cases (
+  id TEXT PRIMARY KEY,
+  org_id TEXT NOT NULL,
+  commitment_id TEXT NOT NULL,
+  cloud_account_id TEXT NOT NULL,
+  renew_by TEXT NOT NULL,
+  gap_usd REAL NOT NULL,
+  recommended_action TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'open',
+  linked_gap_ids TEXT NOT NULL DEFAULT '[]',
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS audit_entries (
+  id TEXT PRIMARY KEY,
+  org_id TEXT NOT NULL,
+  actor TEXT NOT NULL,
+  action TEXT NOT NULL,
+  entity_type TEXT NOT NULL,
+  entity_id TEXT NOT NULL,
+  detail TEXT NOT NULL DEFAULT '{}',
+  created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
 CREATE INDEX IF NOT EXISTS idx_commitments_org ON commitments(org_id);
 CREATE INDEX IF NOT EXISTS idx_usage_account ON usage_slices(cloud_account_id);
 CREATE INDEX IF NOT EXISTS idx_coverage_account ON coverage_snapshots(cloud_account_id);
+CREATE INDEX IF NOT EXISTS idx_renewal_cases_org ON renewal_cases(org_id);
+CREATE INDEX IF NOT EXISTS idx_audit_entries_org ON audit_entries(org_id);
 `;
 
 export type CoverageDb = Database.Database;
