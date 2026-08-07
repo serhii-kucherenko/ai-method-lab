@@ -50,7 +50,7 @@ export default function PricingPage() {
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
           Soft-sim packaging for seats and connected-account tiers. There is no
-          live card checkout — this lab does not capture payments.
+          live card checkout - this lab does not capture payments.
         </p>
 
         <section className="mt-14">
