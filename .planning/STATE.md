@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 2
 current_phase_name: Domain claim core
 status: ready_to_execute
-stopped_at: Completed 02-01-PLAN.md
-last_updated: "2026-08-07T08:13:03.737Z"
+stopped_at: Completed 02-02-PLAN.md
+last_updated: "2026-08-07T08:17:21.436Z"
 last_activity: 2026-08-07
 last_activity_desc: Phase 2 plans written and plan-check PASS
 progress:
   total_phases: 2
   completed_phases: 1
   total_plans: 5
-  completed_plans: 3
+  completed_plans: 4
 ---
 
 # Project State
@@ -32,7 +32,7 @@ Plan: 02-01 (next)
 Status: Ready to execute
 Last activity: 2026-08-07 — Phase 2 plans written and plan-check PASS
 
-Progress: [██████░░░░] 60%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
@@ -61,6 +61,7 @@ Progress: [██████░░░░] 60%
 | Phase 01-smoke-trust P01 | 13min | 3 tasks | 25 files |
 | Phase 01-smoke-trust P02 | 18min | 3 tasks | 8 files |
 | Phase 02 P01 | 25min | 3 tasks | 9 files |
+| Phase 02 P02 | 20min | 3 tasks | 11 files |
 
 ## Accumulated Context
 
@@ -80,6 +81,7 @@ Recent decisions affecting current work:
 - [Phase ?]: Honesty and Sources copy centralized in claim.ts for landing + /honesty
 - [Phase ?]: CTA placeholders are single-purpose stubs with home link only - no desk chrome
 - [Phase ?]: better-sqlite3 on Windows; A prorates by lock overlap; B never aliases A
+- [Phase ?]: Demo bearer ccs-demo-token; import max 500 rows; clientKey 409
 
 ### Pending Todos
 
@@ -98,7 +100,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-08-07T08:13:03.718Z
-Stopped at: Completed 02-01-PLAN.md
+Last session: 2026-08-07T08:17:21.400Z
+Stopped at: Completed 02-02-PLAN.md
 Resume file: None
 Next: `/gsd-execute-phase 2`

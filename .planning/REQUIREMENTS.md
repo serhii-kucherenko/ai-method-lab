@@ -13,8 +13,8 @@
 
 ### Domain claim
 
-- [ ] **DOM-01**: Commitment inventory CRUD with lock window, search, multi-cloud tag, archive on `/commitments`
-- [ ] **DOM-02**: Usage/billing import batches with status on `/imports`
+- [x] **DOM-01**: Commitment inventory CRUD with lock window, search, multi-cloud tag, archive on `/commitments`
+- [x] **DOM-02**: Usage/billing import batches with status on `/imports`
 - [ ] **DOM-03**: Coverage % and $ by account/window on `/coverage`
 - [ ] **DOM-04**: Under-cover + unused-commit gap findings in $ on `/gaps`
 - [x] **DOM-05**: Scorer A commit-matched coverage path
@@ -69,8 +69,8 @@
 | MKT-01 | Phase 1 | Complete |
 | MKT-02 | Phase 1 | Complete |
 | MKT-03 | Phase 1 | Complete |
-| DOM-01 | Phase 2 | Pending |
-| DOM-02 | Phase 2 | Pending |
+| DOM-01 | Phase 2 | Complete |
+| DOM-02 | Phase 2 | Complete |
 | DOM-03 | Phase 2 | Pending |
 | DOM-04 | Phase 2 | Pending |
 | DOM-05 | Phase 2 | Complete |
