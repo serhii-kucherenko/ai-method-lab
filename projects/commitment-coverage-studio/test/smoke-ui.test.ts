@@ -175,4 +175,46 @@ describe("smoke-ui: StudioShell IA + domain pages", () => {
       );
     }
   });
+
+  it("settings page wires org/members and audit under settings (PLT-01, PLT-04)", () => {
+    const page = read("src/app/settings/page.tsx");
+    assert.ok(page.includes("StudioShell"), "settings must use StudioShell");
+    assert.ok(
+      page.includes("/api/org") || page.includes("api/org"),
+      "settings must call /api/org",
+    );
+    assert.ok(
+      page.includes("/api/members") || page.includes("api/members"),
+      "settings must call /api/members",
+    );
+    assert.ok(
+      page.includes("/api/audit") || page.includes("api/audit"),
+      "settings must surface audit via /api/audit",
+    );
+    assert.ok(/Audit/i.test(page), "settings must show Audit section");
+  });
+
+  it("studio-shell keeps settings as footer utility, not eighth primary nav (D-12)", () => {
+    const shell = read("src/components/studio-shell.tsx");
+    assert.ok(
+      shell.includes('href="/settings"') || shell.includes("href='/settings'"),
+      "studio-shell must link settings as utility",
+    );
+    const primaryBlock =
+      shell.match(
+        /aria-label="Studio primary"[\s\S]*?<\/nav>/,
+      )?.[0] ?? "";
+    assert.ok(primaryBlock.length > 0, "primary nav block must exist");
+    assert.ok(
+      !primaryBlock.includes("/settings"),
+      "settings must not be in primary domain nav",
+    );
+    for (const href of DOMAIN_HREFS) {
+      assert.ok(
+        primaryBlock.includes(`href="${href}"`) ||
+          primaryBlock.includes(`href='${href}'`),
+        `primary nav must still include ${href}`,
+      );
+    }
+  });
 });

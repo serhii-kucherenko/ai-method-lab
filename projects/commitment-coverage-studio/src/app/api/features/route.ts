@@ -11,11 +11,18 @@ const FEATURES = [
   "marketing-landing",
   "renewal-cases",
   "renewal-recommendations",
+  "pricing",
+  "demo-guided",
+  "onboarding-checklist",
+  "flows-index",
+  "org-settings",
+  "members",
+  "audit",
 ] as const;
 
 /**
  * Feature inventory of capabilities that are real in this soft-sim lab.
- * Does not invent Phase 4 commercial features as done.
+ * Includes Phase 4 commercial + org/members/audit baselines once shipped.
  */
 export async function GET() {
   return NextResponse.json({
