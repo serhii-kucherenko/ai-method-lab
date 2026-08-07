@@ -4,15 +4,15 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 2
 current_phase_name: Domain claim core
-status: planning
-stopped_at: Completed 01-02-PLAN.md
-last_updated: "2026-08-07T07:49:56.607Z"
+status: ready_to_execute
+stopped_at: Phase 2 plans committed (02-01..02-03); checker PASS
+last_updated: "2026-08-07T08:00:00.000Z"
 last_activity: 2026-08-07
-last_activity_desc: Phase 01 complete, transitioned to Phase 2
+last_activity_desc: Phase 2 planned — dual scorers, inventory APIs, coverage/compare
 progress:
-  total_phases: 1
+  total_phases: 5
   completed_phases: 1
-  total_plans: 2
+  total_plans: 5
   completed_plans: 2
 ---
 
@@ -23,16 +23,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-07)
 
 **Core value:** Show where commitments are under-covered or wasted, in dollars, before renewal.
-**Current focus:** Phase 01 — smoke-trust
+**Current focus:** Phase 02 — domain-claim-core
 
 ## Current Position
 
 Phase: 2 — Domain claim core
-Plan: Not started
-Status: Ready to plan
-Last activity: 2026-08-07 — Phase 01 complete, transitioned to Phase 2
+Plan: 02-01 (next)
+Status: Ready to execute
+Last activity: 2026-08-07 — Phase 2 plans written and plan-check PASS
 
-Progress: [██████████] 100%
+Progress: Phase 1 complete; Phase 2 planned (0/3 plans executed)
 
 ## Performance Metrics
 
@@ -96,7 +96,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-08-07T07:43:56.601Z
-Stopped at: Completed 01-02-PLAN.md
+Last session: 2026-08-07T08:00:00.000Z
+Stopped at: Phase 2 plans committed (checker PASS); execute not started
 Resume file: None
-Next: `/gsd-execute-phase 1`
+Next: `/gsd-execute-phase 2`
