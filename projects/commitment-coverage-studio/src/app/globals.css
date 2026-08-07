@@ -125,6 +125,21 @@ body {
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .compare-result-highlight {
+    animation: compare-row-flash 0.9s ease-out;
+  }
+}
+
+@keyframes compare-row-flash {
+  from {
+    background-color: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
