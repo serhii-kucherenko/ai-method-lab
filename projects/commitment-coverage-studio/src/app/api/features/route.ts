@@ -18,6 +18,9 @@ const FEATURES = [
   "org-settings",
   "members",
   "audit",
+  "webhook-hmac",
+  "export-json-csv",
+  "rate-limit",
 ] as const;
 
 /**
