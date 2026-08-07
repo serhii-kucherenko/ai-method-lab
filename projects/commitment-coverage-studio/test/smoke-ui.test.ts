@@ -141,15 +141,26 @@ describe("smoke-ui: StudioShell IA + domain pages", () => {
     );
   });
 
-  it("renewals page uses StudioShell and lock_end / renew-by copy", () => {
+  it("renewals page uses StudioShell, pack recommendations, and /api/renewals", () => {
     const page = read("src/app/renewals/page.tsx");
     assert.ok(page.includes("StudioShell"), "renewals must use StudioShell");
     assert.ok(
-      page.includes("lock_end") ||
-        page.includes("lockEnd") ||
+      page.includes("/api/renewals") || page.includes("api/renewals"),
+      "renewals must call /api/renewals",
+    );
+    assert.ok(
+      page.includes("recommendedAction") ||
+        (page.includes("buy") &&
+          page.includes("reduce") &&
+          page.includes("hold")),
+      "renewals must reference recommendedAction or buy/reduce/hold",
+    );
+    assert.ok(
+      page.includes("No renew-by dates") ||
+        page.includes("lock_end") ||
         page.includes("renew-by") ||
-        page.includes("No renew-by dates"),
-      "renewals must reference lock_end or renew-by copy",
+        page.includes("Renew-by"),
+      "renewals must keep renew-by empty copy or lock_end language",
     );
   });
 

@@ -9,6 +9,8 @@ const FEATURES = [
   "features-inventory-api",
   "soft-sim-honesty",
   "marketing-landing",
+  "renewal-cases",
+  "renewal-recommendations",
 ] as const;
 
 /**
