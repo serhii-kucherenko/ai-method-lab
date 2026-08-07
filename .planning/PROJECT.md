@@ -65,4 +65,4 @@ Show where commitments are under-covered or wasted, in dollars, before renewal.
 | Standard granularity, YOLO auto | Hands-free 15m loop; balanced phase count for comprehensive bar | ✓ Good |
 
 ---
-*Last updated: 2026-08-07 after gsd-new-project --auto*
+*Last updated: 2026-08-07

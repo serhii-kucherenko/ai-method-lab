@@ -6,7 +6,7 @@ Ship a FinOps soft-sim that imports multi-cloud commitment inventory and usage, 
 
 ## Phases
 
-- [ ] **Phase 1: Smoke & trust** - Brand landing, honesty fence, and DESIGN tokens before domain theater
+- [x] **Phase 1: Smoke & trust** - Brand landing, honesty fence, and DESIGN tokens before domain theater (completed 2026-08-07)
 - [ ] **Phase 2: Domain claim core** - Inventory, imports, coverage/gaps, dual scorers, and ≥30 goldens
 - [ ] **Phase 3: Studio UI** - Live domain IA pages with filters and empty/error paths
 - [ ] **Phase 4: Renewals, commercial, platform** - Renewal packs, commercial surfaces, and platform must-haves
@@ -94,7 +94,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Smoke & trust | 2/2 | In Progress|  |
+| 1. Smoke & trust | 2/2 | Complete    | 2026-08-07 |
 | 2. Domain claim core | 0/TBD | Not started | - |
 | 3. Studio UI | 0/TBD | Not started | - |
 | 4. Renewals, commercial, platform | 0/TBD | Not started | - |
