@@ -42,10 +42,10 @@
 
 ### Sustain bar
 
-- [ ] **SUS-01**: ≥25 real features and ≥11 pages including required commercial routes
-- [ ] **SUS-02**: Live `next build` + app-up smoke (`GET /`)
+- [x] **SUS-01**: ≥25 real features and ≥11 pages including required commercial routes
+- [x] **SUS-02**: Live `next build` + app-up smoke (`GET /`)
 - [ ] **SUS-03**: README embeds live screenshots (landing, primary workspace, pricing, demo, onboarding/flows)
-- [ ] **SUS-04**: `try.html` offline dual-claim digest + in-app guide link
+- [x] **SUS-04**: `try.html` offline dual-claim digest + in-app guide link
 
 ## v2 Requirements
 
@@ -89,10 +89,10 @@
 | PLT-03 | Phase 4 | Complete |
 | PLT-04 | Phase 4 | Complete |
 | PLT-05 | Phase 4 | Complete |
-| SUS-01 | Phase 5 | Pending |
-| SUS-02 | Phase 5 | Pending |
+| SUS-01 | Phase 5 | Complete |
+| SUS-02 | Phase 5 | Complete |
 | SUS-03 | Phase 5 | Pending |
-| SUS-04 | Phase 5 | Pending |
+| SUS-04 | Phase 5 | Complete |
 
 **Coverage:** 27/27 v1 requirements mapped ✓
 
