@@ -84,13 +84,14 @@ Plans:
   2. Stranger can use real `/pricing` (seats + connected-account tiers, no live checkout), `/demo` (Import → Match → Gap → Renew including A vs B), `/onboarding` (checklist with progress), and `/flows` (≥5 named journeys with CTAs)
   3. Org admin can manage settings/members with bearer auth, receive HMAC-verified soft-sim webhooks, export gaps/renewals/compare as JSON/CSV, and see audit trail (non-primary) plus rate-limit feedback on APIs
 
-**Plans:** 4 plans
+**Plans:** 5 plans
 
 Plans:
 - [ ] 04-01-PLAN.md — RenewalCase packs buy/reduce/hold + act/dismiss audit
 - [ ] 04-02-PLAN.md — Commercial /pricing /demo /onboarding /flows (≥5 journeys)
 - [ ] 04-03-PLAN.md — Org settings, members, bearer, audit under /settings
-- [ ] 04-04-PLAN.md — Webhook HMAC, export JSON/CSV, rate-limit feedback
+- [ ] 04-04-PLAN.md — Webhook HMAC + export JSON/CSV
+- [ ] 04-05-PLAN.md — Rate-limit all mutating /api/* + client 429 feedback
 
 **UI hint**: yes
 
@@ -116,7 +117,7 @@ Plans:
 | 1. Smoke & trust | 2/2 | Complete    | 2026-08-07 |
 | 2. Domain claim core | 3/3 | Complete   | 2026-08-07 |
 | 3. Studio UI | 3/3 | Complete   | 2026-08-07 |
-| 4. Renewals, commercial, platform | 0/4 | Not started | - |
+| 4. Renewals, commercial, platform | 0/5 | Not started | - |
 | 5. Sustain bar | 0/TBD | Not started | - |
 
 ## Coverage map
