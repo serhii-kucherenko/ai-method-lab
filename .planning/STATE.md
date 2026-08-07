@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 3
 current_phase_name: Studio UI
 status: ready_to_execute
-stopped_at: Completed 03-01-PLAN.md
-last_updated: "2026-08-07T08:46:00.000Z"
+stopped_at: Completed Phase 3 Studio UI (03-01..03-03); VERIFICATION passed
+last_updated: "2026-08-07T08:48:33.540Z"
 last_activity: 2026-08-07
-last_activity_desc: Completed 03-01 StudioShell tracer; next 03-02
+last_activity_desc: Completed 03-01 StudioShell + live commitments/imports
 progress:
-  total_phases: 5
-  completed_phases: 2
+  total_phases: 3
+  completed_phases: 3
   total_plans: 8
-  completed_plans: 6
+  completed_plans: 8
 ---
 
 # Project State
@@ -28,11 +28,11 @@ See: .planning/PROJECT.md (updated 2026-08-07)
 ## Current Position
 
 Phase: 3 — Studio UI
-Plan: 2 of 3
+Plan: 3 of 3
 Status: Ready to execute
 Last activity: 2026-08-07 — Completed 03-01 StudioShell + live commitments/imports
 
-Progress: [████████░░] 75%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -66,6 +66,8 @@ Progress: [████████░░] 75%
 | Phase 02 P02 | 20min | 3 tasks | 11 files |
 | Phase 02 P03 | 25min | 3 tasks | 8 files |
 | Phase 03-studio-ui P01 | 25min | 3 tasks | 7 files |
+| Phase 03-studio-ui P02 | 20min | 3 tasks | 6 files |
+| Phase 03-studio-ui P03 | 15min | 3 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -84,6 +86,7 @@ Recent decisions affecting current work:
 - CoverageEngine A-only; CompareService A+B on shared ScoreInput
 - Literal hrefs in StudioShell so IA smoke can assert primary routes
 - Client-side provider filter on commitments; search hits API search param
+- [Phase ?]: Thin GET /api/renewals for lock_end queue without Phase 4 packs
 
 ### Pending Todos
 
@@ -102,7 +105,7 @@ None. Next: execute 03-02 (coverage / gaps / compare).
 
 ## Session Continuity
 
-Last session: 2026-08-07T08:46:00.000Z
-Stopped at: Completed 03-01-PLAN.md
+Last session: 2026-08-07T08:48:33.508Z
+Stopped at: Completed Phase 3 Studio UI (03-01..03-03); VERIFICATION passed
 Resume file: None
 Next: Execute 03-02-PLAN.md (live /coverage /gaps /compare)

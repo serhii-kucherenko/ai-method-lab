@@ -8,7 +8,7 @@ Ship a FinOps soft-sim that imports multi-cloud commitment inventory and usage, 
 
 - [x] **Phase 1: Smoke & trust** - Brand landing, honesty fence, and DESIGN tokens before domain theater (completed 2026-08-07)
 - [x] **Phase 2: Domain claim core** - Inventory, imports, coverage/gaps, dual scorers, and ≥30 goldens (completed 2026-08-07)
-- [ ] **Phase 3: Studio UI** - Live domain IA pages with filters and empty/error paths
+- [x] **Phase 3: Studio UI** - Live domain IA pages with filters and empty/error paths (completed 2026-08-07)
 - [ ] **Phase 4: Renewals, commercial, platform** - Renewal packs, commercial surfaces, and platform must-haves
 - [ ] **Phase 5: Sustain bar** - Live build, app-up smoke, README screenshots, try.html, feature bar
 
@@ -63,13 +63,13 @@ Plans:
   2. User can open `/scoreboard` and see an account/gap leaderboard rollup across clouds
   3. Primary nav has no `/jobs` `/lifecycle` `/scenario` `/batch` desk shells (audit/goldens not primary IA)
 
-**Plans**: 1/3 plans executed
+**Plans**: 3/3 plans complete
 
 Plans:
 
 - [x] 03-01-PLAN.md — StudioShell + Bearer client + live /commitments /imports (UI-03 tracer)
-- [ ] 03-02-PLAN.md — Live /coverage /gaps /compare with filters and motion
-- [ ] 03-03-PLAN.md — /scoreboard API+UI (UI-02) + /renewals queue + full IA smoke
+- [x] 03-02-PLAN.md — Live /coverage /gaps /compare with filters and motion
+- [x] 03-03-PLAN.md — /scoreboard API+UI (UI-02) + /renewals queue + full IA smoke
 
 **UI hint**: yes
 
@@ -108,7 +108,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Smoke & trust | 2/2 | Complete    | 2026-08-07 |
 | 2. Domain claim core | 3/3 | Complete   | 2026-08-07 |
-| 3. Studio UI | 1/3 | In Progress|  |
+| 3. Studio UI | 3/3 | Complete   | 2026-08-07 |
 | 4. Renewals, commercial, platform | 0/TBD | Not started | - |
 | 5. Sustain bar | 0/TBD | Not started | - |
 
