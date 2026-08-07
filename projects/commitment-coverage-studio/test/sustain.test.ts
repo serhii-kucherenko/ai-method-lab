@@ -9,6 +9,34 @@ function read(rel: string): string {
   return readFileSync(join(root, rel), "utf8");
 }
 
+function featureIdsFromSource(src: string): Set<string> {
+  return new Set([...src.matchAll(/"([a-z0-9-]+)"/g)].map((m) => m[1]));
+}
+
+/** Locked shipped-surface IDs (D-01 / SUS-01). Each entry is a set of accepted aliases. */
+const REQUIRED_FEATURE_ALIASES: readonly (readonly string[])[] = [
+  ["commitments", "inventory-commitments"],
+  ["coverage"],
+  ["gaps"],
+  ["renewals"],
+  ["imports"],
+  ["compare", "dual-compare"],
+  ["scoreboard"],
+  ["pricing"],
+  ["demo-guided", "demo"],
+  ["onboarding-checklist", "onboarding"],
+  ["flows-index", "flows"],
+  ["org-settings"],
+  ["members"],
+  ["audit"],
+  ["webhook-hmac"],
+  ["export-json-csv"],
+  ["rate-limit"],
+  ["dual-scorers-commit-matched", "dual-scorer", "dual-scorers"],
+  ["dual-scorers-ondemand-blind"],
+  ["goldens-catalog", "goldens"],
+];
+
 const REQUIRED_PAGES = [
   "page.tsx",
   "pricing/page.tsx",
@@ -26,12 +54,27 @@ const REQUIRED_PAGES = [
 describe("sustain: feature and page bars (SUS-01)", () => {
   it("features inventory lists ≥25 real capability IDs", () => {
     const src = read("src/app/api/features/route.ts");
-    const ids = [...src.matchAll(/"([a-z0-9-]+)"/g)].map((m) => m[1]);
-    const unique = new Set(ids);
+    const unique = featureIdsFromSource(src);
     assert.ok(
       unique.size >= 25,
       `expected ≥25 features, got ${unique.size}: ${[...unique].join(", ")}`,
     );
+  });
+
+  it("locks shipped-surface feature ID strings (domain + commercial + platform)", () => {
+    const src = read("src/app/api/features/route.ts");
+    const unique = featureIdsFromSource(src);
+    const missing: string[] = [];
+    for (const aliases of REQUIRED_FEATURE_ALIASES) {
+      const hit = aliases.some((id) => unique.has(id));
+      if (!hit) missing.push(aliases.join("|"));
+    }
+    assert.equal(
+      missing.length,
+      0,
+      `missing locked feature IDs: ${missing.join(", ")} (have: ${[...unique].join(", ")})`,
+    );
+    assert.ok(unique.size >= 25, `expected ≥25 features with locked IDs, got ${unique.size}`);
   });
 
   it("exposes ≥11 page routes including commercial required set", () => {
