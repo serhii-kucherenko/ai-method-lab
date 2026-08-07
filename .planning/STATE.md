@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_phase: 3
-current_phase_name: Studio UI
-status: ready_to_execute
+current_phase: 4
+current_phase_name: Renewals, commercial, platform
+status: ready_to_plan
 stopped_at: Completed Phase 3 Studio UI (03-01..03-03); VERIFICATION passed
-last_updated: "2026-08-07T08:48:33.540Z"
+last_updated: "2026-08-07T08:50:00.000Z"
 last_activity: 2026-08-07
-last_activity_desc: Completed 03-01 StudioShell + live commitments/imports
+last_activity_desc: Phase 3 Studio UI complete — seven domain routes live; next plan Phase 4
 progress:
-  total_phases: 3
+  total_phases: 5
   completed_phases: 3
   total_plans: 8
   completed_plans: 8
@@ -23,24 +23,24 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-07)
 
 **Core value:** Show where commitments are under-covered or wasted, in dollars, before renewal.
-**Current focus:** Phase 03 — Studio UI
+**Current focus:** Phase 04 — Renewals, commercial, platform
 
 ## Current Position
 
-Phase: 3 — Studio UI
-Plan: 3 of 3
-Status: Ready to execute
-Last activity: 2026-08-07 — Completed 03-01 StudioShell + live commitments/imports
+Phase: 4 — Renewals, commercial, platform
+Plan: — (not planned yet)
+Status: Ready to plan
+Last activity: 2026-08-07 — Phase 3 Studio UI complete (seven domain routes + scoreboard)
 
-Progress: [██████████] 100%
+Progress: [██████░░░░] 60%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 6
-- Average duration: ~21 min
-- Total execution time: ~2 hours
+- Total plans completed: 8
+- Average duration: ~20 min
+- Total execution time: ~2.5 hours
 
 **By Phase:**
 
@@ -48,11 +48,11 @@ Progress: [██████████] 100%
 |-------|-------|-------|----------|
 | 01 | 2 | ~31min | ~15min |
 | 02 | 3 | ~70min | ~23min |
-| 03 | 1/3 | ~25min | ~25min |
+| 03 | 3 | ~60min | ~20min |
 
 **Recent Trend:**
 
-- Last 6 plans: Phase 1×2 + Phase 2×3 + Phase 3×1
+- Last 8 plans: Phase 1×2 + Phase 2×3 + Phase 3×3
 - Trend: stable
 
 *Updated after each plan completion*
@@ -85,8 +85,8 @@ Recent decisions affecting current work:
 - Demo bearer ccs-demo-token; import max 500 rows; clientKey 409
 - CoverageEngine A-only; CompareService A+B on shared ScoreInput
 - Literal hrefs in StudioShell so IA smoke can assert primary routes
-- Client-side provider filter on commitments; search hits API search param
-- [Phase ?]: Thin GET /api/renewals for lock_end queue without Phase 4 packs
+- Thin GET /api/renewals for lock_end queue without Phase 4 packs
+- Scoreboard aggregates gap_findings + latest coverage_pct; empty org returns []
 
 ### Pending Todos
 
@@ -94,7 +94,7 @@ None yet.
 
 ### Blockers/Concerns
 
-None. Next: execute 03-02 (coverage / gaps / compare).
+None. Next: `/gsd-plan-phase 4` for renewals packs, commercial surfaces, platform must-haves.
 
 ## Deferred Items
 
@@ -105,7 +105,7 @@ None. Next: execute 03-02 (coverage / gaps / compare).
 
 ## Session Continuity
 
-Last session: 2026-08-07T08:48:33.508Z
+Last session: 2026-08-07T08:50:00.000Z
 Stopped at: Completed Phase 3 Studio UI (03-01..03-03); VERIFICATION passed
 Resume file: None
-Next: Execute 03-02-PLAN.md (live /coverage /gaps /compare)
+Next: Plan Phase 4 (`/gsd-plan-phase 4`)
