@@ -52,3 +52,21 @@ describe("sustain: feature and page bars (SUS-01)", () => {
     assert.ok(pages.length >= 11, `expected ≥11 pages, got ${pages.length}`);
   });
 });
+
+describe("sustain: try.html dual-claim (SUS-04)", () => {
+  it("try.html exists with commit-matched vs on-demand-blind digest", () => {
+    const tryPath = join(root, "try.html");
+    assert.ok(existsSync(tryPath), "try.html must exist");
+    const html = readFileSync(tryPath, "utf8");
+    assert.match(html, /commit-matched/i);
+    assert.match(html, /on-demand/i);
+    assert.match(html, /soft-sim|soft sim/i);
+  });
+
+  it("honesty or demo links to try.html as in-app guide", () => {
+    const honesty = read("src/app/honesty/page.tsx");
+    const demo = read("src/app/demo/page.tsx");
+    const linked = /try\.html/.test(honesty) || /try\.html/.test(demo);
+    assert.ok(linked, "honesty or demo must link to try.html");
+  });
+});
