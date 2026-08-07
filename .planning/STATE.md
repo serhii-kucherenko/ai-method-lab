@@ -4,16 +4,16 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 4
 current_phase_name: Renewals, commercial, platform
-status: ready_to_plan
-stopped_at: Completed Phase 3 Studio UI (03-01..03-03); VERIFICATION passed
-last_updated: "2026-08-07T08:50:00.000Z"
+status: in_progress
+stopped_at: Completed 04-01-PLAN.md
+last_updated: "2026-08-07T09:16:01.876Z"
 last_activity: 2026-08-07
-last_activity_desc: Phase 3 Studio UI complete — seven domain routes live; next plan Phase 4
+last_activity_desc: Completed 04-01 RenewalCase packs (buy/reduce/hold + act/dismiss audit)
 progress:
-  total_phases: 5
+  total_phases: 4
   completed_phases: 3
-  total_plans: 8
-  completed_plans: 8
+  total_plans: 13
+  completed_plans: 9
 ---
 
 # Project State
@@ -28,11 +28,11 @@ See: .planning/PROJECT.md (updated 2026-08-07)
 ## Current Position
 
 Phase: 4 — Renewals, commercial, platform
-Plan: — (not planned yet)
-Status: Ready to plan
-Last activity: 2026-08-07 — Phase 3 Studio UI complete (seven domain routes + scoreboard)
+Plan: 02 of 05
+Status: Ready to execute
+Last activity: 2026-08-07 — Completed 04-01 RenewalCase packs (buy/reduce/hold + act/dismiss audit)
 
-Progress: [██████░░░░] 60%
+Progress: [███████░░░] 69%
 
 ## Performance Metrics
 
@@ -68,6 +68,7 @@ Progress: [██████░░░░] 60%
 | Phase 03-studio-ui P01 | 25min | 3 tasks | 7 files |
 | Phase 03-studio-ui P02 | 20min | 3 tasks | 6 files |
 | Phase 03-studio-ui P03 | 15min | 3 tasks | 6 files |
+| Phase 04 P01 | 28min | 3 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -85,8 +86,11 @@ Recent decisions affecting current work:
 - Demo bearer ccs-demo-token; import max 500 rows; clientKey 409
 - CoverageEngine A-only; CompareService A+B on shared ScoreInput
 - Literal hrefs in StudioShell so IA smoke can assert primary routes
-- Thin GET /api/renewals for lock_end queue without Phase 4 packs
+- Thin GET /api/renewals upgraded to RenewalCase packs (04-01)
 - Scoreboard aggregates gap_findings + latest coverage_pct; empty org returns []
+- [Phase 04]: RenewalPacker: spill→buy, unused→reduce, near-zero/balanced→hold (D-01)
+- [Phase 04]: POST pack replaces open renewal_cases; client JSON export until 04-04
+- [Phase 04]: D-10 partial: audit on renewals act/dismiss; no primary audit nav
 
 ### Pending Todos
 
@@ -94,7 +98,7 @@ None yet.
 
 ### Blockers/Concerns
 
-None. Next: `/gsd-plan-phase 4` for renewals packs, commercial surfaces, platform must-haves.
+None. Next: execute 04-02 commercial /pricing /demo /onboarding /flows.
 
 ## Deferred Items
 
@@ -105,7 +109,7 @@ None. Next: `/gsd-plan-phase 4` for renewals packs, commercial surfaces, platfor
 
 ## Session Continuity
 
-Last session: 2026-08-07T08:50:00.000Z
-Stopped at: Completed Phase 3 Studio UI (03-01..03-03); VERIFICATION passed
+Last session: 2026-08-07T09:16:01.855Z
+Stopped at: Completed 04-01-PLAN.md
 Resume file: None
-Next: Plan Phase 4 (`/gsd-plan-phase 4`)
+Next: Execute 04-02-PLAN.md (commercial surfaces)

@@ -24,7 +24,7 @@
 
 ### Studio surfaces
 
-- [ ] **UI-01**: `/renewals` renewal cases with buy/reduce/hold recommendations
+- [x] **UI-01**: `/renewals` renewal cases with buy/reduce/hold recommendations
 - [x] **UI-02**: `/scoreboard` account/gap leaderboard
 - [x] **UI-03**: Domain IA only — no `/jobs` `/lifecycle` `/scenario` `/batch` primary shells
 
@@ -79,7 +79,7 @@
 | DOM-08 | Phase 2 | Complete |
 | UI-02 | Phase 3 | Complete |
 | UI-03 | Phase 3 | Complete |
-| UI-01 | Phase 4 | Pending |
+| UI-01 | Phase 4 | Complete |
 | COM-01 | Phase 4 | Pending |
 | COM-02 | Phase 4 | Pending |
 | COM-03 | Phase 4 | Pending |
