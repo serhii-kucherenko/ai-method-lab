@@ -114,7 +114,7 @@ status: complete
 4. **Task 2: PATCH act/dismiss (GREEN)** - `34eb7814` (feat)
 5. **Task 3: Features + smoke** - `b6f67ce9` (feat)
 
-**Plan metadata:** (pending docs commit)
+**Plan metadata:** `65bdb49c` (docs: complete plan)
 
 ## Files Created/Modified
 
