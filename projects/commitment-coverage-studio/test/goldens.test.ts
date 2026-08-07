@@ -2,12 +2,13 @@ import assert from "node:assert/strict";
 import { mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { describe, it, after } from "node:test";
+import { after, describe, it } from "node:test";
 import {
   scoreCommitMatched,
   scoreOnDemandBlind,
 } from "../src/domain/scoring";
 import type { ScoreInput } from "../src/domain/types";
+import { GOLDENS } from "../src/goldens";
 import { closeDb, migrate, openDb } from "../src/lib/db";
 
 const overCover: ScoreInput = {
@@ -114,5 +115,40 @@ describe("tracer: sqlite migrate round-trip", () => {
     assert.equal(row.rate_usd, 500);
     assert.equal(row.lock_start, "2026-01-01");
     db.close();
+  });
+});
+
+describe("goldens catalog ≥30 dual-impl fixtures", () => {
+  it("GOLDENS length is at least 30", () => {
+    assert.ok(GOLDENS.length >= 30, `expected ≥30, got ${GOLDENS.length}`);
+  });
+
+  it("every golden stores A and B from scorers; B is not a copy of A", () => {
+    for (const g of GOLDENS) {
+      const a = scoreCommitMatched(g.input);
+      const b = scoreOnDemandBlind(g.input);
+      assert.deepEqual(g.pathA, a);
+      assert.deepEqual(g.pathB, b);
+      assert.notDeepEqual(
+        g.pathA,
+        g.pathB,
+        `${g.id} must not treat B as a copy of A`,
+      );
+      assert.equal(b.unusedCommitUsd, 0);
+      assert.equal(b.coveredUsd, 0);
+    }
+  });
+
+  it("at least 10 fixtures assert non-zero abs(A.gapUsd - B.gapUsd)", () => {
+    const divergent = GOLDENS.filter(
+      (g) => Math.abs(g.pathA.gapUsd - g.pathB.gapUsd) > 0,
+    );
+    assert.ok(
+      divergent.length >= 10,
+      `need ≥10 dollar-divergent goldens, got ${divergent.length}`,
+    );
+    for (const g of divergent) {
+      assert.ok(Math.abs(g.deltaUsd) > 0);
+    }
   });
 });
