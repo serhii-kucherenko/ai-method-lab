@@ -38,6 +38,7 @@ const DEFAULT_PATHS = [
 const WORKSPACE_CANDIDATES = [
   "/packs",
   "/workspace",
+  "/commitments",
   "/jobs",
   "/dashboard",
   "/bench",
@@ -144,42 +145,71 @@ function buildShotList(productDir, pathOverride) {
   return shots;
 }
 
-async function loadPlaywright() {
-  try {
-    return require("playwright");
-  } catch {
-    /* install below */
+function requirePlaywright(productDir) {
+  const candidates = [
+    () => require("playwright"),
+    () => require(join(productDir, "node_modules", "playwright")),
+    () => require(join(repoRoot, "node_modules", "playwright")),
+  ];
+  for (const load of candidates) {
+    try {
+      return load();
+    } catch {
+      /* try next */
+    }
   }
+  return null;
+}
 
-  console.log("Installing playwright (one-time for screenshot capture)...");
+async function loadPlaywright(productDir) {
+  const existing = requirePlaywright(productDir);
+  if (existing) return existing;
+
+  const installCwd =
+    existsSync(join(repoRoot, "package.json")) ? repoRoot : productDir;
+  console.log(
+    `Installing playwright (one-time for screenshot capture) in ${installCwd}...`,
+  );
   await new Promise((resolveInstall, reject) => {
     const child = spawn(
       process.platform === "win32" ? "npm.cmd" : "npm",
       ["install", "--no-save", "playwright@1.55.0"],
-      { cwd: repoRoot, stdio: "inherit", env: process.env },
+      {
+        cwd: installCwd,
+        stdio: "inherit",
+        env: process.env,
+        shell: process.platform === "win32",
+      },
     );
+    child.on("error", reject);
     child.on("close", (code) =>
       code === 0 ? resolveInstall() : reject(new Error(`npm install playwright failed: ${code}`)),
     );
   });
 
-  const pw = require("playwright");
-  // Ensure Chromium is present; ignore if already cached.
-  await new Promise((resolveInstall) => {
-    const child = spawn(
-      process.execPath,
-      [join(repoRoot, "node_modules", "playwright", "cli.js"), "install", "chromium"],
-      { cwd: repoRoot, stdio: "inherit", env: process.env },
-    );
-    const timer = setTimeout(() => {
-      child.kill("SIGTERM");
-      resolveInstall();
-    }, 120_000);
-    child.on("close", () => {
-      clearTimeout(timer);
-      resolveInstall();
+  const pw = requirePlaywright(productDir) || require("playwright");
+  const cliCandidates = [
+    join(installCwd, "node_modules", "playwright", "cli.js"),
+    join(productDir, "node_modules", "playwright", "cli.js"),
+  ];
+  const cli = cliCandidates.find((p) => existsSync(p));
+  if (cli) {
+    await new Promise((resolveInstall) => {
+      const child = spawn(process.execPath, [cli, "install", "chromium"], {
+        cwd: installCwd,
+        stdio: "inherit",
+        env: process.env,
+      });
+      const timer = setTimeout(() => {
+        child.kill("SIGTERM");
+        resolveInstall();
+      }, 120_000);
+      child.on("close", () => {
+        clearTimeout(timer);
+        resolveInstall();
+      });
     });
-  });
+  }
   return pw;
 }
 
@@ -287,11 +317,13 @@ async function main() {
       }
     }
 
-    const { chromium } = await loadPlaywright();
-    const browser = await chromium.launch({
-      headless: true,
-      channel: "chrome",
-    });
+    const { chromium } = await loadPlaywright(productDir);
+    let browser;
+    try {
+      browser = await chromium.launch({ headless: true });
+    } catch {
+      browser = await chromium.launch({ headless: true, channel: "chrome" });
+    }
     const page = await browser.newPage({
       viewport: { width: 1440, height: 900 },
       deviceScaleFactor: 1,

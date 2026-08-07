@@ -6,7 +6,25 @@ Soft-sim FinOps desk that imports multi-cloud commitment inventory and usage, sc
 
 ## Screenshots
 
-_Live captures land in Phase 5 plan 02 - see `screenshots/` once capture completes._
+### Landing
+
+![Landing](screenshots/01-landing.png)
+
+### Commitments
+
+![Commitments](screenshots/02-commitments.png)
+
+### Pricing
+
+![Pricing](screenshots/03-pricing.png)
+
+### Demo
+
+![Demo](screenshots/04-demo.png)
+
+### Onboarding
+
+![Onboarding](screenshots/05-onboarding.png)
 
 ## Run locally
 
