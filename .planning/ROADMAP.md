@@ -22,7 +22,10 @@ Ship a FinOps soft-sim that imports multi-cloud commitment inventory and usage, 
   1. Visitor opens `/` and sees Commitment Coverage Studio as the hero brand selling dollar gap before renewal (not a generic lab desk)
   2. Visitor opens `/honesty` and reads soft-sim fence (not billing SOR; not Idle Seat / True Up) with Sources
   3. Visible UI uses DESIGN tokens (Fraunces / Source Sans 3 / teal covered / rust gap) without isomorphic desk chrome
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 01-01-PLAN.md — Scaffold Next app, DESIGN tokens, brand-first `/` tracer
+- [ ] 01-02-PLAN.md — Full landing, `/honesty` fence + Sources, CTA placeholders
 **UI hint**: yes
 
 ### Phase 2: Domain claim core
@@ -74,7 +77,7 @@ Ship a FinOps soft-sim that imports multi-cloud commitment inventory and usage, 
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Smoke & trust | 0/TBD | Not started | - |
+| 1. Smoke & trust | 0/2 | Planned | - |
 | 2. Domain claim core | 0/TBD | Not started | - |
 | 3. Studio UI | 0/TBD | Not started | - |
 | 4. Renewals, commercial, platform | 0/TBD | Not started | - |
