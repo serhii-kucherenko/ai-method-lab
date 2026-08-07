@@ -131,6 +131,9 @@ describe("smoke-mkt: DESIGN tokens and brand landing", () => {
       "src/app/honesty/page.tsx",
       "src/app/commitments/page.tsx",
       "src/app/demo/page.tsx",
+      "src/app/pricing/page.tsx",
+      "src/app/onboarding/page.tsx",
+      "src/app/flows/page.tsx",
     ];
     const blob = files
       .filter((rel) => existsSync(join(root, rel)))
@@ -141,6 +144,72 @@ describe("smoke-mkt: DESIGN tokens and brand landing", () => {
       assert.ok(
         !blob.includes(`href="${desk}"`) && !blob.includes(`href='${desk}'`),
         `marketing IA must not link to ${desk}`,
+      );
+    }
+  });
+});
+
+describe("smoke-mkt: commercial surfaces COM-01..04", () => {
+  it("/pricing shows seat + connected-account tiers and no live checkout (COM-01, D-03)", () => {
+    const rel = "src/app/pricing/page.tsx";
+    assert.ok(existsSync(join(root, rel)), "pricing page must exist");
+    const page = read(rel);
+    assert.ok(/seat/i.test(page), "pricing must mention seats");
+    assert.ok(
+      /connected.?account/i.test(page),
+      "pricing must mention connected-account tiers",
+    );
+    assert.ok(
+      /no live (card )?checkout/i.test(page) ||
+        (/soft-sim/i.test(page) && /checkout/i.test(page)),
+      "pricing must state soft-sim / no live card checkout",
+    );
+    assert.ok(
+      page.includes('href="/demo"') || page.includes("href='/demo'"),
+      "pricing must CTA to /demo",
+    );
+    assert.ok(
+      !/card number|stripe|payment form|credit card/i.test(page),
+      "pricing must not add live payment capture",
+    );
+  });
+
+  it("/demo guides Import → Match → Gap → Renew with A vs B (COM-02, D-04)", () => {
+    const page = read("src/app/demo/page.tsx");
+    assert.ok(/Import/i.test(page), "demo must include Import step");
+    assert.ok(/Match/i.test(page), "demo must include Match step");
+    assert.ok(/Gap/i.test(page), "demo must include Gap step");
+    assert.ok(/Renew/i.test(page), "demo must include Renew step");
+    assert.ok(
+      /A\s*vs\s*B|compare/i.test(page),
+      "demo must include A vs B compare step",
+    );
+    for (const href of ["/imports", "/gaps", "/compare", "/renewals"]) {
+      assert.ok(
+        page.includes(`href="${href}"`) || page.includes(`href='${href}'`),
+        `demo must CTA to ${href}`,
+      );
+    }
+    assert.ok(
+      page.includes('href="/commitments"') ||
+        page.includes("href='/commitments'") ||
+        page.includes('href="/coverage"') ||
+        page.includes("href='/coverage'"),
+      "demo Match step must link /commitments or /coverage",
+    );
+  });
+
+  it("pricing and demo avoid isomorphic desk IA links (D-12)", () => {
+    const files = ["src/app/pricing/page.tsx", "src/app/demo/page.tsx"];
+    const blob = files
+      .filter((rel) => existsSync(join(root, rel)))
+      .map((rel) => read(rel))
+      .join("\n");
+
+    for (const desk of ["/jobs", "/lifecycle", "/scenario", "/batch"]) {
+      assert.ok(
+        !blob.includes(`href="${desk}"`) && !blob.includes(`href='${desk}'`),
+        `commercial IA must not link to ${desk}`,
       );
     }
   });
