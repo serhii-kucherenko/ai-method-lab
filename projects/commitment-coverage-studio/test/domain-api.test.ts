@@ -790,4 +790,68 @@ describe("domain-api: renewals pack", () => {
       ),
     );
   });
+
+  it("PATCH act/dismiss updates status and writes audit entry", async () => {
+    const renewals = await import("../src/app/api/renewals/route");
+    const detail = await import("../src/app/api/renewals/[id]/route");
+    const packed = await renewals.POST(
+      jsonReq("http://local/api/renewals", {
+        method: "POST",
+        headers: auth,
+        json: {},
+      }),
+    );
+    const packBody = await packed.json();
+    const openCase = packBody.cases.find(
+      (c: { status: string }) => c.status === "open",
+    );
+    assert.ok(openCase, "need an open case to act");
+
+    const actRes = await detail.PATCH(
+      jsonReq(`http://local/api/renewals/${openCase.id}`, {
+        method: "PATCH",
+        headers: auth,
+        json: { status: "acted" },
+      }),
+      { params: Promise.resolve({ id: openCase.id }) },
+    );
+    assert.equal(actRes.status, 200);
+    const acted = await actRes.json();
+    assert.equal(acted.softSim, true);
+    assert.equal(acted.case.status, "acted");
+
+    const { getDb } = await import("../src/lib/db");
+    const audits = getDb()
+      .prepare(
+        `SELECT action, entity_id FROM audit_entries WHERE entity_id = ?`,
+      )
+      .all(openCase.id) as { action: string; entity_id: string }[];
+    assert.ok(
+      audits.some((a) => a.action === "renewals.act"),
+      "expected renewals.act audit row",
+    );
+
+    const second = packBody.cases.find(
+      (c: { id: string; status: string }) =>
+        c.id !== openCase.id && c.status === "open",
+    );
+    assert.ok(second, "need a second open case to dismiss");
+    const dismissRes = await detail.PATCH(
+      jsonReq(`http://local/api/renewals/${second.id}`, {
+        method: "PATCH",
+        headers: auth,
+        json: { status: "dismissed" },
+      }),
+      { params: Promise.resolve({ id: second.id }) },
+    );
+    assert.equal(dismissRes.status, 200);
+    const dismissed = await dismissRes.json();
+    assert.equal(dismissed.case.status, "dismissed");
+    const dismissAudits = getDb()
+      .prepare(
+        `SELECT action FROM audit_entries WHERE entity_id = ? AND action = ?`,
+      )
+      .all(second.id, "renewals.dismiss") as { action: string }[];
+    assert.equal(dismissAudits.length, 1);
+  });
 });
