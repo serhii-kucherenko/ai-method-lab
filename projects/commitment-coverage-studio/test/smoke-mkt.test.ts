@@ -232,6 +232,10 @@ describe("smoke-mkt: commercial surfaces COM-01..04", () => {
     assert.ok(hasRoute(page, "/renewals"), "Renewal pack journey must CTA /renewals");
     assert.ok(hasRoute(page, "/imports"), "Import & match journey must CTA /imports");
     assert.ok(hasRoute(page, "/compare"), "Dual compare journey must CTA /compare");
+    assert.ok(
+      hasRoute(page, "/scoreboard"),
+      "Multi-cloud rollup journey must CTA /scoreboard",
+    );
   });
 
   it("commercial pages avoid isomorphic desk IA links (D-12)", () => {

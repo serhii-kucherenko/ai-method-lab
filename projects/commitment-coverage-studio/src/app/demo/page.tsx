@@ -2,44 +2,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { DISPLAY_NAME } from "@/lib/claim";
 
-const STEPS = [
-  {
-    n: 1,
-    title: "Import",
-    body: "Bring soft-sim usage (and optional commit inventory) into a batch you can inspect.",
-    href: "/imports",
-    cta: "Open imports",
-  },
-  {
-    n: 2,
-    title: "Match",
-    body: "Align Savings Plans, RIs, and CUDs to accounts — then score coverage on the matched view.",
-    href: "/commitments",
-    cta: "Open commitments",
-  },
-  {
-    n: 3,
-    title: "Gap",
-    body: "Read under-cover and unused commit dollars as findings you can defend in the renewals room.",
-    href: "/gaps",
-    cta: "Open gaps",
-  },
-  {
-    n: 4,
-    title: "A vs B compare",
-    body: "Run commit-matched versus on-demand-blind so the dual claim is visible before you renew.",
-    href: "/compare",
-    cta: "Open compare",
-  },
-  {
-    n: 5,
-    title: "Renew",
-    body: "Build a renewal pack with buy / reduce / hold actions tied to gap dollars.",
-    href: "/renewals",
-    cta: "Open renewals",
-  },
-] as const;
-
 export default function DemoPage() {
   return (
     <main className="ledger-field flex flex-1 flex-col">
@@ -56,27 +18,91 @@ export default function DemoPage() {
         </p>
 
         <ol className="mt-12 space-y-10">
-          {STEPS.map((step) => (
-            <li
-              key={step.n}
-              className="border-t border-[color-mix(in_srgb,var(--color-rule)_35%,transparent)] pt-8"
-            >
-              <p className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.16em] text-[var(--color-accent)]">
-                Step {step.n}
-              </p>
-              <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-foreground">
-                {step.title}
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {step.body}
-              </p>
-              <div className="mt-4">
-                <Button asChild variant="outline" size="sm">
-                  <Link href={step.href}>{step.cta}</Link>
-                </Button>
-              </div>
-            </li>
-          ))}
+          <li className="border-t border-[color-mix(in_srgb,var(--color-rule)_35%,transparent)] pt-8">
+            <p className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.16em] text-[var(--color-accent)]">
+              Step 1
+            </p>
+            <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-foreground">
+              Import
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              Bring soft-sim usage (and optional commit inventory) into a batch
+              you can inspect.
+            </p>
+            <div className="mt-4">
+              <Button asChild variant="outline" size="sm">
+                <Link href="/imports">Open imports</Link>
+              </Button>
+            </div>
+          </li>
+          <li className="border-t border-[color-mix(in_srgb,var(--color-rule)_35%,transparent)] pt-8">
+            <p className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.16em] text-[var(--color-accent)]">
+              Step 2
+            </p>
+            <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-foreground">
+              Match
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              Align Savings Plans, RIs, and CUDs to accounts — then score coverage
+              on the matched view.
+            </p>
+            <div className="mt-4">
+              <Button asChild variant="outline" size="sm">
+                <Link href="/commitments">Open commitments</Link>
+              </Button>
+            </div>
+          </li>
+          <li className="border-t border-[color-mix(in_srgb,var(--color-rule)_35%,transparent)] pt-8">
+            <p className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.16em] text-[var(--color-accent)]">
+              Step 3
+            </p>
+            <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-foreground">
+              Gap
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              Read under-cover and unused commit dollars as findings you can
+              defend in the renewals room.
+            </p>
+            <div className="mt-4">
+              <Button asChild variant="outline" size="sm">
+                <Link href="/gaps">Open gaps</Link>
+              </Button>
+            </div>
+          </li>
+          <li className="border-t border-[color-mix(in_srgb,var(--color-rule)_35%,transparent)] pt-8">
+            <p className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.16em] text-[var(--color-accent)]">
+              Step 4
+            </p>
+            <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-foreground">
+              A vs B compare
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              Run commit-matched versus on-demand-blind so the dual claim is
+              visible before you renew.
+            </p>
+            <div className="mt-4">
+              <Button asChild variant="outline" size="sm">
+                <Link href="/compare">Open compare</Link>
+              </Button>
+            </div>
+          </li>
+          <li className="border-t border-[color-mix(in_srgb,var(--color-rule)_35%,transparent)] pt-8">
+            <p className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.16em] text-[var(--color-accent)]">
+              Step 5
+            </p>
+            <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-foreground">
+              Renew
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              Build a renewal pack with buy / reduce / hold actions tied to gap
+              dollars.
+            </p>
+            <div className="mt-4">
+              <Button asChild variant="outline" size="sm">
+                <Link href="/renewals">Open renewals</Link>
+              </Button>
+            </div>
+          </li>
         </ol>
 
         <div className="mt-14 flex flex-wrap gap-3">
