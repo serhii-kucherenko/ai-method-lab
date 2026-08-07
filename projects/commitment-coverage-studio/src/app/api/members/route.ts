@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireBearer } from "@/lib/auth";
+import { extractBearer, requireBearer } from "@/lib/auth";
 import { getDb } from "@/lib/db";
+import { appendAudit } from "@/services/audit";
 import {
   createMember,
   listMembers,
@@ -12,6 +13,11 @@ const createSchema = z.object({
   email: z.string().email(),
   role: z.enum(["admin", "viewer", "editor"]),
 });
+
+function softSimActor(req: Request): string {
+  const token = extractBearer(req) ?? "anonymous";
+  return `soft-sim:${token}`;
+}
 
 /** GET org members (soft-sim, D-07). */
 export async function GET(req: Request) {
@@ -45,10 +51,18 @@ export async function POST(req: Request) {
       { status: 422 },
     );
   }
+  const db = getDb();
   try {
-    const member = createMember(getDb(), {
+    const member = createMember(db, {
       email: parsed.data.email,
       role: parsed.data.role,
+    });
+    appendAudit(db, {
+      actor: softSimActor(req),
+      action: "members.create",
+      entityType: "member",
+      entityId: member.id,
+      detail: { email: member.email, role: member.role },
     });
     return NextResponse.json(
       { softSim: true, member: toMemberPublic(member) },

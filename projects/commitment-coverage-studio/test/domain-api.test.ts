@@ -991,3 +991,77 @@ describe("domain-api: org settings + members (PLT-01)", () => {
     );
   });
 });
+
+describe("domain-api: audit trail (PLT-04)", () => {
+  const dir = mkdtempSync(join(tmpdir(), "ccs-audit-"));
+  const dbPath = join(dir, "coverage.db");
+
+  before(() => {
+    process.env.CCS_DB_PATH = dbPath;
+    closeDb();
+    resetDbForTests(dbPath);
+  });
+
+  after(() => {
+    closeDb();
+    rmSync(dir, { recursive: true, force: true });
+    delete process.env.CCS_DB_PATH;
+  });
+
+  it("GET /api/audit without Bearer returns 401", async () => {
+    const { GET } = await import("../src/app/api/audit/route");
+    const res = await GET(jsonReq("http://local/api/audit"));
+    assert.equal(res.status, 401);
+  });
+
+  it("org PATCH and member POST write audit; GET /api/audit lists them", async () => {
+    const orgApi = await import("../src/app/api/org/route");
+    const membersApi = await import("../src/app/api/members/route");
+    const auditApi = await import("../src/app/api/audit/route");
+
+    const patchRes = await orgApi.PATCH(
+      jsonReq("http://local/api/org", {
+        method: "PATCH",
+        headers: auth,
+        json: { name: "Audited Org", seatTier: "site" },
+      }),
+    );
+    assert.equal(patchRes.status, 200);
+
+    const postRes = await membersApi.POST(
+      jsonReq("http://local/api/members", {
+        method: "POST",
+        headers: auth,
+        json: { email: "audit-member@example.com", role: "editor" },
+      }),
+    );
+    assert.equal(postRes.status, 201);
+    const created = await postRes.json();
+
+    const listRes = await auditApi.GET(
+      jsonReq("http://local/api/audit", { headers: auth }),
+    );
+    assert.equal(listRes.status, 200);
+    const body = await listRes.json();
+    assert.equal(body.softSim, true);
+    assert.ok(Array.isArray(body.entries));
+    assert.ok(
+      body.entries.some(
+        (e: { action: string }) => e.action === "org.patch",
+      ),
+      "expected org.patch audit",
+    );
+    assert.ok(
+      body.entries.some(
+        (e: { action: string; entityId: string }) =>
+          e.action === "members.create" && e.entityId === created.member.id,
+      ),
+      "expected members.create audit",
+    );
+    for (const entry of body.entries) {
+      assert.ok(entry.actor);
+      assert.ok(entry.action);
+      assert.ok(entry.createdAt);
+    }
+  });
+});

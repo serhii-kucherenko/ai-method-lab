@@ -27,12 +27,23 @@ type MemberPublic = {
   createdAt: string;
 };
 
+type AuditEntry = {
+  id: string;
+  actor: string;
+  action: string;
+  entityType: string;
+  entityId: string;
+  createdAt: string;
+};
+
 type OrgResponse = { softSim: boolean; org: OrgPublic };
 type MembersResponse = { softSim: boolean; members: MemberPublic[] };
+type AuditResponse = { softSim: boolean; entries: AuditEntry[] };
 
 export default function SettingsPage() {
   const [org, setOrg] = useState<OrgPublic | null>(null);
   const [members, setMembers] = useState<MemberPublic[] | null>(null);
+  const [audit, setAudit] = useState<AuditEntry[] | null>(null);
   const [name, setName] = useState("");
   const [seatTier, setSeatTier] = useState("evaluator");
   const [webhookSecret, setWebhookSecret] = useState("");
@@ -47,13 +58,15 @@ export default function SettingsPage() {
   const load = useCallback(async () => {
     setLoading(true);
     setError(null);
-    const [orgResult, membersResult] = await Promise.all([
+    const [orgResult, membersResult, auditResult] = await Promise.all([
       apiJson<OrgResponse>("/api/org"),
       apiJson<MembersResponse>("/api/members"),
+      apiJson<AuditResponse>("/api/audit"),
     ]);
     if (!orgResult.ok) {
       setOrg(null);
       setMembers(null);
+      setAudit(null);
       setError(orgResult.message);
       setLoading(false);
       return;
@@ -61,7 +74,16 @@ export default function SettingsPage() {
     if (!membersResult.ok) {
       setOrg(orgResult.data.org);
       setMembers(null);
+      setAudit(null);
       setError(membersResult.message);
+      setLoading(false);
+      return;
+    }
+    if (!auditResult.ok) {
+      setOrg(orgResult.data.org);
+      setMembers(membersResult.data.members);
+      setAudit(null);
+      setError(auditResult.message);
       setLoading(false);
       return;
     }
@@ -69,6 +91,7 @@ export default function SettingsPage() {
     setName(orgResult.data.org.name);
     setSeatTier(orgResult.data.org.seatTier);
     setMembers(membersResult.data.members);
+    setAudit(auditResult.data.entries);
     setLoading(false);
   }, []);
 
@@ -280,6 +303,112 @@ export default function SettingsPage() {
                         <td className="py-2.5 pr-4">{m.role}</td>
                         <td className="py-2.5 font-[family-name:var(--font-mono)] text-[0.75rem] text-muted-foreground">
                           {m.createdAt}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : null}
+          </section>
+
+          <section aria-labelledby="audit-heading">
+            <h2
+              id="audit-heading"
+              className="font-[family-name:var(--font-display)] text-xl font-semibold text-foreground"
+            >
+              Audit
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Recent soft-sim mutations for this org. Shown here under settings —
+              not a primary Studio nav item.
+            </p>
+            {audit && audit.length === 0 ? (
+              <EmptyState
+                className="mt-4"
+                title="No audit entries yet"
+                detail="Save org settings or add a member to write the first row."
+              />
+            ) : null}
+            {audit && audit.length > 0 ? (
+              <div className="mt-4 overflow-x-auto">
+                <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-[color-mix(in_srgb,var(--color-rule)_35%,transparent)] text-muted-foreground">
+                      <th className="py-2 pr-4 font-medium">When</th>
+                      <th className="py-2 pr-4 font-medium">Actor</th>
+                      <th className="py-2 pr-4 font-medium">Action</th>
+                      <th className="py-2 font-medium">Entity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {audit.map((entry) => (
+                      <tr
+                        key={entry.id}
+                        className="border-b border-[color-mix(in_srgb,var(--color-rule)_20%,transparent)]"
+                      >
+                        <td className="py-2.5 pr-4 font-[family-name:var(--font-mono)] text-[0.75rem] text-muted-foreground">
+                          {entry.createdAt}
+                        </td>
+                        <td className="py-2.5 pr-4 font-[family-name:var(--font-mono)] text-[0.75rem]">
+                          {entry.actor}
+                        </td>
+                        <td className="py-2.5 pr-4">{entry.action}</td>
+                        <td className="py-2.5 font-[family-name:var(--font-mono)] text-[0.75rem]">
+                          {entry.entityType}/{entry.entityId}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : null}
+          </section>
+
+          <section aria-labelledby="audit-heading">
+            <h2
+              id="audit-heading"
+              className="font-[family-name:var(--font-display)] text-xl font-semibold text-foreground"
+            >
+              Audit trail
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Recent soft-sim mutations (org, members, renewals). Not a primary
+              workspace nav item.
+            </p>
+            {auditEntries && auditEntries.length === 0 ? (
+              <EmptyState
+                className="mt-4"
+                title="No audit entries yet"
+                detail="Save org settings or add a member to create the first row."
+              />
+            ) : null}
+            {auditEntries && auditEntries.length > 0 ? (
+              <div className="mt-4 overflow-x-auto">
+                <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-[color-mix(in_srgb,var(--color-rule)_35%,transparent)] text-muted-foreground">
+                      <th className="py-2 pr-4 font-medium">When</th>
+                      <th className="py-2 pr-4 font-medium">Actor</th>
+                      <th className="py-2 pr-4 font-medium">Action</th>
+                      <th className="py-2 font-medium">Entity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {auditEntries.map((entry) => (
+                      <tr
+                        key={entry.id}
+                        className="border-b border-[color-mix(in_srgb,var(--color-rule)_20%,transparent)]"
+                      >
+                        <td className="py-2.5 pr-4 font-[family-name:var(--font-mono)] text-[0.75rem] text-muted-foreground">
+                          {entry.createdAt}
+                        </td>
+                        <td className="py-2.5 pr-4 font-[family-name:var(--font-mono)] text-[0.75rem]">
+                          {entry.actor}
+                        </td>
+                        <td className="py-2.5 pr-4">{entry.action}</td>
+                        <td className="py-2.5 font-[family-name:var(--font-mono)] text-[0.75rem] text-muted-foreground">
+                          {entry.entityType}:{entry.entityId}
                         </td>
                       </tr>
                     ))}

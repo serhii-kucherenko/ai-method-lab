@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireBearer } from "@/lib/auth";
+import { extractBearer, requireBearer } from "@/lib/auth";
 import { getDb } from "@/lib/db";
+import { appendAudit } from "@/services/audit";
 import { getOrg, toOrgPublic, updateOrg } from "@/services/org";
 
 const patchSchema = z
@@ -17,6 +18,11 @@ const patchSchema = z
       body.webhookSecret !== undefined,
     { message: "At least one org field required" },
   );
+
+function softSimActor(req: Request): string {
+  const token = extractBearer(req) ?? "anonymous";
+  return `soft-sim:${token}`;
+}
 
 /** GET demo org settings (soft-sim). Never returns raw webhookSecret (T-04-09). */
 export async function GET(req: Request) {
@@ -56,10 +62,22 @@ export async function PATCH(req: Request) {
       { status: 422 },
     );
   }
-  const updated = updateOrg(getDb(), {
+  const db = getDb();
+  const updated = updateOrg(db, {
     name: parsed.data.name,
     seatTier: parsed.data.seatTier,
     webhookSecret: parsed.data.webhookSecret,
+  });
+  appendAudit(db, {
+    actor: softSimActor(req),
+    action: "org.patch",
+    entityType: "org",
+    entityId: updated.id,
+    detail: {
+      name: parsed.data.name,
+      seatTier: parsed.data.seatTier,
+      webhookSecretSet: parsed.data.webhookSecret !== undefined,
+    },
   });
   return NextResponse.json({ softSim: true, org: toOrgPublic(updated) });
 }
