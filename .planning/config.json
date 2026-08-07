@@ -24,7 +24,8 @@
     "verifier": true,
     "nyquist_validation": true,
     "auto_advance": true,
-    "_auto_chain_active": true
+    "_auto_chain_active": false,
+    "skip_discuss": true
   },
   "plan_review": {
     "source_grounding": true
