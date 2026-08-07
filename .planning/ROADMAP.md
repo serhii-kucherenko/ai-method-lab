@@ -84,7 +84,7 @@ Plans:
   2. Stranger can use real `/pricing` (seats + connected-account tiers, no live checkout), `/demo` (Import → Match → Gap → Renew including A vs B), `/onboarding` (checklist with progress), and `/flows` (≥5 named journeys with CTAs)
   3. Org admin can manage settings/members with bearer auth, receive HMAC-verified soft-sim webhooks, export gaps/renewals/compare as JSON/CSV, and see audit trail (non-primary) plus rate-limit feedback on APIs
 
-**Plans:** 5/5 plans complete
+**Plans:** 5/5 plans executed
 
 Plans:
 
