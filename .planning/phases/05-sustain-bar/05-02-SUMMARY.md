@@ -82,6 +82,7 @@ README embeds five live soft-sim captures (landing, commitments, pricing, demo, 
 
 ## Self-Check: PASSED
 
-- FOUND: screenshots/01-landing.png … 05-onboarding.png
-- FOUND: README ## Screenshots with screenshots/ embeds
-- FOUND: a72128cc
+- FOUND: screenshots/01-landing.png … 05-onboarding.png (incl. 02-commitments.png)
+- FOUND: README ## Screenshots embeds all five relative paths including commitments
+- FOUND commits: a72128cc, a2c39443, 154d67a5
+- RE-VERIFIED: `node scripts/capture-product-screenshots.mjs … --paths /,/commitments,/pricing,/demo,/onboarding` wrote 5 live PNGs; `npm test` 72/72; `npm run build` green
