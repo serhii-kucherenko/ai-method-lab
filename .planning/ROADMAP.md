@@ -7,7 +7,7 @@ Ship a FinOps soft-sim that imports multi-cloud commitment inventory and usage, 
 ## Phases
 
 - [x] **Phase 1: Smoke & trust** - Brand landing, honesty fence, and DESIGN tokens before domain theater (completed 2026-08-07)
-- [ ] **Phase 2: Domain claim core** - Inventory, imports, coverage/gaps, dual scorers, and ≥30 goldens
+- [x] **Phase 2: Domain claim core** - Inventory, imports, coverage/gaps, dual scorers, and ≥30 goldens (completed 2026-08-07)
 - [ ] **Phase 3: Studio UI** - Live domain IA pages with filters and empty/error paths
 - [ ] **Phase 4: Renewals, commercial, platform** - Renewal packs, commercial surfaces, and platform must-haves
 - [ ] **Phase 5: Sustain bar** - Live build, app-up smoke, README screenshots, try.html, feature bar
@@ -45,12 +45,12 @@ Plans:
   3. System produces coverage %/$ by account/window and separate under-cover + unused-commit gap findings in dollars (scorer A)
   4. Same fixtures yield material $ divergence between commit-matched (A) and on-demand-blind (B) on compare, backed by ≥30 dual-impl goldens
 
-**Plans**: 2/3 plans executed
+**Plans**: 3/3 plans complete
 Plans:
 
 - [x] 02-01-PLAN.md — Dual scorers A/B, ≥30 goldens, SQLite bootstrap, goldens/features APIs
 - [x] 02-02-PLAN.md — Accounts/commitments CRUD + usage import batches (Bearer)
-- [ ] 02-03-PLAN.md — Coverage snapshots, gap findings, A vs B compare APIs
+- [x] 02-03-PLAN.md — Coverage snapshots, gap findings, A vs B compare APIs
 
 ### Phase 3: Studio UI
 
@@ -100,7 +100,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Smoke & trust | 2/2 | Complete    | 2026-08-07 |
-| 2. Domain claim core | 2/3 | In Progress|  |
+| 2. Domain claim core | 3/3 | Complete   | 2026-08-07 |
 | 3. Studio UI | 0/TBD | Not started | - |
 | 4. Renewals, commercial, platform | 0/TBD | Not started | - |
 | 5. Sustain bar | 0/TBD | Not started | - |

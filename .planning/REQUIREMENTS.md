@@ -15,11 +15,11 @@
 
 - [x] **DOM-01**: Commitment inventory CRUD with lock window, search, multi-cloud tag, archive on `/commitments`
 - [x] **DOM-02**: Usage/billing import batches with status on `/imports`
-- [ ] **DOM-03**: Coverage % and $ by account/window on `/coverage`
-- [ ] **DOM-04**: Under-cover + unused-commit gap findings in $ on `/gaps`
+- [x] **DOM-03**: Coverage % and $ by account/window on `/coverage`
+- [x] **DOM-04**: Under-cover + unused-commit gap findings in $ on `/gaps`
 - [x] **DOM-05**: Scorer A commit-matched coverage path
 - [x] **DOM-06**: Scorer B on-demand-blind baseline path
-- [ ] **DOM-07**: Side-by-side A vs B on `/compare` with material $ divergence
+- [x] **DOM-07**: Side-by-side A vs B on `/compare` with material $ divergence
 - [x] **DOM-08**: ≥30 dual-impl goldens + goldens/features APIs
 
 ### Studio surfaces
@@ -71,11 +71,11 @@
 | MKT-03 | Phase 1 | Complete |
 | DOM-01 | Phase 2 | Complete |
 | DOM-02 | Phase 2 | Complete |
-| DOM-03 | Phase 2 | Pending |
-| DOM-04 | Phase 2 | Pending |
+| DOM-03 | Phase 2 | Complete |
+| DOM-04 | Phase 2 | Complete |
 | DOM-05 | Phase 2 | Complete |
 | DOM-06 | Phase 2 | Complete |
-| DOM-07 | Phase 2 | Pending |
+| DOM-07 | Phase 2 | Complete |
 | DOM-08 | Phase 2 | Complete |
 | UI-02 | Phase 3 | Pending |
 | UI-03 | Phase 3 | Pending |
