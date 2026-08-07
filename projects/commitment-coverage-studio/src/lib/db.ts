@@ -6,7 +6,19 @@ const SCHEMA = `
 CREATE TABLE IF NOT EXISTS orgs (
   id TEXT PRIMARY KEY,
   name TEXT NOT NULL,
+  seat_tier TEXT NOT NULL DEFAULT 'evaluator',
+  webhook_secret TEXT,
+  updated_at TEXT NOT NULL DEFAULT (datetime('now')),
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS members (
+  id TEXT PRIMARY KEY,
+  org_id TEXT NOT NULL,
+  email TEXT NOT NULL,
+  role TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  UNIQUE(org_id, email)
 );
 
 CREATE TABLE IF NOT EXISTS cloud_accounts (
@@ -133,7 +145,28 @@ CREATE INDEX IF NOT EXISTS idx_usage_account ON usage_slices(cloud_account_id);
 CREATE INDEX IF NOT EXISTS idx_coverage_account ON coverage_snapshots(cloud_account_id);
 CREATE INDEX IF NOT EXISTS idx_renewal_cases_org ON renewal_cases(org_id);
 CREATE INDEX IF NOT EXISTS idx_audit_entries_org ON audit_entries(org_id);
+CREATE INDEX IF NOT EXISTS idx_members_org ON members(org_id);
 `;
+
+function ensureOrgColumns(db: CoverageDb): void {
+  const cols = db.prepare("PRAGMA table_info(orgs)").all() as {
+    name: string;
+  }[];
+  const names = new Set(cols.map((c) => c.name));
+  if (!names.has("seat_tier")) {
+    db.exec(
+      `ALTER TABLE orgs ADD COLUMN seat_tier TEXT NOT NULL DEFAULT 'evaluator'`,
+    );
+  }
+  if (!names.has("webhook_secret")) {
+    db.exec(`ALTER TABLE orgs ADD COLUMN webhook_secret TEXT`);
+  }
+  if (!names.has("updated_at")) {
+    db.exec(
+      `ALTER TABLE orgs ADD COLUMN updated_at TEXT NOT NULL DEFAULT (datetime('now'))`,
+    );
+  }
+}
 
 export type CoverageDb = Database.Database;
 
@@ -155,14 +188,22 @@ export function openDb(dbPath = defaultDbPath()): CoverageDb {
 
 export function migrate(db: CoverageDb): void {
   db.exec(SCHEMA);
+  ensureOrgColumns(db);
   const org = db
     .prepare("SELECT id FROM orgs WHERE id = ?")
     .get("org-demo") as { id: string } | undefined;
   if (!org) {
-    db.prepare("INSERT INTO orgs (id, name) VALUES (?, ?)").run(
-      "org-demo",
-      "Demo Org",
-    );
+    db.prepare(
+      `INSERT INTO orgs (id, name, seat_tier) VALUES (?, ?, ?)`,
+    ).run("org-demo", "Demo Org", "evaluator");
+  }
+  const memberCount = db
+    .prepare("SELECT COUNT(*) AS c FROM members WHERE org_id = ?")
+    .get("org-demo") as { c: number };
+  if (memberCount.c === 0) {
+    db.prepare(
+      `INSERT INTO members (id, org_id, email, role) VALUES (?, ?, ?, ?)`,
+    ).run("member-demo-admin", "org-demo", "admin@demo.local", "admin");
   }
 }
 

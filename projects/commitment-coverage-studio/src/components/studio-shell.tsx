@@ -81,6 +81,20 @@ export function StudioShell({
         </div>
         {children}
       </main>
+
+      <footer className="mt-auto border-t border-[color-mix(in_srgb,var(--color-rule)_30%,transparent)]">
+        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-3 sm:px-10">
+          <p className="text-xs text-muted-foreground">
+            Soft-sim lab desk — not a live billing system of record
+          </p>
+          <Link
+            href="/settings"
+            className="text-xs text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+          >
+            Settings
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 }

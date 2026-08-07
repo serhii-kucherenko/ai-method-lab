@@ -186,15 +186,15 @@ describe("smoke-mkt: commercial surfaces COM-01..04", () => {
     );
     for (const href of ["/imports", "/gaps", "/compare", "/renewals"]) {
       assert.ok(
-        page.includes(`href="${href}"`) || page.includes(`href='${href}'`),
+        page.includes(`"${href}"`) || page.includes(`'${href}'`),
         `demo must CTA to ${href}`,
       );
     }
     assert.ok(
-      page.includes('href="/commitments"') ||
-        page.includes("href='/commitments'") ||
-        page.includes('href="/coverage"') ||
-        page.includes("href='/coverage'"),
+      page.includes('"/commitments"') ||
+        page.includes("'/commitments'") ||
+        page.includes('"/coverage"') ||
+        page.includes("'/coverage'"),
       "demo Match step must link /commitments or /coverage",
     );
   });
@@ -212,5 +212,24 @@ describe("smoke-mkt: commercial surfaces COM-01..04", () => {
         `commercial IA must not link to ${desk}`,
       );
     }
+  });
+
+  it("/onboarding checklist shows progress (COM-03, D-05)", () => {
+    const rel = "src/app/onboarding/page.tsx";
+    assert.ok(existsSync(join(root, rel)), "onboarding page must exist");
+    const page = read(rel);
+    assert.ok(/checklist|progress/i.test(page), "onboarding must show progress");
+    assert.ok(
+      page.includes("localStorage"),
+      "onboarding must persist progress in localStorage",
+    );
+    assert.ok(
+      page.includes('href="/imports"') || page.includes("href='/imports'"),
+      "onboarding must link /imports",
+    );
+    assert.ok(
+      page.includes('href="/renewals"') || page.includes("href='/renewals'"),
+      "onboarding must link /renewals",
+    );
   });
 });
