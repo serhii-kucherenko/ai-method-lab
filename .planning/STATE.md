@@ -5,10 +5,10 @@ milestone_name: milestone
 current_phase: 5
 current_phase_name: Sustain bar
 status: executing
-stopped_at: Completed 05-01-PLAN.md (revised ID lock)
-last_updated: "2026-08-07T09:55:13.567Z"
+stopped_at: Completed 05-01-PLAN.md
+last_updated: "2026-08-07T09:56:02.949Z"
 last_activity: 2026-08-07
-last_activity_desc: Phase 5 plan 01 complete with locked shipped-surface feature IDs
+last_activity_desc: 05-01 revised ID lock verified (72 tests)
 progress:
   total_phases: 5
   completed_phases: 4
@@ -78,6 +78,7 @@ Progress: [█████████░] 93%
 | Phase 04 P04 | 25min | 3 tasks | 9 files |
 | Phase 05 P01 | 25min | 3 tasks | 9 files |
 | Phase 05-sustain-bar P01 | 35min | 3 tasks | 9 files |
+| Phase 05 P01 | 30min | 3 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -110,6 +111,7 @@ Recent decisions affecting current work:
 - [Phase ?]: D-11: Middleware rate-limits all mutating /api/*
 - [Phase ?]: try.html root + public mirror for Next /try.html
 - [Phase ?]: Domain FEATURES use locked page-mapped IDs (commitments/coverage/gaps/renewals/imports/compare/scoreboard)
+- [Phase ?]: Domain FEATURES use locked page-mapped IDs; try.html root+public; app-up free-port next start
 
 ### Pending Todos
 
@@ -128,7 +130,7 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-08-07T09:55:13.538Z
-Stopped at: Completed 05-01-PLAN.md (revised ID lock)
+Last session: 2026-08-07T09:56:02.917Z
+Stopped at: Completed 05-01-PLAN.md
 Resume file: None
-Next: Phase 5 sustain bar (ready_to_plan)
+Next: 05-02 screenshots + README embeds (SUS-03)
