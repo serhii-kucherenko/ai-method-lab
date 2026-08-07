@@ -4,11 +4,11 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 5
 current_phase_name: Sustain bar
-status: planning
-stopped_at: Completed 05-01-PLAN.md
-last_updated: "2026-08-07T09:50:46.039Z"
+status: executing
+stopped_at: Completed 05-01-PLAN.md (revised ID lock)
+last_updated: "2026-08-07T09:55:13.567Z"
 last_activity: 2026-08-07
-last_activity_desc: Phase 4 complete, transitioned to Phase 5
+last_activity_desc: Phase 5 plan 01 complete with locked shipped-surface feature IDs
 progress:
   total_phases: 5
   completed_phases: 4
@@ -23,14 +23,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-07)
 
 **Core value:** Show where commitments are under-covered or wasted, in dollars, before renewal.
-**Current focus:** Phase 05 — Sustain bar (ready_to_plan)
+**Current focus:** Phase 05 — Sustain bar (05-01 done; next 05-02 screenshots)
 
 ## Current Position
 
 Phase: 5 — Sustain bar
-Plan: Not started
-Status: Ready to plan
-Last activity: 2026-08-07 — Phase 4 complete, transitioned to Phase 5
+Plan: 2 of 2 (05-01 complete)
+Status: Ready to execute 05-02
+Last activity: 2026-08-07 — 05-01 revised ID lock verified (72 tests)
 
 Progress: [█████████░] 93%
 
@@ -77,6 +77,7 @@ Progress: [█████████░] 93%
 | Phase 4 P05 | 15min | 3 tasks | 6 files |
 | Phase 04 P04 | 25min | 3 tasks | 9 files |
 | Phase 05 P01 | 25min | 3 tasks | 9 files |
+| Phase 05-sustain-bar P01 | 35min | 3 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -108,6 +109,7 @@ Recent decisions affecting current work:
 - [Phase 04]: D-08/D-09: HMAC webhook + Bearer export JSON/CSV (04-04)
 - [Phase ?]: D-11: Middleware rate-limits all mutating /api/*
 - [Phase ?]: try.html root + public mirror for Next /try.html
+- [Phase ?]: Domain FEATURES use locked page-mapped IDs (commitments/coverage/gaps/renewals/imports/compare/scoreboard)
 
 ### Pending Todos
 
@@ -126,7 +128,7 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-08-07T09:50:46.005Z
-Stopped at: Completed 05-01-PLAN.md
+Last session: 2026-08-07T09:55:13.538Z
+Stopped at: Completed 05-01-PLAN.md (revised ID lock)
 Resume file: None
 Next: Phase 5 sustain bar (ready_to_plan)
