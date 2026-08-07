@@ -9,6 +9,16 @@ function read(rel: string): string {
   return readFileSync(join(root, rel), "utf8");
 }
 
+/** Match literal Link href= or data-driven href: "/path" CTAs. */
+function hasRoute(source: string, href: string): boolean {
+  return (
+    source.includes(`href="${href}"`) ||
+    source.includes(`href='${href}'`) ||
+    source.includes(`"${href}"`) ||
+    source.includes(`'${href}'`)
+  );
+}
+
 describe("smoke-mkt: DESIGN tokens and brand landing", () => {
   it("DESIGN.md and globals.css expose ink/paper/accent/gap tokens", () => {
     assert.ok(existsSync(join(root, "DESIGN.md")), "DESIGN.md must exist");
@@ -164,10 +174,7 @@ describe("smoke-mkt: commercial surfaces COM-01..04", () => {
         (/soft-sim/i.test(page) && /checkout/i.test(page)),
       "pricing must state soft-sim / no live card checkout",
     );
-    assert.ok(
-      page.includes('href="/demo"') || page.includes("href='/demo'"),
-      "pricing must CTA to /demo",
-    );
+    assert.ok(hasRoute(page, "/demo"), "pricing must CTA to /demo");
     assert.ok(
       !/card number|stripe|payment form|credit card/i.test(page),
       "pricing must not add live payment capture",
@@ -185,16 +192,10 @@ describe("smoke-mkt: commercial surfaces COM-01..04", () => {
       "demo must include A vs B compare step",
     );
     for (const href of ["/imports", "/gaps", "/compare", "/renewals"]) {
-      assert.ok(
-        page.includes(`href="${href}"`) || page.includes(`href='${href}'`),
-        `demo must CTA to ${href}`,
-      );
+      assert.ok(hasRoute(page, href), `demo must CTA to ${href}`);
     }
     assert.ok(
-      page.includes('href="/commitments"') ||
-        page.includes("href='/commitments'") ||
-        page.includes('href="/coverage"') ||
-        page.includes("href='/coverage'"),
+      hasRoute(page, "/commitments") || hasRoute(page, "/coverage"),
       "demo Match step must link /commitments or /coverage",
     );
   });
@@ -211,14 +212,26 @@ describe("smoke-mkt: commercial surfaces COM-01..04", () => {
       page.includes("localStorage"),
       "onboarding must persist progress in localStorage",
     );
-    assert.ok(
-      page.includes('href="/imports"') || page.includes("href='/imports'"),
-      "onboarding must link /imports",
-    );
-    assert.ok(
-      page.includes('href="/renewals"') || page.includes("href='/renewals'"),
-      "onboarding must link /renewals",
-    );
+    assert.ok(hasRoute(page, "/imports"), "onboarding must link /imports");
+    assert.ok(hasRoute(page, "/renewals"), "onboarding must link /renewals");
+  });
+
+  it("/flows lists ≥5 named journeys with CTAs (COM-04, D-06)", () => {
+    const rel = "src/app/flows/page.tsx";
+    assert.ok(existsSync(join(root, rel)), "flows page must exist");
+    const page = read(rel);
+    for (const name of [
+      "Import & match",
+      "Multi-cloud rollup",
+      "Renewal pack",
+      "Dual compare",
+      "Export & review",
+    ]) {
+      assert.ok(page.includes(name), `flows must name journey: ${name}`);
+    }
+    assert.ok(hasRoute(page, "/renewals"), "Renewal pack journey must CTA /renewals");
+    assert.ok(hasRoute(page, "/imports"), "Import & match journey must CTA /imports");
+    assert.ok(hasRoute(page, "/compare"), "Dual compare journey must CTA /compare");
   });
 
   it("commercial pages avoid isomorphic desk IA links (D-12)", () => {
