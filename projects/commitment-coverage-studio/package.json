@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx --test test/smoke-mkt.test.ts test/smoke-ui.test.ts test/goldens.test.ts test/domain-api.test.ts"
+    "test": "tsx --test test/smoke-mkt.test.ts test/smoke-ui.test.ts test/goldens.test.ts test/domain-api.test.ts test/sustain.test.ts"
   },
   "dependencies": {
     "@types/better-sqlite3": "^9.6.0",
