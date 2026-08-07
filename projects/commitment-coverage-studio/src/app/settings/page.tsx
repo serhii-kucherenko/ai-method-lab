@@ -126,6 +126,7 @@ export default function SettingsPage() {
     setSeatTier(result.data.org.seatTier);
     setWebhookSecret("");
     setSaveNote("Org settings saved (soft-sim).");
+    await load();
   }
 
   async function addMember() {
@@ -356,59 +357,6 @@ export default function SettingsPage() {
                         <td className="py-2.5 pr-4">{entry.action}</td>
                         <td className="py-2.5 font-[family-name:var(--font-mono)] text-[0.75rem]">
                           {entry.entityType}/{entry.entityId}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            ) : null}
-          </section>
-
-          <section aria-labelledby="audit-heading">
-            <h2
-              id="audit-heading"
-              className="font-[family-name:var(--font-display)] text-xl font-semibold text-foreground"
-            >
-              Audit trail
-            </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Recent soft-sim mutations (org, members, renewals). Not a primary
-              workspace nav item.
-            </p>
-            {auditEntries && auditEntries.length === 0 ? (
-              <EmptyState
-                className="mt-4"
-                title="No audit entries yet"
-                detail="Save org settings or add a member to create the first row."
-              />
-            ) : null}
-            {auditEntries && auditEntries.length > 0 ? (
-              <div className="mt-4 overflow-x-auto">
-                <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
-                  <thead>
-                    <tr className="border-b border-[color-mix(in_srgb,var(--color-rule)_35%,transparent)] text-muted-foreground">
-                      <th className="py-2 pr-4 font-medium">When</th>
-                      <th className="py-2 pr-4 font-medium">Actor</th>
-                      <th className="py-2 pr-4 font-medium">Action</th>
-                      <th className="py-2 font-medium">Entity</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {auditEntries.map((entry) => (
-                      <tr
-                        key={entry.id}
-                        className="border-b border-[color-mix(in_srgb,var(--color-rule)_20%,transparent)]"
-                      >
-                        <td className="py-2.5 pr-4 font-[family-name:var(--font-mono)] text-[0.75rem] text-muted-foreground">
-                          {entry.createdAt}
-                        </td>
-                        <td className="py-2.5 pr-4 font-[family-name:var(--font-mono)] text-[0.75rem]">
-                          {entry.actor}
-                        </td>
-                        <td className="py-2.5 pr-4">{entry.action}</td>
-                        <td className="py-2.5 font-[family-name:var(--font-mono)] text-[0.75rem] text-muted-foreground">
-                          {entry.entityType}:{entry.entityId}
                         </td>
                       </tr>
                     ))}
