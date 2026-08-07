@@ -50,7 +50,7 @@ Evidence that the workflow can produce **one sophisticated software product a st
 
 ## Pointers
 
-- `project_tracker: linear` — [ai-method-lab](https://linear.app/serhii-kucherenko/project/ai-method-lab-27d1b78be235)
+- `project_tracker: gsd` — product delivery via `.planning/` (discuss→plan→execute→verify→ship); Linear remains for lab issues: [ai-method-lab](https://linear.app/serhii-kucherenko/project/ai-method-lab-27d1b78be235)
 - Portfolio: `projects/PORTFOLIO.md`
 - Agent roles: `protocols/AGENT_ROLES.md`
 - Product runbook: `protocols/PRODUCT_RUNBOOK.md`
