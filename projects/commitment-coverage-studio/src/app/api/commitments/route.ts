@@ -67,17 +67,3 @@ export async function POST(req: Request) {
   const commitment = createCommitment(db, parsed.data);
   return NextResponse.json({ softSim: true, commitment }, { status: 201 });
 }
-
-export async function getCommitmentOr404(id: string) {
-  const db = getDb();
-  const commitment = getCommitment(db, id);
-  if (!commitment) {
-    return {
-      error: NextResponse.json(
-        { error: "not_found", message: "Commitment not found (soft-sim)" },
-        { status: 404 },
-      ),
-    };
-  }
-  return { commitment };
-}
