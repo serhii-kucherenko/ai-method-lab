@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Commitment Coverage Studio
 
-## Getting Started
+See commitment waste in dollars before renewal.
 
-First, run the development server:
+Soft-sim FinOps desk that imports multi-cloud commitment inventory and usage, scores under-coverage and unused commit in dollars, and compares **commit-matched (A)** vs **on-demand-blind (B)** so renewals open with a gap pack - not a chart museum.
+
+## Screenshots
+
+_Live captures land in Phase 5 plan 02 - see `screenshots/` once capture completes._
+
+## Run locally
 
 ```bash
+cd projects/commitment-coverage-studio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). Demo bearer token: `ccs-demo-token`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm test
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Honesty
 
-## Learn More
+This is a method-lab soft-sim. It is not a live billing system of record, does not purchase commitments, and does not connect to production cloud consoles.
 
-To learn more about Next.js, take a look at the following resources:
+Offline dual-claim digest: open [`try.html`](./try.html) or `/try.html` from the running app (Honesty / Demo).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Primary routes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Route | Job |
+|-------|-----|
+| `/` | Marketing landing |
+| `/commitments` | Commitment inventory |
+| `/imports` | Usage / inventory import |
+| `/coverage` | Commit-matched coverage |
+| `/gaps` | Dollar gap findings |
+| `/compare` | A vs B claim |
+| `/renewals` | Renewal packs |
+| `/scoreboard` | Org scoreboard |
+| `/pricing` | Soft-sim plans |
+| `/demo` | Guided walkthrough |
+| `/onboarding` | Checklist |
+| `/flows` | Journey index |
+| `/honesty` | Soft-sim fence |
+| `/settings` | Org, members, audit |
