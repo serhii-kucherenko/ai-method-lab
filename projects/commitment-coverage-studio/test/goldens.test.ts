@@ -152,3 +152,32 @@ describe("goldens catalog ≥30 dual-impl fixtures", () => {
     }
   });
 });
+
+describe("goldens/features API modules", () => {
+  it("sample route exports GET and references GOLDENS dual-path fields", async () => {
+    const mod = await import("../src/app/api/goldens/sample/route");
+    assert.equal(typeof mod.GET, "function");
+    const res = await mod.GET();
+    assert.equal(res.status, 200);
+    const body = await res.json();
+    assert.equal(body.softSim, true);
+    assert.ok(Array.isArray(body.sample));
+    assert.ok(body.sample.length >= 1);
+    assert.ok("pathA" in body.sample[0]);
+    assert.ok("pathB" in body.sample[0]);
+    assert.ok(/not live/i.test(body.note));
+  });
+
+  it("features route lists goldens, dual scorers, and sqlite", async () => {
+    const mod = await import("../src/app/api/features/route");
+    assert.equal(typeof mod.GET, "function");
+    const res = await mod.GET();
+    const body = await res.json();
+    assert.ok(Array.isArray(body.features));
+    const blob = body.features.join(" ");
+    assert.ok(/golden/i.test(blob));
+    assert.ok(/scorer|commit-matched|ondemand/i.test(blob));
+    assert.ok(/sqlite/i.test(blob));
+    assert.ok(body.softSim === true);
+  });
+});
