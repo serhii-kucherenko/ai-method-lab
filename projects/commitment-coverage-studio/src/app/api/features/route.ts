@@ -9,7 +9,7 @@ const FEATURES = [
   "features-inventory-api",
   "soft-sim-honesty",
   "marketing-landing",
-  "renewal-cases",
+  "renewals",
   "renewal-recommendations",
   "pricing",
   "demo-guided",
@@ -21,12 +21,12 @@ const FEATURES = [
   "webhook-hmac",
   "export-json-csv",
   "rate-limit",
-  "import-batches",
-  "commitment-inventory",
-  "coverage-engine-a",
-  "gap-findings",
-  "compare-ab",
-  "scoreboard-aggregates",
+  "imports",
+  "commitments",
+  "coverage",
+  "gaps",
+  "compare",
+  "scoreboard",
   "accounts-api",
   "settings-shell",
   "bearer-auth",
@@ -34,7 +34,7 @@ const FEATURES = [
 
 /**
  * Feature inventory of capabilities that are real in this soft-sim lab.
- * Includes Phase 4 commercial + org/members/audit baselines once shipped.
+ * Locked shipped-surface IDs map to user-visible pages (D-01 / SUS-01).
  */
 export async function GET() {
   return NextResponse.json({
