@@ -7,22 +7,27 @@ import { DEMO_BEARER_TOKEN } from "../src/lib/auth";
 import { closeDb, resetDbForTests } from "../src/lib/db";
 import { seedMultiCloud } from "../src/lib/repos";
 
-const dir = mkdtempSync(join(tmpdir(), "ccs-api-"));
-const dbPath = join(dir, "coverage.db");
+const auth = { Authorization: `Bearer ${DEMO_BEARER_TOKEN}` };
 
-function authHeaders(extra: HeadersInit = {}): HeadersInit {
-  return {
-    Authorization: `Bearer ${DEMO_BEARER_TOKEN}`,
-    "Content-Type": "application/json",
-    ...extra,
-  };
+function jsonReq(
+  url: string,
+  init: RequestInit & { json?: unknown } = {},
+): Request {
+  const headers = new Headers(init.headers);
+  if (init.json !== undefined) {
+    headers.set("content-type", "application/json");
+  }
+  return new Request(url, {
+    ...init,
+    headers,
+    body: init.json !== undefined ? JSON.stringify(init.json) : init.body,
+  });
 }
 
-function req(url: string, init?: RequestInit): Request {
-  return new Request(`http://localhost${url}`, init);
-}
+describe("domain-api: accounts + commitments inventory", () => {
+  const dir = mkdtempSync(join(tmpdir(), "ccs-api-"));
+  const dbPath = join(dir, "coverage.db");
 
-describe("domain-api: bearer + accounts + commitments", () => {
   before(() => {
     process.env.CCS_DB_PATH = dbPath;
     closeDb();
@@ -38,276 +43,301 @@ describe("domain-api: bearer + accounts + commitments", () => {
   it("POST /api/accounts without Bearer returns 401", async () => {
     const { POST } = await import("../src/app/api/accounts/route");
     const res = await POST(
-      req("/api/accounts", {
+      jsonReq("http://local/api/accounts", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          provider: "aws",
-          accountKey: "x",
-          displayName: "X",
-        }),
+        json: { provider: "aws", accountKey: "x", displayName: "X" },
       }),
     );
     assert.equal(res.status, 401);
   });
 
-  it("creates aws account then commitment; GET list returns it; seed has ≥2 providers", async () => {
-    const db = resetDbForTests(dbPath);
-    const seeded = seedMultiCloud(db);
-    assert.ok(seeded.aws && seeded.gcp);
-    assert.notEqual(seeded.aws.provider, seeded.gcp.provider);
-
+  it("with Bearer: create aws account then commitment; GET list returns it", async () => {
     const accounts = await import("../src/app/api/accounts/route");
     const commitments = await import("../src/app/api/commitments/route");
 
-    const createAcc = await accounts.POST(
-      req("/api/accounts", {
+    const accRes = await accounts.POST(
+      jsonReq("http://local/api/accounts", {
         method: "POST",
-        headers: authHeaders(),
-        body: JSON.stringify({
-          provider: "azure",
-          accountKey: "az-9",
-          displayName: "Azure Lab",
-        }),
+        headers: auth,
+        json: {
+          provider: "aws",
+          accountKey: "aws-prod-1",
+          displayName: "AWS Prod",
+        },
       }),
     );
-    assert.equal(createAcc.status, 201);
-    const accBody = await createAcc.json();
+    assert.equal(accRes.status, 201);
+    const { account } = await accRes.json();
 
-    const createCm = await commitments.POST(
-      req("/api/commitments", {
+    const cmRes = await commitments.POST(
+      jsonReq("http://local/api/commitments", {
         method: "POST",
-        headers: authHeaders(),
-        body: JSON.stringify({
-          cloudAccountId: seeded.aws.id,
+        headers: auth,
+        json: {
+          cloudAccountId: account.id,
           name: "SP compute",
           instrumentType: "SP",
           provider: "aws",
           termMonths: 12,
           rateUsd: 500,
-          lockStart: "2026-01-01T00:00:00Z",
-          lockEnd: "2027-01-01T00:00:00Z",
-          tags: ["renewal"],
-        }),
+          lockStart: "2026-01-01",
+          lockEnd: "2027-01-01",
+          family: "compute",
+          tags: ["prod"],
+        },
       }),
     );
-    assert.equal(createCm.status, 201);
+    assert.equal(cmRes.status, 201);
 
-    const list = await commitments.GET(
-      req("/api/commitments", { headers: authHeaders() }),
+    const listRes = await commitments.GET(
+      jsonReq("http://local/api/commitments", { headers: auth }),
     );
-    const listBody = await list.json();
-    assert.ok(
-      listBody.commitments.some(
-        (c: { name: string }) => c.name === "SP compute",
-      ),
-    );
-    assert.ok(accBody.account.provider === "azure");
+    const list = await listRes.json();
+    assert.ok(list.commitments.some((c: { name: string }) => c.name === "SP compute"));
+  });
+
+  it("seed path creates at least two providers (aws + gcp)", () => {
+    const db = resetDbForTests(dbPath);
+    const { aws, gcp } = seedMultiCloud(db);
+    assert.equal(aws.provider, "aws");
+    assert.equal(gcp.provider, "gcp");
   });
 });
 
 describe("domain-api: commitment search, update, archive", () => {
-  const localDir = mkdtempSync(join(tmpdir(), "ccs-api2-"));
-  const localDb = join(localDir, "coverage.db");
+  const dir = mkdtempSync(join(tmpdir(), "ccs-cm-"));
+  const dbPath = join(dir, "coverage.db");
+  let commitmentId = "";
 
-  before(() => {
-    process.env.CCS_DB_PATH = localDb;
+  before(async () => {
+    process.env.CCS_DB_PATH = dbPath;
     closeDb();
-    const db = resetDbForTests(localDb);
-    seedMultiCloud(db);
+    const db = resetDbForTests(dbPath);
+    const { aws } = seedMultiCloud(db);
+    const commitments = await import("../src/app/api/commitments/route");
+    const res = await commitments.POST(
+      jsonReq("http://local/api/commitments", {
+        method: "POST",
+        headers: auth,
+        json: {
+          cloudAccountId: aws.id,
+          name: "CUD search-me",
+          instrumentType: "CUD",
+          provider: "gcp",
+          termMonths: 36,
+          rateUsd: 300,
+          lockStart: "2026-01-01",
+          lockEnd: "2029-01-01",
+          tags: ["analytics"],
+        },
+      }),
+    );
+    const body = await res.json();
+    commitmentId = body.commitment.id;
   });
 
   after(() => {
     closeDb();
-    rmSync(localDir, { recursive: true, force: true });
+    rmSync(dir, { recursive: true, force: true });
+    delete process.env.CCS_DB_PATH;
   });
 
-  it("search, PATCH rate/lock, archive excludes from default list", async () => {
-    const { aws } = seedMultiCloud(resetDbForTests(localDb));
-    const listRoute = await import("../src/app/api/commitments/route");
-    const idRoute = await import("../src/app/api/commitments/[id]/route");
-
-    const created = await listRoute.POST(
-      req("/api/commitments", {
-        method: "POST",
-        headers: authHeaders(),
-        body: JSON.stringify({
-          cloudAccountId: aws.id,
-          name: "RI searchable-widget",
-          instrumentType: "RI",
-          provider: "aws",
-          termMonths: 36,
-          rateUsd: 300,
-          lockStart: "2026-01-01T00:00:00Z",
-          lockEnd: "2029-01-01T00:00:00Z",
-          tags: ["widget"],
-        }),
+  it("GET /api/commitments search matches name or tag/provider", async () => {
+    const { GET } = await import("../src/app/api/commitments/route");
+    const byName = await GET(
+      jsonReq("http://local/api/commitments?search=search-me", {
+        headers: auth,
       }),
     );
-    const { commitment } = await created.json();
+    const named = await byName.json();
+    assert.ok(named.commitments.length >= 1);
 
-    const search = await listRoute.GET(
-      req("/api/commitments?search=widget", { headers: authHeaders() }),
+    const byProvider = await GET(
+      jsonReq("http://local/api/commitments?search=gcp", { headers: auth }),
     );
-    const searchBody = await search.json();
-    assert.ok(
-      searchBody.commitments.some((c: { id: string }) => c.id === commitment.id),
-    );
+    const providers = await byProvider.json();
+    assert.ok(providers.commitments.length >= 1);
+  });
 
-    const patched = await idRoute.PATCH(
-      req(`/api/commitments/${commitment.id}`, {
+  it("PATCH updates rate and can archive; archived excluded by default", async () => {
+    const detail = await import("../src/app/api/commitments/[id]/route");
+    const list = await import("../src/app/api/commitments/route");
+
+    const patchRes = await detail.PATCH(
+      jsonReq(`http://local/api/commitments/${commitmentId}`, {
         method: "PATCH",
-        headers: authHeaders(),
-        body: JSON.stringify({
-          rateUsd: 350,
-          lockEnd: "2028-06-01T00:00:00Z",
-        }),
+        headers: auth,
+        json: { rateUsd: 350, archive: true },
       }),
-      { params: Promise.resolve({ id: commitment.id }) },
+      { params: Promise.resolve({ id: commitmentId }) },
     );
-    assert.equal(patched.status, 200);
-    const patchedBody = await patched.json();
-    assert.equal(patchedBody.commitment.rate_usd, 350);
+    assert.equal(patchRes.status, 200);
+    const patched = await patchRes.json();
+    assert.equal(patched.commitment.rate_usd, 350);
+    assert.ok(patched.commitment.archived_at);
 
-    const archived = await idRoute.PATCH(
-      req(`/api/commitments/${commitment.id}`, {
+    const defaultList = await list.GET(
+      jsonReq("http://local/api/commitments", { headers: auth }),
+    );
+    const def = await defaultList.json();
+    assert.ok(
+      !def.commitments.some((c: { id: string }) => c.id === commitmentId),
+    );
+
+    const withArchived = await list.GET(
+      jsonReq("http://local/api/commitments?includeArchived=true", {
+        headers: auth,
+      }),
+    );
+    const arch = await withArchived.json();
+    assert.ok(arch.commitments.some((c: { id: string }) => c.id === commitmentId));
+  });
+
+  it("rejects lock window with lockStart after lockEnd", async () => {
+    const detail = await import("../src/app/api/commitments/[id]/route");
+    const res = await detail.PATCH(
+      jsonReq(`http://local/api/commitments/${commitmentId}`, {
         method: "PATCH",
-        headers: authHeaders(),
-        body: JSON.stringify({ archive: true }),
+        headers: auth,
+        json: { lockStart: "2027-01-01", lockEnd: "2026-01-01" },
       }),
-      { params: Promise.resolve({ id: commitment.id }) },
+      { params: Promise.resolve({ id: commitmentId }) },
     );
-    assert.equal(archived.status, 200);
-
-    const defaultList = await listRoute.GET(
-      req("/api/commitments", { headers: authHeaders() }),
-    );
-    const defaultBody = await defaultList.json();
-    assert.ok(
-      !defaultBody.commitments.some(
-        (c: { id: string }) => c.id === commitment.id,
-      ),
-    );
-
-    const withArchived = await listRoute.GET(
-      req("/api/commitments?includeArchived=true", {
-        headers: authHeaders(),
-      }),
-    );
-    const archivedList = await withArchived.json();
-    assert.ok(
-      archivedList.commitments.some(
-        (c: { id: string }) => c.id === commitment.id,
-      ),
-    );
+    assert.equal(res.status, 422);
   });
 });
 
 describe("domain-api: import batches", () => {
-  const localDir = mkdtempSync(join(tmpdir(), "ccs-imp-"));
-  const localDb = join(localDir, "coverage.db");
+  const dir = mkdtempSync(join(tmpdir(), "ccs-imp-"));
+  const dbPath = join(dir, "coverage.db");
+  let awsId = "";
+  let gcpId = "";
 
   before(() => {
-    process.env.CCS_DB_PATH = localDb;
+    process.env.CCS_DB_PATH = dbPath;
     closeDb();
-    resetDbForTests(localDb);
-    seedMultiCloud(resetDbForTests(localDb));
+    const db = resetDbForTests(dbPath);
+    const seeded = seedMultiCloud(db);
+    awsId = seeded.aws.id;
+    gcpId = seeded.gcp.id;
   });
 
   after(() => {
     closeDb();
-    rmSync(localDir, { recursive: true, force: true });
+    rmSync(dir, { recursive: true, force: true });
+    delete process.env.CCS_DB_PATH;
   });
 
-  it("POST import writes UsageSlices; GET status; idempotency 409; failure detail", async () => {
-    const db = resetDbForTests(localDb);
-    const { aws, gcp } = seedMultiCloud(db);
-    assert.ok(aws && gcp);
-
+  it("POST /api/imports accepts multi-provider usage and writes UsageSlices", async () => {
     const imports = await import("../src/app/api/imports/route");
-    const importId = await import("../src/app/api/imports/[id]/route");
-
-    const ok = await imports.POST(
-      req("/api/imports", {
+    const res = await imports.POST(
+      jsonReq("http://local/api/imports", {
         method: "POST",
-        headers: authHeaders(),
-        body: JSON.stringify({
+        headers: auth,
+        json: {
           clientKey: "batch-1",
           rows: [
             {
-              accountKey: "aws-111",
-              provider: "aws",
-              windowStart: "2026-01-01T00:00:00Z",
-              windowEnd: "2026-02-01T00:00:00Z",
+              cloudAccountId: awsId,
+              windowStart: "2026-01-01",
+              windowEnd: "2026-02-01",
               eligibleSpendUsd: 400,
               family: "compute",
             },
             {
-              accountKey: "gcp-222",
-              provider: "gcp",
-              windowStart: "2026-01-01T00:00:00Z",
-              windowEnd: "2026-02-01T00:00:00Z",
-              eligibleSpendUsd: 250,
+              cloudAccountId: gcpId,
+              windowStart: "2026-01-01",
+              windowEnd: "2026-02-01",
+              eligibleSpendUsd: 200,
+              family: "storage",
             },
           ],
-        }),
+        },
       }),
     );
-    assert.equal(ok.status, 201);
-    const okBody = await ok.json();
-    assert.equal(okBody.batch.status, "accepted");
-    assert.equal(okBody.batch.accepted_count, 2);
+    assert.equal(res.status, 201);
+    const body = await res.json();
+    assert.equal(body.status, "accepted");
+    assert.equal(body.batch.accepted_count, 2);
 
-    const slices = db
-      .prepare("SELECT COUNT(*) AS n FROM usage_slices WHERE import_batch_id = ?")
-      .get(okBody.batch.id) as { n: number };
-    assert.equal(slices.n, 2);
+    const { getDb } = await import("../src/lib/db");
+    const slices = getDb()
+      .prepare("SELECT cloud_account_id FROM usage_slices WHERE import_batch_id = ?")
+      .all(body.batchId) as { cloud_account_id: string }[];
+    assert.equal(slices.length, 2);
+    const providers = new Set(slices.map((s) => s.cloud_account_id));
+    assert.ok(providers.has(awsId) && providers.has(gcpId));
+  });
 
-    const detail = await importId.GET(
-      req(`/api/imports/${okBody.batch.id}`, { headers: authHeaders() }),
-      { params: Promise.resolve({ id: okBody.batch.id }) },
-    );
-    assert.equal(detail.status, 200);
-
-    const again = await imports.POST(
-      req("/api/imports", {
+  it("duplicate clientKey returns 409", async () => {
+    const imports = await import("../src/app/api/imports/route");
+    const res = await imports.POST(
+      jsonReq("http://local/api/imports", {
         method: "POST",
-        headers: authHeaders(),
-        body: JSON.stringify({
+        headers: auth,
+        json: {
           clientKey: "batch-1",
           rows: [
             {
-              accountKey: "aws-111",
-              provider: "aws",
-              windowStart: "2026-01-01T00:00:00Z",
-              windowEnd: "2026-02-01T00:00:00Z",
-              eligibleSpendUsd: 1,
-            },
-          ],
-        }),
-      }),
-    );
-    assert.equal(again.status, 409);
-
-    const bad = await imports.POST(
-      req("/api/imports", {
-        method: "POST",
-        headers: authHeaders(),
-        body: JSON.stringify({
-          rows: [
-            {
-              accountKey: "missing",
-              provider: "aws",
-              windowStart: "2026-01-01T00:00:00Z",
-              windowEnd: "2026-02-01T00:00:00Z",
+              cloudAccountId: awsId,
+              windowStart: "2026-02-01",
+              windowEnd: "2026-03-01",
               eligibleSpendUsd: 10,
             },
           ],
-        }),
+        },
       }),
     );
-    assert.equal(bad.status, 422);
-    const badBody = await bad.json();
-    assert.ok(badBody.batch.error_detail);
+    assert.equal(res.status, 409);
+  });
+
+  it("failed rows surface error detail on GET /api/imports/:id", async () => {
+    const imports = await import("../src/app/api/imports/route");
+    const detail = await import("../src/app/api/imports/[id]/route");
+    const create = await imports.POST(
+      jsonReq("http://local/api/imports", {
+        method: "POST",
+        headers: auth,
+        json: {
+          clientKey: "batch-fail",
+          rows: [
+            {
+              cloudAccountId: "missing-account",
+              windowStart: "2026-01-01",
+              windowEnd: "2026-02-01",
+              eligibleSpendUsd: 50,
+            },
+          ],
+        },
+      }),
+    );
+    assert.equal(create.status, 422);
+    const created = await create.json();
+    const get = await detail.GET(
+      jsonReq(`http://local/api/imports/${created.batchId}`, {
+        headers: auth,
+      }),
+      { params: Promise.resolve({ id: created.batchId }) },
+    );
+    const body = await get.json();
+    assert.ok(body.errorDetail || body.batch.error_detail);
+  });
+
+  it("oversized batch returns 422", async () => {
+    const imports = await import("../src/app/api/imports/route");
+    const rows = Array.from({ length: 501 }, (_, i) => ({
+      cloudAccountId: awsId,
+      windowStart: "2026-01-01",
+      windowEnd: "2026-02-01",
+      eligibleSpendUsd: i,
+    }));
+    const res = await imports.POST(
+      jsonReq("http://local/api/imports", {
+        method: "POST",
+        headers: auth,
+        json: { rows },
+      }),
+    );
+    assert.equal(res.status, 422);
   });
 });
