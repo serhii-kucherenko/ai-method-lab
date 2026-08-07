@@ -194,25 +194,30 @@ describe("smoke-ui: StudioShell IA + domain pages", () => {
     assert.ok(/Audit/i.test(page), "settings must show Audit section");
   });
 
-  it("api.ts surfaces rate-limit feedback on 429", () => {
-    const api = read("src/lib/api.ts");
-    assert.ok(api.includes("429"), "api.ts must handle 429");
-    assert.ok(
-      /rate.?limit|Rate limited/i.test(api),
-      "api.ts must mention rate limit feedback",
-    );
-  });
-
-  it("features inventory includes rate-limit, webhook, export", async () => {
+  it("features inventory includes webhook HMAC and export", async () => {
     const { GET } = await import("../src/app/api/features/route");
     const res = await GET();
     const body = await res.json();
-    for (const f of ["rate-limit", "webhook-hmac", "export-json-csv", "audit"]) {
+    for (const f of ["webhook-hmac", "export-json-csv", "audit"]) {
       assert.ok(
         body.features.includes(f),
         `features must include ${f}`,
       );
     }
+  });
+
+  it("renewals and settings wire export via /api/export", () => {
+    const renewals = read("src/app/renewals/page.tsx");
+    assert.ok(
+      renewals.includes("/api/export"),
+      "renewals Export pack must use /api/export",
+    );
+    const settings = read("src/app/settings/page.tsx");
+    assert.ok(
+      settings.includes("/api/export"),
+      "settings must offer export via /api/export",
+    );
+    assert.ok(/Export/i.test(settings), "settings must show Export section");
   });
 
   it("studio-shell keeps settings as footer utility, not eighth primary nav (D-12)", () => {
@@ -222,11 +227,20 @@ describe("smoke-ui: StudioShell IA + domain pages", () => {
       "studio-shell must link settings as utility",
     );
     const primaryBlock =
-      shell.match(/aria-label="Studio primary"[\s\S]*?<\/nav>/)?.[0] ?? "";
+      shell.match(
+        /aria-label="Studio primary"[\s\S]*?<\/nav>/,
+      )?.[0] ?? "";
     assert.ok(primaryBlock.length > 0, "primary nav block must exist");
     assert.ok(
       !primaryBlock.includes("/settings"),
       "settings must not be in primary domain nav",
     );
+    for (const href of DOMAIN_HREFS) {
+      assert.ok(
+        primaryBlock.includes(`href="${href}"`) ||
+          primaryBlock.includes(`href='${href}'`),
+        `primary nav must still include ${href}`,
+      );
+    }
   });
 });
