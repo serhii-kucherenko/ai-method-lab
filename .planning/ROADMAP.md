@@ -25,11 +25,11 @@ Ship a FinOps soft-sim that imports multi-cloud commitment inventory and usage, 
   2. Visitor opens `/honesty` and reads soft-sim fence (not billing SOR; not Idle Seat / True Up) with Sources
   3. Visible UI uses DESIGN tokens (Fraunces / Source Sans 3 / teal covered / rust gap) without isomorphic desk chrome
 
-**Plans**: 1/2 plans executed
+**Plans**: 2/2 plans executed
 Plans:
 
 - [x] 01-01-PLAN.md — Scaffold Next app, DESIGN tokens, brand-first `/` tracer
-- [ ] 01-02-PLAN.md — Full landing, `/honesty` fence + Sources, CTA placeholders
+- [x] 01-02-PLAN.md — Full landing, `/honesty` fence + Sources, CTA placeholders
 
 **UI hint**: yes
 
@@ -94,7 +94,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Smoke & trust | 1/2 | In Progress|  |
+| 1. Smoke & trust | 2/2 | In Progress|  |
 | 2. Domain claim core | 0/TBD | Not started | - |
 | 3. Studio UI | 0/TBD | Not started | - |
 | 4. Renewals, commercial, platform | 0/TBD | Not started | - |

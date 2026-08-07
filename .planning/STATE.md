@@ -4,16 +4,16 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 01
 current_phase_name: smoke-trust
-status: executing
-stopped_at: Completed 01-01-PLAN.md
-last_updated: "2026-08-07T07:35:04.641Z"
+status: verifying
+stopped_at: Completed 01-02-PLAN.md
+last_updated: "2026-08-07T07:43:56.623Z"
 last_activity: 2026-08-07
 last_activity_desc: Phase 01 execution started
 progress:
   total_phases: 1
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -29,10 +29,10 @@ See: .planning/PROJECT.md (updated 2026-08-07)
 
 Phase: 01 (smoke-trust) — EXECUTING
 Plan: 2 of 2
-Status: Ready to execute
+Status: Phase complete — ready for verification
 Last activity: 2026-08-07 — Phase 01 execution started
 
-Progress: [█████░░░░░] 50%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -59,6 +59,7 @@ Progress: [█████░░░░░] 50%
 | Plan | Duration | Tasks | Files |
 |------|----------|-------|-------|
 | Phase 01-smoke-trust P01 | 13min | 3 tasks | 25 files |
+| Phase 01-smoke-trust P02 | 18min | 3 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -74,6 +75,9 @@ Recent decisions affecting current work:
 - No Python sidecar; pure TS dual scorers
 - [Phase ?]: Mapped shadcn primary/destructive/background/radius to DESIGN teal/gap/paper/sm
 - [Phase ?]: Restored Source_Sans_3 after shadcn init injected Geist (D-05)
+- [Phase ?]: Below-fold lives in landing/BelowFold so hero page.tsx stays first-viewport-only
+- [Phase ?]: Honesty and Sources copy centralized in claim.ts for landing + /honesty
+- [Phase ?]: CTA placeholders are single-purpose stubs with home link only - no desk chrome
 
 ### Pending Todos
 
@@ -92,7 +96,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-08-07T07:35:04.621Z
-Stopped at: Completed 01-01-PLAN.md
+Last session: 2026-08-07T07:43:56.601Z
+Stopped at: Completed 01-02-PLAN.md
 Resume file: None
 Next: `/gsd-execute-phase 1`
